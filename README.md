@@ -3,13 +3,11 @@
 Manual : https://nomadsculpt.com/manual/
 
 ```
-git clone https://github.com/stephomi/nomadsculpt.com.git
+git clone https://github.com/stephomi/nomad-manual.git
 ```
 
-# Manual
+# Build
 ```bash
-cd manual
-
 npm install
 npm run dev
 # npm run build
@@ -18,8 +16,13 @@ npm run dev
 # then simply localhost in your browser
 ```
 
-<!-- pnpm update -->
-<!-- npm view vitepress versions -->
+<!-- 
+crowdin upload && crowdin upload translations --auto-approve-imported --import-eq-suggestions
+crowdin pre-translate --method ai --ai-prompt=130
+crowdin download
+
+npm view vitepress versions
+ -->
 
 # Nomad colors
 ```

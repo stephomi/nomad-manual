@@ -143,4 +143,31 @@ export default defineConfig({
             function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-DSF8ZS1RCC');`
         ]
     ],
+
+    locales: {
+        root: { label: 'English', lang: 'en' },
+        zh_cn: { label: '简体中文', lang: 'zh_cn', link: '/zh_cn/' },
+        zh_tw: { label: '繁體中文', lang: 'zh_tw', link: '/zh_tw/' },
+        french: { label: "Français", lang: "fr", link: "/fr/" },
+        spanish: { label: "Español", lang: "es", link: "/es/" },
+        german: { label: "Deutsch", lang: "de", link: "/de/" },
+        czech: { label: "Čeština", lang: "cs", link: "/cs/" },
+        dutch: { label: "Nederlands", lang: "nl", link: "/nl/" },
+        swedish: { label: "Svenska", lang: "sv", link: "/sv/" },
+        italian: { label: "Italiano", lang: "it", link: "/it/" },
+        polish: { label: "Polski", lang: "pl", link: "/pl/" },
+        portuguese: { label: "Português", lang: "pt", link: "/pt/" },
+        japanese: { label: "日本語", lang: "ja", link: "/ja/" },
+        korean: { label: "한국어", lang: "ko", link: "/ko/" },
+        thai: { label: "ไทย", lang: "th", link: "/th/" },
+        vietnamese: { label: "Tiếng Việt", lang: "vi", link: "/vi/" },
+        malay: { label: "Melayu", lang: "ms", link: "/ms/" },
+        indonesian: { label: "Bahasa\nIndonesia", lang: "id", link: "/id/" },
+        hindi: { label: "हिन्दी", lang: "hi", link: "/hi/" },
+        russian: { label: "Русский", lang: "ru", link: "/ru/" },
+        turkish: { label: "Türkçe", lang: "tr", link: "/tr/" },
+        arabic: { label: "العربية", lang: "ar", link: "/ar/" },
+        hebrew: { label: "עברית", lang: "he", link: "/he/" },
+    },
+
 })

@@ -1,23 +1,11 @@
 # Overview
 
-<!-- [[toc]] -->
-
 <!-- 
+[[toc]]
 ::: tip
-This is a tip
-:::
-
 ::: warning
-This is a warning
-:::
-
 ::: danger Error
-This is a dangerous warning
-:::
-
 ::: details
-This is a details block, which does not work in IE / Edge
-:::
 -->
 
 ::: tip New to Nomad?
@@ -25,7 +13,7 @@ Read the [Getting Started](gettingstarted.md) guide.
 :::
 
 
-# Table of contents
+## Table of contents
 
 | Menu                           | Icon                          | Description                                        |
 | :----------------------------: | :---------------------------: | :------------------------------------------------: |
@@ -49,33 +37,51 @@ Read the [Getting Started](gettingstarted.md) guide.
 | [FAQ](faq.md)                  | ![](./icons/faq.webp)         | Frequently Asked Questions                         |
 | [Tips](tips.md)                | ![](./icons/manual.webp)      | Workflow tips                                      |
 
-# Community resources
+## Community resources
 
-- [German manual (nomad-sculpting.de)](https://nomad-sculpting.de/nomad-sculpt/handbuch/)
+<style>
+.video-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.video-grid iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: 0;
+}
+</style>
 
-## Videos
+<div class="video-grid">
 
-### Glen southern
-<div class="video-responsive">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0Mj_yietOKI?si=-XhtDM-oZcMRAfnJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div>
+<h3>Dave Reed</h3>
+<iframe src="https://www.youtube.com/embed/Jm18bkWsAW0?si=Hnt3tdsRf_doFdZq" allowfullscreen></iframe>
 </div>
 
-### Dave Reed
-<div class="video-responsive">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Jm18bkWsAW0?si=Hnt3tdsRf_doFdZq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div>
+<h3>Glen Southern</h3>
+<iframe src="https://www.youtube.com/embed/0Mj_yietOKI?si=-XhtDM-oZcMRAfnJ" allowfullscreen></iframe>
 </div>
 
-###  Small Robot Studio
-<div class="video-responsive">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vw3qpp81rF0?si=xs0Thy6kEGvHVi3q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div>
+<h3>ProcreateFX</h3>
+<iframe src="https://www.youtube.com/embed/BPw16T6Ayck?si=q2WlYGp63OpukkuU" allowfullscreen></iframe>
 </div>
 
-### ProcreateFX
-<div class="video-responsive">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BPw16T6Ayck?si=q2WlYGp63OpukkuU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div>
+<h3>Laurent Briere</h3>
+<iframe src="https://www.youtube.com/embed/LMom2pNzJXU?si=-ucaRBlF97D6cO24" allowfullscreen></iframe>
 </div>
 
-### DM Art classes
-<div class="video-responsive">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5VO0ZqyopGo?si=rtOLMvjwjCfPsdb4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div>
+<h3>Small Robot Studio</h3>
+<iframe src="https://www.youtube.com/embed/vw3qpp81rF0?si=xs0Thy6kEGvHVi3q" allowfullscreen></iframe>
+</div>
+
+<div>
+<h3>DM Art classes</h3>
+<iframe src="https://www.youtube.com/embed/5VO0ZqyopGo?si=rtOLMvjwjCfPsdb4" allowfullscreen></iframe>
+</div>
+
 </div>
