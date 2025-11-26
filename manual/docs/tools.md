@@ -760,7 +760,15 @@ Drag to measure the distance between 2 points.
 This tool will convert the selected object into a clean quad topology layout, with controls for density, edge flow, symmetry. 
 
 ::: tip
-The quad remesher is available as an in-app purchase for iOS only. Android users can use 'Quad Remesh - Instant' available under the Topology -> Misc menu.
+Quad Remesher is developed by [Exoside](https://exoside.com/) for iOS and desktop. 
+
+For iOS it is an in-app purchase within Nomad, a one time payment of $16USD.
+
+For desktop, purchase a license from [Exoside](https://exoside.com/quadremesher/quadremesher-buy/). You can purchase it for just Nomad desktop, or a cross license for all supported desktop apps.
+
+If you already own Quad Remesher for another desktop app, you can [purchase an upgrade to all platforms at less cost.](https://exoside.com/quadremesher/quadremesher-upgrade/)
+
+Quad Remesher is not available for Android.  Android can use the free open source 'Quad Remesh - Instant' available under the Topology -> Misc menu, but understand its feature set is very limited.
 :::
 
 When this tool is activated for the first time, it will ask if you want to enable it as an in-app purchase. Once active, the left and top toolbars will be enabled.
