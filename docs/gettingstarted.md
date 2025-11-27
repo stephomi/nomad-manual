@@ -22,39 +22,39 @@ It's worth checking the main channel for those creators, they frequently post ne
 
 When you first start Nomad you'll see a sphere on screen. Simply drag your stylus on the sphere to start sculpting. Symmetry is enabled by default to make sculpting easier.
 
-![](./videos/gettingstarted_01.mp4)
+![](/videos/gettingstarted_01.mp4)
 
 To make the brush bigger or smaller, use the radius slider on the left.
 
-![](./videos/gettingstarted_02.mp4)
+![](/videos/gettingstarted_02.mp4)
 
 To make the brush stronger or weaker, use the intensity slider on the left.
 
-![](./videos/gettingstarted_03.mp4)
+![](/videos/gettingstarted_03.mp4)
 
 The default tool is the `Clay tool`, and it adds to the surface. To subtract from the surface, tap the `Sub` button on the left. To add to the surface, tap the Sub button again.
 
-![](./videos/gettingstarted_04.mp4)
+![](/videos/gettingstarted_04.mp4)
 
 To smooth the surface, tap the `Smooth` button. To go back to regular sculpting, tap the Smooth button again.
 
-![](./videos/gettingstarted_05.mp4)
+![](/videos/gettingstarted_05.mp4)
 
 To rotate around the model, drag in empty space outside the model.
 
-![](./videos/gettingstarted_06.mp4)
+![](/videos/gettingstarted_06.mp4)
 
 To zoom, use the two finger zoom/pinch gesture.
 
-![](./videos/gettingstarted_07.mp4)
+![](/videos/gettingstarted_07.mp4)
 
 To pan the camera, press 2 fingers on the screen and drag.
 
-![](./videos/gettingstarted_08.mp4)
+![](/videos/gettingstarted_08.mp4)
 
 If you make a mistake, a 2 finger tap will undo, or use the undo button in the lower left. 
 
-![](./videos/gettingstarted_09.mp4)
+![](/videos/gettingstarted_09.mp4)
 
 ::: tip Desktop release
 On desktop, the alt/opt key is used to control the camera:
@@ -79,15 +79,15 @@ With those settings, you can manipulate the camera purely with the pen:
 
 Nomad allows you to paint the surface of your sculpt. From the tool menu on the right, find the `Paint` tool, and click it. On the left toolbar a colored sphere will appear. Click it, this will bring up a color selector. Choose a color, and paint on your model.
 
-![](./videos/gettingstarted_10.mp4)
+![](/videos/gettingstarted_10.mp4)
 
 To erase, tap the `Erase` button on the left toolbar, then erase on the surface. Tap the erase button again to get back into paint mode.
 
-![](./videos/gettingstarted_11.mp4)
+![](/videos/gettingstarted_11.mp4)
 
 Using the clay brush in add/sub modes, smooth, paint, see if you can make a simple cartoon head:
 
-![](./images/gettingstarted_head1.webp)
+![](/images/gettingstarted_head1.webp)
 
 ## Other tools
 
@@ -97,13 +97,13 @@ The tools in Nomad can do a wide variety of things, from sculpting related tools
 
 See if you can use the move, crease, inflate, and smooth tools to add more detail to your head, change its shape:
 
-![](./images/gettingstarted_head2.webp)
+![](/images/gettingstarted_head2.webp)
 
 Now that you know the basics of Nomad, lets look at the rest of the interface.
 
 ## Interface
 
-![](./images/interface_overview1.webp)
+![](/images/interface_overview1.webp)
 
 * `Top menus` - The menus to access most of Nomads features. The top-left menus mainly cover scene and object features, the top-right menus are related to tools. On smaller screens these menus will collapse together to save space.
 * `Stats` - Information about the scene, the current object, mask status, memory usage.
@@ -118,7 +118,7 @@ You can mirror the placement and ordering of all the toolbars, see [Mirror top b
 
 ## Bottom toolbar
 
-![](./images/interface_bottom_toolbar.webp)
+![](/images/interface_bottom_toolbar.webp)
 
 * `Undo` - revert the last operation
 * `Redo` - restore the last undo operation

@@ -1,41 +1,41 @@
-# ![](./icons/open.webp) Files
+# ![](/icons/open.webp) Files
 
 The files menu allows you to save and load nomad projects, import and export 3d models, and export rendered images.
 
-![](./images/file_menu.webp)
+![](/images/file_menu.webp)
 
 ## Project
-![](./images/file_project.webp)
+![](/images/file_project.webp)
 
 A thumbnail is shown of the last save at the top of this menu. Clicking this thumbnail brings up a mini browser, tap twice on another project to bring up a mini menu to open, add, save, clone, rename, delete that project.
 
-### ![](./icons/nomad.webp) Preset 
+### ![](/icons/nomad.webp) Preset 
 Access a collection of demos and character components. Select one, then select again to choose to Open, Add to Scene or Clone the entry into your projects folder.
 
-![](./images/file_preset_preview.webp)
+![](/images/file_preset_preview.webp)
 
-### ![](./icons/save.webp) Save
+### ![](/icons/save.webp) Save
 Save the Nomad project.
 
-### ![](./icons/save_as.webp) Save As...
+### ![](/icons/save_as.webp) Save As...
 Display the project browser to allow you to save the Nomad project with a new name.
 
-### ![](./icons/pencil.webp) Rename
+### ![](/icons/pencil.webp) Rename
 Display a text box to rename the current project.
 
-### ![](./icons/open.webp) Open...
+### ![](/icons/open.webp) Open...
 Display the project browser to open a project.
 
-### ![](./icons/add_file.webp) Add to scene...
+### ![](/icons/add_file.webp) Add to scene...
 Display the project browser, when a project is selected it's contents will be merged with the current scene.
 
-### ![](./icons/trash.webp) Delete...
+### ![](/icons/trash.webp) Delete...
 Display the project browser, any selected projects will be deleted from the file system.
 
-### ![](./icons/new_file.webp) New
+### ![](/icons/new_file.webp) New
 Start a new project, if there are unsaved changes you will be asked if you want to save.
 
-### ![](./icons/autosave.webp) Auto Save...
+### ![](/icons/autosave.webp) Auto Save...
 Menu to control auto save options.
 
 If you enable autosave, you can set up a timer so that a popup will appear at regular intervals.
@@ -56,7 +56,7 @@ If an auto save file exists for a project, it will automatically be loaded inste
 
 ## Import
 
-### ![](./icons/add_file.webp) Import
+### ![](/icons/add_file.webp) Import
 For importing 3d files that aren't Nomad projects.
 
 When you import an external scene file to Nomad, you can either *import* or *add* it.
@@ -72,7 +72,7 @@ Nomad can import these formats:
 - PLY (.ply)
 - FBX (.fbx, experimental)
 
-### ![](./icons/cog.webp) Advanced
+### ![](/icons/cog.webp) Advanced
 Display advanced import options:
 
 ### Project/ glTF / OBJ / STL / FBX
@@ -107,7 +107,7 @@ Set the color mode interpreted from the obj as Linear, sRGB, or Auto.
 ## Export
 Save to a 3d geometry format that can be used in other software. 
 
-![](./images/file_export.webp)
+![](/images/file_export.webp)
 
 Different file formats support different features, the options available will change based on the selected file type.
 
@@ -172,7 +172,7 @@ Blender can import glTF/glb, but doesn't automatically understand vertex attribu
 
 This video shows the process:
 
-![](./videos/blender_pbr.mp4)
+![](/videos/blender_pbr.mp4)
 
 ::: 
 
@@ -186,7 +186,7 @@ USD is a complex format, it's specification supports many features, but not all 
 
 Export an image that is the combination of all the settings in the project (lights, materials, post processing etc). 
 
-![](./images/file_render.webp)
+![](/images/file_render.webp)
 ### Preview
 
 The small preview button next to the menu title will dim the toolbars to help preview the final result.

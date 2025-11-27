@@ -1,4 +1,4 @@
-# ![](./icons/pressure.webp) Pressure 
+# ![](/icons/pressure.webp) Pressure 
 
 ---
 

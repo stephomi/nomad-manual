@@ -1,8 +1,8 @@
-# ![](./icons/camera.webp) Camera
+# ![](/icons/camera.webp) Camera
 
 This menu lets you create and modify cameras, as well as control how you interact with cameras.
 
-![](./images/camera_overview2.webp)
+![](/images/camera_overview2.webp)
 
 Cameras in Nomad have several uses:
 
@@ -61,7 +61,7 @@ With those settings, you can manipulate the camera purely with the pen:
 
 ## Camera controls
 
-![](./images/camera_list.webp)
+![](/images/camera_list.webp)
 
 ### Views
 You can save camera view points by using `Add View`.
@@ -75,17 +75,17 @@ It can be useful if you want to cycle between front/left/back reference views wi
 
 | Action      | Icon                          | Description                                                                 |
 | :---------: | :---------------------------: | :-------------------------------------------------------------------------: |
-| Visibility  | ![](./icons/eye_open.webp)    | Toggle the camera. Hidden cameras will be skipped from previous/next button |
+| Visibility  | ![](/icons/eye_open.webp)    | Toggle the camera. Hidden cameras will be skipped from previous/next button |
 | Name        |                               | Select the camera                                                           |
-| Image       | ![](./icons/image.webp)       | A thumbnail of a reference image if it is linked to the camera              |
-| Update View | ![](./icons/update_view.webp) | Update the saved view with the current view point                           |
-| Edit Name   | ![](./icons/pencil.webp)      | Edit the camera name                                                        |
-| Delete      | ![](./icons/trash.webp)       | Delete the camera                                                           |
+| Image       | ![](/icons/image.webp)       | A thumbnail of a reference image if it is linked to the camera              |
+| Update View | ![](/icons/update_view.webp) | Update the saved view with the current view point                           |
+| Edit Name   | ![](/icons/pencil.webp)      | Edit the camera name                                                        |
+| Delete      | ![](/icons/trash.webp)       | Delete the camera                                                           |
 
-### ![](./icons/tool_view.webp) Add View
+### ![](/icons/tool_view.webp) Add View
 Create a new camera based on the current view.
 
-### ![](./icons/camera.webp) Icons
+### ![](/icons/camera.webp) Icons
 
 Toggle if camera icons are visible in the viewport. If a camera is selected, its icon is always visible.
 
@@ -97,7 +97,7 @@ You can also use the `Orthographic` mode, which is more or less similar to a FOV
 ### First Person
 Enable setting the pivot to be directly on the camera, rather than on the sculpture. Dragging a finger on the background will keep the camera position locked, but change the rotation, similar to how first person games work. Useful when sculpting environments rather than single objects.
 
-![](./images/camera_rotation_ortho_view.webp)
+![](/images/camera_rotation_ortho_view.webp)
 
 ### Rotation Type
 By default the camera is using the `Turntable` rotation mode.

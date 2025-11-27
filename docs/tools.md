@@ -1,6 +1,6 @@
-# ![](./icons/toolbox.webp) Tools
+# ![](/icons/toolbox.webp) Tools
 
-![](./images/tools_menu.webp)
+![](/images/tools_menu.webp)
 
 ::: tip
 Jump down to [Tools](#tools-1) for descriptions of the individual tools.
@@ -35,7 +35,7 @@ Many of these tools can be customized with different brush behavior, pressure, t
 
 The left toolbar has sliders for radius and intensity, and then tool category specific controls, explained below.
 
-![](./images/tool_left_panel.webp)
+![](/images/tool_left_panel.webp)
 
 ::: tip
 The intensity slider for many tools can go above 100%, worth experimenting with!
@@ -55,7 +55,7 @@ By default these all function as sticky buttons; ie you can hold it down to temp
 
 The [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Project](#project), [Facegroup](#facegroup) and [Hide](#hide) tools all use similar controls for selecting areas of the mesh.
 
-![](./images/tools_shape_selector_panel.webp)
+![](/images/tools_shape_selector_panel.webp)
 
 
 * `Lasso` - A freehand drawn shape
@@ -82,32 +82,32 @@ Polygon editing and curve editing behave in similar ways:
 
 Many tools have extra setttings that are found in the settings menu, the first icon in the top right menu:
 
-![](./images/tools_settings_menu.webp)
+![](/images/tools_settings_menu.webp)
 
 ## Tools
 
 |                                                                     |                                                   |                                                                   |                                                         |                                                         |                                                                     |
 | :-----------------------------------------------------------------: | :-----------------------------------------------: | :---------------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------------------: |
-| ![](./icons/tool_clay.webp)         <br> [Clay](#clay)              | ![](./icons/tool_brush.webp) <br> [Brush](#brush) | ![](./icons/tool_move.webp)       <br> [Move](#move)              | ![](./icons/tool_drag.webp)    <br> [Drag](#drag)       | ![](./icons/tool_smooth.webp)  <br> [Smooth](#smooth)   | ![](./icons/tool_mask.webp)    <br> [Mask](#mask)                   |
-| ![](./icons/tool_maskSelector.webp) <br> [Sel Mask](#selector-mask) | ![](./icons/tool_paint.webp) <br> [Paint](#paint) | ![](./icons/tool_smudge.webp)     <br> [Smudge](#smudge)          | ![](./icons/tool_flatten.webp) <br> [Flatten](#flatten) | ![](./icons/tool_planar.webp)  <br> [Planar](#planar)   | ![](./icons/tool_crease.webp)  <br> [Crease](#crease)               |
-| ![](./icons/tool_pinch.webp)        <br> [Pinch](#pinch)            | ![](./icons/tool_trim.webp)  <br> [Trim](#trim)   | ![](./icons/tool_split.webp)      <br> [Split](#split)            | ![](./icons/tool_project.webp) <br> [Project](#project) | ![](./icons/tool_layer.webp)   <br> [Layer](#layer)     | ![](./icons/tool_inflate.webp) <br> [Inflate](#inflate)             |
-| ![](./icons/tool_nudge.webp)        <br> [Nudge](#nudge)            | ![](./icons/tool_stamp.webp) <br> [Stamp](#stamp) | ![](./icons/tool_clearLayer.webp) <br> [Del Layer](#delete-layer) | ![](./icons/tool_tube.webp)    <br> [Tube](#tube)       | ![](./icons/tool_lathe.webp)   <br> [Lathe](#lathe)     | ![](./icons/tool_insert.webp)  <br> [Insert](#insert)               |
-| ![](./icons/tool_transform.webp)    <br> [Transform](#transform)    | ![](./icons/tool_gizmo.webp) <br> [Gizmo](#gizmo) | ![](./icons/tool_faceGroup.webp)  <br> [FaceGroup](#facegroup)    | ![](./icons/tool_hide.webp)    <br> [Hide](#hide)       | ![](./icons/tool_measure.webp) <br> [Measure](#measure) | ![](./icons/tool_remesh.webp)  <br> [Quad Remesher](#quad-remesher) |
-| ![](./icons/tool_select.webp)       <br> [Select](#select)          | ![](./icons/tool_view.webp)  <br> [View](#view)   |                                                                   |                                                         |                                                         |                                                                     |
+| ![](/icons/tool_clay.webp)         <br> [Clay](#clay)              | ![](/icons/tool_brush.webp) <br> [Brush](#brush) | ![](/icons/tool_move.webp)       <br> [Move](#move)              | ![](/icons/tool_drag.webp)    <br> [Drag](#drag)       | ![](/icons/tool_smooth.webp)  <br> [Smooth](#smooth)   | ![](/icons/tool_mask.webp)    <br> [Mask](#mask)                   |
+| ![](/icons/tool_maskSelector.webp) <br> [Sel Mask](#selector-mask) | ![](/icons/tool_paint.webp) <br> [Paint](#paint) | ![](/icons/tool_smudge.webp)     <br> [Smudge](#smudge)          | ![](/icons/tool_flatten.webp) <br> [Flatten](#flatten) | ![](/icons/tool_planar.webp)  <br> [Planar](#planar)   | ![](/icons/tool_crease.webp)  <br> [Crease](#crease)               |
+| ![](/icons/tool_pinch.webp)        <br> [Pinch](#pinch)            | ![](/icons/tool_trim.webp)  <br> [Trim](#trim)   | ![](/icons/tool_split.webp)      <br> [Split](#split)            | ![](/icons/tool_project.webp) <br> [Project](#project) | ![](/icons/tool_layer.webp)   <br> [Layer](#layer)     | ![](/icons/tool_inflate.webp) <br> [Inflate](#inflate)             |
+| ![](/icons/tool_nudge.webp)        <br> [Nudge](#nudge)            | ![](/icons/tool_stamp.webp) <br> [Stamp](#stamp) | ![](/icons/tool_clearLayer.webp) <br> [Del Layer](#delete-layer) | ![](/icons/tool_tube.webp)    <br> [Tube](#tube)       | ![](/icons/tool_lathe.webp)   <br> [Lathe](#lathe)     | ![](/icons/tool_insert.webp)  <br> [Insert](#insert)               |
+| ![](/icons/tool_transform.webp)    <br> [Transform](#transform)    | ![](/icons/tool_gizmo.webp) <br> [Gizmo](#gizmo) | ![](/icons/tool_faceGroup.webp)  <br> [FaceGroup](#facegroup)    | ![](/icons/tool_hide.webp)    <br> [Hide](#hide)       | ![](/icons/tool_measure.webp) <br> [Measure](#measure) | ![](/icons/tool_remesh.webp)  <br> [Quad Remesher](#quad-remesher) |
+| ![](/icons/tool_select.webp)       <br> [Select](#select)          | ![](/icons/tool_view.webp)  <br> [View](#view)   |                                                                   |                                                         |                                                         |                                                                     |
 
 ------
 
-### ![](./icons/tool_clay.webp) Clay
+### ![](/icons/tool_clay.webp) Clay
 The Clay tool is useful for building up your sculpture. `Sub` will remove material from your sculpture.
 
-![](./videos/tool_clay.mp4)
+![](/videos/tool_clay.mp4)
 
-### ![](./icons/tool_brush.webp) Brush
+### ![](/icons/tool_brush.webp) Brush
 The standard brush. `Sub` will remove material.
 
-![](./videos/tool_brush.mp4)
+![](/videos/tool_brush.mp4)
 
-### ![](./icons/tool_move.webp) Move
+### ![](/icons/tool_move.webp) Move
 The area under the brush will stick to the brush, allowing for elastic deformation. The selection is maintained during the move, so if you move the brush away, then move it back where you started, you will see no deformation.
 
 The sub mode is `Normal`, and will move the area under the brush along the surface normal.
@@ -120,9 +120,9 @@ This brush is good for both large scale deformation and careful small deformatio
 * `Same-side vertex only` - Ignore verticies that point in the opposite direction of the deformation.
 
 
-![](./videos/tool_move.mp4)
+![](/videos/tool_move.mp4)
 
-### ![](./icons/tool_drag.webp) Drag
+### ![](/icons/tool_drag.webp) Drag
 The area under the brush will stick to the brush, allowing for elastic deformation. Unlike the move brush, the selection is continuously updated during the stroke, so it is possible to make longer, snake like objects, especially when Dynamic Topology is activated.
 
 THe sub mode is `Normal`, and will move the area under the brush along the surface normal.
@@ -134,9 +134,9 @@ This brush is good for more loose, gestural shape changes.
 * `Radius (Background)` - How far away from the edge of a model you can be and still sculpt, useful when working on the silouette of an object. 
 * `Same-side vertex only` - Ignore verticies that point in the opposite direction of the deformation.
 
-![](./videos/tool_drag.mp4)
+![](/videos/tool_drag.mp4)
 
-### ![](./icons/tool_smooth.webp) Smooth
+### ![](/icons/tool_smooth.webp) Smooth
 Smooth the area by average the point positions. This tool is highly dependent on the polygon density.
 So if you have many polygons, the smoothing will be less effective.
 
@@ -144,7 +144,7 @@ The sub mode is `Relax`, which only smooths the wireframe but tries to retain th
 
 #### Smooth settings
 
-![](./images/tool_smooth_settings.webp)
+![](/images/tool_smooth_settings.webp)
 
 ##### Facegroup
 
@@ -163,9 +163,9 @@ The sub mode is `Relax`, which only smooths the wireframe but tries to retain th
 Higher polygon densities can require raising the intensity above 100%. Very high values (300%, 500%) can also work well as a sculpting tool, forcing areas to go flat and smooth quickly under the brush, like hitting clay with a mallet!
 :::
 
-![](./videos/tool_smooth.mp4)
+![](/videos/tool_smooth.mp4)
 
-### ![](./icons/tool_mask.webp) Mask
+### ![](/icons/tool_mask.webp) Mask
 This tool lets you mask vertices. Masked vertices are protected from sculpting or painting. 
 
 The sub mode is `Unmask`, and will erase where the mask has been painted.
@@ -174,26 +174,26 @@ Similar to selections in 2d painting programs, masks can be painted with a brush
 
 Unlike 2d painting programs, they can also be made via facegroups, and masks can be used to create new geometry via extrusion/extraction style operations. 
 
-![](./videos/tool_mask1.mp4)
+![](/videos/tool_mask1.mp4)
 
  A toolbar will appear at the top of the viewport with extra controls. 
 
-![](./images/tool_mask_toolbar.webp)
+![](/images/tool_mask_toolbar.webp)
 
 The title of the bar can be tapped to expand/collapse, or the arrow in the top right can be tapped to move it to the top or bottom of the UI.
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](./icons/cross_circle2.webp) Clear              | Clear the mask                                                                             |
-| ![](./icons/invert.webp)        Invert             | Invert the mask                                                                            |
-| ![](./icons/sharpen.webp)       Sharpen            | Sharpen the mask edge                                                                      |
-| ![](./icons/blur.webp)          Blur               | Blur the mask edge                                                                         |
+| ![](/icons/cross_circle2.webp) Clear              | Clear the mask                                                                             |
+| ![](/icons/invert.webp)        Invert             | Invert the mask                                                                            |
+| ![](/icons/sharpen.webp)       Sharpen            | Sharpen the mask edge                                                                      |
+| ![](/icons/blur.webp)          Blur               | Blur the mask edge                                                                         |
 |                                 Blur ->            | Drag left/right to interactively blur the mask                                             |
-| ![](./icons/culling.webp)       Front              | Toggle to only mask front facing vertices                                                  |
+| ![](/icons/culling.webp)       Front              | Toggle to only mask front facing vertices                                                  |
 |                                 Convert            | Convert the mask to a facegroup                                                            |
-| ![](./icons/group_to_mask.webp) On tap (facegroup) | When enabled facegroups will be shown, tapping a facegroup will mask it                    |
+| ![](/icons/group_to_mask.webp) On tap (facegroup) | When enabled facegroups will be shown, tapping a facegroup will mask it                    |
 |                                 On tap (mask)      | When enabled tapping an 'island' of mask or unmasked polygons will flood fill that island. |
-| ![](./icons/vertex.webp)        Connected          | When enabled only allow mask strokes to affect connected topology.                         |
+| ![](/icons/vertex.webp)        Connected          | When enabled only allow mask strokes to affect connected topology.                         |
 
 ##### Mask Quick gesture
 You can perform zbrush-style gestures while holding the quick masking button in the left toolbar:
@@ -206,9 +206,9 @@ You can perform zbrush-style gestures while holding the quick masking button in 
 
 
 #### Mask settings
-![](./images/tool_mask_settings.webp)
+![](/images/tool_mask_settings.webp)
 
-![](./videos/tool_mask2.mp4)
+![](/videos/tool_mask2.mp4)
 
 * `Preview` - The Mask settings menu is mainly used to create geometry from the mask. Because of this the default behavior is to preview what the new geometry will look like. You can choose to have no preview, an extract preview, a split preview, and if this geometry will be shown in x-ray mode.
 
@@ -248,16 +248,16 @@ This is normal, close the mask settings menu to view the new shape and the origi
 
 
 
-### ![](./icons/tool_maskSelector.webp) Selection Mask
+### ![](/icons/tool_maskSelector.webp) Selection Mask
 This tool is mostly similar to the [Masking tool](#mask), the main difference is that you don't use stroke to paint mask, but instead use the [Selection Controls](#selection-controls).
 
 The sub mode is `Unmask`, and will erase the mask using selection controls.
 
 Selection mask shares the same tool settings as the `Mask` tool.
 
-![](./videos/tool_selector_mask.mp4)
+![](/videos/tool_selector_mask.mp4)
 
-### ![](./icons/tool_paint.webp) Paint
+### ![](/icons/tool_paint.webp) Paint
 Apply color and material properties. To learn more about material you can visit the [Painting](painting.md) section.
 
 The sub mode is `Erase` and will remove paint.
@@ -265,15 +265,15 @@ The sub mode is `Erase` and will remove paint.
 #### Paint settings
 * `Layer fitering` - This functions like the layer alpha lock in photoshop or procreate. If you're painting on a layer, when this is enabled, you can only modify where paint already exists; unpainted areas will be protected.
 
-![](./videos/tool_paint.mp4)
+![](/videos/tool_paint.mp4)
 
-### ![](./icons/tool_smudge.webp) Smudge
+### ![](/icons/tool_smudge.webp) Smudge
 Smudge color and material proprties. The smudge settings menu contains a `Quality` slider, lower values mean faster strokes.
 
-![](./videos/tool_smudge.mp4)
+![](/videos/tool_smudge.mp4)
 
 
-### ![](./icons/tool_flatten.webp) Flatten
+### ![](/icons/tool_flatten.webp) Flatten
 Flatten the area by projecting the points onto the average plane.
 
 The sub mode is `Fill` and will define a plane set by the highest point, and tend to pull points up.
@@ -289,19 +289,19 @@ When either or both of these are disabled, the flatten can be gradually deepened
 When working in ears of high curvature, eg trying to flatten the cheeks but the tool keeps affecting the sides of the nose, try creating a mask to protect areas the flatten brush shouldn't affect.
 :::
 
-![](./videos/tool_flatten.mp4)
+![](/videos/tool_flatten.mp4)
 
 
-### ![](./icons/tool_planar.webp) Planar
+### ![](/icons/tool_planar.webp) Planar
 Make points planar by projecting onto the average plane, but with less buildup than the flatten brush. This creates cleaner hard-edge surfaces. Quick strokes will push and pull on the surface more, slower strokes that start from already planar areas and work out will maintain the plane more.
 
 The sub mode is `Fill` and will define a plane set by the highest point, and tend to pull points up.
 
 Planar is actually the same tool as `Flatten`, but with `Lock plane direction` enabled, meaning it will tend to make more stable, hard edged surface, while flatten can be more sculptural and used to create semi-flat areas.
 
-![](./videos/tool_planar.mp4)
+![](/videos/tool_planar.mp4)
 
-### ![](./icons/tool_crease.webp) Crease
+### ![](/icons/tool_crease.webp) Crease
 Crease tools can be useful to sculpt small cuts or dents.
 
 The sub mode is `Invert`, and will create a raised crease.
@@ -311,17 +311,17 @@ The sub mode is `Invert`, and will create a raised crease.
 * `Pinch factor` - How much to pull vertices sideways towards the brush. If pinch is at 1, and offset at 0, the surface won't have any depth changes, just topology changes, pulling edges towards the stroke.
 * `Offset factor` - How much to push/pull vertices in depth. If pinch is at 0, and offset at 1, deep creases or raised dents will be made, but will look jagged because not enough geo is pulled towards the crease to define the sides or the bottom of the crease accurately.
 
-![](./videos/tool_crease.mp4)
+![](/videos/tool_crease.mp4)
 
-### ![](./icons/tool_pinch.webp) Pinch
+### ![](/icons/tool_pinch.webp) Pinch
 This tool can be used to sharpen edges.
 
 The sub mode is `Invert` and will spread vertices apart.
 
-![](./videos/tool_pinch.mp4)
+![](/videos/tool_pinch.mp4)
 
 
-### ![](./icons/tool_trim.webp) Trim
+### ![](/icons/tool_trim.webp) Trim
 The Trim tool works by removing a chunk of your mesh, and gives options for how to process the gap left behind. It uses the [Selection controls](#selection-controls) to define the trim.
 
 ::: tip
@@ -344,9 +344,9 @@ In orthographic mode the cut made through the mesh is parallel to the view, whic
 * `Legacy Threshold espilon` - A value that can be adjusted to improve the legacy hole filling algorithm.
 * `Fill Detail` - The approximate size of the triangles used on the trim.
 
-![](./videos/tool_trim.mp4)
+![](/videos/tool_trim.mp4)
 
-### ![](./icons/tool_split.webp) Split
+### ![](/icons/tool_split.webp) Split
 Similar to the [Trim](#trim) tool, except that while Trim discards the selection, Split will keep the selection as a new object.
 
 #### Split settings
@@ -363,19 +363,19 @@ Similar to the [Trim](#trim) tool, except that while Trim discards the selection
 * `Legacy Threshold espilon` - A value that can be adjusted to improve the legacy hole filling algorithm.
 * `Fill Detail` - The approximate size of the triangles used on the split.
 
-![](./videos/tool_split.mp4)
+![](/videos/tool_split.mp4)
 
 
-### ![](./icons/tool_project.webp) Project
+### ![](/icons/tool_project.webp) Project
 The Project tool looks like the [Trim](#trim) tool, but it does not delete or create any geometry, it just moves verticies to conform to the selection.
 
-![](./videos/tool_project.mp4)
+![](/videos/tool_project.mp4)
 
 ::: tip
 If you use Project while in a layer, you can blend between the original and the projected shape with the layer slider.
 :::
 
-### ![](./icons/tool_layer.webp) Layer
+### ![](/icons/tool_layer.webp) Layer
 Raise the surface, but limit the height.
 
 If you keep the pencil down and keep brushing over an area, Layer will raise to a certain height then go no further, vs other tools that will keep accumulating height.
@@ -394,27 +394,27 @@ Create a layer, and use this tool. The the maximum height is now set from the la
 * `Inflate`- When active adjust the direction that layer works to get smoother results.
 * `Relax (Normal)` - The amount of smoothing applied to the normals.
 
-![](./videos/tool_layer.mp4)
+![](/videos/tool_layer.mp4)
 
 
-### ![](./icons/tool_flatten.webp) Inflate
+### ![](/icons/tool_flatten.webp) Inflate
 Move the vertices along their own normals. `Sub` will move vertices along their inverted normal.
 
 #### Inflate Setings
 * `Relax (Normal)` - The amount of smoothing applied to the normals.
 
-![](./videos/tool_inflate.mp4)
+![](/videos/tool_inflate.mp4)
 
 
 
 
-### ![](./icons/tool_nudge.webp) Nudge
+### ![](/icons/tool_nudge.webp) Nudge
 Move or 'smear' points in the direction of the stroke.
 
-![](./videos/tool_nudge.mp4)
+![](/videos/tool_nudge.mp4)
 
 
-### ![](./icons/tool_stamp.webp) Stamp
+### ![](/icons/tool_stamp.webp) Stamp
 
 Click and drag to raise an area of the sculpt in the shape of the selected Alpha.
 
@@ -432,26 +432,26 @@ The two stroke modes are useful for different things.
 
 :::
 
-![](./videos/tool_stamp.mp4)
+![](/videos/tool_stamp.mp4)
 
 
-### ![](./icons/tool_clearLayer.webp) Delete Layer
+### ![](/icons/tool_clearLayer.webp) Delete Layer
 This tool can reset layers locally, you need an active layer otherwise nothing will happen.
 
-![](./videos/tool_delete_layer.mp4)
+![](/videos/tool_delete_layer.mp4)
 
 
-### ![](./icons/tool_tube.webp) Tube
+### ![](/icons/tool_tube.webp) Tube
 Create a tube by drawing a curve. 
-![](./images/tool_tube_new.webp)
+![](/images/tool_tube_new.webp)
 
 Once the tube is created, the path can be edited in 3d space using similar controls to the standard [Shape editing](#shape-editing) and curve editing tools. 
 
-![](./videos/tool_tube.mp4)
+![](/videos/tool_tube.mp4)
 
 #### Tube left toolbar
 
-![](./images/tool_tube_left_toolbar.webp)
+![](/images/tool_tube_left_toolbar.webp)
 
 The left toolbar has the following options:
 
@@ -469,7 +469,7 @@ The left toolbar has the following options:
     * `Screen` - When active, the path is 'pinned' to the screen, allowing you to move the view and the object, and the path stays in place. When inactive, the path is part of the 3d scene, and it will move with the camera and objects.
 
 ##### Tube top toolbar
-![](./images/tool_tube_toolbar.webp)
+![](/images/tool_tube_toolbar.webp)
 Whe a tube is selected, a toolbar will appear at the top of the viewport with extra controls. Click the title of the toolbar to collapse/expand the toolbar, and click the arrow in the top right to move the toolbar to the top or bottom of the viewport.
 
 * `Validate` - bake the tube into regular polygons so it can be sculpted.
@@ -491,7 +491,7 @@ Whe a tube is selected, a toolbar will appear at the top of the viewport with ex
 
 #### Curve point delete toggle
 
-![](./images/tool_tube_delete_toggle.webp)
+![](/images/tool_tube_delete_toggle.webp)
 
 Below the toolbar is a curve point delete toggle. When you drag a curve point near another, it will turn red, indicating that if you let go, the point will be deleted. If you are doing small edits and you do not want to delete points, this button will disable the point delete behavior.
 
@@ -510,16 +510,16 @@ Divisions at 4 and Post subdivision at 3 will make smooth round tipped tubes, go
 :::
 
 
-### ![](./icons/tool_lathe.webp) Lathe
+### ![](/icons/tool_lathe.webp) Lathe
 Create a revolution surface by drawing a curve.
 
 This tool is great for shapes like vases, wineglasses.
 
-![](./videos/tool_lathe.mp4)
+![](/videos/tool_lathe.mp4)
 
 #### Lathe left toolbar
 
-![](./images/tool_lathe_left_toolbar.webp)
+![](/images/tool_lathe_left_toolbar.webp)
 
 The left toolbar has the following options:
 
@@ -536,7 +536,7 @@ The left toolbar has the following options:
     * `Screen` - When active, the path is 'pinned' to the screen, allowing you to move the view and the object, and the path stays in place. When inactive, the path is part of the 3d scene, and it will move with the camera and objects.
 
 #### Lathe top toolbar
-![](./images/tool_lathe_top_toolbar.webp)
+![](/images/tool_lathe_top_toolbar.webp)
 
 Whe a lathe is selected, a toolbar will appear at the top of the viewport with extra controls. Click the title of the toolbar to collapse/expand the toolbar, and click the arrow in the top right to move the toolbar to the top or bottom of the viewport.
 
@@ -562,7 +562,7 @@ Whe a lathe is selected, a toolbar will appear at the top of the viewport with e
 * `Division Y` - same as Y Divisions in the toolbar.
 * `Curve (Repeater)` - convert the curve profile into a [Curve Repeater](scene.md#curve)
 
-### ![](./icons/tool_insert.webp) Insert
+### ![](/icons/tool_insert.webp) Insert
 Place an object on the surface of another. In use it is similar to the stamp tool, but for full 3d shapes.
 
 If you select a primitive from the left toolbar, a click-drag on any surface will place a primitive where you click, the drag will set the size. Once you finish dragging, Insert will swap to [Transform](#transform) mode.
@@ -573,9 +573,9 @@ You don't have to just insert primitives! Select *any* shape in the outliner, if
 
 If an object has a custom pivot, then it will be used as an anchor point. See video below.
 
-![](./videos/tool_insert.mp4)
+![](/videos/tool_insert.mp4)
 
-### ![](./icons/tool_transform.webp) Transform
+### ![](/icons/tool_transform.webp) Transform
 Move/Rotate/Scale a model directly with 1 and 2 fingers, usually over the surface of another object.
 
 The tool is controlled with the left toolbar, and has 5 buttons:
@@ -607,9 +607,9 @@ This presents a fast workflow for cloning objects over another, eg rocks over a 
 * Let go, press the clone button
 * Move this rock, repeat.
 
-![](./videos/tool_transform.mp4)
+![](/videos/tool_transform.mp4)
 
-### ![](./icons/tool_gizmo.webp) Gizmo
+### ![](/icons/tool_gizmo.webp) Gizmo
 This tool lets you move, rotate and scale objects, and alter pivots of objects.
 
 The viewport handle has the following features:
@@ -618,7 +618,7 @@ The viewport handle has the following features:
 * `Rotate` - Drag on the red/green/blue circles to rotate on X/Y/Z. Drag the sphere within the circles to free rotate.
 * `Scale`- Drag on the outer red/green/blue dots to scale on X/Y/Z. Drag on the outer red/green/blue cones to scale on the X/Y/Z planes. Drag on the outer peach circle to uniform scale.
 
-![](./images/tool_gizmo.webp)
+![](/images/tool_gizmo.webp)
 
 #### Nodes and vertices 
 
@@ -659,13 +659,13 @@ When pivot mode is active, a menu is displayed to allow quick pivot changes:
 
 #### Gizmo settings
 
-![](./images/tool_gizmo_settings.webp)
+![](/images/tool_gizmo_settings.webp)
 
 ##### Matrix 
-* ![](./icons/target.webp) `Move origin` - Move the object so that it's pivot is at the center of the scene, called the origin.
-* ![](./icons/bake.webp)  `Bake` - Freeze the object where it currently is, and set the translate/rotate values to 0, scale to 1.
-* ![](./icons/bake.webp) -> ![](./icons/tool_gizmo.webp) `Bake Pivot` - Make the matrix values correspond to where the gizmo handle is in the world.
-* ![](./icons/reset.webp) `Reset` - A shortcut that sets the translation values to 0, rotation values to 0, scale to 1, moving and rotating the object.
+* ![](/icons/target.webp) `Move origin` - Move the object so that it's pivot is at the center of the scene, called the origin.
+* ![](/icons/bake.webp)  `Bake` - Freeze the object where it currently is, and set the translate/rotate values to 0, scale to 1.
+* ![](/icons/bake.webp) -> ![](/icons/tool_gizmo.webp) `Bake Pivot` - Make the matrix values correspond to where the gizmo handle is in the world.
+* ![](/icons/reset.webp) `Reset` - A shortcut that sets the translation values to 0, rotation values to 0, scale to 1, moving and rotating the object.
 
 ::: tip Bake vs bake to pivot
 Create a box, select the Gizmo tool, open and pin the settings menu. By default the translation and rotation are 0, scale is 1.
@@ -711,9 +711,9 @@ By default this symmetry is turned off.
 On the left you can move the gizmo pivot, you can see the video below in action.
 This is especially useful for the rotation, as it doesn't change anything for translation.
 
-![](./videos/tool_gizmo.mp4)
+![](/videos/tool_gizmo.mp4)
 
-### ![](./icons/tool_faceGroup.webp) Facegroup
+### ![](/icons/tool_faceGroup.webp) Facegroup
 
 Facegroups let you organise your object into differently colored faces. You can use these groups in many ways in Nomad:
 
@@ -732,7 +732,7 @@ Facegroups let you organise your object into differently colored faces. You can 
 * `Shape selector` - Create facegroups with shapes instead of a brush, via `Lock+Radius`, `Lasso`, `Polygon`, `Rect` and `Ellipse`. See [Shape Selector](#shape-selector) for more info.
 * `Auto-pick` - When enabled, will select the patch where the stroke starts, and apply that patch for the rest of the stroke. Very useful for tidying up facegroup regions; if a facegroup has extended too far, enable auto-pick, start a stroke from where the facegroup patch is correct, and drag up to the border to reassign the correct patch.
 
-### ![](./icons/tool_hide.webp) Hide
+### ![](/icons/tool_hide.webp) Hide
 Hide or isolate parts of the object. 
 
 The primary modes are controlled from the left hand menu:
@@ -750,12 +750,12 @@ A toolbar will appear at the top of the viewport with extra controls:
 * `Delete` - Delete the hidden part of the object
 * `Split` - Split the hidden part of the object into a new shape.
 
-### ![](./icons/tool_measure.webp) Measure
+### ![](/icons/tool_measure.webp) Measure
 Drag to measure the distance between 2 points.
 
-### ![](./icons/tool_remesh.webp) Quad Remesher
+### ![](/icons/tool_remesh.webp) Quad Remesher
 
-![](./images/tool_quadremesher.webp)
+![](/images/tool_quadremesher.webp)
 
 This tool will convert the selected object into a clean quad topology layout, with controls for density, edge flow, symmetry. 
 
@@ -781,7 +781,7 @@ When this tool is activated for the first time, it will ask if you want to enabl
 * `Ellipse` - Draw ellipses on the the surface of the sculpt, quad remesher will use these as guides for the edge flow. Tap on a path to delete it.
 
 #### Quad remesher top toolbar
-![](./images/tool_quadremesher_toolbar.webp)
+![](/images/tool_quadremesher_toolbar.webp)
 
 A toolbar will appear at the top of the viewport with extra controls:
 
@@ -827,16 +827,16 @@ In the quad remesh options ensure relax is disabled (as you have already relaxed
 
 :::
 
-### ![](./icons/tool_select.webp) Select
+### ![](/icons/tool_select.webp) Select
 Use the shape modes to select objects in the scene. `Unselect` will remove objects from the selection.
 
-### ![](./icons/tool_view.webp) View
+### ![](/icons/tool_view.webp) View
 This "tool" does nothing in particular, this is simply a way to view the model without modifying your scene.
 
 
 ## Toolbox context menu
 
-![](./images/tools_context_menu.webp)
+![](/images/tools_context_menu.webp)
 
 A right click or long press on a tool in the toolbox will bring up a context menu. This menu has the following options:
 

@@ -1,10 +1,11 @@
 .DS_Store
 .yarn*
 .pnp*
-package-lock.json
 .gitignore
+.env
 .temp
 
+package-lock.json
 node_modules
 cache
 dist

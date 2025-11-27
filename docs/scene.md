@@ -1,34 +1,34 @@
-# ![](./icons/scene.webp) Scene 
+# ![](/icons/scene.webp) Scene 
 
 This menu lets you manage objects, lights, cameras and repeaters in Nomad. It displays the scene hierarchy as a tree-view, allowing you to modify many aspects of your objects. It also lets you create new objects, as well as combine and split objects in various ways.
 
 
-![](./images/scene_menu_summary.webp)
+![](/images/scene_menu_summary.webp)
 
 
 ## Shortcut bar
 | Action                 | Icon                              | Description                                                                                                         |
 | :--------------------: | :-------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
-| [Add...](#add-menu)    | ![](./icons/plus.webp)            | Display the [Add Menu](#add-menu) to add an object to the scene                                                     |
-| Delete                 | ![](./icons/trash.webp)           | Delete the object                                                                                                   |
-| Lock                   | ![](./icons/lock.webp)            | Make the object unselectable in the viewport. It can still be selected from the tree view.                          |
-| Join                   | ![](./icons/merge.webp)           | Join the selected objects into a single object with no geometry changes                                             |
-| Separate               | ![](./icons/diagonal.webp)        | If an object is made up of unique polygon shells, break it into separate objects. The reverse of the join operation |
-| [Boolean...](#boolean) | ![](./icons/subtract_circle.webp) | Display the [Boolean](#boolean) menu                                                                                |
-| Clone                  | ![](./icons/clone.webp)           | Duplicate the object into a new object                                                                              |
-| Instance               | ![](./icons/link.webp)            | Duplicate the object as an instance, so modelling changes to one are made to all instances.                         |
-| Un-instance            | ![](./icons/unlink.webp)          | Convert an instance to a unique shape, so modelling changes are no longer copied to other instances                 |
-| Sync                   | ![](./icons/link.webp)            | If instances have children, ensure all instances share the same child hierarchy                                     |
+| [Add...](#add-menu)    | ![](/icons/plus.webp)            | Display the [Add Menu](#add-menu) to add an object to the scene                                                     |
+| Delete                 | ![](/icons/trash.webp)           | Delete the object                                                                                                   |
+| Lock                   | ![](/icons/lock.webp)            | Make the object unselectable in the viewport. It can still be selected from the tree view.                          |
+| Join                   | ![](/icons/merge.webp)           | Join the selected objects into a single object with no geometry changes                                             |
+| Separate               | ![](/icons/diagonal.webp)        | If an object is made up of unique polygon shells, break it into separate objects. The reverse of the join operation |
+| [Boolean...](#boolean) | ![](/icons/subtract_circle.webp) | Display the [Boolean](#boolean) menu                                                                                |
+| Clone                  | ![](/icons/clone.webp)           | Duplicate the object into a new object                                                                              |
+| Instance               | ![](/icons/link.webp)            | Duplicate the object as an instance, so modelling changes to one are made to all instances.                         |
+| Un-instance            | ![](/icons/unlink.webp)          | Convert an instance to a unique shape, so modelling changes are no longer copied to other instances                 |
+| Sync                   | ![](/icons/link.webp)            | If instances have children, ensure all instances share the same child hierarchy                                     |
 
 
 ## Tree view
-![](./images/scene_treeview.webp) 
+![](/images/scene_treeview.webp) 
 
 | Action       | Icon                       | Description              |
 | :----------: | :------------------------: | :----------------------: |
-| Select       | ![](./icons/checked.webp)  | Toggle select/unselected |
-| Visible      | ![](./icons/eye_open.webp) | Toggle visibility        |
-| Menu         | ![](./icons/more.webp)     | Display object menu      |
+| Select       | ![](/icons/checked.webp)  | Toggle select/unselected |
+| Visible      | ![](/icons/eye_open.webp) | Toggle visibility        |
+| Menu         | ![](/icons/more.webp)     | Display object menu      |
 
 ::: tip TIP: Quickly select or hide many objects
 
@@ -51,16 +51,16 @@ Many of these options are similar to the shortcut bar at the top, repeated for c
 
 |       Action        |                        Icon                        | Description                                                                                                                                                             |
 | :-----------------: | :------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|      Instance       |               ![](./icons/link.webp)            | Duplicate the object as an instance, so modelling changes to one are made to all instances.                                                                             |
-|        Clone        |              ![](./icons/clone.webp)            | Duplicate the object into a new object                                                                                                                                  |
-|        Name         |              ![](./icons/pencil.webp)           | Change the name of the object                                                                                                                                           |
-|       Delete        |              ![](./icons/trash.webp)            | Delete the object                                                                                                                                                       |
-|       Delete+       |            ![](./icons/removeNode.webp)         | Delete the object and its children                                                                                                                                      |
-|     Un-instance     |              ![](./icons/unlink.webp)           | Convert an instance to a unique shape, so modelling changes are no longer copied to other instances.                                                                    |
-|  Separate Topology  |             ![](./icons/separate.webp)          | If an object is made up of unique polygon shells, break it into separate objects. The reverse of the join operation.                                                    |
-| Separate Face Group |            ![](./icons/faceGroup.webp)          | If an object has multiple face groups, break the mesh into separate objects.                                                                                            |
-|   Separate Layers   |              ![](./icons/layer.webp)            | If an object has layers, split each layer into a separate object. Useful for sending blendshapes to other applications.                                                 |
-|   Join -> Layers    | ![](./icons/merge.webp) -> ![](./icons/layer.webp) <span style="visibility:hidden">_________</span> | If multiple objects are selected and have matching topology, merge those objects into layers for the primary object (the other objects will be deleted). Again, useful for blendshapes coming FROM other applications.<br><br> Note that the layers will be disabled by default. Enable them if you need to adjust their sliders. |
+|      Instance       |               ![](/icons/link.webp)            | Duplicate the object as an instance, so modelling changes to one are made to all instances.                                                                             |
+|        Clone        |              ![](/icons/clone.webp)            | Duplicate the object into a new object                                                                                                                                  |
+|        Name         |              ![](/icons/pencil.webp)           | Change the name of the object                                                                                                                                           |
+|       Delete        |              ![](/icons/trash.webp)            | Delete the object                                                                                                                                                       |
+|       Delete+       |            ![](/icons/removeNode.webp)         | Delete the object and its children                                                                                                                                      |
+|     Un-instance     |              ![](/icons/unlink.webp)           | Convert an instance to a unique shape, so modelling changes are no longer copied to other instances.                                                                    |
+|  Separate Topology  |             ![](/icons/separate.webp)          | If an object is made up of unique polygon shells, break it into separate objects. The reverse of the join operation.                                                    |
+| Separate Face Group |            ![](/icons/faceGroup.webp)          | If an object has multiple face groups, break the mesh into separate objects.                                                                                            |
+|   Separate Layers   |              ![](/icons/layer.webp)            | If an object has layers, split each layer into a separate object. Useful for sending blendshapes to other applications.                                                 |
+|   Join -> Layers    | ![](/icons/merge.webp) -> ![](/icons/layer.webp) <span style="visibility:hidden">_________</span> | If multiple objects are selected and have matching topology, merge those objects into layers for the primary object (the other objects will be deleted). Again, useful for blendshapes coming FROM other applications.<br><br> Note that the layers will be disabled by default. Enable them if you need to adjust their sliders. |
 
 
 
@@ -93,7 +93,7 @@ This option will simply make one single object entry from multiple selected obje
 You can see an example in video in the [Separate](#separate) section.
 
 ## Boolean
-![](./images/scene_boolean_menu.webp) 
+![](/images/scene_boolean_menu.webp) 
 Combine objects into a single surface.
 
 `Voxel merge` will retain the volume of the objects, and calculate new evenly spaced polygons on the surface. Because of the calculation step a voxel merge can handle complex geometry, but can lose fine detail if the target resolution isn't high enough.
@@ -104,13 +104,13 @@ Combine objects into a single surface.
 Both Voxel Merge and Boolean will use object visibility to control the operation:
 
 #### Union
-Both objects visible will create a boolean **union**, the outer skin of the objects are combined, with no interior surfaces. ![](./images/boolean_union.webp)
+Both objects visible will create a boolean **union**, the outer skin of the objects are combined, with no interior surfaces. ![](/images/boolean_union.webp)
 
 #### Subtract
-One object invisible = boolean **subtract**, the invisible object will be subtracted from the visible object. ![](./images/boolean_subtract.webp)
+One object invisible = boolean **subtract**, the invisible object will be subtracted from the visible object. ![](/images/boolean_subtract.webp)
 
 #### Intersect
-Both objects invisible = boolean **intersection**, create a new shape only where the two objects overlap. ![](./images/boolean_intersect.webp)
+Both objects invisible = boolean **intersection**, create a new shape only where the two objects overlap. ![](/images/boolean_intersect.webp)
 
 
 ### Voxel Merge Button
@@ -133,19 +133,19 @@ Pressing this button will do a polygon boolean operation using the Manifold libr
 If you have a single object based on several disconnected parts, you can split this object into several objects. 
 This can be seen as the opposite of [Simple Merging](#simple-merge).
 
-![](./videos/merge_separate.mp4)
+![](/videos/merge_separate.mp4)
 
 
 ## Add menu
 
-![](./images/scene_addmenu_overview.webp)
+![](/images/scene_addmenu_overview.webp)
 
 This menu will create primitives, groups, cameras, repeaters, and lights.
 
 Primitives are basic shape types that can be adjusted using parameters. Once you have the primitive adjusted to your needs, you then 'validate' it, which bakes those parameters down into a polygon mesh that can be sculpted and painted. A primitive cannot have its parameters adjusted after it has been validated.
 
 
-![](./images/scene_addmenu_top.webp)
+![](/images/scene_addmenu_top.webp)
 
 ### On gizmo
 Enable putting the new primitive where the current selected shape or gizmo is. When disabled, the primitive will be placed at the center of the scene.
@@ -165,19 +165,19 @@ Enable UV's on primitives. UV's (often called texture coordinates), are extra da
 
 | Primitive      | Icon                                      | Description                                                                                                     |
 | :------------: | :---------------------------------------: | :-------------------------------------------------------------------------------------------------------------: |
-| Box            | ![](./icons/cube.webp)                    | It's a simple cube, you can control the division in X, Y and Z                                                  |
-| Sphere         | ![](./icons/circle.webp)                  | For convenience this is named a Sphere but it is actually a subdivided box, with the `Project on sphere` forced |
-| Cylinder       | ![](./icons/cylinder.webp)                | You can add a center hole for the cylinder primitive, for example to make an hollow pipe                        |
-| Torus          | ![](./icons/torus.webp)                   | The torus can be a good starting point for rings                                                                |
-| Cone           | ![](./icons/cone.webp)                    | -                                                                                                               |
-| Icosahedron    | ![](./icons/icosahedron.webp)             | -                                                                                                               |
-| UV-sphere      | ![](./icons/circle.webp)                  | A sphere with uneven poly layout, see [Warning below](#uv-sphere)                                               |
-| Plane          | ![](./icons/rectangle.webp)               | It's a simple plane, note that this is the only primitive that is not closed                                    |
-| Tube           | ![](./icons/tool_tube.webp)               | see [Tube](tools#tube)                                                                                          |
-| Lathe          | ![](./icons/tool_lathe.webp)              | see [Lathe](tools#lathe)                                                                                        |
-| Triplanar      | ![](./icons/triplanar.webp)               | see [Triplanar](#triplanar)                                                                                     |
-| Shadow Catcher | ![](./icons/material_shadow_catcher.webp) | see [Shadow Catcher](#shadow-catcher)                                                                           |
-| Head           | ![](./icons/face.webp)                    | A simple head with a layer to blend between male/female                                                         |
+| Box            | ![](/icons/cube.webp)                    | It's a simple cube, you can control the division in X, Y and Z                                                  |
+| Sphere         | ![](/icons/circle.webp)                  | For convenience this is named a Sphere but it is actually a subdivided box, with the `Project on sphere` forced |
+| Cylinder       | ![](/icons/cylinder.webp)                | You can add a center hole for the cylinder primitive, for example to make an hollow pipe                        |
+| Torus          | ![](/icons/torus.webp)                   | The torus can be a good starting point for rings                                                                |
+| Cone           | ![](/icons/cone.webp)                    | -                                                                                                               |
+| Icosahedron    | ![](/icons/icosahedron.webp)             | -                                                                                                               |
+| UV-sphere      | ![](/icons/circle.webp)                  | A sphere with uneven poly layout, see [Warning below](#uv-sphere)                                               |
+| Plane          | ![](/icons/rectangle.webp)               | It's a simple plane, note that this is the only primitive that is not closed                                    |
+| Tube           | ![](/icons/tool_tube.webp)               | see [Tube](tools#tube)                                                                                          |
+| Lathe          | ![](/icons/tool_lathe.webp)              | see [Lathe](tools#lathe)                                                                                        |
+| Triplanar      | ![](/icons/triplanar.webp)               | see [Triplanar](#triplanar)                                                                                     |
+| Shadow Catcher | ![](/icons/material_shadow_catcher.webp) | see [Shadow Catcher](#shadow-catcher)                                                                           |
+| Head           | ![](/icons/face.webp)                    | A simple head with a layer to blend between male/female                                                         |
 
 ::: tip
 If you wonder what is the base mesh when you launch Nomad: this is a subdivided box as well.
@@ -186,7 +186,7 @@ However the base mesh in Nomad doesn't use `Project on sphere`, meaning it is no
 
 ### Primitive Toolbar
 
-![](./images/scene_primitive_toolbar.gif)
+![](/images/scene_primitive_toolbar.gif)
 
 Once a primitive is created, a toolbar will appear to control it's parameters.
 
@@ -214,7 +214,7 @@ Clicking on the title of the toolbar will toggle it to the top or bottom of the 
 
 ### Primitive menu
 
-![](./images/scene_primitive_menu.webp)
+![](/images/scene_primitive_menu.webp)
 
 This contains all the parameters for the selected primitive. Parameters are the basic descriptions for a shape. To describe a ring, for example, you would describe it's outer, radius, its inner radius, and the number of polygons.
 
@@ -251,7 +251,7 @@ While not suitable for general sculpting, it is useful for eyes; if you rotate t
 ### Triplanar
 This primitive is special in that you should use the [Masking tool](tools.md#mask) on it to shape the geometry.
 
-![](./videos/triplanar.mp4)
+![](/videos/triplanar.mp4)
 
 
 ::: tip
@@ -282,12 +282,12 @@ Create an 'empty' object, that you can parent other objects underneath. This can
 Create a camera.
 
 ## Repeaters
-![](./images/scene_primitive_repeaters.webp)
+![](/images/scene_primitive_repeaters.webp)
 
 Repeaters are nodes that make instances of objects below it. 
 
 ### Array
-![](./images/scene_primitive_array.webp)
+![](/images/scene_primitive_array.webp)
 
 When objects are made children of this node, they can be instanced into a grid layout. When selected, it has controls for:
 * Fit inside - toggle between controlling the size of the grid/box of the array, or controlling the space between the array instances
@@ -296,7 +296,7 @@ When objects are made children of this node, they can be instanced into a grid l
 * SizeX/Y/Z - the width/height/depth of the total array grid when fit inside is toggled.
 
 ### Curve
-![](./images/scene_primitive_curve.webp)
+![](/images/scene_primitive_curve.webp)
 This will create a curve, children of this node will be repeated along the curve. When selected, it has controls for:
 * Edit - allow adding of points to the curve, and moving points on the curve.
 * Snap - will snap curve points to other geometry
@@ -308,7 +308,7 @@ This will create a curve, children of this node will be repeated along the curve
 * B-spline - Toggle the instances to follow the curve exactly, or use b-spline interpolation which has smoother results. 
 
 ### Radial
-![](./images/scene_primitive_radial.webp)
+![](/images/scene_primitive_radial.webp)
 
 Children of this node will be instanced into a circle. Move the child object to alter the radius of this repeater. When selected, it has controls for:
 * RadialX/Y/Z - selecting these buttons will set the radial axis, and set the number of instances.
@@ -316,7 +316,7 @@ Children of this node will be instanced into a circle. Move the child object to 
 
 
 ### Mirror
-![](./images/scene_primitive_mirror.webp)
+![](/images/scene_primitive_mirror.webp)
 
 Children of this node will be mirrored across an axis. When selected it has controls for:
 * Gizmo - enable the transform gizmo to set the center of the mirror. This can also be rotated and scaled. When done, tap gizmo again to reveal the standard controls.
@@ -330,7 +330,7 @@ All the repeaters have a `Validate` control, which will bake the results of the 
 ::: tip Tip: Combine repeaters
 Repeaters can be parented under each other, and several objects can be made children of repeaters, leading to complex effects.
 
-![](./images/scene_repeater_combine.webp)
+![](/images/scene_repeater_combine.webp)
 :::
 
 ::: tip Tip: Repeater pivots
@@ -340,7 +340,7 @@ Some repeaters will try to auto-pivot the child objects, so even if you move or 
 
 ## Light
 
-![](./images/scene_primitive_light.webp)
+![](/images/scene_primitive_light.webp)
 
 ### Directional
 Create a directional light, an infinitely far away light source like the sun.

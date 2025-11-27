@@ -1,4 +1,4 @@
-# ![](./icons/manual.webp) Tips
+# ![](/icons/manual.webp) Tips
 
 [[toc]]
 
@@ -152,40 +152,40 @@ Voxel remesh is great for making evenly spaced polygons, but sometimes creates t
 * Smooth with high intensity
 * artifacts appear (easier to see with a high contrast matcap material):
 
-![](./videos/tip_pimples_before.mp4)
+![](/videos/tip_pimples_before.mp4)
 
 To fix via sculpting, try the `Stable smoothing` option in the smooth settings. This can handle the uneven topology layout of the voxel remesh, and get clean results.
 
-![](./videos/tip_pimples_stable_smooth.mp4)
+![](/videos/tip_pimples_stable_smooth.mp4)
 
 To fix the topolgy itself, use a new primitive, or the quad remesh tools, or an external 3d modeller, and project detail from the original mesh to the new one via `Topology -> Misc -> Reproject`. 
 
-![](./videos/tip_pimples_reproject.mp4)
+![](/videos/tip_pimples_reproject.mp4)
 
 ## Daylight lighting
 
 The default PBR render is, as its name suggests, physically based, which like an unprocessed digital photo can look a little washed out and flat. Nomad's lights and post processing can be used to make renders look more vibrant.
 
 Here is a default render, lets see if we can make it look better:
-![](./images/tips_lighting_default.webp)
+![](/images/tips_lighting_default.webp)
 
 Enabling post processing and tonemapping can add brightness and contrast:
 
-![](./images/tips_lighting_tonemap.webp)
+![](/images/tips_lighting_tonemap.webp)
 
 To focus on the lights, the default environment light is good for sculpting, but can be improved for a final render. One way to think about this is to separate direct light (eg the sun) vs environment light (eg light from the blue of the sky, the ground). By reducing the environment light and rotating it, this starts to capture what the lighting should look like if the subject were in a shaded area:
 
-![](./images/tips_lighting_env.webp)
+![](/images/tips_lighting_env.webp)
 
 A direct light can be added, and its intensity boosted to simulate harsh sunlight. Balancing this with the environment light will achieve a pleasing result:
 
-![](./images/tips_lighting_sunlight.webp)
+![](/images/tips_lighting_sunlight.webp)
 
 Characters can benefit from swapping their material to subsurface, and placing a spotlight behind the character aiming at the ears to make them glow:
 
-![](./images/tips_lighting_sss.webp)
+![](/images/tips_lighting_sss.webp)
 
 Then experiment with the rest of the post process settings! Global Illumination and Ambient Occlusion help with more realistic lighting. Curvature and Sharpen can help bring out more detail in the sculpt. Chromatic Aberration, Depth of Field, Grain, Bloom, Vignette help simulate camera effects. Note that as features are enabled, the lighting and other post processing values need to be adjusted to compensate.
 
 Here's the render with a full set of post processing tweaks:
-![](./images/tips_lighting_final.webp)
+![](/images/tips_lighting_final.webp)

@@ -1,12 +1,12 @@
-# ![](./icons/postprocess.webp) Post process 
+# ![](/icons/postprocess.webp) Post process 
 
 This menu controls many aspects of Nomad to affect the look of the render.
 
-![](./images/postprocess_overview_drac.webp)
+![](/images/postprocess_overview_drac.webp)
 
 Using post processing can substantially change the final look of your scene.
 
-![](./images/postprocess_overview.webp)
+![](/images/postprocess_overview.webp)
 *The same scene before and after post processing, no additional lights or material changes.*
 
 Post process can impact the performance by a lot depending on your device.
@@ -18,7 +18,7 @@ However, most of the time you want the post process to be disabled when you are 
 
 ## Quality
 
-![](./images/postprocess_quality.webp)
+![](/images/postprocess_quality.webp)
 ### Max frame sampling
 Nomad will calculate a certain amount of post processing for a single frame render, which can look noisy. This control determines how many frames will be rendered, then blended together to remove most noisy artifacts. Some effects require no extra samples (eg color grading), while others like global illumination can require hundreds of samples to be noise free. 
 
@@ -39,7 +39,7 @@ When enabled will force the resolution multiplier to x1.0
 Apply a denoiser to the image. This can allow you to use much lower samples. This only works if `Full Resolution` is enabled. Note that the denoising happens after all the samples have been calculated, and can be processor intensive.
 
 ## Preset browser
-![](./images/postprocess_presets.webp)
+![](/images/postprocess_presets.webp)
 Clcking on the image will display a collection of post processing presets. To define your own presets, select one, click 'clone', make changes. To save, click the preset image, click again inside the preset browser, and choose 'save'.
 
 
@@ -51,7 +51,7 @@ This option is only effective with PBR mode.
 
 | SSR off                    | SSR on                    |
 | :------------------------: | :-----------------------: |
-| ![](./images/ssr_off.webp) | ![](./images/ssr_on.webp) |
+| ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
 ## Global Illumination (SSGI)
 
@@ -63,7 +63,7 @@ Global illumination simulates how light bounces between surfaces, eg a red wall 
 
 | SSGI off                   | SSGI on                   |
 | :------------------------: | :-----------------------: |
-| ![](./images/ssgi_off.webp) | ![](./images/ssgi_on.webp) |
+| ![](/images/ssgi_off.webp) | ![](/images/ssgi_on.webp) |
 
 _A spotlight is behind the sphere, aimed at the ceiling. With SSGI off, only the ceiling is lit. WIth SSGI on, light bounces from the ceiling to the walls to the sphere._
 
@@ -79,7 +79,7 @@ The effect only depends on the model geometry.
 
 | SSAO off                    | SSAO on                    |
 | :-------------------------: | :------------------------: |
-| ![](./images/ssao_off.webp) | ![](./images/ssao_on.webp) |
+| ![](/images/ssao_off.webp) | ![](/images/ssao_on.webp) |
 
 ::: tip
 AO will be most visible in areas lit mainly by environment light. Areas that are under strong direct light will receive a much weaker AO effect.
@@ -97,7 +97,7 @@ Simply tap on your model to change the focus point.
 
 | DOF off                   | DOF focus on far ring       | DOF focus on close ring    |
 | :-----------------------: | :-------------------------: | :------------------------: |
-| ![](./images/dof_off.webp) | ![](./images/dof_near.webp) | ![](./images/dof_far.webp) |
+| ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp) |
 
 
 ## Bloom
@@ -110,7 +110,7 @@ Blooms will make the bright area of your scene glow.
 
 | Bloom off                    | Bloom with radius 0         | Bloom with radius 1         |
 | :--------------------------: | :-------------------------: | :-------------------------: |
-| ![](./images/bloom_off.webp) | ![](./images/bloom_r0.webp) | ![](./images/bloom_r1.webp) |
+| ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
 
 ## Tone Mapping
@@ -127,7 +127,7 @@ Notice that with `Tone Mapping` disabled, some details disappear because the pix
 
 | Tone Mapping off            | Tone Mapping on            |
 | :-------------------------: | :------------------------: |
-| ![](./images/tone_off.webp) | ![](./images/tone_on.webp) |
+| ![](/images/tone_off.webp) | ![](/images/tone_on.webp) |
 
 ::: tip
 Tone mapping can enhance the effect of global illumination. If you turn the instensity of the environment map down, the primary light source up, can increase the tone mapping `exposure` to see more of the bounce lighting effects.
@@ -138,7 +138,7 @@ Similar to the curves tool in Photoshop, this allows you to control the balance 
 
 | Color Grading off             | Color Grading on             |
 | :---------------------------: | :--------------------------: |
-| ![](./images/grading_off.webp) | ![](./images/grading_on.webp) |
+| ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
 ## Curvature
 Detect where there are rapid changes in curvature, and apply a colour to those regions.
@@ -150,7 +150,7 @@ Detect where there are rapid changes in curvature, and apply a colour to those r
 
 | Curvature off                    | Curvature on                   |
 | :------------------------------: | :----------------------------: |
-| ![](./images/curvature_off.webp) | ![](./images/curvature_on.webp) |
+| ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
 
 ## Chromatic Aberration
@@ -160,7 +160,7 @@ Simulate the lens artifacts with light being decomposed around the screen edges.
 
 | Chromatic off                 | Chromatic on                 |
 | :---------------------------: | :--------------------------: |
-| ![](./images/chroma_off.webp) | ![](./images/chroma_on.webp) |
+| ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
 
 ## Vignette
@@ -172,7 +172,7 @@ Simulate the lens artifacts by darkening the screen edges.
 
 | Vignette off                    | Vignette on                    |
 | :-----------------------------: | :----------------------------: |
-| ![](./images/vignette_off.webp) | ![](./images/vignette_on.webp) |
+| ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
 ## Grain
 Add a grain effect, it can help make the image a bit less artificial.
@@ -182,7 +182,7 @@ Add a grain effect, it can help make the image a bit less artificial.
 
 | Grain off                    | Grain on                   |
 | :--------------------------: | :------------------------: |
-| ![](./images/grain_off.webp) | ![](./images/grain_on.webp) |
+| ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
 
 ## Sharpness
@@ -193,7 +193,7 @@ A sharpen effect similar to that in Photoshop or photo processing apps.
 
 | Sharpness off                  | Sharpness on                 |
 | :----------------------------: | :--------------------------: |
-| ![](./images/sharpen_off.webp) | ![](./images/sharpen_on.webp) |
+| ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
 ## Pixel Art
 Simulate retro game pixel art.
@@ -203,7 +203,7 @@ Simulate retro game pixel art.
 
 | Pixel off                   | Pixel on                   |
 | :-------------------------: | :------------------------: |
-| ![](./images/pixel_off.webp) | ![](./images/pixel_on.webp) |
+| ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
 ## Scanline
 Simulate the look of old CRT monitors.
@@ -213,7 +213,7 @@ Simulate the look of old CRT monitors.
 
 | Scanline off                   | Scanline on                   |
 | :----------------------------: | :---------------------------: |
-| ![](./images/scanline_off.webp) | ![](./images/scanline_on.webp) |
+| ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
 
 
 ## Dithering

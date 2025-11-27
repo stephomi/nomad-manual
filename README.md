@@ -12,8 +12,6 @@ npm install
 npm run dev
 # npm run build
 # npm run pdf
-
-# then simply localhost in your browser
 ```
 
 <!-- 
@@ -26,14 +24,9 @@ npm view vitepress versions
 
 # Nomad colors
 ```
-#262322
-rgb(38, 35, 34)
-
-#363230
-rgb(54, 50, 48)
-
-#ebbe6c
-rgb(235, 190, 108)
+#262322 rgb(38, 35, 34)
+#363230 rgb(54, 50, 48)
+#ebbe6c rgb(235, 190, 108)
 ```
 
 # Misc
