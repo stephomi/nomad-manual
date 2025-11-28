@@ -1,10 +1,10 @@
-# ![](/icons/symmetry.webp) Symmetri
+# ![](/icons/symmetry.webp) Symmetri {#symmetry}
 
 Den här menyn styr hur penseldrag upprepas över ett spegelplan eller radiellt, samt sätt att återställa symmetri på icke-symmetriska objekt.
 
 ![](/images/symmetry_overview.webp) 
 
-## Översikt 
+## Översikt {#overview}
 Du kan använda symmetri på flera sätt:
 
 * Som en spegel, som speglar arbete över X (vänster/höger), Y (topp/botten), Z (bak/framsida), eller en kombination. 
@@ -23,10 +23,10 @@ De enda undantagen är transformverktygen ([Flytta](#translate), [Rotera](#rotat
 Symmetrimenyn är främst till för att styra penseldragssymmetri. Du kan också spegla och upprepa objekt via [repeatrar som finns i scenmenyn](scene#repeaters). 
 :::
 
-## Enabled
+## Aktiverad {#enabled}
 Växla spegelläge, detta är samma som knappen `Sym` i den vänstra snabbpanelen. 
 
-## Planes
+## Plan {#planes}
 
 Aktivera symmetriplan och antal upprepningar för radiell symmetri. Observera att du inte behöver välja bara ett plan; du kan ha 1, 2 eller alla 3 plan aktiverade för komplex symmetri.
 
@@ -34,10 +34,10 @@ Axeln och upprepningsantalet för radiell symmetri. Observera att dessa inte hel
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Method
+## Metod {#method}
 Spegeln kan antingen vara ”Local” och röra sig med objektet, eller vara ”World” och inte röra sig. Om du är osäker på vilket läge du behöver, titta på spegelplanet och de radiella indikatorerna som visas över objektet. I lokalt läge, om du använder transform-gizmon och flyttar modellen, kommer spegelindikatorerna också att flyttas. I världs-läge kommer spegelindikatorerna att ligga fast, och objektet glider genom dem.
 
-## Mirroring
+## Spegling {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
 När du skulpterar nära symmetriplanen kommer vissa penslar att ha ett ofullkomligt symmetribeteende. Den här sektionen låter dig återställa symmetri genom att kopiera ena sidan av din skulptur till den andra. 
@@ -53,11 +53,11 @@ När du skulpterar nära symmetriplanen kommer vissa penslar att ha ett ofullkom
 
 `Split & Mirror` kommer i princip att skära objektet längs spegeln, kopiera ena sidan, spegla den till den andra och svetsa vertexar längs spegeln. Det är ett mer destruktivt alternativ och kommer att ta bort multiresolution, men ibland krävs den här metoden om modellen är mycket olika på var sida om spegeln.
 
-### Flip object
+### Vänd objekt {#flip-object}
 ![](/images/symmetry_flip.webp)
 Gör vänster sida till höger sida och vice versa. Liknar till utseendet om du använde gizmo-verktygsmenyn och satte skalan till -1 på X.
 
-## Reset and Edit
+## Återställ och redigera {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
@@ -72,7 +72,7 @@ Så om det inte fungerar som du förväntar dig, kontrollera att du är i rätt 
 Knappen `Gizmo (Edit)` är medvetet gråmarkerad som en påminnelse om att du förmodligen inte borde använda den!
 :::
 
-## Show options
+## Visa alternativ {#show-options}
 ![](/images/symmetry_show.webp)
 
 

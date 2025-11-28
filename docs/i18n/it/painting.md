@@ -1,23 +1,23 @@
-# ![](/icons/paint.webp) Pittura  
+# ![](/icons/paint.webp) Pittura {#painting}
 
 Controlla il colore, la ruvidità, la metallicità dei tratti di pittura, consenti il riempimento globale degli attributi di pittura e definisci come gli strumenti di pittura interagiscono con livelli, maschere e selezioni nascoste.
 
 ![](/images/paint_overview.webp)  
 
-## Panoramica
+## Panoramica {#overview}
 
 Nomad utilizza la pittura PBR sui vertici. Cosa significa?
 
-### PBR
+### PBR {#pbr}
 PBR, o Physically Based Rendering, è una tecnica di grafica computerizzata molto diffusa per cinema, televisione, videogiochi e mobile. Basando le luci su proprietà fisiche e definendo le superfici tramite colore, ruvidità, metallicità, è possibile ottenere un’ampia varietà di risultati fotorealistici.
 
-### Pittura sui vertici
+### Pittura per vertici {#vertex-painting}
 
 Pittura sui vertici significa che le informazioni di pittura sono memorizzate nei vertici del modello, invece che nelle texture. Poiché Nomad può gestire modelli con centinaia di migliaia, spesso milioni di vertici, i tuoi modelli possono avere una pittura superficiale altamente dettagliata; se puoi scolpire il dettaglio, puoi anche dipingerlo.
 
 Questo significa anche che dipingere in Nomad non richiede il mapping UV, spesso un processo lento e tecnico in altre applicazioni 3D. Molte altre applicazioni 3D non supportano i conteggi di vertici elevati che supporta Nomad, tuttavia Nomad dispone anche di buoni strumenti di baking delle texture e di decimazione per aiutare.
 
-### Texturing
+### Texturing {#texturing}
 
 Nomad supporta le texture, ma devono essere presenti in un modello importato, oppure tramite il baking della pittura sui vertici in texture. 
 
@@ -38,21 +38,21 @@ Un esempio di workflow:
 Questa è la panoramica, ora esploriamo le sezioni del menu di pittura:
 
 
-## Pittura a tratto
+## Pennellata di pittura {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
 Abilita la pittura per questo strumento, utile se hai bisogno di scolpire e dipingere allo stesso tempo.
 
 Per gli strumenti in cui la pittura è la funzione principale (ad es. Paint, Smudge, Mask), questa casella non esiste.
 
-### Intensità della pittura
+### Intensità della pittura {#paint-intensity}
 
 Uno slider che ti permette di usare un’intensità diversa rispetto all’intensità principale dello strumento.
 
 Le caselle `Alpha`, `Falloff` e `Randomize` determinano se queste funzioni influenzeranno la pittura. Ad esempio potresti avere la randomizzazione abilitata per lo strumento Clay, ma il colore non verrà randomizzato.
 
 
-## Materiale
+## Materiale {#material}
 ![](/images/paint_material.webp) 
 
 La prima icona è una forma di anteprima del materiale. Trascinando sull’anteprima 3D del materiale lo ruoterai. 
@@ -67,14 +67,14 @@ Il pulsante di anteprima accanto al titolo Material ti permette di passare tra N
 
 Il contagocce può essere usato per campionare tutte le proprietà da un oggetto nella tua scena.
 
-## Preset di materiale
+## Preset materiali {#material-presets}
 Toccando la forma di anteprima 3D verrà visualizzato un menu di preset di materiali, che possono essere clonati per definire i tuoi preset.
 
 ![](/images/paint_presets.webp) 
 
 Le opzioni `Embed Textures` e `Alpha`, se abilitate, memorizzeranno all’interno del preset qualsiasi texture usata da questo materiale. Questo è spiegato meglio più avanti.
 
-## Slider PBR
+## Slider PBR {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 La pittura [PBR](shading.md#pbr) utilizza 4 canali:
@@ -113,7 +113,7 @@ Quando usi texture per la pittura PBR, è spesso utile passare a uno strumento c
 Potresti considerare di attivare lo `Smooth Shading` [globalmente](settings.md#smooth-shading) o [per oggetto](material.md#smooth-shading) se stai dipingendo una superficie metallica su un oggetto con un numero di poligoni basso.
 :::
 
-## Paint all
+## Dipingi tutto {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
@@ -132,12 +132,12 @@ I pulsanti aggiuntivi controllano come il Paint All può essere ulteriormente in
 | ![](/icons/triplanar.webp) | Indicatore delle impostazioni Triplanar          |
 | ![](/icons/cog.webp)       | Apre le impostazioni Triplanar                   |
 
-### Impostazioni Triplanar
+### Impostazioni triplanari {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
 Simili alle [impostazioni Triplanar nel menu Material](material.md#triplanar), puoi controllare la fusione delle proiezioni, il tiling e gli offset. 
 
 Usa la casella di anteprima in cima a questo menu per abilitare un’anteprima persistente mentre regoli i valori.
 
-## Materiale globale
+## Materiale globale {#global-material}
 Se questa opzione è abilitata, il materiale selezionato sarà lo stesso per gli altri strumenti. Nota che tiene conto solo delle impostazioni di ruvidità, metallicità e colore.

@@ -1,4 +1,4 @@
-# ![](/icons/sun.webp) Schattierung
+# ![](/icons/sun.webp) Shading {#shading}
 
 Dieses Menü steuert die von Nomad verwendeten Schattierungsmodi, die Lichteigenschaften sowie die Eigenschaften des Umgebungslichts/Matcaps.
 
@@ -22,24 +22,24 @@ Wenn du mehr über Metallizität und Rauigkeit erfahren möchtest, siehe den Abs
 
 ![](/images/shading_second.webp)
 
-### Face Group
+### Flächengruppe {#face-group}
 Überlagert Facegroup‑Farben. Facegroups sind farbige Polygon‑Auswahlen, die mit dem Werkzeug [Face group](tools#facegroup) erstellt werden können und bei den meisten Primitives automatisch erzeugt werden.
 
 Einige Werkzeuge filtern automatisch nach Facegroups, wenn Facegroups sichtbar sind.
 
-### Show paint
+### Farbe anzeigen {#show-paint}
 Nomad kann Farbe, Rauigkeit und Metallizität in den Vertices deiner Skulptur speichern. Mit dieser Checkbox kannst du die Anzeige dieser Eigenschaften global ein‑ oder ausschalten.
 
 Beachte: Wenn du sowohl Vertex‑Eigenschaften als auch Texturen hast und beide aktiviert sind, werden die Werte miteinander multipliziert.
 
-### Show mask
+### Maske anzeigen {#show-mask}
 Schaltet die Graustufen‑Maskenüberlagerung der [Maskenwerkzeuge](tools#mask) ein oder aus. Wenn dies deaktiviert ist, ist die Maske ebenfalls deaktiviert – nützlich, um schnell Änderungen ohne Maske vorzunehmen und sie danach wieder zu aktivieren, ohne die Maske zu verlieren.
 
-### Use Hide
+### Verstecken verwenden {#use-hide}
 
 Schaltet versteckte Flächen ein/aus. Beachte, dass dies nur funktioniert, wenn du NICHT im Hide‑Werkzeug bist!
 
-### Use textures
+### Texturen verwenden {#use-textures}
 
 Nomad erlaubt es, Objekten Texturen über das [Material](material)‑Menü zuzuweisen. Wenn Texturen zugewiesen sind, können sie mit dieser Checkbox global ein‑ oder ausgeschaltet werden.
 
@@ -49,7 +49,7 @@ Nomad erlaubt es, Objekten Texturen über das [Material](material)‑Menü zuzuw
 
 
 
-### PBR und Licht‑Überblick
+### Übersicht PBR und Lichter {#pbr}
 Dieses Handbuch geht nicht ins Detail von Physically Based Rendering.
 
 Wichtig ist: Beleuchtung und Material sind vollständig voneinander getrennt.
@@ -68,7 +68,7 @@ Allerdings ist die Performance dann möglicherweise schlecht.
 Du kannst viele Lichter faken, indem du Objekte unbeleuchtet/emissiv machst und dann Global Illumination im [Post‑Process](postprocess)‑Menü aktivierst.
 :::
 
-### Überblick über Lichttypen
+### Übersicht Lichttypen {#light-types-overview}
 
 Folgende Lichttypen werden derzeit unterstützt:
 
@@ -79,42 +79,42 @@ Folgende Lichttypen werden derzeit unterstützt:
 | [Spot](#spot)               | Kegelförmige Lichter				                    | Yes                                                    |
 | [Point](#point)             | Rundum abstrahlender Punkt                             | Yes, but only through less robust screen-space shadows |
 
-#### Directional
+#### Gerichtet {#directional}
 Sendet Licht aus unendlicher Entfernung mit gleichmäßiger Intensität.
 Seine 3D‑Position in der Szene ist egal, nur seine Ausrichtung zählt.
 
 Du kannst dieses Licht an die Kamera anhängen, sodass die Beleuchtung konsistent bleibt.  
 Zum Beispiel kannst du es als Rim Light verwenden (ein starkes Licht, das von hinten auf dein Modell scheint, in Richtung Kamera), das immer die Rückseite deines Modells beleuchtet.
 
-#### Environment light
+#### Umgebungslicht {#env-light}
 Die Verwendung einer [Umgebungs‑HDR](#environment) eignet sich gut für weiche Gesamtbeleuchtung. Wenn jedoch in der HDR eine starke, scharfe Lichtquelle sichtbar ist, wird der von ihr erzeugte Schatten sehr weich und oft kaum sichtbar sein. Die Kombination eines Directional‑Lichts mit der Umgebungs‑HDR kann helfen, ist aber schwer exakt auszurichten.
 
 Dieses Licht übernimmt die Arbeit für dich. Es wird automatisch so rotiert, dass es sich an der hellsten Stelle der HDR ausrichtet; anschließend kannst du seine Intensität und den Winkel (Schattenweichheit) separat steuern. 
 
-#### Spot
+#### Spot {#spot}
 Spot‑Licht strahlt in eine einzige Richtung, begrenzt durch einen Kegel.
 
-#### Point
+#### Punkt {#point}
 Point‑Licht strahlt in alle Richtungen.  
 Momentan unterstützt Point‑Licht keine Schatten.
 
-#### Shadows
+#### Schatten {#shadows}
 Die Option `normal bias` kann verwendet werden, um typische Schattenartefakte (Acne/Peter‑Panning) zu reduzieren.
 
 Die Schattenqualität hängt von der Größe der Objekte im Verhältnis zur gesamten Szene ab.  
 Wenn du ein großes Objekt in deiner Szene hast, das keine Schatten werfen muss (z. B. eine große Ebene), deaktiviere das Schattenwerfen in seinen [Materialeinstellungen](material.md#cast-shadows).
 
-## Lights
+## Lichter {#lights}
 
 ![](/images/shading_lights.webp)
 
-### ![](/icons/checked.webp) Lights checkbox
+### ![](/icons/checked.webp) Lichter-Checkbox {#lights-checkbox}
 
 Schaltet alle direkten Lichter in der Szene ein oder aus.
 
 
 
-### Add light
+### Licht hinzufügen {#add-light}
 
 Fügt der Szene ein Licht hinzu, bis maximal 4. Wenn ein Licht hinzugefügt wird, erscheint die Lichtliste mit Schaltflächen, und eine Licht‑Toolbar wird oben im Viewport eingeblendet.
 
@@ -127,11 +127,11 @@ Fügt der Szene ein Licht hinzu, bis maximal 4. Wenn ein Licht hinzugefügt wird
 * Das Kopier‑Symbol dupliziert ein Licht. 
 * Das Symbol mit den 3 Punkten öffnet einen vollständigen Licht‑Editor. Das meiste davon ist auch über die Toolbar im Viewport erreichbar. 
 
-### ![](/icons/spotlight.webp)  Icons
+### ![](/icons/spotlight.webp)  Icons {#icons}
 
 Schaltet die Anzeige der Licht‑Icons im Viewport ein/aus.
 
-### Light toolbar
+### Licht-Werkzeugleiste {#light-toolbar}
 ![](/images/shading_lights_toolbar.webp) 
 
 Diese Toolbar erscheint oben im Viewport, wenn ein Licht ausgewählt ist.
@@ -144,7 +144,7 @@ Diese Toolbar erscheint oben im Viewport, wenn ein Licht ausgewählt ist.
 * Size legt die Breite eines Lichts fest. Breitere Lichter erzeugen weichere Schatten, weicheres Licht und weichere Glanzlichter auf Objekten.
 * ... öffnet zusätzliche Einstellungen.
 
-### Light extra controls
+### Zusätzliche Lichtsteuerungen {#light-extra-controls}
 
 ![](/images/shading_extra_controls.webp) 
 
@@ -165,7 +165,7 @@ Beachte, dass einige Optionen nur für bestimmte Lichttypen verfügbar sind.
 * `Contact` beeinflusst, wie Schatten berechnet werden. Schatten sind ein schwieriges Problem in der Computergrafik und können Artefakte verursachen. Für das wichtigste Licht in einer Szene können genauere Schatten gewählt werden; diese Einstellung legt fest, ob Nomad dieses Licht automatisch auswählt oder der Benutzer.
 * `Tolerance` hilft, sichtbare Schattenartefakte (z. B. wenn Schatten nicht korrekt an Oberflächen anliegen oder Rauschen/Muster in Schatten auftreten) zu beheben.
 
-## Environment
+## Umgebung {#environment}
 
 ![](/images/shading_environment.webp)
 
@@ -175,20 +175,20 @@ Nomad enthält mehrere Beispiel‑Environment‑Maps für Innen‑ und Außenber
 
 Tippe auf das Bild, um die verfügbaren Environment‑Maps zu sehen. Wähle in diesem Dialog „Import...“, um eigene Maps zu laden. Am besten verwendest du High Dynamic Range (HDR)‑Bilder im Latlong‑ oder Equirectangular‑Format als .hdr‑ oder .exr‑Dateien. [www.polyhaven.com](https://polyhaven.com/hdris) bietet eine gute Sammlung kostenloser Environment‑Maps; in der Regel sind 1k‑HDR‑Maps eine gute Größe mit guter Qualität.
 
-### Exposure
+### Belichtung {#env-exposure}
 Passt die Helligkeit der Environment Map an. Oft sind die Maps zu hell, wenn sie zusammen mit regulären Lichtern verwendet werden; das Absenken der Exposure kann helfen, sie auszugleichen, besonders in Kombination mit Global Illumination in den [Post‑Process](postprocess)‑Einstellungen.
 
-### Rotation
+### Rotation {#env-rotation}
 
 Da Environment‑Maps Licht aus allen Richtungen erfassen, kannst du sie rotieren, um Reflexionen und Gesamtbeleuchtung optimal mit deiner Skulptur zu kombinieren.
 
-### Attached to camera
+### An Kamera angehängt {#env-attached}
 Hängt die Environment Map an die Kamera.
 
 Dadurch wird die Beleuchtung erzwungen konsistent, was beim Sculpting hilfreich sein kann.
 
 
-## ![](/icons/sphere_smooth.webp) Matcap
+## ![](/icons/sphere_smooth.webp) Matcap {#matcap}
 
 ![](/images/shading_matcap.webp)
 
@@ -200,7 +200,7 @@ Künstler bevorzugen diesen Modus häufig zum Sculpting, da er ihnen erlaubt, si
 
 Ein Tipp auf die Kugel öffnet einen Bildbrowser. Du kannst auch eigene Matcaps hinzufügen; im Allgemeinen kann jedes Foto, Rendering oder sogar eine gemalte Kugel, die eng quadratisch zugeschnitten ist, verwendet werden. Viele Matcap‑Bibliotheken sind online verfügbar; eine nützliche Ressource ist die [nidorx Matcap‑Bibliothek](https://github.com/nidorx/matcaps).
 
-### Use global Matcap
+### Globales Matcap verwenden {#matcap-global}
 
 Normalerweise verwenden Künstler ein einziges Matcap für die gesamte Skulptur, aber wenn dieser Schalter deaktiviert ist, kann jedes Objekt sein eigenes Matcap haben. Das kann künstlerisch für eindrucksvolle Ergebnisse genutzt werden.
 
@@ -208,31 +208,31 @@ Normalerweise verwenden Künstler ein einziges Matcap für die gesamte Skulptur,
 Deaktiviere diese Option und verwende ein Bild eines Augapfels für die Augen deiner Figuren!
 :::
 
-### Rotation
+### Rotation {#matcap-rotation}
 Ein Matcap ist eine spezialisierte Form einer Environment Map und kann daher ebenfalls rotiert werden. Du kannst dies jederzeit im Viewport tun, indem du mit drei Fingern nach links und rechts ziehst.
 
 
 
-## ![](/icons/circle_fill.webp) Unlit
+## ![](/icons/circle_fill.webp) Unbeleuchtet {#unlit}
 
 In diesem Modus wird nur die Oberflächenfarbe angezeigt. Er ist nützlich, um zu prüfen, ob die Oberflächenfarben deiner Objekte deinen Erwartungen entsprechen, ohne von Licht, Schatten, Reflexionen oder Transparenz abgelenkt zu werden. 
 
 Dieser Modus kann auch für nicht‑fotorealistische Renderings verwendet werden, um einen flachen, cartoonartigen Look zu erzielen.
 
-## ![](/icons/cube.webp) Object ID
+## ![](/icons/cube.webp) Objekt-ID {#object-id}
 
 Alle Beleuchtungs‑ und Oberflächeninformationen werden ignoriert, und jedes Objekt wird mit einer einzigartigen, flachen Farbe schattiert. Wenn dies zusammen mit einem PBR‑Render ausgegeben wird, kann es in einem Malprogramm zur Farbauswahl verwendet werden, um Farbkorrekturen an bestimmten Objekten vorzunehmen.
 
 Beachte, dass diese Farben auch in der [Baumansicht des Szenenmenüs](scene#tree-view) erscheinen.
 
-### Randomise id
+### ID zufällig zuweisen {#object-random}
 
 Erzeugt einen neuen Satz zufälliger Farben. 
 
-## ![](/icons/link.webp) Instance ID
+## ![](/icons/link.webp) Instanz-ID {#instance-id}
 
 Wie Object ID, aber Instanzen haben dieselbe Farbe. 
 
-### Randomise id
+### ID zufällig zuweisen {#instance-random}
 
 Erzeugt einen neuen Satz zufälliger Farben.

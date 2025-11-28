@@ -1,10 +1,10 @@
-# ![](/icons/symmetry.webp) Đối xứng
+# ![](/icons/symmetry.webp) Đối xứng {#symmetry}
 
 Menu này điều khiển cách các nét vẽ được lặp lại qua một mặt phẳng gương hoặc theo hướng xuyên tâm, và các cách để khôi phục đối xứng trên các đối tượng không đối xứng.
 
 ![](/images/symmetry_overview.webp) 
 
-## Tổng quan 
+## Tổng quan {#overview}
 Bạn có thể dùng đối xứng theo nhiều cách:
 
 * Như một gương, lật công việc qua trục X (trái/phải), Y (trên/dưới), Z (sau/trước), hoặc kết hợp. 
@@ -23,10 +23,10 @@ Ngoại lệ duy nhất là các công cụ biến đổi ([Move](#translate), [
 Menu đối xứng chủ yếu dùng để điều khiển đối xứng của nét vẽ. Bạn cũng có thể phản chiếu và lặp lại đối tượng thông qua [repeaters trong menu scene](scene#repeaters). 
 :::
 
-## Enabled
+## Bật {#enabled}
 Bật/tắt chế độ gương, giống với nút `Sym` trong bảng nhanh bên trái. 
 
-## Planes
+## Mặt phẳng {#planes}
 
 Bật các mặt phẳng đối xứng và số lần lặp cho đối xứng xuyên tâm. Lưu ý rằng bạn không cần chỉ chọn một mặt phẳng; bạn có thể bật 1, 2 hoặc cả 3 mặt phẳng cho đối xứng phức tạp.
 
@@ -34,10 +34,10 @@ Trục và số lần lặp cho đối xứng xuyên tâm. Lưu ý rằng chúng
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Method
+## Phương thức {#method}
 Gương có thể là 'Local', di chuyển cùng đối tượng, hoặc 'World', không di chuyển. Nếu bạn không chắc cần chế độ nào, hãy quan sát mặt phẳng gương và các chỉ báo xuyên tâm được phủ lên đối tượng. Khi ở chế độ local, nếu bạn dùng gizmo biến đổi và di chuyển mô hình, các chỉ báo gương cũng sẽ di chuyển theo. Khi ở chế độ world, các chỉ báo gương sẽ đứng yên, và đối tượng sẽ trượt qua chúng.
 
-## Mirroring
+## Phản chiếu {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
 Khi điêu khắc gần các mặt phẳng đối xứng, một số cọ sẽ có hành vi đối xứng không hoàn hảo. Phần này cho phép bạn khôi phục đối xứng bằng cách sao chép một bên của bản điêu khắc sang bên kia. 
@@ -52,11 +52,11 @@ Khi điêu khắc gần các mặt phẳng đối xứng, một số cọ sẽ c
 
 `Split & Mirror` về cơ bản sẽ cắt đối tượng dọc theo gương, sao chép một bên, phản chiếu nó sang bên kia, và hàn các vertex dọc theo gương. Đây là tùy chọn phá hủy hơn, và sẽ xóa multiresolution, nhưng đôi khi phương pháp này là cần thiết nếu mô hình rất khác nhau giữa hai bên gương.
 
-### Flip object
+### Lật đối tượng {#flip-object}
 ![](/images/symmetry_flip.webp)
 Đổi bên trái thành bên phải và ngược lại. Trông tương tự như khi bạn dùng menu công cụ gizmo và đặt scale thành -1 trên trục X.
 
-## Reset and Edit
+## Đặt lại và Chỉnh sửa {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
@@ -71,7 +71,7 @@ Vì vậy nếu nó không hoạt động như bạn mong đợi, hãy kiểm tr
 Nút `Gizmo (Edit)` được cố ý làm mờ như một lời nhắc rằng có lẽ bạn không nên dùng nó!
 :::
 
-## Show options
+## Hiển thị tùy chọn {#show-options}
 ![](/images/symmetry_show.webp)
 
 

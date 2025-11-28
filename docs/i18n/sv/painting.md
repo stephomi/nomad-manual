@@ -1,23 +1,23 @@
-# ![](/icons/paint.webp) Målning  
+# ![](/icons/paint.webp) Målning {#painting}
 
 Styr färg, råhet, metallhet på penseldrag, möjliggör fyllning (flood fill) av målningsattribut och hur målarverktyg interagerar med lager, masker och dolda markeringar.
 
 ![](/images/paint_overview.webp)  
 
-## Översikt
+## Översikt {#overview}
 
 Nomad använder PBR‑vertexmålning. Vad betyder det?
 
-### PBR
+### PBR {#pbr}
 PBR, eller Physically Based Rendering, är en populär datorgrafik‑teknik för film, tv, spel och mobil. Genom att basera ljus på fysiska egenskaper och definiera ytor genom färg, råhet och metallhet kan en mängd fotorealistiska utseenden uppnås.
 
-### Vertexmålning
+### Vertexmålning {#vertex-painting}
 
 Vertexmålning innebär att målningsinformationen lagras i modellens vertexar, istället för i texturer. Eftersom Nomad kan hantera modeller med hundratusentals, ofta miljontals vertexar, bör dina modeller kunna ha mycket detaljerad yt‑målning; om du kan skulptera detaljen kan du också måla den detaljen.
 
 Detta innebär också att målning i Nomad inte kräver UV‑mappning, som ofta är en långsam och teknisk process i andra 3D‑applikationer. Många andra 3D‑applikationer stödjer inte de höga vertexantal som Nomad kan, men Nomad har också bra verktyg för texturbakning och decimering som hjälp.
 
-### Texturering
+### Texturering {#texturing}
 
 Nomad stödjer texturer, men de måste finnas i en importerad modell, eller via bakning av vertexmålning till texturer. 
 
@@ -38,20 +38,20 @@ Ett exempel på arbetsflöde:
 Det var översikten, nu går vi igenom sektionerna i målningsmenyn:
 
 
-## Penselmålning
+## Penseldragsmålning {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
 Aktivera målning för detta verktyg, användbart om du behöver skulptera och måla samtidigt.
 
 För verktyg där målning är huvudfunktionen (t.ex. Paint, Smudge, Mask) finns inte denna kryssruta.
 
-### Målningsintensitet
+### Målningsintensitet {#paint-intensity}
 
 En slider som låter dig använda en annan intensitet än verktygets primära intensitet.
 
 Kryssrutorna `Alpha`, `Falloff` och `Randomize` avgör om dessa funktioner påverkar målningen. T.ex. kan du ha randomize aktiverat för Clay‑verktyget, men färgen kommer inte att slumpas.
 
-## Material
+## Material {#material}
 ![](/images/paint_material.webp) 
 
 Den första ikonen är en materialförhandsvisningsform. Genom att dra på 3D‑materialförhandsvisningen roterar du den. 
@@ -66,14 +66,14 @@ Förhandsvisningsknappen bredvid Material‑rubriken låter dig växla mellan No
 
 Pipetten kan användas för att sampla alla egenskaper från ett objekt i din scen.
 
-## Materialpresets
+## Materialförinställningar {#material-presets}
 Genom att trycka på 3D‑förhandsvisningsformen öppnas en preset‑meny med material, dessa kan klonas för att definiera egna presets.
 
 ![](/images/paint_presets.webp) 
 
 Växlarna `Embed Textures` och `Alpha` lagrar, när de är aktiverade, alla texturer som används av detta material i preset:en. Detta förklaras mer nedan.
 
-## PBR‑reglage
+## PBR-reglage {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 [PBR](shading.md#pbr)‑målning använder 4 kanaler:
@@ -112,7 +112,7 @@ När du använder texturer för PBR‑målning är det ofta användbart att byta
 Du kan överväga att slå på `Smooth Shading` [globalt](settings.md#smooth-shading) eller [per objekt](material.md#smooth-shading) om du målar en metallisk yta på ett objekt med lägre polyantal.
 :::
 
-## Paint all
+## Måla allt {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
@@ -131,12 +131,12 @@ De extra knapparna styr hur Paint All kan påverkas ytterligare:
 | ![](/icons/triplanar.webp) | Indikator för triplanar‑inställningar         |
 | ![](/icons/cog.webp)       | Öppna triplanar‑inställningarna               |
 
-### Triplanar‑inställningar
+### Triplanära inställningar {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
 Liknande [triplanar‑inställningarna i materialmenyn](material.md#triplanar) kan du styra blandningen av projektionerna, tiling och offsetar. 
 
 Använd förhandsvisningskryssrutan högst upp i denna meny för att aktivera en bestående förhandsvisning medan du justerar värden.
 
-## Globalt material
+## Globalt material {#global-material}
 Om detta alternativ är aktiverat kommer det valda materialet att vara detsamma som för de andra verktygen. Notera att det bara tar hänsyn till inställningarna för roughness, metalness och color.

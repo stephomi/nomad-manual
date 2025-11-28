@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) 背景
+# ![](/icons/image.webp) 背景 {#background}
 
 このメニューでは、Nomad の背景色や、使用する参照画像を設定できます。
 
 ![](/images/background_overview.webp)
 
-## Background 
+## 背景 {#type}
 ![](/images/background_selector.webp)
 
 ビューポートの背景には 3 つのオプションがあります。
@@ -13,14 +13,14 @@
 * `Color` - 任意に選択できるフラットな単色
 * `Gradient` - 上から下へと変化するグラデーションカラー。Factor スライダーでグラデーションの中間位置を決めることができます。  
 
-## Reference Image
+## 参照画像 {#reference}
 
 ![](/images/background_reference.webp)
 
 背景に任意の画像を追加して、参照用として使用できます。
 画面の隅に移動したい場合など、位置やスケールを変更できます。
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) 変形 {#transform}
 
 このボタンを押すと、参照画像をインタラクティブに配置できます。2 本指でパン、スケール、回転させて、参照画像を配置してください。最終的な配置は、以下のスライダーに反映されます。
 

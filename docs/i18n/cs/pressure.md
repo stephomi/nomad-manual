@@ -1,4 +1,4 @@
-# ![](/icons/pressure.webp) Tlak 
+# ![](/icons/pressure.webp) Tlak {#pressure}
 
 ---
 
@@ -7,7 +7,7 @@ Tato nabídka umožňuje přizpůsobit chování tabletového pera, jako je Appl
 Ve výchozím nastavení bude tlak pera ovlivňovat poloměr (Radius) a intenzitu (Intensity) aktuálního štětce.
 Můžete si přizpůsobit průběh (falloff) tohoto vlivu.
 
-## Povolit nerozpoznaný tlak
+## Povolit nerozpoznaný tlak {#allow-unrecognized-pressure}
 
 U některých zařízení s Androidem vrací dotyk prstu libovolnou pevnou hodnotu tlaku.
 Může to být nepříjemné, pokud plánujete modelovat prstem, zvlášť pokud je vracená hodnota malá.

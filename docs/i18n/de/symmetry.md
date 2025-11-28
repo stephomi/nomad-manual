@@ -1,10 +1,10 @@
-# ![](/icons/symmetry.webp) Symmetrie
+# ![](/icons/symmetry.webp) Symmetrie {#symmetry}
 
 Dieses Menü steuert, wie Striche über eine Spiegelachse oder radial wiederholt werden, sowie Möglichkeiten, Symmetrie bei nicht-symmetrischen Objekten wiederherzustellen.
 
 ![](/images/symmetry_overview.webp) 
 
-## Übersicht 
+## Übersicht {#overview}
 Du kannst Symmetrie auf mehrere Arten verwenden:
 
 * Als Spiegel, der die Arbeit über X (links/rechts), Y (oben/unten), Z (hinten/vorne) oder eine Kombination davon spiegelt. 
@@ -23,10 +23,10 @@ Die einzigen Ausnahmen sind die Transformationswerkzeuge ([Verschieben](#transla
 Das Symmetriemenü dient hauptsächlich zur Steuerung der Strichsymmetrie. Du kannst Objekte auch über [Replikatoren im Szenenmenü](scene#repeaters) spiegeln und wiederholen. 
 :::
 
-## Aktiviert
+## Aktiviert {#enabled}
 Schaltet den Spiegelmodus um, dies entspricht der `Sym`-Schaltfläche im linken Schnellpanel. 
 
-## Ebenen
+## Ebenen {#planes}
 
 Aktiviere Symmetrieebene(n) und die Anzahl der Wiederholungen für Radialsymmetrie. Beachte, dass du nicht nur eine einzelne Ebene wählen musst – du kannst 1, 2 oder alle 3 Ebenen für komplexe Symmetrie aktivieren.
 
@@ -34,10 +34,10 @@ Die Achse und Wiederholungsanzahl für Radialsymmetrie. Beachte, dass diese eben
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Methode
+## Methode {#method}
 Der Spiegel kann entweder „Lokal“ sein und sich mit dem Objekt bewegen oder „Welt“ und sich nicht bewegen. Wenn du nicht sicher bist, welchen Modus du brauchst, beobachte die Spiegel- und Radialsymmetrie-Anzeigen, die über dem Objekt eingeblendet werden. Im lokalen Modus bewegen sich die Spiegelindikatoren mit, wenn du das Modell mit dem Transformationsgizmo verschiebst. Im Weltmodus bleiben die Spiegelindikatoren fixiert und das Objekt gleitet durch sie hindurch.
 
-## Spiegeln
+## Spiegelung {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
 Beim Modellieren in der Nähe der Symmetrieebenen zeigen einige Pinsel ein unvollkommenes Symmetrieverhalten. Dieser Abschnitt ermöglicht es dir, die Symmetrie wiederherzustellen, indem du eine Seite deiner Skulptur auf die andere kopierst. 
@@ -52,11 +52,11 @@ Beim Modellieren in der Nähe der Symmetrieebenen zeigen einige Pinsel ein unvol
 
 `Teilen & Spiegeln` schneidet das Objekt im Grunde entlang des Spiegels, kopiert eine Seite, spiegelt sie auf die andere und verschweißt die Vertices entlang des Spiegels. Es ist eine destruktivere Option und löscht Multiresolution, ist aber manchmal erforderlich, wenn das Modell über den Spiegel hinweg sehr unterschiedlich ist.
 
-### Objekt umkehren
+### Objekt spiegeln {#flip-object}
 ![](/images/symmetry_flip.webp)
 Macht aus der linken Seite die rechte Seite und umgekehrt. Ähnelt optisch dem Ergebnis, wenn du im Gizmo-Werkzeugmenü die Skalierung auf -1 auf X setzt.
 
-## Zurücksetzen und Bearbeiten
+## Zurücksetzen und Bearbeiten {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
@@ -71,7 +71,7 @@ Wenn es also nicht wie erwartet funktioniert, überprüfe, ob du im richtigen Ra
 Die Schaltfläche `Gizmo (Bearbeiten)` ist absichtlich ausgegraut, als Erinnerung daran, dass du sie wahrscheinlich nicht verwenden solltest!
 :::
 
-## Anzeigeoptionen
+## Optionen anzeigen {#show-options}
 ![](/images/symmetry_show.webp)
 
 

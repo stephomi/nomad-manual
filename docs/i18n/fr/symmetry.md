@@ -1,10 +1,10 @@
-# ![](/icons/symmetry.webp) Symmetry
+# ![](/icons/symmetry.webp) Symétrie {#symmetry}
 
 Ce menu contrôle la façon dont les traits sont répétés à travers un plan miroir ou radialement, ainsi que les moyens de restaurer la symétrie sur des objets non symétriques.
 
 ![](/images/symmetry_overview.webp) 
 
-## Overview 
+## Aperçu {#overview}
 Vous pouvez utiliser la symétrie de plusieurs façons :
 
 * Comme un miroir, en reflétant le travail selon X (gauche/droite), Y (haut/bas), Z (arrière/avant), ou une combinaison. 
@@ -23,10 +23,10 @@ Les seules exceptions sont les outils de transformation ([Move](#translate), [Ro
 Le menu de symétrie sert principalement à contrôler la symétrie des traits. Vous pouvez également refléter et répéter des objets via les [répéteurs situés dans le menu de scène](scene#repeaters). 
 :::
 
-## Enabled
+## Activé {#enabled}
 Active ou désactive le mode miroir, c’est la même chose que le bouton `Sym` dans le panneau rapide de gauche. 
 
-## Planes
+## Plans {#planes}
 
 Activez un ou plusieurs plans de symétrie, et le nombre de répétitions pour la symétrie radiale. Notez que vous n’êtes pas obligé de choisir un seul plan, vous pouvez activer 1, 2 ou 3 plans pour une symétrie complexe.
 
@@ -34,10 +34,10 @@ L’axe et le nombre de répétitions pour la symétrie radiale. Notez que ceux-
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Method
+## Méthode {#method}
 Le miroir peut être soit « Local » et se déplacer avec l’objet, soit « World » et rester fixe. Si vous n’êtes pas sûr du mode dont vous avez besoin, observez le plan miroir et les indicateurs radiaux superposés à l’objet. En mode local, si vous utilisez le gizmo de transformation et déplacez le modèle, les indicateurs de miroir se déplaceront également. En mode monde, les indicateurs de miroir resteront fixes et l’objet glissera à travers eux.
 
-## Mirroring
+## Miroir {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
 Lors de la sculpture près des plans de symétrie, certains pinceaux peuvent avoir un comportement de symétrie imparfait. Cette section vous permet de restaurer la symétrie en copiant un côté de votre sculpture vers l’autre. 
@@ -52,11 +52,11 @@ Lors de la sculpture près des plans de symétrie, certains pinceaux peuvent avo
 
 `Split & Mirror` va essentiellement couper l’objet le long du miroir, copier un côté, le refléter de l’autre côté, et souder les sommets le long du miroir. C’est une option plus destructive, et elle supprimera la multirésolution, mais parfois cette méthode est nécessaire si le modèle est très différent de part et d’autre du miroir.
 
-### Flip object
+### Retourner l'objet {#flip-object}
 ![](/images/symmetry_flip.webp)
 Fait passer le côté gauche à droite, et inversement. Semblable en apparence au fait d’utiliser le menu de l’outil gizmo et de définir l’échelle à -1 sur X.
 
-## Reset and Edit
+## Réinitialiser et éditer {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
@@ -71,7 +71,7 @@ Donc si cela ne fonctionne pas comme vous vous y attendez, assurez-vous de véri
 Le bouton `Gizmo (Edit)` est intentionnellement grisé pour vous rappeler que vous ne devriez probablement pas l’utiliser !
 :::
 
-## Show options
+## Afficher les options {#show-options}
 ![](/images/symmetry_show.webp)
 
 

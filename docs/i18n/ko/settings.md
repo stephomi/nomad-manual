@@ -1,31 +1,31 @@
-# ![](/icons/cog.webp) 설정 
+# ![](/icons/cog.webp) 설정 {#reset-to-default}
 
 설정 메뉴에는 Nomad의 모양과 동작을 제어하는 다양한 옵션이 있습니다.
 
 ![](/images/settings_overview.webp)
 
-## 표시 설정
+## 화면 설정 {#display-settings}
 이 섹션에는 이 메뉴 아래쪽에 있는 대부분의 설정으로 바로 이동할 수 있는 빠른 실행 단축키가 포함되어 있습니다.
 
 ![](/images/settings_display_settings.webp)
 
-### 부드러운 음영(Smooth Shading) 
+### 매끄러운 셰이딩 {#smooth-shading}
 부드러운 음영과 면(파셋) 음영을 전환합니다. 면 음영에서는 폴리곤이 각각 독립적으로 음영 처리되어, 기저 토폴로지를 볼 수 있습니다.  
 조각 단계에서는 면 음영으로 토폴로지를 확인하고, 렌더링 시에는 부드러운 음영으로 전환하는 방식이 유용할 수 있습니다.
 
 부드러운 음영을 비활성화하면 성능이 약간 향상됩니다.
 
-### 외곽선(Outline)
+### 외곽선 {#outline-quick}
 현재 선택된 오브젝트에 외곽선을 표시/숨깁니다.
 
 [선택되지 않은 오브젝트 어둡게](#darken-unselected-objects)가 비활성화된 경우, 현재 선택된 메시(들)를 시각적으로 구분하는 데 유용합니다.
 
 성능 관점에서는 외곽선 방식보다 [선택되지 않은 오브젝트 어둡게](#darken-unselected-objects)를 사용하는 것이 훨씬 더 좋습니다.
 
-### 그리드(Grid)
+### 그리드 {#grid-quick}
 배경 그리드를 표시/숨깁니다. 오브젝트의 배치와 스케일을 이해하는 데 유용합니다.
 
-### 양면 표시(Two sided)
+### 양면 {#two-sided-quick}
 폴리곤을 양면으로 표시할지 전환합니다. 모든 면은 특정 방향을 향하고 있습니다.  
 카메라 시점에서 “멀어지는” 방향을 향하는 면은 *백페이스(backface)* 로 간주됩니다.
 
@@ -37,152 +37,152 @@
 `양면(two sided)` 렌더링을 비활성화하면 렌더링 성능이 약간 향상될 수 있습니다.
 
 
-### 와이어프레임(Wireframe)
+### 와이어프레임 {#wireframe-quick}
 와이어프레임 오버레이를 표시/숨깁니다. 
 
 와이어프레임을 활성화하면 성능이 저하된다는 점에 유의하세요.
 
-### 스냅 큐브(Snap cube)
+### 스냅 큐브 {#snap-cube-quick}
 씬의 모서리에 보조 아이콘을 표시/숨깁니다. 공간에서의 방향을 파악하고 앞/뒤/좌/우/위/아래 뷰로 빠르게 전환하는 데 유용합니다.
 
-### 페인팅 표시(Show Painting)
+### 페인팅 표시 {#show-painting}
 페인트(재질) 표시를 전환합니다. 기본 페인트는 흰색, 비금속성(material), 거칠기 25%입니다.
 
-### 숨기기 사용(Use Hide)
+### 숨기기 사용 {#use-hide}
 숨기기 모드를 켜고 끕니다. 끈 상태에서도 기능 자체는 존재하지만 비활성화됩니다. 현재 Hide 도구를 사용 중일 때는 이 버튼이 비활성화됩니다.
 
-### 마스크 표시(Show Mask)
+### 마스크 표시 {#show-mask}
 마스크 표시를 전환합니다. 끈 상태에서도 마스크는 유지되지만, 단지 비활성화되어 보이지 않을 뿐입니다. 다시 누르면 재활성화됩니다.
 
 마스크를 숨기면서도 여전히 활성 상태로 유지하고 싶다면, 아래의 마스크 색을 흰색으로 설정하세요. 작업이 끝나면 다시 회색으로 돌려놓는 것을 잊지 마세요!
 
 현재 마스크 도구를 사용 중일 때는 이 버튼이 비활성화된다는 점에 유의하세요. 
 
-### 마스크 -> 불투명(Mask -> Opaque)
+### 마스크 → 불투명 {#mask-opaque}
 Mask -> opaque는 마스크된 마스크에 대해 투명한 버텍스를 무시합니다. 이는 버텍스 및 텍스처 불투명도에만 관련이 있으며, “Hide”로 숨긴 면은 여전히 숨겨진 상태로 유지됩니다.
 
-### 하이라이트(Highlight)
+### 하이라이트 {#highlight-quick}
 선택 하이라이트 플래시를 전환합니다. 오브젝트를 선택할 때, 선택된 오브젝트를 500밀리초 동안 핫핑크로 잠시 깜빡이게 합니다. 플래시의 색상과 길이는 아래에서 사용자 지정할 수 있습니다.
 
-### 통계(Stats)
+### 통계 {#stats-quick}
 3D 뷰포트에 상태 텍스트를 표시/숨깁니다. 시스템 메모리, 전체 씬 버텍스 수, 현재 선택된 오브젝트의 버텍스 수를 표시합니다.
 
 ----- 
 
-### 선택되지 않은 오브젝트 어둡게(Darken Unselected objects)
+### 선택 해제 객체 어둡게 {#darken-unselected-objects}
 선택되지 않은 오브젝트를 어둡게 표시하여, 현재 선택된 오브젝트가 더 잘 돋보이도록 합니다.
 
-### 마스크(Mask)
+### 마스크 {#mask}
 마스킹에 사용되는 색상입니다. 기본값은 중간 회색이며, 오브젝트 색상에 곱해집니다.  
 이 값을 흰색으로 설정하면 마스크가 보이지 않게 만들 수 있지만, 작업이 끝나면 다시 회색으로 돌려놓는 것을 잊지 마세요!
 
-## ![](/icons/cursor.webp) 커서(Cursor)
+## ![](/icons/cursor.webp) 커서 {#cursor}
 
-### 조각 중 원 표시(Show circle while sculpting)
+### 스컬핑 중 원형 표시 {#show-circle-while-sculpting}
 조각 중에도 브러시 반경을 계속 표시합니다.
 
-### 작은 점 표시(Show small dot)
+### 작은 점 표시 {#show-small-dot}
 조각 중이거나 카메라 피벗이 변경될 때, 브러시 스트로크의 중심에 작은 점을 표시합니다.
 
-### 로프 안정기 표시(Show rope stabilizer)
+### 로프 안정화 표시 {#show-rope-stabilizer}
 스트로크 설정에서 레이지 로프 안정기(lazy rope stabilizer)가 활성화되어 있을 때, 로프 길이를 나타내는 선을 그립니다.
 
-## ![](/icons/cursor.webp) 인디케이터(Indicator)
+## ![](/icons/cursor.webp) 인디케이터 {#indicator}
 ![](/images/settings_indicator.webp)
 
 튜토리얼 및 화면 캡처를 위한 시각적 인디케이터를 표시합니다.
 
 `Finger`, `Stylus`, `Mouse` 버튼은 해당 입력 유형이 감지되었을 때 아이콘을 표시하도록 활성화합니다.
 
-### 색상(Color)
+### 색상 {#indicator-color}
 인디케이터의 색상입니다.
 
-### 크기/아이콘/원(Size/Icon/Circle)
+### 크기/아이콘/원 {#indicator-shape}
 인디케이터 및 그 안의 도형 크기를 조절하는 컨트롤입니다.
 
-## ![](/icons/wireframe.webp) 와이어프레임(Wireframe)
+## ![](/icons/wireframe.webp) 와이어프레임 {#wireframe}
 ![](/images/settings_wireframe.webp)
 와이어프레임 오버레이를 활성화합니다.
 
-### 대상(Target)
+### 대상 {#target}
 선택되지 않은 오브젝트에만 와이어프레임을 표시할지, 선택된 오브젝트에만 표시할지, 혹은 모든 오브젝트에 표시할지 설정합니다.
 
-### 숨기기(Hide)
+### 숨기기 {#hide}
 숨겨진 폴리곤에도 와이어프레임을 계속 표시할지 설정합니다.
 
-### 멀티해상도: 0 레벨만(Multiresolution: Level 0 only)
+### 멀티해상도: 레벨 0만 {#multiresolution-level-0-only}
 멀티해상도 사용 시, 레벨 0의 와이어프레임은 더 진하게, 더 높은 레벨은 점점 더 옅게 표시됩니다. 이 옵션을 활성화하면 레벨 0 와이어프레임만 표시됩니다.
 
-### 색상(Color)
+### 색상 {#wireframe-color}
 와이어프레임의 색상과 불투명도를 설정합니다.
 
-## ![](/icons/grid.webp) 그리드(Grid)
+## ![](/icons/grid.webp) 그리드 {#grid}
 ![](/images/settings_grid.webp)
 그리드를 활성화합니다.
 
-### 색상(Color)
+### 색상 {#grid-color}
 그리드의 색상과 불투명도를 설정합니다.
 
-### 스냅(Snap)
+### 스냅 {#snap}
 곡선 기반 도구가 그리드에 스냅되도록 활성화합니다.
 
-## ![](/icons/culling.webp)Two sided
+## ![](/icons/culling.webp)Two sided {#two-sided}
 폴리곤 면을 양쪽에서 볼 수 있도록 활성화합니다.
 
-### 백페이스 색상 지정(Color Backface, Backface Color)
+### 후면 색상, 후면 색상 선택 {#backface-color}
 백페이스에 색 틴트를 적용할지와, 그 틴트 색상을 설정합니다.
 
-## ![](/icons/outline.webp)Outline
+## ![](/icons/outline.webp)Outline {#outline}
 활성 오브젝트 주위에 외곽선을 표시합니다.
 
-### 외곽선 색상, 두께(Outline color, Thickness)
+### 외곽선 색상, 두께 {#outline-color-thickness}
 외곽선의 색상과 두께를 설정합니다.
 
 
-## ![](/icons/bang.webp) 하이라이트(Highlight)
+## ![](/icons/bang.webp) 하이라이트 {#highlight}
 활성 오브젝트가 변경될 때 짧은 플래시를 표시합니다.
-### 색상, 지속 시간(Color, Duration)
+### 색상, 지속 시간 {#color-duration}
 플래시의 색상과 지속 시간(밀리초 단위)을 설정합니다.
 
-## ![](/icons/snap_cube.webp) 스냅 큐브(Snap cube)
+## ![](/icons/snap_cube.webp) 스냅 큐브 {#snap-cube}
 ![](/images/settings_snapcube.webp)
 
 씬의 모서리에 보조 아이콘을 표시하여, 앞/뒤/좌/우/위/아래 뷰로 빠르게 전환할 수 있습니다. 큐브의 면을 탭하여 정투영(orthographic) 뷰 사이를 전환합니다.
 
-### 모양(Shape)
+### 모양 {#shape}
 스냅 큐브의 모양을 큐브, 구(sphere), 노몬(gnomon) 중에서 선택합니다.
 
-### 정렬 제한(Restrict alignment)
+### 정렬 제한 {#restrict-alignment}
 스냅 큐브를 드래그할 때 카메라 회전을 잠그는 기능을 활성화합니다. 활성화되면 스냅 큐브 위에서의 드래그는 좌/우 또는 상/하 방향으로만 회전합니다.
 
-### 크기(Size)
+### 크기 {#size}
 스냅 큐브의 크기를 설정합니다.
 
-### 180도 뒤집기(Flip 180)
+### 180도 뒤집기 {#flip-180}
 뷰가 스냅된 상태에서 큐브 중앙을 탭하면 뷰를 180도 회전시키는 동작을 활성화합니다. 예를 들어, 뷰가 정면에 스냅된 상태에서 뷰 큐브를 탭하면 후면 뷰로 회전합니다.
 
-### 위치(Position)
+### 위치 {#snap-position}
 스냅 큐브가 위치할 화면 모서리를 설정합니다.
 
 
-## ![](/icons/edit_radius_n.webp) 통계(Stats)
+## ![](/icons/edit_radius_n.webp) 통계 {#stats}
 ![](/images/settings_stats.webp)
 
 시스템 메모리, 전체 씬 버텍스 수, 현재 선택된 오브젝트의 버텍스 수를 표시합니다.
 
-### 위치(Position)
+### 위치 {#stats-position}
 통계 정보가 표시될 화면 모서리를 설정합니다.
 
-## 프리미티브/리피터(Primtive/Repeaters)
-## 수치 입력(Numerical input)
+## 프리미티브/리피터 {#primitive-repeaters}
+## 수치 입력 {#gizmo-input}
 기즈모 위젯을 탭할 때 수치 입력을 허용합니다.
 
-## 멀티해상도(Multiresolution)
-### 최대 버텍스 수(Max vertices count)
+## 멀티해상도 {#multires}
+### 최대 버텍스 수 {#multires-lowres-count}
 멀티해상도 분할(subdivide) 연산이 이 폴리곤 수를 초과하지 못하도록 임계값을 설정합니다. 이를 초과하면 Nomad가 크래시할 가능성이 높습니다. 기본값은 1,000만입니다.
-### 저해상도 임계값(Low resolution threshold)
+### 저해상도 임계값 {#multires-lowres-threshold}
 카메라를 이동할 때 메시의 더 낮은 해상도를 표시할 수 있습니다. 메시의 더 높은 해상도를 표시하고 싶다면 이 값을 증가시킬 수 있습니다.
 
-## 설정(Settings)
-### 기본값으로 재설정(Reset to default)
+## 설정 {#advanced}
+### 기본값으로 재설정 {#reset}
 모든 설정을 기본값으로 재설정합니다.

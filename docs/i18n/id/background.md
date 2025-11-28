@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) Latar Belakang
+# ![](/icons/image.webp) Latar Belakang {#background}
 
 Menu ini mengontrol warna latar belakang Nomad, serta gambar referensi apa pun yang akan digunakan.
 
 ![](/images/background_overview.webp)
 
-## Latar Belakang 
+## Latar Belakang {#type}
 ![](/images/background_selector.webp)
 
 Ada tiga opsi untuk latar belakang viewport.
@@ -13,14 +13,14 @@ Ada tiga opsi untuk latar belakang viewport.
 * `Color` - Warna datar yang dapat Anda pilih
 * `Gradient` - Gradasi warna dari atas ke bawah. Slider Factor memungkinkan Anda menentukan titik tengah gradasi.  
 
-## Gambar Referensi
+## Gambar Referensi {#reference}
 
 ![](/images/background_reference.webp)
 
 Anda dapat menambahkan gambar pilihan Anda pada latar belakang untuk digunakan sebagai referensi.
 Anda dapat mengubah posisi dan skala, misalnya jika Anda ingin memindahkannya ke sudut layar.
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) Transformasi {#transform}
 
 Tombol ini akan memungkinkan Anda menempatkan gambar referensi secara interaktif. Gunakan 2 jari untuk menggeser, menskalakan, dan memutar gambar referensi ke tempatnya. Penempatan akhir akan tercermin pada slider di bawah:
 

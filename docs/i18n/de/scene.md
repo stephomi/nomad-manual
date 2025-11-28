@@ -1,4 +1,4 @@
-# ![](/icons/scene.webp) Szene 
+# ![](/icons/scene.webp) Szene {#scene}
 
 Dieses Menü ermöglicht es dir, Objekte, Lichter, Kameras und Repeater in Nomad zu verwalten. Es zeigt die Szenenhierarchie als Baumansicht an, sodass du viele Aspekte deiner Objekte ändern kannst. Außerdem kannst du neue Objekte erstellen sowie Objekte auf verschiedene Arten kombinieren und trennen.
 
@@ -6,7 +6,7 @@ Dieses Menü ermöglicht es dir, Objekte, Lichter, Kameras und Repeater in Nomad
 ![](/images/scene_menu_summary.webp)
 
 
-## Shortcut-Leiste
+## Shortcut-Leiste {#shortcut-bar}
 | Aktion                | Icon                              | Beschreibung                                                                                                       |
 | :-------------------: | :-------------------------------: | :----------------------------------------------------------------------------------------------------------------: |
 | [Hinzufügen...](#add-menu) | ![](/icons/plus.webp)            | Zeigt das [Hinzufügen-Menü](#add-menu) an, um ein Objekt zur Szene hinzuzufügen                                    |
@@ -21,7 +21,7 @@ Dieses Menü ermöglicht es dir, Objekte, Lichter, Kameras und Repeater in Nomad
 | Sync                  | ![](/icons/link.webp)            | Wenn Instanzen Kinder haben, wird sichergestellt, dass alle Instanzen dieselbe Kind-Hierarchie teilen             |
 
 
-## Baumansicht
+## Baumansicht {#tree-view}
 ![](/images/scene_treeview.webp) 
 
 | Aktion       | Icon                       | Beschreibung           |
@@ -36,7 +36,7 @@ Tippe auf das Auswahl-Icon, um ein einzelnes Objekt umzuschalten, oder ziehe ver
 
 :::
 
-### Manipulation der Baumansicht
+### Baumansicht bearbeiten {#tree-view-manipulation}
 
 Halte ein Element in der Baumansicht lange gedrückt, bis es gelb wird. Du kannst es dann in der Baumansicht nach oben oder unten verschieben oder über ein anderes Element ziehen, um es zu dessen Kind zu machen.
 
@@ -44,7 +44,7 @@ Wenn viele Elemente ausgewählt sind, sind die meisten dunkelgelb, eines ist hel
 
 Wenn du ein Eltern-Element auswählst, werden standardmäßig alle Kind-Elemente ebenfalls ausgewählt. Durch Tippen auf das Eltern-Icon wird zwischen „nur Eltern“ und „Eltern + Kinder“ umgeschaltet.
 
-### Objektmenü
+### Objektmenü {#object-menu}
 
 Ein Klick auf die Auslassungspunkte (...) eines Objekts in der Baumansicht öffnet das Objektmenü.  
 Viele dieser Optionen entsprechen der Shortcut-Leiste oben und werden der Bequemlichkeit halber wiederholt.
@@ -65,7 +65,7 @@ Viele dieser Optionen entsprechen der Shortcut-Leiste oben und werden der Bequem
 
 
 
-### Mehrfachauswahl
+### Mehrfachauswahl {#multiselection}
 Du kannst mehrere Objekte auswählen, um zwei Dinge zu erreichen:
 - das Gizmo-Werkzeug verwenden, um mehrere Objekte gleichzeitig zu bewegen
 - Objekte mit Verbinden- und Boolean-Operationen zusammenführen.
@@ -87,12 +87,12 @@ Dies könnte in Zukunft verbessert werden.
 :::
 
 
-## Verbinden
+## Verbinden {#join}
 Diese Option erstellt aus mehreren ausgewählten Objekten einfach einen einzigen Objekteintrag.
 
 Ein Beispiel dazu findest du im Video im Abschnitt [Trennen](#separate).
 
-## Boolean
+## Boolean {#boolean}
 ![](/images/scene_boolean_menu.webp) 
 Kombiniert Objekte zu einer einzigen Oberfläche.
 
@@ -100,43 +100,43 @@ Kombiniert Objekte zu einer einzigen Oberfläche.
 
 `Boolean` versucht, die Polygone in ihrem ursprünglichen Layout zu belassen und die Polygone dort zu vernähen, wo sich Objekte überlappen. Dies kann deutlich sauberere und schärfere Ergebnisse liefern als ein Voxel-Merge, erfordert jedoch „wasserdichte“ Meshes; es darf keine Löcher oder fehlerhaften Formen in den Objekten geben. Wenn dies fehlschlägt, funktioniert in der Regel ein Voxel-Merge.
 
-### Boolean-Operationen
+### Boolean-Operationen {#boolean-operations}
 Sowohl Voxel Merge als auch Boolean verwenden die Objektsichtbarkeit zur Steuerung der Operation:
 
-#### Vereinigung
+#### Vereinigung {#union}
 Wenn beide Objekte sichtbar sind, wird eine Boolean-**Vereinigung** erstellt, die äußere Hülle der Objekte wird kombiniert, ohne innere Oberflächen. ![](/images/boolean_union.webp)
 
-#### Subtraktion
+#### Subtrahieren {#subtract}
 Ein Objekt unsichtbar = Boolean-**Subtraktion**, das unsichtbare Objekt wird vom sichtbaren Objekt abgezogen. ![](/images/boolean_subtract.webp)
 
-#### Schnittmenge
+#### Schnittmenge {#intersect}
 Beide Objekte unsichtbar = Boolean-**Schnittmenge**, es wird eine neue Form nur dort erstellt, wo sich die beiden Objekte überlappen. ![](/images/boolean_intersect.webp)
 
 
-### Voxel Merge-Button
+### Voxel-Merge-Schaltfläche {#voxel-merge-button}
 Durch Drücken dieses Buttons wird ein Voxel-Merge auf die ausgewählten Objekte ausgeführt. Bei einem einzelnen Objekt wird es in gleichmäßig verteilte Polygone retopologisiert, was nützlich ist, wenn ein Objekt gestreckte Polygone hat.
 
-### Auflösung
+### Auflösung {#resolution}
 Die Auflösung des voxelbasierten 3D-Rasters, das für die Berechnung verwendet wird. Wenn dieser Wert geändert wird, wird ein Schachbrettmuster über das Objekt gelegt, um die Polygongröße zu visualisieren.
 
-### Multiresolution aufbauen
+### Multiresolution erstellen {#build-multiresolution}
 Erstellt Multiresolution-Stufen unterhalb deiner Zielauflösung. Wenn deine Auflösung also 400 ist und „Build multiresolution“ auf 3 steht, erhältst du ein neues Mesh mit z. B. 296.000 Polygonen, aber es gibt 3 niedrigere Subdiv-Stufen mit 74.000, 18.000, 4.000k.
 
-### Scharfe Kanten beibehalten
+### Scharfe Kanten beibehalten {#keep-sharp-edges}
 Aktiviert das Snapping des Voxel-Meshs an Kanten. Funktioniert am besten bei einfachen Formen.
 
-### Boolean-Button
+### Boolean-Schaltfläche {#boolean-button}
 Durch Drücken dieses Buttons wird eine polygonale Boolean-Operation mit der Manifold-Bibliothek von Emmett Lalish ausgeführt. 
 
 
-## Trennen
+## Trennen {#separate}
 Wenn du ein einzelnes Objekt hast, das aus mehreren nicht verbundenen Teilen besteht, kannst du dieses Objekt in mehrere Objekte aufteilen.  
 Dies kann als das Gegenteil von [Simple Merging](#simple-merge) betrachtet werden.
 
 ![](/videos/merge_separate.mp4)
 
 
-## Hinzufügen-Menü
+## Hinzufügen-Menü {#add-menu}
 
 ![](/images/scene_addmenu_overview.webp)
 
@@ -147,21 +147,21 @@ Primitives sind grundlegende Formtypen, die über Parameter angepasst werden kö
 
 ![](/images/scene_addmenu_top.webp)
 
-### Am Gizmo
+### Am Gizmo {#on-gizmo}
 Aktiviert das Platzieren des neuen Primitives an der Position der aktuell ausgewählten Form oder des Gizmos. Wenn deaktiviert, wird das Primitive im Zentrum der Szene platziert.
 
-### Gizmo auswählen
+### Gizmo auswählen {#select-gizmo}
 Aktiviert das automatische Umschalten auf das Gizmo-Werkzeug, wenn ein neues Primitive erstellt wird. 
 
-### Erweitert
+### Erweitert {#add-advanced}
 
 Dieses Menü erlaubt dir, deine Präferenz festzulegen, wo neue Primitives, Gruppen und Repeater erstellt werden. Sie können auf dem ausgewählten Objekt, am Weltursprung oder an der Position des Gizmos erstellt werden.
 
 
-### UVs
+### UVs {#uvs}
 Aktiviert UVs auf Primitives. UVs (oft Texturkoordinaten genannt) sind zusätzliche Daten, die in 3D verwendet werden, um Texturen auf Oberflächen anzuwenden. Sie benötigen mehr Speicher, aber für die meisten Geräte sollte dies kein Problem sein, außer du arbeitest mit sehr hohen Polygonzahlen (z. B. 10 Millionen Polys oder mehr). 
 
-### Primitives
+### Primitiven {#primitives}
 
 | Primitive      | Icon                                      | Beschreibung                                                                                                      |
 | :------------: | :---------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
@@ -184,7 +184,7 @@ Falls du dich fragst, welches das Basismesh beim Start von Nomad ist: Es ist ebe
 Allerdings verwendet das Basismesh in Nomad kein `Project on sphere`, es ist also nicht perfekt rund.
 :::
 
-### Primitive-Werkzeugleiste
+### Primitive-Symbolleiste {#primitive-toolbar}
 
 ![](/images/scene_primitive_toolbar.gif)
 
@@ -212,7 +212,7 @@ Ein Klick auf den Titel der Werkzeugleiste schaltet sie zwischen oberem und unte
 :::
 
 
-### Primitive-Menü
+### Primitive-Menü {#primitive-menu}
 
 ![](/images/scene_primitive_menu.webp)
 
@@ -226,16 +226,16 @@ Die meisten Primitive-Parameter sollten selbsterklärend sein, und es gibt einig
 * `Post subdivision` Aktiviert die gewählte Anzahl an Subdivision-Stufen aus dem Multiresolution-Abschnitt des Topologie-Menüs. Dies kann verwendet werden, um in Kombination mit niedrigen Topologie-Unterteilungen glatte, weichkantige Primitives zu erzeugen. Wenn du z. B. die Box-Topologie-Unterteilungen auf 2 und Post Subdivisions auf 4 setzt, erhältst du eine Box mit weichen Ecken.
 * `Linear subdivision` Legt fest, wie viele Stufen linearer Subdivision vor der regulären glatten Subdivision verwendet werden. Dies kann genutzt werden, um zu steuern, wie scharf oder weich die Ecken auf den unterteilten Oberflächen sind. Setze z. B. die Box-Topologie-Unterteilungen auf 2, Post Subdivisions auf 4, und ändere dann die linearen Subdivisions zwischen 0 und 4. Die Ecken der Box werden von weich zu scharf wechseln.
 
-### Topologie
+### Topologie {#topology}
 
 Dies steuert die Anzahl der Polygone in einem Primitive. Normalerweise sind die Regler gekoppelt, sodass das Ändern des aktiven Sliders alle Polygone gleichmäßig anpasst. Du kannst auf den Entkoppeln-Button tippen und die X/Y/Z-Unterteilungen einer Form separat steuern.
 
-### Geometrie
+### Geometrie {#geometry}
 
 Dies steuert die Gesamtgröße eines Primitives, in X/Y/Z-Einheiten für eckige Formen und in Radius für runde Formen.
 
 
-### UV Sphere
+### UV-Sphäre {#uv-sphere}
 ::: warning
 Die UV Sphere ist zum Skulptieren, insbesondere an den Polen, nicht gut geeignet.
 
@@ -248,7 +248,7 @@ Auch wenn sie sich nicht für allgemeines Skulptieren eignet, ist sie nützlich 
 :::
 
 
-### Triplanar
+### Triplanar {#triplanar}
 Dieses Primitive ist speziell, da du das [Masking-Werkzeug](tools.md#mask) verwenden solltest, um seine Geometrie zu formen.
 
 ![](/videos/triplanar.mp4)
@@ -270,23 +270,23 @@ Derzeit gibt es keine Option, die Malerei auf einer einzelnen Ebene zu „sperre
 Du kannst [Connected Topology](stroke.md#connected-topology) verwenden, um ein wenig zu helfen, da dein Cursor, wenn er genau auf einer Ebene liegt, die anderen Ebenen nicht beeinflusst.
 :::
 
-### Shadow Catcher
+### Schattenfänger {#shadow-catcher}
 Fügt eine Ebene mit dem Shadow-Catcher-Material hinzu. Siehe [Shadow Catcher-Material](material.md#shadow-catcher) für weitere Details. 
 
 
-## Gruppe/Kamera
-### Gruppe
+## Gruppe/Kamera {#groupcamera}
+### Gruppe {#group}
 Erstellt ein „leeres“ Objekt, unter dem du andere Objekte einordnen kannst. Dies kann verwendet werden, um die Hierarchie zu organisieren, indem du viele Objekte unter einer Gruppe sammelst und diese dann zuklappst. Eine Gruppe kann auch als Hilfsobjekt zum Bewegen von Objekten dienen; viele Objekte können unter eine Gruppe gestellt werden, und dann kann die Gruppe mit dem Gizmo-Werkzeug bewegt, rotiert und skaliert werden.
 
-### Ansicht hinzufügen
+### Ansicht hinzufügen {#add-view}
 Erstellt eine Kamera.
 
-## Repeater
+## Repeater {#repeaters}
 ![](/images/scene_primitive_repeaters.webp)
 
 Repeater sind Knoten, die Instanzen der Objekte unter ihnen erzeugen. 
 
-### Array
+### Array {#array}
 ![](/images/scene_primitive_array.webp)
 
 Wenn Objekte zu Kindern dieses Knotens gemacht werden, können sie in einem Gitterlayout instanziert werden. Wenn ausgewählt, hat er folgende Steuerungen:
@@ -295,7 +295,7 @@ Wenn Objekte zu Kindern dieses Knotens gemacht werden, können sie in einem Gitt
 * OffsetX/Y/Z – Abstand zwischen den Instanzen, wenn Fit inside umgeschaltet ist
 * SizeX/Y/Z – Breite/Höhe/Tiefe des gesamten Array-Gitters, wenn Fit inside umgeschaltet ist.
 
-### Curve
+### Kurve {#curve}
 ![](/images/scene_primitive_curve.webp)
 Dies erstellt eine Kurve, Kinder dieses Knotens werden entlang der Kurve wiederholt. Wenn ausgewählt, hat er folgende Steuerungen:
 * Edit – erlaubt das Hinzufügen von Punkten zur Kurve und das Bewegen von Punkten auf der Kurve.
@@ -307,7 +307,7 @@ Dies erstellt eine Kurve, Kinder dieses Knotens werden entlang der Kurve wiederh
 * Twist – schaltet Steuerungen an jedem Kurvenpunkt, um die Drehung (Twist) der Instanzen zu steuern 
 * B-spline – schaltet um, ob die Instanzen der Kurve exakt folgen oder B-Spline-Interpolation verwenden, die glattere Ergebnisse liefert. 
 
-### Radial
+### Radial {#radial}
 ![](/images/scene_primitive_radial.webp)
 
 Kinder dieses Knotens werden in einem Kreis instanziert. Bewege das Kindobjekt, um den Radius dieses Repeaters zu ändern. Wenn ausgewählt, hat er folgende Steuerungen:
@@ -315,7 +315,7 @@ Kinder dieses Knotens werden in einem Kreis instanziert. Bewege das Kindobjekt, 
 
 
 
-### Mirror
+### Spiegeln {#mirror}
 ![](/images/scene_primitive_mirror.webp)
 
 Kinder dieses Knotens werden an einer Achse gespiegelt. Wenn ausgewählt, hat er folgende Steuerungen:
@@ -338,35 +338,35 @@ Repeater können untereinander verschachtelt werden, und mehrere Objekte können
 Einige Repeater versuchen, die Pivots der Kindobjekte automatisch zu setzen, sodass sie sich nicht bewegen, selbst wenn du sie mit dem Gizmo-Werkzeug verschiebst oder drehst. Wenn du dieses Verhalten überschreiben musst, füge eine Gruppe zwischen Repeater und Kind ein. Jetzt kannst du die Kindform unabhängig vom Repeater bewegen.
 :::
 
-## Licht
+## Licht {#light}
 
 ![](/images/scene_primitive_light.webp)
 
-### Directional
+### Gerichtet {#directional}
 Erstellt ein gerichtetes Licht, eine unendlich weit entfernte Lichtquelle wie die Sonne.
 
-### Spot
+### Spot {#spot}
 Erstellt ein Spot-Licht mit Steuerungen für Kegelbreite und Weichheit.
 
-### Point
+### Punkt {#point}
 Erstellt ein Punktlicht.
 
-## Erweitert
-### Auf Element fokussieren
+## Erweitert {#advanced}
+### Auf Objekt fokussieren {#focus-on-item}
 Doppelklick auf ein Element in der Szenenliste zentriert die Kamera im 3D-View auf dieses Element.
 
-### Sichtbarkeit synchronisieren
+### Sichtbarkeit synchronisieren {#sync-visibility}
 Die Verwendung des Augen-Icons wirkt sich auf alle ausgewählten Elemente aus. 
 
-### Instanz: Anzeigen
+### Instanz: Anzeigen {#instance-show}
 Zeigt eine farbige Kapsel links in der Szenenliste an, um Instanzen zu markieren.
 
 
-### Icons
+### Symbole {#icons}
 Legt Größe und Deckkraft der Gruppen-, Licht-, Kamera- und Mirror-Icons im Viewport fest.
 
-### Hierarchie-Linien
+### Hierarchielinien {#hierarchy-lines}
 Zeigt eine Linie zwischen Eltern und Kindern im Viewport an.
 
-## Untere Werkzeugleiste
+## Untere Symbolleiste {#bottom-toolbar}
 Diese Icons schalten die Sichtbarkeit von Gruppe, Licht, Kamera, Repeater und Hierarchie-Linien im Viewport um.

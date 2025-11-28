@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) 배경
+# ![](/icons/image.webp) 배경 {#background}
 
 이 메뉴에서는 Nomad의 배경색과 사용할 참조 이미지를 설정할 수 있습니다.
 
 ![](/images/background_overview.webp)
 
-## Background 
+## 배경 {#type}
 ![](/images/background_selector.webp)
 
 뷰포트 배경에는 세 가지 옵션이 있습니다.
@@ -13,14 +13,14 @@
 * `Color` - 사용자가 선택하는 단색 배경
 * `Gradient` - 위에서 아래로 이어지는 색상 그라디언트입니다. Factor 슬라이더로 그라디언트의 중간 지점을 조절할 수 있습니다.  
 
-## Reference Image
+## 참조 이미지 {#reference}
 
 ![](/images/background_reference.webp)
 
 배경에 원하는 이미지를 추가하여 참조용으로 사용할 수 있습니다.
 예를 들어 화면 구석으로 옮기고 싶다면, 위치와 크기를 변경할 수 있습니다.
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) 변형 {#transform}
 
 이 버튼을 사용하면 참조 이미지를 인터랙티브하게 배치할 수 있습니다. 두 손가락으로 참조 이미지를 이동, 확대/축소, 회전하여 원하는 위치에 둘 수 있습니다. 최종 배치는 아래 슬라이더에 반영됩니다:
 

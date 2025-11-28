@@ -1,0 +1,209 @@
+# ![](/icons/open.webp) 文件 {#files}
+
+文件菜单允许你保存和加载 Nomad 项目、导入和导出 3D 模型，以及导出渲染图像。
+
+![](/images/file_menu.webp)
+
+## 工程 {#project}
+![](/images/file_project.webp)
+
+在此菜单顶部会显示上次保存时的缩略图。点击该缩略图会弹出一个迷你浏览器，双击其他项目会弹出一个迷你菜单，用于打开、添加、保存、克隆、重命名或删除该项目。
+
+### ![](/icons/nomad.webp) 预设 {#preset}
+访问一系列演示和角色组件。选择一个条目，然后再次点击以选择“打开”、“添加到场景”或“克隆”到你的项目文件夹中。
+
+![](/images/file_preset_preview.webp)
+
+### ![](/icons/save.webp) 保存 {#save}
+保存当前 Nomad 项目。
+
+### ![](/icons/save_as.webp) 另存为... {#save-as}
+显示项目浏览器，以新的名称保存 Nomad 项目。
+
+### ![](/icons/pencil.webp) 重命名 {#rename}
+显示文本框以重命名当前项目。
+
+### ![](/icons/open.webp) 打开... {#open}
+显示项目浏览器以打开一个项目。
+
+### ![](/icons/add_file.webp) 添加到场景... {#add}
+显示项目浏览器，选择一个项目后，其内容会与当前场景合并。
+
+### ![](/icons/trash.webp) 删除... {#delete}
+显示项目浏览器，任何被选中的项目都会从文件系统中删除。
+
+### ![](/icons/new_file.webp) 新建 {#new}
+开始一个新项目，如果有未保存的更改，会询问你是否需要保存。
+
+### ![](/icons/autosave.webp) 自动保存... {#auto-save}
+用于控制自动保存选项的菜单。
+
+如果启用自动保存，你可以设置一个计时器，让弹窗以固定时间间隔出现。
+Nomad 不在后台自动保存的原因是 3D 文件可能非常大，在雕刻时保存会造成明显卡顿。
+
+此外，为了避免内存不足问题，场景在保存前通常会被压缩。
+这种压缩/解压缩同样会减慢保存操作。
+
+### 计时器弹窗 {#timer-pop-up}
+设置计时器弹窗出现的频率。
+
+### 弹窗超时 {#popup-timeout}
+启用弹窗超时。
+
+### 放弃自动保存 {#discard-autosave}
+如果某个项目存在自动保存文件，它会被自动加载而不是原始项目。如果不需要这样，此按钮会删除该自动保存文件。之后加载项目时将会加载该项目上一次的手动保存版本。
+
+
+## 导入 {#import}
+
+### ![](/icons/add_file.webp) 导入 {#import-button}
+用于导入非 Nomad 项目的 3D 文件。
+
+当你将外部场景文件导入到 Nomad 时，可以选择 *导入* 或 *添加*。
+
+“添加”文件会将对象添加到当前场景中。
+“导入”文件会创建一个新的 Nomad 项目，并将新对象置于其中。
+
+Nomad 可以导入以下格式：
+- Nomad (.nom)
+- glTF (.glb, .gltf)
+- OBJ (.obj)
+- STL (.stl)
+- PLY (.ply)
+- FBX (.fbx，实验性)
+
+### ![](/icons/cog.webp) 高级 {#advanced}
+显示高级导入选项：
+
+### 工程/ glTF / OBJ / STL / FBX {#project-gltf-obj-stl-fbx}
+#### 保持拓扑 {#keep-topology}
+Nomad 默认会在加载时尝试修复有问题的几何体。启用此选项后，将阻止 Nomad 进行顶点/面重排序、移除重复顶点/面、移除未使用顶点等操作。
+
+#### 跳过纹理 {#skip-textures}
+对于支持纹理的格式（如 glTF），跳过纹理加载。
+
+### 工程 / glTF {#project-gltf}
+#### 保留界面设置 {#keep-gui-settings}
+允许在 Nomad .nom 或 glTF 文件中保存 GUI 和项目设置。
+
+### OBJ {#obj}
+#### 按组拆分 OBJ {#split-obj-by-groups}
+启用后会将 OBJ 的各个组拆分为独立对象。
+
+#### 色彩空间 {#color-space}
+将从 OBJ 中解析的颜色模式设置为 Linear、sRGB 或 Auto。
+
+### PLY {#ply}
+#### 色彩空间 {#color-space-ply}
+将从 PLY 中解析的颜色模式设置为 Linear、sRGB 或 Auto。
+
+
+### FBX {#fbx}
+#### 色彩空间 {#color-space-fbx}
+将从 FBX 中解析的颜色模式设置为 Linear、sRGB 或 Auto。
+
+
+
+## 导出 {#export}
+保存为可在其他软件中使用的 3D 几何格式。 
+
+![](/images/file_export.webp)
+
+不同文件格式支持的功能不同，可用选项会根据所选文件类型变化。
+
+<!-- https://www.tablesgenerator.com/markdown_tables# -->
+<!-- http://markdowntable.com/ -->
+|                                 | NOM    | GLTF/GLB             | OBJ  | USD | PLY  | STL   | FBX                    |
+| :-----------------------------: | :----: | :------------------: | :--: | :--: | :--: | :---: | :--------------------: |
+| [Vertex Colors](#vertex-colors) | ✅     | ✅                   | ✅   | ✅ | ✅    | ✅    | ✅                     |
+| [Vertex PBR](#vertex-pbr)       | ✅     | Nomad ✅<br>Other ⚠️ | ❌   | ✅ | ✅    | ❌    | ❌                     |
+| Quad                            | ✅     | Nomad ✅<br>Other ⚠️ | ✅   | ✅ | ✅    | ❌    | ✅                     |
+| [Layers](#layers)               | ✅     | ✅                   | ❌   | ✅ | ❌    | ❌    | ✅                     |
+| Objects                         | ✅     | ✅                   | ✅   | ✅ | ❌    | ❌    | ✅                     |
+| Face Group                      | ✅     | ✅                   | ✅   | ✅ | ❌    | ❌    | ✅                     |
+| Hierarchy                       | ✅     | ✅                   | ❌   | ✅ | ❌    | ❌    | ✅                     |
+| Lights                          | ✅     | ✅                   | ❌   | ✅ | ❌    | ❌    | ✅                     |
+| Textures                        | ✅     | ✅                   | ✅   | ✅ | ❌    | ❌    | Import ✅<br>Export ❌ |
+| Primitives, Postprocess, etc    | ✅     | Nomad ✅<br>Other ❌ | ❌   | ❌ | ❌    | ❌    | ❌                     |
+
+
+### 全部/可见/选中 {#allvisibleselected}
+当前激活的按钮状态决定哪些对象会被导出。图标旁的数字表示在该选项下会导出的对象数量。
+
+### 顶点色 {#vertex-colors}
+如果文件格式支持，则导出顶点颜色。
+
+### PBR 绘制 {#pbr-paint}
+PBR 顶点颜色会作为次级顶点颜色属性导出。
+通道按如下方式打包：
+
+|           | Channel  |
+| :-------: | :------: |
+| Roughness | R        |
+| Metalness | G        |
+| Masking   | B        |
+
+
+### 图层 {#layers}
+图层通过 glTF 的 morph target（形变目标）来支持。
+Nomad 也会导出每个图层的颜色、粗糙度和金属度，但其他软件通常会忽略这些信息。
+
+### 图层绘制 {#layer-painting}
+导出图层绘制，通常会被其他软件忽略。
+
+### 面组 {#face-group}
+导出面组，导出后有时会与其他软件产生兼容性问题。
+
+### 法线 {#normals}
+导出法线信息。注意，Nomad 在导入其他文件格式时总是会重新计算自己的法线。
+
+### 切线 {#tangents}
+导出切线信息，用于模型包含法线贴图的情况。 
+
+### 纹理 {#textures}
+如果材质中添加了纹理，它们会被导出。注意这不会进行纹理烘焙，烘焙需要通过拓扑中的烘焙选项完成。
+
+### 导出按钮 {#export-button}
+点击此按钮，以当前选定的设置导出几何体。
+
+::: tip 提示：在 Blender 中导入粗糙度和金属度
+
+Blender 可以导入 glTF/glb，但不会自动识别金属度和粗糙度的顶点属性。要使用它们，在材质编辑器中创建一个 Vertex Color 节点，将其属性设置为下一个颜色属性（通常为 Col.001）。连接一个 “Separate XYZ” 节点，将 X 输出连接到 Roughness，将 Y 输出连接到 Metallic。
+
+此视频展示了具体流程：
+
+![](/videos/blender_pbr.mp4)
+
+::: 
+
+::: tip 提示：USD 功能支持情况
+
+USD 是一种复杂格式，其规范支持许多功能，但并非所有 3D 软件都支持这些功能。例如，OSX/iOS 就不支持顶点颜色。USD 导出器中的预设模式会尽量与 OpenUSD、Apple、Procreate、ZBrush 等的兼容性做出最佳折中。
+
+::: 
+
+## 渲染 {#render}
+
+导出一张图像，它是项目中所有设置（灯光、材质、后期处理等）的综合结果。 
+
+![](/images/file_render.webp)
+### 预览 {#preview}
+
+菜单标题旁的小预览按钮会使工具栏变暗，以便更好地预览最终效果。
+
+### 透明背景 {#transparent-background}
+为渲染启用 alpha 通道，便于在 2D 程序中与其他图像合成。注意不支持部分透明。
+
+### 显示界面 {#show-interface}
+启用后会在渲染中包含 Nomad 的界面。
+
+### 渲染比例 {#render-ratio}
+对图像分辨率的倍数系数。
+
+### 最终尺寸 {#final-size}
+渲染所使用的分辨率。当选择 `Custom` 时，宽度和高度滑块将被启用。 
+
+当文件菜单处于激活状态时，如果渲染区域与屏幕分辨率不匹配，视图中会绘制虚线覆盖以指示渲染区域（注意你必须处于横屏模式才能正确显示）。
+
+### 导出 png {#export-png}
+点击此按钮开始渲染过程。完成后你可以选择如何保存或分享该图像。

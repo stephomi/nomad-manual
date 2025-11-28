@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) Warstwy 
+# ![](/icons/layer.webp) Warstwy {#layers}
 
 To menu zawiera stos warstw – sposób na przechowywanie edycji obiektu w nieniszczący sposób – oraz wiele metod łączenia i ponownego wykorzystania warstw.
 
 ![](/images/layers_overview.webp) 
 
-## Przegląd
+## Przegląd {#overview}
 
 Warstwy w Nomadzie pełnią wiele funkcji.
 
@@ -19,7 +19,7 @@ Warstwy można częściowo wymazywać za pomocą narzędzia [Delete Layer](tools
 ![](/videos/layer.mp4)
 
 ::: tip
-W przeciwieństwie do większości oprogramowania do rzeźbienia, zmiana topologii siatki nie spowoduje odrzucenia warstw. Możesz używać [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multiresolution) lub narzędzi [Trim](tools.md#trim)/[Split](tools.md#split), ale pamiętaj, że przy użyciu [Voxel Remesher](topology.md#voxel-remesher) jakość warstwy będzie miała na to wpływ.
+W przeciwieństwie do większości oprogramowania do rzeźbienia, zmiana topologii siatki nie spowoduje odrzucenia warstw. Możesz używać [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multires) lub narzędzi [Trim](tools.md#trim)/[Split](tools.md#split), ale pamiętaj, że przy użyciu [Voxel Remesher](topology.md#voxel-remesher) jakość warstwy będzie miała na to wpływ.
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ Jeśli używasz warstw jako blendshapes/morph targets, w [menu sceny](scene.md#o
 :::
 ----
 
-## Menu warstw 
+## Menu warstw {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Naciśnij `Add layer`, aby utworzyć nową warstwę.
 
 Każda warstwa ma nazwę, suwak do kontrolowania jej siły/współczynnika oraz przyciski opcji.
 
-### Opcje
+### Opcje {#options}
 
 | Action       | Icon                         | Description                                         |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Każda warstwa ma nazwę, suwak do kontrolowania jej siły/współczynnika oraz 
 
 Aby przenieść warstwę w inne miejsce stosu warstw, naciśnij i przytrzymaj jej nazwę, a następnie przeciągnij.
 
-### More...
+### Więcej... {#more}
 
 Przycisk „More...” wyświetli dodatkowe opcje dla bieżącej warstwy:
 
 ![](/images/layers_more.webp) 
 
-#### Channel factors
+#### Współczynniki kanałów {#channel-factors}
 
 Te kontrolki pozwalają skalować ilość rzeźby/koloru/szorstkości/metaliczności/krycia dla warstwy. Wartości te są mnożone przez suwak współczynnika warstwy, więc na przykład jeśli siła warstwy wynosi 1, ale współczynnik kanału koloru to 0.5, kolor będzie wyświetlany z siłą 0.5.
 
@@ -82,17 +82,17 @@ Być może w przyszłości każdy kanał będzie miał własny kanał alfa, aby 
 :::
 
 
-#### ![](/icons/tool_mask.webp) Mask
+#### ![](/icons/tool_mask.webp) Maska {#mask}
 Przycisk maski obok każdego suwaka utworzy maskę z danego kanału. Podobnie jak używanie warstw do tworzenia zaznaczeń w aplikacjach malarskich, pozwala to ponownie wykorzystać pracę wykonaną na warstwie do innych operacji.
 
-#### ![](/icons/preview.webp) Preview
+#### ![](/icons/preview.webp) Podgląd {#preview}
 ![](/images/layers_preview.webp) 
 
 Po włączeniu podglądane będą ustawienia ekstrakcji dla tej warstwy (zobacz następną sekcję).
 
 Gdy włączony jest tryb xray, tylko wyekstrahowany kształt będzie nieprzezroczysty, reszta kształtu stanie się przezroczysta, co jest przydatne, jeśli używasz ujemnych wysokości ekstrakcji.
 
-#### Extract
+#### Ekstrakcja {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ Przycisk `Extract` zduplikuje zawartość warstwy do nowego obiektu, zazwyczaj z
 * Shell - Zamknij wyekstrahowany kształt z użyciem wartości grubości i opcji kierunku.
 * Layer - Wyodrębnij różnicę warstwy.
 
-#### ![](/icons/height.webp) Thickness
+#### ![](/icons/height.webp) Grubość {#thickness}
 ![](/images/layers_thickness.webp) 
 
 Głębokość ekstruzji powłoki. Wartości dodatnie rosną na zewnątrz powierzchni, wartości ujemne w głąb powierzchni.
@@ -116,12 +116,12 @@ Przyciski plus/minus obok tej wartości ustawiają kierunek ekstruzji:
 * Plus ( + ) rozpocznie od bieżącej powierzchni i wyekstruduje w górę.
 * PlusMinus ( ± ) odepchnie górę i dół ekstruzji o równe wartości, tak że będzie ona w połowie zatopiona w oryginalnej powierzchni.
 
-#### Smoothness
+#### Gładkość {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 Jeśli krawędzie obszaru do wyodrębnienia są postrzępione, ten suwak spróbuje rozmyć krawędź do gładszego kształtu. 
 
-#### ![](/icons/height.webp) Edge loop (side)
+#### ![](/icons/height.webp) Pętla krawędzi (bok) {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 Ta sekcja jest widoczna, gdy closing action to „Shell”. 
@@ -132,10 +132,10 @@ Jeśli jest wyłączone, suwak `Division` ustawi liczbę podziałów na bokach.
 
 _To jest koniec podmenu „More...”._
 
-### Advanced
+### Zaawansowane {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Keep top layers details
+#### Zachowaj detale górnych warstw {#keep-top-layers-details}
 
 Zapewnia, że drobne detale na wyższych warstwach pozostaną widoczne, gdy duże zmiany są wprowadzane na niższych warstwach.
 
@@ -144,13 +144,13 @@ Domyślnie, jeśli wyrzeźbisz drobne zmarszczki na warstwie, a następnie wprow
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expand list
+#### UI: Rozwiń listę {#ui-expand-list}
 
 Domyślne menu warstw pozwala przełączać widoczność warstw i krycie warstwy. Włączenie tej opcji rozwija pełne kontrolki dla każdej warstwy.
 
 ![](/images/layers_expand.webp)
 
-#### Sync transform
+#### Synchronizuj transformację {#sync-transform}
 
 Jeśli włączone, wszystkie niezaznaczone warstwy zostaną dostosowane w zależności od transformacji obrotu, skali, pochylenia. 
 

@@ -1,4 +1,4 @@
-# ![](/icons/postprocess.webp) Post process 
+# ![](/icons/postprocess.webp) Son işleme {#post-process}
 
 Bu menü, render görünümünü etkilemek için Nomad’in birçok yönünü kontrol eder.
 
@@ -16,34 +16,31 @@ PBR render için, [Ambient Occlusion](#ambient-occlusion-ssao), [Reflection](#re
 Bununla birlikte, çoğu zaman heykel yaparken post process’in kapalı olmasını istersiniz; böylece render’ın şekline odaklanabilirsiniz.
 
 
-## Quality
+## Kalite {#quality}
 
 ![](/images/postprocess_quality.webp)
-### Max frame sampling
+### Maksimum kare örnekleme {#max-frame-sampling}
 Nomad, tek bir kare render için belirli miktarda post process hesaplar; bu da gürültülü görünebilir. Bu kontrol, kaç kare render edileceğini ve ardından gürültülü artefaktların çoğunu gidermek için birbirine karıştırılacağını belirler. Bazı efektler ek örnek gerektirmez (ör. color grading), buna karşın global illumination gibi diğerleri gürültüsüz olmak için yüzlerce örnek gerektirebilir. 
 
 Viewport’ta bu, Nomad kendi haline bırakıldığında görülebilir; görüntü kalitesi maksimum örneğe kadar kademeli olarak iyileşir, sonra durur. Bu hesaplama sayısı, [Files menüsü](files) altındaki render bölümünde ‘export png’ tıklandığında da kullanılır.
 
-### Resolution multiplier
+### Çözünürlük çarpanı {#resolution-multiplier}
 Bu kaydırıcı, post process çözünürlüğünü kontrol eder. x1.0 değeri, render’ların cihazın piksel çözünürlüğünde yapıldığı anlamına gelir. x0.5 değeri, yarı çözünürlükte render eder; bu hızlıdır ama düşük kalitelidir. 1’den büyük bir değer, daha büyük boyutta render edip sonra küçültür. Bu, daha yüksek kalite, daha az gürültü ama daha uzun render süreleriyle sonuçlanır.
 
-### Max samples
+### Maksimum örnek {#max-samples}
 
 Bu, post process kalitesini artırır, ancak genellikle `Full resolution` daha fazla etkiye sahiptir. 
 
-### Full resolution
-Etkinleştirildiğinde, resolution multiplier’ı x1.0’a zorlar.
-
-### Denoiser (oidn)
+### Gürültü giderici (oidn) {#oidn}
 
 Görüntüye bir denoiser uygular. Bu, çok daha düşük örnek sayıları kullanmanıza izin verebilir. Yalnızca `Full Resolution` etkinse çalışır. Denoise işleminin tüm örnekler hesaplandıktan sonra gerçekleştiğini ve işlemci açısından yoğun olabileceğini unutmayın.
 
-## Preset browser
+## Hazır ayar tarayıcı {#preset-browser}
 ![](/images/postprocess_presets.webp)
 Görsele tıklamak, bir post process preset koleksiyonu gösterir. Kendi preset’lerinizi tanımlamak için birini seçin, ‘clone’a tıklayın, değişiklik yapın. Kaydetmek için preset görseline tıklayın, preset tarayıcısının içinde tekrar tıklayın ve ‘save’i seçin.
 
 
-## Reflection (SSR)
+## Yansıma (SSR) {#reflection-ssr}
 Bu seçenekle, nesneler sahnedeki diğer nesneleri, bu nesneler ekranda görünür olduğu sürece, yansıtabilir.
 Sahnenizde metalik ve parlak nesneler varsa, bu seçeneği muhtemelen kullanmalısınız.
 Bu seçenek yalnızca PBR modunda etkilidir.
@@ -53,7 +50,7 @@ Bu seçenek yalnızca PBR modunda etkilidir.
 | :------------------------: | :-----------------------: |
 | ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
-## Global Illumination (SSGI)
+## Küresel Aydınlatma (SSGI) {#global-illumination-ssgi}
 
 Global illumination, ışığın yüzeyler arasında nasıl sektiğini simüle eder; örneğin kırmızı bir duvar, yakındaki beyaz bir nesneye kırmızı ışık yansıtacaktır. Ambient occlusion ve yansımalarla birlikte kullanıldığında, bir render’ın gerçekçiliğini büyük ölçüde artırabilir. 
 
@@ -67,7 +64,7 @@ Global illumination, ışığın yüzeyler arasında nasıl sektiğini simüle e
 
 _Bir spot ışık kürenin arkasında, tavana doğru yöneltilmiş. SSGI kapalıyken yalnızca tavan aydınlanıyor. SSGI açıkken ışık tavandan duvarlara, oradan da küreye sekerek yayılıyor._
 
-## Ambient Occlusion (SSAO)
+## Ortam Örtme (SSAO) {#ambient-occlusion-ssao}
 Ambient occlusion, ışığın ulaşma şansının daha az olduğu bölgeleri (köşeler vb.) karartır.
 Etki yalnızca model geometrisine bağlıdır.
 
@@ -86,7 +83,7 @@ AO, çoğunlukla ortam ışığıyla aydınlatılan alanlarda en görünür olac
 
 :::
 
-## Depth of Field (DOF)
+## Alan Derinliği (DOF) {#depth-of-field-dof}
 Odak dışındaki bölgelerde bulanıklık efekti ekler.
 
 Odak noktasını değiştirmek için modelinize dokunmanız yeterlidir.
@@ -100,7 +97,7 @@ Odak noktasını değiştirmek için modelinize dokunmanız yeterlidir.
 | ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp)  |
 
 
-## Bloom
+## Parlama {#bloom}
 Bloom, sahnenizdeki parlak alanların parlamasını sağlar.
 
 * `Intensity` - etkinin gücü.
@@ -113,7 +110,7 @@ Bloom, sahnenizdeki parlak alanların parlamasını sağlar.
 | ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
 
-## Tone Mapping
+## Ton Eşleme {#tone-mapping}
 Tone Mapping, HDR değerleri `[0, 1]` aralığına yeniden eşleyen bir işlemdir.
 Bunu kullanmazsanız (veya `none` seçerseniz), 1’den büyük herhangi bir renk bileşeni kırpılır.
 Bu aralığın üzerindeki tüm renk varyasyonları kaybolur.
@@ -133,14 +130,14 @@ Bu aralığın üzerindeki tüm renk varyasyonları kaybolur.
 Tone mapping, global illumination etkisini güçlendirebilir. Ortam haritasının yoğunluğunu azaltıp birincil ışık kaynağını artırırsanız, tone mapping `exposure` değerini yükselterek daha fazla sekme ışığı etkisi görebilirsiniz.
 :::
 
-## Color Grading
+## Renk Derecelendirme {#color-grading}
 Photoshop’taki curves aracına benzer şekilde, görüntüdeki renk dengesini ve dağılımını kontrol etmenizi sağlar. `main` kontrolü tüm renk dengesini etkiler; `red`/`green`/`blue` kontrolleri ince ayar yapmanıza izin verir. 
 
 | Color Grading off              | Color Grading on              |
 | :----------------------------: | :---------------------------: |
 | ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
-## Curvature
+## Eğrilik {#curvature}
 Eğrilikte hızlı değişimlerin olduğu yerleri tespit eder ve bu bölgelere bir renk uygular.
 
 * `Factor` - etkinin genel yoğunluğu
@@ -153,7 +150,7 @@ Eğrilikte hızlı değişimlerin olduğu yerleri tespit eder ve bu bölgelere b
 | ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
 
-## Chromatic Aberration
+## Kromatik Sapma {#chromatic-aberration}
 Ekran kenarlarında ışığın ayrışmasını simüle ederek lens artefaktlarını taklit eder.
 
 * `Strength` - Görüntünün kırmızı/yeşil/mavi kısımlarının ekran kenarlarına doğru ne kadar ayrılacağı
@@ -163,7 +160,7 @@ Ekran kenarlarında ışığın ayrışmasını simüle ederek lens artefaktlar�
 | ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
 
-## Vignette
+## Vinyet {#vignette}
 Ekran kenarlarını karartarak lens artefaktlarını simüle eder.
 
 * `Size` - Görüntünün üzerine yerleştirilen ters elipsin boyutu
@@ -174,7 +171,7 @@ Ekran kenarlarını karartarak lens artefaktlarını simüle eder.
 | :------------------------------: | :-----------------------------: |
 | ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
-## Grain
+## Gren {#grain}
 Bir grain efekti ekler; görüntünün biraz daha az yapay görünmesine yardımcı olabilir.
 
 * `Strength` - Görüntüye eklenen grain/gürültü miktarı.
@@ -185,7 +182,7 @@ Bir grain efekti ekler; görüntünün biraz daha az yapay görünmesine yardım
 | ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
 
-## Sharpness
+## Keskinlik {#sharpness}
 Photoshop veya fotoğraf işleme uygulamalarındakine benzer bir keskinleştirme efekti.
 
 * `Strength` - Görüntüye uygulanan keskinleştirme miktarı.
@@ -195,7 +192,7 @@ Photoshop veya fotoğraf işleme uygulamalarındakine benzer bir keskinleştirme
 | :-----------------------------: | :---------------------------: |
 | ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
-## Pixel Art
+## Piksel Sanatı {#pixel-art}
 Retro oyun piksel sanatını simüle eder.
 
 * `Slider` - Piksel boyutu
@@ -205,7 +202,7 @@ Retro oyun piksel sanatını simüle eder.
 | :--------------------------: | :-------------------------: |
 | ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
-## Scanline
+## Tarama çizgisi {#scanline}
 Eski CRT monitörlerin görünümünü simüle eder.
 
 * `Factor` - Çizgilerin gücü
@@ -216,6 +213,6 @@ Eski CRT monitörlerin görünümünü simüle eder.
 | ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
 
 
-## Dithering
+## Noktasal örnekleme {#dithering}
 
 Pikselleri dither ederek banding artefaktlarını azaltır. Genellikle etkin olmalıdır, ancak belirli işlemler için (ör. depth map dışa aktarma veya veri odaklı diğer işlemler) kapatılabilir.

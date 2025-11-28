@@ -1,4 +1,4 @@
-# ![](/icons/camera.webp) Kamera
+# ![](/icons/camera.webp) Kamera {#camera}
 
 Dieses Menü ermöglicht es dir, Kameras zu erstellen und zu bearbeiten sowie zu steuern, wie du mit Kameras interagierst.
 
@@ -11,9 +11,9 @@ Kameras in Nomad haben mehrere Verwendungszwecke:
 * Als Ego-Perspektiv-Kamera, um in deiner Szene zu navigieren
 * Als orthografische Kamera für isometrische Spiele oder industrielle Renderings.
 
-## Steuerung der Kamera
+## Steuerung der Kamera {#control}
 
-### Rotation
+### Drehung {#rotation}
 Du drehst die Kamera, indem du *einen* Finger auf dem Hintergrund ziehst.  
 Wenn du den Finger auf deinem Modell ziehst, wird stattdessen die Sculpting-Operation gestartet.
 
@@ -21,23 +21,23 @@ Wenn du den Finger auf deinem Modell ziehst, wird stattdessen die Sculpting-Oper
 Ja, du kannst *zwei* Finger auf den Bildschirm legen – so als wolltest du eine Schwenk-/Zoom-Geste starten – und dann *einen* Finger loslassen.
 :::
 
-### Fokus / Zurücksetzen
+### Fokussieren / Zurücksetzen {#focus}
 *Doppeltippe* auf das Modell, um auf den gewählten Punkt zu fokussieren.  
 Wenn du *doppeltippst* auf den Hintergrund, fokussiert die Kamera stattdessen auf das ausgewählte Mesh.
 
-### Verschiebung
+### Verschiebung {#translation}
 Durch Bewegen von *zwei* Fingern kannst du die Kamera schwenken.
 
-### Zoomen
+### Zoomen {#zooming}
 Mit der Pinch-Geste kannst du hinein- und herauszoomen.
 
-### Rollen
+### Rollen {#rolling}
 Du kannst die Ansicht *rollen*, indem du *zwei* Finger drehst.
 ::: warning
 Diese Geste ist nur im Rotationsmodus `Trackball` verfügbar.
 :::
 
-### Desktop-Steuerung
+### Desktop‑Steuerung {#desktop}
 
 Auf dem Desktop wird die Alt/Opt-Taste zur Steuerung der Kamera verwendet:
 
@@ -56,11 +56,11 @@ Mit diesen Einstellungen kannst du die Kamera ausschließlich mit dem Stift steu
 * oberer Wipptaster und Bewegen in der Schwebe = Kamera drehen
 * unterer Wipptaster und Bewegen in der Schwebe = schwenken
 
-## Kamera-Steuerung
+## Kamerasteuerung {#camera-controls}
 
 ![](/images/camera_list.webp)
 
-### Ansichten
+### Ansichten {#views}
 Du kannst Kameraansichten mit `Add View` speichern.  
 Wenn du auf den Namen der Ansicht klickst, stellt die Kamera diese Ansicht wieder her.
 
@@ -78,47 +78,47 @@ Das ist nützlich, wenn du zwischen Vorder-/Links-/Rückansichten mit unterschie
 | Edit Name   | ![](/icons/pencil.webp)      | Edit the camera name                                                        |
 | Delete      | ![](/icons/trash.webp)       | Delete the camera                                                           |
 
-### ![](/icons/tool_view.webp) Add View
+### ![](/icons/tool_view.webp) Ansicht hinzufügen {#add}
 Erstellt eine neue Kamera basierend auf der aktuellen Ansicht.
 
-### ![](/icons/camera.webp) Icons
+### ![](/icons/camera.webp) Symbole {#icons-test}
 
 Legt fest, ob Kamera-Icons im Viewport sichtbar sind. Wenn eine Kamera ausgewählt ist, ist ihr Icon immer sichtbar.
 
-### Projektionstyp
+### Projektionsart {#projection}
 Du kannst das `Field of View` (FOV / Brennweite) deiner Kamera ändern.  
 Für Sculpting-Zwecke wird in der Regel ein niedriger FOV empfohlen, da dies bei den Proportionen helfen kann.  
 Du kannst auch den `Orthographic`-Modus verwenden, der in etwa einem FOV von 0 entspricht.
 
-### First Person
+### Ego-Perspektive {#fps}
 Aktiviert das Setzen des Pivots direkt auf die Kamera anstatt auf die Skulptur. Das Ziehen eines Fingers auf dem Hintergrund hält die Kameraposition fest, ändert aber die Rotation – ähnlich wie in Ego-Shooter-Spielen. Nützlich beim Sculpting von Umgebungen statt einzelnen Objekten.
 
 ![](/images/camera_rotation_ortho_view.webp)
 
-### Rotationstyp
+### Rotationsart {#rotation-type}
 Standardmäßig verwendet die Kamera den Rotationsmodus `Turntable`.  
 Das bedeutet, du hast nur zwei Freiheitsgrade; es ist intuitiver, aber in manchen Fällen möchtest du mehr Flexibilität.  
 Du kannst auf `Trackball` umschalten; dann kannst du die Ansicht *rollen*, indem du *zwei* Finger im Viewport drehst. Auf dem Desktop gibt es einen alternativen Trackball-Modus, der einigen Nutzern vertrauter sein könnte.
 
-### Orthografisches Einrasten
+### Orthogonales Einrasten {#orthographic}
 
 Wenn aktiviert, wird beim Drehen der Ansicht mit gedrückter Umschalttaste (Shift) auf der Tastatur die Kamera auf die nächstgelegene Vorder-/Rück-/Ober-/Unter-/Links-/Rechtsansicht eingerastet und orthografisch gemacht.  
 Die Kamera wird ebenfalls orthografisch, wenn der View-Würfel angeklickt wird, um auf Vorder-/Rück-/Links-/Rechts-/Ober-/Unteransicht einzurasten.
 
-### Ansicht zurücksetzen
+### Ansicht zurücksetzen {#reset}
 
 Bewegt die Kamera nach vorne und passt die Szene in die Ansicht ein.
 
-### Ansicht einrasten
+### Ansicht einrasten {#snap}
 Rastet auf die nächstgelegene Vorder-/Rück-/Links-/Rechts-/Ober-/Unteransicht ein.  
 Wenn du dich bereits in einer dieser Ansichten befindest, rastet ein erneuter Klick um 180 Grad auf die gegenüberliegende Seite ein.
 
-### Geschwindigkeit
+### Geschwindigkeit {#speed}
 
 Wenn dir die Kamera zu langsam oder zu schnell erscheint, kannst du einen Geschwindigkeitsmultiplikator für `rotation`, `translation` und `zooming` einstellen.  
 Nützlich, wenn deine Skulptur sehr groß oder sehr klein ist.
 
-### Pivot-Übersicht
+### Pivot-Übersicht {#pivot}
 
 Wenn du die Kamera drehst, siehst du einen kleinen pinken Punkt – das ist dein Kamera-Pivot-Punkt.  
 Es ist sehr wichtig zu verstehen, wo sich dein Pivot befindet, damit du dich nicht verirrst oder von der Kamera frustriert wirst.
@@ -128,7 +128,7 @@ Standardmäßig wird der Pivot durch folgende Aktionen aktualisiert:
 - Doppeltippen auf den Hintergrund (der neue Pivot befindet sich im Zentrum deines Meshes)
 - das Auflegen von *zwei* Fingern auf den Bildschirm (Schwenken/Zoomen/Rollen) aktualisiert den Pivot auf das Zentrum der *zwei* Finger
 
-### Pivot aktualisieren ...
+### Pivot aktualisieren... {#update-pivot}
 
 Du kannst das Aktualisieren des Pivots mit diesen Optionen weiter anpassen:
 
@@ -141,8 +141,8 @@ Du kannst das Aktualisieren des Pivots mit diesen Optionen weiter anpassen:
 Wenn du dich daran gewöhnt hast, kannst du den (Hinweis-)Punkt in Pink ausblenden, indem du in die [Einstellungen](settings.md) gehst.
 :::
 
-### Doppeltippen auf Objekt
+### Doppeltippen auf Objekt {#dtap-object}
 Wenn `Focus` aktiviert ist, verschiebt Doppeltippen den Pivot auf das angetippte Objekt.
 
-### Doppeltippen auf Hintergrund
+### Doppeltippen auf Hintergrund {#dtap-tap-background}
 Wenn aktiviert, setzt dies den Pivot auf eine der Optionen Selection, Scene oder wechselt zwischen ihnen.

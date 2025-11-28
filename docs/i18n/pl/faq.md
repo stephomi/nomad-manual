@@ -1,9 +1,9 @@
-# ![](/icons/faq.webp) FAQ
+# ![](/icons/faq.webp) FAQ {#faq}
 
 [[toc]]
 
-## Platforma 
-### Gdzie znajdują się moje projekty na urządzeniu?
+## Platforma {#platform}
+### Gdzie znajdują się moje projekty na urządzeniu? {#locate}
 Projekty znajdują się w folderze `projects` wewnątrz głównego folderu Nomad.
 
 W systemie iOS możesz uzyskać dostęp do folderu Nomad za pomocą aplikacji Pliki.
@@ -14,18 +14,18 @@ Możesz uzyskać do niego dostęp za pomocą osobnej aplikacji, na przykład [te
 <!-- [this one](https://play.google.com/store/apps/details?id=com.alphainventor.filemanager) -->
 <!-- [this one](https://play.google.com/store/apps/details?id=com.mi.android.globalFileexplorer) -->
 
-### Czy jest możliwość testowania wersji beta?
+### Czy jest możliwość testowania wersji beta? {#beta}
 Dla Windows i MacOS wersja beta może być dostępna na [stronie głównej](https://nomadsculpt.com).
 <br>
 Dla iOS istnieje prywatny TestFlight, odwiedź [Discord](https://discord.com/invite/8h7BwpRz29) na kanale #beta-ios.
 <br>
 [Demo webowe](https://nomadsculpt.com/demo) jest zazwyczaj aktualizowane o najnowsze funkcje.
 
-### Dlaczego na Androidzie jest darmowa wersja próbna, a na iOS nie?
+### Dlaczego na Androidzie jest darmowy okres próbny, a na iOS nie? {#android-trial}
 Ponieważ stare urządzenia z Androidem są kiepskie (a niektóre nowsze też...), i nie chciałem, żeby ludzie kupowali aplikację i witał ich czarny ekran.
 Ale główny powód jest taki, że mam wrażenie, iż płatne aplikacje na Androidzie nie są tak naprawdę normą.
 
-### Jaki tablet najlepiej nadaje się do uruchamiania Nomad?
+### Jaki tablet jest najlepszy do pracy z Nomad? {#best-tablet}
 
 TL;DR: iPad.
 
@@ -73,7 +73,7 @@ Najpierw skorzystaj z darmowej wersji Nomad bez zapisu, aby przetestować urząd
 Większość plików Nomad ma zwykle 100 MB lub mniej. Oznacza to, że praktycznie każdy tablet kupiony obecnie, iPad lub Android, będzie miał wystarczająco dużo miejsca na twoje projekty Nomad.
 
 
-### Kupiłem Nomad na jedno urządzenie, czy mogę używać go na innym?
+### Kupiłem Nomad na jedno urządzenie, czy mogę używać go na innym? {#multi-devices}
 Tak, o ile korzystasz z tego samego sklepu z aplikacjami i tego samego konta.
 
 Na przykład jeśli kupiłeś aplikację w sklepie App Store na iOS, możesz używać jej na innych urządzeniach z iOS.
@@ -85,7 +85,7 @@ Jeśli jednak kupiłeś Nomad na Androidzie, a potem kupisz iPada, będziesz mus
 Dzieje się tak dlatego, że Nomad nie ma własnego serwera licencji ani modelu subskrypcji. Nie ma też porozumienia między Apple/Google/AppGallery w sprawie współdzielenia licencji. 
 
 
-### Jak przywrócić zakup?
+### Jak przywrócić mój zakup? {#restore}
 Google Play i AppGallery obsługują synchronizację automatycznie.
 
 - Wejdź w menu About (ikona Nomad w lewym górnym rogu) i naciśnij `restore purchase`
@@ -110,25 +110,25 @@ Nowsze urządzenia Huawei nie mają dostępu do usług Google.
 W takim przypadku musisz kupić aplikację ponownie w AppGallery (sklep z aplikacjami Huawei).
 :::
 
-### Czy możesz przetłumaczyć lub poprawić [mój-język]?
+### Czy możecie przetłumaczyć lub poprawić [mój-język]? {#locale}
 Stosunkowo łatwo mogę dodać kolejny język, ale polegam na tłumaczeniu AI, ponieważ znacznie łatwiej jest wtedy obsługiwać regularne aktualizacje.
 Pliki tłumaczeń można znaleźć [tutaj](https://github.com/stephomi/nomad-translation).
 
-## Funkcje
+## Funkcje {#features}
 
-### Dlaczego gizmo się nie porusza?
+### Dlaczego gizmo się nie porusza? {#gizmo-not-moving}
 Możliwe, że masz [włączony pin w lewym pasku narzędzi](tools#left-menu-toolbar). 
 
-### Czy można animować w Nomad?
+### Czy można animować w Nomad? {#animate}
 Na razie nie. Funkcja osi czasu, która mogłaby animować warstwy, byłaby ciekawa, ale obecnie nie jest planowana.  
 
 Chciałbym w przyszłości obsługiwać rigging/skinning, ale wiąże się to z kilkoma wyzwaniami (w szczególności interakcją z narzędziami do rzeźbienia...), więc na razie nic nie jest pewne.
 
-### Czy możemy robić poprawne modelowanie low‑poly?
+### Czy można robić poprawne modelowanie low-poly? {#lowpoly}
 Na razie nie.  
 To nie jest tak naprawdę zakres Nomad *Sculpt*, ale możliwe, że w przyszłości dodam kilka narzędzi.
 
-### Czy możemy robić UV i teksturowanie?
+### Czy można robić UV i teksturowanie? {#texturing}
 Krótka odpowiedź: Tak. Dłuższa odpowiedź: Nie bezpośrednio, ale istnieje kilka sposobów na połączenie znakomitych narzędzi malowania wierzchołków Nomada z UV i teksturami.
 
 * Nomad pozwala malować kolor, szorstkość (roughness), właściwości materiału bezpośrednio w wierzchołkach rzeźby.
@@ -141,29 +141,29 @@ Krótka odpowiedź: Tak. Dłuższa odpowiedź: Nie bezpośrednio, ale istnieje k
 * Wypiekanie i projekcja mogą być wykonywane pomiędzy pojedynczymi obiektami lub wieloma obiektami, albo pomiędzy najwyższym i najniższym poziomem podziału jednego obiektu, co pozwala na różnorodne workflow wypiekania i projekcji.
 * Po wypieczeniu, eksport pliku OBJ wyeksportuje również tekstury, które można przenieść do aplikacji takiej jak Procreate, aby malować bezpośrednio na teksturach.
 
-### Czy mogę nagrać wideo obrotu (turntable)?
+### Czy mogę nagrać wideo obrotu (turntable)? {#video}
 Na razie nieplanowane, iOS ma [funkcję nagrywania wideo](https://support.apple.com/en-au/guide/ipad/ipaddf78ce08/ipados), która jest bardzo łatwa w użyciu.
 
 W iOS robi się to przez przeciągnięcie palcem w dół z lewego górnego rogu i stuknięcie przycisku nagrywania. Pojawi się 3‑sekundowe odliczanie, przesuń menu, aby odsłonić Nomad i użyj funkcji turntable. Po zakończeniu ponownie przesuń palcem w dół z prawego górnego rogu i stuknij przycisk nagrywania. Edytuj film w bibliotece zdjęć, aby usunąć zbędne fragmenty na początku i końcu nagrania.
 
-### Czy możesz dodać [tu-ulubiona-funkcja] jako przycisk najwyższego poziomu?
+### Czy możecie dodać [moją-ulubioną-funkcję] jako przycisk najwyższego poziomu? {#interface}
 Tak, dolny pasek narzędzi można teraz dostosować z menu [interface](interface.md), a także można tworzyć pływające paski narzędzi.
 
-### Jakie będą następne funkcje?
+### Jakie będą następne funkcje? {#next-features}
 W średnio/długoterminowej mapie drogowej mam wiele pomysłów, ale jeszcze nie wiem.  
 
 Poprawki błędów i ulepszanie istniejących funkcji zawsze będą miały wyższy priorytet niż dodawanie nowych.
 
-### Czy możemy robić rigging w Nomadzie?
+### Czy można riggować w Nomad? {#rigging}
 Nie, ale jest to planowane. Na razie możesz łączyć obiekty relacją rodzic‑potomek i zmieniać punkty obrotu (pivot), co pozwala na proste pozowalne rzeźby.
 
-### Czy możemy używać więcej niż 4 świateł?
+### Czy można używać więcej niż 4 świateł? {#lights}
 Nie, to ograniczenie silnika renderującego w czasie rzeczywistym w Nomadzie. Można to obejść, używając obiektów emisyjnych i globalnego oświetlenia w postprocessingu, jak pokazano w [tym poradniku](https://www.youtube.com/watch?v=QhrUGH7CuUA)
 
-### Czy możemy importować narzędzia ZBrush (ZTools)?
+### Czy można importować narzędzia ZBrush (ZTools)? {#zbrush-import}
 Nie, ZBrush używa zastrzeżonego formatu. Powinieneś jednak móc wyodrębnić mapy alfa i używać ich w Nomadzie. 
 
-### Dlaczego kolory nie pasują do tego, co namalowałem? Dlaczego nie mogę uzyskać bieli w renderze?
+### Dlaczego kolory nie zgadzają się z tym, co namalowałem? Dlaczego nie mogę uzyskać bieli w renderze? {#paint-pbr}
 Wyobraź sobie zrobienie zdjęcia kartki papieru, lampki biurkowej i słońca. Starsze aparaty i ekrany po prostu pokażą je wszystkie jako „białe”. Nowsze systemy potrafią pokazać różnicę między odbitym białym papieru, emitowanym światłem lampki i super jasnym światłem słońca.
 
 Współczesna grafika komputerowa próbuje działać w podobny sposób, emulując fizykę światła i powierzchni. Nazywa się to `Physically Based Rendering` lub PBR, i na tym oparty jest renderer PBR Nomada. Wygląda to realistycznie i zrównoważenie, ale często jaskrawo namalowane kolory wydają się ciemniejsze.
@@ -180,9 +180,9 @@ PBR:
 * `Boost the camera exposure`. Jeśli w ciemnym pokoju nie byłoby dodatkowych świateł, mógłbyś wydłużyć czas otwarcia migawki lub użyć wyższej czułości ISO. W Nomadzie podobny efekt uzyskasz w postprocessingu. Przejdź do postprocess, włącz, przejdź do tone mapping, włącz i podnieś suwak ekspozycji, aż kolory będą wyglądały odpowiednio.
 * `Use emissive color`. W menu materiału możesz włączyć „emissive” w sekcji tekstur, co sprawi, że obiekt będzie wyglądał jak źródło światła. Jeśli w ustawieniach postprocess włączysz global illumination, będzie on rzucał światło na inne obiekty w scenie. Możesz też włączyć „unlit” dla tego materiału, co da podobny efekt bez tekstury.
 
-## Crashe
+## Awaryjne zamknięcia {#crashes}
 
-### Aplikacja crashuje, gdy zapisuję lub remeshuję mój model!
+### Aplikacja zamyka się, gdy zapisuję lub remeshuję mój model! {#crash-remesh}
 Twoje urządzenie kończy pamięć (RAM).  
 Aby zmniejszyć użycie pamięci w scenie, możesz użyć niektórych opcji [Topology](topology.md), aby zredukować liczbę polygonów.
 
@@ -190,7 +190,7 @@ Aby zmniejszyć użycie pamięci w scenie, możesz użyć niektórych opcji [Top
 Liczy się ilość pamięci RAM, a nie pamięci masowej (która zwykle jest dużo większa).
 :::
 
-### Aplikacja crashuje, gdy ładuję mój projekt!
+### Aplikacja zamyka się, gdy ładuję mój projekt! {#crash-load}
 Jeśli plik jest mały, możesz wysłać go do mnie, a ja na niego zerknę (mailem na <support@nomadsculpt.com>).
 
 W przeciwnym razie urządzenie prawdopodobnie kończy pamięć RAM.
@@ -224,7 +224,7 @@ With homebrew, simply do `brew install lz4` and then `lz4 myproject.glb.lz4`.
 4. If it still crashes at loading, you can open the file on any 3d desktop software that supports `glTF`.
 ::: -->
 
-### Aplikacja crashuje, gdy uruchamiam Nomad!
+### Aplikacja zamyka się, gdy uruchamiam Nomad! {#crash-start}
 Jeśli crashuje przy ładowaniu, oznacza to, że Nomad ma problem z jakimś plikiem znajdującym się w folderze Nomad.
 
 Najczęściej dzieje się tak dlatego, że projekt jest ciężki i niestety przekroczy limit RAM.

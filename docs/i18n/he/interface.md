@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) תפריט ממשק 
+# ![](/icons/interface.webp) תפריט ממשק {#interface-menu}
 
 תפריט זה שולט באפשרויות רבות להתאמת הממשק של Nomad. 
 
@@ -13,13 +13,13 @@
 עמוד זה עוסק בתפריט הממשק, לא בממשק עצמו! הממשק הכללי מוסבר ב־[Getting Started](gettingstarted.md).
 :::
 
-## Interface 
+## ממשק {#interface}
 
 חלק ה־Interface מאפשר להוסיף קיצורי דרך, ליצור סרגלי כלים צפים, ולשלוט בצבע, בגודל ובמראה של ממשק המשתמש של Nomad.
 
 ![](/images/interface_overview3.webp)
 
-### Add shortcuts (bottom)...
+### הוסף קיצורי דרך (תחתית)... {#add-shortcuts-bottom}
 ![](/images/interface_shortcuts.webp)
 
 לסרגל התחתון מופעלים כברירת מחדל קיצורי הדרך הבאים:
@@ -35,7 +35,7 @@
 
 קיצורי דרך נפוצים נוספים זמינים מתפריט זה, ורבים נוספים ניתן למצוא בתוך כפתור ה־bindings.
 
-#### ![](/icons/more.webp) Bindings
+#### ![](/icons/more.webp) קישורים {#bindings-list}
 
 כמעט כל פונקציה ב־Nomad יכולה להתווסף לסרגל הקיצורים דרך כפתור ה־bindings. כאשר לוחצים על הכפתור יוצג תפריט Bindings:
 
@@ -43,15 +43,15 @@
 
 ניתן לחפש לפי קטגוריה באמצעות האייקונים בחלק העליון, או להשתמש בשדה החיפוש כדי למצוא פונקציות לפי שם. לחץ על פונקציה כדי להוסיף אותה לסרגל הכלים. לחץ שוב כדי להסיר אותה.
 
-#### ![](/icons/list.webp) Order
+#### ![](/icons/list.webp) סדר {#order}
 
 זה יציג רשימה של הקיצורים. לחיצה ארוכה ואז גרירה תאפשר לשנות את סדר הקיצורים.
 
-#### ![](/icons/reset.webp) Reset
+#### ![](/icons/reset.webp) איפוס {#reset}
 
 Reset ישחזר את סרגל הכלים התחתון להגדרות ברירת המחדל שלו.
 
-### Add shortcuts (window)... +
+### הוסף קיצורי דרך (חלון)... + {#add-shortcuts-window}
 ![](/images/interface_add_shortcuts_window.webp)
 
 לחיצה על + תוסיף סרגל כלים צף. הוא לא יהיה גלוי עד שתלחץ על כפתור ה־bindings ותוסיף אליו קיצורי דרך, ואז תוכל להפוך אותו לגלוי. 
@@ -66,43 +66,41 @@ Reset ישחזר את סרגל הכלים התחתון להגדרות ברירת
 * ![](/icons/sort_down.webp) `Collapsable` - הצגת/הסתרת ידית כיווץ בפינה הימנית־עליונה.
 * ![](/icons/trash.webp) `Delete` - מחיקת סרגל הכלים.
 
-### Toolbox
+### ארגז כלים {#toolbox}
 
 אפשרויות לתפריט הכלים בצד ימין של הממשק של Nomad.
 
 ![](/images/interface_toolbox.webp)
 
-#### ![](/icons/resize_bottom_right.webp) Ui Resize Corner
+#### ![](/icons/resize_bottom_right.webp) פינת שינוי גודל הממשק {#ui-resize-corner}
 
 הצגת/הסתרת ידית שינוי גודל בפינת סרגל הכלים התחתונה.
 
-#### Hidden
+#### מוסתר {#hidden}
 בדרך כלל האייקון של ה־toolbox בסרגל העליון יחליף בין עמודה ארוכה בודדת לבין רשימה מרובת עמודות של כלים. אפשרות זו תחליף בין הרשימה מרובת העמודות לבין מצב מוסתר.
 
-#### Colored
+#### צבוע {#colored}
 קידוד צבעוני של האייקונים לפי קטגוריה, למשל כל כלי המסכה חומים, כלי הפיצול אדומים, כלי ההשטחה ירוקים וכו'.
 
-#### Rows: Auto (>1)
+#### שורות: אוטומטי (>1) {#rows-auto-1}
 
-#### Rows: Auto (>1)
-
-#### Reset order
+#### איפוס סדר {#reset-order}
 איפוס סדר ברירת המחדל של הכלים ב־toolbox. אייקונים מותאמים אישית יישארו ב־toolbox בסוף הרשימה.
 
 
-### Presets
+### פריסטים {#presets}
 
 ![](/images/interface_presets.webp)
 
 אוסף של פריסת צבעים (presets) לממשק.
 
-#### High-contrast button
+#### כפתור בעל ניגודיות גבוהה {#high-contrast-button}
 סגנון חלופי לכפתורים שהופך אותם לגלויים יותר כאשר הם פעילים. אם מוגדר על Auto, Nomad ישתמש במצב זה כאשר ניגודיות הצבע בממשק בין מצב פעיל/כבוי נמוכה.
 
-#### Color widget/Color base
+#### וידג׳ט צבע/צבע בסיס {#color-widgetcolor-base}
 הצבעים הראשיים המשמשים בממשק.
 
-#### Transparent panel, Color panel, Blur strength
+#### פאנל שקוף, פאנל צבע, עוצמת טשטוש {#transparent-panel-color-panel-blur-strength}
 ![](/images/interface_transparent.webp)
 כאשר מופעל, יופיעו אפשרויות נוספות לשליטה במראה התפריטים והפאנלים ב־Nomad. ניתן להתאים את הצבע, השקיפות וכמות הטשטוש שלהם.
 
@@ -112,55 +110,55 @@ Reset ישחזר את סרגל הכלים התחתון להגדרות ברירת
 
 ----
 
-### Mirror top bar
+### שיקוף שורת עליונה {#mirror-top-bar}
 היפוך סדר התפריטים בסרגל העליון.
 
-### Mirror side bars
+### שיקוף סרגלי צד {#mirror-side-bars}
 החלפת סרגלי הצד כך שה־toolbox יהיה משמאל ואפשרויות הכלי מימין.
 
-### Mirror bottom bar
+### שיקוף שורת תחתונה {#mirror-bottom-bar}
 העברת הסרגל התחתון לפינה הימנית־תחתונה והיפוך סדר הכפתורים.
 
-### Material color preview
+### תצוגה מקדימה של צבע החומר {#material-color-preview}
 כאשר בוחרים צבע לחומר, תצוגה מקדימה של חומר זה מוצגת על האובייקט הנבחר.
 
 ----
-### Help popup on hover
+### חלון עזרה במעבר עכבר {#help-popup-on-hover}
 
 במכשירים שתומכים בריחוף (hover), קובע אם עזרת ההקשר ב־Nomad, המיוצגת על ידי האייקון ![](/icons/help.webp), תופיע בריחוף או רק בלחיצה.
 
 ----
 
-### Overall scale
+### קנה מידה כולל {#overall-scale}
 מקדם גודל לכל רכיבי הממשק.
-### Panel width
+### רוחב פאנל {#panel-width}
 רוחב התפריטים והפאנלים.
-### Font scale
+### קנה מידה גופן {#font-scale}
 קנה המידה של הגופנים.
-### Vertical spacing
+### ריווח אנכי {#vertical-spacing}
 הרווח בין רכיבים בתפריטים ובפאנלים.
-### Vertical spacing (left)
+### ריווח אנכי (שמאל) {#vertical-spacing-left}
 הרווח בין רכיבים בסרגל הכלים השמאלי.
 
 ----
 
-### Edge offset
+### היסט קצה {#edge-offset}
 מומלץ לשנות ערכים אלה רק אם יש בעיות באינטראקציה עם כפתורים בקצוות המסך. אם המחוונים מושבתים, Nomad ישתמש בערכי ה־safe area שהמכשיר עצמו מחזיר.
 
 ::: tip
 בעת העברת Nomad למכשיר חדש (למשל החלפת iPhone 12 ב־iPhone 15), ודא שאיפסת את אפשרויות הקצוות לברירות המחדל!
 :::
 
-### Reset style
+### איפוס סגנון {#reset-style}
 איפוס כל רכיבי הממשק לערכי ברירת המחדל שלהם.
 
 
-## Gesture
+## מחוות {#gesture}
 תפריט ה־gesture שולט באופן שבו עט סטיילוס ומגע אצבע שולטים ב־Nomad.
 
 ![](/images/interface_gesture.webp)
 
-### Gesture options
+### אפשרויות מחווה {#gesture-options}
 ![](/images/interface_gesture_matrix.webp)
 
 Nomad יכול להגביל פעולות בהתאם להתקן הקלט. לדוגמה, גרירת אצבע יכולה להזיז רק את המצלמה, בעוד שגרירת סטיילוס יכולה לפסל בלבד. אם יש לך עכבר או משטח מגע, ניתן גם להקצות אותם לשליטה בפעולות מסוימות.
@@ -176,7 +174,7 @@ Nomad מאפשר כרגע להגדיר מצבים אלה כך שיהיו נשל�
 
 `Finger always smooths` - ניתן להגדיר ש־Smooth יעבוד רק עם גרירת אצבע.
 
-### ![](/icons/tool_mask.webp) Mask
+### ![](/icons/tool_mask.webp) מסיכה {#mask}
 
 ![](/images/interface_gesture_mask.webp)
 
@@ -185,19 +183,19 @@ Nomad מאפשר כרגע להגדיר מצבים אלה כך שיהיו נשל�
 * הקשה על אזור ממוסך תטשטש (blur) את המסכה
 * הקשה על אזור לא ממוסך תחזק (sharpen) את המסכה
 
-### Toggle Mask <-> SelMask
+### החלפה מסיכה <-> SelMask {#toggle-mask-selmask}
 ![](/images/interface_gesture_togglemask.webp)
 * `Stroke` - לחיצה ארוכה תחליף בין Mask ל־SelMask ותתחיל משיכת קו חדשה. בסוף המשיכה, הכלי הקודם ייבחר מחדש. 
 * `Tool` - לחיצה ארוכה ושחרור ללא תזוזה יחליפו בין Mask ל־SelMask. 
 
-### ![](/icons/tool_hide.webp) Hide
+### ![](/icons/tool_hide.webp) הסתרה {#hide}
 ![](/images/interface_gesture_hide.webp)
 
 `One tap shortcuts` יפעיל את קיצורי הדרך הבאים עם כלי ה־Hide:
 * הקשה על Face Group תסתיר אותו
 * הקשה במרחב ריק תהפוך (invert) את הפוליגונים המוסתרים
 
-### ![](/icons/finger3.webp) Three fingers
+### ![](/icons/finger3.webp) שלוש אצבעות {#three-fingers}
 ![](/images/interface_gesture_threefingers.webp)
 
 אם המכשיר שלך תומך במחוות של 3 אצבעות, ניתן להגדיר קיצורי דרך למחווה זו. 
@@ -208,28 +206,28 @@ Nomad מאפשר כרגע להגדיר מצבים אלה כך שיהיו נשל�
 * `Tool Radius` - שינוי רדיוס הכלי.
 * `Tool Intensity` - שינוי עוצמת הכלי. 
 
-### ![](/icons/fingerprint.webp) History 2/3
+### ![](/icons/fingerprint.webp) היסטוריה 2/3 {#history-23}
 `History shortcuts` - כאשר מופעל, המחוות הבאות פעילות:
 * Undo - הקשה עם 2 אצבעות
 * Redo - הקשה עם 3 אצבעות
 
 `Long press` - כאשר מופעל, החזקת 2/3 אצבעות תבצע ביטול/שחזור מהיר ברצף.
 
-### Accessibility 
+### נגישות {#accessibility}
 
 ![](/images/interface_gesture_accessibility.webp)
 
 `Assistive window` יציג סרגל כלים צף לשליטה בפעולות גרירה, צביטה (pinch), גלגול (roll) ומצלמה.
 
-### Camera
+### מצלמה {#camera}
 קיצור דרך למעבר לתפריט `Camera` (אפשרויות המצלמה היו כאן בעבר, אך הועברו לתפריט המצלמה).
 
-### Pencil double tap -> Bindings 
+### הקשה כפולה בעט -> קישורים {#pencil-tap}
 
 קיצור דרך למעבר לתפריט `Bindings` (אפשרויות הקשה והקשה כפולה של ה־Pencil היו כאן בעבר, אך הועברו לתפריט ה־bindings).
 
 
-## Bindings
+## קישורים {#bindings}
 קיצורי מקלדת וכפתורים ניתנים להגדרה מתפריט ה־bindings:
 
 ![](/images/interface_bindings.webp)
@@ -241,7 +239,7 @@ Nomad מאפשר כרגע להגדיר מצבים אלה כך שיהיו נשל�
 
 ניתן להשבית Bindings בודדים באמצעות תיבת הסימון שליד שם ה־binding.
 
-### ![](/icons/more.webp) Context menu
+### ![](/icons/more.webp) תפריט הקשר {#context-menu}
 האייקון ![](/icons/more.webp) אחרי כל binding פותח תפריט הקשר:
 
 ![](/images/interface_bindings_context.webp)
@@ -251,7 +249,7 @@ Nomad מאפשר כרגע להגדיר מצבים אלה כך שיהיו נשל�
 * `Delete` - מחיקת ה־binding
 * `Toggle shortcut on key tap` - הגדרה אם הקשה קצרה לעומת לחיצה ארוכה מטופלות אחרת. כאשר מופעל, הקשה תפעיל את הכלי. לחיצה ארוכה תפעיל את הכלי רק כל עוד המקש לחוץ, וכאשר הוא ישוחרר יוחזר הכלי הקודם. לעיתים נקרא 'sticky keys' באפליקציות תלת־ממד אחרות.
 
-### Advanced
+### מתקדם {#advanced}
 בתחתית תפריט ה־bindings יש תפריט גלגל שיניים לאפשרויות מתקדמות:
 
 ![](/images/interface_bindings_advanced.webp)
@@ -262,7 +260,7 @@ Nomad מאפשר כרגע להגדיר מצבים אלה כך שיהיו נשל�
 * `Reset bindings` - איפוס כל ה־bindings לברירות המחדל.
 
 
-## iOS ⌘ Keyboard shortcuts display
+## iOS ⌘ תצוגת קיצורי מקלדת {#ios-keyboard-shortcuts-display}
 
 במכשירי iOS עם מקלדת, החזקת מקש ⌘ (cmd) תציג רשימת קיצורי דרך.
 
@@ -271,29 +269,29 @@ Nomad מאפשר כרגע להגדיר מצבים אלה כך שיהיו נשל�
 ![](/images/shortcuts.webp)
 
 
-## Debug
+## ניפוי שגיאות {#debug}
 כמה אפשרויות ניסיוניות ודיבוג מאוחסנות בתפריט זה. רבות מהאפשרויות הללו מומלץ להשאיר כברירת מחדל, ולשנות רק לאחר יצירת קשר עם תמיכת Nomad.
 
 ![](/images/interface_debug.webp)
-### UV
+### UV {#uv}
 * `Normalize Uvs` - Nomad ינרמל את ה־UVs בתוך האריח [0-1].
 
-### Quad Remesh
+### Quad Remesh {#quad-remesh}
 * `Instant Mesh` - הפעלת אלגוריתם ה־instant remesh
 * `Quadriflow` - שיטת quad remesh חלופית.
 
-### Render
+### רנדר {#render}
 * `Heightmap` - שינוי תצוגת ה־viewport כך שתציג את עומק הסצנה. ניתן להשתמש בזה ליצירת Alpha Maps לשימוש במברשות.
 * `Refraction write depth (back)` - הפאה האחורית של רשתות שבירה (refraction) תיכתב ל־depth buffer.
 * `Flip Y (normal map)` - היפוך ערוץ ה־Y בעת אפיית Normal Maps, נדרש למנועי משחק ורנדר מסוימים.
 * `Angle weighted smooth normals` - התאמה לאופן פעולת ההצללה החלקה שיכולה למנוע קפלים במקרים מסוימים.
 
-### Target FPS
+### יעד FPS {#target-fps}
 כאשר מושבת, Nomad יסנכרן את מספר הפריימים לשנייה עם קצב הרענון של התצוגה שלך.
 
 כאשר מופעל, ניתן להגדיר את מספר הפריימים לשנייה שבהם Nomad ירנדר.
 
-### Interface
+### ממשק {#debug-interface}
 * `Top: layout` 
   * Collapse: במכשירים קטנים סרגל העליון יתכווץ לתתי־תפריטים נוספים. 
   * Scroll: אם אתה רגיל ל־Nomad במסכים גדולים ומעדיף את הפריסה הרגילה, הפעלת אפשרות זו תשתמש בסרגל העליון הרחב הסטנדרטי, וניתן יהיה לגלול אותו.
@@ -305,7 +303,7 @@ Nomad מאפשר כרגע להגדיר מצבים אלה כך שיהיו נשל�
 * `Panel: Blending` - אפשרות דיבוג
 * `Pointer: hovering dot` - במכשירים שתומכים בריחוף סטיילוס, הצגת נקודה כאשר הסטיילוס מרחף מעל תפריטים ופאנלים.
 
-### Gif turntable
+### Gif לוחית מסתובבת {#gif-turntable}
 Nomad יכול לייצא Turntable מונפש בפורמט GIF. שים לב שבגלל מגבלות פורמט ה־GIF האיכות נמוכה. הקלטת מסך היא בדרך כלל שיטה טובה יותר.
 
 * `Duration` - כמה זמן בשניות יימשך ה־Turntable
@@ -314,21 +312,21 @@ Nomad יכול לייצא Turntable מונפש בפורמט GIF. שים לב ש�
 * `Max frame sampling` - רבות מאפקטי הרינדור האיכותיים של Nomad נובעים משילוב מספר פריימים יחד. מחוון זה קובע כמה פריימים ישולבו.
 * `Export (GIF)` - התחלת תהליך ייצוא ה־GIF.
 
-### Post Process
+### פוסט פרוסס {#post-process}
 * `Filtering` - אפשרות דיבוג
 * `Format` - אפשרות דיבוג
 * `Buffer reuse` - אפשרות דיבוג
 
-### Performance
+### ביצועים {#performance}
 * `Multicore general` - אפשרות דיבוג
 * `Multicore sculpting` - אפשרות דיבוג
 * `Partial Drawing` - תכונה ניסיונית! השתמש בה אם אתה מפסל חלק קטן יחסית מרשת בעלת פוליגונים רבים. היא אמורה להפוך את הפיסול לחלק יותר, אך אין להפעיל Wireframe! כמו כן היא עלולה להוסיף ארטיפקטים חזותיים במהלך משיכות המברשת.
 
-### Feature
+### תכונה {#feature}
 * `Flip quad split (on tap)` - אפשרות דיבוג
 * `Join: merge radius` - קודקודים (vertices) יתאחו אוטומטית אם הם קרובים מספיק כאשר רשתות מחוברות. ניתן להתאים את הרדיוס באמצעות מחוון זה.
 
-### Debug
+### ניפוי שגיאות {#dev}
 * `Logs` - פתיחת חלון יומן (log)
 * `App review popup` - אפשרות דיבוג
 * `FPS` - הוספת מונה פריימים־לשנייה לסטטיסטיקת ה־viewport.

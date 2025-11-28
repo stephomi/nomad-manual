@@ -1,4 +1,4 @@
-# ![](/icons/scene.webp) 장면(Scene) 
+# ![](/icons/scene.webp) 씬 {#scene}
 
 이 메뉴에서는 Nomad에서 오브젝트, 라이트, 카메라, 리피터를 관리할 수 있습니다. 장면 계층 구조를 트리 뷰로 표시하여 오브젝트의 다양한 속성을 수정할 수 있습니다. 또한 새 오브젝트를 생성하고, 여러 방식으로 오브젝트를 결합하거나 분리할 수 있습니다.
 
@@ -6,7 +6,7 @@
 ![](/images/scene_menu_summary.webp)
 
 
-## 단축 바
+## 단축 표시줄 {#shortcut-bar}
 | Action                 | Icon                              | Description                                                                                                         |
 | :--------------------: | :-------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
 | [Add...](#add-menu)    | ![](/icons/plus.webp)            | 장면에 오브젝트를 추가하기 위해 [Add Menu](#add-menu)를 표시합니다                                                     |
@@ -21,7 +21,7 @@
 | Sync                   | ![](/icons/link.webp)            | 인스턴스에 자식이 있는 경우, 모든 인스턴스가 동일한 자식 계층 구조를 공유하도록 동기화합니다                                     |
 
 
-## 트리 뷰
+## 트리 뷰 {#tree-view}
 ![](/images/scene_treeview.webp) 
 
 | Action       | Icon                       | Description              |
@@ -36,7 +36,7 @@
 
 :::
 
-### 트리 뷰 조작
+### 트리 뷰 조작 {#tree-view-manipulation}
 
 트리 뷰의 항목을 길게 눌러 노란색으로 변할 때까지 유지합니다. 그러면 트리 뷰에서 위아래로 이동할 수 있고, 다른 항목 위로 드래그하여 그 항목의 자식으로 만들 수도 있습니다.
 
@@ -44,7 +44,7 @@
 
 부모 항목을 선택하면 기본적으로 모든 자식 항목도 함께 선택됩니다. 부모 아이콘을 탭하면 부모만 선택할지, 부모와 자식을 함께 선택할지 토글됩니다.
 
-### 오브젝트 메뉴
+### 오브젝트 메뉴 {#object-menu}
 
 트리 뷰에서 오브젝트의 줄임표 버튼(...)을 클릭하면 오브젝트 메뉴가 표시됩니다.  
 이 옵션들 중 상당수는 상단 단축 바와 유사하며, 편의를 위해 반복 제공됩니다.
@@ -65,7 +65,7 @@
 
 
 
-### 다중 선택(Multiselection)
+### 다중 선택 {#multiselection}
 여러 오브젝트를 선택하면 다음 두 가지를 할 수 있습니다:
 - 기즈모 도구를 사용해 여러 오브젝트를 한 번에 이동
 - Join 및 Boolean 연산으로 오브젝트 병합
@@ -87,12 +87,12 @@
 :::
 
 
-## Join
+## 결합 {#join}
 이 옵션은 단순히 여러 개의 선택된 오브젝트를 하나의 오브젝트 항목으로 만듭니다.
 
 예시는 [Separate](#separate) 섹션의 영상에서 확인할 수 있습니다.
 
-## Boolean
+## 불리언 {#boolean}
 ![](/images/scene_boolean_menu.webp)  
 여러 오브젝트를 하나의 표면으로 결합합니다.
 
@@ -100,43 +100,43 @@
 
 `Boolean`은 가능한 한 기존 폴리곤 배치를 유지하면서, 오브젝트가 겹치는 부분의 폴리곤을 봉합하려고 시도합니다. 이는 보통 보xel 머지보다 훨씬 더 깔끔하고 날카로운 결과를 만들지만, ‘watertight’ 메시가 필요합니다. 즉, 오브젝트에 구멍이나 잘못된 형태가 있으면 안 됩니다. 이 작업이 실패할 경우, 보통 Voxel merge는 동작합니다.
 
-### Boolean 연산
+### 불리언 연산 {#boolean-operations}
 Voxel Merge와 Boolean 모두 오브젝트의 가시성을 사용해 연산 방식을 제어합니다:
 
-#### Union
+#### 합치기 {#union}
 두 오브젝트가 모두 보이는 상태이면 Boolean **Union**이 수행되며, 오브젝트의 외피가 결합되고 내부 표면은 없습니다. ![](/images/boolean_union.webp)
 
-#### Subtract
+#### 빼기 {#subtract}
 한 오브젝트가 보이지 않는 상태이면 Boolean **Subtract**가 수행되며, 보이지 않는 오브젝트가 보이는 오브젝트에서 빼기 연산됩니다. ![](/images/boolean_subtract.webp)
 
-#### Intersect
+#### 교차 {#intersect}
 두 오브젝트가 모두 보이지 않는 상태이면 Boolean **Intersection**이 수행되며, 두 오브젝트가 겹치는 부분만 새로운 형태로 생성됩니다. ![](/images/boolean_intersect.webp)
 
 
-### Voxel Merge 버튼
+### 보xel 병합 버튼 {#voxel-merge-button}
 이 버튼을 누르면 선택된 오브젝트에 대해 Voxel merge 연산을 수행합니다. 단일 오브젝트에 사용하면, 늘어난 폴리곤을 균일한 폴리곤으로 리토폴로지하는 데 유용합니다.
 
-### Resolution
+### 해상도 {#resolution}
 계산에 사용되는 보xel 3D 그리드의 해상도입니다. 이 값을 변경하면, 폴리곤 크기를 미리 보기 위해 오브젝트 위에 체커보드 패턴이 오버레이됩니다.
 
-### Build multiresolution
+### 멀티레졸루션 생성 {#build-multiresolution}
 목표 해상도 아래에 멀티 해상도 레벨을 생성합니다. 예를 들어 해상도가 400이고 build multiresolution 값이 3이면, 약 296,000 폴리곤의 새 메시가 생성되며, 그 아래에 74,000, 18,000, 4,000 폴리곤 정도의 3개 서브디브 레벨이 생깁니다.
 
-### Keep sharp edges
+### 날카로운 가장자리 유지 {#keep-sharp-edges}
 보xel 메시를 엣지에 스냅하도록 활성화합니다. 단순한 형태에서 가장 잘 동작합니다.
 
-### Boolean 버튼
+### 불리언 버튼 {#boolean-button}
 이 버튼을 누르면 Emmett Lalish의 Manifold 라이브러리를 사용해 폴리곤 Boolean 연산을 수행합니다. 
 
 
-## Separate
+## 분리 {#separate}
 여러 개의 분리된 파트로 이루어진 단일 오브젝트가 있는 경우, 이를 여러 오브젝트로 분리할 수 있습니다.  
 이는 [Simple Merging](#simple-merge)의 반대 작업으로 볼 수 있습니다.
 
 ![](/videos/merge_separate.mp4)
 
 
-## Add 메뉴
+## 추가 메뉴 {#add-menu}
 
 ![](/images/scene_addmenu_overview.webp)
 
@@ -147,21 +147,21 @@ Voxel Merge와 Boolean 모두 오브젝트의 가시성을 사용해 연산 방�
 
 ![](/images/scene_addmenu_top.webp)
 
-### On gizmo
+### 기즈모에서 {#on-gizmo}
 새 프리미티브를 현재 선택된 형태 또는 기즈모 위치에 배치하도록 활성화합니다. 비활성화하면 프리미티브는 장면의 중심에 배치됩니다.
 
-### Select gizmo
+### 기즈모 선택 {#select-gizmo}
 새 프리미티브가 생성될 때 자동으로 기즈모 도구로 전환되도록 활성화합니다. 
 
-### Advanced
+### 고급 {#add-advanced}
 
 이 메뉴에서는 새 프리미티브, 그룹, 리피터를 어디에 생성할지에 대한 기본 설정을 지정할 수 있습니다. 선택된 오브젝트, 월드 원점, 또는 기즈모 위치 중에서 선택할 수 있습니다.
 
 
-### UV's
+### UV {#uvs}
 프리미티브에 UV를 활성화합니다. UV(텍스처 좌표라고도 함)는 표면에 텍스처를 적용하기 위해 3D에서 사용하는 추가 데이터입니다. 메모리를 더 사용하지만, 대부분의 기기에서는 매우 높은 폴리곤 수(예: 1,000만 폴리곤 이상)가 아니라면 큰 문제가 되지 않습니다. 
 
-### 프리미티브
+### 프리미티브 {#primitives}
 
 | Primitive      | Icon                                      | Description                                                                                                     |
 | :------------: | :---------------------------------------: | :-------------------------------------------------------------------------------------------------------------: |
@@ -184,7 +184,7 @@ Nomad를 실행했을 때 기본으로 나오는 베이스 메시가 무엇인�
 다만 Nomad의 베이스 메시는 `Project on sphere`를 사용하지 않기 때문에 완전히 둥글지는 않습니다.
 :::
 
-### 프리미티브 툴바
+### 프리미티브 툴바 {#primitive-toolbar}
 
 ![](/images/scene_primitive_toolbar.gif)
 
@@ -212,7 +212,7 @@ Nomad를 실행했을 때 기본으로 나오는 베이스 메시가 무엇인�
 :::
 
 
-### 프리미티브 메뉴
+### 프리미티브 메뉴 {#primitive-menu}
 
 ![](/images/scene_primitive_menu.webp)
 
@@ -226,16 +226,16 @@ Nomad를 실행했을 때 기본으로 나오는 베이스 메시가 무엇인�
 * `Post subdivision` 토폴로지 메뉴의 멀티 해상도 섹션에서 선택한 서브디브 레벨 수를 적용합니다. 낮은 토폴로지 분할과 조합해 모서리가 부드러운 프리미티브를 만드는 데 사용할 수 있습니다. 예를 들어 Box의 토폴로지 분할을 2로, Post subdivision을 4로 설정하면 모서리가 부드러운 박스가 됩니다.
 * `Linear subdivision` 일반 스무스 서브디브 전에 사용할 선형 서브디브 레벨 수를 설정합니다. 이는 서브디바이드된 표면의 모서리가 얼마나 날카롭거나 부드러운지 제어하는 데 사용됩니다. 예를 들어 Box의 토폴로지 분할을 2, Post subdivision을 4로 설정한 뒤, Linear subdivision을 0에서 4까지 변경해 보면 박스 모서리가 부드러운 상태에서 날카로운 상태로 변하는 것을 볼 수 있습니다.
 
-### Topology
+### 토폴로지 {#topology}
 
 프리미티브의 폴리곤 수를 제어합니다. 보통 컨트롤은 연결되어 있어, 활성 슬라이더 하나를 변경하면 전체 폴리곤 수가 균일하게 조정됩니다. 링크 해제 버튼을 탭하면 X/Y/Z 분할을 개별적으로 제어할 수 있습니다.
 
-### Geometry
+### 지오메트리 {#geometry}
 
 프리미티브의 전체 크기를 제어합니다. 사각형 형태는 X/Y/Z 단위, 원형 형태는 반지름으로 제어합니다.
 
 
-### UV Sphere
+### UV 구 {#uv-sphere}
 ::: warning
 UV Sphere는 특히 극(폴) 부분에서 조각용으로 적합하지 않습니다.
 
@@ -248,7 +248,7 @@ UV Sphere는 특히 극(폴) 부분에서 조각용으로 적합하지 않습니
 :::
 
 
-### Triplanar
+### 트라이플래너 {#triplanar}
 이 프리미티브는 [Masking 도구](tools.md#mask)를 사용해 기하 구조를 형성해야 한다는 점에서 특별합니다.
 
 ![](/videos/triplanar.mp4)
@@ -270,23 +270,23 @@ Triplanar 프리미티브의 크기를 업데이트할 때마다 마스크 페�
 커서를 정확히 한 평면 위에 둘 경우 다른 평면에 영향을 주지 않도록 돕는 [Connected Topology](stroke.md#connected-topology)를 어느 정도 활용할 수 있습니다.
 :::
 
-### Shadow Catcher
+### 섀도 캐처 {#shadow-catcher}
 Shadow catcher 머티리얼이 적용된 평면을 추가합니다. 자세한 내용은 [Shadow Catcher material](material.md#shadow-catcher)을 참고하세요. 
 
 
-## Group/Camera
-### Group
+## 그룹/카메라 {#groupcamera}
+### 그룹 {#group}
 다른 오브젝트를 자식으로 둘 수 있는 ‘빈’ 오브젝트를 생성합니다. 여러 오브젝트를 그룹 아래에 두고 접어서 계층 구조를 정리하는 데 사용할 수 있습니다. 또한 그룹을 기즈모 도구로 이동/회전/스케일링하여, 그 아래의 여러 오브젝트를 한 번에 조작하는 헬퍼로 사용할 수도 있습니다.
 
-### Add view
+### 뷰 추가 {#add-view}
 카메라를 생성합니다.
 
-## Repeaters
+## 리피터 {#repeaters}
 ![](/images/scene_primitive_repeaters.webp)
 
 리피터는 그 아래에 있는 오브젝트의 인스턴스를 생성하는 노드입니다. 
 
-### Array
+### 배열 {#array}
 ![](/images/scene_primitive_array.webp)
 
 이 노드의 자식이 된 오브젝트는 그리드 형태로 인스턴싱할 수 있습니다. 선택 시 다음과 같은 컨트롤이 있습니다:
@@ -295,7 +295,7 @@ Shadow catcher 머티리얼이 적용된 평면을 추가합니다. 자세한 �
 * OffsetX/Y/Z - Fit inside가 꺼져 있을 때 인스턴스 간 거리
 * SizeX/Y/Z - Fit inside가 켜져 있을 때 배열 그리드 전체의 너비/높이/깊이
 
-### Curve
+### 커브 {#curve}
 ![](/images/scene_primitive_curve.webp)  
 곡선을 생성하며, 이 노드의 자식이 된 오브젝트는 곡선을 따라 반복됩니다. 선택 시 다음과 같은 컨트롤이 있습니다:
 * Edit - 곡선에 포인트를 추가하고, 곡선 위의 포인트를 이동할 수 있게 합니다.
@@ -307,7 +307,7 @@ Shadow catcher 머티리얼이 적용된 평면을 추가합니다. 자세한 �
 * Twist - 각 곡선 포인트에 인스턴스의 비틀림 회전을 제어하는 컨트롤을 토글
 * B-spline - 인스턴스를 곡선을 정확히 따르게 할지, 더 부드러운 결과를 내는 B-spline 보간을 사용할지 토글 
 
-### Radial
+### 방사형 {#radial}
 ![](/images/scene_primitive_radial.webp)
 
 이 노드의 자식이 된 오브젝트는 원형으로 인스턴싱됩니다. 자식 오브젝트를 이동하면 리피터의 반지름이 변경됩니다. 선택 시 다음과 같은 컨트롤이 있습니다:
@@ -315,7 +315,7 @@ Shadow catcher 머티리얼이 적용된 평면을 추가합니다. 자세한 �
 
 
 
-### Mirror
+### 미러 {#mirror}
 ![](/images/scene_primitive_mirror.webp)
 
 이 노드의 자식이 된 오브젝트는 축을 기준으로 미러링됩니다. 선택 시 다음과 같은 컨트롤이 있습니다:
@@ -338,35 +338,35 @@ Shadow catcher 머티리얼이 적용된 평면을 추가합니다. 자세한 �
 일부 리피터는 자식 오브젝트의 피벗을 자동으로 조정하려고 하므로, 기즈모 도구로 자식을 이동/회전해도 움직이지 않는 것처럼 보일 수 있습니다. 이 동작을 무시하려면 리피터와 자식 사이에 그룹을 하나 끼워 넣으세요. 그러면 리피터와 독립적으로 자식 형태를 이동할 수 있습니다.
 :::
 
-## Light
+## 라이트 {#light}
 
 ![](/images/scene_primitive_light.webp)
 
-### Directional
+### 디렉셔널 {#directional}
 태양처럼 무한히 멀리 있는 광원인 방향성 라이트를 생성합니다.
 
-### Spot
+### 스폿 {#spot}
 콘 너비와 부드러움을 제어할 수 있는 스포트 라이트를 생성합니다.
 
-### Point
+### 포인트 {#point}
 포인트 라이트를 생성합니다.
 
-## Advanced
-### Focus on item
+## 고급 {#advanced}
+### 항목에 포커스 {#focus-on-item}
 Scene 목록에서 항목을 더블 클릭하면 3D 뷰에서 해당 항목을 중심으로 카메라가 이동합니다.
 
-### Sync visibility
+### 가시성 동기화 {#sync-visibility}
 눈 아이콘을 사용하면 선택된 모든 항목에 표시/숨김이 적용됩니다. 
 
-### Instance: Show
+### 인스턴스: 표시 {#instance-show}
 Scene 목록 왼쪽에 색상 캡슐을 표시하여 인스턴스를 구분합니다.
 
 
-### Icons
+### 아이콘 {#icons}
 뷰포트에서 그룹, 라이트, 카메라, 미러 아이콘의 크기와 불투명도를 설정합니다.
 
-### Hierarchy lines
+### 계층 구조 선 {#hierarchy-lines}
 뷰포트에서 부모와 자식 사이에 선을 표시합니다.
 
-## 하단 툴바
+## 하단 툴바 {#bottom-toolbar}
 이 아이콘들은 뷰포트에서 Group, Light, Camera, Repeater, Hierarchy line의 표시 여부를 토글합니다.

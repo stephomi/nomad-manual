@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) Tło
+# ![](/icons/image.webp) Tło {#background}
 
 To menu kontroluje kolor tła Nomada, a także wszelkie obrazy referencyjne, które mają być używane.
 
 ![](/images/background_overview.webp)
 
-## Tło
+## Tło {#type}
 ![](/images/background_selector.webp)
 
 Istnieją trzy opcje tła widoku.
@@ -13,14 +13,14 @@ Istnieją trzy opcje tła widoku.
 * `Color` - Jednolity kolor, który możesz wybrać.
 * `Gradient` - Przejście koloru z góry na dół. Suwak Factor pozwala określić punkt środkowy gradientu.  
 
-## Obraz referencyjny
+## Obraz referencyjny {#reference}
 
 ![](/images/background_reference.webp)
 
 Możesz dodać wybrany przez siebie obraz w tle, aby używać go jako referencji.
 Możesz zmieniać jego pozycję i skalę, na przykład jeśli chcesz przenieść go do rogu ekranu.
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) Przekształć {#transform}
 
 Ten przycisk pozwala interaktywnie umieścić obraz referencyjny. Użyj 2 palców, aby przesuwać, skalować i obracać obraz referencyjny. Końcowe położenie zostanie odzwierciedlone w suwakach poniżej:
 

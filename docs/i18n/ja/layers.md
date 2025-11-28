@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) レイヤー
+# ![](/icons/layer.webp) レイヤー {#layers}
 
 このメニューにはレイヤースタックが含まれます。これはオブジェクトへの編集内容を非破壊的に保存する方法であり、レイヤーを結合したり再利用したりする多くの手段を提供します。
 
 ![](/images/layers_overview.webp) 
 
-## 概要
+## 概要 {#overview}
 
 Nomad のレイヤーは複数の用途を持ちます。
 
@@ -19,7 +19,7 @@ Nomad はスカルプトにもレイヤーを使用します。レイヤーに�
 ![](/videos/layer.mp4)
 
 ::: tip
-多くのスカルプトソフトウェアとは異なり、メッシュのトポロジーを変更してもレイヤーは破棄されません。[Voxel Remesher](topology.md#voxel-remesher)、[Multiresolution](topology.md#multiresolution)、[Trim](tools.md#trim)/[Split](tools.md#split) ツールを使用できますが、[Voxel Remesher](topology.md#voxel-remesher) を使用した場合はレイヤーの品質に影響が出る点に注意してください。
+多くのスカルプトソフトウェアとは異なり、メッシュのトポロジーを変更してもレイヤーは破棄されません。[Voxel Remesher](topology.md#voxel-remesher)、[Multiresolution](topology.md#multires)、[Trim](tools.md#trim)/[Split](tools.md#split) ツールを使用できますが、[Voxel Remesher](topology.md#voxel-remesher) を使用した場合はレイヤーの品質に影響が出る点に注意してください。
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ Nomad はスカルプトにもレイヤーを使用します。レイヤーに�
 :::
 ----
 
-## レイヤーメニュー
+## レイヤーメニュー {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Nomad はスカルプトにもレイヤーを使用します。レイヤーに�
 
 各レイヤーには名前、強さ/係数を制御するスライダー、オプションボタンがあります。
 
-### オプション
+### オプション {#options}
 
 | Action       | Icon                         | Description                                         |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Nomad はスカルプトにもレイヤーを使用します。レイヤーに�
 
 レイヤーをレイヤースタック内の別の位置に移動するには、その名前を長押ししてドラッグします。
 
-### More...
+### その他... {#more}
 
 「More...」ボタンを押すと、現在のレイヤーに対する追加オプションが表示されます。
 
 ![](/images/layers_more.webp) 
 
-#### チャンネル係数
+#### チャンネル係数 {#channel-factors}
 
 これらのコントロールで、そのレイヤーに対する sculpt/color/roughness/metalness/opacity の量をスケーリングできます。これらの値はレイヤーの係数スライダーに乗算されます。例えばレイヤー強度が 1 でも、Color チャンネル係数が 0.5 の場合、表示される色の強さは 0.5 になります。
 
@@ -82,17 +82,17 @@ Offset を使うと、バンプのレイヤーをキャビティのレイヤー�
 :::
 
 
-#### ![](/icons/tool_mask.webp) Mask
+#### ![](/icons/tool_mask.webp) マスク {#mask}
 各スライダーの横にある Mask ボタンは、そのチャンネルからマスクを作成します。ペイントアプリケーションでレイヤーを選択範囲として使うのと同様に、レイヤーで行った作業を他の操作に再利用できます。
 
-#### ![](/icons/preview.webp) Preview
+#### ![](/icons/preview.webp) プレビュー {#preview}
 ![](/images/layers_preview.webp) 
 
 有効にすると、このレイヤーの抽出設定をプレビューします（次のセクション参照）。
 
 Xray が有効な場合、抽出された形状のみがソリッドになり、残りの形状は透明になります。これは負の抽出高さを使用している場合に便利です。
 
-#### Extract
+#### 抽出 {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ Xray が有効な場合、抽出された形状のみがソリッドになり、
 * Shell - 厚みと方向オプションを使って抽出形状を閉じます。
 * Layer - レイヤーの差分を抽出します。
 
-#### ![](/icons/height.webp) Thickness
+#### ![](/icons/height.webp) 厚み {#thickness}
 ![](/images/layers_thickness.webp) 
 
 シェル押し出しの深さです。正の値は表面から外側へ、負の値は表面から内側へ成長します。
@@ -116,12 +116,12 @@ Xray が有効な場合、抽出された形状のみがソリッドになり、
 * Plus ( + ) は現在の表面から上方向に押し出します。
 * PlusMinus ( ± ) は押し出しの上下を等量だけ離すため、元の表面に半分埋め込まれた状態になります。
 
-#### Smoothness
+#### スムージング {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 抽出する領域のエッジがギザギザな場合、このスライダーでエッジをぼかして滑らかな形状に近づけます。 
 
-#### ![](/icons/height.webp) Edge loop (side)
+#### ![](/icons/height.webp) エッジループ（側面） {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 このセクションは Closing action が「Shell」のときに表示されます。 
@@ -132,10 +132,10 @@ Xray が有効な場合、抽出された形状のみがソリッドになり、
 
 _これで「More...」サブメニューは終了です。_
 
-### Advanced
+### 詳細設定 {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Keep top layers details
+#### 上位レイヤーのディテールを保持 {#keep-top-layers-details}
 
 下位レイヤーに大きな変更を加えたときに、上位レイヤーの細かいディテールが見えたままになるようにします。
 
@@ -144,13 +144,13 @@ _これで「More...」サブメニューは終了です。_
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expand list
+#### UI: リストを展開 {#ui-expand-list}
 
 デフォルトのレイヤーメニューでは、レイヤーの表示切り替えとレイヤーの透明度のみを操作できます。このオプションを有効にすると、すべてのレイヤーに対してフルコントロールが展開表示されます。
 
 ![](/images/layers_expand.webp)
 
-#### Sync transform
+#### 変形を同期 {#sync-transform}
 
 有効にすると、選択されていないすべてのレイヤーが、Transform の回転・スケール・スキューに応じて調整されます。 
 

@@ -1,4 +1,4 @@
-# ![](/icons/postprocess.webp) Pascaproses 
+# ![](/icons/postprocess.webp) Pascasusai {#post-process}
 
 Menu ini mengawal banyak aspek Nomad yang mempengaruhi rupa render.
 
@@ -16,34 +16,31 @@ Untuk rendering PBR, [Ambient Occlusion](#ambient-occlusion-ssao), [Reflection](
 Walau bagaimanapun, kebanyakan masa anda mahu pascaproses dinyahdayakan ketika mengukir, supaya anda boleh fokus pada bentuk render itu sendiri.
 
 
-## Kualiti
+## Kualiti {#quality}
 
 ![](/images/postprocess_quality.webp)
-### Pensampelan bingkai maks
+### Pensampelan bingkai maksimum {#max-frame-sampling}
 Nomad akan mengira sejumlah pascaproses untuk satu render bingkai, yang boleh kelihatan berhingar. Kawalan ini menentukan berapa banyak bingkai akan dirender, kemudian digabungkan untuk menghapuskan kebanyakan artifak hingar. Sesetengah kesan tidak memerlukan sampel tambahan (cth gred warna), manakala yang lain seperti pencahayaan global boleh memerlukan ratusan sampel untuk bebas hingar. 
 
 Dalam viewport ini boleh dilihat apabila Nomad dibiarkan sahaja, kualiti imej akan diperhalusi secara beransur-ansur sehingga ke sampel maksimum, kemudian berhenti. Bilangan pengiraan ini juga digunakan dalam bahagian render menu [Files](files) apabila 'export png' diklik.
 
-### Pengganda resolusi
+### Pengganda resolusi {#resolution-multiplier}
 Gelangsar ini mengawal resolusi pascaproses. Nilai x1.0 bermaksud render dilakukan pada resolusi piksel peranti. Nilai x0.5 akan merender pada separuh resolusi, yang akan pantas tetapi berkualiti rendah. Nilai lebih besar daripada 1 akan merender pada saiz lebih besar, kemudian diskalakan turun. Ini menghasilkan kualiti lebih tinggi, kurang hingar, tetapi masa render lebih lama.
 
-### Sampel maks
+### Sampel maksimum {#max-samples}
 
 Ini akan meningkatkan kualiti pascaproses, tetapi secara umum `Full resolution` akan memberi lebih banyak impak. 
 
-### Resolusi penuh
-Apabila diaktifkan akan memaksa pengganda resolusi kepada x1.0
-
-### Penyahhingar (oidn)
+### Penyahbising (oidn) {#oidn}
 
 Gunakan penyahhingar pada imej. Ini membolehkan anda menggunakan sampel yang jauh lebih rendah. Ini hanya berfungsi jika `Full Resolution` diaktifkan. Perhatikan bahawa penyahhingaran berlaku selepas semua sampel dikira, dan boleh intensif kepada pemproses.
 
-## Pelayar pratetap
+## Pelayar pratetap {#preset-browser}
 ![](/images/postprocess_presets.webp)
 Mengklik pada imej akan memaparkan koleksi pratetap pascaproses. Untuk menentukan pratetap anda sendiri, pilih satu, klik 'clone', buat perubahan. Untuk menyimpan, klik imej pratetap, klik lagi di dalam pelayar pratetap, dan pilih 'save'.
 
 
-## Pantulan (SSR)
+## Pantulan (SSR) {#reflection-ssr}
 Dengan pilihan ini, objek boleh memantulkan objek lain dalam adegan, selagi objek tersebut kelihatan pada skrin.
 Jika anda mempunyai objek logam dan berkilat dalam adegan anda, maka pilihan ini mungkin patut digunakan.
 Pilihan ini hanya berkesan dengan mod PBR.
@@ -53,7 +50,7 @@ Pilihan ini hanya berkesan dengan mod PBR.
 | :------------------------: | :-----------------------: |
 | ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
-## Pencahayaan Global (SSGI)
+## Pencahayaan Sejagat (SSGI) {#global-illumination-ssgi}
 
 Pencahayaan global mensimulasikan bagaimana cahaya melantun antara permukaan, cth dinding merah akan memancarkan merah ke objek putih berdekatan. Ini boleh meningkatkan realisme render dengan sangat apabila digunakan bersama ambient occlusion dan pantulan. 
 
@@ -67,7 +64,7 @@ Pencahayaan global mensimulasikan bagaimana cahaya melantun antara permukaan, ct
 
 _Sebuah spotlight berada di belakang sfera, dihalakan ke siling. Dengan SSGI off, hanya siling yang diterangi. Dengan SSGI on, cahaya melantun dari siling ke dinding ke sfera._
 
-## Ambient Occlusion (SSAO)
+## Lekukan Sekitar (SSAO) {#ambient-occlusion-ssao}
 Ambient occlusion akan menggelapkan kawasan di mana cahaya kurang berpeluang sampai (sudut, dsb).
 Kesan ini hanya bergantung pada geometri model.
 
@@ -86,7 +83,7 @@ AO akan paling kelihatan di kawasan yang diterangi terutamanya oleh cahaya perse
 
 :::
 
-## Kedalaman Medan (DOF)
+## Kedalaman Medan (DOF) {#depth-of-field-dof}
 Tambah kesan kabur pada kawasan yang berada di luar fokus.
 
 Hanya ketik pada model anda untuk menukar titik fokus.
@@ -100,7 +97,7 @@ Hanya ketik pada model anda untuk menukar titik fokus.
 | ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp) |
 
 
-## Bloom
+## Kembang cahaya {#bloom}
 Bloom akan membuat kawasan terang dalam adegan anda bersinar.
 
 * `Intensity` - kekuatan kesan.
@@ -113,7 +110,7 @@ Bloom akan membuat kawasan terang dalam adegan anda bersinar.
 | ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
 
-## Pemetaan Ton
+## Pemetaan Ton {#tone-mapping}
 Tone Mapping ialah operasi yang akan memetakan semula nilai HDR kepada julat `[0, 1]`.
 Jika anda tidak menggunakannya (atau pilih `none`), sebarang komponen warna lebih tinggi daripada 1 akan dipotong.
 Sebarang variasi warna di atas julat ini kemudian akan hilang.
@@ -133,14 +130,14 @@ Perhatikan bahawa dengan `Tone Mapping` dinyahdayakan, beberapa butiran hilang k
 Tone mapping boleh meningkatkan kesan pencahayaan global. Jika anda menurunkan keamatan peta persekitaran, sumber cahaya utama dinaikkan, anda boleh meningkatkan `exposure` tone mapping untuk melihat lebih banyak kesan pantulan cahaya.
 :::
 
-## Gred Warna
+## Penggredan Warna {#color-grading}
 Serupa dengan alat curves dalam Photoshop, ini membolehkan anda mengawal imbangan dan taburan warna dalam imej. Kawalan `main` mempengaruhi keseluruhan imbangan warna, kawalan `red`/`green`/`blue` membenarkan kawalan halus. 
 
 | Color Grading off             | Color Grading on             |
 | :---------------------------: | :--------------------------: |
 | ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
-## Kelengkungan
+## Kelengkungan {#curvature}
 Mengesan di mana terdapat perubahan kelengkungan yang pantas, dan gunakan warna pada kawasan tersebut.
 
 * `Factor` - keamatan keseluruhan kesan
@@ -153,7 +150,7 @@ Mengesan di mana terdapat perubahan kelengkungan yang pantas, dan gunakan warna 
 | ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
 
-## Aberasi Kromatik
+## Aberasi Kromatik {#chromatic-aberration}
 Mensimulasikan artifak kanta dengan cahaya yang diuraikan di sekeliling tepi skrin.
 
 * `Strength` - sejauh mana bahagian merah/hijau/biru imej dipecahkan ke arah tepi skrin
@@ -163,7 +160,7 @@ Mensimulasikan artifak kanta dengan cahaya yang diuraikan di sekeliling tepi skr
 | ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
 
-## Vinyet
+## Vinyet {#vignette}
 Mensimulasikan artifak kanta dengan menggelapkan tepi skrin.
 
 * `Size` - Saiz elips songsang yang diletakkan di atas imej
@@ -174,7 +171,7 @@ Mensimulasikan artifak kanta dengan menggelapkan tepi skrin.
 | :-----------------------------: | :----------------------------: |
 | ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
-## Grain
+## Biji bunyi {#grain}
 Tambah kesan grain, ia boleh membantu menjadikan imej kelihatan kurang artifisial.
 
 * `Strength` - jumlah grain/hingar yang ditambah pada imej.
@@ -185,7 +182,7 @@ Tambah kesan grain, ia boleh membantu menjadikan imej kelihatan kurang artifisia
 | ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
 
-## Ketajaman
+## Ketajaman {#sharpness}
 Kesan menajamkan serupa dengan yang terdapat dalam Photoshop atau aplikasi pemprosesan foto.
 
 * `Strength` - jumlah penajaman yang digunakan pada imej.
@@ -195,7 +192,7 @@ Kesan menajamkan serupa dengan yang terdapat dalam Photoshop atau aplikasi pempr
 | :----------------------------: | :--------------------------: |
 | ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
-## Seni Piksel
+## Seni Piksel {#pixel-art}
 Mensimulasikan seni piksel permainan retro.
 
 * `Slider` - saiz piksel
@@ -205,7 +202,7 @@ Mensimulasikan seni piksel permainan retro.
 | :-------------------------: | :------------------------: |
 | ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
-## Garis Imbas
+## Garisan Imbas {#scanline}
 Mensimulasikan rupa monitor CRT lama.
 
 * `Factor` - kekuatan garis
@@ -216,6 +213,6 @@ Mensimulasikan rupa monitor CRT lama.
 | ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
 
 
-## Dithering
+## Penditeran {#dithering}
 
 Dither piksel untuk mengurangkan artifak banding. Biasanya ini patut diaktifkan, tetapi boleh dinyahdayakan untuk operasi khusus (cth mengeksport peta kedalaman atau operasi khusus data lain).

@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) Ebenen 
+# ![](/icons/layer.webp) Ebenen {#layers}
 
 Dieses Menü enthält den Ebenenstapel – eine Möglichkeit, Bearbeitungen an deinem Objekt nicht-destruktiv zu speichern – sowie viele Möglichkeiten, Ebenen zu kombinieren und wiederzuverwenden.
 
 ![](/images/layers_overview.webp) 
 
-## Übersicht
+## Übersicht {#overview}
 
 Nomad-Ebenen erfüllen mehrere Zwecke.
 
@@ -19,7 +19,7 @@ Ebenen können teilweise über das Werkzeug [Delete Layer](tools.md#delete-layer
 ![](/videos/layer.mp4)
 
 ::: tip
-Anders als bei den meisten Sculpting-Programmen gehen Ebenen beim Ändern der Topologie eines Meshes nicht verloren. Du kannst den [Voxel Remesher](topology.md#voxel-remesher), die [Multiresolution](topology.md#multiresolution) oder die Werkzeuge [Trim](tools.md#trim)/[Split](tools.md#split) verwenden, beachte aber, dass bei Verwendung des [Voxel Remesher](topology.md#voxel-remesher) die Qualität der Ebene beeinträchtigt wird.
+Anders als bei den meisten Sculpting-Programmen gehen Ebenen beim Ändern der Topologie eines Meshes nicht verloren. Du kannst den [Voxel Remesher](topology.md#voxel-remesher), die [Multiresolution](topology.md#multires) oder die Werkzeuge [Trim](tools.md#trim)/[Split](tools.md#split) verwenden, beachte aber, dass bei Verwendung des [Voxel Remesher](topology.md#voxel-remesher) die Qualität der Ebene beeinträchtigt wird.
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ Wenn du Ebenen für Blendshapes/Morph Targets verwendest, gibt es zusätzliche E
 :::
 ----
 
-## Ebenenmenü 
+## Ebenenmenü {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Drücke `Add layer`, um eine neue Ebene zu erstellen.
 
 Jede Ebene hat einen Namen, einen Schieberegler zur Steuerung ihrer Stärke/Faktors und Optionsschaltflächen.
 
-### Optionen
+### Optionen {#options}
 
 | Action       | Icon                         | Description                                         |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Jede Ebene hat einen Namen, einen Schieberegler zur Steuerung ihrer Stärke/Fakt
 
 Um eine Ebene an eine andere Stelle im Ebenenstapel zu verschieben, drücke und halte ihren Namen und ziehe sie dann.
 
-### More...
+### Mehr... {#more}
 
 Die Schaltfläche „More...“ zeigt zusätzliche Optionen für die aktuelle Ebene an:
 
 ![](/images/layers_more.webp) 
 
-#### Channel factors
+#### Kanal­faktoren {#channel-factors}
 
 Mit diesen Reglern kannst du die Menge an Sculpt/Farbe/Rauigkeit/Metallizität/Deckkraft für die Ebene skalieren. Diese Werte werden mit dem Ebenenfaktor-Schieberegler multipliziert. Wenn zum Beispiel die Ebenenstärke 1 beträgt, der Farbkanalfaktor aber 0,5, wird die angezeigte Farbe mit einer Stärke von 0,5 dargestellt.
 
@@ -82,17 +82,17 @@ Möglicherweise wird in Zukunft jeder Kanal seinen eigenen Alphakanal haben, um 
 :::
 
 
-#### ![](/icons/tool_mask.webp) Mask
+#### ![](/icons/tool_mask.webp) Maske {#mask}
 Die Masken-Schaltfläche neben jedem Schieberegler erstellt eine Maske aus diesem Kanal. Ähnlich wie die Verwendung von Ebenen zur Auswahl in Malprogrammen ermöglicht dies, Arbeiten, die du in einer Ebene erledigt hast, für andere Operationen wiederzuverwenden.
 
-#### ![](/icons/preview.webp) Preview
+#### ![](/icons/preview.webp) Vorschau {#preview}
 ![](/images/layers_preview.webp) 
 
 Wenn aktiviert, werden die Extraktions-Einstellungen für diese Ebene in der Vorschau angezeigt (siehe nächsten Abschnitt).
 
 Wenn X-Ray aktiviert ist, wird nur die extrahierte Form solide dargestellt, der Rest der Form wird transparent gemacht – nützlich, wenn du negative Extraktionshöhen verwendest.
 
-#### Extract
+#### Extrahieren {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ Die Schaltfläche `Extract` dupliziert den Inhalt der Ebene in ein neues Objekt,
 * Shell - Schließt die extrahierte Form mit den Optionen für Dicke und Richtung.
 * Layer - Extrahiert die Ebenendifferenz.
 
-#### ![](/icons/height.webp) Thickness
+#### ![](/icons/height.webp) Dicke {#thickness}
 ![](/images/layers_thickness.webp) 
 
 Die Tiefe der Shell-Extrusion. Positive Werte wachsen aus der Oberfläche heraus, negative Werte wachsen in die Oberfläche hinein.
@@ -116,12 +116,12 @@ Das Plus/Minus neben diesem Wert legt die Richtung der Extrusion fest:
 * Plus ( + ) beginnt an der aktuellen Oberfläche und extrudiert nach oben.
 * PlusMinus ( ± ) verschiebt Ober- und Unterseite der Extrusion gleichermaßen nach außen, sodass sie zur Hälfte in der ursprünglichen Oberfläche eingebettet ist.
 
-#### Smoothness
+#### Glättung {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 Wenn die Kanten des zu extrahierenden Bereichs ausgefranst sind, versucht dieser Schieberegler, die Kante in eine glattere Form zu verwischen. 
 
-#### ![](/icons/height.webp) Edge loop (side)
+#### ![](/icons/height.webp) Kantenschleife (Seite) {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 Dieser Abschnitt ist sichtbar, wenn die Closing Action „Shell“ ist. 
@@ -132,10 +132,10 @@ Wenn deaktiviert, legt der `Division`-Schieberegler die Anzahl der Unterteilunge
 
 _Dies ist das Ende des „More...“-Untermenüs._
 
-### Advanced
+### Erweitert {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Keep top layers details
+#### Obere Ebenen­details behalten {#keep-top-layers-details}
 
 Stellt sicher, dass kleine Details auf höheren Ebenen sichtbar bleiben, wenn große Änderungen an unteren Ebenen vorgenommen werden.
 
@@ -144,13 +144,13 @@ Standardmäßig gehen kleine Faltendetails auf einer Ebene verloren, wenn du ans
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expand list
+#### UI: Liste ausklappen {#ui-expand-list}
 
 Das Standard-Ebenenmenü ermöglicht es dir, die Ebenensichtbarkeit und die Ebenendeckkraft umzuschalten. Wenn du diese Option aktivierst, werden die vollständigen Bedienelemente für jede Ebene eingeblendet.
 
 ![](/images/layers_expand.webp)
 
-#### Sync transform
+#### Transformation synchronisieren {#sync-transform}
 
 Wenn aktiviert, werden alle nicht ausgewählten Ebenen entsprechend der Transformationsrotation, -skalierung und -schrägung angepasst. 
 

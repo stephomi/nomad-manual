@@ -1,9 +1,9 @@
-# ![](/icons/faq.webp) Soalan Lazim (FAQ)
+# ![](/icons/faq.webp) Soalan Lazim {#faq}
 
 [[toc]]
 
-## Platform 
-### Di manakah projek saya berada pada peranti?
+## Platform {#platform}
+### Di manakah projek saya disimpan pada peranti? {#locate}
 Projek terletak dalam folder `projects` di dalam folder utama Nomad.
 
 Di iOS, anda boleh mengakses folder Nomad dengan aplikasi Files iOS.
@@ -14,18 +14,18 @@ Anda boleh mengaksesnya melalui aplikasi berasingan, contohnya [aplikasi ini](ht
 <!-- [this one](https://play.google.com/store/apps/details?id=com.alphainventor.filemanager) -->
 <!-- [this one](https://play.google.com/store/apps/details?id=com.mi.android.globalFileexplorer) -->
 
-### Adakah terdapat cara untuk menguji beta?
+### Adakah terdapat cara untuk menguji beta? {#beta}
 Untuk Windows & MacOS, versi beta mungkin tersedia di [Laman Utama](https://nomadsculpt.com).
 <br>
 Untuk iOS terdapat TestFlight peribadi, lawati [Discord](https://discord.com/invite/8h7BwpRz29) dalam saluran #beta-ios.
 <br>
 [Demo Web](https://nomadsculpt.com/demo) biasanya dikemas kini dengan ciri-ciri terkini.
 
-### Mengapa ada percubaan percuma di Android tetapi tidak di iOS?
+### Mengapa ada percubaan percuma di Android tetapi tidak di iOS? {#android-trial}
 Kerana peranti Android lama kurang berkuasa (dan sesetengah yang baharu juga...), dan saya tidak mahu orang membeli aplikasi dan disambut dengan skrin hitam.
 Tetapi sebab utama ialah saya rasa aplikasi berbayar di Android bukanlah kebiasaan.
 
-### Apakah tablet terbaik untuk menjalankan Nomad?
+### Apakah tablet terbaik untuk menjalankan Nomad? {#best-tablet}
 
 Ringkasan: iPad.
 
@@ -73,7 +73,7 @@ Sila gunakan versi percuma tanpa fungsi simpan Nomad untuk menguji dahulu.
 Kebanyakan fail Nomad biasanya 100mb atau kurang. Ini bermakna hampir mana-mana tablet yang anda beli hari ini, iPad atau Android, akan mempunyai ruang yang mencukupi untuk projek Nomad anda.
 
 
-### Saya beli Nomad untuk satu peranti, bolehkah saya gunakannya pada peranti lain?
+### Saya membeli Nomad untuk satu peranti, bolehkah saya gunakannya pada peranti lain? {#multi-devices}
 Selagi ia menggunakan gedung aplikasi dan akaun yang sama, boleh.
 
 Sebagai contoh jika anda membelinya di App Store iOS, anda boleh menggunakannya pada peranti iOS anda yang lain.
@@ -85,7 +85,7 @@ Namun jika anda membeli Nomad di Android, kemudian anda mendapat iPad, anda perl
 Ini kerana Nomad tidak mempunyai pelayan lesen sendiri atau model langganan. Tiada perjanjian antara Apple/Google/AppGallery untuk mengendalikan perkongsian lesen. 
 
 
-### Bagaimana untuk memulihkan pembelian saya?
+### Bagaimana untuk memulihkan pembelian saya? {#restore}
 Google Play dan AppGallery kedua-duanya mengendalikan penyegerakan secara automatik.
 
 - Pergi ke menu About (ikon nomad di kiri atas), dan tekan `restore purchase`
@@ -110,27 +110,27 @@ Peranti Huawei terkini tidak mempunyai akses kepada perkhidmatan Google.
 Dalam kes itu anda perlu membeli aplikasi sekali lagi di AppGallery (gedung aplikasi Huawei).
 :::
 
-### Bolehkah anda menterjemah atau membetulkan [bahasa-saya]?
+### Bolehkah anda menterjemah atau membetulkan [bahasa-saya]? {#locale}
 Saya agak mudah untuk menambah bahasa lain, tetapi saya bergantung pada terjemahan AI kerana ia jauh lebih mudah untuk diurus bagi kemas kini berkala.
 Fail terjemahan boleh didapati [di sini](https://github.com/stephomi/nomad-translation).
 
-## Ciri-ciri
+## Ciri {#features}
 
-### Mengapa gizmo tidak bergerak?
+### Mengapa gizmo tidak bergerak? {#gizmo-not-moving}
 Anda mungkin mempunyai [pin diaktifkan dalam bar alat menu kiri](tools#left-menu-toolbar). 
 
-### Bolehkah kita animasi dalam Nomad?
+### Bolehkah kita buat animasi dalam Nomad? {#animate}
 Buat masa ini tidak. Ciri garis masa yang boleh menganimasikan lapisan mungkin menarik, tetapi belum benar-benar dirancang pada masa ini.  
 
 Saya ingin menyokong rigging/skinning pada masa hadapan, tetapi ia menimbulkan beberapa cabaran (terutamanya interaksi dengan alat mengukir...) jadi belum pasti buat masa ini.
 
 
-### Bolehkah kita melakukan pemodelan low-poly yang betul?
+### Bolehkah kita lakukan pemodelan low-poly yang betul? {#lowpoly}
 Buat masa ini tidak.
 Ini bukan benar-benar skop Nomad *Sculpt*, tetapi mungkin saya akan menyediakan beberapa alat pada masa hadapan.
 
 
-### Bolehkah kita buat uv dan tekstur?
+### Bolehkah kita lakukan UV dan tekstur? {#texturing}
 Jawapan ringkas: Ya. Jawapan panjang: Bukan secara langsung, tetapi terdapat beberapa cara untuk menggabungkan alat cat verteks Nomad yang sangat baik dengan uv dan tekstur.
 
 * Nomad membenarkan anda mengecat warna, kekasaran, sifat bahan terus ke verteks ukiran anda.
@@ -143,30 +143,30 @@ Jawapan ringkas: Ya. Jawapan panjang: Bukan secara langsung, tetapi terdapat beb
 * Baking dan project boleh dikendalikan antara objek tunggal atau banyak objek, atau antara tahap subdivisi tertinggi dan terendah bagi objek tunggal, membolehkan pelbagai aliran kerja bake dan project.
 * Selepas baking, mengeksport obj juga akan mengeksport tekstur, yang boleh dibawa ke aplikasi seperti Procreate untuk mengecat terus pada tekstur.
 
-### Bolehkah saya merakam video turntable?
+### Bolehkah saya merakam video turntable? {#video}
 Tidak dirancang buat masa ini, iOS mempunyai [ciri rakaman video](https://support.apple.com/en-au/guide/ipad/ipaddf78ce08/ipados) yang sangat mudah digunakan.
 
 Di iOS, ini dilakukan dengan meleret ke bawah dari kiri atas, dan mengetik butang rakam. Ia akan memberikan kiraan undur 3 saat, leret menu ke atas untuk memaparkan Nomad, dan gunakan ciri turntable. Apabila selesai, leret ke bawah sekali lagi dari kanan atas, dan ketik butang rakam sekali lagi. Sunting video dari pustaka foto untuk membuang rakaman berlebihan di awal dan akhir video.
 
-### Bolehkah anda tambah [ciri-kegemaran-saya] sebagai butang aras atas?
+### Bolehkah anda menambah [ciri-kegemaran] sebagai butang aras teratas? {#interface}
 Ya, bar alat bawah kini boleh disesuaikan dari menu [interface](interface.md), dan bar alat terapung kini boleh dicipta.
 
-### Apakah ciri seterusnya?
+### Apakah ciri seterusnya? {#next-features}
 Untuk pelan jangka sederhana/panjang saya mempunyai banyak idea tetapi belum pasti lagi.  
 
 Pembaikan pepijat dan penambahbaikan ciri sedia ada sentiasa mempunyai keutamaan lebih tinggi berbanding menambah ciri baharu.
 
 
-### Bolehkah kita rig dalam Nomad?
+### Bolehkah kita rig dalam Nomad? {#rigging}
 Tidak, tetapi ia dirancang. Buat masa ini anda boleh parent bentuk bersama dan mengubah titik pivot, membolehkan ukiran mudah yang boleh diposisikan.
 
-### Bolehkah kita gunakan lebih daripada 4 lampu?
+### Bolehkah kita gunakan lebih daripada 4 lampu? {#lights}
 Tidak, ini adalah had enjin render masa nyata dalam Nomad. Adalah mungkin untuk memalsukannya menggunakan objek emissive dan global illumination dalam pasca proses, seperti yang ditunjukkan dalam [tutorial ini](https://www.youtube.com/watch?v=QhrUGH7CuUA)
 
-### Bolehkah kita import Zbrush tools?
+### Bolehkah kita import Zbrush tools? {#zbrush-import}
 Tidak, Zbrush menggunakan format proprietari. Anda sepatutnya boleh mengekstrak peta alpha dan menggunakannya dalam Nomad. 
 
-### Mengapa warna tidak sepadan dengan apa yang saya cat? Mengapa saya tidak boleh dapatkan putih dalam render?
+### Mengapa warna tidak sepadan dengan apa yang saya lukis? Mengapa saya tidak boleh dapatkan warna putih dalam render? {#paint-pbr}
 Bayangkan mengambil foto sekeping kertas, berbanding foto lampu meja, berbanding foto matahari. Kamera dan skrin lama hanya akan menjadikan semuanya ‘putih’. Sistem yang lebih moden boleh menunjukkan perbezaan antara putih pantulan kertas berbanding cahaya yang dipancarkan lampu, berbanding super terang matahari.
 
 Grafik komputer moden cuba berfungsi dengan cara yang serupa, meniru fizik cahaya dan permukaan. Ini dipanggil `Physically Based Rendering`, atau PBR, dan renderer PBR Nomad berasaskan perkara ini. Ia kelihatan realistik dan seimbang, tetapi selalunya warna terang yang dicat akan kelihatan lebih gelap.
@@ -183,9 +183,9 @@ PBR:
 * `Tingkatkan exposure kamera`. Jika bilik gelap itu tidak mempunyai lampu tambahan, anda boleh biarkan kamera membuka shutter lebih lama, atau gunakan ISO yang lebih sensitif. Dalam Nomad anda boleh mencapai hasil serupa dengan pasca proses. Pergi ke post process, aktifkan, turun ke tone mapping, aktifkan, dan naikkan peluncur exposure sehingga warna terasa betul.
 * `Gunakan warna emissive`. Dalam menu material, anda boleh mengaktifkan 'emissive' di bawah textures, yang akan menjadikan objek kelihatan seperti sumber cahaya. Jika anda menghidupkan global illumination dalam tetapan post process, ia akan memancarkan cahaya ke objek lain dalam adegan. Anda juga boleh mengaktifkan 'unlit' untuk material tersebut, yang akan mencapai rupa yang serupa tanpa tekstur.
 
-## Runtuhan (Crashes)
+## Ralat & Runtuhan {#crashes}
 
-### Ia runtuh apabila saya simpan atau remesh model saya!
+### Aplikasi ranap apabila saya simpan atau remesh model! {#crash-remesh}
 Peranti anda kehabisan memori (RAM).  
 Untuk mengurangkan penggunaan memori dalam adegan anda, anda boleh menggunakan beberapa pilihan [Topology](topology.md) untuk mengurangkan bilangan poligon.
 
@@ -194,7 +194,7 @@ Apa yang penting ialah jumlah RAM, bukan storan (yang biasanya jauh lebih besar)
 :::
 
 
-### Ia runtuh apabila saya memuatkan projek saya!
+### Aplikasi ranap apabila saya muatkan projek! {#crash-load}
 Jika fail kecil, anda boleh menghantarnya kepada saya dan saya akan lihat (melalui emel <support@nomadsculpt.com>).
 
 Jika tidak, peranti mungkin kehabisan memori RAM.
@@ -228,7 +228,7 @@ With homebrew, simply do `brew install lz4` and then `lz4 myproject.glb.lz4`.
 4. If it still crashes at loading, you can open the file on any 3d desktop software that supports `glTF`.
 ::: -->
 
-### Ia runtuh apabila saya memulakan Nomad!
+### Aplikasi ranap apabila saya mula Nomad! {#crash-start}
 Jika ia runtuh ketika memuatkan, ini bermakna Nomad bergelut dengan fail tertentu yang terdapat dalam folder Nomad.
 
 Kebanyakan masa, ia berlaku kerana projek terlalu berat dan malangnya akan melebihi had RAM.

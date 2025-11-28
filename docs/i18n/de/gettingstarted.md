@@ -1,6 +1,6 @@
-# Erste Schritte
+# Erste Schritte {#getting-started}
 
-## Willkommen bei Nomad!
+## Willkommen bei Nomad! {#welcome-to-nomad}
 
 Nomad ist eine 3D‑Sculpting‑App, die auf vielen Geräten läuft und am besten auf Tablets mit druckempfindlichem Stift funktioniert, z. B. einem Apple iPad mit Pencil oder einem Samsung Galaxy Tab mit Stylus.
 
@@ -18,7 +18,7 @@ Auf YouTube gibt es inzwischen SEHR VIELE Einsteiger‑Video‑Tutorials, hier s
 Es lohnt sich, den Hauptkanal dieser Creator zu prüfen, sie veröffentlichen häufig neue Tutorials.
 :::
 
-## Deine erste Skulptur
+## Deine erste Skulptur {#your-first-sculpt}
 
 Wenn du Nomad zum ersten Mal startest, siehst du eine Kugel auf dem Bildschirm. Ziehe einfach mit deinem Stift über die Kugel, um mit dem Sculpting zu beginnen. Symmetrie ist standardmäßig aktiviert, um das Sculpting zu erleichtern.
 
@@ -75,7 +75,7 @@ Mit diesen Einstellungen kannst du die Kamera ausschließlich mit dem Stift steu
 * untere Wipptaste und Hover‑Bewegung = verschieben (pan)
 :::
 
-## Farbe hinzufügen
+## Farbe hinzufügen {#add-color}
 
 Nomad ermöglicht es dir, die Oberfläche deiner Skulptur zu bemalen. Wähle im Werkzeugmenü auf der rechten Seite das `Paint`‑Werkzeug und klicke darauf. In der linken Werkzeugleiste erscheint eine farbige Kugel. Klicke darauf, um einen Farbwähler zu öffnen. Wähle eine Farbe und male auf deinem Modell.
 
@@ -89,7 +89,7 @@ Verwende den Clay‑Pinsel in Add/Sub‑Modi, Smooth und Paint und versuche, ein
 
 ![](/images/gettingstarted_head1.webp)
 
-## Weitere Werkzeuge
+## Weitere Werkzeuge {#other-tools}
 
 Die Werkzeugpalette enthält viele Werkzeuge, die beim Sculpting helfen. Bisher hast du den Clay‑Pinsel (das Standard‑Startwerkzeug), Smooth und Paint verwendet. Da Smooth sehr häufig benutzt wird, hat es ein zusätzliches Shortcut in der linken Werkzeugleiste.
 
@@ -101,7 +101,7 @@ Versuche, mit den Werkzeugen Move, Crease, Inflate und Smooth mehr Details zu de
 
 Jetzt, da du die Grundlagen von Nomad kennst, schauen wir uns den Rest der Benutzeroberfläche an.
 
-## Benutzeroberfläche
+## Benutzeroberfläche {#interface}
 
 ![](/images/interface_overview1.webp)
 
@@ -116,7 +116,7 @@ Jetzt, da du die Grundlagen von Nomad kennst, schauen wir uns den Rest der Benut
 Du kannst die Platzierung und Reihenfolge aller Werkzeugleisten spiegeln, siehe [Mirror top bar](interface.md#mirror-top-bar) und andere verwandte Optionen.
 :::
 
-## Untere Werkzeugleiste
+## Untere Werkzeugleiste {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
@@ -130,7 +130,7 @@ Du kannst die Platzierung und Reihenfolge aller Werkzeugleisten spiegeln, siehe 
 * `Wire` – Schaltet ein Wireframe‑Overlay ein oder aus. Ein langes Drücken oder Wischen nach oben zeigt Optionen für das Wireframe.
 * `Inspect` – Schaltet die Anzeige zusätzlicher Daten über das aktuelle Mesh ein oder aus. Standardmäßig werden UVs angezeigt, aber ein langes Drücken oder Wischen nach oben ermöglicht es dir, andere Eigenschaften zu inspizieren, falls sie vorhanden sind, und festzulegen, ob dies im Hintergrund oder auf dem Mesh angezeigt wird.
 
-## Nächste Schritte
+## Nächste Schritte {#next-steps}
 
 Was du als Nächstes lernen solltest, hängt von dir und deinen Interessen ab! Hier ein paar Vorschläge:
 
@@ -147,7 +147,7 @@ Möchtest du *alles* über Nomad lernen? Gute Wahl! Dieses Handbuch deckt alle B
 Wenn du Videos bevorzugst: Holger Schönischka hat auf YouTube eine riesige Sammlung von Tipps und Tricks zu Nomad erstellt: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Hilfe bekommen
+## Hilfe erhalten {#getting-help}
 
 Wenn du nach dem Lesen des Handbuchs und dem Anschauen der Tutorial‑Videos noch Fragen hast, gibt es drei Hauptwege, um mit anderen Nomad‑Nutzern oder dem Entwickler von Nomad zu sprechen:
 

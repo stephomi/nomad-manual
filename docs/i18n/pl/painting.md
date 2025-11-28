@@ -1,23 +1,23 @@
-# ![](/icons/paint.webp) Malowanie  
+# ![](/icons/paint.webp) Malowanie {#painting}
 
 Kontroluj kolor, szorstkość, metaliczność pociągnięć pędzla, umożliwiaj zalewanie (flood fill) atrybutów farby oraz sposób, w jaki narzędzia malarskie wchodzą w interakcję z warstwami, maskami i ukrytymi zaznaczeniami.
 
 ![](/images/paint_overview.webp)  
 
-## Przegląd
+## Przegląd {#overview}
 
 Nomad używa wierzchołkowego malowania PBR. Co to oznacza?
 
-### PBR
+### PBR {#pbr}
 PBR, czyli Physically Based Rendering, to popularna technika grafiki komputerowej stosowana w filmie, telewizji, grach i na urządzeniach mobilnych. Dzięki opieraniu świateł na właściwościach fizycznych oraz definiowaniu powierzchni poprzez kolor, szorstkość i metaliczność można uzyskać szeroką gamę fotorealistycznych wyglądów.
 
-### Malowanie wierzchołków
+### Malowanie wierzchołków {#vertex-painting}
 
 Malowanie wierzchołków oznacza, że informacje o farbie są przechowywane w wierzchołkach modelu, a nie w teksturach. Ponieważ Nomad potrafi obsługiwać modele liczące setki tysięcy, a często miliony wierzchołków, Twoje modele mogą mieć bardzo szczegółowe malowanie powierzchni; jeśli możesz wyrzeźbić detal, możesz też go pomalować.
 
 Oznacza to również, że malowanie w Nomadzie nie wymaga mapowania UV, które w innych aplikacjach 3D jest często powolnym i technicznym procesem. Wiele innych aplikacji 3D nie obsługuje tak wysokiej liczby wierzchołków jak Nomad, jednak Nomad ma też dobre narzędzia do wypalania tekstur i dekymacji.
 
-### Teksturowanie
+### Teksturowanie {#texturing}
 
 Nomad obsługuje tekstury, ale muszą one być obecne w zaimportowanym modelu lub zostać utworzone poprzez wypalenie malowania wierzchołków do tekstur. 
 
@@ -38,21 +38,21 @@ Przykładowy workflow:
 To był przegląd, teraz przyjrzyjmy się sekcjom menu malowania:
 
 
-## Malowanie pociągnięć
+## Malowanie pociągnięć {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
 Włącz malowanie dla tego narzędzia, przydatne, jeśli chcesz rzeźbić i malować jednocześnie.
 
 Dla narzędzi, w których malowanie jest główną funkcją (np. Paint, Smudge, Mask), to pole wyboru nie istnieje.
 
-### Intensywność malowania
+### Intensywność malowania {#paint-intensity}
 
 Suwak pozwalający użyć innej intensywności niż podstawowa intensywność narzędzia.
 
 Pola wyboru `Alpha`, `Falloff` i `Randomize` określają, czy te funkcje będą wpływać na malowanie. Np. możesz mieć włączone randomize dla narzędzia Clay, ale kolor nie będzie losowany.
 
 
-## Materiał
+## Materiał {#material}
 ![](/images/paint_material.webp) 
 
 Pierwsza ikona to kształt podglądu materiału. Przeciąganie na podglądzie 3D materiału będzie go obracać. 
@@ -67,14 +67,14 @@ Przycisk podglądu obok tytułu Material pozwala przełączać między none, Mat
 
 Pipeta może być użyta do pobrania wszystkich właściwości z obiektu w Twojej scenie.
 
-## Presety materiałów
+## Presety materiałów {#material-presets}
 Stuknięcie w 3D kształt podglądu wyświetli menu presetów materiałów, które można sklonować, aby zdefiniować własne presety.
 
 ![](/images/paint_presets.webp) 
 
 Przełączniki `Embed Textures` i `Alpha` po włączeniu zapiszą wszystkie tekstury używane przez ten materiał w presecie. Jest to szerzej wyjaśnione poniżej.
 
-## Suwaki PBR
+## Suwaki PBR {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 Malowanie [PBR](shading.md#pbr) używa 4 kanałów:
@@ -113,7 +113,7 @@ Podczas używania tekstur do malowania PBR często przydatne jest przełączenie
 Możesz rozważyć włączenie `Smooth Shading` [globalnie](settings.md#smooth-shading) lub [per-obiekt](material.md#smooth-shading), jeśli malujesz metaliczną powierzchnię na obiekcie o niskiej liczbie polygonów.
 :::
 
-## Paint all
+## Maluj wszystko {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
@@ -132,12 +132,12 @@ Dodatkowe przyciski kontrolują, w jaki sposób Paint All może być dalej modyf
 | ![](/icons/triplanar.webp) | Wskaźnik ustawień triplanar                   |
 | ![](/icons/cog.webp)       | Otwórz ustawienia Triplanar                   |
 
-### Ustawienia Triplanar
+### Ustawienia trójpłaszczyznowe {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
 Podobnie jak w [ustawieniach triplanar w menu materiału](material.md#triplanar), możesz kontrolować mieszanie projekcji, tiling i przesunięcia. 
 
 Użyj pola podglądu na górze tego menu, aby włączyć trwały podgląd podczas regulacji wartości.
 
-## Global material
+## Materiał globalny {#global-material}
 Jeśli ta opcja jest włączona, wybrany materiał będzie taki sam jak w innych narzędziach. Zauważ, że brane są pod uwagę tylko ustawienia szorstkości, metaliczności i koloru.

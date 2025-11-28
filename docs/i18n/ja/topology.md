@@ -1,4 +1,4 @@
-# ![](/icons/multires.webp) トポロジー 
+# ![](/icons/multires.webp) トポロジ {#topology}
 
 このメニューでは、Nomad 内のオブジェクトのトポロジー制御に加え、オブジェクト間およびテクスチャ間でディテールをベイク／転送するためのツールを扱います。
 
@@ -26,7 +26,7 @@ Nomad のトポロジーメニューはいくつかのセクションに分か�
 | [Primitive](#msc)                     | ![](/icons/dot.webp)        | プリミティブのオプション                                         |
 
 
-## Polygon stats
+## ポリゴン統計 {#polygon-stats}
 
 ![](/images/topology_stats.webp)
 
@@ -34,18 +34,18 @@ Nomad のトポロジーメニューはいくつかのセクションに分か�
 
 このセクションをタップすると、シーン内のすべてのポリゴンオブジェクトについてのポリゴン統計一覧が表示されます。
 
-## ![](/icons/multires.webp) Multiresolution
+## ![](/icons/multires.webp) マルチレゾリューション {#multiresolution}
 
 ![](/images/topology_multires_menu.webp)
 
-### Multiresolution とは？
+### マルチレゾリューションとは？ {#what-is-multiresolution}
 マルチレゾリューション機能は主に次の 2 つの用途に有用です:
 - スムーズサブディビジョンアルゴリズムによるオブジェクトのポリゴン数増加
 - 複数の解像度レベルを扱い、小さな編集と大きな編集を行き来できるようにする
 
 ![](/videos/multiresolution.mp4)
 
-#### マルチレゾリューションのワークフロー
+#### マルチレゾリューションのワークフロー {#multiresolution-workflow}
 マルチレゾリューションの重要な点は、低解像度に戻ってオブジェクトを編集し、その後再び最高解像度に戻しても、高解像度のディテールを失わないことです。高解像度のディテールは自動的に再投影されます。
 
 ::: warning
@@ -58,35 +58,35 @@ Nomad のトポロジーメニューはいくつかのセクションに分か�
 :::
 
 
-### Multiresolution スライダー
+### マルチレゾリューションスライダー {#multiresolution-slider}
 このスライダーは現在のオブジェクトに存在するサブディビジョンレベル数を示します。縦棒が 6 本なら、サブディビジョンレベルは 6 つあります。丸印は現在表示中のサブディビジョンレベルを示します。 
 
-### Reverse
+### 反転 {#reverse}
 最も低いサブディビジョンレベルにいるとき、Reverse ボタンは現在のレベルより下のレベルを作成しようとします。これは一般的に、そのオブジェクトが最初からサブディビジョンで作成されている場合（Nomad や他のマルチレゾリューションサブディビジョンサーフェス対応 3D アプリケーションで作成された場合）にのみ可能です。
 
-### Subdivide
+### 細分化 {#subdivide}
 *Subdivide* ボタンはポリゴン数を 4 倍に増やします。そのため、ポリゴン数が非常に速く増加する可能性があるので注意してください。
 *Subdivision Surface* の重要な性質として、最終的に *Smooth Surface* に収束するという点があります。
 仕組みを理解するには、ポリゴン数の少ないオブジェクトに対して *Subdivide* ボタンを試してみてください。
 
 `Linear subdivision` オプションを有効にすると、この *Smooth* な挙動を無効にできます。
 
-### Delete lower
+### 下位レベルを削除 {#delete-lower}
 現在表示中のレベルより下にサブディビジョンがある場合、それらを削除します。誤って削除してしまった場合は、Reverse ボタンで再作成できます。
 
-### Delete higher
+### 上位レベルを削除 {#delete-higher}
 現在表示中のレベルより上にサブディビジョンがある場合、それらを削除します。
 
-### Linear subdivision
+### 線形細分化 {#linear-subdivision}
 スムージングを適用せずにメッシュを分割します。
 
-### Sharp border
+### シャープな境界 {#sharp-border}
 オブジェクトにフェイスグループがある場合、このオプションを有効にするとフェイスグループ境界をシャープに保ちます。これは各サブディビジョンレベルごとに設定でき（サブディビジョンスライダー上の該当レベルの上に小さなアイコンが表示されます）、レベルごとに挙動を変えられます。
 
-### Keep triangles
+### 三角形を保持 {#keep-triangles}
 一般的なサブディビジョンサーフェスシステムは、サブディビジョン時にすべてのポリゴンをクアッドに変換しようとします。このトグルを有効にすると、サブディビジョンで三角形を維持するよう強制します。
 
-### Lock (LV0)
+### ロック（LV0） {#lock-lv0}
 
 最も低いサブディビジョンレベルが変更されないようにロックします。これは、オブジェクトが別アプリケーションで生成されており、ベースメッシュを変更してはならない場合に重要です。このオプションを無効にすると、高いサブディビジョンレベルで大きな変更を行った際に、レベル 0 も一緒に変形します。
 
@@ -97,7 +97,7 @@ Nomad のトポロジーメニューはいくつかのセクションに分か�
 :::
 
 
-## ![](/icons/voxel.webp) Voxel Remesher
+## ![](/icons/voxel.webp) ボクセルリメッシャー {#voxel-remesher}
 ![](/images/topology_voxel_menu.webp)
 `Voxel Remesher` を使用すると、メッシュ全体のトポロジーが強制的に均一な解像度になり、すべてのポリゴンがほぼ同じサイズになります。トポロジーを気にせず自由にスカルプトしたい場合に非常に便利です。
 
@@ -117,13 +117,13 @@ Nomad のトポロジーメニューはいくつかのセクションに分か�
 実際には、リメッシュを適用する前にすべての穴が埋められます。これは [Trim tool](tools.md#trim) や [Hole filling feature](scene.md#hole-filling) と同様の挙動です。
 :::
 
-### Remesh
+### リメッシュ {#voxel-remesh}
 ボクセルリメッシュを実行します。
 
-### Resolution
+### 解像度 {#voxel-resolution}
 計算時に使用されるボクセルのサイズです。このパラメータを変更している間、結果のプレビューとしてチェッカーボードパターンがメッシュ上にオーバーレイ表示されます。
 
-### Build multiresolution
+### マルチレゾリューションを構築 {#build-multiresolution}
 ボクセルリメッシュ結果に対して、低いマルチレゾリューションレベルを作成します。チェッカーボードパターンを見ながら解像度を設定し、Build multiresolution を 2 に設定した場合、最終結果はスライダーの解像度に相当するディテールを持ち、マルチレゾタブではレベル 2 になります。つまり、レベル 1 とレベル 0 により低解像度のマルチレゾメッシュが存在する状態になります。これは、均一なポリゴンを持つクリーンなメッシュを生成しつつ、低解像度のコントロールメッシュも同時に得る良い方法です。
 
 ::: tip Tip: Build multiresolution と Stable smoothing
@@ -132,10 +132,10 @@ Nomad のトポロジーメニューはいくつかのセクションに分か�
 
 :::
 
-### Keep sharp edges
+### シャープなエッジを保持 {#keep-sharp-edges}
 新しい頂点を元メッシュのシャープエッジにスナップさせます。歪みが生じる場合があります。
 
-## ![](/icons/dynamic.webp) Dynamic Topology
+## ![](/icons/dynamic.webp) ダイナミックトポロジ {#dynamic-topology}
 
 ![](/images/topology_dyntopo_menu.webp)
 マルチレゾリューションとボクセルリメッシュは、トポロジー制御のための業界標準的な手法ですが、どちらもポリゴンを伸ばしすぎたり、詰め込みすぎたりしないよう注意する必要があります。 
@@ -148,13 +148,13 @@ Dynamic Topology はクアッドではなく三角形ポリゴンを使用する
 
 ![](/videos/dynamic.mp4)
 
-### Enabled
+### 有効化 {#enabled}
 Dynamic Topology を有効にします。DynTopo アイコンがブラシ半径と強度スライダーの下に表示され、ツールごとに Dyntopo を切り替えられます。
 
-### Detail
+### ディテール {#dyn-detail}
 ディテール量を制御します。挙動は後述の「Detail based on...」の選択に応じて変化します。
 
-### Detail based on...
+### ディテールの基準... {#detail-based-on}
 | Method   | Description                                                     |
 | :------: | :-------------------------------------------------------------: |
 | Screen   | ディテールレベルは、オブジェクトが画面上でどれだけ大きく表示されているかに依存します。Detail スライダーは 100% 以上で細かいディテール（小さな三角形）、1% で粗いディテール（大きな三角形）になります。  |
@@ -167,7 +167,7 @@ Radius モードの挙動を理解するには、片方の指で Detail スラ�
 
 :::
 
-### Prefer...
+### 優先... {#prefer}
 | Method  | Description       |
 | :-----: | :---------------: |
 | Speed   | パフォーマンス優先 |
@@ -180,14 +180,14 @@ Radius モードの挙動を理解するには、片方の指で Detail スラ�
 そのため、非常に細かいディテールをスカルプトしたり、素早いストロークを行った場合でも、トポロジーは常に期待通りにリファインされます。
 
 
-### Use pressure on radius
+### 半径に筆圧を使用 {#use-pressure-on-radius}
 `Radius` モードが有効な場合のみ意味を持ちます。有効にすると、ペン圧でブラシサイズが変化しても、ディテールレベルは常にブラシサイズを反映します。
 
-### Use stroke falloff
+### ストロークフォールオフを使用 {#use-stroke-falloff}
 
 ブラシのフォールオフカーブとアルファも Dyntopo の計算に含めます。
 
-### Method
+### メソッド {#method}
 `Dynamic Topology` を[ブラシ](#brush)に対して使用する場合も、[グローバル](#global)に使用する場合も、動作モードを選択できます:
 
 | Method         | Description                                                           |
@@ -196,30 +196,30 @@ Radius モードの挙動を理解するには、片方の指で Detail スラ�
 | Subdivision    | 新しいポリゴンを追加するのみで、削除は行いません                      |
 | Decimation     | ポリゴンを削除するのみで、追加は行いません                            |
 
-### Protect masked area
+### マスク領域を保護 {#protect-masked-area}
 マスクされた領域のトポロジーが変更されないよう保護します。
 
-### Vertex extrapolation
+### 頂点外挿 {#vertex-extrapolation}
 
 
-### Detail
+### ディテール {#all-detail}
 リメッシュ操作に使用される解像度です。Dyntopo が「Constant」モードの場合、この値はメニュー上部の Detail スライダーと同じになります。
 
-### Remesh
+### リメッシュ {#dyn-remesh}
 Dyntopo アルゴリズムを使ってグローバルリメッシュを実行します。通常、完全なリメッシュには [Voxel Remesher](#voxel-remesher) を使用するのが推奨です。
 
 ただし、ボクセルに対する利点として、マスクされた領域が保護されるため、どこに密度を多く／少なく配置するかをより細かく制御できます。
 
 
 
-## ![](/icons/topo_extra.webp) Misc
+## ![](/icons/topo_extra.webp) その他 {#misc}
 
 ![](/images/topology_misc_menu.webp)
 
-##### ![](/icons/cog.webp) ギアメニュー
+##### ![](/icons/cog.webp) 歯車メニュー {#gear-menu}
 このメニュー内の多くのツールには追加オプションがあります。セクションタイトル横のギアアイコンからアクセスできます。
 
-### Decimation
+### ディシメーション {#decimation}
 
 ![](/images/topology_decimation.webp)
 
@@ -243,7 +243,7 @@ Dyntopo アルゴリズムを使ってグローバルリメッシュを実行し
 
 :::
 
-#### Decimate
+#### ディシメート {#decimate}
 ディシメート処理を開始します。
 
 Decimate ボタン横のアイコンで、ディシメーションに影響するオプションを切り替えられます。パーセンテージはそのオプションの強さを示し、詳細ギアメニューで設定できます。
@@ -254,24 +254,24 @@ Decimate ボタン横のアイコンで、ディシメーションに影響す�
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - フェイスグループ境界をできるだけ保持します。
 * ![](/icons/checkerboard.webp) `Preserve UV Borders` - UV 境界をできるだけ保持します。
 
-#### ![](/icons/cog.webp) Decimate ギアメニュー
+#### ![](/icons/cog.webp) ディシメート歯車メニュー {#decimate-gear-menu}
 ギアメニューには以下の詳細オプションがあります:
-##### Preserve painting
+##### ペイントを保持 {#preserve-painting}
 チェックボックスでこのモードを切り替えます。値はペイントディテールをどの程度正確に保持するかを決定します。値が高いほどペイントを多く保持します。ペイントを気にしない場合は 0 に設定します。
 
 
-##### Uniform faces
+##### 面を均一に {#uniform-faces}
 チェックボックスでこのモードを切り替えます。値が高いほど、サイズの揃った三角形が出力されます。
 
-##### Preserve borders
+##### 境界を保持 {#preserve-borders}
 境界をディシメートしないようにします。`Geometry`、`Face Group`、`UV` の各境界ごとに重みを設定できます。
 
-#### Target triangles
+#### 目標三角形数 {#target-triangles}
 目標とする三角形数を設定します。デフォルト値は 50% で、パーセント／ターゲットボタンで、パーセンテージ指定と正確なポリゴン数指定を切り替えられます。
 
 
 
-### UV Unwrap - UVAtlas
+### UVアンラップ - UVAtlas {#uv-unwrap-uvatlas}
 
 ![](/images/topology_uvatlas_menu.webp)
 現在のメッシュに対してテクスチャ座標（UV）を計算します。一般的に、歪みを最小限に抑えるためにカットを増やし、アイランド数を多くする傾向があります。
@@ -280,23 +280,23 @@ Decimate ボタン横のアイコンで、ディシメーションに影響す�
 
 ![](/videos/unwrap.mp4)
 
-#### Unwrap
+#### アンラップ {#unwrap}
 選択中オブジェクトの UV を計算し、背景に表示します。
 
-#### Delete UVs
+#### UVを削除 {#delete-uvs}
 オブジェクトの UV を削除します。
 
-#### ![](/icons/cog.webp) UVAtlas ギアメニュー
+#### ![](/icons/cog.webp) UVAtlas歯車メニュー {#uvatlas-gear-menu}
 ギアメニューには以下の詳細オプションがあります:
 
-#### Face Group
+#### フェイスグループ {#atlas-face-group}
 
 フェイスグループを UV のカット位置として使用します。
 
-##### Max Stretch
+##### 最大ストレッチ {#max-stretch}
 値が低いほど歪みが少なくアイランド数が多くなり、値が高いほど歪みが大きくアイランド数が少なくなります。 
 
-##### Island spacing
+##### アイランド間隔 {#island-spacing}
 アイランド間のパディング量です。値が低いほどスペースの無駄は少なくなりますが、テクスチャがアイランド間でにじむリスクが高まります。 
 
 ::: warning
@@ -323,24 +323,24 @@ Nomad でモデルを作成する場合、UV がなくてもオブジェクト�
 
 :::
 
-### UV Unwrap - BFF
+### UVアンラップ - BFF {#uv-unwrap-bff}
 ![](/images/topology_uvbff_menu.webp)
 
 BFF UV は「カットを少なく、歪みを多く」というアプローチを優先します。 
 
-#### ![](/icons/cog.webp) UV BFF ギアメニュー
+#### ![](/icons/cog.webp) UV BFF歯車メニュー {#uv-bff-gear-menu}
 
-#### Face Group
+#### フェイスグループ {#bff-face-group}
 
 フェイスグループを UV のカット位置として使用します。
 
-##### Cone count
+##### コーン数 {#cone-count}
 使用される主投影の数を定義します。値が低いほどアイランド数は少なくなりますが、歪みは大きくなります。
 
-##### Seamless patches
+##### シームレスパッチ {#seamless-patches}
 UV パッチのレイアウトに影響します。丁寧に作成されたフェイスグループと組み合わせると最も効果的です。
 
-### Bake -> texture 
+### ベイク -> テクスチャ {#bake-texture}
 ![](/images/topology_bake_menu.webp)
 
 テクスチャベイクは、シーン内の他の可視オブジェクトを、選択中オブジェクトの UV に投影してテクスチャを生成します。
@@ -360,35 +360,35 @@ Solo モードを使えば、他のメッシュを素早く非表示にできま
 
 処理後、頂点カラーは新しい無効化レイヤーに移動され、テクスチャと干渉しないようになります。
 
-#### From itself
+#### 自身から {#tex-from-itself}
 現在のオブジェクトの最高マルチレゾリューションレベルを、最も低いレベルへベイクします。セットアップは簡単ですが、より細かい制御が必要な場合は次のオプションの方が有用です。
 
-#### From high-res ()
+#### 高解像度から () {#tex-from-high-res}
 シーン内の他の可視オブジェクトから、選択中オブジェクトへベイクします。括弧内の数値は、高解像度ターゲットとして使用される他の可視オブジェクト数を示し、それらが現在の UV 付き低解像度オブジェクトにベイクされます。ターゲットオブジェクトは、ベイク対象オブジェクトとレイアウトやトポロジーが同じである必要はなく、柔軟なベイクワークフローが可能です。
 
-#### Resolution
+#### 解像度 {#tex-bake-resolution}
 ベイクされるテクスチャの解像度です。ベイクテクスチャは常に正方形であり、1024 を指定すると 1024x1024 の画像が生成されます。 
 
 下のボタンはよく使われる解像度へのショートカットです。参考までに、512x512 は Web グラフィックや単純なジオメトリ向けの比較的小さなサイズで、4096x4096（略して 4k）は高品質レンダリング向けです。
 
-#### ![](/icons/cog.webp) Bake ギアメニュー
+#### ![](/icons/cog.webp) ベイク歯車メニュー {#tex-bake-gear-menu}
 ![](/images/topology_bake_gear_menu.webp)
 ギアメニューには以下の詳細オプションがあります:
 
-##### Normal, Roughness, Metalness, Color, Emissive, Opacity
+##### ノーマル、ラフネス、メタリネス、カラー、エミッシブ、不透明度 {#tex-normal-roughness-metalness-color-emissive-opacity}
 これらのチェックボックスは、どのプロパティをベイクするかを決定します。各プロパティは別々のマップにベイクされます。ベイク完了後、これらは現在のオブジェクトのマテリアルにテクスチャとして追加されます。
 
-##### Backup
+##### バックアップ {#tex-backup}
 ベイクされたテクスチャをプレビューするには、オブジェクトのペイント情報を無効にする必要があります。このオプションを有効にすると、ペイント情報を新しいレイヤーにバックアップとして移動し、簡単に有効／無効を切り替えられるようにします。
 
-#### Cage radius
+#### ケージ半径 {#tex-cage-radius}
 ベイク対象オブジェクトからどれだけ離れた位置までレイを飛ばしてターゲットオブジェクトを探すかを調整します。デフォルトではアーティファクトを避けるために距離は低めに設定されていますが、ターゲットオブジェクトがベイク対象から離れている場合は値を大きくする必要があります。
 
-##### Ray offset
+##### レイオフセット {#tex-ray-offset}
 ベイク計算をベイク対象オブジェクト上のどの位置から開始するかを調整します。デフォルトでは表面から 5% 外側から開始し、一般的なアーティファクトを回避します。ターゲットオブジェクトがベイク対象から非常に離れている場合は、このオフセットを増やす必要があるかもしれません。
 
 
-### Reproject to vertex
+### 頂点へリプロジェクト {#reproject-to-vertex}
 
 ![](/images/topology_reproject_menu.webp)
 
@@ -400,7 +400,7 @@ Solo モードを使えば、他のメッシュを素早く非表示にできま
 `Bake to texture` や `Reproject to vertex` を使用する際は、頂点カラーとマテリアルテクスチャの両方が考慮されます。
 :::
 
-#### From itself
+#### 自身から {#vertex-from-itself}
 マテリアルのテクスチャを頂点属性に変換します。このボタンは、オブジェクトに UV があり、かつマテリアルにテクスチャが有効な場合にのみアクティブになります。
 
 ::: tip TIP: テクスチャペイント
@@ -414,36 +414,36 @@ Nomad はテクスチャの直接ペイントや編集をサポートしてい�
 1. `Bake to texture` を `From itself` モードで実行し、その編集内容を再びテクスチャに変換する
 :::
 
-#### From high-res ()
+#### 高解像度から () {#vertex-from-high-res}
 可視オブジェクトを、選択中オブジェクトの頂点属性へ変換します。このボタン上の数値は、可視オブジェクトの数を示します。
 
 ::: tip
 他オブジェクトのリプロジェクションは、他オブジェクトから色情報を転送するだけでなく、頂点位置を他オブジェクトに投影する用途にも使えます。例えば、包帯メッシュをキャラクターに投影するといったことが可能です。
 :::
 
-#### ![](/icons/cog.webp) Reproject ギアメニュー
+#### ![](/icons/cog.webp) リプロジェクト歯車メニュー {#vertex-reproject-gear-menu}
 ギアメニューには以下の詳細オプションがあります:
 
-#### Vertices, Roughness, Metalness, Color, Opacity, Opacity->Mask, Mask, Layers, Face Group
+#### 頂点、ラフネス、メタリネス、カラー、不透明度、不透明度->マスク、マスク、レイヤー、フェイスグループ {#vertex-vertices-roughness-metalness-color-opacity-opacity-mask-mask-layers-face-group}
 これらのチェックボックスは、どのプロパティを選択中オブジェクトへ投影するかを決定します。 
 
-#### Relax
+#### リラックス {#vertex-relax}
 選択中メッシュのレイアウトを、リプロジェクションターゲットによりよくフィットさせるために、一定量スムーズ／リラックスさせることができます。Smooth は高ポリゴンメッシュに適しており、Relax はローポリメッシュに適しています。Auto にすると、Nomad が最適な方法を自動判定します。
 
-#### Iterations
+#### イテレーション {#vertex-iterations}
 リプロジェクション中にリラックス処理を何回適用するかを指定します。
 
-#### Cage radius
+#### ケージ半径 {#vertex-cage-radius}
 選択中オブジェクトからどれだけ離れた位置までレイを飛ばしてターゲットオブジェクトを探すかを調整します。デフォルトではアーティファクトを避けるために距離は低めに設定されていますが、ターゲットオブジェクトがベイク対象から離れている場合は値を大きくする必要があります。
 
-#### Ray bias
+#### レイバイアス {#vertex-ray-bias}
 値が低いほどターゲット表面上の最も近いポイントへの投影を優先し、値が高いほどサーフェス法線に沿った交差点への投影を優先します。 
 
-#### Ray offset
+#### レイオフセット {#ray-vertex-offset}
 選択中オブジェクト上で、ベイク計算をどこから開始するかを調整します。デフォルトでは表面から 5% 外側から開始し、特定のアーティファクトを回避します。ターゲットオブジェクトが選択中オブジェクトから非常に離れている場合は、このオフセットを増やす必要があるかもしれません。
 
 
-### Quad Remesh - Instant
+### クアッドリメッシュ - Instant {#quad-remesh-instant}
 ![](/images/topology_quadremesh_menu.webp)
 [Wenzel Jakob, Marco Tarini, Daniele Panozzo, Olga Sorkine-Hornung による Instant Meshes アルゴリズム](https://igl.ethz.ch/projects/instant-meshes/) を使用してリメッシュします。メッシュのフローを解析し、クリーンなクアッドトポロジーを生成します。
 
@@ -451,22 +451,22 @@ Nomad はテクスチャの直接ペイントや編集をサポートしてい�
 iOS およびデスクトップでは、[Quad remesher](tools#quad-remesher) ツールの方が、より良い結果と高い制御性を提供します。
 :::
 
-#### Remesh
+#### リメッシュ {#instant-remesh}
 Instant Meshes の処理を開始します。
 
-#### Target quads
+#### 目標クアッド数 {#target-quads}
 Quad Remesh が生成を試みるクアッドポリゴン数です。
 
-#### ![](/icons/cog.webp) Quad Remesh Instant ギアメニュー
+#### ![](/icons/cog.webp) クアッドリメッシュ Instant 歯車メニュー {#quad-remesh-instant-gear-menu}
 ギアメニューには以下の詳細オプションがあります:
 
-##### Crease angle
+##### クリース角度 {#crease-angle}
 リメッシュ処理のガイドとして利用されるシャープコーナーのしきい値です。
 
-#### Max fill hole
+#### 最大穴埋めサイズ {#max-fill-hole}
 アルゴリズムが不要な穴を生成することがあります。頂点数がこの値未満の穴は自動的に埋められます。
 
-### Holes
+### ホール {#holes}
 ![](/images/topology_holes_menu.webp)
 通常、オブジェクトは「クローズド」であり、メッシュが「ウォータタイト」であることが多いでしょう。
 
@@ -478,50 +478,50 @@ Quad Remesh が生成を試みるクアッドポリゴン数です。
 Voxel Remesher を実行すると、1 つまたは複数メッシュに対して使用した場合でも、すべての穴は自動的に閉じられます。
 :::
 
-#### Close holes
+#### 穴を閉じる {#close-holes}
 穴埋め処理を実行します。
 
-#### ![](/icons/cog.webp) Holes ギアメニュー
+#### ![](/icons/cog.webp) ホール歯車メニュー {#holes-gear-menu}
 ギアメニューには以下の詳細オプションがあります:
 
-##### Detail
+##### ディテール {#fill-detail}
 穴を埋める際に使用されるポリゴン密度です。このスライダーをドラッグしている間、モデル上にチェッカーボードパターンが表示され、使用される三角形サイズの目安になります。チェックボックスを有効にするとこれを無効化し、既存の頂点のみを使用します。その場合、穴の上に細長い三角形が生成されることが多く、スカルプトしづらくなります。
 
-##### Fill non-manifold
+##### 非多様体を埋める {#fill-non-manifold}
 非多様体の穴を埋めるよう試みます。
 
-##### Face Group
+##### フェイスグループ {#fill-face-group}
 
 穴を埋める際に、各穴に個別のフェイスグループを割り当てるか（Auto）、すべて同じフェイスグループを共有させるか（Off）、フェイスグループを作成しないか（On）を指定します。
 
-### Force Manifold
+### 強制多様体化 {#force-manifold}
 ![](/images/topology_forcemanifold_menu.webp)
 非多様体エッジをクリーンアップしようと試みます。2 つ以上の面が共有するエッジをサポートしない外部ソフトウェア向けに有用です。
 
-#### Clean
+#### クリーン {#clean}
 クリーンアップ処理を実行します。
-#### ![](/icons/cog.webp) Force manifold ギアメニュー
+#### ![](/icons/cog.webp) 強制多様体化歯車メニュー {#force-manifold-gear-menu}
 ギアメニューには以下の詳細オプションがあります:
 
-#### Delete small faces
+#### 小さな面を削除 {#delete-small-faces}
 小さなポリゴンを削除・結合するためのしきい値です。
 
 
-### Triplanar
+### トライプラナー {#triplanar}
 ![](/images/topology_triplanar_menu.webp)
 メッシュを [triplanar](scene.md#triplanar) プリミティブに変換します。
 この処理により、多くのディテールが失われる可能性があります。
 
-#### Force cubic
+#### 立方体を強制 {#force-cubic}
 トライプラナーを立方体に強制します。無効の場合、トライプラナーはオブジェクトを囲む最も近いバウンディングボックスにフィットします。
 
-#### Convert
+#### 変換 {#convert}
 トライプラナー変換を実行します。
 
-#### Resolution
+#### 解像度 {#triplanar-resolution}
 トライプラナー処理で使用されるボクセルサイズです。
 
-## ![](/icons/dot.webp) Primitive
+## ![](/icons/dot.webp) プリミティブ {#primitive}
 選択中プリミティブのパラメータです。これらはプリミティブのビューポートツールバーからも利用できます。
 
 ![](/images/topology_primitive_screenshot.webp)

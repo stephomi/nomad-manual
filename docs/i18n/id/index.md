@@ -1,4 +1,4 @@
-# Overview
+# Ikhtisar {#overview}
 
 <!-- 
 [[toc]]
@@ -13,7 +13,7 @@ Baca panduan [Memulai](gettingstarted.md).
 :::
 
 
-## Daftar isi
+## Daftar isi {#table-of-contents}
 
 | Menu                           | Icon                          | Deskripsi                                           |
 | :----------------------------: | :---------------------------: | :------------------------------------------------: |
@@ -37,7 +37,7 @@ Baca panduan [Memulai](gettingstarted.md).
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Pertanyaan yang Sering Diajukan                     |
 | [Tips](tips.md)                | ![](/icons/manual.webp)      | Tips alur kerja                                     |
 
-## Sumber daya komunitas
+## Sumber daya komunitas {#community-resources}
 
 <style>
 .video-grid {

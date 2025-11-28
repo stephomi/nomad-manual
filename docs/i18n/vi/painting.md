@@ -1,23 +1,23 @@
-# ![](/icons/paint.webp) Tô màu  
+# ![](/icons/paint.webp) Tô màu {#painting}
 
 Điều khiển màu sắc, độ nhám (roughness), độ kim loại (metalness) của các nét sơn, cho phép tô tràn (flood fill) các thuộc tính sơn, và cách các công cụ sơn tương tác với layer, mask, vùng ẩn.
 
 ![](/images/paint_overview.webp)  
 
-## Tổng quan
+## Tổng quan {#overview}
 
 Nomad sử dụng kỹ thuật tô màu theo đỉnh (PBR vertex painting). Điều này có nghĩa là gì?
 
-### PBR
+### PBR {#pbr}
 PBR, hay Physically Based Rendering (kết xuất dựa trên vật lý), là một kỹ thuật đồ họa máy tính phổ biến trong phim ảnh, truyền hình, game và di động. Bằng cách dựa ánh sáng trên các thuộc tính vật lý, và định nghĩa bề mặt thông qua màu sắc, độ nhám, độ kim loại, có thể đạt được rất nhiều kiểu hiển thị chân thực.
 
-### Tô màu theo đỉnh (Vertex painting)
+### Tô đỉnh (Vertex) {#vertex-painting}
 
 Vertex painting có nghĩa là thông tin sơn được lưu trong các đỉnh (vertex) của mô hình, thay vì trong texture. Vì Nomad có thể xử lý các mô hình với hàng trăm nghìn, thậm chí hàng triệu đỉnh, mô hình của bạn có thể có lớp sơn bề mặt rất chi tiết; nếu bạn có thể điêu khắc chi tiết đó, bạn cũng có thể tô màu chi tiết đó.
 
 Điều này cũng có nghĩa là tô màu trong Nomad không cần UV mapping, vốn thường là một quy trình chậm và kỹ thuật trong các ứng dụng 3D khác. Nhiều ứng dụng 3D khác không hỗ trợ số lượng đỉnh cao như Nomad, tuy nhiên Nomad cũng có các công cụ bake texture và giảm đa giác (decimation) rất tốt để hỗ trợ.
 
-### Dán chất liệu (Texturing)
+### Tạo kết cấu (Texturing) {#texturing}
 
 Nomad hỗ trợ texture, nhưng chúng phải có sẵn trong mô hình được import, hoặc thông qua việc bake tô màu theo đỉnh sang texture. 
 
@@ -38,20 +38,20 @@ Một ví dụ về quy trình làm việc:
 Đó là phần tổng quan, giờ hãy khám phá các mục trong menu tô màu:
 
 
-## Tô theo nét (Stroke painting)
+## Tô theo nét vẽ {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
 Bật tô màu cho công cụ này, hữu ích nếu bạn cần điêu khắc và tô màu cùng lúc.
 
 Với các công cụ mà tô màu là chức năng chính (ví dụ Paint, Smudge, Mask), checkbox này sẽ không xuất hiện.
 
-### Cường độ tô màu (Paint intensity)
+### Cường độ tô {#paint-intensity}
 
 Thanh trượt cho phép bạn dùng cường độ tô màu khác với cường độ chính của công cụ.
 
 Các checkbox `Alpha`, `Falloff` và `Randomize` quyết định liệu các tính năng đó có ảnh hưởng đến tô màu hay không. Ví dụ bạn có thể bật randomize cho công cụ clay, nhưng màu sắc sẽ không bị random.
 
-## Chất liệu (Material)
+## Vật liệu {#material}
 ![](/images/paint_material.webp) 
 
 Biểu tượng đầu tiên là hình xem trước chất liệu. Kéo trên hình xem trước 3D sẽ xoay nó. 
@@ -66,14 +66,14 @@ Nút xem trước cạnh tiêu đề Material cho phép bạn chuyển giữa no
 
 Ống nhỏ giọt có thể dùng để lấy mẫu tất cả thuộc tính từ một đối tượng trong cảnh của bạn.
 
-## Preset chất liệu (Material Presets)
+## Các preset vật liệu {#material-presets}
 Chạm vào hình xem trước 3D sẽ mở menu preset chất liệu, bạn có thể clone chúng để tạo preset riêng.
 
 ![](/images/paint_presets.webp) 
 
 Khi bật, các công tắc `Embed Textures` và `Alpha` sẽ lưu mọi texture được chất liệu này sử dụng bên trong preset. Điều này được giải thích kỹ hơn bên dưới.
 
-## Thanh trượt PBR
+## Thanh trượt PBR {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 Tô màu [PBR](shading.md#pbr) sử dụng 4 kênh:
@@ -112,7 +112,7 @@ Khi dùng texture cho tô màu PBR, thường hữu ích nếu chuyển sang cô
 Bạn có thể cân nhắc bật `Smooth Shading` [toàn cục](settings.md#smooth-shading) hoặc [theo từng đối tượng](material.md#smooth-shading) nếu bạn đang tô bề mặt kim loại trên một đối tượng có số lượng polygon thấp.
 :::
 
-## Tô toàn bộ (Paint all)
+## Tô tất cả {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
@@ -131,12 +131,12 @@ Các nút bổ sung điều khiển cách Paint All có thể bị ảnh hưởn
 | ![](/icons/triplanar.webp) | Chỉ báo thiết lập triplanar                   |
 | ![](/icons/cog.webp)       | Mở thiết lập Triplanar                        |
 
-### Thiết lập Triplanar
+### Cài đặt triplanar {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
 Tương tự [thiết lập triplanar trong menu material](material.md#triplanar), bạn có thể điều khiển độ hòa trộn giữa các phép chiếu, độ lặp (tiling) và độ lệch (offset). 
 
 Dùng checkbox preview ở đầu menu này để bật xem trước liên tục trong khi chỉnh giá trị.
 
-## Chất liệu toàn cục (Global material)
+## Vật liệu toàn cục {#global-material}
 Nếu tùy chọn này được bật, chất liệu đã chọn sẽ giống nhau cho các công cụ khác. Lưu ý nó chỉ tính đến thiết lập roughness, metalness và color.

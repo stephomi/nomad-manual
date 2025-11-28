@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) Layers 
+# ![](/icons/layer.webp) Layers {#layers}
 
 This menu contains the layer stack, a way to store edits to your object in a non destructive way, and many ways to combine and repurpose layers.
 
 ![](/images/layers_overview.webp) 
 
-## Overview
+## Overview {#overview}
 
 Nomad layers serve multiple purposes.
 
@@ -19,7 +19,7 @@ Layers can be partially erased via the [Delete Layer](tools.md#delete-layer) too
 ![](/videos/layer.mp4)
 
 ::: tip
-Unlike most sculpting software, changing the topology of a mesh will not discard the layers. You can use the [Voxel Remesher](topology.md#voxel-remesher), the [Multiresolution](topology.md#multiresolution) or the [Trim](tools.md#trim)/[Split](tools.md#split) tools, but note that when using [Voxel Remesher](topology.md#voxel-remesher), the quality of the layer will be impacted.
+Unlike most sculpting software, changing the topology of a mesh will not discard the layers. You can use the [Voxel Remesher](topology.md#voxel-remesher), the [Multiresolution](topology.md#multires) or the [Trim](tools.md#trim)/[Split](tools.md#split) tools, but note that when using [Voxel Remesher](topology.md#voxel-remesher), the quality of the layer will be impacted.
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ If using layers for blendshapes/morph targets, there is extra layer functionalit
 :::
 ----
 
-## Layer menu 
+## Layer menu {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Press `Add layer` to create a new layer.
 
 Each layer has a name, a slider to control it's strength/factor, and option buttons.
 
-### Options
+### Options {#options}
 
 | Action       | Icon                         | Description                                         |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Each layer has a name, a slider to control it's strength/factor, and option butt
 
 To move a layer to another part of the layer stack, press and hold on its name, then drag.
 
-### More...
+### More... {#more}
 
 The 'More...' button will show extra options for the current layer:
 
 ![](/images/layers_more.webp) 
 
-#### Channel factors
+#### Channel factors {#channel-factors}
 
 These controls let you scale the amount of sculpt/color/roughness/metalness/opacity for the layer. These values are multiplied against the layer factor slider, so for example if the layer strength is 1, but the color channel factor is 0.5, then the color displayed will be at 0.5 strength.
 
@@ -82,17 +82,17 @@ Maybe in the future, each channel will have its own alpha channel to remove this
 :::
 
 
-#### ![](/icons/tool_mask.webp) Mask
+#### ![](/icons/tool_mask.webp) Mask {#mask}
 The mask button next to each slider will create a mask from that channel. Similar to using layers to make selections in painting applications, this allows you to reuse work you have done in a layer for other operations.
 
-#### ![](/icons/preview.webp) Preview
+#### ![](/icons/preview.webp) Preview {#preview}
 ![](/images/layers_preview.webp) 
 
 When enabled, will preview the extract settings for this layer (see the next section).
 
 When xray is enabled, only the exacted shape will be solid, the rest of the shape will be made transparent, useful if you are using negative extraction heights.
 
-#### Extract
+#### Extract {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ The `Extract` button will duplicate the contents of the layer into a new object,
 * Shell - Close the extracted shape with the thickness value and direction options.
 * Layer - Extract the layer difference.
 
-#### ![](/icons/height.webp) Thickness
+#### ![](/icons/height.webp) Thickness {#thickness}
 ![](/images/layers_thickness.webp) 
 
 The depth of the shell extrusion. Positive values grow out of the surface, negative values grow into the surface.
@@ -116,12 +116,12 @@ The plus/minus next to this value will set the direction of the extrusion:
 * Plus ( + ) will start from the current surface and extrude up.
 * PlusMinus ( ± ) will push the top and bottom of the extrusion away by equal amounts, so it will be halfway embedded in the original surface.
 
-#### Smoothness
+#### Smoothness {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 If the edges of the region to be extracted are jagged, this slider will attempt to blur the edge into a smoother shape. 
 
-#### ![](/icons/height.webp) Edge loop (side)
+#### ![](/icons/height.webp) Edge loop (side) {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 This section is visible when the closing action is 'Shell'. 
@@ -132,10 +132,10 @@ If disabled, the `Division` slider will set the number of divisions on the sides
 
 _This is the end of the 'More...' submenu._
 
-### Advanced
+### Advanced {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Keep top layers details
+#### Keep top layers details {#keep-top-layers-details}
 
 Ensure that small details on higher layers remain visible when large changes are made to lower changes.
 
@@ -144,17 +144,16 @@ By default if you sculpt small wrinkles on a layer, then go and make large chang
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expand list
+#### UI: Expand list {#ui-expand-list}
 
 The default layer menu lets you toggle layer visibility and the layer opacity. Enabling this option expands the full controls for every layer.
 
 ![](/images/layers_expand.webp)
 
-#### Sync transform
+#### Sync transform {#sync-transform}
 
 If enabled, all the unselected layers will be adjusted depending on the transform rotation, scale, skew. 
 
 Disbale this option if the other layers are meantt o be used without the new transform that you are applying.
 
 When set on `Auto`, only the visible layers will be adjusted.
-

@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) Camadas 
+# ![](/icons/layer.webp) Camadas {#layers}
 
 Este menu contém a pilha de camadas, uma forma de armazenar edições no seu objeto de maneira não destrutiva, e muitas maneiras de combinar e reaproveitar camadas.
 
 ![](/images/layers_overview.webp) 
 
-## Visão geral
+## Visão geral {#overview}
 
 As camadas do Nomad têm múltiplos propósitos.
 
@@ -19,7 +19,7 @@ As camadas podem ser parcialmente apagadas por meio da ferramenta [Delete Layer]
 ![](/videos/layer.mp4)
 
 ::: tip
-Ao contrário da maioria dos softwares de escultura, mudar a topologia de uma malha não descartará as camadas. Você pode usar o [Voxel Remesher](topology.md#voxel-remesher), o [Multiresolution](topology.md#multiresolution) ou as ferramentas [Trim](tools.md#trim)/[Split](tools.md#split), mas note que ao usar o [Voxel Remesher](topology.md#voxel-remesher), a qualidade da camada será impactada.
+Ao contrário da maioria dos softwares de escultura, mudar a topologia de uma malha não descartará as camadas. Você pode usar o [Voxel Remesher](topology.md#voxel-remesher), o [Multiresolution](topology.md#multires) ou as ferramentas [Trim](tools.md#trim)/[Split](tools.md#split), mas note que ao usar o [Voxel Remesher](topology.md#voxel-remesher), a qualidade da camada será impactada.
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ Se estiver usando camadas para blendshapes/morph targets, há funcionalidades ex
 :::
 ----
 
-## Menu de camadas 
+## Menu de camada {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Pressione `Add layer` para criar uma nova camada.
 
 Cada camada tem um nome, um controle deslizante para controlar sua intensidade/fator e botões de opções.
 
-### Opções
+### Opções {#options}
 
 | Ação         | Ícone                        | Descrição                                           |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Cada camada tem um nome, um controle deslizante para controlar sua intensidade/f
 
 Para mover uma camada para outra parte da pilha de camadas, pressione e segure no nome dela e então arraste.
 
-### More...
+### Mais... {#more}
 
 O botão 'More...' mostrará opções extras para a camada atual:
 
 ![](/images/layers_more.webp) 
 
-#### Fatores de canal
+#### Fatores de canal {#channel-factors}
 
 Esses controles permitem escalar a quantidade de escultura/cor/rugosidade/metalicidade/opacidade da camada. Esses valores são multiplicados pelo controle deslizante de fator da camada, então, por exemplo, se a intensidade da camada for 1, mas o fator do canal de cor for 0,5, a cor exibida terá intensidade 0,5.
 
@@ -82,17 +82,17 @@ Talvez no futuro, cada canal tenha seu próprio canal alfa para remover essa lim
 :::
 
 
-#### ![](/icons/tool_mask.webp) Mask
+#### ![](/icons/tool_mask.webp) Máscara {#mask}
 O botão de máscara ao lado de cada controle deslizante criará uma máscara a partir daquele canal. Similar ao uso de camadas para fazer seleções em aplicativos de pintura, isso permite reutilizar o trabalho que você fez em uma camada para outras operações.
 
-#### ![](/icons/preview.webp) Preview
+#### ![](/icons/preview.webp) Pré-visualização {#preview}
 ![](/images/layers_preview.webp) 
 
 Quando ativado, irá pré-visualizar as configurações de extração para esta camada (veja a próxima seção).
 
 Quando o raio‑X (xray) está ativado, apenas a forma extraída ficará sólida, o restante da forma ficará transparente, útil se você estiver usando alturas de extração negativas.
 
-#### Extract
+#### Extrair {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ O botão `Extract` irá duplicar o conteúdo da camada em um novo objeto, geralm
 * Shell - Fecha a forma extraída com o valor de espessura e opções de direção.
 * Layer - Extrai a diferença da camada.
 
-#### ![](/icons/height.webp) Thickness
+#### ![](/icons/height.webp) Espessura {#thickness}
 ![](/images/layers_thickness.webp) 
 
 A profundidade da extrusão do shell. Valores positivos crescem para fora da superfície, valores negativos crescem para dentro da superfície.
@@ -116,12 +116,12 @@ O sinal de mais/menos ao lado desse valor define a direção da extrusão:
 * Mais ( + ) começará da superfície atual e extrudirá para cima.
 * MaisMenos ( ± ) empurrará o topo e a base da extrusão para longe em quantidades iguais, de modo que ficará metade embutida na superfície original.
 
-#### Suavidade
+#### Suavidade {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 Se as bordas da região a ser extraída estiverem irregulares, este controle deslizante tentará desfocar a borda em uma forma mais suave. 
 
-#### ![](/icons/height.webp) Edge loop (side)
+#### ![](/icons/height.webp) Loop de aresta (lado) {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 Esta seção fica visível quando a ação de fechamento é 'Shell'. 
@@ -132,10 +132,10 @@ Se desativado, o controle deslizante `Division` definirá o número de divisões
 
 _Este é o fim do submenu 'More...'._
 
-### Avançado
+### Avançado {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Keep top layers details
+#### Manter detalhes das camadas superiores {#keep-top-layers-details}
 
 Garante que pequenos detalhes em camadas superiores permaneçam visíveis quando grandes alterações são feitas em camadas inferiores.
 
@@ -144,13 +144,13 @@ Por padrão, se você esculpir pequenas rugas em uma camada e depois fizer grand
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expand list
+#### UI: Expandir lista {#ui-expand-list}
 
 O menu de camadas padrão permite alternar a visibilidade da camada e a opacidade da camada. Ativar esta opção expande os controles completos para cada camada.
 
 ![](/images/layers_expand.webp)
 
-#### Sync transform
+#### Sincronizar transformação {#sync-transform}
 
 Se ativado, todas as camadas não selecionadas serão ajustadas dependendo da rotação, escala e inclinação (skew) da transformação. 
 

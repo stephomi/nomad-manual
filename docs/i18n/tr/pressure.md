@@ -1,4 +1,4 @@
-# ![](/icons/pressure.webp) Basınç 
+# ![](/icons/pressure.webp) Basınç {#pressure}
 
 ---
 
@@ -7,7 +7,7 @@ Bu menü, Apple Pencil veya Samsung S Pen gibi tablet kaleminin davranışını 
 Varsayılan olarak, kalemin basıncı geçerli fırçanın Yarıçapını ve Yoğunluğunu etkiler.
 Bu etkinin azalma eğrisini özelleştirebilirsiniz.
 
-## Tanınmayan basınca izin ver
+## Tanınmayan basınca izin ver {#allow-unrecognized-pressure}
 
 Bazı Android cihazlarda, parmak girdileri rastgele sabit bir basınç değeri döndürür.
 Özellikle döndürülen değer küçükse, parmağınızla yontma yapmayı planlıyorsanız bu can sıkıcı olabilir.

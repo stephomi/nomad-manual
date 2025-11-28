@@ -1,4 +1,4 @@
-# ![](/icons/camera.webp) Fotocamera
+# ![](/icons/camera.webp) Fotocamera {#camera}
 
 Questo menu consente di creare e modificare le fotocamere, oltre a controllare come interagisci con esse.
 
@@ -11,9 +11,9 @@ Le fotocamere in Nomad hanno diversi utilizzi:
 * Come fotocamera in prima persona per navigare nella scena
 * Come fotocamera ortografica per giochi isometrici o rendering in stile industriale.
 
-## Controllare la fotocamera
+## Controllare la fotocamera {#control}
 
-### Rotazione
+### Rotazione {#rotation}
 Ruoti la fotocamera trascinando *un* dito sullo sfondo.
 Se trascini il dito sul modello, verrà invece avviata l’operazione di scultura.
 
@@ -21,23 +21,23 @@ Se trascini il dito sul modello, verrà invece avviata l’operazione di scultur
 Sì, puoi appoggiare *due* dita sullo schermo - come se volessi iniziare un gesto di pan/zoom - e poi sollevare *un* dito.
 :::
 
-### Messa a fuoco / Reset
+### Messa a fuoco / Reimposta {#focus}
 *Doppio tocco* sul modello per mettere a fuoco il punto selezionato.
 Se fai *doppio tocco* sullo sfondo, la fotocamera metterà a fuoco la mesh selezionata.
 
-### Traslazione
+### Traslazione {#translation}
 Muovendo *due* dita puoi effettuare il pan della fotocamera.
 
-### Zoom
+### Zoom {#zooming}
 Usando il gesto di pizzico puoi effettuare lo zoom avanti/indietro.
 
-### Rotazione sull’asse di vista (Roll)
+### Rotazione sull'asse di vista {#rolling}
 Puoi *ruotare* la vista ruotando *due* dita.
 ::: warning
 Questo gesto è disponibile solo per la modalità di rotazione `trackball`.
 :::
 
-### Controlli da desktop
+### Controlli desktop {#desktop}
 
 Su desktop, il tasto alt/opt viene usato per controllare la fotocamera:
 
@@ -56,11 +56,11 @@ Con queste impostazioni, puoi manipolare la fotocamera solo con la penna:
 * rocker superiore e movimento in hover = ruota la fotocamera
 * rocker inferiore e movimento in hover = pan
 
-## Controlli fotocamera
+## Controlli della fotocamera {#camera-controls}
 
 ![](/images/camera_list.webp)
 
-### Viste
+### Viste {#views}
 Puoi salvare punti di vista della fotocamera usando `Add View`.
 Se fai clic sul nome della vista, la fotocamera ripristinerà quella vista.
 
@@ -78,44 +78,44 @@ Può essere utile se vuoi passare ciclicamente tra viste di riferimento frontali
 | Modifica nome | ![](/icons/pencil.webp)    | Modifica il nome della fotocamera                                           |
 | Elimina     | ![](/icons/trash.webp)       | Elimina la fotocamera                                                       |
 
-### ![](/icons/tool_view.webp) Add View
+### ![](/icons/tool_view.webp) Aggiungi vista {#add}
 Crea una nuova fotocamera basata sulla vista corrente.
 
-### ![](/icons/camera.webp) Icons
+### ![](/icons/camera.webp) Icone {#icons-test}
 
 Attiva/disattiva la visibilità delle icone delle fotocamere nel viewport. Se una fotocamera è selezionata, la sua icona è sempre visibile.
 
-### Projection Type
+### Tipo di proiezione {#projection}
 Puoi modificare il `Field of View` (FOV / lunghezza focale) della fotocamera.
 Di solito è consigliato usare un FOV basso per scopi di scultura, poiché può aiutare con le proporzioni.  
 Puoi anche usare la modalità `Orthographic`, che è più o meno simile a un FOV pari a 0.
 
-### First Person
+### Prima persona {#fps}
 Abilita l’impostazione del pivot direttamente sulla fotocamera, invece che sulla scultura. Trascinando un dito sullo sfondo la posizione della fotocamera rimarrà bloccata, ma cambierà la rotazione, in modo simile ai giochi in prima persona. Utile quando si scolpiscono ambienti piuttosto che singoli oggetti.
 
 ![](/images/camera_rotation_ortho_view.webp)
 
-### Rotation Type
+### Tipo di rotazione {#rotation-type}
 Per impostazione predefinita la fotocamera usa la modalità di rotazione `Turntable`.
 Significa che hai solo due gradi di libertà, è più intuitiva ma in alcuni casi potresti volere più flessibilità.  
 Puoi passare a `Trackball`, potrai *ruotare* la vista ruotando *due* dita sul viewport. Su desktop esiste una modalità trackball alternativa che potrebbe risultare più familiare ad alcuni utenti.
 
-### Orthographic snap
+### Aggancio ortografico {#orthographic}
 
 Quando è abilitata, se hai una tastiera tenere premuto shift mentre ruoti la vista farà agganciare la fotocamera alla vista frontale/posteriore/superiore/inferiore/sinistra/destra più vicina e renderà la fotocamera ortografica. La fotocamera verrà inoltre resa ortografica quando il cubo di vista viene cliccato per agganciare a front/back/left/right/top/bottom.
 
-### Reset view
+### Reimposta vista {#reset}
 
 Sposta la fotocamera sul fronte e adatta la scena alla vista.
 
-### Snap view
+### Aggancia vista {#snap}
 Aggancia alla vista frontale/posteriore/sinistra/destra/superiore/inferiore più vicina. Se ti trovi già in una di queste viste, facendo clic di nuovo verrà effettuato uno snap di 180 gradi al lato opposto.
 
-### Speed
+### Velocità {#speed}
 
 Se senti che la fotocamera si muove troppo lentamente o troppo velocemente, puoi impostare un moltiplicatore di velocità per `rotation`, `translation` e `zooming`. Utile se la tua scultura è molto grande o molto piccola.
 
-### Panoramica del pivot
+### Panoramica del perno {#pivot}
 
 Quando ruoti la fotocamera puoi vedere un piccolo punto rosa, questo è il punto di pivot della fotocamera.  
 È molto importante capire dove si trova il pivot per non perderti o sentirti frustrato dai movimenti della fotocamera.
@@ -125,7 +125,7 @@ Per impostazione predefinita il pivot viene aggiornato tramite queste operazioni
 - doppio tocco sullo sfondo (il nuovo pivot sarà al centro della mesh)
 - appoggiare *due* dita sullo schermo (pan/zoom/roll) aggiornerà il pivot al centro delle *due* dita
 
-### Update Pivot...
+### Aggiorna perno... {#update-pivot}
 
 Puoi personalizzare ulteriormente l’aggiornamento del pivot con queste opzioni:
 
@@ -138,8 +138,8 @@ Puoi personalizzare ulteriormente l’aggiornamento del pivot con queste opzioni
 Quando ti ci sarai abituato, puoi nascondere il punto rosa (di suggerimento) andando nei menu delle [Impostazioni](settings.md).
 :::
 
-### Double tap on object
+### Doppio tocco sull'oggetto {#dtap-object}
 Quando `Focus` è abilitato, il doppio tocco sposterà il pivot sull’oggetto toccato.
 
-### Double tap on background
+### Doppio tocco sullo sfondo {#dtap-tap-background}
 Quando è abilitato, imposta il pivot su una delle opzioni Selection, Scene, oppure alterna tra di esse.

@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) Plano de fundo
+# ![](/icons/image.webp) Fundo {#background}
 
 Este menu controla a cor de fundo do Nomad, bem como quaisquer imagens de referência a serem usadas.
 
 ![](/images/background_overview.webp)
 
-## Plano de fundo 
+## Fundo {#type}
 ![](/images/background_selector.webp)
 
 Há três opções para o plano de fundo da viewport.
@@ -13,14 +13,14 @@ Há três opções para o plano de fundo da viewport.
 * `Color` - Uma cor chapada que você pode escolher
 * `Gradient` - Um degradê de cor de cima para baixo. O controle deslizante Factor permite determinar o ponto médio do degradê.  
 
-## Imagem de referência
+## Imagem de referência {#reference}
 
 ![](/images/background_reference.webp)
 
 Você pode adicionar uma imagem de sua escolha no plano de fundo para ser usada como referência.
 Você pode alterar a posição e a escala, por exemplo, se quiser movê-la para o canto da tela.
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) Transformar {#transform}
 
 Este botão permite posicionar a imagem de referência de forma interativa. Use 2 dedos para mover, redimensionar e girar a imagem de referência até o lugar desejado. A posição final será refletida nos controles deslizantes abaixo:
 

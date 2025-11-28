@@ -1,4 +1,4 @@
-# ![](/icons/sun.webp) Cieniowanie
+# ![](/icons/sun.webp) Cieniowanie {#shading}
 
 To menu kontroluje tryby cieniowania używane przez Nomad, właściwości oświetlenia oraz właściwości światła otoczenia/matcap.
 
@@ -22,24 +22,24 @@ Jeśli chcesz dowiedzieć się więcej o metaliczności i szorstkości, zobacz s
 
 ![](/images/shading_second.webp)
 
-### Face Group
+### Grupa ścian {#face-group}
 Nakładka kolorów grup ścian. Grupy ścian to kolorowe zaznaczenia wielokątów, które można tworzyć narzędziem [Face group](tools#facegroup) i które są tworzone automatycznie dla większości prymitywów.
 
 Niektóre narzędzia będą automatycznie filtrować po grupach ścian, gdy są one widoczne.
 
-### Show paint
+### Pokaż malowanie {#show-paint}
 Nomad może przechowywać kolor, szorstkość i metaliczność w wierzchołkach twojej rzeźby. Możesz globalnie przełączać wyświetlanie tych właściwości tym polem wyboru.
 
 Zauważ, że jeśli masz zarówno właściwości wierzchołków, jak i tekstury, i oba są włączone, wartości zostaną pomnożone przez siebie.
 
-### Show mask
+### Pokaż maskę {#show-mask}
 Przełącz szarą nakładkę maski z [mask tools](tools#mask). Gdy jest wyłączona, maska jest również wyłączona, co jest przydatne do szybkich zmian bez maski; potem możesz ją ponownie włączyć i nie stracisz swojej maski.
 
-### Use Hide
+### Użyj ukrywania {#use-hide}
 
 Przełącz ukryte ściany. Zauważ, że działa to tylko wtedy, gdy NIE jesteś w narzędziu hide!
 
-### Use textures
+### Użyj tekstur {#use-textures}
 
 Nomad pozwala przypisywać tekstury do obiektów z menu [material](material). Jeśli tekstury są przypisane, można je globalnie przełączać tym polem wyboru.
 
@@ -49,7 +49,7 @@ Nomad pozwala przypisywać tekstury do obiektów z menu [material](material). Je
 
 
 
-### PBR i przegląd świateł
+### Przegląd PBR i świateł {#pbr}
 Ten podręcznik nie będzie wchodził w szczegóły dotyczące fizycznie poprawnego renderingu (Physically Based Rendering).
 
 Ważne jest, aby pamiętać, że oświetlenie i materiał są całkowicie rozdzielone.
@@ -68,7 +68,7 @@ Nie musi to jednak działać wydajnie.
 Możesz „udawać” wiele świateł, ustawiając obiekty jako unlit/emissive, a następnie włączając globalne oświetlenie w menu [post process](postprocess).
 :::
 
-### Przegląd typów świateł
+### Przegląd typów świateł {#light-types-overview}
 
 Oto typy świateł obecnie obsługiwane:
 
@@ -79,42 +79,42 @@ Oto typy świateł obecnie obsługiwane:
 | [Spot](#spot)               | Światła w kształcie stożka				                | Tak                                                    |
 | [Point](#point)             | Punktowe światło dookólne                              | Tak, ale tylko przez mniej solidne cienie ekranowe     |
 
-#### Directional
+#### Kierunkowe {#directional}
 Emituje światło z nieskończonej odległości, z jednolitą intensywnością.
 Jego pozycja 3D w scenie nie ma znaczenia, liczy się tylko orientacja.
 
 Możesz przypiąć to światło do kamery, dzięki czemu oświetlenie będzie spójne.  
 Na przykład możesz użyć go jako światła obrysowego (mocne światło emitowane zza modelu, skierowane w stronę kamery), które zawsze oświetla tył twojego modelu.
 
-#### Environment light
+#### Środowiskowe {#env-light}
 Użycie [environment hdr](#environment) dobrze sprawdza się przy ogólnym miękkim oświetleniu, ale jeśli w HDR widoczne jest silne, ostre źródło światła, cień przez nie tworzony będzie bardzo miękki, często w ogóle niewidoczny. Użycie światła kierunkowego w połączeniu z HDR otoczenia może pomóc, ale ich wyrównanie może być trudne.
 
 To światło wykonuje tę pracę za ciebie. Światło zostanie automatycznie obrócone tak, aby wyrównać się z najjaśniejszą częścią HDR, a następnie możesz osobno kontrolować jego intensywność i kąt (miękkość cienia). 
 
-#### Spot
+#### Reflektor {#spot}
 Światło typu spot emituje światło w jednym kierunku, ograniczone kształtem stożka.
 
-#### Point
+#### Punktowe {#point}
 Światło punktowe emituje światło we wszystkich kierunkach.  
 Obecnie światło punktowe nie obsługuje cieni.
 
-#### Shadows
+#### Cienie {#shadows}
 Opcja `normal bias` może być użyta do zredukowania typowych artefaktów cieni (acne/peter-panning).
 
 Jakość cieni zależy od rozmiaru obiektów względem całej sceny.  
 Jeśli masz duży obiekt w scenie, który nie musi rzucać cieni (na przykład duża płaszczyzna), upewnij się, że wyłączysz rzucanie cieni w jego [ustawieniach materiału](material.md#cast-shadows).
 
-## Lights
+## Światła {#lights}
 
 ![](/images/shading_lights.webp)
 
-### ![](/icons/checked.webp) Lights checkbox
+### ![](/icons/checked.webp) Pole wyboru Światła {#lights-checkbox}
 
 Przełącz wszystkie światła bezpośrednie w scenie.
 
 
 
-### Add light
+### Dodaj światło {#add-light}
 
 Dodaj światło do sceny, maksymalnie 4. Gdy światło zostanie dodane, wyświetlona zostanie lista świateł z przyciskami, a na górze widoku pojawi się pasek narzędzi świateł.
 
@@ -127,11 +127,11 @@ Dodaj światło do sceny, maksymalnie 4. Gdy światło zostanie dodane, wyświet
 * Ikona kopiowania duplikuje światło. 
 * Ikona z 3 kropkami otwiera pełny edytor światła. Większość tej funkcjonalności jest również dostępna z paska narzędzi, który pojawia się w widoku. 
 
-### ![](/icons/spotlight.webp)  Icons
+### ![](/icons/spotlight.webp) Ikony {#icons}
 
 Przełącz wyświetlanie ikon świateł w widoku
 
-### Light toolbar
+### Pasek narzędzi świateł {#light-toolbar}
 ![](/images/shading_lights_toolbar.webp) 
 
 Ten pasek narzędzi pojawi się na górze widoku, gdy światło jest zaznaczone.
@@ -144,7 +144,7 @@ Ten pasek narzędzi pojawi się na górze widoku, gdy światło jest zaznaczone.
 * Size ustawia szerokość światła. Szersze światła rzucają miękkie cienie, miękkie oświetlenie i bardziej miękkie refleksy na obiektach.
 * ... otwiera dodatkowe kontrolki.
 
-### Light extra controls
+### Dodatkowe kontrolki światła {#light-extra-controls}
 
 ![](/images/shading_extra_controls.webp) 
 
@@ -166,7 +166,7 @@ Zauważ, że niektóre opcje są specyficzne dla określonych typów świateł.
 * `Tolerance` – jeśli widoczne są artefakty cieni (cienie nie wydają się stykać z powierzchniami lub w cieniach pojawia się szum i wzory), regulacja tolerance może pomóc rozwiązać te problemy.
 
 
-## Environment
+## Środowisko {#environment}
 
 ![](/images/shading_environment.webp)
 
@@ -176,20 +176,20 @@ Nomad zawiera kilka przykładowych map środowiskowych dla wnętrz i plenerów, 
 
 Stuknij obraz, aby zobaczyć dostępne mapy środowiskowe. Z tego okna dialogowego wybierz „Import...”, aby wczytać własną. Najlepiej używać obrazów HDR (High Dynamic Range) w formacie latlong lub equirectangular, jako pliki .hdr lub .exr. Strona [www.polyhaven.com](https://polyhaven.com/hdris) ma dobrą kolekcję darmowych map środowiskowych; zazwyczaj mapy hdr 1k mają dobry rozmiar i jakość.
 
-### Exposure
+### Ekspozycja {#env-exposure}
 Reguluje jasność mapy środowiskowej. Często mapy mogą być zbyt jasne przy użyciu z normalnymi światłami; zmniejszenie ekspozycji może pomóc w zbalansowaniu, szczególnie przy użyciu z Global Illumination w ustawieniach [Post Process](postprocess).
 
-### Rotation
+### Obrót {#env-rotation}
 
 Ponieważ mapy środowiskowe rejestrują światło ze wszystkich kierunków, możesz je obracać, aby uzyskać dobre połączenie odbić i ogólnego oświetlenia z twoją rzeźbą.
 
-### Attached to camera
+### Dołączone do kamery {#env-attached}
 Przypnij środowisko do kamery.
 
 Wymusi to spójne oświetlenie, co może być przydatne podczas rzeźbienia.
 
 
-## ![](/icons/sphere_smooth.webp) Matcap
+## ![](/icons/sphere_smooth.webp) Matcap {#matcap}
 
 ![](/images/shading_matcap.webp)
 
@@ -201,7 +201,7 @@ Artyści często preferują ten tryb do rzeźbienia, ponieważ pozwala im skupi�
 
 Stuknięcie w sferę otworzy przeglądarkę obrazów. Możesz też dodać własny matcap – zazwyczaj dowolne zdjęcie, render, a nawet malunek sfery przyciętej ciasno do kwadratu może zostać użyty. W sieci dostępnych jest wiele bibliotek matcap; przydatnym źródłem jest [biblioteka matcap nidorx](https://github.com/nidorx/matcaps).
 
-### Use global Matcap
+### Użyj globalnego Matcap {#matcap-global}
 
 Zazwyczaj artyści używają jednego matcapa dla całej rzeźby, ale jeśli ten przełącznik jest wyłączony, każdy obiekt może mieć własny matcap. Można to artystycznie wykorzystać do uzyskania wyrazistych rezultatów.
 
@@ -209,31 +209,31 @@ Zazwyczaj artyści używają jednego matcapa dla całej rzeźby, ale jeśli ten 
 Wyłącz tę opcję i użyj obrazu gałki ocznej dla oczu swojej postaci!
 :::
 
-### Rotation
+### Obrót {#matcap-rotation}
 Matcap jest wyspecjalizowaną formą mapy środowiskowej, więc podobnie jak mapa środowiskowa może być obracany. Możesz to również robić w dowolnym momencie w widoku, przeciągając trzema palcami w lewo i prawo.
 
 
 
-## ![](/icons/circle_fill.webp) Unlit
+## ![](/icons/circle_fill.webp) Bez oświetlenia {#unlit}
 
 Ten tryb pokazuje tylko kolor powierzchni. Może być przydatny do sprawdzenia, czy kolory powierzchni twoich obiektów są takie, jakich oczekujesz, bez rozpraszania przez światła, cienie, odbicia, przezroczystość. 
 
 Tryb ten może być również używany do nie-fotorealistycznych renderów, aby uzyskać płaski, kreskówkowy wygląd.
 
-## ![](/icons/cube.webp) Object ID
+## ![](/icons/cube.webp) ID obiektu {#object-id}
 
 Wszystkie informacje o oświetleniu i powierzchni są ignorowane, a każdy obiekt jest cieniowany unikalnym płaskim kolorem. Jeśli zostanie to wyrenderowane obok renderu PBR, może być użyte w programie do malowania do zaznaczania po kolorze, a tym samym do wykonywania korekcji kolorów na konkretnych obiektach.
 
 Zauważ, że te kolory pojawią się również w [widoku drzewa w menu Scene](scene#tree-view).
 
-### Randomise id
+### Losuj ID {#object-random}
 
 Wygeneruj nowy zestaw losowych kolorów. 
 
-## ![](/icons/link.webp) Instance ID
+## ![](/icons/link.webp) ID instancji {#instance-id}
 
 Tak samo jak Object ID, ale instancje będą miały ten sam kolor. 
 
-### Randomise id
+### Losuj ID {#instance-random}
 
 Wygeneruj nowy zestaw losowych kolorów.

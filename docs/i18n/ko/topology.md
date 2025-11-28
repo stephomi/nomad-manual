@@ -1,4 +1,4 @@
-# ![](/icons/multires.webp) 토폴로지 
+# ![](/icons/multires.webp) 토폴로지 {#topology}
 
 이 메뉴는 Nomad에서 오브젝트의 토폴로지를 제어하고, 오브젝트 간 및 텍스처 간에 디테일을 베이크하고 전송하는 도구들을 제공합니다.
 
@@ -26,7 +26,7 @@ Nomad의 토폴로지 메뉴는 다음과 같은 섹션으로 구성됩니다:
 | [Primitive](#msc)                     | ![](/icons/dot.webp)        | 프리미티브 옵션                                                 |
 
 
-## 폴리곤 통계
+## 폴리곤 통계 {#polygon-stats}
 
 ![](/images/topology_stats.webp)
 
@@ -35,18 +35,18 @@ Nomad의 토폴로지 메뉴는 다음과 같은 섹션으로 구성됩니다:
 
 이 섹션을 탭하면 씬 안의 모든 폴리곤 오브젝트에 대한 폴리곤 통계 목록이 나타납니다.
 
-## ![](/icons/multires.webp) Multiresolution
+## ![](/icons/multires.webp) 멀티해상도 {#multiresolution}
 
 ![](/images/topology_multires_menu.webp)
 
-### Multiresolution이란?
+### 멀티해상도란? {#what-is-multiresolution}
 Multiresolution 기능은 크게 두 가지 상황에서 유용합니다:
 - 오브젝트의 폴리곤 수를 늘리기 위한 부드러운 서브디비전 알고리즘
 - 서로 다른 해상도 레벨을 다루어, 큰 형태와 작은 디테일 편집을 오가며 작업
 
 ![](/videos/multiresolution.mp4)
 
-#### Multiresolution 워크플로
+#### 멀티해상도 워크플로 {#multiresolution-workflow}
 Multiresolution의 중요한 점은, 낮은 해상도 레벨로 돌아가 오브젝트를 수정한 뒤 다시 높은 해상도 레벨로 올라가도, 고해상도 디테일이 유지된다는 것입니다.  
 모든 고해상도 디테일은 자동으로 프로젝션됩니다.
 
@@ -60,40 +60,40 @@ Multiresolution의 중요한 점은, 낮은 해상도 레벨로 돌아가 오브
 :::
 
 
-### Multiresolution 슬라이더
+### 멀티해상도 슬라이더 {#multiresolution-slider}
 이 슬라이더는 현재 오브젝트의 서브디비전 레벨 수를 나타냅니다. 세로 막대가 6개라면, 6개의 서브디비전 레벨이 있는 것입니다.  
 원형 표시가 현재 표시 중인 서브디비전 레벨을 나타냅니다. 
 
-### Reverse
+### 반전 {#reverse}
 가장 낮은 서브디비전 레벨에서 Reverse 버튼을 누르면, 현재 레벨 아래에 새로운 레벨을 만들려고 시도합니다.  
 이는 일반적으로, 처음부터 Nomad나 다른 멀티레졸루션 서브디비전 서피스를 지원하는 3D 애플리케이션에서 서브디비전으로 생성된 오브젝트에만 가능합니다.
 
-### Subdivide
+### 세분화 {#subdivide}
 *Subdivide* 버튼은 폴리곤 수를 4배로 증가시키므로, 폴리곤 수가 매우 빠르게 늘어날 수 있다는 점에 유의해야 합니다!  
 *Subdivision Surface*의 중요한 특징은, 반복할수록 *부드러운 표면(Smooth Surface)* 으로 수렴한다는 것입니다.  
 작동 방식을 이해하려면, 폴리곤이 몇 개 없는 오브젝트에 *Subdivide* 버튼을 여러 번 적용해 보세요.
 
 `Linear subdivision` 옵션을 체크하면 이 *Smooth* 동작을 비활성화할 수 있습니다.
 
-### Delete lower
+### 하위 레벨 삭제 {#delete-lower}
 현재 표시 중인 레벨 아래에 서브디비전 레벨이 있다면, 그 레벨들을 삭제합니다.  
 실수로 삭제했다면 Reverse 버튼으로 다시 생성할 수 있습니다.
 
-### Delete higher
+### 상위 레벨 삭제 {#delete-higher}
 현재 표시 중인 레벨 위에 있는 서브디비전 레벨들을 삭제합니다.
 
-### Linear subdivision
+### 선형 세분화 {#linear-subdivision}
 스무딩을 적용하지 않고 메쉬를 서브디바이드합니다.
 
-### Sharp border
+### 날카로운 경계 {#sharp-border}
 오브젝트에 페이스 그룹이 있는 경우, 이 옵션을 활성화하면 페이스 그룹 경계를 날카롭게 유지합니다.  
 이 옵션은 각 서브디비전 레벨마다 설정할 수 있으며, 해당 레벨 위에 작은 아이콘으로 표시됩니다.
 
-### Keep triangles
+### 삼각형 유지 {#keep-triangles}
 대부분의 표준 서브디비전 서피스 시스템은 서브디비전 시 모든 폴리곤을 쿼드로 변환하려고 합니다.  
 이 토글을 켜면 서브디비전 시 삼각형을 유지하도록 강제합니다.
 
-### Lock (LV0)
+### 잠금 (LV0) {#lock-lv0}
 
 가장 낮은 서브디비전 레벨이 수정되지 않도록 보호합니다.  
 외부 애플리케이션에서 생성된 오브젝트이고, 베이스 메쉬가 변경되면 안 되는 경우 중요합니다.  
@@ -108,7 +108,7 @@ Multiresolution의 중요한 점은, 낮은 해상도 레벨로 돌아가 오브
 :::
 
 
-## ![](/icons/voxel.webp) Voxel Remesher
+## ![](/icons/voxel.webp) 보셀 리메셔 {#voxel-remesher}
 ![](/images/topology_voxel_menu.webp)
 `Voxel Remesher`를 사용하면, 메쉬 전체의 토폴로지가 균일한 해상도를 갖도록 강제됩니다. 즉, 모든 폴리곤의 크기가 대체로 비슷해집니다.  
 이는 토폴로지에 신경 쓰지 않고 자유롭게 스컬핑하고 싶을 때 매우 유용합니다.
@@ -129,13 +129,13 @@ Multiresolution의 중요한 점은, 낮은 해상도 레벨로 돌아가 오브
 일반적으로, 리메시를 적용하기 전에 모든 구멍이 [Trim 도구](tools.md#trim)나 [구멍 채우기 기능](scene.md#hole-filling)처럼 메워진다는 뜻입니다.
 :::
 
-### Remesh
+### 리메시 {#voxel-remesh}
 보xel 리메시를 실행합니다.
 
-### Resolution
+### 해상도 {#voxel-resolution}
 계산에 사용되는 보xel의 크기입니다. 이 값을 변경하는 동안, 결과를 미리 보여주기 위해 메쉬 위에 체커보드 패턴이 오버레이됩니다.
 
-### Build multiresolution
+### 멀티해상도 생성 {#build-multiresolution}
 보xel 리메시 결과에 대해 낮은 Multiresolution 레벨을 생성합니다.  
 체커보드 패턴으로 해상도를 정하고, Build multiresolution을 2로 설정하면, 최종 결과는 Resolution 슬라이더에 맞는 디테일을 가지며, Multires 탭에서 레벨 2로 표시됩니다. 즉, 레벨 1과 레벨 0에 더 낮은 해상도의 Multires 메쉬가 생깁니다.  
 이는 균일한 폴리곤을 가진 깨끗한 메쉬를 생성하면서, 동시에 낮은 해상도의 컨트롤 메쉬를 갖는 좋은 방법입니다.
@@ -147,10 +147,10 @@ Multiresolution의 중요한 점은, 낮은 해상도 레벨로 돌아가 오브
 
 :::
 
-### Keep sharp edges
+### 날카로운 모서리 유지 {#keep-sharp-edges}
 새로 생성되는 포인트를 원래 메쉬의 날카로운 엣지에 스냅하도록 합니다. 왜곡이 생길 수 있습니다.
 
-## ![](/icons/dynamic.webp) Dynamic Topology
+## ![](/icons/dynamic.webp) 다이내믹 토폴로지 {#dynamic-topology}
 
 ![](/images/topology_dyntopo_menu.webp)
 Multiresolution과 보xel 리메시는 토폴로지를 제어하기 위한 업계 표준 방법이지만, 둘 다 폴리곤이 너무 늘어나거나, 너무 조밀해지지 않도록 신경 써야 합니다. 
@@ -165,13 +165,13 @@ Dynamic Topology는 쿼드가 아닌 삼각형 폴리곤을 사용한다는 점�
 
 ![](/videos/dynamic.mp4)
 
-### Enabled
+### 활성화 {#enabled}
 Dynamic Topology를 켭니다. 브러시 반경과 강도 슬라이더 아래에 DynTopo 아이콘이 표시되며, 도구별로 Dyntopo를 토글할 수 있습니다.
 
-### Detail
+### 디테일 {#dyn-detail}
 디테일의 양을 제어합니다. 동작 방식은 아래의 ‘Detail based on...’ 설정에 따라 달라집니다.
 
-### Detail based on...
+### 기준 디테일... {#detail-based-on}
 | Method   | Description                                                     |
 | :------: | :-------------------------------------------------------------: |
 | Screen   | 디테일 수준이 화면에서 오브젝트가 차지하는 크기에 따라 달라집니다. 슬라이더 100% 이상은 매우 세밀한 디테일(작은 삼각형), 1%는 낮은 디테일(큰 삼각형)을 의미합니다.  |
@@ -185,7 +185,7 @@ Radius 모드의 동작을 잘 이해하려면, 한 손가락으로 디테일 �
 
 :::
 
-### Prefer...
+### 우선... {#prefer}
 | Method  | Description       |
 | :-----: | :---------------: |
 | Speed   | 성능 우선         |
@@ -198,14 +198,14 @@ Radius 모드의 동작을 잘 이해하려면, 한 손가락으로 디테일 �
 따라서 아주 작은 디테일을 조각하거나 빠른 스트로크를 그려도, 토폴로지가 항상 기대한 수준으로 정제됩니다.
 
 
-### Use pressure on radius
+### 반경에 압력 사용 {#use-pressure-on-radius}
 `Radius` 모드에서만 의미가 있습니다. 활성화하면, 펜 압력으로 브러시 크기가 변해도 디테일 수준이 항상 실제 브러시 크기를 반영합니다.
 
-### Use stroke falloff
+### 스트로크 폴오프 사용 {#use-stroke-falloff}
 
 브러시 폴오프 커브와 알파도 Dyntopo 계산에 포함합니다.
 
-### Method
+### 방식 {#method}
 [브러시](#brush) 단위로든 [글로벌](#global)로든 `Dynamic Topology`를 사용할 때, 다음 모드 중 하나를 선택할 수 있습니다:
 
 | Method         | Description                                                           |
@@ -214,30 +214,30 @@ Radius 모드의 동작을 잘 이해하려면, 한 손가락으로 디테일 �
 | Subdivision    | 폴리곤을 추가만 하며, 삭제는 하지 않습니다.                          |
 | Decimation     | 폴리곤을 삭제만 하며, 추가는 하지 않습니다.                          |
 
-### Protect masked area
+### 마스크 영역 보호 {#protect-masked-area}
 마스크된 영역의 토폴로지가 변경되지 않도록 보호합니다.
 
-### Vertex extrapolation
+### 버텍스 외삽 {#vertex-extrapolation}
 
 
-### Detail
+### 디테일 {#all-detail}
 리메시 작업에 사용되는 해상도입니다. Dyntopo가 ‘Constant’ 모드일 경우, 이 값은 메뉴 상단의 Detail 슬라이더와 동일합니다.
 
-### Remesh
+### 리메시 {#dyn-remesh}
 Dyntopo 알고리즘을 사용해 전체 리메시를 실행합니다. 전체 리메시는 보통 [Voxel Remesher](#voxel-remesher)를 사용하는 것이 좋습니다.
 
 하지만 보xel과 달리, 마스크된 영역이 보호되므로, 어느 부분에 밀도를 더 줄지/덜 줄지 더 세밀하게 제어할 수 있다는 장점이 있습니다.
 
 
 
-## ![](/icons/topo_extra.webp) Misc
+## ![](/icons/topo_extra.webp) 기타 {#misc}
 
 ![](/images/topology_misc_menu.webp)
 
-##### ![](/icons/cog.webp) 기어 메뉴
+##### ![](/icons/cog.webp) 기어 메뉴 {#gear-menu}
 이 메뉴의 많은 도구에는 추가 옵션이 있으며, 섹션 제목 옆의 기어 아이콘을 통해 접근할 수 있습니다.
 
-### Decimation
+### 디시메이션 {#decimation}
 
 ![](/images/topology_decimation.webp)
 
@@ -262,7 +262,7 @@ Dyntopo 알고리즘을 사용해 전체 리메시를 실행합니다. 전체 �
 
 :::
 
-#### Decimate
+#### 디시메이트 {#decimate}
 디시메이션 작업을 시작합니다.
 
 Decimate 버튼 옆의 아이콘들은 디시메이션에 영향을 주는 옵션을 토글합니다.  
@@ -274,25 +274,25 @@ Decimate 버튼 옆의 아이콘들은 디시메이션에 영향을 주는 옵�
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - 페이스 그룹 경계를 최대한 유지합니다.
 * ![](/icons/checkerboard.webp) `Preserve UV Borders` - UV 경계를 최대한 유지합니다.
 
-#### ![](/icons/cog.webp) Decimate 기어 메뉴
+#### ![](/icons/cog.webp) 디시메이트 기어 메뉴 {#decimate-gear-menu}
 기어 메뉴에는 다음과 같은 고급 옵션이 있습니다:
-##### Preserve painting
+##### 페인팅 보존 {#preserve-painting}
 체크박스로 모드를 켜고 끌 수 있으며, 값은 페인팅 디테일을 얼마나 정확히 보존할지 결정합니다.  
 값이 높을수록 페인팅이 더 잘 보존됩니다. 페인팅을 신경 쓰지 않는다면 0으로 설정하세요.
 
 
-##### Uniform faces
+##### 균일한 폴리곤 {#uniform-faces}
 체크박스로 모드를 켜고 끌 수 있습니다. 값이 높을수록 크기가 비슷한 삼각형이 생성됩니다.
 
-##### Preserve borders
+##### 경계 보존 {#preserve-borders}
 경계가 디시메이션되지 않도록 합니다. `Geometry`, `Face Group`, `UV` 경계 각각에 대해 가중치를 설정할 수 있습니다.
 
-#### Target triangles
+#### 목표 삼각형 수 {#target-triangles}
 목표 삼각형 개수를 설정합니다. 기본값은 50%이며, 퍼센트/타깃 버튼을 눌러 퍼센트 모드와 정확한 폴리곤 수 지정 모드 사이를 전환할 수 있습니다.
 
 
 
-### UV Unwrap - UVAtlas
+### UV 언랩 - UVAtlas {#uv-unwrap-uvatlas}
 
 ![](/images/topology_uvatlas_menu.webp)
 현재 메쉬에 대한 텍스처 좌표(UV)를 계산합니다. 일반적으로 왜곡을 줄이기 위해, 더 많은 아일랜드와 컷을 만드는 쪽을 선호합니다.
@@ -301,23 +301,23 @@ Decimate 버튼 옆의 아이콘들은 디시메이션에 영향을 주는 옵�
 
 ![](/videos/unwrap.mp4)
 
-#### Unwrap
+#### 언랩 {#unwrap}
 선택된 오브젝트에 UV를 계산하며, 결과는 배경에 표시됩니다.
 
-#### Delete UVs
+#### UV 삭제 {#delete-uvs}
 오브젝트의 UV를 삭제합니다.
 
-#### ![](/icons/cog.webp) UVAtlas 기어 메뉴
+#### ![](/icons/cog.webp) UVAtlas 기어 메뉴 {#uvatlas-gear-menu}
 기어 메뉴에는 다음과 같은 고급 옵션이 있습니다:
 
-#### Face Group
+#### 페이스 그룹 {#atlas-face-group}
 
 페이스 그룹을 사용해 UV 컷을 정의합니다.
 
-##### Max Stretch
+##### 최대 스트레치 {#max-stretch}
 값이 낮을수록 왜곡은 적고 아일랜드는 많아지며, 값이 높을수록 왜곡은 많고 아일랜드는 적어집니다. 
 
-##### Island spacing
+##### 아일랜드 간격 {#island-spacing}
 아일랜드 간의 패딩 양입니다. 값이 낮으면 공간 낭비는 줄지만, 아일랜드 사이에서 텍스처가 번질 위험이 커집니다. 
 
 ::: warning
@@ -350,24 +350,24 @@ Nomad에서 만든 모델은 UV 없이도 오브젝트에 직접 페인팅할 �
 
 :::
 
-### UV Unwrap - BFF
+### UV 언랩 - BFF {#uv-unwrap-bff}
 ![](/images/topology_uvbff_menu.webp)
 
 BFF UV는 ‘컷은 적고 왜곡은 많은’ 방식을 선호합니다. 
 
-#### ![](/icons/cog.webp) UV BFF 기어 메뉴
+#### ![](/icons/cog.webp) UV BFF 기어 메뉴 {#uv-bff-gear-menu}
 
-#### Face Group
+#### 페이스 그룹 {#bff-face-group}
 
 페이스 그룹을 사용해 UV 컷을 정의합니다.
 
-##### Cone count
+##### 콘 개수 {#cone-count}
 사용되는 주요 투영 개수를 정의합니다. 값이 낮을수록 아일랜드는 적어지지만, 왜곡은 많아집니다.
 
-##### Seamless patches
+##### 심리스 패치 {#seamless-patches}
 UV 패치의 레이아웃에 영향을 주며, 신중하게 만든 페이스 그룹과 함께 사용할 때 가장 잘 동작합니다.
 
-### Bake -> texture 
+### 베이크 -> 텍스처 {#bake-texture}
 ![](/images/topology_bake_menu.webp)
 
 텍스처 베이킹은 씬의 다른 보이는 오브젝트들을 선택된 오브젝트의 UV에 투영하여 텍스처를 생성합니다.
@@ -387,43 +387,43 @@ Solo 모드를 사용해 다른 메쉬를 빠르게 숨길 수도 있습니다.
 
 작업 후에는 버텍스 컬러가 새로 비활성화된 레이어로 이동하여, 텍스처와 간섭하지 않도록 합니다.
 
-#### From itself
+#### 자체에서 {#tex-from-itself}
 현재 오브젝트의 가장 높은 Multiresolution 레벨을 가장 낮은 레벨로 베이크합니다.  
 설정이 간단하지만, 더 많은 제어가 필요하다면 다음 옵션이 더 유용합니다.
 
-#### From high-res ()
+#### 고해상도에서 () {#tex-from-high-res}
 씬에서 보이는 다른 오브젝트들을 선택된 오브젝트로 베이크합니다. 괄호 안의 숫자는, 현재 저해상도 UV 오브젝트에 베이크 대상으로 사용될 다른 보이는 오브젝트 수를 나타냅니다.  
 이 다른 오브젝트들은 레이아웃이나 토폴로지가 베이크 대상 오브젝트와 같을 필요가 없으므로, 매우 유연한 베이크 워크플로가 가능합니다.
 
-#### Resolution
+#### 해상도 {#tex-bake-resolution}
 베이크될 텍스처의 해상도입니다. 베이크 텍스처는 항상 정사각형이므로, 1024는 1024x1024 이미지를 생성합니다. 
 
 아래 버튼들은 자주 사용하는 해상도에 대한 바로가기입니다.  
 참고로, 512x512는 웹 그래픽이나 단순 지오메트리용으로 비교적 작은 크기이고, 4096x4096(줄여서 4K)은 고품질 렌더링용입니다.
 
-#### ![](/icons/cog.webp) Bake 기어 메뉴
+#### ![](/icons/cog.webp) 베이크 기어 메뉴 {#tex-bake-gear-menu}
 ![](/images/topology_bake_gear_menu.webp)
 기어 메뉴에는 다음과 같은 고급 옵션이 있습니다:
 
-##### Normal, Roughness, Metalness, Color, Emissive, Opacity
+##### 노멀, 러프니스, 메탈니스, 컬러, 이미시브, 불투명도 {#tex-normal-roughness-metalness-color-emissive-opacity}
 각 체크박스는 어떤 속성을 베이크할지 결정하며, 각각 별도의 맵으로 생성됩니다.  
 베이크가 완료되면, 이 맵들은 현재 오브젝트의 머티리얼 텍스처로 추가됩니다.
 
-##### Backup
+##### 백업 {#tex-backup}
 베이크된 텍스처를 미리 보려면, 오브젝트의 페인트 정보가 비활성화되어야 합니다.  
 이 옵션은 페인트 정보를 새 레이어로 옮겨 백업해 두어, 쉽게 켜고 끌 수 있도록 합니다.
 
-#### Cage radius
+#### 케이지 반경 {#tex-cage-radius}
 베이크 오브젝트에서 얼마나 떨어진 곳까지 레이를 쏴서 타깃 오브젝트를 찾을지 조정합니다.  
 기본적으로는 아티팩트를 피하기 위해 이 거리가 낮게 설정되어 있지만, 타깃 오브젝트가 베이크 오브젝트에서 멀리 떨어져 있다면 값을 늘려야 할 수 있습니다.
 
-##### Ray offset
+##### 레이 오프셋 {#tex-ray-offset}
 베이크 계산을 베이크 오브젝트의 어디에서부터 시작할지 조정합니다.  
 기본값은 표면에서 5% 떨어진 지점이며, 대부분의 일반적인 아티팩트를 피할 수 있습니다.  
 타깃 오브젝트가 베이크 오브젝트에서 매우 멀리 떨어져 있다면, 이 오프셋을 더 늘려야 할 수 있습니다.
 
 
-### Reproject to vertex
+### 버텍스로 리프로젝트 {#reproject-to-vertex}
 
 ![](/images/topology_reproject_menu.webp)
 
@@ -436,7 +436,7 @@ Solo 모드를 사용해 다른 메쉬를 빠르게 숨길 수도 있습니다.
 `Bake to texture`나 `Reproject to vertex`를 사용할 때는, 버텍스 컬러와 머티리얼 텍스처가 모두 고려됩니다.
 :::
 
-#### From itself
+#### 자체에서 {#vertex-from-itself}
 머티리얼의 텍스처를 버텍스 값으로 변환합니다.  
 이 버튼은 오브젝트에 UV가 있고, 머티리얼에 텍스처가 활성화되어 있을 때만 사용할 수 있습니다.
 
@@ -451,7 +451,7 @@ Nomad는 텍스처를 직접 편집/페인팅하는 기능을 제공하지 않�
 1. `Bake to texture`를 `From itself` 모드로 실행합니다. 이렇게 하면 편집 내용이 다시 텍스처로 변환됩니다.
 :::
 
-#### From high-res ()
+#### 고해상도에서 () {#vertex-from-high-res}
 보이는 모든 오브젝트를 선택된 오브젝트의 버텍스 값으로 변환합니다.  
 버튼에 표시된 숫자는 보이는 오브젝트의 개수입니다.
 
@@ -460,35 +460,35 @@ Nomad는 텍스처를 직접 편집/페인팅하는 기능을 제공하지 않�
 예를 들어, 붕대를 캐릭터 몸 위에 투영하는 식으로 활용할 수 있습니다.
 :::
 
-#### ![](/icons/cog.webp) Reproject 기어 메뉴
+#### ![](/icons/cog.webp) 리프로젝트 기어 메뉴 {#vertex-reproject-gear-menu}
 기어 메뉴에는 다음과 같은 고급 옵션이 있습니다:
 
-#### Vertices, Roughness, Metalness, Color, Opacity, Opacity->Mask, Mask, Layers, Face Group
+#### 버텍스, 러프니스, 메탈니스, 컬러, 불투명도, 불투명도->마스크, 마스크, 레이어, 페이스 그룹 {#vertex-vertices-roughness-metalness-color-opacity-opacity-mask-mask-layers-face-group}
 이 체크박스들은 어떤 속성을 선택된 오브젝트로 투영할지 결정합니다. 
 
-#### Relax
+#### 릴랙스 {#vertex-relax}
 선택된 메쉬의 레이아웃을 일정량 스무딩/릴랙스하여, 리프로젝션 타깃에 더 잘 맞도록 할 수 있습니다.  
 Smooth는 고폴리곤 메쉬에 더 적합하고, Relax는 저폴리곤 메쉬에 더 적합합니다.  
 Auto는 Nomad가 가장 적절한 방식을 자동으로 선택합니다.
 
-#### Iterations
+#### 반복 {#vertex-iterations}
 리프로젝션 중 릴랙스 작업을 몇 번 반복할지 설정합니다.
 
-#### Cage radius
+#### 케이지 반경 {#vertex-cage-radius}
 선택된 오브젝트에서 얼마나 떨어진 곳까지 레이를 쏴서 타깃 오브젝트를 찾을지 조정합니다.  
 기본적으로는 아티팩트를 피하기 위해 이 거리가 낮게 설정되어 있지만, 타깃 오브젝트가 베이크 오브젝트에서 멀리 떨어져 있다면 값을 늘려야 할 수 있습니다.
 
-#### Ray bias
+#### 레이 바이어스 {#vertex-ray-bias}
 값이 낮을수록 타깃 표면의 가장 가까운 점으로 투영하는 쪽을 선호합니다.  
 값이 높을수록 표면 노멀을 따라 교차점을 찾는 방식을 선호합니다. 
 
-#### Ray offset
+#### 레이 오프셋 {#ray-vertex-offset}
 선택된 오브젝트에서 베이크 계산을 어디서부터 시작할지 조정합니다.  
 기본값은 표면에서 5% 떨어진 지점이며, 특정 아티팩트를 피하는 데 도움이 됩니다.  
 타깃 오브젝트가 매우 멀리 떨어져 있다면, 이 오프셋을 더 늘려야 할 수 있습니다.
 
 
-### Quad Remesh - Instant
+### 쿼드 리메시 - 인스턴트 {#quad-remesh-instant}
 ![](/images/topology_quadremesh_menu.webp)
 [Wenzel Jakob, Marco Tarini, Daniele Panozzo, Olga Sorkine-Hornung의 Instant Meshes 알고리즘](https://igl.ethz.ch/projects/instant-meshes/)을 사용해 리메시합니다.  
 메쉬의 흐름을 분석해 깨끗한 쿼드 토폴로지를 생성합니다.
@@ -497,23 +497,23 @@ Auto는 Nomad가 가장 적절한 방식을 자동으로 선택합니다.
 iOS와 데스크톱에서는 [Quad remesher](tools#quad-remesher) 도구가 더 나은 결과와 더 많은 제어를 제공합니다.
 :::
 
-#### Remesh
+#### 리메시 {#instant-remesh}
 Instant Meshes 작업을 시작합니다.
 
-#### Target quads
+#### 목표 쿼드 수 {#target-quads}
 Quad Remesh가 생성하려고 시도하는 쿼드 폴리곤의 개수입니다.
 
-#### ![](/icons/cog.webp) Quad Remesh Instant 기어 메뉴
+#### ![](/icons/cog.webp) 쿼드 리메시 인스턴트 기어 메뉴 {#quad-remesh-instant-gear-menu}
 기어 메뉴에는 다음과 같은 고급 옵션이 있습니다:
 
-##### Crease angle
+##### 크리즈 각도 {#crease-angle}
 리메시 작업을 안내하는 데 도움을 주는 날카로운 코너의 임계값입니다.
 
-#### Max fill hole
+#### 최대 홀 채우기 {#max-fill-hole}
 알고리즘이 원치 않는 구멍을 생성하는 경우가 있습니다.  
 버텍스 수가 이 값보다 적은 구멍은 자동으로 메워집니다.
 
-### Holes
+### 홀 {#holes}
 ![](/images/topology_holes_menu.webp)
 대부분의 경우, 오브젝트는 메쉬가 ‘닫힌’ 상태인 watertight 메쉬일 것입니다.
 
@@ -526,53 +526,53 @@ Quad Remesh가 생성하려고 시도하는 쿼드 폴리곤의 개수입니다.
 Voxel Remesher를 실행하면, 하나 또는 여러 메쉬에 사용하더라도 모든 구멍이 자동으로 메워집니다.
 :::
 
-#### Close holes
+#### 홀 닫기 {#close-holes}
 구멍 메우기 작업을 실행합니다.
 
-#### ![](/icons/cog.webp) Holes 기어 메뉴
+#### ![](/icons/cog.webp) 홀 기어 메뉴 {#holes-gear-menu}
 기어 메뉴에는 다음과 같은 고급 옵션이 있습니다:
 
-##### Detail
+##### 디테일 {#fill-detail}
 구멍을 메우는 데 사용할 폴리곤 밀도입니다.  
 이 슬라이더를 드래그하는 동안 모델 위에 체커보드 패턴이 표시되며, 사용할 삼각형 크기를 가늠할 수 있습니다.  
 체크박스를 끄면 새 포인트를 생성하지 않고 기존 포인트만 사용하며, 이 경우 구멍 위에 길고 얇은 삼각형이 생겨 스컬핑하기 어려울 수 있습니다.
 
-##### Fill non-manifold
+##### 비다양체 채우기 {#fill-non-manifold}
 Non-manifold 구멍을 메우려고 시도합니다.
 
-##### Face Group
+##### 페이스 그룹 {#fill-face-group}
 
 구멍을 메울 때, 각 구멍에 고유한 페이스 그룹을 줄지(Auto), 모두 같은 페이스 그룹을 공유하게 할지(Off), 아예 페이스 그룹을 만들지 않을지(On)를 설정합니다.
 
-### Force Manifold
+### 다양체 강제 {#force-manifold}
 ![](/images/topology_forcemanifold_menu.webp)
 Non-manifold 엣지를 정리하려고 시도합니다.  
 두 개 이상의 면이 공유하는 엣지를 지원하지 않는 외부 소프트웨어용으로 메쉬를 정리할 때 유용합니다.
 
-#### Clean
+#### 정리 {#clean}
 정리 작업을 실행합니다.
-#### ![](/icons/cog.webp) Force manifold 기어 메뉴
+#### ![](/icons/cog.webp) 다양체 강제 기어 메뉴 {#force-manifold-gear-menu}
 기어 메뉴에는 다음과 같은 고급 옵션이 있습니다:
 
-#### Delete small faces
+#### 작은 폴리곤 삭제 {#delete-small-faces}
 작은 폴리곤을 제거하고 인접 폴리곤과 합치는 데 사용되는 임계값입니다.
 
 
-### Triplanar
+### 트라이플래너 {#triplanar}
 ![](/images/topology_triplanar_menu.webp)
 메쉬를 [Triplanar](scene.md#triplanar) 프리미티브로 변환합니다.  
 이 과정에서 많은 디테일을 잃을 수 있습니다.
 
-#### Force cubic
+#### 큐빅 강제 {#force-cubic}
 Triplanar를 정육면체로 강제합니다. 끄면 오브젝트를 둘러싸는 최소 바운딩 박스에 맞춰집니다.
 
-#### Convert
+#### 변환 {#convert}
 Triplanar 변환을 실행합니다.
 
-#### Resolution
+#### 해상도 {#triplanar-resolution}
 Triplanar 작업에 사용되는 보xel 크기입니다.
 
-## ![](/icons/dot.webp) Primitive
+## ![](/icons/dot.webp) 프리미티브 {#primitive}
 선택된 프리미티브에 대한 파라미터입니다. 이 옵션들은 프리미티브 뷰포트 툴바에서도 사용할 수 있습니다.
 
 ![](/images/topology_primitive_screenshot.webp)

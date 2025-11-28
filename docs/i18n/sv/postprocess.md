@@ -1,4 +1,4 @@
-# ![](/icons/postprocess.webp) Efterbearbetning 
+# ![](/icons/postprocess.webp) Efterbearbetning {#post-process}
 
 Den här menyn styr många aspekter av Nomad som påverkar hur renderingen ser ut.
 
@@ -16,34 +16,31 @@ För PBR-rendering bör [Ambient Occlusion](#ambient-occlusion-ssao), [Reflectio
 Oftast vill du dock ha efterbearbetningen avstängd när du skulpterar, för att fokusera på själva formen i renderingen.
 
 
-## Quality
+## Kvalitet {#quality}
 
 ![](/images/postprocess_quality.webp)
-### Max frame sampling
+### Max bildruteprovtagning {#max-frame-sampling}
 Nomad beräknar en viss mängd efterbearbetning för en enskild bildruta, vilket kan se brusigt ut. Den här kontrollen avgör hur många bildrutor som ska renderas och sedan blandas ihop för att ta bort de flesta brusartefakter. Vissa effekter kräver inga extra sampel (t.ex. färgkorrigering), medan andra som global illumination kan kräva hundratals sampel för att bli brusfria. 
 
 I vyn kan detta ses när Nomad lämnas ifred; bildkvaliteten förfinas gradvis upp till max antal sampel och stannar sedan. Detta antal beräkningar används också i renderingssektionen i [Files-menyn](files) när ”export png” klickas.
 
-### Resolution multiplier
+### Upplösningsmultiplikator {#resolution-multiplier}
 Den här skjutreglaget styr upplösningen på efterbearbetningen. Ett värde på x1.0 innebär att renderingarna görs i enhetens pixelupplösning. Ett värde på x0.5 renderar i halv upplösning, vilket går snabbt men ger låg kvalitet. Ett värde större än 1 renderar i större storlek och skalas sedan ned. Detta ger högre kvalitet, mindre brus men längre renderingstider.
 
-### Max samples
+### Max antal sampel {#max-samples}
 
 Detta ökar kvaliteten på efterbearbetningen, men generellt har `Full resolution` större inverkan. 
 
-### Full resolution
-När den är aktiverad tvingar den upplösningsmultiplikatorn till x1.0
-
-### Denoiser (oidn)
+### Brusreducering (oidn) {#oidn}
 
 Applicera en brusreducerare på bilden. Detta kan göra att du kan använda mycket färre sampel. Detta fungerar bara om `Full Resolution` är aktiverat. Observera att brusreduceringen sker efter att alla sampel har beräknats och kan vara processorintensiv.
 
-## Preset browser
+## Förinställningsbläddrare {#preset-browser}
 ![](/images/postprocess_presets.webp)
 Genom att klicka på bilden visas en samling förinställningar för efterbearbetning. För att definiera egna förinställningar, välj en, klicka på ”clone”, gör ändringar. För att spara, klicka på förinställningsbilden, klicka igen inne i preset browser och välj ”save”.
 
 
-## Reflection (SSR)
+## Reflektion (SSR) {#reflection-ssr}
 Med det här alternativet kan objekt reflektera andra objekt i scenen, så länge objekten är synliga på skärmen.
 Om du har metalliska och blanka objekt i din scen bör det här alternativet troligen användas.
 Detta alternativ är endast effektivt i PBR-läge.
@@ -53,7 +50,7 @@ Detta alternativ är endast effektivt i PBR-läge.
 | :------------------------: | :-----------------------: |
 | ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
-## Global Illumination (SSGI)
+## Global ljussättning (SSGI) {#global-illumination-ssgi}
 
 Global illumination simulerar hur ljus studsar mellan ytor, t.ex. att en röd vägg kastar rött ljus på ett närliggande vitt objekt. Detta kan avsevärt förbättra realismen i en rendering när det används tillsammans med ambient occlusion och reflektioner. 
 
@@ -67,7 +64,7 @@ Global illumination simulerar hur ljus studsar mellan ytor, t.ex. att en röd v�
 
 _En spotlight är placerad bakom sfären och riktad mot taket. Med SSGI av är det bara taket som är upplyst. Med SSGI på studsar ljuset från taket till väggarna till sfären._
 
-## Ambient Occlusion (SSAO)
+## Ambient Occlusion (SSAO) {#ambient-occlusion-ssao}
 Ambient occlusion mörkar områden där ljuset har mindre chans att nå (hörn osv).
 Effekten beror endast på modellens geometri.
 
@@ -86,7 +83,7 @@ AO kommer att vara mest synlig i områden som huvudsakligen är upplysta av omgi
 
 :::
 
-## Depth of Field (DOF)
+## Skärpedjup (DOF) {#depth-of-field-dof}
 Lägg till en oskärpeffekt på området som ligger utanför fokus.
 
 Tryck helt enkelt på din modell för att ändra fokuspunkt.
@@ -100,7 +97,7 @@ Tryck helt enkelt på din modell för att ändra fokuspunkt.
 | ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp) |
 
 
-## Bloom
+## Bloom {#bloom}
 Bloom får de ljusa områdena i din scen att glöda.
 
 * `Intensity` - styrkan på effekten.
@@ -113,7 +110,7 @@ Bloom får de ljusa områdena i din scen att glöda.
 | ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
 
-## Tone Mapping
+## Tonmappning {#tone-mapping}
 Tone Mapping är en operation som mappar HDR-värden till intervallet `[0, 1]`.
 Om du inte använder det (eller väljer `none`) kommer alla färgkomponenter högre än 1 att klippas.
 Alla färgvariationer över detta intervall går då förlorade.
@@ -133,14 +130,14 @@ Observera att med `Tone Mapping` inaktiverat försvinner vissa detaljer eftersom
 Tone mapping kan förstärka effekten av global illumination. Om du sänker intensiteten på miljökartan, höjer den primära ljuskällan, kan du öka `exposure` i tone mapping för att se mer av ljusstudseffekterna.
 :::
 
-## Color Grading
+## Färgkorrigering {#color-grading}
 Liknande kurvverktyget i Photoshop låter detta dig kontrollera balansen och fördelningen av färg i bilden. `main`-kontrollen påverkar hela färgbalansen, `red`/`green`/`blue`-kontrollerna ger finjustering. 
 
 | Color Grading off             | Color Grading on             |
 | :---------------------------: | :--------------------------: |
 | ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
-## Curvature
+## Krökning {#curvature}
 Upptäck var det finns snabba förändringar i krökning och applicera en färg på dessa områden.
 
 * `Factor` - den övergripande intensiteten på effekten
@@ -153,7 +150,7 @@ Upptäck var det finns snabba förändringar i krökning och applicera en färg 
 | ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
 
-## Chromatic Aberration
+## Kromatisk aberration {#chromatic-aberration}
 Simulera linsartefakter där ljuset bryts upp runt skärmens kanter.
 
 * `Strength` - hur mycket de röda/gröna/blå delarna av bilden separeras mot skärmens kanter
@@ -163,7 +160,7 @@ Simulera linsartefakter där ljuset bryts upp runt skärmens kanter.
 | ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
 
-## Vignette
+## Vinjettering {#vignette}
 Simulera linsartefakter genom att mörka ned skärmens kanter.
 
 * `Size` - Storleken på en inverterad ellips som placeras över bilden
@@ -174,7 +171,7 @@ Simulera linsartefakter genom att mörka ned skärmens kanter.
 | :-----------------------------: | :----------------------------: |
 | ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
-## Grain
+## Brus {#grain}
 Lägg till en korn-effekt; det kan hjälpa till att göra bilden lite mindre artificiell.
 
 * `Strength` - mängden korn/brus som läggs till i bilden.
@@ -185,7 +182,7 @@ Lägg till en korn-effekt; det kan hjälpa till att göra bilden lite mindre art
 | ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
 
-## Sharpness
+## Skärpa {#sharpness}
 En skärpeeffekt liknande den i Photoshop eller fotoappar.
 
 * `Strength` - mängden skärpa som appliceras på bilden.
@@ -195,7 +192,7 @@ En skärpeeffekt liknande den i Photoshop eller fotoappar.
 | :----------------------------: | :--------------------------: |
 | ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
-## Pixel Art
+## Pixelkonst {#pixel-art}
 Simulera retro-spelens pixelgrafik.
 
 * `Slider` - storleken på pixlarna
@@ -205,7 +202,7 @@ Simulera retro-spelens pixelgrafik.
 | :-------------------------: | :------------------------: |
 | ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
-## Scanline
+## Scanline {#scanline}
 Simulera utseendet hos gamla CRT-skärmar.
 
 * `Factor` - styrkan på linjerna
@@ -216,6 +213,6 @@ Simulera utseendet hos gamla CRT-skärmar.
 | ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
 
 
-## Dithering
+## Dithering {#dithering}
 
 Dithra pixlar för att minska bandningsartefakter. Vanligtvis bör detta vara aktiverat, men kan stängas av för specifika operationer (t.ex. export av djupkartor eller andra dataspecifika operationer).

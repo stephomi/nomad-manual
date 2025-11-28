@@ -1,10 +1,10 @@
-# ![](/icons/symmetry.webp) Simmetria
+# ![](/icons/symmetry.webp) Simmetria {#symmetry}
 
 Questo menu controlla come i tratti verranno ripetuti attraverso un piano a specchio o radialmente, e i modi per ripristinare la simmetria su oggetti non simmetrici.
 
 ![](/images/symmetry_overview.webp) 
 
-## Panoramica 
+## Panoramica {#overview}
 Puoi usare la simmetria in diversi modi:
 
 * Come uno specchio, ribaltando il lavoro sugli assi X (sinistra/destra), Y (alto/basso), Z (dietro/davanti), o una combinazione di essi. 
@@ -23,10 +23,10 @@ Le uniche eccezioni sono gli strumenti di trasformazione ([Sposta](#translate), 
 Il menu di simmetria serve principalmente a controllare la simmetria dei tratti. Puoi anche specchiare e ripetere oggetti tramite i [ripetitori presenti nel menu scena](scene#repeaters). 
 :::
 
-## Enabled
+## Abilitato {#enabled}
 Attiva/disattiva la modalità specchio, è la stessa del pulsante `Sym` nel pannello rapido a sinistra. 
 
-## Planes
+## Piani {#planes}
 
 Abilita uno o più piani di simmetria e il numero di ripetizioni per la simmetria radiale. Nota che non devi scegliere un solo piano: puoi avere 1, 2 o 3 piani abilitati per una simmetria complessa.
 
@@ -34,10 +34,10 @@ L’asse e il conteggio delle ripetizioni per la simmetria radiale. Nota che anc
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Method
+## Metodo {#method}
 Lo specchio può essere “Locale”, e muoversi con l’oggetto, oppure “Mondo”, e rimanere fermo. Se non sei sicuro di quale modalità ti serva, osserva il piano a specchio e gli indicatori radiali sovrapposti all’oggetto. In modalità locale, se usi il gizmo di trasformazione e sposti il modello, anche gli indicatori dello specchio si muoveranno. In modalità mondo, gli indicatori dello specchio resteranno fissi e l’oggetto scivolerà attraverso di essi.
 
-## Mirroring
+## Mirroring {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
 Quando scolpisci vicino ai piani di simmetria, alcuni pennelli possono avere un comportamento di simmetria imperfetto. Questa sezione ti permette di ripristinare la simmetria copiando un lato della tua scultura sull’altro. 
@@ -52,11 +52,11 @@ Quando scolpisci vicino ai piani di simmetria, alcuni pennelli possono avere un 
 
 `Split & Mirror` essenzialmente taglierà l’oggetto lungo lo specchio, copierà un lato, lo specchierà sull’altro e salderà i vertici lungo lo specchio. È un’opzione più distruttiva e cancellerà la multirisoluzione, ma a volte questo metodo è necessario se il modello è molto diverso attraverso lo specchio.
 
-### Flip object
+### Capovolgi oggetto {#flip-object}
 ![](/images/symmetry_flip.webp)
 Rende il lato sinistro il lato destro e viceversa. Simile, come risultato, a usare il menu dello strumento gizmo e impostare la scala a -1 sull’asse X.
 
-## Reset and Edit
+## Reimposta e modifica {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
@@ -71,7 +71,7 @@ Quindi, se non funziona come ti aspetti, assicurati di controllare di essere nel
 Il pulsante `Gizmo (Edit)` è intenzionalmente disattivato come promemoria del fatto che probabilmente non dovresti usarlo!
 :::
 
-## Show options
+## Mostra opzioni {#show-options}
 ![](/images/symmetry_show.webp)
 
 

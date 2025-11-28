@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) Couches 
+# ![](/icons/layer.webp) Calques {#layers}
 
 Ce menu contient la pile de couches, un moyen de stocker les modifications apportées à votre objet de manière non destructive, ainsi que de nombreuses façons de combiner et de réutiliser les couches.
 
 ![](/images/layers_overview.webp) 
 
-## Vue d’ensemble
+## Aperçu {#overview}
 
 Les couches de Nomad ont plusieurs usages.
 
@@ -19,7 +19,7 @@ Les couches peuvent être partiellement effacées via l’outil [Delete Layer](t
 ![](/videos/layer.mp4)
 
 ::: tip
-Contrairement à la plupart des logiciels de sculpture, modifier la topologie d’un maillage ne supprimera pas les couches. Vous pouvez utiliser le [Voxel Remesher](topology.md#voxel-remesher), le [Multiresolution](topology.md#multiresolution) ou les outils [Trim](tools.md#trim)/[Split](tools.md#split), mais notez qu’en utilisant le [Voxel Remesher](topology.md#voxel-remesher), la qualité de la couche sera impactée.
+Contrairement à la plupart des logiciels de sculpture, modifier la topologie d’un maillage ne supprimera pas les couches. Vous pouvez utiliser le [Voxel Remesher](topology.md#voxel-remesher), le [Multiresolution](topology.md#multires) ou les outils [Trim](tools.md#trim)/[Split](tools.md#split), mais notez qu’en utilisant le [Voxel Remesher](topology.md#voxel-remesher), la qualité de la couche sera impactée.
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ Si vous utilisez les couches pour des blendshapes/morph targets, il existe des f
 :::
 ----
 
-## Menu des couches 
+## Menu Calque {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Appuyez sur `Add layer` pour créer une nouvelle couche.
 
 Chaque couche possède un nom, un curseur pour contrôler sa force/facteur, et des boutons d’options.
 
-### Options
+### Options {#options}
 
 | Action       | Icône                        | Description                                         |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Chaque couche possède un nom, un curseur pour contrôler sa force/facteur, et d
 
 Pour déplacer une couche vers une autre partie de la pile, appuyez et maintenez sur son nom, puis faites-la glisser.
 
-### Plus...
+### Plus... {#more}
 
 Le bouton « More... » affichera des options supplémentaires pour la couche actuelle :
 
 ![](/images/layers_more.webp) 
 
-#### Facteurs de canal
+#### Facteurs de canal {#channel-factors}
 
 Ces contrôles vous permettent de mettre à l’échelle la quantité de sculpture/couleur/rugosité/métallicité/opacité pour la couche. Ces valeurs sont multipliées par le curseur de facteur de couche, donc par exemple si la force de la couche est 1, mais que le facteur du canal couleur est 0,5, alors la couleur affichée sera à une force de 0,5.
 
@@ -82,17 +82,17 @@ Peut-être qu’à l’avenir, chaque canal aura son propre canal alpha pour sup
 :::
 
 
-#### ![](/icons/tool_mask.webp) Masque
+#### ![](/icons/tool_mask.webp) Masque {#mask}
 Le bouton de masque à côté de chaque curseur créera un masque à partir de ce canal. De manière similaire à l’utilisation de couches pour faire des sélections dans les applications de peinture, cela vous permet de réutiliser le travail effectué dans une couche pour d’autres opérations.
 
-#### ![](/icons/preview.webp) Aperçu
+#### ![](/icons/preview.webp) Aperçu {#preview}
 ![](/images/layers_preview.webp) 
 
 Lorsqu’il est activé, prévisualise les paramètres d’extraction pour cette couche (voir la section suivante).
 
 Lorsque le mode rayon X est activé, seule la forme extraite sera solide, le reste de la forme sera rendu transparent, ce qui est utile si vous utilisez des hauteurs d’extraction négatives.
 
-#### Extraire
+#### Extraction {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ Le bouton `Extract` dupliquera le contenu de la couche dans un nouvel objet, gé
 * Shell - Fermer la forme extraite avec les options d’épaisseur et de direction.
 * Layer - Extraire la différence de couche.
 
-#### ![](/icons/height.webp) Épaisseur
+#### ![](/icons/height.webp) Épaisseur {#thickness}
 ![](/images/layers_thickness.webp) 
 
 La profondeur de l’extrusion de coque. Les valeurs positives se développent hors de la surface, les valeurs négatives vers l’intérieur de la surface.
@@ -116,12 +116,12 @@ Le plus/moins à côté de cette valeur définit la direction de l’extrusion :
 * Plus ( + ) commencera à partir de la surface actuelle et extrudera vers le haut.
 * PlusMinus ( ± ) poussera le haut et le bas de l’extrusion dans des directions opposées de manière égale, de sorte qu’elle sera à moitié intégrée dans la surface d’origine.
 
-#### Lissage
+#### Lissage {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 Si les bords de la région à extraire sont irréguliers, ce curseur tentera de flouter le bord pour obtenir une forme plus lisse. 
 
-#### ![](/icons/height.webp) Boucle de bord (côté)
+#### ![](/icons/height.webp) Boucle de bord (côté) {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 Cette section est visible lorsque l’action de fermeture est « Shell ». 
@@ -132,10 +132,10 @@ Si désactivé, le curseur `Division` définira le nombre de divisions sur les c
 
 _Ceci est la fin du sous-menu « More... ». _
 
-### Avancé
+### Avancé {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Conserver les détails des couches supérieures
+#### Conserver les détails des calques supérieurs {#keep-top-layers-details}
 
 Garantit que les petits détails sur les couches supérieures restent visibles lorsque de grands changements sont effectués sur les couches inférieures.
 
@@ -144,13 +144,13 @@ Par défaut, si vous sculptez de petites rides sur une couche, puis effectuez de
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Développer la liste
+#### UI : Développer la liste {#ui-expand-list}
 
 Le menu de couches par défaut vous permet d’activer/désactiver la visibilité des couches et l’opacité de la couche. L’activation de cette option développe les contrôles complets pour chaque couche.
 
 ![](/images/layers_expand.webp)
 
-#### Synchroniser la transformation
+#### Synchroniser la transformation {#sync-transform}
 
 Si activé, toutes les couches non sélectionnées seront ajustées en fonction de la rotation, de l’échelle et du cisaillement de la transformation. 
 

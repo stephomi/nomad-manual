@@ -1,23 +1,23 @@
-# ![](/icons/paint.webp) Malování  
+# ![](/icons/paint.webp) Malování {#painting}
 
 Ovládejte barvu, drsnost, kovovost malovaných tahů, umožněte hromadné vyplňování malovacích atributů a určete, jak malovací nástroje interagují s vrstvami, maskami a skrytými výběry.
 
 ![](/images/paint_overview.webp)  
 
-## Přehled
+## Přehled {#overview}
 
 Nomad používá PBR malování vrcholů. Co to znamená?
 
-### PBR
+### PBR {#pbr}
 PBR, neboli fyzikálně založené vykreslování (Physically Based Rendering), je populární technika počítačové grafiky pro film, televizi, hry a mobilní zařízení. Tím, že jsou světla založena na fyzikálních vlastnostech a povrchy jsou definovány pomocí barvy, drsnosti a kovovosti, lze dosáhnout široké škály fotorealistických vzhledů.
 
-### Malování vrcholů
+### Malování vrcholů {#vertex-painting}
 
 Malování vrcholů znamená, že informace o barvě jsou uloženy ve vrcholech modelu, nikoli v texturách. Protože Nomad zvládá modely se stovkami tisíc, často miliony vrcholů, měly by vaše modely být schopné mít velmi detailní povrchové malování; pokud můžete detail vymodelovat, můžete ho také namalovat.
 
 To také znamená, že malování v Nomadu nevyžaduje UV mapování, což je v jiných 3D aplikacích často pomalý a technický proces. Mnoho jiných 3D aplikací nepodporuje tak vysoký počet vrcholů jako Nomad, nicméně Nomad má také dobré nástroje pro pečení textur a decimaci.
 
-### Texturování
+### Texturování {#texturing}
 
 Nomad podporuje textury, ale ty musí být přítomné v importovaném modelu, nebo vzniknout pečením malby vrcholů do textur. 
 
@@ -38,21 +38,21 @@ Příklad pracovního postupu:
 To byl přehled, nyní si projdeme jednotlivé části malovacího menu:
 
 
-## Malování tahem
+## Malování tahem {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
 Povolí malování pro tento nástroj, užitečné, pokud potřebujete současně modelovat a malovat.
 
 U nástrojů, kde je malování primární funkcí (např. Paint, Smudge, Mask), toto zaškrtávací políčko neexistuje.
 
-### Intenzita malby
+### Intenzita malby {#paint-intensity}
 
 Posuvník, který vám umožní použít jinou intenzitu než primární intenzitu nástroje.
 
 Zaškrtávací políčka `Alpha`, `Falloff` a `Randomize` určují, zda tyto funkce ovlivní malování. Například můžete mít u nástroje Clay zapnuté náhodnění, ale barva se náhodně měnit nebude.
 
 
-## Materiál
+## Materiál {#material}
 ![](/images/paint_material.webp) 
 
 První ikona je náhledový tvar materiálu. Tažením na 3D náhledu materiálu jej otočíte. 
@@ -67,14 +67,14 @@ Tlačítko náhledu vedle názvu Material vám umožní přepínat mezi None, Ma
 
 Kapátko lze použít k nasamplování všech vlastností z objektu ve scéně.
 
-## Předvolby materiálu
+## Předvolby materiálu {#material-presets}
 Klepnutím na 3D náhledový tvar se otevře menu předvoleb materiálů, které lze klonovat a definovat tak vlastní předvolby.
 
 ![](/images/paint_presets.webp) 
 
 Přepínače `Embed Textures` a `Alpha`, pokud jsou zapnuté, uloží všechny textury použité tímto materiálem přímo do předvolby. To je níže vysvětleno podrobněji.
 
-## PBR posuvníky
+## Posuvníky PBR {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 [PBR](shading.md#pbr) malování používá 4 kanály:
@@ -113,7 +113,7 @@ Při použití textur pro PBR malování je často užitečné přepnout na nás
 Pokud malujete kovový povrch na objektu s nižším počtem polygonů, můžete zvážit zapnutí `Smooth Shading` [globálně](settings.md#smooth-shading) nebo [pro konkrétní objekt](material.md#smooth-shading).
 :::
 
-## Paint all
+## Malovat vše {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
@@ -132,12 +132,12 @@ Další tlačítka určují, jak může být Paint All dále ovlivněno:
 | ![](/icons/triplanar.webp) | Indikátor triplanárního nastavení             |
 | ![](/icons/cog.webp)       | Otevřít nastavení Triplanar                   |
 
-### Triplanar settings
+### Nastavení triplanárního zobrazení {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
 Podobně jako [triplanární nastavení v menu materiálu](material.md#triplanar) můžete ovládat prolínání projekcí, dlaždicování a posuny. 
 
 Pomocí zaškrtávacího políčka Preview v horní části tohoto menu můžete při úpravě hodnot zapnout trvalý náhled.
 
-## Global material
+## Globální materiál {#global-material}
 Pokud je tato možnost zapnutá, vybraný materiál bude stejný jako u ostatních nástrojů. Všimněte si, že se bere v úvahu pouze nastavení drsnosti, kovovosti a barvy.

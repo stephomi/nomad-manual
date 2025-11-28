@@ -1,4 +1,4 @@
-# ![](/icons/sun.webp) 셰이딩(Shading)
+# ![](/icons/sun.webp) 셰이딩 {#shading}
 
 이 메뉴에서는 Nomad에서 사용되는 셰이딩 모드, 조명 속성, 그리고 환경광/매트캡 속성을 제어합니다.
 
@@ -22,24 +22,24 @@ metalness와 roughness에 대해 더 알고 싶다면 [버텍스 페인트](pain
 
 ![](/images/shading_second.webp)
 
-### Face Group
+### 페이스 그룹 {#face-group}
 페이스 그룹 색상을 오버레이합니다. 페이스 그룹은 [Face group](tools#facegroup) 도구로 만들 수 있는 폴리곤의 색상 선택 영역이며, 대부분의 프리미티브에서는 자동으로 생성됩니다.
 
 일부 도구는 페이스 그룹이 보이는 상태일 때 자동으로 페이스 그룹을 기준으로 필터링합니다.
 
-### Show paint
+### 페인트 표시 {#show-paint}
 Nomad는 조각의 버텍스에 색상, 거칠기(roughness), 금속성(metalness)을 저장할 수 있습니다. 이 체크박스로 이러한 속성의 표시를 전역적으로 켜고 끌 수 있습니다.
 
 버텍스 속성과 텍스처를 둘 다 가지고 있고 둘 다 활성화되어 있다면, 두 값은 서로 곱해집니다.
 
-### Show mask
+### 마스크 표시 {#show-mask}
 [마스크 도구](tools#mask)의 그레이스케일 마스크 오버레이를 토글합니다. 이 옵션을 끄면 마스크도 함께 비활성화되므로, 마스크 없이 빠르게 수정한 뒤 다시 켜서 마스크를 유지하는 데 유용합니다.
 
-### Use Hide
+### 숨기기 사용 {#use-hide}
 
 숨겨진 면을 토글합니다. 이 기능은 **Hide 도구를 사용 중이 아닐 때만** 작동합니다!
 
-### Use textures
+### 텍스처 사용 {#use-textures}
 
 Nomad에서는 [material](material) 메뉴에서 오브젝트에 텍스처를 할당할 수 있습니다. 텍스처가 할당되어 있다면 이 체크박스로 전역적으로 켜고 끌 수 있습니다.
 
@@ -49,7 +49,7 @@ Nomad에서는 [material](material) 메뉴에서 오브젝트에 텍스처를 �
 
 
 
-### PBR과 조명 개요
+### PBR 및 조명 개요 {#pbr}
 이 매뉴얼에서는 물리 기반 렌더링(PBR)의 세부 사항까지는 다루지 않습니다.
 
 중요한 점은 조명과 머티리얼이 완전히 분리되어 있다는 것입니다.  
@@ -68,7 +68,7 @@ Nomad에서는 [material](material) 메뉴에서 오브젝트에 텍스처를 �
 오브젝트를 Unlit/Emissive로 만들어 다수의 조명을 흉내 낸 뒤, [후처리](postprocess) 메뉴에서 글로벌 일루미네이션을 켜는 방식도 사용할 수 있습니다.
 :::
 
-### 조명 타입 개요
+### 조명 유형 개요 {#light-types-overview}
 
 현재 지원되는 조명 타입은 다음과 같습니다:
 
@@ -79,42 +79,42 @@ Nomad에서는 [material](material) 메뉴에서 오브젝트에 텍스처를 �
 | [Spot](#spot)               | 원뿔 모양의 조명				                        | Yes                                                    |
 | [Point](#point)             | 모든 방향으로 퍼지는 점광원                            | Yes, but only through less robust screen-space shadows |
 
-#### Directional
+#### 디렉셔널 {#directional}
 무한히 먼 곳에서 균일한 세기로 빛을 발산합니다.  
 씬에서의 3D 위치는 중요하지 않고, 방향만 중요합니다.
 
 이 조명을 카메라에 붙일 수 있으며, 이렇게 하면 항상 일정한 조명을 유지할 수 있습니다.  
 예를 들어, 캐릭터 뒤쪽에서 카메라를 향해 비추는 강한 림 라이트(테두리 조명)를 만들고, 카메라를 회전해도 항상 캐릭터 뒤에서 비추도록 할 수 있습니다.
 
-#### Environment light
+#### 환경광 {#env-light}
 [환경 HDR](#environment)을 사용하면 전체적으로 부드러운 조명을 얻을 수 있지만, HDR에 강하고 날카로운 광원이 있을 경우 그로 인해 생기는 그림자는 매우 부드럽거나 거의 보이지 않을 수 있습니다. 이때 Directional 라이트를 환경 HDR과 함께 사용하면 도움이 되지만, 둘을 정확히 정렬하기가 어렵습니다.
 
 Environment light는 이 작업을 자동으로 처리합니다. HDR에서 가장 밝은 부분에 맞춰 자동으로 방향을 정렬하고, 강도와 각도(그림자 부드러움)는 별도로 조절할 수 있습니다. 
 
-#### Spot
+#### 스폿 {#spot}
 Spot 라이트는 단일 방향으로, 원뿔 형태로 제한된 빛을 발산합니다.
 
-#### Point
+#### 포인트 {#point}
 Point 라이트는 모든 방향으로 빛을 발산합니다.  
 현재 Point 라이트는 그림자를 지원하지 않습니다.
 
-#### Shadows
+#### 그림자 {#shadows}
 `normal bias` 옵션은 일반적인 그림자 아티팩트(여드름 현상/떠 있는 그림자)를 줄이는 데 사용할 수 있습니다.
 
 그림자 품질은 씬 전체 크기에 비해 오브젝트의 크기에 따라 달라집니다.  
 씬에 매우 큰 오브젝트(예: 큰 평면)가 있고, 그 오브젝트가 그림자를 투사할 필요가 없다면, 해당 오브젝트의 [머티리얼 설정](material.md#cast-shadows)에서 그림자 투사를 비활성화하는 것이 좋습니다.
 
-## Lights
+## 조명 {#lights}
 
 ![](/images/shading_lights.webp)
 
-### ![](/icons/checked.webp) Lights 체크박스
+### ![](/icons/checked.webp) 조명 체크박스 {#lights-checkbox}
 
 씬에 있는 모든 직접 조명을 토글합니다.
 
 
 
-### Add light
+### 조명 추가 {#add-light}
 
 씬에 조명을 추가합니다(최대 4개). 조명이 추가되면, 조명 리스트가 버튼과 함께 표시되고, 뷰포트 상단에 조명 툴바가 추가됩니다.
 
@@ -127,11 +127,11 @@ Point 라이트는 모든 방향으로 빛을 발산합니다.
 * 복사 아이콘은 조명을 복제합니다. 
 * 점 3개 아이콘은 전체 조명 편집기를 엽니다. 이 기능 대부분은 뷰포트에 나타나는 툴바에서도 사용할 수 있습니다. 
 
-### ![](/icons/spotlight.webp)  Icons
+### ![](/icons/spotlight.webp)  아이콘 {#icons}
 
 뷰포트에서 조명 아이콘의 표시를 토글합니다.
 
-### Light toolbar
+### 조명 툴바 {#light-toolbar}
 ![](/images/shading_lights_toolbar.webp) 
 
 조명이 선택되면 이 툴바가 뷰포트 상단에 나타납니다.
@@ -144,7 +144,7 @@ Point 라이트는 모든 방향으로 빛을 발산합니다.
 * Size는 조명의 폭을 설정합니다. 더 넓은 조명은 더 부드러운 그림자, 부드러운 조명, 그리고 오브젝트 위의 부드러운 하이라이트를 만듭니다.
 * ... 버튼은 추가 컨트롤을 엽니다.
 
-### Light extra controls
+### 조명 추가 컨트롤 {#light-extra-controls}
 
 ![](/images/shading_extra_controls.webp) 
 
@@ -166,7 +166,7 @@ Point 라이트는 모든 방향으로 빛을 발산합니다.
 * `Tolerance`는 그림자 아티팩트(표면과 맞닿지 않는 그림자, 그림자 내부의 노이즈나 패턴 등)가 보일 때 이를 조정해 문제를 완화하는 데 사용할 수 있습니다.
 
 
-## Environment
+## 환경 {#environment}
 
 ![](/images/shading_environment.webp)
 
@@ -176,20 +176,20 @@ Nomad에는 실내/실외, 다양한 색조와 밝기를 가진 여러 예제 �
 
 이미지를 탭하면 사용 가능한 환경 맵 목록이 표시됩니다. 그 대화상자에서 ‘Import...’를 선택해 직접 만든 맵을 불러올 수 있습니다. latlong 또는 equirectangular 형식의 고다이내믹레인지(HDR) 이미지(.hdr 또는 .exr)를 사용하는 것이 가장 좋습니다. [www.polyhaven.com](https://polyhaven.com/hdris)에는 무료로 사용할 수 있는 환경 맵이 많이 있으며, 일반적으로 1k HDR 맵이 크기와 품질 면에서 적당합니다.
 
-### Exposure
+### 노출 {#env-exposure}
 환경 맵의 밝기를 조절합니다. 일반 조명과 함께 사용할 때 맵이 너무 밝게 느껴질 수 있으며, 특히 [Post Process](postprocess) 설정에서 글로벌 일루미네이션을 사용할 때는 노출을 낮춰 균형을 맞추는 것이 좋습니다.
 
-### Rotation
+### 회전 {#env-rotation}
 
 환경 맵은 모든 방향에서 오는 빛을 담고 있으므로, 회전시켜 조각과의 반사 및 전체 조명이 잘 어우러지도록 조정할 수 있습니다.
 
-### Attached to camera
+### 카메라에 부착 {#env-attached}
 환경을 카메라에 붙입니다.
 
 이렇게 하면 조명이 항상 일정하게 유지되며, 조각 작업 중에 유용할 수 있습니다.
 
 
-## ![](/icons/sphere_smooth.webp) Matcap
+## ![](/icons/sphere_smooth.webp) 맷캡 {#matcap}
 
 ![](/images/shading_matcap.webp)
 
@@ -201,7 +201,7 @@ Nomad에는 실내/실외, 다양한 색조와 밝기를 가진 여러 예제 �
 
 구체를 탭하면 이미지 브라우저가 열립니다. 일반적으로 구체 사진, 렌더, 심지어 구체를 그린 그림이라도, 정사각형으로 꽉 차게 크롭된 이미지라면 Matcap으로 사용할 수 있습니다. 온라인에는 많은 Matcap 라이브러리가 있으며, 유용한 자료로 [nidorx matcap library](https://github.com/nidorx/matcaps)가 있습니다.
 
-### Use global Matcap
+### 전역 맷캡 사용 {#matcap-global}
 
 보통 아티스트는 전체 조각에 하나의 Matcap만 사용하지만, 이 토글을 끄면 각 오브젝트마다 개별 Matcap을 사용할 수 있습니다. 이를 활용해 강렬한 아트 스타일을 만들 수도 있습니다.
 
@@ -209,31 +209,31 @@ Nomad에는 실내/실외, 다양한 색조와 밝기를 가진 여러 예제 �
 이 옵션을 끄고, 캐릭터의 눈에는 눈동자 이미지를 Matcap으로 사용해 보세요!
 :::
 
-### Rotation
+### 회전 {#matcap-rotation}
 Matcap은 특수한 형태의 환경 맵이므로, 환경 맵처럼 회전할 수 있습니다. 뷰포트에서 세 손가락으로 좌우 드래그해 언제든지 회전시킬 수도 있습니다.
 
 
 
-## ![](/icons/circle_fill.webp) Unlit
+## ![](/icons/circle_fill.webp) 언릿 {#unlit}
 
 이 모드는 표면 색상만 표시합니다. 조명, 그림자, 반사, 투명도 등에 방해받지 않고 오브젝트의 표면 색이 의도한 대로인지 확인하는 데 유용합니다. 
 
 또한 비사실적인 렌더, 평면적이고 카툰 같은 느낌을 내는 데도 사용할 수 있습니다.
 
-## ![](/icons/cube.webp) Object ID
+## ![](/icons/cube.webp) 오브젝트 ID {#object-id}
 
 모든 조명과 표면 정보는 무시되고, 각 오브젝트는 고유한 단색으로 셰이딩됩니다. 이를 PBR 렌더와 함께 렌더링하면, 페인팅 프로그램에서 색상으로 선택 영역을 만들 수 있어 특정 오브젝트만 색 보정을 하는 데 사용할 수 있습니다.
 
 이 색상들은 [Scene 메뉴 트리 뷰](scene#tree-view)에도 표시됩니다.
 
-### Randomise id
+### ID 무작위화 {#object-random}
 
 새로운 랜덤 색상 세트를 생성합니다. 
 
-## ![](/icons/link.webp) Instance ID
+## ![](/icons/link.webp) 인스턴스 ID {#instance-id}
 
 Object ID와 동일하지만, 인스턴스는 같은 색을 공유합니다. 
 
-### Randomise id
+### ID 무작위화 {#instance-random}
 
 새로운 랜덤 색상 세트를 생성합니다.

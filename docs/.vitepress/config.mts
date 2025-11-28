@@ -173,8 +173,8 @@ export default defineConfig({
 
     locales: {
         root: { lang: 'en', label: 'English' },
-        zh_hans: { lang: 'zh-Hans', themeConfig: getLocaleTheme('zh_hans'), label: '简体中文' },
-        zh_hant: { lang: 'zh-Hant', themeConfig: getLocaleTheme('zh_hant'), label: '繁體中文' },
+        zh_hans: { lang: 'zh-Hans', themeConfig: getLocaleTheme('zh-hans'), label: '简体中文' },
+        zh_hant: { lang: 'zh-Hant', themeConfig: getLocaleTheme('zh-hant'), label: '繁體中文' },
         ja: { lang: 'ja', themeConfig: getLocaleTheme('ja'), label: '日本語' },
         ko: { lang: 'ko', themeConfig: getLocaleTheme('ko'), label: '한국어' },
         th: { lang: 'th', themeConfig: getLocaleTheme('th'), label: 'ไทย' },

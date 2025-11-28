@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) Pozadí
+# ![](/icons/image.webp) Pozadí {#background}
 
 Tato nabídka ovládá barvu pozadí Nomadu a také referenční obrázky, které se mají použít.
 
 ![](/images/background_overview.webp)
 
-## Pozadí
+## Pozadí {#type}
 ![](/images/background_selector.webp)
 
 Pro pozadí zobrazení jsou k dispozici tři možnosti.
@@ -13,14 +13,14 @@ Pro pozadí zobrazení jsou k dispozici tři možnosti.
 * `Color` – Jednolitá barva, kterou si můžete zvolit.
 * `Gradient` – Přechod barvy shora dolů. Posuvník Factor vám umožní určit střed přechodu.
 
-## Referenční obrázek
+## Referenční obrázek {#reference}
 
 ![](/images/background_reference.webp)
 
 Na pozadí můžete přidat libovolný obrázek, který bude sloužit jako reference.
 Můžete měnit jeho pozici a měřítko, například pokud jej chcete přesunout do rohu obrazovky.
 
-### ![](/icons/tool_transform.webp) Transformace
+### ![](/icons/tool_transform.webp) Transformace {#transform}
 
 Toto tlačítko vám umožní umístit referenční obrázek interaktivně. Použijte 2 prsty pro posun, změnu měřítka a rotaci referenčního obrázku na místo. Konečné umístění se projeví v posuvnících níže:
 

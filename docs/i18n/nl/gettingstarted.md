@@ -1,6 +1,6 @@
-# Aan de slag
+# Aan de slag {#getting-started}
 
-## Welkom bij Nomad!
+## Welkom bij Nomad! {#welcome-to-nomad}
 
 Nomad is een 3D-sculptingapp die op veel apparaten werkt, en het beste werkt op tablets met een drukgevoelige stylus, bijvoorbeeld een Apple iPad met Pencil, of een Samsung Galaxy Tab met stylus.
 
@@ -18,7 +18,7 @@ YouTube heeft inmiddels HEEL VEEL video-tutorials voor beginners, hier zijn een 
 Het is de moeite waard om het hoofd­kanaal van deze makers te bekijken, ze plaatsen regelmatig nieuwe tutorials.
 :::
 
-## Je eerste sculpt
+## Je eerste sculpt {#your-first-sculpt}
 
 Wanneer je Nomad voor het eerst start, zie je een bol op het scherm. Sleep simpelweg met je stylus over de bol om te beginnen met sculpten. Symmetrie is standaard ingeschakeld om sculpten makkelijker te maken.
 
@@ -75,7 +75,7 @@ Met die instellingen kun je de camera volledig met de pen bedienen:
 * onderste rocker en hover-beweging = pannen
 :::
 
-## Kleur toevoegen
+## Kleur toevoegen {#add-color}
 
 Nomad laat je het oppervlak van je sculpt beschilderen. Zoek in het toolmenu rechts de `Paint`-tool en klik erop. In de toolbar links verschijnt een gekleurde bol. Klik daarop om een kleurkiezer te openen. Kies een kleur en schilder op je model.
 
@@ -89,7 +89,7 @@ Gebruik de clay-brush in add/sub-modi, smooth en paint, en kijk of je een eenvou
 
 ![](/images/gettingstarted_head1.webp)
 
-## Andere tools
+## Andere tools {#other-tools}
 
 Het toolpalet heeft veel tools die helpen bij het sculpten. Tot nu toe heb je de clay-brush (de standaard starttool), smooth en paint gebruikt. Omdat smooth vaak wordt gebruikt, heeft deze een extra snelkoppeling in de linker toolbar.
 
@@ -101,7 +101,7 @@ Kijk of je de move-, crease-, inflate- en smooth-tools kunt gebruiken om meer de
 
 Nu je de basis van Nomad kent, kijken we naar de rest van de interface.
 
-## Interface
+## Interface {#interface}
 
 ![](/images/interface_overview1.webp)
 
@@ -116,7 +116,7 @@ Nu je de basis van Nomad kent, kijken we naar de rest van de interface.
 Je kunt de plaatsing en volgorde van alle toolbars spiegelen, zie [Mirror top bar](interface.md#mirror-top-bar) en andere gerelateerde opties.
 :::
 
-## Onderste toolbar
+## Werkbalk onderaan {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
@@ -130,7 +130,7 @@ Je kunt de plaatsing en volgorde van alle toolbars spiegelen, zie [Mirror top ba
 * `Wire` - Schakel een wireframe-overlay in of uit. Een lange tik of omhoog vegen toont opties voor het wireframe.
 * `Inspect` - Schakel het bekijken van extra data over de huidige mesh in of uit. Standaard worden UV’s weergegeven, maar een lange tik of omhoog vegen laat je andere eigenschappen inspecteren als die bestaan, en of dit op de achtergrond of op de mesh wordt weergegeven.
 
-## Volgende stappen
+## Volgende stappen {#next-steps}
 
 Wat je hierna zou moeten leren, hangt af van jou en wat je interessant vindt! Hier zijn wat suggesties:
 
@@ -147,7 +147,7 @@ Wil je *alles* over Nomad leren? Goede keuze! Deze handleiding behandelt heel No
 Als je liever video hebt: Holger Schönischka heeft een enorme verzameling tips en trucs voor Nomad op YouTube gemaakt: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Hulp krijgen
+## Hulp krijgen {#getting-help}
 
 Als je na het lezen van de handleiding en het bekijken van de tutorialvideo’s nog vragen hebt, zijn er drie belangrijke manieren om met andere Nomad-gebruikers of de ontwikkelaar van Nomad te praten:
 

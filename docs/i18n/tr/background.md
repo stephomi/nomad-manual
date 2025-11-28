@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) Arka Plan
+# ![](/icons/image.webp) Arka Plan {#background}
 
 Bu menü, Nomad'ın arka plan rengini ve kullanılacak referans görsellerini kontrol eder.
 
 ![](/images/background_overview.webp)
 
-## Arka Plan
+## Arka Plan {#type}
 ![](/images/background_selector.webp)
 
 Görünüm penceresi arka planı için üç seçenek vardır.
@@ -13,14 +13,14 @@ Görünüm penceresi arka planı için üç seçenek vardır.
 * `Color` - Seçebileceğiniz düz bir renk
 * `Gradient` - Yukarıdan aşağıya bir renk geçişi. Factor kaydırıcısı, gradyanın orta noktasını belirlemenizi sağlar.  
 
-## Referans Görseli
+## Referans Görsel {#reference}
 
 ![](/images/background_reference.webp)
 
 Arka plana referans olarak kullanılmak üzere seçtiğiniz bir görsel ekleyebilirsiniz.
 Örneğin ekranın köşesine taşımak isterseniz, konumunu ve ölçeğini değiştirebilirsiniz.
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) Dönüştür {#transform}
 
 Bu düğme, referans görselini etkileşimli olarak yerleştirmenizi sağlar. Referans görselini yerine oturtmak için 2 parmağınızı kullanarak kaydırın, ölçekleyin, döndürün. Son yerleşim aşağıdaki kaydırıcılara yansıtılır:
 

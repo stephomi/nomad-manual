@@ -1,6 +1,6 @@
-# Guida introduttiva
+# Per Iniziare {#getting-started}
 
-## Benvenuto in Nomad!
+## Benvenuto in Nomad! {#welcome-to-nomad}
 
 Nomad è un’app di scultura 3D che funziona su molti dispositivi, e dà il meglio di sé sui tablet con pennino sensibile alla pressione, ad esempio un iPad con Apple Pencil, o un Samsung Galaxy Tab con pennino.
 
@@ -18,7 +18,7 @@ Su YouTube ora ci sono MOLTI video tutorial per principianti, ecco alcuni ottimi
 Vale la pena controllare il canale principale di questi creatori, pubblicano spesso nuovi tutorial.
 :::
 
-## La tua prima scultura
+## La tua prima scultura {#your-first-sculpt}
 
 Quando avvii Nomad per la prima volta vedrai una sfera sullo schermo. Trascina semplicemente il pennino sulla sfera per iniziare a scolpire. La simmetria è attivata per impostazione predefinita per rendere la scultura più semplice.
 
@@ -75,7 +75,7 @@ Con queste impostazioni, puoi manipolare la camera solo con la penna:
 * rocker inferiore e movimento in hover = trasla
 :::
 
-## Aggiungere colore
+## Aggiungi colore {#add-color}
 
 Nomad ti permette di dipingere la superficie della tua scultura. Dal menu degli strumenti sulla destra, trova lo strumento `Paint` e cliccalo. Sulla barra degli strumenti a sinistra apparirà una sfera colorata. Cliccala, si aprirà un selettore di colore. Scegli un colore e dipingi sul tuo modello.
 
@@ -89,7 +89,7 @@ Usando il pennello clay in modalità add/sub, smooth e paint, prova a creare una
 
 ![](/images/gettingstarted_head1.webp)
 
-## Altri strumenti
+## Altri strumenti {#other-tools}
 
 La palette degli strumenti ha molti strumenti per aiutarti nella scultura. Finora hai usato il pennello clay (lo strumento predefinito), smooth e paint. Poiché smooth è usato spesso, ha una scorciatoia extra nella barra degli strumenti a sinistra.
 
@@ -101,7 +101,7 @@ Vedi se riesci a usare gli strumenti move, crease, inflate e smooth per aggiunge
 
 Ora che conosci le basi di Nomad, diamo un’occhiata al resto dell’interfaccia.
 
-## Interfaccia
+## Interfaccia {#interface}
 
 ![](/images/interface_overview1.webp)
 
@@ -116,7 +116,7 @@ Ora che conosci le basi di Nomad, diamo un’occhiata al resto dell’interfacci
 Puoi invertire il posizionamento e l’ordine di tutte le barre degli strumenti, vedi [Mirror top bar](interface.md#mirror-top-bar) e altre opzioni correlate.
 :::
 
-## Barra degli strumenti inferiore
+## Barra degli strumenti inferiore {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
@@ -130,7 +130,7 @@ Puoi invertire il posizionamento e l’ordine di tutte le barre degli strumenti,
 * `Wire` - Attiva/disattiva una sovrapposizione wireframe. Una pressione prolungata o uno swipe verso l’alto riveleranno le opzioni per il wireframe.
 * `Inspect` - Attiva/disattiva la visualizzazione di dati extra sulla mesh corrente. Per impostazione predefinita mostrerà le UV, ma una pressione prolungata o uno swipe verso l’alto ti permetteranno di ispezionare altre proprietà se esistono, e se queste vengono visualizzate sullo sfondo o sulla mesh.
 
-## Prossimi passi
+## Prossimi passaggi {#next-steps}
 
 Cosa imparare dopo dipende da te, e da ciò che trovi interessante! Ecco alcuni suggerimenti:
 
@@ -147,7 +147,7 @@ Vuoi imparare *tutto* su Nomad? Ottima scelta! Questo manuale copre tutto Nomad,
 Se preferisci i video, Holger Schönischka ha realizzato una grande raccolta di suggerimenti e trucchi per Nomad su YouTube: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Ottenere aiuto
+## Ottenere aiuto {#getting-help}
 
 Se hai ancora domande dopo aver letto il manuale e guardato i video tutorial, ci sono tre modi principali per parlare con altri utenti di Nomad o con lo sviluppatore di Nomad:
 

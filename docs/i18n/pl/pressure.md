@@ -1,4 +1,4 @@
-# ![](/icons/pressure.webp) Nacisk 
+# ![](/icons/pressure.webp) Nacisk {#pressure}
 
 ---
 
@@ -7,7 +7,7 @@ To menu pozwala dostosować zachowanie rysika tabletu, takiego jak Apple Pencil 
 Domyślnie nacisk rysika wpływa na promień (Radius) i intensywność (Intensity) aktualnego pędzla.
 Możesz dostosować krzywą spadku tego wpływu.
 
-## Zezwalaj na nierozpoznany nacisk
+## Zezwól na nierozpoznane ciśnienie {#allow-unrecognized-pressure}
 
 Na niektórych urządzeniach z Androidem dotyk palca zwraca arbitralną, stałą wartość nacisku.
 Może to być irytujące, jeśli planujesz rzeźbić palcem, szczególnie gdy zwracana wartość jest mała.

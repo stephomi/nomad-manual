@@ -1,4 +1,4 @@
-# ![](/icons/scene.webp) Sahne 
+# ![](/icons/scene.webp) Sahne {#scene}
 
 Bu menü, Nomad'da nesneleri, ışıkları, kameraları ve tekrarlayıcıları (repeater) yönetmenizi sağlar. Sahne hiyerarşisini ağaç görünümü olarak gösterir ve nesnelerinizin birçok yönünü değiştirmenize imkân tanır. Ayrıca yeni nesneler oluşturmanıza, nesneleri çeşitli şekillerde birleştirip ayırmanıza da olanak verir.
 
@@ -6,7 +6,7 @@ Bu menü, Nomad'da nesneleri, ışıkları, kameraları ve tekrarlayıcıları (
 ![](/images/scene_menu_summary.webp)
 
 
-## Kısayol çubuğu
+## Kısayol çubuğu {#shortcut-bar}
 | Eylem                 | Simge                              | Açıklama                                                                                                           |
 | :--------------------: | :-------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
 | [Ekle...](#add-menu)    | ![](/icons/plus.webp)            | Sahneye bir nesne eklemek için [Ekle Menüsü](#add-menu)'nü gösterir                                                 |
@@ -21,7 +21,7 @@ Bu menü, Nomad'da nesneleri, ışıkları, kameraları ve tekrarlayıcıları (
 | Eşitle (Sync)                   | ![](/icons/link.webp)            | Instance'ların çocukları varsa, tüm instance'ların aynı çocuk hiyerarşisini paylaşmasını sağlar                                     |
 
 
-## Ağaç görünümü
+## Ağaç görünümü {#tree-view}
 ![](/images/scene_treeview.webp) 
 
 | Eylem       | Simge                       | Açıklama              |
@@ -36,7 +36,7 @@ Tek bir nesneyi değiştirmek için seçim simgesine dokunun veya seçim sütunu
 
 :::
 
-### Ağaç görünümünü düzenleme
+### Ağaç görünümü düzenleme {#tree-view-manipulation}
 
 Ağaç görünümündeki bir öğeye uzun basın, sarıya dönene kadar bekleyin. Sonra onu ağaç görünümünde yukarı veya aşağı taşıyabilir, ayrıca başka bir öğenin üzerine sürükleyerek o öğenin çocuğu yapabilirsiniz.
 
@@ -44,7 +44,7 @@ Birçok öğe seçiliyken, çoğu koyu sarı, biri daha açık sarı olur. Tüm 
 
 Bir üst (parent) öğeyi seçtiğinizde, varsayılan olarak tüm çocuk öğeler de seçilir. Üst simgesine dokunmak, yalnızca üstü veya üst ve çocukları seçme arasında geçiş yapar.
 
-### Nesne menüsü
+### Nesne menüsü {#object-menu}
 
 Ağaç görünümünde bir nesne için üç nokta (...) düğmesine tıklamak nesne menüsünü gösterir. 
 Bu seçeneklerin çoğu, kolaylık olması için üstteki kısayol çubuğundakilere benzer.
@@ -65,7 +65,7 @@ Bu seçeneklerin çoğu, kolaylık olması için üstteki kısayol çubuğundaki
 
 
 
-### Çoklu seçim
+### Çoklu seçim {#multiselection}
 Birden fazla nesne seçerek iki şeyi daha kolay yapabilirsiniz:
 - birden fazla nesneyi aynı anda taşımak için gizmo aracını kullanmak
 - nesneleri birleştirme ve boolean işlemleriyle birleştirmek.
@@ -87,12 +87,12 @@ Bu gelecekte geliştirilebilir.
 :::
 
 
-## Birleştir
+## Birleştir {#join}
 Bu seçenek, birden fazla seçili nesneden tek bir nesne girdisi oluşturur.
 
 [Ayır](#separate) bölümünde videolu bir örnek görebilirsiniz.
 
-## Boolean
+## Boolean {#boolean}
 ![](/images/scene_boolean_menu.webp) 
 Nesneleri tek bir yüzeye birleştirir.
 
@@ -100,43 +100,43 @@ Nesneleri tek bir yüzeye birleştirir.
 
 `Boolean`, çokgenleri özgün yerleşimlerinde bırakmaya ve nesnelerin çakıştığı yerlerde çokgenleri birleştirmeye çalışır. Bu, voxel birleştirmeye göre çok daha temiz ve keskin sonuçlar verebilir; ancak bunun için "su geçirmez" ağlar gerekir; nesnelerde delikler veya bozuk şekiller olmamalıdır. Bu başarısız olursa, genellikle voxel birleştirme işe yarar.
 
-### Boolean işlemleri
+### Boolean işlemleri {#boolean-operations}
 Hem Voxel Merge hem de Boolean, işlemi kontrol etmek için nesne görünürlüğünü kullanır:
 
-#### Birleşim (Union)
+#### Birleştir {#union}
 Her iki nesne de görünürken boolean **union** oluşturulur; nesnelerin dış kabukları birleştirilir, iç yüzeyler olmaz. ![](/images/boolean_union.webp)
 
-#### Çıkarma (Subtract)
+#### Çıkar {#subtract}
 Bir nesne görünmez = boolean **subtract**, görünmez nesne görünür nesneden çıkarılır. ![](/images/boolean_subtract.webp)
 
-#### Kesişim (Intersect)
+#### Kesiştir {#intersect}
 Her iki nesne de görünmez = boolean **intersection**, yalnızca iki nesnenin çakıştığı yerde yeni bir şekil oluşturulur. ![](/images/boolean_intersect.webp)
 
 
-### Voxel Merge Düğmesi
+### Voksel Birleştir Düğmesi {#voxel-merge-button}
 Bu düğmeye basmak, seçili nesneler üzerinde voxel birleştirme işlemi yapar. Tek bir nesnede yapıldığında, gerilmiş çokgenleri olan bir nesne için faydalı olan, eşit aralıklı çokgenlere sahip olacak şekilde yeniden topoloji oluşturur.
 
-### Çözünürlük
+### Çözünürlük {#resolution}
 Hesaplama için kullanılan voxel 3B ızgarasının çözünürlüğü. Bu değer değiştirildiğinde, çokgen boyutunu önizlemek için nesnenin üzerine dama tahtası deseni bindirilir.
 
-### Çoklu çözünürlük oluştur
+### Çoklu çözünürlük oluştur {#build-multiresolution}
 Hedef çözünürlüğünüzün altında çoklu çözünürlük seviyeleri oluşturur. Örneğin çözünürlüğünüz 400 ve çoklu çözünürlük 3 ise, yaklaşık 296.000 çokgenli yeni bir ağ elde edersiniz, ancak bunun altında 74.000, 18.000, 4.000k gibi 3 alt bölme seviyesi olur.
 
-### Keskin kenarları koru
+### Keskin kenarları koru {#keep-sharp-edges}
 Voxel ağını kenarlara oturtmayı etkinleştirir. Basit şekillerde en iyi sonucu verir.
 
-### Boolean düğmesi
+### Boolean düğmesi {#boolean-button}
 Bu düğmeye basmak, Emmett Lalish'in Manifold kütüphanesini kullanarak çokgen boolean işlemi yapar. 
 
 
-## Ayır
+## Ayır {#separate}
 Birden fazla bağlantısız parçaya dayanan tek bir nesneniz varsa, bu nesneyi birden fazla nesneye bölebilirsiniz. 
 Bu, [Basit Birleştirme](#simple-merge)'nin tersi olarak görülebilir.
 
 ![](/videos/merge_separate.mp4)
 
 
-## Ekle menüsü
+## Ekle menüsü {#add-menu}
 
 ![](/images/scene_addmenu_overview.webp)
 
@@ -147,21 +147,21 @@ Primitifler, parametrelerle ayarlanabilen temel şekil türleridir. Primitifi ih
 
 ![](/images/scene_addmenu_top.webp)
 
-### Gizmo üzerinde
+### Gizmoda {#on-gizmo}
 Yeni primitifin, seçili şeklin veya gizmonun bulunduğu yere yerleştirilmesini etkinleştirir. Devre dışı bırakıldığında, primitif sahnenin merkezine yerleştirilir.
 
-### Gizmo seç
+### Seçim gizmou {#select-gizmo}
 Yeni bir primitif oluşturulduğunda otomatik olarak gizmo aracına geçmeyi etkinleştirir. 
 
-### Gelişmiş
+### Gelişmiş {#add-advanced}
 
 Bu menü, yeni primitiflerin, grupların, tekrarlayıcıların nerede oluşturulacağına dair tercihlerinizi ayarlamanıza olanak tanır. Seçili nesnenin üzerinde, dünya orijininde veya gizmonun konumunda olabilirler.
 
 
-### UV'ler
+### UV'ler {#uvs}
 Primitiflerde UV'leri etkinleştirir. UV'ler (genellikle doku koordinatları olarak adlandırılır), dokuların yüzeylere uygulanmasına izin vermek için 3B'de kullanılan ek verilerdir. Daha fazla bellek kullanırlar, ancak çoğu cihaz için 10 milyon poligon veya daha fazlası gibi çok yüksek poligon sayılarına çıkmadığınız sürece bu bir sorun olmamalıdır. 
 
-### Primitifler
+### Primitifler {#primitives}
 
 | Primitif      | Simge                                      | Açıklama                                                                                                     |
 | :------------: | :---------------------------------------: | :-------------------------------------------------------------------------------------------------------------: |
@@ -184,7 +184,7 @@ Nomad'i başlattığınızda temel ağın ne olduğunu merak ediyorsanız: bu da
 Ancak Nomad'deki temel ağ `Project on sphere` kullanmaz, yani mükemmel yuvarlak değildir.
 :::
 
-### Primitif Araç Çubuğu
+### Primitif araç çubuğu {#primitive-toolbar}
 
 ![](/images/scene_primitive_toolbar.gif)
 
@@ -212,7 +212,7 @@ Araç çubuğunun başlığına tıklamak, onu ekranın üstüne veya altına ta
 :::
 
 
-### Primitif menüsü
+### Primitif menüsü {#primitive-menu}
 
 ![](/images/scene_primitive_menu.webp)
 
@@ -226,16 +226,16 @@ Bu menü, seçili primitif için tüm parametreleri içerir. Parametreler, bir �
 * `Post subdivision` Topoloji menüsünün çoklu çözünürlük bölümünden seçilen alt bölme sayısını etkinleştirir. Bu, düşük topoloji bölünmeleriyle birlikte kullanıldığında yumuşatılmış, yumuşak köşeli primitifler yapmak için kullanılabilir. Örneğin, bir kutunun topoloji bölünmelerini 2'ye, post subdivision'ı 4'e ayarlamak, yumuşak köşeli bir kutu oluşturur.
 * `Linear subdivision` Normal yumuşak alt bölmeden önce kaç seviye lineer alt bölme kullanılacağını ayarlar. Bu, alt bölünmüş yüzeylerde köşelerin ne kadar keskin veya yumuşak olacağını kontrol etmek için kullanılabilir. Örneğin, bir kutunun topoloji bölünmelerini 2'ye, post subdivision'ı 4'e ayarlayın, ardından lineer subdivision'ı 0 ile 4 arasında değiştirin. Kutunun köşeleri yumuşaktan keskin hale geçecektir.
 
-### Topoloji
+### Topoloji {#topology}
 
 Bu, bir primitifteki çokgen sayısını kontrol eder. Genellikle kontroller bağlantılıdır; etkin kaydırıcıyı değiştirmek tüm çokgenleri eşit şekilde ayarlar. Bağlantıyı kesme düğmesine dokunarak bir şeklin X/Y/Z bölünmelerini ayrı ayrı kontrol edebilirsiniz.
 
-### Geometri
+### Geometri {#geometry}
 
 Bu, kare şekiller için X/Y/Z birimlerinde, yuvarlak şekiller için yarıçap cinsinden bir primitifin genel boyutunu kontrol eder.
 
 
-### UV Küre
+### UV Küre {#uv-sphere}
 ::: warning
 UV Küre, özellikle kutuplarda yontma için pek uygun değildir.
 
@@ -248,7 +248,7 @@ Genel yontma için uygun olmasa da gözler için kullanışlıdır; küreyi kutu
 :::
 
 
-### Triplanar
+### Triplanar {#triplanar}
 Bu primitif özeldir; geometrisini şekillendirmek için üzerinde [Maskeleme aracı](tools.md#mask)'nı kullanmanız gerekir.
 
 ![](/videos/triplanar.mp4)
@@ -270,23 +270,23 @@ Triplanar primitifinin boyutunu her güncellediğinizde, maske boyamanın kalite
 [Connected Topology](stroke.md#connected-topology)'yi biraz yardımcı olması için kullanabilirsiniz; imleciniz tam olarak bir düzlemin üzerindeyse diğer düzlemleri etkilemez.
 :::
 
-### Gölge Yakalayıcı
+### Gölge Yakalayıcı {#shadow-catcher}
 Gölge yakalayıcı malzemesine sahip bir düzlem ekler. Daha fazla ayrıntı için bkz. [Shadow Catcher material](material.md#shadow-catcher). 
 
 
-## Grup/Kamera
-### Grup
+## Grup/Kamera {#groupcamera}
+### Grup {#group}
 Altına diğer nesneleri bağlayabileceğiniz "boş" bir nesne oluşturur. Bu, birçok nesneyi bir grup altına koyup sonra grubu kapatarak hiyerarşiyi basitçe düzenlemek için kullanılabilir. Bir grup ayrıca nesneleri taşımak için yardımcı olarak da kullanılabilir; birçok nesne bir grubun altına yerleştirilebilir ve ardından grup, gizmo aracıyla taşınabilir, döndürülebilir, ölçeklenebilir.
 
-### Görünüm ekle
+### Görünüm ekle {#add-view}
 Bir kamera oluşturur.
 
-## Tekrarlayıcılar (Repeaters)
+## Tekrarlayıcılar {#repeaters}
 ![](/images/scene_primitive_repeaters.webp)
 
 Tekrarlayıcılar, altındaki nesnelerin instance'larını oluşturan düğümlerdir. 
 
-### Dizi (Array)
+### Dizi {#array}
 ![](/images/scene_primitive_array.webp)
 
 Nesneler bu düğümün çocukları yapıldığında, bir ızgara düzeninde instance'lanabilirler. Seçildiğinde şu kontrolleri vardır:
@@ -295,7 +295,7 @@ Nesneler bu düğümün çocukları yapıldığında, bir ızgara düzeninde ins
 * OffsetX/Y/Z - Fit inside kapalıyken instance'lar arasındaki mesafe
 * SizeX/Y/Z - Fit inside açıkken toplam dizi ızgarasının genişlik/yükseklik/derinliği.
 
-### Eğri (Curve)
+### Eğri {#curve}
 ![](/images/scene_primitive_curve.webp)
 Bu, bir eğri oluşturur; bu düğümün çocukları eğri boyunca tekrarlanır. Seçildiğinde şu kontrolleri vardır:
 * Edit - Eğriye nokta eklemeye ve eğri üzerindeki noktaları taşımaya izin verir.
@@ -307,7 +307,7 @@ Bu, bir eğri oluşturur; bu düğümün çocukları eğri boyunca tekrarlanır.
 * Twist - Instance'ların burulma dönüşünü kontrol etmek için her eğri noktasında kontrolleri açıp kapatır 
 * B-spline - Instance'ların eğriyi tam olarak takip etmesini veya daha yumuşak sonuçlar veren b-spline enterpolasyonunu kullanmasını açıp kapatır. 
 
-### Radyal
+### Radyal {#radial}
 ![](/images/scene_primitive_radial.webp)
 
 Bu düğümün çocukları bir daire içinde instance'lanır. Bu tekrarlayıcının yarıçapını değiştirmek için çocuk nesneyi hareket ettirin. Seçildiğinde şu kontrolleri vardır:
@@ -315,7 +315,7 @@ Bu düğümün çocukları bir daire içinde instance'lanır. Bu tekrarlayıcın
 
 
 
-### Ayna (Mirror)
+### Ayna {#mirror}
 ![](/images/scene_primitive_mirror.webp)
 
 Bu düğümün çocukları bir eksen boyunca aynalanır. Seçildiğinde şu kontrolleri vardır:
@@ -338,35 +338,35 @@ Tekrarlayıcılar birbirlerinin altına bağlanabilir ve birkaç nesne tekrarlay
 Bazı tekrarlayıcılar, çocuk nesnelerin pivotunu otomatik ayarlamaya çalışır; bu nedenle onları gizmo aracıyla hareket ettirseniz veya döndürseniz bile hareket etmezler. Bu davranışı geçersiz kılmanız gerekirse, tekrarlayıcı ile çocuk arasına bir grup ekleyin. Artık çocuk şekli tekrarlayıcıdan bağımsız olarak hareket ettirebilirsiniz.
 :::
 
-## Işık
+## Işık {#light}
 
 ![](/images/scene_primitive_light.webp)
 
-### Yönlü (Directional)
+### Yönlü {#directional}
 Güneş gibi sonsuz uzaklıkta bir ışık kaynağı olan yönlü ışık oluşturur.
 
-### Spot
+### Spot {#spot}
 Konik genişliği ve yumuşaklığı üzerinde kontrolleri olan bir spot ışık oluşturur
 
-### Nokta (Point)
+### Noktasal {#point}
 Noktasal ışık oluşturur
 
-## Gelişmiş
-### Öğeye odaklan
+## Gelişmiş {#advanced}
+### Öğeye odaklan {#focus-on-item}
 Sahne listesindeki bir öğeye çift tıklamak, kamerayı 3B görünümde o öğeye ortalar.
 
-### Görünürlüğü eşitle
+### Görünürlüğü senkronize et {#sync-visibility}
 Göz simgesini kullanmak, tüm seçili öğeleri etkiler. 
 
-### Instance: Göster
+### Örnek: Göster {#instance-show}
 Sahne listesinin solunda instance'ları göstermek için renkli bir kapsül görüntüler.
 
 
-### Simgeler
+### Simgeler {#icons}
 Görünüm penceresindeki grup, ışık, kamera, ayna simgelerinin boyutunu ve opaklığını ayarlar
 
-### Hiyerarşi çizgileri
+### Hiyerarşi çizgileri {#hierarchy-lines}
 Görünüm penceresinde ebeveyn ile çocukları arasında bir çizgi gösterir
 
-## Alt araç çubuğu
+## Alt araç çubuğu {#bottom-toolbar}
 Bu simgeler, görünüm penceresinde Grup, Işık, Kamera, Tekrarlayıcı ve Hiyerarşi çizgilerinin görünürlüğünü açıp kapatır.

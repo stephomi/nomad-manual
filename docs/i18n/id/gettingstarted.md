@@ -1,6 +1,6 @@
-# Memulai
+# Memulai {#getting-started}
 
-## Selamat datang di Nomad!
+## Selamat datang di Nomad! {#welcome-to-nomad}
 
 Nomad adalah aplikasi pemodelan 3D (3D sculpting) yang bekerja di banyak perangkat, dan paling optimal digunakan pada tablet dengan stylus yang sensitif terhadap tekanan, misalnya Apple iPad dengan Apple Pencil, atau Samsung Galaxy Tab dengan stylus.
 
@@ -18,7 +18,7 @@ Youtube sekarang memiliki BANYAK video tutorial untuk pemula, berikut beberapa t
 Ada baiknya memeriksa kanal utama para kreator tersebut, mereka sering mengunggah tutorial baru.
 :::
 
-## Sculpt pertama Anda
+## Sculpt pertama Anda {#your-first-sculpt}
 
 Saat pertama kali menjalankan Nomad, Anda akan melihat sebuah bola di layar. Cukup seret stylus Anda di atas bola tersebut untuk mulai melakukan sculpting. Simetri diaktifkan secara bawaan untuk memudahkan proses sculpting.
 
@@ -75,7 +75,7 @@ Dengan pengaturan tersebut, Anda dapat memanipulasi kamera hanya dengan pena:
 * rocker bawah dan gerakan hover = pan
 :::
 
-## Menambahkan warna
+## Tambahkan warna {#add-color}
 
 Nomad memungkinkan Anda mengecat permukaan sculpt Anda. Dari menu alat di sebelah kanan, cari alat `Paint`, lalu klik. Di toolbar kiri akan muncul sebuah bola berwarna. Klik bola tersebut, ini akan menampilkan pemilih warna. Pilih warna, lalu lukis di model Anda.
 
@@ -89,7 +89,7 @@ Dengan menggunakan kuas clay dalam mode add/sub, smooth, dan paint, coba lihat a
 
 ![](/images/gettingstarted_head1.webp)
 
-## Alat lainnya
+## Alat lainnya {#other-tools}
 
 Palet alat memiliki banyak tool untuk membantu proses sculpting. Sejauh ini Anda telah menggunakan kuas clay (alat awal bawaan), smooth, dan paint. Karena smooth sering digunakan, alat ini memiliki pintasan tambahan di toolbar kiri.
 
@@ -101,7 +101,7 @@ Coba gunakan alat move, crease, inflate, dan smooth untuk menambahkan lebih bany
 
 Sekarang setelah Anda mengetahui dasar-dasar Nomad, mari kita lihat bagian lain dari antarmuka.
 
-## Antarmuka
+## Antarmuka {#interface}
 
 ![](/images/interface_overview1.webp)
 
@@ -116,7 +116,7 @@ Sekarang setelah Anda mengetahui dasar-dasar Nomad, mari kita lihat bagian lain 
 Anda dapat mencerminkan posisi dan urutan semua toolbar, lihat [Mirror top bar](interface.md#mirror-top-bar) dan opsi terkait lainnya.
 :::
 
-## Bottom toolbar
+## Bilah alat bawah {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
@@ -130,7 +130,7 @@ Anda dapat mencerminkan posisi dan urutan semua toolbar, lihat [Mirror top bar](
 * `Wire` - Mengaktifkan/menonaktifkan overlay wireframe. Tekan lama atau geser ke atas untuk menampilkan opsi wireframe.
 * `Inspect` - Mengaktifkan tampilan data tambahan tentang mesh saat ini. Secara bawaan akan menampilkan UV, tetapi tekan lama atau geser ke atas untuk memeriksa properti lain jika ada, dan apakah ini ditampilkan di latar belakang atau langsung pada mesh.
 
-## Langkah berikutnya
+## Langkah berikutnya {#next-steps}
 
 Apa yang sebaiknya Anda pelajari selanjutnya terserah Anda, dan apa yang Anda anggap menarik! Berikut beberapa saran:
 
@@ -147,7 +147,7 @@ Ingin mempelajari *semua hal* tentang Nomad? Pilihan yang bagus! Manual ini menc
 Jika Anda lebih suka video, Holger Schönischka telah membuat koleksi besar tips dan trik untuk Nomad di Youtube: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Mendapatkan bantuan
+## Mendapatkan bantuan {#getting-help}
 
 Jika Anda masih memiliki pertanyaan setelah membaca manual dan menonton video tutorial, ada tiga cara utama untuk berbicara dengan pengguna Nomad lainnya atau pengembang Nomad:
 

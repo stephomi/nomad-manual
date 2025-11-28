@@ -1,4 +1,4 @@
-# ![](/icons/scene.webp) Cena 
+# ![](/icons/scene.webp) Cena {#scene}
 
 Este menu permite gerir objetos, luzes, câmaras e repetidores no Nomad. Mostra a hierarquia da cena como uma vista em árvore, permitindo modificar muitos aspetos dos seus objetos. Também permite criar novos objetos, bem como combinar e separar objetos de várias formas.
 
@@ -6,7 +6,7 @@ Este menu permite gerir objetos, luzes, câmaras e repetidores no Nomad. Mostra 
 ![](/images/scene_menu_summary.webp)
 
 
-## Barra de atalho
+## Barra de atalho {#shortcut-bar}
 | Ação                  | Ícone                             | Descrição                                                                                                          |
 | :-------------------: | :-------------------------------: | :----------------------------------------------------------------------------------------------------------------: |
 | [Adicionar...](#add-menu) | ![](/icons/plus.webp)            | Mostra o [Menu Adicionar](#add-menu) para adicionar um objeto à cena                                               |
@@ -21,7 +21,7 @@ Este menu permite gerir objetos, luzes, câmaras e repetidores no Nomad. Mostra 
 | Sincronizar           | ![](/icons/link.webp)            | Se instâncias tiverem filhos, garante que todas as instâncias partilham a mesma hierarquia de filhos              |
 
 
-## Vista em árvore
+## Exibição em árvore {#tree-view}
 ![](/images/scene_treeview.webp) 
 
 | Ação         | Ícone                      | Descrição                |
@@ -36,7 +36,7 @@ Toque no ícone de seleção para alternar um único objeto, ou arraste vertical
 
 :::
 
-### Manipulação da vista em árvore
+### Manipulação da exibição em árvore {#tree-view-manipulation}
 
 Faça um toque longo num item da vista em árvore até ficar amarelo. Depois pode movê‑lo para cima ou para baixo na árvore, bem como arrastá‑lo sobre outro item para o tornar filho desse item.
 
@@ -44,7 +44,7 @@ Quando muitos itens estão selecionados, a maioria ficará amarelo escuro e um f
 
 Quando seleciona um item pai, por predefinição todos os itens filho também serão selecionados. Tocar no ícone do pai alternará entre selecionar apenas o pai, ou o pai e os filhos.
 
-### Menu do objeto
+### Menu do objeto {#object-menu}
 
 Clicar no botão de reticências (...) de um objeto na vista em árvore mostra o menu do objeto.  
 Muitas destas opções são semelhantes à barra de atalho no topo, repetidas por conveniência.
@@ -65,7 +65,7 @@ Muitas destas opções são semelhantes à barra de atalho no topo, repetidas po
 
 
 
-### Multiseleção
+### Multiseleção {#multiselection}
 Pode selecionar vários objetos para ajudar em duas coisas:
 - usar a ferramenta de gizmo para mover vários objetos de uma vez
 - fundir objetos usando operações de unir e booleanas.
@@ -87,12 +87,12 @@ Isto poderá ser melhorado no futuro.
 :::
 
 
-## Unir
+## Unir {#join}
 Esta opção simplesmente cria uma única entrada de objeto a partir de vários objetos selecionados.
 
 Pode ver um exemplo em vídeo na secção [Separar](#separate).
 
-## Booleano
+## Booleano {#boolean}
 ![](/images/scene_boolean_menu.webp) 
 Combina objetos numa única superfície.
 
@@ -100,43 +100,43 @@ Combina objetos numa única superfície.
 
 `Boolean` tenta manter os polígonos no seu layout original e coser os polígonos onde os objetos se sobrepõem. Isto pode produzir resultados muito mais limpos e nítidos do que uma fusão por voxel; no entanto, requer meshes “watertight”: não podem existir buracos ou formas malformadas nos objetos. Se isto falhar, normalmente uma fusão por voxel funcionará.
 
-### Operações booleanas
+### Operações booleanas {#boolean-operations}
 Tanto o Voxel Merge como o Boolean usam a visibilidade dos objetos para controlar a operação:
 
-#### União
+#### União {#union}
 Ambos os objetos visíveis criam uma **união** booleana; a pele exterior dos objetos é combinada, sem superfícies interiores. ![](/images/boolean_union.webp)
 
-#### Subtrair
+#### Subtrair {#subtract}
 Um objeto invisível = **subtração** booleana; o objeto invisível será subtraído do objeto visível. ![](/images/boolean_subtract.webp)
 
-#### Interseção
+#### Interseção {#intersect}
 Ambos os objetos invisíveis = **interseção** booleana; cria uma nova forma apenas onde os dois objetos se sobrepõem. ![](/images/boolean_intersect.webp)
 
 
-### Botão Voxel Merge
+### Botão de Mesclagem Voxel {#voxel-merge-button}
 Premir este botão fará uma operação de fusão por voxel nos objetos selecionados. Quando feito num único objeto, irá retopologizar em polígonos uniformemente espaçados, útil quando um objeto tem polígonos esticados.
 
-### Resolução
+### Resolução {#resolution}
 A resolução da grelha 3D de voxels usada para o cálculo. Quando este valor é alterado, um padrão de tabuleiro de xadrez é sobreposto no objeto para pré-visualizar o tamanho dos polígonos.
 
-### Construir multirresolução
+### Construir multirresolução {#build-multiresolution}
 Cria níveis de multirresolução abaixo da sua resolução alvo. Assim, se a sua resolução for 400 e “build multiresolution” for 3, obterá uma nova malha com, por exemplo, 296 000 polígonos, mas existirão 3 níveis de subdivisão inferiores com 74 000, 18 000, 4 000.
 
-### Manter arestas vivas
+### Manter arestas afiadas {#keep-sharp-edges}
 Ativa o encaixe da malha de voxel às arestas. Funciona melhor em formas simples.
 
-### Botão Boolean
+### Botão booleano {#boolean-button}
 Premir este botão fará uma operação booleana de polígonos usando a biblioteca Manifold de Emmett Lalish. 
 
 
-## Separar
+## Separar {#separate}
 Se tiver um único objeto baseado em várias partes desconectadas, pode dividir esse objeto em vários objetos.  
 Isto pode ser visto como o oposto de [Simple Merging](#simple-merge).
 
 ![](/videos/merge_separate.mp4)
 
 
-## Menu Adicionar
+## Menu Adicionar {#add-menu}
 
 ![](/images/scene_addmenu_overview.webp)
 
@@ -147,21 +147,21 @@ Primitivas são tipos de formas básicas que podem ser ajustadas usando parâmet
 
 ![](/images/scene_addmenu_top.webp)
 
-### No gizmo
+### No gizmo {#on-gizmo}
 Ativa colocar a nova primitiva onde está a forma selecionada ou o gizmo atual. Quando desativado, a primitiva será colocada no centro da cena.
 
-### Selecionar gizmo
+### Selecionar gizmo {#select-gizmo}
 Ativa a mudança automática para a ferramenta de gizmo quando uma nova primitiva é criada. 
 
-### Avançado
+### Avançado {#add-advanced}
 
 Este menu permite definir a sua preferência para onde novas primitivas, grupos e repetidores serão criados. Podem ser criados sobre o objeto selecionado, na origem do mundo ou na posição do gizmo.
 
 
-### UV's
+### UVs {#uvs}
 Ativa UVs nas primitivas. UVs (frequentemente chamados coordenadas de textura) são dados extra usados em 3D para permitir que texturas sejam aplicadas às superfícies. Consomem mais memória, mas para a maioria dos dispositivos isto não deve ser um problema, exceto em contagens de polígonos muito altas (por exemplo, 10 milhões de polígonos ou mais). 
 
-### Primitivas
+### Primitivas {#primitives}
 
 | Primitiva      | Ícone                                     | Descrição                                                                                                         |
 | :------------: | :---------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
@@ -184,7 +184,7 @@ Se se pergunta qual é a malha base quando inicia o Nomad: também é um cubo su
 No entanto, a malha base no Nomad não usa `Project on sphere`, o que significa que não é perfeitamente redonda.
 :::
 
-### Barra de ferramentas da primitiva
+### Barra de ferramentas de primitivas {#primitive-toolbar}
 
 ![](/images/scene_primitive_toolbar.gif)
 
@@ -212,7 +212,7 @@ Clicar no título da barra de ferramentas alterna‑a entre o topo e a base do e
 :::
 
 
-### Menu da primitiva
+### Menu de primitivas {#primitive-menu}
 
 ![](/images/scene_primitive_menu.webp)
 
@@ -226,16 +226,16 @@ A maioria dos parâmetros das primitivas deve ser autoexplicativa, e há alguns 
 * `Post subdivision` Ativa o número escolhido de subdivisões da secção de multirresolução do menu de topologia. Pode ser usado para criar primitivas suavizadas, com cantos suaves, em combinação com divisões de topologia baixas. Por exemplo, definir as divisões de topologia de um cubo para 2 e as subdivisões pós para 4 criará um cubo com cantos suaves.
 * `Linear subdivision` Define quantos níveis de subdivisão linear usar antes da subdivisão suave normal. Pode ser usado para controlar quão vivos ou suaves são os cantos nas superfícies subdivididas. Por exemplo, defina as divisões de topologia de um cubo para 2, subdivisões pós para 4 e depois experimente alterar as subdivisões lineares entre 0 e 4. Os cantos do cubo passarão de suaves a vivos.
 
-### Topologia
+### Topologia {#topology}
 
 Controla o número de polígonos numa primitiva. Normalmente os controlos estão ligados, por isso alterar o slider ativo ajustará todos os polígonos de forma uniforme. Pode tocar no botão de desligar e controlar separadamente as divisões X/Y/Z de uma forma.
 
-### Geometria
+### Geometria {#geometry}
 
 Controla o tamanho geral de uma primitiva, em unidades X/Y/Z para formas quadradas e em raio para formas redondas.
 
 
-### UV Sphere
+### Esfera UV {#uv-sphere}
 ::: warning
 A UV Sphere não é adequada para escultura, especialmente nos polos.
 
@@ -248,7 +248,7 @@ Embora não seja adequada para escultura geral, é útil para olhos; se rodar a 
 :::
 
 
-### Triplanar
+### Triplanar {#triplanar}
 Esta primitiva é especial, pois deve usar a [ferramenta de máscara](tools.md#mask) nela para moldar a geometria.
 
 ![](/videos/triplanar.mp4)
@@ -270,23 +270,23 @@ Por agora não há opção para “bloquear” a pintura num único plano, mas t
 Pode usar a [Connected Topology](stroke.md#connected-topology) para ajudar um pouco, pois se o cursor estiver precisamente sobre um plano não afetará os outros planos.
 :::
 
-### Shadow Catcher
+### Captura de sombra {#shadow-catcher}
 Adiciona um plano com o material shadow catcher. Veja [Shadow Catcher material](material.md#shadow-catcher) para mais detalhes. 
 
 
-## Grupo/Câmara
-### Group
+## Grupo/Câmera {#groupcamera}
+### Grupo {#group}
 Cria um objeto “vazio”, ao qual pode atribuir outros objetos como filhos. Pode ser usado simplesmente para organizar a hierarquia, colocando muitos objetos dentro de um grupo e depois fechando‑o. Um grupo também pode ser usado como auxiliar para mover objetos; muitos objetos podem ser colocados dentro de um grupo e depois o grupo é movido, rodado ou escalado com a ferramenta de gizmo.
 
-### Add view
+### Adicionar vista {#add-view}
 Cria uma câmara.
 
-## Repetidores
+## Repetidores {#repeaters}
 ![](/images/scene_primitive_repeaters.webp)
 
 Repetidores são nós que criam instâncias dos objetos abaixo deles. 
 
-### Array
+### Matriz {#array}
 ![](/images/scene_primitive_array.webp)
 
 Quando objetos são tornados filhos deste nó, podem ser instanciados numa disposição em grelha. Quando selecionado, tem controlos para:
@@ -295,7 +295,7 @@ Quando objetos são tornados filhos deste nó, podem ser instanciados numa dispo
 * OffsetX/Y/Z - distância entre as instâncias quando “fit inside” está ativado
 * SizeX/Y/Z - a largura/altura/profundidade da grelha total do array quando “fit inside” está ativado.
 
-### Curve
+### Curva {#curve}
 ![](/images/scene_primitive_curve.webp)
 Cria uma curva; filhos deste nó serão repetidos ao longo da curva. Quando selecionado, tem controlos para:
 * Edit - permite adicionar pontos à curva e mover pontos na curva
@@ -307,7 +307,7 @@ Cria uma curva; filhos deste nó serão repetidos ao longo da curva. Quando sele
 * Twist - alterna controlos em cada ponto da curva para controlar a rotação de torção das instâncias 
 * B-spline - alterna entre as instâncias seguirem exatamente a curva ou usarem interpolação B-spline, que tem resultados mais suaves. 
 
-### Radial
+### Radial {#radial}
 ![](/images/scene_primitive_radial.webp)
 
 Filhos deste nó serão instanciados num círculo. Mova o objeto filho para alterar o raio deste repetidor. Quando selecionado, tem controlos para:
@@ -315,7 +315,7 @@ Filhos deste nó serão instanciados num círculo. Mova o objeto filho para alte
 
 
 
-### Mirror
+### Espelho {#mirror}
 ![](/images/scene_primitive_mirror.webp)
 
 Filhos deste nó serão espelhados através de um eixo. Quando selecionado, tem controlos para:
@@ -338,35 +338,35 @@ Repetidores podem ser colocados como filhos uns dos outros, e vários objetos po
 Alguns repetidores tentarão autoajustar o pivot dos objetos filhos, por isso, mesmo que os mova ou rode com o gizmo, eles não se moverão. Se precisar de substituir este comportamento, insira um grupo entre o repetidor e o filho. Agora pode mover a forma filha independentemente do repetidor.
 :::
 
-## Luz
+## Luz {#light}
 
 ![](/images/scene_primitive_light.webp)
 
-### Directional
+### Direcional {#directional}
 Cria uma luz direcional, uma fonte de luz infinitamente distante como o sol.
 
-### Spot
+### Spot {#spot}
 Cria uma luz spot, com controlos sobre a largura do cone e suavidade
 
-### Point
+### Ponto {#point}
 Cria uma luz pontual
 
-## Avançado
-### Focar no item
+## Avançado {#advanced}
+### Focar no item {#focus-on-item}
 Fazer duplo clique num item na lista da Cena centrará a câmara nesse item na vista 3D.
 
-### Sincronizar visibilidade
+### Sincronizar visibilidade {#sync-visibility}
 Usar o ícone de olho afetará todos os itens selecionados. 
 
-### Instância: Mostrar
+### Instância: Mostrar {#instance-show}
 Mostra uma cápsula de cor à esquerda da lista da cena para indicar instâncias.
 
 
-### Ícones
+### Ícones {#icons}
 Define o tamanho e a opacidade dos ícones de grupo, luz, câmara e espelho na viewport
 
-### Linhas de hierarquia
+### Linhas de hierarquia {#hierarchy-lines}
 Mostra uma linha entre o pai e os seus filhos na viewport
 
-## Barra inferior
+## Barra de ferramentas inferior {#bottom-toolbar}
 Estes ícones alternam a visibilidade de Grupo, Luz, Câmara, Repetidor e linhas de Hierarquia na viewport.

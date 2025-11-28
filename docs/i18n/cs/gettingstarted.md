@@ -1,6 +1,6 @@
-# Začínáme
+# Začínáme {#getting-started}
 
-## Vítejte v Nomadu!
+## Vítejte v Nomadu! {#welcome-to-nomad}
 
 Nomad je aplikace pro 3D modelování (sochaření), která funguje na mnoha zařízeních a nejlépe pracuje na tabletech s tlakově citlivým stylusem, např. Apple iPad s Apple Pencil nebo Samsung Galaxy Tab se stylusem.
 
@@ -18,7 +18,7 @@ Na YouTube je nyní SPOUSTA video tutoriálů pro začátečníky, zde jsou něk
 Vyplatí se podívat na hlavní kanál těchto tvůrců, často zveřejňují nové tutoriály.
 :::
 
-## Váš první model
+## Váš první sochárský projekt {#your-first-sculpt}
 
 Když Nomad spustíte poprvé, uvidíte na obrazovce kouli. Jednoduše táhněte stylusem po kouli a začněte modelovat. Symetrie je ve výchozím nastavení zapnutá, aby bylo modelování snazší.
 
@@ -75,7 +75,7 @@ S těmito nastaveními můžete kameru ovládat pouze perem:
 * spodní kolébka a pohyb vznosem = posun
 :::
 
-## Přidání barvy
+## Přidání barvy {#add-color}
 
 Nomad vám umožňuje malovat na povrch vašeho modelu. V nabídce nástrojů vpravo najděte nástroj `Paint` a klepněte na něj. Na levém panelu se objeví barevná koule. Klepněte na ni, zobrazí se výběr barvy. Zvolte barvu a malujte na svůj model.
 
@@ -89,7 +89,7 @@ Pomocí štětce Clay v režimech add/sub, nástroje Smooth a nástroje Paint zk
 
 ![](/images/gettingstarted_head1.webp)
 
-## Další nástroje
+## Další nástroje {#other-tools}
 
 Paleta nástrojů obsahuje mnoho nástrojů, které pomáhají s modelováním. Zatím jste použili štětec Clay (výchozí nástroj), Smooth a Paint. Protože se Smooth používá často, má navíc zkratku na levém panelu.
 
@@ -101,7 +101,7 @@ Zkuste použít nástroje Move, Crease, Inflate a Smooth k přidání detailů n
 
 Teď, když znáte základy Nomadu, se podíváme na zbytek rozhraní.
 
-## Rozhraní
+## Rozhraní {#interface}
 
 ![](/images/interface_overview1.webp)
 
@@ -116,7 +116,7 @@ Teď, když znáte základy Nomadu, se podíváme na zbytek rozhraní.
 Můžete zrcadlově otočit umístění a pořadí všech panelů nástrojů, viz [Mirror top bar](interface.md#mirror-top-bar) a další související volby.
 :::
 
-## Spodní panel nástrojů
+## Spodní panel nástrojů {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
@@ -130,7 +130,7 @@ Můžete zrcadlově otočit umístění a pořadí všech panelů nástrojů, vi
 * `Wire` – přepíná překryvnou drátěnou síť (wireframe). Dlouhé podržení nebo gesto přejetí nahoru zobrazí možnosti drátěného zobrazení.
 * `Inspect` – přepíná zobrazení dodatečných dat o aktuální síti (mesh). Ve výchozím nastavení zobrazuje UV mapy, ale dlouhé podržení nebo gesto přejetí nahoru umožní zkontrolovat i jiné vlastnosti, pokud existují, a nastavit, zda se zobrazují na pozadí nebo přímo na síti.
 
-## Další kroky
+## Další kroky {#next-steps}
 
 Co byste se měli naučit dál, záleží na vás a na tom, co vás zajímá! Zde je pár návrhů:
 
@@ -147,7 +147,7 @@ Chcete se naučit *všechno* o Nomadu? Dobrá volba! Tento manuál pokrývá cel
 Pokud preferujete video, Holger Schönischka vytvořil na YouTube obrovskou sbírku tipů a triků pro Nomad: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Získání pomoci
+## Získání pomoci {#getting-help}
 
 Pokud máte po přečtení manuálu a zhlédnutí výukových videí stále otázky, existují tři hlavní způsoby, jak mluvit s ostatními uživateli Nomadu nebo s vývojářem Nomadu:
 

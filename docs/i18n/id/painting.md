@@ -1,23 +1,23 @@
-# ![](/icons/paint.webp) Pengecatan  
+# ![](/icons/paint.webp) Melukis {#painting}
 
 Mengontrol warna, kekasaran, metalness dari sapuan cat, memungkinkan pengisian menyeluruh (flood fill) atribut cat, dan bagaimana alat cat berinteraksi dengan layer, mask, serta seleksi tersembunyi.
 
 ![](/images/paint_overview.webp)  
 
-## Ikhtisar
+## Ikhtisar {#overview}
 
 Nomad menggunakan pengecatan verteks PBR. Apa artinya ini?
 
-### PBR
+### PBR {#pbr}
 PBR, atau Physically Based Rendering adalah teknik grafis komputer populer untuk film, televisi, gim, dan mobile. Dengan mendasarkan cahaya pada properti fisik, dan mendefinisikan permukaan melalui warna, kekasaran, metalness, berbagai tampilan fotorealistik dapat dicapai.
 
-### Pengecatan verteks
+### Melukis verteks {#vertex-painting}
 
 Pengecatan verteks berarti informasi cat disimpan di verteks model, bukan di tekstur. Karena Nomad dapat menangani model dengan ratusan ribu, sering kali jutaan verteks, model Anda seharusnya dapat memiliki pengecatan permukaan yang sangat detail; jika Anda bisa memahat detailnya, Anda juga bisa mengecat detail tersebut.
 
 Ini juga berarti bahwa pengecatan di Nomad tidak memerlukan pemetaan UV, yang sering kali merupakan proses lambat dan teknis di aplikasi 3D lain. Banyak aplikasi 3D lain tidak mendukung jumlah verteks tinggi seperti yang dapat dilakukan Nomad, namun Nomad juga memiliki alat baking tekstur dan decimation yang baik untuk membantu.
 
-### Teksturing
+### Pemberian tekstur {#texturing}
 
 Nomad mendukung tekstur, tetapi tekstur harus sudah ada di model yang diimpor, atau melalui baking pengecatan verteks ke tekstur. 
 
@@ -38,20 +38,20 @@ Salah satu contoh alur kerja:
 Itu ikhtisarnya, sekarang mari jelajahi bagian-bagian dari menu pengecatan:
 
 
-## Pengecatan sapuan
+## Melukis goresan {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
 Mengaktifkan pengecatan untuk alat ini, berguna jika Anda perlu memahat dan mengecat pada saat yang sama.
 
 Untuk alat di mana pengecatan adalah fungsi utama (misalnya Paint, Smudge, Mask), kotak centang ini tidak ada.
 
-### Intensitas cat
+### Intensitas cat {#paint-intensity}
 
 Slider untuk memungkinkan Anda menggunakan intensitas yang berbeda dari intensitas alat utama.
 
 Kotak centang `Alpha`, `Falloff` dan `Randomize` menentukan apakah fitur-fitur tersebut akan memengaruhi pengecatan. Misalnya Anda dapat mengaktifkan randomize untuk alat clay, tetapi warna tidak akan diacak.
 
-## Material
+## Material {#material}
 ![](/images/paint_material.webp) 
 
 Ikon pertama adalah bentuk pratinjau material. Menyeret pada pratinjau material 3D akan memutarnya. 
@@ -66,14 +66,14 @@ Tombol pratinjau di sebelah judul Material memungkinkan Anda beralih antara none
 
 Eyedropper dapat digunakan untuk mengambil semua properti dari sebuah objek di dalam scene Anda.
 
-## Preset material
+## Preset material {#material-presets}
 Mengetuk bentuk pratinjau 3D akan menampilkan menu preset material, preset ini dapat diklon untuk mendefinisikan preset Anda sendiri.
 
 ![](/images/paint_presets.webp) 
 
 Toggel `Embed Textures` dan `Alpha` ketika diaktifkan akan menyimpan tekstur apa pun yang digunakan oleh material ini di dalam preset. Hal ini dijelaskan lebih lanjut di bawah.
 
-## Slider PBR
+## Penggeser PBR {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 Pengecatan [PBR](shading.md#pbr) menggunakan 4 kanal:
@@ -112,7 +112,7 @@ Saat menggunakan tekstur untuk pengecatan PBR, sering kali berguna untuk beralih
 Anda mungkin ingin menyalakan `Smooth Shading` [secara global](settings.md#smooth-shading) atau [per-objek](material.md#smooth-shading) jika Anda mengecat permukaan metalik pada objek dengan jumlah poligon rendah.
 :::
 
-## Paint all
+## Cat semua {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
@@ -131,12 +131,12 @@ Tombol tambahan mengontrol bagaimana paint all dapat dipengaruhi lebih lanjut:
 | ![](/icons/triplanar.webp) | Indikator pengaturan triplanar                |
 | ![](/icons/cog.webp)       | Membuka pengaturan Triplanar                  |
 
-### Pengaturan Triplanar
+### Pengaturan triplanar {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
 Serupa dengan [pengaturan triplanar di menu material](material.md#triplanar), Anda dapat mengontrol blending proyeksi, tiling dan offset. 
 
 Gunakan kotak centang pratinjau di bagian atas menu ini untuk mengaktifkan pratinjau persisten saat menyesuaikan nilai.
 
-## Global material
+## Material global {#global-material}
 Jika opsi ini diaktifkan, material yang dipilih akan sama dengan alat lainnya. Perhatikan bahwa ini hanya mempertimbangkan pengaturan roughness, metalness dan color.

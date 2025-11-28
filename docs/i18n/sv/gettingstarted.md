@@ -1,6 +1,6 @@
-# Komma igång
+# Kom igång {#getting-started}
 
-## Välkommen till Nomad!
+## Välkommen till Nomad! {#welcome-to-nomad}
 
 Nomad är en 3D‑skulptapp som fungerar på många enheter, och fungerar bäst på surfplattor med tryckkänslig penna, t.ex. en Apple iPad med Pencil, eller en Samsung Galaxy Tab med stylus.
 
@@ -18,7 +18,7 @@ Youtube har nu MÅNGA videoguider för nybörjare, här är några bra länkar:
 Det är värt att kolla huvudkanalen för dessa skapare, de lägger ofta upp nya guider.
 :::
 
-## Din första skulpt
+## Din första skulptur {#your-first-sculpt}
 
 När du startar Nomad första gången ser du en sfär på skärmen. Dra helt enkelt med pennan på sfären för att börja skulptera. Symmetri är aktiverat som standard för att göra skulpteringen enklare.
 
@@ -75,7 +75,7 @@ Med dessa inställningar kan du styra kameran enbart med pennan:
 * nedre vippknapp och hovrande rörelse = panorera
 :::
 
-## Lägg till färg
+## Lägg till färg {#add-color}
 
 Nomad låter dig måla på ytan av din skulpt. I verktygsmenyn till höger hittar du verktyget `Paint` och klickar på det. På verktygsfältet till vänster visas då en färgad sfär. Klicka på den för att öppna färgväljaren. Välj en färg och måla på din modell.
 
@@ -89,7 +89,7 @@ Använd clay‑penseln i add/sub‑lägen, smooth och paint, och se om du kan g�
 
 ![](/images/gettingstarted_head1.webp)
 
-## Andra verktyg
+## Andra verktyg {#other-tools}
 
 Verktygspaletten har många verktyg som hjälper till med skulptering. Hittills har du använt clay‑penseln (standardverktyget), smooth och paint. Eftersom smooth används ofta har det en extra genväg i verktygsfältet till vänster.
 
@@ -101,7 +101,7 @@ Se om du kan använda verktygen move, crease, inflate och smooth för att lägga
 
 Nu när du kan grunderna i Nomad, låt oss titta på resten av gränssnittet.
 
-## Gränssnitt
+## Gränssnitt {#interface}
 
 ![](/images/interface_overview1.webp)
 
@@ -116,7 +116,7 @@ Nu när du kan grunderna i Nomad, låt oss titta på resten av gränssnittet.
 Du kan spegelvända placering och ordning för alla verktygsfält, se [Mirror top bar](interface.md#mirror-top-bar) och andra relaterade alternativ.
 :::
 
-## Nedre verktygsfältet
+## Nedre verktygsrad {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
@@ -130,7 +130,7 @@ Du kan spegelvända placering och ordning för alla verktygsfält, se [Mirror to
 * `Wire` - Växla en wireframe‑overlay. Ett långt tryck eller en uppåtsvepning visar alternativ för wireframe.
 * `Inspect` - Växla visning av extra data om det aktuella nätet. Som standard visas UV:er, men ett långt tryck eller en uppåtsvepning låter dig inspektera andra egenskaper om de finns, och om detta visas i bakgrunden eller på själva nätet.
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 Vad du bör lära dig härnäst beror på dig och vad du tycker är intressant! Här är några förslag:
 
@@ -147,7 +147,7 @@ Vill du lära dig *allt* om Nomad? Bra val! Den här manualen täcker hela Nomad
 Om du föredrar video har Holger Schönischka gjort en stor samling tips och tricks för Nomad på Youtube: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Få hjälp
+## Få hjälp {#getting-help}
 
 Om du fortfarande har frågor efter att ha läst manualen och tittat på instruktionsvideorna finns det tre huvudsakliga sätt att prata med andra Nomad‑användare eller utvecklaren av Nomad:
 

@@ -1,10 +1,10 @@
-# ![](/icons/symmetry.webp) Simetri
+# ![](/icons/symmetry.webp) Simetri {#symmetry}
 
 Menu ini mengontrol bagaimana goresan akan diulang melintasi bidang cermin atau secara radial, serta cara memulihkan simetri pada objek yang tidak simetris.
 
 ![](/images/symmetry_overview.webp) 
 
-## Gambaran umum
+## Ikhtisar {#overview}
 Anda dapat menggunakan simetri dengan beberapa cara:
 
 * Sebagai cermin, membalik pekerjaan melintasi X (kiri/kanan), Y (atas/bawah), Z (belakang/depan), atau kombinasinya. 
@@ -23,10 +23,10 @@ Satu-satunya pengecualian adalah alat transformasi ([Move](#translate), [Rotate]
 Menu simetri terutama untuk mengontrol simetri goresan. Anda juga dapat mencerminkan dan mengulang objek melalui [repeater yang ada di menu scene](scene#repeaters). 
 :::
 
-## Enabled
+## Diaktifkan {#enabled}
 Alihkan mode cermin, ini sama dengan tombol `Sym` di panel cepat kiri. 
 
-## Planes
+## Bidang {#planes}
 
 Aktifkan bidang simetri dan jumlah pengulangan untuk simetri radial. Perhatikan bahwa Anda tidak harus memilih hanya satu bidang, Anda dapat mengaktifkan 1, 2, atau 3 bidang sekaligus untuk simetri yang kompleks.
 
@@ -34,10 +34,10 @@ Sumbu dan jumlah pengulangan untuk simetri radial. Perhatikan bahwa ini juga tid
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Method
+## Metode {#method}
 Cermin dapat bersifat 'Local', dan bergerak bersama objek, atau 'World', dan tidak bergerak. Jika Anda tidak yakin mode mana yang Anda perlukan, amati bidang cermin dan indikator radial yang ditumpangkan pada objek. Saat dalam mode lokal, jika Anda menggunakan gizmo transformasi dan memindahkan model, indikator cermin juga akan bergerak. Saat dalam mode dunia, indikator cermin akan tetap diam, dan objek akan bergeser melewatinya.
 
-## Mirroring
+## Pencerminan {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
 Saat memahat dekat bidang simetri, beberapa kuas akan memiliki perilaku simetri yang tidak sempurna. Bagian ini memungkinkan Anda memulihkan simetri dengan menyalin satu sisi pahatan ke sisi lainnya. 
@@ -52,11 +52,11 @@ Saat memahat dekat bidang simetri, beberapa kuas akan memiliki perilaku simetri 
 
 `Split & Mirror` pada dasarnya akan memotong objek sepanjang cermin, menyalin satu sisi, mencerminkannya ke sisi lain, dan mengelas verteks di sepanjang cermin. Ini adalah opsi yang lebih destruktif, dan akan menghapus multiresolusi, tetapi terkadang metode ini diperlukan jika model sangat berbeda di kedua sisi cermin.
 
-### Flip object
+### Balik objek {#flip-object}
 ![](/images/symmetry_flip.webp)
 Membuat sisi kiri menjadi sisi kanan, dan sebaliknya. Mirip tampilannya dengan jika Anda menggunakan menu alat gizmo dan mengatur skala ke -1 pada X.
 
-## Reset and Edit
+## Atur Ulang dan Sunting {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
@@ -71,7 +71,7 @@ Jadi jika tidak bekerja seperti yang Anda harapkan, pastikan untuk memeriksa apa
 Tombol `Gizmo (Edit)` sengaja dibuat abu-abu sebagai pengingat bahwa Anda mungkin sebaiknya tidak menggunakannya!
 :::
 
-## Show options
+## Tampilkan opsi {#show-options}
 ![](/images/symmetry_show.webp)
 
 

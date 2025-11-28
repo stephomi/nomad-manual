@@ -1,23 +1,23 @@
-# ![](/icons/paint.webp) Boyama  
+# ![](/icons/paint.webp) Boyama {#painting}
 
 Boya darbelerinin renk, pürüzlülük, metalliğini kontrol edin; boya özniteliklerini taşma (flood fill) ile doldurun ve boya araçlarının katmanlar, maskeler, gizli seçimlerle nasıl etkileşime girdiğini ayarlayın.
 
 ![](/images/paint_overview.webp)  
 
-## Genel Bakış
+## Genel bakış {#overview}
 
 Nomad, PBR vertex boyama kullanır. Bu ne anlama geliyor?
 
-### PBR
+### PBR {#pbr}
 PBR, yani Fiziksel Tabanlı Görselleştirme, film, televizyon, oyunlar ve mobil için popüler bir bilgisayar grafiği tekniğidir. Işıkları fiziksel özelliklere dayandırarak ve yüzeyleri renk, pürüzlülük, metanlık ile tanımlayarak çok çeşitli fotogerçekçi görünümler elde edilebilir.
 
-### Vertex boyama
+### Tepe noktası (vertex) boyama {#vertex-painting}
 
 Vertex boyama, boya bilgisinin dokularda değil, modelin vertekslerinde saklandığı anlamına gelir. Nomad yüz binlerce, çoğu zaman milyonlarca verteksi olan modelleri işleyebildiği için, modellerinizin son derece detaylı yüzey boyamasına sahip olması gerekir; eğer detayı yontabiliyorsanız, o detayı boyayabilirsiniz de.
 
 Bu aynı zamanda Nomad'de boyamanın, diğer 3B uygulamalarda genellikle yavaş ve teknik bir süreç olan UV eşleme gerektirmediği anlamına gelir. Birçok diğer 3B uygulama, Nomad'in desteklediği yüksek vertex sayılarını desteklemez, ancak Nomad'in ayrıca iyi doku pişirme (baking) ve küçültme (decimation) araçları da vardır.
 
-### Dokulandırma
+### Dokulandırma {#texturing}
 
 Nomad dokuları destekler, ancak bunların içe aktarılan bir modelde mevcut olması ya da vertex boyamayı dokulara pişirerek elde edilmesi gerekir. 
 
@@ -38,21 +38,21 @@ Nomad bunları [otomatik olarak hesaplayabilir](topology.md#uv-unwrap), ancak ge
 Genel bakış bu kadar, şimdi boyama menüsünün bölümlerini inceleyelim:
 
 
-## Darbe boyama
+## Fırça darbesiyle boyama {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
 Bu araç için boyamayı etkinleştirin; aynı anda hem yontmanız hem de boyamanız gerektiğinde kullanışlıdır.
 
 Boyamanın birincil işlev olduğu araçlarda (örn. Paint, Smudge, Mask) bu onay kutusu yoktur.
 
-### Boya yoğunluğu
+### Boya yoğunluğu {#paint-intensity}
 
 Birincil araç yoğunluğundan farklı bir yoğunluk kullanmanıza izin veren bir kaydırıcı.
 
 `Alpha`, `Falloff` ve `Randomize` onay kutuları, bu özelliklerin boyamayı etkileyip etkilemeyeceğini belirler. Örneğin, kil aracı için rastgeleleştirmeyi etkinleştirmiş olabilirsiniz, ancak renk rastgeleleştirilmeyebilir.
 
 
-## Malzeme
+## Malzeme {#material}
 ![](/images/paint_material.webp) 
 
 İlk simge bir malzeme önizleme şeklidir. 3B malzeme önizlemesi üzerinde sürüklemek onu döndürür. 
@@ -67,14 +67,14 @@ Malzeme başlığının yanındaki önizleme düğmesi, None, Material veya Trip
 
 Damlalık, sahnenizdeki bir nesneden tüm özellikleri örneklemek için kullanılabilir.
 
-## Malzeme Ön Ayarları
+## Malzeme Ön Ayarları {#material-presets}
 3B önizleme şekline dokunmak, malzemelerin bir ön ayar menüsünü açar; bunlar kendi ön ayarlarınızı tanımlamak için klonlanabilir.
 
 ![](/images/paint_presets.webp) 
 
 `Embed Textures` ve `Alpha` anahtarları etkinleştirildiğinde, bu malzeme tarafından kullanılan tüm dokular ön ayar içinde saklanır. Bu aşağıda daha ayrıntılı açıklanmıştır.
 
-## PBR kaydırıcıları
+## PBR kaydırıcıları {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 [PBR](shading.md#pbr) boyama 4 kanal kullanır:
@@ -113,7 +113,7 @@ PBR boyama için dokular kullanırken, genellikle `Stamp` gibi bir araca geçmek
 Daha düşük poligon sayısına sahip bir nesne üzerinde metalik bir yüzey boyuyorsanız, `Smooth Shading` özelliğini [genel](settings.md#smooth-shading) veya [nesne bazında](material.md#smooth-shading) açmayı düşünebilirsiniz.
 :::
 
-## Tümünü boya
+## Tümünü boya {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
@@ -132,12 +132,12 @@ Ek düğmeler, tümünü boya işleminin nasıl daha fazla etkilenebileceğini k
 | ![](/icons/triplanar.webp) | Triplanar ayarlarının göstergesi              |
 | ![](/icons/cog.webp)       | Triplanar ayarlarını aç                       |
 
-### Triplanar ayarları
+### Üç düzlemli (triplanar) ayarları {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
 [Malzeme menüsündeki triplanar ayarlarına](material.md#triplanar) benzer şekilde, projeksiyonların karışımını, döşemeyi (tiling) ve ofsetleri kontrol edebilirsiniz. 
 
 Değerleri ayarlarken kalıcı bir önizleme etkinleştirmek için bu menünün üst kısmındaki önizleme onay kutusunu kullanın.
 
-## Global malzeme
+## Global malzeme {#global-material}
 Bu seçenek etkinleştirilirse, seçili malzeme diğer araçlarla aynı olur. Yalnızca pürüzlülük, metanlık ve renk ayarlarının dikkate alındığını unutmayın.

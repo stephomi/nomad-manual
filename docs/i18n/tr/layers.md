@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) Katmanlar 
+# ![](/icons/layer.webp) Katmanlar {#layers}
 
 Bu menü, nesnenize yaptığınız düzenlemeleri yıkıcı olmayan bir şekilde saklamanızı sağlayan katman yığını ile katmanları birleştirmenin ve yeniden amaçlandırmanın birçok yolunu içerir.
 
 ![](/images/layers_overview.webp) 
 
-## Genel Bakış
+## Genel bakış {#overview}
 
 Nomad katmanları birden fazla amaca hizmet eder.
 
@@ -19,7 +19,7 @@ Katmanlar [Delete Layer](tools.md#delete-layer) aracıyla kısmen silinebilir ve
 ![](/videos/layer.mp4)
 
 ::: tip
-Çoğu yontma yazılımının aksine, bir ağın topolojisini değiştirmek katmanları silmez. [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multiresolution) veya [Trim](tools.md#trim)/[Split](tools.md#split) araçlarını kullanabilirsiniz, ancak [Voxel Remesher](topology.md#voxel-remesher) kullanırken katman kalitesinin etkileneceğini unutmayın.
+Çoğu yontma yazılımının aksine, bir ağın topolojisini değiştirmek katmanları silmez. [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multires) veya [Trim](tools.md#trim)/[Split](tools.md#split) araçlarını kullanabilirsiniz, ancak [Voxel Remesher](topology.md#voxel-remesher) kullanırken katman kalitesinin etkileneceğini unutmayın.
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ Katmanları blendshape/morph target olarak kullanıyorsanız, [sahne menüsünde
 :::
 ----
 
-## Katman menüsü 
+## Katman menüsü {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Yeni bir katman oluşturmak için `Add layer` düğmesine basın.
 
 Her katmanın bir adı, gücünü/faktörünü kontrol eden bir kaydırıcısı ve seçenek düğmeleri vardır.
 
-### Seçenekler
+### Seçenekler {#options}
 
 | Eylem        | Simge                        | Açıklama                                            |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Her katmanın bir adı, gücünü/faktörünü kontrol eden bir kaydırıcısı 
 
 Bir katmanı katman yığınının başka bir bölümüne taşımak için, adına basılı tutun ve sürükleyin.
 
-### Daha fazla...
+### Daha fazla... {#more}
 
 ‘Daha fazla...’ düğmesi, geçerli katman için ek seçenekler gösterir:
 
 ![](/images/layers_more.webp) 
 
-#### Kanal faktörleri
+#### Kanal faktörleri {#channel-factors}
 
 Bu kontroller, katman için yontma/renk/pürüzlülük/metalik/opaklık miktarını ölçeklendirmenizi sağlar. Bu değerler, katman faktörü kaydırıcısıyla çarpılır; örneğin katman gücü 1 ise, ancak renk kanal faktörü 0,5 ise, görüntülenen renk 0,5 güçte olur.
 
@@ -82,17 +82,17 @@ Belki gelecekte, bu sınırlamayı kaldırmak için her kanalın kendi alfa kana
 :::
 
 
-#### ![](/icons/tool_mask.webp) Maske
+#### ![](/icons/tool_mask.webp) Maske {#mask}
 Her kaydırıcının yanındaki maske düğmesi, o kanaldan bir maske oluşturur. Boyama uygulamalarında seçim yapmak için katman kullanmaya benzer şekilde, bu, bir katmanda yaptığınız çalışmayı diğer işlemler için yeniden kullanmanıza olanak tanır.
 
-#### ![](/icons/preview.webp) Önizleme
+#### ![](/icons/preview.webp) Önizleme {#preview}
 ![](/images/layers_preview.webp) 
 
 Etkinleştirildiğinde, bu katman için çıkarma ayarlarını önizler (bir sonraki bölüme bakın).
 
 X-ray etkinleştirildiğinde, yalnızca çıkarılan şekil katı olur, şeklin geri kalanı saydam yapılır; bu, negatif çıkarma yükseklikleri kullanıyorsanız kullanışlıdır.
 
-#### Çıkar
+#### Çıkar {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ X-ray etkinleştirildiğinde, yalnızca çıkarılan şekil katı olur, şeklin 
 * Shell - Çıkarılan şekli kalınlık değeri ve yön seçenekleriyle kapat.
 * Layer - Katman farkını çıkar.
 
-#### ![](/icons/height.webp) Kalınlık
+#### ![](/icons/height.webp) Kalınlık {#thickness}
 ![](/images/layers_thickness.webp) 
 
 Kabuk ekstrüzyonunun derinliği. Pozitif değerler yüzeyden dışarı doğru, negatif değerler yüzeyin içine doğru büyür.
@@ -116,12 +116,12 @@ Bu değerin yanındaki artı/eksi, ekstrüzyonun yönünü ayarlar:
 * Artı ( + ) mevcut yüzeyden başlayıp yukarı doğru ekstrüde eder.
 * ArtıEksi ( ± ) ekstrüzyonun üst ve altını eşit miktarda dışarı iter, böylece orijinal yüzeye yarı gömülü olur.
 
-#### Pürüzsüzlük
+#### Pürüzsüzlük {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 Çıkarılacak bölgenin kenarları tırtıklıysa, bu kaydırıcı kenarı daha pürüzsüz bir şekle bulanıklaştırmaya çalışır. 
 
-#### ![](/icons/height.webp) Kenar döngüsü (yan)
+#### ![](/icons/height.webp) Kenar döngüsü (yan) {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 Bu bölüm, kapatma eylemi ‘Shell’ olduğunda görünür. 
@@ -132,10 +132,10 @@ Devre dışı bırakılırsa, `Division` kaydırıcısı yanlardaki bölme sayı
 
 _Bu, ‘Daha fazla...’ alt menüsünün sonudur._
 
-### Gelişmiş
+### Gelişmiş {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Üst katman detaylarını koru
+#### Üst katman detaylarını koru {#keep-top-layers-details}
 
 Alt katmanlarda büyük değişiklikler yapıldığında, üst katmanlardaki küçük detayların görünür kalmasını sağlar.
 
@@ -144,13 +144,13 @@ Varsayılan olarak, bir katmanda küçük kırışıklıklar yontarsanız ve ard
 ![](/videos/layers_details.mp4)
 
 
-#### Arayüz: Listeyi genişlet
+#### Arayüz: Listeyi genişlet {#ui-expand-list}
 
 Varsayılan katman menüsü, katman görünürlüğünü ve katman opaklığını değiştirmenize olanak tanır. Bu seçeneği etkinleştirmek, her katman için tam kontrolleri genişletir.
 
 ![](/images/layers_expand.webp)
 
-#### Dönüşümü senkronize et
+#### Dönüşümü senkronize et {#sync-transform}
 
 Etkinleştirilirse, seçili olmayan tüm katmanlar dönüşümün dönüş, ölçek, eğrilik (skew) değerlerine bağlı olarak ayarlanır. 
 

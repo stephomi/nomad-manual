@@ -1,4 +1,4 @@
-# ![](/icons/multires.webp) Topologi 
+# ![](/icons/multires.webp) Topologi {#topology}
 
 Menu ini mengawal topologi objek dalam Nomad, serta alat untuk membakar (bake) dan memindahkan butiran antara objek, dan antara tekstur.
 
@@ -26,7 +26,7 @@ Menu topologi Nomad mempunyai beberapa bahagian:
 | [Primitive](#msc)                     | ![](/icons/dot.webp)        | Pilihan primitif                                                 |
 
 
-## Statistik poligon
+## Statistik poligon {#polygon-stats}
 
 ![](/images/topology_stats.webp)
 
@@ -34,18 +34,18 @@ Bahagian atas menu topologi memaparkan maklumat poligon untuk objek terpilih dan
 
 Mengetik pada bahagian ini akan memaparkan senarai statistik poligon untuk semua objek poligon dalam senario.
 
-## ![](/icons/multires.webp) Multiresolution
+## ![](/icons/multires.webp) Multiresolusi {#multiresolution}
 
 ![](/images/topology_multires_menu.webp)
 
-### Apa itu multiresolution?
+### Apakah multiresolusi? {#what-is-multiresolution}
 Fungsi multiresolution berguna untuk dua senario utama:
 - Algoritma subdivision licin untuk meningkatkan bilangan poligon objek anda
 - Mengendalikan beberapa tahap resolusi supaya anda boleh bergilir antara suntingan skala kecil dan besar
 
 ![](/videos/multiresolution.mp4)
 
-#### Aliran kerja multiresolution
+#### Aliran kerja multiresolusi {#multiresolution-workflow}
 Satu aspek penting multiresolution ialah anda boleh kembali ke resolusi lebih rendah, membuat perubahan pada objek dan kemudian kembali ke resolusi tertinggi tanpa kehilangan butiran resolusi tinggi. Semua butiran resolusi tinggi akan diproyeksikan secara automatik.
 
 ::: warning
@@ -58,35 +58,35 @@ Anda sepatutnya sentiasa mendapat amaran jika ini bakal berlaku, contohnya apabi
 :::
 
 
-### Peluncur multiresolution
+### Gelangsar multiresolusi {#multiresolution-slider}
 Peluncur ini menunjukkan bilangan tahap subdivision dalam objek semasa. Jika terdapat 6 bar menegak, terdapat 6 tahap subdivision. Bulatan menunjukkan tahap subdivision yang sedang dipaparkan. 
 
-### Reverse
+### Songsang {#reverse}
 Apabila berada pada tahap subdivision paling rendah, butang reverse akan cuba mencipta satu tahap di bawah tahap semasa. Perlu diingat ini biasanya hanya boleh berlaku jika objek itu dicipta dengan subdivision dari awal, contohnya dalam Nomad atau aplikasi 3D lain yang menyokong permukaan subdivision multiresolution.
 
-### Subdivide
+### Pecahan (Subdivide) {#subdivide}
 Butang *Subdivide* akan meningkatkan bilangan poligon sebanyak 4 kali ganda, jadi pastikan anda memantau bilangan poligon kerana ia boleh meningkat dengan sangat cepat!
 Satu aspek penting *Subdivision Surface* ialah ia akan menumpu kepada *Smooth Surface*.
 Untuk memahami cara ia berfungsi, anda boleh cuba butang *Subdivide* pada objek dengan hanya beberapa poligon.
 
 Anda boleh nyahaktifkan kelakuan *Smooth* ini dengan menanda pilihan `Linear subdivision`.
 
-### Delete lower
+### Padam aras lebih rendah {#delete-lower}
 Jika terdapat subdivision di bawah tahap yang sedang dipaparkan, padamkannya. Jika anda melakukannya secara tidak sengaja, anda boleh menciptanya semula dengan butang Reverse.
 
-### Delete higher
+### Padam aras lebih tinggi {#delete-higher}
 Jika terdapat subdivision di atas tahap yang sedang dipaparkan, padamkannya.
 
-### Linear subdivision
+### Pecahan linear {#linear-subdivision}
 Subdivide mesh tanpa menggunakan pelicinan.
 
-### Sharp border
+### Sempadan tajam {#sharp-border}
 Jika objek anda mempunyai facegroup, mengaktifkan pilihan ini akan mengekalkan sempadan facegroup tajam. Ini boleh ditetapkan pada setiap tahap subdivision (peluncur subdivision akan mempunyai ikon kecil di atas tahap untuk menunjukkan perkara ini).
 
-### Keep triangles
+### Kekalkan segi tiga {#keep-triangles}
 Kebanyakan sistem subdivision surface piawai akan cuba menukar semua poligon kepada quad semasa operasi subdivision. Togol ini akan memaksa subdivision menggunakan segi tiga sebaliknya.
 
-### Lock (LV0)
+### Kunci (LV0) {#lock-lv0}
 
 Menghalang tahap subdivision paling rendah daripada diubah suai. Ini boleh menjadi penting jika objek anda dijana dalam aplikasi lain, dan objek asas perlu kekal tidak berubah. Apabila pilihan ini dinyahaktifkan, perubahan besar yang dibuat pada tahap subdivision lebih tinggi akan menggerakkan tahap 0.
 
@@ -97,7 +97,7 @@ Subdivision akan melicinkan semua tepi tajam secara lalai. Untuk mengekalkan tep
 :::
 
 
-## ![](/icons/voxel.webp) Voxel Remesher
+## ![](/icons/voxel.webp) Voxel Remesher {#voxel-remesher}
 ![](/images/topology_voxel_menu.webp)
 Apabila menggunakan `Voxel Remesher`, keseluruhan mesh akan memaksa topologi mempunyai resolusi seragam, bermakna semua poligon mempunyai saiz lebih kurang sama. Ini sangat berguna apabila anda tidak mahu memikirkan topologi dan hanya mahu mengukir bebas (free-form sculpting).
 
@@ -117,13 +117,13 @@ Dengan lubang, kita tidak maksudkan `genus hole` (`hole` pada donut), tetapi seb
 Kebiasaannya, ini bermakna sebelum menggunakan remeshing, setiap lubang akan diisi, sama seperti [Trim tool](tools.md#trim) atau [Hole filling feature](scene.md#hole-filling).
 :::
 
-### Remesh
+### Remesh {#voxel-remesh}
 Laksanakan voxel remesh.
 
-### Resolution
+### Resolusi {#voxel-resolution}
 Saiz voxel yang digunakan semasa pengiraan. Semasa menukar parameter ini, corak papan dam (checkerboard) akan ditindih pada mesh untuk memberikan pratonton hasil.
 
-### Build multiresolution
+### Bina multiresolusi {#build-multiresolution}
 Cipta tahap multiresolution lebih rendah untuk voxel remesh. Jika anda menggunakan corak papan dam untuk menetapkan resolusi, dan tetapkan build multiresolution kepada 2, hasil akhir akan mempunyai butiran yang sepadan dengan peluncur resolusi, dan jika anda pergi ke tab multires, ia akan berada pada tahap 2, bermakna anda mempunyai mesh multires resolusi lebih rendah pada tahap 1 dan tahap 0. Ini boleh menjadi cara yang baik untuk menjana mesh bersih dengan poligon sekata, dan mempunyai mesh kawalan resolusi rendah.
 
 ::: tip Tip: Build multiresolution dan stable smoothing
@@ -132,10 +132,10 @@ Pilihan ini kadangkala boleh menyebabkan 'gelung' dalam geometri yang sukar untu
 
 :::
 
-### Keep sharp edges
+### Kekalkan tepi tajam {#keep-sharp-edges}
 Aktifkan snapping titik baharu kepada tepi tajam pada mesh asal. Ia boleh memperkenalkan herotan.
 
-## ![](/icons/dynamic.webp) Dynamic Topology
+## ![](/icons/dynamic.webp) Topologi Dinamik {#dynamic-topology}
 
 ![](/images/topology_dyntopo_menu.webp)
 Multiresolution dan voxel remeshing ialah kaedah industri biasa untuk mengawal topologi, tetapi kedua-duanya memerlukan anda memerhati supaya anda tidak meregangkan poligon terlalu jauh, atau memampatkan poligon terlalu rapat. 
@@ -148,13 +148,13 @@ Lihat video di bawah dalam tindakan.
 
 ![](/videos/dynamic.mp4)
 
-### Enabled
+### Dibenarkan {#enabled}
 Hidupkan dynamic topology. Ikon DynTopo akan diletakkan di bawah peluncur jejari dan intensiti berus untuk membolehkan anda togol Dyntopo bagi setiap alat.
 
-### Detail
+### Perincian {#dyn-detail}
 Mengawal jumlah butiran, kelakuannya berubah berdasarkan pilihan 'Detail based on...', lihat di bawah.
 
-### Detail based on...
+### Perincian berdasarkan... {#detail-based-on}
 | Method   | Description                                                     |
 | :------: | :-------------------------------------------------------------: |
 | Screen   | Tahap butiran bergantung pada betapa besar objek di skrin. Peluncur detail ialah 100% atau lebih tinggi untuk butiran halus, menghasilkan segi tiga kecil, atau 1% untuk butiran rendah, menghasilkan segi tiga besar.  |
@@ -167,7 +167,7 @@ Untuk mendapatkan gambaran lebih baik tentang cara mod radius berfungsi, mula ge
 
 :::
 
-### Prefer...
+### Utamakan... {#prefer}
 | Method  | Description       |
 | :-----: | :---------------: |
 | Speed   | Utamakan prestasi |
@@ -180,14 +180,14 @@ Apabila anda mengutamakan `Quality`, 2 perbezaan utama ialah:
 Dengan cara itu, jika anda mengukir butiran sangat kecil atau membuat sapuan pantas, topologi akan sentiasa ditapis seperti yang dijangka
 
 
-### Use pressure on radius
+### Guna tekanan pada jejari {#use-pressure-on-radius}
 Hanya relevan jika `Radius` diaktifkan. Apabila diaktifkan, tahap butiran akan sentiasa mencerminkan saiz berus, walaupun saiz berus dipengaruhi oleh tekanan pensel.
 
-### Use stroke falloff
+### Guna jatuhan strok {#use-stroke-falloff}
 
 Juga sertakan lengkung falloff berus dan alpha dalam pengiraan dyntopo.
 
-### Method
+### Kaedah {#method}
 Sama ada anda menggunakan `Dynamic Topology` pada [Brush](#brush) atau [Globally](#global), anda boleh memilih mod operasinya:
 
 | Method         | Description                                                           |
@@ -196,30 +196,30 @@ Sama ada anda menggunakan `Dynamic Topology` pada [Brush](#brush) atau [Globally
 | Subdivision    | Hanya menambah permukaan baharu, tidak boleh membuang permukaan       |
 | Decimation     | Hanya membuang permukaan, tidak boleh menambah permukaan              |
 
-### Protect masked area
+### Lindungi kawasan bertopeng {#protect-masked-area}
 Aktifkan kawasan bertopeng (masked) untuk melindungi topologi daripada diubah.
 
-### Vertex extrapolation
+### Ekstrapolasi verteks {#vertex-extrapolation}
 
 
-### Detail
+### Perincian {#all-detail}
 Resolusi yang digunakan untuk operasi remesh. Jika Dyntopo berada dalam mod 'Constant', ia akan menjadi nilai yang sama seperti peluncur Detail di bahagian atas menu ini.
 
-### Remesh
+### Remesh {#dyn-remesh}
 Laksanakan remesh global menggunakan algoritma dyntopo. Biasanya anda patut menggunakan [Voxel Remesher](#voxel-remesher) untuk remeshing penuh.
 
 Namun satu kelebihan berbanding voxel ialah kawasan bertopeng akan dilindungi, jadi anda boleh mempunyai kawalan lebih baik di mana untuk meletakkan lebih atau kurang ketumpatan.
 
 
 
-## ![](/icons/topo_extra.webp) Misc
+## ![](/icons/topo_extra.webp) Pelbagai {#misc}
 
 ![](/images/topology_misc_menu.webp)
 
-##### ![](/icons/cog.webp) Menu gear
+##### ![](/icons/cog.webp) Menu gear {#gear-menu}
 Banyak alat dalam menu ini mempunyai pilihan tambahan. Ia boleh diakses melalui ikon gear di sebelah tajuk bahagian.
 
-### Decimation
+### Pengurangan (Decimation) {#decimation}
 
 ![](/images/topology_decimation.webp)
 
@@ -243,7 +243,7 @@ Menggunakan [Quadremesh tool](tools.md#quad-remesher) pada objek poligon tinggi 
 
 :::
 
-#### Decimate
+#### Kurangkan (Decimate) {#decimate}
 Mulakan operasi decimate.
 
 Ikon di sebelah butang decimate membolehkan anda togol pilihan yang mempengaruhi decimation. Peratusan menunjukkan sekuat mana pilihan itu, dan boleh ditetapkan dalam menu gear lanjutan.
@@ -254,24 +254,24 @@ Ikon di sebelah butang decimate membolehkan anda togol pilihan yang mempengaruhi
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - Decimate akan cuba mengekalkan sempadan facegroup tidak berubah.
 * ![](/icons/checkerboard.webp) `Preserve UV Borders` - Decimate akan cuba mengekalkan sempadan UV tidak berubah.
 
-#### ![](/icons/cog.webp) Menu gear Decimate
+#### ![](/icons/cog.webp) Menu gear Decimate {#decimate-gear-menu}
 Menu gear mempunyai pilihan lanjutan berikut:
-##### Preserve painting
+##### Kekalkan lukisan {#preserve-painting}
 Kotak semak akan menogol mod ini, nilai akan menentukan sejauh mana butiran lukisan akan dipelihara. Nilai lebih tinggi akan memelihara lebih banyak lukisan. Tetapkan kepada 0 jika anda tidak peduli tentang lukisan.
 
 
-##### Uniform faces
+##### Muka seragam {#uniform-faces}
 Kotak semak akan menogol mod ini. Nilai lebih tinggi akan menghasilkan segi tiga dengan saiz serupa.
 
-##### Preserve borders
+##### Kekalkan sempadan {#preserve-borders}
 Aktifkan untuk menghalang sempadan daripada didecimate. Berat sempadan boleh dipilih untuk sempadan `Geometry`, `Face Group` atau `UV`.
 
-#### Target triangles
+#### Segi tiga sasaran {#target-triangles}
 Tetapkan sasaran bilangan segi tiga. Nilai lalai ialah 50%, butang percent/target akan menogol antara peratusan atau kiraan poligon sasaran tepat.
 
 
 
-### UV Unwrap - UVAtlas
+### Nyahbentang UV - UVAtlas {#uv-unwrap-uvatlas}
 
 ![](/images/topology_uvatlas_menu.webp)
 Kira koordinat tekstur (UV) untuk mesh semasa, secara umum lebih suka menghasilkan lebih banyak pulau (islands) dengan potongan, untuk meminimumkan herotan.
@@ -280,23 +280,23 @@ Ikon mata kecil antara tajuk menu dan menu gear akan menogol pratonton UV pada o
 
 ![](/videos/unwrap.mp4)
 
-#### Unwrap
+#### Nyahbentang {#unwrap}
 Kira UV untuk objek terpilih, yang akan dipaparkan di latar belakang.
 
-#### Delete UVs
+#### Padam UV {#delete-uvs}
 Padam UV pada objek.
 
-#### ![](/icons/cog.webp) Menu gear UVAtlas
+#### ![](/icons/cog.webp) Menu gear UVAtlas {#uvatlas-gear-menu}
 Menu gear mempunyai pilihan lanjutan berikut:
 
-#### Face Group
+#### Kumpulan muka {#atlas-face-group}
 
 Gunakan facegroup untuk menentukan potongan bagi UV.
 
-##### Max Stretch
+##### Regangan maksimum {#max-stretch}
 Nilai rendah menghasilkan kurang herotan dan lebih banyak pulau, nilai tinggi menghasilkan lebih banyak herotan dan kurang pulau. 
 
-##### Island spacing
+##### Jarak pulau {#island-spacing}
 Jumlah jarak (padding) antara pulau. Nilai rendah akan membazirkan kurang ruang, tetapi berisiko tekstur bocor antara pulau. 
 
 ::: warning
@@ -323,24 +323,24 @@ Apabila model dibuat dalam Nomad, anda boleh mengecat terus pada objek tanpa UV.
 
 :::
 
-### UV Unwrap - BFF
+### Nyahbentang UV - BFF {#uv-unwrap-bff}
 ![](/images/topology_uvbff_menu.webp)
 
 UV BFF mengutamakan pendekatan 'kurang potongan, lebih herotan'. 
 
-#### ![](/icons/cog.webp) Menu gear UV BFF
+#### ![](/icons/cog.webp) Menu gear UV BFF {#uv-bff-gear-menu}
 
-#### Face Group
+#### Kumpulan muka {#bff-face-group}
 
 Gunakan facegroup untuk menentukan potongan bagi UV.
 
-##### Cone count
+##### Bilangan kon {#cone-count}
 Tentukan bilangan unjuran utama yang digunakan. Nilai lebih rendah akan menghasilkan kurang pulau, tetapi lebih banyak herotan.
 
-##### Seamless patches
+##### Tampalan tanpa jahitan {#seamless-patches}
 Mempengaruhi susun atur tampalan UV, berfungsi paling baik dengan facegroup yang dibuat dengan teliti.
 
-### Bake -> texture 
+### Bakar -> tekstur {#bake-texture}
 ![](/images/topology_bake_menu.webp)
 
 Texture baking akan mencipta tekstur dengan memproyeksikan objek lain yang kelihatan dalam senario ke dalam UV objek terpilih.
@@ -360,35 +360,35 @@ Anda kini sepatutnya mempunyai mesh resolusi rendah yang mengekalkan kebanyakan 
 
 Selepas operasi, warna vertex akan dipindahkan ke lapisan baharu yang dinyahaktifkan, supaya ia tidak mengganggu tekstur.
 
-#### From itself
+#### Daripada dirinya {#tex-from-itself}
 Bake tahap multiresolution tertinggi ke tahap terendah pada objek semasa. Ini mudah disediakan, tetapi selalunya anda memerlukan lebih kawalan, dalam kes itu pilihan seterusnya lebih berguna.
 
-#### From high-res ()
+#### Daripada resolusi tinggi () {#tex-from-high-res}
 Bake daripada objek lain yang kelihatan dalam senario ke objek terpilih. Nombor dalam kurungan menunjukkan bilangan objek lain yang kelihatan yang akan digunakan sebagai sasaran resolusi tinggi, dan dibake ke dalam objek resolusi rendah semasa dengan UV. Objek lain tidak perlu serupa dari segi susun atur atau topologi dengan objek yang dibake, membenarkan aliran kerja bake yang pelbagai.
 
-#### Resolution
+#### Resolusi {#tex-bake-resolution}
 Resolusi tekstur bake. Tekstur bake sentiasa segi empat sama, jadi 1024 akan menghasilkan imej 1024x1024. 
 
 Butang di bawah ialah pintasan untuk resolusi yang biasa digunakan. Sebagai rujukan, 512x512 agak kecil, contohnya untuk grafik web dan geometri ringkas. 4096x4096 (ringkasnya 4k) adalah untuk render berkualiti tinggi.
 
-#### ![](/icons/cog.webp) Menu gear Bake
+#### ![](/icons/cog.webp) Menu gear Bake {#tex-bake-gear-menu}
 ![](/images/topology_bake_gear_menu.webp)
 Menu gear mempunyai pilihan lanjutan berikut:
 
-##### Normal, Roughness, Metalness, Color, Emissive, Opacity
+##### Normal, Kekasaran, Kemendapan (Metalness), Warna, Pancaran, Kelegapan {#tex-normal-roughness-metalness-color-emissive-opacity}
 Kotak semak ini akan menentukan sifat mana yang akan dibake, setiap satu ke dalam peta berasingan. Selepas bake selesai, ini akan ditambah sebagai tekstur kepada material objek semasa.
 
-##### Backup
+##### Sandaran {#tex-backup}
 Untuk pratonton tekstur bake, maklumat cat objek perlu dinyahaktifkan. Pilihan ini akan memindahkan sebarang maklumat cat ke lapisan baharu sebagai sandaran supaya ia boleh diaktif/nyahaktif dengan mudah.
 
-#### Cage radius
+#### Jejari sangkar {#tex-cage-radius}
 Laraskan sejauh mana dari objek bake sinar dihantar untuk mencari objek sasaran. Secara lalai jarak ini dikekalkan rendah untuk mengelakkan artifak, tetapi boleh ditingkatkan jika objek sasaran jauh dari objek bake.
 
-##### Ray offset
+##### Ofset sinar {#tex-ray-offset}
 Laraskan di mana pengiraan bake bermula pada objek bake. Secara lalai ia bermula 5% jauh dari permukaan, yang mengelakkan kebanyakan artifak biasa. Jika objek sasaran sangat jauh dari objek bake, offset ini mungkin perlu ditingkatkan.
 
 
-### Reproject to vertex
+### Penunjaman semula ke verteks {#reproject-to-vertex}
 
 ![](/images/topology_reproject_menu.webp)
 
@@ -401,7 +401,7 @@ Ia boleh dianggap sebagai songsangan baking; jika baking memindahkan sifat verte
 Apabila menggunakan `Bake to texture` atau `Reproject to vertex`, kedua-dua warna vertex dan tekstur material akan diambil kira.
 :::
 
-#### From itself
+#### Daripada dirinya {#vertex-from-itself}
 Tukar tekstur daripada material kepada nilai vertex. Butang ini hanya akan aktif jika objek mempunyai UV, dan tekstur aktif dalam material.
 
 ::: tip TIP: Texture painting
@@ -415,36 +415,36 @@ Nomad tidak secara langsung menyokong pengecatan dan penyuntingan tekstur, tetap
 1. `Bake to texture`, dalam mod `From itself`. Suntingan tersebut ditukar kembali ke tekstur.
 :::
 
-#### From high-res ()
+#### Daripada resolusi tinggi () {#vertex-from-high-res}
 Tukar sebarang objek yang kelihatan kepada nilai vertex pada objek terpilih. Nombor pada butang ini menunjukkan bilangan objek yang kelihatan.
 
 ::: tip
 Reproject objek lain boleh digunakan bukan sahaja untuk memindahkan maklumat warna daripada objek lain, tetapi untuk memproyeksikan vertex ke atas objek lain, contohnya balutan (bandages) boleh diproyeksikan ke atas watak.
 :::
 
-#### ![](/icons/cog.webp) Menu gear Reproject
+#### ![](/icons/cog.webp) Menu gear Reproject {#vertex-reproject-gear-menu}
 Menu gear mempunyai pilihan lanjutan berikut:
 
-#### Vertices, Roughness, Metalness, Color, Opacity, Opacity->Mask, Mask, Layers, Face Group
+#### Verteks, Kekasaran, Kemendapan (Metalness), Warna, Kelegapan, Kelegapan->Topeng, Topeng, Lapisan, Kumpulan muka {#vertex-vertices-roughness-metalness-color-opacity-opacity-mask-mask-layers-face-group}
 Kotak semak ini menentukan sifat mana yang akan diproyeksikan ke objek terpilih. 
 
-#### Relax
+#### Renggangkan {#vertex-relax}
 Mesh terpilih boleh mempunyai susun aturnya dilicinkan atau direlaks tertentu untuk lebih sesuai dengan sasaran reprojection. Smooth lebih baik untuk mesh poligon tinggi. Relax lebih baik untuk mesh poligon rendah. Auto akan membenarkan Nomad menentukan kaedah terbaik.
 
-#### Iterations
+#### Lebihan (Iterations) {#vertex-iterations}
 Berapa kali operasi relax patut digunakan semasa reprojection.
 
-#### Cage radius
+#### Jejari sangkar {#vertex-cage-radius}
 Laraskan sejauh mana dari objek terpilih sinar dihantar untuk mencari objek sasaran. Secara lalai jarak ini dikekalkan rendah untuk mengelakkan artifak, tetapi boleh ditingkatkan jika objek sasaran jauh dari objek bake.
 
-#### Ray bias
+#### Bias sinar {#vertex-ray-bias}
 Nilai lebih rendah akan mengutamakan projek ke titik terdekat pada permukaan sasaran. Nilai lebih tinggi akan mengutamakan titik persilangan menggunakan normal permukaan. 
 
-#### Ray offset
+#### Ofset sinar {#ray-vertex-offset}
 Laraskan di mana pengiraan bake bermula pada objek terpilih. Secara lalai ia bermula 5% jauh dari permukaan, yang mengelakkan artifak tertentu. Jika objek sasaran sangat jauh dari objek bake, offset ini mungkin perlu ditingkatkan.
 
 
-### Quad Remesh - Instant
+### Quad Remesh - Segera {#quad-remesh-instant}
 ![](/images/topology_quadremesh_menu.webp)
 Remesh menggunakan [algoritma Instant Meshes oleh Wenzel Jakob, Marco Tarini, Daniele Panozzo, Olga Sorkine-Hornung](https://igl.ethz.ch/projects/instant-meshes/). Ia akan menganalisis aliran mesh dan mencipta topologi quad yang bersih.
 
@@ -452,22 +452,22 @@ Remesh menggunakan [algoritma Instant Meshes oleh Wenzel Jakob, Marco Tarini, Da
 Pada iOS dan desktop, alat [Quad remesher](tools#quad-remesher) memberikan hasil yang lebih baik dan lebih kawalan.
 :::
 
-#### Remesh
+#### Remesh {#instant-remesh}
 Mulakan operasi instant meshes.
 
-#### Target quads
+#### Sasaran quad {#target-quads}
 Bilangan poligon quad yang akan cuba dicipta oleh quad remesh.
 
-#### ![](/icons/cog.webp) Menu gear Quad Remesh Instant
+#### ![](/icons/cog.webp) Menu gear Quad Remesh Instant {#quad-remesh-instant-gear-menu}
 Menu gear mempunyai pilihan lanjutan berikut:
 
-##### Crease angle
+##### Sudut kerutan {#crease-angle}
 Ambang sudut tajam yang akan cuba membantu membimbing operasi remesh.
 
-#### Max fill hole
+#### Pengisian lubang maks {#max-fill-hole}
 Algoritma kadangkala boleh menghasilkan lubang yang tidak diingini. Jika lubang mempunyai bilangan vertex kurang daripada nilai ini, maka ia akan diisi.
 
-### Holes
+### Lubang {#holes}
 ![](/images/topology_holes_menu.webp)
 Kebanyakan masa, objek anda mungkin watertight, bermakna mesh adalah 'tertutup'.
 
@@ -479,50 +479,50 @@ Jika objek anda mempunyai lubang, anda boleh mengisinya. Perlu diingat ia hanya 
 Apabila anda menjalankan Voxel remesher, semua lubang ditutup secara automatik, sama ada anda menggunakannya pada 1 atau berbilang mesh.
 :::
 
-#### Close holes
+#### Tutup lubang {#close-holes}
 Laksanakan tindakan menutup lubang.
 
-#### ![](/icons/cog.webp) Menu gear Holes
+#### ![](/icons/cog.webp) Menu gear Holes {#holes-gear-menu}
 Menu gear mempunyai pilihan lanjutan berikut:
 
-##### Detail
+##### Perincian {#fill-detail}
 Ketumpatan poligon yang digunakan untuk mengisi lubang. Semasa menyeret peluncur ini corak papan dam akan ditunjukkan pada model, ini akan memberikan petunjuk saiz segi tiga yang akan digunakan. Kotak semak akan menyahaktifkan ini, dan hanya menggunakan titik sedia ada, yang biasanya akan menghasilkan segi tiga panjang dan nipis di atas lubang, yang boleh sukar untuk diukir.
 
-##### Fill non-manifold
+##### Isi bukan manifold {#fill-non-manifold}
 Cuba isi lubang non-manifold.
 
-##### Face Group
+##### Kumpulan muka {#fill-face-group}
 
 Apabila mengisi lubang, patutkah setiap lubang mendapat facegroup sendiri (Auto), atau semuanya berkongsi satu facegroup (Off), atau jangan cipta facegroup (On).
 
-### Force Manifold
+### Paksa Manifold {#force-manifold}
 ![](/images/topology_forcemanifold_menu.webp)
 Cuba membersihkan tepi non-manifold. Ia boleh berguna untuk perisian luaran yang tidak menyokong tepi yang mempunyai lebih daripada 2 permukaan bersama.
 
-#### Clean
+#### Bersih {#clean}
 Laksanakan tindakan clean.
-#### ![](/icons/cog.webp) Menu gear Force manifold
+#### ![](/icons/cog.webp) Menu gear Force manifold {#force-manifold-gear-menu}
 Menu gear mempunyai pilihan lanjutan berikut:
 
-#### Delete small faces
+#### Padam muka kecil {#delete-small-faces}
 Ambang yang digunakan untuk membuang dan menyambung poligon kecil.
 
 
-### Triplanar
+### Triplanar {#triplanar}
 ![](/images/topology_triplanar_menu.webp)
 Menukar mesh kepada primitif [triplanar](scene.md#triplanar).
 Anda mungkin akan kehilangan banyak butiran dalam proses ini.
 
-#### Force cubic
+#### Paksa kubik {#force-cubic}
 Aktifkan triplanar supaya menjadi kubus. Jika tidak, triplanar akan muat ke kotak pembatas (bounding box) paling hampir di sekeliling objek anda.
 
-#### Convert
+#### Tukar {#convert}
 Laksanakan tindakan triplanar.
 
-#### Resolution
+#### Resolusi {#triplanar-resolution}
 Saiz voxel yang digunakan dalam operasi triplanar.
 
-## ![](/icons/dot.webp) Primitive
+## ![](/icons/dot.webp) Primitif {#primitive}
 Parameter untuk primitif terpilih. Ini juga tersedia dalam bar alat viewport primitif.
 
 ![](/images/topology_primitive_screenshot.webp)

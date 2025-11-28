@@ -1,41 +1,41 @@
-# ![](/icons/open.webp) Files
+# ![](/icons/open.webp) Files {#files}
 
 The files menu allows you to save and load nomad projects, import and export 3d models, and export rendered images.
 
 ![](/images/file_menu.webp)
 
-## Project
+## Project {#project}
 ![](/images/file_project.webp)
 
 A thumbnail is shown of the last save at the top of this menu. Clicking this thumbnail brings up a mini browser, tap twice on another project to bring up a mini menu to open, add, save, clone, rename, delete that project.
 
-### ![](/icons/nomad.webp) Preset 
+### ![](/icons/nomad.webp) Preset {#preset}
 Access a collection of demos and character components. Select one, then select again to choose to Open, Add to Scene or Clone the entry into your projects folder.
 
 ![](/images/file_preset_preview.webp)
 
-### ![](/icons/save.webp) Save
+### ![](/icons/save.webp) Save {#save}
 Save the Nomad project.
 
-### ![](/icons/save_as.webp) Save As...
+### ![](/icons/save_as.webp) Save As... {#save-as}
 Display the project browser to allow you to save the Nomad project with a new name.
 
-### ![](/icons/pencil.webp) Rename
+### ![](/icons/pencil.webp) Rename {#rename}
 Display a text box to rename the current project.
 
-### ![](/icons/open.webp) Open...
+### ![](/icons/open.webp) Open... {#open}
 Display the project browser to open a project.
 
-### ![](/icons/add_file.webp) Add to scene...
+### ![](/icons/add_file.webp) Add to scene... {#add}
 Display the project browser, when a project is selected it's contents will be merged with the current scene.
 
-### ![](/icons/trash.webp) Delete...
+### ![](/icons/trash.webp) Delete... {#delete}
 Display the project browser, any selected projects will be deleted from the file system.
 
-### ![](/icons/new_file.webp) New
+### ![](/icons/new_file.webp) New {#new}
 Start a new project, if there are unsaved changes you will be asked if you want to save.
 
-### ![](/icons/autosave.webp) Auto Save...
+### ![](/icons/autosave.webp) Auto Save... {#auto-save}
 Menu to control auto save options.
 
 If you enable autosave, you can set up a timer so that a popup will appear at regular intervals.
@@ -44,19 +44,19 @@ The reason why Nomad doesn't save in background is because 3d files can be prett
 Additionally, to avoid out-of-memory issues the scene is typically compressed before the saving operation.
 This compression/decompression will slow down the save operation as well.
 
-### Timer pop up
+### Timer pop up {#timer-pop-up}
 How frequently will the timer popup appear.
 
-### Popup timeout
+### Popup timeout {#popup-timeout}
 Enable popup timeout
 
-### Discard autosave
+### Discard autosave {#discard-autosave}
 If an auto save file exists for a project, it will automatically be loaded instead of the original project. If this isn't required, this button will delete the autosave. Loading the fill will then load the last manual save of the project.
 
 
-## Import
+## Import {#import}
 
-### ![](/icons/add_file.webp) Import
+### ![](/icons/add_file.webp) Import {#import-button}
 For importing 3d files that aren't Nomad projects.
 
 When you import an external scene file to Nomad, you can either *import* or *add* it.
@@ -72,39 +72,39 @@ Nomad can import these formats:
 - PLY (.ply)
 - FBX (.fbx, experimental)
 
-### ![](/icons/cog.webp) Advanced
+### ![](/icons/cog.webp) Advanced {#advanced}
 Display advanced import options:
 
-### Project/ glTF / OBJ / STL / FBX
-#### Keep topology
+### Project/ glTF / OBJ / STL / FBX {#project-gltf-obj-stl-fbx}
+#### Keep topology {#keep-topology}
 Nomad by default will attempt to fix problem geometry on load. Enabling this will stop Nomad from vertex/face reordering, removal of vertex/face duplicates, removal of unused vertices.
 
-#### Skip textures
+#### Skip textures {#skip-textures}
 Skip loading of textures for formats that support it like glTF
 
-### Project / glTF
-#### Keep gui settings
+### Project / glTF {#project-gltf}
+#### Keep gui settings {#keep-gui-settings}
 Enable savng of the gui and project settings within the Nomad .nom or glTF file.
 
-### OBJ
-#### Split OBJ by groups
+### OBJ {#obj}
+#### Split OBJ by groups {#split-obj-by-groups}
 Enable splitting OBJ groups into separate objects.
 
-#### Color Space
+#### Color Space {#color-space}
 Set the color mode interpreted from the obj as Linear, sRGB, or Auto.
 
-### PLY
-#### Color Space
+### PLY {#ply}
+#### Color Space {#color-space-ply}
 Set the color mode interpreted from the ply as Linear, sRGB, or Auto.
 
 
-### FBX
-#### Color Space
+### FBX {#fbx}
+#### Color Space {#color-space-fbx}
 Set the color mode interpreted from the obj as Linear, sRGB, or Auto.
 
 
 
-## Export
+## Export {#export}
 Save to a 3d geometry format that can be used in other software. 
 
 ![](/images/file_export.webp)
@@ -127,13 +127,13 @@ Different file formats support different features, the options available will ch
 | Primitives, Postprocess, etc    | ✅     | Nomad ✅<br>Other ❌ | ❌   | ❌ | ❌    | ❌    | ❌                     |
 
 
-### All/Visible/Selected
+### All/Visible/Selected {#allvisibleselected}
 The active button state will set which objects will be exported. The number next to the icons indicate how many objects will be exported for that option.
 
-### Vertex colors
+### Vertex colors {#vertex-colors}
 Export vertex colors if supported by the file format.
 
-### PBR Paint
+### PBR Paint {#pbr-paint}
 PBR vertex colors are exported as secondary vertex colors attributes.
 The channels are packed in the following way:
 
@@ -144,26 +144,26 @@ The channels are packed in the following way:
 | Masking   | B        |
 
 
-### Layers
+### Layers {#layers}
 Layers are supported through glTF morph targets.
 Nomad also exports per-layer colors, roughness and metalness but it will be ignored by other software.
 
-### Layer painting
+### Layer painting {#layer-painting}
 Export layer painting, usually ignored by other software.
 
-### Face Group
+### Face Group {#face-group}
 Export facegroups, exporting can sometimes interfere with other software.
 
-### Normals
+### Normals {#normals}
 Export normal information. Note that Nomad will always compute its own normals when importing other file formats.
 
-### Tangents
+### Tangents {#tangents}
 Export tangent information, used if the model has normal maps. 
 
-### Textures
+### Textures {#textures}
 If textures have been added to the material, they will be exported. Note that this will not bake textures, that is done via the bake options in topology.
 
-### Export button
+### Export button {#export-button}
 Click this to export the geometry using the selected settiings.
 
 ::: tip Tip: Import roughness and metalness to Blender
@@ -182,28 +182,28 @@ USD is a complex format, it's specification supports many features, but not all 
 
 ::: 
 
-## Render
+## Render {#render}
 
 Export an image that is the combination of all the settings in the project (lights, materials, post processing etc). 
 
 ![](/images/file_render.webp)
-### Preview
+### Preview {#preview}
 
 The small preview button next to the menu title will dim the toolbars to help preview the final result.
 
-### Transparent background
+### Transparent background {#transparent-background}
 Enable an alpha channel for the render, useful to combine the render with other images in 2d programs. Note that partial transparency is not supported.
 
-### Show interface
+### Show interface {#show-interface}
 Enable including Nomad's UI in the render.
 
-### Render ratio
+### Render ratio {#render-ratio}
 A multiplier on the image resolution.
 
-### Final size
+### Final size {#final-size}
 The resolution to use for the render. When `Custom` is selected, the width and height sliders will be enabled. 
 
 When the File menu is active, a dashed overlay will be drawn in the viewport to indicate the render region if it does not match the screen resolution (note that you must be in landscape mode for this to be correct).
 
-### Export png
+### Export png {#export-png}
 Click this button to start the render process. When complete you can then choose how to save or share the image.

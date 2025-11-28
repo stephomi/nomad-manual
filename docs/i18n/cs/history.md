@@ -1,4 +1,4 @@
-# ![](/icons/history.webp) Historie
+# ![](/icons/history.webp) Historie {#history}
 ![](/images/history_overview.webp)
 
 Stejně jako většina nástrojů pro tvorbu obsahu můžete v Nomadu vracet a opakovat všechny úpravy.
@@ -10,31 +10,31 @@ Můžete použít rychlá gesta pro vrácení/obnovení:
 - klepnutí 3 prsty pro opakování
 :::
 
-## Historie
+## Historie {#history-panel}
 ![](/images/history_history.webp)
 
 Tento panel zobrazuje zásobník historie, ukazuje počet kroků, název operace a množství paměti, které daný krok používá.
 
-## Nastavení
+## Nastavení {#settings}
 ![](/images/history_settings.webp)
 
-### Limit historie (Mb)
+### Limit historie (MB) {#history-limit-mb}
 Pokud zásobník historie překročí tuto hodnotu, starší operace budou odstraněny tak, aby se využití paměti vešlo do tohoto limitu.
 
 
-### Maximální počet kroků zpět
+### Maximální počet kroků zpět {#maximum-undoable}
 Můžete nastavit maximální počet operací, které lze vrátit.
 
-## Obnovit kameru
+## Obnovit kameru {#restore-camera}
 Pro každou operaci je uložen pohled kamery.
 Pokud tuto možnost povolíte, vrácení nebo opakování operace resetuje kameru na uložený pohled.
 
-## Zahrnout akce
+## Zahrnout akce {#include-actions}
 
 * `Lights` - Pokud je vypnuto, operace se světly (kromě přesunů pomocí gizma) budou historií ignorovány
 * `Matcaps & HDRIs` - Pokud je vypnuto, změny matcapů a HDRI budou historií ignorovány
 * `PostProcess` - Pokud je vypnuto, změny v možnostech postprocessingu budou historií ignorovány
 
-## Statistiky paměti
+## Statistika paměti {#memory-stats}
 
 Tato sekce poskytuje rozpis využití paměti v Nomadu.

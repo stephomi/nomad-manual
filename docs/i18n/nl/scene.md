@@ -1,4 +1,4 @@
-# ![](/icons/scene.webp) Scène 
+# ![](/icons/scene.webp) Scène {#scene}
 
 Met dit menu kun je objecten, lichten, camera’s en repeaters beheren in Nomad. Het toont de scène-hiërarchie als een boomstructuur, zodat je veel aspecten van je objecten kunt aanpassen. Je kunt er ook nieuwe objecten mee maken, en objecten op verschillende manieren samenvoegen en splitsen.
 
@@ -6,7 +6,7 @@ Met dit menu kun je objecten, lichten, camera’s en repeaters beheren in Nomad.
 ![](/images/scene_menu_summary.webp)
 
 
-## Snelkoppelingenbalk
+## Snelkoppelingbalk {#shortcut-bar}
 | Actie                 | Icoon                             | Beschrijving                                                                                                       |
 | :--------------------: | :-------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
 | [Toevoegen...](#add-menu)    | ![](/icons/plus.webp)            | Toon het [Toevoegen-menu](#add-menu) om een object aan de scène toe te voegen                                      |
@@ -21,7 +21,7 @@ Met dit menu kun je objecten, lichten, camera’s en repeaters beheren in Nomad.
 | Sync                  | ![](/icons/link.webp)            | Als instanties kinderen hebben, zorg ervoor dat alle instanties dezelfde kind-hiërarchie delen                     |
 
 
-## Boomweergave
+## Boomweergave {#tree-view}
 ![](/images/scene_treeview.webp) 
 
 | Actie        | Icoon                      | Beschrijving              |
@@ -36,7 +36,7 @@ Tik op het selecteericoon om één object te schakelen, of sleep verticaal over 
 
 :::
 
-### Manipulatie van de boomweergave
+### Boomweergave‑manipulatie {#tree-view-manipulation}
 
 Houd een item in de boomweergave lang ingedrukt tot het geel wordt. Je kunt het dan omhoog of omlaag verplaatsen in de boomweergave, en het over een ander item slepen om er een kind van te maken.
 
@@ -44,7 +44,7 @@ Wanneer veel items geselecteerd zijn, zullen de meeste donkergeel zijn en één 
 
 Wanneer je een ouderitem selecteert, worden standaard alle kinditems ook geselecteerd. Tikken op het oudericoon schakelt tussen alleen de ouder selecteren, of de ouder plus kinderen.
 
-### Objectmenu
+### Objectmenu {#object-menu}
 
 Klikken op de ellipsknop (...) voor een object in de boomweergave toont het objectmenu. 
 Veel van deze opties lijken op de snelkoppelingenbalk bovenaan, herhaald voor het gemak.
@@ -65,7 +65,7 @@ Veel van deze opties lijken op de snelkoppelingenbalk bovenaan, herhaald voor he
 
 
 
-### Meervoudige selectie
+### Meervoudige selectie {#multiselection}
 Je kunt meerdere objecten selecteren om twee dingen te doen:
 - het gizmo-gereedschap gebruiken om meerdere objecten tegelijk te verplaatsen
 - objecten samenvoegen met join- en boolean-bewerkingen.
@@ -87,12 +87,12 @@ Dit kan in de toekomst verbeterd worden.
 :::
 
 
-## Samenvoegen
+## Samenvoegen {#join}
 Deze optie maakt simpelweg één enkel objectitem van meerdere geselecteerde objecten.
 
 Je kunt een voorbeeld in video zien in de sectie [Splitsen](#separate).
 
-## Boolean
+## Booleaans {#boolean}
 ![](/images/scene_boolean_menu.webp) 
 Combineer objecten tot één oppervlak.
 
@@ -100,43 +100,43 @@ Combineer objecten tot één oppervlak.
 
 `Boolean` probeert de polygonen in hun oorspronkelijke indeling te laten en de polygonen aan elkaar te hechten waar objecten overlappen. Dit kan veel schonere en scherpere resultaten geven dan een voxel merge, maar vereist ‘waterdichte’ meshes; er mogen geen gaten of misvormde vormen in de objecten zitten. Als dit faalt, werkt een voxel merge meestal wel.
 
-### Boolean-bewerkingen
+### Booleaanse bewerkingen {#boolean-operations}
 Zowel Voxel Merge als Boolean gebruiken de zichtbaarheid van objecten om de bewerking te bepalen:
 
-#### Unie
+#### Verenigen {#union}
 Beide objecten zichtbaar resulteert in een boolean-**unie**, de buitenste huid van de objecten wordt gecombineerd, zonder binnenste oppervlakken. ![](/images/boolean_union.webp)
 
-#### Aftrekken
+#### Aftrekken {#subtract}
 Eén object onzichtbaar = boolean-**aftrekken**, het onzichtbare object wordt afgetrokken van het zichtbare object. ![](/images/boolean_subtract.webp)
 
-#### Doorsnede
+#### Doorsnede {#intersect}
 Beide objecten onzichtbaar = boolean-**doorsnede**, maak een nieuwe vorm alleen waar de twee objecten overlappen. ![](/images/boolean_intersect.webp)
 
 
-### Voxel Merge-knop
+### Voxel‑samenvoegknop {#voxel-merge-button}
 Op deze knop drukken voert een voxel merge-bewerking uit op de geselecteerde objecten. Bij één enkel object wordt het geretopologiseerd naar gelijkmatig verdeelde polygonen, handig wanneer een object uitgerekte polygonen heeft.
 
-### Resolutie
+### Resolutie {#resolution}
 De resolutie van het voxel-3D-raster dat voor de berekening wordt gebruikt. Wanneer deze waarde wordt gewijzigd, wordt een dambordpatroon over het object gelegd om de grootte van de polygonen te tonen.
 
-### Multiresolution opbouwen
+### Multiresolutie opbouwen {#build-multiresolution}
 Maak multiresolutieniveaus onder je doelresolutie. Dus als je resolutie 400 is en multiresolution opbouwen is 3, krijg je een nieuwe mesh met bijvoorbeeld 296.000 polygonen, maar er zullen 3 lagere subdiv-niveaus zijn op 74.000, 18.000, 4.000k.
 
-### Scherpe randen behouden
+### Scherpe randen behouden {#keep-sharp-edges}
 Schakel het vastklikken van het voxelmesh op randen in. Dit werkt het best op eenvoudige vormen.
 
-### Boolean-knop
+### Booleaanse knop {#boolean-button}
 Op deze knop drukken voert een polygon-boolean-bewerking uit met behulp van de Manifold-bibliotheek van Emmett Lalish. 
 
 
-## Splitsen
+## Scheiden {#separate}
 Als je één object hebt dat uit meerdere niet-verbonden delen bestaat, kun je dit object splitsen in meerdere objecten. 
 Dit kan worden gezien als het tegenovergestelde van [Eenvoudig samenvoegen](#simple-merge).
 
 ![](/videos/merge_separate.mp4)
 
 
-## Toevoegen-menu
+## Toevoegmenu {#add-menu}
 
 ![](/images/scene_addmenu_overview.webp)
 
@@ -147,21 +147,21 @@ Primitieven zijn basisvormen die met parameters kunnen worden aangepast. Zodra j
 
 ![](/images/scene_addmenu_top.webp)
 
-### Op gizmo
+### Op gizmo {#on-gizmo}
 Schakel in om de nieuwe primitieve te plaatsen waar de huidige geselecteerde vorm of het gizmo zich bevindt. Wanneer uitgeschakeld, wordt de primitieve in het midden van de scène geplaatst.
 
-### Gizmo selecteren
+### Gizmo selecteren {#select-gizmo}
 Schakel automatisch overschakelen naar het gizmo-gereedschap in wanneer een nieuwe primitieve wordt gemaakt. 
 
-### Geavanceerd
+### Geavanceerd {#add-advanced}
 
 Met dit menu kun je je voorkeur instellen voor waar nieuwe primitieven, groepen en repeaters worden gemaakt. Ze kunnen op het geselecteerde object, op de wereldorigin of op de locatie van het gizmo worden geplaatst.
 
 
-### UV’s
+### UV's {#uvs}
 Schakel UV’s in op primitieven. UV’s (vaak textuurcoördinaten genoemd) zijn extra gegevens die in 3D worden gebruikt om texturen op oppervlakken toe te passen. Ze nemen meer geheugen in, maar voor de meeste apparaten is dit geen probleem, tenzij je in zeer hoge poly-aantallen komt (bijv. 10 miljoen polys of meer). 
 
-### Primitieven
+### Primitieven {#primitives}
 
 | Primitief      | Icoon                                     | Beschrijving                                                                                                     |
 | :------------: | :---------------------------------------: | :-------------------------------------------------------------------------------------------------------------: |
@@ -184,7 +184,7 @@ Als je je afvraagt wat de basismesh is wanneer je Nomad start: dit is ook een ge
 De basismesh in Nomad gebruikt echter geen `Project on sphere`, wat betekent dat hij niet perfect rond is.
 :::
 
-### Primitieve werkbalk
+### Primitive‑werkbalk {#primitive-toolbar}
 
 ![](/images/scene_primitive_toolbar.gif)
 
@@ -212,7 +212,7 @@ Klikken op de titel van de werkbalk schakelt hem naar de boven- of onderkant van
 :::
 
 
-### Primitieve-menu
+### Primitiefmenu {#primitive-menu}
 
 ![](/images/scene_primitive_menu.webp)
 
@@ -226,16 +226,16 @@ De meeste primitieveparameters spreken voor zich, en er zijn enkele gemeenschapp
 * `Post subdivision` Schakel het gekozen aantal subdivisieniveaus in uit de multiresolution-sectie van het topologiemenu. Dit kan worden gebruikt om gladde, zacht afgeronde primitieven te maken in combinatie met lage topologieverdelingen. Bijvoorbeeld: zet de box-topologieverdelingen op 2 en post subdivisions op 4 om een box met zachte hoeken te maken.
 * `Linear subdivision` Stel in hoeveel niveaus lineaire subdivisie moeten worden gebruikt voordat reguliere smooth-subdivisie wordt toegepast. Dit kan worden gebruikt om te bepalen hoe scherp of zacht de hoeken zijn op de gesubdivideerde oppervlakken. Zet bijvoorbeeld de box-topologieverdelingen op 2, post subdivisions op 4, en probeer vervolgens de lineaire subdivisies tussen 0 en 4 te veranderen. De hoeken van de box gaan van zacht naar scherp.
 
-### Topologie
+### Topologie {#topology}
 
 Dit regelt het aantal polygonen in een primitieve. Meestal zijn de regelaars gekoppeld, zodat het wijzigen van de actieve schuifregelaar alle polygonen gelijkmatig aanpast. Je kunt op de ontkoppelknop tikken en de X/Y/Z-verdelingen van een vorm afzonderlijk regelen.
 
-### Geometrie
+### Geometrie {#geometry}
 
 Dit regelt de algehele grootte van een primitieve, in X/Y/Z-eenheden voor vierkante vormen en in straal voor ronde vormen.
 
 
-### UV Sphere
+### UV‑bol {#uv-sphere}
 ::: warning
 De UV Sphere is niet goed geschikt om op te sculpten, vooral niet op de polen.
 
@@ -248,7 +248,7 @@ Hoewel hij niet geschikt is voor algemeen sculpten, is hij wel nuttig voor ogen;
 :::
 
 
-### Triplanar
+### Triplanar {#triplanar}
 Deze primitieve is speciaal in die zin dat je de [Masking tool](tools.md#mask) erop moet gebruiken om de geometrie te vormen.
 
 ![](/videos/triplanar.mp4)
@@ -270,23 +270,23 @@ Voorlopig is er geen optie om het schilderen op één vlak te ‘vergrendelen’
 Je kunt [Connected Topology](stroke.md#connected-topology) gebruiken om een beetje te helpen; als je cursor precies op één vlak ligt, zal dat de andere vlakken niet beïnvloeden.
 :::
 
-### Shadow Catcher
+### Schaduw‑vanger {#shadow-catcher}
 Voeg een vlak toe met het shadow catcher-materiaal. Zie [Shadow Catcher-materiaal](material.md#shadow-catcher) voor meer details. 
 
 
-## Groep/Camera
-### Groep
+## Groep/Camera {#groupcamera}
+### Groep {#group}
 Maak een ‘leeg’ object waar je andere objecten onder kunt hangen. Dit kan worden gebruikt om de hiërarchie eenvoudig te organiseren door veel objecten onder een groep te plaatsen en die vervolgens te sluiten. Een groep kan ook worden gebruikt als hulpmiddel om objecten te verplaatsen; veel objecten kunnen onder een groep worden geplaatst en vervolgens kan de groep met het gizmo-gereedschap worden verplaatst, geroteerd en geschaald.
 
-### View toevoegen
+### Weergave toevoegen {#add-view}
 Maak een camera.
 
-## Repeaters
+## Repeaters {#repeaters}
 ![](/images/scene_primitive_repeaters.webp)
 
 Repeaters zijn nodes die instanties maken van de objecten eronder. 
 
-### Array
+### Array {#array}
 ![](/images/scene_primitive_array.webp)
 
 Wanneer objecten kinderen van deze node worden, kunnen ze als instanties in een rasterindeling worden geplaatst. Wanneer geselecteerd, heeft hij regelaars voor:
@@ -295,7 +295,7 @@ Wanneer objecten kinderen van deze node worden, kunnen ze als instanties in een 
 * OffsetX/Y/Z - afstand tussen de instanties wanneer fit inside is ingeschakeld
 * SizeX/Y/Z - de breedte/hoogte/diepte van het totale arrayraster wanneer fit inside is ingeschakeld.
 
-### Curve
+### Curve {#curve}
 ![](/images/scene_primitive_curve.webp)
 Dit maakt een curve; kinderen van deze node worden langs de curve herhaald. Wanneer geselecteerd, heeft hij regelaars voor:
 * Edit - sta toe dat punten aan de curve worden toegevoegd en dat punten op de curve worden verplaatst.
@@ -307,7 +307,7 @@ Dit maakt een curve; kinderen van deze node worden langs de curve herhaald. Wann
 * Twist - schakel regelaars op elk curvepunt om de twist-rotatie van de instanties te regelen 
 * B-spline - schakel of de instanties de curve exact volgen, of B-spline-interpolatie gebruiken die gladdere resultaten geeft. 
 
-### Radial
+### Radiaal {#radial}
 ![](/images/scene_primitive_radial.webp)
 
 Kinderen van deze node worden als instanties in een cirkel geplaatst. Verplaats het kindobject om de straal van deze repeater te wijzigen. Wanneer geselecteerd, heeft hij regelaars voor:
@@ -315,7 +315,7 @@ Kinderen van deze node worden als instanties in een cirkel geplaatst. Verplaats 
 
 
 
-### Mirror
+### Spiegel {#mirror}
 ![](/images/scene_primitive_mirror.webp)
 
 Kinderen van deze node worden gespiegeld over een as. Wanneer geselecteerd, heeft hij regelaars voor:
@@ -338,35 +338,35 @@ Repeaters kunnen onder elkaar worden geparent en meerdere objecten kunnen kinder
 Sommige repeaters proberen het pivotpunt van de kindobjecten automatisch in te stellen, zodat ze niet bewegen, zelfs als je ze met het gizmo-gereedschap verplaatst of roteert. Als je dit gedrag moet overschrijven, voeg dan een groep in tussen de repeater en het kind. Nu kun je de kindvorm onafhankelijk van de repeater verplaatsen.
 :::
 
-## Licht
+## Licht {#light}
 
 ![](/images/scene_primitive_light.webp)
 
-### Directional
+### Directioneel {#directional}
 Maak een directioneel licht, een oneindig ver weg lichtbron zoals de zon.
 
-### Spot
+### Spot {#spot}
 Maak een spotlicht, met regelaars voor de conusbreedte en zachtheid
 
-### Point
+### Punt {#point}
 Maak een puntlicht
 
-## Geavanceerd
-### Focus op item
+## Geavanceerd {#advanced}
+### Focus op item {#focus-on-item}
 Dubbelklikken op een item in de Scène-lijst centreert de camera op dat item in de 3D-weergave.
 
-### Zichtbaarheid synchroniseren
+### Zichtbaarheid synchroniseren {#sync-visibility}
 Het gebruik van het oogicoon heeft effect op alle geselecteerde items. 
 
-### Instantie: tonen
+### Instantie: tonen {#instance-show}
 Toon een gekleurde capsule links van de scenelijst om instanties weer te geven.
 
 
-### Iconen
+### Pictogrammen {#icons}
 Stel de grootte en dekking in van de groep-, licht-, camera- en mirror-iconen in de viewport
 
-### Hiërarchielijnen
+### Hiërarchielijnen {#hierarchy-lines}
 Toon een lijn tussen ouder en kinderen in de viewport
 
-## Onderste werkbalk
+## Onderste werkbalk {#bottom-toolbar}
 Deze iconen schakelen de zichtbaarheid van Groep, Licht, Camera, Repeater en Hiërarchielijnen in de viewport.

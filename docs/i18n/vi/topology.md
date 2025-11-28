@@ -1,4 +1,4 @@
-# ![](/icons/multires.webp) Tô-pô-lô-gy 
+# ![](/icons/multires.webp) Tôpô {#topology}
 
 Menu này điều khiển tô-pô-lô-gy của các đối tượng trong Nomad, cũng như các công cụ để bake và chuyển chi tiết giữa các đối tượng, và giữa các texture.
 
@@ -26,7 +26,7 @@ Menu topology của Nomad có vài phần:
 | [Primitive](#msc)                     | ![](/icons/dot.webp)        | Tùy chọn primitive                                               |
 
 
-## Polygon stats
+## Thống kê đa giác {#polygon-stats}
 
 ![](/images/topology_stats.webp)
 
@@ -34,18 +34,18 @@ Phần trên cùng của menu topology hiển thị thông tin polygon cho đố
 
 Chạm vào phần này sẽ hiển thị danh sách thống kê polygon cho tất cả đối tượng polygon trong cảnh.
 
-## ![](/icons/multires.webp) Multiresolution
+## ![](/icons/multires.webp) Đa phân giải {#multiresolution}
 
 ![](/images/topology_multires_menu.webp)
 
-### Multiresolution là gì?
+### Đa phân giải là gì? {#what-is-multiresolution}
 Tính năng multiresolution hữu ích cho hai trường hợp chính:
 - Thuật toán smooth subdivision để tăng số polygon của đối tượng
 - Quản lý nhiều mức độ phân giải để bạn có thể luân phiên giữa chỉnh sửa lớn và nhỏ
 
 ![](/videos/multiresolution.mp4)
 
-#### Quy trình Multiresolution
+#### Quy trình làm việc đa phân giải {#multiresolution-workflow}
 Một điểm quan trọng của multiresolution là bạn có thể quay lại mức phân giải thấp hơn, chỉnh sửa đối tượng rồi quay lại mức phân giải cao nhất mà không mất chi tiết độ phân giải cao. Tất cả chi tiết độ phân giải cao sẽ được project lại tự động.
 
 ::: warning
@@ -58,35 +58,35 @@ Bạn sẽ luôn nhận được cảnh báo nếu điều này sắp xảy ra, 
 :::
 
 
-### Thanh trượt Multiresolution
+### Thanh trượt đa phân giải {#multiresolution-slider}
 Thanh trượt này cho biết số mức subdivision trong đối tượng hiện tại. Nếu có 6 thanh dọc, nghĩa là có 6 mức subdivision. Vòng tròn cho biết mức subdivision đang được hiển thị. 
 
-### Reverse
+### Đảo ngược {#reverse}
 Khi đang ở mức subdivision thấp nhất, nút reverse sẽ cố gắng tạo thêm một mức bên dưới mức hiện tại. Lưu ý là điều này thường chỉ thực hiện được nếu đối tượng ban đầu được tạo bằng subdivision, ví dụ trong Nomad hoặc các phần mềm 3D khác có multiresolution subdivision surfaces.
 
-### Subdivide
+### Chia nhỏ {#subdivide}
 Nút *Subdivide* sẽ tăng số polygon lên gấp 4, vì vậy hãy chú ý polycount vì nó có thể tăng rất nhanh!
 Một điểm quan trọng của *Subdivision Surface* là chúng sẽ hội tụ về một *Smooth Surface*.
 Để hiểu cách hoạt động, bạn có thể thử nút *Subdivide* trên một đối tượng chỉ có vài polygon.
 
 Bạn có thể tắt hành vi *Smooth* này bằng cách bật tùy chọn `Linear subdivision`.
 
-### Delete lower
+### Xoá mức thấp hơn {#delete-lower}
 Nếu có các subdivision bên dưới mức đang hiển thị, xóa chúng. Nếu lỡ tay, bạn có thể tạo lại bằng nút Reverse.
 
-### Delete higher
+### Xoá mức cao hơn {#delete-higher}
 Nếu có các subdivision phía trên mức đang hiển thị, xóa chúng.
 
-### Linear subdivision
+### Chia nhỏ tuyến tính {#linear-subdivision}
 Subdivide mesh mà không áp dụng smoothing.
 
-### Sharp border
+### Biên sắc nét {#sharp-border}
 Nếu đối tượng có facegroup, bật tùy chọn này sẽ giữ biên facegroup sắc. Có thể đặt riêng cho từng mức subdivision (thanh trượt subdivision sẽ có một biểu tượng nhỏ phía trên mức đó để biểu thị).
 
-### Keep triangles
+### Giữ tam giác {#keep-triangles}
 Hầu hết hệ thống subdivision surface tiêu chuẩn sẽ cố gắng chuyển tất cả polygon thành quads trong quá trình subdivision. Tùy chọn này sẽ buộc subdivision dùng tam giác thay vì quads.
 
-### Lock (LV0)
+### Khoá (LV0) {#lock-lv0}
 
 Ngăn mức subdivision thấp nhất bị chỉnh sửa. Điều này quan trọng nếu đối tượng được tạo từ ứng dụng khác và mesh gốc phải giữ nguyên. Khi tắt tùy chọn này, các thay đổi lớn ở mức subdivision cao hơn sẽ làm di chuyển level 0.
 
@@ -97,7 +97,7 @@ Subdivision sẽ làm mượt mọi cạnh sắc theo mặc định. Để giữ
 :::
 
 
-## ![](/icons/voxel.webp) Voxel Remesher
+## ![](/icons/voxel.webp) Voxel Remesher {#voxel-remesher}
 ![](/images/topology_voxel_menu.webp)
 Khi dùng `Voxel Remesher`, toàn bộ mesh sẽ bị buộc có tô-pô-lô-gy với độ phân giải đồng đều, nghĩa là tất cả polygon có kích thước xấp xỉ nhau. Điều này rất hữu ích khi bạn không muốn nghĩ về tô-pô-lô-gy và chỉ muốn điêu khắc tự do.
 
@@ -117,13 +117,13 @@ Ngoài ra nó không hỗ trợ mesh có lỗ.
 Thông thường, điều đó có nghĩa là trước khi remesh, mọi lỗ sẽ được lấp lại, tương tự [Trim tool](tools.md#trim) hoặc [tính năng Hole filling](scene.md#hole-filling).
 :::
 
-### Remesh
+### Remesh {#voxel-remesh}
 Thực hiện voxel remesh.
 
-### Resolution
+### Độ phân giải {#voxel-resolution}
 Kích thước voxel dùng trong quá trình tính toán. Khi thay đổi tham số này, một mẫu caro sẽ phủ lên mesh để xem trước kết quả.
 
-### Build multiresolution
+### Tạo đa phân giải {#build-multiresolution}
 Tạo các mức multiresolution thấp hơn cho voxel remesh. Nếu bạn dùng mẫu caro để đặt độ phân giải, và đặt build multiresolution là 2, kết quả cuối sẽ có chi tiết khớp với thanh trượt resolution, và nếu bạn vào tab multires, nó sẽ ở level 2, nghĩa là bạn có các mesh multires độ phân giải thấp hơn ở level 1 và level 0. Đây là cách tốt để vừa tạo mesh sạch với polygon đều, vừa có mesh điều khiển độ phân giải thấp.
 
 ::: tip Tip: Build multiresolution và stable smoothing
@@ -132,10 +132,10 @@ Tùy chọn này đôi khi có thể tạo các 'vòng lặp' trong hình học 
 
 :::
 
-### Keep sharp edges
+### Giữ cạnh sắc {#keep-sharp-edges}
 Bật việc snap các điểm mới vào cạnh sắc trên mesh gốc. Có thể gây biến dạng.
 
-## ![](/icons/dynamic.webp) Dynamic Topology
+## ![](/icons/dynamic.webp) Tôpô động {#dynamic-topology}
 
 ![](/images/topology_dyntopo_menu.webp)
 Multiresolution và voxel remeshing là các phương pháp phổ biến trong ngành để kiểm soát tô-pô-lô-gy, nhưng cả hai đều yêu cầu bạn chú ý không kéo giãn polygon quá xa hoặc nén polygon quá chặt. 
@@ -148,13 +148,13 @@ Xem video bên dưới để thấy hoạt động.
 
 ![](/videos/dynamic.mp4)
 
-### Enabled
+### Bật {#enabled}
 Bật dynamic topology. Một biểu tượng DynTopo sẽ được đặt dưới thanh trượt bán kính và cường độ brush để cho phép bật/tắt Dyntopo theo từng công cụ.
 
-### Detail
+### Chi tiết {#dyn-detail}
 Điều khiển lượng chi tiết, hành vi thay đổi dựa trên lựa chọn 'Detail based on...', xem bên dưới.
 
-### Detail based on...
+### Độ chi tiết dựa trên... {#detail-based-on}
 | Method   | Description                                                     |
 | :------: | :-------------------------------------------------------------: |
 | Screen   | Mức chi tiết phụ thuộc vào kích thước đối tượng trên màn hình. Thanh trượt detail là 100% hoặc cao hơn cho chi tiết mịn (tam giác nhỏ), hoặc 1% cho chi tiết thấp (tam giác lớn).  |
@@ -167,7 +167,7 @@ Bật dynamic topology. Một biểu tượng DynTopo sẽ được đặt dư�
 
 :::
 
-### Prefer...
+### Ưu tiên... {#prefer}
 | Method  | Description       |
 | :-----: | :---------------: |
 | Speed   | Ưu tiên hiệu năng |
@@ -180,14 +180,14 @@ Khi ưu tiên `Quality`, có 2 khác biệt chính:
 Nhờ vậy, nếu bạn điêu khắc chi tiết rất nhỏ hoặc stroke nhanh, tô-pô-lô-gy luôn được refine như mong đợi
 
 
-### Use pressure on radius
+### Dùng lực bút cho bán kính {#use-pressure-on-radius}
 Chỉ liên quan nếu `Radius` được bật. Khi bật, mức chi tiết sẽ luôn phản ánh kích thước brush, ngay cả khi kích thước brush bị ảnh hưởng bởi lực bút.
 
-### Use stroke falloff
+### Dùng độ rơi nét vẽ {#use-stroke-falloff}
 
 Bao gồm cả đường cong falloff của brush và alpha vào tính toán dyntopo.
 
-### Method
+### Phương thức {#method}
 Dù bạn dùng `Dynamic Topology` trên [Brush](#brush) hay [Global](#global), bạn có thể chọn chế độ hoạt động:
 
 | Method         | Description                                                           |
@@ -196,30 +196,30 @@ Dù bạn dùng `Dynamic Topology` trên [Brush](#brush) hay [Global](#global), 
 | Subdivision    | Chỉ thêm mặt mới, không thể bớt mặt                                   |
 | Decimation     | Chỉ bớt mặt, không thể thêm mặt                                       |
 
-### Protect masked area
+### Bảo vệ vùng được che {#protect-masked-area}
 Bật bảo vệ vùng được mask khỏi việc thay đổi tô-pô-lô-gy.
 
-### Vertex extrapolation
+### Ngoại suy đỉnh {#vertex-extrapolation}
 
 
-### Detail
+### Chi tiết {#all-detail}
 Độ phân giải dùng cho thao tác remesh. Nếu Dyntopo ở chế độ 'Constant', nó sẽ là cùng giá trị với thanh trượt Detail ở đầu menu này.
 
-### Remesh
+### Remesh {#dyn-remesh}
 Thực hiện remesh toàn cục bằng thuật toán dyntopo. Thông thường bạn nên dùng [Voxel Remesher](#voxel-remesher) cho remesh toàn phần.
 
 Tuy nhiên một ưu điểm so với voxel là vùng được mask sẽ được bảo vệ, nên bạn có thể kiểm soát tốt hơn nơi cần nhiều hay ít mật độ.
 
 
 
-## ![](/icons/topo_extra.webp) Misc
+## ![](/icons/topo_extra.webp) Khác {#misc}
 
 ![](/images/topology_misc_menu.webp)
 
-##### ![](/icons/cog.webp) Gear menu
+##### ![](/icons/cog.webp) Trình đơn bánh răng {#gear-menu}
 Nhiều công cụ trong menu này có tùy chọn nâng cao. Có thể truy cập qua biểu tượng bánh răng cạnh tiêu đề phần.
 
-### Decimation
+### Giảm đa giác {#decimation}
 
 ![](/images/topology_decimation.webp)
 
@@ -243,7 +243,7 @@ Dùng [Quadremesh tool](tools.md#quad-remesher) trên đối tượng high poly 
 
 :::
 
-#### Decimate
+#### Giảm đa giác {#decimate}
 Bắt đầu thao tác decimate.
 
 Các biểu tượng cạnh nút decimate cho phép bật/tắt các tùy chọn ảnh hưởng đến decimation. Phần trăm cho biết độ mạnh của tùy chọn và có thể đặt trong menu bánh răng nâng cao.
@@ -254,24 +254,24 @@ Các biểu tượng cạnh nút decimate cho phép bật/tắt các tùy chọn
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - Decimate sẽ cố giữ biên facegroup không đổi.
 * ![](/icons/checkerboard.webp) `Preserve UV Borders` - Decimate sẽ cố giữ biên UV không đổi.
 
-#### ![](/icons/cog.webp) Decimate gear menu
+#### ![](/icons/cog.webp) Trình đơn bánh răng Giảm đa giác {#decimate-gear-menu}
 Menu bánh răng có các tùy chọn nâng cao sau:
-##### Preserve painting
+##### Giữ màu vẽ {#preserve-painting}
 Checkbox bật/tắt chế độ này, giá trị xác định độ chính xác khi giữ chi tiết tô vẽ. Giá trị cao giữ painting nhiều hơn. Đặt 0 nếu bạn không quan tâm painting.
 
 
-##### Uniform faces
+##### Mặt đồng đều {#uniform-faces}
 Checkbox bật/tắt chế độ này. Giá trị cao sẽ tạo tam giác kích thước tương tự nhau.
 
-##### Preserve borders
+##### Giữ biên {#preserve-borders}
 Bật để ngăn biên bị decimate. Có thể chọn trọng số biên cho biên `Geometry`, `Face Group` hoặc `UV`.
 
-#### Target triangles
+#### Số tam giác mục tiêu {#target-triangles}
 Đặt số tam giác mục tiêu. Giá trị mặc định là 50%, nút percent/target sẽ chuyển giữa phần trăm hoặc số poly mục tiêu chính xác.
 
 
 
-### UV Unwrap - UVAtlas
+### UV Unwrap - UVAtlas {#uv-unwrap-uvatlas}
 
 ![](/images/topology_uvatlas_menu.webp)
 Tính toán tọa độ texture (UV) cho mesh hiện tại, thường ưu tiên tạo nhiều island với đường cắt để giảm méo.
@@ -280,23 +280,23 @@ Biểu tượng con mắt nhỏ giữa tiêu đề menu và menu bánh răng s�
 
 ![](/videos/unwrap.mp4)
 
-#### Unwrap
+#### Unwrap {#unwrap}
 Tính UV cho đối tượng được chọn, sẽ hiển thị ở nền.
 
-#### Delete UVs
+#### Xoá UV {#delete-uvs}
 Xóa UV trên đối tượng.
 
-#### ![](/icons/cog.webp) UVAtlas gear menu
+#### ![](/icons/cog.webp) Trình đơn bánh răng UVAtlas {#uvatlas-gear-menu}
 Menu bánh răng có các tùy chọn nâng cao sau:
 
-#### Face Group
+#### Nhóm mặt {#atlas-face-group}
 
 Dùng facegroup để định nghĩa đường cắt cho UV.
 
-##### Max Stretch
+##### Độ giãn tối đa {#max-stretch}
 Giá trị thấp tạo ít méo và nhiều island, giá trị cao tạo nhiều méo và ít island. 
 
-##### Island spacing
+##### Khoảng cách đảo {#island-spacing}
 Lượng khoảng cách giữa các island. Giá trị thấp ít lãng phí không gian hơn nhưng dễ bị lem texture giữa các island. 
 
 ::: warning
@@ -323,24 +323,24 @@ Khi model được tạo trong Nomad, bạn có thể tô trực tiếp lên đ�
 
 :::
 
-### UV Unwrap - BFF
+### UV Unwrap - BFF {#uv-unwrap-bff}
 ![](/images/topology_uvbff_menu.webp)
 
 UV BFF ưu tiên cách tiếp cận 'ít cắt, nhiều méo'. 
 
-#### ![](/icons/cog.webp) UV BFF gear menu
+#### ![](/icons/cog.webp) Trình đơn bánh răng UV BFF {#uv-bff-gear-menu}
 
-#### Face Group
+#### Nhóm mặt {#bff-face-group}
 
 Dùng facegroup để định nghĩa đường cắt cho UV.
 
-##### Cone count
+##### Số nón {#cone-count}
 Xác định số lượng hướng chiếu chính được dùng. Giá trị thấp tạo ít island hơn nhưng nhiều méo hơn.
 
-##### Seamless patches
+##### Mảnh liền mạch {#seamless-patches}
 Ảnh hưởng đến bố cục các mảng UV, hoạt động tốt nhất với facegroup được tạo cẩn thận.
 
-### Bake -> texture 
+### Bake -> texture {#bake-texture}
 ![](/images/topology_bake_menu.webp)
 
 Texture baking sẽ tạo texture bằng cách project các đối tượng khác đang hiển thị trong cảnh vào UV của đối tượng được chọn.
@@ -360,35 +360,35 @@ Giờ bạn sẽ có một mesh độ phân giải thấp giữ lại hầu hế
 
 Sau thao tác, vertex color sẽ được chuyển sang một layer mới bị tắt, để không gây nhiễu với texture.
 
-#### From itself
+#### Từ chính nó {#tex-from-itself}
 Bake mức multiresolution cao nhất xuống mức thấp nhất trên đối tượng hiện tại. Cách này dễ thiết lập, nhưng thường bạn sẽ cần nhiều kiểm soát hơn, khi đó tùy chọn tiếp theo hữu ích hơn.
 
-#### From high-res ()
+#### Từ bản độ phân giải cao () {#tex-from-high-res}
 Bake từ các đối tượng khác đang hiển thị trong cảnh vào đối tượng được chọn. Con số trong ngoặc cho biết số đối tượng hiển thị khác sẽ được dùng làm mục tiêu high-res và được bake vào đối tượng low-res hiện tại có UV. Các đối tượng khác không cần giống về bố cục hay tô-pô-lô-gy với đối tượng được bake, cho phép quy trình bake linh hoạt.
 
-#### Resolution
+#### Độ phân giải {#tex-bake-resolution}
 Độ phân giải của texture được bake. Texture bake luôn là hình vuông, nên 1024 sẽ tạo ảnh 1024x1024. 
 
 Các nút bên dưới là phím tắt cho các độ phân giải thường dùng. Tham khảo: 512x512 tương đối nhỏ, dùng cho đồ họa web và hình học đơn giản. 4096x4096 (gọi tắt 4k) dùng cho render chất lượng cao.
 
-#### ![](/icons/cog.webp) Bake gear menu
+#### ![](/icons/cog.webp) Trình đơn bánh răng Bake {#tex-bake-gear-menu}
 ![](/images/topology_bake_gear_menu.webp)
 Menu bánh răng có các tùy chọn nâng cao sau:
 
-##### Normal, Roughness, Metalness, Color, Emissive, Opacity
+##### Normal, Roughness, Metalness, Color, Emissive, Opacity {#tex-normal-roughness-metalness-color-emissive-opacity}
 Các checkbox này quyết định thuộc tính nào sẽ được bake, mỗi loại vào một map riêng. Sau khi bake xong, chúng sẽ được thêm làm texture vào material của đối tượng hiện tại.
 
-##### Backup
+##### Sao lưu {#tex-backup}
 Để xem trước texture đã bake, thông tin paint của đối tượng nên được tắt. Tùy chọn này sẽ chuyển mọi thông tin paint sang một layer mới làm bản sao lưu để có thể bật/tắt dễ dàng.
 
-#### Cage radius
+#### Bán kính lồng (cage) {#tex-cage-radius}
 Điều chỉnh khoảng cách từ đối tượng bake mà các tia được bắn ra để tìm đối tượng mục tiêu. Mặc định khoảng cách này thấp để tránh artefact, nhưng có thể tăng nếu đối tượng mục tiêu ở xa đối tượng bake.
 
-##### Ray offset
+##### Độ lệch tia {#tex-ray-offset}
 Điều chỉnh vị trí bắt đầu tính toán bake trên đối tượng bake. Mặc định bắt đầu từ vị trí cách bề mặt 5%, giúp tránh hầu hết artefact phổ biến. Nếu đối tượng mục tiêu rất xa đối tượng bake, offset này có thể cần tăng.
 
 
-### Reproject to vertex
+### Chiếu lại lên đỉnh {#reproject-to-vertex}
 
 ![](/images/topology_reproject_menu.webp)
 
@@ -401,7 +401,7 @@ Có thể xem như ngược lại với baking; nếu baking chuyển thuộc t�
 Khi dùng `Bake to texture` hoặc `Reproject to vertex`, cả vertex color và material texture đều được tính đến.
 :::
 
-#### From itself
+#### Từ chính nó {#vertex-from-itself}
 Chuyển texture từ material thành giá trị vertex. Nút này chỉ hoạt động nếu đối tượng có UV và texture đang bật trong material.
 
 ::: tip TIP: Texture painting
@@ -415,36 +415,36 @@ Nomad không hỗ trợ trực tiếp việc tô và chỉnh sửa texture, như
 1. `Bake to texture` ở chế độ `From itself`. Các chỉnh sửa đó được chuyển ngược lại thành texture.
 :::
 
-#### From high-res ()
+#### Từ bản độ phân giải cao () {#vertex-from-high-res}
 Chuyển mọi đối tượng hiển thị thành giá trị vertex trên đối tượng được chọn. Con số trên nút này cho biết số đối tượng hiển thị.
 
 ::: tip
 Reproject đối tượng khác không chỉ dùng để chuyển thông tin màu từ đối tượng khác, mà còn để project vertex lên đối tượng khác, ví dụ băng quấn có thể được project lên nhân vật.
 :::
 
-#### ![](/icons/cog.webp) Reproject gear menu
+#### ![](/icons/cog.webp) Trình đơn bánh răng Reproject {#vertex-reproject-gear-menu}
 Menu bánh răng có các tùy chọn nâng cao sau:
 
-#### Vertices, Roughness, Metalness, Color, Opacity, Opacity->Mask, Mask, Layers, Face Group
+#### Đỉnh, Roughness, Metalness, Màu, Độ mờ, Độ mờ->Mask, Mask, Lớp, Nhóm mặt {#vertex-vertices-roughness-metalness-color-opacity-opacity-mask-mask-layers-face-group}
 Các checkbox này quyết định thuộc tính nào sẽ được project lên đối tượng được chọn. 
 
-#### Relax
+#### Làm mượt {#vertex-relax}
 Mesh được chọn có thể được làm mượt hoặc relax bố cục một mức nào đó để khớp tốt hơn với mục tiêu reprojection. Smooth phù hợp với mesh high poly. Relax phù hợp với mesh low poly. Auto sẽ để Nomad tự chọn phương pháp tốt nhất.
 
-#### Iterations
+#### Số vòng lặp {#vertex-iterations}
 Số lần thao tác relax được áp dụng trong quá trình reprojection.
 
-#### Cage radius
+#### Bán kính lồng (cage) {#vertex-cage-radius}
 Điều chỉnh khoảng cách từ đối tượng được chọn mà các tia được bắn ra để tìm đối tượng mục tiêu. Mặc định khoảng cách này thấp để tránh artefact, nhưng có thể tăng nếu đối tượng mục tiêu ở xa đối tượng bake.
 
-#### Ray bias
+#### Độ lệch tia (bias) {#vertex-ray-bias}
 Giá trị thấp ưu tiên project đến điểm gần nhất trên bề mặt mục tiêu. Giá trị cao ưu tiên điểm giao nhau theo pháp tuyến bề mặt. 
 
-#### Ray offset
+#### Độ lệch tia {#ray-vertex-offset}
 Điều chỉnh vị trí bắt đầu tính toán bake trên đối tượng được chọn. Mặc định bắt đầu từ vị trí cách bề mặt 5%, giúp tránh một số artefact. Nếu đối tượng mục tiêu rất xa, offset này có thể cần tăng.
 
 
-### Quad Remesh - Instant
+### Quad Remesh - Instant {#quad-remesh-instant}
 ![](/images/topology_quadremesh_menu.webp)
 Remesh bằng [thuật toán Instant Meshes của Wenzel Jakob, Marco Tarini, Daniele Panozzo, Olga Sorkine-Hornung](https://igl.ethz.ch/projects/instant-meshes/). Nó sẽ phân tích flow của mesh và tạo tô-pô-lô-gy quad sạch.
 
@@ -452,22 +452,22 @@ Remesh bằng [thuật toán Instant Meshes của Wenzel Jakob, Marco Tarini, Da
 Trên iOS và desktop, công cụ [Quad remesher](tools#quad-remesher) cho kết quả tốt hơn và nhiều kiểm soát hơn.
 :::
 
-#### Remesh
+#### Remesh {#instant-remesh}
 Bắt đầu thao tác instant meshes.
 
-#### Target quads
+#### Số quad mục tiêu {#target-quads}
 Số polygon quad mà quad remesh sẽ cố gắng tạo.
 
-#### ![](/icons/cog.webp) Quad Remesh Instant gear menu
+#### ![](/icons/cog.webp) Trình đơn bánh răng Quad Remesh Instant {#quad-remesh-instant-gear-menu}
 Menu bánh răng có các tùy chọn nâng cao sau:
 
-##### Crease angle
+##### Góc nếp gấp {#crease-angle}
 Ngưỡng góc sắc sẽ cố gắng hỗ trợ dẫn hướng thao tác remesh.
 
-#### Max fill hole
+#### Kích thước tối đa lỗ cần lấp {#max-fill-hole}
 Thuật toán đôi khi có thể tạo lỗ không mong muốn. Nếu lỗ có ít vertex hơn giá trị này, nó sẽ được lấp.
 
-### Holes
+### Lỗ {#holes}
 ![](/images/topology_holes_menu.webp)
 Hầu hết thời gian, đối tượng của bạn có lẽ sẽ watertight, nghĩa là mesh 'đóng kín'.
 
@@ -479,50 +479,50 @@ Nếu đối tượng có lỗ, bạn có thể lấp chúng. Lưu ý nó chỉ 
 Khi bạn chạy Voxel remesher, mọi lỗ sẽ tự động được lấp, dù bạn dùng trên 1 hay nhiều mesh.
 :::
 
-#### Close holes
+#### Đóng lỗ {#close-holes}
 Thực hiện thao tác lấp lỗ.
 
-#### ![](/icons/cog.webp) Holes gear menu
+#### ![](/icons/cog.webp) Trình đơn bánh răng Lỗ {#holes-gear-menu}
 Menu bánh răng có các tùy chọn nâng cao sau:
 
-##### Detail
+##### Chi tiết {#fill-detail}
 Mật độ polygon dùng để lấp lỗ. Khi kéo thanh trượt này, một mẫu caro sẽ hiển thị trên model, cho biết kích thước tam giác sẽ dùng. Checkbox sẽ tắt điều này và chỉ dùng các điểm hiện có, thường tạo tam giác dài mỏng trên lỗ, khó điêu khắc.
 
-##### Fill non-manifold
+##### Lấp mặt không đa tạp {#fill-non-manifold}
 Cố gắng lấp lỗ non-manifold.
 
-##### Face Group
+##### Nhóm mặt {#fill-face-group}
 
 Khi lấp lỗ, mỗi lỗ nên có facegroup riêng (Auto), hay tất cả dùng chung một facegroup (Off), hay không tạo facegroup (On).
 
-### Force Manifold
+### Ép đa tạp hợp lệ {#force-manifold}
 ![](/images/topology_forcemanifold_menu.webp)
 Cố gắng làm sạch các cạnh non-manifold. Hữu ích cho phần mềm ngoài không hỗ trợ cạnh có hơn 2 mặt chung.
 
-#### Clean
+#### Làm sạch {#clean}
 Thực hiện thao tác clean.
-#### ![](/icons/cog.webp) Force manifold gear menu
+#### ![](/icons/cog.webp) Trình đơn bánh răng Ép đa tạp hợp lệ {#force-manifold-gear-menu}
 Menu bánh răng có các tùy chọn nâng cao sau:
 
-#### Delete small faces
+#### Xoá mặt nhỏ {#delete-small-faces}
 Ngưỡng dùng để xóa và nối các polygon nhỏ.
 
 
-### Triplanar
+### Triplanar {#triplanar}
 ![](/images/topology_triplanar_menu.webp)
 Chuyển mesh thành primitive [triplanar](scene.md#triplanar).
 Bạn có thể sẽ mất nhiều chi tiết trong quá trình này.
 
-#### Force cubic
+#### Ép khối lập phương {#force-cubic}
 Buộc triplanar là hình lập phương. Nếu không, triplanar sẽ khớp với bounding box gần nhất bao quanh đối tượng.
 
-#### Convert
+#### Chuyển đổi {#convert}
 Thực hiện thao tác triplanar.
 
-#### Resolution
+#### Độ phân giải {#triplanar-resolution}
 Kích thước voxel dùng trong thao tác triplanar.
 
-## ![](/icons/dot.webp) Primitive
+## ![](/icons/dot.webp) Nguyên thuỷ {#primitive}
 Tham số cho primitive được chọn. Chúng cũng có trong thanh công cụ primitive trong viewport.
 
 ![](/images/topology_primitive_screenshot.webp)

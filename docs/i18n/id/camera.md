@@ -1,4 +1,4 @@
-# ![](/icons/camera.webp) Kamera
+# ![](/icons/camera.webp) Kamera {#camera}
 
 Menu ini memungkinkan Anda membuat dan mengubah kamera, serta mengontrol bagaimana Anda berinteraksi dengan kamera.
 
@@ -11,9 +11,9 @@ Kamera di Nomad memiliki beberapa kegunaan:
 * Sebagai kamera perspektif orang pertama untuk menavigasi skena Anda
 * Sebagai kamera ortografik untuk gim isometrik atau rendering bergaya industrial.
 
-## Mengontrol kamera
+## Mengontrol kamera {#control}
 
-### Rotasi
+### Rotasi {#rotation}
 Anda memutar kamera dengan menyeret *satu* jari pada latar belakang.
 Jika Anda menyeret jari di atas model, maka itu akan memulai operasi pemahatan.
 
@@ -21,23 +21,23 @@ Jika Anda menyeret jari di atas model, maka itu akan memulai operasi pemahatan.
 Ya, Anda bisa meletakkan *dua* jari di layar - seolah ingin memulai gerakan pan/zoom - lalu lepaskan *satu* jari.
 :::
 
-### Fokus / Reset
+### Fokus / Reset {#focus}
 *Ketuk dua kali* pada model untuk memfokuskan titik yang dipilih.
 Jika Anda *ketuk dua kali* di latar belakang, kamera akan fokus pada mesh yang terpilih.
 
-### Translasi
+### Translasi {#translation}
 Dengan menggerakkan *dua* jari, Anda dapat menggeser (pan) kamera.
 
-### Zoom
+### Zoom {#zooming}
 Dengan menggunakan gerakan cubit (pinch) Anda dapat memperbesar/memperkecil.
 
-### Rolling
+### Putar gulung {#rolling}
 Anda dapat *memutar* (roll) tampilan dengan memutar *dua* jari.
 ::: warning
 Gestur ini hanya tersedia untuk mode rotasi `trackball`.
 :::
 
-### Kontrol desktop
+### Kontrol desktop {#desktop}
 
 Di desktop, tombol alt/opt digunakan untuk mengontrol kamera:
 
@@ -56,11 +56,11 @@ Dengan pengaturan tersebut, Anda dapat memanipulasi kamera hanya dengan pena:
 * rocker atas dan gerakan hover = memutar kamera
 * rocker bawah dan gerakan hover = pan
 
-## Kontrol kamera
+## Kontrol kamera {#camera-controls}
 
 ![](/images/camera_list.webp)
 
-### Views
+### Tampilan {#views}
 Anda dapat menyimpan titik pandang kamera dengan menggunakan `Add View`.
 Jika Anda mengklik nama view, maka kamera akan mengembalikan tampilan tersebut.
 
@@ -78,44 +78,44 @@ Ini bisa berguna jika Anda ingin berputar di antara tampilan referensi depan/kir
 | Edit Name   | ![](/icons/pencil.webp)      | Mengubah nama kamera                                                        |
 | Delete      | ![](/icons/trash.webp)       | Menghapus kamera                                                            |
 
-### ![](/icons/tool_view.webp) Add View
+### ![](/icons/tool_view.webp) Tambah Tampilan {#add}
 Membuat kamera baru berdasarkan tampilan saat ini.
 
-### ![](/icons/camera.webp) Icons
+### ![](/icons/camera.webp) Ikon {#icons-test}
 
 Mengaktifkan/nonaktifkan apakah ikon kamera terlihat di viewport. Jika sebuah kamera dipilih, ikonnya akan selalu terlihat.
 
-### Projection Type
+### Jenis Proyeksi {#projection}
 Anda dapat mengubah `Field of View` (FOV / panjang fokus) kamera Anda.
 Biasanya disarankan menggunakan FOV rendah untuk keperluan pemahatan, karena dapat membantu proporsi.  
 Anda juga dapat menggunakan mode `Orthographic`, yang kurang lebih mirip dengan FOV sama dengan 0.
 
-### First Person
+### Orang pertama {#fps}
 Mengaktifkan pengaturan pivot agar berada langsung pada kamera, bukan pada patung. Menyeret jari pada latar belakang akan menjaga posisi kamera tetap terkunci, tetapi mengubah rotasi, mirip dengan cara kerja gim orang pertama. Berguna saat memahat lingkungan daripada objek tunggal.
 
 ![](/images/camera_rotation_ortho_view.webp)
 
-### Rotation Type
+### Jenis Rotasi {#rotation-type}
 Secara bawaan kamera menggunakan mode rotasi `Turntable`.
 Artinya Anda hanya memiliki dua derajat kebebasan, ini lebih intuitif tetapi dalam beberapa kasus Anda menginginkan fleksibilitas lebih.  
 Anda dapat beralih ke `Trackball`, Anda akan dapat *memutar* (roll) tampilan dengan memutar *dua* jari pada viewport. Di desktop ada mode trackball alternatif yang mungkin lebih familier bagi beberapa pengguna.
 
-### Orthographic snap
+### Snap ortografis {#orthographic}
 
 Saat diaktifkan, jika Anda memiliki keyboard, menahan tombol shift saat memutar tampilan akan menjepret (snap) kamera ke tampilan depan/belakang/atas/bawah/kiri/kanan terdekat, dan membuat kamera menjadi ortografik. Kamera juga akan dibuat ortografik ketika kubus tampilan diklik untuk menjepret ke depan/belakang/kiri/kanan/atas/bawah.
 
-### Reset view
+### Reset tampilan {#reset}
 
 Memindahkan kamera ke depan, dan menyesuaikan skena agar pas di tampilan.
 
-### Snap view
+### Snap tampilan {#snap}
 Menjepret ke tampilan depan/belakang/kiri/kanan/atas/bawah terdekat. Jika Anda sudah berada di salah satu tampilan tersebut, mengklik lagi akan menjepret 180 derajat ke sisi yang berlawanan.
 
-### Speed
+### Kecepatan {#speed}
 
 Jika Anda merasa kamera bergerak terlalu lambat atau terlalu cepat, Anda dapat mengatur pengali kecepatan untuk `rotation`, `translation` dan `zooming`. Berguna jika patung Anda sangat besar atau sangat kecil.
 
-### Gambaran pivot
+### Ikhtisar pivot {#pivot}
 
 Saat Anda memutar kamera, Anda dapat melihat titik merah muda kecil, itulah titik pivot kamera Anda.  
 Sangat penting untuk memahami di mana pivot Anda agar Anda tidak tersesat atau merasa frustrasi dengan kamera.
@@ -125,7 +125,7 @@ Secara bawaan pivot diperbarui melalui operasi berikut:
 - ketuk dua kali pada latar belakang (pivot baru akan berada di tengah mesh Anda)
 - meletakkan *dua* jari di layar (pan/zoom/roll) akan memperbarui pivot ke tengah *dua* jari
 
-### Update Pivot...
+### Perbarui Pivot... {#update-pivot}
 
 Anda dapat menyesuaikan lebih lanjut agar pivot diperbarui dengan opsi berikut:
 
@@ -138,8 +138,8 @@ Anda dapat menyesuaikan lebih lanjut agar pivot diperbarui dengan opsi berikut:
 Jika Anda sudah terbiasa, Anda dapat menyembunyikan titik merah muda (petunjuk) jika Anda masuk ke menu [Settings](settings.md).
 :::
 
-### Double tap on object
+### Ketuk dua kali pada objek {#dtap-object}
 Saat `Focus` diaktifkan, ketuk dua kali akan memindahkan pivot ke objek yang diketuk.
 
-### Double tap on background
+### Ketuk dua kali pada latar belakang {#dtap-tap-background}
 Saat diaktifkan, mengatur pivot menjadi salah satu dari Selection, Scene, atau bergantian di antara keduanya.

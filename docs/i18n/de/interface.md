@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) Interface-Menü 
+# ![](/icons/interface.webp) Interfacemenü {#interface-menu}
 
 Dieses Menü steuert viele Optionen zur Anpassung der Nomad-Oberfläche. 
 
@@ -13,13 +13,13 @@ Nomad kann sehr tiefgehend angepasst werden, dieses Menü ist in 4 Bereiche aufg
 Diese Seite beschreibt das Interface-Menü, nicht die Oberfläche selbst! Die gesamte Oberfläche wird in [Erste Schritte](gettingstarted.md) beschrieben.
 :::
 
-## Interface 
+## Oberfläche {#interface}
 
 Im Interface-Bereich kannst du Shortcuts hinzufügen, schwebende Werkzeugleisten erstellen sowie Farbe, Größe und Erscheinungsbild der Nomad-Benutzeroberfläche steuern.
 
 ![](/images/interface_overview3.webp)
 
-### Shortcuts hinzufügen (unten)...
+### Verknüpfungen hinzufügen (unten)... {#add-shortcuts-bottom}
 ![](/images/interface_shortcuts.webp)
 
 In der unteren Werkzeugleiste sind standardmäßig diese Shortcuts aktiviert:
@@ -35,7 +35,7 @@ In der unteren Werkzeugleiste sind standardmäßig diese Shortcuts aktiviert:
 
 Weitere häufig verwendete Shortcuts sind in diesem Menü verfügbar, viele weitere findest du über die Schaltfläche „Bindings“.
 
-#### ![](/icons/more.webp) Bindings
+#### ![](/icons/more.webp) Belegungen {#bindings-list}
 
 Fast jede Funktion von Nomad kann über die Bindings-Schaltfläche zur Shortcut-Leiste hinzugefügt werden. Beim Klick auf die Schaltfläche wird ein Bindings-Menü angezeigt:
 
@@ -43,15 +43,15 @@ Fast jede Funktion von Nomad kann über die Bindings-Schaltfläche zur Shortcut-
 
 Du kannst über die Symbole oben nach Kategorien suchen oder das Suchfeld verwenden, um Funktionen nach Namen zu finden. Klicke auf eine Funktion, um sie zur Werkzeugleiste hinzuzufügen. Klicke erneut, um sie zu entfernen.
 
-#### ![](/icons/list.webp) Reihenfolge
+#### ![](/icons/list.webp) Reihenfolge {#order}
 
 Dies zeigt eine Liste der Shortcuts an. Lange drücken und dann ziehen, um die Shortcuts neu anzuordnen.
 
-#### ![](/icons/reset.webp) Zurücksetzen
+#### ![](/icons/reset.webp) Zurücksetzen {#reset}
 
 „Reset“ stellt die untere Werkzeugleiste auf ihre Standardeinstellungen zurück.
 
-### Shortcuts hinzufügen (Fenster)... +
+### Verknüpfungen hinzufügen (Fenster)... + {#add-shortcuts-window}
 ![](/images/interface_add_shortcuts_window.webp)
 
 Durch Klicken auf das + wird eine schwebende Werkzeugleiste hinzugefügt. Sie ist erst sichtbar, wenn du über die Bindings-Schaltfläche Shortcuts hinzufügst und sie dann sichtbar machst. 
@@ -66,43 +66,41 @@ Du kannst mehrere Werkzeugleisten erstellen, jede Werkzeugleiste hat in diesem M
 * ![](/icons/sort_down.webp) `Collapsable` – Einen Einklapp-Button in der oberen rechten Ecke ein-/ausblenden.
 * ![](/icons/trash.webp) `Delete` – Die Werkzeugleiste löschen.
 
-### Toolbox
+### Werkzeugleiste {#toolbox}
 
 Optionen für das Werkzeugmenü auf der rechten Seite der Nomad-Oberfläche.
 
 ![](/images/interface_toolbox.webp)
 
-#### ![](/icons/resize_bottom_right.webp) Ui Resize Corner
+#### ![](/icons/resize_bottom_right.webp) UI-Größenecke {#ui-resize-corner}
 
 Einen Größenänderungsgriff in der unteren Ecke der Werkzeugleiste ein-/ausblenden.
 
-#### Hidden
+#### Ausgeblendet {#hidden}
 Normalerweise schaltet das Toolbox-Symbol in der oberen Leiste zwischen einer langen einspaltigen oder einer mehrspaltigen Werkzeugliste um. Diese Option schaltet zwischen der mehrspaltigen Liste und „ausgeblendet“ um.
 
-#### Colored
+#### Farblich markiert {#colored}
 Farbcodierung der Symbole nach Kategorie, z. B. alle Masken-Tools braun, Split-Tools rot, Flatten-Tools grün usw.
 
-#### Rows: Auto (>1)
+#### Zeilen: Auto (>1) {#rows-auto-1}
 
-#### Rows: Auto (>1)
-
-#### Reset order
+#### Reihenfolge zurücksetzen {#reset-order}
 Setzt die Standardwerkzeuge in der Toolbox auf die Standardreihenfolge zurück. Benutzerdefinierte Symbole bleiben in der Toolbox am Ende der Liste erhalten.
 
 
-### Presets
+### Voreinstellungen {#presets}
 
 ![](/images/interface_presets.webp)
 
 Eine Sammlung von Farbpresets für die Oberfläche.
 
-#### High-contrast button
+#### Hochkontrast-Schaltfläche {#high-contrast-button}
 Ein alternativer Stil für Buttons, der sie bei aktiviertem Zustand besser sichtbar macht. Wenn auf Auto gesetzt, verwendet Nomad diesen Modus, wenn der UI-Farbkontrast zwischen aktiviert/deaktiviert gering ist.
 
-#### Color widget/Color base
+#### Farbwähler/Farbgrundlage {#color-widgetcolor-base}
 Die Hauptfarben, die in der Oberfläche verwendet werden.
 
-#### Transparent panel, Color panel, Blur strength
+#### Transparentes Panel, Farbpanel, Unschärfestärke {#transparent-panel-color-panel-blur-strength}
 ![](/images/interface_transparent.webp)
 Wenn aktiviert, erscheinen zusätzliche Optionen zur Steuerung des Aussehens von Menüs und Panels in Nomad. Deren Farbe, Transparenz und Unschärfegrad können angepasst werden.
 
@@ -112,55 +110,55 @@ Auf kleinen Geräten kann es hilfreich sein, das Farbpanel fast weiß, transpare
 
 ----
 
-### Mirror top bar
+### Obere Leiste spiegeln {#mirror-top-bar}
 Die Reihenfolge der Menüs in der oberen Leiste umkehren.
 
-### Mirror side bars
+### Seitenleisten spiegeln {#mirror-side-bars}
 Die Seitenleisten vertauschen, sodass die Toolbox links und die Werkzeugoptionen rechts sind.
 
-### Mirror bottom bar
+### Untere Leiste spiegeln {#mirror-bottom-bar}
 Die untere Leiste in die untere rechte Ecke verschieben und die Button-Reihenfolge umkehren.
 
-### Material color preview
+### Materialfarb-Vorschau {#material-color-preview}
 Wenn du eine Farbe für ein Material auswählst, wird eine Vorschau dieses Materials auf dem aktuell ausgewählten Objekt angezeigt.
 
 ----
-### Help popup on hover
+### Hilfe-Popup bei Hover {#help-popup-on-hover}
 
 Für Geräte, die Hover unterstützen: Legt fest, ob die kontextbezogene Hilfe in Nomad, dargestellt durch das ![](/icons/help.webp)-Symbol, beim Hover oder nur beim Klicken erscheint.
 
 ----
 
-### Overall scale
+### Gesamtskalierung {#overall-scale}
 Ein Größenmultiplikator für alle UI-Elemente.
-### Panel width
+### Panelbreite {#panel-width}
 Die Breite der Menüs und Panels.
-### Font scale
+### Schriftgröße {#font-scale}
 Skalierung der Schriftarten.
-### Vertical spacing
+### Vertikaler Abstand {#vertical-spacing}
 Der Abstand zwischen Elementen in Menüs und Panels.
-### Vertical spacing (left)
+### Vertikaler Abstand (links) {#vertical-spacing-left}
 Der Abstand zwischen Elementen in der linken Werkzeugleiste.
 
 ----
 
-### Edge offset
+### Randabstand {#edge-offset}
 Du solltest diese Werte nur ändern, wenn du Probleme bei der Interaktion mit Buttons an den Bildschirmrändern hast. Wenn diese Slider deaktiviert sind, verwendet Nomad die vom Gerät selbst zurückgegebenen Safe-Area-Werte.
 
 ::: tip
 Wenn du Nomad auf ein neues Gerät überträgst (z. B. Austausch eines iPhone 12 durch ein iPhone 15), setze die Randoptionen unbedingt auf die Standardwerte zurück!
 :::
 
-### Reset style
+### Stil zurücksetzen {#reset-style}
 Setzt alle UI-Elemente auf ihre Standardwerte zurück.
 
 
-## Gesture
+## Gesten {#gesture}
 Das Gesture-Menü steuert, wie Stift- und Finger-Eingaben Nomad steuern.
 
 ![](/images/interface_gesture.webp)
 
-### Gesture options
+### Gestenoptionen {#gesture-options}
 ![](/images/interface_gesture_matrix.webp)
 
 Nomad kann Aktionen basierend auf dem Eingabegerät einschränken. Beispielsweise kann ein Finger-Drag nur die Kamera bewegen, während ein Stift-Drag nur skulptiert. Wenn du eine Maus oder ein Trackpad hast, können diese ebenfalls bestimmten Aktionen zugewiesen werden.
@@ -176,7 +174,7 @@ Nomad erlaubt es derzeit, diese Modi für beliebige Kombinationen aus Finger-, S
 
 `Finger always smooths` – Smooth kann so eingestellt werden, dass es nur bei Finger-Drags funktioniert.
 
-### ![](/icons/tool_mask.webp) Mask
+### ![](/icons/tool_mask.webp) Maske {#mask}
 
 ![](/images/interface_gesture_mask.webp)
 
@@ -185,19 +183,19 @@ Nomad erlaubt es derzeit, diese Modi für beliebige Kombinationen aus Finger-, S
 * Tipp auf einen maskierten Bereich, um die Maske zu verwischen
 * Tipp auf einen unmaskierten Bereich, um die Maske zu schärfen
 
-### Toggle Mask <-> SelMask
+### Maske <-> SelMask umschalten {#toggle-mask-selmask}
 ![](/images/interface_gesture_togglemask.webp)
 * `Stroke` – Langes Drücken schaltet zwischen Mask und SelMask um und startet einen neuen Strich. Am Ende des Strichs wird das vorherige Tool wieder ausgewählt. 
 * `Tool` – Langes Drücken und Loslassen ohne Bewegung, um zwischen Mask und SelMask zu wechseln. 
 
-### ![](/icons/tool_hide.webp) Hide
+### ![](/icons/tool_hide.webp) Verbergen {#hide}
 ![](/images/interface_gesture_hide.webp)
 
 `One tap shortcuts` aktiviert die folgenden Shortcuts mit dem Hide-Tool:
 * Tipp auf eine Face Group, um sie zu verstecken
 * Tipp in den leeren Raum, um die versteckten Polygone zu invertieren
 
-### ![](/icons/finger3.webp) Three fingers
+### ![](/icons/finger3.webp) Drei Finger {#three-fingers}
 ![](/images/interface_gesture_threefingers.webp)
 
 Wenn dein Gerät 3-Finger-Gesten unterstützt, kannst du hier Shortcuts für diese Geste konfigurieren. 
@@ -208,28 +206,28 @@ Die Optionsmatrix erlaubt es, vertikale und horizontale Drags als separate Short
 * `Tool Radius` – Bearbeitet den Werkzeugradius.
 * `Tool Intensity` – Bearbeitet die Werkzeugintensität. 
 
-### ![](/icons/fingerprint.webp) History 2/3
+### ![](/icons/fingerprint.webp) Verlauf 2/3 {#history-23}
 `History shortcuts` – wenn aktiviert, sind folgende Gesten aktiv:
 * Undo – Tipp mit 2 Fingern
 * Redo – Tipp mit 3 Fingern
 
 `Long press` – wenn aktiviert, führt das Halten von 2/3 Fingern ein schnelles Undo/Redo aus.
 
-### Accessibility 
+### Barrierefreiheit {#accessibility}
 
 ![](/images/interface_gesture_accessibility.webp)
 
 `Assistive window` blendet eine schwebende Werkzeugleiste ein, um Drag-, Pinch-, Roll- und Kameraaktionen zu steuern.
 
-### Camera
+### Kamera {#camera}
 Ein Shortcut zum `Camera`-Menü (Kameraoptionen befanden sich früher hier, wurden aber ins Kamera-Menü verschoben).
 
-### Pencil double tap -> Bindings 
+### Pencil-Doppeltipp -> Belegungen {#pencil-tap}
 
 Ein Shortcut zum `Bindings`-Menü (Pencil-Tap- und Doppeltipp-Optionen befanden sich früher hier, wurden aber ins Bindings-Menü verschoben).
 
 
-## Bindings
+## Belegungen {#bindings}
 Tastatur- und Button-Shortcuts können im Bindings-Menü definiert werden:
 
 ![](/images/interface_bindings.webp)
@@ -241,7 +239,7 @@ Finde Funktionen über die Kategoriesymbole oben oder über die Suchleiste nach 
 
 Einzelne Bindings können über das Kontrollkästchen neben dem Binding-Namen deaktiviert werden.
 
-### ![](/icons/more.webp) Kontextmenü
+### ![](/icons/more.webp) Kontextmenü {#context-menu}
 Das ![](/icons/more.webp)-Symbol hinter jedem Binding öffnet ein Kontextmenü:
 
 ![](/images/interface_bindings_context.webp)
@@ -251,7 +249,7 @@ Das ![](/icons/more.webp)-Symbol hinter jedem Binding öffnet ein Kontextmenü:
 * `Delete` – Binding löschen
 * `Toggle shortcut on key tap` – Konfigurieren, ob Tipp vs. langes Drücken unterschiedlich behandelt werden. Wenn aktiviert, schaltet ein Tipp das Tool ein. Ein langes Drücken aktiviert das Tool nur, solange die Taste gedrückt wird; beim Loslassen wird zum vorherigen Tool zurückgekehrt. In anderen 3D-Apps oft „Sticky Keys“ genannt.
 
-### Advanced
+### Erweitert {#advanced}
 Am unteren Rand des Bindings-Menüs befindet sich ein Zahnradmenü für erweiterte Optionen:
 
 ![](/images/interface_bindings_advanced.webp)
@@ -262,7 +260,7 @@ Am unteren Rand des Bindings-Menüs befindet sich ein Zahnradmenü für erweiter
 * `Reset bindings` – Setzt alle Bindings auf ihre Standardwerte zurück.
 
 
-## iOS ⌘ Tastaturkürzel-Anzeige
+## iOS ⌘ Tastaturkürzel-Anzeige {#ios-keyboard-shortcuts-display}
 
 Auf iOS-Geräten mit Tastatur kannst du die ⌘-Taste (cmd) gedrückt halten, um eine Liste der Shortcuts anzuzeigen.
 
@@ -271,29 +269,29 @@ Android-Tastaturunterstützung ist noch etwas experimentell.
 ![](/images/shortcuts.webp)
 
 
-## Debug
+## Debug {#debug}
 Einige experimentelle und Debug-Optionen sind in diesem Menü untergebracht. Viele dieser Optionen sollten auf ihren Standardwerten belassen und nur nach Rücksprache mit dem Nomad-Support geändert werden.
 
 ![](/images/interface_debug.webp)
-### UV
+### UV {#uv}
 * `Normalize Uvs` – Nomad normalisiert die UVs innerhalb des [0-1]-Tiles.
 
-### Quad Remesh
+### Quad Remesh {#quad-remesh}
 * `Instant Mesh` – Aktiviert den Instant-Remesh-Algorithmus
 * `Quadriflow` – Eine alternative Quad-Remesh-Methode.
 
-### Render
+### Rendern {#render}
 * `Heightmap` – Ändert den Viewport, um die Tiefe der Szene zu rendern. Dies kann verwendet werden, um Alphamaps für Brushes zu erstellen.
 * `Refraction write depth (back)` – Die Rückseite von Refraktionsmeshes wird in den Depth-Buffer geschrieben.
 * `Flip Y (normal map)` – Invertiert den Y-Kanal beim Backen von Normalmaps, erforderlich für bestimmte Game- und Render-Engines.
 * `Angle weighted smooth normals` – Eine Anpassung der Glättung, die in bestimmten Fällen Falten vermeiden kann.
 
-### Target FPS
+### Ziel-FPS {#target-fps}
 Wenn deaktiviert, synchronisiert Nomad seine Frames pro Sekunde mit der Bildwiederholrate deines Displays.
 
 Wenn aktiviert, kannst du die Bildrate einstellen, mit der Nomad rendert.
 
-### Interface
+### Oberfläche {#debug-interface}
 * `Top: layout` 
   * Collapse: Auf kleinen Geräten wird die obere Leiste in weitere Untermenüs eingeklappt. 
   * Scroll: Wenn du Nomad auf großen Displays gewohnt bist und das normale Layout bevorzugst, verwendet diese Option die Standard-Topbar in voller Breite, die scrollbar ist.
@@ -305,7 +303,7 @@ Wenn aktiviert, kannst du die Bildrate einstellen, mit der Nomad rendert.
 * `Panel: Blending` – Debug-Option
 * `Pointer: hovering dot` – Für Geräte mit Stift-Hover-Unterstützung wird ein Punkt angezeigt, wenn der Stift über Menüs und Panels schwebt.
 
-### Gif turntable
+### GIF-Turntable {#gif-turntable}
 Nomad kann ein animiertes GIF-Turntable exportieren. Beachte, dass die Qualität aufgrund von Einschränkungen des GIF-Formats gering ist. Bildschirmaufnahmen sind in der Regel die bessere Methode.
 
 * `Duration` – Wie lange das Turntable in Sekunden dauert
@@ -314,21 +312,21 @@ Nomad kann ein animiertes GIF-Turntable exportieren. Beachte, dass die Qualität
 * `Max frame sampling` – Viele von Nomads hochwertigen Rendereffekten entstehen durch das Kombinieren mehrerer Frames. Dieser Slider legt fest, wie viele Frames kombiniert werden.
 * `Export (GIF)` – Startet den GIF-Export.
 
-### Post Process
+### Nachbearbeitung {#post-process}
 * `Filtering` – Debug-Option
 * `Format` – Debug-Option
 * `Buffer reuse` – Debug-Option
 
-### Performance
+### Leistung {#performance}
 * `Multicore general` – Debug-Option
 * `Multicore sculpting` – Debug-Option
 * `Partial Drawing` – Experimentelles Feature! Verwende es, wenn du nur einen relativ kleinen Bereich eines High-Poly-Meshes skulptierst. Es sollte das Sculpting flüssiger machen, du solltest aber kein Wireframe aktivieren! Außerdem kann es während Pinselstrichen zu visuellen Artefakten kommen.
 
-### Feature
+### Funktion {#feature}
 * `Flip quad split (on tap)` – Debug-Option
 * `Join: merge radius` – Vertices werden beim Zusammenführen von Meshes automatisch verschweißt, wenn sie nah genug beieinander liegen. Du kannst den Radius mit diesem Slider anpassen.
 
-### Debug
+### Debug {#dev}
 * `Logs` – Öffnet ein Log-Fenster
 * `App review popup` – Debug-Option
 * `FPS` – Fügt den Viewport-Statistiken einen FPS-Zähler hinzu.

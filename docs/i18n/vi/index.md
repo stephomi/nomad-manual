@@ -1,4 +1,4 @@
-# Tổng quan
+# Tổng quan {#overview}
 
 <!-- 
 [[toc]]
@@ -13,7 +13,7 @@
 :::
 
 
-## Mục lục
+## Mục lục {#table-of-contents}
 
 | Menu                           | Icon                          | Description                                              |
 | :----------------------------: | :---------------------------: | :------------------------------------------------------: |
@@ -37,7 +37,7 @@
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Câu hỏi thường gặp                                       |
 | [Tips](tips.md)                | ![](/icons/manual.webp)      | Mẹo quy trình làm việc                                   |
 
-## Tài nguyên cộng đồng
+## Tài nguyên cộng đồng {#community-resources}
 
 <style>
 .video-grid {

@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) Latar Belakang
+# ![](/icons/image.webp) Latar Belakang {#background}
 
 Menu ini mengawal warna latar belakang Nomad, serta sebarang imej rujukan yang akan digunakan.
 
 ![](/images/background_overview.webp)
 
-## Latar Belakang 
+## Latar Belakang {#type}
 ![](/images/background_selector.webp)
 
 Terdapat tiga pilihan untuk latar belakang viewport.
@@ -13,14 +13,14 @@ Terdapat tiga pilihan untuk latar belakang viewport.
 * `Color` - Warna rata yang boleh anda pilih
 * `Gradient` - Leraian warna daripada atas ke bawah. Gelangsar Factor membolehkan anda menentukan titik tengah gradien.  
 
-## Imej Rujukan
+## Imej Rujukan {#reference}
 
 ![](/images/background_reference.webp)
 
 Anda boleh menambah imej pilihan anda pada latar belakang untuk digunakan sebagai rujukan.
 Anda boleh menukar kedudukan dan skala, contohnya jika anda mahu mengalihkannya ke bucu skrin.
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) Ubah {#transform}
 
 Butang ini membolehkan anda meletakkan imej rujukan secara interaktif. Gunakan 2 jari untuk menggeser, menskala, dan memutar imej rujukan ke tempatnya. Kedudukan akhir akan ditunjukkan dalam gelangsar di bawah:
 

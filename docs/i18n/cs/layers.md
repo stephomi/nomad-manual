@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) Vrstvy 
+# ![](/icons/layer.webp) Vrstvy {#layers}
 
 Tato nabídka obsahuje zásobník vrstev – způsob, jak ne‑destruktivně ukládat úpravy objektu – a mnoho možností, jak vrstvy kombinovat a znovu využívat.
 
 ![](/images/layers_overview.webp) 
 
-## Přehled
+## Přehled {#overview}
 
 Vrstvy v Nomadu slouží k více účelům.
 
@@ -19,7 +19,7 @@ Vrstvy lze částečně mazat pomocí nástroje [Delete Layer](tools.md#delete-l
 ![](/videos/layer.mp4)
 
 ::: tip
-Na rozdíl od většiny sochařského softwaru změna topologie meshe vrstvy neodstraní. Můžete použít [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multiresolution) nebo nástroje [Trim](tools.md#trim)/[Split](tools.md#split), ale pamatujte, že při použití [Voxel Remesher](topology.md#voxel-remesher) bude kvalita vrstvy ovlivněna.
+Na rozdíl od většiny sochařského softwaru změna topologie meshe vrstvy neodstraní. Můžete použít [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multires) nebo nástroje [Trim](tools.md#trim)/[Split](tools.md#split), ale pamatujte, že při použití [Voxel Remesher](topology.md#voxel-remesher) bude kvalita vrstvy ovlivněna.
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ Pokud používáte vrstvy jako blendshapes/morph targets, je v [nabídce scény]
 :::
 ----
 
-## Nabídka vrstev 
+## Nabídka vrstev {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Stisknutím `Add layer` vytvoříte novou vrstvu.
 
 Každá vrstva má název, posuvník pro ovládání její síly/faktoru a tlačítka voleb.
 
-### Možnosti
+### Možnosti {#options}
 
 | Akce        | Ikona                        | Popis                                               |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Každá vrstva má název, posuvník pro ovládání její síly/faktoru a tlač
 
 Pro přesunutí vrstvy na jiné místo v zásobníku vrstev podržte prst na jejím názvu a přetáhněte ji.
 
-### More...
+### Více… {#more}
 
 Tlačítko „More...” zobrazí další možnosti pro aktuální vrstvu:
 
 ![](/images/layers_more.webp) 
 
-#### Faktory kanálů
+#### Faktory kanálu {#channel-factors}
 
 Tato nastavení umožňují škálovat množství sochání/barvy/drsnosti/kovovosti/krytí pro danou vrstvu. Tyto hodnoty se násobí proti posuvníku faktoru vrstvy, takže například pokud je síla vrstvy 1, ale faktor kanálu barvy je 0,5, pak bude barva zobrazena s poloviční silou 0,5.
 
@@ -82,17 +82,17 @@ Možná v budoucnu bude mít každý kanál svůj vlastní alfa kanál, aby se t
 :::
 
 
-#### ![](/icons/tool_mask.webp) Mask
+#### ![](/icons/tool_mask.webp) Maska {#mask}
 Tlačítko masky vedle každého posuvníku vytvoří masku z daného kanálu. Podobně jako používání vrstev k vytváření výběrů v malovacích aplikacích vám to umožní znovu použít práci provedenou ve vrstvě pro jiné operace.
 
-#### ![](/icons/preview.webp) Preview
+#### ![](/icons/preview.webp) Náhled {#preview}
 ![](/images/layers_preview.webp) 
 
 Po zapnutí zobrazí náhled nastavení extrakce pro tuto vrstvu (viz další sekce).
 
 Když je zapnutý rentgen (xray), bude plný pouze extrahovaný tvar, zbytek tvaru bude průhledný, což je užitečné, pokud používáte záporné výšky extrakce.
 
-#### Extract
+#### Extrahovat {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ Tlačítko `Extract` duplikuje obsah vrstvy do nového objektu, obvykle s uživa
 * Shell – Uzavřít extrahovaný tvar s použitím hodnoty tloušťky a voleb směru.
 * Layer – Extrahovat rozdíl vrstvy.
 
-#### ![](/icons/height.webp) Thickness
+#### ![](/icons/height.webp) Tloušťka {#thickness}
 ![](/images/layers_thickness.webp) 
 
 Hloubka skořepinové extruze. Kladné hodnoty rostou ven z povrchu, záporné hodnoty rostou do povrchu.
@@ -116,12 +116,12 @@ Plus/mínus vedle této hodnoty nastavuje směr extruze:
 * Plus ( + ) začne od aktuálního povrchu a extruduje nahoru.
 * PlusMinus ( ± ) odtlačí horní i spodní část extruze o stejnou hodnotu, takže bude napůl zapuštěná v původním povrchu.
 
-#### Smoothness
+#### Hladkost {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 Pokud jsou okraje oblasti, která má být extrahována, zubaté, tento posuvník se pokusí okraj rozmazat do hladšího tvaru. 
 
-#### ![](/icons/height.webp) Edge loop (side)
+#### ![](/icons/height.webp) Smyčka hrany (bok) {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 Tato sekce je viditelná, když je closing action nastaveno na „Shell”. 
@@ -132,10 +132,10 @@ Pokud je vypnuto, posuvník `Division` nastaví počet dělení na bocích.
 
 _Toto je konec podnabídky „More...“._
 
-### Advanced
+### Pokročilé {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Keep top layers details
+#### Zachovat detaily horních vrstev {#keep-top-layers-details}
 
 Zajistí, aby malé detaily na vyšších vrstvách zůstaly viditelné, když se na nižších vrstvách provádějí velké změny.
 
@@ -144,13 +144,13 @@ Ve výchozím nastavení, pokud na vrstvě vymodelujete malé vrásky a poté pr
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expand list
+#### UI: Rozbalit seznam {#ui-expand-list}
 
 Výchozí nabídka vrstev umožňuje přepínat viditelnost vrstev a jejich krytí. Zapnutím této volby se rozbalí úplné ovládací prvky pro každou vrstvu.
 
 ![](/images/layers_expand.webp)
 
-#### Sync transform
+#### Synchronizovat transformaci {#sync-transform}
 
 Pokud je zapnuto, všechny nevybrané vrstvy budou upraveny v závislosti na transformaci – rotaci, měřítku, zkosení. 
 

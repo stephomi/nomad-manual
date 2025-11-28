@@ -1,4 +1,4 @@
-# Přehled
+# Přehled {#overview}
 
 <!-- 
 [[toc]]
@@ -13,7 +13,7 @@ Přečtěte si průvodce [Začínáme](gettingstarted.md).
 :::
 
 
-## Obsah
+## Obsah {#table-of-contents}
 
 | Menu                           | Ikona                         | Popis                                               |
 | :----------------------------: | :---------------------------: | :------------------------------------------------: |
@@ -37,7 +37,7 @@ Přečtěte si průvodce [Začínáme](gettingstarted.md).
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Často kladené otázky                               |
 | [Tipy](tips.md)                | ![](/icons/manual.webp)      | Tipy pro workflow                                  |
 
-## Komunitní zdroje
+## Komunitní zdroje {#community-resources}
 
 <style>
 .video-grid {

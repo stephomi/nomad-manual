@@ -1,31 +1,31 @@
-# ![](/icons/cog.webp) Einstellungen 
+# ![](/icons/cog.webp) Einstellungen {#reset-to-default}
 
 Das Einstellungsmenü enthält viele Optionen zur Steuerung des Erscheinungsbilds und des Verhaltens von Nomad.
 
 ![](/images/settings_overview.webp)
 
-## Anzeigeeinstellungen
+## Anzeigeeinstellungen {#display-settings}
 Dieser Abschnitt enthält Schnellzugriffe für die meisten Einstellungen weiter unten in diesem Menü.
 
 ![](/images/settings_display_settings.webp)
 
-### Glatte Schattierung 
+### Glatte Schattierung {#smooth-shading}
 Zwischen glatter und facettierter Schattierung umschalten. Bei facettierter Schattierung werden die Polygone unabhängig voneinander schattiert, sodass du die zugrunde liegende Topologie sehen kannst.
 Es kann nützlich sein, während der Sculpting-Phase die facettierte Schattierung zu verwenden und dann für das Rendering auf glatte Schattierung zu wechseln.
 
 Das Deaktivieren der glatten Schattierung verbessert die Leistung ein wenig.
 
-### Kontur
+### Kontur {#outline-quick}
 Eine Kontur um deine aktuelle Auswahl ein- oder ausschalten.
 
 Dies ist nützlich, um visuelles Feedback zu deiner aktuell ausgewählten Mesh(es) zu erhalten, falls [Nicht ausgewählte abdunkeln](#darken-unselected-objects) deaktiviert ist.
 
 Aus Leistungssicht ist die Verwendung von [Nicht ausgewählte abdunkeln](#darken-unselected-objects) deutlich besser als die Kontur-Lösung.
 
-### Gitter
+### Gitter {#grid-quick}
 Ein Hintergrundgitter ein- oder ausschalten, nützlich zum Verständnis von Objektplatzierung und Maßstab.
 
-### Zweiseitig
+### Zweiseitig {#two-sided-quick}
 Zweiseitige Polygonanzeige ein- oder ausschalten. Alle Flächen zeigen in eine bestimmte Richtung.
 Flächen, die als *Rückseite* gelten, sind diejenigen, die „von“ der Kameraposition „weg“ zeigen.
 
@@ -37,151 +37,151 @@ Meistens solltest du die Rückseite von Flächen nicht sehen, daher kann das Ein
 Das Deaktivieren des `zweiseitigen` Renderings kann die Renderleistung etwas verbessern.
 
 
-### Drahtgitter
+### Drahtgitter {#wireframe-quick}
 Ein Drahtgitter-Overlay ein- oder ausschalten. 
 
 Beachte, dass das Aktivieren des Drahtgitters die Leistung verringert.
 
-### Snap-Würfel
+### Snap-Würfel {#snap-cube-quick}
 Ein Hilfssymbol in der Ecke der Szene ein- oder ausschalten, nützlich zur Orientierung im Raum und zum schnellen Wechsel zwischen Vorder-/Rück-/Links-/Rechts-/Oben-/Unten-Ansichten.
 
-### Malen anzeigen
+### Malerei anzeigen {#show-painting}
 Die Farbdarstellung ein- oder ausschalten. Die standardmäßig verwendete Farbe ist ein weißes, nichtmetallisches Material mit 25 % Rauheit.
 
-### Verbergen verwenden
+### Verbergen verwenden {#use-hide}
 Den Verbergen-Modus ein- oder ausschalten. Wenn er ausgeschaltet ist, ist er weiterhin vorhanden, nur deaktiviert. Diese Schaltfläche ist deaktiviert, wenn du aktuell das Verbergen-Werkzeug verwendest.
 
-### Maske anzeigen
+### Maske anzeigen {#show-mask}
 Den Maskenmodus ein- oder ausschalten. Wenn er ausgeschaltet ist, ist er weiterhin vorhanden, nur deaktiviert. Drücke diese Schaltfläche erneut, um ihn wieder zu aktivieren.
 
 Wenn du die Maske ausblenden UND trotzdem aktiv haben möchtest, verwende die Maskenfarbe unten und setze sie auf Weiß. Denk daran, sie wieder auf ein Grau zu stellen, wenn du fertig bist!
 
 Beachte, dass diese Schaltfläche deaktiviert ist, wenn du aktuell ein Maskenwerkzeug verwendest. 
 
-### Maske -> Deckend
+### Maske -> Deckend {#mask-opaque}
 Maske -> deckend ignoriert transparente Vertices für maskierte Masken. Dies ist nur für Vertex- und Textur-Deckkraft relevant, durch „Verbergen“ ausgeblendete Flächen bleiben weiterhin verborgen.
 
-### Hervorhebung
+### Hervorheben {#highlight-quick}
 Das Aufblitzen der Auswahlhervorhebung ein- oder ausschalten. Beim Auswählen von Objekten wird das ausgewählte Objekt für 500 Millisekunden kurz in kräftigem Pink aufblitzen. Farbe und Dauer des Aufblitzens können unten angepasst werden.
 
-### Statistiken
+### Statistiken {#stats-quick}
 Die Statusanzeige im 3D-Viewport ein- oder ausschalten. Sie zeigt Informationen über deinen Systemspeicher, die Gesamtanzahl der Vertices in der Szene und die Vertexanzahl der aktuellen Auswahl an.
 
 ----- 
 
-### Nicht ausgewählte Objekte abdunkeln
+### Nicht ausgewählte Objekte abdunkeln {#darken-unselected-objects}
 Objekte, die nicht ausgewählt sind, werden abgedunkelt, sodass die aktuelle Auswahl hervorsticht.
 
-### Maske
+### Maske {#mask}
 Die für Maskierung verwendete Farbe, standardmäßig ein mittleres Grau, das mit deiner Objektfarbe multipliziert wird. Setze dies auf Weiß, um die Maske unsichtbar zu machen, aber denk daran, sie wieder auf ein Grau zu stellen, wenn du fertig bist!
 
-## ![](/icons/cursor.webp) Cursor
+## ![](/icons/cursor.webp) Cursor {#cursor}
 
-### Kreis beim Sculpten anzeigen
+### Kreis beim Sculpten anzeigen {#show-circle-while-sculpting}
 Den Pinselradius während des Sculptens weiterhin anzeigen.
 
-### Kleinen Punkt anzeigen
+### Kleinen Punkt anzeigen {#show-small-dot}
 Einen Punkt im Zentrum des Pinselstrichs während des Sculptens oder wenn der Kamerapivot geändert wird anzeigen.
 
-### Seil-Stabilisator anzeigen
+### Seilstabilisator anzeigen {#show-rope-stabilizer}
 Eine Linie zeichnen, um die Seillänge anzuzeigen, wenn der Lazy-Rope-Stabilisator in den Stricheinstellungen aktiv ist.
 
-## ![](/icons/cursor.webp) Indikator
+## ![](/icons/cursor.webp) Indikator {#indicator}
 ![](/images/settings_indicator.webp)
 
 Visuelle Indikator(en) für Tutorials und Bildschirmaufnahmen anzeigen.
 
 Die Schaltflächen `Finger`, `Stift` und `Maus` aktivieren die Anzeige eines Symbols, wenn diese Art von Eingabe erkannt wird.
 
-### Farbe
+### Farbe {#indicator-color}
 Die Farbe des Indikators.
 
-### Größe/Icon/Kreis
+### Größe/Icon/Kreis {#indicator-shape}
 Steuerelemente zur Anpassung der Größe des Indikators und der Formen innerhalb des Indikators.
 
-## ![](/icons/wireframe.webp) Drahtgitter
+## ![](/icons/wireframe.webp) Drahtgitter {#wireframe}
 ![](/images/settings_wireframe.webp)
 Das Drahtgitter-Overlay aktivieren.
 
-### Ziel
+### Ziel {#target}
 Festlegen, ob nicht ausgewählte Objekte ein Drahtgitter anzeigen, oder nur ausgewählte Objekte, oder alle Objekte.
 
-### Verbergen
+### Verbergen {#hide}
 Festlegen, ob das Drahtgitter auch für verborgene Polygone angezeigt wird.
 
-### Multiresolution: Nur Level 0
+### Multiresolution: Nur Stufe 0 {#multiresolution-level-0-only}
 Multiresolution zeigt Drahtgitter für Level 0 dunkler und höhere Level schrittweise heller an. Wenn aktiviert, zeigt diese Option nur das Drahtgitter von Level 0 an.
 
-### Farbe
+### Farbe {#wireframe-color}
 Farbe und Deckkraft für das Drahtgitter festlegen.
 
-## ![](/icons/grid.webp) Gitter
+## ![](/icons/grid.webp) Gitter {#grid}
 ![](/images/settings_grid.webp)
 Das Gitter aktivieren.
 
-### Farbe
+### Farbe {#grid-color}
 Gitterfarbe und Deckkraft festlegen.
 
-### Einrasten
+### Einrasten {#snap}
 Einrasten für kurvenbasierte Werkzeuge am Gitter aktivieren.
 
-## ![](/icons/culling.webp)Two sided
+## ![](/icons/culling.webp)Zweiseitig {#two-sided}
 Das Anzeigen von Polygonflächen von beiden Seiten aktivieren.
 
-### Rückseite einfärben, Rückseitenfarbe
+### Rückseitenfarbe, Rückseitenfarbe {#backface-color}
 Einfärben der Rückseiten aktivieren und die Einfärbefarbe festlegen.
 
-## ![](/icons/outline.webp)Outline
+## ![](/icons/outline.webp)Kontur {#outline}
 Eine Kontur um das aktive Objekt aktivieren.
 
-### Konturfarbe, Dicke
+### Konturfarbe, Dicke {#outline-color-thickness}
 Farbe und Dicke der Kontur festlegen.
 
 
-## ![](/icons/bang.webp) Hervorhebung
+## ![](/icons/bang.webp) Hervorheben {#highlight}
 Ein kurzes Aufblitzen aktivieren, wenn das aktive Objekt geändert wird.
-### Farbe, Dauer
+### Farbe, Dauer {#color-duration}
 Farbe und Dauer des Aufblitzens in Millisekunden festlegen.
 
-## ![](/icons/snap_cube.webp) Snap-Würfel
+## ![](/icons/snap_cube.webp) Snap-Würfel {#snap-cube}
 ![](/images/settings_snapcube.webp)
 
 Ein Hilfssymbol in der Ecke der Szene anzeigen, nützlich zum schnellen Wechsel zwischen Vorder-/Rück-/Links-/Rechts-/Oben-/Unten-Ansichten. Tippe auf die Seiten des Würfels, um zwischen orthografischen Ansichten zu wechseln.
 
-### Form
+### Form {#shape}
 Zwischen einem Würfel, einer Kugel oder einer Gnomon-Form für den Snap-Würfel wählen.
 
-### Ausrichtung beschränken
+### Ausrichtung beschränken {#restrict-alignment}
 Sperren der Kamerarotation beim Ziehen am Snap-Würfel aktivieren. Wenn aktiv, wird eine Ziehbewegung am Snap-Würfel nur nach links/rechts oder oben/unten ausgeführt.
 
-### Größe
+### Größe {#size}
 Die Größe des Snap-Würfels festlegen.
 
-### 180° drehen
+### 180° drehen {#flip-180}
 Ein Tippverhalten aktivieren, sodass bei eingerasteter Ansicht ein Tippen auf die Mitte des Würfels die Ansicht um 180 Grad dreht. Wenn zum Beispiel die Ansicht auf „Vorne“ eingerastet ist, dreht ein Tippen auf den Würfel zur Rückansicht.
 
-### Position
+### Position {#snap-position}
 Festlegen, in welcher Ecke sich der Snap-Würfel befindet.
 
 
-## ![](/icons/edit_radius_n.webp) Statistiken
+## ![](/icons/edit_radius_n.webp) Statistiken {#stats}
 ![](/images/settings_stats.webp)
 
 Informationen über deinen Systemspeicher, die Gesamtanzahl der Vertices in der Szene und die Vertexanzahl der aktuellen Auswahl anzeigen.
 
-### Position
+### Position {#stats-position}
 Festlegen, in welcher Ecke die Statistiken angezeigt werden.
 
-## Primitive/Wiederholer
-## Numerische Eingabe
+## Primitive/Wiederholer {#primitive-repeaters}
+## Numerische Eingabe {#gizmo-input}
 Numerische Eingabe beim Tippen auf die Gizmo-Widgets erlauben.
 
-## Multiresolution
-### Maximale Vertexanzahl
+## Multiresolution {#multires}
+### Maximale Anzahl Scheitelpunkte {#multires-lowres-count}
 Einen Schwellenwert festlegen, um eine Multires-Subdivide-Operation oberhalb dieser Polygonanzahl zu verhindern, da dies Nomad wahrscheinlich zum Absturz bringen würde. Der Standardwert ist 10 Millionen.
-### Niedrigauflösungs-Schwellenwert
+### Niedrigauflösungs-Schwellenwert {#multires-lowres-threshold}
 Eine niedrigere Auflösung des Meshes kann angezeigt werden, wenn du die Kamera bewegst. Du kannst diesen Wert erhöhen, wenn du eine höhere Auflösung des Meshes anzeigen möchtest.
 
-## Einstellungen
-### Auf Standard zurücksetzen
+## Einstellungen {#advanced}
+### Auf Standard zurücksetzen {#reset}
 Alle Einstellungen auf ihre Standardwerte zurücksetzen.

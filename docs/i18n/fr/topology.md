@@ -1,4 +1,4 @@
-# ![](/icons/multires.webp) Topologie 
+# ![](/icons/multires.webp) Topologie {#topology}
 
 Ce menu contrôle la topologie des objets dans Nomad, ainsi que les outils pour cuire (baker) et transférer les détails entre objets, et entre textures.
 
@@ -26,7 +26,7 @@ Le menu de topologie de Nomad comporte plusieurs sections :
 | [Primitive](#msc)                     | ![](/icons/dot.webp)        | Options de primitive                                             |
 
 
-## Statistiques de polygones
+## Statistiques de polygones {#polygon-stats}
 
 ![](/images/topology_stats.webp)
 
@@ -34,18 +34,18 @@ La partie supérieure du menu de topologie affiche les informations de polygones
 
 Un appui sur cette section fera apparaître une liste de statistiques de polygones pour tous les objets polygonaux de la scène.
 
-## ![](/icons/multires.webp) Multirésolution
+## ![](/icons/multires.webp) Multirésolution {#multiresolution}
 
 ![](/images/topology_multires_menu.webp)
 
-### Qu’est-ce que la multirésolution ?
+### Qu’est-ce que la multirésolution ? {#what-is-multiresolution}
 La fonction de multirésolution est utile dans deux cas principaux :
 - L’algorithme de subdivision lissée pour augmenter le nombre de polygones de votre objet
 - Gérer plusieurs niveaux de résolution afin de pouvoir alterner entre des modifications à grande et à petite échelle
 
 ![](/videos/multiresolution.mp4)
 
-#### Flux de travail multirésolution
+#### Flux de travail de multirésolution {#multiresolution-workflow}
 Un aspect important de la multirésolution est que vous pouvez revenir à une résolution plus basse, faire des modifications sur votre objet puis revenir à la résolution la plus élevée sans perdre les détails haute résolution. Tous les détails haute résolution seront projetés automatiquement.
 
 ::: warning
@@ -58,35 +58,35 @@ Vous devriez toujours obtenir un avertissement si cela doit arriver, par exemple
 :::
 
 
-### Curseur de multirésolution
+### Curseur de multirésolution {#multiresolution-slider}
 Ce curseur indique le nombre de niveaux de subdivision de l’objet courant. S’il y a 6 barres verticales, il y a 6 niveaux de subdivision. Le cercle indique le niveau de subdivision actuellement affiché. 
 
-### Reverse
+### Inverser {#reverse}
 Au niveau de subdivision le plus bas, le bouton Reverse tentera de créer un niveau en dessous du niveau actuel. Notez que cela n’est généralement possible que si l’objet a été créé avec subdivision au départ, par exemple dans Nomad ou dans d’autres applications 3D qui utilisent des surfaces de subdivision multirésolution.
 
-### Subdivide
+### Subdiviser {#subdivide}
 Le bouton *Subdivide* multipliera le nombre de polygones par 4, surveillez donc bien le nombre de polygones car il peut augmenter très rapidement !
 Un aspect important des *Surfaces de subdivision* est qu’elles convergent vers une *Surface lisse*.
 Pour comprendre comment cela fonctionne, vous pouvez essayer le bouton *Subdivide* sur un objet avec seulement quelques polygones.
 
 Vous pouvez désactiver ce comportement *Smooth* en cochant l’option `Linear subdivision`.
 
-### Delete lower
+### Supprimer les niveaux inférieurs {#delete-lower}
 S’il existe des subdivisions en dessous du niveau actuellement affiché, elles seront supprimées. Si vous faites cela par accident, vous pouvez les recréer avec le bouton Reverse.
 
-### Delete higher
+### Supprimer les niveaux supérieurs {#delete-higher}
 S’il existe des subdivisions au-dessus du niveau actuellement affiché, elles seront supprimées.
 
-### Linear subdivision
+### Subdivision linéaire {#linear-subdivision}
 Subdivise le maillage sans appliquer de lissage.
 
-### Sharp border
+### Bord net {#sharp-border}
 Si votre objet possède des facegroups, l’activation de cette option conservera les bords de facegroup nets. Cela peut être défini à chaque niveau de subdivision (le curseur de subdivision aura une petite icône au-dessus du niveau pour l’indiquer).
 
-### Keep triangles
+### Conserver les triangles {#keep-triangles}
 La plupart des systèmes standard de surfaces de subdivision tenteront de convertir tous les polygones en quads lors d’une opération de subdivision. Ce bouton forcera la subdivision à utiliser des triangles à la place.
 
-### Lock (LV0)
+### Verrouiller (LV0) {#lock-lv0}
 
 Empêche la modification du niveau de subdivision le plus bas. Cela peut être important si votre objet a été généré dans une autre application et que l’objet de base doit rester inchangé. Lorsque cette option est désactivée, de grands changements effectués à des niveaux de subdivision plus élevés déplaceront le niveau 0.
 
@@ -97,7 +97,7 @@ La subdivision lisse tous les bords vifs par défaut. Pour garder des arêtes l�
 :::
 
 
-## ![](/icons/voxel.webp) Remesh Voxel
+## ![](/icons/voxel.webp) Remesh voxel {#voxel-remesher}
 ![](/images/topology_voxel_menu.webp)
 Lorsque vous utilisez le `Remesh Voxel`, tout le maillage forcera la topologie à avoir une résolution uniforme, ce qui signifie que tous les polygones ont plus ou moins la même taille. C’est très utile lorsque vous ne voulez pas penser à la topologie et simplement faire de la sculpture libre.
 
@@ -117,13 +117,13 @@ Par trous, on ne parle pas du `trou de genre` (le `trou` d’un donut), mais plu
 Concrètement, cela signifie qu’avant d’appliquer le remeshing, tous les trous seront comblés, de manière similaire à l’outil [Trim](tools.md#trim) ou à la [fonction de remplissage de trous](scene.md#hole-filling).
 :::
 
-### Remesh
+### Remesh {#voxel-remesh}
 Exécuter le remesh voxel.
 
-### Resolution
+### Résolution {#voxel-resolution}
 La taille des voxels utilisés pendant le calcul. Lors de la modification de ce paramètre, un motif en damier sera superposé sur le maillage pour donner un aperçu du résultat.
 
-### Build multiresolution
+### Construire la multirésolution {#build-multiresolution}
 Créer des niveaux de multirésolution inférieurs pour le remesh voxel. Si vous utilisez le motif en damier pour définir une résolution, et que vous réglez Build multiresolution sur 2, le résultat final aura un niveau de détail correspondant au curseur de résolution, et si vous allez dans l’onglet multires, il sera au niveau 2, ce qui signifie que vous avez des maillages multirésolution de plus faible résolution aux niveaux 1 et 0. C’est un bon moyen à la fois de générer un maillage propre avec des polygones réguliers, et d’avoir un maillage de contrôle de plus faible résolution.
 
 ::: tip Astuce : Build multiresolution et lissage stable
@@ -132,10 +132,10 @@ Cette option peut parfois provoquer des « boucles » dans la géométrie qui pe
 
 :::
 
-### Keep sharp edges
+### Conserver les arêtes nettes {#keep-sharp-edges}
 Active l’accrochage des nouveaux points aux arêtes vives du maillage original. Cela peut introduire de la distorsion.
 
-## ![](/icons/dynamic.webp) Topologie dynamique
+## ![](/icons/dynamic.webp) Topologie dynamique {#dynamic-topology}
 
 ![](/images/topology_dyntopo_menu.webp)
 La multirésolution et le remesh voxel sont des méthodes industrielles courantes pour contrôler la topologie, mais toutes deux exigent que vous surveilliez que vous n’étirez pas trop les polygones, ou que vous ne les serrez pas trop.
@@ -148,13 +148,13 @@ Voir la vidéo ci-dessous en action.
 
 ![](/videos/dynamic.mp4)
 
-### Enabled
+### Activé {#enabled}
 Activer la topologie dynamique. Une icône DynTopo sera placée sous les curseurs de rayon et d’intensité du pinceau pour vous permettre d’activer/désactiver la Dyntopo par outil.
 
-### Detail
+### Détail {#dyn-detail}
 Contrôle la quantité de détail, son comportement change en fonction de la sélection « Detail based on... », voir ci-dessous.
 
-### Detail based on...
+### Détail basé sur... {#detail-based-on}
 | Méthode | Description                                                     |
 | :-----: | :-------------------------------------------------------------: |
 | Screen  | Le niveau de détail dépend de la taille de l’objet à l’écran. Le curseur de détail est à 100 % ou plus pour un détail fin, produisant de petits triangles, ou à 1 % pour un faible détail, produisant de grands triangles.  |
@@ -167,7 +167,7 @@ Pour mieux comprendre le fonctionnement du mode Radius, commencez à déplacer l
 
 :::
 
-### Prefer...
+### Préférer... {#prefer}
 | Méthode | Description        |
 | :-----: | :----------------: |
 | Speed   | Favoriser la vitesse |
@@ -180,14 +180,14 @@ Lorsque vous favorisez la `Quality`, les 2 principales différences sont :
 Ainsi, si vous sculptez de très petits détails ou faites des traits rapides, la topologie sera toujours affinée comme prévu.
 
 
-### Use pressure on radius
+### Utiliser la pression sur le rayon {#use-pressure-on-radius}
 Pertinent uniquement si `Radius` est activé. Lorsqu’il est activé, le niveau de détail reflétera toujours la taille du pinceau, même lorsque la taille du pinceau est affectée par la pression du stylet.
 
-### Use stroke falloff
+### Utiliser la retombée du trait {#use-stroke-falloff}
 
 Inclut également la courbe de dégressivité (falloff) du pinceau et l’alpha dans les calculs de dyntopo.
 
-### Method
+### Méthode {#method}
 Que vous utilisiez la `Topologie dynamique` sur votre [Brush](#brush) ou [Globalement](#global), vous pouvez choisir dans quel mode elle fonctionne :
 
 | Méthode        | Description                                                           |
@@ -196,30 +196,30 @@ Que vous utilisiez la `Topologie dynamique` sur votre [Brush](#brush) ou [Global
 | Subdivision    | Ajoute uniquement de nouvelles faces, ne peut pas en supprimer        |
 | Decimation     | Supprime uniquement des faces, ne peut pas en ajouter                 |
 
-### Protect masked area
+### Protéger la zone masquée {#protect-masked-area}
 Active la protection des zones masquées pour empêcher la modification de la topologie.
 
-### Vertex extrapolation
+### Extrapolation des sommets {#vertex-extrapolation}
 
 
-### Detail
+### Détail {#all-detail}
 La résolution utilisée pour l’opération de remesh. Si Dyntopo est en mode `Constant`, ce sera la même valeur que le curseur Detail en haut de ce menu.
 
-### Remesh
+### Remesh {#dyn-remesh}
 Exécuter un remesh global en utilisant l’algorithme de dyntopo. En général, vous devriez utiliser le [Remesh Voxel](#voxel-remesher) pour un remeshing complet.
 
 Cependant, un avantage par rapport aux voxels est que la zone masquée sera protégée, vous pouvez donc mieux contrôler où mettre plus ou moins de densité.
 
 
 
-## ![](/icons/topo_extra.webp) Divers
+## ![](/icons/topo_extra.webp) Divers {#misc}
 
 ![](/images/topology_misc_menu.webp)
 
-##### ![](/icons/cog.webp) Menu engrenage
+##### ![](/icons/cog.webp) Menu engrenage {#gear-menu}
 De nombreux outils de ce menu ont des options supplémentaires. Elles sont accessibles via l’icône d’engrenage à côté du titre de la section.
 
-### Decimation
+### Décimation {#decimation}
 
 ![](/images/topology_decimation.webp)
 
@@ -243,7 +243,7 @@ L’utilisation de l’outil [Quadremesh](tools.md#quad-remesher) sur des objets
 
 :::
 
-#### Decimate
+#### Décimer {#decimate}
 Lancer l’opération de décimation.
 
 Les icônes à côté du bouton Decimate vous permettent d’activer/désactiver des options qui affectent la décimation. Le pourcentage indique la force de cette option, et peut être défini dans le menu avancé (engrenage).
@@ -254,24 +254,24 @@ Les icônes à côté du bouton Decimate vous permettent d’activer/désactiver
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - La décimation essaiera de conserver les bords de facegroup.
 * ![](/icons/checkerboard.webp) `Preserve UV Borders` - La décimation essaiera de conserver les bords d’UV.
 
-#### ![](/icons/cog.webp) Menu engrenage Decimate
+#### ![](/icons/cog.webp) Menu engrenage de décimation {#decimate-gear-menu}
 Le menu engrenage contient ces options avancées :
-##### Preserve painting
+##### Préserver la peinture {#preserve-painting}
 La case à cocher active/désactive ce mode, la valeur détermine à quel point les détails de peinture seront préservés. Des valeurs plus élevées préserveront davantage la peinture. Mettez 0 si vous ne vous souciez pas de la peinture.
 
 
-##### Uniform faces
+##### Faces uniformes {#uniform-faces}
 La case à cocher active/désactive ce mode. Des valeurs plus élevées produiront des triangles de taille similaire.
 
-##### Preserve borders
+##### Préserver les bordures {#preserve-borders}
 Active pour empêcher la décimation des bords. Les poids de bord peuvent être sélectionnés pour les bords de `Geometry`, de `Face Group` ou d’`UV`.
 
-#### Target triangles
+#### Triangles cibles {#target-triangles}
 Définir le nombre cible de triangles. La valeur par défaut est 50 %, le bouton percent/target permet de basculer entre un pourcentage ou un nombre de polygones cible exact.
 
 
 
-### UV Unwrap - UVAtlas
+### Dépliage UV - UVAtlas {#uv-unwrap-uvatlas}
 
 ![](/images/topology_uvatlas_menu.webp)
 Calculer les coordonnées de texture (UV) pour le maillage courant, en préférant généralement créer plus d’îlots avec des coupures, afin de minimiser la distorsion.
@@ -280,23 +280,23 @@ La petite icône d’œil entre le titre du menu et le menu engrenage permet d�
 
 ![](/videos/unwrap.mp4)
 
-#### Unwrap
+#### Déplier {#unwrap}
 Calculer les UV pour l’objet sélectionné, qui seront affichés en arrière-plan.
 
-#### Delete UVs
+#### Supprimer les UV {#delete-uvs}
 Supprimer les UV de l’objet.
 
-#### ![](/icons/cog.webp) Menu engrenage UVAtlas
+#### ![](/icons/cog.webp) Menu engrenage UVAtlas {#uvatlas-gear-menu}
 Le menu engrenage contient ces options avancées :
 
-#### Face Group
+#### Groupe de faces {#atlas-face-group}
 
 Utiliser les facegroups pour définir les coupures des UV.
 
-##### Max Stretch
+##### Étirement max {#max-stretch}
 Des valeurs faibles créent moins de distorsion et plus d’îlots, des valeurs élevées créent plus de distorsion et moins d’îlots. 
 
-##### Island spacing
+##### Espacement des îlots {#island-spacing}
 La quantité d’espace (padding) entre les îlots. Des valeurs faibles gaspillent moins d’espace, mais augmentent le risque de bavures de textures entre les îlots. 
 
 ::: warning
@@ -323,24 +323,24 @@ Lorsque les modèles sont créés dans Nomad, vous pouvez peindre directement su
 
 :::
 
-### UV Unwrap - BFF
+### Dépliage UV - BFF {#uv-unwrap-bff}
 ![](/images/topology_uvbff_menu.webp)
 
 Les UV BFF privilégient une approche « moins de coupures, plus de distorsion ». 
 
-#### ![](/icons/cog.webp) Menu engrenage UV BFF
+#### ![](/icons/cog.webp) Menu engrenage UV BFF {#uv-bff-gear-menu}
 
-#### Face Group
+#### Groupe de faces {#bff-face-group}
 
 Utiliser les facegroups pour définir les coupures des UV.
 
-##### Cone count
+##### Nombre de cônes {#cone-count}
 Définir le nombre de projections principales utilisées. Des valeurs plus faibles produiront moins d’îlots, mais plus de distorsion.
 
-##### Seamless patches
+##### Patches sans couture {#seamless-patches}
 Affecte la disposition des patches UV, fonctionne mieux avec des facegroups soigneusement créés.
 
-### Bake -> texture 
+### Bake -> texture {#bake-texture}
 ![](/images/topology_bake_menu.webp)
 
 Le baking de texture créera des textures en projetant les autres objets visibles de la scène dans les UV de l’objet sélectionné.
@@ -360,35 +360,35 @@ Vous devriez maintenant avoir un maillage de faible résolution qui conserve la 
 
 Après l’opération, les couleurs de sommets seront déplacées dans une nouvelle couche désactivée, afin qu’elles n’interfèrent pas avec les textures.
 
-#### From itself
+#### À partir de lui-même {#tex-from-itself}
 Baker le niveau de multirésolution le plus élevé vers le niveau le plus bas sur l’objet courant. C’est simple à configurer, mais souvent vous aurez besoin de plus de contrôle, auquel cas l’option suivante est plus utile.
 
-#### From high-res ()
+#### À partir de la haute résolution () {#tex-from-high-res}
 Baker à partir des autres objets visibles de la scène vers l’objet sélectionné. Le nombre entre parenthèses indique le nombre d’autres objets visibles qui seront utilisés comme cibles haute résolution, et bakés dans l’objet basse résolution courant avec UV. Les autres objets n’ont pas besoin d’être similaires en disposition ou en topologie à l’objet baké, ce qui permet des flux de travail de baking très flexibles.
 
-#### Resolution
+#### Résolution {#tex-bake-resolution}
 La résolution de la texture bakée. Les textures de baking sont toujours carrées, donc 1024 créera une image 1024x1024. 
 
 Les boutons ci-dessous sont des raccourcis pour des résolutions couramment utilisées. À titre de référence, 512x512 est relativement petit, par exemple pour des graphismes web et une géométrie simple. 4096x4096 (4k pour faire court) est destiné aux rendus de haute qualité.
 
-#### ![](/icons/cog.webp) Menu engrenage Bake
+#### ![](/icons/cog.webp) Menu engrenage de bake {#tex-bake-gear-menu}
 ![](/images/topology_bake_gear_menu.webp)
 Le menu engrenage contient ces options avancées :
 
-##### Normal, Roughness, Metalness, Color, Emissive, Opacity
+##### Normale, Rugosité, Métallicité, Couleur, Émissif, Opacité {#tex-normal-roughness-metalness-color-emissive-opacity}
 Ces cases à cocher déterminent quelles propriétés seront bakées, chacune dans une carte séparée. Une fois le baking terminé, elles seront ajoutées comme textures au matériau de l’objet courant.
 
-##### Backup
+##### Sauvegarde {#tex-backup}
 Pour prévisualiser les textures bakées, les informations de peinture de l’objet doivent être désactivées. Cette option transférera toute information de peinture vers une nouvelle couche en tant que sauvegarde afin qu’elle puisse être facilement activée/désactivée.
 
-#### Cage radius
+#### Rayon de cage {#tex-cage-radius}
 Ajuste la distance à partir de l’objet de baking à laquelle les rayons sont envoyés pour rechercher les objets cibles. Par défaut, cette distance est maintenue faible pour éviter les artefacts, mais peut être augmentée si les objets cibles sont éloignés de l’objet de baking.
 
-##### Ray offset
+##### Décalage de rayon {#tex-ray-offset}
 Ajuste l’endroit d’où commencent les calculs de baking sur l’objet de baking. Par défaut, ils commencent à 5 % au-dessus de la surface, ce qui évite la plupart des artefacts courants. Si les objets cibles sont très éloignés de l’objet de baking, ce décalage peut devoir être augmenté.
 
 
-### Reproject to vertex
+### Reprojeter vers sommet {#reproject-to-vertex}
 
 ![](/images/topology_reproject_menu.webp)
 
@@ -401,7 +401,7 @@ On peut le considérer comme l’inverse du baking ; si le baking transfère les
 Lorsque vous utilisez `Bake to texture` ou `Reproject to vertex`, à la fois les couleurs de sommets et les textures de matériau seront prises en compte.
 :::
 
-#### From itself
+#### À partir de lui-même {#vertex-from-itself}
 Convertir les textures du matériau en valeurs de sommets. Ce bouton ne sera actif que si l’objet possède des UV et que des textures sont actives dans le matériau.
 
 ::: tip ASTUCE : peinture de texture
@@ -415,36 +415,36 @@ Nomad ne supporte pas directement la peinture et l’édition de textures, mais 
 1. `Bake to texture`, en mode `From itself`. Ces modifications sont reconverties en textures.
 :::
 
-#### From high-res ()
+#### À partir de la haute résolution () {#vertex-from-high-res}
 Convertir tous les objets visibles en valeurs de sommets sur l’objet sélectionné. Le nombre sur ce bouton indique le nombre d’objets visibles.
 
 ::: tip
 La reprojection d’autres objets peut être utilisée non seulement pour transférer des informations de couleur depuis d’autres objets, mais aussi pour projeter des sommets sur d’autres objets, par exemple des bandages peuvent être projetés sur un personnage.
 :::
 
-#### ![](/icons/cog.webp) Menu engrenage Reproject
+#### ![](/icons/cog.webp) Menu engrenage de reprojection {#vertex-reproject-gear-menu}
 Le menu engrenage contient ces options avancées :
 
-#### Vertices, Roughness, Metalness, Color, Opacity, Opacity->Mask, Mask, Layers, Face Group
+#### Sommets, Rugosité, Métallicité, Couleur, Opacité, Opacité->Masque, Masque, Couches, Groupe de faces {#vertex-vertices-roughness-metalness-color-opacity-opacity-mask-mask-layers-face-group}
 Ces cases à cocher déterminent quelles propriétés seront projetées sur l’objet sélectionné. 
 
-#### Relax
+#### Relaxer {#vertex-relax}
 Le maillage sélectionné peut voir sa disposition lissée ou relaxée dans une certaine mesure pour mieux s’adapter aux cibles de reprojection. Smooth est préférable pour les maillages haute résolution. Relax est préférable pour les maillages low poly. Auto laissera Nomad déterminer la meilleure méthode.
 
-#### Iterations
+#### Itérations {#vertex-iterations}
 Combien de fois l’opération de relax doit être appliquée pendant la reprojection.
 
-#### Cage radius
+#### Rayon de cage {#vertex-cage-radius}
 Ajuste la distance à partir de l’objet sélectionné à laquelle les rayons sont envoyés pour rechercher les objets cibles. Par défaut, cette distance est maintenue faible pour éviter les artefacts, mais peut être augmentée si les objets cibles sont éloignés de l’objet de baking.
 
-#### Ray bias
+#### Biais de rayon {#vertex-ray-bias}
 Des valeurs plus faibles favoriseront la projection vers le point le plus proche sur la surface cible. Des valeurs plus élevées favoriseront un point d’intersection utilisant la normale de surface. 
 
-#### Ray offset
+#### Décalage de rayon {#ray-vertex-offset}
 Ajuste l’endroit d’où commencent les calculs de baking sur l’objet sélectionné. Par défaut, ils commencent à 5 % au-dessus de la surface, ce qui évite certains artefacts. Si les objets cibles sont très éloignés de l’objet de baking, ce décalage peut devoir être augmenté.
 
 
-### Quad Remesh - Instant
+### Quad Remesh - Instant {#quad-remesh-instant}
 ![](/images/topology_quadremesh_menu.webp)
 Remesher en utilisant l’[algorithme Instant Meshes de Wenzel Jakob, Marco Tarini, Daniele Panozzo, Olga Sorkine-Hornung](https://igl.ethz.ch/projects/instant-meshes/). Il analysera le flux d’un maillage et créera une topologie quad propre.
 
@@ -452,22 +452,22 @@ Remesher en utilisant l’[algorithme Instant Meshes de Wenzel Jakob, Marco Tari
 Sur iOS et desktop, l’outil [Quad remesher](tools#quad-remesher) donne de meilleurs résultats et plus de contrôle.
 :::
 
-#### Remesh
+#### Remesh {#instant-remesh}
 Lancer l’opération Instant Meshes.
 
-#### Target quads
+#### Quads cibles {#target-quads}
 Le nombre de polygones quads que Quad Remesh tentera de créer.
 
-#### ![](/icons/cog.webp) Menu engrenage Quad Remesh Instant
+#### ![](/icons/cog.webp) Menu engrenage Quad Remesh Instant {#quad-remesh-instant-gear-menu}
 Le menu engrenage contient ces options avancées :
 
-##### Crease angle
+##### Angle de plis {#crease-angle}
 Un seuil d’angles vifs qui aidera à guider l’opération de remesh.
 
-#### Max fill hole
+#### Remplissage max des trous {#max-fill-hole}
 L’algorithme peut parfois produire des trous indésirables. Si un trou a moins de sommets que cette valeur, il sera comblé.
 
-### Holes
+### Trous {#holes}
 ![](/images/topology_holes_menu.webp)
 La plupart du temps, votre objet sera probablement étanche, ce qui signifie que le maillage est « fermé ».
 
@@ -479,50 +479,50 @@ Si votre objet a des trous, vous pouvez les combler. Notez que cela ne fonctionn
 Lorsque vous lancez le Remesh Voxel, tous les trous sont automatiquement fermés, que vous l’utilisiez sur un ou plusieurs maillages.
 :::
 
-#### Close holes
+#### Fermer les trous {#close-holes}
 Exécuter l’action de fermeture des trous.
 
-#### ![](/icons/cog.webp) Menu engrenage Holes
+#### ![](/icons/cog.webp) Menu engrenage des trous {#holes-gear-menu}
 Le menu engrenage contient ces options avancées :
 
-##### Detail
+##### Détail {#fill-detail}
 La densité de polygones utilisée pour combler le trou. Pendant le déplacement de ce curseur, un motif en damier sera affiché sur le modèle, ce qui donnera une indication de la taille des triangles à utiliser. La case à cocher désactivera cela et utilisera uniquement les points existants, ce qui créera généralement de longs triangles fins au-dessus du trou, difficiles à sculpter.
 
-##### Fill non-manifold
+##### Remplir les non-manifold {#fill-non-manifold}
 Essayer de combler les trous non manifold.
 
-##### Face Group
+##### Groupe de faces {#fill-face-group}
 
 Lors du remplissage des trous, chaque trou doit-il obtenir son propre facegroup (Auto), doivent-ils tous partager un facegroup (Off), ou ne pas créer de facegroups (On).
 
-### Force Manifold
+### Forcer manifold {#force-manifold}
 ![](/images/topology_forcemanifold_menu.webp)
 Essayer de nettoyer les arêtes non manifold. Cela peut être utile pour les logiciels externes qui ne supportent pas les arêtes ayant plus de 2 faces en commun.
 
-#### Clean
+#### Nettoyer {#clean}
 Exécuter l’action de nettoyage.
-#### ![](/icons/cog.webp) Menu engrenage Force manifold
+#### ![](/icons/cog.webp) Menu engrenage Forcer manifold {#force-manifold-gear-menu}
 Le menu engrenage contient ces options avancées :
 
-#### Delete small faces
+#### Supprimer les petites faces {#delete-small-faces}
 Un seuil utilisé pour supprimer et fusionner les petits polygones.
 
 
-### Triplanar
+### Triplanaire {#triplanar}
 ![](/images/topology_triplanar_menu.webp)
 Convertit le maillage en primitive [triplanar](scene.md#triplanar).
 Vous perdrez probablement beaucoup de détails au passage.
 
-#### Force cubic
+#### Forcer cubique {#force-cubic}
 Forcer le triplanar à être un cube. Sinon, le triplanar s’ajustera à la boîte englobante la plus proche autour de votre objet.
 
-#### Convert
+#### Convertir {#convert}
 Exécuter l’action triplanar.
 
-#### Resolution
+#### Résolution {#triplanar-resolution}
 La taille de voxel utilisée dans l’opération triplanar.
 
-## ![](/icons/dot.webp) Primitive
+## ![](/icons/dot.webp) Primitive {#primitive}
 Paramètres pour la primitive sélectionnée. Ils sont également disponibles dans la barre d’outils de la vue des primitives.
 
 ![](/images/topology_primitive_screenshot.webp)

@@ -1,4 +1,4 @@
-# ![](/icons/toolbox.webp) 도구
+# ![](/icons/toolbox.webp) 도구 {#tools}
 
 ![](/images/tools_menu.webp)
 
@@ -6,7 +6,7 @@
 각 개별 도구 설명은 아래 [도구](#tools-1) 섹션을 참고하세요.
 :::
 
-## 개요
+## 개요 {#overview}
 
 도구는 오른쪽의 `Toolbox` 에서 선택하고, 왼쪽의 `Tool Controls` 로 조작합니다. 추가 설정은 오른쪽 상단 메뉴의 첫 번째 아이콘인 `Settings` 메뉴에서 찾을 수 있습니다.
 
@@ -31,7 +31,7 @@ Nomad의 도구는 툴박스에서 색상으로 구분됩니다:
 이들 도구 대부분은 [Stroke](stroke.md) 메뉴를 통해 브러시 동작, 압력, 텍스처 등을 커스터마이즈할 수 있습니다. 
 
 
-### 브러시 컨트롤
+### 브러시 컨트롤 {#brush-controls}
 
 왼쪽 툴바에는 반경과 강도 슬라이더가 있으며, 그 아래에 도구 카테고리별 전용 컨트롤이 있습니다(아래에서 설명).
 
@@ -41,17 +41,17 @@ Nomad의 도구는 툴박스에서 색상으로 구분됩니다:
 많은 도구의 강도 슬라이더는 100%를 넘길 수 있으니, 꼭 실험해 보세요!
 :::
 
-### Sub 모드
+### 서브 모드 {#sub-mode}
 강도 슬라이더 바로 아래 버튼은 `Sub` 버튼입니다. 이 버튼의 라벨과 기능은 도구마다 바뀌며, 누르면 보통 반대 동작에 해당하는 보조 모드를 호출합니다. 예를 들어 [Paint](#paint)에서는 지우개 모드가 되고, [Crease](#crease)에서는 홈 대신 튀어나온 엣지를 만듭니다.
 
 기본적으로 이 버튼은 ‘홀드형’으로 동작합니다. 즉, 누르고 있는 동안만 보조 모드가 활성화되고, 손을 떼면 꺼집니다. 탭하면 Sub 모드가 계속 활성화됩니다.
 
-### 바로가기
+### 단축키 {#shortcuts}
 왼쪽 툴바 하단에는 [Smooth](#smooth), [Mask](#mask), [Hide](#hide), [Gizmo](#gizmo), [Color](painting.md#pbr-sliders), [Alpha](stroke.md#alpha) 에 대한 바로가기 버튼이 있습니다. 
 
 기본적으로 이들 역시 모두 ‘홀드형’으로 동작합니다. 즉, 누르고 있는 동안만 해당 모드가 활성화되고, 손을 떼면 꺼집니다. 탭하면 해당 바로가기 모드가 계속 활성화됩니다.
 
-### 선택 컨트롤
+### 선택 컨트롤 {#selection-controls}
 
 [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Project](#project), [Facegroup](#facegroup), [Hide](#hide) 도구는 모두 메시 영역 선택을 위해 비슷한 컨트롤을 사용합니다.
 
@@ -69,7 +69,7 @@ Nomad의 도구는 툴박스에서 색상으로 구분됩니다:
 
 대부분의 도구에는 자동 검증(auto validate) 옵션이 있어, 셰이프를 다 그리는 즉시 연산이 수행됩니다. 자동 검증이 꺼져 있으면 셰이프 옆에 초록색 버튼이 나타나며, 이 버튼을 눌러 연산을 실행합니다. 이 모드에서는 셰이프를 편집하거나 뷰를 조정한 뒤, 준비가 되면 초록 버튼을 눌러 사용할 수 있습니다.
 
-### Shape editing
+### 형태 편집 {#shape-editing}
 폴리곤 편집과 커브 편집은 비슷하게 동작합니다:
 
 * 먼저 선을 드래그해 두 점을 정의한 뒤, 선의 가운데를 드래그해 폴리곤이나 커브를 만듭니다.
@@ -78,13 +78,13 @@ Nomad의 도구는 툴박스에서 색상으로 구분됩니다:
 * 점을 삭제하려면, 해당 점을 이웃 점 쪽으로 드래그해 빨갛게 변할 때까지 이동합니다.
 * 폴리곤 또는 패스 아이콘 모서리의 휴지통 아이콘을 누르면 셰이프가 삭제됩니다.
 
-### Settings 메뉴
+### 설정 메뉴 {#settings-menu}
 
 많은 도구에는 추가 설정이 있으며, 오른쪽 상단 메뉴의 첫 번째 아이콘인 Settings 메뉴에서 찾을 수 있습니다:
 
 ![](/images/tools_settings_menu.webp)
 
-## 도구
+## 도구 {#tools-1}
 
 |                                                                     |                                                   |                                                                   |                                                         |                                                         |                                                                     |
 | :-----------------------------------------------------------------: | :-----------------------------------------------: | :---------------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------------------: |
@@ -97,24 +97,24 @@ Nomad의 도구는 툴박스에서 색상으로 구분됩니다:
 
 ------
 
-### ![](/icons/tool_clay.webp) Clay
+### ![](/icons/tool_clay.webp) 클레이 {#clay}
 Clay 도구는 조형을 쌓아 올릴 때 유용합니다. `Sub` 는 조형에서 재질을 깎아냅니다.
 
 ![](/videos/tool_clay.mp4)
 
-### ![](/icons/tool_brush.webp) Brush
+### ![](/icons/tool_brush.webp) 브러시 {#brush}
 표준 브러시입니다. `Sub` 는 재질을 제거합니다.
 
 ![](/videos/tool_brush.mp4)
 
-### ![](/icons/tool_move.webp) Move
+### ![](/icons/tool_move.webp) 이동 {#move}
 브러시 아래 영역이 브러시에 달라붙어 탄성 변형을 할 수 있습니다. 이동 중에는 선택 영역이 유지되므로, 브러시를 멀리 이동했다가 다시 시작 지점으로 가져오면 변형이 사라진 것을 볼 수 있습니다.
 
 Sub 모드는 `Normal` 이며, 브러시 아래 영역을 표면 노멀 방향으로 이동시킵니다.
 
 이 브러시는 큰 형태 변형과 섬세한 소규모 변형 모두에 적합합니다.
 
-#### Move 설정
+#### 이동 설정 {#move-settings}
 
 * `Radius (Background)` - 모델의 실루엣을 작업할 때처럼, 모델의 가장자리에서 얼마나 떨어져 있어도 조각이 가능한지 설정합니다. 
 * `Same-side vertex only` - 변형 방향과 반대 방향을 향하는 버텍스는 무시합니다.
@@ -122,40 +122,40 @@ Sub 모드는 `Normal` 이며, 브러시 아래 영역을 표면 노멀 방향�
 
 ![](/videos/tool_move.mp4)
 
-### ![](/icons/tool_drag.webp) Drag
+### ![](/icons/tool_drag.webp) 드래그 {#drag}
 브러시 아래 영역이 브러시에 달라붙어 탄성 변형을 합니다. Move 브러시와 달리, 드래그 중에는 선택 영역이 계속 갱신되므로, 특히 Dynamic Topology가 활성화된 상태에서 긴 뱀 같은 형태를 만들 수 있습니다.
 
 Sub 모드는 `Normal` 이며, 브러시 아래 영역을 표면 노멀 방향으로 이동시킵니다.
 
 이 브러시는 보다 느슨하고 제스처적인 형태 변형에 적합합니다.
 
-#### Drag 설정
+#### 드래그 설정 {#drag-settings}
 
 * `Radius (Background)` - 모델의 실루엣을 작업할 때처럼, 모델의 가장자리에서 얼마나 떨어져 있어도 조각이 가능한지 설정합니다. 
 * `Same-side vertex only` - 변형 방향과 반대 방향을 향하는 버텍스는 무시합니다.
 
 ![](/videos/tool_drag.mp4)
 
-### ![](/icons/tool_smooth.webp) Smooth
+### ![](/icons/tool_smooth.webp) 스무스 {#smooth}
 포인트 위치의 평균을 내어 영역을 부드럽게 합니다. 이 도구는 폴리곤 밀도에 크게 의존합니다.
 폴리곤이 많을수록 스무딩 효과는 덜 강하게 느껴질 수 있습니다.
 
 Sub 모드는 `Relax` 로, 지오메트리 디테일을 유지하려 하면서 와이어프레임만 부드럽게 합니다.
 
-#### Smooth 설정
+#### 스무스 설정 {#smooth-settings}
 
 ![](/images/tool_smooth_settings.webp)
 
-##### Facegroup
+##### 페이스 그룹 {#smooth-facegroup}
 
 * `Relax` - 페이스그룹 경계를 부드럽게 합니다. 100% 이상의 강도를 사용하면 경계를 빠르게 부드럽게 할 수 있습니다. `Auto` 는 페이스그룹 프리뷰가 활성화된 경우에만 스무딩, `Off` 는 비활성, `On` 은 항상 활성입니다. 
 
-##### Vertex
+##### 버텍스 {#vertex}
 * `Sticky vertex on border` - 평면처럼 열린 엣지를 가진 메시에서 모서리를 평탄하게 만들 수 있습니다. 이 옵션을 활성화하면 열린 엣지가 고정됩니다.
 * `Relax` - 왼쪽 툴바의 Relax 보조 모드와 동일합니다.
 * `Stable smoothing` - 토폴로지에 덜 의존적인 스무딩을 시도합니다. 토폴로지 밀도가 고르지 않을 때, 그리고 높은 스무딩 강도에서 가장 잘 작동합니다.
 
-##### Painting
+##### 페인팅 {#painting}
 * `Screen Smoothing` - 매우 높은 폴리곤 수에서도 토폴로지에 독립적인 스무딩을 얻고 싶을 때 사용합니다.
 * `Screen samples` - 스무딩 품질입니다. 값이 높을수록 더 부드럽지만 느려집니다.
 
@@ -165,7 +165,7 @@ Sub 모드는 `Relax` 로, 지오메트리 디테일을 유지하려 하면서 �
 
 ![](/videos/tool_smooth.mp4)
 
-### ![](/icons/tool_mask.webp) Mask
+### ![](/icons/tool_mask.webp) 마스크 {#mask}
 이 도구는 버텍스를 마스킹합니다. 마스크된 버텍스는 조각이나 페인팅으로부터 보호됩니다. 
 
 Sub 모드는 `Unmask` 로, 그려진 마스크를 지웁니다.
@@ -195,7 +195,7 @@ Sub 모드는 `Unmask` 로, 그려진 마스크를 지웁니다.
 |                                 On tap (mask)      | 활성화 시 마스크/비마스크 ‘섬’을 탭하면 해당 섬 전체를 플러드 필합니다.                  |
 | ![](/icons/vertex.webp)        Connected          | 활성화 시 연결된 토폴로지에만 마스크 스트로크가 영향을 줍니다.                           |
 
-##### Mask 퀵 제스처
+##### 마스크 퀵 제스처 {#mask-quick-gesture}
 왼쪽 퀵 마스킹 버튼을 누른 상태에서 ZBrush 스타일 제스처를 사용할 수 있습니다:
 | Action  | Gesture (hold lower-left shortcut) |
 | :-----: | :--------------------------------: |
@@ -205,28 +205,28 @@ Sub 모드는 `Unmask` 로, 그려진 마스크를 지웁니다.
 | Sharpen | 마스크되지 않은 영역을 탭          |
 
 
-#### Mask 설정
+#### 마스크 설정 {#mask-settings}
 ![](/images/tool_mask_settings.webp)
 
 ![](/videos/tool_mask2.mp4)
 
 * `Preview` - Mask 설정 메뉴는 주로 마스크에서 지오메트리를 생성하는 데 사용됩니다. 이 때문에 기본 동작은 새 지오메트리가 어떻게 보일지 미리보기입니다. 프리뷰 없음, 추출 프리뷰, 분할 프리뷰, 그리고 이 지오메트리를 X-ray 모드로 표시할지 여부를 선택할 수 있습니다.
 
-##### Thickness
+##### 두께 {#thickness}
 * `Height` - 추출된 형태의 높이입니다. 플러스/마이너스 아이콘으로 바깥쪽 돌출, 안쪽 돌출, 중앙 기준 돌출을 순환할 수 있습니다. 
 * `Height/Height+Mask` - 높이를 일정하게 둘지, 마스크의 블러 정도가 높이에 영향을 주도록 할지 토글합니다. 후자는 부드럽고 가변적인 높이의 형태를 만들 수 있습니다. 
 
-##### Smoothness
+##### 부드러움 {#smoothness}
 활성화 시 추출된 형태의 경계를 부드럽게 합니다. 폴리곤 수가 많을수록 더 잘 작동합니다. 
 * `Iterations` - 적용되는 스무딩 양입니다. 값이 높을수록 매우 부드러운 곡선 엣지를 만들지만, 마스크 형태에서 점점 멀어질 수 있습니다.
 * `All/Sharp border/Borders only` - 스무딩 방향을 설정합니다. 전체(All)는 측면과 윗면 모두를 부드럽게 하고, Sharp border는 윗면과 측면을 부드럽게 하되 엣지는 날카롭게 유지하며, Borders only는 경계만 부드럽게 하고 윗면은 그대로 둡니다.
 
-##### Edge loop (side)
+##### 엣지 루프 (측면) {#edge-loop-side}
 * `Auto Edge-loop (side)` - 추출된 형태의 측면에 자동으로 엣지 루프 수를 계산해, 마스크된 영역의 폴리곤과 맞는 정사각형 폴리곤을 만듭니다. 비활성화 시 슬라이더로 엣지 루프 수를 직접 설정할 수 있습니다.
 
 ----
 
-##### Extract
+##### 추출 {#extract}
 * `Extract` - 추출 지오메트리를 생성합니다.
 * `Closing action` - 추출 시 동작 방식을 설정합니다. 'None' 은 마스크된 폴리곤을 새 형태로 복제만 합니다. 'Fill' 은 복제 후 뒷면을 메우려 시도합니다. 'Shell' 은 'thickness' 에 설정된 만큼 돌출하며, 기본값입니다.
 
@@ -237,18 +237,18 @@ Sub 모드는 `Unmask` 로, 그려진 마스크를 지웁니다.
 이는 정상 동작입니다. 새 형태와 원본을 보기 위해 Mask 설정 메뉴를 닫고, 필요하다면 원본 표면을 다시 선택해 마스크를 지우거나 새 마스크를 그리세요.
 :::
 
-##### Split
+##### 분리 {#split-mask}
 * `Split` - 마스크된 영역과 마스크되지 않은 영역 모두를 새 형태로 추출합니다. 
 * `Closing action (masked)` - 마스크된 영역 추출의 동작 방식을 설정합니다. 'None', 'Fill', 'Shell' 의 의미는 Extract와 동일합니다.
 * `Closing action (unmasked)` - 마스크되지 않은 영역 추출의 동작 방식을 설정합니다. 'None', 'Fill', 'Shell' 의 의미는 동일합니다.
 * `Sync border` - 마스크된/비마스크된 추출 형태 사이의 경계가 서로 가깝게 유지되도록 합니다. 비활성화 시, Shell 연산이 각 면의 노멀 방향으로 돌출하기 때문에 두 형태 사이에 틈이 생길 수 있습니다.
 
-##### Carve
+##### 조각 {#carve}
 * `Carve` - 기본 모드에서, 'thickness' 만큼 표면을 Trim 한 것처럼 동작합니다. 오렌지 껍질 한 조각을 도려낸 것과 비슷합니다. 
 
 
 
-### ![](/icons/tool_maskSelector.webp) Selection Mask
+### ![](/icons/tool_maskSelector.webp) 선택 마스크 {#selection-mask}
 이 도구는 대부분 [Mask 도구](#mask)와 비슷하지만, 스트로크로 마스크를 칠하는 대신 [Selection Controls](#selection-controls)를 사용해 마스크를 만듭니다.
 
 Sub 모드는 `Unmask` 로, 선택 컨트롤을 사용해 마스크를 지웁니다.
@@ -257,28 +257,28 @@ Selection Mask는 `Mask` 도구와 동일한 도구 설정을 공유합니다.
 
 ![](/videos/tool_selector_mask.mp4)
 
-### ![](/icons/tool_paint.webp) Paint
+### ![](/icons/tool_paint.webp) 페인트 {#paint}
 색상과 머티리얼 속성을 적용합니다. 머티리얼에 대한 자세한 내용은 [Painting](painting.md) 섹션을 참고하세요.
 
 Sub 모드는 `Erase` 로, 페인트를 제거합니다.
 
-#### Paint 설정
+#### 페인트 설정 {#paint-settings}
 * `Layer fitering` - Photoshop이나 Procreate의 레이어 알파 잠금과 비슷하게 동작합니다. 레이어에 페인팅 중일 때 이 옵션을 활성화하면, 이미 페인트가 있는 영역만 수정할 수 있고, 칠해지지 않은 영역은 보호됩니다.
 
 ![](/videos/tool_paint.mp4)
 
-### ![](/icons/tool_smudge.webp) Smudge
+### ![](/icons/tool_smudge.webp) 스머지 {#smudge}
 색상과 머티리얼 속성을 문지릅니다. Smudge 설정 메뉴에는 `Quality` 슬라이더가 있으며, 값이 낮을수록 스트로크가 더 빠릅니다.
 
 ![](/videos/tool_smudge.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Flatten
+### ![](/icons/tool_flatten.webp) 플래튼 {#flatten}
 포인트를 평균 평면에 투영해 영역을 평탄하게 만듭니다.
 
 Sub 모드는 `Fill` 이며, 가장 높은 포인트를 기준으로 평면을 정의하고 포인트를 위로 끌어올리는 경향이 있습니다.
 
-#### Flatten 설정
+#### 플래튼 설정 {#flatten-settings}
 
 * `Lock plane direction` - 첫 클릭에서 계산된 평면 방향을 계속 사용합니다. 기본값은 비활성입니다.
 * `Lock plane origin`- 첫 클릭 위치를 평면의 중심으로 사용합니다. 기본값은 비활성입니다.
@@ -292,7 +292,7 @@ Sub 모드는 `Fill` 이며, 가장 높은 포인트를 기준으로 평면을 �
 ![](/videos/tool_flatten.mp4)
 
 
-### ![](/icons/tool_planar.webp) Planar
+### ![](/icons/tool_planar.webp) 플래너 {#planar}
 포인트를 평균 평면에 투영해 평탄하게 만들지만, Flatten 브러시보다 누적 효과가 적습니다. 더 깨끗한 하드 엣지 표면을 만들 수 있습니다. 짧은 스트로크는 표면을 더 밀고 당기고, 이미 평탄한 영역에서 시작해 바깥으로 천천히 그리면 평면을 더 잘 유지합니다.
 
 Sub 모드는 `Fill` 이며, 가장 높은 포인트를 기준으로 평면을 정의하고 포인트를 위로 끌어올리는 경향이 있습니다.
@@ -301,19 +301,19 @@ Planar는 실제로 `Flatten` 과 같은 도구지만, `Lock plane direction` �
 
 ![](/videos/tool_planar.mp4)
 
-### ![](/icons/tool_crease.webp) Crease
+### ![](/icons/tool_crease.webp) 크리스 {#crease}
 Crease 도구는 작은 컷이나 홈을 조각할 때 유용합니다.
 
 Sub 모드는 `Invert` 로, 홈 대신 튀어나온 크리즈를 만듭니다.
 
-#### Crease 설정
+#### 크리스 설정 {#crease-settings}
 
 * `Pinch factor` - 버텍스를 브러시 쪽으로 옆으로 얼마나 끌어당길지 설정합니다. Pinch가 1이고 Offset이 0이면, 표면 깊이 변화 없이 토폴로지만 변하며, 엣지가 스트로크 쪽으로 모입니다.
 * `Offset factor` - 버텍스를 깊이 방향으로 얼마나 밀고 당길지 설정합니다. Pinch가 0이고 Offset이 1이면 깊은 홈이나 튀어나온 자국이 생기지만, 크리즈의 양옆과 바닥을 정의할 만큼 충분한 지오메트리가 끌려오지 않아 거칠어 보일 수 있습니다.
 
 ![](/videos/tool_crease.mp4)
 
-### ![](/icons/tool_pinch.webp) Pinch
+### ![](/icons/tool_pinch.webp) 핀치 {#pinch}
 엣지를 날카롭게 만드는 데 사용할 수 있습니다.
 
 Sub 모드는 `Invert` 로, 버텍스를 서로 멀어지게 퍼뜨립니다.
@@ -321,7 +321,7 @@ Sub 모드는 `Invert` 로, 버텍스를 서로 멀어지게 퍼뜨립니다.
 ![](/videos/tool_pinch.mp4)
 
 
-### ![](/icons/tool_trim.webp) Trim
+### ![](/icons/tool_trim.webp) 트림 {#trim}
 Trim 도구는 메시의 일부를 잘라내고, 남은 구멍을 어떻게 처리할지에 대한 옵션을 제공합니다. 잘라낼 영역은 [Selection controls](#selection-controls)를 사용해 정의합니다.
 
 ::: tip
@@ -330,7 +330,7 @@ Trim 도구는 메시의 일부를 잘라내고, 남은 구멍을 어떻게 처�
 정투영(orthographic) 모드에서는 메시를 가르는 컷이 뷰와 평행하게 이루어져, 대부분 사용자가 기대하는 결과를 얻습니다. 원근 카메라에서는 객체의 앞쪽과 뒤쪽에서 컷 모양이 다르게 보입니다.
 :::
 
-#### Trim 설정
+#### 트림 설정 {#trim-settings}
 
 * `Stroke painting` - 페인트 메뉴에서 페인트가 활성화되어 있으면, 메워진 영역이 현재 선택된 색으로 채워집니다.
 * `Boolean` - Trim으로 생긴 구멍을 쿼드 폴리 영역으로 메웁니다. 메워진 영역은 평평합니다.
@@ -346,10 +346,10 @@ Trim 도구는 메시의 일부를 잘라내고, 남은 구멍을 어떻게 처�
 
 ![](/videos/tool_trim.mp4)
 
-### ![](/icons/tool_split.webp) Split
+### ![](/icons/tool_split.webp) 스플릿 {#split}
 [Trim](#trim) 도구와 비슷하지만, Trim이 선택 영역을 버리는 반면 Split은 선택 영역을 새 오브젝트로 유지합니다.
 
-#### Split 설정
+#### 스플릿 설정 {#split-settings}
 
 * `Stroke painting` - 페인트 메뉴에서 페인트가 활성화되어 있으면, 메워진 영역이 현재 선택된 색으로 채워집니다.
 * `Boolean` - Split으로 생긴 구멍을 쿼드 폴리 영역으로 메웁니다. 메워진 영역은 평평합니다.
@@ -366,7 +366,7 @@ Trim 도구는 메시의 일부를 잘라내고, 남은 구멍을 어떻게 처�
 ![](/videos/tool_split.mp4)
 
 
-### ![](/icons/tool_project.webp) Project
+### ![](/icons/tool_project.webp) 프로젝트 {#project}
 Project 도구는 겉보기에는 [Trim](#trim) 도구와 비슷하지만, 지오메트리를 삭제하거나 생성하지 않고, 단지 버텍스를 선택 영역에 맞게 이동시킵니다.
 
 ![](/videos/tool_project.mp4)
@@ -375,7 +375,7 @@ Project 도구는 겉보기에는 [Trim](#trim) 도구와 비슷하지만, 지�
 레이어 위에서 Project를 사용하면, 레이어 슬라이더로 원래 형태와 투영된 형태 사이를 블렌딩할 수 있습니다.
 :::
 
-### ![](/icons/tool_layer.webp) Layer
+### ![](/icons/tool_layer.webp) 레이어 {#layer}
 표면을 올리되, 높이에 제한을 둡니다.
 
 펜을 떼지 않고 같은 영역을 계속 칠해도, Layer는 일정 높이까지만 올리고 그 이상은 더 올라가지 않습니다. 다른 도구들은 계속 높이가 누적되는 것과 대조적입니다.
@@ -388,7 +388,7 @@ Project 도구는 겉보기에는 [Trim](#trim) 도구와 비슷하지만, 지�
 
 `Sub` 는 최소 깊이를 사용해 홈을 만듭니다.
 
-#### Layer 설정
+#### 레이어 설정 {#layer-settings}
 
 * `Use layer data` - 활성화 시, 선택된 레이어가 있을 경우 레이어 데이터를 사용해 최대 높이를 설정합니다.
 * `Inflate`- 활성화 시 Layer가 작동하는 방향을 조정해 더 부드러운 결과를 얻습니다.
@@ -397,10 +397,10 @@ Project 도구는 겉보기에는 [Trim](#trim) 도구와 비슷하지만, 지�
 ![](/videos/tool_layer.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Inflate
+### ![](/icons/tool_flatten.webp) 인플레이트 {#inflate}
 버텍스를 각자의 노멀 방향으로 이동시킵니다. `Sub` 는 버텍스를 반대 노멀 방향으로 이동시킵니다.
 
-#### Inflate 설정
+#### 인플레이트 설정 {#inflate-setings}
 * `Relax (Normal)` - 노멀에 적용되는 스무딩 양입니다.
 
 ![](/videos/tool_inflate.mp4)
@@ -408,13 +408,13 @@ Project 도구는 겉보기에는 [Trim](#trim) 도구와 비슷하지만, 지�
 
 
 
-### ![](/icons/tool_nudge.webp) Nudge
+### ![](/icons/tool_nudge.webp) 너지 {#nudge}
 스트로크 방향으로 포인트를 이동하거나 ‘문지릅니다’.
 
 ![](/videos/tool_nudge.mp4)
 
 
-### ![](/icons/tool_stamp.webp) Stamp
+### ![](/icons/tool_stamp.webp) 스탬프 {#stamp}
 
 선택된 알파 모양대로 조형의 한 영역을 클릭-드래그해 돌출시킵니다.
 
@@ -435,13 +435,13 @@ Stamp는 보통 고해상도 지오메트리에서 가장 잘 작동합니다. �
 ![](/videos/tool_stamp.mp4)
 
 
-### ![](/icons/tool_clearLayer.webp) Delete Layer
+### ![](/icons/tool_clearLayer.webp) 레이어 삭제 {#delete-layer}
 이 도구는 레이어를 국소적으로 리셋할 수 있습니다. 활성 레이어가 없으면 아무 일도 일어나지 않습니다.
 
 ![](/videos/tool_delete_layer.mp4)
 
 
-### ![](/icons/tool_tube.webp) Tube
+### ![](/icons/tool_tube.webp) 튜브 {#tube}
 곡선을 그려 튜브를 생성합니다. 
 ![](/images/tool_tube_new.webp)
 
@@ -449,7 +449,7 @@ Stamp는 보통 고해상도 지오메트리에서 가장 잘 작동합니다. �
 
 ![](/videos/tool_tube.mp4)
 
-#### Tube 왼쪽 툴바
+#### 튜브 왼쪽 툴바 {#tube-left-toolbar}
 
 ![](/images/tool_tube_left_toolbar.webp)
 
@@ -468,7 +468,7 @@ Stamp는 보통 고해상도 지오메트리에서 가장 잘 작동합니다. �
     * `Closed` - 튜브를 루프로 만듭니다.
     * `Screen` - 활성화 시 경로가 화면에 ‘고정’되어, 뷰와 오브젝트를 움직여도 경로는 제자리에 남습니다. 비활성화 시 경로는 3D 씬의 일부가 되어 카메라와 오브젝트와 함께 움직입니다.
 
-##### Tube 상단 툴바
+##### 튜브 상단 툴바 {#tube-top-toolbar}
 ![](/images/tool_tube_toolbar.webp)
 튜브가 선택되면, 뷰포트 상단에 추가 컨트롤이 있는 툴바가 나타납니다. 툴바 제목을 클릭해 접기/펼치기를 하고, 오른쪽 상단 화살표를 클릭해 툴바를 뷰포트 위/아래로 이동할 수 있습니다.
 
@@ -489,7 +489,7 @@ Stamp는 보통 고해상도 지오메트리에서 가장 잘 작동합니다. �
 * `Constant density` - 활성화 시 폴리곤을 정사각형으로 유지합니다. 비활성화 시 튜브 길이 방향의 `Y divisions` 를 설정할 수 있습니다.
 * `...` - Tube 설정 메뉴입니다.
 
-#### 커브 포인트 삭제 토글
+#### 커브 포인트 삭제 토글 {#curve-point-delete-toggle}
 
 ![](/images/tool_tube_delete_toggle.webp)
 
@@ -497,7 +497,7 @@ Stamp는 보통 고해상도 지오메트리에서 가장 잘 작동합니다. �
 
 
 
-#### Tube 설정
+#### 튜브 설정 {#tube-settings}
 * `Primitive` - UV 활성/비활성, 튜브 검증(Validate)을 위한 버튼입니다.
 * `Post subdivision` - 검증 전에 멀티레졸루션 레벨을 설정하는 바로가기입니다.
 * `Linear subdivision` - 검증 전에 선형 서브디비전 레벨을 설정하는 바로가기입니다. 
@@ -510,14 +510,14 @@ Division을 4로, Post subdivision을 3으로 설정하면 끝이 둥근 매끄�
 :::
 
 
-### ![](/icons/tool_lathe.webp) Lathe
+### ![](/icons/tool_lathe.webp) 레이스 {#lathe}
 곡선을 그려 회전 표면을 생성합니다.
 
 이 도구는 꽃병, 와인잔 같은 형태에 적합합니다.
 
 ![](/videos/tool_lathe.mp4)
 
-#### Lathe 왼쪽 툴바
+#### 레이스 왼쪽 툴바 {#lathe-left-toolbar}
 
 ![](/images/tool_lathe_left_toolbar.webp)
 
@@ -535,7 +535,7 @@ Division을 4로, Post subdivision을 3으로 설정하면 끝이 둥근 매끄�
     * `Closed` - 튜브를 루프로 만듭니다.
     * `Screen` - 활성화 시 경로가 화면에 ‘고정’되어, 뷰와 오브젝트를 움직여도 경로는 제자리에 남습니다. 비활성화 시 경로는 3D 씬의 일부가 되어 카메라와 오브젝트와 함께 움직입니다.
 
-#### Lathe 상단 툴바
+#### 레이스 상단 툴바 {#lathe-top-toolbar}
 ![](/images/tool_lathe_top_toolbar.webp)
 
 Lathe가 선택되면, 뷰포트 상단에 추가 컨트롤이 있는 툴바가 나타납니다. 툴바 제목을 클릭해 접기/펼치기를 하고, 오른쪽 상단 화살표를 클릭해 툴바를 뷰포트 위/아래로 이동할 수 있습니다.
@@ -554,7 +554,7 @@ Lathe가 선택되면, 뷰포트 상단에 추가 컨트롤이 있는 툴바가 
 * `Constant density` - 활성화 시 폴리곤을 정사각형으로 유지합니다. 비활성화 시 튜브 길이 방향의 `Y divisions` 를 설정할 수 있습니다.
 * `...` - Lathe 설정 메뉴입니다.
 
-#### Lathe 설정
+#### 레이스 설정 {#lathe-settings}
 * `Primitive` - UV 활성/비활성, 튜브 검증(Validate)을 위한 버튼입니다.
 * `Post subdivision` - 검증 전에 멀티레졸루션 레벨을 설정하는 바로가기입니다.
 * `Linear subdivision` - 검증 전에 선형 서브디비전 레벨을 설정하는 바로가기입니다. 
@@ -562,7 +562,7 @@ Lathe가 선택되면, 뷰포트 상단에 추가 컨트롤이 있는 툴바가 
 * `Division Y` - 툴바의 Y Divisions와 동일합니다.
 * `Curve (Repeater)` - 커브 프로파일을 [Curve Repeater](scene.md#curve)로 변환합니다.
 
-### ![](/icons/tool_insert.webp) Insert
+### ![](/icons/tool_insert.webp) 인서트 {#insert}
 다른 표면 위에 오브젝트를 배치합니다. 사용감은 Stamp 도구와 비슷하지만, 완전한 3D 형태를 사용합니다.
 
 왼쪽 툴바에서 프리미티브를 선택한 뒤, 어떤 표면이든 클릭-드래그하면 클릭한 위치에 프리미티브가 배치되고, 드래그 길이로 크기가 정해집니다. 드래그를 마치면 Insert는 [Transform](#transform) 모드로 전환됩니다.
@@ -575,7 +575,7 @@ Instance 모드에서는 드래그로 새 인스턴스를 생성하고 표면 �
 
 ![](/videos/tool_insert.mp4)
 
-### ![](/icons/tool_transform.webp) Transform
+### ![](/icons/tool_transform.webp) 트랜스폼 {#transform}
 보통 다른 오브젝트 표면 위에서, 1~2 손가락으로 모델을 직접 이동/회전/스케일합니다.
 
 도구는 왼쪽 툴바의 5개 버튼으로 제어합니다:
@@ -609,7 +609,7 @@ Transform은 두 손가락을 사용해 이들 모드 중 두 가지를 빠르�
 
 ![](/videos/tool_transform.mp4)
 
-### ![](/icons/tool_gizmo.webp) Gizmo
+### ![](/icons/tool_gizmo.webp) 기즈모 {#gizmo}
 이 도구는 오브젝트를 이동, 회전, 스케일하고, 오브젝트의 피벗을 변경할 수 있게 해줍니다.
 
 뷰포트 핸들은 다음 기능을 갖습니다:
@@ -620,7 +620,7 @@ Transform은 두 손가락을 사용해 이들 모드 중 두 가지를 빠르�
 
 ![](/images/tool_gizmo.webp)
 
-#### 노드와 버텍스 
+#### 노드와 버텍스 {#nodes-and-vertices}
 
 Nomad의 모든 오브젝트는 노드와 버텍스로 구성됩니다:
 
@@ -629,7 +629,7 @@ Nomad의 모든 오브젝트는 노드와 버텍스로 구성됩니다:
 
 8개의 버텍스로 이루어진 단순 박스가 있다면, 변환 행렬을 수정해 박스를 이동할 수도 있고, 버텍스 위치를 수정해 이동할 수도 있습니다. 조각할 때는 보통 버텍스를 수정하고, 기즈모로 오브젝트를 움직일 때는 보통 노드를 수정합니다. Nomad는 두 가지 모두를 지원합니다. 
 
-#### 왼쪽 메뉴 툴바
+#### 왼쪽 메뉴 툴바 {#left-menu-toolbar}
 
 왼쪽 툴바는 기즈모가 노드 또는 버텍스 중 어느 쪽에 작동할지와 기타 기능을 제어합니다:
 
@@ -642,7 +642,7 @@ Nomad의 모든 오브젝트는 노드와 버텍스로 구성됩니다:
 * `Snap translation` - 이동 값을 일정 간격으로 스냅합니다. 스냅 값은 스냅이 활성일 때 표시되며 편집할 수 있습니다.
 * `Pivot` - 활성화 시, 오브젝트를 움직이지 않고 기즈모만 이동/회전할 수 있습니다. 아래에서 설명하는 추가 메뉴가 있습니다.
 
-#### Pivot
+#### 피벗 {#pivot}
 Pivot 모드가 활성화되면, 빠른 피벗 변경을 위한 메뉴가 표시됩니다:
 
 **Reset** 
@@ -657,11 +657,11 @@ Pivot 모드가 활성화되면, 빠른 피벗 변경을 위한 메뉴가 표시
 * `First` - 표면을 탭한 위치로 피벗을 이동하지만, 회전은 변경하지 않습니다.
 * `Medial` - 탭한 표면 아래 오브젝트의 중간 지점으로 피벗을 이동합니다.
 
-#### Gizmo 설정
+#### 기즈모 설정 {#gizmo-settings}
 
 ![](/images/tool_gizmo_settings.webp)
 
-##### Matrix 
+##### 매트릭스 {#matrix}
 * ![](/icons/target.webp) `Move origin` - 오브젝트의 피벗이 씬의 중심(원점)에 오도록 오브젝트를 이동합니다.
 * ![](/icons/bake.webp)  `Bake` - 현재 위치에서 오브젝트를 고정하고, 이동/회전 값을 0, 스케일을 1로 설정합니다.
 * ![](/icons/bake.webp) -> ![](/icons/tool_gizmo.webp) `Bake Pivot` - 기즈모 핸들이 월드에서 위치한 곳에 맞춰 행렬 값을 설정합니다.
@@ -713,7 +713,7 @@ Pivot 모드를 활성화하고 핸들을 한쪽으로 옮긴 뒤, Pivot 모드�
 
 ![](/videos/tool_gizmo.mp4)
 
-### ![](/icons/tool_faceGroup.webp) Facegroup
+### ![](/icons/tool_faceGroup.webp) 페이스 그룹 {#facegroup}
 
 Facegroup은 오브젝트를 서로 다른 색상의 면으로 구성해 정리할 수 있게 해줍니다. Nomad에서 Facegroup은 여러 방식으로 사용할 수 있습니다:
 
@@ -724,7 +724,7 @@ Facegroup은 오브젝트를 서로 다른 색상의 면으로 구성해 정리�
 * Quad Remesher 가이드
 * Smooth 같은 도구에 추가 제어 제공
 
-#### Facegroup 왼쪽 툴바
+#### 페이스 그룹 왼쪽 툴바 {#facegroup-left-toolbar}
 
 * `Patch ` - 사용 가능한 Facegroup을 패치로 표시합니다. 사용하지 않는 패치는 삭제할 수 있습니다. 패치를 탭해 이름을 바꾸거나 색을 변경합니다. 플러스 아이콘으로 새 패치를 생성합니다.
 * `Dot` - 오브젝트 위를 칠해 Facegroup을 정의합니다. '+ Face Group' 이 활성화되어 있으면, 매 스트로크마다 자동으로 새 Facegroup이 생성되어 영역을 빠르게 정의할 수 있습니다. 탭하면 선택된 영역을 플러드 필합니다. 슬라이더는 점의 반경을 설정합니다.
@@ -732,7 +732,7 @@ Facegroup은 오브젝트를 서로 다른 색상의 면으로 구성해 정리�
 * `Shape selector` - 브러시 대신 `Lock+Radius`, `Lasso`, `Polygon`, `Rect`, `Ellipse` 를 사용해 셰이프로 Facegroup을 만듭니다. 자세한 내용은 [Shape Selector](#shape-selector)를 참고하세요.
 * `Auto-pick` - 활성화 시, 스트로크가 시작되는 지점의 패치를 자동으로 선택해 스트로크 전체에 적용합니다. Facegroup 영역을 정리할 때 매우 유용합니다. Facegroup이 너무 멀리 확장되었다면 Auto-pick을 켜고, 패치가 올바른 영역에서 스트로크를 시작해 경계까지 드래그해 올바른 패치로 재할당할 수 있습니다.
 
-### ![](/icons/tool_hide.webp) Hide
+### ![](/icons/tool_hide.webp) 숨기기 {#hide}
 오브젝트의 일부를 숨기거나 고립시킵니다. 
 
 주요 모드는 왼쪽 메뉴에서 제어합니다:
@@ -750,10 +750,10 @@ Facegroup은 오브젝트를 서로 다른 색상의 면으로 구성해 정리�
 * `Delete` - 숨겨진 부분을 삭제합니다.
 * `Split` - 숨겨진 부분을 새 형태로 분리합니다.
 
-### ![](/icons/tool_measure.webp) Measure
+### ![](/icons/tool_measure.webp) 측정 {#measure}
 두 점 사이의 거리를 측정하려면 드래그합니다.
 
-### ![](/icons/tool_remesh.webp) Quad Remesher
+### ![](/icons/tool_remesh.webp) 쿼드 리메셔 {#quad-remesher}
 
 ![](/images/tool_quadremesher.webp)
 
@@ -780,7 +780,7 @@ When this tool is activated for the first time, it will ask if you want to enabl
 * `Rect` - 스컬프트 표면 위에 사각형을 그립니다. 쿼드 리메셔는 이를 엣지 플로우의 가이드로 사용합니다. 경로를 탭하면 삭제됩니다.
 * `Ellipse` - 스컬프트 표면 위에 타원을 그립니다. 쿼드 리메셔는 이를 엣지 플로우의 가이드로 사용합니다. 경로를 탭하면 삭제됩니다.
 
-#### Quad remesher top toolbar
+#### 쿼드 리메셔 상단 툴바 {#quad-remesher-top-toolbar}
 ![](/images/tool_quadremesher_toolbar.webp)
 
 뷰포트 상단에 추가 컨트롤이 있는 툴바가 나타납니다:
@@ -801,7 +801,7 @@ When this tool is activated for the first time, it will ask if you want to enabl
 * `Symmetry` - 대칭 결과를 활성화할지 토글합니다. 대칭은 항상 월드 X축을 기준으로 계산되므로, 대칭 결과를 기대한다면 모델이 원점에 위치하도록 하세요.
 * `...` - 쿼드 리메셔 설정 메뉴입니다. 
 
-#### Quad remesher settings menu
+#### 쿼드 리메셔 설정 메뉴 {#quad-remesher-settings-menu}
 
 이 설정 대부분은 상단 툴바에서도 사용할 수 있습니다.
 
@@ -827,14 +827,14 @@ When this tool is activated for the first time, it will ask if you want to enabl
 
 :::
 
-### ![](/icons/tool_select.webp) Select
+### ![](/icons/tool_select.webp) 선택 {#select}
 도형 모드를 사용해 씬의 오브젝트를 선택합니다. `Unselect`는 선택에서 오브젝트를 제거합니다.
 
-### ![](/icons/tool_view.webp) View
+### ![](/icons/tool_view.webp) 뷰 {#view}
 이 "툴"은 특별히 아무 작업도 하지 않으며, 단지 씬을 수정하지 않고 모델을 보기 위한 용도입니다.
 
 
-## Toolbox context menu
+## 툴박스 컨텍스트 메뉴 {#toolbox-context-menu}
 
 ![](/images/tools_context_menu.webp)
 

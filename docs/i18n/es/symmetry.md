@@ -1,10 +1,10 @@
-# ![](/icons/symmetry.webp) Simetría
+# ![](/icons/symmetry.webp) Simetría {#symmetry}
 
 Este menú controla cómo se repetirán los trazos a través de un plano de espejo o de forma radial, y las formas de restaurar la simetría en objetos no simétricos.
 
 ![](/images/symmetry_overview.webp) 
 
-## Descripción general 
+## Descripción general {#overview}
 Puedes usar la simetría de varias maneras:
 
 * Como un espejo, invirtiendo el trabajo a través de X (izquierda/derecha), Y (arriba/abajo), Z (detrás/delante), o una combinación. 
@@ -23,10 +23,10 @@ Las únicas excepciones son las herramientas de transformación ([Mover](#transl
 El menú de simetría es principalmente para controlar la simetría de los trazos. También puedes reflejar y repetir objetos mediante [repetidores que se encuentran en el menú de escena](scene#repeaters). 
 :::
 
-## Enabled
+## Activado {#enabled}
 Activa el modo espejo, es lo mismo que el botón `Sym` en el panel rápido de la izquierda. 
 
-## Planes
+## Planos {#planes}
 
 Activa plano(s) de simetría y el número de repeticiones para la simetría radial. Ten en cuenta que no tienes que elegir solo un plano; puedes tener 1, 2 o los 3 planos activados para una simetría compleja.
 
@@ -34,10 +34,10 @@ El eje y el recuento de repeticiones para la simetría radial. Ten en cuenta que
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Method
+## Método {#method}
 El espejo puede ser 'Local', y moverse con el objeto, o ser 'World' (Mundo), y no moverse. Si no estás seguro de qué modo necesitas, observa el plano de espejo y los indicadores radiales que se superponen sobre el objeto. En modo local, si usas el gizmo de transformación y mueves el modelo, los indicadores del espejo también se moverán. En modo mundo, los indicadores del espejo permanecerán fijos y el objeto se deslizará a través de ellos.
 
-## Mirroring
+## Espejado {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
 Al esculpir cerca de los planos de simetría, algunos pinceles tendrán un comportamiento de simetría imperfecto. Esta sección te permite restaurar la simetría copiando un lado de tu escultura al otro. 
@@ -53,11 +53,11 @@ Al esculpir cerca de los planos de simetría, algunos pinceles tendrán un compo
 
 `Split & Mirror` esencialmente cortará el objeto a lo largo del espejo, copiará un lado, lo reflejará al otro y soldará los vértices a lo largo del espejo. Es una opción más destructiva y eliminará la multirresolución, pero a veces este método es necesario si el modelo es muy diferente a través del espejo.
 
-### Flip object
+### Voltear objeto {#flip-object}
 ![](/images/symmetry_flip.webp)
 Hace que el lado izquierdo pase a ser el derecho y viceversa. Similar en apariencia a si usaras el menú de la herramienta gizmo y establecieras la escala en -1 en X.
 
-## Reset and Edit
+## Restablecer y editar {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
@@ -72,7 +72,7 @@ Así que si no funciona como esperas, asegúrate de comprobar si estás en el es
 ¡El botón `Gizmo (Edit)` está intencionadamente atenuado como recordatorio de que probablemente no deberías usarlo!
 :::
 
-## Show options
+## Mostrar opciones {#show-options}
 ![](/images/symmetry_show.webp)
 
 

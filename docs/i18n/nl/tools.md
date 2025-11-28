@@ -1,4 +1,4 @@
-# ![](/icons/toolbox.webp) Gereedschap
+# ![](/icons/toolbox.webp) Gereedschap {#tools}
 
 ![](/images/tools_menu.webp)
 
@@ -6,7 +6,7 @@
 Spring naar beneden naar [Gereedschap](#tools-1) voor beschrijvingen van de individuele tools.
 :::
 
-## Overzicht
+## Overzicht {#overview}
 
 Gereedschap wordt geselecteerd uit de `Toolbox` rechts, en bediend met de `Tool Controls` links. Extra instellingen zijn te vinden in het `Settings`-menu, het eerste icoon in het menu rechtsboven.
 
@@ -31,7 +31,7 @@ Nomads tools zijn kleurgecodeerd in de toolbox:
 Veel van deze tools kunnen worden aangepast met verschillend brush‑gedrag, druk, texturen enz. via het [Stroke](stroke.md)-menu. 
 
 
-### Brush‑instellingen
+### Penseelbediening {#brush-controls}
 
 De linker toolbar heeft schuifregelaars voor radius en intensiteit, en daarna toolspecifieke instellingen per categorie, hieronder uitgelegd.
 
@@ -41,17 +41,17 @@ De linker toolbar heeft schuifregelaars voor radius en intensiteit, en daarna to
 De intensiteitsschuif voor veel tools kan boven 100% gaan, het is de moeite waard om hiermee te experimenteren!
 :::
 
-### Sub‑modus
+### Sub‑modus {#sub-mode}
 De knop direct onder de intensiteitsschuif is de `Sub`‑knop. Het label en de functie veranderen per tool, en wanneer hij is ingedrukt wordt een alternatieve, meestal tegenovergestelde werking geactiveerd. Voor [Paint](#paint) wordt bijvoorbeeld een Erase‑modus geactiveerd, voor [Crease](#crease) worden opstaande randen gemaakt in plaats van groeven, enz.
 
 Standaard werkt hij als een “sticky” knop; je kunt hem ingedrukt houden om hem tijdelijk te activeren, en zodra je loslaat wordt hij weer uitgeschakeld. Als je tikt, wordt de sub‑modus permanent geactiveerd.
 
-### Snelkoppelingen
+### Snelkoppelingen {#shortcuts}
 Onderaan de linker toolbar staan snelkoppelingen voor [Smooth](#smooth), [Mask](#mask), [Hide](#hide), [Gizmo](#gizmo), [Color](painting.md#pbr-sliders), [Alpha](stroke.md#alpha). 
 
 Standaard werken deze allemaal als “sticky” knoppen; je kunt ze ingedrukt houden om ze tijdelijk te activeren, en zodra je loslaat worden ze weer uitgeschakeld. Als je tikt, wordt die snelkoppelingsmodus permanent geactiveerd.
 
-### Selectie‑instellingen
+### Selectiebediening {#selection-controls}
 
 De tools [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Project](#project), [Facegroup](#facegroup) en [Hide](#hide) gebruiken vergelijkbare bediening om gebieden van de mesh te selecteren.
 
@@ -69,7 +69,7 @@ De tools [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Pro
 
 De meeste tools hebben een optie voor auto validate, wat betekent dat de bewerking wordt uitgevoerd zodra je klaar bent met het tekenen van de vorm. Wanneer auto validate uit staat, wordt er een groene knop naast de vorm getekend die de bewerking uitvoert. Dit stelt je in staat de vorm te bewerken, het zicht aan te passen, en wanneer je klaar bent druk je op de groene knop om de vorm te gebruiken.
 
-### Shape editing
+### Vormbewerking {#shape-editing}
 Polygon‑bewerking en curve‑bewerking gedragen zich op vergelijkbare wijze:
 
 * Begin met het slepen van een lijn om 2 punten te definiëren, sleep dan vanuit het midden van de lijn om een polygoon of curve te definiëren.
@@ -78,13 +78,13 @@ Polygon‑bewerking en curve‑bewerking gedragen zich op vergelijkbare wijze:
 * Om een punt te verwijderen, sleep je een punt naar zijn buur totdat hij rood wordt.
 * Het prullenbak‑icoon in de hoek van het polygon‑ of path‑icoon verwijdert de vorm.
 
-### Settings‑menu
+### Instellingenmenu {#settings-menu}
 
 Veel tools hebben extra instellingen die te vinden zijn in het settings‑menu, het eerste icoon in het menu rechtsboven:
 
 ![](/images/tools_settings_menu.webp)
 
-## Tools
+## Gereedschap {#tools-1}
 
 |                                                                     |                                                   |                                                                   |                                                         |                                                         |                                                                     |
 | :-----------------------------------------------------------------: | :-----------------------------------------------: | :---------------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------------------: |
@@ -97,24 +97,24 @@ Veel tools hebben extra instellingen die te vinden zijn in het settings‑menu, 
 
 ------
 
-### ![](/icons/tool_clay.webp) Clay
+### ![](/icons/tool_clay.webp) Klei {#clay}
 De Clay‑tool is handig om je sculptuur op te bouwen. `Sub` verwijdert materiaal van je sculptuur.
 
 ![](/videos/tool_clay.mp4)
 
-### ![](/icons/tool_brush.webp) Brush
+### ![](/icons/tool_brush.webp) Penseel {#brush}
 De standaard brush. `Sub` verwijdert materiaal.
 
 ![](/videos/tool_brush.mp4)
 
-### ![](/icons/tool_move.webp) Move
+### ![](/icons/tool_move.webp) Verplaatsen {#move}
 Het gebied onder de brush blijft aan de brush “plakken”, wat elastische vervorming mogelijk maakt. De selectie wordt behouden tijdens het verplaatsen, dus als je de brush weghaalt en weer terugbrengt naar het beginpunt, zie je geen vervorming.
 
 De sub‑modus is `Normal`, en verplaatst het gebied onder de brush langs de oppervlaknormaal.
 
 Deze brush is geschikt voor zowel grootschalige vervorming als nauwkeurige kleine vervormingen.
 
-#### Move‑instellingen
+#### Instellingen Verplaatsen {#move-settings}
 
 * `Radius (Background)` - Hoe ver je van de rand van een model kunt zijn en nog steeds kunt sculpten, handig bij het werken aan de silhouet van een object. 
 * `Same-side vertex only` - Negeer vertices die in de tegenovergestelde richting van de vervorming wijzen.
@@ -122,40 +122,40 @@ Deze brush is geschikt voor zowel grootschalige vervorming als nauwkeurige klein
 
 ![](/videos/tool_move.mp4)
 
-### ![](/icons/tool_drag.webp) Drag
+### ![](/icons/tool_drag.webp) Slepen {#drag}
 Het gebied onder de brush blijft aan de brush “plakken”, wat elastische vervorming mogelijk maakt. In tegenstelling tot de Move‑brush wordt de selectie continu bijgewerkt tijdens de stroke, zodat het mogelijk is langere, slangachtige vormen te maken, vooral wanneer Dynamic Topology is geactiveerd.
 
 De sub‑modus is `Normal`, en verplaatst het gebied onder de brush langs de oppervlaknormaal.
 
 Deze brush is goed voor lossere, meer gebarige vormveranderingen.
 
-#### Drag‑instellingen
+#### Instellingen Slepen {#drag-settings}
 
 * `Radius (Background)` - Hoe ver je van de rand van een model kunt zijn en nog steeds kunt sculpten, handig bij het werken aan de silhouet van een object. 
 * `Same-side vertex only` - Negeer vertices die in de tegenovergestelde richting van de vervorming wijzen.
 
 ![](/videos/tool_drag.mp4)
 
-### ![](/icons/tool_smooth.webp) Smooth
+### ![](/icons/tool_smooth.webp) Vervagen {#smooth}
 Maak het gebied glad door de puntposities te middelen. Deze tool is sterk afhankelijk van de polygoondichtheid.
 Als je veel polygonen hebt, is het gladmaken minder effectief.
 
 De sub‑modus is `Relax`, die alleen het wireframe gladmaakt maar probeert de geometrische details te behouden.
 
-#### Smooth‑instellingen
+#### Instellingen Vervagen {#smooth-settings}
 
 ![](/images/tool_smooth_settings.webp)
 
-##### Facegroup
+##### Vlakkengroep {#smooth-facegroup}
 
 * `Relax` - Maakt de randen van facegroups glad. Gebruik een intensiteit groter dan 100% om randen snel glad te maken. `Auto` maakt alleen glad als facegroup‑preview is ingeschakeld, `Off` schakelt uit, `On` schakelt in. 
 
-##### Vertex
+##### Vertex {#vertex}
 * `Sticky vertex on border` - Voor meshes met open randen, bv. een vlak, is het mogelijk de hoeken uit te vlakken. Door deze optie in te schakelen worden de open randen vergrendeld.
 * `Relax` - hetzelfde als de relax‑alternatieve modus in de toolbar links.
 * `Stable smoothing` - Probeert het gladmaken topologie‑onafhankelijk te maken. Dit werkt het best bij variërende topologiedichtheid en met een hoge smoothing‑intensiteit.
 
-##### Painting
+##### Schilderen {#painting}
 * `Screen Smoothing` - Gebruik deze optie om topologie‑onafhankelijk gladmaken te krijgen, zelfs bij hoge polycounts.
 * `Screen samples` - De kwaliteit van het gladmaken; hogere waarden zijn gladder maar trager.
 
@@ -165,7 +165,7 @@ Hogere polygoondichtheden kunnen vereisen dat je de intensiteit boven 100% verho
 
 ![](/videos/tool_smooth.mp4)
 
-### ![](/icons/tool_mask.webp) Mask
+### ![](/icons/tool_mask.webp) Masker {#mask}
 Met deze tool kun je vertices maskeren. Gemaskerde vertices zijn beschermd tegen sculpten of schilderen. 
 
 De sub‑modus is `Unmask`, en wist waar het masker is geschilderd.
@@ -195,7 +195,7 @@ De titel van de balk kan worden aangetikt om in/uit te klappen, of de pijl recht
 |                                 On tap (mask)      | When enabled tapping an 'island' of mask or unmasked polygons will flood fill that island. |
 | ![](/icons/vertex.webp)        Connected          | When enabled only allow mask strokes to affect connected topology.                         |
 
-##### Mask Quick gesture
+##### Snelle Masker‑beweging {#mask-quick-gesture}
 Je kunt ZBrush‑achtige gebaren uitvoeren terwijl je de quick‑maskingknop in de linker toolbar ingedrukt houdt:
 | Action  | Gesture (hold lower-left shortcut) |
 | :-----: | :--------------------------------: |
@@ -205,28 +205,28 @@ Je kunt ZBrush‑achtige gebaren uitvoeren terwijl je de quick‑maskingknop in 
 | Sharpen | Tap on unmasked area               |
 
 
-#### Mask‑instellingen
+#### Maskerinstellingen {#mask-settings}
 ![](/images/tool_mask_settings.webp)
 
 ![](/videos/tool_mask2.mp4)
 
 * `Preview` - Het Mask‑instellingenmenu wordt vooral gebruikt om geometrie uit het masker te maken. Daarom is het standaardgedrag om een preview te tonen van hoe de nieuwe geometrie eruit zal zien. Je kunt kiezen voor geen preview, een extract‑preview, een split‑preview, en of deze geometrie in x‑ray‑modus wordt getoond.
 
-##### Thickness
+##### Dikte {#thickness}
 * `Height` - De hoogte van de geëxtraheerde vorm. Met het Plus/Minus‑icoon kun je wisselen tussen een naar buiten gerichte extrusie, naar binnen, of gecentreerd. 
 * `Height/Height+Mask` - Schakel tussen een constante hoogte, of dat vervaagde delen van het masker de hoogte beïnvloeden, zodat zachte en variërende hoogtes mogelijk zijn. 
 
-##### Smoothness
+##### Gladheid {#smoothness}
 Wanneer actief, worden de randen van de geëxtraheerde vorm gladgemaakt; dit werkt beter bij hogere polygoonaantallen. 
 * `Iterations` - De hoeveelheid smoothing die wordt toegepast. Hoge waarden produceren zeer gladde gebogen randen, maar zullen beginnen af te wijken van de maskervorm.
 * `All/Sharp border/Borders only` - Smoothing kan in alle richtingen werken (zijkanten en bovenkant), of de bovenkant en zijkanten gladmaken maar een scherpe rand behouden, of alleen de rand gladmaken en het bovenvlak ongemoeid laten.
 
-##### Edge loop (side)
+##### Randlus (zijkant) {#edge-loop-side}
 * `Auto Edge-loop (side)` - Berekent het aantal verdelingen aan de zijkanten van de geëxtraheerde vorm om vierkante polygonen te maken die overeenkomen met de polygonen van het gemaskerde gebied. Wanneer uitgeschakeld kun je zelf het aantal edge‑loops instellen met de edge‑loop‑schuif.
 
 ----
 
-##### Extract
+##### Extraheren {#extract}
 * `Extract` - Maak de geëxtraheerde geometrie.
 * `Closing action` - Hoe Extract zich moet gedragen. 'None' dupliceert de gemaskerde polygons in een nieuwe vorm. 'Fill' doet hetzelfde en probeert het achtervlak te dichten. 'Shell' extrudeert met de hoeveelheid ingesteld bij 'thickness', en is de standaard.
 
@@ -237,18 +237,18 @@ Als de preview in 'Extract'‑modus staat met 'X-ray' ingeschakeld, kan het klik
 Dit is normaal; sluit het Mask‑instellingenmenu om de nieuwe vorm en het origineel te bekijken, en selecteer het oorspronkelijke oppervlak opnieuw als je het masker moet wissen of nieuwe maskers wilt tekenen.
 :::
 
-##### Split
+##### Splitsen {#split-mask}
 * `Split` - Extraheert zowel de gemaskerde ALS de ongemaskerde gebieden in nieuwe vormen. 
 * `Closing action (masked)` - Hoe de extractie van het masker zich moet gedragen. 'None' dupliceert de gemaskerde polygons in een nieuwe vorm. 'Fill' doet hetzelfde en probeert het achtervlak te dichten. 'Shell' extrudeert met de hoeveelheid ingesteld bij 'thickness', en is de standaard.
 * `Closing action (unmasked)` - Hoe de extractie van het ongemaskerde deel zich moet gedragen. 'None' dupliceert de gemaskerde polygons in een nieuwe vorm. 'Fill' doet hetzelfde en probeert het achtervlak te dichten. 'Shell' extrudeert met de hoeveelheid ingesteld bij 'thickness', en is de standaard.
 * `Sync border` - Zorgt dat de rand tussen de gemaskerde en ongemaskerde geëxtraheerde vormen dicht bij elkaar blijft. Wanneer uitgeschakeld kan er een opening ontstaan tussen de vormen, omdat de shell‑bewerking elk vlak langs zijn normaal extrudeert.
 
-##### Carve
+##### Uitsnijden {#carve}
 * `Carve` - Gedraagt zich in de standaardmodus alsof je in het oppervlak hebt getrimd met de hoeveelheid 'thickness', zoals het uitsnijden van een stuk sinaasappelschil. 
 
 
 
-### ![](/icons/tool_maskSelector.webp) Selection Mask
+### ![](/icons/tool_maskSelector.webp) Selectiemasker {#selection-mask}
 Deze tool lijkt grotendeels op de [Masking‑tool](#mask); het belangrijkste verschil is dat je geen stroke gebruikt om een masker te schilderen, maar de [Selection Controls](#selection-controls).
 
 De sub‑modus is `Unmask`, en wist het masker met behulp van de selectie‑bediening.
@@ -257,28 +257,28 @@ Selection Mask deelt dezelfde toolinstellingen als de `Mask`‑tool.
 
 ![](/videos/tool_selector_mask.mp4)
 
-### ![](/icons/tool_paint.webp) Paint
+### ![](/icons/tool_paint.webp) Schilderen {#paint}
 Breng kleur en materiaaleigenschappen aan. Voor meer informatie over materiaal kun je de sectie [Painting](painting.md) bekijken.
 
 De sub‑modus is `Erase` en verwijdert verf.
 
-#### Paint‑instellingen
+#### Schilderinstellingen {#paint-settings}
 * `Layer fitering` - Dit werkt als de layer alpha lock in Photoshop of Procreate. Als je op een layer schildert, kun je met deze optie alleen gebieden wijzigen waar al verf aanwezig is; onbeschilderde gebieden worden beschermd.
 
 ![](/videos/tool_paint.mp4)
 
-### ![](/icons/tool_smudge.webp) Smudge
+### ![](/icons/tool_smudge.webp) Smudge {#smudge}
 Vervaag kleur en materiaaleigenschappen. Het Smudge‑instellingenmenu bevat een `Quality`‑schuif; lagere waarden betekenen snellere strokes.
 
 ![](/videos/tool_smudge.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Flatten
+### ![](/icons/tool_flatten.webp) Afvlakken {#flatten}
 Maak het gebied vlak door de punten op het gemiddelde vlak te projecteren.
 
 De sub‑modus is `Fill` en definieert een vlak dat wordt bepaald door het hoogste punt, en trekt punten eerder omhoog.
 
-#### Flatten‑instellingen
+#### Instellingen Afvlakken {#flatten-settings}
 
 * `Lock plane direction` - Gebruik de vlakrichting die bij de eerste klik is berekend. Standaard is dit uitgeschakeld.
 * `Lock plane origin`- Gebruik de eerste klik als middelpunt van het vlak. Standaard is dit uitgeschakeld.
@@ -292,7 +292,7 @@ Wanneer je werkt in gebieden met hoge kromming, bijvoorbeeld bij het vlakmaken v
 ![](/videos/tool_flatten.mp4)
 
 
-### ![](/icons/tool_planar.webp) Planar
+### ![](/icons/tool_planar.webp) Vlak {#planar}
 Maak punten vlak door ze op het gemiddelde vlak te projecteren, maar met minder opbouw dan de Flatten‑brush. Dit creëert schonere hard‑edge oppervlakken. Snelle strokes duwen en trekken meer aan het oppervlak, langzamere strokes die vanuit al vlakke gebieden naar buiten werken behouden het vlak beter.
 
 De sub‑modus is `Fill` en definieert een vlak dat wordt bepaald door het hoogste punt, en trekt punten eerder omhoog.
@@ -301,19 +301,19 @@ Planar is in feite dezelfde tool als `Flatten`, maar met `Lock plane direction` 
 
 ![](/videos/tool_planar.mp4)
 
-### ![](/icons/tool_crease.webp) Crease
+### ![](/icons/tool_crease.webp) Vouw {#crease}
 Crease‑tools zijn handig om kleine sneden of deuken te sculpten.
 
 De sub‑modus is `Invert`, en maakt een opstaande groef.
 
-#### Crease‑instellingen
+#### Instellingen Vouw {#crease-settings}
 
 * `Pinch factor` - Hoeveel vertices zijwaarts naar de stroke worden getrokken. Als pinch op 1 staat en offset op 0, verandert het oppervlak niet in diepte, alleen in topologie, waarbij randen naar de stroke worden getrokken.
 * `Offset factor` - Hoeveel vertices in de diepte worden geduwd/getrokken. Als pinch op 0 staat en offset op 1, worden diepe groeven of opstaande deuken gemaakt, maar die zien er hoekig uit omdat er niet genoeg geo naar de groef wordt getrokken om de zijkanten of bodem nauwkeurig te definiëren.
 
 ![](/videos/tool_crease.mp4)
 
-### ![](/icons/tool_pinch.webp) Pinch
+### ![](/icons/tool_pinch.webp) Knijpen {#pinch}
 Deze tool kan worden gebruikt om randen te verscherpen.
 
 De sub‑modus is `Invert` en duwt vertices uit elkaar.
@@ -321,7 +321,7 @@ De sub‑modus is `Invert` en duwt vertices uit elkaar.
 ![](/videos/tool_pinch.mp4)
 
 
-### ![](/icons/tool_trim.webp) Trim
+### ![](/icons/tool_trim.webp) Bijsnijden {#trim}
 De Trim‑tool werkt door een stuk van je mesh te verwijderen, en geeft opties voor hoe het overgebleven gat moet worden verwerkt. Hij gebruikt de [Selection controls](#selection-controls) om de trim te definiëren.
 
 ::: tip
@@ -330,7 +330,7 @@ Omdat deze tool vanuit de camera projecteert, krijg je een waarschuwing als de c
 In orthografische modus is de snede door de mesh parallel aan de view, wat meestal is wat men verwacht. In perspectiefmodus ziet de snede er anders uit aan de verre kant van het object dan aan de nabije kant.
 :::
 
-#### Trim‑instellingen
+#### Instellingen Bijsnijden {#trim-settings}
 
 * `Stroke painting` - Als paint is ingeschakeld in het Paint‑menu, wordt het gepatchte gebied gevuld met de momenteel geselecteerde kleur.
 * `Boolean` - Vul het gat van de trim met een quad‑polygebied. Het gevulde gebied is vlak.
@@ -346,10 +346,10 @@ In orthografische modus is de snede door de mesh parallel aan de view, wat meest
 
 ![](/videos/tool_trim.mp4)
 
-### ![](/icons/tool_split.webp) Split
+### ![](/icons/tool_split.webp) Splitsen {#split}
 Vergelijkbaar met de [Trim](#trim)‑tool, behalve dat Trim de selectie weggooit, terwijl Split de selectie bewaart als een nieuw object.
 
-#### Split‑instellingen
+#### Instellingen Splitsen {#split-settings}
 
 * `Stroke painting` - Als paint is ingeschakeld in het Paint‑menu, wordt het gepatchte gebied gevuld met de momenteel geselecteerde kleur.
 * `Boolean` - Vul het gat van de split met een quad‑polygebied. De gevulde gebieden zijn vlak.
@@ -366,7 +366,7 @@ Vergelijkbaar met de [Trim](#trim)‑tool, behalve dat Trim de selectie weggooit
 ![](/videos/tool_split.mp4)
 
 
-### ![](/icons/tool_project.webp) Project
+### ![](/icons/tool_project.webp) Projecteren {#project}
 De Project‑tool lijkt op de [Trim](#trim)‑tool, maar verwijdert of maakt geen geometrie; hij verplaatst alleen vertices zodat ze overeenkomen met de selectie.
 
 ![](/videos/tool_project.mp4)
@@ -375,7 +375,7 @@ De Project‑tool lijkt op de [Trim](#trim)‑tool, maar verwijdert of maakt gee
 Als je Project gebruikt terwijl je in een layer werkt, kun je met de layer‑slider tussen de oorspronkelijke en de geprojecteerde vorm blenden.
 :::
 
-### ![](/icons/tool_layer.webp) Layer
+### ![](/icons/tool_layer.webp) Laag {#layer}
 Verhoog het oppervlak, maar beperk de hoogte.
 
 Als je de pen omlaag houdt en over een gebied blijft brushen, zal Layer tot een bepaalde hoogte verhogen en niet verder gaan, in tegenstelling tot andere tools die hoogte blijven opstapelen.
@@ -388,7 +388,7 @@ Maak een layer en gebruik deze tool. De maximale hoogte wordt nu ingesteld vanui
 
 `Sub` gebruikt een minimale diepte en maakt groeven.
 
-#### Layer‑instellingen
+#### Laaginstellingen {#layer-settings}
 
 * `Use layer data` - Wanneer actief, en wanneer een layer is geselecteerd, gebruik de layer‑data om de maximale hoogte in te stellen.
 * `Inflate`- Wanneer actief wordt de richting waarin Layer werkt aangepast om gladdere resultaten te krijgen.
@@ -397,10 +397,10 @@ Maak een layer en gebruik deze tool. De maximale hoogte wordt nu ingesteld vanui
 ![](/videos/tool_layer.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Inflate
+### ![](/icons/tool_flatten.webp) Opblazen {#inflate}
 Verplaats de vertices langs hun eigen normals. `Sub` verplaatst vertices langs hun omgekeerde normaal.
 
-#### Inflate‑instellingen
+#### Instellingen Opblazen {#inflate-setings}
 * `Relax (Normal)` - De hoeveelheid smoothing die op de normals wordt toegepast.
 
 ![](/videos/tool_inflate.mp4)
@@ -408,13 +408,13 @@ Verplaats de vertices langs hun eigen normals. `Sub` verplaatst vertices langs h
 
 
 
-### ![](/icons/tool_nudge.webp) Nudge
+### ![](/icons/tool_nudge.webp) Duwen {#nudge}
 Verplaats of “smeer” punten in de richting van de stroke.
 
 ![](/videos/tool_nudge.mp4)
 
 
-### ![](/icons/tool_stamp.webp) Stamp
+### ![](/icons/tool_stamp.webp) Stempel {#stamp}
 
 Klik en sleep om een gebied van de sculpt omhoog te halen in de vorm van de geselecteerde Alpha.
 
@@ -435,13 +435,13 @@ De twee stroke‑modi zijn nuttig voor verschillende dingen.
 ![](/videos/tool_stamp.mp4)
 
 
-### ![](/icons/tool_clearLayer.webp) Delete Layer
+### ![](/icons/tool_clearLayer.webp) Laag verwijderen {#delete-layer}
 Deze tool kan layers lokaal resetten; je hebt een actieve layer nodig, anders gebeurt er niets.
 
 ![](/videos/tool_delete_layer.mp4)
 
 
-### ![](/icons/tool_tube.webp) Tube
+### ![](/icons/tool_tube.webp) Buis {#tube}
 Maak een tube door een curve te tekenen. 
 ![](/images/tool_tube_new.webp)
 
@@ -449,7 +449,7 @@ Zodra de tube is gemaakt, kan het pad in 3D‑ruimte worden bewerkt met vergelij
 
 ![](/videos/tool_tube.mp4)
 
-#### Tube‑linker toolbar
+#### Linkerwerkbalk Buis {#tube-left-toolbar}
 
 ![](/images/tool_tube_left_toolbar.webp)
 
@@ -468,7 +468,7 @@ De linker toolbar heeft de volgende opties:
     * `Closed` - Maak van de tube een lus
     * `Screen` - Wanneer actief, wordt het pad aan het scherm “vastgepind”, zodat je de view en het object kunt verplaatsen terwijl het pad op zijn plaats blijft. Wanneer inactief, maakt het pad deel uit van de 3D‑scene en beweegt het mee met camera en objecten.
 
-##### Tube‑toptoolbar
+##### Bovenste werkbalk Buis {#tube-top-toolbar}
 ![](/images/tool_tube_toolbar.webp)
 Wanneer een tube is geselecteerd, verschijnt er een toolbar bovenaan de viewport met extra bediening. Klik op de titel van de toolbar om hem in/uit te klappen, en klik op de pijl rechtsboven om de toolbar naar de boven- of onderkant van de viewport te verplaatsen.
 
@@ -489,7 +489,7 @@ Wanneer een tube is geselecteerd, verschijnt er een toolbar bovenaan de viewport
 * `Constant density` - Wanneer actief, blijven de polygonen vierkant. Wanneer uitgeschakeld, kun je `Y divisions` langs de lengte van de tube instellen.
 * `...` - Tube‑instellingenmenu.
 
-#### Curve point delete‑toggle
+#### Schakelaar curvepunt verwijderen {#curve-point-delete-toggle}
 
 ![](/images/tool_tube_delete_toggle.webp)
 
@@ -497,7 +497,7 @@ Onder de toolbar staat een curve point delete‑toggle. Wanneer je een curvepunt
 
 
 
-#### Tube‑instellingen
+#### Buisinstellingen {#tube-settings}
 * `Primitive` - Knoppen om UV’s in/uit te schakelen, of om de tube te valideren.
 * `Post subdivision` - Een snelkoppeling om het multiresolution‑niveau in te stellen vóór het valideren.
 * `Linear subdivision` - Snelkoppeling om het lineaire subdivisie‑niveau in te stellen vóór het valideren. 
@@ -510,14 +510,14 @@ Divisions op 4 en Post subdivision op 3 maken gladde, rond‑afgeronde tubes, go
 :::
 
 
-### ![](/icons/tool_lathe.webp) Lathe
+### ![](/icons/tool_lathe.webp) Draaibank {#lathe}
 Maak een rotatieoppervlak door een curve te tekenen.
 
 Deze tool is ideaal voor vormen zoals vazen en wijnglazen.
 
 ![](/videos/tool_lathe.mp4)
 
-#### Lathe‑linker toolbar
+#### Linkerwerkbalk Draaibank {#lathe-left-toolbar}
 
 ![](/images/tool_lathe_left_toolbar.webp)
 
@@ -535,7 +535,7 @@ De linker toolbar heeft de volgende opties:
     * `Closed` - Maak van de tube een lus
     * `Screen` - Wanneer actief, wordt het pad aan het scherm “vastgepind”, zodat je de view en het object kunt verplaatsen terwijl het pad op zijn plaats blijft. Wanneer inactief, maakt het pad deel uit van de 3D‑scene en beweegt het mee met camera en objecten.
 
-#### Lathe‑toptoolbar
+#### Bovenste werkbalk Draaibank {#lathe-top-toolbar}
 ![](/images/tool_lathe_top_toolbar.webp)
 
 Wanneer een lathe is geselecteerd, verschijnt er een toolbar bovenaan de viewport met extra bediening. Klik op de titel van de toolbar om hem in/uit te klappen, en klik op de pijl rechtsboven om de toolbar naar de boven- of onderkant van de viewport te verplaatsen.
@@ -554,7 +554,7 @@ Wanneer een lathe is geselecteerd, verschijnt er een toolbar bovenaan de viewpor
 * `Constant density` - Wanneer actief, blijven de polygonen vierkant. Wanneer uitgeschakeld, kun je `Y divisions` langs de lengte van de tube instellen.
 * `...` - Lathe‑instellingenmenu.
 
-#### Lathe‑instellingen
+#### Instellingen Draaibank {#lathe-settings}
 * `Primitive` - Knoppen om UV’s in/uit te schakelen, of om de tube te valideren.
 * `Post subdivision` - Een snelkoppeling om het multiresolution‑niveau in te stellen vóór het valideren.
 * `Linear subdivision` - Snelkoppeling om het lineaire subdivisie‑niveau in te stellen vóór het valideren. 
@@ -562,7 +562,7 @@ Wanneer een lathe is geselecteerd, verschijnt er een toolbar bovenaan de viewpor
 * `Division Y` - Zelfde als Y Divisions in de toolbar.
 * `Curve (Repeater)` - Converteer het curveprofiel naar een [Curve Repeater](scene.md#curve)
 
-### ![](/icons/tool_insert.webp) Insert
+### ![](/icons/tool_insert.webp) Invoegen {#insert}
 Plaats een object op het oppervlak van een ander. In gebruik lijkt het op de Stamp‑tool, maar dan voor volledige 3D‑vormen.
 
 Als je een primitive uit de linker toolbar selecteert, plaatst een klik‑sleep op een oppervlak een primitive waar je klikt; de sleep bepaalt de grootte. Zodra je klaar bent met slepen, schakelt Insert over naar de [Transform](#transform)‑modus.
@@ -575,7 +575,7 @@ Als een object een aangepaste pivot heeft, wordt die gebruikt als ankerpunt. Zie
 
 ![](/videos/tool_insert.mp4)
 
-### ![](/icons/tool_transform.webp) Transform
+### ![](/icons/tool_transform.webp) Transformeren {#transform}
 Verplaats/roteer/scale een model direct met 1 en 2 vingers, meestal over het oppervlak van een ander object.
 
 De tool wordt bediend met de linker toolbar en heeft 5 knoppen:
@@ -609,7 +609,7 @@ Dit levert een snelle workflow op om objecten over een ander te klonen, bijvoorb
 
 ![](/videos/tool_transform.mp4)
 
-### ![](/icons/tool_gizmo.webp) Gizmo
+### ![](/icons/tool_gizmo.webp) Gizmo {#gizmo}
 Met deze tool kun je objecten verplaatsen, roteren en schalen, en pivots van objecten aanpassen.
 
 De viewport‑handle heeft de volgende functies:
@@ -620,7 +620,7 @@ De viewport‑handle heeft de volgende functies:
 
 ![](/images/tool_gizmo.webp)
 
-#### Nodes en vertices 
+#### Knooppunten en vertices {#nodes-and-vertices}
 
 Elk object in Nomad bestaat uit een node en vertices:
 
@@ -629,7 +629,7 @@ Elk object in Nomad bestaat uit een node en vertices:
 
 Als je een eenvoudige box hebt die uit 8 vertices bestaat, kun je hem verplaatsen door zijn transformation matrix te wijzigen, of door de vertexposities te wijzigen. Bij sculpten wil je meestal de vertices aanpassen; bij het verplaatsen van objecten met de gizmo wil je meestal de node aanpassen. Nomad laat je beide doen. 
 
-#### Linker menu‑toolbar
+#### Linker menuwerkbalk {#left-menu-toolbar}
 
 De linker toolbar bepaalt of de gizmo op de node of de vertices werkt, evenals andere functies:
 
@@ -642,7 +642,7 @@ De linker toolbar bepaalt of de gizmo op de node of de vertices werkt, evenals a
 * `Snap translation` - Schakel het snappen van translatie‑waarden naar stappen in; de snapwaarde wordt weergegeven en kan worden aangepast wanneer Snap actief is.
 * `Pivot` - Wanneer ingeschakeld kan de gizmo worden verplaatst en geroteerd zonder het object te verplaatsen. Er is een extra menu dat hieronder wordt uitgelegd.
 
-#### Pivot
+#### Draaipunt {#pivot}
 Wanneer Pivot‑modus actief is, wordt een menu weergegeven om snel pivots te wijzigen:
 
 **Reset** 
@@ -657,11 +657,11 @@ Wanneer Pivot‑modus actief is, wordt een menu weergegeven om snel pivots te wi
 * `First` - Verplaats (maar roteer niet) de pivot naar het oppervlak waar wordt getikt
 * `Medial` - Verplaats de pivot naar het midden van het object, onder het oppervlak waar wordt getikt.
 
-#### Gizmo‑instellingen
+#### Gizmo‑instellingen {#gizmo-settings}
 
 ![](/images/tool_gizmo_settings.webp)
 
-##### Matrix 
+##### Matrix {#matrix}
 * ![](/icons/target.webp) `Move origin` - Verplaats het object zodat zijn pivot in het midden van de scene staat, de origin.
 * ![](/icons/bake.webp)  `Bake` - “Vries” het object waar het nu staat en zet de translate/rotate‑waarden op 0, scale op 1.
 * ![](/icons/bake.webp) -> ![](/icons/tool_gizmo.webp) `Bake Pivot` - Laat de matrixwaarden overeenkomen met de positie van de gizmo‑handle in de wereld.
@@ -713,7 +713,7 @@ Dit is vooral nuttig voor rotatie, omdat het niets verandert voor translatie.
 
 ![](/videos/tool_gizmo.mp4)
 
-### ![](/icons/tool_faceGroup.webp) Facegroup
+### ![](/icons/tool_faceGroup.webp) Vlakkengroep {#facegroup}
 
 Met Facegroups kun je je object in verschillend gekleurde vlakken organiseren. Je kunt deze groepen op veel manieren in Nomad gebruiken:
 
@@ -724,7 +724,7 @@ Met Facegroups kun je je object in verschillend gekleurde vlakken organiseren. J
 * De quad remesher sturen
 * Extra controle voor tools zoals Smooth.
 
-#### Facegroup‑linker toolbar
+#### Linkerwerkbalk Vlakkengroep {#facegroup-left-toolbar}
 
 * `Patch ` - Toon de beschikbare facegroups als patches. Ongebruikte patches kunnen worden verwijderd. Tik op een patch om hem te hernoemen of de kleur te wijzigen. Met het plus‑icoon kun je nieuwe patches maken.
 * `Dot` - Schilder op het object om facegroups te definiëren. Wanneer '+ Face Group' is ingeschakeld, maakt elke nieuwe stroke automatisch een nieuwe facegroup, handig om snel regio’s te definiëren. Een tik vult de geselecteerde regio. De schuif stelt de radius van de dot in.
@@ -732,7 +732,7 @@ Met Facegroups kun je je object in verschillend gekleurde vlakken organiseren. J
 * `Shape selector` - Maak facegroups met vormen in plaats van een brush, via `Lock+Radius`, `Lasso`, `Polygon`, `Rect` en `Ellipse`. Zie [Shape Selector](#shape-selector) voor meer info.
 * `Auto-pick` - Wanneer ingeschakeld, wordt de patch geselecteerd waar de stroke begint en wordt die patch voor de rest van de stroke toegepast. Zeer handig om facegroup‑regio’s op te schonen; als een facegroup te ver is doorgetrokken, schakel Auto‑pick in, begin een stroke waar de facegroup‑patch correct is en sleep naar de rand om de juiste patch opnieuw toe te wijzen.
 
-### ![](/icons/tool_hide.webp) Hide
+### ![](/icons/tool_hide.webp) Verbergen {#hide}
 Verberg of isoleer delen van het object. 
 
 De primaire modi worden bediend vanuit het linker menu:
@@ -750,10 +750,10 @@ Er verschijnt een toolbar bovenaan de viewport met extra bediening:
 * `Delete` - Verwijder het verborgen deel van het object
 * `Split` - Splits het verborgen deel van het object in een nieuwe vorm.
 
-### ![](/icons/tool_measure.webp) Measure
+### ![](/icons/tool_measure.webp) Meten {#measure}
 Sleep om de afstand tussen 2 punten te meten.
 
-### ![](/icons/tool_remesh.webp) Quad Remesher
+### ![](/icons/tool_remesh.webp) Quad‑Remesher {#quad-remesher}
 
 ![](/images/tool_quadremesher.webp)
 
@@ -780,7 +780,7 @@ Wanneer deze tool voor de eerste keer wordt geactiveerd, wordt gevraagd of je de
 * `Rect` - Teken rechthoeken op het oppervlak van het sculpt; quad remesher zal deze gebruiken als gidsen voor de edge flow. Tik op een pad om het te verwijderen.
 * `Ellipse` - Teken ellipsen op het oppervlak van het sculpt; quad remesher zal deze gebruiken als gidsen voor de edge flow. Tik op een pad om het te verwijderen.
 
-#### Quad remesher bovenste werkbalk
+#### Bovenste werkbalk Quad‑Remesher {#quad-remesher-top-toolbar}
 ![](/images/tool_quadremesher_toolbar.webp)
 
 Er verschijnt een werkbalk bovenaan de viewport met extra bedieningselementen:
@@ -801,7 +801,7 @@ Er verschijnt een werkbalk bovenaan de viewport met extra bedieningselementen:
 * `Symmetry` - Schakelaar om een symmetrisch resultaat in te schakelen. Merk op dat symmetrie altijd rond de wereld-x-as wordt berekend, dus zorg dat je model zich op de oorsprong bevindt als je een symmetrisch resultaat verwacht.
 * `...` - Quadremesher-instellingenmenu. 
 
-#### Quad remesher-instellingenmenu
+#### Instellingenmenu Quad‑Remesher {#quad-remesher-settings-menu}
 
 De meeste van deze instellingen zijn beschikbaar in de bovenste werkbalk.
 
@@ -827,14 +827,14 @@ Zorg er in de quad-remesh-opties voor dat relax is uitgeschakeld (aangezien je d
 
 :::
 
-### ![](/icons/tool_select.webp) Select
+### ![](/icons/tool_select.webp) Selecteren {#select}
 Gebruik de vormmodi om objecten in de scène te selecteren. `Unselect` zal objecten uit de selectie verwijderen.
 
-### ![](/icons/tool_view.webp) View
+### ![](/icons/tool_view.webp) Weergave {#view}
 Deze "tool" doet op zichzelf niets bijzonders; dit is simpelweg een manier om het model te bekijken zonder je scène te wijzigen.
 
 
-## Toolbox-contextmenu
+## Contextmenu gereedschapskist {#toolbox-context-menu}
 
 ![](/images/tools_context_menu.webp)
 

@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) Fondo
+# ![](/icons/image.webp) Fondo {#background}
 
 Este menú controla el color de fondo de Nomad, así como cualquier imagen de referencia que se vaya a usar.
 
 ![](/images/background_overview.webp)
 
-## Fondo 
+## Fondo {#type}
 ![](/images/background_selector.webp)
 
 Hay tres opciones para el fondo de la vista.
@@ -13,14 +13,14 @@ Hay tres opciones para el fondo de la vista.
 * `Color` - Un color plano que puedes elegir.
 * `Gradient` - Un degradado de color de arriba hacia abajo. El control deslizante Factor te permite determinar el punto medio del degradado.  
 
-## Imagen de referencia
+## Imagen de referencia {#reference}
 
 ![](/images/background_reference.webp)
 
 Puedes añadir una imagen de tu elección en el fondo para usarla como referencia.
 Puedes cambiar la posición y la escala, por ejemplo si quieres moverla a una esquina de la pantalla.
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) Transformar {#transform}
 
 Este botón te permitirá colocar la imagen de referencia de forma interactiva. Usa 2 dedos para desplazar, escalar y rotar la imagen de referencia hasta colocarla. La posición final se reflejará en los controles deslizantes de abajo:
 

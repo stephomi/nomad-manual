@@ -1,9 +1,9 @@
-# ![](/icons/faq.webp) Často kladené dotazy (FAQ)
+# ![](/icons/faq.webp) Často kladené otázky {#faq}
 
 [[toc]]
 
-## Platforma 
-### Kde se na mém zařízení nacházejí projekty?
+## Platforma {#platform}
+### Kde jsou na mém zařízení uloženy moje projekty? {#locate}
 Projekty se nacházejí ve složce `projects` uvnitř hlavní složky Nomad.
 
 V iOS se ke složce Nomad dostanete přes aplikaci Soubory.
@@ -14,18 +14,18 @@ Můžete se k ní dostat pomocí samostatné aplikace, například [této](https
 <!-- [this one](https://play.google.com/store/apps/details?id=com.alphainventor.filemanager) -->
 <!-- [this one](https://play.google.com/store/apps/details?id=com.mi.android.globalFileexplorer) -->
 
-### Existuje možnost beta testování?
+### Je možné testovat beta verzi? {#beta}
 Pro Windows a MacOS může být beta verze dostupná na [domovské stránce](https://nomadsculpt.com).
 <br>
 Pro iOS existuje soukromý TestFlight, navštivte [Discord](https://discord.com/invite/8h7BwpRz29) v kanálu #beta-ios.
 <br>
 [Webová ukázka](https://nomadsculpt.com/demo) je obvykle aktualizována s nejnovějšími funkcemi.
 
-### Proč je na Androidu zkušební verze zdarma, ale ne na iOS?
+### Proč je na Androidu k dispozici bezplatná zkušební verze, ale na iOS ne? {#android-trial}
 Protože stará Android zařízení jsou mizerná (a některá nová také...), a nechtěl jsem, aby si lidé koupili aplikaci a přivítala je černá obrazovka.
 Hlavní důvod ale je, že placené aplikace na Androidu nejsou úplně standardem.
 
-### Jaký je nejlepší tablet pro běh Nomadu?
+### Jaký je nejlepší tablet pro provozování Nomadu? {#best-tablet}
 
 Stručně: iPad.
 
@@ -73,7 +73,7 @@ Nejprve prosím použijte bezplatnou verzi Nomadu bez ukládání a otestujte si
 Většina souborů Nomadu má obvykle 100 MB nebo méně. To znamená, že téměř jakýkoli tablet, který si dnes koupíte, ať už iPad nebo Android, bude mít pro vaše projekty Nomad dostatek místa.
 
 
-### Koupil(a) jsem Nomad pro jedno zařízení, mohu ho použít na jiném?
+### Koupil jsem Nomad pro jedno zařízení, mohu ho použít na jiném zařízení? {#multi-devices}
 Pokud používá stejný obchod s aplikacemi a stejný účet, tak ano.
 
 Například pokud jste ho koupili v iOS App Store, můžete ho používat na ostatních iOS zařízeních.
@@ -85,7 +85,7 @@ Pokud jste ale koupili Nomad na Androidu a pak si pořídíte iPad, budete ho mu
 Je to proto, že Nomad nemá vlastní licenční server ani předplatné. Neexistuje žádná dohoda mezi Apple/Google/AppGallery ohledně sdílení licencí. 
 
 
-### Jak obnovit nákup?
+### Jak obnovit svůj nákup? {#restore}
 Google Play i AppGallery synchronizaci řeší automaticky.
 
 - Jděte do nabídky About (ikona Nomad vlevo nahoře) a stiskněte `restore purchase`
@@ -110,27 +110,27 @@ Novější zařízení Huawei nemají přístup ke službám Google.
 V takovém případě budete muset aplikaci znovu zakoupit v AppGallery (obchod s aplikacemi Huawei).
 :::
 
-### Můžete přeložit nebo opravit [můj jazyk]?
+### Můžete přeložit nebo opravit [můj-jazyk]? {#locale}
 Poměrně snadno mohu přidat další jazyk, ale spoléhám se na překlad pomocí AI, protože je mnohem jednodušší ho udržovat při pravidelných aktualizacích.
 Soubory s překlady najdete [zde](https://github.com/stephomi/nomad-translation).
 
-## Funkce
+## Funkce {#features}
 
-### Proč se gizmo nehýbe?
+### Proč se gizmo nepohybuje? {#gizmo-not-moving}
 Možná máte [zapnutý pin v levém panelu nástrojů](tools#left-menu-toolbar). 
 
-### Můžeme v Nomadu animovat?
+### Můžeme v Nomadu animovat? {#animate}
 Zatím ne. Časová osa, která by umožnila animovat vrstvy, by mohla být zajímavá, ale momentálně není v plánu.  
 
 Do budoucna bych rád podporoval rigging/skinování, ale přináší to několik výzev (zejména interakci s modelovacími nástroji...), takže zatím nic jistého.
 
 
-### Můžeme dělat skutečné low-poly modelování?
+### Můžeme dělat pořádné low-poly modelování? {#lowpoly}
 Zatím ne.
 To není úplně v rozsahu Nomad *Sculpt*, ale možná v budoucnu přidám několik nástrojů.
 
 
-### Můžeme dělat UV a texturování?
+### Můžeme dělat UV a texturování? {#texturing}
 Krátká odpověď: Ano. Dlouhá odpověď: Ne přímo, ale existuje několik způsobů, jak zkombinovat vynikající nástroje Nomadu pro vertex paint s UV a texturami.
 
 * Nomad umožňuje malovat barvu, drsnost a materiálové vlastnosti přímo do vrcholů modelu.
@@ -143,30 +143,30 @@ Krátká odpověď: Ano. Dlouhá odpověď: Ne přímo, ale existuje několik zp
 * Baking a projekce mohou probíhat mezi jednotlivými objekty nebo mnoha objekty, případně mezi nejvyšší a nejnižší úrovní subdivize jednoho objektu, což umožňuje různé workflow pro baking a projekci.
 * Po bakeování se při exportu OBJ exportují i textury, které lze vzít do aplikace jako Procreate a malovat přímo do textur.
 
-### Můžu nahrát video turntablu?
+### Můžu nahrát video otáčejícího se modelu (turntable)? {#video}
 Zatím neplánováno, iOS má [funkci nahrávání videa](https://support.apple.com/en-au/guide/ipad/ipaddf78ce08/ipados), která se velmi snadno používá.
 
 V iOS to provedete tak, že stáhnete prstem z levého horního rohu a klepnete na tlačítko nahrávání. Po třísekundovém odpočtu menu odsuňte, aby byl vidět Nomad, a použijte funkci turntable. Po dokončení znovu stáhněte prstem z pravého horního rohu a znovu klepněte na tlačítko nahrávání. Video upravte v knihovně fotek a odstraňte přebytečné záběry na začátku a na konci.
 
-### Můžete přidat [oblíbenou funkci] jako tlačítko v hlavní liště?
+### Můžete přidat [oblíbenou-funkci] jako tlačítko na hlavní lištu? {#interface}
 Ano, spodní panel nástrojů lze nyní přizpůsobit v nabídce [interface](interface.md) a je možné vytvářet plovoucí panely nástrojů.
 
-### Jaké budou další funkce?
+### Jaké budou další funkce? {#next-features}
 Pro střednědobý/dlouhodobý plán mám spoustu nápadů, ale zatím nevím.  
 
 Opravy chyb a vylepšování stávajících funkcí budou mít vždy vyšší prioritu než přidávání nových.
 
 
-### Můžeme v Nomadu riggovat?
+### Můžeme v Nomadu riggovat? {#rigging}
 Ne, ale je to v plánu. Zatím můžete objekty vzájemně parentovat a měnit pivot body, což umožňuje jednoduché pózovatelné modely.
 
-### Můžeme použít více než 4 světla?
+### Můžeme používat více než 4 světla? {#lights}
 Ne, to je omezení realtime renderovacího enginu v Nomadu. Dá se to obejít pomocí emisivních objektů a globální iluminace v postprocessingu, jak je ukázáno v [tomto tutoriálu](https://www.youtube.com/watch?v=QhrUGH7CuUA)
 
-### Můžeme importovat ZBrush tools?
+### Můžeme importovat ZBrush tools? {#zbrush-import}
 Ne, ZBrush používá proprietární formát. Měli byste ale být schopni z něj získat alpha mapy a použít je v Nomadu. 
 
-### Proč barvy neodpovídají tomu, co jsem namaloval(a)? Proč ve renderu nedostanu bílou?
+### Proč barvy neodpovídají tomu, co jsem namaloval? Proč v renderu nedosáhnu čistě bílé? {#paint-pbr}
 Představte si fotku kusu papíru, fotku stolní lampy a fotku slunce. Starší fotoaparáty a obrazovky z nich prostě udělají všechny „bílé“. Modernější systémy dokážou ukázat rozdíl mezi odraženou bílou papíru, vyzařovaným světlem lampy a super jasem slunce.
 
 Moderní počítačová grafika se snaží fungovat podobně, napodobuje fyziku světla a povrchů. Říká se tomu `Physically Based Rendering` neboli PBR a renderer Nomadu je na něm založený. Výsledek vypadá realisticky a vyváženě, ale často se stává, že jasně namalované barvy vypadají tmavší.
@@ -183,9 +183,9 @@ PBR:
 * `Zvyšte expozici kamery`. Kdyby v tmavé místnosti nešlo přidat světla, mohl by fotoaparát nechat déle otevřenou závěrku nebo použít citlivější ISO. V Nomadu dosáhnete podobného výsledku v postprocessingu. Jděte do post process, zapněte ho, sjeďte k tone mappingu, zapněte ho a zvyšte posuvník exposure, dokud barvy nebudou působit správně.
 * `Použijte emisivní barvu`. V nabídce materiálu můžete pod texturami zapnout „emissive“, což způsobí, že objekt bude vypadat jako zdroj světla. Pokud v nastavení postprocessingu zapnete global illumination, bude vrhat světlo na ostatní objekty ve scéně. Můžete také pro daný materiál zapnout „unlit“, čímž dosáhnete podobného vzhledu i bez textury.
 
-## Pády aplikace
+## Pády aplikace {#crashes}
 
-### Aplikace spadne, když ukládám nebo remeshuju model!
+### Aplikace spadne, když uložím nebo remeshuji model! {#crash-remesh}
 Vašemu zařízení dochází paměť (RAM).  
 Abyste snížili využití paměti ve scéně, můžete použít některé volby [Topology](topology.md) ke snížení počtu polygonů.
 
@@ -194,7 +194,7 @@ Důležité je množství RAM, ne úložiště (to je obvykle mnohem větší).
 :::
 
 
-### Aplikace spadne, když načítám projekt!
+### Aplikace spadne, když načtu svůj projekt! {#crash-load}
 Pokud je soubor malý, můžete mi ho poslat a já se na něj podívám (e‑mailem na <support@nomadsculpt.com>).
 
 Jinak zařízení pravděpodobně dochází RAM.
@@ -228,7 +228,7 @@ With homebrew, simply do `brew install lz4` and then `lz4 myproject.glb.lz4`.
 4. If it still crashes at loading, you can open the file on any 3d desktop software that supports `glTF`.
 ::: -->
 
-### Aplikace spadne, když spustím Nomad!
+### Aplikace spadne, když spustím Nomad! {#crash-start}
 Pokud spadne při načítání, znamená to, že Nomad má problém s nějakým souborem ve složce Nomad.
 
 Většinou se to stane proto, že je projekt příliš velký a bohužel překročí limit RAM.

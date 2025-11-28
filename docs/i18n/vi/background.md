@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) Nền (Background)
+# ![](/icons/image.webp) Hình nền {#background}
 
 Menu này điều khiển màu nền của Nomad, cũng như mọi ảnh tham chiếu được sử dụng.
 
 ![](/images/background_overview.webp)
 
-## Nền 
+## Hình nền {#type}
 ![](/images/background_selector.webp)
 
 Có ba tùy chọn cho nền của khung nhìn (viewport).
@@ -13,14 +13,14 @@ Có ba tùy chọn cho nền của khung nhìn (viewport).
 * `Color` - Một màu phẳng mà bạn có thể chọn
 * `Gradient` - Dải chuyển màu từ trên xuống dưới. Thanh trượt Factor cho phép bạn xác định điểm giữa của gradient.  
 
-## Ảnh tham chiếu
+## Ảnh tham chiếu {#reference}
 
 ![](/images/background_reference.webp)
 
 Bạn có thể thêm một ảnh tùy chọn vào nền để dùng làm tham chiếu.
 Bạn có thể thay đổi vị trí và tỉ lệ, ví dụ nếu bạn muốn di chuyển nó vào góc màn hình.
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) Biến đổi {#transform}
 
 Nút này cho phép bạn đặt ảnh tham chiếu một cách tương tác. Dùng 2 ngón tay để pan, phóng to/thu nhỏ, xoay ảnh tham chiếu vào vị trí mong muốn. Vị trí cuối cùng sẽ được phản ánh trong các thanh trượt bên dưới:
 

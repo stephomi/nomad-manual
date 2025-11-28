@@ -1,4 +1,4 @@
-# Genel Bakış
+# Genel bakış {#overview}
 
 <!-- 
 [[toc]]
@@ -13,7 +13,7 @@
 :::
 
 
-## İçindekiler
+## İçindekiler tablosu {#table-of-contents}
 
 | Menü                           | Simge                         | Açıklama                                            |
 | :----------------------------: | :---------------------------: | :-------------------------------------------------: |
@@ -37,7 +37,7 @@
 | [SSS](faq.md)                  | ![](/icons/faq.webp)         | Sıkça Sorulan Sorular                               |
 | [İpuçları](tips.md)            | ![](/icons/manual.webp)      | İş akışı ipuçları                                   |
 
-## Topluluk kaynakları
+## Topluluk kaynakları {#community-resources}
 
 <style>
 .video-grid {

@@ -1,4 +1,4 @@
-# ![](/icons/toolbox.webp) Công cụ
+# ![](/icons/toolbox.webp) Công cụ {#tools}
 
 ![](/images/tools_menu.webp)
 
@@ -6,7 +6,7 @@
 Cuộn xuống [Công cụ](#tools-1) để xem mô tả từng công cụ.
 :::
 
-## Tổng quan
+## Tổng quan {#overview}
 
 Công cụ được chọn từ `Toolbox` bên phải, và điều khiển bằng `Tool Controls` bên trái. Các thiết lập bổ sung nằm trong menu `Settings`, biểu tượng đầu tiên ở góc trên bên phải.
 
@@ -31,7 +31,7 @@ Các công cụ của Nomad được tô màu trong hộp công cụ:
 Nhiều công cụ có thể được tùy biến với các hành vi cọ khác nhau, lực nhấn, kết cấu… thông qua menu [Stroke](stroke.md). 
 
 
-### Điều khiển cọ
+### Điều khiển cọ {#brush-controls}
 
 Thanh công cụ bên trái có các thanh trượt cho bán kính và cường độ, sau đó là các điều khiển riêng cho từng nhóm công cụ, được giải thích bên dưới.
 
@@ -41,17 +41,17 @@ Thanh công cụ bên trái có các thanh trượt cho bán kính và cường 
 Thanh trượt cường độ của nhiều công cụ có thể vượt quá 100%, rất đáng để thử nghiệm!
 :::
 
-### Chế độ Sub
+### Chế độ phụ {#sub-mode}
 Nút ngay dưới thanh trượt cường độ là nút `Sub`. Nhãn và chức năng của nó sẽ thay đổi theo từng công cụ, và khi nhấn sẽ kích hoạt một hành vi thay thế, thường là ngược lại. Ví dụ với [Paint](#paint) nó sẽ kích hoạt chế độ Erase, với [Crease](#crease) nó sẽ tạo cạnh nổi thay vì rãnh, v.v.
 
 Mặc định nó hoạt động như nút giữ tạm; tức là bạn có thể giữ để tạm thời kích hoạt, khi thả ra nó sẽ tắt. Nếu bạn chạm một lần, chế độ sub sẽ được bật cố định.
 
-### Phím tắt
+### Phím tắt {#shortcuts}
 Ở cuối thanh công cụ bên trái là các phím tắt cho [Smooth](#smooth), [Mask](#mask), [Hide](#hide), [Gizmo](#gizmo), [Color](painting.md#pbr-sliders), [Alpha](stroke.md#alpha). 
 
 Mặc định tất cả đều hoạt động như nút giữ tạm; tức là bạn có thể giữ để tạm thời kích hoạt, khi thả ra nó sẽ tắt. Nếu bạn chạm một lần, chế độ phím tắt đó sẽ được bật cố định.
 
-### Điều khiển vùng chọn
+### Điều khiển vùng chọn {#selection-controls}
 
 Các công cụ [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Project](#project), [Facegroup](#facegroup) và [Hide](#hide) đều dùng các điều khiển tương tự để chọn vùng trên lưới.
 
@@ -69,7 +69,7 @@ Các công cụ [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split
 
 Hầu hết công cụ có tùy chọn auto validate, nghĩa là thao tác sẽ diễn ra ngay khi bạn vẽ xong hình. Khi auto validate tắt, một nút xanh sẽ xuất hiện cạnh hình, nhấn nút này để thực thi thao tác. Điều này cho phép bạn chỉnh sửa hình, điều chỉnh góc nhìn, khi sẵn sàng dùng hình thì nhấn nút xanh.
 
-### Chỉnh sửa hình
+### Chỉnh sửa hình dạng {#shape-editing}
 Chỉnh sửa polygon và đường cong hoạt động tương tự nhau:
 
 * Ban đầu, kéo một đường để tạo 2 điểm, sau đó kéo từ giữa đường để tạo polygon hoặc đường cong.
@@ -78,13 +78,13 @@ Chỉnh sửa polygon và đường cong hoạt động tương tự nhau:
 * Để xóa một điểm, kéo điểm đó vào điểm lân cận cho đến khi nó chuyển màu đỏ.
 * Biểu tượng thùng rác ở góc biểu tượng polygon hoặc path sẽ xóa hình.
 
-### Menu Settings
+### Menu Cài đặt {#settings-menu}
 
 Nhiều công cụ có thiết lập bổ sung nằm trong menu settings, biểu tượng đầu tiên ở menu trên cùng bên phải:
 
 ![](/images/tools_settings_menu.webp)
 
-## Công cụ
+## Công cụ {#tools-1}
 
 |                                                                     |                                                   |                                                                   |                                                         |                                                         |                                                                     |
 | :-----------------------------------------------------------------: | :-----------------------------------------------: | :---------------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------------------: |
@@ -97,24 +97,24 @@ Nhiều công cụ có thiết lập bổ sung nằm trong menu settings, biểu
 
 ------
 
-### ![](/icons/tool_clay.webp) Clay
+### ![](/icons/tool_clay.webp) Đất sét {#clay}
 Công cụ Clay hữu ích để xây dựng khối điêu khắc. `Sub` sẽ loại bỏ vật liệu khỏi khối điêu khắc.
 
 ![](/videos/tool_clay.mp4)
 
-### ![](/icons/tool_brush.webp) Brush
+### ![](/icons/tool_brush.webp) Cọ {#brush}
 Cọ tiêu chuẩn. `Sub` sẽ loại bỏ vật liệu.
 
 ![](/videos/tool_brush.mp4)
 
-### ![](/icons/tool_move.webp) Move
+### ![](/icons/tool_move.webp) Di chuyển {#move}
 Vùng dưới cọ sẽ dính vào cọ, cho phép biến dạng đàn hồi. Vùng chọn được giữ nguyên trong suốt thao tác move, nên nếu bạn di chuyển cọ đi xa rồi đưa nó về vị trí ban đầu, bạn sẽ không thấy biến dạng nào.
 
 Chế độ sub là `Normal`, và sẽ di chuyển vùng dưới cọ theo pháp tuyến bề mặt.
 
 Cọ này tốt cho cả biến dạng quy mô lớn và biến dạng nhỏ, chính xác.
 
-#### Thiết lập Move
+#### Cài đặt Di chuyển {#move-settings}
 
 * `Radius (Background)` - Khoảng cách tối đa từ mép mô hình mà bạn vẫn có thể điêu khắc, hữu ích khi làm việc trên đường viền (silhouette) của vật thể. 
 * `Same-side vertex only` - Bỏ qua các đỉnh có hướng ngược với hướng biến dạng.
@@ -122,40 +122,40 @@ Cọ này tốt cho cả biến dạng quy mô lớn và biến dạng nhỏ, ch
 
 ![](/videos/tool_move.mp4)
 
-### ![](/icons/tool_drag.webp) Drag
+### ![](/icons/tool_drag.webp) Kéo {#drag}
 Vùng dưới cọ sẽ dính vào cọ, cho phép biến dạng đàn hồi. Không giống cọ Move, vùng chọn được cập nhật liên tục trong suốt nét vẽ, nên có thể tạo các đối tượng dài, dạng rắn, đặc biệt khi Dynamic Topology được bật.
 
 Chế độ sub là `Normal`, và sẽ di chuyển vùng dưới cọ theo pháp tuyến bề mặt.
 
 Cọ này phù hợp cho các thay đổi hình khối thoáng, mang tính cử chỉ.
 
-#### Thiết lập Drag
+#### Cài đặt Kéo {#drag-settings}
 
 * `Radius (Background)` - Khoảng cách tối đa từ mép mô hình mà bạn vẫn có thể điêu khắc, hữu ích khi làm việc trên đường viền (silhouette) của vật thể. 
 * `Same-side vertex only` - Bỏ qua các đỉnh có hướng ngược với hướng biến dạng.
 
 ![](/videos/tool_drag.mp4)
 
-### ![](/icons/tool_smooth.webp) Smooth
+### ![](/icons/tool_smooth.webp) Làm mịn {#smooth}
 Làm mượt vùng bằng cách lấy trung bình vị trí các điểm. Công cụ này phụ thuộc mạnh vào mật độ polygon.
 Nếu có nhiều polygon, hiệu quả làm mượt sẽ kém hơn.
 
 Chế độ sub là `Relax`, chỉ làm mượt lưới (wireframe) nhưng cố giữ chi tiết hình học.
 
-#### Thiết lập Smooth
+#### Cài đặt Làm mịn {#smooth-settings}
 
 ![](/images/tool_smooth_settings.webp)
 
-##### Facegroup
+##### Nhóm mặt {#smooth-facegroup}
 
 * `Relax` - Sẽ làm mượt biên của facegroup. Dùng cường độ lớn hơn 100% để làm mượt nhanh. `Auto` sẽ chỉ làm mượt nếu xem trước facegroup được bật, `Off` tắt, `On` bật. 
 
-##### Vertex
+##### Điểm đỉnh (vertex) {#vertex}
 * `Sticky vertex on border` - Với lưới có cạnh hở, ví dụ một mặt phẳng, có thể làm mượt các góc. Bật tùy chọn này sẽ khóa các cạnh hở.
 * `Relax` - giống chế độ relax thay thế trong thanh công cụ bên trái.
 * `Stable smoothing` - Cố gắng làm cho việc làm mượt độc lập với topology. Hoạt động tốt nhất với mật độ topology thay đổi và giá trị cường độ làm mượt cao.
 
-##### Painting
+##### Tô màu {#painting}
 * `Screen Smoothing` - Dùng tùy chọn này để có làm mượt độc lập topology, ngay cả ở mật độ polygon cao.
 * `Screen samples` - Chất lượng làm mượt, giá trị cao hơn sẽ mượt hơn nhưng chậm hơn.
 
@@ -165,7 +165,7 @@ Mật độ polygon cao có thể yêu cầu tăng cường độ trên 100%. Gi
 
 ![](/videos/tool_smooth.mp4)
 
-### ![](/icons/tool_mask.webp) Mask
+### ![](/icons/tool_mask.webp) Mặt nạ {#mask}
 Công cụ này cho phép bạn mask các đỉnh. Các đỉnh bị mask được bảo vệ khỏi điêu khắc hoặc tô màu. 
 
 Chế độ sub là `Unmask`, và sẽ xóa nơi mặt nạ đã được tô.
@@ -195,7 +195,7 @@ Tiêu đề thanh có thể chạm để mở/thu gọn, hoặc chạm vào mũi
 |                                 On tap (mask)      | Khi bật, chạm vào một 'đảo' mask hoặc không mask sẽ tô tràn đảo đó.                       |
 | ![](/icons/vertex.webp)        Connected          | Khi bật, chỉ cho phép nét mask ảnh hưởng đến topology nối liền.                           |
 
-##### Cử chỉ nhanh Mask
+##### Cử chỉ nhanh Mặt nạ {#mask-quick-gesture}
 Bạn có thể thực hiện các cử chỉ kiểu zbrush khi giữ nút quick masking ở thanh bên trái:
 | Action  | Gesture (hold lower-left shortcut) |
 | :-----: | :--------------------------------: |
@@ -205,28 +205,28 @@ Bạn có thể thực hiện các cử chỉ kiểu zbrush khi giữ nút quick
 | Sharpen | Chạm lên vùng chưa mask            |
 
 
-#### Thiết lập Mask
+#### Cài đặt Mặt nạ {#mask-settings}
 ![](/images/tool_mask_settings.webp)
 
 ![](/videos/tool_mask2.mp4)
 
 * `Preview` - Menu thiết lập Mask chủ yếu dùng để tạo hình học từ mask. Vì vậy hành vi mặc định là xem trước hình học mới sẽ trông như thế nào. Bạn có thể chọn không xem trước, xem trước extract, xem trước split, và có hiển thị hình học này ở chế độ x-ray hay không.
 
-##### Thickness
+##### Độ dày {#thickness}
 * `Height` - Chiều cao của hình được extract. Biểu tượng Plus/Minus cho phép bạn chuyển vòng giữa extrusion ra ngoài, vào trong, hoặc ở giữa. 
 * `Height/Height+Mask` - Chuyển giữa chiều cao cố định, hoặc để phần mask bị làm mờ ảnh hưởng đến chiều cao, cho phép tạo hình mềm và chiều cao thay đổi. 
 
-##### Smoothness
+##### Độ mượt {#smoothness}
 Khi bật, sẽ làm mượt biên của hình được extract, hoạt động tốt hơn với số polygon cao. 
 * `Iterations` - Lượng làm mượt áp dụng. Giá trị cao sẽ tạo cạnh cong rất mượt, nhưng sẽ bắt đầu lệch khỏi hình mask.
 * `All/Sharp border/Borders only` - Làm mượt có thể hoạt động theo mọi hướng, làm mượt cả mặt bên và mặt trên của hình extract, hoặc làm mượt mặt trên và bên nhưng giữ cạnh sắc, hoặc chỉ làm mượt biên, giữ nguyên mặt trên.
 
-##### Edge loop (side)
+##### Vòng cạnh (bên) {#edge-loop-side}
 * `Auto Edge-loop (side)` - Sẽ tính toán số lượng chia trên mặt bên của hình extract để tạo polygon vuông khớp với polygon vùng mask. Khi tắt, bạn có thể tự đặt số edge loop bằng thanh trượt edge loop.
 
 ----
 
-##### Extract
+##### Tách lớp (Extract) {#extract}
 * `Extract` - Tạo hình học được extract.
 * `Closing action` - Cách extract hoạt động. 'None' sẽ nhân đôi polygon được mask thành hình mới. 'Fill' sẽ làm tương tự và cố vá mặt sau. 'Shell' sẽ extrude theo giá trị đặt trong 'thickness', và là mặc định.
 
@@ -237,18 +237,18 @@ Nếu preview ở chế độ 'Extract' với 'X-ray' bật, việc nhấn nút 
 Điều này là bình thường, hãy đóng menu thiết lập mask để xem hình mới và hình gốc, và chọn lại bề mặt gốc nếu bạn cần xóa mask hoặc vẽ mask mới.
 :::
 
-##### Split
+##### Tách (Split) {#split-mask}
 * `Split` - Sẽ extract cả vùng mask VÀ không mask thành các hình mới. 
 * `Closing action (masked)` - Cách extract vùng mask hoạt động. 'None' sẽ nhân đôi polygon được mask thành hình mới. 'Fill' sẽ làm tương tự và cố vá mặt sau. 'Shell' sẽ extrude theo giá trị đặt trong 'thickness', và là mặc định.
 * `Closing action (unmasked)` - Cách extract vùng không mask hoạt động. 'None' sẽ nhân đôi polygon được mask thành hình mới. 'Fill' sẽ làm tương tự và cố vá mặt sau. 'Shell' sẽ extrude theo giá trị đặt trong 'thickness', và là mặc định.
 * `Sync border` - Đảm bảo biên giữa hai hình extract (mask và không mask) nằm sát nhau. Khi tắt, vì thao tác shell sẽ extrude mỗi mặt theo pháp tuyến riêng, có thể xuất hiện khe giữa hai hình.
 
-##### Carve
+##### Khắc (Carve) {#carve}
 * `Carve` - Ở chế độ mặc định, hoạt động như thể bạn đã trim vào bề mặt theo giá trị 'thickness', giống như cắt một miếng vỏ cam. 
 
 
 
-### ![](/icons/tool_maskSelector.webp) Selection Mask
+### ![](/icons/tool_maskSelector.webp) Chọn Mặt nạ {#selection-mask}
 Công cụ này gần giống [Mask](#mask), điểm khác biệt chính là bạn không dùng stroke để tô mask, mà dùng [Điều khiển vùng chọn](#selection-controls).
 
 Chế độ sub là `Unmask`, và sẽ xóa mask bằng điều khiển vùng chọn.
@@ -257,28 +257,28 @@ Selection mask dùng chung thiết lập công cụ với công cụ `Mask`.
 
 ![](/videos/tool_selector_mask.mp4)
 
-### ![](/icons/tool_paint.webp) Paint
+### ![](/icons/tool_paint.webp) Sơn {#paint}
 Áp dụng màu và thuộc tính vật liệu. Để tìm hiểu thêm về vật liệu bạn có thể xem phần [Painting](painting.md).
 
 Chế độ sub là `Erase` và sẽ xóa màu.
 
-#### Thiết lập Paint
+#### Cài đặt Sơn {#paint-settings}
 * `Layer fitering` - Hoạt động giống khóa alpha layer trong photoshop hoặc procreate. Nếu bạn đang vẽ trên một layer, khi bật tùy chọn này, bạn chỉ có thể chỉnh nơi đã có màu; vùng chưa tô sẽ được bảo vệ.
 
 ![](/videos/tool_paint.mp4)
 
-### ![](/icons/tool_smudge.webp) Smudge
+### ![](/icons/tool_smudge.webp) Nhoè {#smudge}
 Nhòe màu và thuộc tính vật liệu. Menu thiết lập Smudge có thanh trượt `Quality`, giá trị thấp hơn cho nét vẽ nhanh hơn.
 
 ![](/videos/tool_smudge.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Flatten
+### ![](/icons/tool_flatten.webp) Làm phẳng {#flatten}
 Làm phẳng vùng bằng cách chiếu các điểm lên mặt phẳng trung bình.
 
 Chế độ sub là `Fill` và sẽ xác định mặt phẳng dựa trên điểm cao nhất, có xu hướng kéo các điểm lên.
 
-#### Thiết lập Flatten
+#### Cài đặt Làm phẳng {#flatten-settings}
 
 * `Lock plane direction` - Dùng hướng mặt phẳng được tính ở cú nhấp đầu tiên. Mặc định tắt.
 * `Lock plane origin`- Dùng cú nhấp đầu tiên làm tâm mặt phẳng. Mặc định tắt.
@@ -292,7 +292,7 @@ Khi làm việc ở vùng cong mạnh, ví dụ cố làm phẳng má nhưng cô
 ![](/videos/tool_flatten.mp4)
 
 
-### ![](/icons/tool_planar.webp) Planar
+### ![](/icons/tool_planar.webp) Mặt phẳng {#planar}
 Làm phẳng các điểm bằng cách chiếu lên mặt phẳng trung bình, nhưng ít tích lũy hơn Flatten. Điều này tạo bề mặt cạnh cứng sạch hơn. Nét nhanh sẽ đẩy/kéo bề mặt nhiều hơn, nét chậm bắt đầu từ vùng đã phẳng và đi ra sẽ giữ mặt phẳng tốt hơn.
 
 Chế độ sub là `Fill` và sẽ xác định mặt phẳng dựa trên điểm cao nhất, có xu hướng kéo các điểm lên.
@@ -301,19 +301,19 @@ Planar thực ra là cùng một công cụ với `Flatten`, nhưng bật `Lock 
 
 ![](/videos/tool_planar.mp4)
 
-### ![](/icons/tool_crease.webp) Crease
+### ![](/icons/tool_crease.webp) Tạo rãnh (Crease) {#crease}
 Công cụ Crease hữu ích để điêu khắc các vết cắt hoặc lõm nhỏ.
 
 Chế độ sub là `Invert`, và sẽ tạo rãnh nổi.
 
-#### Thiết lập Crease
+#### Cài đặt Tạo rãnh {#crease-settings}
 
 * `Pinch factor` - Mức độ kéo các đỉnh sang ngang về phía nét cọ. Nếu pinch là 1 và offset là 0, bề mặt sẽ không thay đổi độ sâu, chỉ thay đổi topology, kéo cạnh về phía nét vẽ.
 * `Offset factor` - Mức độ đẩy/kéo các đỉnh theo chiều sâu. Nếu pinch là 0 và offset là 1, sẽ tạo rãnh sâu hoặc vết lồi, nhưng trông răng cưa vì không đủ hình học được kéo về phía rãnh để định nghĩa cạnh và đáy rãnh chính xác.
 
 ![](/videos/tool_crease.mp4)
 
-### ![](/icons/tool_pinch.webp) Pinch
+### ![](/icons/tool_pinch.webp) Bóp (Pinch) {#pinch}
 Công cụ này có thể dùng để làm sắc cạnh.
 
 Chế độ sub là `Invert` và sẽ đẩy các đỉnh ra xa nhau.
@@ -321,7 +321,7 @@ Chế độ sub là `Invert` và sẽ đẩy các đỉnh ra xa nhau.
 ![](/videos/tool_pinch.mp4)
 
 
-### ![](/icons/tool_trim.webp) Trim
+### ![](/icons/tool_trim.webp) Cắt gọt (Trim) {#trim}
 Công cụ Trim hoạt động bằng cách loại bỏ một phần lưới, và cung cấp tùy chọn xử lý khoảng trống còn lại. Nó dùng [Điều khiển vùng chọn](#selection-controls) để xác định vùng cắt.
 
 ::: tip
@@ -330,7 +330,7 @@ Vì công cụ này chiếu từ camera, bạn sẽ nhận cảnh báo nếu cam
 Ở chế độ trực giao (orthographic), đường cắt qua lưới song song với hướng nhìn, đúng như mong đợi. Khi dùng camera phối cảnh, đường cắt sẽ khác nhau giữa phía gần và phía xa của vật thể.
 :::
 
-#### Thiết lập Trim
+#### Cài đặt Cắt gọt {#trim-settings}
 
 * `Stroke painting` - Nếu tô màu được bật trong menu Paint, vùng vá sẽ được tô bằng màu hiện tại.
 * `Boolean` - vá lỗ cắt bằng vùng polygon quad. Vùng vá sẽ phẳng.
@@ -346,10 +346,10 @@ Vì công cụ này chiếu từ camera, bạn sẽ nhận cảnh báo nếu cam
 
 ![](/videos/tool_trim.mp4)
 
-### ![](/icons/tool_split.webp) Split
+### ![](/icons/tool_split.webp) Chia tách (Split) {#split}
 Tương tự công cụ [Trim](#trim), ngoại trừ Trim loại bỏ vùng chọn, còn Split giữ vùng chọn thành đối tượng mới.
 
-#### Thiết lập Split
+#### Cài đặt Chia tách {#split-settings}
 
 * `Stroke painting` - Nếu tô màu được bật trong menu Paint, vùng vá sẽ được tô bằng màu hiện tại.
 * `Boolean` - vá lỗ split bằng vùng polygon quad. Các vùng vá sẽ phẳng.
@@ -366,7 +366,7 @@ Tương tự công cụ [Trim](#trim), ngoại trừ Trim loại bỏ vùng ch�
 ![](/videos/tool_split.mp4)
 
 
-### ![](/icons/tool_project.webp) Project
+### ![](/icons/tool_project.webp) Chiếu (Project) {#project}
 Công cụ Project trông giống [Trim](#trim), nhưng không xóa hay tạo hình học, nó chỉ di chuyển các đỉnh để khớp với vùng chọn.
 
 ![](/videos/tool_project.mp4)
@@ -375,7 +375,7 @@ Công cụ Project trông giống [Trim](#trim), nhưng không xóa hay tạo h�
 Nếu bạn dùng Project trong một layer, bạn có thể trộn giữa hình gốc và hình đã project bằng thanh trượt layer.
 :::
 
-### ![](/icons/tool_layer.webp) Layer
+### ![](/icons/tool_layer.webp) Lớp (Layer) {#layer}
 Nâng bề mặt lên, nhưng giới hạn chiều cao.
 
 Nếu bạn giữ bút và tiếp tục tô trên một vùng, Layer sẽ nâng đến một chiều cao nhất định rồi không tăng nữa, khác với các công cụ khác sẽ tiếp tục tích lũy chiều cao.
@@ -388,7 +388,7 @@ Tạo một layer, và dùng công cụ này. Chiều cao tối đa giờ đư�
 
 `Sub` sẽ dùng độ sâu tối thiểu, tạo rãnh.
 
-#### Thiết lập Layer
+#### Cài đặt Lớp {#layer-settings}
 
 * `Use layer data` - Khi bật, và khi một layer được chọn, dùng dữ liệu layer để đặt chiều cao tối đa.
 * `Inflate`- Khi bật sẽ điều chỉnh hướng hoạt động của Layer để cho kết quả mượt hơn.
@@ -397,10 +397,10 @@ Tạo một layer, và dùng công cụ này. Chiều cao tối đa giờ đư�
 ![](/videos/tool_layer.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Inflate
+### ![](/icons/tool_flatten.webp) Thổi phồng (Inflate) {#inflate}
 Di chuyển các đỉnh theo pháp tuyến riêng của chúng. `Sub` sẽ di chuyển các đỉnh theo pháp tuyến đảo ngược.
 
-#### Thiết lập Inflate
+#### Cài đặt Thổi phồng {#inflate-setings}
 * `Relax (Normal)` - Mức độ làm mượt áp dụng lên pháp tuyến.
 
 ![](/videos/tool_inflate.mp4)
@@ -408,13 +408,13 @@ Di chuyển các đỉnh theo pháp tuyến riêng của chúng. `Sub` sẽ di c
 
 
 
-### ![](/icons/tool_nudge.webp) Nudge
+### ![](/icons/tool_nudge.webp) Đẩy nhẹ (Nudge) {#nudge}
 Di chuyển hoặc 'quệt' các điểm theo hướng nét vẽ.
 
 ![](/videos/tool_nudge.mp4)
 
 
-### ![](/icons/tool_stamp.webp) Stamp
+### ![](/icons/tool_stamp.webp) Đóng dấu (Stamp) {#stamp}
 
 Nhấp và kéo để nâng một vùng điêu khắc theo hình của Alpha đã chọn.
 
@@ -435,13 +435,13 @@ Hai chế độ stroke hữu ích cho các mục đích khác nhau:
 ![](/videos/tool_stamp.mp4)
 
 
-### ![](/icons/tool_clearLayer.webp) Delete Layer
+### ![](/icons/tool_clearLayer.webp) Xoá Lớp {#delete-layer}
 Công cụ này có thể reset layer cục bộ, bạn cần một layer đang hoạt động nếu không sẽ không có gì xảy ra.
 
 ![](/videos/tool_delete_layer.mp4)
 
 
-### ![](/icons/tool_tube.webp) Tube
+### ![](/icons/tool_tube.webp) Ống (Tube) {#tube}
 Tạo ống bằng cách vẽ một đường cong. 
 ![](/images/tool_tube_new.webp)
 
@@ -449,7 +449,7 @@ Khi ống được tạo, đường dẫn có thể chỉnh sửa trong không g
 
 ![](/videos/tool_tube.mp4)
 
-#### Thanh công cụ Tube bên trái
+#### Thanh công cụ bên trái của Ống {#tube-left-toolbar}
 
 ![](/images/tool_tube_left_toolbar.webp)
 
@@ -468,7 +468,7 @@ Thanh bên trái có các tùy chọn sau:
     * `Closed` - biến ống thành vòng kín
     * `Screen` - Khi bật, đường dẫn được 'ghim' lên màn hình, cho phép bạn di chuyển góc nhìn và đối tượng, còn đường dẫn giữ nguyên. Khi tắt, đường dẫn là một phần của cảnh 3D, và sẽ di chuyển theo camera và đối tượng.
 
-##### Thanh công cụ Tube phía trên
+##### Thanh công cụ trên của Ống {#tube-top-toolbar}
 ![](/images/tool_tube_toolbar.webp)
 Khi một ống được chọn, một thanh công cụ sẽ xuất hiện ở trên cùng khung nhìn với các điều khiển bổ sung. Nhấp tiêu đề thanh để thu gọn/mở rộng, và nhấp mũi tên góc trên bên phải để di chuyển thanh lên trên hoặc xuống dưới khung nhìn.
 
@@ -489,13 +489,13 @@ Khi một ống được chọn, một thanh công cụ sẽ xuất hiện ở t
 * `Constant density` - khi bật, sẽ giữ polygon vuông. Khi tắt, cho phép đặt `Y divisions` dọc theo chiều dài ống.
 * `...` - Menu thiết lập Tube.
 
-#### Công tắc xóa điểm cong
+#### Bật/tắt xoá điểm đường cong {#curve-point-delete-toggle}
 
 ![](/images/tool_tube_delete_toggle.webp)
 
 Bên dưới thanh công cụ là công tắc xóa điểm cong. Khi bạn kéo một điểm cong gần điểm khác, nó sẽ chuyển màu đỏ, báo rằng nếu thả ra, điểm sẽ bị xóa. Nếu bạn đang chỉnh sửa nhỏ và không muốn xóa điểm, nút này sẽ tắt hành vi xóa điểm.
 
-#### Thiết lập Tube
+#### Cài đặt Ống {#tube-settings}
 * `Primitive` - các nút cho phép bật/tắt UV, hoặc validate ống.
 * `Post subdivision` - phím tắt đặt mức multiresolution trước khi validate.
 * `Linear subdivision` - phím tắt đặt mức linear subdivision trước khi validate. 
@@ -508,14 +508,14 @@ Division là 4 và Post subdivision là 3 sẽ tạo ống đầu tròn mượt,
 :::
 
 
-### ![](/icons/tool_lathe.webp) Lathe
+### ![](/icons/tool_lathe.webp) Tiện (Lathe) {#lathe}
 Tạo bề mặt xoay bằng cách vẽ một đường cong.
 
 Công cụ này rất phù hợp cho các hình như bình, ly rượu.
 
 ![](/videos/tool_lathe.mp4)
 
-#### Thanh công cụ Lathe bên trái
+#### Thanh công cụ bên trái của Tiện {#lathe-left-toolbar}
 
 ![](/images/tool_lathe_left_toolbar.webp)
 
@@ -533,7 +533,7 @@ Thanh bên trái có các tùy chọn sau:
     * `Closed` - biến ống thành vòng kín
     * `Screen` - Khi bật, đường dẫn được 'ghim' lên màn hình, cho phép bạn di chuyển góc nhìn và đối tượng, còn đường dẫn giữ nguyên. Khi tắt, đường dẫn là một phần của cảnh 3D, và sẽ di chuyển theo camera và đối tượng.
 
-#### Thanh công cụ Lathe phía trên
+#### Thanh công cụ trên của Tiện {#lathe-top-toolbar}
 ![](/images/tool_lathe_top_toolbar.webp)
 
 Khi một Lathe được chọn, một thanh công cụ sẽ xuất hiện ở trên cùng khung nhìn với các điều khiển bổ sung. Nhấp tiêu đề thanh để thu gọn/mở rộng, và nhấp mũi tên góc trên bên phải để di chuyển thanh lên trên hoặc xuống dưới khung nhìn.
@@ -552,7 +552,7 @@ Khi một Lathe được chọn, một thanh công cụ sẽ xuất hiện ở t
 * `Constant density` - khi bật, sẽ giữ polygon vuông. Khi tắt, cho phép đặt `Y divisions` dọc theo chiều dài ống.
 * `...` - Menu thiết lập Lathe.
 
-#### Thiết lập Lathe
+#### Cài đặt Tiện {#lathe-settings}
 * `Primitive` - các nút cho phép bật/tắt UV, hoặc validate ống.
 * `Post subdivision` - phím tắt đặt mức multiresolution trước khi validate.
 * `Linear subdivision` - phím tắt đặt mức linear subdivision trước khi validate. 
@@ -560,7 +560,7 @@ Khi một Lathe được chọn, một thanh công cụ sẽ xuất hiện ở t
 * `Division Y` - giống Y Divisions trong thanh công cụ.
 * `Curve (Repeater)` - chuyển profile đường cong thành [Curve Repeater](scene.md#curve)
 
-### ![](/icons/tool_insert.webp) Insert
+### ![](/icons/tool_insert.webp) Chèn (Insert) {#insert}
 Đặt một đối tượng lên bề mặt đối tượng khác. Khi dùng nó giống công cụ Stamp, nhưng cho hình 3D đầy đủ.
 
 Nếu bạn chọn một primitive từ thanh bên trái, thao tác nhấp-kéo trên bất kỳ bề mặt nào sẽ đặt primitive tại vị trí nhấp, kéo sẽ đặt kích thước. Khi kết thúc kéo, Insert sẽ chuyển sang chế độ [Transform](#transform).
@@ -573,7 +573,7 @@ Nếu một đối tượng có pivot tùy chỉnh, nó sẽ được dùng làm
 
 ![](/videos/tool_insert.mp4)
 
-### ![](/icons/tool_transform.webp) Transform
+### ![](/icons/tool_transform.webp) Biến đổi (Transform) {#transform}
 Di chuyển/Xoay/Scale mô hình trực tiếp bằng 1 và 2 ngón tay, thường trên bề mặt đối tượng khác.
 
 Công cụ được điều khiển bằng thanh bên trái, có 5 nút:
@@ -607,7 +607,7 @@ Bạn cũng có thể đổi chế độ thứ hai bằng cử chỉ chạm ngó
 
 ![](/videos/tool_transform.mp4)
 
-### ![](/icons/tool_gizmo.webp) Gizmo
+### ![](/icons/tool_gizmo.webp) Gizmo {#gizmo}
 Công cụ này cho phép bạn di chuyển, xoay và scale đối tượng, và thay đổi pivot của đối tượng.
 
 Tay cầm trong khung nhìn có các tính năng sau:
@@ -618,7 +618,7 @@ Tay cầm trong khung nhìn có các tính năng sau:
 
 ![](/images/tool_gizmo.webp)
 
-#### Node và vertex 
+#### Nút và đỉnh {#nodes-and-vertices}
 
 Mỗi đối tượng trong Nomad được tạo từ một node và các vertex:
 
@@ -627,7 +627,7 @@ Mỗi đối tượng trong Nomad được tạo từ một node và các vertex
 
 Nếu bạn có một hộp đơn giản gồm 8 vertex, bạn có thể tịnh tiến nó bằng cách chỉnh ma trận biến đổi, hoặc chỉnh vị trí vertex. Khi điêu khắc bạn thường muốn chỉnh vertex, khi di chuyển đối tượng bằng gizmo, bạn thường muốn chỉnh node. Nomad cho phép làm cả hai. 
 
-#### Thanh công cụ bên trái
+#### Thanh công cụ menu bên trái {#left-menu-toolbar}
 
 Thanh công cụ bên trái điều khiển việc gizmo sẽ tác động lên node hay vertex, cũng như các chức năng khác:
 
@@ -640,7 +640,7 @@ Thanh công cụ bên trái điều khiển việc gizmo sẽ tác động lên 
 * `Snap translation` - Bật việc tịnh tiến bị ràng buộc theo bước, giá trị bước được hiển thị và có thể chỉnh khi Snap bật.
 * `Pivot` - Khi bật, gizmo có thể di chuyển và xoay mà không di chuyển đối tượng. Nó có menu bổ sung giải thích bên dưới.
 
-#### Pivot
+#### Trục xoay (Pivot) {#pivot}
 Khi chế độ Pivot bật, một menu hiển thị để cho phép thay đổi pivot nhanh:
 
 **Reset** 
@@ -655,11 +655,11 @@ Khi chế độ Pivot bật, một menu hiển thị để cho phép thay đổi
 * `First` - Di chuyển (nhưng không xoay) pivot đến nơi bề mặt được chạm
 * `Medial` - Di chuyển pivot đến giữa đối tượng, dưới nơi bề mặt được chạm.
 
-#### Thiết lập Gizmo
+#### Cài đặt Gizmo {#gizmo-settings}
 
 ![](/images/tool_gizmo_settings.webp)
 
-##### Matrix 
+##### Ma trận (Matrix) {#matrix}
 * ![](/icons/target.webp) `Move origin` - Di chuyển đối tượng sao cho pivot của nó nằm ở tâm cảnh (origin).
 * ![](/icons/bake.webp)  `Bake` - Đóng băng đối tượng tại vị trí hiện tại, và đặt giá trị translate/rotate về 0, scale về 1.
 * ![](/icons/bake.webp) -> ![](/icons/tool_gizmo.webp) `Bake Pivot` - Làm cho giá trị ma trận tương ứng với vị trí tay cầm gizmo trong thế giới.
@@ -711,7 +711,7 @@ Mặc định đối xứng này tắt.
 
 ![](/videos/tool_gizmo.mp4)
 
-### ![](/icons/tool_faceGroup.webp) Facegroup
+### ![](/icons/tool_faceGroup.webp) Nhóm mặt (Facegroup) {#facegroup}
 
 Facegroup cho phép bạn tổ chức đối tượng thành các mặt có màu khác nhau. Bạn có thể dùng các nhóm này theo nhiều cách trong Nomad:
 
@@ -722,7 +722,7 @@ Facegroup cho phép bạn tổ chức đối tượng thành các mặt có màu
 * Hướng dẫn quad remesher
 * Điều khiển bổ sung cho các công cụ như Smooth.
 
-#### Thanh công cụ Facegroup bên trái
+#### Thanh công cụ bên trái của Nhóm mặt {#facegroup-left-toolbar}
 
 * `Patch ` - Hiển thị các facegroup có sẵn dưới dạng patch. Patch không dùng có thể xóa. Chạm vào patch để đổi tên hoặc đổi màu. Biểu tượng dấu cộng cho phép tạo patch mới.
 * `Dot` - Tô trên đối tượng để xác định facegroup. Khi '+ Face Group' bật, mỗi nét mới sẽ tự động tạo facegroup mới, hữu ích để nhanh chóng xác định vùng. Một cú chạm sẽ tô tràn vùng được chọn. Thanh trượt đặt bán kính Dot.
@@ -730,7 +730,7 @@ Facegroup cho phép bạn tổ chức đối tượng thành các mặt có màu
 * `Shape selector` - Tạo facegroup bằng hình thay vì cọ, thông qua `Lock+Radius`, `Lasso`, `Polygon`, `Rect` và `Ellipse`. Xem [Shape Selector](#shape-selector) để biết thêm.
 * `Auto-pick` - Khi bật, sẽ chọn patch tại nơi nét bắt đầu, và áp dụng patch đó cho phần còn lại của nét. Rất hữu ích để dọn dẹp vùng facegroup; nếu một facegroup lan quá xa, bật Auto-pick, bắt đầu nét từ nơi patch facegroup đúng, và kéo đến biên để gán lại patch đúng.
 
-### ![](/icons/tool_hide.webp) Hide
+### ![](/icons/tool_hide.webp) Ẩn {#hide}
 Ẩn hoặc cô lập các phần của đối tượng. 
 
 Các chế độ chính được điều khiển từ menu bên trái:
@@ -748,10 +748,10 @@ Một thanh công cụ sẽ xuất hiện ở trên cùng khung nhìn với các
 * `Delete` - Xóa phần đang ẩn của đối tượng
 * `Split` - Tách phần đang ẩn của đối tượng thành hình mới.
 
-### ![](/icons/tool_measure.webp) Measure
+### ![](/icons/tool_measure.webp) Đo {#measure}
 Kéo để đo khoảng cách giữa 2 điểm.
 
-### ![](/icons/tool_remesh.webp) Quad Remesher
+### ![](/icons/tool_remesh.webp) Quad Remesher {#quad-remesher}
 
 ![](/images/tool_quadremesher.webp)
 
@@ -778,7 +778,7 @@ When this tool is activated for the first time, it will ask if you want to enabl
 * `Rect` - Vẽ các hình chữ nhật trên bề mặt khối điêu khắc, quad remesher sẽ dùng chúng làm đường dẫn cho hướng chảy cạnh. Chạm vào một đường dẫn để xóa nó.
 * `Ellipse` - Vẽ các hình elip trên bề mặt khối điêu khắc, quad remesher sẽ dùng chúng làm đường dẫn cho hướng chảy cạnh. Chạm vào một đường dẫn để xóa nó.
 
-#### Quad remesher top toolbar
+#### Thanh công cụ trên của Quad Remesher {#quad-remesher-top-toolbar}
 ![](/images/tool_quadremesher_toolbar.webp)
 
 Một thanh công cụ sẽ xuất hiện ở phía trên khung nhìn với các điều khiển bổ sung:
@@ -799,7 +799,7 @@ Một thanh công cụ sẽ xuất hiện ở phía trên khung nhìn với các
 * `Symmetry` - Bật/tắt để cho ra kết quả đối xứng. Lưu ý đối xứng luôn được tính quanh trục X của thế giới, nên hãy đảm bảo mô hình của bạn nằm tại gốc tọa độ nếu bạn muốn kết quả đối xứng.
 * `...` - Menu cài đặt Quadremesher. 
 
-#### Quad remesher settings menu
+#### Menu cài đặt Quad Remesher {#quad-remesher-settings-menu}
 
 Hầu hết các cài đặt này đều có trong thanh công cụ phía trên.
 
@@ -825,14 +825,14 @@ Trong tùy chọn quad remesh hãy đảm bảo đã tắt relax (vì bạn đã
 
 :::
 
-### ![](/icons/tool_select.webp) Select
+### ![](/icons/tool_select.webp) Chọn {#select}
 Dùng các chế độ hình dạng để chọn đối tượng trong cảnh. `Unselect` sẽ loại bỏ đối tượng khỏi vùng chọn.
 
-### ![](/icons/tool_view.webp) View
+### ![](/icons/tool_view.webp) Xem {#view}
 “Công cụ” này không làm gì cụ thể, nó chỉ là cách để xem mô hình mà không chỉnh sửa cảnh của bạn.
 
 
-## Toolbox context menu
+## Menu ngữ cảnh hộp công cụ {#toolbox-context-menu}
 
 ![](/images/tools_context_menu.webp)
 

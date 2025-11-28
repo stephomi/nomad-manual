@@ -1,9 +1,9 @@
-# ![](/icons/faq.webp) FAQ
+# ![](/icons/faq.webp) FAQ {#faq}
 
 [[toc]]
 
-## Platform 
-### Waar staan mijn projecten op mijn apparaat?
+## Platform {#platform}
+### Waar staan mijn projecten op mijn apparaat? {#locate}
 De projecten staan in de map `projects` binnen de hoofdmap van Nomad.
 
 Op iOS kun je de Nomad-map openen met de iOS Bestanden-app.
@@ -14,18 +14,18 @@ Je kunt er toegang toe krijgen via een aparte app, bijvoorbeeld [deze](https://p
 <!-- [this one](https://play.google.com/store/apps/details?id=com.alphainventor.filemanager) -->
 <!-- [this one](https://play.google.com/store/apps/details?id=com.mi.android.globalFileexplorer) -->
 
-### Is er een manier om de bèta te testen?
+### Is er een manier om bètatester te worden? {#beta}
 Voor Windows & MacOS is er mogelijk een bèta beschikbaar op de [Homepage](https://nomadsculpt.com).
 <br>
 Voor iOS is er een privé-TestFlight, bezoek de [Discord](https://discord.com/invite/8h7BwpRz29) in het #beta-ios-kanaal.
 <br>
 De [Web Demo](https://nomadsculpt.com/demo) wordt meestal bijgewerkt met de nieuwste functies.
 
-### Waarom is er een gratis proefversie op Android, maar niet op iOS?
+### Waarom is er een gratis proefperiode op Android, maar niet op iOS? {#android-trial}
 Omdat oude Android-apparaten slecht zijn (en sommige recente ook...), en ik niet wilde dat mensen de app kopen en dan worden begroet met een zwart scherm.
 Maar de belangrijkste reden is dat ik het gevoel heb dat betaalde Android-apps niet echt de norm zijn.
 
-### Wat is de beste tablet om Nomad op te draaien?
+### Wat is de beste tablet om Nomad op te draaien? {#best-tablet}
 
 TLDR: Een iPad.
 
@@ -73,7 +73,7 @@ Gebruik eerst de gratis versie van Nomad zonder opslaan om te testen.
 De meeste Nomad-bestanden zijn 100 MB of kleiner. Dit betekent dat vrijwel elke tablet die je tegenwoordig koopt, iPad of Android, ruim voldoende opslag heeft voor je Nomad-projecten.
 
 
-### Ik heb Nomad voor één apparaat gekocht, kan ik het op een ander apparaat gebruiken?
+### Ik heb Nomad voor één apparaat gekocht, kan ik het op een ander apparaat gebruiken? {#multi-devices}
 Zolang het dezelfde appstore en hetzelfde account gebruikt, ja.
 
 Als je het bijvoorbeeld in de iOS App Store hebt gekocht, kun je het op je andere iOS-apparaten gebruiken.
@@ -85,7 +85,7 @@ Als je Nomad echter op Android hebt gekocht en daarna een iPad aanschaft, moet j
 Dit komt omdat Nomad geen eigen licentieserver of abonnementsmodel heeft. Er is geen overeenkomst tussen Apple/Google/AppGallery om licenties te delen. 
 
 
-### Hoe herstel ik mijn aankoop?
+### Hoe herstel ik mijn aankoop? {#restore}
 Google Play en AppGallery regelen de synchronisatie automatisch.
 
 - Ga naar het About-menu (linksboven op het Nomad-icoon) en tik op `restore purchase`
@@ -110,27 +110,27 @@ Recente Huawei-apparaten hebben geen toegang tot Google-services.
 In dat geval moet je de app opnieuw kopen in AppGallery (Huawei App Store).
 :::
 
-### Kun je [mijn-taal] vertalen of verbeteren?
+### Kun je [mijn-taal] vertalen of corrigeren? {#locale}
 Ik kan relatief eenvoudig een andere taal toevoegen, maar ik vertrouw op AI-vertaling omdat dat veel makkelijker is om bij regelmatige updates te gebruiken.
 De vertaalbestanden zijn [hier](https://github.com/stephomi/nomad-translation) te vinden.
 
-## Features
+## Functies {#features}
 
-### Waarom beweegt de gizmo niet?
+### Waarom beweegt de gizmo niet? {#gizmo-not-moving}
 Je hebt mogelijk [pin ingeschakeld in de linker menubalk](tools#left-menu-toolbar). 
 
-### Kunnen we animeren in Nomad?
+### Kunnen we animeren in Nomad? {#animate}
 Nog niet. Een tijdlijnfunctie die lagen kan animeren zou interessant kunnen zijn, maar is op dit moment niet echt gepland.  
 
 Ik zou in de toekomst graag rigging/skinning ondersteunen, maar dat brengt een aantal uitdagingen met zich mee (met name de interactie met sculpting-tools...) dus er is nog niets zeker.
 
 
-### Kunnen we echt low-poly modelleren?
+### Kunnen we echt low-poly modelleren? {#lowpoly}
 Nog niet.
 Dit valt niet echt binnen de scope van Nomad *Sculpt*, maar misschien bied ik in de toekomst een paar tools aan.
 
 
-### Kunnen we uv en texturing doen?
+### Kunnen we uv’s en texturen maken? {#texturing}
 Korte antwoord: Ja. Lange antwoord: Niet direct, maar er zijn verschillende manieren om Nomads uitstekende vertex paint-tools te combineren met uv's en textures.
 
 * Nomad laat je kleur, roughness en materiaaleigenschappen direct in de vertices van je sculpt schilderen.
@@ -143,30 +143,30 @@ Korte antwoord: Ja. Lange antwoord: Niet direct, maar er zijn verschillende mani
 * Baken en projecteren kan worden gedaan tussen losse objecten of meerdere objecten, of tussen de hoogste en laagste subdivisieniveaus van één object, wat een verscheidenheid aan bake- en project-workflows mogelijk maakt.
 * Na het baken zal het exporteren van een obj ook textures exporteren, die je vervolgens in een app als Procreate kunt gebruiken om direct op textures te schilderen.
 
-### Kan ik een turntable-video opnemen?
+### Kan ik een turntable‑video opnemen? {#video}
 Niet gepland op dit moment; iOS heeft een [video-opnamefunctie](https://support.apple.com/en-au/guide/ipad/ipaddf78ce08/ipados) die heel eenvoudig te gebruiken is.
 
 Op iOS doe je dit door vanaf de linkerbovenhoek naar beneden te vegen en op de opnameknop te tikken. Je krijgt een aftelling van 3 seconden; veeg het menu weg om Nomad te tonen en gebruik de turntable-functie. Als je klaar bent, veeg je opnieuw vanaf de rechterbovenhoek naar beneden en tik je weer op de opnameknop. Bewerk de video in de fotobibliotheek om overtollige beelden aan het begin en einde te verwijderen.
 
-### Kun je [favoriete-functie] toevoegen als een top-level knop?
+### Kun je [mijn-favoriete-functie] toevoegen als een knop op het hoofdscherm? {#interface}
 Ja, de onderste toolbar kan nu worden aangepast via het [interface](interface.md)-menu, en zwevende toolbars kunnen nu worden aangemaakt.
 
-### Wat zijn de volgende features?
+### Wat zijn de volgende functies? {#next-features}
 Voor de middellange/lange termijn-roadmap heb ik veel ideeën, maar ik weet het nog niet.  
 
 Bugfixes en het verbeteren van bestaande functies hebben altijd een hogere prioriteit dan het toevoegen van nieuwe functies.
 
 
-### Kunnen we riggen in Nomad?
+### Kunnen we riggen in Nomad? {#rigging}
 Nee, maar het is wel gepland. Voor nu kun je vormen aan elkaar koppelen (parenten) en draaipunten aanpassen, wat eenvoudige poseerbare sculpts mogelijk maakt.
 
-### Kunnen we meer dan 4 lichten gebruiken?
+### Kunnen we meer dan 4 lichten gebruiken? {#lights}
 Nee, dit is een beperking van de realtime render-engine binnen Nomad. Het is mogelijk dit te faken met emissive-objecten en global illumination in post-process, zoals getoond in [deze tutorial](https://www.youtube.com/watch?v=QhrUGH7CuUA)
 
-### Kunnen we Zbrush-tools importeren?
+### Kunnen we ZBrush-tools importeren? {#zbrush-import}
 Nee, Zbrush gebruikt een proprietair formaat. Je zou de alpha-maps moeten kunnen exporteren en in Nomad gebruiken. 
 
-### Waarom komen de kleuren niet overeen met wat ik heb geschilderd? Waarom krijg ik geen wit in de render?
+### Waarom komen de kleuren niet overeen met wat ik heb geschilderd? Waarom krijg ik geen wit in de render? {#paint-pbr}
 Stel je een foto voor van een vel papier, versus een foto van een bureaulamp, versus een foto van de zon. Oudere camera's en schermen maken ze allemaal gewoon ‘wit’. Modernere systemen kunnen een verschil laten zien tussen het gereflecteerde wit van papier, het uitgestraalde licht van een lamp en het superheldere van de zon.
 
 Moderne computergraphics probeert op een vergelijkbare manier te werken, door de fysica van licht en oppervlakken te emuleren. Dit heet `Physically Based Rendering`, of PBR, en Nomads PBR-renderer is hierop gebaseerd. Dit ziet er realistisch en gebalanceerd uit, maar vaak lijken fel geschilderde kleuren donkerder.
@@ -183,9 +183,9 @@ PBR:
 * `Verhoog de camera-exposure`. Als de donkere kamer geen extra lichten had, zou je de camera de sluiter langer open kunnen laten houden of een gevoeliger ISO gebruiken. In Nomad kun je een vergelijkbaar resultaat bereiken met post-processing. Ga naar post process, schakel in, ga naar tone mapping, schakel in en verhoog de exposure-slider totdat de kleuren goed aanvoelen.
 * `Gebruik emissive color`. In het material-menu kun je 'emissive' inschakelen onder textures, waardoor een object als lichtbron verschijnt. Als je global illumination inschakelt in de post-process-instellingen, zal het licht werpen op andere objecten in de scène. Je kunt ook 'unlit' inschakelen voor dat materiaal, wat een vergelijkbare look geeft zonder texture.
 
-## Crashes
+## Crashes {#crashes}
 
-### Het crasht wanneer ik mijn model opsla of remesh!
+### Het crasht wanneer ik mijn model opsla of remesh! {#crash-remesh}
 Je apparaat raakt door het geheugen (RAM) heen.  
 Om het geheugengebruik in je scène te verminderen, kun je enkele van de [Topology](topology.md)-opties gebruiken om het aantal polygonen te verlagen.
 
@@ -194,7 +194,7 @@ Waar het om gaat is de hoeveelheid RAM, niet de opslag (die meestal veel groter 
 :::
 
 
-### Het crasht wanneer ik mijn project laad!
+### Het crasht wanneer ik mijn project laad! {#crash-load}
 Als het bestand klein is, kun je het naar mij sturen en kijk ik ernaar (per e-mail <support@nomadsculpt.com>).
 
 Anders raakt het apparaat waarschijnlijk door het RAM-geheugen heen.
@@ -228,7 +228,7 @@ With homebrew, simply do `brew install lz4` and then `lz4 myproject.glb.lz4`.
 4. If it still crashes at loading, you can open the file on any 3d desktop software that supports `glTF`.
 ::: -->
 
-### Het crasht wanneer ik Nomad start!
+### Het crasht wanneer ik Nomad start! {#crash-start}
 Als het crasht tijdens het laden, betekent dit dat Nomad moeite heeft met een bepaald bestand dat in de Nomad-map staat.
 
 Meestal gebeurt dit omdat het project zwaar is en helaas de RAM-limiet zal overschrijden.

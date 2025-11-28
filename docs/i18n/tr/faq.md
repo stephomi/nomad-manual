@@ -1,9 +1,9 @@
-# ![](/icons/faq.webp) SSS
+# ![](/icons/faq.webp) SSS {#faq}
 
 [[toc]]
 
-## Platform 
-### Projelerim cihazımda nerede bulunuyor?
+## Platform {#platform}
+### Projelerim cihazımda nerede bulunur? {#locate}
 Projeler, ana Nomad klasörünün içindeki `projects` klasöründe bulunur.
 
 iOS’ta, iOS Dosyalar uygulamasıyla Nomad klasörüne erişebilirsiniz.
@@ -14,18 +14,18 @@ Ayrı bir uygulama üzerinden erişebilirsiniz, örneğin [şu uygulama](https:/
 <!-- [this one](https://play.google.com/store/apps/details?id=com.alphainventor.filemanager) -->
 <!-- [this one](https://play.google.com/store/apps/details?id=com.mi.android.globalFileexplorer) -->
 
-### Beta test etmenin bir yolu var mı?
+### Beta testi yapmanın bir yolu var mı? {#beta}
 Windows & MacOS için, [Ana Sayfa](https://nomadsculpt.com)’da bir beta mevcut olabilir.
 <br>
 iOS için özel bir TestFlight var, [Discord](https://discord.com/invite/8h7BwpRz29)’da #beta-ios kanalını ziyaret edin.
 <br>
 [Web Demo](https://nomadsculpt.com/demo) genellikle en son özelliklerle güncellenir.
 
-### Neden Android’de ücretsiz deneme var da iOS’ta yok?
+### Neden Android'de ücretsiz deneme var da iOS'ta yok? {#android-trial}
 Çünkü eski Android cihazlar berbat (ve bazı yenileri de öyle...), ve insanların uygulamayı satın alıp siyah bir ekranla karşılaşmasını istemedim.
 Ama asıl sebep, ücretli Android uygulamalarının pek standart olmamasıydı.
 
-### Nomad’i çalıştırmak için en iyi tablet hangisi?
+### Nomad'i çalıştırmak için en iyi tablet hangisi? {#best-tablet}
 
 Kısaca: Bir iPad.
 
@@ -73,7 +73,7 @@ Lütfen önce ücretsiz, kaydetme devre dışı bırakılmış Nomad sürümün�
 Çoğu Nomad dosyası 100 MB veya daha küçüktür. Bu da günümüzde alacağınız hemen her tablette, iPad veya Android fark etmeksizin, Nomad projeleriniz için fazlasıyla yer olacağı anlamına gelir.
 
 
-### Bir cihaz için Nomad satın aldım, başka bir cihazda kullanabilir miyim?
+### Nomad'i bir cihaz için satın aldım, başka bir cihazda kullanabilir miyim? {#multi-devices}
 Aynı uygulama mağazasını ve aynı hesabı kullandığı sürece, evet.
 
 Örneğin iOS uygulama mağazasından satın aldıysanız, diğer iOS cihazlarınızda kullanabilirsiniz.
@@ -85,7 +85,7 @@ Ancak Nomad’i Android’de satın alıp sonra bir iPad alırsanız, yeniden sa
 Bunun sebebi, Nomad’in kendi lisans sunucusu veya abonelik modelinin olmamasıdır. Apple/Google/AppGallery arasında lisans paylaşımını yönetecek bir anlaşma yoktur. 
 
 
-### Satın almamı nasıl geri yüklerim?
+### Satın almamı nasıl geri yüklerim? {#restore}
 Google Play ve AppGallery senkronizasyonu otomatik olarak halleder.
 
 - Hakkında menüsüne gidin (sol üstteki nomad simgesi) ve `restore purchase` düğmesine basın
@@ -110,27 +110,27 @@ Yeni Huawei cihazlarının Google hizmetlerine erişimi yoktur.
 Bu durumda uygulamayı AppGallery’den (Huawei uygulama mağazası) tekrar satın almanız gerekir.
 :::
 
-### [benim-dilim]’i çevirebilir veya düzeltebilir misiniz?
+### [Benim-dilim] için çeviri yapabilir veya düzeltme yapabilir misiniz? {#locale}
 Görece kolayca başka bir dil ekleyebilirim, ancak düzenli güncellemeleri daha kolay yönetebilmek için yapay zekâ çevirisine güveniyorum.
 Çeviri dosyalarını [burada](https://github.com/stephomi/nomad-translation) bulabilirsiniz.
 
-## Özellikler
+## Özellikler {#features}
 
-### Neden gizmo hareket etmiyor?
+### Neden gizmo hareket etmiyor? {#gizmo-not-moving}
 Muhtemelen [sol menü araç çubuğunda sabitleme (pin) etkin](tools#left-menu-toolbar). 
 
-### Nomad içinde animasyon yapabilir miyiz?
+### Nomad içinde animasyon yapabilir miyiz? {#animate}
 Şimdilik hayır. Katmanları animasyonlu hale getirebilecek bir zaman çizelgesi özelliği ilginç olabilir, ancak şu anda pek planlanmıyor.  
 
 Gelecekte rigging/skin’leme desteği vermek isterim, ancak bazı zorluklar barındırıyor (özellikle heykel araçlarıyla etkileşim...) bu yüzden şimdilik kesin bir şey yok.
 
 
-### Doğru düzgün low-poly modelleme yapabilir miyiz?
+### Düzgün low-poly modelleme yapabilir miyiz? {#lowpoly}
 Şimdilik hayır.
 Bu aslında Nomad *Sculpt*’un kapsamına pek girmiyor, ama belki gelecekte birkaç araç sağlayabilirim.
 
 
-### UV ve kaplama (texturing) yapabilir miyiz?
+### UV ve dokulama yapabilir miyiz? {#texturing}
 Kısa cevap: Evet. Uzun cevap: Doğrudan değil, ama Nomad’in mükemmel vertex boyama araçlarını UV ve kaplamalarla birleştirmenin birkaç yolu var.
 
 * Nomad, heykelinizin vertekslerine doğrudan renk, pürüzlülük ve malzeme özellikleri boyamanıza izin verir.
@@ -143,30 +143,30 @@ Kısa cevap: Evet. Uzun cevap: Doğrudan değil, ama Nomad’in mükemmel vertex
 * Pişirme ve projeksiyon, tek nesneler veya birçok nesne arasında, ya da tek bir nesnenin en yüksek ve en düşük alt bölüm seviyeleri arasında yapılabilir; bu da çeşitli pişirme ve projeksiyon iş akışlarına olanak tanır.
 * Pişirmeden sonra bir obj dosyası dışa aktarmak, kaplamaları da dışa aktarır; bunlar Procreate gibi bir uygulamaya alınıp doğrudan kaplamalar üzerinde boyama yapmak için kullanılabilir.
 
-### Turntable videosu kaydedebilir miyim?
+### Bir turntable videosu kaydedebilir miyim? {#video}
 Şimdilik planlanmıyor, iOS’ta kullanımı çok kolay bir [video kaydetme özelliği](https://support.apple.com/en-au/guide/ipad/ipaddf78ce08/ipados) var.
 
 iOS’ta bu, sol üstten aşağı kaydırıp kayıt düğmesine dokunarak yapılır. Size 3 saniyelik bir geri sayım verir, menüyü kaydırarak Nomad’i görünür hale getirin ve turntable özelliğini kullanın. İşiniz bittiğinde, tekrar sağ üstten aşağı kaydırın ve kayıt düğmesine tekrar dokunun. Fotoğraf kitaplığından videonun başındaki ve sonundaki fazlalıkları keserek düzenleyin.
 
-### [favori-özelliğimi] üst seviye bir düğme olarak ekleyebilir misiniz?
+### [favori-özelliğimi] en üst seviye bir düğme olarak ekleyebilir misiniz? {#interface}
 Evet, alt araç çubuğu artık [arayüz](interface.md) menüsünden özelleştirilebilir ve yüzen araç çubukları oluşturulabilir.
 
-### Sıradaki özellikler neler?
+### Sıradaki özellikler neler? {#next-features}
 Orta/uzun vadeli yol haritası için birçok fikrim var ama henüz bilmiyorum.  
 
 Hata düzeltmeleri ve mevcut özellikleri iyileştirmek, her zaman yeni özellikler eklemenin önünde önceliğe sahip olacak.
 
 
-### Nomad’de rig yapabilir miyiz?
+### Nomad'de rig yapabilir miyiz? {#rigging}
 Hayır, ama planlanıyor. Şimdilik şekilleri birbirine bağlayabilir ve pivot noktalarını değiştirebilirsiniz, bu da basit pozlanabilir heykellere izin verir.
 
-### 4’ten fazla ışık kullanabilir miyiz?
+### 4'ten fazla ışık kullanabilir miyiz? {#lights}
 Hayır, bu Nomad’in gerçek zamanlı render motorunun bir sınırlamasıdır. Bunu, [bu eğitimde](https://www.youtube.com/watch?v=QhrUGH7CuUA) gösterildiği gibi, emisyonlu nesneler ve son işlemde global aydınlatma kullanarak taklit etmek mümkündür.
 
-### Zbrush tool’larını içe aktarabilir miyiz?
+### Zbrush tool'larını içe aktarabilir miyiz? {#zbrush-import}
 Hayır, Zbrush özel bir format kullanır. Alpha haritalarını çıkarıp Nomad’de kullanabilmeniz gerekir. 
 
-### Neden renkler boyadığım gibi görünmüyor? Neden render’da beyaz elde edemiyorum?
+### Neden renkler boyadığım gibi görünmüyor? Neden render'da beyaz elde edemiyorum? {#paint-pbr}
 Bir kâğıt parçasının fotoğrafını çektiğinizi, bir masa lambasının fotoğrafını çektiğinizi ve güneşin fotoğrafını çektiğinizi düşünün. Eski kameralar ve ekranlar bunların hepsini sadece ‘beyaz’ yapar. Daha modern sistemler, kâğıdın yansıttığı beyaz ile lambanın yaydığı ışık ve güneşin süper parlaklığı arasında fark gösterebilir.
 
 Modern bilgisayar grafikleri benzer bir şekilde çalışmaya çalışır, ışığın ve yüzeylerin fiziğini taklit eder. Buna `Fiziksel Tabanlı Render` veya PBR denir ve Nomad’in PBR render’ı buna dayanır. Bu gerçekçi ve dengeli görünür, ancak çoğu zaman parlak boyanmış renkler daha koyu görünür.
@@ -183,9 +183,9 @@ PBR:
 * `Kamera pozlamasını artırın`. Karanlık odada ekstra ışık yoksa, kamera deklanşörü daha uzun süre açık tutabilir veya daha hassas bir ISO kullanabilirdi. Nomad’de benzer bir sonucu son işlemle elde edebilirsiniz. Post process’e gidin, etkinleştirin, tone mapping bölümüne inin, etkinleştirin ve renkler doğru gelene kadar pozlama kaydırıcısını yükseltin.
 * `Emissive renk kullanın`. Malzeme menüsünde, bir nesnenin ışık kaynağı gibi görünmesini sağlayan ‘emissive’i dokular altında etkinleştirebilirsiniz. Post process ayarlarında global aydınlatmayı açarsanız, sahnedeki diğer nesnelerin üzerine ışık düşürecektir. Ayrıca o malzeme için ‘unlit’i etkinleştirebilirsiniz, bu da benzer bir görünümü doku olmadan sağlar.
 
-## Çökmeler
+## Çökmeler {#crashes}
 
-### Modelimi kaydederken veya yeniden mesh’lerken çöküyor!
+### Modelimi kaydederken veya yeniden mesh yaparken çöküyor! {#crash-remesh}
 Cihazınızın belleği (RAM) tükeniyor.  
 Sahnenizdeki bellek kullanımını azaltmak için, poligon sayısını azaltmak amacıyla bazı [Topoloji](topology.md) seçeneklerini kullanabilirsiniz.
 
@@ -194,7 +194,7 @@ Sahnenizdeki bellek kullanımını azaltmak için, poligon sayısını azaltmak 
 :::
 
 
-### Projemi yüklerken çöküyor!
+### Projemi yüklerken çöküyor! {#crash-load}
 Dosya küçükse, bana gönderebilirsiniz, bir göz atarım (e-posta ile <support@nomadsculpt.com>).
 
 Aksi halde cihaz muhtemelen RAM belleğinin sınırına ulaşıyordur.
@@ -228,7 +228,7 @@ With homebrew, simply do `brew install lz4` and then `lz4 myproject.glb.lz4`.
 4. If it still crashes at loading, you can open the file on any 3d desktop software that supports `glTF`.
 ::: -->
 
-### Nomad’i başlatırken çöküyor!
+### Nomad'i başlatırken çöküyor! {#crash-start}
 Yükleme sırasında çöküyorsa, Nomad’in Nomad klasöründe bulunan belirli bir dosyayla sorun yaşadığı anlamına gelir.
 
 Çoğu zaman, proje ağır olduğu için olur ve maalesef RAM sınırını aşar.

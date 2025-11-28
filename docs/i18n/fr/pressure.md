@@ -1,4 +1,4 @@
-# ![](/icons/pressure.webp) Pression 
+# ![](/icons/pressure.webp) Pression {#pressure}
 
 ---
 
@@ -7,7 +7,7 @@ Ce menu vous permet de personnaliser le comportement du stylet de la tablette, c
 Par défaut, la pression du stylet affecte le Rayon et l’Intensité de la brosse actuelle.
 Vous pouvez personnaliser l’atténuation de cet impact.
 
-## Autoriser la pression non reconnue
+## Autoriser la pression non reconnue {#allow-unrecognized-pressure}
 
 Sur certains appareils Android, les entrées au doigt renvoient une valeur de pression fixe et arbitraire.
 Cela peut être gênant si vous prévoyez de sculpter avec votre doigt, en particulier si la valeur renvoyée est faible.

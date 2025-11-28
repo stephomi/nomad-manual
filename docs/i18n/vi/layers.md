@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) Layers 
+# ![](/icons/layer.webp) Lớp {#layers}
 
 This menu contains the layer stack, a way to store edits to your object in a non destructive way, and many ways to combine and repurpose layers.
 
 ![](/images/layers_overview.webp) 
 
-## Overview
+## Tổng quan {#overview}
 
 Các layer trong Nomad có nhiều mục đích khác nhau.
 
@@ -19,7 +19,7 @@ Layer có thể được xóa một phần bằng công cụ [Delete Layer](tool
 ![](/videos/layer.mp4)
 
 ::: tip
-Không giống hầu hết phần mềm điêu khắc khác, thay đổi topology của mesh sẽ không làm mất layer. Bạn có thể dùng [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multiresolution) hoặc các công cụ [Trim](tools.md#trim)/[Split](tools.md#split), nhưng lưu ý rằng khi dùng [Voxel Remesher](topology.md#voxel-remesher), chất lượng của layer sẽ bị ảnh hưởng.
+Không giống hầu hết phần mềm điêu khắc khác, thay đổi topology của mesh sẽ không làm mất layer. Bạn có thể dùng [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multires) hoặc các công cụ [Trim](tools.md#trim)/[Split](tools.md#split), nhưng lưu ý rằng khi dùng [Voxel Remesher](topology.md#voxel-remesher), chất lượng của layer sẽ bị ảnh hưởng.
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ Nếu dùng layer cho blendshape/morph target, sẽ có thêm chức năng layer
 :::
 ----
 
-## Layer menu 
+## Menu lớp {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Nhấn `Add layer` để tạo một layer mới.
 
 Mỗi layer có một tên, một thanh trượt để điều khiển độ mạnh/hệ số của nó, và các nút tùy chọn.
 
-### Options
+### Tùy chọn {#options}
 
 | Action       | Icon                         | Description                                         |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Mỗi layer có một tên, một thanh trượt để điều khiển độ m�
 
 Để di chuyển một layer đến vị trí khác trong ngăn xếp layer, nhấn giữ vào tên của nó rồi kéo.
 
-### More...
+### Thêm... {#more}
 
 Nút 'More...' sẽ hiển thị thêm các tùy chọn cho layer hiện tại:
 
 ![](/images/layers_more.webp) 
 
-#### Channel factors
+#### Hệ số kênh {#channel-factors}
 
 Các điều khiển này cho phép bạn nhân tỉ lệ lượng sculpt/color/roughness/metalness/opacity cho layer. Các giá trị này được nhân với giá trị thanh trượt hệ số layer, ví dụ nếu độ mạnh của layer là 1, nhưng hệ số kênh màu (color channel factor) là 0.5, thì màu hiển thị sẽ ở mức 0.5.
 
@@ -82,17 +82,17 @@ Có thể trong tương lai, mỗi kênh sẽ có kênh alpha riêng để loạ
 :::
 
 
-#### ![](/icons/tool_mask.webp) Mask
+#### ![](/icons/tool_mask.webp) Mặt nạ {#mask}
 Nút mask bên cạnh mỗi thanh trượt sẽ tạo một mask từ kênh đó. Tương tự như việc dùng layer để tạo vùng chọn trong các phần mềm vẽ, điều này cho phép bạn tái sử dụng công việc đã làm trong một layer cho các thao tác khác.
 
-#### ![](/icons/preview.webp) Preview
+#### ![](/icons/preview.webp) Xem trước {#preview}
 ![](/images/layers_preview.webp) 
 
 Khi bật, sẽ xem trước thiết lập extract cho layer này (xem phần tiếp theo).
 
 Khi bật xray, chỉ phần hình dạng được extract sẽ là đặc, phần còn lại của hình sẽ được làm trong suốt, hữu ích nếu bạn đang dùng chiều cao extract âm.
 
-#### Extract
+#### Trích xuất {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ Nút `Extract` sẽ nhân bản nội dung của layer thành một đối tư�
 * Shell - Đóng kín hình dạng được extract với giá trị độ dày và tùy chọn hướng.
 * Layer - Extract phần chênh lệch của layer.
 
-#### ![](/icons/height.webp) Thickness
+#### ![](/icons/height.webp) Độ dày {#thickness}
 ![](/images/layers_thickness.webp) 
 
 Độ sâu của phần shell extrusion. Giá trị dương đẩy ra khỏi bề mặt, giá trị âm đẩy vào trong bề mặt.
@@ -116,12 +116,12 @@ Nút cộng/trừ bên cạnh giá trị này sẽ đặt hướng extrusion:
 * Plus ( + ) sẽ bắt đầu từ bề mặt hiện tại và extrude lên trên.
 * PlusMinus ( ± ) sẽ đẩy cả mặt trên và dưới của extrusion ra xa với lượng bằng nhau, nên nó sẽ nằm chìm một nửa trong bề mặt gốc.
 
-#### Smoothness
+#### Độ mượt {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 Nếu cạnh của vùng cần extract bị răng cưa, thanh trượt này sẽ cố gắng làm mờ cạnh để tạo hình dạng mượt hơn. 
 
-#### ![](/icons/height.webp) Edge loop (side)
+#### ![](/icons/height.webp) Vòng lặp cạnh (bên) {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 Phần này chỉ hiển thị khi closing action là 'Shell'. 
@@ -132,10 +132,10 @@ Nếu tắt, thanh trượt `Division` sẽ đặt số lượng phân chia trê
 
 _Đây là phần kết thúc của submenu 'More...'._
 
-### Advanced
+### Nâng cao {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Keep top layers details
+#### Giữ chi tiết lớp trên cùng {#keep-top-layers-details}
 
 Đảm bảo các chi tiết nhỏ trên các layer phía trên vẫn hiển thị khi có các thay đổi lớn ở các layer phía dưới.
 
@@ -144,13 +144,13 @@ Mặc định, nếu bạn điêu khắc các nếp nhăn nhỏ trên một laye
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expand list
+#### Giao diện: Mở rộng danh sách {#ui-expand-list}
 
 Menu layer mặc định cho phép bạn bật/tắt hiển thị layer và chỉnh opacity của layer. Bật tùy chọn này sẽ mở rộng toàn bộ điều khiển cho mọi layer.
 
 ![](/images/layers_expand.webp)
 
-#### Sync transform
+#### Đồng bộ biến đổi {#sync-transform}
 
 Nếu bật, tất cả các layer không được chọn sẽ được điều chỉnh tùy theo phép biến đổi xoay, tỉ lệ, skew. 
 

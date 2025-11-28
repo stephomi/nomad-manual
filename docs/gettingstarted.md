@@ -1,6 +1,6 @@
-# Getting Started
+# Getting Started {#getting-started}
 
-## Welcome to Nomad!
+## Welcome to Nomad! {#welcome-to-nomad}
 
 Nomad is a 3d sculpting app that works on many devices, and works best on tablets with a pressure sensitive stylus, eg an Apple iPad and pencil, or a Samsung Galaxy Tab with stylus.
 
@@ -18,7 +18,7 @@ Youtube now has a LOT of beginner video tutorials, here are some great links:
 It's worth checking the main channel for those creators, they frequently post new tutorials.
 :::
 
-## Your first sculpt
+## Your first sculpt {#your-first-sculpt}
 
 When you first start Nomad you'll see a sphere on screen. Simply drag your stylus on the sphere to start sculpting. Symmetry is enabled by default to make sculpting easier.
 
@@ -75,7 +75,7 @@ With those settings, you can manipulate the camera purely with the pen:
 * lower rocker and hover move = pan
 :::
 
-## Add color
+## Add color {#add-color}
 
 Nomad allows you to paint the surface of your sculpt. From the tool menu on the right, find the `Paint` tool, and click it. On the left toolbar a colored sphere will appear. Click it, this will bring up a color selector. Choose a color, and paint on your model.
 
@@ -89,7 +89,7 @@ Using the clay brush in add/sub modes, smooth, paint, see if you can make a simp
 
 ![](/images/gettingstarted_head1.webp)
 
-## Other tools
+## Other tools {#other-tools}
 
 The tool pallette has many tools to help with sculpting. So far you've used the clay brush (the default starting tool), smooth, and paint. Because smooth is used frequently, it has an extra shortcut in the left hand toolbar.
 
@@ -101,7 +101,7 @@ See if you can use the move, crease, inflate, and smooth tools to add more detai
 
 Now that you know the basics of Nomad, lets look at the rest of the interface.
 
-## Interface
+## Interface {#interface}
 
 ![](/images/interface_overview1.webp)
 
@@ -116,7 +116,7 @@ Now that you know the basics of Nomad, lets look at the rest of the interface.
 You can mirror the placement and ordering of all the toolbars, see [Mirror top bar](interface.md#mirror-top-bar) and other related options.
 :::
 
-## Bottom toolbar
+## Bottom toolbar {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
@@ -130,7 +130,7 @@ You can mirror the placement and ordering of all the toolbars, see [Mirror top b
 * `Wire` - Toggle a wireframe overlay. A long press or swipe up will reveal options for the wireframe.
 * `Inspect` - Toggle viewing extra data about the current mesh. By default it will display UVs, but a long press or swipe up will allow you to inspect other properties if they exist, and if this is displayed in the background or on the mesh.
 
-## Next steps
+## Next steps {#next-steps}
 
 What you should learn next is up to you, and what you find interesting! Here's some suggestions:
 
@@ -147,11 +147,10 @@ Do you want to want to learn *everything* about Nomad? Good choice! This manual 
 If you prefer video, Holger Schönischka has made a huge collection of tips and tricks for Nomad on Youtube: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Getting help
+## Getting help {#getting-help}
 
 If you still have questions after reading the manual and watching the tutorial videos, there's three main ways to talk to other Nomad users or the developer of Nomad:
 
 * Visit the forums: [forum.nomadsculpt.com](http://forum.nomadsculpt.com)
 * Join the Nomad discord chat: [https://discord.com/invite/8h7BwpRz29](https://discord.com/invite/8h7BwpRz29)
 * Contact the developer directly at support@nomadsculpt.com
-

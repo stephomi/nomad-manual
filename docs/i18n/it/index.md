@@ -1,4 +1,4 @@
-# Panoramica
+# Panoramica {#overview}
 
 <!-- 
 [[toc]]
@@ -13,7 +13,7 @@ Leggi la guida [Per iniziare](gettingstarted.md).
 :::
 
 
-## Indice
+## Indice dei contenuti {#table-of-contents}
 
 | Menu                           | Icona                         | Descrizione                                         |
 | :----------------------------: | :---------------------------: | :------------------------------------------------: |
@@ -37,7 +37,7 @@ Leggi la guida [Per iniziare](gettingstarted.md).
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Domande frequenti                                  |
 | [Tips](tips.md)                | ![](/icons/manual.webp)      | Suggerimenti di workflow                           |
 
-## Risorse della community
+## Risorse della comunità {#community-resources}
 
 <style>
 .video-grid {

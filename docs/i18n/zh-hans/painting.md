@@ -1,0 +1,143 @@
+# ![](/icons/paint.webp) 绘画 {#painting}
+
+控制笔触的颜色、粗糙度、金属度，支持对绘画属性进行整体填充，以及控制绘画工具与���层、蒙版、隐藏选择之间的交互方式。
+
+![](/images/paint_overview.webp)  
+
+## 概览 {#overview}
+
+Nomad 使用 PBR 顶点绘制。这是什么意思？
+
+### PBR {#pbr}
+PBR（Physically Based Rendering，基于物理的渲染）是一种在电影、���视、游戏和移动端中广泛使用的计算机图形技术。通过基于物理属性来模拟光照，并用颜色、粗糙度、金属度来定义表面，可以实现多种高度真实的外观效果。
+
+### 顶点绘制 {#vertex-painting}
+
+顶点绘制意味着绘画信息存储在模型的顶点中，而不是纹理中。由于 Nomad 可以处理几十万甚至数百万顶点的模型，你的模型可以拥有非常精细的表面涂装；只要你能雕出细节，就同样可以把这些细节画出来。
+
+这也意味着在 Nomad 中绘画不需要 UV 展开，而 UV 展开在其他 3D 软件中通常是一个缓慢且技术性较强的过程。许多其他 3D 软件并不支持 Nomad 这样高的顶点数量，不过 Nomad 也提供了良好的纹理烘焙和简模工具来辅助工作。
+
+### 纹理绘制 {#texturing}
+
+Nomad 支持纹理，但必须是导入模型中已经包含的纹理，或者通过将顶点绘制烘焙为纹理来获得。  
+
+纹理本质上就是一张图片，但在 3D 语境中通常指分配给物体的一张图像。  
+要把一张图片包裹到模型上，模型需要有纹理坐标（UV）。
+
+Nomad 可以[自动计算 UV](topology.md#uv-unwrap)，但你对整体质量的控制会比较有限。
+
+::: tip
+一个示例工作流程：
+- 在 Nomad 中雕刻，然后进行 [UV 展开](topology.md#uv-unwrap)
+- 如果你已经在 Nomad 中开始绘制，可以[将顶点颜色转移到纹理](topology.md#bake-vertex-colors-to-texture)
+- 导出到 Procreate
+- 在 Procreate 中进行纹理绘制
+- 再导回 Nomad 用于渲染
+:::
+
+以上是概览，下面来逐项介绍绘画菜单的各个部分：
+
+
+## 笔触绘制 {#stroke-painting}
+![](/images/paint_intensity.webp)  
+
+为当前工具启用绘画功能，如果你需要一边雕刻一边绘画，这会很有用。
+
+对于以绘画为主要功能的工具（例如 Paint、Smudge、Mask），不会出现这个复选框。
+
+### 绘制强度 {#paint-intensity}
+
+一个滑块，用于使用与主工具强度不同的绘画强度。
+
+`Alpha`、`Falloff` 和 `Randomize` 复选框决定这些功能是否会影响绘画。例如，你可以在 Clay 工具中启用随机化，但颜色不会被随机化。
+
+
+## 材质 {#material}
+![](/images/paint_material.webp) 
+
+第一个图标是材质预览形状，在 3D 材质预览上拖动可以旋转它。  
+
+第二个图标是带有当前 Alpha 和衰减设置的笔触预览。
+
+材质标题旁边的预览按钮可以在 None、Material 或 Triplanar 之间切换。这决定了当你交互式修改绘画属性时会发生什么：
+
+* `None` - 调整属性时不会在模型上显示预览
+* `Material` - 调整属性时会在物体上预览材质数值。如果你使用纹理且模型有 UV，则会使用 UV
+* `Triplanar` - 材质会以三平面投射的方式进行预览
+
+吸管可以用来从场景中的物体采样所有属性。
+
+## 材质预设 {#material-presets}
+点击 3D 预览形状会打开材质预设菜单，你可以克隆预设来定义自己的预设。
+
+![](/images/paint_presets.webp) 
+
+当启用 `Embed Textures` 和 `Alpha` 开关时，该材质使用的任何纹理都会被存储在预设中。下面会有更详细的说明。
+
+## PBR 滑块 {#pbr-sliders}
+![](/images/paint_sliders.webp) 
+
+[PBR](shading.md#pbr) 绘制使用 4 个通道：
+- `Color` 要绘制的颜色。可以使用吸管从模型的其他部分或参考图像中拾取颜色。
+- `Roughness` 表示表面有多“粗糙”或“光滑”。粗糙度值越低，反射越锐利。
+- `Metalness` 表示表面是否为金属。大多数情况下该值应为 0% 或 100%，介于两者之间的数值应是少数特例。
+- `Opacity` 表示材质的透明程度。严格来说它不属于 PBR 规范的一部分，但在很多场景中很有用。1 为完全不透明，0 为完全透明。注意，不透明度与折射是不同的概念，Nomad 中的折射由折射材质来处理。 
+
+如果你选择了一个材质预设，会同时绘制 3 个通道（通常会刻意排除不透明度）。这意味着你不只是简单地绘制“红色”，而是在绘制“红色粗糙金属”或“白色光滑塑料”。
+
+方形区域是纹理槽，点击它可以为该属性使用纹理而不是纯色数值。
+
+滑块旁边的画笔图标会将该属性整体填充到物体上。
+
+复选框用于启用或禁用某个属性，例如你可以只绘制颜色，或者只绘制粗糙度和不透明度。
+
+下面是不同粗糙度和金属度组合的一些示例：
+
+|                | Metalness 0%                      | Metalness 100%               |
+| :------------: | :-------------------------------: | :--------------------------: |
+| Roughness 0%   | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
+| Roughness 50%  | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
+| Roughness 100% | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
+
+::: warning
+在 [Matcap 渲染](shading.md#matcap) 模式下只支持颜色，金属度和粗糙度会被忽略。
+:::
+
+::: tip
+在使用纹理进行 PBR 绘制时，通常可以切换到 `Stamp` 工具，或者在笔触菜单中使用非 Dot 的模式，以避免纹理被点状笔触“抹糊”。
+
+![](/videos/paint_color_texture.mp4)  
+:::
+
+::: tip
+如果你在多边形数量较低的物体上绘制金属表面，可以考虑开启 `Smooth Shading`，可以是[全局开启](settings.md#smooth-shading)，也可以[按物体开启](material.md#smooth-shading)。
+:::
+
+## 全部绘制 {#paint-all}
+
+![](/images/paint_paint_all.webp)
+
+将当前材质应用到整个物体上，可以使用普通模式的 “Paint All”，也可以使用三平面投射模式。
+
+颜色 / 金属度 / 粗糙度 / 不透明度滑块旁边的复选框会被遵守，任何被禁用的属性都不会被填充。
+
+额外的按钮用于控制整体绘制的进一步影响范围：
+
+| Icon                        | Description                                   |
+| :-------------------------: | :-------------------------------------------: |
+| ![](/icons/tool_mask.webp) | 被蒙版区域不会受到影响。                      |
+| ![](/icons/tool_hide.webp) | 被隐藏区域不会受到影响。                      |
+| ![](/icons/opacity.webp)   | 使用上方工具的绘画强度因子。                  |
+| ![](/icons/layer.webp)     | 图层中未被绘制的区域不会受到影响。            |
+| ![](/icons/triplanar.webp) | 三平面设置指示图标                            |
+| ![](/icons/cog.webp)       | 打开三平面设置                                |
+
+### 三平面设置 {#triplanar-settings}
+![](/images/paint_triplanar_settings.webp)
+
+与[材质菜单中的三平面设置](material.md#triplanar)类似，你可以控制投射之间的混合、平铺以及偏移。  
+
+使用该菜单顶部的预览复选框，可以在调整数值时启用持续预览。
+
+## 全局材质 {#global-material}
+如果启用此选项，所选材质会与其他工具共用。注意它只会考虑粗糙度、金属度和颜色设置。

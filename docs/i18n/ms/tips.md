@@ -1,58 +1,58 @@
-# ![](/icons/manual.webp) Petua
+# ![](/icons/manual.webp) Petua {#tips}
 
 [[toc]]
 
-## Cara memulakan model
+## Cara memulakan model {#how-to-start-a-model}
 
 Pemula dalam pengukiran 3D sering bertanya apakah cara terbaik untuk memulakan model. Tiada cara yang paling baik, setiap orang ada keutamaan berbeza. Berikut beberapa pendekatan yang lebih lazim.
 
-### Mengukir pada sfera, multires
+### Muat arca pada sfera, multires {#sculpt-on-sphere-multires}
 
 Model lalai apabila Nomad dilancarkan ialah cara yang paling biasa. Gunakan alat move, clay, crease untuk menolak dan menarik sfera menjadi bentuk, gunakan aras subdivisi lebih rendah apabila anda mahu membuat perubahan besar dengan cepat, gunakan aras subdivisi lebih tinggi untuk kerja perincian.
 
 Masalah biasa ialah anda sering kehabisan poligon di tempat yang anda perlukan, sementara anda mempunyai terlalu banyak poligon di tempat lain. Contohnya jika anda menolak sfera lalai menjadi satu badan penuh, besar kemungkinan anda tidak mempunyai cukup perincian untuk membuat jari, sementara anda akan mempunyai banyak poligon terbuang di belakang kepala. Untuk bentuk yang kebanyakannya sfera seperti kepala, ini mungkin memadai.
 
-### Dyntopo
+### Dyntopo {#dyntopo}
 
 Mengaktifkan Dyntopo akan secara adaptif menambah dan membuang poligon ketika anda mengukir. Poligon ini akan berupa segi tiga, dan pemula selalunya tidak menyukai susun atur yang berselerak berbanding rupa multires yang kemas. Ia berbaloi untuk diteruskan! Jika anda menghidupkan smooth shading, mematikan wireframe dan berhenti risau tentang susun atur, mod ini boleh memberi rasa seperti tanah liat. Jangan lupa jika anda menggunakan berus besar, atau berus smooth, mod ini juga boleh membuang poligon, jadi alat sentiasa terasa pantas dan responsif. Setelah anda menyiapkan laluan pertama ukiran, anda boleh mengklonnya dan menjalankannya melalui quad remesher untuk mendapatkan susun atur yang baik, dan memprojek semula perincian asal ke aras subdivisi tinggi.
 
-### Voxel remesh
+### Voxel remesh {#voxel-remesh}
 
 Voxel remesh akan mengenakan topologi berasaskan quad pada ukiran anda. Operasi ini pantas pada resolusi rendah, dan boleh digunakan untuk dengan cepat menggantikan poligon yang diregangkan atau terlalu padat dengan susun atur yang jaraknya sekata. Ini boleh menjadi cara yang baik untuk memulakan satu badan penuh daripada sfera; katakan anda bermula dengan kepala, anda boleh meregangkan leher, voxel remesh. Regangkan badan, voxel remesh, lengan, voxel remesh, dan seterusnya, sehingga anda mendapat bentuk asas.
 
-### Guna objek berbilang
+### Guna objek berbilang {#use-multiple-objects}
 
 Banyak panduan anatomi akan mewakili badan daripada sfera, silinder, kubus ringkas. Anda juga boleh mengukir dengan cara ini dalam Nomad. Ini mempunyai kelebihan membolehkan anda mem‑parent objek bersama dalam hierarki adegan, jadi anda boleh memutar leher dan kepala akan mengikut, sebagai contoh. Keupayaan menggunakan alat gizmo untuk terjemahan/putaran/skala yang tepat juga sangat berguna, dan anda juga boleh menetapkan pivot per bentuk supaya ia bergerak tepat seperti yang anda jangka. Apabila blok asas berada di tempat yang betul, anda boleh memilih semuanya dan voxel remesh atau boolean menjadi satu permukaan tunggal untuk pengukiran lebih terperinci.
 
 Petua berguna untuk cara kerja ini ialah bermula dengan sfera, skala menjadi sosej yang memanjang, tekan pivot, klik 'bottom', tekan pivot lagi. Kini anda mempunyai bahagian badan yang boleh diklon, diterjemah sepanjang panjang sfera pertama, diklon, diputar, diklon, digelincir, diklon dan sebagainya untuk menyusun badan dengan cepat.
 
-### Tubes
+### Tiub {#tubes}
 
 Alat tube ialah cara yang hebat untuk memulakan ukiran. Ekor reptilia, lengan, kaki, jari, kening, semuanya boleh dilakar dengan cepat menggunakan alat tube, kemudian mudah disunting selepas itu. Ia juga membolehkan anda mengubah profil keratan rentas, membolehkan perubahan bentuk pantas. Anda boleh memvalidasi bentuk untuk mula mengukir padanya, dan voxel remesh bersama objek lain untuk mendapatkan mesh badan penuh.
 
-### Guna aplikasi lain
+### Guna aplikasi lain {#use-other-apps}
 
 Sesetengah orang lebih suka memulakan model dalam aplikasi lain, itu juga tidak mengapa. Alat seperti Blender atau Valence membenarkan model dimulakan menggunakan teknik low poly, kemudian boleh diimport ke dalam Nomad untuk diukir.
 
-### Guna preset terbina dalam
+### Guna pratetap terbina dalam {#use-the-built-in-presets}
 
 Daripada menu project klik `Preset...` di bahagian kanan atas. Di sini anda akan menemui beberapa preset bentuk kepala dan badan daripada Blender foundation. Pilih satu yang anda suka, ketik sekali lagi, tambah ke adegan anda. 
 
-### Guna model dalam talian
+### Guna model dalam talian {#use-online-models}
 
 Terdapat banyak model percuma tersedia dalam talian, contohnya polyhaven, sketchfab, turbosquid. Biasanya model ini boleh diimport ke Nomad, dan sama ada diukir terus, atau digunakan sebagai rujukan.
 
-### Tiada peraturan!
+### Tiada peraturan! {#no-rules}
 
 Akhirnya anda boleh menggunakan sebarang gabungan teknik ini, atau langsung tiada! Nomad sangat fleksibel dalam hal ini, pengguna mahir mungkin menggunakan tubes untuk bermula, kemudian dyntopo, kemudian gabung dengan kaki yang dimuat turun, kemudian quad remesh semuanya, kemudian multires untuk perincian akhir. Apa sahaja yang berkesan untuk anda.
 
-## Facegroups
+## Facegroups {#facegroups}
 
 Alat facegroup boleh digunakan untuk banyak perkara, seperti yang diterangkan dalam video youtube ini: https://youtu.be/qtjYcxS8f9s?si=HGWTG-NqXGstWehx
 
 Ini ialah ringkasan teks ciri yang diliputi dalam video tersebut.
 
-### Mengapa facegroups?
+### Mengapa facegroups? {#why-facegroups}
 
 Facegroups membolehkan anda mengatur dan memilih faces ('faces' dan 'polygons' digunakan silih ganti dalam manual ini). Ini lebih mudah dijelaskan berbanding alat pemilihan dan pengorganisasian lain dalam Nomad. Nomad membenarkan anda mencipta objek, menamakannya, mem‑parent‑kannya, adalah mudah untuk mencipta struktur objek untuk mentakrifkan bilik yang terdiri daripada lantai, dinding, kerusi, meja dan sebagainya.
 
@@ -64,63 +64,63 @@ Analogi paling hampir ialah mewarnakan peta, kemudian kemudian dapat memilih neg
 
 Untuk kepala watak anda boleh mewarnakan zon untuk menanda soket mata, hidung, bibir, dagu, telinga, kemudian dengan mudah memilih zon tersebut kemudian. Untuk pengukiran permukaan keras dan mekanikal ia boleh berguna untuk mentakrifkan panel dan seksyen.
 
-### Mencipta dan menyunting facegroups
+### Mencipta dan mengedit facegroups {#creating-and-editing-facegroups}
 
 Facegroups boleh digunakan dengan berus, di mana setiap sapuan baharu mencipta facegroup baharu, atau ia boleh memilih facegroup di bawah kursor dan melanjutkannya. Ia juga boleh dicipta menggunakan bentuk.
 
 * Dot, auto-pick diaktifkan - satu seretan akan mentakrifkan warna facegroup baharu dan menetapkannya kepada faces yang anda seret. Setiap seretan baharu akan mentakrifkan facegroup baharu. Satu ketikan akan memenuhi facegroup baharu.
 * Dot, auto-pick dinyahaktifkan - apabila butang auto-pick berada dalam mod 'sub', Nomad akan memilih facegroup di bawah kursor, dan menerapkannya sepanjang baki seretan. Ini berguna untuk memperhalus facegroups tanpa perlu memilihnya secara manual.
 
-### Masking
+### Pemaskaan {#masking}
 
 Apabila alat mask aktif, dan butang facegroup aktif pada toolbar‑nya, mengetik facegroup akan mem‑mask‑kannya.
 
 
-### Menyembunyikan
+### Menyembunyi {#hiding}
 
 Apabila alat hide aktif, dan butang facegroup aktif pada toolbar‑nya, mengetik facegroup akan menyembunyikannya.
 
-### Mengatur
+### Mengatur {#organizing}
 
 Seperti yang dinyatakan sebelum ini facegroups boleh digunakan untuk mengatur mesh anda tanpa memerlukan anda membuat objek berasingan. Anda mungkin tidak mahu membahagikan kepala kepada objek berasingan untuk hidung, dagu, telinga, tetapi sangat berguna untuk mentakrifkannya melalui facegroups.
 
-### Rantau UV
+### Rantau UV {#uv-regions}
 
 Alat UV Atlas akan cuba mentakrifkan seam secara automatik, tetapi kadangkala akan meletakkan seam di tempat yang anda tidak mahu. Jika facegroups wujud pada objek, dan pilihan facegroup aktif dalam pilihan UV Atlas, ia akan menggunakan sempadan facegroup sebagai seam UV sebaliknya.
 
-### Quad remesher
+### Quad remesher {#quad-remesher}
 
 Plugin quad remesher biasanya akan mengalirkan edges dengan baik pada model anda, tetapi anda boleh menggunakan facegroups untuk membantu mengarahkannya apabila pilihan facegroup diaktifkan. Ini boleh memudahkan untuk mentakrifkan aliran edge yang bersih di sekeliling mata, rabung kening, bibir, lipatan pipi sebagai contoh.
 
-### Penapis dengan alat lain
+### Tapis dengan alat lain {#filter-with-other-tools}
 
 Banyak alat akan mempunyai pilihan untuk sedar facegroup, sama ada daripada menu alat utama mereka, atau melalui menu stroke -> filtering. Contohnya alat smooth pada kekuatan melebihi 100% boleh melicinkan secara agresif perincian dalam facegroup, tetapi mengekalkan sempadan facegroup agak utuh.
 
-### Relax dan smooth sempadan facegroup
+### Renggangkan dan licinkan sempadan facegroup {#relax-and-smooth-facegroup-borders}
 
 Pilihan relax dalam alat facegroup melakukan kerja yang sangat baik untuk melicinkan sempadan facegroup sambil mengekalkan ciri lain utuh. Ini boleh menjadi cara yang baik untuk mentakrifkan rantau sempadan facegroup yang licin sebelum quad remeshing.
 
-## Had pada tablet/peranti mudah alih
+## Had pada tablet/peranti mudah alih {#limitations-on-tabletmobile}
 
 Tablet dan peranti mudah alih semasa sangat berkuasa, tetapi mempunyai perbezaan penting berbanding komputer desktop dan komputer riba:
 
-### Tiada penyejukan aktif
+### Tiada penyejukan aktif {#no-active-cooling}
 
 Komputer mempunyai kipas dan/atau heatsink besar untuk mengekalkannya sejuk, dan direka untuk berjalan pada suhu tinggi. Perkakasan mudah alih biasanya direka untuk ketipisan dahulu, bukan untuk membantu mengekalkan dalaman sejuk. Jika Nomad didorong ke tetapan kualiti tertingginya (mod pencahayaan PBR, bahan kompleks, banyak objek, banyak pilihan post processing diaktifkan), ini boleh menyebabkan peranti terlalu panas dan menghabiskan bateri dengan sangat cepat. 
 
 Pendekatan yang lebih baik ialah menggunakan mod pencahayaan matcap, dan menggunakan render multiplier yang lebih rendah (bahagian atas menu post process). Pilihan ini akan mengekalkan peranti sejuk dan membolehkan anda mengukir lebih lama.
 
-### Memori terhad
+### Memori terhad {#limited-memory}
 
 Nomad boleh mencapai hasil yang setara dengan kebanyakan aplikasi pengukiran desktop, tetapi ia tidak boleh melanggar hukum fizik! Kebanyakan komputer desktop mempunyai dua kali ganda memori peranti mudah alih, workstation yang dibina untuk animasi 3D selalunya mempunyai 4x atau 8x memori. Oleh sebab itu, adalah baik untuk peka tentang berapa banyak poligon yang anda gunakan, jalankan beberapa ujian pada peranti anda untuk melihat bila ia mula menjadi lembap. Hampir semua peranti yang boleh menjalankan Nomad boleh mengendalikan 1 juta poligon dengan agak mudah. Ipad Pro M2 boleh mengendalikan 8 juta dengan selesa, orang telah menguji pada Ipad terkini jauh melebihi itu.
 
 Walau begitu, hanya ukiran yang paling terperinci memerlukan lebih daripada 4 juta poli; jika anda membuat objek yang agak ringkas dan mendapati diri anda sering melebihi 500,000, 1 juta, 4 juta, anda menggunakan terlalu banyak poligon! Pastikan anda menghidupkan mod smooth shaded dalam pilihan.
 
-### OS kurang bertolak ansur dengan aplikasi intensif
+### OS kurang memaafkan dengan aplikasi intensif {#os-is-less-forgiving-with-intensive-apps}
 
 Apple dan Android menjangka aplikasi akan menyimpan dan memuatkan fail kecil dengan sangat cepat. Mereka juga menganggap aplikasi boleh bertukar tugas dengan sangat cepat. Sekali lagi Nomad melakukan beberapa helah bijak untuk mengekalkan saiz fail agak kecil dan menyimpannya dengan sangat cepat, tetapi jika OS mudah alih memutuskan Nomad mengambil masa terlalu lama, ia akan terus membunuhnya sebelum ia menyelesaikan tugasnya. Ini satu lagi sebab untuk mengekalkan fail pada saiz yang lebih kecil; adalah mungkin untuk bekerja dengan ukiran 37 juta poli seperti yang dilaporkan seorang pengguna di discord, tetapi ia tidak digalakkan!
 
-## Bekerja pada skrin kecil
+## Bekerja pada skrin kecil {#working-on-small-screens}
 
 Nomad direka untuk berfungsi pada tablet, tetapi juga berfungsi dengan baik pada telefon. Mengukir pada skrin kecil seperti telefon boleh dipermudah dengan beberapa pelarasan UI dan aliran kerja:
 
@@ -132,7 +132,7 @@ Nomad direka untuk berfungsi pada tablet, tetapi juga berfungsi dengan baik pada
 * Ini dan banyak lagi pilihan boleh ditemui dalam [Interface menu](./interface.md). 
 
 
-## Inflate atau peak deformer
+## Pengembang inflat atau peak {#inflate-or-peak-deformer}
 
 Banyak aplikasi 3D mempunyai inflate deformer, yang akan menolak semua vertex sepanjang normal masing‑masing dengan jumlah yang boleh dikawal. Walaupun Nomad pada masa ini tiada deformers, adalah mungkin untuk meniru tingkah laku ini dengan berus inflate:
 
@@ -143,7 +143,7 @@ Banyak aplikasi 3D mempunyai inflate deformer, yang akan menolak semua vertex se
 * Laraskan intensiti berus untuk mengawal jumlah inflate
 * Gunakan masking jika perlu untuk melindungi atau mengurangkan kesan inflate di kawasan tertentu.
 
-## Menghapuskan bonjolan atau 'jerawat' daripada operasi voxel remesh
+## Buang bonjolan atau 'jerawat' daripada operasi voxel remesh {#remove-lumps-or-pimples-from-a-voxel-remesh-operation}
 
 Voxel remesh bagus untuk menghasilkan poligon yang jaraknya sekata, tetapi kadangkala mencipta topologi yang akan menyebabkan bonjolan kecil atau jerawat apabila di‑smooth. Contohnya:
 
@@ -162,7 +162,7 @@ Untuk membaiki topologi itu sendiri, gunakan primitif baharu, atau alat quad rem
 
 ![](/videos/tip_pimples_reproject.mp4)
 
-## Pencahayaan siang hari
+## Pencahayaan siang hari {#daylight-lighting}
 
 Render PBR lalai adalah, seperti namanya, berasaskan fizikal, yang seperti foto digital tidak diproses boleh kelihatan sedikit pudar dan rata. Lampu dan post processing Nomad boleh digunakan untuk menjadikan render kelihatan lebih bertenaga.
 

@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) Sfondo
+# ![](/icons/image.webp) Sfondo {#background}
 
 Questo menu controlla il colore di sfondo di Nomad, oltre a eventuali immagini di riferimento da utilizzare.
 
 ![](/images/background_overview.webp)
 
-## Sfondo 
+## Sfondo {#type}
 ![](/images/background_selector.webp)
 
 Ci sono tre opzioni per lo sfondo della viewport.
@@ -13,14 +13,14 @@ Ci sono tre opzioni per lo sfondo della viewport.
 * `Color` - Un colore uniforme che puoi scegliere
 * `Gradient` - Una sfumatura di colore dall’alto verso il basso. Lo slider Factor ti permette di determinare il punto medio del gradiente.  
 
-## Immagine di riferimento
+## Immagine di riferimento {#reference}
 
 ![](/images/background_reference.webp)
 
 Puoi aggiungere un’immagine a tua scelta sullo sfondo da usare come riferimento.
 Puoi cambiarne posizione e scala, per esempio se vuoi spostarla in un angolo dello schermo.
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) Trasforma {#transform}
 
 Questo pulsante ti permette di posizionare l’immagine di riferimento in modo interattivo. Usa 2 dita per spostare, scalare e ruotare l’immagine di riferimento nella posizione desiderata. Il posizionamento finale sarà riportato negli slider sottostanti:
 

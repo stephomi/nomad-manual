@@ -1,4 +1,4 @@
-# ![](/icons/scene.webp) Cảnh 
+# ![](/icons/scene.webp) Cảnh {#scene}
 
 Menu này cho phép bạn quản lý đối tượng, đèn, camera và repeater trong Nomad. Nó hiển thị cây phân cấp của cảnh dưới dạng tree-view, cho phép bạn chỉnh sửa nhiều khía cạnh của các đối tượng. Nó cũng cho phép bạn tạo đối tượng mới, cũng như gộp và tách đối tượng theo nhiều cách khác nhau.
 
@@ -6,7 +6,7 @@ Menu này cho phép bạn quản lý đối tượng, đèn, camera và repeater
 ![](/images/scene_menu_summary.webp)
 
 
-## Thanh lối tắt
+## Thanh phím tắt {#shortcut-bar}
 | Action                 | Icon                              | Description                                                                                                         |
 | :--------------------: | :-------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
 | [Add...](#add-menu)    | ![](/icons/plus.webp)            | Hiển thị [Add Menu](#add-menu) để thêm một đối tượng vào cảnh                                                     |
@@ -21,7 +21,7 @@ Menu này cho phép bạn quản lý đối tượng, đèn, camera và repeater
 | Sync                   | ![](/icons/link.webp)            | Nếu các instance có con, đảm bảo tất cả instance chia sẻ cùng một cây con                                         |
 
 
-## Tree view
+## Dạng cây {#tree-view}
 ![](/images/scene_treeview.webp) 
 
 | Action       | Icon                       | Description              |
@@ -36,7 +36,7 @@ Chạm vào biểu tượng chọn để bật/tắt một đối tượng, ho�
 
 :::
 
-### Thao tác với tree view
+### Thao tác dạng cây {#tree-view-manipulation}
 
 Nhấn giữ lâu trên một mục trong tree view cho đến khi nó chuyển sang màu vàng. Sau đó bạn có thể di chuyển nó lên hoặc xuống trong tree view, cũng như kéo nó lên trên một mục khác để biến nó thành con của mục đó.
 
@@ -44,7 +44,7 @@ Khi nhiều mục được chọn, hầu hết sẽ có màu vàng đậm, một
 
 Khi bạn chọn một mục cha, mặc định tất cả mục con cũng sẽ được chọn. Chạm vào biểu tượng của mục cha sẽ chuyển đổi giữa việc chỉ chọn cha, hoặc chọn cả cha và con.
 
-### Menu đối tượng
+### Menu đối tượng {#object-menu}
 
 Nhấn vào nút dấu ba chấm (...) cho một đối tượng trong tree view sẽ hiển thị menu đối tượng. 
 Nhiều tuỳ chọn ở đây tương tự với thanh lối tắt phía trên, được lặp lại cho tiện.
@@ -65,7 +65,7 @@ Nhiều tuỳ chọn ở đây tương tự với thanh lối tắt phía trên,
 
 
 
-### Multiselection
+### Chọn nhiều {#multiselection}
 Bạn có thể chọn nhiều đối tượng để phục vụ hai mục đích:
 - dùng công cụ gizmo để di chuyển nhiều đối tượng cùng lúc
 - gộp đối tượng bằng Join và các phép Boolean.
@@ -87,12 +87,12 @@ Lý do là multiselection chỉ cho phép biến đổi toàn mesh, không phả
 :::
 
 
-## Join
+## Nối {#join}
 Tuỳ chọn này sẽ đơn giản tạo một mục đối tượng duy nhất từ nhiều đối tượng được chọn.
 
 Bạn có thể xem ví dụ video trong phần [Separate](#separate).
 
-## Boolean
+## Boolean {#boolean}
 ![](/images/scene_boolean_menu.webp) 
 Kết hợp các đối tượng thành một bề mặt duy nhất.
 
@@ -100,43 +100,43 @@ Kết hợp các đối tượng thành một bề mặt duy nhất.
 
 `Boolean` sẽ cố gắng giữ nguyên bố cục polygon ban đầu, và khâu polygon tại vùng các đối tượng chồng lấp. Điều này có thể cho kết quả sạch và sắc nét hơn voxel merge, tuy nhiên nó yêu cầu mesh phải “kín nước” (watertight); không được có lỗ hoặc hình dạng lỗi. Nếu thao tác này thất bại, thường voxel merge sẽ hoạt động được.
 
-### Các phép Boolean
+### Thao tác Boolean {#boolean-operations}
 Cả Voxel Merge và Boolean đều dùng trạng thái hiển thị của đối tượng để điều khiển phép toán:
 
-#### Union
+#### Hợp (Union) {#union}
 Cả hai đối tượng đều hiển thị sẽ tạo boolean **union**, lớp vỏ ngoài của các đối tượng được kết hợp, không có bề mặt bên trong. ![](/images/boolean_union.webp)
 
-#### Subtract
+#### Trừ (Subtract) {#subtract}
 Một đối tượng ẩn = boolean **subtract**, đối tượng ẩn sẽ bị trừ khỏi đối tượng hiển thị. ![](/images/boolean_subtract.webp)
 
-#### Intersect
+#### Giao (Intersect) {#intersect}
 Cả hai đối tượng đều ẩn = boolean **intersection**, tạo một hình mới chỉ tại vùng hai đối tượng giao nhau. ![](/images/boolean_intersect.webp)
 
 
-### Nút Voxel Merge
+### Nút Voxel Merge {#voxel-merge-button}
 Nhấn nút này sẽ thực hiện thao tác voxel merge trên các đối tượng được chọn. Khi thực hiện trên một đối tượng đơn lẻ, nó sẽ retopo thành polygon phân bố đều, hữu ích khi đối tượng có polygon bị kéo giãn.
 
-### Resolution
+### Độ phân giải {#resolution}
 Độ phân giải của lưới voxel 3D dùng để tính toán. Khi giá trị này thay đổi, một mẫu caro sẽ phủ lên đối tượng để xem trước kích thước polygon.
 
-### Build multiresolution
+### Tạo đa phân giải {#build-multiresolution}
 Tạo các mức multiresolution thấp hơn độ phân giải mục tiêu. Ví dụ nếu resolution là 400 và build multiresolution là 3, bạn sẽ có một mesh mới với khoảng 296.000 polygon, nhưng có 3 mức subdiv thấp hơn là 74.000, 18.000, 4.000.
 
-### Keep sharp edges
+### Giữ cạnh sắc {#keep-sharp-edges}
 Bật việc “snap” lưới voxel vào các cạnh. Hoạt động tốt nhất trên hình dạng đơn giản.
 
-### Nút Boolean
+### Nút Boolean {#boolean-button}
 Nhấn nút này sẽ thực hiện phép Boolean polygon dùng thư viện Manifold của Emmett Lalish. 
 
 
-## Separate
+## Tách {#separate}
 Nếu bạn có một đối tượng đơn lẻ được tạo từ nhiều phần rời nhau, bạn có thể tách đối tượng này thành nhiều đối tượng. 
 Có thể xem thao tác này như ngược lại với [Simple Merging](#simple-merge).
 
 ![](/videos/merge_separate.mp4)
 
 
-## Add menu
+## Menu Thêm {#add-menu}
 
 ![](/images/scene_addmenu_overview.webp)
 
@@ -147,21 +147,21 @@ Primitive là các dạng hình cơ bản có thể điều chỉnh bằng tham 
 
 ![](/images/scene_addmenu_top.webp)
 
-### On gizmo
+### Trên gizmo {#on-gizmo}
 Bật việc đặt primitive mới tại vị trí shape hoặc gizmo đang được chọn. Khi tắt, primitive sẽ được đặt ở tâm cảnh.
 
-### Select gizmo
+### Chọn gizmo {#select-gizmo}
 Bật việc tự động chuyển sang công cụ gizmo khi một primitive mới được tạo. 
 
-### Advanced
+### Nâng cao {#add-advanced}
 
 Menu này cho phép bạn đặt tuỳ chọn về vị trí tạo primitive, group, repeater mới. Chúng có thể được tạo trên đối tượng đang chọn, tại gốc toạ độ thế giới, hoặc tại vị trí gizmo.
 
 
-### UV's
+### UV {#uvs}
 Bật UV cho primitive. UV (thường gọi là texture coordinates) là dữ liệu bổ sung trong 3D để cho phép áp texture lên bề mặt. Chúng tốn thêm bộ nhớ, nhưng với hầu hết thiết bị thì không đáng lo trừ khi bạn dùng số polygon rất lớn (ví dụ 10 triệu polygon trở lên). 
 
-### Primitives
+### Nguyên khối {#primitives}
 
 | Primitive      | Icon                                      | Description                                                                                                     |
 | :------------: | :---------------------------------------: | :-------------------------------------------------------------------------------------------------------------: |
@@ -184,7 +184,7 @@ Nếu bạn thắc mắc mesh gốc khi mở Nomad là gì: đó cũng là một
 Tuy nhiên mesh gốc trong Nomad không dùng `Project on sphere`, nghĩa là nó không tròn hoàn hảo.
 :::
 
-### Thanh công cụ Primitive
+### Thanh công cụ Nguyên khối {#primitive-toolbar}
 
 ![](/images/scene_primitive_toolbar.gif)
 
@@ -212,7 +212,7 @@ Nhấp vào tiêu đề của thanh công cụ sẽ chuyển nó lên trên ho�
 :::
 
 
-### Menu Primitive
+### Menu Nguyên khối {#primitive-menu}
 
 ![](/images/scene_primitive_menu.webp)
 
@@ -226,16 +226,16 @@ Hầu hết tham số primitive khá dễ hiểu, và có một số tham số c
 * `Post subdivision` Bật số mức subdiv đã chọn từ phần multiresolution trong menu topology. Có thể dùng để tạo primitive bo tròn, mềm bằng cách kết hợp với số chia topology thấp. Ví dụ đặt box topology divisions là 2, và post subdivisions là 4, sẽ tạo box có góc bo tròn.
 * `Linear subdivision` Đặt số mức linear subdivision trước khi dùng smooth subdivision thông thường. Có thể dùng để điều khiển độ sắc/mềm của góc trên bề mặt đã subdiv. Ví dụ đặt box topology divisions là 2, post subdivisions là 4, rồi thử đổi linear subdivisions từ 0 đến 4. Góc của box sẽ chuyển từ mềm sang sắc.
 
-### Topology
+### Topology {#topology}
 
 Điều khiển số polygon trong primitive. Thường các điều khiển được liên kết, nên thay đổi một slider đang hoạt động sẽ điều chỉnh polygon đồng đều. Bạn có thể chạm nút unlink để điều khiển riêng số chia X/Y/Z trên hình.
 
-### Geometry
+### Hình học {#geometry}
 
 Điều khiển kích thước tổng thể của primitive, theo đơn vị X/Y/Z cho hình vuông, và theo bán kính cho hình tròn.
 
 
-### UV Sphere
+### Cầu UV {#uv-sphere}
 ::: warning
 UV Sphere không phù hợp để sculpt, đặc biệt ở vùng cực (poles).
 
@@ -248,7 +248,7 @@ Dù không phù hợp cho sculpt tổng quát, nó hữu ích cho mắt; nếu b
 :::
 
 
-### Triplanar
+### Triplanar {#triplanar}
 Primitive này đặc biệt ở chỗ bạn nên dùng [Masking tool](tools.md#mask) trên nó để tạo hình hình học.
 
 ![](/videos/triplanar.mp4)
@@ -270,23 +270,23 @@ Hiện chưa có tuỳ chọn “khoá” việc vẽ trên một plane duy nh�
 Bạn có thể dùng [Connected Topology](stroke.md#connected-topology) để hỗ trợ phần nào, theo đó nếu con trỏ nằm chính xác trên một plane thì sẽ không ảnh hưởng đến các plane khác.
 :::
 
-### Shadow Catcher
+### Bắt bóng (Shadow Catcher) {#shadow-catcher}
 Thêm một plane với vật liệu shadow catcher. Xem [Shadow Catcher material](material.md#shadow-catcher) để biết thêm chi tiết. 
 
 
-## Group/Camera
-### Group
+## Nhóm/Camera {#groupcamera}
+### Nhóm {#group}
 Tạo một đối tượng “rỗng” (empty), bạn có thể cho các đối tượng khác làm con bên dưới. Có thể dùng để đơn giản hoá cây phân cấp bằng cách đặt nhiều đối tượng vào một group rồi thu gọn nó. Group cũng có thể dùng làm helper để di chuyển đối tượng; nhiều đối tượng có thể đặt dưới một group, rồi di chuyển, xoay, scale group bằng công cụ gizmo.
 
-### Add view
+### Thêm góc nhìn {#add-view}
 Tạo một camera.
 
-## Repeaters
+## Bộ lặp (Repeaters) {#repeaters}
 ![](/images/scene_primitive_repeaters.webp)
 
 Repeater là các node tạo instance cho các đối tượng bên dưới nó. 
 
-### Array
+### Mảng (Array) {#array}
 ![](/images/scene_primitive_array.webp)
 
 Khi các đối tượng là con của node này, chúng có thể được instance thành bố cục dạng lưới. Khi được chọn, nó có các điều khiển:
@@ -295,7 +295,7 @@ Khi các đối tượng là con của node này, chúng có thể được inst
 * OffsetX/Y/Z - khoảng cách giữa các instance khi fit inside được bật
 * SizeX/Y/Z - chiều rộng/cao/sâu của toàn bộ lưới array khi fit inside được bật.
 
-### Curve
+### Đường cong (Curve) {#curve}
 ![](/images/scene_primitive_curve.webp)
 Node này tạo một đường cong, các con của node sẽ được lặp dọc theo đường cong. Khi được chọn, nó có các điều khiển:
 * Edit - cho phép thêm điểm vào đường cong, và di chuyển các điểm trên đường cong.
@@ -307,7 +307,7 @@ Node này tạo một đường cong, các con của node sẽ được lặp d�
 * Twist - Bật điều khiển trên từng điểm đường cong để điều khiển xoay (twist) của instance 
 * B-spline - Bật/tắt việc instance bám chính xác theo đường cong, hoặc dùng nội suy b-spline cho kết quả mượt hơn. 
 
-### Radial
+### Xoay tròn (Radial) {#radial}
 ![](/images/scene_primitive_radial.webp)
 
 Các con của node này sẽ được instance thành vòng tròn. Di chuyển đối tượng con để thay đổi bán kính repeater. Khi được chọn, nó có các điều khiển:
@@ -315,7 +315,7 @@ Các con của node này sẽ được instance thành vòng tròn. Di chuyển 
 
 
 
-### Mirror
+### Gương (Mirror) {#mirror}
 ![](/images/scene_primitive_mirror.webp)
 
 Các con của node này sẽ được phản chiếu qua một trục. Khi được chọn, nó có các điều khiển:
@@ -338,35 +338,35 @@ Repeater có thể được cho làm con của repeater khác, và nhiều đố
 Một số repeater sẽ cố gắng tự động đặt pivot cho đối tượng con, nên ngay cả khi bạn di chuyển hoặc xoay chúng bằng gizmo, chúng sẽ không di chuyển. Nếu bạn cần ghi đè hành vi này, hãy chèn một group giữa repeater và đối tượng con. Khi đó bạn có thể di chuyển shape con độc lập với repeater.
 :::
 
-## Light
+## Đèn {#light}
 
 ![](/images/scene_primitive_light.webp)
 
-### Directional
+### Định hướng (Directional) {#directional}
 Tạo directional light, nguồn sáng ở vô cực giống như mặt trời.
 
-### Spot
+### Đèn rọi (Spot) {#spot}
 Tạo spot light, với điều khiển độ rộng và độ mềm của hình nón sáng
 
-### Point
+### Điểm (Point) {#point}
 Tạo point light
 
-## Advanced
-### Focus on item
+## Nâng cao {#advanced}
+### Focus vào mục {#focus-on-item}
 Nhấp đúp vào một mục trong danh sách Scene sẽ đưa camera về tâm của mục đó trong khung nhìn 3D.
 
-### Sync visibility
+### Đồng bộ hiển thị {#sync-visibility}
 Dùng biểu tượng con mắt sẽ ảnh hưởng đến tất cả mục đang được chọn. 
 
-### Instance: Show
+### Thể hiện: Hiển thị {#instance-show}
 Hiển thị một capsule màu ở bên trái danh sách scene để cho biết instance.
 
 
-### Icons
+### Biểu tượng {#icons}
 Đặt kích thước và độ mờ của icon group, light, camera, mirror trong viewport
 
-### Hierarchy lines
+### Đường phân cấp {#hierarchy-lines}
 Hiển thị đường nối giữa cha và con trong viewport
 
-## Bottom toolbar
+## Thanh công cụ dưới {#bottom-toolbar}
 Các icon này sẽ bật/tắt hiển thị Group, Light, Camera, Repeater và Hierarchy lines trong viewport.

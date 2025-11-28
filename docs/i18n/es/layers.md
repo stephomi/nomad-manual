@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) Capas 
+# ![](/icons/layer.webp) Capas {#layers}
 
 Este menú contiene la pila de capas, una forma de almacenar ediciones en tu objeto de manera no destructiva, y muchas formas de combinar y reutilizar capas.
 
 ![](/images/layers_overview.webp) 
 
-## Descripción general
+## Descripción general {#overview}
 
 Las capas de Nomad cumplen múltiples propósitos.
 
@@ -19,7 +19,7 @@ Las capas se pueden borrar parcialmente mediante la herramienta [Delete Layer](t
 ![](/videos/layer.mp4)
 
 ::: tip
-A diferencia de la mayoría del software de esculpido, cambiar la topología de una malla no descartará las capas. Puedes usar el [Voxel Remesher](topology.md#voxel-remesher), el [Multiresolution](topology.md#multiresolution) o las herramientas [Trim](tools.md#trim)/[Split](tools.md#split), pero ten en cuenta que al usar el [Voxel Remesher](topology.md#voxel-remesher), la calidad de la capa se verá afectada.
+A diferencia de la mayoría del software de esculpido, cambiar la topología de una malla no descartará las capas. Puedes usar el [Voxel Remesher](topology.md#voxel-remesher), el [Multiresolution](topology.md#multires) o las herramientas [Trim](tools.md#trim)/[Split](tools.md#split), pero ten en cuenta que al usar el [Voxel Remesher](topology.md#voxel-remesher), la calidad de la capa se verá afectada.
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ Si usas capas para blendshapes/morph targets, hay funcionalidad extra de capas e
 :::
 ----
 
-## Menú de capas 
+## Menú de capas {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Pulsa `Add layer` para crear una nueva capa.
 
 Cada capa tiene un nombre, un deslizador para controlar su intensidad/factor y botones de opciones.
 
-### Opciones
+### Opciones {#options}
 
 | Acción       | Icono                        | Descripción                                         |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Cada capa tiene un nombre, un deslizador para controlar su intensidad/factor y b
 
 Para mover una capa a otra parte de la pila de capas, mantén pulsado su nombre y arrástrala.
 
-### More...
+### Más... {#more}
 
 El botón 'More...' mostrará opciones adicionales para la capa actual:
 
 ![](/images/layers_more.webp) 
 
-#### Factores de canal
+#### Factores de canal {#channel-factors}
 
 Estos controles te permiten escalar la cantidad de esculpido/color/rugosidad/metalicidad/opacidad de la capa. Estos valores se multiplican por el deslizador de factor de capa, así que, por ejemplo, si la intensidad de la capa es 1, pero el factor del canal de color es 0.5, entonces el color mostrado tendrá una intensidad de 0.5.
 
@@ -82,17 +82,17 @@ Quizá en el futuro cada canal tenga su propio canal alfa para eliminar esta lim
 :::
 
 
-#### ![](/icons/tool_mask.webp) Mask
+#### ![](/icons/tool_mask.webp) Máscara {#mask}
 El botón de máscara junto a cada deslizador creará una máscara a partir de ese canal. Similar al uso de capas para hacer selecciones en aplicaciones de pintura, esto te permite reutilizar el trabajo que has hecho en una capa para otras operaciones.
 
-#### ![](/icons/preview.webp) Preview
+#### ![](/icons/preview.webp) Vista previa {#preview}
 ![](/images/layers_preview.webp) 
 
 Cuando está activado, previsualizará los ajustes de extracción para esta capa (ver la siguiente sección).
 
 Cuando el modo rayos X está activado, solo la forma extraída será sólida; el resto de la forma se volverá transparente, lo cual es útil si estás usando alturas de extracción negativas.
 
-#### Extract
+#### Extraer {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ El botón `Extract` duplicará el contenido de la capa en un nuevo objeto, norma
 * Shell - Cierra la forma extraída con las opciones de valor de grosor y dirección.
 * Layer - Extrae la diferencia de la capa.
 
-#### ![](/icons/height.webp) Thickness
+#### ![](/icons/height.webp) Grosor {#thickness}
 ![](/images/layers_thickness.webp) 
 
 La profundidad de la extrusión del shell. Los valores positivos crecen hacia fuera de la superficie, los valores negativos crecen hacia dentro de la superficie.
@@ -116,12 +116,12 @@ El signo más/menos junto a este valor establecerá la dirección de la extrusi�
 * Más ( + ) comenzará desde la superficie actual y extruirá hacia arriba.
 * MásMenos ( ± ) empujará la parte superior e inferior de la extrusión hacia afuera en cantidades iguales, de modo que quedará a medio incrustar en la superficie original.
 
-#### Suavidad
+#### Suavidad {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 Si los bordes de la región a extraer son irregulares, este deslizador intentará difuminar el borde para obtener una forma más suave. 
 
-#### ![](/icons/height.webp) Edge loop (side)
+#### ![](/icons/height.webp) Bucle de borde (lado) {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 Esta sección es visible cuando la acción de cierre es 'Shell'. 
@@ -132,10 +132,10 @@ Si se desactiva, el deslizador `Division` establecerá el número de divisiones 
 
 _Este es el final del submenú 'More...'._
 
-### Avanzado
+### Avanzado {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Keep top layers details
+#### Conservar detalles de las capas superiores {#keep-top-layers-details}
 
 Garantiza que los pequeños detalles en las capas superiores sigan siendo visibles cuando se realizan cambios grandes en las capas inferiores.
 
@@ -144,13 +144,13 @@ De forma predeterminada, si esculpes pequeñas arrugas en una capa y luego haces
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expand list
+#### UI: Expandir lista {#ui-expand-list}
 
 El menú de capas predeterminado te permite alternar la visibilidad de la capa y la opacidad de la capa. Activar esta opción expande los controles completos para cada capa.
 
 ![](/images/layers_expand.webp)
 
-#### Sync transform
+#### Sincronizar transformación {#sync-transform}
 
 Si está activado, todas las capas no seleccionadas se ajustarán en función de la rotación, escala y deformación de la transformación. 
 

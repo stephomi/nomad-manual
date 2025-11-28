@@ -1,4 +1,4 @@
-# Übersicht
+# Überblick {#overview}
 
 <!-- 
 [[toc]]
@@ -13,7 +13,7 @@ Lies die Anleitung [Erste Schritte](gettingstarted.md).
 :::
 
 
-## Inhaltsverzeichnis
+## Inhaltsverzeichnis {#table-of-contents}
 
 | Menü                           | Icon                          | Beschreibung                                       |
 | :----------------------------: | :---------------------------: | :------------------------------------------------: |
@@ -37,7 +37,7 @@ Lies die Anleitung [Erste Schritte](gettingstarted.md).
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Häufig gestellte Fragen                            |
 | [Tipps](tips.md)               | ![](/icons/manual.webp)      | Workflow‑Tipps                                     |
 
-## Community-Ressourcen
+## Community-Ressourcen {#community-resources}
 
 <style>
 .video-grid {

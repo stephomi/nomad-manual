@@ -1,10 +1,10 @@
-# ![](/icons/symmetry.webp) Simetri
+# ![](/icons/symmetry.webp) Simetri {#symmetry}
 
 Menu ini mengawal bagaimana sapuan akan diulang merentasi satah cermin atau secara jejari, dan cara untuk memulihkan simetri pada objek yang tidak simetri.
 
 ![](/images/symmetry_overview.webp) 
 
-## Gambaran keseluruhan 
+## Gambaran keseluruhan {#overview}
 Anda boleh menggunakan simetri dalam beberapa cara:
 
 * Sebagai cermin, membalikkan kerja merentasi X (kiri/kanan), Y (atas/bawah), Z (belakang/hadapan), atau gabungan daripadanya. 
@@ -23,10 +23,10 @@ Satu-satunya pengecualian ialah alat transform ([Move](#translate), [Rotate](#ro
 Menu simetri terutamanya untuk mengawal simetri sapuan. Anda juga boleh mencerminkan dan mengulang objek melalui [repeater yang terdapat dalam menu adegan](scene#repeaters). 
 :::
 
-## Enabled
+## Didayakan {#enabled}
 Togol mod cermin, ini sama seperti butang `Sym` dalam panel pantas kiri. 
 
-## Planes
+## Bidang {#planes}
 
 Aktifkan satah simetri dan bilangan ulangan untuk simetri jejari. Perhatikan bahawa anda tidak perlu memilih hanya satu satah, anda boleh mengaktifkan 1, 2 atau 3 satah untuk simetri yang kompleks.
 
@@ -34,10 +34,10 @@ Paksi dan kiraan ulangan untuk simetri jejari. Perhatikan bahawa ini juga tidak 
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Method
+## Kaedah {#method}
 Cermin boleh sama ada 'Local', dan bergerak bersama objek, atau 'World', dan tidak bergerak. Jika anda tidak pasti mod mana yang diperlukan, perhatikan satah cermin dan penunjuk jejari yang ditindih pada objek. Dalam mod setempat, jika anda menggunakan gizmo transform dan menggerakkan model, penunjuk cermin juga akan bergerak. Dalam mod dunia, penunjuk cermin akan kekal tetap, dan objek akan meluncur melaluinya.
 
-## Mirroring
+## Cerminan {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
 Apabila mengukir berhampiran satah simetri, sesetengah berus akan mempunyai tingkah laku simetri yang tidak sempurna. Bahagian ini membolehkan anda memulihkan simetri dengan menyalin satu sisi ukiran anda ke sisi yang lain. 
@@ -53,11 +53,11 @@ Apabila mengukir berhampiran satah simetri, sesetengah berus akan mempunyai ting
 
 `Split & Mirror` pada asasnya akan memotong objek sepanjang cermin, menyalin satu sisi, mencerminkannya ke sisi lain, dan mengimpal verteks sepanjang cermin. Ia ialah pilihan yang lebih destruktif, dan akan memadam multiresolusi, tetapi kadangkala kaedah ini diperlukan jika model sangat berbeza merentasi cermin.
 
-### Flip object
+### Balik objek {#flip-object}
 ![](/images/symmetry_flip.webp)
 Menjadikan sisi kiri sebagai sisi kanan, dan sebaliknya. Penampilannya serupa seperti jika anda menggunakan menu alat gizmo dan menetapkan skala kepada -1 pada X.
 
-## Reset and Edit
+## Tetap semula dan Edit {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
@@ -72,7 +72,7 @@ Jadi jika ia tidak berfungsi seperti yang anda jangkakan, pastikan anda menyemak
 Butang `Gizmo (Edit)` sengaja dikelabukan sebagai peringatan bahawa anda mungkin tidak sepatutnya menggunakannya!
 :::
 
-## Show options
+## Tunjuk pilihan {#show-options}
 ![](/images/symmetry_show.webp)
 
 

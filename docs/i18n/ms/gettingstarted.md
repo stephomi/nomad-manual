@@ -1,6 +1,6 @@
-# Bermula
+# Bermula {#getting-started}
 
-## Selamat datang ke Nomad!
+## Selamat datang ke Nomad! {#welcome-to-nomad}
 
 Nomad ialah aplikasi pengukiran 3D yang berfungsi pada banyak peranti, dan berfungsi paling baik pada tablet dengan stylus sensitif tekanan, contohnya Apple iPad dan Pencil, atau Samsung Galaxy Tab dengan stylus.
 
@@ -18,7 +18,7 @@ YouTube kini mempunyai BANYAK tutorial video untuk pemula, berikut beberapa paut
 Berbaloi untuk menyemak saluran utama pencipta tersebut, mereka kerap menyiarkan tutorial baharu.
 :::
 
-## Ukiran pertama anda
+## Arca pertama anda {#your-first-sculpt}
 
 Apabila anda mula-mula memulakan Nomad anda akan melihat sebuah sfera pada skrin. Hanya seret stylus anda pada sfera untuk mula mengukir. Simetri diaktifkan secara lalai untuk memudahkan pengukiran.
 
@@ -75,7 +75,7 @@ Dengan tetapan tersebut, anda boleh memanipulasi kamera hanya dengan pen:
 * rocker bawah dan gerakan hover = pan
 :::
 
-## Tambah warna
+## Tambah warna {#add-color}
 
 Nomad membolehkan anda mewarnakan permukaan ukiran anda. Dari menu alat di sebelah kanan, cari alat `Paint`, dan klik. Pada bar alat kiri satu sfera berwarna akan muncul. Klik, ini akan memaparkan pemilih warna. Pilih warna, dan warnakan pada model anda.
 
@@ -89,7 +89,7 @@ Dengan menggunakan berus clay dalam mod add/sub, smooth, paint, cuba lihat jika 
 
 ![](/images/gettingstarted_head1.webp)
 
-## Alat lain
+## Alat lain {#other-tools}
 
 Palet alat mempunyai banyak alat untuk membantu pengukiran. Setakat ini anda telah menggunakan berus clay (alat permulaan lalai), smooth, dan paint. Oleh kerana smooth kerap digunakan, ia mempunyai pintasan tambahan di bar alat sebelah kiri.
 
@@ -101,7 +101,7 @@ Cuba lihat jika anda boleh menggunakan alat move, crease, inflate, dan smooth un
 
 Sekarang setelah anda tahu asas Nomad, mari lihat selebihnya antara muka.
 
-## Antara muka
+## Antara muka {#interface}
 
 ![](/images/interface_overview1.webp)
 
@@ -116,7 +116,7 @@ Sekarang setelah anda tahu asas Nomad, mari lihat selebihnya antara muka.
 Anda boleh mencerminkan penempatan dan susunan semua bar alat, lihat [Mirror top bar](interface.md#mirror-top-bar) dan pilihan berkaitan lain.
 :::
 
-## Bar alat bawah
+## Bar alat bawah {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
@@ -130,7 +130,7 @@ Anda boleh mencerminkan penempatan dan susunan semua bar alat, lihat [Mirror top
 * `Wire` - Togol hamparan wireframe. Tekan lama atau leret ke atas akan memaparkan pilihan untuk wireframe.
 * `Inspect` - Togol paparan data tambahan tentang mesh semasa. Secara lalai ia akan memaparkan UV, tetapi tekan lama atau leret ke atas akan membolehkan anda memeriksa sifat lain jika wujud, dan sama ada ini dipaparkan di latar belakang atau pada mesh.
 
-## Langkah seterusnya
+## Langkah seterusnya {#next-steps}
 
 Apa yang patut anda pelajari seterusnya terpulang kepada anda, dan apa yang anda minati! Berikut beberapa cadangan:
 
@@ -147,7 +147,7 @@ Mahukan belajar *semua* tentang Nomad? Pilihan yang bagus! Manual ini merangkumi
 Jika anda lebih suka video, Holger Schönischka telah membuat koleksi besar petua dan helah untuk Nomad di YouTube: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Mendapatkan bantuan
+## Mendapatkan bantuan {#getting-help}
 
 Jika anda masih mempunyai soalan selepas membaca manual dan menonton video tutorial, terdapat tiga cara utama untuk bercakap dengan pengguna Nomad lain atau pembangun Nomad:
 

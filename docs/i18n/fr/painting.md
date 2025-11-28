@@ -1,23 +1,23 @@
-# ![](/icons/paint.webp) Peinture  
+# ![](/icons/paint.webp) Peinture {#painting}
 
 Contrôler la couleur, la rugosité, la métallité des coups de pinceau, permettre le remplissage global des attributs de peinture, et définir la façon dont les outils de peinture interagissent avec les calques, masques et sélections masquées.
 
 ![](/images/paint_overview.webp)  
 
-## Vue d’ensemble
+## Vue d’ensemble {#overview}
 
 Nomad utilise la peinture de sommets PBR. Qu’est‑ce que cela signifie ?
 
-### PBR
+### PBR {#pbr}
 PBR, ou Physically Based Rendering (rendu physiquement réaliste), est une technique de graphisme très répandue pour le cinéma, la télévision, les jeux et le mobile. En basant les lumières sur des propriétés physiques et en définissant les surfaces via la couleur, la rugosité et la métallité, on peut obtenir une grande variété de rendus photoréalistes.
 
-### Peinture de sommets
+### Peinture de sommets {#vertex-painting}
 
 La peinture de sommets signifie que les informations de peinture sont stockées dans les sommets du modèle, plutôt que dans des textures. Comme Nomad peut gérer des modèles comportant des centaines de milliers, voire souvent des millions de sommets, vos modèles devraient pouvoir avoir une peinture de surface très détaillée ; si vous pouvez sculpter le détail, vous pouvez aussi le peindre.
 
 Cela signifie également que peindre dans Nomad ne nécessite pas de dépliage UV, souvent un processus lent et technique dans d’autres applications 3D. Beaucoup d’autres applications 3D ne prennent pas en charge les nombres de sommets élevés que Nomad peut gérer, cependant Nomad dispose aussi de bons outils de cuisson de textures et de décimation pour aider.
 
-### Texturage
+### Texturation {#texturing}
 
 Nomad prend en charge les textures, mais elles doivent être présentes dans un modèle importé, ou via la cuisson de la peinture de sommets vers des textures. 
 
@@ -38,21 +38,21 @@ Exemple de flux de travail :
 Voilà pour la vue d’ensemble, explorons maintenant les sections du menu de peinture :
 
 
-## Peinture par trait
+## Peinture par traits {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
 Active la peinture pour cet outil, utile si vous avez besoin de sculpter et peindre en même temps.
 
 Pour les outils dont la fonction principale est la peinture (par ex. Paint, Smudge, Mask), cette case à cocher n’existe pas.
 
-### Intensité de peinture
+### Intensité de la peinture {#paint-intensity}
 
 Un curseur vous permet d’utiliser une intensité différente de l’intensité principale de l’outil.
 
 Les cases `Alpha`, `Falloff` et `Randomize` déterminent si ces fonctions affecteront la peinture. Par exemple, vous pouvez avoir l’aléatoire activé pour l’outil Clay, mais la couleur ne sera pas randomisée.
 
 
-## Matériau
+## Matériau {#material}
 ![](/images/paint_material.webp) 
 
 La première icône est une forme d’aperçu de matériau. En faisant glisser sur l’aperçu 3D du matériau, vous le faites pivoter. 
@@ -67,14 +67,14 @@ Le bouton d’aperçu à côté du titre Material permet d’alterner entre None
 
 La pipette peut être utilisée pour échantillonner toutes les propriétés d’un objet dans votre scène.
 
-## Presets de matériau
+## Préréglages de matériau {#material-presets}
 Un appui sur la forme d’aperçu 3D ouvre un menu de presets de matériaux, qui peuvent être clonés pour définir vos propres presets.
 
 ![](/images/paint_presets.webp) 
 
 Les bascules `Embed Textures` et `Alpha`, lorsqu’elles sont activées, stockent toutes les textures utilisées par ce matériau dans le preset. Ceci est expliqué plus en détail ci‑dessous.
 
-## Curseurs PBR
+## Curseurs PBR {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 La peinture [PBR](shading.md#pbr) utilise 4 canaux :
@@ -113,7 +113,7 @@ Lorsque vous utilisez des textures pour la peinture PBR, il est souvent utile de
 Vous pouvez envisager d’activer le `Smooth Shading` [globalement](settings.md#smooth-shading) ou [par objet](material.md#smooth-shading) si vous peignez une surface métallique sur un objet avec un faible nombre de polygones.
 :::
 
-## Paint all
+## Tout peindre {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
@@ -132,12 +132,12 @@ Les boutons supplémentaires contrôlent la façon dont le Paint All peut être 
 | ![](/icons/triplanar.webp) | Indicateur des paramètres triplanaires          |
 | ![](/icons/cog.webp)       | Ouvrir les paramètres Triplanar                 |
 
-### Paramètres Triplanar
+### Paramètres triplanaires {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
 Similaire aux [paramètres triplanaires du menu Material](material.md#triplanar), vous pouvez contrôler le mélange des projections, le tiling et les décalages. 
 
 Utilisez la case d’aperçu en haut de ce menu pour activer un aperçu persistant pendant l’ajustement des valeurs.
 
-## Matériau global
+## Matériau global {#global-material}
 Si cette option est activée, le matériau sélectionné sera le même que pour les autres outils. Notez qu’elle ne prend en compte que les réglages de rugosité, métallité et couleur.

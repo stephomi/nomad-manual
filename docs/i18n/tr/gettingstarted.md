@@ -1,6 +1,6 @@
-# Başlarken
+# Başlarken {#getting-started}
 
-## Nomad'a Hoş Geldiniz!
+## Nomad'e Hoş Geldiniz! {#welcome-to-nomad}
 
 Nomad, birçok cihazda çalışan bir 3B yontma (sculpting) uygulamasıdır ve basınca duyarlı kalemli tabletlerde en iyi şekilde çalışır; örneğin Apple iPad ve Pencil ya da kalemli Samsung Galaxy Tab.
 
@@ -18,7 +18,7 @@ Youtube'da artık yeni başlayanlar için ÇOK FAZLA video eğitim var, işte ba
 Bu içerik üreticilerinin ana kanallarına göz atmaya değer, sık sık yeni eğitimler paylaşıyorlar.
 :::
 
-## İlk yontunuz
+## İlk heykeliniz {#your-first-sculpt}
 
 Nomad'ı ilk başlattığınızda ekranda bir küre görürsünüz. Yontmaya başlamak için kaleminizi kürenin üzerinde sürüklemeniz yeterlidir. Yontmayı kolaylaştırmak için simetri varsayılan olarak etkindir.
 
@@ -75,7 +75,7 @@ Bu ayarlarla, kamerayı yalnızca kalemle kontrol edebilirsiniz:
 * alt sallanan ve havada hareket = kaydırma
 :::
 
-## Renk ekleme
+## Renk ekleme {#add-color}
 
 Nomad, yontunuzun yüzeyini boyamanıza olanak tanır. Sağdaki araç menüsünden `Paint` aracını bulun ve tıklayın. Sol araç çubuğunda renkli bir küre belirecektir. Ona tıklayın; bu, bir renk seçici açar. Bir renk seçin ve modelinizin üzerine boyayın.
 
@@ -89,7 +89,7 @@ Kil fırçasını ekleme/çıkarma (add/sub) modlarında, smooth ve paint ile bi
 
 ![](/images/gettingstarted_head1.webp)
 
-## Diğer araçlar
+## Diğer araçlar {#other-tools}
 
 Araç paleti, yontmaya yardımcı olacak birçok araca sahiptir. Şimdiye kadar kil fırçasını (varsayılan başlangıç aracı), smooth ve paint'i kullandınız. Smooth sık kullanıldığından, sol araç çubuğunda ekstra bir kısayolu vardır.
 
@@ -101,7 +101,7 @@ Move, crease, inflate ve smooth araçlarını kullanarak kafanıza daha fazla de
 
 Artık Nomad'ın temellerini bildiğinize göre, arayüzün geri kalanına bakalım.
 
-## Arayüz
+## Arayüz {#interface}
 
 ![](/images/interface_overview1.webp)
 
@@ -116,7 +116,7 @@ Artık Nomad'ın temellerini bildiğinize göre, arayüzün geri kalanına bakal
 Tüm araç çubuklarının yerleşimini ve sıralamasını aynalayabilirsiniz, bkz. [Mirror top bar](interface.md#mirror-top-bar) ve ilgili diğer seçenekler.
 :::
 
-## Alt araç çubuğu
+## Alt araç çubuğu {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
@@ -130,7 +130,7 @@ Tüm araç çubuklarının yerleşimini ve sıralamasını aynalayabilirsiniz, b
 * `Wire` - Tel kafes (wireframe) bindirmesini aç/kapat. Uzun basma veya yukarı kaydırma, tel kafes seçeneklerini gösterir.
 * `Inspect` - Geçerli ağ (mesh) hakkında ek verileri görüntülemeyi aç/kapat. Varsayılan olarak UV'leri gösterir, ancak uzun basma veya yukarı kaydırma, mevcutsa diğer özellikleri ve bunların arka planda mı yoksa ağ üzerinde mi gösterileceğini incelemenize olanak tanır.
 
-## Sonraki adımlar
+## Sonraki adımlar {#next-steps}
 
 Sonra ne öğrenmeniz gerektiği size ve ilginizi çeken şeye bağlı! İşte bazı öneriler:
 
@@ -147,7 +147,7 @@ Nomad hakkında *her şeyi* öğrenmek mi istiyorsunuz? İyi seçim! Bu kılavuz
 Videoyu tercih ediyorsanız, Holger Schönischka Youtube'da Nomad için çok büyük bir ipucu ve püf noktası koleksiyonu hazırladı: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Yardım alma
+## Yardım alma {#getting-help}
 
 Kılavuzu okuduktan ve eğitim videolarını izledikten sonra hâlâ sorularınız varsa, diğer Nomad kullanıcılarıyla veya Nomad geliştiricisiyle konuşmanın üç ana yolu vardır:
 

@@ -1,4 +1,4 @@
-# ![](/icons/material.webp) Bahan
+# ![](/icons/material.webp) Bahan {#material}
 
 Menu ini membolehkan anda menukar bahan objek semasa, sifat render objek/bahan, dan menetapkan tekstur pada bahan.
 
@@ -24,16 +24,16 @@ Butang salin/tampal di bahagian atas menu ini membolehkan anda menyalin bahan da
 
 Perlu diingat bahawa enjin render Nomad adalah enjin render masa nyata; walaupun berkuasa, ia mengutamakan kelajuan berbanding ketepatan untuk kesan tertentu. 
 
-## Jenis bahan
+## Jenis bahan {#material-types}
 
 ![](/images/material_types.webp)
 
 Jenis bahan Nomad ialah Opaque, Subsurface, Blending, Additive, Refraction, Dithering, Shadow Catcher.
 
-### ![](/icons/material_opaque.webp) Opaque
+### ![](/icons/material_opaque.webp) Legap {#opaque}
 Mod lalai yang menganggap permukaan sebagai bahan ringkas yang menyokong warna, kekasaran, kelogaman dan kelegapan yang dilukis.
 
-### ![](/icons/material_subsurface.webp) Subsurface
+### ![](/icons/material_subsurface.webp) Bawah permukaan {#subsurface}
 Mod ini boleh mensimulasikan bahan yang membenarkan cahaya kabur dan berselerak secara dalaman seperti kulit, lilin, jed.
 
 Untuk hasil terbaik, tukar kepada mod penaungan PBR dan gunakan sekurang-kurangnya satu cahaya berarah atau spot, sebaiknya dengan persekitaran yang malap.
@@ -42,7 +42,7 @@ Untuk hasil terbaik, tukar kepada mod penaungan PBR dan gunakan sekurang-kurangn
 
 `Translucency` mengawal bagaimana cahaya berselerak dari bahagian hadapan ke bahagian belakang bentuk, seperti cahaya yang menembusi bahagian bawah daun, atau apabila telinga disinari kuat dari belakang. 
 
-### ![](/icons/material_blending.webp) Blending
+### ![](/icons/material_blending.webp) Pengadunan {#blending}
 
 Serupa dengan Opaque, tetapi menyokong peluncur kelegapan untuk membolehkan bahan bercampur antara pepejal dan lutsinar. Ini ialah peluncur tunggal ringkas untuk kelegapan, berbanding kelegapan boleh lukis yang disokong oleh bahan opaque. 
 
@@ -50,7 +50,7 @@ Serupa dengan Opaque, tetapi menyokong peluncur kelegapan untuk membolehkan baha
 Mod Blending boleh menyebabkan berkelip dan “popping” pada bentuk yang kompleks atau bersilang.
 :::
 
-### ![](/icons/material_additive.webp) Additive
+### ![](/icons/material_additive.webp) Aditif {#additive}
 Anda boleh menjadikan mesh separa lutsinar dengan bahan ini. Ia serupa dengan bahan blending, tetapi sementara blending akan bercampur dengan persekitarannya, additive akan sentiasa lebih cerah daripada objek di belakangnya, sesuai untuk kesan terang seperti sinar cahaya, api, letupan.
 
 Anda boleh menetapkan nilai kelegapan lebih tinggi daripada 1, yang bermaksud objek akan menjadi lebih cerah.  
@@ -58,7 +58,7 @@ Ini berguna jika anda mahu menggunakan [bloom](postprocess.md#bloom) dan `parame
 
 Mod ini cenderung mempunyai artifak yang lebih sedikit berbanding [Blending](#blending) (ketelusan bebas tertib).
 
-### ![](/icons/material_refraction.webp) Refraction
+### ![](/icons/material_refraction.webp) Pembiasan {#refraction}
 Mod ini boleh digunakan untuk mensimulasikan bahan kaca. Disebabkan kekangan masa nyata, pembiasan kendiri dan pembiasan berlapis berbilang adalah agak terhad.
 
 Lukisan kekasaran pada model mempengaruhi sejauh mana kaburnya pembiasan.
@@ -72,10 +72,10 @@ Untuk mendapatkan nilai berbeza (contohnya gula-gula lolipop dengan permukaan ta
 ![](/videos/refraction.mp4)
 
 
-### ![](/icons/material_dithering.webp) Dithering
+### ![](/icons/material_dithering.webp) Dithering {#dithering}
 Menjadikan objek separa lutsinar dengan membuang beberapa piksel secara rawak.
 
-### ![](/icons/material_shadow_catcher.webp) Shadow Catcher
+### ![](/icons/material_shadow_catcher.webp) Penangkap bayang {#shadow-catcher}
 
 Menjadikan objek tidak kelihatan, dan hanya menerima bayang-bayang. Berguna untuk menggabungkan render Nomad dengan imej lain. 
 
@@ -85,49 +85,49 @@ Maklumat lanjut tentang ketelusan dan mod blending boleh didapati di https://sup
 
 :::
 
-## Kawalan
+## Kawalan {#controls}
 
 ![](/images/material_controls.webp)
 
-### Sentiasa tanpa pencahayaan (Always unlit)
+### Sentiasa tidak berlampu {#always-unlit}
 Jika diaktifkan, objek akan mengabaikan PBR dan Matcap dan hanya memaparkan warna lukisan tanpa penaungan.
 Perlu diingat jika anda menggunakan [Additive](#additive), anda boleh melukis ketelusan secara terus dengan menggunakan warna hitam.
 
-### Kelegapan
+### Kelegapan {#opacity}
 Seberapa pepejal atau legap sesuatu objek akan kelihatan; 100% ialah pepejal, 0% ialah lutsinar. Anda juga boleh melukis kelegapan untuk kawalan lebih halus.
 
-### Pantulan
+### Pantulan {#reflectance}
 Mengawal jumlah pantulan yang diterima bahan untuk bahan bukan logam. Kebanyakan masa nilai lalai patut digunakan (yang sepadan dengan 4% cahaya dipantulkan pada sudut normal), tetapi boleh dinaikkan untuk menguatkan pantulan dan sorotan pada mata watak, sebagai contoh.
 
-### Inverse culling
+### Pemotongan songsang {#inverse-culling}
 Membalikkan normal permukaan. Biasanya tidak diperlukan, tetapi boleh digunakan jika model kelihatan terbalik, atau bersama dengan `Two sided` dimatikan, boleh digunakan untuk membuat bahagian dalam di mana dinding paling hampir dengan kamera sentiasa disembunyikan.
 
-### Smooth Shading
+### Lorekan licin {#smooth-shading}
 Lihat [pilihan global](settings.md#smooth-shading).  
 Nilai `Auto` akan menggunakan pilihan global.
 
-### Two sided
+### Dua sisi {#two-sided}
 Lihat [pilihan global](settings.md#two-sided).  
 Nilai `Auto` akan menggunakan pilihan global.
 
-### Coloured backface
+### Bahagian belakang berwarna {#coloured-backface}
 Lihat [pilihan global](settings#two-sided).
 Nilai `Auto` akan menggunakan pilihan global.
 
-### Casts shadows
+### Membaling bayang {#casts-shadows}
 Buat masa ini `Auto` sama seperti `On`.
 Objek lutsinar juga membuang bayang-bayang (dalam corak dithering untuk meniru bayang-bayang blended).  
 Pastikan untuk mematikan bayang-bayang jika anda mempunyai objek besar dalam adegan yang tidak perlu membuang bayang-bayang (contohnya lantai besar).
 
-### Recieve shadows
+### Menerima bayang {#recieve-shadows}
 Buat masa ini `Auto` sama seperti `On`.
 
-### Wireframe
+### Rangka dawai {#wireframe}
 Lihat [pilihan global](settings.md#wireframe).  
 Nilai `Auto` akan menggunakan pilihan global.
 
 
-## Tekstur
+## Tekstur {#textures}
 
 ![](/images/material_textures.webp)
 
@@ -144,28 +144,28 @@ Tekstur boleh digunakan pada
 
 Mengklik pada slot tekstur akan memaparkan pemilih. Selepas tekstur ditetapkan pada slot bahan, mengklik sekali lagi akan memaparkan panel tekstur:
 
-### Pilihan panel tekstur
+### Pilihan panel tekstur {#texture-panel-options}
 
 ![](/images/material_texture_panel.webp)
 
-### Open
+### Buka {#open}
 Pilih tekstur lain
 
-### None
+### Tiada {#none}
 Buang tekstur
 
-### Opacity
+### Kelegapan {#texture-opacity}
 
 Jika imej mempunyai saluran alfa, ini membolehkan anda menggunakannya untuk Kelegapan, atau mengabaikannya.
 
-### ![](/icons/link.webp) Ikon Rantai/Pautan 
+### ![](/icons/link.webp) Ikon rantai/pautan {#chainlink-icon}
 
 Ikon pautan dalam bahagian berikut, apabila diaktifkan, bermaksud apa sahaja pilihan yang digunakan akan dikongsi dengan tekstur lain (warna, normal, kekasaran, kelogaman, kelegapan, emisif) yang juga mempunyai ikon pautan diaktifkan. 
 
 Ini membolehkan anda memastikan jika anda mempunyai tekstur yang sejajar, ia akan kekal sejajar walaupun anda mengubah parameter atau jenis unjuran.
 
 
-### Projection
+### Unjuran {#projection}
 ![](/images/material_projection.webp)
 
 Tetapkan bagaimana tekstur harus digunakan pada objek.
@@ -174,7 +174,7 @@ Tetapkan bagaimana tekstur harus digunakan pada objek.
 * `UV` - Gunakan koordinat uv mesh untuk menggunakan tekstur. Jika mesh dan tekstur datang dari luar Nomad, atau akan dieksport dari Nomad untuk digunakan di tempat lain, UV ialah pilihan yang betul.
 * `Triplanar` - Unjurkan tekstur sepanjang paksi X,Y,Z, dan gabungkan sambungan.
 
-### Triplanar
+### Triplanar {#triplanar}
 ![](/images/material_triplanar.webp)
 
 Unjuran triplanar ialah cara yang berkuasa tetapi ringkas untuk menggunakan tekstur pada objek.
@@ -186,45 +186,45 @@ Ini kemudian boleh dibakar ke dalam UV atau warna verteks jika perlu.
 
 ![](/images/material_triplanar_example.webp)
 
-#### Method
+#### Kaedah {#method}
 
 * `Local` - Unjuran akan bergerak bersama transform objek
 * `World` - Unjuran kekal tetap, menggerakkan objek akan meluncurkannya melalui unjuran.
 
-#### Hardness
+#### Kekerasan {#hardness}
 
 Bagaimana unjuran bercampur. 100% tidak akan melakukan sebarang pengadunan, dan tepi unjuran akan tajam. 0% akan mengadun tepi dalam sudut yang luas. Lalai ialah 90%, cukup pengadunan untuk menyembunyikan tepi, dan membiarkan selebih unjuran kekal tajam.
 
-### Uniform
+### Seragam {#uniform}
 
 Apabila ditanda, kekerasan yang sama digunakan untuk semua unjuran. Apabila dinyah tanda, kawalan kekerasan tambahan didedahkan untuk unjuran X, Y, Z.
 
 
-### Parameter
+### Parameter {#parameter}
 ![](/images/material_parameter.webp)
 
-#### Filtering
+#### Penapisan {#filtering}
 Kaedah penapisan tekstur untuk digunakan, `Auto` ialah lalai, kaedah ialah `Nearest`, `Linear`, `Mipmap`. Nearest tidak melakukan penapisan, jadi tekstur boleh mendapat artifak bergerigi apabila dilihat dari dekat. Linear dan Mipmap melakukan penapisan yang lebih baik, jadi tekstur kelihatan kabur dan bukannya bergerigi apabila dekat.
 
-#### Tiling-X
+#### Ulangan-X {#tiling-x}
 Jika parameter Scale lebih besar daripada 1, menjadikan tekstur lebih kecil daripada UV objek, bagaimana tekstur akan diulang sepanjang paksi X. `None` bermaksud tiada ulangan. `Repeat` akan membuat salinan tekstur. `Mirror` akan membuat salinan tekstur, dengan setiap salinan kedua diterbalikkan, yang boleh membantu menyembunyikan artifak pengulangan.
 
-#### Tiling-Y
+#### Ulangan-Y {#tiling-y}
 Sama seperti Tiling-X, tetapi untuk paksi Y.
 
-### Transform
+### Transformasi {#transform}
 ![](/images/material_transform.webp)
 
 Transformasi 2D tambahan digunakan pada tekstur dalam ruang UV. Butang reset menetapkan semula kepada lalai, ikon rantai (apabila tekstur selain warna dipilih) akan memaut atau menyahpaut transform supaya sama seperti tekstur warna.
 
-#### Translation
+#### Terjemahan {#translation}
 Ofset X dan Y tekstur
 
-#### Rotation
+#### Putaran {#rotation}
 Putaran tekstur
 
-#### Scale
+#### Skala {#scale}
 Skala tekstur, nombor lebih besar akan menjadikan tekstur lebih kecil pada objek, gunakan peluncur Tiling-X dan Tiling-Y untuk mengawal apa yang berlaku.
 
-### Uniform scale
+### Skala seragam {#uniform-scale}
 Apabila dimatikan Nomad akan memaparkan kawalan berasingan untuk Scale-X dan Scale-Y.

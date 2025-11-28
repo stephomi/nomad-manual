@@ -1,4 +1,4 @@
-# ![](/icons/toolbox.webp) Nástroje
+# ![](/icons/toolbox.webp) Nástroje {#tools}
 
 ![](/images/tools_menu.webp)
 
@@ -6,7 +6,7 @@
 Přeskočte dolů na [Nástroje](#tools-1) pro popisy jednotlivých nástrojů.
 :::
 
-## Přehled
+## Přehled {#overview}
 
 Nástroje se vybírají z `Toolbox` vpravo a ovládají se přes `Tool Controls` vlevo. Další nastavení najdete v nabídce `Settings`, první ikona v pravém horním rohu.
 
@@ -31,7 +31,7 @@ Nástroje Nomadu jsou v panelu nástrojů barevně kódované:
 Mnoho těchto nástrojů lze přizpůsobit různým chováním štětce, tlakem, texturami atd. přes nabídku [Stroke](stroke.md). 
 
 
-### Ovládání štětce
+### Ovládání štětce {#brush-controls}
 
 Levý panel nástrojů má posuvníky pro poloměr a intenzitu a pak ovládání specifická pro kategorii nástroje, vysvětlená níže.
 
@@ -41,17 +41,17 @@ Levý panel nástrojů má posuvníky pro poloměr a intenzitu a pak ovládání
 Posuvník intenzity u mnoha nástrojů může jít nad 100 %, stojí za to experimentovat!
 :::
 
-### Sub mode
+### Režim Sub {#sub-mode}
 Tlačítko přímo pod posuvníkem intenzity je tlačítko `Sub`. Jeho popisek a funkce se mění s každým nástrojem a po stisknutí vyvolá alternativní, obvykle opačné chování. Např. u [Paint](#paint) vyvolá režim mazání (Erase), u [Crease](#crease) vytváří vystouplé hrany místo rýh atd.
 
 Ve výchozím nastavení funguje jako „lepivé“ tlačítko; tj. můžete ho držet pro dočasné vyvolání, po uvolnění se vypne. Pokud na něj klepnete, sub režim zůstane trvale aktivní.
 
-### Zkratky
+### Zkratky {#shortcuts}
 Ve spodní části levého panelu nástrojů jsou zkratky pro [Smooth](#smooth), [Mask](#mask), [Hide](#hide), [Gizmo](#gizmo), [Color](painting.md#pbr-sliders), [Alpha](stroke.md#alpha). 
 
 Ve výchozím nastavení všechny fungují jako „lepivá“ tlačítka; tj. můžete je držet pro dočasné vyvolání, po uvolnění se vypnou. Pokud na ně klepnete, daný režim zkratky zůstane trvale aktivní.
 
-### Ovládání výběru
+### Ovládání výběru {#selection-controls}
 
 Nástroje [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Project](#project), [Facegroup](#facegroup) a [Hide](#hide) používají podobné ovládání pro výběr oblastí sítě.
 
@@ -69,7 +69,7 @@ Nástroje [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Pr
 
 Většina nástrojů má volbu auto validate, což znamená, že operace proběhne hned po dokončení kreslení tvaru. Když je auto validate vypnuté, vedle tvaru se zobrazí zelené tlačítko, které operaci provede. To vám umožní tvar upravovat, měnit pohled a až budete připraveni tvar použít, stiskněte zelené tlačítko.
 
-### Úprava tvaru
+### Úprava tvaru {#shape-editing}
 Úprava polygonu a křivky se chová podobně:
 
 * Na začátku táhněte čáru pro definování 2 bodů, pak táhněte ze středu čáry pro definování polygonu nebo křivky.
@@ -78,13 +78,13 @@ Většina nástrojů má volbu auto validate, což znamená, že operace proběh
 * Pro smazání bodu ho přetáhněte do jeho souseda, dokud nezčervená.
 * Ikona koše v rohu ikony polygonu nebo cesty smaže tvar.
 
-### Nabídka Settings
+### Nabídka Nastavení {#settings-menu}
 
 Mnoho nástrojů má další nastavení v nabídce settings, první ikona v pravém horním menu:
 
 ![](/images/tools_settings_menu.webp)
 
-## Nástroje
+## Nástroje {#tools-1}
 
 |                                                                     |                                                   |                                                                   |                                                         |                                                         |                                                                     |
 | :-----------------------------------------------------------------: | :-----------------------------------------------: | :---------------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------------------: |
@@ -97,24 +97,24 @@ Mnoho nástrojů má další nastavení v nabídce settings, první ikona v prav
 
 ------
 
-### ![](/icons/tool_clay.webp) Clay
+### ![](/icons/tool_clay.webp) Hlína {#clay}
 Nástroj Clay je užitečný pro budování objemu sochy. `Sub` bude materiál z vaší sochy odebírat.
 
 ![](/videos/tool_clay.mp4)
 
-### ![](/icons/tool_brush.webp) Brush
+### ![](/icons/tool_brush.webp) Štětec {#brush}
 Standardní štětec. `Sub` bude materiál odebírat.
 
 ![](/videos/tool_brush.mp4)
 
-### ![](/icons/tool_move.webp) Move
+### ![](/icons/tool_move.webp) Posun {#move}
 Oblast pod štětcem se „přilepí“ na štětec, což umožňuje elastickou deformaci. Výběr je během přesunu zachován, takže pokud štětec odsunete a pak ho vrátíte zpět na původní místo, neuvidíte žádnou deformaci.
 
 Sub režim je `Normal` a bude oblast pod štětcem posouvat podél normály povrchu.
 
 Tento štětec je vhodný jak pro velkorozměrové deformace, tak pro jemné malé úpravy.
 
-#### Move Settings
+#### Nastavení nástroje Posun {#move-settings}
 
 * `Radius (Background)` - Jak daleko od okraje modelu můžete být a stále modelovat, užitečné při práci na siluetě objektu. 
 * `Same-side vertex only` - Ignoruje vrcholy, které směřují opačným směrem než deformace.
@@ -122,40 +122,40 @@ Tento štětec je vhodný jak pro velkorozměrové deformace, tak pro jemné mal
 
 ![](/videos/tool_move.mp4)
 
-### ![](/icons/tool_drag.webp) Drag
+### ![](/icons/tool_drag.webp) Tažení {#drag}
 Oblast pod štětcem se „přilepí“ na štětec, což umožňuje elastickou deformaci. Na rozdíl od štětce Move se výběr během tahu průběžně aktualizuje, takže je možné vytvářet delší, hadovité objekty, zvláště když je aktivní Dynamic Topology.
 
 Sub režim je `Normal` a bude oblast pod štětcem posouvat podél normály povrchu.
 
 Tento štětec je vhodný pro volnější, gestické změny tvaru.
 
-#### Drag Settings
+#### Nastavení nástroje Tažení {#drag-settings}
 
 * `Radius (Background)` - Jak daleko od okraje modelu můžete být a stále modelovat, užitečné při práci na siluetě objektu. 
 * `Same-side vertex only` - Ignoruje vrcholy, které směřují opačným směrem než deformace.
 
 ![](/videos/tool_drag.mp4)
 
-### ![](/icons/tool_smooth.webp) Smooth
+### ![](/icons/tool_smooth.webp) Vyhladit {#smooth}
 Vyhlazuje oblast zprůměrováním pozic bodů. Tento nástroj je silně závislý na hustotě polygonů.
 Pokud máte mnoho polygonů, vyhlazování bude méně účinné.
 
 Sub režim je `Relax`, který vyhlazuje pouze drátěný model, ale snaží se zachovat geometrické detaily.
 
-#### Smooth settings
+#### Nastavení nástroje Vyhladit {#smooth-settings}
 
 ![](/images/tool_smooth_settings.webp)
 
-##### Facegroup
+##### Skupina ploch {#smooth-facegroup}
 
 * `Relax` - Vyhlazuje hranice facegroup. Použijte intenzitu vyšší než 100 % pro rychlé vyhlazení hran. `Auto` bude vyhlazovat pouze pokud je zapnutý náhled facegroup, `Off` vypne, `On` zapne. 
 
-##### Vertex
+##### Vrchol {#vertex}
 * `Sticky vertex on border` - U sítí s otevřenými hranami, např. rovina, je možné vyhladit rohy. Zapnutí této volby uzamkne otevřené hrany.
 * `Relax` - stejné jako relax alternativní režim v levém panelu nástrojů.
 * `Stable smoothing` - Snaží se udělat vyhlazování nezávislé na topologii. Nejlépe funguje s proměnlivou hustotou topologie a s vysokou hodnotou intenzity vyhlazování.
 
-##### Painting
+##### Malování {#painting}
 * `Screen Smoothing` - Použijte tuto volbu pro topologicky nezávislé vyhlazování, i při vysokých počtech polygonů.
 * `Screen samples` - Kvalita vyhlazování, vyšší hodnoty budou hladší, ale pomalejší.
 
@@ -165,7 +165,7 @@ Vyšší hustoty polygonů mohou vyžadovat zvýšení intenzity nad 100 %. Velm
 
 ![](/videos/tool_smooth.mp4)
 
-### ![](/icons/tool_mask.webp) Mask
+### ![](/icons/tool_mask.webp) Maska {#mask}
 Tento nástroj umožňuje maskovat vrcholy. Maskované vrcholy jsou chráněny před modelováním nebo malováním. 
 
 Sub režim je `Unmask` a bude masku v místě tahu mazat.
@@ -195,7 +195,7 @@ Název panelu lze klepnutím rozbalit/sbalit, nebo klepnutím na šipku vpravo n
 |                                 On tap (mask)      | Pokud je zapnuto, klepnutí na „ostrov“ masky nebo nemaskovaných polygonů jej zaplní        |
 | ![](/icons/vertex.webp)        Connected          | Pokud je zapnuto, dovolí tahy masky ovlivnit pouze souvislou topologii                     |
 
-##### Mask Quick gesture
+##### Rychlé gesto Masky {#mask-quick-gesture}
 Můžete provádět gesta ve stylu ZBrushe při držení tlačítka rychlé masky v levém panelu:
 | Action  | Gesture (hold lower-left shortcut) |
 | :-----: | :--------------------------------: |
@@ -205,28 +205,28 @@ Můžete provádět gesta ve stylu ZBrushe při držení tlačítka rychlé mask
 | Sharpen | Klepnutí na nemaskovanou oblast    |
 
 
-#### Mask settings
+#### Nastavení Masky {#mask-settings}
 ![](/images/tool_mask_settings.webp)
 
 ![](/videos/tool_mask2.mp4)
 
 * `Preview` - Nabídka Mask settings se používá hlavně k vytváření geometrie z masky. Proto je výchozí chování náhled toho, jak bude nová geometrie vypadat. Můžete zvolit žádný náhled, náhled extrakce, náhled split a zda bude tato geometrie zobrazena v režimu x-ray.
 
-##### Thickness
+##### Tloušťka {#thickness}
 * `Height` - Výška extrahovaného tvaru. Ikona Plus/Minus umožňuje cyklovat mezi extruzí směrem ven, dovnitř nebo centrovanou. 
 * `Height/Height+Mask` - Přepíná mezi konstantní výškou nebo tím, zda rozmazané části masky ovlivní výšku, což umožňuje měkké a proměnlivé výšky tvarů. 
 
-##### Smoothness
+##### Hladkost {#smoothness}
 Pokud je aktivní, vyhlazuje okraj extrahovaného tvaru, funguje lépe při vyšším počtu polygonů. 
 * `Iterations` - Množství aplikovaného vyhlazení. Vysoké hodnoty vytvoří velmi hladké zakřivené hrany, ale začnou se odchylovat od tvaru masky.
 * `All/Sharp border/Borders only` - Vyhlazování může fungovat ve všech směrech, vyhlazovat boky i horní část extrahovaného tvaru, nebo vyhlazovat horní část a boky, ale zachovat ostrý okraj, nebo vyhlazovat pouze okraj a horní plochu ponechat nedotčenou.
 
-##### Edge loop (side)
+##### Okrajová smyčka (bok) {#edge-loop-side}
 * `Auto Edge-loop (side)` - Vypočítá počet dělení na bocích extrahovaného tvaru tak, aby vznikly čtvercové polygony odpovídající polygonům maskované oblasti. Po vypnutí můžete počet edge loop nastavit sami posuvníkem edge loop.
 
 ----
 
-##### Extract
+##### Extrakce {#extract}
 * `Extract` - Vytvoří extrahovanou geometrii.
 * `Closing action` - Jak se má Extract chovat. „None“ duplikuje maskované polygony do nového tvaru. „Fill“ udělá totéž a pokusí se zaplnit zadní plochu. „Shell“ extruduje do výšky nastavené v „thickness“ a je výchozí.
 
@@ -237,18 +237,18 @@ Pokud je náhled v režimu „Extract“ s povoleným „X-ray“, může být k
 To je v pořádku, zavřete nabídku mask settings, abyste viděli nový tvar a původní, a znovu vyberte původní povrch, pokud potřebujete masku vymazat nebo kreslit nové masky.
 :::
 
-##### Split
+##### Rozdělení {#split-mask}
 * `Split` - Extrahuje maskované I nemaskované oblasti do nových tvarů. 
 * `Closing action (masked)` - Jak se má chovat extrakce masky. „None“ duplikuje maskované polygony do nového tvaru. „Fill“ udělá totéž a pokusí se zaplnit zadní plochu. „Shell“ extruduje do výšky nastavené v „thickness“ a je výchozí.
 * `Closing action (unmasked)` - Jak se má chovat extrakce nemaskované části. „None“ duplikuje maskované polygony do nového tvaru. „Fill“ udělá totéž a pokusí se zaplnit zadní plochu. „Shell“ extruduje do výšky nastavené v „thickness“ a je výchozí.
 * `Sync border` - Zajistí, aby okraj mezi maskovanými a nemaskovanými extrahovanými tvary zůstal blízko sebe. Po vypnutí se může mezi tvary vytvořit mezera, protože operace shell extruduje každou plochu podél její normály.
 
-##### Carve
+##### Vyřezat {#carve}
 * `Carve` - V základním režimu se chová, jako byste do povrchu vyřízli nástrojem Trim do hloubky „thickness“, jako když vyříznete kus pomerančové kůry. 
 
 
 
-### ![](/icons/tool_maskSelector.webp) Selection Mask
+### ![](/icons/tool_maskSelector.webp) Výběrová maska {#selection-mask}
 Tento nástroj je většinou podobný nástroji [Mask](#mask), hlavní rozdíl je v tom, že masku nemalujete tahem, ale používáte [Selection Controls](#selection-controls).
 
 Sub režim je `Unmask` a bude masku mazat pomocí výběrových ovládacích prvků.
@@ -257,28 +257,28 @@ Selection mask sdílí stejná nastavení nástroje jako nástroj `Mask`.
 
 ![](/videos/tool_selector_mask.mp4)
 
-### ![](/icons/tool_paint.webp) Paint
+### ![](/icons/tool_paint.webp) Malba {#paint}
 Aplikuje barvu a materiálové vlastnosti. Více o materiálech najdete v sekci [Painting](painting.md).
 
 Sub režim je `Erase` a bude malbu odstraňovat.
 
-#### Paint settings
+#### Nastavení Malby {#paint-settings}
 * `Layer fitering` - Funguje jako uzamčení alfa vrstvy ve Photoshopu nebo Procreate. Pokud malujete na vrstvu a je to zapnuté, můžete upravovat pouze tam, kde už barva existuje; nenamalované oblasti budou chráněny.
 
 ![](/videos/tool_paint.mp4)
 
-### ![](/icons/tool_smudge.webp) Smudge
+### ![](/icons/tool_smudge.webp) Rozmazání {#smudge}
 Rozmazává barvu a materiálové vlastnosti. Nabídka nastavení Smudge obsahuje posuvník `Quality`, nižší hodnoty znamenají rychlejší tahy.
 
 ![](/videos/tool_smudge.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Flatten
+### ![](/icons/tool_flatten.webp) Zploštit {#flatten}
 Zplošťuje oblast projekcí bodů na průměrnou rovinu.
 
 Sub režim je `Fill` a definuje rovinu podle nejvyššího bodu a má tendenci body vytahovat nahoru.
 
-#### Flatten settings
+#### Nastavení nástroje Zploštit {#flatten-settings}
 
 * `Lock plane direction` - Použije směr roviny vypočítaný při prvním kliknutí. Ve výchozím nastavení vypnuto.
 * `Lock plane origin`- Použije první klik jako střed roviny. Ve výchozím nastavení vypnuto.
@@ -292,7 +292,7 @@ Při práci v oblastech s vysokým zakřivením, např. při snaze zploštit tv�
 ![](/videos/tool_flatten.mp4)
 
 
-### ![](/icons/tool_planar.webp) Planar
+### ![](/icons/tool_planar.webp) Rovinný {#planar}
 Zplošťuje body projekcí na průměrnou rovinu, ale s menším „nabíháním“ než štětec Flatten. Vytváří čistší tvrdé plochy. Rychlé tahy více tlačí a tahají povrch, pomalejší tahy, které začínají z již rovinných oblastí a rozšiřují se ven, rovinu více zachovávají.
 
 Sub režim je `Fill` a definuje rovinu podle nejvyššího bodu a má tendenci body vytahovat nahoru.
@@ -301,19 +301,19 @@ Planar je ve skutečnosti stejný nástroj jako `Flatten`, ale s povoleným `Loc
 
 ![](/videos/tool_planar.mp4)
 
-### ![](/icons/tool_crease.webp) Crease
+### ![](/icons/tool_crease.webp) Rýha {#crease}
 Nástroj Crease je užitečný pro modelování malých řezů nebo důlků.
 
 Sub režim je `Invert` a vytváří vystouplou rýhu.
 
-#### Crease Settings
+#### Nastavení nástroje Rýha {#crease-settings}
 
 * `Pinch factor` - Jak moc tahat vrcholy do stran směrem ke štětci. Pokud je pinch 1 a offset 0, povrch nebude mít žádné změny hloubky, jen změny topologie, tahající hrany směrem k tahu.
 * `Offset factor` - Jak moc tlačit/tahat vrcholy do hloubky. Pokud je pinch 0 a offset 1, vzniknou hluboké rýhy nebo vystouplé důlky, ale budou vypadat zubatě, protože se k rýze nestáhne dost geometrie, aby přesně definovala boky nebo dno rýhy.
 
 ![](/videos/tool_crease.mp4)
 
-### ![](/icons/tool_pinch.webp) Pinch
+### ![](/icons/tool_pinch.webp) Štípnutí {#pinch}
 Tento nástroj lze použít k zostření hran.
 
 Sub režim je `Invert` a bude vrcholy od sebe odtlačovat.
@@ -321,7 +321,7 @@ Sub režim je `Invert` a bude vrcholy od sebe odtlačovat.
 ![](/videos/tool_pinch.mp4)
 
 
-### ![](/icons/tool_trim.webp) Trim
+### ![](/icons/tool_trim.webp) Ořez {#trim}
 Nástroj Trim funguje tak, že odstraní část sítě a nabízí volby, jak zpracovat vzniklou mezeru. Pro definování řezu používá [Selection controls](#selection-controls).
 
 ::: tip
@@ -330,7 +330,7 @@ Protože tento nástroj promítá z kamery, dostanete varování, pokud je kamer
 V ortografickém režimu je řez skrz síť rovnoběžný s pohledem, což lidé obvykle očekávají. V perspektivě bude řez na vzdálenější straně objektu vypadat jinak než na bližší.
 :::
 
-#### Trim settings
+#### Nastavení nástroje Ořez {#trim-settings}
 
 * `Stroke painting` - Pokud je v nabídce Paint zapnuto malování, zaplátovaná oblast bude vyplněna aktuálně zvolenou barvou.
 * `Boolean` - Zaplní díru po řezu oblastí z quad polygonů. Vyplněná oblast bude plochá.
@@ -346,10 +346,10 @@ V ortografickém režimu je řez skrz síť rovnoběžný s pohledem, což lidé
 
 ![](/videos/tool_trim.mp4)
 
-### ![](/icons/tool_split.webp) Split
+### ![](/icons/tool_split.webp) Rozdělit {#split}
 Podobné nástroji [Trim](#trim), s tím rozdílem, že Trim výběr zahodí, zatímco Split výběr zachová jako nový objekt.
 
-#### Split settings
+#### Nastavení nástroje Rozdělit {#split-settings}
 
 * `Stroke painting` - Pokud je v nabídce Paint zapnuto malování, zaplátovaná oblast bude vyplněna aktuálně zvolenou barvou.
 * `Boolean` - Zaplní díru po splitu oblastí z quad polygonů. Vyplněné oblasti budou ploché.
@@ -366,7 +366,7 @@ Podobné nástroji [Trim](#trim), s tím rozdílem, že Trim výběr zahodí, za
 ![](/videos/tool_split.mp4)
 
 
-### ![](/icons/tool_project.webp) Project
+### ![](/icons/tool_project.webp) Projekce {#project}
 Nástroj Project vypadá jako [Trim](#trim), ale nemaže ani nevytváří žádnou geometrii, pouze posouvá vrcholy tak, aby odpovídaly výběru.
 
 ![](/videos/tool_project.mp4)
@@ -375,7 +375,7 @@ Nástroj Project vypadá jako [Trim](#trim), ale nemaže ani nevytváří žádn
 Pokud použijete Project v rámci vrstvy, můžete pomocí posuvníku vrstvy míchat mezi původním a projektovaným tvarem.
 :::
 
-### ![](/icons/tool_layer.webp) Layer
+### ![](/icons/tool_layer.webp) Vrstvy {#layer}
 Zvedá povrch, ale omezuje výšku.
 
 Pokud držíte pero dole a přejíždíte přes oblast, Layer zvedne do určité výšky a dál už ne, na rozdíl od jiných nástrojů, které budou výšku stále kumulovat.
@@ -388,7 +388,7 @@ Vytvořte vrstvu a použijte tento nástroj. Maximální výška je nyní nastav
 
 `Sub` použije minimální hloubku a vytváří rýhy.
 
-#### Layer Settings
+#### Nastavení vrstev {#layer-settings}
 
 * `Use layer data` - Pokud je aktivní a je vybraná vrstva, použije data vrstvy pro nastavení maximální výšky.
 * `Inflate`- Pokud je aktivní, upraví směr, kterým Layer pracuje, pro hladší výsledky.
@@ -397,10 +397,10 @@ Vytvořte vrstvu a použijte tento nástroj. Maximální výška je nyní nastav
 ![](/videos/tool_layer.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Inflate
+### ![](/icons/tool_flatten.webp) Nafouknout {#inflate}
 Posouvá vrcholy podél jejich vlastních normál. `Sub` posouvá vrcholy podél jejich invertované normály.
 
-#### Inflate Setings
+#### Nastavení nástroje Nafouknout {#inflate-setings}
 * `Relax (Normal)` - Množství vyhlazení aplikovaného na normály.
 
 ![](/videos/tool_inflate.mp4)
@@ -408,13 +408,13 @@ Posouvá vrcholy podél jejich vlastních normál. `Sub` posouvá vrcholy podél
 
 
 
-### ![](/icons/tool_nudge.webp) Nudge
+### ![](/icons/tool_nudge.webp) Postrčit {#nudge}
 Posouvá nebo „rozmazává“ body ve směru tahu.
 
 ![](/videos/tool_nudge.mp4)
 
 
-### ![](/icons/tool_stamp.webp) Stamp
+### ![](/icons/tool_stamp.webp) Razítko {#stamp}
 
 Klepněte a táhněte pro zvednutí oblasti sochy ve tvaru zvoleného Alpha.
 
@@ -435,13 +435,13 @@ Dva režimy stroke jsou užitečné pro různé věci.
 ![](/videos/tool_stamp.mp4)
 
 
-### ![](/icons/tool_clearLayer.webp) Delete Layer
+### ![](/icons/tool_clearLayer.webp) Smazat vrstvu {#delete-layer}
 Tento nástroj může lokálně resetovat vrstvy, musíte mít aktivní vrstvu, jinak se nic nestane.
 
 ![](/videos/tool_delete_layer.mp4)
 
 
-### ![](/icons/tool_tube.webp) Tube
+### ![](/icons/tool_tube.webp) Trubice {#tube}
 Vytvořte trubici nakreslením křivky. 
 ![](/images/tool_tube_new.webp)
 
@@ -449,7 +449,7 @@ Jakmile je trubice vytvořena, lze cestu upravovat ve 3D prostoru pomocí podobn
 
 ![](/videos/tool_tube.mp4)
 
-#### Tube left toolbar
+#### Levý panel nástroje Trubice {#tube-left-toolbar}
 
 ![](/images/tool_tube_left_toolbar.webp)
 
@@ -468,7 +468,7 @@ Levý panel nástrojů má následující volby:
     * `Closed` - Udělá z trubice smyčku
     * `Screen` - Pokud je aktivní, cesta je „připnutá“ k obrazovce, což umožňuje pohybovat pohledem a objektem, zatímco cesta zůstává na místě. Pokud je vypnuté, cesta je součástí 3D scény a pohybuje se s kamerou a objekty.
 
-##### Tube top toolbar
+##### Horní panel nástroje Trubice {#tube-top-toolbar}
 ![](/images/tool_tube_toolbar.webp)
 Když je trubice vybraná, v horní části viewportu se objeví panel nástrojů s dalšími ovládacími prvky. Kliknutím na název panelu ho sbalíte/rozbalíte a kliknutím na šipku vpravo nahoře panel přesunete nahoru nebo dolů ve viewportu.
 
@@ -489,7 +489,7 @@ Když je trubice vybraná, v horní části viewportu se objeví panel nástroj�
 * `Constant density` - Pokud je aktivní, udržuje polygony čtvercové. Po vypnutí umožní nastavit `Y divisions` podél délky trubice.
 * `...` - Nabídka nastavení Tube.
 
-#### Přepínač mazání bodu křivky
+#### Přepínač mazání bodů křivky {#curve-point-delete-toggle}
 
 ![](/images/tool_tube_delete_toggle.webp)
 
@@ -497,7 +497,7 @@ Pod panelem nástrojů je přepínač mazání bodu křivky. Když přetáhnete 
 
 
 
-#### Tube settings
+#### Nastavení nástroje Trubice {#tube-settings}
 * `Primitive` - Tlačítka pro zapnutí/vypnutí UV nebo pro potvrzení (validate) trubice.
 * `Post subdivision` - Zkratka pro nastavení úrovně multiresolution před potvrzením.
 * `Linear subdivision` - Zkratka pro nastavení úrovně lineárního dělení před potvrzením. 
@@ -510,14 +510,14 @@ Division nastavené na 4 a Post subdivision na 3 vytvoří hladké trubice s kul
 :::
 
 
-### ![](/icons/tool_lathe.webp) Lathe
+### ![](/icons/tool_lathe.webp) Soustruh {#lathe}
 Vytvoří rotační plochu nakreslením křivky.
 
 Tento nástroj je skvělý pro tvary jako vázy, sklenice na víno.
 
 ![](/videos/tool_lathe.mp4)
 
-#### Lathe left toolbar
+#### Levý panel nástroje Soustruh {#lathe-left-toolbar}
 
 ![](/images/tool_lathe_left_toolbar.webp)
 
@@ -535,7 +535,7 @@ Levý panel nástrojů má následující volby:
     * `Closed` - Udělá z trubice smyčku
     * `Screen` - Pokud je aktivní, cesta je „připnutá“ k obrazovce, což umožňuje pohybovat pohledem a objektem, zatímco cesta zůstává na místě. Pokud je vypnuté, cesta je součástí 3D scény a pohybuje se s kamerou a objekty.
 
-#### Lathe top toolbar
+#### Horní panel nástroje Soustruh {#lathe-top-toolbar}
 ![](/images/tool_lathe_top_toolbar.webp)
 
 Když je lathe vybrané, v horní části viewportu se objeví panel nástrojů s dalšími ovládacími prvky. Kliknutím na název panelu ho sbalíte/rozbalíte a kliknutím na šipku vpravo nahoře panel přesunete nahoru nebo dolů ve viewportu.
@@ -554,7 +554,7 @@ Když je lathe vybrané, v horní části viewportu se objeví panel nástrojů 
 * `Constant density` - Pokud je aktivní, udržuje polygony čtvercové. Po vypnutí umožní nastavit `Y divisions` podél délky trubice.
 * `...` - Nabídka nastavení Lathe.
 
-#### Lathe settings
+#### Nastavení nástroje Soustruh {#lathe-settings}
 * `Primitive` - Tlačítka pro zapnutí/vypnutí UV nebo pro potvrzení (validate) trubice.
 * `Post subdivision` - Zkratka pro nastavení úrovně multiresolution před potvrzením.
 * `Linear subdivision` - Zkratka pro nastavení úrovně lineárního dělení před potvrzením. 
@@ -562,7 +562,7 @@ Když je lathe vybrané, v horní části viewportu se objeví panel nástrojů 
 * `Division Y` - Stejné jako Y Divisions v panelu nástrojů.
 * `Curve (Repeater)` - Převede profil křivky na [Curve Repeater](scene.md#curve)
 
-### ![](/icons/tool_insert.webp) Insert
+### ![](/icons/tool_insert.webp) Vložit {#insert}
 Umístí objekt na povrch jiného. Použitím je podobný nástroji Stamp, ale pro plné 3D tvary.
 
 Pokud vyberete primitivum z levého panelu nástrojů, klepnutí a tažení na jakýkoli povrch umístí primitivum na místo kliknutí, tažení nastaví velikost. Po dokončení tažení se Insert přepne do režimu [Transform](#transform).
@@ -575,7 +575,7 @@ Pokud má objekt vlastní pivot, použije se jako kotevní bod. Viz video níže
 
 ![](/videos/tool_insert.mp4)
 
-### ![](/icons/tool_transform.webp) Transform
+### ![](/icons/tool_transform.webp) Transformace {#transform}
 Přesouvá/otáčí/škáluje model přímo jedním a dvěma prsty, obvykle po povrchu jiného objektu.
 
 Nástroj se ovládá levým panelem nástrojů a má 5 tlačítek:
@@ -609,7 +609,7 @@ To umožňuje rychlý pracovní postup pro klonování objektů po jiném, např
 
 ![](/videos/tool_transform.mp4)
 
-### ![](/icons/tool_gizmo.webp) Gizmo
+### ![](/icons/tool_gizmo.webp) Gizmo {#gizmo}
 Tento nástroj umožňuje přesouvat, otáčet a škálovat objekty a měnit pivoty objektů.
 
 Ovládací prvek ve viewportu má následující funkce:
@@ -620,7 +620,7 @@ Ovládací prvek ve viewportu má následující funkce:
 
 ![](/images/tool_gizmo.webp)
 
-#### Uzly a vrcholy 
+#### Uzly a vrcholy {#nodes-and-vertices}
 
 Každý objekt v Nomadu se skládá z uzlu a vrcholů:
 
@@ -629,7 +629,7 @@ Každý objekt v Nomadu se skládá z uzlu a vrcholů:
 
 Pokud máte jednoduchou kostku složenou z 8 vrcholů, můžete ji posunout úpravou transformační matice nebo úpravou pozic vrcholů. Při sochání obvykle chcete upravovat vrcholy, při přesouvání objektů pomocí gizma obvykle chcete upravovat uzel. Nomad umožňuje obojí. 
 
-#### Levý panel nástrojů
+#### Levý panel nabídky {#left-menu-toolbar}
 
 Levý panel ovládá, zda bude gizmo pracovat s uzlem nebo vrcholy, a další funkce:
 
@@ -642,7 +642,7 @@ Levý panel ovládá, zda bude gizmo pracovat s uzlem nebo vrcholy, a další fu
 * `Snap translation` - Zapne přichytávání hodnot posunu na kroky, hodnota kroku se zobrazuje a lze ji upravit, když je Snap aktivní.
 * `Pivot` - Pokud je zapnuto, lze gizmo přesouvat a otáčet bez pohybu objektu. Má další nabídku vysvětlenou níže.
 
-#### Pivot
+#### Střed (Pivot) {#pivot}
 Když je režim Pivot aktivní, zobrazí se nabídka pro rychlé změny pivotu:
 
 **Reset** 
@@ -657,11 +657,11 @@ Když je režim Pivot aktivní, zobrazí se nabídka pro rychlé změny pivotu:
 * `First` - Přesune (ale neotočí) pivot na místo klepnutí na povrch
 * `Medial` - Přesune pivot doprostřed objektu pod místo klepnutí na povrch.
 
-#### Gizmo settings
+#### Nastavení Gizma {#gizmo-settings}
 
 ![](/images/tool_gizmo_settings.webp)
 
-##### Matrix 
+##### Matice {#matrix}
 * ![](/icons/target.webp) `Move origin` - Přesune objekt tak, aby jeho pivot byl ve středu scény, tzv. v počátku.
 * ![](/icons/bake.webp)  `Bake` - „Zamrazí“ objekt v aktuální pozici a nastaví hodnoty translate/rotate na 0, scale na 1.
 * ![](/icons/bake.webp) -> ![](/icons/tool_gizmo.webp) `Bake Pivot` - Nastaví hodnoty matice tak, aby odpovídaly pozici gizma ve světě.
@@ -713,7 +713,7 @@ To je obzvlášť užitečné pro rotaci, protože to nemění nic na posunu.
 
 ![](/videos/tool_gizmo.mp4)
 
-### ![](/icons/tool_faceGroup.webp) Facegroup
+### ![](/icons/tool_faceGroup.webp) Skupina ploch {#facegroup}
 
 Facegroup vám umožňují organizovat objekt do různě barevných ploch. Tyto skupiny můžete v Nomadu používat mnoha způsoby:
 
@@ -724,7 +724,7 @@ Facegroup vám umožňují organizovat objekt do různě barevných ploch. Tyto 
 * Navádění nástroje quad remesher
 * Dodatečná kontrola pro nástroje jako Smooth.
 
-#### Facegroup left toolbar
+#### Levý panel nástroje Skupina ploch {#facegroup-left-toolbar}
 
 * `Patch ` - Zobrazí dostupné facegroup jako „záplaty“. Nepoužívané záplaty lze smazat. Klepnutím na záplatu ji přejmenujete nebo změníte její barvu. Ikona plus umožňuje vytvářet nové záplaty.
 * `Dot` - Malujte na objekt pro definování facegroup. Pokud je zapnuto `+ Face Group`, každý nový tah automaticky vytvoří novou facegroup, užitečné pro rychlé definování oblastí. Klepnutí zaplní vybranou oblast. Posuvník nastavuje poloměr tečky.
@@ -732,7 +732,7 @@ Facegroup vám umožňují organizovat objekt do různě barevných ploch. Tyto 
 * `Shape selector` - Vytváří facegroup pomocí tvarů místo štětce, přes `Lock+Radius`, `Lasso`, `Polygon`, `Rect` a `Ellipse`. Více informací viz [Shape Selector](#shape-selector).
 * `Auto-pick` - Pokud je zapnuto, vybere záplatu, kde tah začíná, a tuto záplatu použije pro zbytek tahu. Velmi užitečné pro úklid oblastí facegroup; pokud se facegroup rozšířila příliš daleko, zapněte Auto-pick, začněte tah z místa, kde je záplata správná, a táhněte k hranici pro znovupřiřazení správné záplaty.
 
-### ![](/icons/tool_hide.webp) Hide
+### ![](/icons/tool_hide.webp) Skrýt {#hide}
 Skrývá nebo izoluje části objektu. 
 
 Hlavní režimy se ovládají z levého panelu:
@@ -750,10 +750,10 @@ V horní části viewportu se objeví panel nástrojů s dalšími ovládacími 
 * `Delete` - Smaže skrytou část objektu
 * `Split` - Rozdělí skrytou část objektu do nového tvaru.
 
-### ![](/icons/tool_measure.webp) Measure
+### ![](/icons/tool_measure.webp) Měření {#measure}
 Tažením změříte vzdálenost mezi dvěma body.
 
-### ![](/icons/tool_remesh.webp) Quad Remesher
+### ![](/icons/tool_remesh.webp) Čtyřúhelníkový remesher {#quad-remesher}
 
 ![](/images/tool_quadremesher.webp)
 
@@ -780,7 +780,7 @@ When je tento nástroj poprvé aktivován, zeptá se, zda jej chcete povolit jak
 * `Rect` - Kreslí obdélníky na povrchu sochy, quad remesher je použije jako vodítka pro tok hran. Klepnutím na cestu ji smažete.
 * `Ellipse` - Kreslí elipsy na povrchu sochy, quad remesher je použije jako vodítka pro tok hran. Klepnutím na cestu ji smažete.
 
-#### Quad remesher horní panel nástrojů
+#### Horní panel Čtyřúhelníkového remesheru {#quad-remesher-top-toolbar}
 ![](/images/tool_quadremesher_toolbar.webp)
 
 V horní části viewportu se objeví panel nástrojů s dalšími ovládacími prvky:
@@ -801,7 +801,7 @@ V horní části viewportu se objeví panel nástrojů s dalšími ovládacími 
 * `Symmetry` - Přepínač pro povolení symetrického výsledku. Všimněte si, že symetrie je vždy počítána kolem světové osy X, takže pokud očekáváte symetrický výsledek, ujistěte se, že je váš model v počátku souřadnic.
 * `...` - Nabídka nastavení Quadremesheru. 
 
-#### Nabídka nastavení Quad remesheru
+#### Nabídka nastavení Čtyřúhelníkového remesheru {#quad-remesher-settings-menu}
 
 Většina těchto nastavení je dostupná v horním panelu nástrojů.
 
@@ -827,14 +827,14 @@ V možnostech quad remeshe se ujistěte, že je relax vypnutý (protože jste me
 
 :::
 
-### ![](/icons/tool_select.webp) Select
+### ![](/icons/tool_select.webp) Výběr {#select}
 Použijte režimy tvaru k výběru objektů ve scéně. `Unselect` odstraní objekty z výběru.
 
-### ![](/icons/tool_view.webp) View
+### ![](/icons/tool_view.webp) Pohled {#view}
 Tento „nástroj“ nedělá nic konkrétního, je to pouze způsob, jak si model prohlížet bez úprav vaší scény.
 
 
-## Kontextová nabídka Toolboxu
+## Kontekstová nabídka nástrojů {#toolbox-context-menu}
 
 ![](/images/tools_context_menu.webp)
 

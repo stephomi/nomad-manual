@@ -1,6 +1,6 @@
-# Bắt đầu
+# Bắt đầu {#getting-started}
 
-## Chào mừng đến với Nomad!
+## Chào mừng đến với Nomad! {#welcome-to-nomad}
 
 Nomad là một ứng dụng điêu khắc 3D hoạt động trên nhiều thiết bị, và hoạt động tốt nhất trên máy tính bảng với bút cảm ứng nhận lực nhấn, ví dụ như iPad và Apple Pencil, hoặc Samsung Galaxy Tab với bút stylus.
 
@@ -18,7 +18,7 @@ Youtube hiện có RẤT NHIỀU video hướng dẫn cho người mới bắt �
 Rất đáng để xem thêm các video khác trên kênh chính của những tác giả này, họ thường xuyên đăng hướng dẫn mới.
 :::
 
-## Tác phẩm điêu khắc đầu tiên của bạn
+## Tác phẩm điêu khắc đầu tiên của bạn {#your-first-sculpt}
 
 Khi bạn mở Nomad lần đầu, bạn sẽ thấy một hình cầu trên màn hình. Chỉ cần kéo bút stylus trên hình cầu để bắt đầu điêu khắc. Đối xứng được bật sẵn theo mặc định để giúp việc điêu khắc dễ hơn.
 
@@ -75,7 +75,7 @@ Với các thiết lập đó, bạn có thể điều khiển camera chỉ bằ
 * rocker dưới và di chuyển khi đang hover = pan
 :::
 
-## Thêm màu
+## Thêm màu {#add-color}
 
 Nomad cho phép bạn tô màu lên bề mặt tác phẩm điêu khắc. Từ menu công cụ bên phải, tìm công cụ `Paint` và bấm vào. Trên thanh công cụ bên trái sẽ xuất hiện một hình cầu có màu. Bấm vào đó, bộ chọn màu sẽ hiện ra. Chọn một màu và tô lên mô hình của bạn.
 
@@ -89,7 +89,7 @@ Dùng cọ clay ở chế độ add/sub, smooth, paint, thử xem bạn có th�
 
 ![](/images/gettingstarted_head1.webp)
 
-## Các công cụ khác
+## Các công cụ khác {#other-tools}
 
 Bảng công cụ có nhiều công cụ hỗ trợ điêu khắc. Đến giờ bạn đã dùng cọ clay (công cụ mặc định khi khởi động), smooth và paint. Vì smooth được dùng rất thường xuyên, nó có thêm một phím tắt trên thanh công cụ bên trái.
 
@@ -101,7 +101,7 @@ Thử dùng các công cụ move, crease, inflate và smooth để thêm chi ti�
 
 Giờ bạn đã biết những điều cơ bản về Nomad, hãy xem phần còn lại của giao diện.
 
-## Giao diện
+## Giao diện {#interface}
 
 ![](/images/interface_overview1.webp)
 
@@ -116,7 +116,7 @@ Giờ bạn đã biết những điều cơ bản về Nomad, hãy xem phần c�
 Bạn có thể phản chiếu vị trí và thứ tự của tất cả thanh công cụ, xem [Mirror top bar](interface.md#mirror-top-bar) và các tùy chọn liên quan khác.
 :::
 
-## Thanh công cụ dưới
+## Thanh công cụ dưới cùng {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
@@ -130,7 +130,7 @@ Bạn có thể phản chiếu vị trí và thứ tự của tất cả thanh c
 * `Wire` - Bật/tắt lớp phủ wireframe. Nhấn giữ lâu hoặc vuốt lên sẽ hiển thị các tùy chọn cho wireframe.
 * `Inspect` - Bật/tắt xem thêm dữ liệu về mesh hiện tại. Theo mặc định nó sẽ hiển thị UV, nhưng nhấn giữ lâu hoặc vuốt lên sẽ cho phép bạn kiểm tra các thuộc tính khác nếu chúng tồn tại, và chọn hiển thị ở nền hay trên mesh.
 
-## Bước tiếp theo
+## Các bước tiếp theo {#next-steps}
 
 Bạn nên học gì tiếp theo là tùy ở bạn, và điều bạn thấy hứng thú! Dưới đây là một vài gợi ý:
 
@@ -147,7 +147,7 @@ Bạn có muốn học *mọi thứ* về Nomad không? Lựa chọn tuyệt v�
 Nếu bạn thích video, Holger Schönischka đã làm một bộ sưu tập khổng lồ các mẹo và thủ thuật cho Nomad trên Youtube: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Nhận hỗ trợ
+## Nhận trợ giúp {#getting-help}
 
 Nếu bạn vẫn còn câu hỏi sau khi đọc tài liệu và xem các video hướng dẫn, có ba cách chính để trò chuyện với những người dùng Nomad khác hoặc với nhà phát triển Nomad:
 

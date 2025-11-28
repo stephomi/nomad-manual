@@ -1,6 +1,6 @@
-# Empezando
+# Empezando {#getting-started}
 
-## ¡Bienvenido a Nomad!
+## ¡Bienvenido a Nomad! {#welcome-to-nomad}
 
 Nomad es una aplicación de esculpido 3D que funciona en muchos dispositivos, y funciona mejor en tabletas con un lápiz óptico sensible a la presión, por ejemplo un iPad con Apple Pencil, o una Samsung Galaxy Tab con lápiz.
 
@@ -18,7 +18,7 @@ Youtube tiene ahora MUCHOS tutoriales en vídeo para principiantes, aquí hay al
 Vale la pena revisar el canal principal de esos creadores, publican nuevos tutoriales con frecuencia.
 :::
 
-## Tu primera escultura
+## Tu primera escultura {#your-first-sculpt}
 
 Cuando inicies Nomad por primera vez verás una esfera en pantalla. Simplemente arrastra tu lápiz sobre la esfera para empezar a esculpir. La simetría está activada por defecto para facilitar el esculpido.
 
@@ -75,7 +75,7 @@ Con esas configuraciones, puedes manipular la cámara solo con el lápiz:
 * balancín inferior y movimiento en el aire = desplazar
 :::
 
-## Añadir color
+## Añadir color {#add-color}
 
 Nomad te permite pintar la superficie de tu escultura. En el menú de herramientas de la derecha, busca la herramienta `Paint` y haz clic en ella. En la barra lateral izquierda aparecerá una esfera de color. Haz clic en ella, esto abrirá un selector de color. Elige un color y pinta sobre tu modelo.
 
@@ -89,7 +89,7 @@ Usando el pincel de arcilla en modos add/sub, smooth, paint, intenta crear una c
 
 ![](/images/gettingstarted_head1.webp)
 
-## Otras herramientas
+## Otras herramientas {#other-tools}
 
 La paleta de herramientas tiene muchas herramientas para ayudar con el esculpido. Hasta ahora has usado el pincel de arcilla (la herramienta inicial por defecto), smooth y paint. Como smooth se usa con frecuencia, tiene un atajo extra en la barra lateral izquierda.
 
@@ -101,7 +101,7 @@ Intenta usar las herramientas move, crease, inflate y smooth para añadir más d
 
 Ahora que conoces lo básico de Nomad, veamos el resto de la interfaz.
 
-## Interfaz
+## Interfaz {#interface}
 
 ![](/images/interface_overview1.webp)
 
@@ -116,7 +116,7 @@ Ahora que conoces lo básico de Nomad, veamos el resto de la interfaz.
 Puedes reflejar la colocación y el orden de todas las barras de herramientas, consulta [Mirror top bar](interface.md#mirror-top-bar) y otras opciones relacionadas.
 :::
 
-## Barra inferior
+## Barra de herramientas inferior {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
@@ -130,7 +130,7 @@ Puedes reflejar la colocación y el orden de todas las barras de herramientas, c
 * `Wire` - Alterna una superposición de malla alámbrica. Una pulsación larga o deslizar hacia arriba mostrará opciones para la malla alámbrica.
 * `Inspect` - Alterna la visualización de datos extra sobre la malla actual. Por defecto mostrará las UVs, pero una pulsación larga o deslizar hacia arriba te permitirá inspeccionar otras propiedades si existen, y si esto se muestra en el fondo o sobre la malla.
 
-## Próximos pasos
+## Próximos pasos {#next-steps}
 
 Lo que deberías aprender a continuación depende de ti y de lo que te resulte interesante. Aquí van algunas sugerencias:
 
@@ -147,7 +147,7 @@ Lo que deberías aprender a continuación depende de ti y de lo que te resulte i
 Si prefieres vídeo, Holger Schönischka ha creado una enorme colección de consejos y trucos para Nomad en Youtube: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Obtener ayuda
+## Obtener ayuda {#getting-help}
 
 Si aún tienes preguntas después de leer el manual y ver los vídeos tutoriales, hay tres formas principales de hablar con otros usuarios de Nomad o con el desarrollador de Nomad:
 

@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) Hintergrund
+# ![](/icons/image.webp) Hintergrund {#background}
 
 Dieses Menü steuert die Hintergrundfarbe von Nomad sowie alle Referenzbilder, die verwendet werden sollen.
 
 ![](/images/background_overview.webp)
 
-## Hintergrund 
+## Hintergrund {#type}
 ![](/images/background_selector.webp)
 
 Es gibt drei Optionen für den Viewport-Hintergrund.
@@ -13,14 +13,14 @@ Es gibt drei Optionen für den Viewport-Hintergrund.
 * `Color` – Eine einfarbige Fläche, die du auswählen kannst
 * `Gradient` – Ein Farbverlauf von oben nach unten. Mit dem Faktor-Regler kannst du den Mittelpunkt des Farbverlaufs bestimmen.  
 
-## Referenzbild
+## Referenzbild {#reference}
 
 ![](/images/background_reference.webp)
 
 Du kannst ein Bild deiner Wahl im Hintergrund hinzufügen, das als Referenz verwendet wird.
 Du kannst die Position und den Maßstab ändern, zum Beispiel, wenn du es in eine Bildschirmecke verschieben möchtest.
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) Transformieren {#transform}
 
 Mit dieser Schaltfläche kannst du das Referenzbild interaktiv platzieren. Verwende 2 Finger, um das Referenzbild zu verschieben, zu skalieren und zu drehen. Die endgültige Platzierung wird in den folgenden Reglern wiedergegeben:
 

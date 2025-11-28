@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) Lager 
+# ![](/icons/layer.webp) Lager {#layers}
 
 Den här menyn innehåller lagerstacken, ett sätt att spara ändringar på ditt objekt på ett icke-destruktivt sätt, samt många sätt att kombinera och återanvända lager.
 
 ![](/images/layers_overview.webp) 
 
-## Översikt
+## Översikt {#overview}
 
 Nomad-lager har flera användningsområden.
 
@@ -19,7 +19,7 @@ Lager kan delvis raderas via verktyget [Delete Layer](tools.md#delete-layer), oc
 ![](/videos/layer.mp4)
 
 ::: tip
-Till skillnad från de flesta skulpteringsprogram kommer ändring av ett meshs topologi inte att ta bort lagren. Du kan använda [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multiresolution) eller verktygen [Trim](tools.md#trim)/[Split](tools.md#split), men observera att när du använder [Voxel Remesher](topology.md#voxel-remesher) kommer kvaliteten på lagret att påverkas.
+Till skillnad från de flesta skulpteringsprogram kommer ändring av ett meshs topologi inte att ta bort lagren. Du kan använda [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multires) eller verktygen [Trim](tools.md#trim)/[Split](tools.md#split), men observera att när du använder [Voxel Remesher](topology.md#voxel-remesher) kommer kvaliteten på lagret att påverkas.
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ Om du använder lager för blendshapes/morph targets finns extra lagerfunktional
 :::
 ----
 
-## Lagermeny 
+## Lagermeny {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Tryck på `Add layer` för att skapa ett nytt lager.
 
 Varje lager har ett namn, ett reglage för att styra dess styrka/faktor och alternativknappar.
 
-### Alternativ
+### Alternativ {#options}
 
 | Åtgärd       | Ikon                         | Beskrivning                                         |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Varje lager har ett namn, ett reglage för att styra dess styrka/faktor och alte
 
 För att flytta ett lager till en annan plats i lagerstacken, tryck och håll på dess namn och dra sedan.
 
-### More...
+### Mer... {#more}
 
 Knappen ”More...” visar extra alternativ för det aktuella lagret:
 
 ![](/images/layers_more.webp) 
 
-#### Kanalfaktorer
+#### Kanal­faktorer {#channel-factors}
 
 Dessa kontroller låter dig skala mängden skulptering/färg/råhet/metallhet/opacitet för lagret. Dessa värden multipliceras med lagrets faktorreglage, så om till exempel lagerstyrkan är 1 men färgkanalfaktorn är 0,5, kommer färgen som visas att vara på 0,5 styrka.
 
@@ -82,17 +82,17 @@ Kanske kommer varje kanal i framtiden att ha sin egen alfakanal för att ta bort
 :::
 
 
-#### ![](/icons/tool_mask.webp) Mask
+#### ![](/icons/tool_mask.webp) Mask {#mask}
 Maskknappen bredvid varje reglage skapar en mask från den kanalen. Liknande hur lager används för att göra markeringar i målningsprogram gör detta att du kan återanvända arbete du gjort i ett lager för andra operationer.
 
-#### ![](/icons/preview.webp) Förhandsvisning
+#### ![](/icons/preview.webp) Förhandsvisning {#preview}
 ![](/images/layers_preview.webp) 
 
 När den är aktiverad förhandsvisas extraheringsinställningarna för detta lager (se nästa avsnitt).
 
 När röntgenläge är aktiverat kommer endast den extraherade formen att vara solid, resten av formen görs transparent, vilket är användbart om du använder negativa extraheringshöjder.
 
-#### Extract
+#### Extrahera {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ Knappen `Extract` duplicerar innehållet i lagret till ett nytt objekt, vanligtv
 * Shell - Stäng den extraherade formen med tjockleksvärdet och riktningsalternativen.
 * Layer - Extrahera lagerskillnaden.
 
-#### ![](/icons/height.webp) Thickness
+#### ![](/icons/height.webp) Tjocklek {#thickness}
 ![](/images/layers_thickness.webp) 
 
 Djupet på skalextruderingen. Positiva värden växer ut från ytan, negativa värden växer in i ytan.
@@ -116,12 +116,12 @@ Plus/minus bredvid detta värde ställer in extruderingens riktning:
 * Plus ( + ) börjar från den aktuella ytan och extruderar uppåt.
 * PlusMinus ( ± ) skjuter extruderingens topp och botten bortåt med lika stora mängder, så att den blir till hälften inbäddad i den ursprungliga ytan.
 
-#### Smoothness
+#### Släthet {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 Om kanterna på området som ska extraheras är taggiga försöker detta reglage sudda ut kanten till en mjukare form. 
 
-#### ![](/icons/height.webp) Edge loop (side)
+#### ![](/icons/height.webp) Kantögla (sida) {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 Detta avsnitt är synligt när closing action är ”Shell”. 
@@ -132,10 +132,10 @@ Om det är inaktiverat ställer reglaget `Division` in antalet indelningar på s
 
 _Detta är slutet på undermenyn ”More...“._
 
-### Avancerat
+### Avancerat {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Keep top layers details
+#### Behåll detalj i översta lager {#keep-top-layers-details}
 
 Säkerställ att små detaljer på högre lager förblir synliga när stora förändringar görs på lägre lager.
 
@@ -144,13 +144,13 @@ Som standard, om du skulpterar små rynkor på ett lager och sedan gör stora ä
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expand list
+#### UI: Fäll ut lista {#ui-expand-list}
 
 Standardlagermenyn låter dig växla lagersynlighet och lageropacitet. Om du aktiverar det här alternativet expanderas fullständiga kontroller för varje lager.
 
 ![](/images/layers_expand.webp)
 
-#### Sync transform
+#### Synka transformering {#sync-transform}
 
 Om det är aktiverat kommer alla icke-markerade lager att justeras beroende på transformens rotation, skala, skevning. 
 

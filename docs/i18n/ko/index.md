@@ -1,4 +1,4 @@
-# Overview
+# 개요 {#overview}
 
 <!-- 
 [[toc]]
@@ -13,7 +13,7 @@
 :::
 
 
-## Table of contents
+## 목차 {#table-of-contents}
 
 | Menu                           | Icon                          | Description                                        |
 | :----------------------------: | :---------------------------: | :------------------------------------------------: |
@@ -37,7 +37,7 @@
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | 자주 묻는 질문                                     |
 | [Tips](tips.md)                | ![](/icons/manual.webp)      | 워크플로 팁                                        |
 
-## Community resources
+## 커뮤니티 리소스 {#community-resources}
 
 <style>
 .video-grid {

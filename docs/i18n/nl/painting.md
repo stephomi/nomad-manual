@@ -1,23 +1,23 @@
-# ![](/icons/paint.webp) Schilderen  
+# ![](/icons/paint.webp) Schilderen {#painting}
 
 Beheer de kleur, ruwheid, metallicheid van verfstreken, maak het mogelijk om verf‑eigenschappen te vullen (flood fill), en bepaal hoe verf‑tools omgaan met lagen, maskers en verborgen selecties.
 
 ![](/images/paint_overview.webp)  
 
-## Overzicht
+## Overzicht {#overview}
 
 Nomad gebruikt PBR‑vertexpainting. Wat betekent dit?
 
-### PBR
+### PBR {#pbr}
 PBR, of Physically Based Rendering, is een populaire computer­grafiek‑techniek voor film, televisie, games en mobiel. Door licht te baseren op fysieke eigenschappen, en oppervlakken te definiëren via kleur, ruwheid en metallicheid, kan een grote variëteit aan fotorealistische looks worden bereikt.
 
-### Vertexpainting
+### Vertex-schilderen {#vertex-painting}
 
 Vertexpainting betekent dat de verfinformatie wordt opgeslagen in de vertices van het model, in plaats van in textures. Omdat Nomad modellen met honderdduizenden, vaak miljoenen vertices aankan, zouden je modellen zeer gedetailleerde oppervlakteverf moeten kunnen hebben; als je het detail kunt beeldhouwen, kun je dat detail ook schilderen.
 
 Dit betekent ook dat schilderen in Nomad geen UV‑mapping vereist, vaak een traag en technisch proces in andere 3D‑applicaties. Veel andere 3D‑applicaties ondersteunen niet de hoge vertex‑aantallen die Nomad wel aankan, maar Nomad heeft ook goede texture‑baking‑ en decimation‑tools om te helpen.
 
-### Texturing
+### Texturering {#texturing}
 
 Nomad ondersteunt textures, maar die moeten aanwezig zijn in een geïmporteerd model, of via het bakken van vertexpainting naar textures. 
 
@@ -38,21 +38,21 @@ Een voorbeeld van workflow:
 Dat is het overzicht, nu bekijken we de onderdelen van het schildermenu:
 
 
-## Stroke painting
+## Penseelstreek-schilderen {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
 Schilderen inschakelen voor deze tool, handig als je tegelijk wilt beeldhouwen en schilderen.
 
 Voor tools waar schilderen de primaire functie is (bijv. Paint, Smudge, Mask), bestaat dit selectievakje niet.
 
-### Paint intensity
+### Schilderintensiteit {#paint-intensity}
 
 Een schuifregelaar waarmee je een andere intensiteit kunt gebruiken dan de primaire tool‑intensiteit.
 
 De selectievakjes `Alpha`, `Falloff` en `Randomize` bepalen of die functies het schilderen beïnvloeden. Je kunt bijvoorbeeld randomize inschakelen voor de Clay‑tool, maar de kleur niet laten randomizen.
 
 
-## Materiaal
+## Materiaal {#material}
 ![](/images/paint_material.webp) 
 
 Het eerste pictogram is een materiaalvoorbeeld‑vorm. Door te slepen op de 3D‑materiaalpreview roteer je deze. 
@@ -67,14 +67,14 @@ Met de previewknop naast de titel Material kun je wisselen tussen none, Material
 
 De pipet kan worden gebruikt om alle eigenschappen van een object in je scène te samplen.
 
-## Materiaalpresets
+## Materiaalpresets {#material-presets}
 Tik op de 3D‑voorbeeldvorm om een preset‑menu met materialen te openen; deze kunnen worden gekloond om je eigen presets te definiëren.
 
 ![](/images/paint_presets.webp) 
 
 De schakelaars `Embed Textures` en `Alpha` slaan, indien ingeschakeld, alle textures op die door dit materiaal worden gebruikt binnen de preset. Dit wordt hieronder verder uitgelegd.
 
-## PBR‑schuifregelaars
+## PBR-schuifregelaars {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 [PBR](shading.md#pbr)‑schilderen gebruikt 4 kanalen:
@@ -113,7 +113,7 @@ Wanneer je textures gebruikt voor PBR‑schilderen, is het vaak handig om over t
 Je kunt overwegen om `Smooth Shading` [globaal](settings.md#smooth-shading) of [per object](material.md#smooth-shading) in te schakelen als je een metalen oppervlak schildert op een object met een lagere polycount.
 :::
 
-## Paint all
+## Alles schilderen {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
@@ -132,12 +132,12 @@ De extra knoppen bepalen hoe Paint All verder kan worden beïnvloed:
 | ![](/icons/triplanar.webp) | Indicator van triplanar‑instellingen          |
 | ![](/icons/cog.webp)       | Open de Triplanar‑instellingen                |
 
-### Triplanar‑instellingen
+### Triplanare instellingen {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
 Vergelijkbaar met de [triplanar‑instellingen in het materiaalmenu](material.md#triplanar) kun je de blending van de projecties, tiling en offsets regelen. 
 
 Gebruik het preview‑selectievakje bovenaan dit menu om een blijvende preview in te schakelen terwijl je waarden aanpast.
 
-## Globaal materiaal
+## Globaal materiaal {#global-material}
 Als deze optie is ingeschakeld, zal het geselecteerde materiaal hetzelfde zijn als bij de andere tools. Merk op dat alleen roughness‑, metalness‑ en kleurinstellingen in aanmerking worden genomen.

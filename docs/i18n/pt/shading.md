@@ -1,4 +1,4 @@
-# ![](/icons/sun.webp) Sombreamento
+# ![](/icons/sun.webp) Sombras {#shading}
 
 Este menu controla os modos de sombreamento usados pelo Nomad, as propriedades de iluminação e as propriedades de luz de ambiente/matcap.
 
@@ -22,24 +22,24 @@ Se quiser saber mais sobre metalness e roughness, veja a seção [Vertex Paint](
 
 ![](/images/shading_second.webp)
 
-### Face Group
+### Grupo de faces {#face-group}
 Sobrepõe as cores dos facegroups. Facegroups são seleções coloridas de polígonos que podem ser criadas com a ferramenta [Face group](tools#facegroup) e são criadas automaticamente com a maioria dos primitivos.
 
 Algumas ferramentas irão automaticamente filtrar por facegroups quando os facegroups estiverem visíveis.
 
-### Show paint
+### Mostrar pintura {#show-paint}
 O Nomad pode armazenar cor, roughness e metalness nos vértices da sua escultura. Você pode alternar a exibição dessas propriedades globalmente com esta caixa de seleção.
 
 Note que, se você tiver tanto propriedades de vértice quanto texturas, e ambas estiverem ativadas, os valores serão multiplicados entre si.
 
-### Show mask
+### Mostrar máscara {#show-mask}
 Alterna a sobreposição em tons de cinza da máscara das [ferramentas de máscara](tools#mask). Quando isto está desativado, a máscara também é desativada, o que é útil para fazer alterações rápidas sem a máscara; depois você pode ativá-la novamente sem perder a máscara.
 
-### Use Hide
+### Usar ocultar {#use-hide}
 
 Alterna faces ocultas. Note que isto só funciona se você NÃO estiver na ferramenta de esconder (hide)!
 
-### Use textures
+### Usar texturas {#use-textures}
 
 O Nomad permite que texturas sejam atribuídas a objetos a partir do menu [material](material). Se texturas forem atribuídas, elas podem ser alternadas globalmente com esta caixa de seleção.
 
@@ -49,7 +49,7 @@ O Nomad permite que texturas sejam atribuídas a objetos a partir do menu [mater
 
 
 
-### Visão geral de PBR e luzes
+### Visão geral de PBR e luzes {#pbr}
 Este manual não entrará em detalhes sobre Physically Based Rendering.
 
 Uma coisa importante a ter em mente é que iluminação e material são totalmente separados.
@@ -68,7 +68,7 @@ No entanto, isso não terá necessariamente um bom desempenho.
 Você pode simular muitas luzes tornando objetos unlit/emissive e então ativando a iluminação global no menu de [pós-processo](postprocess).
 :::
 
-### Visão geral dos tipos de luz
+### Visão geral dos tipos de luz {#light-types-overview}
 
 Aqui estão os tipos de luz atualmente suportados:
 
@@ -79,42 +79,42 @@ Aqui estão os tipos de luz atualmente suportados:
 | [Spot](#spot)               | Luzes em forma de cone				                    | Yes                                                    |
 | [Point](#point)             | Ponto de luz omnidirecional                            | Yes, but only through less robust screen-space shadows |
 
-#### Directional
+#### Direcional {#directional}
 Emite luz de uma distância infinitamente grande, com intensidade uniforme.
 Sua posição 3D na cena não importa, apenas sua orientação.
 
 Você pode anexar esta luz à câmera, assim ela terá iluminação consistente.  
 Por exemplo, você pode usá-la para fazer uma rim light (uma luz forte que emite por trás do seu modelo, apontando em direção à câmera) que sempre ilumina a parte de trás do seu modelo.
 
-#### Environment light
+#### Luz de ambiente {#env-light}
 Usar um [environment hdr](#environment) funciona bem para iluminação geral suave, mas se houver uma luz forte e nítida visível no HDR, a sombra criada por ela será muito suave, muitas vezes nem visível. Usar uma luz direcional em combinação com o HDR de ambiente pode ajudar, mas pode ser difícil alinhá-las.
 
 Esta luz faz o trabalho por você. A luz será automaticamente rotacionada para se alinhar com a parte mais brilhante do HDR; então você pode controlar sua intensidade e ângulo (maciez da sombra) separadamente. 
 
-#### Spot
+#### Spot {#spot}
 A luz spot emite luz em uma única direção, restrita por uma forma de cone.
 
-#### Point
+#### Ponto {#point}
 A luz point emite luz em todas as direções.  
 No momento, a luz point não oferece suporte a sombras.
 
-#### Shadows
+#### Sombras {#shadows}
 A opção `normal bias` pode ser usada para reduzir artefatos comuns de sombra (acne/peter-panning).
 
 A qualidade das sombras depende do tamanho dos objetos em relação à cena inteira.  
 Se você tiver um objeto grande na sua cena que não precisa projetar sombras (por exemplo, um grande plano), certifique-se de desativar o lançamento de sombras nas [configurações de material](material.md#cast-shadows) dele.
 
-## Lights
+## Luzes {#lights}
 
 ![](/images/shading_lights.webp)
 
-### ![](/icons/checked.webp) Lights checkbox
+### ![](/icons/checked.webp) Caixa de seleção Luzes {#lights-checkbox}
 
 Alterna todas as luzes diretas na cena.
 
 
 
-### Add light
+### Adicionar luz {#add-light}
 
 Adiciona uma luz à cena, até um máximo de 4. Quando uma luz é adicionada, a lista de luzes é exibida com botões, e uma barra de ferramentas de luz é adicionada ao topo da viewport.
 
@@ -127,11 +127,11 @@ Adiciona uma luz à cena, até um máximo de 4. Quando uma luz é adicionada, a 
 * O ícone de cópia duplica uma luz. 
 * O ícone de 3 pontos abre um editor completo de luz. A maior parte dessa funcionalidade também está disponível na barra de ferramentas que aparece na viewport. 
 
-### ![](/icons/spotlight.webp)  Icons
+### ![](/icons/spotlight.webp) Ícones {#icons}
 
 Alterna a exibição dos ícones de luz na viewport.
 
-### Light toolbar
+### Barra de ferramentas de luz {#light-toolbar}
 ![](/images/shading_lights_toolbar.webp) 
 
 Esta barra de ferramentas aparecerá no topo da viewport quando uma luz estiver selecionada.
@@ -144,7 +144,7 @@ Esta barra de ferramentas aparecerá no topo da viewport quando uma luz estiver 
 * Size define a largura de uma luz. Luzes mais largas projetam sombras suaves, iluminação suave e um highlight mais suave nos objetos.
 * ... abre controles extras.
 
-### Light extra controls
+### Controles extras de luz {#light-extra-controls}
 
 ![](/images/shading_extra_controls.webp) 
 
@@ -166,7 +166,7 @@ Note que algumas opções são específicas de certos tipos de luz.
 * `Tolerance` se artefatos de sombra forem visíveis (ou as sombras não parecem tocar as superfícies, ou há ruído e padrões dentro das sombras), ajustar tolerance pode ajudar a corrigir esses problemas.
 
 
-## Environment
+## Ambiente {#environment}
 
 ![](/images/shading_environment.webp)
 
@@ -176,20 +176,20 @@ O Nomad vem com vários mapas de ambiente de exemplo para áreas internas e exte
 
 Toque na imagem para ver os mapas de ambiente disponíveis. Nesse diálogo, escolha “Import...” para carregar o seu próprio. É melhor usar imagens High Dynamic Range (HDR), no formato latlong ou equiretangular, como arquivos .hdr ou .exr. O site [www.polyhaven.com](https://polyhaven.com/hdris) tem uma boa coleção de mapas de ambiente gratuitos; em geral, os mapas HDR 1k têm bom tamanho e boa qualidade.
 
-### Exposure
+### Exposição {#env-exposure}
 Ajusta o brilho do mapa de ambiente. Muitas vezes os mapas podem ser brilhantes demais quando usados com luzes regulares; reduzir a exposição pode ajudar a equilibrar, especialmente quando usado com Global Illumination nas configurações de [Post Process](postprocess).
 
-### Rotation
+### Rotação {#env-rotation}
 
 Como os mapas de ambiente capturam luz de todas as direções, você pode rotacioná-los para fazer com que os reflexos e a iluminação geral combinem bem com a sua escultura.
 
-### Attached to camera
+### Anexado à câmera {#env-attached}
 Anexa o ambiente à câmera.
 
 Isso forçará a iluminação a ser consistente, o que pode ser útil durante a escultura.
 
 
-## ![](/icons/sphere_smooth.webp) Matcap
+## ![](/icons/sphere_smooth.webp) Matcap {#matcap}
 
 ![](/images/shading_matcap.webp)
 
@@ -201,7 +201,7 @@ Artistas tendem a preferir este modo para fins de escultura, pois ele permite fo
 
 Tocar na esfera abrirá um navegador de imagens. Você também pode adicionar seu próprio matcap; em geral, qualquer foto, render ou até uma pintura de uma esfera recortada de forma justa em um quadrado pode ser usada. Muitas bibliotecas de matcap estão disponíveis online; um recurso útil é a [biblioteca de matcaps do nidorx](https://github.com/nidorx/matcaps).
 
-### Use global Matcap
+### Usar Matcap global {#matcap-global}
 
 Normalmente artistas usam um único matcap para toda a escultura, mas se este alternador estiver desativado, cada objeto pode ter seu próprio matcap. Isso pode ser usado artisticamente para obter resultados marcantes.
 
@@ -209,31 +209,31 @@ Normalmente artistas usam um único matcap para toda a escultura, mas se este al
 Desative esta opção e use uma imagem de um globo ocular para os olhos dos seus personagens!
 :::
 
-### Rotation
+### Rotação {#matcap-rotation}
 Um matcap é uma forma especializada de mapa de ambiente, então, como um mapa de ambiente, ele pode ser rotacionado. Você também pode fazer isso a qualquer momento na viewport arrastando com 3 dedos para a esquerda e para a direita.
 
 
 
-## ![](/icons/circle_fill.webp) Unlit
+## ![](/icons/circle_fill.webp) Sem iluminação {#unlit}
 
 Este modo mostrará apenas a cor da superfície. Pode ser útil para verificar se a cor da superfície dos seus objetos é a que você espera, sem distração de luzes, sombras, reflexão ou transparência. 
 
 Este modo também pode ser usado para renders não fotorrealistas, obtendo um visual plano e cartunesco.
 
-## ![](/icons/cube.webp) Object ID
+## ![](/icons/cube.webp) ID do objeto {#object-id}
 
 Todas as informações de iluminação e superfície são ignoradas, e cada objeto é sombreado com uma cor chapada única. Se isto for renderizado junto com um render PBR, pode ser usado em um programa de pintura para selecionar por cor e, assim, poder fazer correções de cor em objetos específicos.
 
 Note que essas cores também aparecerão na [visualização em árvore do menu Scene](scene#tree-view).
 
-### Randomise id
+### Aleatorizar id {#object-random}
 
 Gera um novo conjunto de cores aleatórias. 
 
-## ![](/icons/link.webp) Instance ID
+## ![](/icons/link.webp) ID de instância {#instance-id}
 
 Igual ao Object ID, mas instâncias terão a mesma cor. 
 
-### Randomise id
+### Aleatorizar id {#instance-random}
 
 Gera um novo conjunto de cores aleatórias.

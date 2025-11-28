@@ -1,10 +1,10 @@
-# ![](/icons/symmetry.webp) Simetri
+# ![](/icons/symmetry.webp) Simetri {#symmetry}
 
 Bu menü, fırça darbelerinin bir ayna düzlemi boyunca veya radyal olarak nasıl tekrar edileceğini ve simetrik olmayan nesnelerde simetrinin nasıl geri getirileceğini kontrol eder.
 
 ![](/images/symmetry_overview.webp) 
 
-## Genel Bakış 
+## Genel Bakış {#overview}
 Simetriyi birkaç şekilde kullanabilirsiniz:
 
 * Ayna olarak, çalışmayı X (sol/sağ), Y (üst/alt), Z (arka/ön) veya bunların kombinasyonları boyunca çevirmek için. 
@@ -23,10 +23,10 @@ Tek istisnalar, kendi simetri durumuna sahip olan dönüştürme araçlarıdır 
 Simetri menüsü esas olarak darbe (stroke) simetrisini kontrol etmek içindir. Nesneleri ayrıca [sahne menüsünde bulunan tekrarlayıcılar](scene#repeaters) aracılığıyla da aynalayabilir ve çoğaltabilirsiniz. 
 :::
 
-## Etkin
+## Etkin {#enabled}
 Ayna modunu açıp kapatır, bu sol hızlı paneldeki `Sym` düğmesiyle aynıdır. 
 
-## Düzlemler
+## Düzlemler {#planes}
 
 Simetri düzlemlerini ve radyal simetri için tekrar sayısını etkinleştirin. Yalnızca tek bir düzlem seçmek zorunda olmadığınızı, karmaşık simetri için 1, 2 veya 3 düzlemin tamamını etkinleştirebileceğinizi unutmayın.
 
@@ -34,10 +34,10 @@ Radyal simetri için eksen ve tekrar sayısı. Bunların da tek bir eksenle sın
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Yöntem
+## Yöntem {#method}
 Ayna, nesneyle birlikte hareket eden 'Yerel' olabilir veya hareket etmeyen 'Dünya' olabilir. Hangi moda ihtiyacınız olduğundan emin değilseniz, nesnenin üzerine bindirilen ayna düzlemini ve radyal göstergeleri gözlemleyin. Yerel moddayken, dönüştürme gizmosunu kullanıp modeli hareket ettirirseniz, ayna göstergeleri de hareket eder. Dünya modunda ise ayna göstergeleri sabit kalır ve nesne onların içinden kayar.
 
-## Aynalama
+## Yansılama {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
 Simetri düzlemlerinin yakınında yontu yaparken, bazı fırçalar mükemmel olmayan simetri davranışına sahip olabilir. Bu bölüm, yontunuzun bir tarafını diğerine kopyalayarak simetriyi geri yüklemenizi sağlar. 
@@ -53,11 +53,11 @@ Simetri düzlemlerinin yakınında yontu yaparken, bazı fırçalar mükemmel ol
 
 `Split & Mirror`, temelde nesneyi ayna boyunca keser, bir tarafı kopyalar, diğer tarafa aynalar ve ayna boyunca tepe noktalarını birleştirir (weld). Daha yıkıcı bir seçenektir ve çok çözünürlüklü (multiresolution) veriyi siler, ancak model ayna boyunca çok farklıysa bazen bu yöntem gereklidir.
 
-### Nesneyi çevir
+### Nesneyi çevir {#flip-object}
 ![](/images/symmetry_flip.webp)
 Sol tarafı sağ tarafa ve tam tersini yapar. Görünüş olarak, gizmo araç menüsünü kullanıp X ölçeğini -1 olarak ayarlamaya benzer.
 
-## Sıfırla ve Düzenle
+## Sıfırla ve Düzenle {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
@@ -72,7 +72,7 @@ Bu nedenle beklediğiniz gibi çalışmıyorsa, doğru uzayda olup olmadığın�
 `Gizmo (Edit)` düğmesi, muhtemelen bunu kullanmamanız gerektiğini hatırlatmak için özellikle gri renktedir!
 :::
 
-## Gösterme seçenekleri
+## Seçenekleri göster {#show-options}
 ![](/images/symmetry_show.webp)
 
 

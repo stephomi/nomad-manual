@@ -1,4 +1,4 @@
-# ![](/icons/material.webp) マテリアル
+# ![](/icons/material.webp) マテリアル {#material}
 
 このメニューでは、現在のオブジェクトのマテリアル、オブジェクト／マテリアルのレンダー特性を変更したり、マテリアルにテクスチャを割り当てたりできます。
 
@@ -24,16 +24,16 @@ Material type、reflectance、emssive/unlit は、以下で説明するマテリ
 
 Nomad のレンダラーはリアルタイムレンダラーであることに注意してください。強力ではありますが、特定の効果においては精度よりも速度を優先します。
 
-## マテリアルタイプ
+## マテリアルタイプ {#material-types}
 
 ![](/images/material_types.webp)
 
 Nomad のマテリアルタイプには、Opaque、Subsurface、Blending、Additive、Refraction、Dithering、Shadow Catcher があります。
 
-### ![](/icons/material_opaque.webp) Opaque
+### ![](/icons/material_opaque.webp) 不透明 {#opaque}
 デフォルトのモードで、ペイントされた color、roughness、metalness、opacity をサポートするシンプルなマテリアルとしてサーフェスを扱います。
 
-### ![](/icons/material_subsurface.webp) Subsurface
+### ![](/icons/material_subsurface.webp) サブサーフェス {#subsurface}
 このモードは、肌、ろう、翡翠のように、光が内部でぼやけたり散乱したりするマテリアルをシミュレートできます。
 
 最良の結果を得るには、PBR シェーディングモードに切り替え、少なくとも 1 つのディレクショナルライトまたはスポットライトを使用し、理想的には環境光を弱めてください。
@@ -42,7 +42,7 @@ Nomad のマテリアルタイプには、Opaque、Subsurface、Blending、Addit
 
 `Translucency` は、葉の裏側を通る散乱光や、耳が強く逆光で照らされているときのように、光が形状の前面から背面へどのように散乱するかを制御します。
 
-### ![](/icons/material_blending.webp) Blending
+### ![](/icons/material_blending.webp) ブレンディング {#blending}
 
 Opaque に似ていますが、opacity スライダーをサポートしており、マテリアルをソリッドから透明まで連続的に変化させることができます。これは、Opaque マテリアルがサポートするペイント可能な opacity とは異なり、単一のシンプルなスライダーです。
 
@@ -50,7 +50,7 @@ Opaque に似ていますが、opacity スライダーをサポートしてお�
 Blending モードは、複雑な形状や交差する形状でちらつきやポッピングを引き起こすことがあります。
 :::
 
-### ![](/icons/material_additive.webp) Additive
+### ![](/icons/material_additive.webp) 加算 {#additive}
 このマテリアルを使うと、メッシュを半透明にできます。Blending マテリアルに似ていますが、Blending が周囲と混ざり合うのに対し、Additive は常に背後のオブジェクトよりも明るくなります。光の筋、炎、爆発などの明るいエフェクトに適しています。
 
 Opacity 値を 1 より大きく設定することができ、その場合オブジェクトはより明るくなります。  
@@ -58,7 +58,7 @@ Opacity 値を 1 より大きく設定することができ、その場合オブ
 
 このモードは、[Blending](#blending) よりもアーティファクトが少ない傾向があります（順序非依存トランスペアレンシー）。
 
-### ![](/icons/material_refraction.webp) Refraction
+### ![](/icons/material_refraction.webp) 屈折 {#refraction}
 このモードはガラスのようなマテリアルをシミュレートするために使用できます。リアルタイム処理の制約により、自己屈折や多層屈折にはある程度の制限があります。
 
 モデルにペイントされた roughness は、屈折のぼやけ具合に影響します。  
@@ -72,10 +72,10 @@ Opacity 値を 1 より大きく設定することができ、その場合オブ
 ![](/videos/refraction.mp4)
 
 
-### ![](/icons/material_dithering.webp) Dithering
+### ![](/icons/material_dithering.webp) ディザリング {#dithering}
 ランダムにいくつかのピクセルを破棄することで、オブジェクトを半透明にします。
 
-### ![](/icons/material_shadow_catcher.webp) Shadow Catcher
+### ![](/icons/material_shadow_catcher.webp) シャドウキャッチャー {#shadow-catcher}
 
 オブジェクトを不可視にし、影だけを受け取るようにします。Nomad のレンダーを他の画像と合成する際に便利です。
 
@@ -85,49 +85,49 @@ Opacity 値を 1 より大きく設定することができ、その場合オブ
 
 :::
 
-## コントロール
+## コントロール {#controls}
 
 ![](/images/material_controls.webp)
 
-### Always unlit
+### 常にアンリット {#always-unlit}
 有効にすると、オブジェクトは PBR や Matcap を無視し、シェーディングなしでペイントされた色のみを表示します。  
 [Additive](#additive) を使用している場合、黒色を使って直接透明度をペイントできることに注意してください。
 
-### Opacity
+### 不透明度 {#opacity}
 オブジェクトがどれだけソリッド（不透明）に見えるかを制御します。100% は完全にソリッド、0% は完全に透明です。より細かく制御したい場合は、opacity をペイントすることもできます。
 
-### Reflectance
+### 反射率 {#reflectance}
 非金属マテリアルが受け取る反射の量を制御します。通常はデフォルト値（標準的な正面角での 4% の反射光に相当）を使用しますが、キャラクターの目の反射やハイライトを強調したい場合などに値を上げることができます。
 
-### Inverse culling
+### インバースカリング {#inverse-culling}
 サーフェスの法線を反転させます。通常は不要ですが、モデルが裏返しに見える場合や、`Two sided` を無効にした状態と組み合わせて、カメラに最も近い壁が常に非表示になるようなインテリア表現に使用できます。
 
-### Smooth Shading
+### スムーズシェーディング {#smooth-shading}
 [グローバルオプション](settings.md#smooth-shading) を参照してください。  
 `Auto` 値はグローバルオプションを使用します。
 
-### Two sided
+### 両面 {#two-sided}
 [グローバルオプション](settings.md#two-sided) を参照してください。  
 `Auto` 値はグローバルオプションを使用します。
 
-### Coloured backface
+### 裏面に色を付ける {#coloured-backface}
 [グローバルオプション](settings#two-sided) を参照してください。  
 `Auto` 値はグローバルオプションを使用します。
 
-### Casts shadows
+### 影を落とす {#casts-shadows}
 現時点では `Auto` は `On` と同じです。  
 透明オブジェクトも影を落とします（ブレンドされた影をエミュレートするためにディザパターンで描画されます）。  
 シーン内に、影を落とす必要のない大きなオブジェクト（たとえば大きな床）がある場合は、必ず影のキャストを無効にしてください。
 
-### Recieve shadows
+### 影を受ける {#recieve-shadows}
 現時点では `Auto` は `On` と同じです。
 
-### Wireframe
+### ワイヤーフレーム {#wireframe}
 [グローバルオプション](settings.md#wireframe) を参照してください。  
 `Auto` 値はグローバルオプションを使用します。
 
 
-## テクスチャ
+## テクスチャ {#textures}
 
 ![](/images/material_textures.webp)
 
@@ -144,28 +144,28 @@ Opacity 値を 1 より大きく設定することができ、その場合オブ
 
 テクスチャスロットをクリックするとセレクターが表示されます。テクスチャがマテリアルスロットに割り当てられた後、再度クリックするとテクスチャパネルが表示されます。
 
-### テクスチャパネルオプション
+### テクスチャパネルオプション {#texture-panel-options}
 
 ![](/images/material_texture_panel.webp)
 
-### Open
+### 開く {#open}
 別のテクスチャを選択します。
 
-### None
+### なし {#none}
 テクスチャを削除します。
 
-### Opacity
+### 不透明度 {#texture-opacity}
 
 画像にアルファチャンネルがある場合、それを Opacity に使用するか、無視するかを選択できます。
 
-### ![](/icons/link.webp) チェーン／リンクアイコン 
+### ![](/icons/link.webp) チェーン／リンクアイコン {#chainlink-icon}
 
 以下のセクションにあるリンクアイコンを有効にすると、そのテクスチャに対して使用されるオプションが、リンクアイコンが有効になっている他のテクスチャ（color、normal、roughness、metalness、opacity、emissive）と共有されます。
 
 これにより、位置合わせされたテクスチャ同士が、パラメータやプロジェクションタイプを変更してもずれないようにできます。
 
 
-### Projection
+### プロジェクション {#projection}
 ![](/images/material_projection.webp)
 
 テクスチャをオブジェクトにどのように適用するかを設定します。
@@ -174,7 +174,7 @@ Opacity 値を 1 より大きく設定することができ、その場合オブ
 * `UV` - メッシュの UV 座標を使ってテクスチャを適用します。メッシュとテクスチャが Nomad の外部から来ている場合や、Nomad から外部で使用するためにエクスポートする場合は、UV が正しい選択です。
 * `Triplanar` - X、Y、Z 軸に沿ってテクスチャを投影し、継ぎ目をブレンドします。
 
-### Triplanar
+### トライプラナー {#triplanar}
 ![](/images/material_triplanar.webp)
 
 Triplanar プロジェクションは、テクスチャをオブジェクトに適用するための、強力でありながらシンプルな方法です。
@@ -185,45 +185,45 @@ Triplanar は、同じ画像を持つ 6 台のビデオプロジェクターが�
 
 ![](/images/material_triplanar_example.webp)
 
-#### Method
+#### メソッド {#method}
 
 * `Local` - プロジェクションはオブジェクトのトランスフォームと一緒に移動します。
 * `World` - プロジェクションは固定され、オブジェクトを動かすと、オブジェクトがプロジェクションの中をスライドしていくように見えます。
 
-#### Hardness
+#### ハードネス {#hardness}
 
 プロジェクション同士の混ざり方を制御します。100% ではブレンドが行われず、プロジェクションの境界はシャープになります。0% では広い角度にわたって境界がブレンドされます。デフォルトは 90% で、境界を隠すのに十分なブレンドを行いつつ、それ以外の部分はシャープに保ちます。
 
-### Uniform
+### ユニフォーム {#uniform}
 
 オンにすると、すべてのプロジェクションに同じ Hardness が使用されます。オフにすると、X、Y、Z プロジェクションごとに個別の Hardness コントロールが表示されます。
 
 
-### Parameter
+### パラメーター {#parameter}
 ![](/images/material_parameter.webp)
 
-#### Filtering
+#### フィルタリング {#filtering}
 使用するテクスチャフィルタ方式です。`Auto` がデフォルトで、`Nearest`、`Linear`、`Mipmap` があります。Nearest はフィルタリングを行わないため、テクスチャを近くで見るとギザギザのアーティファクトが発生することがあります。Linear と Mipmap はより良いフィルタリングを行うため、近くで見たときにギザギザではなくぼやけて見えます。
 
-#### Tiling-X
+#### タイリング-X {#tiling-x}
 Scale パラメータが 1 より大きく、テクスチャがオブジェクトの UV より小さくなっている場合、X 軸方向にテクスチャをどのようにタイルするかを指定します。`None` は繰り返しなし、`Repeat` はテクスチャをコピーして繰り返します。`Mirror` はテクスチャをコピーし、2 枚目ごとに反転させて配置することで、タイルの繰り返しによるアーティファクトを目立たなくできます。
 
-#### Tiling-Y
+#### タイリング-Y {#tiling-y}
 Tiling-X と同様ですが、Y 軸方向に対する設定です。
 
-### Transform
+### トランスフォーム {#transform}
 ![](/images/material_transform.webp)
 
 UV 空間でテクスチャに適用される 2D 変換です。リセットボタンでデフォルト値に戻せます。チェーンアイコン（color 以外のテクスチャが選択されている場合）は、Transform を color テクスチャとリンクさせるかどうかを切り替えます。
 
-#### Translation
+#### トランスレーション {#translation}
 テクスチャの X および Y 方向のオフセットです。
 
-#### Rotation
+#### 回転 {#rotation}
 テクスチャの回転です。
 
-#### Scale
+#### スケール {#scale}
 テクスチャのスケールです。値を大きくすると、オブジェクト上でテクスチャが小さく表示されます。Tiling-X と Tiling-Y スライダーを使って、その際の挙動を制御します。
 
-### Uniform scale
+### 一様スケール {#uniform-scale}
 オフにすると、Scale-X と Scale-Y の個別コントロールが表示されます。

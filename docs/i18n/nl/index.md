@@ -1,4 +1,4 @@
-# Overzicht
+# Overzicht {#overview}
 
 <!-- 
 [[toc]]
@@ -13,7 +13,7 @@ Lees de gids [Aan de slag](gettingstarted.md).
 :::
 
 
-## Inhoudsopgave
+## Inhoudsopgave {#table-of-contents}
 
 | Menu                           | Pictogram                     | Beschrijving                                       |
 | :----------------------------: | :---------------------------: | :------------------------------------------------: |
@@ -37,7 +37,7 @@ Lees de gids [Aan de slag](gettingstarted.md).
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Veelgestelde vragen                                |
 | [Tips](tips.md)                | ![](/icons/manual.webp)      | Workflow‑tips                                      |
 
-## Community‑bronnen
+## Communitybronnen {#community-resources}
 
 <style>
 .video-grid {

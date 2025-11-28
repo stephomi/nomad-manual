@@ -1,4 +1,4 @@
-# ![](/icons/postprocess.webp) Post process 
+# ![](/icons/postprocess.webp) Proses pasca {#post-process}
 
 Menu ini mengontrol banyak aspek Nomad yang memengaruhi tampilan hasil render.
 
@@ -16,34 +16,31 @@ Untuk rendering PBR, [Ambient Occlusion](#ambient-occlusion-ssao), [Reflection](
 Namun, sebagian besar waktu Anda ingin post process dimatikan saat sedang sculpting, agar bisa fokus pada bentuk dari hasil render itu sendiri.
 
 
-## Quality
+## Kualitas {#quality}
 
 ![](/images/postprocess_quality.webp)
-### Max frame sampling
+### Pengambilan sampel bingkai maks {#max-frame-sampling}
 Nomad akan menghitung sejumlah post process untuk satu frame render, yang bisa terlihat berisik (noisy). Kontrol ini menentukan berapa banyak frame yang akan dirender, lalu dibaurkan (blend) bersama untuk menghilangkan sebagian besar artefak noise. Beberapa efek tidak memerlukan sampel ekstra (misalnya color grading), sementara yang lain seperti global illumination bisa memerlukan ratusan sampel agar bebas noise. 
 
 Di viewport hal ini bisa terlihat ketika Nomad dibiarkan, kualitas gambar akan perlahan membaik hingga mencapai jumlah sampel maksimum, lalu berhenti. Jumlah perhitungan ini juga digunakan di bagian render pada [Files menu](files) ketika 'export png' diklik.
 
-### Resolution multiplier
+### Pengganda resolusi {#resolution-multiplier}
 Slider ini mengontrol resolusi post process. Nilai x1.0 berarti render dilakukan pada resolusi piksel perangkat. Nilai x0.5 akan merender pada setengah resolusi, yang akan cepat tetapi berkualitas rendah. Nilai lebih besar dari 1 akan merender pada ukuran lebih besar, lalu diskalakan turun. Ini menghasilkan kualitas lebih tinggi, noise lebih sedikit, tetapi waktu render lebih lama.
 
-### Max samples
+### Sampel maks {#max-samples}
 
 Ini akan meningkatkan kualitas post process, tetapi umumnya `Full resolution` akan memiliki dampak lebih besar. 
 
-### Full resolution
-Saat diaktifkan akan memaksa resolution multiplier ke x1.0
-
-### Denoiser (oidn)
+### Penghilang noise (oidn) {#oidn}
 
 Menerapkan denoiser pada gambar. Ini memungkinkan Anda menggunakan jumlah sampel yang jauh lebih rendah. Ini hanya berfungsi jika `Full Resolution` diaktifkan. Perlu dicatat bahwa denoising terjadi setelah semua sampel dihitung, dan bisa cukup membebani prosesor.
 
-## Preset browser
+## Penjelajah preset {#preset-browser}
 ![](/images/postprocess_presets.webp)
 Mengklik gambar akan menampilkan kumpulan preset post process. Untuk membuat preset sendiri, pilih salah satu, klik 'clone', lalu lakukan perubahan. Untuk menyimpan, klik gambar preset, klik lagi di dalam preset browser, dan pilih 'save'.
 
 
-## Reflection (SSR)
+## Refleksi (SSR) {#reflection-ssr}
 Dengan opsi ini, objek dapat memantulkan objek lain di dalam scene, selama objek tersebut terlihat di layar.
 Jika Anda memiliki objek metalik dan mengkilap di scene Anda, maka opsi ini sebaiknya digunakan.
 Opsi ini hanya efektif pada mode PBR.
@@ -53,7 +50,7 @@ Opsi ini hanya efektif pada mode PBR.
 | :------------------------: | :-----------------------: |
 | ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
-## Global Illumination (SSGI)
+## Pencahayaan Global (SSGI) {#global-illumination-ssgi}
 
 Global illumination mensimulasikan bagaimana cahaya memantul antar permukaan, misalnya dinding merah akan memantulkan warna merah ke objek putih di dekatnya. Ini dapat sangat meningkatkan realisme render ketika digunakan bersama ambient occlusion dan reflections. 
 
@@ -67,7 +64,7 @@ Global illumination mensimulasikan bagaimana cahaya memantul antar permukaan, mi
 
 _Sebuah spotlight berada di belakang bola, diarahkan ke langit-langit. Dengan SSGI off, hanya langit-langit yang terkena cahaya. Dengan SSGI on, cahaya memantul dari langit-langit ke dinding lalu ke bola._
 
-## Ambient Occlusion (SSAO)
+## Oklusi Ambien (SSAO) {#ambient-occlusion-ssao}
 Ambient occlusion akan menggelapkan area di mana cahaya memiliki kemungkinan lebih kecil untuk mencapai (sudut, dll).
 Efek ini hanya bergantung pada geometri model.
 
@@ -86,7 +83,7 @@ AO akan paling terlihat di area yang terutama diterangi oleh cahaya environment.
 
 :::
 
-## Depth of Field (DOF)
+## Kedalaman Bidang (DOF) {#depth-of-field-dof}
 Menambahkan efek blur pada area yang berada di luar fokus.
 
 Cukup ketuk pada model Anda untuk mengubah titik fokus.
@@ -100,7 +97,7 @@ Cukup ketuk pada model Anda untuk mengubah titik fokus.
 | ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp) |
 
 
-## Bloom
+## Kilau {#bloom}
 Bloom akan membuat area terang di scene Anda tampak menyala (glow).
 
 * `Intensity` - kekuatan efek.
@@ -113,7 +110,7 @@ Bloom akan membuat area terang di scene Anda tampak menyala (glow).
 | ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
 
-## Tone Mapping
+## Pemetaan Nada {#tone-mapping}
 Tone Mapping adalah operasi yang akan memetakan ulang nilai HDR ke rentang `[0, 1]`.
 Jika Anda tidak menggunakannya (atau memilih `none`), komponen warna apa pun yang lebih tinggi dari 1 akan terpotong.
 Setiap variasi warna di atas rentang ini kemudian akan hilang.
@@ -133,14 +130,14 @@ Perhatikan bahwa dengan `Tone Mapping` dimatikan, beberapa detail menghilang kar
 Tone mapping dapat meningkatkan efek global illumination. Jika Anda menurunkan intensitas environment map, menaikkan sumber cahaya utama, lalu meningkatkan `exposure` pada tone mapping, Anda dapat melihat lebih banyak efek pantulan cahaya (bounce lighting).
 :::
 
-## Color Grading
+## Penjenjangan Warna {#color-grading}
 Mirip dengan tool curves di Photoshop, ini memungkinkan Anda mengontrol keseimbangan dan distribusi warna pada gambar. Kontrol `main` memengaruhi keseimbangan warna keseluruhan, sedangkan `red`/`green`/`blue` memungkinkan kontrol yang lebih halus. 
 
 | Color Grading off             | Color Grading on             |
 | :---------------------------: | :--------------------------: |
 | ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
-## Curvature
+## Kelengkungan {#curvature}
 Mendeteksi area di mana terdapat perubahan kurvatur yang cepat, dan menerapkan warna pada area tersebut.
 
 * `Factor` - intensitas keseluruhan efek
@@ -153,7 +150,7 @@ Mendeteksi area di mana terdapat perubahan kurvatur yang cepat, dan menerapkan w
 | ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
 
-## Chromatic Aberration
+## Aberasi Kromatik {#chromatic-aberration}
 Mensimulasikan artefak lensa dengan cahaya yang terurai di sekitar tepi layar.
 
 * `Strength` - seberapa jauh bagian merah/hijau/biru dari gambar terpisah ke arah tepi layar
@@ -163,7 +160,7 @@ Mensimulasikan artefak lensa dengan cahaya yang terurai di sekitar tepi layar.
 | ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
 
-## Vignette
+## Vinyet {#vignette}
 Mensimulasikan artefak lensa dengan menggelapkan tepi layar.
 
 * `Size` - Ukuran elips terbalik yang ditempatkan di atas gambar
@@ -174,7 +171,7 @@ Mensimulasikan artefak lensa dengan menggelapkan tepi layar.
 | :-----------------------------: | :----------------------------: |
 | ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
-## Grain
+## Butiran {#grain}
 Menambahkan efek grain, yang dapat membantu membuat gambar terasa sedikit kurang artifisial.
 
 * `Strength` - jumlah grain/noise yang ditambahkan ke gambar.
@@ -185,7 +182,7 @@ Menambahkan efek grain, yang dapat membantu membuat gambar terasa sedikit kurang
 | ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
 
-## Sharpness
+## Ketajaman {#sharpness}
 Efek penajaman mirip dengan yang ada di Photoshop atau aplikasi pemrosesan foto.
 
 * `Strength` - jumlah penajaman yang diterapkan pada gambar.
@@ -195,7 +192,7 @@ Efek penajaman mirip dengan yang ada di Photoshop atau aplikasi pemrosesan foto.
 | :----------------------------: | :--------------------------: |
 | ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
-## Pixel Art
+## Seni Piksel {#pixel-art}
 Mensimulasikan pixel art game retro.
 
 * `Slider` - ukuran piksel
@@ -205,7 +202,7 @@ Mensimulasikan pixel art game retro.
 | :-------------------------: | :------------------------: |
 | ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
-## Scanline
+## Garis pindai {#scanline}
 Mensimulasikan tampilan monitor CRT lama.
 
 * `Factor` - kekuatan garis
@@ -216,6 +213,6 @@ Mensimulasikan tampilan monitor CRT lama.
 | ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
 
 
-## Dithering
+## Pewarnaan bertitik {#dithering}
 
 Mendither piksel untuk mengurangi artefak banding. Biasanya ini sebaiknya diaktifkan, tetapi bisa dimatikan untuk operasi tertentu (misalnya mengekspor depth map atau operasi spesifik data lainnya).

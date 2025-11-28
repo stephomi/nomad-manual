@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) 레이어 
+# ![](/icons/layer.webp) 레이어 {#layers}
 
 이 메뉴에는 레이어 스택이 포함되어 있습니다. 이는 오브젝트에 대한 편집 내용을 비파괴적인 방식으로 저장하는 방법이며, 레이어를 결합하고 재활용하는 다양한 기능을 제공합니다.
 
 ![](/images/layers_overview.webp) 
 
-## 개요
+## 개요 {#overview}
 
 Nomad의 레이어는 여러 가지 용도로 사용됩니다.
 
@@ -19,7 +19,7 @@ Nomad는 또한 조각(sculpting)을 위해 레이어를 사용합니다. 레이
 ![](/videos/layer.mp4)
 
 ::: tip
-대부분의 스컬핑 소프트웨어와 달리, 메시의 토폴로지를 변경해도 레이어가 삭제되지 않습니다. [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multiresolution) 또는 [Trim](tools.md#trim)/[Split](tools.md#split) 도구를 사용할 수 있지만, [Voxel Remesher](topology.md#voxel-remesher)를 사용할 경우 레이어의 품질에 영향이 있을 수 있다는 점에 유의하세요.
+대부분의 스컬핑 소프트웨어와 달리, 메시의 토폴로지를 변경해도 레이어가 삭제되지 않습니다. [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multires) 또는 [Trim](tools.md#trim)/[Split](tools.md#split) 도구를 사용할 수 있지만, [Voxel Remesher](topology.md#voxel-remesher)를 사용할 경우 레이어의 품질에 영향이 있을 수 있다는 점에 유의하세요.
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ Nomad는 또한 조각(sculpting)을 위해 레이어를 사용합니다. 레이
 :::
 ----
 
-## 레이어 메뉴 
+## 레이어 메뉴 {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Nomad는 또한 조각(sculpting)을 위해 레이어를 사용합니다. 레이
 
 각 레이어에는 이름, 강도/계수를 제어하는 슬라이더, 그리고 옵션 버튼이 있습니다.
 
-### 옵션
+### 옵션 {#options}
 
 | Action       | Icon                         | Description                                         |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Nomad는 또한 조각(sculpting)을 위해 레이어를 사용합니다. 레이
 
 레이어를 레이어 스택의 다른 위치로 이동하려면, 이름을 길게 누른 후 드래그합니다.
 
-### More...
+### 더 보기... {#more}
 
 'More...' 버튼을 누르면 현재 레이어에 대한 추가 옵션이 표시됩니다:
 
 ![](/images/layers_more.webp) 
 
-#### 채널 계수
+#### 채널 계수 {#channel-factors}
 
 이 컨트롤을 사용하면 해당 레이어의 조각/색상/거칠기/금속성/불투명도의 양을 스케일링할 수 있습니다. 이 값들은 레이어 강도 슬라이더 값에 곱해지므로, 예를 들어 레이어 강도가 1이고 색상 채널 계수가 0.5라면, 표시되는 색상 강도는 0.5가 됩니다.
 
@@ -82,17 +82,17 @@ Offset을 사용하면 범프 레이어를 캐비티 레이어로 바꾸거나, 
 :::
 
 
-#### ![](/icons/tool_mask.webp) 마스크
+#### ![](/icons/tool_mask.webp) 마스크 {#mask}
 각 슬라이더 옆의 마스크 버튼은 해당 채널로부터 마스크를 생성합니다. 페인팅 애플리케이션에서 레이어를 선택 영역으로 사용하는 것과 유사하게, 레이어에서 수행한 작업을 다른 작업에 재사용할 수 있습니다.
 
-#### ![](/icons/preview.webp) 미리보기
+#### ![](/icons/preview.webp) 미리보기 {#preview}
 ![](/images/layers_preview.webp) 
 
 활성화하면 이 레이어에 대한 추출 설정을 미리 봅니다(다음 섹션 참조).
 
 X-ray가 활성화되면, 추출된 형태만 실체를 가지며 나머지 형태는 투명해집니다. 이는 음수 추출 높이를 사용할 때 유용합니다.
 
-#### 추출
+#### 추출 {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ X-ray가 활성화되면, 추출된 형태만 실체를 가지며 나머지 형�
 * Shell - 두께 값과 방향 옵션을 사용해 추출된 형태를 닫습니다.
 * Layer - 레이어 차이를 추출합니다.
 
-#### ![](/icons/height.webp) 두께
+#### ![](/icons/height.webp) 두께 {#thickness}
 ![](/images/layers_thickness.webp) 
 
 쉘(껍질) 익스트루전의 깊이입니다. 양수 값은 표면 밖으로, 음수 값은 표면 안쪽으로 성장합니다.
@@ -116,12 +116,12 @@ X-ray가 활성화되면, 추출된 형태만 실체를 가지며 나머지 형�
 * Plus ( + )는 현재 표면에서 시작해 위로 익스트루전합니다.
 * PlusMinus ( ± )는 위/아래를 동일한 양만큼 밀어내어, 익스트루전이 원래 표면에 절반 정도 박히도록 합니다.
 
-#### 부드러움
+#### 매끄러움 {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 추출할 영역의 가장자리가 들쭉날쭉하다면, 이 슬라이더는 가장자리를 블러 처리해 더 부드러운 형태로 만들려고 시도합니다. 
 
-#### ![](/icons/height.webp) 엣지 루프(측면)
+#### ![](/icons/height.webp) 엣지 루프(측면) {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 이 섹션은 Closing action이 'Shell'일 때 표시됩니다. 
@@ -132,10 +132,10 @@ X-ray가 활성화되면, 추출된 형태만 실체를 가지며 나머지 형�
 
 _여기까지가 'More...' 서브메뉴의 끝입니다._
 
-### 고급
+### 고급 {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### 상위 레이어 디테일 유지
+#### 상위 레이어 디테일 유지 {#keep-top-layers-details}
 
 하위 레이어에 큰 변형을 가하더라도 상위 레이어의 작은 디테일이 유지되도록 합니다.
 
@@ -144,13 +144,13 @@ _여기까지가 'More...' 서브메뉴의 끝입니다._
 ![](/videos/layers_details.mp4)
 
 
-#### UI: 리스트 확장
+#### UI: 목록 확장 {#ui-expand-list}
 
 기본 레이어 메뉴에서는 레이어 가시성과 레이어 불투명도만 토글할 수 있습니다. 이 옵션을 활성화하면 모든 레이어에 대한 전체 컨트롤이 확장되어 표시됩니다.
 
 ![](/images/layers_expand.webp)
 
-#### 변형 동기화
+#### 변형 동기화 {#sync-transform}
 
 활성화하면, 선택되지 않은 모든 레이어가 변형(회전, 스케일, 스큐)에 따라 함께 조정됩니다. 
 

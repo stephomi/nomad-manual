@@ -1,4 +1,4 @@
-# ![](/icons/material.webp) Materiał
+# ![](/icons/material.webp) Materiał {#material}
 
 To menu pozwala zmienić materiał bieżącego obiektu, właściwości renderowania obiektu/materiału oraz przypisać tekstury do materiału.
 
@@ -24,16 +24,16 @@ Przyciski kopiuj/wklej na górze tego menu pozwalają kopiować materiały z jed
 
 Pamiętaj, że renderer Nomada jest rendererem czasu rzeczywistego; mimo że jest wydajny, w przypadku niektórych efektów przedkłada szybkość nad dokładność. 
 
-## Material types
+## Typy materiału {#material-types}
 
 ![](/images/material_types.webp)
 
 Typy materiałów w Nomadzie to: Opaque, Subsurface, Blending, Additive, Refraction, Dithering, Shadow Catcher.
 
-### ![](/icons/material_opaque.webp) Opaque
+### ![](/icons/material_opaque.webp) Nieprzezroczysty {#opaque}
 Domyślny tryb, który traktuje powierzchnie jako prosty materiał obsługujący malowany kolor, roughness, metalness, opacity.
 
-### ![](/icons/material_subsurface.webp) Subsurface
+### ![](/icons/material_subsurface.webp) Podpowierzchniowy {#subsurface}
 Ten tryb może symulować materiał, który pozwala światłu rozmywać się i rozpraszać wewnętrznie, jak skóra, wosk, jadeit.
 
 Aby uzyskać najlepszy efekt, przełącz się na tryb cieniowania PBR i użyj co najmniej jednego światła kierunkowego lub punktowego, najlepiej przy przyciemnionym otoczeniu.
@@ -42,7 +42,7 @@ Aby uzyskać najlepszy efekt, przełącz się na tryb cieniowania PBR i użyj co
 
 `Translucency` kontroluje, jak światło rozprasza się z przodu na tył kształtu, jak rozproszenie przez spodnią stronę liścia lub gdy uszy są mocno podświetlone od tyłu. 
 
-### ![](/icons/material_blending.webp) Blending
+### ![](/icons/material_blending.webp) Mieszanie {#blending}
 
 Podobny do Opaque, ale obsługuje suwak opacity, który pozwala mieszać materiał między pełną nieprzezroczystością a przezroczystością. Jest to prosty pojedynczy suwak krycia, w przeciwieństwie do malowalnego krycia obsługiwanego przez materiał opaque. 
 
@@ -50,7 +50,7 @@ Podobny do Opaque, ale obsługuje suwak opacity, który pozwala mieszać materia
 Tryb Blending może powodować migotanie i „wyskakiwanie” w złożonych lub przecinających się kształtach.
 :::
 
-### ![](/icons/material_additive.webp) Additive
+### ![](/icons/material_additive.webp) Addytywny {#additive}
 Możesz sprawić, że siatka będzie półprzezroczysta przy użyciu tego materiału. Jest podobny do materiału blending, ale podczas gdy blending miesza się z otoczeniem, additive będzie zawsze jaśniejszy niż obiekty za nim, co jest dobre do jasnych efektów, takich jak promienie światła, ogień, eksplozje.
 
 Możesz ustawić wartość opacity wyższą niż 1, co oznacza, że obiekt będzie jaśniejszy.  
@@ -58,7 +58,7 @@ Może to być przydatne, jeśli chcesz użyć [bloom](postprocess.md#bloom) i `t
 
 Ten tryb ma zwykle mniej artefaktów niż [Blending](#blending) (order independent transparency).
 
-### ![](/icons/material_refraction.webp) Refraction
+### ![](/icons/material_refraction.webp) Załamanie {#refraction}
 Ten tryb może być użyty do symulacji materiału szklanego. Ze względu na ograniczenia czasu rzeczywistego, autorefrakcja i wielowarstwowa refrakcja są częściowo ograniczone.
 
 Malowana chropowatość (roughness) modelu wpływa na to, jak rozmyta jest refrakcja.
@@ -72,10 +72,10 @@ Aby mieć różne wartości (na przykład lizak z ostrą powierzchnią, ale rozm
 ![](/videos/refraction.mp4)
 
 
-### ![](/icons/material_dithering.webp) Dithering
+### ![](/icons/material_dithering.webp) Dithering {#dithering}
 Sprawia, że obiekt jest półprzezroczysty poprzez odrzucanie części pikseli w losowy sposób.
 
-### ![](/icons/material_shadow_catcher.webp) Shadow Catcher
+### ![](/icons/material_shadow_catcher.webp) Łapacz cieni {#shadow-catcher}
 
 Sprawia, że obiekt jest niewidoczny i jedynie przyjmuje cienie. Przydatne do łączenia renderów z Nomada z innymi obrazami. 
 
@@ -85,49 +85,49 @@ Więcej informacji o przezroczystości i trybach mieszania można znaleźć na h
 
 :::
 
-## Controls
+## Kontrolki {#controls}
 
 ![](/images/material_controls.webp)
 
-### Always unlit
+### Zawsze nieoświetlony {#always-unlit}
 Jeśli włączone, obiekt zignoruje PBR i Matcap i po prostu wyświetli swój kolor malowania bez cieniowania.
 Pamiętaj, że jeśli używasz [Additive](#additive), możesz malować przezroczystość bezpośrednio, używając czarnego koloru.
 
-### Opacity
+### Krycie {#opacity}
 Jak bardzo solidny lub nieprzezroczysty będzie obiekt; 100% to pełna nieprzezroczystość, 0% to pełna przezroczystość. Możesz też malować opacity dla dokładniejszej kontroli.
 
-### Reflectance
+### Reflektancja {#reflectance}
 Kontroluje ilość odbicia, jaką materiał otrzyma dla materiałów niemetalicznych. Najczęściej należy używać wartości domyślnej (która odpowiada standardowym 4% odbitego światła pod kątem prostym), ale można ją zwiększyć, aby wzmocnić odbicia i highlighty, na przykład w oczach postaci.
 
-### Inverse culling
+### Odwrócone odcinanie {#inverse-culling}
 Odwraca normalne powierzchni. Zwykle nie jest wymagane, ale może być użyte, jeśli model wydaje się „na lewą stronę” lub w połączeniu z wyłączonym `Two sided` może posłużyć do tworzenia wnętrz, gdzie ściana najbliżej kamery jest zawsze ukryta.
 
-### Smooth Shading
+### Gładkie cieniowanie {#smooth-shading}
 Zobacz [global option](settings.md#smooth-shading).  
 Wartość `Auto` użyje opcji globalnej.
 
-### Two sided
+### Dwustronny {#two-sided}
 Zobacz [global option](settings.md#two-sided).  
 Wartość `Auto` użyje opcji globalnej.
 
-### Coloured backface
+### Kolorowany tył {#coloured-backface}
 Zobacz [global option](settings#two-sided).
 Wartość `Auto` użyje opcji globalnej.
 
-### Casts shadows
+### Rzuca cienie {#casts-shadows}
 Na razie `Auto` jest tym samym co `On`.
 Przezroczyste obiekty również rzucają cienie (w wzorze dithering, aby emulować mieszane cienie).  
 Pamiętaj, aby wyłączyć rzucanie cieni, jeśli masz duży obiekt w scenie, który nie musi rzucać cieni (na przykład duża podłoga).
 
-### Recieve shadows
+### Otrzymuje cienie {#recieve-shadows}
 Na razie `Auto` jest tym samym co `On`.
 
-### Wireframe
+### Szkielet (siatka) {#wireframe}
 Zobacz [global option](settings.md#wireframe).  
 Wartość `Auto` użyje opcji globalnej.
 
 
-## Textures
+## Tekstury {#textures}
 
 ![](/images/material_textures.webp)
 
@@ -144,28 +144,28 @@ Tekstury można zastosować do:
 
 Kliknięcie w slot tekstury otworzy selektor. Po przypisaniu tekstury do slotu materiału, ponowne kliknięcie otworzy panel tekstury:
 
-### Texture panel options
+### Opcje panelu tekstur {#texture-panel-options}
 
 ![](/images/material_texture_panel.webp)
 
-### Open
+### Otwórz {#open}
 Wybierz inną teksturę
 
-### None
+### Brak {#none}
 Usuń teksturę
 
-### Opacity
+### Krycie {#texture-opacity}
 
 Jeśli obraz ma kanał alfa, pozwoli to użyć go do Opacity lub go zignorować.
 
-### ![](/icons/link.webp) Chain/Link icon 
+### ![](/icons/link.webp) Ikona łańcucha/linku {#chainlink-icon}
 
 Ikona linku w poniższych sekcjach, gdy jest włączona, oznacza, że użyte opcje będą współdzielone z innymi teksturami (color, normal, roughness, metalness, opacity, emissive), które również mają włączoną swoją ikonę linku. 
 
 Pozwala to upewnić się, że jeśli masz wyrównane tekstury, pozostaną one wyrównane nawet po zmianie parametrów lub typów projekcji.
 
 
-### Projection
+### Projekcja {#projection}
 ![](/images/material_projection.webp)
 
 Ustawia sposób nakładania tekstury na obiekt.
@@ -174,7 +174,7 @@ Ustawia sposób nakładania tekstury na obiekt.
 * `UV` - Użyj współrzędnych UV siatki do nałożenia tekstury. Jeśli siatka i tekstura pochodzą spoza Nomada lub mają być eksportowane z Nomada do użycia gdzie indziej, UV jest właściwą opcją.
 * `Triplanar` - Rzutuje teksturę wzdłuż osi X, Y, Z i miesza szwy. 
 
-### Triplanar
+### Trójpłaszczyznowa {#triplanar}
 ![](/images/material_triplanar.webp)
 
 Projekcje triplanar to potężny, a zarazem prosty sposób nakładania tekstur na obiekty.
@@ -186,45 +186,45 @@ W razie potrzeby można to następnie wypalić do UV lub kolorów wierzchołków
 
 ![](/images/material_triplanar_example.webp)
 
-#### Method
+#### Metoda {#method}
 
 * `Local` - Projekcja będzie poruszać się wraz z transformacją obiektu
 * `World` - Projekcja pozostaje nieruchoma, a poruszanie obiektem przesuwa go przez projekcję.
 
-#### Hardness
+#### Twardość {#hardness}
 
 Sposób mieszania projekcji. 100% oznacza brak mieszania i ostre krawędzie projekcji. 0% oznacza mieszanie krawędzi pod szerokim kątem. Wartość domyślna to 90% – wystarczające mieszanie, aby ukryć krawędzie i pozwolić reszcie projekcji pozostać ostrą.
 
-### Uniform
+### Jednolite {#uniform}
 
 Po zaznaczeniu ta sama twardość jest używana dla wszystkich projekcji. Po odznaczeniu pojawiają się dodatkowe kontrolki twardości dla projekcji X, Y, Z.
 
 
-### Parameter
+### Parametr {#parameter}
 ![](/images/material_parameter.webp)
 
-#### Filtering
+#### Filtrowanie {#filtering}
 Metoda filtrowania tekstury; `Auto` jest domyślne, dostępne metody to `Nearest`, `Linear`, `Mipmap`. Nearest nie wykonuje filtrowania, więc tekstury mogą mieć postrzępione artefakty przy oglądaniu z bliska. Linear i Mipmap zapewniają lepsze filtrowanie, więc tekstury wydają się rozmyte, a nie postrzępione z bliska.
 
-#### Tiling-X
+#### Kafelkowanie-X {#tiling-x}
 Jeśli parametr Scale jest większy niż 1, co sprawia, że tekstura jest mniejsza niż UV obiektu, określa, jak tekstura będzie kafelkowana wzdłuż osi X. `None` oznacza brak powtórzeń. `Repeat` będzie powielać teksturę. `Mirror` będzie powielać teksturę, przy czym co drugi kafelek będzie odwrócony, co może pomóc ukryć artefakty kafelkowania.
 
-#### Tiling-Y
+#### Kafelkowanie-Y {#tiling-y}
 Tak samo jak Tiling-X, ale dla osi Y.
 
-### Transform
+### Transformacja {#transform}
 ![](/images/material_transform.webp)
 
 Dodatkowe 2D transformacje stosowane do tekstury w przestrzeni UV. Przycisk reset przywraca wartości domyślne, ikona łańcucha (gdy wybrane są tekstury inne niż color) połączy lub rozłączy transformację tak, aby była taka sama jak dla tekstury color.
 
-#### Translation
+#### Translacja {#translation}
 Przesunięcie tekstury w osi X i Y
 
-#### Rotation
+#### Rotacja {#rotation}
 Obrót tekstury
 
-#### Scale
+#### Skala {#scale}
 Skala tekstury; większe liczby sprawią, że tekstura będzie mniejsza na obiekcie. Użyj suwaków Tiling-X i Tiling-Y, aby kontrolować, co się wtedy dzieje.
 
-### Uniform scale
+### Jednolita skala {#uniform-scale}
 Po wyłączeniu Nomad pokaże osobne kontrolki dla Scale-X i Scale-Y.

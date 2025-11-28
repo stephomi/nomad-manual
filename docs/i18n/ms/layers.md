@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) Lapisan 
+# ![](/icons/layer.webp) Lapisan {#layers}
 
 Menu ini mengandungi susunan lapisan (layer stack), satu cara untuk menyimpan suntingan pada objek anda secara tidak merosakkan (non‑destructive), dan pelbagai cara untuk menggabung serta menggunakan semula lapisan.
 
 ![](/images/layers_overview.webp) 
 
-## Gambaran keseluruhan
+## Gambaran keseluruhan {#overview}
 
 Lapisan Nomad mempunyai pelbagai tujuan.
 
@@ -19,7 +19,7 @@ Lapisan boleh dipadam sebahagiannya melalui alat [Delete Layer](tools.md#delete-
 ![](/videos/layer.mp4)
 
 ::: tip
-Tidak seperti kebanyakan perisian sculpting, menukar topologi mesh tidak akan membuang lapisan. Anda boleh menggunakan [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multiresolution) atau alat [Trim](tools.md#trim)/[Split](tools.md#split), tetapi ambil perhatian bahawa apabila menggunakan [Voxel Remesher](topology.md#voxel-remesher), kualiti lapisan akan terjejas.
+Tidak seperti kebanyakan perisian sculpting, menukar topologi mesh tidak akan membuang lapisan. Anda boleh menggunakan [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multires) atau alat [Trim](tools.md#trim)/[Split](tools.md#split), tetapi ambil perhatian bahawa apabila menggunakan [Voxel Remesher](topology.md#voxel-remesher), kualiti lapisan akan terjejas.
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ Jika menggunakan lapisan untuk blendshape/morph target, terdapat fungsi lapisan 
 :::
 ----
 
-## Menu lapisan 
+## Menu lapisan {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Tekan `Add layer` untuk mencipta lapisan baharu.
 
 Setiap lapisan mempunyai nama, peluncur untuk mengawal kekuatan/faktornya, dan butang pilihan.
 
-### Pilihan
+### Pilihan {#options}
 
 | Action       | Icon                         | Description                                         |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Setiap lapisan mempunyai nama, peluncur untuk mengawal kekuatan/faktornya, dan b
 
 Untuk mengalihkan lapisan ke bahagian lain dalam susunan lapisan, tekan dan tahan pada namanya, kemudian seret.
 
-### More...
+### Lagi... {#more}
 
 Butang 'More...' akan memaparkan pilihan tambahan untuk lapisan semasa:
 
 ![](/images/layers_more.webp) 
 
-#### Faktor saluran (Channel factors)
+#### Faktor saluran {#channel-factors}
 
 Kawalan ini membolehkan anda menskalakan jumlah sculpt/color/roughness/metalness/opacity untuk lapisan. Nilai‑nilai ini didarab dengan peluncur faktor lapisan, jadi sebagai contoh jika kekuatan lapisan ialah 1, tetapi faktor saluran warna ialah 0.5, maka warna yang dipaparkan akan berada pada kekuatan 0.5.
 
@@ -82,17 +82,17 @@ Mungkin pada masa hadapan, setiap saluran akan mempunyai saluran alfa sendiri un
 :::
 
 
-#### ![](/icons/tool_mask.webp) Mask
+#### ![](/icons/tool_mask.webp) Topeng {#mask}
 Butang mask di sebelah setiap peluncur akan mencipta mask daripada saluran tersebut. Sama seperti menggunakan lapisan untuk membuat pilihan dalam aplikasi melukis, ini membolehkan anda menggunakan semula kerja yang telah anda lakukan dalam satu lapisan untuk operasi lain.
 
-#### ![](/icons/preview.webp) Preview
+#### ![](/icons/preview.webp) Pratonton {#preview}
 ![](/images/layers_preview.webp) 
 
 Apabila diaktifkan, akan mempratonton tetapan extract untuk lapisan ini (lihat seksyen seterusnya).
 
 Apabila xray diaktifkan, hanya bentuk yang diekstrak akan menjadi legap, selebihnya bentuk akan menjadi lutsinar, berguna jika anda menggunakan ketinggian ekstraksi negatif.
 
-#### Extract
+#### Ekstrak {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ Butang `Extract` akan menduplikasi kandungan lapisan ke dalam objek baharu, bias
 * Shell - Tutup bentuk yang diekstrak dengan nilai ketebalan dan pilihan arah.
 * Layer - Ekstrak perbezaan lapisan.
 
-#### ![](/icons/height.webp) Thickness
+#### ![](/icons/height.webp) Ketebalan {#thickness}
 ![](/images/layers_thickness.webp) 
 
 Kedalaman ekstrusi shell. Nilai positif berkembang keluar dari permukaan, nilai negatif berkembang masuk ke dalam permukaan.
@@ -116,12 +116,12 @@ Tanda tambah/tolak di sebelah nilai ini akan menetapkan arah ekstrusi:
 * Plus ( + ) akan bermula dari permukaan semasa dan mengekstrud ke atas.
 * PlusMinus ( ± ) akan menolak bahagian atas dan bawah ekstrusi menjauh dengan jumlah yang sama, jadi ia akan tertanam separuh dalam permukaan asal.
 
-#### Smoothness
+#### Kelicinan {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 Jika tepi rantau yang akan diekstrak bergerigi, peluncur ini akan cuba mengaburkan tepi menjadi bentuk yang lebih licin. 
 
-#### ![](/icons/height.webp) Edge loop (side)
+#### ![](/icons/height.webp) Gelung tepi (sisi) {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 Seksysen ini kelihatan apabila closing action ialah 'Shell'. 
@@ -132,10 +132,10 @@ Jika dinyahaktifkan, peluncur `Division` akan menetapkan bilangan bahagian pada 
 
 _Ini adalah penghujung submenu 'More...'._
 
-### Advanced
+### Lanjutan {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Keep top layers details
+#### Kekalkan perincian lapisan atas {#keep-top-layers-details}
 
 Memastikan perincian kecil pada lapisan lebih tinggi kekal kelihatan apabila perubahan besar dibuat pada lapisan lebih rendah.
 
@@ -144,13 +144,13 @@ Secara lalai jika anda mengukir kedutan kecil pada satu lapisan, kemudian pergi 
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expand list
+#### UI: Kembangkan senarai {#ui-expand-list}
 
 Menu lapisan lalai membolehkan anda menogol keterlihatan lapisan dan kelegapan lapisan. Mengaktifkan pilihan ini mengembangkan kawalan penuh untuk setiap lapisan.
 
 ![](/images/layers_expand.webp)
 
-#### Sync transform
+#### Segerak transformasi {#sync-transform}
 
 Jika diaktifkan, semua lapisan yang tidak dipilih akan dilaraskan bergantung pada putaran, skala, herotan (skew) transform.
 

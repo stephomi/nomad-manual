@@ -1,23 +1,23 @@
-# ![](/icons/paint.webp) Malen  
+# ![](/icons/paint.webp) Malen {#painting}
 
 Steuern Sie Farbe, Rauheit und Metallizität von Pinselstrichen, ermöglichen Sie Flutfüllungen von Malattributen und legen Sie fest, wie Malwerkzeuge mit Ebenen, Masken und versteckten Auswahlen interagieren.
 
 ![](/images/paint_overview.webp)  
 
-## Übersicht
+## Übersicht {#overview}
 
 Nomad verwendet PBR-Vertex-Painting. Was bedeutet das?
 
-### PBR
+### PBR {#pbr}
 PBR, oder Physically Based Rendering, ist eine beliebte Computergrafik-Technik für Film, Fernsehen, Spiele und Mobile. Durch die physikalische Grundlage der Beleuchtung und die Definition von Oberflächen über Farbe, Rauheit und Metallizität kann eine große Bandbreite fotorealistischer Looks erzielt werden.
 
-### Vertex-Painting
+### Vertex-Malerei {#vertex-painting}
 
 Vertex-Painting bedeutet, dass die Malinformationen in den Vertices des Modells gespeichert werden, anstatt in Texturen. Da Nomad Modelle mit Hunderttausenden, oft Millionen von Vertices verarbeiten kann, sollten Ihre Modelle sehr detaillierte Oberflächenbemalung haben können; wenn Sie ein Detail modellieren können, können Sie dieses Detail auch bemalen.
 
 Das bedeutet auch, dass Malen in Nomad kein UV-Mapping erfordert, was in anderen 3D-Anwendungen oft ein langsamer und technischer Prozess ist. Viele andere 3D-Anwendungen unterstützen nicht die hohen Vertex-Anzahlen, die Nomad verarbeiten kann, allerdings verfügt Nomad auch über gute Werkzeuge zum Textur-Backen und zur Reduktion (Decimation).
 
-### Texturierung
+### Texturierung {#texturing}
 
 Nomad unterstützt Texturen, aber sie müssen in einem importierten Modell vorhanden sein oder über das Backen von Vertex-Painting in Texturen erzeugt werden. 
 
@@ -38,21 +38,21 @@ Ein Beispiel-Workflow:
 Das ist die Übersicht, nun sehen wir uns die Bereiche des Malmenüs an:
 
 
-## Strichmalen
+## Pinselstrich-Malerei {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
 Aktiviert das Malen für dieses Werkzeug, nützlich, wenn Sie gleichzeitig modellieren und malen müssen.
 
 Für Werkzeuge, bei denen Malen die Hauptfunktion ist (z. B. Paint, Smudge, Mask), existiert dieses Kontrollkästchen nicht.
 
-### Malintensität
+### Malintensität {#paint-intensity}
 
 Ein Schieberegler, mit dem Sie eine andere Intensität als die primäre Werkzeugintensität verwenden können.
 
 Die Kontrollkästchen `Alpha`, `Falloff` und `Randomize` bestimmen, ob diese Funktionen das Malen beeinflussen. Sie könnten z. B. Randomize für das Clay-Werkzeug aktiviert haben, aber die Farbe wird nicht zufällig verändert.
 
 
-## Material
+## Material {#material}
 ![](/images/paint_material.webp) 
 
 Das erste Symbol ist eine Materialvorschauform. Durch Ziehen an der 3D-Materialvorschau drehen Sie diese. 
@@ -67,14 +67,14 @@ Die Vorschau-Schaltfläche neben dem Titel „Material“ lässt Sie zwischen No
 
 Die Pipette kann verwendet werden, um alle Eigenschaften von einem Objekt in Ihrer Szene zu übernehmen.
 
-## Material-Presets
+## Material-Voreinstellungen {#material-presets}
 Durch Tippen auf die 3D-Vorschauform wird ein Preset-Menü mit Materialien geöffnet, die geklont werden können, um eigene Presets zu definieren.
 
 ![](/images/paint_presets.webp) 
 
 Die Umschalter `Embed Textures` und `Alpha` speichern bei Aktivierung alle von diesem Material verwendeten Texturen innerhalb des Presets. Dies wird weiter unten näher erläutert.
 
-## PBR-Schieberegler
+## PBR-Regler {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 [PBR](shading.md#pbr)-Malen verwendet 4 Kanäle:
@@ -113,7 +113,7 @@ Wenn Sie Texturen für PBR-Malen verwenden, ist es oft hilfreich, auf ein Werkze
 Sie sollten in Erwägung ziehen, `Smooth Shading` [global](settings.md#smooth-shading) oder [pro Objekt](material.md#smooth-shading) zu aktivieren, wenn Sie eine metallische Oberfläche auf einem Objekt mit niedriger Polygonanzahl bemalen.
 :::
 
-## Alles malen
+## Alles malen {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
@@ -132,12 +132,12 @@ Die zusätzlichen Schaltflächen steuern, wie „Paint All“ weiter beeinflusst
 | ![](/icons/triplanar.webp) | Indikator für Triplanar-Einstellungen          |
 | ![](/icons/cog.webp)       | Öffnet die Triplanar-Einstellungen             |
 
-### Triplanar-Einstellungen
+### Triplanare Einstellungen {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
 Ähnlich wie die [Triplanar-Einstellungen im Materialmenü](material.md#triplanar) können Sie das Blending der Projektionen, das Tiling und die Offsets steuern. 
 
 Verwenden Sie das Vorschau-Kontrollkästchen oben in diesem Menü, um eine dauerhafte Vorschau beim Anpassen der Werte zu aktivieren.
 
-## Globales Material
+## Globales Material {#global-material}
 Wenn diese Option aktiviert ist, ist das ausgewählte Material dasselbe wie bei den anderen Werkzeugen. Beachten Sie, dass dabei nur Rauheits-, Metallizitäts- und Farbeinstellungen berücksichtigt werden.

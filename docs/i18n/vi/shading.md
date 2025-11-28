@@ -1,4 +1,4 @@
-# ![](/icons/sun.webp) Đổ bóng (Shading)
+# ![](/icons/sun.webp) Đổ bóng {#shading}
 
 Menu này điều khiển các chế độ đổ bóng Nomad sử dụng, thuộc tính ánh sáng, và thuộc tính ánh sáng môi trường/matcap.
 
@@ -22,24 +22,24 @@ Nếu bạn muốn tìm hiểu thêm về metalness và roughness, xem phần [V
 
 ![](/images/shading_second.webp)
 
-### Face Group
+### Nhóm mặt {#face-group}
 Hiển thị chồng màu facegroup. Facegroup là các vùng đa giác được tô màu, có thể được tạo bằng công cụ [Face group](tools#facegroup), và được tạo tự động với hầu hết các primitive.
 
 Một số công cụ sẽ tự động lọc theo facegroup khi facegroup đang được hiển thị.
 
-### Show paint
+### Hiện sơn {#show-paint}
 Nomad có thể lưu màu, roughness, metalness trong các vertex của bản điêu khắc. Bạn có thể bật/tắt hiển thị các thuộc tính này trên toàn cảnh bằng checkbox này.
 
 Lưu ý nếu bạn có cả thuộc tính vertex và texture, và cả hai đều được bật, các giá trị sẽ được nhân với nhau.
 
-### Show mask
+### Hiện mặt nạ {#show-mask}
 Bật/tắt lớp phủ mask thang xám của [các công cụ mask](tools#mask). Khi tắt tùy chọn này, mask cũng bị vô hiệu hóa, hữu ích khi cần chỉnh nhanh mà không dùng mask, sau đó có thể bật lại mà không mất mask.
 
-### Use Hide
+### Dùng ẩn {#use-hide}
 
 Bật/tắt các mặt bị ẩn. Lưu ý điều này chỉ hoạt động nếu bạn KHÔNG ở trong công cụ hide!
 
-### Use textures
+### Dùng kết cấu {#use-textures}
 
 Nomad cho phép gán texture cho đối tượng từ menu [material](material). Nếu texture đã được gán, chúng có thể được bật/tắt toàn cục bằng checkbox này.
 
@@ -49,7 +49,7 @@ Nomad cho phép gán texture cho đối tượng từ menu [material](material).
 
 
 
-### Tổng quan PBR và đèn
+### Tổng quan PBR và ánh sáng {#pbr}
 Tài liệu này sẽ không đi sâu vào chi tiết về Kết xuất Dựa trên Vật lý (PBR).
 
 Một điều quan trọng cần nhớ là ánh sáng và vật liệu được tách biệt hoàn toàn.
@@ -68,7 +68,7 @@ Tuy nhiên hiệu năng có thể không tốt.
 Bạn có thể “giả” nhiều đèn bằng cách đặt đối tượng ở chế độ unlit/emissive, rồi bật global illumination trong menu [post process](postprocess).
 :::
 
-### Tổng quan các loại đèn
+### Tổng quan loại ánh sáng {#light-types-overview}
 
 Các loại đèn hiện được hỗ trợ:
 
@@ -79,42 +79,42 @@ Các loại đèn hiện được hỗ trợ:
 | [Spot](#spot)               | Đèn hình nón				                            | Yes                                                    |
 | [Point](#point)             | Điểm sáng phát mọi hướng                                | Yes, but only through less robust screen-space shadows |
 
-#### Directional
+#### Hướng {#directional}
 Phát sáng từ khoảng cách vô hạn, với cường độ đồng đều.
 Vị trí 3D của nó trong cảnh không quan trọng, chỉ có hướng là quan trọng.
 
 Bạn có thể gắn đèn này vào camera, như vậy ánh sáng sẽ luôn nhất quán.  
 Ví dụ bạn có thể dùng nó làm rim light (nguồn sáng mạnh từ phía sau mẫu, chiếu về phía camera) luôn chiếu sáng phía sau mẫu.
 
-#### Environment light
+#### Ánh sáng môi trường {#env-light}
 Dùng [environment hdr](#environment) rất tốt cho ánh sáng mềm tổng thể, nhưng nếu có nguồn sáng mạnh, sắc nét trong HDR, bóng đổ tạo ra sẽ rất mềm, thường gần như không thấy. Dùng đèn directional kết hợp với environment HDR có thể giúp, nhưng khó để căn thẳng hàng.
 
 Loại đèn này làm việc đó giúp bạn. Đèn sẽ tự động xoay để thẳng hàng với vùng sáng nhất trong HDR, sau đó bạn có thể điều khiển cường độ và góc (độ mềm của bóng) riêng biệt. 
 
-#### Spot
+#### Đèn chiếu (Spot) {#spot}
 Đèn spot phát sáng theo một hướng, bị giới hạn bởi hình nón.
 
-#### Point
+#### Điểm {#point}
 Đèn point phát sáng theo mọi hướng.  
 Hiện tại, đèn point không hỗ trợ bóng đổ.
 
-#### Shadows
+#### Bóng đổ {#shadows}
 Tùy chọn `normal bias` có thể dùng để giảm các lỗi bóng thường gặp (acne/peter-panning).
 
 Chất lượng bóng phụ thuộc vào kích thước đối tượng so với toàn cảnh.  
 Nếu bạn có một đối tượng lớn trong cảnh không cần đổ bóng (ví dụ một mặt phẳng lớn), hãy tắt đổ bóng trong [thiết lập vật liệu](material.md#cast-shadows) của nó.
 
-## Lights
+## Đèn {#lights}
 
 ![](/images/shading_lights.webp)
 
-### ![](/icons/checked.webp) Lights checkbox
+### ![](/icons/checked.webp) Bật/tắt đèn {#lights-checkbox}
 
 Bật/tắt toàn bộ các đèn trực tiếp trong cảnh.
 
 
 
-### Add light
+### Thêm đèn {#add-light}
 
 Thêm một đèn vào cảnh, tối đa 4 đèn. Khi một đèn được thêm, danh sách đèn sẽ hiển thị với các nút, và một thanh công cụ đèn được thêm vào phía trên khung nhìn.
 
@@ -127,11 +127,11 @@ Thêm một đèn vào cảnh, tối đa 4 đèn. Khi một đèn được thêm
 * Biểu tượng copy sẽ nhân bản đèn. 
 * Biểu tượng 3 chấm sẽ mở trình chỉnh sửa đèn đầy đủ. Hầu hết chức năng này cũng có trong thanh công cụ xuất hiện trong khung nhìn. 
 
-### ![](/icons/spotlight.webp)  Icons
+### ![](/icons/spotlight.webp)  Biểu tượng {#icons}
 
 Bật/tắt hiển thị biểu tượng đèn trong khung nhìn.
 
-### Light toolbar
+### Thanh công cụ đèn {#light-toolbar}
 ![](/images/shading_lights_toolbar.webp) 
 
 Thanh công cụ này sẽ xuất hiện ở phía trên khung nhìn khi một đèn được chọn.
@@ -144,7 +144,7 @@ Thanh công cụ này sẽ xuất hiện ở phía trên khung nhìn khi một �
 * Size đặt bề rộng của đèn. Đèn rộng hơn sẽ tạo bóng mềm, ánh sáng mềm, và highlight mềm hơn trên đối tượng.
 * ... sẽ mở các điều khiển bổ sung.
 
-### Light extra controls
+### Điều khiển bổ sung cho đèn {#light-extra-controls}
 
 ![](/images/shading_extra_controls.webp) 
 
@@ -165,7 +165,7 @@ Lưu ý một số tùy chọn chỉ áp dụng cho một số loại đèn nh�
 * `Contact` điều chỉnh cách tính bóng tiếp xúc. Bóng là một bài toán khó trong đồ họa máy tính, và có thể gây lỗi hiển thị. Có thể chọn bóng chính xác hơn cho đèn quan trọng nhất trong cảnh; điều khiển này quyết định đèn quan trọng được Nomad chọn tự động hay do người dùng chọn.
 * `Tolerance` nếu thấy lỗi bóng (bóng không chạm bề mặt, hoặc có nhiễu/hoa văn trong bóng), chỉnh tolerance có thể giúp khắc phục.
 
-## Environment
+## Môi trường {#environment}
 
 ![](/images/shading_environment.webp)
 
@@ -175,20 +175,20 @@ Nomad đi kèm một số bản đồ môi trường mẫu cho không gian trong
 
 Chạm vào hình để xem các bản đồ môi trường có sẵn. Từ hộp thoại đó chọn 'Import...' để tải bản đồ của riêng bạn. Tốt nhất nên dùng ảnh High Dynamic Range (HDR), ở định dạng latlong hoặc equirectangular, dạng file .hdr hoặc .exr. [www.polyhaven.com](https://polyhaven.com/hdris) có bộ sưu tập bản đồ môi trường miễn phí rất tốt; thường các bản đồ hdr 1k là kích thước và chất lượng phù hợp.
 
-### Exposure
+### Phơi sáng {#env-exposure}
 Điều chỉnh độ sáng của bản đồ môi trường. Thường các bản đồ có thể quá sáng khi dùng cùng đèn thông thường, giảm exposure có thể giúp cân bằng, đặc biệt khi dùng với Global Illumination trong thiết lập [Post Process](postprocess).
 
-### Rotation
+### Xoay {#env-rotation}
 
 Vì bản đồ môi trường ghi lại ánh sáng từ mọi hướng, bạn có thể xoay chúng để phản xạ và ánh sáng tổng thể kết hợp tốt với bản điêu khắc.
 
-### Attached to camera
+### Gắn với camera {#env-attached}
 Gắn môi trường với camera.
 
 Nó sẽ buộc ánh sáng luôn nhất quán, hữu ích trong quá trình điêu khắc.
 
 
-## ![](/icons/sphere_smooth.webp) Matcap
+## ![](/icons/sphere_smooth.webp) Matcap {#matcap}
 
 ![](/images/shading_matcap.webp)
 
@@ -200,7 +200,7 @@ Các họa sĩ thường ưa chuộng chế độ này cho mục đích điêu k
 
 Chạm vào hình cầu sẽ mở trình duyệt ảnh. Bạn cũng có thể thêm matcap của riêng mình, nói chung bất kỳ bức ảnh, bản render, thậm chí tranh vẽ một quả cầu được cắt gọn thành hình vuông đều có thể dùng. Có nhiều thư viện matcap trực tuyến, một nguồn hữu ích là [nidorx matcap library](https://github.com/nidorx/matcaps).
 
-### Use global Matcap
+### Dùng Matcap toàn cục {#matcap-global}
 
 Thông thường nghệ sĩ sẽ dùng một matcap cho toàn bộ bản điêu khắc, nhưng nếu tắt tùy chọn này, mỗi đối tượng có thể có matcap riêng. Điều này có thể dùng mang tính nghệ thuật để tạo hiệu ứng ấn tượng.
 
@@ -208,31 +208,31 @@ Thông thường nghệ sĩ sẽ dùng một matcap cho toàn bộ bản điêu 
 Tắt tùy chọn này, và dùng một hình ảnh nhãn cầu cho đôi mắt nhân vật của bạn!
 :::
 
-### Rotation
+### Xoay {#matcap-rotation}
 Matcap là một dạng chuyên biệt của bản đồ môi trường, nên giống bản đồ môi trường, nó có thể xoay được. Bạn cũng có thể làm điều này bất cứ lúc nào trong khung nhìn bằng cách kéo 3 ngón tay sang trái/phải.
 
 
 
-## ![](/icons/circle_fill.webp) Unlit
+## ![](/icons/circle_fill.webp) Không đổ sáng (Unlit) {#unlit}
 
 Chế độ này chỉ hiển thị màu bề mặt. Nó hữu ích để kiểm tra màu bề mặt của đối tượng có đúng như mong đợi hay không, mà không bị phân tán bởi đèn, bóng, phản xạ, trong suốt. 
 
 Chế độ này cũng có thể dùng cho các bản render phi hiện thực, tạo phong cách phẳng, hoạt hình.
 
-## ![](/icons/cube.webp) Object ID
+## ![](/icons/cube.webp) ID đối tượng {#object-id}
 
 Mọi thông tin ánh sáng và bề mặt bị bỏ qua, và mỗi đối tượng được tô bằng một màu phẳng duy nhất. Nếu render song song với một bản render PBR, nó có thể được dùng trong phần mềm tô vẽ để chọn theo màu, từ đó chỉnh màu cho từng đối tượng cụ thể.
 
 Lưu ý các màu này cũng xuất hiện trong [chế độ cây của menu Scene](scene#tree-view).
 
-### Randomise id
+### Ngẫu nhiên hóa ID {#object-random}
 
 Tạo một bộ màu ngẫu nhiên mới. 
 
-## ![](/icons/link.webp) Instance ID
+## ![](/icons/link.webp) ID instance {#instance-id}
 
 Giống Object ID, nhưng các instance sẽ có cùng màu. 
 
-### Randomise id
+### Ngẫu nhiên hóa ID {#instance-random}
 
 Tạo một bộ màu ngẫu nhiên mới.

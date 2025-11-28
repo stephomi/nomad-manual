@@ -1,4 +1,4 @@
-# ![](/icons/scene.webp) Scene 
+# ![](/icons/scene.webp) Scene {#scene}
 
 Menu ini memungkinkan Anda mengelola objek, lampu, kamera, dan repeater di Nomad. Menu ini menampilkan hierarki scene sebagai tampilan pohon (tree-view), sehingga Anda dapat mengubah banyak aspek dari objek Anda. Menu ini juga memungkinkan Anda membuat objek baru, serta menggabungkan dan memisahkan objek dengan berbagai cara.
 
@@ -6,7 +6,7 @@ Menu ini memungkinkan Anda mengelola objek, lampu, kamera, dan repeater di Nomad
 ![](/images/scene_menu_summary.webp)
 
 
-## Shortcut bar
+## Bilah pintasan {#shortcut-bar}
 | Action                 | Icon                              | Description                                                                                                         |
 | :--------------------: | :-------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
 | [Add...](#add-menu)    | ![](/icons/plus.webp)            | Menampilkan [Add Menu](#add-menu) untuk menambahkan objek ke scene                                                 |
@@ -21,7 +21,7 @@ Menu ini memungkinkan Anda mengelola objek, lampu, kamera, dan repeater di Nomad
 | Sync                   | ![](/icons/link.webp)            | Jika instance memiliki anak, memastikan semua instance berbagi hierarki anak yang sama                             |
 
 
-## Tree view
+## Tampilan pohon {#tree-view}
 ![](/images/scene_treeview.webp) 
 
 | Action       | Icon                       | Description              |
@@ -36,7 +36,7 @@ Ketuk ikon select untuk mengubah satu objek, atau seret secara vertikal pada kol
 
 :::
 
-### Tree view manipulation
+### Manipulasi tampilan pohon {#tree-view-manipulation}
 
 Tekan lama pada sebuah item di tree view sampai berubah menjadi kuning. Anda kemudian dapat memindahkannya ke atas atau ke bawah di tree view, serta menyeretnya ke atas item lain untuk menjadikannya anak dari item tersebut.
 
@@ -44,7 +44,7 @@ Saat banyak item dipilih, sebagian besar akan berwarna kuning gelap, satu akan b
 
 Saat Anda memilih item parent, secara default semua item child juga akan dipilih. Mengetuk ikon parent akan mengubah antara hanya memilih parent, atau parent beserta child-nya.
 
-### Object menu
+### Menu objek {#object-menu}
 
 Mengklik tombol elipsis (...) untuk sebuah objek di tree view akan menampilkan object menu. 
 Banyak opsi di sini mirip dengan shortcut bar di atas, diulang untuk kenyamanan.
@@ -65,7 +65,7 @@ Banyak opsi di sini mirip dengan shortcut bar di atas, diulang untuk kenyamanan.
 
 
 
-### Multiselection
+### Multiseleksi {#multiselection}
 Anda dapat memilih beberapa objek untuk membantu dua hal:
 - menggunakan gizmo tool untuk memindahkan beberapa objek sekaligus
 - menggabungkan objek menggunakan operasi join dan boolean.
@@ -87,12 +87,12 @@ Ini mungkin akan ditingkatkan di masa depan.
 :::
 
 
-## Join
+## Gabung {#join}
 Opsi ini akan membuat satu entri objek tunggal dari beberapa objek yang dipilih.
 
 Anda dapat melihat contoh dalam video di bagian [Separate](#separate).
 
-## Boolean
+## Boolean {#boolean}
 ![](/images/scene_boolean_menu.webp) 
 Menggabungkan objek menjadi satu permukaan.
 
@@ -100,43 +100,43 @@ Menggabungkan objek menjadi satu permukaan.
 
 `Boolean` akan berusaha mempertahankan tata letak poligon asli, dan menjahit poligon di area tumpang tindih objek. Ini dapat menghasilkan hasil yang jauh lebih bersih dan tajam dibanding voxel merge, namun membutuhkan mesh yang 'watertight'; tidak boleh ada lubang atau bentuk rusak pada objek. Jika ini gagal, biasanya voxel merge akan berhasil.
 
-### Boolean operations
+### Operasi Boolean {#boolean-operations}
 Baik Voxel Merge maupun Boolean akan menggunakan visibilitas objek untuk mengontrol operasi:
 
-#### Union
+#### Gabung {#union}
 Kedua objek terlihat akan membuat boolean **union**, kulit luar objek digabungkan, tanpa permukaan interior. ![](/images/boolean_union.webp)
 
-#### Subtract
+#### Kurangi {#subtract}
 Satu objek tidak terlihat = boolean **subtract**, objek yang tidak terlihat akan dikurangkan dari objek yang terlihat. ![](/images/boolean_subtract.webp)
 
-#### Intersect
+#### Irisan {#intersect}
 Kedua objek tidak terlihat = boolean **intersection**, membuat bentuk baru hanya di area di mana kedua objek saling tumpang tindih. ![](/images/boolean_intersect.webp)
 
 
-### Voxel Merge Button
+### Tombol Voxel Merge {#voxel-merge-button}
 Menekan tombol ini akan melakukan operasi voxel merge pada objek yang dipilih. Jika dilakukan pada satu objek, ini akan melakukan retopologi menjadi poligon yang terdistribusi merata, berguna ketika sebuah objek memiliki poligon yang teregang.
 
-### Resolution
+### Resolusi {#resolution}
 Resolusi grid voxel 3D yang digunakan untuk perhitungan. Saat nilai ini diubah, pola papan catur akan ditampilkan di atas objek untuk mempratinjau ukuran poligon.
 
-### Build multiresolution
+### Bangun multiresolusi {#build-multiresolution}
 Membuat level multiresolution di bawah resolusi target Anda. Jadi jika resolusi Anda 400 dan build multiresolution bernilai 3, Anda akan mendapatkan mesh baru dengan sekitar 296.000 poligon, tetapi akan ada 3 level subdiv lebih rendah di 74.000, 18.000, 4.000k.
 
-### Keep sharp edges
+### Pertahankan tepi tajam {#keep-sharp-edges}
 Mengaktifkan snapping mesh voxel ke tepi. Ini bekerja paling baik pada bentuk sederhana.
 
-### Boolean button
+### Tombol Boolean {#boolean-button}
 Menekan tombol ini akan melakukan operasi boolean poligon menggunakan pustaka Manifold oleh Emmett Lalish. 
 
 
-## Separate
+## Pisah {#separate}
 Jika Anda memiliki satu objek yang terdiri dari beberapa bagian yang tidak saling terhubung, Anda dapat membagi objek ini menjadi beberapa objek. 
 Ini dapat dianggap sebagai kebalikan dari [Simple Merging](#simple-merge).
 
 ![](/videos/merge_separate.mp4)
 
 
-## Add menu
+## Menu tambah {#add-menu}
 
 ![](/images/scene_addmenu_overview.webp)
 
@@ -147,21 +147,21 @@ Primitive adalah tipe bentuk dasar yang dapat disesuaikan menggunakan parameter.
 
 ![](/images/scene_addmenu_top.webp)
 
-### On gizmo
+### Pada gizmo {#on-gizmo}
 Mengaktifkan penempatan primitive baru di posisi shape atau gizmo yang saat ini dipilih. Jika dinonaktifkan, primitive akan ditempatkan di pusat scene.
 
-### Select gizmo
+### Pilih gizmo {#select-gizmo}
 Mengaktifkan perpindahan otomatis ke gizmo tool saat primitive baru dibuat. 
 
-### Advanced
+### Lanjutan {#add-advanced}
 
 Menu ini memungkinkan Anda mengatur preferensi lokasi pembuatan primitive, group, repeater baru. Mereka dapat dibuat pada objek yang dipilih, di world origin, atau di lokasi gizmo.
 
 
-### UV's
+### UV {#uvs}
 Mengaktifkan UV pada primitive. UV (sering disebut koordinat tekstur) adalah data tambahan yang digunakan di 3D untuk memungkinkan tekstur diterapkan ke permukaan. UV memakan lebih banyak memori, tetapi untuk sebagian besar perangkat hal ini tidak menjadi masalah kecuali Anda menggunakan jumlah poligon yang sangat tinggi (misalnya 10 juta poligon atau lebih). 
 
-### Primitives
+### Primtif {#primitives}
 
 | Primitive      | Icon                                      | Description                                                                                                     |
 | :------------: | :---------------------------------------: | :-------------------------------------------------------------------------------------------------------------: |
@@ -184,7 +184,7 @@ Jika Anda penasaran apa base mesh saat meluncurkan Nomad: itu juga adalah box ya
 Namun base mesh di Nomad tidak menggunakan `Project on sphere`, artinya tidak benar-benar bulat.
 :::
 
-### Primitive Toolbar
+### Bilah alat primitif {#primitive-toolbar}
 
 ![](/images/scene_primitive_toolbar.gif)
 
@@ -212,7 +212,7 @@ Mengklik judul toolbar akan memindahkannya ke bagian atas atau bawah tampilan. M
 :::
 
 
-### Primitive menu
+### Menu primitif {#primitive-menu}
 
 ![](/images/scene_primitive_menu.webp)
 
@@ -226,16 +226,16 @@ Sebagian besar parameter primitive cukup jelas, dan ada beberapa parameter umum 
 * `Post subdivision` Mengaktifkan jumlah subdivision yang dipilih dari bagian multiresolution di menu topology. Ini dapat digunakan untuk membuat primitive dengan sudut halus dan membulat dikombinasikan dengan pembagian topologi rendah. Misalnya, mengatur pembagian topologi box ke 2, dan post subdivision ke 4, akan membuat box dengan sudut halus.
 * `Linear subdivision` Menetapkan berapa banyak level linear subdivision yang digunakan sebelum menggunakan smooth subdivision biasa. Ini dapat digunakan untuk mengontrol seberapa tajam atau lembut sudut pada permukaan yang disubdivide. Misalnya, atur pembagian topologi box ke 2, post subdivision ke 4, lalu coba ubah linear subdivision antara 0 dan 4. Sudut box akan berubah dari lembut menjadi tajam.
 
-### Topology
+### Topologi {#topology}
 
 Ini mengontrol jumlah poligon dalam primitive. Biasanya kontrol saling terhubung, sehingga mengubah satu slider aktif akan menyesuaikan semua poligon secara merata. Anda dapat mengetuk tombol unlink, dan mengontrol pembagian X/Y/Z pada bentuk secara terpisah.
 
-### Geometry
+### Geometri {#geometry}
 
 Ini mengontrol ukuran keseluruhan primitive, dalam satuan X/Y/Z untuk bentuk bersudut, dan radius untuk bentuk bulat.
 
 
-### UV Sphere
+### UV Sphere {#uv-sphere}
 ::: warning
 UV Sphere tidak cocok untuk sculpting, terutama di area kutub.
 
@@ -248,7 +248,7 @@ Meskipun tidak cocok untuk sculpting umum, UV Sphere berguna untuk mata; jika An
 :::
 
 
-### Triplanar
+### Triplanar {#triplanar}
 Primitive ini spesial karena Anda sebaiknya menggunakan [Masking tool](tools.md#mask) untuk membentuk geometrinya.
 
 ![](/videos/triplanar.mp4)
@@ -270,23 +270,23 @@ Untuk saat ini belum ada opsi untuk 'mengunci' painting pada satu plane, tetapi 
 Anda dapat menggunakan [Connected Topology](stroke.md#connected-topology) untuk sedikit membantu, karena jika kursor Anda berada tepat di satu plane, itu tidak akan memengaruhi plane lain.
 :::
 
-### Shadow Catcher
+### Shadow Catcher {#shadow-catcher}
 Menambahkan plane dengan material shadow catcher. Lihat [Shadow Catcher material](material.md#shadow-catcher) untuk detail lebih lanjut. 
 
 
-## Group/Camera
-### Group
+## Grup/Kamera {#groupcamera}
+### Grup {#group}
 Membuat objek 'kosong', yang dapat Anda jadikan parent bagi objek lain di bawahnya. Ini dapat digunakan untuk sekadar mengatur hierarki dengan menempatkan banyak objek di bawah sebuah group, lalu menutupnya. Group juga dapat digunakan sebagai helper untuk memindahkan objek; banyak objek dapat ditempatkan di bawah group, lalu group tersebut dipindahkan, diputar, diskalakan dengan gizmo tool.
 
-### Add view
+### Tambah sudut pandang {#add-view}
 Membuat kamera.
 
-## Repeaters
+## Pengulang {#repeaters}
 ![](/images/scene_primitive_repeaters.webp)
 
 Repeater adalah node yang membuat instance dari objek di bawahnya. 
 
-### Array
+### Array {#array}
 ![](/images/scene_primitive_array.webp)
 
 Saat objek dijadikan child dari node ini, objek tersebut dapat di-instance ke dalam tata letak grid. Saat dipilih, node ini memiliki kontrol:
@@ -295,7 +295,7 @@ Saat objek dijadikan child dari node ini, objek tersebut dapat di-instance ke da
 * OffsetX/Y/Z - jarak antar instance saat fit inside diaktifkan
 * SizeX/Y/Z - lebar/tinggi/kedalaman total grid array saat fit inside diaktifkan.
 
-### Curve
+### Kurva {#curve}
 ![](/images/scene_primitive_curve.webp)
 Ini akan membuat sebuah curve, objek child dari node ini akan diulang sepanjang curve. Saat dipilih, node ini memiliki kontrol:
 * Edit - memungkinkan penambahan titik pada curve, dan memindahkan titik pada curve.
@@ -307,7 +307,7 @@ Ini akan membuat sebuah curve, objek child dari node ini akan diulang sepanjang 
 * Twist - toggle kontrol pada setiap titik curve untuk mengontrol rotasi twist instance 
 * B-spline - toggle instance untuk mengikuti curve secara tepat, atau menggunakan interpolasi b-spline yang hasilnya lebih halus. 
 
-### Radial
+### Radial {#radial}
 ![](/images/scene_primitive_radial.webp)
 
 Child dari node ini akan di-instance menjadi lingkaran. Pindahkan objek child untuk mengubah radius repeater ini. Saat dipilih, node ini memiliki kontrol:
@@ -315,7 +315,7 @@ Child dari node ini akan di-instance menjadi lingkaran. Pindahkan objek child un
 
 
 
-### Mirror
+### Cermin {#mirror}
 ![](/images/scene_primitive_mirror.webp)
 
 Child dari node ini akan dicerminkan melintasi sebuah sumbu. Saat dipilih, node ini memiliki kontrol:
@@ -338,35 +338,35 @@ Repeater dapat dijadikan parent satu sama lain, dan beberapa objek dapat dijadik
 Beberapa repeater akan mencoba mengatur pivot child secara otomatis, sehingga meskipun Anda memindahkan atau memutarnya dengan gizmo tool, mereka tidak akan bergerak. Jika Anda perlu menimpa perilaku ini, sisipkan sebuah group di antara repeater dan child. Sekarang Anda dapat memindahkan bentuk child secara independen dari repeater.
 :::
 
-## Light
+## Cahaya {#light}
 
 ![](/images/scene_primitive_light.webp)
 
-### Directional
+### Directional {#directional}
 Membuat directional light, sumber cahaya yang sangat jauh seperti matahari.
 
-### Spot
+### Spot {#spot}
 Membuat spot light, dengan kontrol lebar dan kelembutan cone
 
-### Point
+### Titik {#point}
 Membuat point light
 
-## Advanced
-### Focus on item
+## Lanjutan {#advanced}
+### Fokus pada item {#focus-on-item}
 Klik dua kali sebuah item di daftar Scene akan memusatkan kamera pada item tersebut di tampilan 3D.
 
-### Sync visibility
+### Sinkronkan visibilitas {#sync-visibility}
 Menggunakan ikon mata akan memengaruhi semua item yang dipilih. 
 
-### Instance: Show
+### Instansi: Tampilkan {#instance-show}
 Menampilkan kapsul warna di kiri daftar scene untuk menunjukkan instance.
 
 
-### Icons
+### Ikon {#icons}
 Mengatur ukuran dan opasitas ikon group, light, camera, mirror di viewport
 
-### Hierarchy lines
+### Garis hierarki {#hierarchy-lines}
 Menampilkan garis antara parent dan child-nya di viewport
 
-## Bottom toolbar
+## Bilah alat bawah {#bottom-toolbar}
 Ikon-ikon ini akan mengaktifkan/menonaktifkan visibilitas Group, Light, Camera, Repeater, dan Hierarchy lines di viewport.

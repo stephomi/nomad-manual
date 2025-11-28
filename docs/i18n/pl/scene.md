@@ -1,4 +1,4 @@
-# ![](/icons/scene.webp) Scena 
+# ![](/icons/scene.webp) Scena {#scene}
 
 To menu pozwala zarządzać obiektami, światłami, kamerami i replikatorami (repeaters) w Nomadzie. Wyświetla hierarchię sceny w postaci drzewa, umożliwiając modyfikację wielu aspektów obiektów. Pozwala także tworzyć nowe obiekty oraz łączyć i rozdzielać obiekty na różne sposoby.
 
@@ -6,7 +6,7 @@ To menu pozwala zarządzać obiektami, światłami, kamerami i replikatorami (re
 ![](/images/scene_menu_summary.webp)
 
 
-## Pasek skrótów
+## Pasek skrótów {#shortcut-bar}
 | Akcja                 | Ikona                             | Opis                                                                                                              |
 | :-------------------: | :-------------------------------: | :----------------------------------------------------------------------------------------------------------------: |
 | [Dodaj...](#add-menu) | ![](/icons/plus.webp)            | Wyświetl [menu Dodaj](#add-menu), aby dodać obiekt do sceny                                                       |
@@ -21,7 +21,7 @@ To menu pozwala zarządzać obiektami, światłami, kamerami i replikatorami (re
 | Synchronizuj          | ![](/icons/link.webp)            | Jeśli instancje mają dzieci, upewnij się, że wszystkie instancje mają tę samą hierarchię dzieci                   |
 
 
-## Widok drzewa
+## Widok drzewa {#tree-view}
 ![](/images/scene_treeview.webp) 
 
 | Akcja        | Ikona                      | Opis                      |
@@ -36,7 +36,7 @@ Stuknij ikonę zaznaczenia, aby przełączyć pojedynczy obiekt, lub przeciągni
 
 :::
 
-### Manipulacja w widoku drzewa
+### Manipulacja widokiem drzewa {#tree-view-manipulation}
 
 Przytrzymaj długo element w widoku drzewa, aż zmieni kolor na żółty. Następnie możesz przesuwać go w górę lub w dół w drzewie, a także przeciągnąć na inny element, aby stał się jego dzieckiem.
 
@@ -44,7 +44,7 @@ Gdy zaznaczonych jest wiele elementów, większość będzie ciemnożółta, jed
 
 Gdy zaznaczysz element nadrzędny, domyślnie wszystkie elementy podrzędne również zostaną zaznaczone. Stuknięcie ikony rodzica przełącza między zaznaczeniem tylko rodzica a rodzica z dziećmi.
 
-### Menu obiektu
+### Menu obiektu {#object-menu}
 
 Kliknięcie przycisku z wielokropkiem (...) dla obiektu w widoku drzewa wyświetli menu obiektu. 
 Wiele z tych opcji jest podobnych do paska skrótów u góry, powtórzonych dla wygody.
@@ -65,7 +65,7 @@ Wiele z tych opcji jest podobnych do paska skrótów u góry, powtórzonych dla 
 
 
 
-### Wielokrotne zaznaczanie
+### Wielokrotny wybór {#multiselection}
 Możesz zaznaczyć wiele obiektów, aby osiągnąć dwie rzeczy:
 - używać narzędzia gizmo do jednoczesnego przesuwania kilku obiektów
 - łączyć obiekty za pomocą operacji Połącz i Boolean.
@@ -87,12 +87,12 @@ Może to zostać ulepszone w przyszłości.
 :::
 
 
-## Połącz
+## Połącz {#join}
 Ta opcja po prostu utworzy jeden wpis obiektu z wielu zaznaczonych obiektów.
 
 Przykład wideo można zobaczyć w sekcji [Rozdziel](#separate).
 
-## Boolean
+## Boolean {#boolean}
 ![](/images/scene_boolean_menu.webp) 
 Łącz obiekty w jedną powierzchnię.
 
@@ -100,43 +100,43 @@ Przykład wideo można zobaczyć w sekcji [Rozdziel](#separate).
 
 `Boolean` spróbuje pozostawić poligony w ich oryginalnym układzie i zszyć je w miejscach, gdzie obiekty się nakładają. Może to dać znacznie czystsze i ostrzejsze rezultaty niż łączenie wokselowe, jednak wymaga „szczelnych” siatek; w obiektach nie może być dziur ani uszkodzonych kształtów. Jeśli to się nie powiedzie, zazwyczaj zadziała łączenie wokselowe.
 
-### Operacje Boolean
+### Operacje boolowskie {#boolean-operations}
 Zarówno Voxel Merge, jak i Boolean używają widoczności obiektów do sterowania operacją:
 
-#### Union
+#### Suma {#union}
 Oba obiekty widoczne utworzą **sumę** (union) boolowską – zewnętrzna „skóra” obiektów zostanie połączona, bez wewnętrznych powierzchni. ![](/images/boolean_union.webp)
 
-#### Subtract
+#### Różnica {#subtract}
 Jeden obiekt niewidoczny = **różnica** (subtract) boolowska – niewidoczny obiekt zostanie odjęty od widocznego. ![](/images/boolean_subtract.webp)
 
-#### Intersect
+#### Część wspólna {#intersect}
 Oba obiekty niewidoczne = **część wspólna** (intersection) boolowska – powstanie nowy kształt tylko w miejscu, gdzie obiekty się nakładają. ![](/images/boolean_intersect.webp)
 
 
-### Przycisk Voxel Merge
+### Przycisk Voxel Merge {#voxel-merge-button}
 Naciśnięcie tego przycisku wykona operację łączenia wokselowego na zaznaczonych obiektach. Wykonane na pojedynczym obiekcie przetopologizuje go do równomiernie rozmieszczonych poligonów, co jest przydatne, gdy obiekt ma rozciągnięte poligony.
 
-### Resolution
+### Rozdzielczość {#resolution}
 Rozdzielczość trójwymiarowej siatki wokseli używanej do obliczeń. Po zmianie tej wartości na obiekt nakładany jest wzór szachownicy, aby podglądnąć rozmiar poligonów.
 
-### Build multiresolution
+### Zbuduj multirozdzielczość {#build-multiresolution}
 Utwórz poziomy wielorozdzielczości poniżej docelowej rozdzielczości. Jeśli więc rozdzielczość wynosi 400, a build multiresolution to 3, otrzymasz nową siatkę z np. 296 000 poligonów, ale będą 3 niższe poziomy subdiv: 74 000, 18 000, 4 000.
 
-### Keep sharp edges
+### Zachowaj ostre krawędzie {#keep-sharp-edges}
 Włącz przyciąganie siatki wokselowej do krawędzi. Najlepiej działa na prostych kształtach.
 
-### Przycisk Boolean
+### Przycisk Boolean {#boolean-button}
 Naciśnięcie tego przycisku wykona operację boolowską na poligonach z użyciem biblioteki Manifold autorstwa Emmetta Lalisha. 
 
 
-## Separate
+## Rozdziel {#separate}
 Jeśli masz pojedynczy obiekt złożony z kilku niepołączonych części, możesz rozdzielić go na kilka obiektów. 
 Można to traktować jako przeciwieństwo [prostego łączenia](#simple-merge).
 
 ![](/videos/merge_separate.mp4)
 
 
-## Add menu
+## Menu dodawania {#add-menu}
 
 ![](/images/scene_addmenu_overview.webp)
 
@@ -147,21 +147,21 @@ Prymitywy to podstawowe typy kształtów, które można regulować za pomocą pa
 
 ![](/images/scene_addmenu_top.webp)
 
-### On gizmo
+### Na gizmie {#on-gizmo}
 Włącz umieszczanie nowego prymitywu w miejscu aktualnie zaznaczonego kształtu lub gizma. Gdy wyłączone, prymityw zostanie umieszczony w centrum sceny.
 
-### Select gizmo
+### Wybierz gizmo {#select-gizmo}
 Włącz automatyczne przełączanie na narzędzie gizmo po utworzeniu nowego prymitywu. 
 
-### Advanced
+### Zaawansowane {#add-advanced}
 
 To menu pozwala ustawić preferencje dotyczące miejsca tworzenia nowych prymitywów, grup i repeaterów. Mogą być tworzone na zaznaczonym obiekcie, w początku układu współrzędnych (world origin) lub w miejscu gizma.
 
 
-### UV's
+### UV {#uvs}
 Włącz UV dla prymitywów. UV (często nazywane współrzędnymi tekstury) to dodatkowe dane używane w 3D, aby umożliwić nakładanie tekstur na powierzchnie. Zajmują więcej pamięci, ale dla większości urządzeń nie powinno to być problemem, chyba że pracujesz na bardzo wysokich liczbach poligonów (np. 10 milionów i więcej). 
 
-### Primitives
+### Prymitywy {#primitives}
 
 | Prymityw       | Ikona                                     | Opis                                                                                                              |
 | :------------: | :---------------------------------------: | :----------------------------------------------------------------------------------------------------------------: |
@@ -184,7 +184,7 @@ Jeśli zastanawiasz się, jaka jest siatka bazowa po uruchomieniu Nomada: to ró
 Jednak siatka bazowa w Nomadzie nie używa `Project on sphere`, co oznacza, że nie jest idealnie okrągła.
 :::
 
-### Pasek narzędzi prymitywu
+### Pasek narzędzi prymitywów {#primitive-toolbar}
 
 ![](/images/scene_primitive_toolbar.gif)
 
@@ -212,7 +212,7 @@ Kliknięcie tytułu paska narzędzi przełączy go między górą a dołem ekran
 :::
 
 
-### Menu prymitywu
+### Menu prymitywów {#primitive-menu}
 
 ![](/images/scene_primitive_menu.webp)
 
@@ -226,16 +226,16 @@ Większość parametrów prymitywów jest dość oczywista, a część jest wsp�
 * `Post subdivision` Włącz wybraną liczbę poziomów podziału z sekcji multiresolution w menu topologii. Można tego użyć do tworzenia wygładzonych prymitywów z miękkimi krawędziami w połączeniu z niskimi podziałami topologii. Na przykład ustaw podziały topologii sześcianu na 2, a post subdivisions na 4 – otrzymasz sześcian z gładkimi narożnikami.
 * `Linear subdivision` Ustaw, ile poziomów podziału liniowego użyć przed zastosowaniem zwykłego gładkiego podziału. Pozwala to kontrolować, jak ostre lub miękkie są krawędzie na podzielonych powierzchniach. Np. ustaw podziały topologii sześcianu na 2, post subdivisions na 4, a następnie zmieniaj linear subdivisions między 0 a 4. Narożniki sześcianu przejdą od miękkich do ostrych.
 
-### Topology
+### Topologia {#topology}
 
 Kontroluje liczbę poligonów w prymitywie. Zwykle suwaki są połączone, więc zmiana aktywnego suwaka równomiernie dostosuje wszystkie poligony. Możesz stuknąć przycisk rozłączenia i sterować podziałami X/Y/Z kształtu osobno.
 
-### Geometry
+### Geometria {#geometry}
 
 Kontroluje ogólny rozmiar prymitywu – w jednostkach X/Y/Z dla kształtów „kwadratowych” oraz w promieniu dla kształtów okrągłych.
 
 
-### UV Sphere
+### Sfera UV {#uv-sphere}
 ::: warning
 UV Sphere nie nadaje się dobrze do rzeźbienia, szczególnie w okolicach biegunów.
 
@@ -248,7 +248,7 @@ Choć nie nadaje się do ogólnego rzeźbienia, jest przydatna do oczu; jeśli o
 :::
 
 
-### Triplanar
+### Triplanar {#triplanar}
 Ten prymityw jest szczególny, ponieważ do kształtowania geometrii powinieneś używać [narzędzia Mask](tools.md#mask).
 
 ![](/videos/triplanar.mp4)
@@ -270,23 +270,23 @@ Na razie nie ma opcji „zablokowania” malowania na pojedynczej płaszczyźnie
 Możesz użyć [Connected Topology](stroke.md#connected-topology), aby trochę pomóc – jeśli kursor leży dokładnie na jednej płaszczyźnie, nie wpłynie na pozostałe.
 :::
 
-### Shadow Catcher
+### Shadow Catcher {#shadow-catcher}
 Dodaj płaszczyznę z materiałem shadow catcher. Zobacz [materiał Shadow Catcher](material.md#shadow-catcher), aby uzyskać więcej szczegółów. 
 
 
-## Group/Camera
-### Group
+## Grupa/Kamera {#groupcamera}
+### Grupa {#group}
 Utwórz „pusty” obiekt, pod który możesz podpinać inne obiekty. Można go użyć po prostu do organizacji hierarchii, umieszczając wiele obiektów w grupie, a następnie ją zwijając. Grupa może też służyć jako pomoc przy przemieszczaniu obiektów; wiele obiektów można umieścić w grupie, a następnie przesuwać, obracać i skalować grupę narzędziem gizmo.
 
-### Add view
+### Dodaj widok {#add-view}
 Utwórz kamerę.
 
-## Repeaters
+## Repeater’y {#repeaters}
 ![](/images/scene_primitive_repeaters.webp)
 
 Repeatery to węzły tworzące instancje obiektów znajdujących się pod nimi. 
 
-### Array
+### Array {#array}
 ![](/images/scene_primitive_array.webp)
 
 Gdy obiekty są dziećmi tego węzła, mogą być instancjowane w układzie siatki. Po zaznaczeniu ma on następujące kontrolki:
@@ -295,7 +295,7 @@ Gdy obiekty są dziećmi tego węzła, mogą być instancjowane w układzie siat
 * OffsetX/Y/Z – odległość między instancjami, gdy fit inside jest przełączone
 * SizeX/Y/Z – szerokość/wysokość/głębokość całej siatki array, gdy fit inside jest przełączone.
 
-### Curve
+### Krzywa {#curve}
 ![](/images/scene_primitive_curve.webp)
 Tworzy krzywą, a dzieci tego węzła będą powtarzane wzdłuż krzywej. Po zaznaczeniu ma następujące kontrolki:
 * Edit – pozwala dodawać punkty do krzywej i przesuwać punkty na krzywej.
@@ -307,7 +307,7 @@ Tworzy krzywą, a dzieci tego węzła będą powtarzane wzdłuż krzywej. Po zaz
 * Twist – przełącz kontrolki na każdym punkcie krzywej do sterowania skrętem (rotacją) instancji 
 * B-spline – przełącz, czy instancje mają dokładnie podążać za krzywą, czy używać interpolacji B-spline dla gładszych rezultatów. 
 
-### Radial
+### Promieniowy {#radial}
 ![](/images/scene_primitive_radial.webp)
 
 Dzieci tego węzła będą instancjowane w okręgu. Przesuń obiekt potomny, aby zmienić promień repeatera. Po zaznaczeniu ma następujące kontrolki:
@@ -315,7 +315,7 @@ Dzieci tego węzła będą instancjowane w okręgu. Przesuń obiekt potomny, aby
 
 
 
-### Mirror
+### Lustro {#mirror}
 ![](/images/scene_primitive_mirror.webp)
 
 Dzieci tego węzła będą lustrzane względem osi. Po zaznaczeniu ma następujące kontrolki:
@@ -338,35 +338,35 @@ Repeatery można zagnieżdżać jeden pod drugim, a kilka obiektów może być d
 Niektóre repeatery próbują automatycznie ustawić pivot obiektów potomnych, więc nawet jeśli przesuwasz lub obracasz je gizmem, nie będą się poruszać. Jeśli chcesz nadpisać to zachowanie, wstaw grupę między repeater a dziecko. Teraz możesz przesuwać kształt potomny niezależnie od repeatera.
 :::
 
-## Light
+## Światło {#light}
 
 ![](/images/scene_primitive_light.webp)
 
-### Directional
+### Kierunkowe {#directional}
 Utwórz światło kierunkowe, nieskończenie odległe źródło światła, jak słońce.
 
-### Spot
+### Reflektor {#spot}
 Utwórz reflektor (spot light) z kontrolą szerokości stożka i miękkości krawędzi
 
-### Point
+### Punktowe {#point}
 Utwórz światło punktowe
 
-## Advanced
-### Focus on item
+## Zaawansowane {#advanced}
+### Wycentruj na elemencie {#focus-on-item}
 Podwójne kliknięcie elementu na liście Sceny wycentruje kamerę na tym elemencie w widoku 3D.
 
-### Sync visibility
+### Synchronizuj widoczność {#sync-visibility}
 Użycie ikony oka wpłynie na wszystkie zaznaczone elementy. 
 
-### Instance: Show
+### Instancja: Pokaż {#instance-show}
 Wyświetl kolorową kapsułkę po lewej stronie listy sceny, aby pokazać instancje.
 
 
-### Icons
+### Ikony {#icons}
 Ustaw rozmiar i przezroczystość ikon grup, świateł, kamer i luster w widoku 3D
 
-### Hierarchy lines
+### Linie hierarchii {#hierarchy-lines}
 Wyświetl linię między rodzicem a jego dziećmi w widoku 3D
 
-## Dolny pasek narzędzi
+## Dolny pasek narzędzi {#bottom-toolbar}
 Te ikony przełączają widoczność grup, świateł, kamer, repeaterów i linii hierarchii w widoku 3D.

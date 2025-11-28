@@ -1,23 +1,23 @@
-# ![](/icons/paint.webp) Painting  
+# ![](/icons/paint.webp) Painting {#painting}
 
 Control the color, roughness, metalness of paint strokes, allow for flood filling of paint attributes, and how paint tools interact with layers, masks, hidden selections.
 
 ![](/images/paint_overview.webp)  
 
-## Overview
+## Overview {#overview}
 
 Nomad uses PBR vertex painting. What does this mean?
 
-### PBR
+### PBR {#pbr}
 PBR, or Physically Based Rendering is a popular computer graphics technique for film, television, games and mobile. By basing lights on physical properties, and defining surfaces through color, roughness, metalness, a wide variety of photoreal looks can be achieved.
 
-### Vertex painting
+### Vertex painting {#vertex-painting}
 
 Vertex painting means that the paint information is stored in the vertices of the model, rather than in textures. Because Nomad can handle models with hundreds of thousands, often millions of vertices, your models should be able to have highly detailed surface paint; if you can sculpt the detail, you can also paint that detail.
 
 This also means that painting in Nomad doesn't require UV mapping, often a slow and technical process in other 3d applications. Many other 3d applications don't support the high vertex counts that Nomad can, however Nomad also has good texture baking and decimation tools to help.
 
-### Texturing
+### Texturing {#texturing}
 
 Nomad supports textures, but they have to be present in an imported model, or via baking vertex painting to textures. 
 
@@ -38,21 +38,21 @@ One example of workflow:
 That's the overview, now lets explore the sections of the painting menu:
 
 
-## Stroke painting
+## Stroke painting {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
 Enable painting for this tool, useful if you need to sculpt and paint at the same time.
 
 For tools where painting is the primary function (eg Paint, Smudge, Mask), this checkbox doesn't exist.
 
-### Paint intensity
+### Paint intensity {#paint-intensity}
 
 A slider to allow you to ise a different intensity to the primary tool intensity.
 
 The `Alpha`, `Falloff` and `Randomize` checkboxes determine if those features will affect painting. Eg you could have randomize enabled for the clay tool, but color won't be randomized.
 
 
-## Material
+## Material {#material}
 ![](/images/paint_material.webp) 
 
 The first icon is a material preview shape. Dragging on the 3d material preview will rotate it. 
@@ -67,14 +67,14 @@ The preview button next to the Material title lets you swap between none, Materi
 
 The eydropper can be used to sample all the properties from an object in your scene.
 
-## Material Presets
+## Material Presets {#material-presets}
 Tapping the 3d preview shape will bring up a preset menu of materials, these can be cloned to define your own presets.
 
 ![](/images/paint_presets.webp) 
 
 The `Embed Textures` and `Alpha` toggles when enabled will store any textures used by this material within the preset. This is explained more below.
 
-## PBR sliders
+## PBR sliders {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 [PBR](shading.md#pbr) painting uses 4 channels:
@@ -113,7 +113,7 @@ When using textures for pbr painting, it's often useful to swap to something lik
 You might consider turning on `Smooth Shading` [globally](settings.md#smooth-shading) or [per-object](material.md#smooth-shading) if you are painting a metallic surface on on object with a lower polycount.
 :::
 
-## Paint all
+## Paint all {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
@@ -132,12 +132,12 @@ The extra buttons control how the paint all can be further affected:
 | ![](/icons/triplanar.webp) | Indicator of triplanar settings               |
 | ![](/icons/cog.webp)       | Open the Triplanar settings                   |
 
-### Triplanar settings
+### Triplanar settings {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
 Similar to the [triplanar settings in the material menu](material.md#triplanar), you can control the blending of the projections, tiling and offsets. 
 
 Use the preview checkbox at the top of this menu to enable a persistent preview while adjusting values.
 
-## Global material
+## Global material {#global-material}
 If this option is enabled, the selected material will be the same as the other tools. Note that it only takes into account roughness, metalness and color settings.

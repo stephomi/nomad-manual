@@ -1,4 +1,4 @@
-# ![](/icons/postprocess.webp) Post process 
+# ![](/icons/postprocess.webp) Post process {#post-process}
 
 This menu controls many aspects of Nomad to affect the look of the render.
 
@@ -16,34 +16,31 @@ For PBR rendering, [Ambient Occlusion](#ambient-occlusion-ssao), [Reflection](#r
 However, most of the time you want the post process to be disabled when you are sculpting, to focus on the shape itself of the rendering.
 
 
-## Quality
+## Quality {#quality}
 
 ![](/images/postprocess_quality.webp)
-### Max frame sampling
+### Max frame sampling {#max-frame-sampling}
 Nomad will calculate a certain amount of post processing for a single frame render, which can look noisy. This control determines how many frames will be rendered, then blended together to remove most noisy artifacts. Some effects require no extra samples (eg color grading), while others like global illumination can require hundreds of samples to be noise free. 
 
 In the viewport this can be seen whenever nomad is left alone, the image quality will gradually refine up to the max samples, then stop. This number of calculations is also used in the render section of the [Files menu](files) when 'export png' is clicked.
 
-### Resolution multiplier
+### Resolution multiplier {#resolution-multiplier}
 This slider controls the resolution of the post processing. A value of x1.0 will mean the render's are done at the pixel resolution of the device. A value of x0.5 will render at half resolution, which will be fast but low quality. A value greater than 1 will render at a bigger size, then scale down. This result in higher quality, less noise, but longer render times.
 
-### Max samples
+### Max samples {#max-samples}
 
 This will increase the quality of post process, but generally `Full resolution` will have more impact. 
 
-### Full resolution
-When enabled will force the resolution multiplier to x1.0
-
-### Denoiser (oidn)
+### Denoiser (oidn) {#oidn}
 
 Apply a denoiser to the image. This can allow you to use much lower samples. This only works if `Full Resolution` is enabled. Note that the denoising happens after all the samples have been calculated, and can be processor intensive.
 
-## Preset browser
+## Preset browser {#preset-browser}
 ![](/images/postprocess_presets.webp)
 Clcking on the image will display a collection of post processing presets. To define your own presets, select one, click 'clone', make changes. To save, click the preset image, click again inside the preset browser, and choose 'save'.
 
 
-## Reflection (SSR)
+## Reflection (SSR) {#reflection-ssr}
 With this option, objects can reflect other objects in the scene, as long as the objects are visible on the screen.
 If you have metallic and shiny objects in your scene, then this option should probably be used.
 This option is only effective with PBR mode.
@@ -53,7 +50,7 @@ This option is only effective with PBR mode.
 | :------------------------: | :-----------------------: |
 | ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
-## Global Illumination (SSGI)
+## Global Illumination (SSGI) {#global-illumination-ssgi}
 
 Global illumination simulates how light bounces between surfaces, eg a red wall will cast red onto a nearby white object. This can hugely enhance the realism of a render when used with ambient occlusion and reflections. 
 
@@ -67,7 +64,7 @@ Global illumination simulates how light bounces between surfaces, eg a red wall 
 
 _A spotlight is behind the sphere, aimed at the ceiling. With SSGI off, only the ceiling is lit. WIth SSGI on, light bounces from the ceiling to the walls to the sphere._
 
-## Ambient Occlusion (SSAO)
+## Ambient Occlusion (SSAO) {#ambient-occlusion-ssao}
 Ambient occlusion will darken areas where the light has less chance of reaching (corners, etc).
 The effect only depends on the model geometry.
 
@@ -86,7 +83,7 @@ AO will be most visible in areas lit mainly by environment light. Areas that are
 
 :::
 
-## Depth of Field (DOF)
+## Depth of Field (DOF) {#depth-of-field-dof}
 Add a blur effect on the region that is outside the focus.
 
 Simply tap on your model to change the focus point.
@@ -100,7 +97,7 @@ Simply tap on your model to change the focus point.
 | ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp) |
 
 
-## Bloom
+## Bloom {#bloom}
 Blooms will make the bright area of your scene glow.
 
 * `Intensity` - strength of the effect.
@@ -113,7 +110,7 @@ Blooms will make the bright area of your scene glow.
 | ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
 
-## Tone Mapping
+## Tone Mapping {#tone-mapping}
 Tone Mapping is an operation that will remap HDR values to the `[0, 1]` range.
 If you don't use it (or select `none`), any color component higher than 1 will be clipped.
 Any color variations above this range will then be lost.
@@ -133,14 +130,14 @@ Notice that with `Tone Mapping` disabled, some details disappear because the pix
 Tone mapping can enhance the effect of global illumination. If you turn the instensity of the environment map down, the primary light source up, can increase the tone mapping `exposure` to see more of the bounce lighting effects.
 :::
 
-## Color Grading
+## Color Grading {#color-grading}
 Similar to the curves tool in Photoshop, this allows you to control the balance and distribution of color in the image. The `main` control affects the entire color balance, the `red`/`green`/`blue` controls allow for fine control. 
 
 | Color Grading off             | Color Grading on             |
 | :---------------------------: | :--------------------------: |
 | ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
-## Curvature
+## Curvature {#curvature}
 Detect where there are rapid changes in curvature, and apply a colour to those regions.
 
 * `Factor` - overall intensity of the effect
@@ -153,7 +150,7 @@ Detect where there are rapid changes in curvature, and apply a colour to those r
 | ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
 
-## Chromatic Aberration
+## Chromatic Aberration {#chromatic-aberration}
 Simulate the lens artifacts with light being decomposed around the screen edges.
 
 * `Strength` - how much the red/green/blue parts of the image get split towards the screen edges
@@ -163,7 +160,7 @@ Simulate the lens artifacts with light being decomposed around the screen edges.
 | ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
 
-## Vignette
+## Vignette {#vignette}
 Simulate the lens artifacts by darkening the screen edges.
 
 * `Size` - The size of a inverted ellipse placed over the image
@@ -174,7 +171,7 @@ Simulate the lens artifacts by darkening the screen edges.
 | :-----------------------------: | :----------------------------: |
 | ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
-## Grain
+## Grain {#grain}
 Add a grain effect, it can help make the image a bit less artificial.
 
 * `Strength` - the amount of grain/noise added to the image.
@@ -185,7 +182,7 @@ Add a grain effect, it can help make the image a bit less artificial.
 | ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
 
-## Sharpness
+## Sharpness {#sharpness}
 A sharpen effect similar to that in Photoshop or photo processing apps.
 
 * `Strength` - the amount of sharpening applied to the image.
@@ -195,7 +192,7 @@ A sharpen effect similar to that in Photoshop or photo processing apps.
 | :----------------------------: | :--------------------------: |
 | ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
-## Pixel Art
+## Pixel Art {#pixel-art}
 Simulate retro game pixel art.
 
 * `Slider` - size of the pixels
@@ -205,7 +202,7 @@ Simulate retro game pixel art.
 | :-------------------------: | :------------------------: |
 | ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
-## Scanline
+## Scanline {#scanline}
 Simulate the look of old CRT monitors.
 
 * `Factor` - strength of the lines
@@ -216,6 +213,6 @@ Simulate the look of old CRT monitors.
 | ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
 
 
-## Dithering
+## Dithering {#dithering}
 
 Dither pixels to reduce banding artifacts. Usually this should be enabled, but can be turned off for specific operations (eg exporting depth maps or other data specific operations).

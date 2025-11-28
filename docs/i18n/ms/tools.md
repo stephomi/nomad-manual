@@ -1,4 +1,4 @@
-# ![](/icons/toolbox.webp) Alat
+# ![](/icons/toolbox.webp) Alat {#tools}
 
 ![](/images/tools_menu.webp)
 
@@ -6,7 +6,7 @@
 Lompat ke bawah ke [Alat](#tools-1) untuk penerangan setiap alat.
 :::
 
-## Gambaran keseluruhan
+## Gambaran keseluruhan {#overview}
 
 Alat dipilih daripada `Toolbox` di sebelah kanan, dan dikawal dengan `Tool Controls` di sebelah kiri. Tetapan tambahan boleh ditemui dalam menu `Settings`, ikon pertama di menu kanan-atas.
 
@@ -31,7 +31,7 @@ Alat Nomad dikodkan warna dalam toolbox:
 Banyak alat ini boleh disesuaikan dengan kelakuan berus, tekanan, tekstur dan lain-lain melalui menu [Stroke](stroke.md). 
 
 
-### Kawalan berus
+### Kawalan berus {#brush-controls}
 
 Toolbar kiri mempunyai peluncur untuk radius dan intensiti, dan kemudian kawalan khusus kategori alat, diterangkan di bawah.
 
@@ -41,17 +41,17 @@ Toolbar kiri mempunyai peluncur untuk radius dan intensiti, dan kemudian kawalan
 Peluncur intensiti untuk banyak alat boleh melebihi 100%, berbaloi untuk dicuba!
 :::
 
-### Sub mode
+### Mod sub {#sub-mode}
 Butang betul-betul di bawah peluncur intensiti ialah butang `Sub`. Label dan fungsinya akan berubah mengikut alat, dan apabila ditekan akan memanggil kelakuan alternatif, biasanya bertentangan. Contohnya untuk [Paint](#paint) ia akan memanggil mod Padam, untuk [Crease](#crease) ia akan mencipta tepi timbul dan bukannya lekuk dan sebagainya.
 
 Secara lalai ia berfungsi sebagai butang “sticky”; iaitu anda boleh menekannya dan menahan untuk mengaktifkannya sementara, apabila anda lepaskan ia akan dimatikan. Jika anda mengetik, sub mode akan diaktifkan secara kekal.
 
-### Pintasan
+### Pintasan {#shortcuts}
 Di bahagian bawah toolbar kiri terdapat pintasan untuk [Smooth](#smooth), [Mask](#mask), [Hide](#hide), [Gizmo](#gizmo), [Color](painting.md#pbr-sliders), [Alpha](stroke.md#alpha). 
 
 Secara lalai semuanya berfungsi sebagai butang “sticky”; iaitu anda boleh menekannya dan menahan untuk mengaktifkannya sementara, apabila anda lepaskan ia akan dimatikan. Jika anda mengetik, mod pintasan itu akan diaktifkan secara kekal.
 
-### Kawalan pemilihan
+### Kawalan pemilihan {#selection-controls}
 
 Alat [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Project](#project), [Facegroup](#facegroup) dan [Hide](#hide) semuanya menggunakan kawalan yang serupa untuk memilih kawasan pada mesh.
 
@@ -69,7 +69,7 @@ Alat [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Project
 
 Kebanyakan alat mempunyai pilihan auto validate, bermaksud operasi akan berlaku sebaik sahaja anda selesai melukis bentuk. Apabila auto validate dimatikan, satu butang hijau akan dilukis di sebelah bentuk yang akan melaksanakan operasi. Ini membolehkan anda mengedit bentuk, melaras pandangan, dan apabila anda bersedia untuk menggunakan bentuk itu, tekan butang hijau.
 
-### Penyuntingan bentuk
+### Penyuntingan bentuk {#shape-editing}
 Penyuntingan poligon dan penyuntingan lengkung berkelakuan dengan cara yang serupa:
 
 * Untuk bermula, seret satu garisan untuk mentakrifkan 2 titik, kemudian seret keluar dari tengah garisan untuk mentakrifkan poligon atau lengkung.
@@ -78,13 +78,13 @@ Penyuntingan poligon dan penyuntingan lengkung berkelakuan dengan cara yang seru
 * Untuk memadam titik, seret satu titik ke jirannya sehingga ia bertukar merah.
 * Ikon tong sampah di penjuru ikon poligon atau path akan memadam bentuk.
 
-### Menu Settings
+### Menu tetapan {#settings-menu}
 
 Banyak alat mempunyai tetapan tambahan yang ditemui dalam menu settings, ikon pertama di menu kanan-atas:
 
 ![](/images/tools_settings_menu.webp)
 
-## Alat
+## Alat {#tools-1}
 
 |                                                                     |                                                   |                                                                   |                                                         |                                                         |                                                                     |
 | :-----------------------------------------------------------------: | :-----------------------------------------------: | :---------------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------------------: |
@@ -97,24 +97,24 @@ Banyak alat mempunyai tetapan tambahan yang ditemui dalam menu settings, ikon pe
 
 ------
 
-### ![](/icons/tool_clay.webp) Clay
+### ![](/icons/tool_clay.webp) Tanah liat {#clay}
 Alat Clay berguna untuk membina arca anda. `Sub` akan membuang material daripada arca anda.
 
 ![](/videos/tool_clay.mp4)
 
-### ![](/icons/tool_brush.webp) Brush
+### ![](/icons/tool_brush.webp) Berus {#brush}
 Berus piawai. `Sub` akan membuang material.
 
 ![](/videos/tool_brush.mp4)
 
-### ![](/icons/tool_move.webp) Move
+### ![](/icons/tool_move.webp) Alih {#move}
 Kawasan di bawah berus akan melekat pada berus, membenarkan deformasi elastik. Pemilihan dikekalkan semasa gerakan, jadi jika anda mengalihkan berus jauh, kemudian mengembalikannya ke tempat asal, anda tidak akan melihat sebarang deformasi.
 
 Sub mode ialah `Normal`, dan akan menggerakkan kawasan di bawah berus sepanjang normal permukaan.
 
 Berus ini bagus untuk deformasi skala besar dan juga deformasi kecil yang teliti.
 
-#### Tetapan Move
+#### Tetapan alih {#move-settings}
 
 * `Radius (Background)` - Sejauh mana dari tepi model anda boleh berada dan masih boleh mengukir, berguna apabila bekerja pada siluet objek. 
 * `Same-side vertex only` - Abaikan verteks yang menghala ke arah bertentangan dengan deformasi.
@@ -122,40 +122,40 @@ Berus ini bagus untuk deformasi skala besar dan juga deformasi kecil yang teliti
 
 ![](/videos/tool_move.mp4)
 
-### ![](/icons/tool_drag.webp) Drag
+### ![](/icons/tool_drag.webp) Seret {#drag}
 Kawasan di bawah berus akan melekat pada berus, membenarkan deformasi elastik. Tidak seperti berus move, pemilihan dikemas kini secara berterusan semasa stroke, jadi adalah mungkin untuk membuat objek panjang seperti ular, terutamanya apabila Dynamic Topology diaktifkan.
 
 Sub mode ialah `Normal`, dan akan menggerakkan kawasan di bawah berus sepanjang normal permukaan.
 
 Berus ini bagus untuk perubahan bentuk yang lebih longgar dan gestural.
 
-#### Tetapan Drag
+#### Tetapan seret {#drag-settings}
 
 * `Radius (Background)` - Sejauh mana dari tepi model anda boleh berada dan masih boleh mengukir, berguna apabila bekerja pada siluet objek. 
 * `Same-side vertex only` - Abaikan verteks yang menghala ke arah bertentangan dengan deformasi.
 
 ![](/videos/tool_drag.mp4)
 
-### ![](/icons/tool_smooth.webp) Smooth
+### ![](/icons/tool_smooth.webp) Licin {#smooth}
 Lembutkan kawasan dengan mempuratakan kedudukan titik. Alat ini sangat bergantung pada ketumpatan poligon.
 Jadi jika anda mempunyai banyak poligon, pelicinan akan kurang berkesan.
 
 Sub mode ialah `Relax`, yang hanya melicinkan wireframe tetapi cuba mengekalkan butiran geometri.
 
-#### Tetapan Smooth
+#### Tetapan licin {#smooth-settings}
 
 ![](/images/tool_smooth_settings.webp)
 
-##### Facegroup
+##### Kumpulan muka {#smooth-facegroup}
 
 * `Relax` - Akan melicinkan sempadan facegroup. Gunakan intensiti lebih besar daripada 100% untuk melicinkan sempadan dengan cepat. `Auto` akan melicinkan hanya jika pratonton facegroup diaktifkan, `Off` akan mematikan, `On` akan menghidupkan. 
 
-##### Vertex
+##### Verteks {#vertex}
 * `Sticky vertex on border` - Untuk mesh dengan tepi terbuka, contohnya satah, adalah mungkin untuk melicinkan bucu. Mengaktifkan pilihan ini akan mengunci tepi terbuka.
 * `Relax` - sama seperti mod alternatif relax di toolbar kiri.
 * `Stable smoothing` - Cuba menjadikan pelicinan bebas topologi. Ini berfungsi paling baik dengan ketumpatan topologi yang berubah-ubah dan dengan nilai intensiti pelicinan yang tinggi.
 
-##### Painting
+##### Pengecatan {#painting}
 * `Screen Smoothing` - Gunakan pilihan ini untuk mendapatkan pelicinan bebas topologi, walaupun pada kiraan poligon tinggi.
 * `Screen samples` - Kualiti pelicinan, nombor lebih tinggi akan lebih licin, tetapi lebih perlahan.
 
@@ -165,7 +165,7 @@ Ketumpatan poligon yang lebih tinggi mungkin memerlukan peningkatan intensiti me
 
 ![](/videos/tool_smooth.mp4)
 
-### ![](/icons/tool_mask.webp) Mask
+### ![](/icons/tool_mask.webp) Topeng {#mask}
 Alat ini membolehkan anda memask verteks. Verteks yang dimask dilindungi daripada sculpting atau painting. 
 
 Sub mode ialah `Unmask`, dan akan memadam di mana mask telah dilukis.
@@ -195,7 +195,7 @@ Tajuk bar boleh diketuk untuk kembang/kuncup, atau anak panah di kanan-atas bole
 |                                 On tap (mask)      | Apabila diaktifkan, mengetik 'pulau' mask atau poligon tidak dimask akan flood fill pulau itu. |
 | ![](/icons/vertex.webp)        Connected          | Apabila diaktifkan hanya benarkan stroke mask menjejaskan topologi yang bersambung.       |
 
-##### Gerak isyarat pantas Mask
+##### Gerak isyarat pantas topeng {#mask-quick-gesture}
 Anda boleh melakukan gerak isyarat gaya ZBrush sambil menahan butang quick masking di toolbar kiri:
 | Action  | Gesture (hold lower-left shortcut) |
 | :-----: | :--------------------------------: |
@@ -205,28 +205,28 @@ Anda boleh melakukan gerak isyarat gaya ZBrush sambil menahan butang quick maski
 | Sharpen | Ketik pada kawasan tidak dimask    |
 
 
-#### Tetapan Mask
+#### Tetapan topeng {#mask-settings}
 ![](/images/tool_mask_settings.webp)
 
 ![](/videos/tool_mask2.mp4)
 
 * `Preview` - Menu tetapan Mask terutamanya digunakan untuk mencipta geometri daripada mask. Oleh itu kelakuan lalai ialah mempratonton rupa geometri baharu. Anda boleh memilih untuk tiada pratonton, pratonton extract, pratonton split, dan sama ada geometri ini akan dipaparkan dalam mod x-ray.
 
-##### Thickness
+##### Ketebalan {#thickness}
 * `Height` - Ketinggian bentuk yang diekstrak. Ikon Plus/Minus membolehkan anda mengitar antara extrusion ke luar, ke dalam, atau berpusat. 
 * `Height/Height+Mask` - Togol antara ketinggian kekal malar, atau jika bahagian mask yang dikaburkan patut menjejaskan ketinggian, membolehkan bentuk lembut dan ketinggian berubah-ubah. 
 
-##### Smoothness
+##### Kelembutan {#smoothness}
 Apabila aktif, akan melicinkan sempadan bentuk yang diekstrak, ia berfungsi lebih baik dengan kiraan poligon yang lebih tinggi. 
 * `Iterations` - Jumlah pelicinan yang digunakan. Nilai tinggi akan menghasilkan tepi melengkung yang sangat licin, tetapi akan mula menyimpang daripada bentuk mask.
 * `All/Sharp border/Borders only` - Pelicinan boleh berfungsi dalam semua arah, melicinkan sisi dan bahagian atas bentuk yang diekstrak, atau melicinkan bahagian atas dan sisi tetapi mengekalkan tepi tajam, atau hanya melicinkan sempadan, meninggalkan permukaan atas tidak terjejas.
 
-##### Edge loop (side)
+##### Gelung tepi (sisi) {#edge-loop-side}
 * `Auto Edge-loop (side)` - Akan mengira jumlah pembahagian pada sisi bentuk yang diekstrak untuk menghasilkan poligon segi empat sama yang sepadan dengan poligon kawasan dimask. Apabila dimatikan, anda boleh menetapkan bilangan edge loop sendiri dengan peluncur edge loop.
 
 ----
 
-##### Extract
+##### Ekstrak {#extract}
 * `Extract` - Cipta geometri yang diekstrak.
 * `Closing action` - Cara extract patut berkelakuan. 'None' akan menduplikasi poligon dimask ke bentuk baharu. 'Fill' akan melakukan perkara yang sama, dan cuba menampal permukaan belakang. 'Shell' akan mengekstrak ke jumlah yang ditetapkan dalam 'thickness', dan ini ialah lalai.
 
@@ -237,18 +237,18 @@ Jika preview berada dalam mod 'Extract' dengan 'X-ray' diaktifkan, mengklik buta
 Ini adalah normal, tutup menu tetapan mask untuk melihat bentuk baharu dan yang asal, dan pilih semula permukaan asal jika anda perlu mengosongkan mask atau melukis mask baharu.
 :::
 
-##### Split
+##### Pisah {#split-mask}
 * `Split` - Akan mengekstrak kedua-dua kawasan dimask DAN tidak dimask ke bentuk baharu. 
 * `Closing action (masked)` - Cara extract mask patut berkelakuan. 'None' akan menduplikasi poligon dimask ke bentuk baharu. 'Fill' akan melakukan perkara yang sama, dan cuba menampal permukaan belakang. 'Shell' akan mengekstrak ke jumlah yang ditetapkan dalam 'thickness', dan ini ialah lalai.
 * `Closing action (unmasked)` - Cara extract tidak dimask patut berkelakuan. 'None' akan menduplikasi poligon dimask ke bentuk baharu. 'Fill' akan melakukan perkara yang sama, dan cuba menampal permukaan belakang. 'Shell' akan mengekstrak ke jumlah yang ditetapkan dalam 'thickness', dan ini ialah lalai.
 * `Sync border` - Pastikan sempadan antara bentuk dimask dan tidak dimask yang diekstrak kekal rapat. Apabila dimatikan, kerana operasi shell akan mengekstrak setiap muka sepanjang normalnya, jurang boleh terbentuk antara bentuk.
 
-##### Carve
+##### Ukir {#carve}
 * `Carve` - Dalam mod lalai, berkelakuan seolah-olah anda telah men-trim ke dalam permukaan mengikut jumlah 'thickness', seperti memotong sepotong kulit oren. 
 
 
 
-### ![](/icons/tool_maskSelector.webp) Selection Mask
+### ![](/icons/tool_maskSelector.webp) Topeng pemilihan {#selection-mask}
 Alat ini kebanyakannya serupa dengan [alat Masking](#mask), perbezaan utama ialah anda tidak menggunakan stroke untuk melukis mask, tetapi sebaliknya menggunakan [Selection Controls](#selection-controls).
 
 Sub mode ialah `Unmask`, dan akan memadam mask menggunakan kawalan pemilihan.
@@ -257,28 +257,28 @@ Selection mask berkongsi tetapan alat yang sama seperti alat `Mask`.
 
 ![](/videos/tool_selector_mask.mp4)
 
-### ![](/icons/tool_paint.webp) Paint
+### ![](/icons/tool_paint.webp) Cat {#paint}
 Sapukan warna dan sifat material. Untuk mengetahui lebih lanjut tentang material anda boleh lawati bahagian [Painting](painting.md).
 
 Sub mode ialah `Erase` dan akan membuang cat.
 
-#### Tetapan Paint
+#### Tetapan cat {#paint-settings}
 * `Layer fitering` - Ini berfungsi seperti layer alpha lock dalam Photoshop atau Procreate. Jika anda melukis pada layer, apabila ini diaktifkan, anda hanya boleh mengubah di mana cat sudah wujud; kawasan tidak dicat akan dilindungi.
 
 ![](/videos/tool_paint.mp4)
 
-### ![](/icons/tool_smudge.webp) Smudge
+### ![](/icons/tool_smudge.webp) Comot {#smudge}
 Smudge warna dan sifat material. Menu tetapan smudge mengandungi peluncur `Quality`, nilai lebih rendah bermakna stroke lebih pantas.
 
 ![](/videos/tool_smudge.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Flatten
+### ![](/icons/tool_flatten.webp) Rata {#flatten}
 Ratakan kawasan dengan memproyeksikan titik ke satah purata.
 
 Sub mode ialah `Fill` dan akan mentakrifkan satah yang ditetapkan oleh titik tertinggi, dan cenderung menarik titik ke atas.
 
-#### Tetapan Flatten
+#### Tetapan rata {#flatten-settings}
 
 * `Lock plane direction` - Gunakan arah satah yang dikira pada klik pertama. Secara lalai ini dimatikan.
 * `Lock plane origin`- Gunakan klik pertama sebagai pusat satah. Secara lalai ini dimatikan.
@@ -292,7 +292,7 @@ Apabila bekerja di kawasan kelengkungan tinggi, contohnya cuba meratakan pipi te
 ![](/videos/tool_flatten.mp4)
 
 
-### ![](/icons/tool_planar.webp) Planar
+### ![](/icons/tool_planar.webp) Planar {#planar}
 Menjadikan titik planar dengan memproyeksikan ke satah purata, tetapi dengan penimbunan kurang daripada berus flatten. Ini menghasilkan permukaan tepi keras yang lebih bersih. Stroke pantas akan menolak dan menarik permukaan lebih banyak, stroke perlahan yang bermula dari kawasan yang sudah planar dan bergerak keluar akan mengekalkan satah dengan lebih baik.
 
 Sub mode ialah `Fill` dan akan mentakrifkan satah yang ditetapkan oleh titik tertinggi, dan cenderung menarik titik ke atas.
@@ -301,19 +301,19 @@ Planar sebenarnya alat yang sama seperti `Flatten`, tetapi dengan `Lock plane di
 
 ![](/videos/tool_planar.mp4)
 
-### ![](/icons/tool_crease.webp) Crease
+### ![](/icons/tool_crease.webp) Kedut {#crease}
 Alat Crease berguna untuk mengukir potongan kecil atau lekuk.
 
 Sub mode ialah `Invert`, dan akan mencipta crease timbul.
 
-#### Tetapan Crease
+#### Tetapan kedut {#crease-settings}
 
 * `Pinch factor` - Berapa banyak untuk menarik verteks ke sisi ke arah stroke berus. Jika pinch pada 1, dan offset pada 0, permukaan tidak akan mempunyai sebarang perubahan kedalaman, hanya perubahan topologi, menarik tepi ke arah stroke.
 * `Offset factor` - Berapa banyak untuk menolak/tarik verteks dalam kedalaman. Jika pinch pada 0, dan offset pada 1, crease dalam atau lekuk timbul akan dibuat, tetapi akan kelihatan bergerigi kerana tidak cukup geo ditarik ke arah crease untuk mentakrifkan sisi atau dasar crease dengan tepat.
 
 ![](/videos/tool_crease.mp4)
 
-### ![](/icons/tool_pinch.webp) Pinch
+### ![](/icons/tool_pinch.webp) Cubit {#pinch}
 Alat ini boleh digunakan untuk menajamkan tepi.
 
 Sub mode ialah `Invert` dan akan menjarakkan verteks.
@@ -321,7 +321,7 @@ Sub mode ialah `Invert` dan akan menjarakkan verteks.
 ![](/videos/tool_pinch.mp4)
 
 
-### ![](/icons/tool_trim.webp) Trim
+### ![](/icons/tool_trim.webp) Kemaskan {#trim}
 Alat Trim berfungsi dengan membuang sebahagian mesh anda, dan memberikan pilihan cara memproses jurang yang ditinggalkan. Ia menggunakan [Selection controls](#selection-controls) untuk mentakrifkan trim.
 
 ::: tip
@@ -330,7 +330,7 @@ Oleh kerana alat ini memproyeksikan dari kamera, anda akan mendapat amaran jika 
 Dalam mod ortografik potongan yang dibuat melalui mesh adalah selari dengan pandangan, yang biasanya dijangka. Apabila dilakukan dengan kamera perspektif, potongan akan kelihatan berbeza di bahagian jauh objek berbanding bahagian dekat.
 :::
 
-#### Tetapan Trim
+#### Tetapan kemaskan {#trim-settings}
 
 * `Stroke painting` - Jika painting diaktifkan dalam menu paint, kawasan yang ditampal akan diisi dengan warna semasa.
 * `Boolean` - isi lubang trim menggunakan kawasan poligon quad. Kawasan yang diisi akan rata.
@@ -346,10 +346,10 @@ Dalam mod ortografik potongan yang dibuat melalui mesh adalah selari dengan pand
 
 ![](/videos/tool_trim.mp4)
 
-### ![](/icons/tool_split.webp) Split
+### ![](/icons/tool_split.webp) Pisah {#split}
 Serupa dengan alat [Trim](#trim), kecuali Trim membuang pemilihan, Split akan mengekalkan pemilihan sebagai objek baharu.
 
-#### Tetapan Split
+#### Tetapan pisah {#split-settings}
 
 * `Stroke painting` - Jika painting diaktifkan dalam menu paint, kawasan yang ditampal akan diisi dengan warna semasa.
 * `Boolean` - isi lubang split menggunakan kawasan poligon quad. Kawasan yang diisi akan rata.
@@ -366,7 +366,7 @@ Serupa dengan alat [Trim](#trim), kecuali Trim membuang pemilihan, Split akan me
 ![](/videos/tool_split.mp4)
 
 
-### ![](/icons/tool_project.webp) Project
+### ![](/icons/tool_project.webp) Projek {#project}
 Alat Project kelihatan seperti alat [Trim](#trim), tetapi ia tidak memadam atau mencipta sebarang geometri, ia hanya menggerakkan verteks supaya mengikut pemilihan.
 
 ![](/videos/tool_project.mp4)
@@ -375,7 +375,7 @@ Alat Project kelihatan seperti alat [Trim](#trim), tetapi ia tidak memadam atau 
 Jika anda menggunakan Project semasa berada dalam layer, anda boleh mengadun antara bentuk asal dan bentuk yang diprojek dengan peluncur layer.
 :::
 
-### ![](/icons/tool_layer.webp) Layer
+### ![](/icons/tool_layer.webp) Lapisan {#layer}
 Naikkan permukaan, tetapi hadkan ketinggian.
 
 Jika anda terus menekan pensel dan terus berus di atas kawasan, Layer akan naik ke ketinggian tertentu kemudian tidak akan naik lagi, berbanding alat lain yang akan terus mengumpul ketinggian.
@@ -388,7 +388,7 @@ Cipta satu layer, dan gunakan alat ini. Ketinggian maksimum kini ditetapkan dari
 
 `Sub` akan menggunakan kedalaman minimum, mencipta alur.
 
-#### Tetapan Layer
+#### Tetapan lapisan {#layer-settings}
 
 * `Use layer data` - Apabila aktif, dan apabila layer dipilih, gunakan data layer untuk menetapkan ketinggian maksimum.
 * `Inflate`- Apabila aktif laraskan arah kerja layer untuk mendapatkan hasil yang lebih licin.
@@ -397,10 +397,10 @@ Cipta satu layer, dan gunakan alat ini. Ketinggian maksimum kini ditetapkan dari
 ![](/videos/tool_layer.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Inflate
+### ![](/icons/tool_flatten.webp) Kembung {#inflate}
 Gerakkan verteks sepanjang normal masing-masing. `Sub` akan menggerakkan verteks sepanjang normal songsang.
 
-#### Tetapan Inflate
+#### Tetapan kembung {#inflate-setings}
 * `Relax (Normal)` - Jumlah pelicinan yang digunakan pada normal.
 
 ![](/videos/tool_inflate.mp4)
@@ -408,13 +408,13 @@ Gerakkan verteks sepanjang normal masing-masing. `Sub` akan menggerakkan verteks
 
 
 
-### ![](/icons/tool_nudge.webp) Nudge
+### ![](/icons/tool_nudge.webp) Tolak {#nudge}
 Gerakkan atau 'smear' titik mengikut arah stroke.
 
 ![](/videos/tool_nudge.mp4)
 
 
-### ![](/icons/tool_stamp.webp) Stamp
+### ![](/icons/tool_stamp.webp) Setem {#stamp}
 
 Klik dan seret untuk menaikkan kawasan arca mengikut bentuk Alpha terpilih.
 
@@ -435,13 +435,13 @@ Dua mod stroke berguna untuk perkara berbeza.
 ![](/videos/tool_stamp.mp4)
 
 
-### ![](/icons/tool_clearLayer.webp) Delete Layer
+### ![](/icons/tool_clearLayer.webp) Padam lapisan {#delete-layer}
 Alat ini boleh menetapkan semula layer secara setempat, anda memerlukan layer aktif jika tidak tiada apa akan berlaku.
 
 ![](/videos/tool_delete_layer.mp4)
 
 
-### ![](/icons/tool_tube.webp) Tube
+### ![](/icons/tool_tube.webp) Tiub {#tube}
 Cipta tube dengan melukis satu lengkung. 
 ![](/images/tool_tube_new.webp)
 
@@ -449,7 +449,7 @@ Sebaik sahaja tube dicipta, path boleh diedit dalam ruang 3D menggunakan kawalan
 
 ![](/videos/tool_tube.mp4)
 
-#### Toolbar kiri Tube
+#### Palang alat kiri tiub {#tube-left-toolbar}
 
 ![](/images/tool_tube_left_toolbar.webp)
 
@@ -468,7 +468,7 @@ Toolbar kiri mempunyai pilihan berikut:
     * `Closed` - jadikan tube satu gelung
     * `Screen` - Apabila aktif, path 'dipin' ke skrin, membolehkan anda menggerakkan pandangan dan objek, dan path kekal di tempat. Apabila tidak aktif, path adalah sebahagian daripada adegan 3D, dan ia akan bergerak dengan kamera dan objek.
 
-##### Toolbar atas Tube
+##### Palang alat atas tiub {#tube-top-toolbar}
 ![](/images/tool_tube_toolbar.webp)
 Apabila tube dipilih, toolbar akan muncul di bahagian atas viewport dengan kawalan tambahan. Klik tajuk toolbar untuk kuncup/kembang toolbar, dan klik anak panah di kanan-atas untuk memindahkan toolbar ke bahagian atas atau bawah viewport.
 
@@ -489,7 +489,7 @@ Apabila tube dipilih, toolbar akan muncul di bahagian atas viewport dengan kawal
 * `Constant density` - apabila aktif, akan mengekalkan poligon segi empat sama. apabila dimatikan, akan membenarkan anda menetapkan `Y divisions` sepanjang panjang tube.
 * `...` - Menu tetapan Tube.
 
-#### Togol padam titik lengkung
+#### Togol padam titik lengkung {#curve-point-delete-toggle}
 
 ![](/images/tool_tube_delete_toggle.webp)
 
@@ -497,7 +497,7 @@ Di bawah toolbar terdapat togol padam titik lengkung. Apabila anda menyeret satu
 
 
 
-#### Tetapan Tube
+#### Tetapan tiub {#tube-settings}
 * `Primitive` - butang untuk membolehkan/nyahdayakan UV, atau untuk validate tube.
 * `Post subdivision` - pintasan untuk menetapkan tahap multiresolution sebelum validate.
 * `Linear subdivision` - pintasan untuk menetapkan tahap linear subdivision sebelum validate. 
@@ -510,14 +510,14 @@ Divisions pada 4 dan Post subdivision pada 3 akan menghasilkan tube hujung bulat
 :::
 
 
-### ![](/icons/tool_lathe.webp) Lathe
+### ![](/icons/tool_lathe.webp) Larik {#lathe}
 Cipta permukaan putaran dengan melukis satu lengkung.
 
 Alat ini bagus untuk bentuk seperti pasu, gelas wain.
 
 ![](/videos/tool_lathe.mp4)
 
-#### Toolbar kiri Lathe
+#### Palang alat kiri larik {#lathe-left-toolbar}
 
 ![](/images/tool_lathe_left_toolbar.webp)
 
@@ -535,7 +535,7 @@ Toolbar kiri mempunyai pilihan berikut:
     * `Closed` - jadikan tube satu gelung
     * `Screen` - Apabila aktif, path 'dipin' ke skrin, membolehkan anda menggerakkan pandangan dan objek, dan path kekal di tempat. Apabila tidak aktif, path adalah sebahagian daripada adegan 3D, dan ia akan bergerak dengan kamera dan objek.
 
-#### Toolbar atas Lathe
+#### Palang alat atas larik {#lathe-top-toolbar}
 ![](/images/tool_lathe_top_toolbar.webp)
 
 Apabila lathe dipilih, toolbar akan muncul di bahagian atas viewport dengan kawalan tambahan. Klik tajuk toolbar untuk kuncup/kembang toolbar, dan klik anak panah di kanan-atas untuk memindahkan toolbar ke bahagian atas atau bawah viewport.
@@ -554,7 +554,7 @@ Apabila lathe dipilih, toolbar akan muncul di bahagian atas viewport dengan kawa
 * `Constant density` - apabila aktif, akan mengekalkan poligon segi empat sama. apabila dimatikan, akan membenarkan anda menetapkan `Y divisions` sepanjang panjang tube.
 * `...` - Menu tetapan Lathe.
 
-#### Tetapan Lathe
+#### Tetapan larik {#lathe-settings}
 * `Primitive` - butang untuk membolehkan/nyahdayakan UV, atau untuk validate tube.
 * `Post subdivision` - pintasan untuk menetapkan tahap multiresolution sebelum validate.
 * `Linear subdivision` - pintasan untuk menetapkan tahap linear subdivision sebelum validate. 
@@ -562,7 +562,7 @@ Apabila lathe dipilih, toolbar akan muncul di bahagian atas viewport dengan kawa
 * `Division Y` - sama seperti Y Divisions dalam toolbar.
 * `Curve (Repeater)` - tukar profil lengkung menjadi [Curve Repeater](scene.md#curve)
 
-### ![](/icons/tool_insert.webp) Insert
+### ![](/icons/tool_insert.webp) Sisip {#insert}
 Letakkan objek pada permukaan objek lain. Dari segi penggunaan ia serupa dengan alat stamp, tetapi untuk bentuk 3D penuh.
 
 Jika anda memilih primitif dari toolbar kiri, klik-seret pada mana-mana permukaan akan meletakkan primitif di tempat anda klik, seretan akan menetapkan saiz. Sebaik sahaja anda selesai menyeret, Insert akan bertukar ke mod [Transform](#transform).
@@ -575,7 +575,7 @@ Jika objek mempunyai pivot tersuai, maka ia akan digunakan sebagai titik sauh. L
 
 ![](/videos/tool_insert.mp4)
 
-### ![](/icons/tool_transform.webp) Transform
+### ![](/icons/tool_transform.webp) Ubah {#transform}
 Alih/Putar/Skalakan model secara terus dengan 1 dan 2 jari, biasanya di atas permukaan objek lain.
 
 Alat dikawal dengan toolbar kiri, dan mempunyai 5 butang:
@@ -609,7 +609,7 @@ Ini memberikan aliran kerja pantas untuk mengklon objek di atas objek lain, cont
 
 ![](/videos/tool_transform.mp4)
 
-### ![](/icons/tool_gizmo.webp) Gizmo
+### ![](/icons/tool_gizmo.webp) Gizmo {#gizmo}
 Alat ini membolehkan anda menggerak, memutar dan menskalakan objek, dan mengubah pivot objek.
 
 Pemegang viewport mempunyai ciri berikut:
@@ -620,7 +620,7 @@ Pemegang viewport mempunyai ciri berikut:
 
 ![](/images/tool_gizmo.webp)
 
-#### Node dan verteks 
+#### Nod dan verteks {#nodes-and-vertices}
 
 Setiap objek dalam Nomad terdiri daripada node dan verteks:
 
@@ -629,7 +629,7 @@ Setiap objek dalam Nomad terdiri daripada node dan verteks:
 
 Jika anda mempunyai kotak ringkas yang terdiri daripada 8 verteks, anda boleh menterjemahkannya dengan mengubah matriks transformasinya, atau dengan mengubah kedudukan verteks. Semasa sculpting anda biasanya mahu mengubah verteks, semasa menggerakkan objek dengan gizmo, anda biasanya mahu mengubah node. Nomad membenarkan anda melakukan kedua-duanya. 
 
-#### Toolbar menu kiri
+#### Palang menu kiri {#left-menu-toolbar}
 
 Toolbar kiri mengawal sama ada gizmo akan berfungsi pada node atau verteks, serta fungsi lain:
 
@@ -642,7 +642,7 @@ Toolbar kiri mengawal sama ada gizmo akan berfungsi pada node atau verteks, sert
 * `Snap translation` - Aktifkan nilai terjemahan disnap kepada kenaikan, nilai snap dipaparkan dan boleh diedit apabila snap aktif.
 * `Pivot` - Apabila diaktifkan, gizmo boleh digerak dan diputar tanpa menggerakkan objek. Ia mempunyai menu tambahan yang diterangkan di bawah.
 
-#### Pivot
+#### Pivot {#pivot}
 Apabila mod pivot aktif, menu dipaparkan untuk membolehkan perubahan pivot pantas:
 
 **Reset** 
@@ -657,11 +657,11 @@ Apabila mod pivot aktif, menu dipaparkan untuk membolehkan perubahan pivot panta
 * `First` - Pindah (tetapi jangan putar) pivot ke tempat permukaan diketuk
 * `Medial` - Pindahkan pivot ke tengah objek, di bawah tempat permukaan diketuk.
 
-#### Tetapan Gizmo
+#### Tetapan gizmo {#gizmo-settings}
 
 ![](/images/tool_gizmo_settings.webp)
 
-##### Matrix 
+##### Matriks {#matrix}
 * ![](/icons/target.webp) `Move origin` - Pindahkan objek supaya pivotnya berada di tengah adegan, dipanggil origin.
 * ![](/icons/bake.webp)  `Bake` - Bekukan objek di tempat ia berada, dan tetapkan nilai translate/rotate kepada 0, scale kepada 1.
 * ![](/icons/bake.webp) -> ![](/icons/tool_gizmo.webp) `Bake Pivot` - Jadikan nilai matriks sepadan dengan tempat pemegang gizmo berada dalam dunia.
@@ -713,7 +713,7 @@ Ini amat berguna untuk putaran, kerana ia tidak mengubah apa-apa untuk terjemaha
 
 ![](/videos/tool_gizmo.mp4)
 
-### ![](/icons/tool_faceGroup.webp) Facegroup
+### ![](/icons/tool_faceGroup.webp) Kumpulan muka {#facegroup}
 
 Facegroup membolehkan anda mengatur objek kepada muka berwarna berbeza. Anda boleh menggunakan kumpulan ini dalam banyak cara dalam Nomad:
 
@@ -724,7 +724,7 @@ Facegroup membolehkan anda mengatur objek kepada muka berwarna berbeza. Anda bol
 * Membimbing quad remesher
 * Kawalan tambahan untuk alat seperti smooth.
 
-#### Toolbar kiri Facegroup
+#### Palang alat kiri kumpulan muka {#facegroup-left-toolbar}
 
 * `Patch ` - Paparkan facegroup tersedia sebagai patch. Patch tidak digunakan boleh dipadam. Ketik pada patch untuk menamakan semula atau menukar warnanya. Ikon tambah membolehkan anda mencipta patch baharu.
 * `Dot` - Lukis pada objek untuk mentakrifkan facegroup. Apabila '+ Face Group' diaktifkan, setiap stroke baharu akan secara automatik mencipta facegroup baharu, berguna untuk mentakrifkan kawasan dengan cepat. Ketikan akan flood fill kawasan terpilih. Peluncur menetapkan radius dot.
@@ -732,7 +732,7 @@ Facegroup membolehkan anda mengatur objek kepada muka berwarna berbeza. Anda bol
 * `Shape selector` - Cipta facegroup dengan bentuk dan bukannya berus, melalui `Lock+Radius`, `Lasso`, `Polygon`, `Rect` dan `Ellipse`. Lihat [Shape Selector](#shape-selector) untuk maklumat lanjut.
 * `Auto-pick` - Apabila diaktifkan, akan memilih patch di mana stroke bermula, dan menggunakan patch itu untuk sepanjang stroke. Sangat berguna untuk mengemas kawasan facegroup; jika facegroup telah meluas terlalu jauh, aktifkan auto-pick, mulakan stroke dari tempat patch facegroup betul, dan seret ke sempadan untuk menetapkan semula patch yang betul.
 
-### ![](/icons/tool_hide.webp) Hide
+### ![](/icons/tool_hide.webp) Sembunyi {#hide}
 Sembunyikan atau asingkan bahagian objek. 
 
 Mod utama dikawal dari menu kiri:
@@ -750,10 +750,10 @@ Toolbar akan muncul di bahagian atas viewport dengan kawalan tambahan:
 * `Delete` - Padam bahagian objek yang tersembunyi
 * `Split` - Pisahkan bahagian objek yang tersembunyi menjadi bentuk baharu.
 
-### ![](/icons/tool_measure.webp) Measure
+### ![](/icons/tool_measure.webp) Ukur {#measure}
 Seret untuk mengukur jarak antara 2 titik.
 
-### ![](/icons/tool_remesh.webp) Quad Remesher
+### ![](/icons/tool_remesh.webp) Quad Remesher {#quad-remesher}
 
 ![](/images/tool_quadremesher.webp)
 
@@ -780,7 +780,7 @@ Apabila alat ini diaktifkan buat kali pertama, ia akan bertanya sama ada anda ma
 * `Rect` - Lukis segi empat tepat pada permukaan arca, quad remesher akan menggunakannya sebagai panduan untuk aliran tepi. Ketik pada satu laluan untuk memadamkannya.
 * `Ellipse` - Lukis elips pada permukaan arca, quad remesher akan menggunakannya sebagai panduan untuk aliran tepi. Ketik pada satu laluan untuk memadamkannya.
 
-#### Quad remesher top toolbar
+#### Palang alat atas quad remesher {#quad-remesher-top-toolbar}
 ![](/images/tool_quadremesher_toolbar.webp)
 
 Satu bar alat akan muncul di bahagian atas viewport dengan kawalan tambahan:
@@ -801,7 +801,7 @@ Satu bar alat akan muncul di bahagian atas viewport dengan kawalan tambahan:
 * `Symmetry` - Togol untuk mengaktifkan hasil simetri. Ambil perhatian bahawa simetri sentiasa dikira di sekeliling paksi-x dunia, jadi pastikan model anda berada di origin jika anda menjangkakan hasil simetri.
 * `...` - Menu tetapan Quadremesher. 
 
-#### Quad remesher settings menu
+#### Menu tetapan quad remesher {#quad-remesher-settings-menu}
 
 Kebanyakan tetapan ini tersedia dalam bar alat atas.
 
@@ -827,14 +827,14 @@ Dalam pilihan quad remesh pastikan relax dilumpuhkan (kerana anda telah pun melo
 
 :::
 
-### ![](/icons/tool_select.webp) Select
+### ![](/icons/tool_select.webp) Pilih {#select}
 Gunakan mod bentuk untuk memilih objek dalam adegan. `Unselect` akan mengeluarkan objek daripada pemilihan.
 
-### ![](/icons/tool_view.webp) View
+### ![](/icons/tool_view.webp) Papar {#view}
 "Alat" ini tidak melakukan apa-apa secara khusus, ini hanyalah cara untuk melihat model tanpa mengubah suai adegan anda.
 
 
-## Toolbox context menu
+## Menu konteks kotak alat {#toolbox-context-menu}
 
 ![](/images/tools_context_menu.webp)
 

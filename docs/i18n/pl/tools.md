@@ -1,4 +1,4 @@
-# ![](/icons/toolbox.webp) Narzędzia
+# ![](/icons/toolbox.webp) Narzędzia {#tools}
 
 ![](/images/tools_menu.webp)
 
@@ -6,7 +6,7 @@
 Przejdź do [Narzędzia](#tools-1), aby zobaczyć opisy poszczególnych narzędzi.
 :::
 
-## Przegląd
+## Przegląd {#overview}
 
 Narzędzia wybiera się z `Toolbox` po prawej stronie, a steruje się nimi za pomocą `Tool Controls` po lewej. Dodatkowe ustawienia znajdują się w menu `Settings`, pierwszej ikonie w prawym górnym rogu.
 
@@ -31,7 +31,7 @@ Narzędzia Nomad są kolorystycznie oznaczone w toolboxie:
 Wiele z tych narzędzi można dostosować pod względem zachowania pędzla, nacisku, tekstur itp. za pomocą menu [Stroke](stroke.md). 
 
 
-### Kontrolki pędzla
+### Sterowanie pędzlem {#brush-controls}
 
 Lewy pasek narzędzi zawiera suwaki promienia i intensywności, a następnie specyficzne dla kategorii narzędzia kontrolki, opisane poniżej.
 
@@ -41,17 +41,17 @@ Lewy pasek narzędzi zawiera suwaki promienia i intensywności, a następnie spe
 Suwak intensywności dla wielu narzędzi może przekraczać 100%, warto poeksperymentować!
 :::
 
-### Sub mode
+### Tryb podrzędny {#sub-mode}
 Przycisk bezpośrednio pod suwakiem intensywności to przycisk `Sub`. Jego etykieta i funkcja zmieniają się w zależności od narzędzia, a po wciśnięciu wywołuje alternatywne, zwykle przeciwne zachowanie. Np. dla [Paint](#paint) włącza tryb Erase, dla [Crease](#crease) tworzy wypukłe krawędzie zamiast wcięć itp.
 
 Domyślnie działa jak przycisk chwilowy; tzn. możesz go przytrzymać, aby tymczasowo go włączyć, po puszczeniu zostanie wyłączony. Jeśli go stukniesz, tryb sub będzie aktywny na stałe.
 
-### Skróty
+### Skróty {#shortcuts}
 Na dole lewego paska narzędzi znajdują się skróty do [Smooth](#smooth), [Mask](#mask), [Hide](#hide), [Gizmo](#gizmo), [Color](painting.md#pbr-sliders), [Alpha](stroke.md#alpha). 
 
 Domyślnie wszystkie działają jak przyciski chwilowe; tzn. możesz je przytrzymać, aby tymczasowo je włączyć, po puszczeniu zostaną wyłączone. Jeśli je stukniesz, dany tryb skrótu będzie aktywny na stałe.
 
-### Kontrolki zaznaczenia
+### Sterowanie zaznaczeniem {#selection-controls}
 
 Narzędzia [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Project](#project), [Facegroup](#facegroup) i [Hide](#hide) używają podobnych kontrolek do zaznaczania obszarów siatki.
 
@@ -69,7 +69,7 @@ Narzędzia [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [P
 
 Większość narzędzi ma opcję auto validate, co oznacza, że operacja zostanie wykonana natychmiast po zakończeniu rysowania kształtu. Gdy auto validate jest wyłączone, obok kształtu pojawi się zielony przycisk, który wykona operację. Pozwala to edytować kształt, dostosować widok, a gdy będziesz gotowy do użycia kształtu, naciśnij zielony przycisk.
 
-### Edycja kształtu
+### Edycja kształtu {#shape-editing}
 Edycja wielokątów i krzywych zachowuje się w podobny sposób:
 
 * Na początek przeciągnij linię, aby zdefiniować 2 punkty, następnie przeciągnij ze środka linii, aby zdefiniować wielokąt lub krzywą.
@@ -78,13 +78,13 @@ Edycja wielokątów i krzywych zachowuje się w podobny sposób:
 * Aby usunąć punkt, przeciągnij go na sąsiedni, aż zmieni kolor na czerwony.
 * Ikona kosza w rogu ikony wielokąta lub ścieżki usunie kształt.
 
-### Menu Settings
+### Menu ustawień {#settings-menu}
 
 Wiele narzędzi ma dodatkowe ustawienia znajdujące się w menu settings, pierwszej ikonie w prawym górnym rogu:
 
 ![](/images/tools_settings_menu.webp)
 
-## Tools
+## Narzędzia {#tools-1}
 
 |                                                                     |                                                   |                                                                   |                                                         |                                                         |                                                                     |
 | :-----------------------------------------------------------------: | :-----------------------------------------------: | :---------------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------------------: |
@@ -97,24 +97,24 @@ Wiele narzędzi ma dodatkowe ustawienia znajdujące się w menu settings, pierws
 
 ------
 
-### ![](/icons/tool_clay.webp) Clay
+### ![](/icons/tool_clay.webp) Glina {#clay}
 Narzędzie Clay jest przydatne do budowania rzeźby. `Sub` usuwa materiał z rzeźby.
 
 ![](/videos/tool_clay.mp4)
 
-### ![](/icons/tool_brush.webp) Brush
+### ![](/icons/tool_brush.webp) Pędzel {#brush}
 Standardowy pędzel. `Sub` usuwa materiał.
 
 ![](/videos/tool_brush.mp4)
 
-### ![](/icons/tool_move.webp) Move
+### ![](/icons/tool_move.webp) Przesuń {#move}
 Obszar pod pędzlem „przykleja się” do pędzla, umożliwiając elastyczną deformację. Zaznaczenie jest utrzymywane podczas przesuwania, więc jeśli odsuniesz pędzel, a potem wrócisz w to samo miejsce, nie zobaczysz deformacji.
 
 Tryb sub to `Normal` i przesuwa obszar pod pędzlem wzdłuż normalnej powierzchni.
 
 To narzędzie jest dobre zarówno do dużych deformacji, jak i precyzyjnych, małych zmian.
 
-#### Ustawienia Move
+#### Ustawienia narzędzia Przesuń {#move-settings}
 
 * `Radius (Background)` - Jak daleko od krawędzi modelu możesz być i nadal rzeźbić, przydatne przy pracy nad sylwetką obiektu. 
 * `Same-side vertex only` - Ignoruj wierzchołki, które są zwrócone w przeciwnym kierunku niż deformacja.
@@ -122,40 +122,40 @@ To narzędzie jest dobre zarówno do dużych deformacji, jak i precyzyjnych, ma�
 
 ![](/videos/tool_move.mp4)
 
-### ![](/icons/tool_drag.webp) Drag
+### ![](/icons/tool_drag.webp) Przeciągnij {#drag}
 Obszar pod pędzlem „przykleja się” do pędzla, umożliwiając elastyczną deformację. W przeciwieństwie do pędzla Move, zaznaczenie jest ciągle aktualizowane podczas pociągnięcia, więc można tworzyć dłuższe, „wężowe” obiekty, szczególnie gdy włączona jest Dynamic Topology.
 
 Tryb sub to `Normal` i przesuwa obszar pod pędzlem wzdłuż normalnej powierzchni.
 
 To narzędzie jest dobre do luźniejszych, gesturalnych zmian kształtu.
 
-#### Ustawienia Drag
+#### Ustawienia narzędzia Przeciągnij {#drag-settings}
 
 * `Radius (Background)` - Jak daleko od krawędzi modelu możesz być i nadal rzeźbić, przydatne przy pracy nad sylwetką obiektu. 
 * `Same-side vertex only` - Ignoruj wierzchołki, które są zwrócone w przeciwnym kierunku niż deformacja.
 
 ![](/videos/tool_drag.mp4)
 
-### ![](/icons/tool_smooth.webp) Smooth
+### ![](/icons/tool_smooth.webp) Wygładzanie {#smooth}
 Wygładza obszar poprzez uśrednianie pozycji punktów. To narzędzie jest silnie zależne od gęstości wielokątów.
 Jeśli masz wiele wielokątów, wygładzanie będzie mniej efektywne.
 
 Tryb sub to `Relax`, który wygładza tylko siatkę (wireframe), starając się zachować detale geometryczne.
 
-#### Ustawienia Smooth
+#### Ustawienia wygładzania {#smooth-settings}
 
 ![](/images/tool_smooth_settings.webp)
 
-##### Facegroup
+##### Grupa ścian {#smooth-facegroup}
 
 * `Relax` - Wygładza krawędzie facegroupów. Użyj intensywności większej niż 100%, aby szybko wygładzić krawędzie. `Auto` wygładza tylko wtedy, gdy podgląd facegroupów jest włączony, `Off` wyłącza, `On` włącza. 
 
-##### Vertex
+##### Wierzchołek {#vertex}
 * `Sticky vertex on border` - Dla siatek z otwartymi krawędziami, np. płaszczyzny, możliwe jest wygładzenie narożników. Włączenie tej opcji zablokuje otwarte krawędzie.
 * `Relax` - to samo co alternatywny tryb relax na lewym pasku narzędzi.
 * `Stable smoothing` - Próbuje uczynić wygładzanie niezależnym od topologii. Najlepiej działa przy zróżnicowanej gęstości topologii i wysokiej wartości intensywności wygładzania.
 
-##### Painting
+##### Malowanie {#painting}
 * `Screen Smoothing` - Użyj tej opcji, aby uzyskać wygładzanie niezależne od topologii, nawet przy wysokich liczbach wielokątów.
 * `Screen samples` - Jakość wygładzania, wyższe wartości będą gładsze, ale wolniejsze.
 
@@ -165,7 +165,7 @@ Wyższe gęstości wielokątów mogą wymagać podniesienia intensywności powy�
 
 ![](/videos/tool_smooth.mp4)
 
-### ![](/icons/tool_mask.webp) Mask
+### ![](/icons/tool_mask.webp) Maska {#mask}
 To narzędzie pozwala maskować wierzchołki. Zamaskowane wierzchołki są chronione przed rzeźbieniem lub malowaniem. 
 
 Tryb sub to `Unmask` i wymazuje obszary, gdzie maska została nałożona.
@@ -195,7 +195,7 @@ Tytuł paska można stuknąć, aby go rozwinąć/zwinąć, a strzałkę w prawym
 |                                 On tap (mask)      | Po włączeniu stuknięcie „wyspy” zamaskowanych lub odmaskowanych wielokątów wypełni ją     |
 | ![](/icons/vertex.webp)        Connected          | Po włączeniu pociągnięcia maski wpływają tylko na połączoną topologię                     |
 
-##### Mask Quick gesture
+##### Szybki gest maski {#mask-quick-gesture}
 Możesz wykonywać gesty w stylu ZBrusha, trzymając przycisk szybkiego maskowania na lewym pasku narzędzi:
 | Action  | Gesture (hold lower-left shortcut) |
 | :-----: | :--------------------------------: |
@@ -205,28 +205,28 @@ Możesz wykonywać gesty w stylu ZBrusha, trzymając przycisk szybkiego maskowan
 | Sharpen | Stuknij w odmaskowany obszar       |
 
 
-#### Ustawienia Mask
+#### Ustawienia maski {#mask-settings}
 ![](/images/tool_mask_settings.webp)
 
 ![](/videos/tool_mask2.mp4)
 
 * `Preview` - Menu ustawień Mask służy głównie do tworzenia geometrii z maski. Z tego powodu domyślnym zachowaniem jest podgląd tego, jak będzie wyglądać nowa geometria. Możesz wybrać brak podglądu, podgląd extract, podgląd split oraz to, czy geometria będzie wyświetlana w trybie x-ray.
 
-##### Thickness
+##### Grubość {#thickness}
 * `Height` - Wysokość wyciągniętego kształtu. Ikona Plus/Minus pozwala przełączać się między ekstrudowaniem na zewnątrz, do wewnątrz lub wyśrodkowanym. 
 * `Height/Height+Mask` - Przełączanie między stałą wysokością a sytuacją, w której rozmyte części maski wpływają na wysokość, pozwalając na miękkie i zróżnicowane wysokości kształtów. 
 
-##### Smoothness
+##### Gładkość {#smoothness}
 Po włączeniu wygładza krawędź wyciągniętego kształtu, działa lepiej przy wyższej liczbie wielokątów. 
 * `Iterations` - Ilość zastosowanego wygładzania. Wysokie wartości dadzą bardzo gładkie, zakrzywione krawędzie, ale kształt zacznie odbiegać od maski.
 * `All/Sharp border/Borders only` - Wygładzanie może działać we wszystkich kierunkach, wygładzając boki i górę wyciągniętego kształtu, lub wygładzać górę i boki, ale zachować ostrą krawędź, albo wygładzać tylko krawędź, pozostawiając górną powierzchnię bez zmian.
 
-##### Edge loop (side)
+##### Pętla krawędzi (bok) {#edge-loop-side}
 * `Auto Edge-loop (side)` - Oblicza liczbę podziałów na bokach wyciągniętego kształtu, aby utworzyć kwadratowe wielokąty dopasowane do wielokątów obszaru zamaskowanego. Po wyłączeniu możesz sam ustawić liczbę edge loopów suwakiem.
 
 ----
 
-##### Extract
+##### Ekstrakcja {#extract}
 * `Extract` - Utwórz wyciągniętą geometrię.
 * `Closing action` - Jak ma zachowywać się extract. 'None' duplikuje zamaskowane polygony do nowego kształtu. 'Fill' robi to samo i próbuje załatać tylną powierzchnię. 'Shell' wyciąga do wartości ustawionej w 'thickness' i jest domyślne.
 
@@ -237,18 +237,18 @@ Jeśli podgląd jest w trybie 'Extract' z włączonym 'X-ray', kliknięcie przyc
 To normalne, zamknij menu ustawień maski, aby zobaczyć nowy kształt i oryginał, a następnie wybierz ponownie oryginalną powierzchnię, jeśli musisz wyczyścić maskę lub narysować nowe maski.
 :::
 
-##### Split
+##### Podział {#split-mask}
 * `Split` - Wyciągnie zarówno zamaskowane, jak i odmaskowane regiony do nowych kształtów. 
 * `Closing action (masked)` - Jak ma zachowywać się extract maski. 'None' duplikuje zamaskowane polygony do nowego kształtu. 'Fill' robi to samo i próbuje załatać tylną powierzchnię. 'Shell' wyciąga do wartości ustawionej w 'thickness' i jest domyślne.
 * `Closing action (unmasked)` - Jak ma zachowywać się extract odmaskowanej części. 'None' duplikuje odmaskowane polygony do nowego kształtu. 'Fill' robi to samo i próbuje załatać tylną powierzchnię. 'Shell' wyciąga do wartości ustawionej w 'thickness' i jest domyślne.
 * `Sync border` - Zapewnia, że krawędź między zamaskowanymi i odmaskowanymi wyciągniętymi kształtami pozostaje blisko siebie. Po wyłączeniu, ponieważ operacja shell wyciąga każdą ścianę wzdłuż jej normalnej, między kształtami może powstać szczelina.
 
-##### Carve
+##### Rzeźbienie {#carve}
 * `Carve` - W trybie domyślnym zachowuje się tak, jakbyś przyciął powierzchnię na głębokość 'thickness', jak wycięcie kawałka skórki pomarańczy. 
 
 
 
-### ![](/icons/tool_maskSelector.webp) Selection Mask
+### ![](/icons/tool_maskSelector.webp) Maska zaznaczenia {#selection-mask}
 To narzędzie jest w większości podobne do [Masking tool](#mask), główna różnica polega na tym, że nie używasz stroke do malowania maski, ale [Selection Controls](#selection-controls).
 
 Tryb sub to `Unmask` i wymazuje maskę za pomocą kontrolek zaznaczenia.
@@ -257,28 +257,28 @@ Selection mask współdzieli te same ustawienia narzędzia co `Mask`.
 
 ![](/videos/tool_selector_mask.mp4)
 
-### ![](/icons/tool_paint.webp) Paint
+### ![](/icons/tool_paint.webp) Malowanie {#paint}
 Nakłada kolor i właściwości materiału. Aby dowiedzieć się więcej o materiale, odwiedź sekcję [Painting](painting.md).
 
 Tryb sub to `Erase` i usuwa farbę.
 
-#### Ustawienia Paint
+#### Ustawienia malowania {#paint-settings}
 * `Layer fitering` - Działa jak blokada alfy warstwy w Photoshopie lub Procreate. Jeśli malujesz na warstwie, po włączeniu tej opcji możesz modyfikować tylko miejsca, gdzie farba już istnieje; niepomalowane obszary będą chronione.
 
 ![](/videos/tool_paint.mp4)
 
-### ![](/icons/tool_smudge.webp) Smudge
+### ![](/icons/tool_smudge.webp) Rozmazywanie {#smudge}
 Rozmazuje kolor i właściwości materiału. Menu ustawień Smudge zawiera suwak `Quality`, niższe wartości oznaczają szybsze pociągnięcia.
 
 ![](/videos/tool_smudge.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Flatten
+### ![](/icons/tool_flatten.webp) Spłaszczanie {#flatten}
 Spłaszcza obszar, rzutując punkty na średnią płaszczyznę.
 
 Tryb sub to `Fill` i definiuje płaszczyznę ustawioną przez najwyższy punkt, z tendencją do podciągania punktów w górę.
 
-#### Ustawienia Flatten
+#### Ustawienia spłaszczania {#flatten-settings}
 
 * `Lock plane direction` - Użyj kierunku płaszczyzny obliczonego przy pierwszym kliknięciu. Domyślnie wyłączone.
 * `Lock plane origin`- Użyj pierwszego kliknięcia jako środka płaszczyzny. Domyślnie wyłączone.
@@ -292,7 +292,7 @@ Przy pracy w obszarach o dużej krzywiźnie, np. próbując spłaszczyć policzk
 ![](/videos/tool_flatten.mp4)
 
 
-### ![](/icons/tool_planar.webp) Planar
+### ![](/icons/tool_planar.webp) Planarne {#planar}
 Ustawia punkty w jednej płaszczyźnie, rzutując je na średnią płaszczyznę, ale z mniejszym narastaniem niż pędzel Flatten. Tworzy to czystsze, twarde powierzchnie. Szybkie pociągnięcia bardziej wypychają i wciągają powierzchnię, wolniejsze, zaczynające się od już płaskich obszarów i wychodzące na zewnątrz, lepiej utrzymują płaszczyznę.
 
 Tryb sub to `Fill` i definiuje płaszczyznę ustawioną przez najwyższy punkt, z tendencją do podciągania punktów w górę.
@@ -301,19 +301,19 @@ Planar jest w rzeczywistości tym samym narzędziem co `Flatten`, ale z włączo
 
 ![](/videos/tool_planar.mp4)
 
-### ![](/icons/tool_crease.webp) Crease
+### ![](/icons/tool_crease.webp) Zagięcie {#crease}
 Narzędzia Crease są przydatne do rzeźbienia małych nacięć lub wgłębień.
 
 Tryb sub to `Invert` i tworzy wypukłe wcięcia.
 
-#### Ustawienia Crease
+#### Ustawienia zagięcia {#crease-settings}
 
 * `Pinch factor` - Jak bardzo ściągać wierzchołki na boki w kierunku pociągnięcia pędzla. Jeśli pinch jest na 1, a offset na 0, powierzchnia nie będzie miała zmian głębokości, tylko zmiany topologii, ściągając krawędzie w kierunku pociągnięcia.
 * `Offset factor` - Jak bardzo wypychać/wciągać wierzchołki w głąb. Jeśli pinch jest na 0, a offset na 1, powstaną głębokie wcięcia lub wypukłe wgłębienia, ale będą wyglądać poszarpanie, ponieważ za mało geometrii jest ściągane w kierunku wcięcia, aby dokładnie zdefiniować boki lub dno.
 
 ![](/videos/tool_crease.mp4)
 
-### ![](/icons/tool_pinch.webp) Pinch
+### ![](/icons/tool_pinch.webp) Ściśnięcie {#pinch}
 To narzędzie może być używane do wyostrzania krawędzi.
 
 Tryb sub to `Invert` i rozsuwa wierzchołki.
@@ -321,7 +321,7 @@ Tryb sub to `Invert` i rozsuwa wierzchołki.
 ![](/videos/tool_pinch.mp4)
 
 
-### ![](/icons/tool_trim.webp) Trim
+### ![](/icons/tool_trim.webp) Przycinanie {#trim}
 Narzędzie Trim działa poprzez usunięcie fragmentu siatki i daje opcje, jak przetworzyć powstałą lukę. Używa [Selection controls](#selection-controls) do zdefiniowania przycięcia.
 
 ::: tip
@@ -330,7 +330,7 @@ Ponieważ to narzędzie projektuje z kamery, otrzymasz ostrzeżenie, jeśli kame
 W trybie ortograficznym cięcie przez siatkę jest równoległe do widoku, co zwykle jest oczekiwane. W trybie perspektywicznym cięcie będzie wyglądać inaczej po dalszej i bliższej stronie obiektu.
 :::
 
-#### Ustawienia Trim
+#### Ustawienia przycinania {#trim-settings}
 
 * `Stroke painting` - Jeśli malowanie jest włączone w menu Paint, załatany obszar zostanie wypełniony aktualnie wybranym kolorem.
 * `Boolean` - wypełnia dziurę po przycięciu regionem quadów. Wypełniony region będzie płaski.
@@ -346,10 +346,10 @@ W trybie ortograficznym cięcie przez siatkę jest równoległe do widoku, co zw
 
 ![](/videos/tool_trim.mp4)
 
-### ![](/icons/tool_split.webp) Split
+### ![](/icons/tool_split.webp) Podział {#split}
 Podobne do narzędzia [Trim](#trim), z tą różnicą, że Trim odrzuca zaznaczenie, a Split zachowuje zaznaczenie jako nowy obiekt.
 
-#### Ustawienia Split
+#### Ustawienia podziału {#split-settings}
 
 * `Stroke painting` - Jeśli malowanie jest włączone w menu Paint, załatany obszar zostanie wypełniony aktualnie wybranym kolorem.
 * `Boolean` - wypełnia dziurę po podziale regionem quadów. Wypełnione regiony będą płaskie.
@@ -366,7 +366,7 @@ Podobne do narzędzia [Trim](#trim), z tą różnicą, że Trim odrzuca zaznacze
 ![](/videos/tool_split.mp4)
 
 
-### ![](/icons/tool_project.webp) Project
+### ![](/icons/tool_project.webp) Projekcja {#project}
 Narzędzie Project wygląda jak [Trim](#trim), ale nie usuwa ani nie tworzy geometrii, tylko przesuwa wierzchołki, aby dopasować je do zaznaczenia.
 
 ![](/videos/tool_project.mp4)
@@ -375,7 +375,7 @@ Narzędzie Project wygląda jak [Trim](#trim), ale nie usuwa ani nie tworzy geom
 Jeśli użyjesz Project będąc na warstwie, możesz mieszać między oryginalnym a zprojekowanym kształtem suwakiem warstwy.
 :::
 
-### ![](/icons/tool_layer.webp) Layer
+### ![](/icons/tool_layer.webp) Warstwa {#layer}
 Podnosi powierzchnię, ale ogranicza wysokość.
 
 Jeśli trzymasz rysik na ekranie i wciąż malujesz po obszarze, Layer podniesie go do pewnej wysokości i dalej nie pójdzie, w przeciwieństwie do innych narzędzi, które będą wciąż kumulować wysokość.
@@ -388,7 +388,7 @@ Utwórz warstwę i użyj tego narzędzia. Maksymalna wysokość jest teraz ustaw
 
 `Sub` użyje minimalnej głębokości, tworząc rowki.
 
-#### Ustawienia Layer
+#### Ustawienia warstwy {#layer-settings}
 
 * `Use layer data` - Po włączeniu i przy zaznaczonej warstwie używa danych warstwy do ustawienia maksymalnej wysokości.
 * `Inflate`- Po włączeniu dostosowuje kierunek działania Layer, aby uzyskać gładsze rezultaty.
@@ -397,10 +397,10 @@ Utwórz warstwę i użyj tego narzędzia. Maksymalna wysokość jest teraz ustaw
 ![](/videos/tool_layer.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Inflate
+### ![](/icons/tool_flatten.webp) Nadmuchanie {#inflate}
 Przesuwa wierzchołki wzdłuż ich własnych normalnych. `Sub` przesuwa wierzchołki wzdłuż odwróconej normalnej.
 
-#### Ustawienia Inflate
+#### Ustawienia nadmuchiwania {#inflate-setings}
 * `Relax (Normal)` - Ilość wygładzania stosowanego do normalnych.
 
 ![](/videos/tool_inflate.mp4)
@@ -408,13 +408,13 @@ Przesuwa wierzchołki wzdłuż ich własnych normalnych. `Sub` przesuwa wierzcho
 
 
 
-### ![](/icons/tool_nudge.webp) Nudge
+### ![](/icons/tool_nudge.webp) Szturchnięcie {#nudge}
 Przesuwa lub „rozmazuje” punkty w kierunku pociągnięcia.
 
 ![](/videos/tool_nudge.mp4)
 
 
-### ![](/icons/tool_stamp.webp) Stamp
+### ![](/icons/tool_stamp.webp) Stempel {#stamp}
 
 Kliknij i przeciągnij, aby podnieść obszar rzeźby w kształcie wybranego Alpha.
 
@@ -435,13 +435,13 @@ Dwa tryby stroke są przydatne do różnych rzeczy.
 ![](/videos/tool_stamp.mp4)
 
 
-### ![](/icons/tool_clearLayer.webp) Delete Layer
+### ![](/icons/tool_clearLayer.webp) Usuń warstwę {#delete-layer}
 To narzędzie może resetować warstwy lokalnie, potrzebujesz aktywnej warstwy, w przeciwnym razie nic się nie stanie.
 
 ![](/videos/tool_delete_layer.mp4)
 
 
-### ![](/icons/tool_tube.webp) Tube
+### ![](/icons/tool_tube.webp) Rura {#tube}
 Twórz rurę, rysując krzywą. 
 ![](/images/tool_tube_new.webp)
 
@@ -449,7 +449,7 @@ Po utworzeniu rury ścieżkę można edytować w przestrzeni 3D, używając podo
 
 ![](/videos/tool_tube.mp4)
 
-#### Lewy pasek narzędzi Tube
+#### Lewy pasek narzędzi Rury {#tube-left-toolbar}
 
 ![](/images/tool_tube_left_toolbar.webp)
 
@@ -468,7 +468,7 @@ Lewy pasek narzędzi ma następujące opcje:
     * `Closed` - zamienia rurę w pętlę
     * `Screen` - Po włączeniu ścieżka jest „przypięta” do ekranu, pozwalając na poruszanie widokiem i obiektem, a ścieżka pozostaje na miejscu. Po wyłączeniu ścieżka jest częścią sceny 3D i porusza się wraz z kamerą i obiektami.
 
-##### Górny pasek narzędzi Tube
+##### Górny pasek narzędzi Rury {#tube-top-toolbar}
 ![](/images/tool_tube_toolbar.webp)
 Gdy rura jest zaznaczona, na górze widoku pojawi się pasek narzędzi z dodatkowymi kontrolkami. Kliknij tytuł paska, aby go zwinąć/rozwinąć, a strzałkę w prawym górnym rogu, aby przenieść pasek na górę lub dół widoku.
 
@@ -489,7 +489,7 @@ Gdy rura jest zaznaczona, na górze widoku pojawi się pasek narzędzi z dodatko
 * `Constant density` - Po włączeniu utrzymuje kwadratowe wielokąty. Po wyłączeniu pozwala ustawić `Y divisions` wzdłuż długości rury.
 * `...` - Menu ustawień Tube.
 
-#### Przełącznik usuwania punktu krzywej
+#### Przełącznik usuwania punktu krzywej {#curve-point-delete-toggle}
 
 ![](/images/tool_tube_delete_toggle.webp)
 
@@ -497,7 +497,7 @@ Poniżej paska narzędzi znajduje się przełącznik usuwania punktu krzywej. Gd
 
 
 
-#### Ustawienia Tube
+#### Ustawienia Rury {#tube-settings}
 * `Primitive` - przyciski pozwalające włączyć/wyłączyć UV lub zatwierdzić rurę.
 * `Post subdivision` - skrót do ustawienia poziomu multiresolution przed zatwierdzeniem.
 * `Linear subdivision` - skrót do ustawienia poziomu linear subdivision przed zatwierdzeniem. 
@@ -510,14 +510,14 @@ Division X ustawione na 4 i Post subdivision na 3 da gładkie, zaokrąglone koń
 :::
 
 
-### ![](/icons/tool_lathe.webp) Lathe
+### ![](/icons/tool_lathe.webp) Tokarka {#lathe}
 Twórz powierzchnię obrotową, rysując krzywą.
 
 To narzędzie jest świetne do kształtów takich jak wazony, kieliszki do wina.
 
 ![](/videos/tool_lathe.mp4)
 
-#### Lewy pasek narzędzi Lathe
+#### Lewy pasek narzędzi Tokarki {#lathe-left-toolbar}
 
 ![](/images/tool_lathe_left_toolbar.webp)
 
@@ -535,7 +535,7 @@ Lewy pasek narzędzi ma następujące opcje:
     * `Closed` - zamienia rurę w pętlę
     * `Screen` - Po włączeniu ścieżka jest „przypięta” do ekranu, pozwalając na poruszanie widokiem i obiektem, a ścieżka pozostaje na miejscu. Po wyłączeniu ścieżka jest częścią sceny 3D i porusza się wraz z kamerą i obiektami.
 
-#### Górny pasek narzędzi Lathe
+#### Górny pasek narzędzi Tokarki {#lathe-top-toolbar}
 ![](/images/tool_lathe_top_toolbar.webp)
 
 Gdy lathe jest zaznaczony, na górze widoku pojawi się pasek narzędzi z dodatkowymi kontrolkami. Kliknij tytuł paska, aby go zwinąć/rozwinąć, a strzałkę w prawym górnym rogu, aby przenieść pasek na górę lub dół widoku.
@@ -554,7 +554,7 @@ Gdy lathe jest zaznaczony, na górze widoku pojawi się pasek narzędzi z dodatk
 * `Constant density` - Po włączeniu utrzymuje kwadratowe wielokąty. Po wyłączeniu pozwala ustawić `Y divisions` wzdłuż długości rury.
 * `...` - Menu ustawień Lathe.
 
-#### Ustawienia Lathe
+#### Ustawienia Tokarki {#lathe-settings}
 * `Primitive` - przyciski pozwalające włączyć/wyłączyć UV lub zatwierdzić rurę.
 * `Post subdivision` - skrót do ustawienia poziomu multiresolution przed zatwierdzeniem.
 * `Linear subdivision` - skrót do ustawienia poziomu linear subdivision przed zatwierdzeniem. 
@@ -562,7 +562,7 @@ Gdy lathe jest zaznaczony, na górze widoku pojawi się pasek narzędzi z dodatk
 * `Division Y` - to samo co Y Divisions na pasku narzędzi.
 * `Curve (Repeater)` - konwertuje profil krzywej na [Curve Repeater](scene.md#curve)
 
-### ![](/icons/tool_insert.webp) Insert
+### ![](/icons/tool_insert.webp) Wstaw {#insert}
 Umieszcza obiekt na powierzchni innego. W użyciu jest podobne do narzędzia Stamp, ale dla pełnych kształtów 3D.
 
 Jeśli wybierzesz prymityw z lewego paska narzędzi, kliknięcie i przeciągnięcie na dowolnej powierzchni umieści prymityw w miejscu kliknięcia, a przeciągnięcie ustawi rozmiar. Po zakończeniu przeciągania Insert przełączy się w tryb [Transform](#transform).
@@ -575,7 +575,7 @@ Jeśli obiekt ma niestandardowy pivot, zostanie on użyty jako punkt kotwiczenia
 
 ![](/videos/tool_insert.mp4)
 
-### ![](/icons/tool_transform.webp) Transform
+### ![](/icons/tool_transform.webp) Przekształć {#transform}
 Przesuwa/obraca/skaluje model bezpośrednio jednym i dwoma palcami, zwykle po powierzchni innego obiektu.
 
 Narzędzie jest kontrolowane lewym paskiem narzędzi i ma 5 przycisków:
@@ -609,7 +609,7 @@ Daje to szybki workflow do klonowania obiektów na innym, np. kamieni na krajobr
 
 ![](/videos/tool_transform.mp4)
 
-### ![](/icons/tool_gizmo.webp) Gizmo
+### ![](/icons/tool_gizmo.webp) Gizmo {#gizmo}
 To narzędzie pozwala przesuwać, obracać i skalować obiekty oraz zmieniać ich pivoty.
 
 Uchwyt w widoku ma następujące funkcje:
@@ -620,7 +620,7 @@ Uchwyt w widoku ma następujące funkcje:
 
 ![](/images/tool_gizmo.webp)
 
-#### Węzły i wierzchołki 
+#### Węzły i wierzchołki {#nodes-and-vertices}
 
 Każdy obiekt w Nomad składa się z węzła i wierzchołków:
 
@@ -629,7 +629,7 @@ Każdy obiekt w Nomad składa się z węzła i wierzchołków:
 
 Jeśli masz prostą kostkę złożoną z 8 wierzchołków, możesz ją przesunąć, modyfikując macierz transformacji lub pozycje wierzchołków. Podczas rzeźbienia zwykle chcesz modyfikować wierzchołki, podczas przesuwania obiektów gizmem zwykle chcesz modyfikować węzeł. Nomad pozwala robić jedno i drugie. 
 
-#### Lewy pasek narzędzi
+#### Lewy pasek menu {#left-menu-toolbar}
 
 Lewy pasek narzędzi kontroluje, czy gizmo będzie działać na węźle czy wierzchołkach obiektu, a także inne funkcje:
 
@@ -642,7 +642,7 @@ Lewy pasek narzędzi kontroluje, czy gizmo będzie działać na węźle czy wier
 * `Snap translation` - Włącza przyciąganie wartości przesunięcia do przyrostów, wartość przyciągania jest wyświetlana i można ją edytować po włączeniu.
 * `Pivot` - Po włączeniu gizmo można przesuwać i obracać bez przesuwania obiektu. Ma dodatkowe menu opisane poniżej.
 
-#### Pivot
+#### Punkt obrotu {#pivot}
 Gdy tryb pivot jest aktywny, wyświetlane jest menu umożliwiające szybkie zmiany pivotu:
 
 **Reset** 
@@ -657,11 +657,11 @@ Gdy tryb pivot jest aktywny, wyświetlane jest menu umożliwiające szybkie zmia
 * `First` - Przesuwa (ale nie obraca) pivot do miejsca stuknięcia na powierzchni
 * `Medial` - Przesuwa pivot do środka obiektu pod miejscem stuknięcia na powierzchni.
 
-#### Ustawienia Gizmo
+#### Ustawienia Gizmo {#gizmo-settings}
 
 ![](/images/tool_gizmo_settings.webp)
 
-##### Matrix 
+##### Macierz {#matrix}
 * ![](/icons/target.webp) `Move origin` - Przesuwa obiekt tak, aby jego pivot był w środku sceny (origin).
 * ![](/icons/bake.webp)  `Bake` - Zamraża obiekt w bieżącej pozycji i ustawia wartości translate/rotate na 0, scale na 1.
 * ![](/icons/bake.webp) -> ![](/icons/tool_gizmo.webp) `Bake Pivot` - Sprawia, że wartości macierzy odpowiadają położeniu uchwytu gizma w świecie.
@@ -713,7 +713,7 @@ Jest to szczególnie przydatne przy rotacji, ponieważ nie zmienia nic dla przes
 
 ![](/videos/tool_gizmo.mp4)
 
-### ![](/icons/tool_faceGroup.webp) Facegroup
+### ![](/icons/tool_faceGroup.webp) Grupa ścian {#facegroup}
 
 Facegroupy pozwalają zorganizować obiekt w różnokolorowe powierzchnie. Możesz używać tych grup na wiele sposobów w Nomadzie:
 
@@ -724,7 +724,7 @@ Facegroupy pozwalają zorganizować obiekt w różnokolorowe powierzchnie. Może
 * Kierowanie quad remeshera
 * Dodatkowa kontrola dla narzędzi takich jak Smooth.
 
-#### Lewy pasek narzędzi Facegroup
+#### Lewy pasek narzędzi Grupy ścian {#facegroup-left-toolbar}
 
 * `Patch ` - Wyświetla dostępne facegroupy jako łatki. Nieużywane łatki można usunąć. Stuknij łatkę, aby zmienić jej nazwę lub kolor. Ikona plus pozwala tworzyć nowe łatki.
 * `Dot` - Maluj po obiekcie, aby definiować facegroupy. Gdy '+ Face Group' jest włączone, każde nowe pociągnięcie automatycznie tworzy nowy facegroup, przydatne do szybkiego definiowania regionów. Stuknięcie wypełni zaznaczony region. Suwak ustawia promień kropki.
@@ -732,7 +732,7 @@ Facegroupy pozwalają zorganizować obiekt w różnokolorowe powierzchnie. Może
 * `Shape selector` - Tworzy facegroupy za pomocą kształtów zamiast pędzla, poprzez `Lock+Radius`, `Lasso`, `Polygon`, `Rect` i `Ellipse`. Zobacz [Shape Selector](#shape-selector), aby uzyskać więcej informacji.
 * `Auto-pick` - Po włączeniu wybierze łatkę, w której zaczyna się pociągnięcie, i zastosuje ją do reszty pociągnięcia. Bardzo przydatne do porządkowania regionów facegroupów; jeśli facegroup rozciągnął się za daleko, włącz Auto-pick, zacznij pociągnięcie tam, gdzie łatka facegroupu jest poprawna, i przeciągnij do krawędzi, aby przypisać poprawną łatkę.
 
-### ![](/icons/tool_hide.webp) Hide
+### ![](/icons/tool_hide.webp) Ukryj {#hide}
 Ukrywa lub izoluje części obiektu. 
 
 Główne tryby są kontrolowane z lewego menu:
@@ -750,10 +750,10 @@ Na górze widoku pojawi się pasek narzędzi z dodatkowymi kontrolkami:
 * `Delete` - Usuwa ukrytą część obiektu
 * `Split` - Dzieli ukrytą część obiektu na nowy kształt.
 
-### ![](/icons/tool_measure.webp) Measure
+### ![](/icons/tool_measure.webp) Pomiar {#measure}
 Przeciągnij, aby zmierzyć odległość między 2 punktami.
 
-### ![](/icons/tool_remesh.webp) Quad Remesher
+### ![](/icons/tool_remesh.webp) Quad Remesher {#quad-remesher}
 
 ![](/images/tool_quadremesher.webp)
 
@@ -780,7 +780,7 @@ When to narzędzie zostanie aktywowane po raz pierwszy, zapyta, czy chcesz je w�
 * `Rect` - Rysuj prostokąty na powierzchni rzeźby, quad remesher użyje ich jako prowadnic dla przepływu krawędzi. Stuknij ścieżkę, aby ją usunąć.
 * `Ellipse` - Rysuj elipsy na powierzchni rzeźby, quad remesher użyje ich jako prowadnic dla przepływu krawędzi. Stuknij ścieżkę, aby ją usunąć.
 
-#### Górny pasek narzędzi quad remeshera
+#### Górny pasek narzędzi Quad Remeshera {#quad-remesher-top-toolbar}
 ![](/images/tool_quadremesher_toolbar.webp)
 
 Na górze widoku pojawi się pasek narzędzi z dodatkowymi kontrolkami:
@@ -801,7 +801,7 @@ Na górze widoku pojawi się pasek narzędzi z dodatkowymi kontrolkami:
 * `Symmetry` - Przełącznik włączający symetryczny wynik. Zauważ, że symetria jest zawsze obliczana względem osi X świata, więc upewnij się, że model znajduje się w punkcie początkowym (origin), jeśli oczekujesz symetrycznego rezultatu.
 * `...` - menu ustawień Quadremeshera. 
 
-#### Menu ustawień quad remeshera
+#### Menu ustawień Quad Remeshera {#quad-remesher-settings-menu}
 
 Większość tych ustawień jest dostępna na górnym pasku narzędzi.
 
@@ -827,14 +827,14 @@ W opcjach quad remesha upewnij się, że relax jest wyłączony (ponieważ siatk
 
 :::
 
-### ![](/icons/tool_select.webp) Select
+### ![](/icons/tool_select.webp) Zaznacz {#select}
 Użyj trybów kształtu, aby zaznaczać obiekty na scenie. `Unselect` usunie obiekty z zaznaczenia.
 
-### ![](/icons/tool_view.webp) View
+### ![](/icons/tool_view.webp) Widok {#view}
 To „narzędzie” nie robi nic szczególnego, jest to po prostu sposób na oglądanie modelu bez modyfikowania sceny.
 
 
-## Menu kontekstowe skrzynki narzędzi (Toolbox)
+## Menu kontekstowe zestawu narzędzi {#toolbox-context-menu}
 
 ![](/images/tools_context_menu.webp)
 

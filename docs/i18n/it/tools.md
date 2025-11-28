@@ -1,4 +1,4 @@
-# ![](/icons/toolbox.webp) Strumenti
+# ![](/icons/toolbox.webp) Strumenti {#tools}
 
 ![](/images/tools_menu.webp)
 
@@ -6,7 +6,7 @@
 Vai a [Strumenti](#tools-1) per le descrizioni dei singoli strumenti.
 :::
 
-## Panoramica
+## Panoramica {#overview}
 
 Gli strumenti vengono selezionati dalla `Toolbox` a destra e controllati con i `Tool Controls` a sinistra. Impostazioni aggiuntive si trovano nel menu `Settings`, la prima icona nel menu in alto a destra.
 
@@ -31,7 +31,7 @@ Gli strumenti di Nomad sono codificati a colori nella toolbox:
 Molti di questi strumenti possono essere personalizzati con diversi comportamenti del pennello, pressione, texture ecc tramite il menu [Stroke](stroke.md). 
 
 
-### Controlli del pennello
+### Controlli del pennello {#brush-controls}
 
 La barra degli strumenti a sinistra ha slider per raggio e intensità, e poi controlli specifici per la categoria di strumento, spiegati sotto.
 
@@ -41,17 +41,17 @@ La barra degli strumenti a sinistra ha slider per raggio e intensità, e poi con
 Lo slider di intensità per molti strumenti può andare oltre il 100%, vale la pena sperimentare!
 :::
 
-### Sub mode
+### Modalità secondaria {#sub-mode}
 Il pulsante direttamente sotto lo slider di intensità è il pulsante `Sub`. La sua etichetta e funzione cambieranno con ogni strumento, e quando premuto invocherà un comportamento alternativo, di solito opposto. Ad es. per [Paint](#paint) invocherà una modalità Erase, per [Crease](#crease) creerà bordi rialzati invece che incisioni ecc.
 
 Per impostazione predefinita funziona come un pulsante “sticky”; cioè puoi tenerlo premuto per attivarlo temporaneamente, quando lo rilasci verrà disattivato. Se lo tocchi, la sub mode verrà attivata in modo permanente.
 
-### Scorciatoie
+### Scorciatoie {#shortcuts}
 In fondo alla barra degli strumenti di sinistra ci sono scorciatoie per [Smooth](#smooth), [Mask](#mask), [Hide](#hide), [Gizmo](#gizmo), [Color](painting.md#pbr-sliders), [Alpha](stroke.md#alpha). 
 
 Per impostazione predefinita funzionano tutti come pulsanti “sticky”; cioè puoi tenerli premuti per attivarli temporaneamente, quando li rilasci verranno disattivati. Se li tocchi, quella modalità scorciatoia verrà attivata in modo permanente.
 
-### Controlli di selezione
+### Controlli di selezione {#selection-controls}
 
 Gli strumenti [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Project](#project), [Facegroup](#facegroup) e [Hide](#hide) usano controlli simili per selezionare aree della mesh.
 
@@ -69,7 +69,7 @@ Gli strumenti [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split),
 
 La maggior parte degli strumenti ha un’opzione di auto validate, il che significa che l’operazione avverrà non appena avrai finito di disegnare la forma. Quando l’auto validate è disattivato, verrà disegnato un pulsante verde accanto alla forma che eseguirà l’operazione. Questo ti permette di modificare la forma, regolare la vista, e quando sei pronto per usare la forma, premi il pulsante verde.
 
-### Shape editing
+### Modifica forma {#shape-editing}
 L’editing di poligoni e curve si comporta in modo simile:
 
 * Per iniziare, trascina una linea per definire 2 punti, poi trascina dal centro della linea per definire un poligono o una curva.
@@ -78,13 +78,13 @@ L’editing di poligoni e curve si comporta in modo simile:
 * Per eliminare un punto, trascinalo nel suo vicino finché non diventa rosso.
 * L’icona del cestino nell’angolo dell’icona del poligono o del path eliminerà la forma.
 
-### Menu Settings
+### Menu impostazioni {#settings-menu}
 
 Molti strumenti hanno impostazioni extra che si trovano nel menu settings, la prima icona nel menu in alto a destra:
 
 ![](/images/tools_settings_menu.webp)
 
-## Tools
+## Strumenti {#tools-1}
 
 |                                                                     |                                                   |                                                                   |                                                         |                                                         |                                                                     |
 | :-----------------------------------------------------------------: | :-----------------------------------------------: | :---------------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------------------: |
@@ -97,24 +97,24 @@ Molti strumenti hanno impostazioni extra che si trovano nel menu settings, la pr
 
 ------
 
-### ![](/icons/tool_clay.webp) Clay
+### ![](/icons/tool_clay.webp) Argilla {#clay}
 Lo strumento Clay è utile per costruire la tua scultura. `Sub` rimuoverà materiale dalla scultura.
 
 ![](/videos/tool_clay.mp4)
 
-### ![](/icons/tool_brush.webp) Brush
+### ![](/icons/tool_brush.webp) Pennello {#brush}
 Il pennello standard. `Sub` rimuoverà materiale.
 
 ![](/videos/tool_brush.mp4)
 
-### ![](/icons/tool_move.webp) Move
+### ![](/icons/tool_move.webp) Sposta {#move}
 L’area sotto il pennello si attaccherà al pennello, permettendo una deformazione elastica. La selezione viene mantenuta durante il movimento, quindi se sposti il pennello lontano, poi lo riporti dove hai iniziato, non vedrai alcuna deformazione.
 
 La sub mode è `Normal` e sposterà l’area sotto il pennello lungo la normale della superficie.
 
 Questo pennello è adatto sia per deformazioni su larga scala che per piccole deformazioni precise.
 
-#### Impostazioni Move
+#### Impostazioni Sposta {#move-settings}
 
 * `Radius (Background)` - Quanto lontano dal bordo di un modello puoi essere e continuare a scolpire, utile quando lavori sulla silhouette di un oggetto. 
 * `Same-side vertex only` - Ignora i vertici che puntano nella direzione opposta alla deformazione.
@@ -122,40 +122,40 @@ Questo pennello è adatto sia per deformazioni su larga scala che per piccole de
 
 ![](/videos/tool_move.mp4)
 
-### ![](/icons/tool_drag.webp) Drag
+### ![](/icons/tool_drag.webp) Trascina {#drag}
 L’area sotto il pennello si attaccherà al pennello, permettendo una deformazione elastica. A differenza del pennello Move, la selezione viene aggiornata continuamente durante la pennellata, quindi è possibile creare oggetti lunghi e sinuosi, specialmente quando la Dynamic Topology è attivata.
 
 La sub mode è `Normal` e sposterà l’area sotto il pennello lungo la normale della superficie.
 
 Questo pennello è adatto a modifiche di forma più libere e gestuali.
 
-#### Impostazioni Drag
+#### Impostazioni Trascina {#drag-settings}
 
 * `Radius (Background)` - Quanto lontano dal bordo di un modello puoi essere e continuare a scolpire, utile quando lavori sulla silhouette di un oggetto. 
 * `Same-side vertex only` - Ignora i vertici che puntano nella direzione opposta alla deformazione.
 
 ![](/videos/tool_drag.mp4)
 
-### ![](/icons/tool_smooth.webp) Smooth
+### ![](/icons/tool_smooth.webp) Leviga {#smooth}
 Leviga l’area mediando le posizioni dei punti. Questo strumento dipende fortemente dalla densità dei poligoni.
 Quindi se hai molti poligoni, la levigatura sarà meno efficace.
 
 La sub mode è `Relax`, che leviga solo la wireframe ma cerca di mantenere i dettagli geometrici.
 
-#### Impostazioni Smooth
+#### Impostazioni Leviga {#smooth-settings}
 
 ![](/images/tool_smooth_settings.webp)
 
-##### Facegroup
+##### Gruppo facce {#smooth-facegroup}
 
 * `Relax` - Levigherà i bordi dei facegroup. Usa un’intensità superiore al 100% per levigare rapidamente i bordi. `Auto` levigherà solo se l’anteprima dei facegroup è abilitata, `Off` disabilita, `On` abilita. 
 
-##### Vertex
+##### Vertice {#vertex}
 * `Sticky vertex on border` - Per mesh con bordi aperti, ad es. un piano, è possibile levigare gli angoli. Abilitando questa opzione i bordi aperti verranno bloccati.
 * `Relax` - uguale alla modalità alternativa relax nella barra degli strumenti a sinistra.
 * `Stable smoothing` - Cerca di rendere la levigatura indipendente dalla topologia. Funziona meglio con densità di topologia variabile e con un valore di intensità di smoothing alto.
 
-##### Painting
+##### Pittura {#painting}
 * `Screen Smoothing` - Usa questa opzione per ottenere una levigatura indipendente dalla topologia, anche ad alti conteggi di poligoni.
 * `Screen samples` - La qualità della levigatura, valori più alti saranno più morbidi ma più lenti.
 
@@ -165,7 +165,7 @@ Densità di poligoni più alte possono richiedere di aumentare l’intensità ol
 
 ![](/videos/tool_smooth.mp4)
 
-### ![](/icons/tool_mask.webp) Mask
+### ![](/icons/tool_mask.webp) Maschera {#mask}
 Questo strumento ti permette di mascherare i vertici. I vertici mascherati sono protetti da scultura o pittura. 
 
 La sub mode è `Unmask` e cancellerà dove la maschera è stata dipinta.
@@ -195,7 +195,7 @@ Il titolo della barra può essere toccato per espandere/comprimere, oppure la fr
 |                                 On tap (mask)      | Quando abilitato, toccare un “isolotto” di poligoni mascherati o non mascherati lo riempirà |
 | ![](/icons/vertex.webp)        Connected          | Quando abilitato permette alle pennellate di maschera di influenzare solo topologia connessa |
 
-##### Gesture rapide Mask
+##### Gesto rapido Maschera {#mask-quick-gesture}
 Puoi eseguire gesture in stile ZBrush mentre tieni premuto il pulsante di quick masking nella barra in basso a sinistra:
 | Action  | Gesture (hold lower-left shortcut) |
 | :-----: | :--------------------------------: |
@@ -205,28 +205,28 @@ Puoi eseguire gesture in stile ZBrush mentre tieni premuto il pulsante di quick 
 | Sharpen | Tap sull’area non mascherata       |
 
 
-#### Impostazioni Mask
+#### Impostazioni Maschera {#mask-settings}
 ![](/images/tool_mask_settings.webp)
 
 ![](/videos/tool_mask2.mp4)
 
 * `Preview` - Il menu delle impostazioni Mask è usato principalmente per creare geometria dalla maschera. Per questo il comportamento predefinito è di mostrare un’anteprima di come sarà la nuova geometria. Puoi scegliere di non avere anteprima, un’anteprima di estrazione, un’anteprima di split e se questa geometria sarà mostrata in modalità x-ray.
 
-##### Thickness
+##### Spessore {#thickness}
 * `Height` - L’altezza della forma estratta. L’icona Plus/Minus ti permette di passare ciclicamente tra un’estrusione verso l’esterno, verso l’interno o centrata. 
 * `Height/Height+Mask` - Alterna tra altezza costante o se le parti sfocate della maschera devono influenzare l’altezza, permettendo forme morbide con altezze variabili. 
 
-##### Smoothness
+##### Morbidezza {#smoothness}
 Quando attivo, leviga il bordo della forma estratta, funziona meglio con conteggi di poligoni più alti. 
 * `Iterations` - La quantità di levigatura applicata. Valori alti produrranno bordi curvi molto lisci, ma inizieranno ad allontanarsi dalla forma della maschera.
 * `All/Sharp border/Borders only` - La levigatura può funzionare in tutte le direzioni, levigando sia i lati che la parte superiore della forma estratta, oppure levigare la parte superiore e i lati ma mantenere un bordo netto, oppure levigare solo il bordo lasciando la superficie superiore invariata.
 
-##### Edge loop (side)
+##### Loop di bordo (lato) {#edge-loop-side}
 * `Auto Edge-loop (side)` - Calcolerà il numero di divisioni sui lati della forma estratta per creare poligoni quadrati che corrispondano ai poligoni dell’area mascherata. Quando disabilitato, puoi impostare tu stesso il numero di edge loop con lo slider edge loop.
 
 ----
 
-##### Extract
+##### Estrai {#extract}
 * `Extract` - Crea la geometria estratta.
 * `Closing action` - Come deve comportarsi l’estrazione. “None” duplica i poligoni mascherati in una nuova forma. “Fill” fa lo stesso e cerca di chiudere la superficie posteriore. “Shell” estrude della quantità impostata in “thickness” ed è l’impostazione predefinita.
 
@@ -237,18 +237,18 @@ Se l’anteprima è in modalità “Extract” con “X-ray” abilitato, clicca
 È normale, chiudi il menu delle impostazioni Mask per vedere la nuova forma e l’originale, e seleziona di nuovo la superficie originale se devi cancellare la maschera o disegnarne di nuove.
 :::
 
-##### Split
+##### Dividi {#split-mask}
 * `Split` - Estrarrà sia le regioni mascherate CHE quelle non mascherate in nuove forme. 
 * `Closing action (masked)` - Come deve comportarsi l’estrazione della parte mascherata. “None” duplica i poligoni mascherati in una nuova forma. “Fill” fa lo stesso e cerca di chiudere la superficie posteriore. “Shell” estrude della quantità impostata in “thickness” ed è l’impostazione predefinita.
 * `Closing action (unmasked)` - Come deve comportarsi l’estrazione della parte non mascherata. “None” duplica i poligoni mascherati in una nuova forma. “Fill” fa lo stesso e cerca di chiudere la superficie posteriore. “Shell” estrude della quantità impostata in “thickness” ed è l’impostazione predefinita.
 * `Sync border` - Garantisce che il bordo tra le forme estratte mascherate e non mascherate rimanga vicino. Quando disabilitato, poiché l’operazione shell estruderà ogni faccia lungo la sua normale, può formarsi uno spazio tra le forme.
 
-##### Carve
+##### Incidi {#carve}
 * `Carve` - In modalità predefinita, si comporta come se avessi tagliato nella superficie della quantità “thickness”, come tagliare una sezione di buccia d’arancia. 
 
 
 
-### ![](/icons/tool_maskSelector.webp) Selection Mask
+### ![](/icons/tool_maskSelector.webp) Maschera di selezione {#selection-mask}
 Questo strumento è per lo più simile allo [strumento Mask](#mask), la differenza principale è che non usi lo stroke per dipingere la maschera, ma usi i [Selection Controls](#selection-controls).
 
 La sub mode è `Unmask` e cancellerà la maschera usando i controlli di selezione.
@@ -257,28 +257,28 @@ Selection Mask condivide le stesse impostazioni di strumento di `Mask`.
 
 ![](/videos/tool_selector_mask.mp4)
 
-### ![](/icons/tool_paint.webp) Paint
+### ![](/icons/tool_paint.webp) Dipingi {#paint}
 Applica colore e proprietà del materiale. Per saperne di più sui materiali puoi visitare la sezione [Painting](painting.md).
 
 La sub mode è `Erase` e rimuoverà la pittura.
 
-#### Impostazioni Paint
+#### Impostazioni Dipingi {#paint-settings}
 * `Layer fitering` - Funziona come il blocco alfa del livello in Photoshop o Procreate. Se stai dipingendo su un livello, quando è abilitato puoi modificare solo dove la pittura esiste già; le aree non dipinte saranno protette.
 
 ![](/videos/tool_paint.mp4)
 
-### ![](/icons/tool_smudge.webp) Smudge
+### ![](/icons/tool_smudge.webp) Sfumino {#smudge}
 Sfuma colore e proprietà del materiale. Il menu delle impostazioni Smudge contiene uno slider `Quality`, valori più bassi significano pennellate più veloci.
 
 ![](/videos/tool_smudge.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Flatten
+### ![](/icons/tool_flatten.webp) Appiattisci {#flatten}
 Appiattisce l’area proiettando i punti sul piano medio.
 
 La sub mode è `Fill` e definirà un piano impostato dal punto più alto, tendendo a tirare i punti verso l’alto.
 
-#### Impostazioni Flatten
+#### Impostazioni Appiattisci {#flatten-settings}
 
 * `Lock plane direction` - Usa la direzione del piano calcolata al primo clic. Per impostazione predefinita è disabilitato.
 * `Lock plane origin`- Usa il primo clic come centro del piano. Per impostazione predefinita è disabilitato.
@@ -292,7 +292,7 @@ Quando lavori in aree ad alta curvatura, ad es. cercando di appiattire le guance
 ![](/videos/tool_flatten.mp4)
 
 
-### ![](/icons/tool_planar.webp) Planar
+### ![](/icons/tool_planar.webp) Planare {#planar}
 Rende i punti complanari proiettandoli sul piano medio, ma con meno accumulo rispetto al pennello Flatten. Questo crea superfici pulite con spigoli netti. Pennellate rapide spingeranno e tireranno di più sulla superficie, pennellate più lente che partono da aree già planari e si espandono manterranno meglio il piano.
 
 La sub mode è `Fill` e definirà un piano impostato dal punto più alto, tendendo a tirare i punti verso l’alto.
@@ -301,19 +301,19 @@ Planar è in realtà lo stesso strumento di `Flatten`, ma con `Lock plane direct
 
 ![](/videos/tool_planar.mp4)
 
-### ![](/icons/tool_crease.webp) Crease
+### ![](/icons/tool_crease.webp) Piega {#crease}
 Gli strumenti Crease possono essere utili per scolpire piccoli tagli o incisioni.
 
 La sub mode è `Invert` e creerà una cresta rialzata.
 
-#### Impostazioni Crease
+#### Impostazioni Piega {#crease-settings}
 
 * `Pinch factor` - Quanto tirare lateralmente i vertici verso la pennellata. Se pinch è a 1 e offset a 0, la superficie non avrà cambiamenti di profondità, solo cambiamenti di topologia, tirando gli edge verso la pennellata.
 * `Offset factor` - Quanto spingere/tirare i vertici in profondità. Se pinch è a 0 e offset a 1, verranno create incisioni profonde o rigonfiamenti rialzati, ma appariranno frastagliati perché non viene tirata abbastanza geometria verso l’incisione per definire accuratamente i lati o il fondo.
 
 ![](/videos/tool_crease.mp4)
 
-### ![](/icons/tool_pinch.webp) Pinch
+### ![](/icons/tool_pinch.webp) Pizzica {#pinch}
 Questo strumento può essere usato per affilare i bordi.
 
 La sub mode è `Invert` e allontanerà i vertici tra loro.
@@ -321,7 +321,7 @@ La sub mode è `Invert` e allontanerà i vertici tra loro.
 ![](/videos/tool_pinch.mp4)
 
 
-### ![](/icons/tool_trim.webp) Trim
+### ![](/icons/tool_trim.webp) Rifila {#trim}
 Lo strumento Trim funziona rimuovendo una porzione della mesh e offre opzioni su come elaborare il vuoto lasciato. Usa i [Selection controls](#selection-controls) per definire il taglio.
 
 ::: tip
@@ -330,7 +330,7 @@ Poiché questo strumento proietta dalla camera, riceverai un avviso se la camera
 In modalità ortografica il taglio effettuato attraverso la mesh è parallelo alla vista, che è ciò che di solito ci si aspetta. Quando viene fatto con una camera prospettica, il taglio apparirà diverso sul lato lontano dell’oggetto rispetto al lato vicino.
 :::
 
-#### Impostazioni Trim
+#### Impostazioni Rifila {#trim-settings}
 
 * `Stroke painting` - Se la pittura è abilitata nel menu Paint, la regione chiusa verrà riempita con il colore attualmente selezionato.
 * `Boolean` - riempie il foro del trim usando una regione di quad. La regione riempita sarà piatta.
@@ -346,10 +346,10 @@ In modalità ortografica il taglio effettuato attraverso la mesh è parallelo al
 
 ![](/videos/tool_trim.mp4)
 
-### ![](/icons/tool_split.webp) Split
+### ![](/icons/tool_split.webp) Suddividi {#split}
 Simile allo strumento [Trim](#trim), tranne per il fatto che mentre Trim scarta la selezione, Split manterrà la selezione come nuovo oggetto.
 
-#### Impostazioni Split
+#### Impostazioni Suddividi {#split-settings}
 
 * `Stroke painting` - Se la pittura è abilitata nel menu Paint, la regione chiusa verrà riempita con il colore attualmente selezionato.
 * `Boolean` - riempie il foro dello split usando una regione di quad. Le regioni riempite saranno piatte.
@@ -366,7 +366,7 @@ Simile allo strumento [Trim](#trim), tranne per il fatto che mentre Trim scarta 
 ![](/videos/tool_split.mp4)
 
 
-### ![](/icons/tool_project.webp) Project
+### ![](/icons/tool_project.webp) Proietta {#project}
 Lo strumento Project assomiglia allo strumento [Trim](#trim), ma non elimina né crea geometria, sposta solo i vertici per conformarsi alla selezione.
 
 ![](/videos/tool_project.mp4)
@@ -375,7 +375,7 @@ Lo strumento Project assomiglia allo strumento [Trim](#trim), ma non elimina né
 Se usi Project mentre sei in un layer, puoi sfumare tra la forma originale e quella proiettata con lo slider del layer.
 :::
 
-### ![](/icons/tool_layer.webp) Layer
+### ![](/icons/tool_layer.webp) Livello {#layer}
 Alza la superficie ma limita l’altezza.
 
 Se tieni la penna abbassata e continui a passare su un’area, Layer alzerà fino a una certa altezza e non andrà oltre, a differenza di altri strumenti che continueranno ad accumulare altezza.
@@ -388,7 +388,7 @@ Crea un layer e usa questo strumento. L’altezza massima è ora impostata dal l
 
 `Sub` userà una profondità minima, creando scanalature.
 
-#### Impostazioni Layer
+#### Impostazioni Livello {#layer-settings}
 
 * `Use layer data` - Quando attivo, e quando un layer è selezionato, usa i dati del layer per impostare l’altezza massima.
 * `Inflate`- Quando attivo regola la direzione in cui lavora Layer per ottenere risultati più morbidi.
@@ -397,10 +397,10 @@ Crea un layer e usa questo strumento. L’altezza massima è ora impostata dal l
 ![](/videos/tool_layer.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Inflate
+### ![](/icons/tool_flatten.webp) Gonfia {#inflate}
 Sposta i vertici lungo le proprie normali. `Sub` sposterà i vertici lungo la normale invertita.
 
-#### Impostazioni Inflate
+#### Impostazioni Gonfia {#inflate-setings}
 * `Relax (Normal)` - La quantità di levigatura applicata alle normali.
 
 ![](/videos/tool_inflate.mp4)
@@ -408,13 +408,13 @@ Sposta i vertici lungo le proprie normali. `Sub` sposterà i vertici lungo la no
 
 
 
-### ![](/icons/tool_nudge.webp) Nudge
+### ![](/icons/tool_nudge.webp) Spingi {#nudge}
 Sposta o “spalma” i punti nella direzione della pennellata.
 
 ![](/videos/tool_nudge.mp4)
 
 
-### ![](/icons/tool_stamp.webp) Stamp
+### ![](/icons/tool_stamp.webp) Timbro {#stamp}
 
 Clicca e trascina per sollevare un’area della scultura con la forma dell’Alpha selezionata.
 
@@ -435,13 +435,13 @@ Le due modalità di stroke sono utili per cose diverse.
 ![](/videos/tool_stamp.mp4)
 
 
-### ![](/icons/tool_clearLayer.webp) Delete Layer
+### ![](/icons/tool_clearLayer.webp) Elimina livello {#delete-layer}
 Questo strumento può resettare i layer localmente, hai bisogno di un layer attivo altrimenti non succederà nulla.
 
 ![](/videos/tool_delete_layer.mp4)
 
 
-### ![](/icons/tool_tube.webp) Tube
+### ![](/icons/tool_tube.webp) Tubo {#tube}
 Crea un tubo disegnando una curva. 
 ![](/images/tool_tube_new.webp)
 
@@ -449,7 +449,7 @@ Una volta creato il tubo, il path può essere modificato nello spazio 3D usando 
 
 ![](/videos/tool_tube.mp4)
 
-#### Toolbar sinistra Tube
+#### Barra strumenti sinistra Tubo {#tube-left-toolbar}
 
 ![](/images/tool_tube_left_toolbar.webp)
 
@@ -468,7 +468,7 @@ La toolbar di sinistra ha le seguenti opzioni:
     * `Closed` - rende il tubo un loop
     * `Screen` - Quando attivo, il path è “fissato” allo schermo, permettendoti di muovere la vista e l’oggetto mentre il path rimane in posizione. Quando inattivo, il path fa parte della scena 3D e si muoverà con la camera e gli oggetti.
 
-##### Toolbar superiore Tube
+##### Barra strumenti superiore Tubo {#tube-top-toolbar}
 ![](/images/tool_tube_toolbar.webp)
 Quando un tubo è selezionato, una toolbar apparirà nella parte superiore della viewport con controlli extra. Clicca il titolo della toolbar per comprimerla/espanderla e clicca la freccia in alto a destra per spostarla in alto o in basso nella viewport.
 
@@ -489,13 +489,13 @@ Quando un tubo è selezionato, una toolbar apparirà nella parte superiore della
 * `Constant density` - quando attivo, manterrà i poligoni quadrati. Quando disabilitato, ti permetterà di impostare le `Y divisions` lungo la lunghezza del tubo.
 * `...` - Menu impostazioni Tube.
 
-#### Toggle eliminazione punti curva
+#### Attiva/disattiva eliminazione punti curva {#curve-point-delete-toggle}
 
 ![](/images/tool_tube_delete_toggle.webp)
 
 Sotto la toolbar c’è un toggle per l’eliminazione dei punti curva. Quando trascini un punto curva vicino a un altro, diventerà rosso, indicando che se lo rilasci il punto verrà eliminato. Se stai facendo piccole modifiche e non vuoi eliminare punti, questo pulsante disabiliterà il comportamento di eliminazione.
 
-#### Impostazioni Tube
+#### Impostazioni Tubo {#tube-settings}
 * `Primitive` - pulsanti che permettono di abilitare/disabilitare le UV o di validare il tubo.
 * `Post subdivision` - scorciatoia per impostare il livello di multiresolution prima della validazione.
 * `Linear subdivision` - scorciatoia per impostare il livello di subdivision lineare prima della validazione. 
@@ -508,14 +508,14 @@ Divisioni a 4 e Post subdivision a 3 creeranno tubi con estremità arrotondate l
 :::
 
 
-### ![](/icons/tool_lathe.webp) Lathe
+### ![](/icons/tool_lathe.webp) Tornio {#lathe}
 Crea una superficie di rivoluzione disegnando una curva.
 
 Questo strumento è ottimo per forme come vasi, calici.
 
 ![](/videos/tool_lathe.mp4)
 
-#### Toolbar sinistra Lathe
+#### Barra strumenti sinistra Tornio {#lathe-left-toolbar}
 
 ![](/images/tool_lathe_left_toolbar.webp)
 
@@ -533,7 +533,7 @@ La toolbar di sinistra ha le seguenti opzioni:
     * `Closed` - rende il tubo un loop
     * `Screen` - Quando attivo, il path è “fissato” allo schermo, permettendoti di muovere la vista e l’oggetto mentre il path rimane in posizione. Quando inattivo, il path fa parte della scena 3D e si muoverà con la camera e gli oggetti.
 
-#### Toolbar superiore Lathe
+#### Barra strumenti superiore Tornio {#lathe-top-toolbar}
 ![](/images/tool_lathe_top_toolbar.webp)
 
 Quando un lathe è selezionato, una toolbar apparirà nella parte superiore della viewport con controlli extra. Clicca il titolo della toolbar per comprimerla/espanderla e clicca la freccia in alto a destra per spostarla in alto o in basso nella viewport.
@@ -552,7 +552,7 @@ Quando un lathe è selezionato, una toolbar apparirà nella parte superiore dell
 * `Constant density` - quando attivo, manterrà i poligoni quadrati. Quando disabilitato, ti permetterà di impostare le `Y divisions` lungo la lunghezza del tubo.
 * `...` - Menu impostazioni Lathe.
 
-#### Impostazioni Lathe
+#### Impostazioni Tornio {#lathe-settings}
 * `Primitive` - pulsanti che permettono di abilitare/disabilitare le UV o di validare il tubo.
 * `Post subdivision` - scorciatoia per impostare il livello di multiresolution prima della validazione.
 * `Linear subdivision` - scorciatoia per impostare il livello di subdivision lineare prima della validazione. 
@@ -560,7 +560,7 @@ Quando un lathe è selezionato, una toolbar apparirà nella parte superiore dell
 * `Division Y` - come Y Divisions nella toolbar.
 * `Curve (Repeater)` - converte il profilo della curva in un [Curve Repeater](scene.md#curve)
 
-### ![](/icons/tool_insert.webp) Insert
+### ![](/icons/tool_insert.webp) Inserisci {#insert}
 Posiziona un oggetto sulla superficie di un altro. Nell’uso è simile allo strumento Stamp, ma per forme 3D complete.
 
 Se selezioni una primitiva dalla toolbar di sinistra, un clic-trascina su qualsiasi superficie posizionerà una primitiva dove clicchi, il trascinamento ne imposterà la dimensione. Una volta terminato il trascinamento, Insert passerà alla modalità [Transform](#transform).
@@ -573,7 +573,7 @@ Se un oggetto ha un pivot personalizzato, verrà usato come punto di ancoraggio.
 
 ![](/videos/tool_insert.mp4)
 
-### ![](/icons/tool_transform.webp) Transform
+### ![](/icons/tool_transform.webp) Trasforma {#transform}
 Muovi/Ruota/Scala un modello direttamente con 1 o 2 dita, di solito sulla superficie di un altro oggetto.
 
 Lo strumento è controllato dalla toolbar di sinistra e ha 5 pulsanti:
@@ -607,7 +607,7 @@ Questo offre un flusso di lavoro veloce per clonare oggetti su un altro, ad es. 
 
 ![](/videos/tool_transform.mp4)
 
-### ![](/icons/tool_gizmo.webp) Gizmo
+### ![](/icons/tool_gizmo.webp) Gizmo {#gizmo}
 Questo strumento ti permette di muovere, ruotare e scalare oggetti e modificare i pivot degli oggetti.
 
 L’handle nella viewport ha le seguenti caratteristiche:
@@ -618,7 +618,7 @@ L’handle nella viewport ha le seguenti caratteristiche:
 
 ![](/images/tool_gizmo.webp)
 
-#### Nodi e vertici 
+#### Nodi e vertici {#nodes-and-vertices}
 
 Ogni oggetto in Nomad è composto da un nodo e da vertici:
 
@@ -627,7 +627,7 @@ Ogni oggetto in Nomad è composto da un nodo e da vertici:
 
 Se hai un semplice box composto da 8 vertici, potresti traslarlo modificando la sua matrice di trasformazione o modificando le posizioni dei vertici. Quando scolpisci di solito vuoi modificare i vertici, quando muovi oggetti con il gizmo di solito vuoi modificare il nodo. Nomad ti permette di fare entrambe le cose. 
 
-#### Toolbar menu sinistro
+#### Barra strumenti menu sinistro {#left-menu-toolbar}
 
 La toolbar a sinistra controlla se il gizmo lavorerà sul nodo o sui vertici, oltre ad altre funzioni:
 
@@ -640,7 +640,7 @@ La toolbar a sinistra controlla se il gizmo lavorerà sul nodo o sui vertici, ol
 * `Snap translation` - Abilita la traslazione a scatti, il valore di snap è mostrato e può essere modificato quando lo snap è attivo.
 * `Pivot` - Quando abilitato, il gizmo può essere mosso e ruotato senza muovere l’oggetto. Ha un menu extra spiegato sotto.
 
-#### Pivot
+#### Pivot {#pivot}
 Quando la modalità Pivot è attiva, viene mostrato un menu per permettere rapide modifiche al pivot:
 
 **Reset** 
@@ -655,11 +655,11 @@ Quando la modalità Pivot è attiva, viene mostrato un menu per permettere rapid
 * `First` - Sposta (ma non ruota) il pivot dove la superficie è stata toccata
 * `Medial` - Sposta il pivot al centro dell’oggetto, sotto il punto della superficie toccato.
 
-#### Impostazioni Gizmo
+#### Impostazioni Gizmo {#gizmo-settings}
 
 ![](/images/tool_gizmo_settings.webp)
 
-##### Matrix 
+##### Matrice {#matrix}
 * ![](/icons/target.webp) `Move origin` - Sposta l’oggetto in modo che il suo pivot sia al centro della scena, chiamato origine.
 * ![](/icons/bake.webp)  `Bake` - Congela l’oggetto dove si trova attualmente e imposta i valori di traslazione/rotazione a 0, scala a 1.
 * ![](/icons/bake.webp) -> ![](/icons/tool_gizmo.webp) `Bake Pivot` - Fa sì che i valori della matrice corrispondano a dove si trova l’handle del gizmo nel mondo.
@@ -711,7 +711,7 @@ Questo è particolarmente utile per la rotazione, poiché non cambia nulla per l
 
 ![](/videos/tool_gizmo.mp4)
 
-### ![](/icons/tool_faceGroup.webp) Facegroup
+### ![](/icons/tool_faceGroup.webp) Gruppo facce {#facegroup}
 
 I Facegroup ti permettono di organizzare il tuo oggetto in facce di colore diverso. Puoi usare questi gruppi in molti modi in Nomad:
 
@@ -722,7 +722,7 @@ I Facegroup ti permettono di organizzare il tuo oggetto in facce di colore diver
 * Guidare il quad remesher
 * Controllo aggiuntivo per strumenti come Smooth.
 
-#### Toolbar sinistra Facegroup
+#### Barra strumenti sinistra Gruppo facce {#facegroup-left-toolbar}
 
 * `Patch ` - Mostra i facegroup disponibili come patch. Le patch non usate possono essere eliminate. Tocca una patch per rinominarla o cambiarne il colore. L’icona più ti permette di creare nuove patch.
 * `Dot` - Dipingi sull’oggetto per definire facegroup. Quando “+ Face Group” è abilitato, ogni nuova pennellata creerà automaticamente un nuovo facegroup, utile per definire rapidamente regioni. Un tap riempirà la regione selezionata. Lo slider imposta il raggio del dot.
@@ -730,7 +730,7 @@ I Facegroup ti permettono di organizzare il tuo oggetto in facce di colore diver
 * `Shape selector` - Crea facegroup con forme invece che con un pennello, tramite `Lock+Radius`, `Lasso`, `Polygon`, `Rect` ed `Ellipse`. Vedi [Shape Selector](#shape-selector) per maggiori informazioni.
 * `Auto-pick` - Quando abilitato, selezionerà la patch da cui inizia la pennellata e applicherà quella patch per il resto della pennellata. Molto utile per ripulire le regioni dei facegroup; se un facegroup si è esteso troppo, abilita Auto-pick, inizia una pennellata da dove la patch del facegroup è corretta e trascina fino al bordo per riassegnare la patch corretta.
 
-### ![](/icons/tool_hide.webp) Hide
+### ![](/icons/tool_hide.webp) Nascondi {#hide}
 Nascondi o isola parti dell’oggetto. 
 
 Le modalità principali sono controllate dal menu a sinistra:
@@ -748,10 +748,10 @@ Una toolbar apparirà nella parte superiore della viewport con controlli extra:
 * `Delete` - Elimina la parte nascosta dell’oggetto
 * `Split` - Divide la parte nascosta dell’oggetto in una nuova forma.
 
-### ![](/icons/tool_measure.webp) Measure
+### ![](/icons/tool_measure.webp) Misura {#measure}
 Trascina per misurare la distanza tra 2 punti.
 
-### ![](/icons/tool_remesh.webp) Quad Remesher
+### ![](/icons/tool_remesh.webp) Quad Remesher {#quad-remesher}
 
 ![](/images/tool_quadremesher.webp)
 
@@ -778,7 +778,7 @@ Quando questo strumento viene attivato per la prima volta, chiederà se vuoi abi
 * `Rect` - Disegna rettangoli sulla superficie dello sculpt, il quad remesher li userà come guide per il flusso degli edge. Tocca un percorso per eliminarlo.
 * `Ellipse` - Disegna ellissi sulla superficie dello sculpt, il quad remesher le userà come guide per il flusso degli edge. Tocca un percorso per eliminarlo.
 
-#### Barra degli strumenti superiore del quad remesher
+#### Barra strumenti superiore Quad Remesher {#quad-remesher-top-toolbar}
 ![](/images/tool_quadremesher_toolbar.webp)
 
 Una barra degli strumenti apparirà nella parte superiore della viewport con controlli aggiuntivi:
@@ -799,7 +799,7 @@ Una barra degli strumenti apparirà nella parte superiore della viewport con con
 * `Symmetry` - Attiva/disattiva per ottenere un risultato simmetrico. Nota che la simmetria è sempre calcolata attorno all’asse x del mondo, quindi assicurati che il tuo modello sia all’origine se ti aspetti un risultato simmetrico.
 * `...` - Menu delle impostazioni del quad remesher. 
 
-#### Menu delle impostazioni del quad remesher
+#### Menu impostazioni Quad Remesher {#quad-remesher-settings-menu}
 
 La maggior parte di queste impostazioni è disponibile nella barra degli strumenti superiore.
 
@@ -825,14 +825,14 @@ Nelle opzioni del quad remesh assicurati che il relax sia disabilitato (dato che
 
 :::
 
-### ![](/icons/tool_select.webp) Select
+### ![](/icons/tool_select.webp) Seleziona {#select}
 Usa le modalità di forma per selezionare oggetti nella scena. `Unselect` rimuoverà oggetti dalla selezione.
 
-### ![](/icons/tool_view.webp) View
+### ![](/icons/tool_view.webp) Vista {#view}
 Questo "strumento" non fa nulla in particolare, è semplicemente un modo per visualizzare il modello senza modificare la scena.
 
 
-## Menu contestuale della toolbox
+## Menu contestuale della toolbox {#toolbox-context-menu}
 
 ![](/images/tools_context_menu.webp)
 

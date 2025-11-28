@@ -1,4 +1,4 @@
-# ![](/icons/postprocess.webp) 후처리(Post process) 
+# ![](/icons/postprocess.webp) 포스트 프로세스 {#post-process}
 
 이 메뉴는 렌더의 최종 모습을 바꾸는 노마드(Nomad)의 여러 요소를 제어합니다.
 
@@ -16,34 +16,31 @@ PBR 렌더링의 경우 [Ambient Occlusion](#ambient-occlusion-ssao), [Reflectio
 다만 대부분의 경우, 형태에 집중하기 위해 조각 작업을 할 때는 후처리를 끄는 편이 좋습니다.
 
 
-## Quality
+## 품질 {#quality}
 
 ![](/images/postprocess_quality.webp)
-### Max frame sampling
+### 최대 프레임 샘플링 {#max-frame-sampling}
 노마드는 한 프레임 렌더에 대해 일정량의 후처리를 계산하는데, 이때 노이즈가 보일 수 있습니다. 이 컨트롤은 몇 개의 프레임을 렌더링한 뒤, 노이즈 아티팩트를 줄이기 위해 서로 블렌딩할지를 결정합니다. 어떤 효과(예: 컬러 그레이딩)는 추가 샘플이 거의 필요 없지만, 글로벌 일루미네이션 같은 효과는 노이즈를 없애려면 수백 개의 샘플이 필요할 수 있습니다. 
 
 뷰포트에서는 노마드를 그대로 두면 이미지 품질이 점차 정제되다가, 최대 샘플 수에 도달하면 멈추는 것으로 확인할 수 있습니다. 이 계산 횟수는 [Files 메뉴](files)의 렌더 섹션에서 'export png'를 클릭했을 때도 사용됩니다.
 
-### Resolution multiplier
+### 해상도 배율 {#resolution-multiplier}
 이 슬라이더는 후처리의 해상도를 제어합니다. 값이 x1.0이면 기기의 실제 픽셀 해상도로 렌더링합니다. x0.5는 절반 해상도로 렌더링하여 빠르지만 품질이 낮습니다. 1보다 큰 값은 더 큰 해상도로 렌더한 뒤 축소합니다. 이는 더 높은 품질과 적은 노이즈를 제공하지만, 렌더 시간이 길어집니다.
 
-### Max samples
+### 최대 샘플 수 {#max-samples}
 
 후처리 품질을 높입니다. 다만 일반적으로 `Full resolution`이 더 큰 영향을 줍니다. 
 
-### Full resolution
-활성화하면 해상도 배율을 강제로 x1.0으로 고정합니다.
-
-### Denoiser (oidn)
+### 디노이저 (oidn) {#oidn}
 
 이미지에 디노이저를 적용합니다. 이를 사용하면 훨씬 적은 샘플 수로도 충분한 품질을 얻을 수 있습니다. `Full Resolution`이 켜져 있을 때만 동작합니다. 디노이징은 모든 샘플 계산이 끝난 후에 수행되며, 프로세서 부하가 클 수 있습니다.
 
-## Preset browser
+## 프리셋 브라우저 {#preset-browser}
 ![](/images/postprocess_presets.webp)
 이미지를 클릭하면 후처리 프리셋 모음이 표시됩니다. 자신만의 프리셋을 만들려면, 하나를 선택하고 'clone'을 누른 뒤 변경을 가합니다. 저장하려면 프리셋 이미지를 클릭하고, 프리셋 브라우저 안을 다시 클릭한 후 'save'를 선택합니다.
 
 
-## Reflection (SSR)
+## 반사 (SSR) {#reflection-ssr}
 이 옵션을 사용하면, 화면에 보이는 한에서 장면의 오브젝트들이 서로를 반사할 수 있습니다.  
 장면에 금속성·광택이 강한 오브젝트가 있다면 이 옵션을 사용하는 것이 좋습니다.  
 이 옵션은 PBR 모드에서만 효과가 있습니다.
@@ -53,7 +50,7 @@ PBR 렌더링의 경우 [Ambient Occlusion](#ambient-occlusion-ssao), [Reflectio
 | :------------------------: | :-----------------------: |
 | ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
-## Global Illumination (SSGI)
+## 전역 조명 (SSGI) {#global-illumination-ssgi}
 
 글로벌 일루미네이션은 빛이 표면 사이를 튕기며 퍼지는 현상을 시뮬레이션합니다. 예를 들어, 빨간 벽은 인접한 흰 오브젝트에 붉은 빛을 투사합니다. 앰비언트 오클루전과 반사와 함께 사용하면 렌더의 현실감을 크게 높일 수 있습니다. 
 
@@ -67,7 +64,7 @@ PBR 렌더링의 경우 [Ambient Occlusion](#ambient-occlusion-ssao), [Reflectio
 
 _스포트라이트가 구 뒤쪽에서 천장을 향해 비추고 있습니다. SSGI를 끄면 천장만 밝아집니다. SSGI를 켜면 빛이 천장에서 벽으로, 다시 구로 반사됩니다._
 
-## Ambient Occlusion (SSAO)
+## 주변 폐색 (SSAO) {#ambient-occlusion-ssao}
 앰비언트 오클루전은 빛이 잘 닿지 않는 영역(모서리 등)을 어둡게 만듭니다.  
 이 효과는 모델의 기하 구조에만 의존합니다.
 
@@ -86,7 +83,7 @@ AO는 주로 환경광에 의해 조명되는 영역에서 가장 잘 보입니�
 
 :::
 
-## Depth of Field (DOF)
+## 피사계 심도 (DOF) {#depth-of-field-dof}
 초점이 맞지 않는 영역에 블러 효과를 추가합니다.
 
 모델을 탭하여 초점 위치를 변경할 수 있습니다.
@@ -100,7 +97,7 @@ AO는 주로 환경광에 의해 조명되는 영역에서 가장 잘 보입니�
 | ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp) |
 
 
-## Bloom
+## 블룸 {#bloom}
 Bloom은 장면의 밝은 영역이 빛나 보이게 만듭니다.
 
 * `Intensity` - 효과의 강도.
@@ -113,7 +110,7 @@ Bloom은 장면의 밝은 영역이 빛나 보이게 만듭니다.
 | ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
 
-## Tone Mapping
+## 톤 매핑 {#tone-mapping}
 톤 매핑은 HDR 값을 `[0, 1]` 범위로 다시 매핑하는 작업입니다.  
 이를 사용하지 않거나 `none`을 선택하면, 1보다 큰 모든 색상 성분은 클리핑됩니다.  
 이 범위를 넘어서는 색상 변화는 모두 손실됩니다.
@@ -133,14 +130,14 @@ Bloom은 장면의 밝은 영역이 빛나 보이게 만듭니다.
 톤 매핑은 글로벌 일루미네이션 효과를 강화할 수 있습니다. 환경 맵의 강도를 낮추고, 기본 광원 강도를 높인 뒤, 톤 매핑의 `exposure`를 올리면 바운스 라이트 효과를 더 잘 볼 수 있습니다.
 :::
 
-## Color Grading
+## 컬러 그레이딩 {#color-grading}
 포토샵의 커브 도구와 비슷하게, 이미지의 색 균형과 분포를 제어할 수 있습니다. `main` 컨트롤은 전체 색 균형에 영향을 주고, `red`/`green`/`blue` 컨트롤은 각 채널을 세밀하게 조정합니다. 
 
 | Color Grading off             | Color Grading on             |
 | :---------------------------: | :--------------------------: |
 | ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
-## Curvature
+## 커버처 {#curvature}
 곡률이 급격히 변하는 영역을 감지하여, 그 부분에 색을 입힙니다.
 
 * `Factor` - 효과의 전체 강도
@@ -153,7 +150,7 @@ Bloom은 장면의 밝은 영역이 빛나 보이게 만듭니다.
 | ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
 
-## Chromatic Aberration
+## 색수차 {#chromatic-aberration}
 화면 가장자리에서 빛이 분해되는 렌즈 아티팩트를 시뮬레이션합니다.
 
 * `Strength` - 화면 가장자리로 갈수록 이미지의 빨강/초록/파랑 채널이 얼마나 분리될지
@@ -163,7 +160,7 @@ Bloom은 장면의 밝은 영역이 빛나 보이게 만듭니다.
 | ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
 
-## Vignette
+## 비네트 {#vignette}
 화면 가장자리를 어둡게 만들어 렌즈 아티팩트를 시뮬레이션합니다.
 
 * `Size` - 이미지 위에 놓이는 반전된 타원(ellipse)의 크기
@@ -174,7 +171,7 @@ Bloom은 장면의 밝은 영역이 빛나 보이게 만듭니다.
 | :-----------------------------: | :----------------------------: |
 | ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
-## Grain
+## 그레인 {#grain}
 그레인(필름 입자) 효과를 추가합니다. 이미지를 덜 인공적으로 보이게 하는 데 도움이 될 수 있습니다.
 
 * `Strength` - 이미지에 추가되는 그레인/노이즈의 양.
@@ -185,7 +182,7 @@ Bloom은 장면의 밝은 영역이 빛나 보이게 만듭니다.
 | ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
 
-## Sharpness
+## 선명도 {#sharpness}
 포토샵이나 사진 보정 앱에 있는 것과 비슷한 샤프닝 효과입니다.
 
 * `Strength` - 이미지에 적용되는 샤프닝의 양.
@@ -195,7 +192,7 @@ Bloom은 장면의 밝은 영역이 빛나 보이게 만듭니다.
 | :----------------------------: | :--------------------------: |
 | ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
-## Pixel Art
+## 픽셀 아트 {#pixel-art}
 레트로 게임의 픽셀 아트 스타일을 시뮬레이션합니다.
 
 * `Slider` - 픽셀 크기
@@ -205,7 +202,7 @@ Bloom은 장면의 밝은 영역이 빛나 보이게 만듭니다.
 | :-------------------------: | :------------------------: |
 | ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
-## Scanline
+## 스캔라인 {#scanline}
 옛 CRT 모니터의 화면 느낌을 시뮬레이션합니다.
 
 * `Factor` - 줄무늬(스캔라인)의 강도
@@ -216,6 +213,6 @@ Bloom은 장면의 밝은 영역이 빛나 보이게 만듭니다.
 | ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
 
 
-## Dithering
+## 디더링 {#dithering}
 
 디더링을 통해 밴딩 아티팩트를 줄입니다. 일반적으로는 켜 두는 것이 좋지만, 깊이 맵 내보내기처럼 특정 데이터 전용 작업에서는 끌 수 있습니다.

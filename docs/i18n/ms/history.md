@@ -1,4 +1,4 @@
-# ![](/icons/history.webp) Sejarah
+# ![](/icons/history.webp) Sejarah {#history}
 ![](/images/history_overview.webp)
 
 Seperti kebanyakan alat penciptaan kandungan, anda boleh buat asal/ulang semula semua penyuntingan dalam Nomad.
@@ -10,31 +10,31 @@ Anda boleh menggunakan gerak isyarat pantas untuk buat asal/ulang semula:
 - Ketik dengan 3 jari untuk ulang semula
 :::
 
-## Sejarah
+## Sejarah {#history-panel}
 ![](/images/history_history.webp)
 
 Panel ini memaparkan timbunan sejarah, menunjukkan bilangan langkah, nama operasi, dan jumlah memori yang digunakan oleh langkah tersebut.
 
-## Tetapan
+## Tetapan {#settings}
 ![](/images/history_settings.webp)
 
-### Had sejarah (Mb)
+### Had sejarah (Mb) {#history-limit-mb}
 Jika timbunan sejarah melebihi nilai ini, operasi yang lebih lama akan dibuang supaya penggunaan memori mematuhi had ini.
 
 
-### Bilangan maksimum boleh buat asal
+### Maksimum boleh buat asal {#maximum-undoable}
 Anda boleh mengawal bilangan maksimum operasi.
 
-## Pulihkan kamera
+## Pulihkan kamera {#restore-camera}
 Untuk setiap operasi, sudut pandang kamera akan disimpan.
 Jika anda mengaktifkan pilihan ini, membuat asal atau mengulang semula sesuatu operasi akan menetapkan semula kamera kepada sudut pandang yang disimpan.
 
-## Sertakan tindakan
+## Sertakan tindakan {#include-actions}
 
 * `Lights` - Apabila dinyahdayakan, operasi cahaya (selain pergerakan gizmo) akan diabaikan oleh timbunan sejarah
 * `Matcaps & HDRIs` - Apabila dinyahdayakan, perubahan pada matcap dan hdri akan diabaikan oleh timbunan sejarah
 * `PostProcess` - Apabila dinyahdayakan, perubahan pada pilihan pascaproses akan diabaikan oleh timbunan sejarah
 
-## Statistik memori
+## Statistik memori {#memory-stats}
 
 Bahagian ini memberikan pecahan penggunaan memori oleh Nomad.

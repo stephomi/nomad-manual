@@ -1,10 +1,10 @@
-# ![](/icons/symmetry.webp) Symetria
+# ![](/icons/symmetry.webp) Symetria {#symmetry}
 
 To menu kontroluje, w jaki sposób pociągnięcia pędzla będą powielane względem płaszczyzny lustrzanej lub promieniowo, oraz umożliwia przywrócenie symetrii w obiektach niesymetrycznych.
 
 ![](/images/symmetry_overview.webp) 
 
-## Przegląd 
+## Przegląd {#overview}
 Symetrii możesz używać na kilka sposobów:
 
 * Jako lustra, odbijając pracę względem osi X (lewo/prawo), Y (góra/dół), Z (tył/przód) lub ich kombinacji. 
@@ -23,10 +23,10 @@ Jedynymi wyjątkami są narzędzia transformacji ([Move](#translate), [Rotate](#
 Menu symetrii służy głównie do kontrolowania symetrii pociągnięć. Możesz także odbijać i powielać obiekty za pomocą [repeaterów dostępnych w menu sceny](scene#repeaters). 
 :::
 
-## Enabled
+## Włączone {#enabled}
 Przełącza tryb lustrzany, to samo co przycisk `Sym` w lewym panelu szybkiego dostępu. 
 
-## Planes
+## Płaszczyzny {#planes}
 
 Włącz płaszczyznę(-ny) symetrii oraz ustaw liczbę powtórzeń dla symetrii promieniowej. Zauważ, że nie musisz wybierać tylko jednej płaszczyzny – możesz mieć włączone 1, 2 lub 3 płaszczyzny dla złożonej symetrii.
 
@@ -34,10 +34,10 @@ Oś i liczba powtórzeń dla symetrii promieniowej. Zauważ, że one również n
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Method
+## Metoda {#method}
 Lustro może być „Local” i poruszać się razem z obiektem, albo „World” i pozostawać nieruchome. Jeśli nie masz pewności, którego trybu potrzebujesz, obserwuj płaszczyznę lustrzaną i wskaźniki promieniowe nałożone na obiekt. W trybie lokalnym, gdy użyjesz gizma transformacji i przesuniesz model, wskaźniki lustrzane również się przesuną. W trybie światowym wskaźniki pozostaną nieruchome, a obiekt będzie się przez nie przesuwał.
 
-## Mirroring
+## Odbicie lustrzane {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
 Podczas rzeźbienia w pobliżu płaszczyzn symetrii niektóre pędzle mogą zachowywać się niesymetrycznie. Ta sekcja pozwala przywrócić symetrię poprzez skopiowanie jednej strony rzeźby na drugą. 
@@ -52,11 +52,11 @@ Podczas rzeźbienia w pobliżu płaszczyzn symetrii niektóre pędzle mogą zach
 
 `Split & Mirror` zasadniczo przetnie obiekt wzdłuż lustra, skopiuje jedną stronę, odbije ją na drugą i zespawa wierzchołki wzdłuż lustra. Jest to opcja bardziej destrukcyjna i usunie wielorozdzielczość (multiresolution), ale czasem ta metoda jest wymagana, jeśli model bardzo różni się po obu stronach lustra.
 
-### Flip object
+### Odwróć obiekt {#flip-object}
 ![](/images/symmetry_flip.webp)
 Zamienia lewą stronę z prawą i odwrotnie. Efekt wizualnie podobny do użycia menu narzędzia gizmo i ustawienia skali na -1 na osi X.
 
-## Reset and Edit
+## Resetuj i edytuj {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
@@ -71,7 +71,7 @@ Jeśli więc nie działa to tak, jak się spodziewasz, upewnij się, że jesteś
 Przycisk `Gizmo (Edit)` jest celowo wyszarzony jako przypomnienie, że prawdopodobnie nie powinieneś go używać!
 :::
 
-## Show options
+## Pokaż opcje {#show-options}
 ![](/images/symmetry_show.webp)
 
 

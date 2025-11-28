@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) Lapisan
+# ![](/icons/layer.webp) Lapisan {#layers}
 
 Menu ini berisi tumpukan lapisan (layer stack), cara untuk menyimpan edit pada objek Anda secara non-destruktif, dan banyak cara untuk menggabungkan serta memanfaatkan ulang lapisan.
 
 ![](/images/layers_overview.webp) 
 
-## Gambaran umum
+## Ikhtisar {#overview}
 
 Lapisan di Nomad memiliki beberapa fungsi.
 
@@ -19,7 +19,7 @@ Lapisan dapat dihapus sebagian melalui tool [Delete Layer](tools.md#delete-layer
 ![](/videos/layer.mp4)
 
 ::: tip
-Tidak seperti kebanyakan perangkat lunak sculpting, mengubah topologi mesh tidak akan menghapus lapisan. Anda dapat menggunakan [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multiresolution) atau tool [Trim](tools.md#trim)/[Split](tools.md#split), tetapi perlu dicatat bahwa saat menggunakan [Voxel Remesher](topology.md#voxel-remesher), kualitas lapisan akan terpengaruh.
+Tidak seperti kebanyakan perangkat lunak sculpting, mengubah topologi mesh tidak akan menghapus lapisan. Anda dapat menggunakan [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multires) atau tool [Trim](tools.md#trim)/[Split](tools.md#split), tetapi perlu dicatat bahwa saat menggunakan [Voxel Remesher](topology.md#voxel-remesher), kualitas lapisan akan terpengaruh.
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ Jika menggunakan lapisan untuk blendshape/morph target, ada fungsi lapisan tamba
 :::
 ----
 
-## Menu lapisan
+## Menu lapisan {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Tekan `Add layer` untuk membuat lapisan baru.
 
 Setiap lapisan memiliki nama, slider untuk mengontrol kekuatan/faktornya, dan tombol opsi.
 
-### Opsi
+### Opsi {#options}
 
 | Action       | Icon                         | Description                                         |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Setiap lapisan memiliki nama, slider untuk mengontrol kekuatan/faktornya, dan to
 
 Untuk memindahkan lapisan ke bagian lain dari tumpukan lapisan, tekan dan tahan pada namanya, lalu seret.
 
-### More...
+### Lainnya... {#more}
 
 Tombol 'More...' akan menampilkan opsi tambahan untuk lapisan saat ini:
 
 ![](/images/layers_more.webp) 
 
-#### Channel factors
+#### Faktor kanal {#channel-factors}
 
 Kontrol ini memungkinkan Anda menskalakan jumlah sculpt/color/roughness/metalness/opacity untuk lapisan tersebut. Nilai-nilai ini dikalikan dengan slider faktor lapisan, jadi misalnya jika kekuatan lapisan adalah 1, tetapi faktor channel warna adalah 0.5, maka warna yang ditampilkan akan berada pada kekuatan 0.5.
 
@@ -82,17 +82,17 @@ Mungkin di masa depan, setiap channel akan memiliki channel alpha sendiri untuk 
 :::
 
 
-#### ![](/icons/tool_mask.webp) Mask
+#### ![](/icons/tool_mask.webp) Masker {#mask}
 Tombol mask di sebelah setiap slider akan membuat mask dari channel tersebut. Mirip dengan penggunaan lapisan untuk membuat seleksi di aplikasi lukis, ini memungkinkan Anda menggunakan kembali pekerjaan yang telah Anda lakukan di sebuah lapisan untuk operasi lainnya.
 
-#### ![](/icons/preview.webp) Preview
+#### ![](/icons/preview.webp) Pratinjau {#preview}
 ![](/images/layers_preview.webp) 
 
 Saat diaktifkan, akan menampilkan pratinjau pengaturan extract untuk lapisan ini (lihat bagian berikutnya).
 
 Saat xray diaktifkan, hanya bentuk yang diekstrak yang akan tampak solid, bagian bentuk lainnya akan dibuat transparan, berguna jika Anda menggunakan tinggi ekstraksi negatif.
 
-#### Extract
+#### Ekstrak {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ Tombol `Extract` akan menduplikasi isi lapisan ke dalam objek baru, biasanya den
 * Shell - Menutup bentuk yang diekstrak dengan nilai ketebalan dan opsi arah.
 * Layer - Mengekstrak perbedaan lapisan.
 
-#### ![](/icons/height.webp) Thickness
+#### ![](/icons/height.webp) Ketebalan {#thickness}
 ![](/images/layers_thickness.webp) 
 
 Kedalaman ekstrusi shell. Nilai positif tumbuh keluar dari permukaan, nilai negatif tumbuh ke dalam permukaan.
@@ -116,12 +116,12 @@ Tombol plus/minus di sebelah nilai ini akan mengatur arah ekstrusi:
 * Plus ( + ) akan mulai dari permukaan saat ini dan mengekstrusi ke atas.
 * PlusMinus ( ± ) akan mendorong bagian atas dan bawah ekstrusi menjauh dengan jumlah yang sama, sehingga akan setengah tertanam di permukaan asli.
 
-#### Smoothness
+#### Kehalusan {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 Jika tepi area yang akan diekstrak bergerigi, slider ini akan mencoba mengaburkan tepi menjadi bentuk yang lebih halus. 
 
-#### ![](/icons/height.webp) Edge loop (side)
+#### ![](/icons/height.webp) Loop tepi (sisi) {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 Bagian ini terlihat ketika closing action adalah 'Shell'. 
@@ -132,10 +132,10 @@ Jika dinonaktifkan, slider `Division` akan mengatur jumlah divisi di sisi.
 
 _Ini adalah akhir dari submenu 'More...'._
 
-### Advanced
+### Tingkat lanjut {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Keep top layers details
+#### Pertahankan detail lapisan atas {#keep-top-layers-details}
 
 Memastikan detail kecil pada lapisan yang lebih tinggi tetap terlihat ketika perubahan besar dibuat pada lapisan yang lebih rendah.
 
@@ -144,13 +144,13 @@ Secara bawaan jika Anda memahat kerutan kecil pada sebuah lapisan, lalu membuat 
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expand list
+#### UI: Perluas daftar {#ui-expand-list}
 
 Menu lapisan bawaan memungkinkan Anda mengaktifkan/nonaktifkan visibilitas lapisan dan opasitas lapisan. Mengaktifkan opsi ini akan memperluas kontrol penuh untuk setiap lapisan.
 
 ![](/images/layers_expand.webp)
 
-#### Sync transform
+#### Sinkronkan transformasi {#sync-transform}
 
 Jika diaktifkan, semua lapisan yang tidak dipilih akan disesuaikan tergantung pada transformasi rotasi, skala, dan skew. 
 

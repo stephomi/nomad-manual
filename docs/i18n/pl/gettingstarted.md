@@ -1,6 +1,6 @@
-# Pierwsze kroki
+# Pierwsze kroki {#getting-started}
 
-## Witamy w Nomadzie!
+## Witamy w Nomad! {#welcome-to-nomad}
 
 Nomad to aplikacja do rzeźbienia 3D, która działa na wielu urządzeniach, a najlepiej sprawdza się na tabletach z rysikiem czułym na nacisk, np. Apple iPad z Apple Pencil lub Samsung Galaxy Tab z rysikiem.
 
@@ -18,7 +18,7 @@ Na YouTube jest teraz BARDZO dużo filmów dla początkujących, oto kilka świe
 Warto zajrzeć na główne kanały tych twórców, często publikują nowe poradniki.
 :::
 
-## Twój pierwszy model
+## Twój pierwszy rzeźbiarski projekt {#your-first-sculpt}
 
 Po pierwszym uruchomieniu Nomada zobaczysz na ekranie kulę. Po prostu przeciągnij rysikiem po kuli, aby zacząć rzeźbić. Symetria jest domyślnie włączona, aby ułatwić rzeźbienie.
 
@@ -75,7 +75,7 @@ Z tymi ustawieniami możesz sterować kamerą wyłącznie piórkiem:
 * dolny rocker i ruch w powietrzu = przesunięcie (pan)
 :::
 
-## Dodawanie koloru
+## Dodaj kolor {#add-color}
 
 Nomad pozwala malować powierzchnię Twojej rzeźby. W menu narzędzi po prawej znajdź narzędzie `Paint` i kliknij je. Na lewym pasku narzędzi pojawi się kolorowa kula. Kliknij ją, aby otworzyć selektor koloru. Wybierz kolor i maluj po swoim modelu.
 
@@ -89,7 +89,7 @@ Używając pędzla clay w trybach add/sub, smooth i paint, spróbuj stworzyć pr
 
 ![](/images/gettingstarted_head1.webp)
 
-## Inne narzędzia
+## Inne narzędzia {#other-tools}
 
 Paleta narzędzi zawiera wiele narzędzi pomagających w rzeźbieniu. Do tej pory używałeś pędzla clay (domyślne narzędzie startowe), smooth i paint. Ponieważ smooth jest używane bardzo często, ma dodatkowy skrót na lewym pasku narzędzi.
 
@@ -101,7 +101,7 @@ Spróbuj użyć narzędzi move, crease, inflate i smooth, aby dodać więcej det
 
 Skoro znasz już podstawy Nomada, przyjrzyjmy się reszcie interfejsu.
 
-## Interfejs
+## Interfejs {#interface}
 
 ![](/images/interface_overview1.webp)
 
@@ -116,7 +116,7 @@ Skoro znasz już podstawy Nomada, przyjrzyjmy się reszcie interfejsu.
 Możesz odbić lustrzanie położenie i kolejność wszystkich pasków narzędzi, zobacz [Mirror top bar](interface.md#mirror-top-bar) i inne powiązane opcje.
 :::
 
-## Dolny pasek narzędzi
+## Dolny pasek narzędzi {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
@@ -130,7 +130,7 @@ Możesz odbić lustrzanie położenie i kolejność wszystkich pasków narzędzi
 * `Wire` - Przełącza nakładkę siatki krawędzi (wireframe). Długie przytrzymanie lub przesunięcie w górę ujawni opcje dla wireframe.
 * `Inspect` - Przełącza wyświetlanie dodatkowych danych o aktualnej siatce. Domyślnie wyświetlane są UV, ale długie przytrzymanie lub przesunięcie w górę pozwoli sprawdzić inne właściwości, jeśli istnieją, oraz czy są wyświetlane w tle czy na siatce.
 
-## Kolejne kroki
+## Kolejne kroki {#next-steps}
 
 To, czego powinieneś się nauczyć dalej, zależy od Ciebie i od tego, co Cię interesuje! Oto kilka propozycji:
 
@@ -147,7 +147,7 @@ Chcesz nauczyć się *wszystkiego* o Nomadzie? Dobry wybór! Ten podręcznik obe
 Jeśli wolisz wideo, Holger Schönischka przygotował ogromną kolekcję porad i trików do Nomada na YouTube: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Uzyskiwanie pomocy
+## Uzyskiwanie pomocy {#getting-help}
 
 Jeśli nadal masz pytania po przeczytaniu podręcznika i obejrzeniu filmów instruktażowych, są trzy główne sposoby, aby porozmawiać z innymi użytkownikami Nomada lub z deweloperem Nomada:
 

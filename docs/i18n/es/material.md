@@ -1,4 +1,4 @@
-# ![](/icons/material.webp) Material
+# ![](/icons/material.webp) Material {#material}
 
 Este menú te permite cambiar el material del objeto actual, las propiedades de renderizado del objeto/material y asignar texturas al material.
 
@@ -24,16 +24,16 @@ Los botones de copiar/pegar en la parte superior de este menú te permiten copia
 
 Ten en cuenta que el motor de render de Nomad es en tiempo real; aunque es potente, prioriza la velocidad sobre la precisión para ciertos efectos. 
 
-## Material types
+## Tipos de material {#material-types}
 
 ![](/images/material_types.webp)
 
 Los tipos de material de Nomad son Opaque, Subsurface, Blending, Additive, Refraction, Dithering, Shadow Catcher.
 
-### ![](/icons/material_opaque.webp) Opaque
+### ![](/icons/material_opaque.webp) Opaco {#opaque}
 El modo predeterminado que trata las superficies como un material simple que admite color, rugosidad, metalness y opacidad pintados.
 
-### ![](/icons/material_subsurface.webp) Subsurface
+### ![](/icons/material_subsurface.webp) Subsuperficial {#subsurface}
 Este modo puede simular material que permite que la luz se difumine y disperse internamente, como piel, cera o jade.
 
 Para obtener el mejor resultado, cambia al modo de sombreado PBR y usa al menos una luz direccional o puntual, idealmente con un entorno tenue.
@@ -42,7 +42,7 @@ Para obtener el mejor resultado, cambia al modo de sombreado PBR y usa al menos 
 
 `Translucency` controla cómo la luz se dispersa desde la parte frontal hacia la parte posterior de una forma, como la dispersión a través de la parte inferior de una hoja, o cuando las orejas están fuertemente retroiluminadas. 
 
-### ![](/icons/material_blending.webp) Blending
+### ![](/icons/material_blending.webp) Fusión {#blending}
 
 Similar a Opaque, pero admite el control deslizante de opacidad para permitir que el material se mezcle entre sólido y transparente. Este es un control simple de opacidad mediante un único deslizador, frente a la opacidad pintable que admite el material opaco. 
 
@@ -50,7 +50,7 @@ Similar a Opaque, pero admite el control deslizante de opacidad para permitir qu
 El modo Blending puede causar parpadeos y saltos en formas complejas o que se intersecan.
 :::
 
-### ![](/icons/material_additive.webp) Additive
+### ![](/icons/material_additive.webp) Aditivo {#additive}
 Puedes hacer tu malla semitransparente con este material. Es similar al material blending, pero mientras blending se mezcla con su entorno, additive siempre será más brillante que los objetos que tenga detrás, lo que es bueno para efectos intensos como rayos de luz, fuego o explosiones.
 
 Puedes establecer un valor de opacidad superior a 1, lo que significa que el objeto será más brillante.  
@@ -58,7 +58,7 @@ Puede ser útil si quieres usar el [bloom](postprocess.md#bloom) y el `threshold
 
 Este modo tiende a tener menos artefactos que [Blending](#blending) (transparencia independiente del orden).
 
-### ![](/icons/material_refraction.webp) Refraction
+### ![](/icons/material_refraction.webp) Refracción {#refraction}
 Este modo se puede usar para simular material de vidrio. Debido a las limitaciones del tiempo real, la autorrefracción y la refracción en múltiples capas son algo limitadas.
 
 La rugosidad pintada del modelo afecta lo borrosa que es la refracción.
@@ -72,10 +72,10 @@ Para tener valores diferentes (por ejemplo, una piruleta con superficie nítida 
 ![](/videos/refraction.mp4)
 
 
-### ![](/icons/material_dithering.webp) Dithering
+### ![](/icons/material_dithering.webp) Trama (dithering) {#dithering}
 Hace el objeto semitransparente descartando algunos píxeles de forma aleatoria.
 
-### ![](/icons/material_shadow_catcher.webp) Shadow Catcher
+### ![](/icons/material_shadow_catcher.webp) Captador de sombras {#shadow-catcher}
 
 Hace el objeto invisible y solo recibe sombras. Útil para combinar renders de Nomad con otras imágenes. 
 
@@ -85,49 +85,49 @@ Se puede encontrar más información sobre transparencia y modos de mezcla en ht
 
 :::
 
-## Controls
+## Controles {#controls}
 
 ![](/images/material_controls.webp)
 
-### Always unlit
+### Siempre sin iluminación {#always-unlit}
 Si está activado, el objeto ignorará PBR y Matcap y simplemente mostrará su color pintado sin sombreado.
 Ten en cuenta que si usas [Additive](#additive), puedes pintar transparencia directamente usando color negro.
 
-### Opacity
+### Opacidad {#opacity}
 Qué tan sólido u opaco aparecerá un objeto; 100% es sólido, 0% es transparente. También puedes pintar la opacidad para un control más fino.
 
-### Reflectance
+### Reflectancia {#reflectance}
 Controla la cantidad de reflexión que recibirá el material para materiales no metálicos. La mayoría de las veces se debe usar el valor predeterminado (que corresponde al 4% estándar de luz reflejada en ángulo normal), pero se puede aumentar para potenciar reflejos y brillos, por ejemplo en los ojos de un personaje.
 
-### Inverse culling
+### Culling inverso {#inverse-culling}
 Invierte las normales de una superficie. Normalmente no es necesario, pero se puede usar si un modelo parece estar al revés o, en combinación con `Two sided` desactivado, se puede usar para crear interiores donde la pared más cercana a la cámara siempre esté oculta.
 
-### Smooth Shading
+### Sombreado suave {#smooth-shading}
 Consulta la [opción global](settings.md#smooth-shading).  
 El valor `Auto` usará la opción global.
 
-### Two sided
+### Doble cara {#two-sided}
 Consulta la [opción global](settings.md#two-sided).  
 El valor `Auto` usará la opción global.
 
-### Coloured backface
+### Cara posterior coloreada {#coloured-backface}
 Consulta la [opción global](settings#two-sided).
 El valor `Auto` usará la opción global.
 
-### Casts shadows
+### Proyecta sombras {#casts-shadows}
 Por ahora `Auto` es lo mismo que `On`.
 Los objetos transparentes también proyectan sombras (en un patrón de dithering para emular sombras mezcladas).  
 Asegúrate de desactivar la proyección de sombras si tienes un objeto grande en tu escena que no necesita proyectar sombras (por ejemplo, un gran suelo).
 
-### Recieve shadows
+### Recibe sombras {#recieve-shadows}
 Por ahora `Auto` es lo mismo que `On`.
 
-### Wireframe
+### Malla alámbrica {#wireframe}
 Consulta la [opción global](settings.md#wireframe).  
 El valor `Auto` usará la opción global.
 
 
-## Textures
+## Texturas {#textures}
 
 ![](/images/material_textures.webp)
 
@@ -144,28 +144,28 @@ Las texturas se pueden aplicar a
 
 Al hacer clic en una ranura de textura aparecerá un selector. Después de que una textura se haya asignado a una ranura de material, al hacer clic de nuevo aparecerá un panel de textura:
 
-### Texture panel options
+### Opciones del panel de texturas {#texture-panel-options}
 
 ![](/images/material_texture_panel.webp)
 
-### Open
+### Abrir {#open}
 Seleccionar otra textura
 
-### None
+### Ninguna {#none}
 Eliminar la textura
 
-### Opacity
+### Opacidad {#texture-opacity}
 
 Si la imagen tiene un canal alfa, esto te permitirá usarlo para Opacity o ignorarlo.
 
-### ![](/icons/link.webp) Chain/Link icon 
+### ![](/icons/link.webp) Icono de cadena/enlace {#chainlink-icon}
 
 El icono de enlace en las siguientes secciones, cuando está activado, hará que las opciones que se usen se compartan con las otras texturas (color, normal, roughness, metalness, opacity, emissive) que también tengan activado su icono de enlace. 
 
 Esto te permite asegurarte de que, si tienes texturas alineadas, se mantendrán alineadas incluso si alteras parámetros o tipos de proyección.
 
 
-### Projection
+### Proyección {#projection}
 ![](/images/material_projection.webp)
 
 Define cómo se debe aplicar la textura al objeto.
@@ -174,7 +174,7 @@ Define cómo se debe aplicar la textura al objeto.
 * `UV` - Usa las coordenadas UV de la malla para aplicar la textura. Si la malla y la textura vienen de fuera de Nomad, o se van a exportar desde Nomad para usarse en otro lugar, UV es la opción correcta.
 * `Triplanar` - Proyecta la textura a lo largo de los ejes X, Y, Z y mezcla las uniones. 
 
-### Triplanar
+### Triplanar {#triplanar}
 ![](/images/material_triplanar.webp)
 
 Las proyecciones triplanares son una forma potente pero sencilla de aplicar texturas a objetos.
@@ -186,45 +186,45 @@ Esto luego se puede hornear en UVs o colores por vértice si es necesario.
 
 ![](/images/material_triplanar_example.webp)
 
-#### Method
+#### Método {#method}
 
 * `Local` - La proyección se moverá con la transformación del objeto
 * `World` - La proyección permanece fija; mover el objeto lo deslizará a través de la proyección.
 
-#### Hardness
+#### Dureza {#hardness}
 
 Cómo se mezclan las proyecciones. 100% no hará mezcla y los bordes de las proyecciones serán nítidos. 0% mezclará los bordes en un ángulo amplio. El valor predeterminado es 90%, suficiente mezcla para ocultar los bordes y permitir que el resto de las proyecciones permanezcan nítidas.
 
-### Uniform
+### Uniforme {#uniform}
 
 Cuando está activado, se usa la misma dureza para todas las proyecciones. Cuando está desactivado, se exponen controles de dureza adicionales para las proyecciones X, Y, Z.
 
 
-### Parameter
+### Parámetro {#parameter}
 ![](/images/material_parameter.webp)
 
-#### Filtering
+#### Filtrado {#filtering}
 El método de filtrado de textura a usar; `Auto` es el valor predeterminado. Los métodos son `Nearest`, `Linear`, `Mipmap`. Nearest no hace filtrado, por lo que las texturas pueden presentar artefactos dentados cuando se ven de cerca. Linear y Mipmap hacen un mejor filtrado, por lo que las texturas aparecen borrosas en lugar de dentadas de cerca.
 
-#### Tiling-X
+#### Repetición-X {#tiling-x}
 Si el parámetro Scale es mayor que 1, haciendo que la textura sea más pequeña que las UVs del objeto, cómo se repetirá la textura a lo largo del eje X. `None` significa sin repeticiones. `Repeat` hará copias de la textura. `Mirror` hará copias de la textura, con cada segunda copia invertida, lo que puede ayudar a ocultar artefactos de repetición.
 
-#### Tiling-Y
+#### Repetición-Y {#tiling-y}
 Igual que Tiling-X, pero para el eje Y.
 
-### Transform
+### Transformar {#transform}
 ![](/images/material_transform.webp)
 
 Transformaciones 2D adicionales aplicadas a la textura en el espacio UV. El botón de reinicio restablece los valores predeterminados; el icono de cadena (cuando se seleccionan texturas distintas del color) vinculará o desvinculará la transformación para que sea la misma que la de la textura de color.
 
-#### Translation
+#### Traslación {#translation}
 El desplazamiento X e Y de la textura
 
-#### Rotation
+#### Rotación {#rotation}
 La rotación de la textura
 
-#### Scale
+#### Escala {#scale}
 La escala de la textura; números más grandes harán que la textura sea más pequeña en el objeto. Usa los deslizadores Tiling-X y Tiling-Y para controlar lo que ocurre.
 
-### Uniform scale
+### Escala uniforme {#uniform-scale}
 Cuando está desactivado, Nomad mostrará controles separados para Scale-X y Scale-Y.

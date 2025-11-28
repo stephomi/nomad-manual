@@ -1,4 +1,4 @@
-# ![](/icons/pressure.webp) Tekanan 
+# ![](/icons/pressure.webp) Tekanan {#pressure}
 
 ---
 
@@ -7,7 +7,7 @@ Menu ini membolehkan anda menyesuaikan kelakuan pensel tablet, seperti Apple Pen
 Secara lalai, tekanan pensel akan mempengaruhi Jejari dan Keamatan berus semasa.
 Anda boleh menyesuaikan jatuhan (falloff) kesan ini.
 
-## Benarkan tekanan tidak dikenali
+## Benarkan tekanan tidak dikenali {#allow-unrecognized-pressure}
 
 Untuk sesetengah peranti Android, input jari akan mengembalikan nilai tekanan tetap yang sewenang-wenangnya.
 Ini boleh menjengkelkan jika anda bercadang untuk mengukir menggunakan jari, terutamanya jika nilai yang dikembalikan adalah kecil.

@@ -1,4 +1,4 @@
-# ![](/icons/sun.webp) Ombrage
+# ![](/icons/sun.webp) Ombrage {#shading}
 
 Ce menu contrôle les modes d’ombrage utilisés par Nomad, les propriét��s d’éclairage, ainsi que les propriétés de lumière d’environnement/matcap.
 
@@ -22,24 +22,24 @@ Pour en savoir plus sur la métallicité et la rugosité, voir la section [Peint
 
 ![](/images/shading_second.webp)
 
-### Face Group
+### Groupe de faces {#face-group}
 Superpose les couleurs des groupes de faces. Les groupes de faces sont des sélections colorées de polygones qui peuvent être créées avec l’outil [Face group](tools#facegroup), et sont générées automatiquement avec la plupart des primitives.
 
 Certains outils filtreront automatiquement par groupes de faces lorsque ceux‑ci sont visibles.
 
-### Show paint
+### Afficher la peinture {#show-paint}
 Nomad peut stocker la couleur, la rugosité et la métallicité dans les sommets de votre sculpture. Vous pouvez activer/désactiver l’affichage de ces propriétés globalement avec cette case à cocher.
 
 Notez que si vous avez à la fois des propriétés de sommets et des textures, et que les deux sont activées, les valeurs seront multipliées entre elles.
 
-### Show mask
+### Afficher le masque {#show-mask}
 Active/désactive la superposition en niveaux de gris du masque des [outils de masque](tools#mask). Quand ceci est désactivé, le masque est également désactivé, ce qui est utile pour faire des modifications rapides sans le masque, puis vous pouvez le réactiver sans perdre votre masque.
 
-### Use Hide
+### Utiliser Cacher {#use-hide}
 
 Active/désactive les faces cachées. Notez que cela ne fonctionne que si vous n’êtes PAS dans l’outil de masquage/cachage !
 
-### Use textures
+### Utiliser les textures {#use-textures}
 
 Nomad permet d’assigner des textures aux objets depuis le menu [material](material). Si des textures sont assignées, elles peuvent être activées/désactivées globalement avec cette case à cocher.
 
@@ -49,7 +49,7 @@ Nomad permet d’assigner des textures aux objets depuis le menu [material](mate
 
 
 
-### Aperçu PBR et lumières
+### Vue d’ensemble PBR et lumières {#pbr}
 Ce manuel n’entrera pas dans les détails du rendu physiquement réaliste (PBR).
 
 Un point important à garder à l’esprit est que l’éclairage et le matériau sont complètement séparés.
@@ -68,7 +68,7 @@ Cependant, les performances ne seront pas forcément bonnes.
 Vous pouvez simuler de nombreuses lumières en rendant des objets non éclairés/émissifs, puis en activant l’illumination globale dans le menu [post process](postprocess).
 :::
 
-### Aperçu des types de lumières
+### Vue d’ensemble des types de lumière {#light-types-overview}
 
 Voici les types de lumières actuellement pris en charge :
 
@@ -79,42 +79,42 @@ Voici les types de lumières actuellement pris en charge :
 | [Spot](#spot)               | Lumières en forme de cône                              | Oui                                                        |
 | [Point](#point)             | Point lumineux omnidirectionnel                        | Oui, mais uniquement via des ombres en espace‑écran moins robustes |
 
-#### Directional
+#### Directionnelle {#directional}
 Elle émet de la lumière depuis une distance infinie, avec une intensité uniforme.
 Sa position 3D dans la scène n’a pas d’importance, seule son orientation compte.
 
 Vous pouvez attacher cette lumière à la caméra, de façon à obtenir un éclairage constant.  
 Par exemple, vous pouvez l’utiliser pour créer un « rim light » (une lumière forte qui vient de l’arrière de votre modèle, pointant vers la caméra) qui éclaire toujours l’arrière de votre modèle.
 
-#### Environment light
+#### Lumière d’environnement {#env-light}
 L’utilisation d’un [HDR d’environnement](#environment) fonctionne bien pour un éclairage global doux, mais si une source lumineuse forte et nette est visible dans le HDR, l’ombre créée sera très douce, souvent à peine visible. Utiliser une lumière directionnelle en combinaison avec le HDR d’environnement peut aider, mais il peut être difficile de les aligner.
 
 Cette lumière fait le travail pour vous. Elle sera automatiquement orientée pour s’aligner avec la partie la plus lumineuse du HDR, puis vous pouvez contrôler séparément son intensité et son angle (douceur des ombres). 
 
-#### Spot
+#### Spot {#spot}
 Une lumière spot émet de la lumière dans une seule direction, limitée par une forme de cône.
 
-#### Point
+#### Point {#point}
 Une lumière ponctuelle émet de la lumière dans toutes les directions.  
 Pour le moment, la lumière ponctuelle ne prend pas en charge les ombres.
 
-#### Shadows
+#### Ombres {#shadows}
 L’option `normal bias` peut être utilisée pour réduire les artefacts d’ombre courants (acné/peter‑panning).
 
 La qualité des ombres dépend de la taille des objets par rapport à l’ensemble de la scène.  
 Si vous avez un grand objet dans votre scène qui n’a pas besoin de projeter des ombres (par exemple un grand plan), assurez‑vous de désactiver la projection d’ombres dans ses [paramètres de matériau](material.md#cast-shadows).
 
-## Lights
+## Lumières {#lights}
 
 ![](/images/shading_lights.webp)
 
-### ![](/icons/checked.webp) Lights checkbox
+### ![](/icons/checked.webp) Case à cocher Lumières {#lights-checkbox}
 
 Active/désactive toutes les lumières directes de la scène.
 
 
 
-### Add light
+### Ajouter une lumière {#add-light}
 
 Ajoute une lumière à la scène, jusqu’à un maximum de 4. Lorsqu’une lumière est ajoutée, la liste des lumières s’affiche avec des boutons, et une barre d’outils de lumière est ajoutée en haut de la vue.
 
@@ -127,11 +127,11 @@ Ajoute une lumière à la scène, jusqu’à un maximum de 4. Lorsqu’une lumi�
 * L’icône de copie duplique une lumière. 
 * L’icône à 3 points ouvre un éditeur de lumière complet. La plupart de ces fonctionnalités sont également disponibles depuis la barre d’outils qui apparaît dans la vue.
 
-### ![](/icons/spotlight.webp)  Icons
+### ![](/icons/spotlight.webp)  Icônes {#icons}
 
 Active/désactive l’affichage des icônes de lumière dans la vue.
 
-### Light toolbar
+### Barre d’outils Lumière {#light-toolbar}
 ![](/images/shading_lights_toolbar.webp) 
 
 Cette barre d’outils apparaît en haut de la vue lorsqu’une lumière est sélectionnée.
@@ -144,7 +144,7 @@ Cette barre d’outils apparaît en haut de la vue lorsqu’une lumière est sé
 * Size définit la largeur d’une lumière. Des lumières plus larges projettent des ombres plus douces, un éclairage plus doux et un reflet plus diffus sur les objets.
 * ... ouvre des contrôles supplémentaires.
 
-### Light extra controls
+### Contrôles supplémentaires de la lumière {#light-extra-controls}
 
 ![](/images/shading_extra_controls.webp) 
 
@@ -166,7 +166,7 @@ Notez que certaines options sont spécifiques à certains types de lumières.
 * `Tolerance` si des artefacts d’ombre sont visibles (soit les ombres ne semblent pas toucher les surfaces, soit il y a du bruit et des motifs dans les ombres), ajuster la tolérance peut aider à corriger ces problèmes.
 
 
-## Environment
+## Environnement {#environment}
 
 ![](/images/shading_environment.webp)
 
@@ -176,20 +176,20 @@ Nomad est livré avec plusieurs exemples de cartes d’environnement pour des sc
 
 Touchez l’image pour voir les cartes d’environnement disponibles. Depuis cette boîte de dialogue, choisissez « Import... » pour charger les vôtres. Il est préférable d’utiliser des images à grande plage dynamique (HDR), au format latlong ou équirectangulaire, en fichiers .hdr ou .exr. [www.polyhaven.com](https://polyhaven.com/hdris) propose une bonne collection de cartes d’environnement gratuites, en général les cartes HDR 1k offrent une bonne taille et une bonne qualité.
 
-### Exposure
+### Exposition {#env-exposure}
 Ajuste la luminosité de la carte d’environnement. Souvent, les cartes peuvent être trop lumineuses lorsqu’elles sont utilisées avec des lumières classiques ; réduire l’exposition peut aider à équilibrer, en particulier lorsqu’elles sont utilisées avec l’illumination globale dans les paramètres de [Post Process](postprocess).
 
-### Rotation
+### Rotation {#env-rotation}
 
 Comme les cartes d’environnement capturent la lumière venant de toutes les directions, vous pouvez les faire pivoter pour obtenir des reflets et un éclairage global qui se combinent bien avec votre sculpture.
 
-### Attached to camera
+### Attaché à la caméra {#env-attached}
 Attache l’environnement à la caméra.
 
 Cela force l’éclairage à rester constant, ce qui peut être utile pendant la sculpture.
 
 
-## ![](/icons/sphere_smooth.webp) Matcap
+## ![](/icons/sphere_smooth.webp) Matcap {#matcap}
 
 ![](/images/shading_matcap.webp)
 
@@ -201,7 +201,7 @@ Les artistes ont tendance à privilégier ce mode pour la sculpture, car il leur
 
 Toucher la sphère ouvre un explorateur d’images. Vous pouvez également ajouter votre propre matcap ; en général, n’importe quelle photo, rendu, voire une peinture d’une sphère recadrée serrée dans un carré peut être utilisée. De nombreuses bibliothèques de matcaps sont disponibles en ligne, une ressource utile est la [bibliothèque de matcaps de nidorx](https://github.com/nidorx/matcaps).
 
-### Use global Matcap
+### Utiliser le Matcap global {#matcap-global}
 
 En général, les artistes utilisent un seul matcap pour l’ensemble de la sculpture, mais si ce bouton est désactivé, chaque objet peut avoir son propre matcap. Cela peut être utilisé de manière artistique pour obtenir des résultats saisissants.
 
@@ -209,31 +209,31 @@ En général, les artistes utilisent un seul matcap pour l’ensemble de la scul
 Désactivez cette option et utilisez une image de globe oculaire pour les yeux de vos personnages !
 :::
 
-### Rotation
+### Rotation {#matcap-rotation}
 Un matcap est une forme spécialisée de carte d’environnement, donc comme une carte d’environnement, il peut être pivoté. Vous pouvez également le faire à tout moment dans la vue en faisant glisser avec 3 doigts vers la gauche ou la droite.
 
 
 
-## ![](/icons/circle_fill.webp) Unlit
+## ![](/icons/circle_fill.webp) Non éclairé {#unlit}
 
 Ce mode n’affiche que la couleur de surface. Il peut être utile pour vérifier que les couleurs de surface de vos objets sont bien celles que vous attendez, sans être distrait par les lumières, les ombres, les reflets ou la transparence. 
 
 Ce mode peut également être utilisé pour des rendus non photoréalistes, afin d’obtenir un aspect plat et cartoon.
 
-## ![](/icons/cube.webp) Object ID
+## ![](/icons/cube.webp) ID objet {#object-id}
 
 Toutes les informations d’éclairage et de surface sont ignorées, et chaque objet est ombré avec une couleur unie unique. Si ceci est rendu en parallèle d’un rendu PBR, cela peut être utilisé dans un logiciel de peinture pour sélectionner par couleur, et ainsi pouvoir faire des corrections colorimétriques sur des objets spécifiques.
 
 Notez que ces couleurs apparaîtront également dans la [vue arborescente du menu Scene](scene#tree-view).
 
-### Randomise id
+### Randomiser l’ID {#object-random}
 
 Génère un nouveau jeu de couleurs aléatoires. 
 
-## ![](/icons/link.webp) Instance ID
+## ![](/icons/link.webp) ID d’instance {#instance-id}
 
 Identique à Object ID, mais les instances auront la même couleur. 
 
-### Randomise id
+### Randomiser l’ID {#instance-random}
 
 Génère un nouveau jeu de couleurs aléatoires.

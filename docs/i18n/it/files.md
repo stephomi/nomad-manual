@@ -1,41 +1,41 @@
-# ![](/icons/open.webp) File
+# ![](/icons/open.webp) File {#files}
 
 Il menu File consente di salvare e caricare progetti Nomad, importare ed esportare modelli 3D ed esportare immagini renderizzate.
 
 ![](/images/file_menu.webp)
 
-## Progetto
+## Progetto {#project}
 ![](/images/file_project.webp)
 
 Nella parte superiore di questo menu viene mostrata una miniatura dell’ultimo salvataggio. Facendo clic su questa miniatura si apre un mini browser; tocca due volte un altro progetto per far apparire un mini menu che permette di aprire, aggiungere, salvare, clonare, rinominare o eliminare quel progetto.
 
-### ![](/icons/nomad.webp) Preset 
+### ![](/icons/nomad.webp) Predefinito {#preset}
 Accedi a una raccolta di demo e componenti di personaggi. Selezionane uno, poi selezionalo di nuovo per scegliere se Aprire, Aggiungere alla scena o Clonare l’elemento nella cartella dei tuoi progetti.
 
 ![](/images/file_preset_preview.webp)
 
-### ![](/icons/save.webp) Salva
+### ![](/icons/save.webp) Salva {#save}
 Salva il progetto Nomad.
 
-### ![](/icons/save_as.webp) Salva con nome...
+### ![](/icons/save_as.webp) Salva con nome... {#save-as}
 Mostra il browser dei progetti per consentirti di salvare il progetto Nomad con un nuovo nome.
 
-### ![](/icons/pencil.webp) Rinomina
+### ![](/icons/pencil.webp) Rinomina {#rename}
 Mostra una casella di testo per rinominare il progetto corrente.
 
-### ![](/icons/open.webp) Apri...
+### ![](/icons/open.webp) Apri... {#open}
 Mostra il browser dei progetti per aprire un progetto.
 
-### ![](/icons/add_file.webp) Aggiungi alla scena...
+### ![](/icons/add_file.webp) Aggiungi alla scena... {#add}
 Mostra il browser dei progetti; quando un progetto viene selezionato, il suo contenuto verrà unito con la scena corrente.
 
-### ![](/icons/trash.webp) Elimina...
+### ![](/icons/trash.webp) Elimina... {#delete}
 Mostra il browser dei progetti; tutti i progetti selezionati verranno eliminati dal file system.
 
-### ![](/icons/new_file.webp) Nuovo
+### ![](/icons/new_file.webp) Nuovo {#new}
 Avvia un nuovo progetto; se ci sono modifiche non salvate ti verrà chiesto se desideri salvarle.
 
-### ![](/icons/autosave.webp) Salvataggio automatico...
+### ![](/icons/autosave.webp) Salvataggio automatico... {#auto-save}
 Menu per controllare le opzioni di salvataggio automatico.
 
 Se abiliti il salvataggio automatico, puoi impostare un timer in modo che un popup appaia a intervalli regolari.
@@ -44,19 +44,19 @@ Il motivo per cui Nomad non salva in background è che i file 3D possono essere 
 Inoltre, per evitare problemi di memoria insufficiente, la scena viene in genere compressa prima dell’operazione di salvataggio.
 Questa compressione/decompressione rallenterà anche l’operazione di salvataggio.
 
-### Timer pop up
+### Popup timer {#timer-pop-up}
 Con quale frequenza apparirà il popup del timer.
 
-### Timeout popup
+### Timeout popup {#popup-timeout}
 Abilita il timeout del popup.
 
-### Scarta autosalvataggio
+### Scarta salvataggio automatico {#discard-autosave}
 Se esiste un file di autosalvataggio per un progetto, verrà caricato automaticamente al posto del progetto originale. Se questo non è necessario, questo pulsante eliminerà l’autosalvataggio. Il caricamento del file utilizzerà quindi l’ultimo salvataggio manuale del progetto.
 
 
-## Importa
+## Importa {#import}
 
-### ![](/icons/add_file.webp) Importa
+### ![](/icons/add_file.webp) Importa {#import-button}
 Per importare file 3D che non sono progetti Nomad.
 
 Quando importi un file di scena esterno in Nomad, puoi *importarlo* oppure *aggiungerlo*.
@@ -72,39 +72,39 @@ Nomad può importare questi formati:
 - PLY (.ply)
 - FBX (.fbx, sperimentale)
 
-### ![](/icons/cog.webp) Avanzate
+### ![](/icons/cog.webp) Avanzato {#advanced}
 Mostra le opzioni avanzate di importazione:
 
-### Progetto/ glTF / OBJ / STL / FBX
-#### Mantieni topologia
+### Progetto/ glTF / OBJ / STL / FBX {#project-gltf-obj-stl-fbx}
+#### Mantieni topologia {#keep-topology}
 Per impostazione predefinita Nomad tenterà di correggere la geometria problematica in fase di caricamento. Abilitando questa opzione si impedirà a Nomad di riordinare vertici/facce, rimuovere duplicati di vertici/facce, rimuovere vertici non utilizzati.
 
-#### Salta texture
+#### Salta texture {#skip-textures}
 Salta il caricamento delle texture per i formati che le supportano, come glTF.
 
-### Progetto / glTF
-#### Mantieni impostazioni GUI
+### Progetto / glTF {#project-gltf}
+#### Mantieni impostazioni GUI {#keep-gui-settings}
 Abilita il salvataggio dell’interfaccia grafica e delle impostazioni del progetto all’interno del file Nomad .nom o glTF.
 
-### OBJ
-#### Dividi OBJ per gruppi
+### OBJ {#obj}
+#### Dividi OBJ per gruppi {#split-obj-by-groups}
 Abilita la suddivisione dei gruppi OBJ in oggetti separati.
 
-#### Spazio colore
+#### Spazio colore {#color-space}
 Imposta la modalità colore interpretata dall’OBJ come Lineare, sRGB o Auto.
 
-### PLY
-#### Spazio colore
+### PLY {#ply}
+#### Spazio colore {#color-space-ply}
 Imposta la modalità colore interpretata dal PLY come Lineare, sRGB o Auto.
 
 
-### FBX
-#### Spazio colore
+### FBX {#fbx}
+#### Spazio colore {#color-space-fbx}
 Imposta la modalità colore interpretata dall’OBJ come Lineare, sRGB o Auto.
 
 
 
-## Esporta
+## Esporta {#export}
 Salva in un formato di geometria 3D che può essere utilizzato in altri software. 
 
 ![](/images/file_export.webp)
@@ -127,13 +127,13 @@ Formati di file diversi supportano funzionalità differenti; le opzioni disponib
 | Primitives, Postprocess, ecc.  | ✅     | Nomad ✅<br>Other ❌ | ❌   | ❌ | ❌    | ❌    | ❌                     |
 
 
-### Tutti/Visibili/Selezionati
+### Tutti/Visibili/Selezionati {#allvisibleselected}
 Lo stato attivo del pulsante imposta quali oggetti verranno esportati. Il numero accanto alle icone indica quanti oggetti verranno esportati per quella opzione.
 
-### Colori per vertice
+### Colori vertice {#vertex-colors}
 Esporta i colori per vertice se supportati dal formato di file.
 
-### PBR Paint
+### PBR Paint {#pbr-paint}
 I colori PBR per vertice vengono esportati come attributi secondari di colori per vertice.
 I canali sono impacchettati nel modo seguente:
 
@@ -144,26 +144,26 @@ I canali sono impacchettati nel modo seguente:
 | Masking   | B       |
 
 
-### Livelli
+### Livelli {#layers}
 I livelli sono supportati tramite i morph target glTF.
 Nomad esporta anche colori, roughness e metalness per livello, ma verranno ignorati da altri software.
 
-### Pittura livelli
+### Pittura livelli {#layer-painting}
 Esporta la pittura dei livelli, solitamente ignorata da altri software.
 
-### Face Group
+### Gruppo di facce {#face-group}
 Esporta i facegroup; l’esportazione può talvolta interferire con altri software.
 
-### Normali
+### Normali {#normals}
 Esporta le informazioni sulle normali. Nota che Nomad calcolerà sempre le proprie normali quando importa altri formati di file.
 
-### Tangenti
+### Tangenti {#tangents}
 Esporta le informazioni sulle tangenti, utilizzate se il modello ha normal map. 
 
-### Texture
+### Texture {#textures}
 Se sono state aggiunte texture al materiale, verranno esportate. Nota che questo non effettuerà il baking delle texture, che viene invece eseguito tramite le opzioni di baking nella sezione topologia.
 
-### Pulsante Esporta
+### Pulsante Esporta {#export-button}
 Fai clic qui per esportare la geometria utilizzando le impostazioni selezionate.
 
 ::: tip Suggerimento: importa roughness e metalness in Blender
@@ -182,28 +182,28 @@ USD è un formato complesso, la sua specifica supporta molte funzionalità, ma n
 
 ::: 
 
-## Render
+## Rendering {#render}
 
 Esporta un’immagine che è la combinazione di tutte le impostazioni nel progetto (luci, materiali, post-processing, ecc.). 
 
 ![](/images/file_render.webp)
-### Anteprima
+### Anteprima {#preview}
 
 Il piccolo pulsante di anteprima accanto al titolo del menu attenuerà le barre degli strumenti per aiutare a visualizzare il risultato finale.
 
-### Sfondo trasparente
+### Sfondo trasparente {#transparent-background}
 Abilita un canale alfa per il render, utile per combinare il render con altre immagini in programmi 2D. Nota che la trasparenza parziale non è supportata.
 
-### Mostra interfaccia
+### Mostra interfaccia {#show-interface}
 Abilita l’inclusione dell’interfaccia di Nomad nel render.
 
-### Rapporto di render
+### Rapporto di rendering {#render-ratio}
 Un moltiplicatore sulla risoluzione dell’immagine.
 
-### Dimensione finale
+### Dimensione finale {#final-size}
 La risoluzione da utilizzare per il render. Quando è selezionato `Custom`, gli slider di larghezza e altezza saranno abilitati. 
 
 Quando il menu File è attivo, nel viewport verrà disegnato un riquadro tratteggiato per indicare la regione di render se non corrisponde alla risoluzione dello schermo (nota che devi essere in modalità orizzontale perché sia corretta).
 
-### Esporta png
+### Esporta PNG {#export-png}
 Fai clic su questo pulsante per avviare il processo di render. Al termine potrai scegliere come salvare o condividere l’immagine.

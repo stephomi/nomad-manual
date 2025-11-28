@@ -1,4 +1,4 @@
-# ![](/icons/sun.webp) Peneduhan
+# ![](/icons/sun.webp) Shading {#shading}
 
 Menu ini mengawal mod peneduhan yang digunakan oleh Nomad, sifat pencahayaan, dan sifat cahaya persekitaran/matcap.
 
@@ -22,24 +22,24 @@ Jika anda ingin belajar lebih lanjut tentang metalness dan roughness, lihat baha
 
 ![](/images/shading_second.webp)
 
-### Face Group
+### Kumpulan Permukaan {#face-group}
 Tindihan warna facegroup. Facegroup ialah pemilihan poligon berwarna yang boleh dicipta dengan alat [Face group](tools#facegroup), dan dihasilkan secara automatik dengan kebanyakan primitif.
 
 Sesetengah alat akan menapis secara automatik mengikut facegroup apabila facegroup kelihatan.
 
-### Show paint
+### Tunjuk warna {#show-paint}
 Nomad boleh menyimpan warna, roughness, metalness dalam verteks arca anda. Anda boleh togol paparan sifat ini secara global dengan kotak semak ini.
 
 Perhatikan bahawa jika anda mempunyai kedua-dua sifat verteks dan tekstur, dan kedua-duanya didayakan, nilainya akan didarab antara satu sama lain.
 
-### Show mask
+### Tunjuk topeng {#show-mask}
 Togol tindihan mask skala kelabu bagi [alat mask](tools#mask). Apabila ini dinyahdayakan, mask juga dinyahdayakan, berguna untuk membuat perubahan pantas tanpa mask, kemudian anda boleh mengaktifkannya semula tanpa kehilangan mask anda.
 
-### Use Hide
+### Guna Sembunyi {#use-hide}
 
 Togol muka tersembunyi. Perhatikan ini hanya berfungsi jika anda TIDAK berada dalam alat hide!
 
-### Use textures
+### Guna tekstur {#use-textures}
 
 Nomad membenarkan tekstur diberikan kepada objek daripada menu [material](material). Jika tekstur diberikan ia boleh ditogol secara global dengan kotak semak ini.
 
@@ -49,7 +49,7 @@ Nomad membenarkan tekstur diberikan kepada objek daripada menu [material](materi
 
 
 
-### Gambaran keseluruhan PBR dan lampu
+### Gambaran keseluruhan PBR dan cahaya {#pbr}
 Manual ini tidak akan menyelami butiran tentang Pemaparan Berasaskan Fizik.
 
 Satu perkara penting untuk diingat ialah pencahayaan dan material dipisahkan sepenuhnya.
@@ -68,7 +68,7 @@ Walau bagaimanapun ia mungkin tidak berprestasi dengan baik.
 Anda boleh memalsukan banyak lampu dengan menjadikan objek unlit/emissive, kemudian aktifkan global illumination dalam menu [post process](postprocess).
 :::
 
-### Gambaran keseluruhan jenis lampu
+### Gambaran keseluruhan jenis cahaya {#light-types-overview}
 
 Berikut ialah jenis lampu yang kini disokong:
 
@@ -79,42 +79,42 @@ Berikut ialah jenis lampu yang kini disokong:
 | [Spot](#spot)               | Cahaya berbentuk kon                                   | Ya                                                       |
 | [Point](#point)             | Titik cahaya omni-arah                                 | Ya, tetapi hanya melalui bayang skrin-ruang yang kurang mantap |
 
-#### Directional
+#### Berarah {#directional}
 Ia memancarkan cahaya dari jarak yang sangat jauh, dengan keamatan seragam.
 Kedudukan 3Dnya dalam adegan tidak penting, hanya orientasinya sahaja.
 
 Anda boleh melampirkan lampu ini pada kamera, dengan itu ia mempunyai pencahayaan yang konsisten.  
 Sebagai contoh anda boleh menggunakannya untuk membuat rim light (cahaya kuat yang memancar dari belakang model anda, menghala ke kamera) yang sentiasa menerangi bahagian belakang model anda.
 
-#### Environment light
+#### Cahaya persekitaran {#env-light}
 Menggunakan [environment hdr](#environment) berfungsi dengan baik untuk pencahayaan lembut keseluruhan, tetapi jika terdapat cahaya tajam yang kuat kelihatan dalam HDR, bayang yang dicipta olehnya akan sangat lembut, selalunya tidak kelihatan langsung. Menggunakan lampu directional bersama HDR persekitaran boleh membantu, tetapi boleh menjadi sukar untuk menyelaraskannya.
 
 Lampu ini melakukan kerja itu untuk anda. Lampu akan diputar secara automatik untuk sejajar dengan bahagian paling terang HDR, kemudian anda boleh mengawal keamatan dan sudutnya (kelembutan bayang) secara berasingan. 
 
-#### Spot
+#### Spot {#spot}
 Lampu spot memancarkan cahaya dalam satu arah, dihadkan oleh bentuk kon.
 
-#### Point
+#### Titik {#point}
 Lampu point akan memancarkan cahaya ke semua arah.  
 Pada masa ini, lampu point tidak menyokong bayang-bayang.
 
-#### Shadows
+#### Bayang {#shadows}
 Pilihan `normal bias` boleh digunakan untuk mengurangkan artifak bayang biasa (acne/peter-panning).
 
 Kualiti bayang-bayang bergantung pada saiz objek relatif kepada keseluruhan adegan.  
 Jika anda mempunyai objek besar dalam adegan anda yang tidak perlu membuang bayang (contohnya satah besar), pastikan untuk menyahdayakan bayang dalam [tetapan material](material.md#cast-shadows)nya.
 
-## Lights
+## Cahaya {#lights}
 
 ![](/images/shading_lights.webp)
 
-### ![](/icons/checked.webp) Kotak semak Lights
+### ![](/icons/checked.webp) Kotak semak Cahaya {#lights-checkbox}
 
 Togol semua lampu langsung dalam adegan.
 
 
 
-### Add light
+### Tambah cahaya {#add-light}
 
 Tambah lampu ke adegan, maksimum 4. Apabila lampu ditambah, senarai lampu dipaparkan dengan butang, dan bar alat lampu ditambah ke bahagian atas viewport.
 
@@ -127,11 +127,11 @@ Tambah lampu ke adegan, maksimum 4. Apabila lampu ditambah, senarai lampu dipapa
 * Ikon salin akan menggandakan lampu. 
 * Ikon 3 titik akan memaparkan penyunting lampu penuh. Kebanyakan fungsi ini juga tersedia daripada bar alat yang muncul dalam viewport. 
 
-### ![](/icons/spotlight.webp)  Icons
+### ![](/icons/spotlight.webp)  Ikon {#icons}
 
 Togol paparan ikon lampu dalam viewport
 
-### Light toolbar
+### Bar alat cahaya {#light-toolbar}
 ![](/images/shading_lights_toolbar.webp) 
 
 Bar alat ini akan muncul di bahagian atas viewport apabila lampu dipilih.
@@ -144,7 +144,7 @@ Bar alat ini akan muncul di bahagian atas viewport apabila lampu dipilih.
 * Size menetapkan lebar lampu. Lampu yang lebih lebar akan membuang bayang lembut, pencahayaan lembut, dan highlight yang lebih lembut pada objek.
 * ... akan memaparkan kawalan tambahan.
 
-### Kawalan tambahan lampu
+### Kawalan tambahan cahaya {#light-extra-controls}
 
 ![](/images/shading_extra_controls.webp) 
 
@@ -166,7 +166,7 @@ Perhatikan bahawa sesetengah pilihan khusus untuk jenis lampu tertentu.
 * `Tolerance` jika artifak bayang kelihatan (sama ada bayang nampaknya tidak menyentuh permukaan, atau terdapat hingar dan corak dalam bayang), melaras tolerance boleh membantu membetulkan isu tersebut.
 
 
-## Environment
+## Persekitaran {#environment}
 
 ![](/images/shading_environment.webp)
 
@@ -176,20 +176,20 @@ Nomad disertakan dengan beberapa contoh peta persekitaran untuk kawasan dalam da
 
 Ketik pada imej untuk melihat peta persekitaran yang tersedia. Daripada dialog itu pilih 'Import...' untuk memuatkan peta anda sendiri. Adalah terbaik menggunakan imej High Dynamic Range (HDR), dalam format latlong atau equirectangular, sebagai fail .hdr atau .exr. [www.polyhaven.com](https://polyhaven.com/hdris) mempunyai koleksi peta persekitaran percuma yang baik untuk digunakan, secara umum peta hdr 1k ialah saiz dan kualiti yang baik.
 
-### Exposure
+### Pendedahan {#env-exposure}
 Laras kecerahan peta persekitaran. Selalunya peta boleh terlalu terang apabila digunakan dengan lampu biasa, menurunkan exposure boleh membantu mengimbangi, terutamanya apabila digunakan dengan Global Illumination dalam tetapan [Post Process](postprocess).
 
-### Rotation
+### Putaran {#env-rotation}
 
 Oleh kerana peta persekitaran menangkap cahaya dari semua arah, anda boleh memutarnya untuk mendapatkan pantulan dan pencahayaan keseluruhan yang serasi dengan arca anda.
 
-### Attached to camera
+### Dilampir pada kamera {#env-attached}
 Lampirkan persekitaran kepada kamera.
 
 Ia akan memaksa pencahayaan menjadi konsisten, yang boleh berguna semasa mengukir.
 
 
-## ![](/icons/sphere_smooth.webp) Matcap
+## ![](/icons/sphere_smooth.webp) Matcap {#matcap}
 
 ![](/images/shading_matcap.webp)
 
@@ -201,7 +201,7 @@ Artis cenderung menggemari mod ini untuk tujuan mengukir kerana ia membolehkan m
 
 Mengetik pada sfera akan memaparkan pelayar imej. Anda juga boleh menambah matcap anda sendiri, secara umum sebarang foto, render, malah lukisan sfera yang telah dipotong ketat menjadi segi empat sama boleh digunakan. Banyak pustaka matcap tersedia dalam talian, sumber berguna ialah [pustaka matcap nidorx](https://github.com/nidorx/matcaps).
 
-### Use global Matcap
+### Guna Matcap global {#matcap-global}
 
 Biasanya artis akan menggunakan satu matcap untuk keseluruhan arca, tetapi jika togol ini dinyahdayakan, setiap objek boleh mempunyai matcap sendiri. Ini boleh digunakan secara artistik untuk mendapatkan hasil yang menarik.
 
@@ -209,31 +209,31 @@ Biasanya artis akan menggunakan satu matcap untuk keseluruhan arca, tetapi jika 
 Nyahtogol pilihan ini, dan gunakan imej bola mata untuk mata watak anda!
 :::
 
-### Rotation
+### Putaran {#matcap-rotation}
 Matcap ialah bentuk khusus peta persekitaran, jadi seperti peta persekitaran, ia boleh diputar. Anda juga boleh melakukannya pada bila-bila masa dalam viewport dengan menyeret menggunakan 3 jari ke kiri dan kanan.
 
 
 
-## ![](/icons/circle_fill.webp) Unlit
+## ![](/icons/circle_fill.webp) Tanpa pencahayaan {#unlit}
 
 Mod ini hanya akan menunjukkan warna permukaan. Ia boleh berguna untuk menyemak warna permukaan objek anda adalah seperti yang anda jangkakan, tanpa diganggu oleh lampu, bayang, pantulan, ketelusan. 
 
 Mod ini juga boleh digunakan untuk render bukan fotorealistik, menghasilkan rupa rata dan kartun.
 
-## ![](/icons/cube.webp) Object ID
+## ![](/icons/cube.webp) ID Objek {#object-id}
 
 Semua maklumat pencahayaan dan permukaan diabaikan, dan setiap objek diwarnakan dengan warna rata yang unik. Jika ini dirender bersama render PBR, ia boleh digunakan dalam program melukis untuk memilih mengikut warna, dan dengan itu dapat melakukan pembetulan warna pada objek tertentu.
 
 Perhatikan bahawa warna ini juga akan muncul dalam [paparan pokok menu Scene](scene#tree-view).
 
-### Randomise id
+### Rawak id {#object-random}
 
 Jana set warna rawak yang baharu. 
 
-## ![](/icons/link.webp) Instance ID
+## ![](/icons/link.webp) ID Instans {#instance-id}
 
 Sama seperti Object ID, tetapi instans akan mempunyai warna yang sama. 
 
-### Randomise id
+### Rawak id {#instance-random}
 
 Jana set warna rawak yang baharu.

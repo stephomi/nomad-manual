@@ -1,4 +1,4 @@
-# Översikt
+# Översikt {#overview}
 
 <!-- 
 [[toc]]
@@ -13,7 +13,7 @@ Läs guiden [Kom igång](gettingstarted.md).
 :::
 
 
-## Innehållsförteckning
+## Innehållsförteckning {#table-of-contents}
 
 | Meny                           | Ikon                          | Beskrivning                                       |
 | :----------------------------: | :---------------------------: | :-----------------------------------------------: |
@@ -37,7 +37,7 @@ Läs guiden [Kom igång](gettingstarted.md).
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Vanliga frågor                                    |
 | [Tips](tips.md)                | ![](/icons/manual.webp)      | Arbetsflödestips                                  |
 
-## Community-resurser
+## Community‑resurser {#community-resources}
 
 <style>
 .video-grid {

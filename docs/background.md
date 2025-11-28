@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) Background
+# ![](/icons/image.webp) Background {#background}
 
 This menu controls the background color of Nomad, as well as any reference images to be used.
 
 ![](/images/background_overview.webp)
 
-## Background 
+## Type {#type}
 ![](/images/background_selector.webp)
 
 There are three options for the viewport background.
@@ -13,14 +13,14 @@ There are three options for the viewport background.
 * `Color` - A flat color that you can choose
 * `Gradient` - A ramp of colour from top to bottom. The Factor slider lets you determine the midpoint of the gradient.  
 
-## Reference Image
+## Reference Image {#reference}
 
 ![](/images/background_reference.webp)
 
 You can add an image of your choice on the background to be used for reference.
 You can change the position and scale, for example if you want to move it to the screen corner.
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) Transform {#transform}
 
 This button will let you place the reference image interactively. Use 2 fingers to pan, scale, rotate the reference image into place. The final placement will be reflected in the sliders below:
 

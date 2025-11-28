@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) Arrière-plan
+# ![](/icons/image.webp) Arrière-plan {#background}
 
 Ce menu contrôle la couleur d’arrière-plan de Nomad, ainsi que les images de référence à utiliser.
 
 ![](/images/background_overview.webp)
 
-## Arrière-plan 
+## Arrière-plan {#type}
 ![](/images/background_selector.webp)
 
 Il existe trois options pour l’arrière-plan de la vue.
@@ -13,14 +13,14 @@ Il existe trois options pour l’arrière-plan de la vue.
 * `Color` - Une couleur unie que vous pouvez choisir.
 * `Gradient` - Un dégradé de couleur du haut vers le bas. Le curseur Factor vous permet de déterminer le point médian du dégradé.  
 
-## Image de référence
+## Image de référence {#reference}
 
 ![](/images/background_reference.webp)
 
 Vous pouvez ajouter une image de votre choix en arrière-plan pour l’utiliser comme référence.
 Vous pouvez en modifier la position et l’échelle, par exemple si vous souhaitez la déplacer dans un coin de l’écran.
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) Transformer {#transform}
 
 Ce bouton vous permet de placer l’image de référence de manière interactive. Utilisez 2 doigts pour déplacer (pan), mettre à l’échelle (scale) et faire pivoter (rotate) l’image de référence. Le placement final sera reflété dans les curseurs ci-dessous :
 

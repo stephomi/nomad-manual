@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) Achtergrond
+# ![](/icons/image.webp) Achtergrond {#background}
 
 Dit menu bepaalt de achtergrondkleur van Nomad, evenals eventuele referentieafbeeldingen die worden gebruikt.
 
 ![](/images/background_overview.webp)
 
-## Achtergrond 
+## Achtergrond {#type}
 ![](/images/background_selector.webp)
 
 Er zijn drie opties voor de viewport-achtergrond.
@@ -13,14 +13,14 @@ Er zijn drie opties voor de viewport-achtergrond.
 * `Color` - Een effen kleur die je kunt kiezen
 * `Gradient` - Een kleurverloop van boven naar beneden. Met de Factor-schuifregelaar kun je het middelpunt van het verloop bepalen.  
 
-## Referentieafbeelding
+## Referentieafbeelding {#reference}
 
 ![](/images/background_reference.webp)
 
 Je kunt een afbeelding naar keuze aan de achtergrond toevoegen om als referentie te gebruiken.
 Je kunt de positie en schaal aanpassen, bijvoorbeeld als je deze naar een hoek van het scherm wilt verplaatsen.
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) Transformeren {#transform}
 
 Met deze knop kun je de referentieafbeelding interactief plaatsen. Gebruik 2 vingers om de referentieafbeelding te pannen, schalen en roteren. De uiteindelijke plaatsing wordt weergegeven in de schuifregelaars hieronder:
 

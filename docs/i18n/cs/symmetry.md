@@ -1,10 +1,10 @@
-# ![](/icons/symmetry.webp) Symetrie
+# ![](/icons/symmetry.webp) Symetrie {#symmetry}
 
 Tato nabídka ovládá, jak budou tahy opakovány přes zrcadlovou rovinu nebo radiálně, a způsoby, jak obnovit symetrii na nesymetrických objektech.
 
 ![](/images/symmetry_overview.webp) 
 
-## Přehled 
+## Přehled {#overview}
 Symetrii můžete používat několika způsoby:
 
 * Jako zrcadlo, které převrací práci přes osy X (vlevo/vpravo), Y (nahoře/dole), Z (vzadu/vpředu), nebo jejich kombinaci. 
@@ -23,10 +23,10 @@ Jedinými výjimkami jsou transformační nástroje ([Přesunout](#translate), [
 Nabídka symetrie slouží hlavně k ovládání symetrie tahů. Objekty můžete také zrcadlit a opakovat pomocí [repeaterů v nabídce scény](scene#repeaters). 
 :::
 
-## Enabled
+## Povolené {#enabled}
 Přepíná režim zrcadlení, je to totéž jako tlačítko `Sym` v levém rychlém panelu. 
 
-## Planes
+## Roviny {#planes}
 
 Zapnutí roviny/rovin symetrie a nastavení počtu opakování pro radiální symetrii. Nemusíte volit jen jednu rovinu, pro složitou symetrii můžete mít zapnuté 1, 2 nebo 3 roviny.
 
@@ -34,10 +34,10 @@ Osa a počet opakování pro radiální symetrii. Ani tyto volby nejsou omezeny 
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Method
+## Metoda {#method}
 Zrcadlo může být buď „Local“ (lokální) a pohybovat se s objektem, nebo „World“ (světové) a zůstávat nehybné. Pokud si nejste jisti, který režim potřebujete, sledujte rovinu zrcadlení a radiální indikátory překryté přes objekt. V lokálním režimu se při použití transformačního gizma a posunu modelu budou indikátory zrcadla pohybovat spolu s ním. Ve světovém režimu zůstanou indikátory zrcadla na místě a objekt se bude skrz ně posouvat.
 
-## Mirroring
+## Zrcadlení {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
 Při modelování v blízkosti rovin symetrie mohou mít některé štětce nedokonalé symetrické chování. Tato sekce umožňuje obnovit symetrii zkopírováním jedné strany sochy na druhou. 
@@ -52,11 +52,11 @@ Při modelování v blízkosti rovin symetrie mohou mít některé štětce nedo
 
 `Split & Mirror` v podstatě objekt podél zrcadla rozřízne, jednu stranu zkopíruje, zrcadlí ji na druhou a svaří vrcholy podél zrcadla. Je to destruktivnější volba a smaže multirezoluci, ale někdy je tato metoda nutná, pokud je model přes zrcadlo velmi odlišný.
 
-### Flip object
+### Překlopit objekt {#flip-object}
 ![](/images/symmetry_flip.webp)
 Přehoďte levou stranu na pravou a naopak. Vzhledově podobné tomu, jako kdybyste v nabídce nástroje gizmo nastavili měřítko na -1 na ose X.
 
-## Reset and Edit
+## Obnovit a upravit {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
@@ -71,7 +71,7 @@ Pokud tedy nefungují podle očekávání, zkontrolujte, zda jste ve správném 
 Tlačítko `Gizmo (Edit)` je záměrně zašedlé jako připomínka, že byste ho pravděpodobně neměli používat!
 :::
 
-## Show options
+## Zobrazit možnosti {#show-options}
 ![](/images/symmetry_show.webp)
 
 

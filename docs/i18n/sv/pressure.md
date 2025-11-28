@@ -1,4 +1,4 @@
-# ![](/icons/pressure.webp) Tryck 
+# ![](/icons/pressure.webp) Tryck {#pressure}
 
 ---
 
@@ -7,7 +7,7 @@ Den här menyn låter dig anpassa beteendet hos surfplattans penna, till exempel
 Som standard påverkar pennans tryck Radie och Intensitet för den aktuella penseln.
 Du kan anpassa avklingningen för denna påverkan.
 
-## Tillåt oigenkänt tryck
+## Tillåt oidentifierat tryck {#allow-unrecognized-pressure}
 
 För vissa Android‑enheter returnerar fingerinmatningar ett godtyckligt fast tryckvärde.
 Det kan vara irriterande om du planerar att skulptera med fingret, särskilt om värdet som returneras är litet.

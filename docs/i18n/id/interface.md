@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) Menu Antarmuka 
+# ![](/icons/interface.webp) Menu Antarmuka {#interface-menu}
 
 Menu ini mengontrol banyak opsi untuk menyesuaikan antarmuka Nomad. 
 
@@ -13,13 +13,13 @@ Nomad dapat dikustomisasi hingga tingkat yang cukup dalam, menu ini dibagi menja
 Halaman ini untuk menu antarmuka, bukan antarmukanya sendiri! Antarmuka secara keseluruhan dijelaskan di [Getting Started](gettingstarted.md).
 :::
 
-## Interface 
+## Antarmuka {#interface}
 
 Bagian interface memungkinkan Anda menambahkan pintasan, membuat toolbar mengambang, dan mengontrol warna, ukuran, tampilan antarmuka pengguna Nomad.
 
 ![](/images/interface_overview3.webp)
 
-### Add shortcuts (bottom)...
+### Tambahkan pintasan (bawah)... {#add-shortcuts-bottom}
 ![](/images/interface_shortcuts.webp)
 
 Toolbar bawah memiliki pintasan berikut yang diaktifkan secara bawaan:
@@ -35,7 +35,7 @@ Toolbar bawah memiliki pintasan berikut yang diaktifkan secara bawaan:
 
 Pintasan umum lain tersedia dari menu ini, lebih banyak lagi dapat ditemukan di dalam tombol bindings.
 
-#### ![](/icons/more.webp) Bindings
+#### ![](/icons/more.webp) Pengikatan {#bindings-list}
 
 Hampir setiap fungsi Nomad dapat ditambahkan ke toolbar pintasan melalui tombol bindings. Menu bindings akan ditampilkan ketika tombol diklik:
 
@@ -43,15 +43,15 @@ Hampir setiap fungsi Nomad dapat ditambahkan ke toolbar pintasan melalui tombol 
 
 Anda dapat mencari berdasarkan kategori melalui ikon di bagian atas, atau gunakan kolom pencarian untuk menemukan fungsi berdasarkan nama. Klik pada sebuah fungsi untuk menambahkannya ke toolbar. Klik lagi untuk menghapusnya.
 
-#### ![](/icons/list.webp) Order
+#### ![](/icons/list.webp) Urutan {#order}
 
 Ini akan menampilkan daftar pintasan. Tekan lama lalu seret untuk mengubah urutan pintasan.
 
-#### ![](/icons/reset.webp) Reset
+#### ![](/icons/reset.webp) Atur ulang {#reset}
 
 Reset akan mengembalikan toolbar bawah ke pengaturan bawaan.
 
-### Add shortcuts (window)... +
+### Tambahkan pintasan (jendela)... + {#add-shortcuts-window}
 ![](/images/interface_add_shortcuts_window.webp)
 
 Mengklik tanda + akan menambahkan toolbar mengambang. Toolbar tidak akan terlihat sampai Anda mengklik tombol bindings dan menambahkan beberapa pintasan ke dalamnya, lalu Anda dapat membuatnya terlihat. 
@@ -66,43 +66,41 @@ Anda dapat membuat banyak toolbar, setiap toolbar memiliki opsi berikut di menu 
 * ![](/icons/sort_down.webp) `Collapsable` - Mengaktifkan/mematikan handle collapse di sudut kanan atas.
 * ![](/icons/trash.webp) `Delete` - Menghapus toolbar.
 
-### Toolbox
+### Kotak alat {#toolbox}
 
 Opsi untuk menu tool di sisi kanan antarmuka Nomad.
 
 ![](/images/interface_toolbox.webp)
 
-#### ![](/icons/resize_bottom_right.webp) Ui Resize Corner
+#### ![](/icons/resize_bottom_right.webp) Sudut Ubah Ukuran UI {#ui-resize-corner}
 
 Mengaktifkan/mematikan handle pengubah ukuran di sudut bawah toolbar.
 
-#### Hidden
+#### Tersembunyi {#hidden}
 Biasanya ikon toolbox di bar atas akan berganti antara satu kolom panjang, atau daftar tool multi-kolom. Opsi ini akan berganti antara daftar multi-kolom, atau disembunyikan.
 
-#### Colored
+#### Berwarna {#colored}
 Memberi kode warna pada ikon berdasarkan kategori, misalnya semua tool mask berwarna coklat, tool split merah, tool flatten hijau, dll.
 
-#### Rows: Auto (>1)
+#### Baris: Otomatis (>1) {#rows-auto-1}
 
-#### Rows: Auto (>1)
-
-#### Reset order
+#### Atur ulang urutan {#reset-order}
 Mengatur ulang tool bawaan di toolbox ke urutan bawaan. Ikon kustom akan tetap berada di toolbox di akhir daftar.
 
 
-### Presets
+### Preset {#presets}
 
 ![](/images/interface_presets.webp)
 
 Kumpulan preset warna untuk antarmuka.
 
-#### High-contrast button
+#### Tombol kontras tinggi {#high-contrast-button}
 Gaya alternatif untuk tombol yang membuatnya lebih terlihat ketika diaktifkan. Jika disetel ke Auto, Nomad akan menggunakan mode ini ketika kontras warna UI antara aktif/nonaktif rendah.
 
-#### Color widget/Color base
+#### Widget warna/Warna dasar {#color-widgetcolor-base}
 Warna utama yang digunakan di antarmuka.
 
-#### Transparent panel, Color panel, Blur strength
+#### Panel transparan, Panel warna, Kekuatan blur {#transparent-panel-color-panel-blur-strength}
 ![](/images/interface_transparent.webp)
 Ketika diaktifkan, opsi tambahan akan muncul untuk mengontrol tampilan menu dan panel di Nomad. Warna, transparansi, dan jumlah blur dapat disesuaikan.
 
@@ -112,55 +110,55 @@ Pada perangkat kecil, akan berguna membuat panel warna hampir putih, transparan,
 
 ----
 
-### Mirror top bar
+### Cermin bar atas {#mirror-top-bar}
 Membalik urutan menu di bar atas.
 
-### Mirror side bars
+### Cermin bar samping {#mirror-side-bars}
 Menukar side bar sehingga toolbox berada di kiri, opsi tool di kanan.
 
-### Mirror bottom bar
+### Cermin bar bawah {#mirror-bottom-bar}
 Memindahkan bar bawah ke sudut kanan bawah, dan membalik urutan tombol.
 
-### Material color preview
+### Pratinjau warna material {#material-color-preview}
 Saat Anda memilih warna untuk material, pratinjau material ini ditampilkan pada objek yang sedang dipilih.
 
 ----
-### Help popup on hover
+### Popup bantuan saat hover {#help-popup-on-hover}
 
 Untuk perangkat yang mendukung hover, atur apakah bantuan konteks di Nomad yang diwakili ikon ![](/icons/help.webp) akan muncul saat hover, atau hanya ketika diklik.
 
 ----
 
-### Overall scale
+### Skala keseluruhan {#overall-scale}
 Pengali ukuran untuk semua elemen UI.
-### Panel width
+### Lebar panel {#panel-width}
 Lebar menu dan panel.
-### Font scale
+### Skala font {#font-scale}
 Skala font.
-### Vertical spacing
+### Jarak vertikal {#vertical-spacing}
 Jarak antar elemen di menu dan panel.
-### Vertical spacing (left)
+### Jarak vertikal (kiri) {#vertical-spacing-left}
 Jarak antar elemen di toolbar kiri.
 
 ----
 
-### Edge offset
+### Offset tepi {#edge-offset}
 Anda hanya perlu mengubah nilai ini jika mengalami masalah berinteraksi dengan tombol di tepi layar. Jika slider ini dinonaktifkan, Nomad akan menggunakan nilai safe area yang dikembalikan oleh perangkat itu sendiri.
 
 ::: tip
 Saat memindahkan Nomad ke perangkat baru (misalnya mengganti iPhone 12 dengan iPhone 15), pastikan untuk mereset opsi edge ke bawaan!
 :::
 
-### Reset style
+### Atur ulang gaya {#reset-style}
 Mengatur ulang semua elemen UI ke nilai bawaan.
 
 
-## Gesture
+## Gestur {#gesture}
 Menu gesture mengontrol bagaimana tekanan stylus dan jari mengontrol Nomad.
 
 ![](/images/interface_gesture.webp)
 
-### Gesture options
+### Opsi gestur {#gesture-options}
 ![](/images/interface_gesture_matrix.webp)
 
 Nomad dapat membatasi operasi berdasarkan perangkat input. Misalnya drag dengan jari hanya dapat menggerakkan kamera, sementara drag dengan stylus hanya dapat melakukan sculpt. Jika Anda memiliki mouse atau trackpad, itu juga dapat ditetapkan untuk mengontrol operasi tertentu.
@@ -176,7 +174,7 @@ Saat ini Nomad memungkinkan Anda mengatur mode berikut agar dikontrol oleh kombi
 
 `Finger always smooths` - Smooth dapat diatur hanya bekerja dengan drag jari.
 
-### ![](/icons/tool_mask.webp) Mask
+### ![](/icons/tool_mask.webp) Masker {#mask}
 
 ![](/images/interface_gesture_mask.webp)
 
@@ -185,19 +183,19 @@ Saat ini Nomad memungkinkan Anda mengatur mode berikut agar dikontrol oleh kombi
 * ketuk pada area yang termask untuk mengaburkan mask
 * ketuk pada area yang tidak termask untuk menajamkan mask
 
-### Toggle Mask <-> SelMask
+### Alihkan Masker <-> SelMask {#toggle-mask-selmask}
 ![](/images/interface_gesture_togglemask.webp)
 * `Stroke` - Tekan lama akan berganti antara Mask dan SelMask dan memulai stroke baru. Di akhir stroke, tool sebelumnya dipilih kembali. 
 * `Tool` - Tekan lama dan lepas tanpa menggerakkan untuk beralih antara Mask dan SelMask. 
 
-### ![](/icons/tool_hide.webp) Hide
+### ![](/icons/tool_hide.webp) Sembunyikan {#hide}
 ![](/images/interface_gesture_hide.webp)
 
 `One tap shortcuts` akan mengaktifkan pintasan berikut dengan tool hide:
 * Ketuk pada face group untuk menyembunyikannya
 * Ketuk di ruang kosong untuk membalik poligon yang disembunyikan
 
-### ![](/icons/finger3.webp) Three fingers
+### ![](/icons/finger3.webp) Tiga jari {#three-fingers}
 ![](/images/interface_gesture_threefingers.webp)
 
 Jika perangkat Anda mendukung gesture 3 jari, konfigurasikan pintasan untuk gesture tersebut. 
@@ -208,28 +206,28 @@ Matriks opsi memungkinkan Anda mendefinisikan drag vertikal dan horizontal sebag
 * `Tool Radius` - Mengubah radius tool.
 * `Tool Intensity` - Mengubah intensitas tool. 
 
-### ![](/icons/fingerprint.webp) History 2/3
+### ![](/icons/fingerprint.webp) Riwayat 2/3 {#history-23}
 `History shortcuts` - ketika diaktifkan, gesture berikut aktif:
 * Undo - ketuk dengan 2 jari
 * Redo - ketuk dengan 3 jari
 
 `Long press` - ketika diaktifkan, menahan 2/3 jari akan melakukan undo/redo dengan cepat.
 
-### Accessibility 
+### Aksesibilitas {#accessibility}
 
 ![](/images/interface_gesture_accessibility.webp)
 
 `Assistive window` akan menampilkan toolbar mengambang untuk mengontrol drag, pinch, roll, dan operasi kamera.
 
-### Camera
+### Kamera {#camera}
 Pintasan untuk pergi ke menu `Camera` (opsi kamera sebelumnya berada di sini, tetapi dipindahkan ke menu kamera).
 
-### Pencil double tap -> Bindings 
+### Ketukan ganda Pensil -> Pengikatan {#pencil-tap} {#pencil-tap}
 
 Pintasan untuk pergi ke menu `Bindings` (opsi tap dan double tap Pencil sebelumnya berada di sini, tetapi telah dipindahkan ke menu bindings).
 
 
-## Bindings
+## Pengikatan {#bindings}
 Pintasan keyboard dan tombol dapat didefinisikan dari menu bindings:
 
 ![](/images/interface_bindings.webp)
@@ -241,7 +239,7 @@ Temukan fungsi melalui ikon kategori di bagian atas, atau melalui kolom pencaria
 
 Binding individual dapat dinonaktifkan melalui checkbox di sebelah nama binding.
 
-### ![](/icons/more.webp) Context menu
+### ![](/icons/more.webp) Menu konteks {#context-menu}
 Ikon ![](/icons/more.webp) setelah setiap binding akan menampilkan context menu:
 
 ![](/images/interface_bindings_context.webp)
@@ -251,7 +249,7 @@ Ikon ![](/icons/more.webp) setelah setiap binding akan menampilkan context menu:
 * `Delete` - Menghapus binding
 * `Toggle shortcut on key tap` - Mengonfigurasi apakah tap vs tekan lama diperlakukan berbeda. Ketika diaktifkan, tap akan mengaktifkan tool. Tekan lama akan mengaktifkan tool hanya selama tombol ditekan, ketika dilepas akan kembali ke tool sebelumnya. Kadang disebut 'sticky keys' di aplikasi 3D lain.
 
-### Advanced
+### Lanjutan {#advanced}
 Di bagian bawah menu bindings terdapat menu gear untuk opsi lanjutan:
 
 ![](/images/interface_bindings_advanced.webp)
@@ -262,7 +260,7 @@ Di bagian bawah menu bindings terdapat menu gear untuk opsi lanjutan:
 * `Reset bindings` - mengatur ulang semua binding ke bawaan.
 
 
-## iOS ⌘ Keyboard shortcuts display
+## Pintasan keyboard iOS ⌘ ditampilkan {#ios-keyboard-shortcuts-display}
 
 Pada perangkat iOS dengan keyboard, tahan tombol ⌘ (cmd) untuk menampilkan daftar pintasan.
 
@@ -271,29 +269,29 @@ Dukungan keyboard Android masih agak eksperimental.
 ![](/images/shortcuts.webp)
 
 
-## Debug
+## Debug {#debug}
 Beberapa opsi eksperimental dan debug disimpan di menu ini. Banyak dari opsi ini sebaiknya dibiarkan pada nilai bawaan, dan hanya diubah setelah menghubungi dukungan Nomad.
 
 ![](/images/interface_debug.webp)
-### UV
+### UV {#uv}
 * `Normalize Uvs` - Nomad akan menormalkan UV di dalam tile [0-1].
 
-### Quad Remesh
+### Quad Remesh {#quad-remesh}
 * `Instant Mesh` - Mengaktifkan algoritma instant remesh
 * `Quadriflow` - Metode quad remesh alternatif.
 
-### Render
+### Render {#render}
 * `Heightmap` - Mengubah viewport untuk merender kedalaman scene. Ini dapat digunakan untuk membuat alpha map untuk digunakan pada brush.
 * `Refraction write depth (back)` - Backface dari mesh refraksi akan ditulis ke depth buffer.
 * `Flip Y (normal map)` - Membalik channel y saat baking normal map, diperlukan untuk engine game dan render tertentu.
 * `Angle weighted smooth normals` - Penyesuaian cara kerja smooth shading yang dapat menghindari lipatan pada kasus tertentu.
 
-### Target FPS
+### FPS Target {#target-fps}
 Ketika dinonaktifkan, Nomad akan menyinkronkan frame-per-second dengan refresh rate layar Anda.
 
 Ketika diaktifkan, Anda dapat mengatur frame per second yang akan dirender Nomad.
 
-### Interface
+### Antarmuka {#debug-interface}
 * `Top: layout` 
   * Collapse: Pada perangkat kecil bar atas akan dilipat menjadi lebih banyak submenu. 
   * Scroll: Jika Anda terbiasa dengan Nomad di layar besar dan lebih menyukai layout normal, mengaktifkan ini akan menggunakan bar atas lebar standar, dan dapat digulir.
@@ -305,7 +303,7 @@ Ketika diaktifkan, Anda dapat mengatur frame per second yang akan dirender Nomad
 * `Panel: Blending` - Opsi debug
 * `Pointer: hovering dot` - Untuk perangkat yang mendukung hover stylus, menampilkan titik ketika stylus melayang di atas menu dan panel.
 
-### Gif turntable
+### Gif turntable {#gif-turntable}
 Nomad dapat mengekspor gif animasi turntable. Perhatikan bahwa karena keterbatasan format gif, kualitasnya rendah. Perekaman layar biasanya merupakan metode yang lebih baik.
 
 * `Duration` - berapa lama dalam detik durasi turntable
@@ -314,21 +312,21 @@ Nomad dapat mengekspor gif animasi turntable. Perhatikan bahwa karena keterbatas
 * `Max frame sampling` - Banyak efek rendering berkualitas tinggi Nomad berasal dari penggabungan beberapa frame. Slider ini mengatur berapa banyak frame yang digabungkan.
 * `Export (GIF)` - memulai proses ekspor gif.
 
-### Post Process
+### Pasca Proses {#post-process}
 * `Filtering` - Opsi debug
 * `Format` - Opsi debug
 * `Buffer reuse` - Opsi debug
 
-### Performance
+### Performa {#performance}
 * `Multicore general` - Opsi debug
 * `Multicore sculpting` - Opsi debug
 * `Partial Drawing` - Fitur eksperimental! Gunakan jika Anda sedang melakukan sculpt pada bagian yang relatif kecil dari mesh high poly. Ini seharusnya membuat sculpt lebih mulus, tetapi Anda tidak boleh mengaktifkan wireframe! Juga dapat menambah artefak visual selama sapuan brush.
 
-### Feature
+### Fitur {#feature}
 * `Flip quad split (on tap)` -  Opsi debug
 * `Join: merge radius` - Vertex akan otomatis dilas jika cukup berdekatan ketika mesh digabungkan. Anda dapat menyesuaikan radius dengan slider ini.
 
-### Debug
+### Debug {#dev}
 * `Logs` - Menampilkan jendela log
 * `App review popup` - Opsi debug
 * `FPS` - menambahkan penghitung frame-per-second ke statistik viewport.

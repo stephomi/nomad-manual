@@ -1,4 +1,4 @@
-# ![](/icons/postprocess.webp) Post process 
+# ![](/icons/postprocess.webp) Postprocessing {#post-process}
 
 To menu kontroluje wiele aspektów Nomada wpływających na wygląd renderu.
 
@@ -16,34 +16,31 @@ Dla renderingu PBR [Ambient Occlusion](#ambient-occlusion-ssao), [Reflection](#r
 Jednak najczęściej chcesz mieć post process wyłączony podczas rzeźbienia, aby skupić się na samym kształcie renderu.
 
 
-## Quality
+## Jakość {#quality}
 
 ![](/images/postprocess_quality.webp)
-### Max frame sampling
+### Maksymalne próbkowanie klatki {#max-frame-sampling}
 Nomad obliczy pewną ilość postprocessingu dla pojedynczego renderu klatki, co może wyglądać szumiąco. To ustawienie określa, ile klatek zostanie wyrenderowanych, a następnie zblendowanych, aby usunąć większość zaszumionych artefaktów. Niektóre efekty nie wymagają dodatkowych próbek (np. color grading), podczas gdy inne, jak global illumination, mogą wymagać setek próbek, aby były wolne od szumu. 
 
 W widoku roboczym widać to, gdy Nomad zostanie pozostawiony w spokoju – jakość obrazu stopniowo się poprawia aż do osiągnięcia maksymalnej liczby próbek, a potem się zatrzymuje. Ta liczba obliczeń jest również używana w sekcji renderu w [menu Files](files), gdy kliknięty zostanie „export png”.
 
-### Resolution multiplier
+### Mnożnik rozdzielczości {#resolution-multiplier}
 Ten suwak kontroluje rozdzielczość postprocessingu. Wartość x1.0 oznacza, że render jest wykonywany w natywnej rozdzielczości pikseli urządzenia. Wartość x0.5 będzie renderować w połowie rozdzielczości, co jest szybkie, ale niskiej jakości. Wartość większa niż 1 będzie renderować w większym rozmiarze, a następnie skalować w dół. Skutkuje to wyższą jakością, mniejszym szumem, ale dłuższym czasem renderu.
 
-### Max samples
+### Maksymalna liczba próbek {#max-samples}
 
 Zwiększa to jakość postprocessu, ale zazwyczaj `Full resolution` ma większy wpływ. 
 
-### Full resolution
-Po włączeniu wymusza mnożnik rozdzielczości na x1.0
-
-### Denoiser (oidn)
+### Odszumiacz (oidn) {#oidn}
 
 Zastosuj denoiser do obrazu. Pozwala to używać znacznie mniejszej liczby próbek. Działa tylko, jeśli `Full Resolution` jest włączone. Zwróć uwagę, że odszumianie następuje po obliczeniu wszystkich próbek i może być obciążające dla procesora.
 
-## Preset browser
+## Przeglądarka presetów {#preset-browser}
 ![](/images/postprocess_presets.webp)
 Kliknięcie na obrazku wyświetli kolekcję presetów postprocessingu. Aby zdefiniować własne presety, wybierz jeden, kliknij „clone”, wprowadź zmiany. Aby zapisać, kliknij obrazek presetu, kliknij ponownie wewnątrz przeglądarki presetów i wybierz „save”.
 
 
-## Reflection (SSR)
+## Odbicie (SSR) {#reflection-ssr}
 Dzięki tej opcji obiekty mogą odbijać inne obiekty w scenie, o ile są one widoczne na ekranie.
 Jeśli masz w scenie metaliczne i błyszczące obiekty, ta opcja powinna prawdopodobnie być używana.
 Ta opcja działa tylko w trybie PBR.
@@ -53,7 +50,7 @@ Ta opcja działa tylko w trybie PBR.
 | :------------------------: | :-----------------------: |
 | ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
-## Global Illumination (SSGI)
+## Globalne oświetlenie (SSGI) {#global-illumination-ssgi}
 
 Global illumination symuluje, jak światło odbija się między powierzchniami, np. czerwona ściana rzuci czerwone światło na pobliski biały obiekt. Może to ogromnie zwiększyć realizm renderu, gdy jest używane z ambient occlusion i odbiciami. 
 
@@ -67,7 +64,7 @@ Global illumination symuluje, jak światło odbija się między powierzchniami, 
 
 _Reflektor znajduje się za sferą, skierowany w sufit. Z wyłączonym SSGI oświetlony jest tylko sufit. Z włączonym SSGI światło odbija się od sufitu na ściany i na sferę._
 
-## Ambient Occlusion (SSAO)
+## Otaczająca okluzja (SSAO) {#ambient-occlusion-ssao}
 Ambient occlusion przyciemnia obszary, do których światło ma mniejsze szanse dotrzeć (rogi itp.).
 Efekt zależy wyłącznie od geometrii modelu.
 
@@ -86,7 +83,7 @@ AO będzie najbardziej widoczne w obszarach oświetlonych głównie światłem �
 
 :::
 
-## Depth of Field (DOF)
+## Głębia ostrości (DOF) {#depth-of-field-dof}
 Dodaje efekt rozmycia w obszarach znajdujących się poza punktem ostrości.
 
 Po prostu stuknij w model, aby zmienić punkt ostrości.
@@ -100,7 +97,7 @@ Po prostu stuknij w model, aby zmienić punkt ostrości.
 | ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp) |
 
 
-## Bloom
+## Poświata {#bloom}
 Bloom sprawia, że jasne obszary sceny świecą.
 
 * `Intensity` - siła efektu.
@@ -113,7 +110,7 @@ Bloom sprawia, że jasne obszary sceny świecą.
 | ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
 
-## Tone Mapping
+## Mapowanie tonalne {#tone-mapping}
 Tone Mapping to operacja, która remapuje wartości HDR do zakresu `[0, 1]`.
 Jeśli go nie używasz (lub wybierzesz `none`), każdy składnik koloru wyższy niż 1 zostanie obcięty.
 Wszelkie różnice kolorów powyżej tego zakresu zostaną utracone.
@@ -133,14 +130,14 @@ Zauważ, że przy wyłączonym `Tone Mapping` niektóre detale znikają, poniewa
 Tone mapping może wzmocnić efekt global illumination. Jeśli zmniejszysz intensywność mapy środowiskowej, zwiększysz moc głównego źródła światła, możesz następnie zwiększyć `exposure` w tone mapping, aby zobaczyć więcej efektów światła odbitego.
 :::
 
-## Color Grading
+## Korekcja kolorów {#color-grading}
 Podobnie jak narzędzie krzywych w Photoshopie, pozwala kontrolować balans i rozkład kolorów w obrazie. Kontrolka `main` wpływa na cały balans kolorów, a `red`/`green`/`blue` pozwalają na precyzyjną kontrolę. 
 
 | Color Grading off             | Color Grading on             |
 | :---------------------------: | :--------------------------: |
 | ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
-## Curvature
+## Krzywizna {#curvature}
 Wykrywa miejsca, w których występują szybkie zmiany krzywizny, i nakłada na te obszary kolor.
 
 * `Factor` - ogólna intensywność efektu
@@ -153,7 +150,7 @@ Wykrywa miejsca, w których występują szybkie zmiany krzywizny, i nakłada na 
 | ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
 
-## Chromatic Aberration
+## Aberracja chromatyczna {#chromatic-aberration}
 Symuluje artefakty obiektywu, w których światło rozszczepia się przy krawędziach ekranu.
 
 * `Strength` - jak mocno czerwone/zielone/niebieskie składowe obrazu są rozdzielane przy krawędziach ekranu
@@ -163,7 +160,7 @@ Symuluje artefakty obiektywu, w których światło rozszczepia się przy krawęd
 | ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
 
-## Vignette
+## Winieta {#vignette}
 Symuluje artefakty obiektywu poprzez przyciemnianie krawędzi ekranu.
 
 * `Size` - Rozmiar odwróconej elipsy nałożonej na obraz
@@ -174,7 +171,7 @@ Symuluje artefakty obiektywu poprzez przyciemnianie krawędzi ekranu.
 | :-----------------------------: | :----------------------------: |
 | ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
-## Grain
+## Ziarno {#grain}
 Dodaje efekt ziarna, co może pomóc sprawić, że obraz będzie wyglądał mniej sztucznie.
 
 * `Strength` - ilość ziarna/szumu dodanego do obrazu.
@@ -185,7 +182,7 @@ Dodaje efekt ziarna, co może pomóc sprawić, że obraz będzie wyglądał mnie
 | ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
 
-## Sharpness
+## Ostrość {#sharpness}
 Efekt wyostrzania podobny do tego w Photoshopie lub aplikacjach do obróbki zdjęć.
 
 * `Strength` - ilość wyostrzenia zastosowana do obrazu.
@@ -195,7 +192,7 @@ Efekt wyostrzania podobny do tego w Photoshopie lub aplikacjach do obróbki zdj�
 | :----------------------------: | :--------------------------: |
 | ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
-## Pixel Art
+## Pixel art {#pixel-art}
 Symuluje pikselart z retro gier.
 
 * `Slider` - rozmiar pikseli
@@ -205,7 +202,7 @@ Symuluje pikselart z retro gier.
 | :-------------------------: | :------------------------: |
 | ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
-## Scanline
+## Skanlinia {#scanline}
 Symuluje wygląd starych monitorów CRT.
 
 * `Factor` - siła linii
@@ -216,6 +213,6 @@ Symuluje wygląd starych monitorów CRT.
 | ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
 
 
-## Dithering
+## Dithering {#dithering}
 
 Dithering pikseli w celu redukcji artefaktów pasmowania. Zazwyczaj powinien być włączony, ale można go wyłączyć dla specyficznych operacji (np. eksport map głębi lub innych operacji specyficznych dla danych).

@@ -1,9 +1,9 @@
-# ![](/icons/faq.webp) FAQ
+# ![](/icons/faq.webp) FAQ {#faq}
 
 [[toc]]
 
-## Platform 
-### Where are my projects located on my device?
+## Platform {#platform}
+### Where are my projects located on my device? {#locate}
 The projects are located in the `projects` folder inside the main Nomad folder.
 
 On iOS, you can access the Nomad folder with the iOS Files app.
@@ -14,18 +14,18 @@ You can access it through a separate app, for example [this one](https://play.go
 <!-- [this one](https://play.google.com/store/apps/details?id=com.alphainventor.filemanager) -->
 <!-- [this one](https://play.google.com/store/apps/details?id=com.mi.android.globalFileexplorer) -->
 
-### Is there a way to beta test?
+### Is there a way to beta test? {#beta}
 For Windows & MacOS, a beta might be available on the [Homepage](https://nomadsculpt.com).
 <br>
 For iOS there is a private TestFlight, visit the [Discord](https://discord.com/invite/8h7BwpRz29) in the #beta-ios channel.
 <br>
 The [Web Demo](https://nomadsculpt.com/demo) is usually updated with the latest features.
 
-### Why is there a free trial on Android? But not on iOS?
+### Why is there a free trial on Android? But not on iOS? {#android-trial}
 Because old Android devices suck (and some recent ones as well...), and I didn't want people to buy the app and be welcomed with a black screen.
 But the main reason is that I felt like paid Android apps are not really the norm.
 
-### What is the best tablet to run Nomad on?
+### What is the best tablet to run Nomad on? {#best-tablet}
 
 TLDR: An iPad.
 
@@ -73,7 +73,7 @@ Please use the free save-disabled version of Nomad to test first.
 Most Nomad files tend to be 100mb or less. This means almost any tablet you buy these days, iPad or Android,  will have plenty of room for your Nomad projects.
 
 
-### I bought Nomad for one device, can I use it on another device?
+### I bought Nomad for one device, can I use it on another device? {#multi-devices}
 As long as it uses the same app store and same account, yes.
 
 For example if you bought it on the iOS app store, you can use it on your other iOS devices.
@@ -85,7 +85,7 @@ However if you bought Nomad on Android, then you get an iPad, you will need to b
 This is because Nomad does not have it's own license server or subscription model. There is no agreement between Apple/Google/AppGallery to handle license sharing. 
 
 
-### How to restore my purchase?
+### How to restore my purchase? {#restore}
 Google Play and AppGallery both handle the synchronization automatically.
 
 - Go in the About menu (top left nomad icon), and hit `restore purchase`
@@ -93,7 +93,7 @@ Google Play and AppGallery both handle the synchronization automatically.
 - Reboot the device
 - Sometimes you need to wait a couple of hours
 - Make sure that the Google Play application is up-to-date
-- Re-install Nomad (make sure to [backup your files](#where-are-my-projects-located-on-my-device) if you don't want to lose anything)
+- Re-install Nomad (make sure to [backup your files](#locate) if you don't want to lose anything)
 - You can try to purchase again to see what happens (note: you cannot buy twice the same item on the same account)
 
 :::tip
@@ -110,27 +110,27 @@ Recent Huawei devices don't have access to Google services.
 In that case you’ll need to purchase the app again on AppGallery (Huawei app store).
 :::
 
-### Can you translate or fix [my-language]?
+### Can you translate or fix [my-language]? {#locale}
 I can relatively easily add another language, but I am relying on AI translation as it's much easier to handle for regular updates.
 The translation files can be found [here](https://github.com/stephomi/nomad-translation).
 
-## Features
+## Features {#features}
 
-### Why is the gizmo not moving?
+### Why is the gizmo not moving? {#gizmo-not-moving}
 You might have [pin enabled in the left menu toolbar](tools#left-menu-toolbar). 
 
-### Can we animate inside Nomad?
+### Can we animate inside Nomad? {#animate}
 Not for now. A timeline feature that could animate the layers could be interesting, but not really planned at the moment.  
 
 I'd like to support rigging/skinning in the future, but it poses a few challenges (notably the interaction with sculpting tools...) so nothing sure for now.
 
 
-### Can we do proper low-poly modeling?
+### Can we do proper low-poly modeling? {#lowpoly}
 Not for now.
 This is not really Nomad *Sculpt*'s scope, but maybe I'll provide a few tools in the future.
 
 
-### Can we do uv and texturing?
+### Can we do uv and texturing? {#texturing}
 Short answer: Yes. Long answer: Not directly, but there are several ways to combine Nomad's excellent vertex paint tools with uv's and textures.
 
 * Nomad allows you to paint color, roughness, material properties directly into the vertices of your sculpt.
@@ -143,30 +143,30 @@ Short answer: Yes. Long answer: Not directly, but there are several ways to comb
 * Baking and projecting can be handled between single objects or many objects, or between the highest and lowest subdivision levels of a single object, allowing for a variety of bake and project workflows.
 * After baking, exporting an obj will also export textures, which can be taken to an app like Procreate to paint directly on textures.
 
-### Can I record a turntable video?
+### Can I record a turntable video? {#video}
 Not planned for now, iOS has a [video recording feature](https://support.apple.com/en-au/guide/ipad/ipaddf78ce08/ipados) that is very easy to use.
 
 Under iOS, this is done by swiping down from the top left, and tapping the record button. It will give you a 3 second countdown, swipe the menu away to reveal Nomad, and use the turntable feature. When complete, swipe down again from the top right, and tap the record button again. Edit the movie from the photo library to remove excess footage at the start and end of the video.
 
-### Can you add [insert-favorite-feature] as a top-level button?
+### Can you add [insert-favorite-feature] as a top-level button? {#interface}
 Yes, the lower toolbar can now be customised from the [interface](interface.md) menu, and floating toolbars can now be created.
 
-### What are the next features?
+### What are the next features? {#next-features}
 For the mid/long term roadmap I have a lot of ideas but I don't know yet.  
 
 Bug fixes and improving existing features will always have higher priority over adding new features.
 
 
-### Can we rig in nomad?
+### Can we rig in nomad? {#rigging}
 No, but it is planned. For now you can parent shapes together and alter pivot points, allowing for simple posable sculpts.
 
-### Can we use more than 4 lights?
+### Can we use more than 4 lights? {#lights}
 No, this is a limitation of the realtime render engine within Nomad. It is possible to fake this using emissive objects and global illumination in post process, as shown in [this tutorial](https://www.youtube.com/watch?v=QhrUGH7CuUA)
 
-### Can we import Zbrush tools?
+### Can we import Zbrush tools? {#zbrush-import}
 No, Zbrush uses a proprietary format. You should be able to extract the alpha maps and use them in Nomad. 
 
-### Why don't the colors match what I painted? Why can't I get white in the render?
+### Why don't the colors match what I painted? Why can't I get white in the render? {#paint-pbr}
 Imagine taking a photo of a piece of paper, vs a photo of a desk lamp, vs a photo of the sun. Older cameras and screens will just make them all ‘white’. More modern systems can show a difference between reflected white of paper vs emitted light of a lamp, vs the super bright of the sun.
 
 Modern computer graphics tries to work in a similar way, emulating the physics of light and surfaces. This is called `Physically Based Rendering`, or PBR, and Nomad's PBR renderer is based on this. This looks realistic and balanced, but often brightly painted colors will appear darker.
@@ -183,9 +183,9 @@ PBR:
 * `Boost the camera exposure`. If the dark room didn't have any extra lights, you could have the camera hold the shutter open for longer, or use a more sensitive ISO. In Nomad you can achieve a similar result with post processing. Go to post process, enable, down to tone mapping, enable, and raise the exposure slider until the colors feel right.
 * `Use emissive color`. In the material menu, you can enable 'emissive' under textures, which will make an object appear to be a light source. If you turn on global illmination in the post process settings, it will cast light onto other objects in the scene. You can also enable 'unlit' for that material, which will achieve a similar look without a texture.
 
-## Crashes
+## Crashes {#crashes}
 
-### It crashes when I save or remesh my model!
+### It crashes when I save or remesh my model! {#crash-remesh}
 Your device is running out of memory (RAM).  
 To reduce memory usage in your scene, you can use some of the [Topology](topology.md) options to reduce the number of polygons.
 
@@ -194,14 +194,14 @@ What matters is the amount of RAM, not the storage (which is usually much bigger
 :::
 
 
-### It crashes when I load my project!
+### It crashes when I load my project! {#crash-load}
 If the file is small, you can send it to me and I'll take a look (by email <support@nomadsculpt.com>).
 
 Otherwise the device is probably running out of RAM memory.
 
 - Make sure you close any other opened apps on your device.
 - Start a new project in Nomad instead on having a project currently opened.
-- If it still crashes, the only solution is to load [your file project](#where-are-my-projects-located-on-my-device) on a device with more memory.
+- If it still crashes, the only solution is to load [your file project](#locate) on a device with more memory.
 
 ::: tip
 On a desktop browser, you can try loading your file [in this url](https://nomadsculpt.com/demo_save/) and then export it back after simplifying your scene.
@@ -211,29 +211,12 @@ Some browsers limit the amount of RAM a single tab can take, so it's possible th
 If your project is using [Layers](layers.md), you might want to squash them to reduce memory usage.
 :::
 
-<!-- ::: tip
-Additionally, for legacy glb.lz4 file format, you can try the following:
-
-1. If your project is using [Layers](layers.md), enable the `Merge layers` option before loading the project.
-The option can be found in the `Files -> Settings` sub menu.
-Layers can take a lot of memory, merging them at loading can help reduce the memory peak usage.
-
-2. Decompress your [project](#where-are-my-projects-located-on-my-device) (`.glb.lz4` to `.glb`).
-On windows, you need to download [LZ4](https://github.com/lz4/lz4/releases).
-On MacOS, you can use the command line.
-With homebrew, simply do `brew install lz4` and then `lz4 myproject.glb.lz4`.
-
-3. Try to load the `.glb` file directly into Nomad again.
-
-4. If it still crashes at loading, you can open the file on any 3d desktop software that supports `glTF`.
-::: -->
-
-### It crashes when I start Nomad!
+### It crashes when I start Nomad! {#crash-start}
 If it crashes at loading, it means Nomad struggles with a certain file present in the Nomad folder.
 
 Most of the time, it happens because the project is heavy and it will unfortunately exceed the RAM limit.
 
-Locate the [Nomad folder](#where-are-my-projects-located-on-my-device), and then rename or move some file to find the culprit.
+Locate the [Nomad folder](#locate), and then rename or move some file to find the culprit.
 
 First, try to rename `settings.json`. That way it will stop loading the last project.
 

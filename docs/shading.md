@@ -1,4 +1,4 @@
-# ![](/icons/sun.webp) Shading
+# ![](/icons/sun.webp) Shading {#shading}
 
 This menu controls the shading modes used by Nomad, lighting properties, and the environment light/matcap properties.
 
@@ -22,24 +22,24 @@ If you want to learn more about metalness and roughness, see the [Vertex Paint](
 
 ![](/images/shading_second.webp)
 
-### Face Group
+### Face Group {#face-group}
 Overlay facegroup colours. Facegroups are coloured selections of polygons that can be created with the [Face group](tools#facegroup) tool, and are made automatically with most of the primitives.
 
 Some tools will automatically filter by facegroups when facegroups are visible.
 
-### Show paint
+### Show paint {#show-paint}
 Nomad can store color, roughness, metalness in the verticies of your sculpt. You can toggle the display of these properties globally with this checkbox.
 
 Note that if you have both vertex properties and textures, and both are enabled, the values will be multiplied together.
 
-### Show mask
+### Show mask {#show-mask}
 Toggle the grayscale mask overlay of the [mask tools](tools#mask). When this is disabled, the mask is also disabled, useful for making quick changes without the mask, then you can enable it again and not lose your mask.
 
-### Use Hide
+### Use Hide {#use-hide}
 
 Toggle hidden faces. Note this only works if you are NOT in the hide tool!
 
-### Use textures
+### Use textures {#use-textures}
 
 Nomad allows for textures to be assigned to objects from the [material](material) menu. If textures are assigned they be toggled globally with this checkbox.
 
@@ -62,7 +62,7 @@ However it won't necessarily perform well.
 You can fake many lights by making objects unlit/emissive, then enable global illumination in the [post process](postprocess) menu.
 :::
 
-### Light types overview
+### Light types overview {#light-types-overview}
 
 Here are the type of lights currently supported:
 
@@ -73,42 +73,42 @@ Here are the type of lights currently supported:
 | [Spot](#spot)               | Cone shaped lights				                        | Yes                                                    |
 | [Point](#point)             | Omni-directional point of light                         | Yes, but only through less robust screen-space shadows |
 
-#### Directional
+#### Directional {#directional}
 It emits light from infinitely far away, with a uniform intensity.
 It's 3d position in the scene doesn't matter, only its orientation does.
 
 You can attach this light to the camera, that way it has consistent lighting.  
 For example you can use it to make a rim light (a strong light that emits from the back of your model, pointing towards the camera) that always lights the back of your model.
 
-#### Environment light
+#### Environment light {#env-light}
 Using a [environment hdr](#environment) works well for overall soft lighting, but if there is a strong sharp light visible in the HDR, the shadow created by it will be very soft, often not visible at all. Using a directional light in combination with the environment HDR can help, but it can be difficult to get them aligned.
 
 This light does the work for you. The light will automatically be rotated to align with the brightest part of the HDR, then you can control its intensity and angle (shadow softness) separately. 
 
-#### Spot
+#### Spot {#spot}
 Spot light emits light in a single direction, restricted by a cone shape.
 
-#### Point
+#### Point {#point}
 Point light will emit light in every direction.  
 At the moment, point light doesn't support shadows.
 
-#### Shadows
+#### Shadows {#shadows}
 The option `normal bias` can be used to reduce common shadow artifacts (acne/peter-panning).
 
 The quality of the shadows depends on the size of the objects relative to the entire scene.  
 If you have a big object in your scene that doesn't need to cast shadows (for example a big plane), make sure to disable shadow casting in its [material settings](material.md#cast-shadows).
 
-## Lights
+## Lights {#lights}
 
 ![](/images/shading_lights.webp)
 
-### ![](/icons/checked.webp) Lights checkbox
+### ![](/icons/checked.webp) Lights checkbox {#lights-checkbox}
 
 Toggle all the direct lights in the scene.
 
 
 
-### Add light
+### Add light {#add-light}
 
 Add a light to the scene, to a maxiumum of 4. When a light is added, the light lister is displayed with buttons, and a light toolbar is added to the top of the viewport.
 
@@ -121,11 +121,11 @@ Add a light to the scene, to a maxiumum of 4. When a light is added, the light l
 * The copy icon will duplicate a light. 
 * The 3 dots icon will bring up a full light editor. Most of this functionality is also available from the toolbar that appears in the viewport. 
 
-### ![](/icons/spotlight.webp)  Icons
+### ![](/icons/spotlight.webp)  Icons {#icons}
 
 Toggle the display of light icons in the viewport
 
-### Light toolbar
+### Light toolbar {#light-toolbar}
 ![](/images/shading_lights_toolbar.webp) 
 
 This toolbar will appear at the top of the viewport when a light is selected.
@@ -138,7 +138,7 @@ This toolbar will appear at the top of the viewport when a light is selected.
 * Size sets the width of a light. Wider lights will cast soft shadows, soft lighting, and a softer highlight on objects.
 * ... will bring up extra controls.
 
-### Light extra controls
+### Light extra controls {#light-extra-controls}
 
 ![](/images/shading_extra_controls.webp) 
 
@@ -160,7 +160,7 @@ Note that some options are specific to certain light types.
 * `Tolerance` if shadow artifacts are visible (either shadows don't appear to contact surfaces, or there's noise and patterns within shadows), adjusting tolerance can help fix those issues.
 
 
-## Environment
+## Environment {#environment}
 
 ![](/images/shading_environment.webp)
 
@@ -170,20 +170,20 @@ Nomad comes with several example environment maps for indoor and outdoor areas, 
 
 Tap on the image to see the available environment maps. From that dialog choose 'Import...' to load your own. It's best to use High Dynamic Range (HDR) images, in the latlong or equirectangular format, as either .hdr or .exr files. [www.polyhaven.com](https://polyhaven.com/hdris) has a good collection of free environment maps to use, generally the 1k hdr maps are a good size and good quality.
 
-### Exposure
+### Exposure {#env-exposure}
 Adjust the brightness of the environment map. Often the maps can be too bright when used with regular lights, turning the exposure down can help balance, especially when used with Global Illumination in the [Post Process](postprocess) settings.
 
-### Rotation
+### Rotation {#env-rotation}
 
 Becaue environment maps capture light from all directions, you can rotate them to get the reflections and overall lighting to combine well with your sculpt.
 
-### Attached to camera
+### Attached to camera {#env-attached}
 Attach the environment to the camera.
 
 It will force the lighting to be consistent, whcih can be useful during sculpting.
 
 
-## ![](/icons/sphere_smooth.webp) Matcap
+## ![](/icons/sphere_smooth.webp) Matcap {#matcap}
 
 ![](/images/shading_matcap.webp)
 
@@ -195,7 +195,7 @@ Artists tend to favor this mode for sculpting purposes since they allow them to 
 
 Tapping on the sphere will bring up an image browser. You can also add your own matcap, generally any photo, render, even a painting of a sphere that has been cropped tightly into a square can be used. Many matcap libraries are available online, a useful resource is the [nidorx matcap library](https://github.com/nidorx/matcaps).
 
-### Use global Matcap
+### Use global Matcap {#matcap-global}
 
 Usually artists will use a single matcap for the entire sculpt, but if this toggle is disabled, each object can have its own matcap. This can be used artistically to get striking results.
 
@@ -203,32 +203,31 @@ Usually artists will use a single matcap for the entire sculpt, but if this togg
 Disable this option, and use an image of an eyeball for your characters eyes!
 :::
 
-### Rotation
+### Rotation {#matcap-rotation}
 A matcap is a specialised form of an environment map, so like an environment map, it can be rotated. You can also do this at any time in the viewport by dragging with 3 fingers left and right.
 
 
 
-## ![](/icons/circle_fill.webp) Unlit
+## ![](/icons/circle_fill.webp) Unlit {#unlit}
 
 This mode will only show the surface color. It can be useful for checking the surface color of your objects are what you expect, without being distracted by lights, shadows, reflecton, transparency. 
 
 This mode can also be used for non-photoreal renders, achieving a flat, cartoony look.
 
-## ![](/icons/cube.webp) Object ID
+## ![](/icons/cube.webp) Object ID {#object-id}
 
 All lighting and surface information is ignored, and each object is shaded with a unique flat color. If this is rendered alongside a PBR render, this can be used in a painting program to select by color, and thus be able to do color corrections on specific objects.
 
 Note that these colors will also appear in the [Scene menu tree view](scene#tree-view).
 
-### Randomise id
+### Randomise id {#object-random}
 
 Generate a new set of random colors. 
 
-## ![](/icons/link.webp) Instance ID
+## ![](/icons/link.webp) Instance ID {#instance-id}
 
 Same as Object ID, but instances will have the same color. 
 
-### Randomise id
+### Randomise id {#instance-random}
 
 Generate a new set of random colors. 
-

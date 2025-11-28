@@ -1,4 +1,4 @@
-# ![](/icons/sun.webp) Shading
+# ![](/icons/sun.webp) Shading {#shading}
 
 Menu ini mengontrol mode shading yang digunakan oleh Nomad, properti pencahayaan, dan properti cahaya lingkungan/matcap.
 
@@ -22,24 +22,24 @@ Jika Anda ingin mempelajari lebih lanjut tentang metalness dan roughness, lihat 
 
 ![](/images/shading_second.webp)
 
-### Face Group
+### Grup Muka {#face-group}
 Overlay warna facegroup. Facegroup adalah seleksi poligon berwarna yang dapat dibuat dengan tool [Face group](tools#facegroup), dan dibuat secara otomatis pada sebagian besar primitif.
 
 Beberapa tool akan otomatis memfilter berdasarkan facegroup ketika facegroup terlihat.
 
-### Show paint
+### Tampilkan cat {#show-paint}
 Nomad dapat menyimpan color, roughness, metalness di vertex sculpt Anda. Anda dapat mengaktif/nonaktifkan tampilan properti ini secara global dengan checkbox ini.
 
 Perhatikan bahwa jika Anda memiliki properti vertex dan tekstur sekaligus, dan keduanya diaktifkan, nilainya akan dikalikan satu sama lain.
 
-### Show mask
+### Tampilkan mask {#show-mask}
 Mengaktif/nonaktifkan overlay mask grayscale dari [mask tools](tools#mask). Saat ini dinonaktifkan, mask juga dinonaktifkan, berguna untuk membuat perubahan cepat tanpa mask, lalu Anda dapat mengaktifkannya lagi tanpa kehilangan mask.
 
-### Use Hide
+### Gunakan Sembunyi {#use-hide}
 
 Mengaktif/nonaktifkan wajah yang disembunyikan. Perhatikan ini hanya berfungsi jika Anda TIDAK berada di tool hide!
 
-### Use textures
+### Gunakan tekstur {#use-textures}
 
 Nomad memungkinkan tekstur ditetapkan ke objek dari menu [material](material). Jika tekstur ditetapkan, tekstur dapat diaktif/nonaktifkan secara global dengan checkbox ini.
 
@@ -49,7 +49,7 @@ Nomad memungkinkan tekstur ditetapkan ke objek dari menu [material](material). J
 
 
 
-### PBR dan ikhtisar lampu
+### Ikhtisar PBR dan lampu {#pbr}
 Manual ini tidak akan membahas detail tentang Physically Based Rendering.
 
 Satu hal penting yang perlu diingat adalah bahwa pencahayaan dan material sepenuhnya terpisah.
@@ -68,7 +68,7 @@ Namun performanya belum tentu baik.
 Anda dapat memalsukan banyak lampu dengan membuat objek unlit/emissive, lalu mengaktifkan global illumination di menu [post process](postprocess).
 :::
 
-### Ikhtisar jenis lampu
+### Ikhtisar jenis lampu {#light-types-overview}
 
 Berikut jenis lampu yang saat ini didukung:
 
@@ -79,42 +79,42 @@ Berikut jenis lampu yang saat ini didukung:
 | [Spot](#spot)               | Cahaya berbentuk kerucut                              | Ya                                                       |
 | [Point](#point)             | Titik cahaya omni-directional                         | Ya, tetapi hanya melalui screen-space shadow yang kurang andal |
 
-#### Directional
+#### Directional {#directional}
 Memancarkan cahaya dari jarak tak terhingga, dengan intensitas seragam.
 Posisi 3D-nya di dalam scene tidak penting, hanya orientasinya yang berpengaruh.
 
 Anda dapat melampirkan lampu ini ke kamera, sehingga pencahayaan menjadi konsisten.  
 Sebagai contoh Anda dapat menggunakannya untuk membuat rim light (cahaya kuat yang memancar dari belakang model Anda, mengarah ke kamera) yang selalu menerangi bagian belakang model Anda.
 
-#### Environment light
+#### Cahaya lingkungan {#env-light}
 Menggunakan [environment hdr](#environment) bekerja dengan baik untuk pencahayaan lembut secara keseluruhan, tetapi jika ada cahaya tajam yang kuat terlihat di HDR, bayangan yang dibuat akan sangat lembut, sering kali tidak terlihat sama sekali. Menggunakan directional light bersamaan dengan environment HDR dapat membantu, tetapi bisa sulit untuk menyelaraskannya.
 
 Lampu ini melakukan pekerjaan itu untuk Anda. Lampu akan otomatis diputar agar sejajar dengan bagian paling terang dari HDR, lalu Anda dapat mengontrol intensitas dan sudutnya (kelembutan bayangan) secara terpisah. 
 
-#### Spot
+#### Spot {#spot}
 Spot light memancarkan cahaya ke satu arah, dibatasi oleh bentuk kerucut.
 
-#### Point
+#### Titik {#point}
 Point light akan memancarkan cahaya ke segala arah.  
 Saat ini, point light tidak mendukung bayangan.
 
-#### Shadows
+#### Bayangan {#shadows}
 Opsi `normal bias` dapat digunakan untuk mengurangi artefak bayangan umum (acne/peter-panning).
 
 Kualitas bayangan bergantung pada ukuran objek relatif terhadap keseluruhan scene.  
 Jika Anda memiliki objek besar di scene yang tidak perlu membuat bayangan (misalnya bidang datar besar), pastikan untuk menonaktifkan pembuatan bayangan di [pengaturan material](material.md#cast-shadows)-nya.
 
-## Lights
+## Lampu {#lights}
 
 ![](/images/shading_lights.webp)
 
-### ![](/icons/checked.webp) Lights checkbox
+### ![](/icons/checked.webp) Kotak centang Lampu {#lights-checkbox}
 
 Mengaktif/nonaktifkan semua direct light di scene.
 
 
 
-### Add light
+### Tambah lampu {#add-light}
 
 Menambahkan lampu ke scene, hingga maksimum 4. Saat lampu ditambahkan, daftar lampu akan ditampilkan dengan tombol, dan toolbar lampu ditambahkan ke bagian atas viewport.
 
@@ -127,11 +127,11 @@ Menambahkan lampu ke scene, hingga maksimum 4. Saat lampu ditambahkan, daftar la
 * Ikon salin akan menduplikasi lampu. 
 * Ikon 3 titik akan menampilkan editor lampu lengkap. Sebagian besar fungsinya juga tersedia dari toolbar yang muncul di viewport. 
 
-### ![](/icons/spotlight.webp)  Icons
+### ![](/icons/spotlight.webp)  Ikon {#icons}
 
 Mengaktif/nonaktifkan tampilan ikon lampu di viewport
 
-### Light toolbar
+### Toolbar lampu {#light-toolbar}
 ![](/images/shading_lights_toolbar.webp) 
 
 Toolbar ini akan muncul di bagian atas viewport saat sebuah lampu dipilih.
@@ -144,7 +144,7 @@ Toolbar ini akan muncul di bagian atas viewport saat sebuah lampu dipilih.
 * Size mengatur lebar lampu. Lampu yang lebih lebar akan menghasilkan bayangan lembut, pencahayaan lembut, dan highlight yang lebih lembut pada objek.
 * ... akan menampilkan kontrol tambahan.
 
-### Light extra controls
+### Kontrol ekstra lampu {#light-extra-controls}
 
 ![](/images/shading_extra_controls.webp) 
 
@@ -166,7 +166,7 @@ Perhatikan bahwa beberapa opsi spesifik untuk jenis lampu tertentu.
 * `Tolerance` jika artefak bayangan terlihat (baik bayangan tampak tidak menyentuh permukaan, atau ada noise dan pola di dalam bayangan), menyetel tolerance dapat membantu memperbaiki masalah tersebut.
 
 
-## Environment
+## Lingkungan {#environment}
 
 ![](/images/shading_environment.webp)
 
@@ -176,20 +176,20 @@ Nomad menyertakan beberapa contoh environment map untuk area indoor dan outdoor,
 
 Ketuk gambar untuk melihat environment map yang tersedia. Dari dialog tersebut pilih 'Import...' untuk memuat milik Anda sendiri. Sebaiknya gunakan gambar High Dynamic Range (HDR), dalam format latlong atau equirectangular, sebagai file .hdr atau .exr. [www.polyhaven.com](https://polyhaven.com/hdris) memiliki koleksi environment map gratis yang bagus untuk digunakan, umumnya map hdr 1k adalah ukuran dan kualitas yang baik.
 
-### Exposure
+### Eksposur {#env-exposure}
 Mengatur kecerahan environment map. Sering kali map bisa terlalu terang saat digunakan dengan lampu biasa, menurunkan exposure dapat membantu menyeimbangkan, terutama saat digunakan dengan Global Illumination di pengaturan [Post Process](postprocess).
 
-### Rotation
+### Rotasi {#env-rotation}
 
 Karena environment map menangkap cahaya dari segala arah, Anda dapat memutarnya untuk mendapatkan pantulan dan pencahayaan keseluruhan yang berpadu baik dengan sculpt Anda.
 
-### Attached to camera
+### Terpasang ke kamera {#env-attached}
 Melampirkan environment ke kamera.
 
 Ini akan memaksa pencahayaan menjadi konsisten, yang bisa berguna saat memahat.
 
 
-## ![](/icons/sphere_smooth.webp) Matcap
+## ![](/icons/sphere_smooth.webp) Matcap {#matcap}
 
 ![](/images/shading_matcap.webp)
 
@@ -201,7 +201,7 @@ Seniman cenderung menyukai mode ini untuk keperluan sculpting karena memungkinka
 
 Mengetuk sphere akan menampilkan image browser. Anda juga dapat menambahkan matcap Anda sendiri, umumnya foto apa pun, render, bahkan lukisan sebuah sphere yang dipotong rapat menjadi persegi dapat digunakan. Banyak pustaka matcap tersedia online, salah satu sumber yang berguna adalah [nidorx matcap library](https://github.com/nidorx/matcaps).
 
-### Use global Matcap
+### Gunakan Matcap global {#matcap-global}
 
 Biasanya seniman akan menggunakan satu matcap untuk seluruh sculpt, tetapi jika toggle ini dinonaktifkan, setiap objek dapat memiliki matcap sendiri. Ini dapat digunakan secara artistik untuk mendapatkan hasil yang mencolok.
 
@@ -209,31 +209,31 @@ Biasanya seniman akan menggunakan satu matcap untuk seluruh sculpt, tetapi jika 
 Nonaktifkan opsi ini, dan gunakan gambar bola mata untuk mata karakter Anda!
 :::
 
-### Rotation
+### Rotasi {#matcap-rotation}
 Matcap adalah bentuk khusus dari environment map, jadi seperti environment map, matcap dapat diputar. Anda juga dapat melakukannya kapan saja di viewport dengan menyeret menggunakan 3 jari ke kiri dan kanan.
 
 
 
-## ![](/icons/circle_fill.webp) Unlit
+## ![](/icons/circle_fill.webp) Tanpa cahaya {#unlit}
 
 Mode ini hanya akan menampilkan warna permukaan. Ini dapat berguna untuk memeriksa apakah warna permukaan objek Anda sesuai harapan, tanpa terganggu oleh lampu, bayangan, refleksi, transparansi. 
 
 Mode ini juga dapat digunakan untuk render non-fotorealistik, menghasilkan tampilan datar dan kartun.
 
-## ![](/icons/cube.webp) Object ID
+## ![](/icons/cube.webp) ID Objek {#object-id}
 
 Semua informasi pencahayaan dan permukaan diabaikan, dan setiap objek diarsir dengan warna flat unik. Jika ini dirender bersamaan dengan render PBR, ini dapat digunakan di program pengecatan untuk memilih berdasarkan warna, dan dengan demikian dapat melakukan koreksi warna pada objek tertentu.
 
 Perhatikan bahwa warna-warna ini juga akan muncul di [tree view menu Scene](scene#tree-view).
 
-### Randomise id
+### Acak id {#object-random}
 
 Menghasilkan set warna acak baru. 
 
-## ![](/icons/link.webp) Instance ID
+## ![](/icons/link.webp) ID Instance {#instance-id}
 
 Sama seperti Object ID, tetapi instance akan memiliki warna yang sama. 
 
-### Randomise id
+### Acak id {#instance-random}
 
 Menghasilkan set warna acak baru.

@@ -1,4 +1,4 @@
-# ![](/icons/material.webp) Material
+# ![](/icons/material.webp) Material {#material}
 
 Menu ini memungkinkan Anda mengubah material objek saat ini, properti render objek/material, dan menetapkan tekstur ke material.
 
@@ -24,16 +24,16 @@ Tombol copy/paste di bagian atas menu ini memungkinkan Anda menyalin material da
 
 Perhatikan bahwa renderer Nomad adalah renderer realtime; meskipun kuat, ia lebih mengutamakan kecepatan daripada akurasi untuk efek tertentu. 
 
-## Material types
+## Jenis material {#material-types}
 
 ![](/images/material_types.webp)
 
 Tipe material Nomad adalah Opaque, Subsurface, Blending, Additive, Refraction, Dithering, Shadow Catcher.
 
-### ![](/icons/material_opaque.webp) Opaque
+### ![](/icons/material_opaque.webp) Buram {#opaque}
 Mode bawaan yang memperlakukan permukaan sebagai material sederhana yang mendukung color, roughness, metalness, opacity yang dapat dilukis.
 
-### ![](/icons/material_subsurface.webp) Subsurface
+### ![](/icons/material_subsurface.webp) Subpermukaan {#subsurface}
 Mode ini dapat mensimulasikan material yang memungkinkan cahaya mengaburkan dan menyebarkan cahaya secara internal seperti kulit, lilin, giok.
 
 Untuk hasil terbaik, beralihlah ke mode shading PBR dan gunakan setidaknya satu directional atau spot light, idealnya dengan environment yang redup.
@@ -42,7 +42,7 @@ Untuk hasil terbaik, beralihlah ke mode shading PBR dan gunakan setidaknya satu 
 
 `Translucency` mengontrol bagaimana cahaya menyebar dari depan ke belakang sebuah bentuk, seperti penyebaran cahaya melalui bagian bawah daun, atau ketika telinga disinari kuat dari belakang. 
 
-### ![](/icons/material_blending.webp) Blending
+### ![](/icons/material_blending.webp) Pencampuran {#blending}
 
 Mirip dengan Opaque, tetapi mendukung slider opacity untuk memungkinkan material bercampur antara padat dan transparan. Ini adalah slider tunggal yang sederhana untuk opacity, dibandingkan opacity yang dapat dilukis yang didukung oleh material opaque. 
 
@@ -50,7 +50,7 @@ Mirip dengan Opaque, tetapi mendukung slider opacity untuk memungkinkan material
 Mode Blending dapat menyebabkan flickering dan popping pada bentuk yang kompleks atau saling berpotongan.
 :::
 
-### ![](/icons/material_additive.webp) Additive
+### ![](/icons/material_additive.webp) Aditif {#additive}
 Anda dapat membuat mesh Anda semi-transparan dengan material ini. Mirip dengan material blending, tetapi sementara blending akan bercampur dengan sekelilingnya, additive akan selalu lebih terang daripada objek di belakangnya, cocok untuk efek terang seperti sinar cahaya, api, ledakan.
 
 Anda dapat mengatur nilai opacity lebih tinggi dari 1, yang berarti objek akan lebih terang.  
@@ -58,7 +58,7 @@ Ini bisa berguna jika Anda ingin menggunakan [bloom](postprocess.md#bloom) dan `
 
 Mode ini cenderung memiliki lebih sedikit artefak dibandingkan [Blending](#blending) (order independent transparency).
 
-### ![](/icons/material_refraction.webp) Refraction
+### ![](/icons/material_refraction.webp) Refraksi {#refraction}
 Mode ini dapat digunakan untuk mensimulasikan material kaca. Karena keterbatasan waktu nyata, self-refraction dan refraction berlapis banyak agak terbatas.
 
 Roughness yang dilukis pada model memengaruhi seberapa buram refraksi tersebut.
@@ -72,10 +72,10 @@ Untuk mendapatkan nilai yang berbeda (misalnya permen lollipop dengan permukaan 
 ![](/videos/refraction.mp4)
 
 
-### ![](/icons/material_dithering.webp) Dithering
+### ![](/icons/material_dithering.webp) Dithering {#dithering}
 Membuat objek semi-transparan dengan membuang beberapa piksel secara acak.
 
-### ![](/icons/material_shadow_catcher.webp) Shadow Catcher
+### ![](/icons/material_shadow_catcher.webp) Penangkap bayangan {#shadow-catcher}
 
 Membuat objek tidak terlihat, dan hanya menerima bayangan. Berguna untuk menggabungkan render Nomad dengan gambar lain. 
 
@@ -85,49 +85,49 @@ Informasi lebih lanjut tentang transparency dan blending modes dapat ditemukan d
 
 :::
 
-## Controls
+## Kontrol {#controls}
 
 ![](/images/material_controls.webp)
 
-### Always unlit
+### Selalu tanpa pencahayaan {#always-unlit}
 Jika diaktifkan, objek akan mengabaikan PBR dan Matcap dan hanya menampilkan lukisan warnanya tanpa shading.
 Perhatikan bahwa jika Anda menggunakan [Additive](#additive), Anda dapat melukis transparansi secara langsung dengan menggunakan warna hitam.
 
-### Opacity
+### Opasitas {#opacity}
 Seberapa padat atau buram sebuah objek akan terlihat; 100% padat, 0% transparan. Anda juga dapat melukis opacity untuk kontrol yang lebih halus.
 
-### Reflectance
+### Reflektansi {#reflectance}
 Mengontrol jumlah pantulan yang akan diterima material untuk material non-logam. Sebagian besar waktu nilai bawaan sebaiknya digunakan (yang sesuai dengan 4% cahaya yang dipantulkan pada sudut normal), tetapi dapat dinaikkan untuk meningkatkan pantulan dan highlight pada mata karakter, misalnya.
 
-### Inverse culling
+### Pembalikan culling {#inverse-culling}
 Membalik normal permukaan. Biasanya tidak diperlukan, tetapi dapat digunakan jika model tampak terbalik, atau dikombinasikan dengan `Two sided` yang dimatikan, dapat digunakan untuk membuat interior di mana dinding yang paling dekat dengan kamera selalu tersembunyi.
 
-### Smooth Shading
+### Penghalusan bayangan {#smooth-shading}
 Lihat [global option](settings.md#smooth-shading).  
 Nilai `Auto` akan menggunakan global option.
 
-### Two sided
+### Dua sisi {#two-sided}
 Lihat [global option](settings.md#two-sided).  
 Nilai `Auto` akan menggunakan global option.
 
-### Coloured backface
+### Bagian belakang berwarna {#coloured-backface}
 Lihat [global option](settings#two-sided).
 Nilai `Auto` akan menggunakan global option.
 
-### Casts shadows
+### Menjatuhkan bayangan {#casts-shadows}
 Untuk saat ini `Auto` sama dengan `On`.
 Objek transparan juga menghasilkan bayangan (dengan pola dithering untuk meniru bayangan blended).  
 Pastikan untuk menonaktifkan shadow casting jika Anda memiliki objek besar di scene yang tidak perlu menghasilkan bayangan (misalnya lantai besar).
 
-### Recieve shadows
+### Menerima bayangan {#recieve-shadows}
 Untuk saat ini `Auto` sama dengan `On`.
 
-### Wireframe
+### Wireframe {#wireframe}
 Lihat [global option](settings.md#wireframe).  
 Nilai `Auto` akan menggunakan global option.
 
 
-## Textures
+## Tekstur {#textures}
 
 ![](/images/material_textures.webp)
 
@@ -144,28 +144,28 @@ Tekstur dapat diterapkan ke
 
 Mengklik sebuah slot tekstur akan menampilkan pemilih. Setelah tekstur ditetapkan ke slot material, mengklik lagi akan menampilkan panel tekstur:
 
-### Texture panel options
+### Opsi panel tekstur {#texture-panel-options}
 
 ![](/images/material_texture_panel.webp)
 
-### Open
+### Buka {#open}
 Memilih tekstur lain
 
-### None
+### Tidak ada {#none}
 Menghapus tekstur
 
-### Opacity
+### Opasitas {#texture-opacity}
 
 Jika gambar memiliki alpha channel, ini akan memungkinkan Anda menggunakannya untuk Opacity, atau mengabaikannya.
 
-### ![](/icons/link.webp) Chain/Link icon 
+### ![](/icons/link.webp) Ikon rantai/tautan {#chainlink-icon}
 
 Ikon link di bagian berikut, ketika diaktifkan, berarti opsi apa pun yang digunakan akan dibagikan dengan tekstur lain (color, normal, roughness, metalness, opacity, emissive) yang juga memiliki ikon link mereka diaktifkan. 
 
 Ini memungkinkan Anda memastikan jika Anda memiliki tekstur yang selaras, tekstur tersebut akan tetap selaras bahkan ketika Anda mengubah parameter atau tipe proyeksi.
 
 
-### Projection
+### Proyeksi {#projection}
 ![](/images/material_projection.webp)
 
 Mengatur bagaimana tekstur harus diterapkan ke objek.
@@ -174,7 +174,7 @@ Mengatur bagaimana tekstur harus diterapkan ke objek.
 * `UV` - Menggunakan koordinat uv mesh untuk menerapkan tekstur. Jika mesh dan tekstur berasal dari luar Nomad, atau akan diekspor dari Nomad untuk digunakan di tempat lain, UV adalah opsi yang benar.
 * `Triplanar` - Memproyeksikan tekstur sepanjang sumbu X,Y,Z, dan mengaburkan sambungannya. 
 
-### Triplanar
+### Triplanar {#triplanar}
 ![](/images/material_triplanar.webp)
 
 Proyeksi Triplanar adalah cara yang kuat namun sederhana untuk menerapkan tekstur ke objek.
@@ -186,45 +186,45 @@ Ini kemudian dapat di-bake ke UV atau vertex color jika diperlukan.
 
 ![](/images/material_triplanar_example.webp)
 
-#### Method
+#### Metode {#method}
 
 * `Local` - Proyeksi akan bergerak mengikuti transform objek
 * `World` - Proyeksi tetap diam, menggerakkan objek akan menggesernya melalui proyeksi.
 
-#### Hardness
+#### Kekerasan {#hardness}
 
 Bagaimana proyeksi bercampur. 100% tidak akan melakukan blending, dan tepi proyeksi akan tajam. 0% akan mengaburkan tepi pada sudut yang lebar. Nilai bawaan adalah 90%, cukup pencampuran untuk menyembunyikan tepi, dan membiarkan bagian lain dari proyeksi tetap tajam.
 
-### Uniform
+### Seragam {#uniform}
 
 Jika dicentang, hardness yang sama digunakan untuk semua proyeksi. Jika tidak dicentang, kontrol hardness tambahan akan ditampilkan untuk proyeksi X, Y, Z.
 
 
-### Parameter
+### Parameter {#parameter}
 ![](/images/material_parameter.webp)
 
-#### Filtering
+#### Penyaringan {#filtering}
 Metode filter tekstur yang digunakan, `Auto` adalah bawaan, metodenya adalah `Nearest`, `Linear`, `Mipmap`. Nearest tidak melakukan filtering, sehingga tekstur dapat mendapatkan artefak bergerigi ketika dilihat dari dekat. Linear dan Mipmap melakukan filtering yang lebih baik, sehingga tekstur tampak buram daripada bergerigi dari dekat.
 
-#### Tiling-X
+#### Ulangan-X {#tiling-x}
 Jika parameter Scale lebih besar dari 1, membuat tekstur lebih kecil daripada UV objek, bagaimana tekstur akan diulang sepanjang sumbu X. `None` berarti tanpa pengulangan. `Repeat` akan membuat salinan tekstur. `Mirror` akan membuat salinan tekstur, dengan setiap salinan kedua dibalik, yang dapat membantu menyembunyikan artefak tiling.
 
-#### Tiling-Y
+#### Ulangan-Y {#tiling-y}
 Sama seperti Tiling-X, tetapi untuk sumbu Y.
 
-### Transform
+### Transformasi {#transform}
 ![](/images/material_transform.webp)
 
 Transformasi 2D tambahan yang diterapkan ke tekstur dalam ruang UV. Tombol reset mengembalikan ke bawaan, ikon rantai (ketika tekstur selain color dipilih) akan menghubungkan atau memutus transform agar sama dengan tekstur color.
 
-#### Translation
+#### Translasi {#translation}
 Offset X dan Y dari tekstur
 
-#### Rotation
+#### Rotasi {#rotation}
 Rotasi tekstur
 
-#### Scale
+#### Skala {#scale}
 Skala tekstur, angka yang lebih besar akan membuat tekstur lebih kecil pada objek, gunakan slider Tiling-X dan Tiling-Y untuk mengontrol apa yang terjadi.
 
-### Uniform scale
+### Skala seragam {#uniform-scale}
 Ketika dimatikan Nomad akan menampilkan kontrol terpisah untuk Scale-X dan Scale-Y.

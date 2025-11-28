@@ -1,4 +1,4 @@
-# ![](/icons/postprocess.webp) Postprocess 
+# ![](/icons/postprocess.webp) Postprocess {#post-process}
 
 Tato nabídka ovládá mnoho aspektů Nomadu, které ovlivňují vzhled renderu.
 
@@ -16,34 +16,31 @@ Pro PBR renderování by měly být zapnuté [Ambient Occlusion](#ambient-occlus
 Většinu času ale budete chtít mít postprocessing při skulptování vypnutý, abyste se mohli soustředit na samotný tvar renderu.
 
 
-## Quality
+## Kvalita {#quality}
 
 ![](/images/postprocess_quality.webp)
-### Max frame sampling
+### Maximální snímkové vzorkování {#max-frame-sampling}
 Nomad pro jeden snímek vypočítá určité množství postprocessingu, který může vypadat zrnitě. Toto nastavení určuje, kolik snímků se vyrenderuje a následně smíchá dohromady, aby se odstranila většina šumových artefaktů. Některé efekty nevyžadují žádné extra vzorky (např. color grading), zatímco jiné, jako globální iluminace, mohou vyžadovat stovky vzorků, aby byly bez šumu. 
 
 Ve viewportu je to vidět vždy, když necháte Nomad chvíli být – kvalita obrazu se postupně zpřesňuje až do maxima vzorků a pak se zastaví. Tento počet výpočtů se používá také v sekci renderu v [Files menu](files), když kliknete na „export png“.
 
-### Resolution multiplier
+### Násobič rozlišení {#resolution-multiplier}
 Tento posuvník ovládá rozlišení postprocessingu. Hodnota x1.0 znamená, že se rendery provádějí v rozlišení pixelů zařízení. Hodnota x0.5 bude renderovat v polovičním rozlišení, což je rychlé, ale nízké kvality. Hodnota vyšší než 1 bude renderovat ve větší velikosti a pak obraz zmenší. Výsledkem je vyšší kvalita, méně šumu, ale delší časy renderu.
 
-### Max samples
+### Maximální počet vzorků {#max-samples}
 
 Toto zvýší kvalitu postprocessingu, ale obecně bude mít větší dopad `Full resolution`. 
 
-### Full resolution
-Po zapnutí vynutí multiplikátor rozlišení na x1.0
-
-### Denoiser (oidn)
+### Odstranění šumu (oidn) {#oidn}
 
 Aplikuje na obraz denoiser. To vám umožní používat mnohem nižší počet vzorků. Funguje pouze tehdy, pokud je zapnuté `Full Resolution`. Všimněte si, že odšumování probíhá až po výpočtu všech vzorků a může být náročné na procesor.
 
-## Preset browser
+## Prohlížeč předvoleb {#preset-browser}
 ![](/images/postprocess_presets.webp)
 Kliknutím na obrázek se zobrazí kolekce presetů postprocessingu. Pro definování vlastních presetů nějaký vyberte, klikněte na „clone“, proveďte změny. Pro uložení klikněte na obrázek presetu, znovu klikněte uvnitř preset browseru a zvolte „save“.
 
 
-## Reflection (SSR)
+## Odraz (SSR) {#reflection-ssr}
 S touto volbou mohou objekty odrážet jiné objekty ve scéně, pokud jsou tyto objekty viditelné na obrazovce.
 Pokud máte ve scéně kovové a lesklé objekty, tuto volbu byste pravděpodobně měli použít.
 Tato volba je účinná pouze v PBR režimu.
@@ -53,7 +50,7 @@ Tato volba je účinná pouze v PBR režimu.
 | :------------------------: | :-----------------------: |
 | ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
-## Global Illumination (SSGI)
+## Globální iluminace (SSGI) {#global-illumination-ssgi}
 
 Globální iluminace simuluje, jak se světlo odráží mezi povrchy, např. červená zeď vrhá červený nádech na blízký bílý objekt. Při použití s ambient occlusion a odrazy může výrazně zvýšit realističnost renderu. 
 
@@ -67,7 +64,7 @@ Globální iluminace simuluje, jak se světlo odráží mezi povrchy, např. če
 
 _Reflektor je za koulí a míří na strop. Se SSGI vypnutým je osvětlený pouze strop. Se SSGI zapnutým se světlo odráží ze stropu na stěny a na kouli._
 
-## Ambient Occlusion (SSAO)
+## Ambientní okluze (SSAO) {#ambient-occlusion-ssao}
 Ambient occlusion ztmavuje oblasti, kam má světlo menší šanci proniknout (rohy atd.).
 Efekt závisí pouze na geometrii modelu.
 
@@ -86,7 +83,7 @@ AO bude nejviditelnější v oblastech osvětlených hlavně environment světle
 
 :::
 
-## Depth of Field (DOF)
+## Hloubka ostrosti (DOF) {#depth-of-field-dof}
 Přidá efekt rozostření v oblasti mimo rovinu zaostření.
 
 Jednoduše klepněte na svůj model pro změnu zaostřovacího bodu.
@@ -100,7 +97,7 @@ Jednoduše klepněte na svůj model pro změnu zaostřovacího bodu.
 | ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp) |
 
 
-## Bloom
+## Záře {#bloom}
 Bloom způsobí, že světlé oblasti vaší scény budou zářit.
 
 * `Intensity` - síla efektu.
@@ -113,7 +110,7 @@ Bloom způsobí, že světlé oblasti vaší scény budou zářit.
 | ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
 
-## Tone Mapping
+## Tonální mapování {#tone-mapping}
 Tone Mapping je operace, která převádí HDR hodnoty do rozsahu `[0, 1]`.
 Pokud jej nepoužijete (nebo zvolíte `none`), jakákoli barevná složka vyšší než 1 bude oříznuta.
 Jakékoli barevné variace nad tímto rozsahem se tak ztratí.
@@ -133,14 +130,14 @@ Všimněte si, že s vypnutým `Tone Mapping` některé detaily mizí, protože 
 Tone mapping může zesílit efekt globální iluminace. Pokud snížíte intenzitu environment mapy, zvýšíte primární zdroj světla, můžete zvýšit `exposure` v tone mappingu, abyste viděli více efektů odraženého světla.
 :::
 
-## Color Grading
+## Barevné korekce {#color-grading}
 Podobně jako nástroj křivek ve Photoshopu vám to umožňuje ovládat vyvážení a rozložení barev v obrazu. `main` ovládací prvek ovlivňuje celkové barevné vyvážení, `red`/`green`/`blue` umožňují jemné doladění. 
 
 | Color Grading off             | Color Grading on             |
 | :---------------------------: | :--------------------------: |
 | ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
-## Curvature
+## Zakřivení {#curvature}
 Detekuje místa, kde dochází k rychlým změnám křivosti, a na tyto oblasti aplikuje barvu.
 
 * `Factor` - celková intenzita efektu
@@ -153,7 +150,7 @@ Detekuje místa, kde dochází k rychlým změnám křivosti, a na tyto oblasti 
 | ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
 
-## Chromatic Aberration
+## Chromatická aberace {#chromatic-aberration}
 Simuluje artefakty objektivu, kdy se světlo rozkládá u okrajů obrazovky.
 
 * `Strength` - jak moc se červené/zelené/modré části obrazu rozštěpí směrem k okrajům obrazovky
@@ -163,7 +160,7 @@ Simuluje artefakty objektivu, kdy se světlo rozkládá u okrajů obrazovky.
 | ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
 
-## Vignette
+## Vinětace {#vignette}
 Simuluje artefakty objektivu ztmavením okrajů obrazovky.
 
 * `Size` - Velikost invertované elipsy umístěné přes obraz
@@ -174,7 +171,7 @@ Simuluje artefakty objektivu ztmavením okrajů obrazovky.
 | :-----------------------------: | :----------------------------: |
 | ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
-## Grain
+## Zrno {#grain}
 Přidá efekt zrna, který může pomoci, aby obraz působil méně uměle.
 
 * `Strength` - množství zrna/šumu přidaného do obrazu.
@@ -185,7 +182,7 @@ Přidá efekt zrna, který může pomoci, aby obraz působil méně uměle.
 | ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
 
-## Sharpness
+## Ostrost {#sharpness}
 Efekt doostření podobný tomu ve Photoshopu nebo aplikacích pro úpravu fotek.
 
 * `Strength` - množství doostření aplikovaného na obraz.
@@ -195,7 +192,7 @@ Efekt doostření podobný tomu ve Photoshopu nebo aplikacích pro úpravu fotek
 | :----------------------------: | :--------------------------: |
 | ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
-## Pixel Art
+## Pixel art {#pixel-art}
 Simuluje pixel art z retro her.
 
 * `Slider` - velikost pixelů
@@ -205,7 +202,7 @@ Simuluje pixel art z retro her.
 | :-------------------------: | :------------------------: |
 | ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
-## Scanline
+## Řádkový rastr {#scanline}
 Simuluje vzhled starých CRT monitorů.
 
 * `Factor` - síla linek
@@ -216,6 +213,6 @@ Simuluje vzhled starých CRT monitorů.
 | ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
 
 
-## Dithering
+## Dithering {#dithering}
 
 Dithering pixelů pro redukci pruhových (banding) artefaktů. Obvykle by měl být zapnutý, ale může být vypnut pro specifické operace (např. export depth map nebo jiné operace specifické pro data).

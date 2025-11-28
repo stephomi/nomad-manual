@@ -1,4 +1,4 @@
-# ![](/icons/postprocess.webp) Hậu kỳ (Post process) 
+# ![](/icons/postprocess.webp) Hậu kỳ {#post-process}
 
 Menu này điều khiển nhiều khía cạnh của Nomad để ảnh hưởng đến diện mạo của bản render.
 
@@ -15,33 +15,30 @@ Có một ô chọn (checkbox) toàn cục để tắt toàn bộ hậu kỳ, gi
 
 Tuy nhiên, hầu hết thời gian bạn sẽ muốn tắt hậu kỳ khi đang điêu khắc, để tập trung vào hình khối của bản render.
 
-## Chất lượng (Quality)
+## Chất lượng {#quality}
 
 ![](/images/postprocess_quality.webp)
-### Lấy mẫu khung hình tối đa (Max frame sampling)
+### Lấy mẫu khung hình tối đa {#max-frame-sampling}
 Nomad sẽ tính toán một lượng hiệu ứng hậu kỳ nhất định cho một khung hình đơn, điều này có thể trông nhiễu. Điều khiển này xác định có bao nhiêu khung hình sẽ được render rồi trộn lại với nhau để loại bỏ phần lớn nhiễu. Một số hiệu ứng không cần thêm mẫu (ví dụ color grading), trong khi các hiệu ứng khác như global illumination có thể cần hàng trăm mẫu để hết nhiễu. 
 
 Trong viewport, điều này có thể thấy khi bạn để Nomad đứng yên, chất lượng hình ảnh sẽ dần được tinh chỉnh cho đến khi đạt số mẫu tối đa rồi dừng. Số lượng tính toán này cũng được dùng trong phần render của [menu Files](files) khi nhấn 'export png'.
 
-### Hệ số độ phân giải (Resolution multiplier)
+### Hệ số nhân độ phân giải {#resolution-multiplier}
 Thanh trượt này điều khiển độ phân giải của hậu kỳ. Giá trị x1.0 nghĩa là render được thực hiện ở độ phân giải điểm ảnh của thiết bị. Giá trị x0.5 sẽ render ở nửa độ phân giải, nhanh nhưng chất lượng thấp. Giá trị lớn hơn 1 sẽ render ở kích thước lớn hơn rồi thu nhỏ xuống. Điều này cho chất lượng cao hơn, ít nhiễu hơn nhưng thời gian render lâu hơn.
 
-### Số mẫu tối đa (Max samples)
+### Số mẫu tối đa {#max-samples}
 
 Tùy chọn này sẽ tăng chất lượng hậu kỳ, nhưng nhìn chung `Full resolution` sẽ có tác động nhiều hơn. 
 
-### Full resolution
-Khi bật sẽ buộc hệ số độ phân giải về x1.0
-
-### Denoiser (oidn)
+### Khử nhiễu (oidn) {#oidn}
 
 Áp dụng bộ khử nhiễu cho hình ảnh. Điều này cho phép bạn dùng số mẫu thấp hơn nhiều. Tùy chọn này chỉ hoạt động nếu `Full Resolution` được bật. Lưu ý việc khử nhiễu diễn ra sau khi tất cả mẫu đã được tính toán, và có thể tốn tài nguyên xử lý.
 
-## Trình duyệt preset (Preset browser)
+## Trình duyệt preset {#preset-browser}
 ![](/images/postprocess_presets.webp)
 Nhấn vào hình sẽ hiển thị một bộ sưu tập preset hậu kỳ. Để tạo preset riêng, chọn một preset, nhấn 'clone', rồi chỉnh sửa. Để lưu, nhấn vào hình preset, nhấn lần nữa trong trình duyệt preset và chọn 'save'.
 
-## Reflection (SSR)
+## Phản xạ (SSR) {#reflection-ssr}
 Với tùy chọn này, các đối tượng có thể phản chiếu những đối tượng khác trong cảnh, miễn là các đối tượng đó hiển thị trên màn hình.
 Nếu bạn có các vật thể kim loại và bóng trong cảnh, thì nên dùng tùy chọn này.
 Tùy chọn này chỉ hiệu quả với chế độ PBR.
@@ -50,7 +47,7 @@ Tùy chọn này chỉ hiệu quả với chế độ PBR.
 | :------------------------: | :-----------------------: |
 | ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
-## Global Illumination (SSGI)
+## Chiếu sáng toàn cục (SSGI) {#global-illumination-ssgi}
 
 Global illumination mô phỏng cách ánh sáng dội giữa các bề mặt, ví dụ một bức tường đỏ sẽ hắt đỏ lên một vật thể trắng gần đó. Điều này có thể tăng mạnh tính chân thực của bản render khi dùng cùng ambient occlusion và reflection. 
 
@@ -62,7 +59,7 @@ Global illumination mô phỏng cách ánh sáng dội giữa các bề mặt, v
 
 _Một spotlight ở phía sau hình cầu, chiếu lên trần. Khi tắt SSGI, chỉ có trần được chiếu sáng. Khi bật SSGI, ánh sáng dội từ trần xuống tường rồi tới hình cầu._
 
-## Ambient Occlusion (SSAO)
+## Đổ bóng môi trường (SSAO) {#ambient-occlusion-ssao}
 Ambient occlusion sẽ làm tối các vùng mà ánh sáng khó tiếp cận (góc cạnh, khe, v.v.).
 Hiệu ứng này chỉ phụ thuộc vào hình học của mô hình.
 
@@ -80,7 +77,7 @@ AO sẽ thấy rõ nhất ở những vùng chủ yếu được chiếu sáng b
 
 :::
 
-## Depth of Field (DOF)
+## Độ sâu trường ảnh (DOF) {#depth-of-field-dof}
 Thêm hiệu ứng nhòe cho vùng nằm ngoài điểm lấy nét.
 
 Chỉ cần chạm vào mô hình để thay đổi điểm lấy nét.
@@ -92,7 +89,7 @@ Chỉ cần chạm vào mô hình để thay đổi điểm lấy nét.
 | :------------------------: | :-------------------------: | :------------------------: |
 | ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp) |
 
-## Bloom
+## Bloom {#bloom}
 Bloom sẽ làm các vùng sáng trong cảnh phát sáng (glow).
 
 * `Intensity` - Cường độ hiệu ứng.
@@ -104,7 +101,7 @@ Bloom sẽ làm các vùng sáng trong cảnh phát sáng (glow).
 | :---------------------------: | :-------------------------: | :-------------------------: |
 | ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
-## Tone Mapping
+## Ánh xạ tông màu {#tone-mapping}
 Tone Mapping là thao tác ánh xạ các giá trị HDR về khoảng `[0, 1]`.
 Nếu bạn không dùng (hoặc chọn `none`), mọi thành phần màu lớn hơn 1 sẽ bị cắt ngưỡng (clipped).
 Mọi biến thiên màu sắc trên khoảng này sẽ bị mất.
@@ -124,14 +121,14 @@ Lưu ý khi tắt `Tone Mapping`, một số chi tiết biến mất vì điểm
 Tone mapping có thể tăng hiệu ứng của global illumination. Nếu bạn giảm cường độ bản đồ môi trường, tăng nguồn sáng chính, sau đó tăng `exposure` trong tone mapping để thấy rõ hơn hiệu ứng ánh sáng dội.
 :::
 
-## Color Grading
+## Chỉnh màu {#color-grading}
 Tương tự công cụ Curves trong Photoshop, tính năng này cho phép bạn điều khiển cân bằng và phân bố màu trong hình. Điều khiển `main` ảnh hưởng đến cân bằng màu tổng thể, các điều khiển `red`/`green`/`blue` cho phép tinh chỉnh chi tiết. 
 
 | Color Grading off              | Color Grading on              |
 | :----------------------------: | :---------------------------: |
 | ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
-## Curvature
+## Độ cong {#curvature}
 Phát hiện nơi có thay đổi độ cong nhanh và áp màu lên những vùng đó.
 
 * `Factor` - Cường độ tổng thể của hiệu ứng
@@ -142,7 +139,7 @@ Phát hiện nơi có thay đổi độ cong nhanh và áp màu lên những vù
 | :-------------------------------: | :-----------------------------: |
 | ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
-## Chromatic Aberration
+## Quang sai sắc {#chromatic-aberration}
 Mô phỏng lỗi ống kính khi ánh sáng bị tách màu quanh rìa màn hình.
 
 * `Strength` - Mức độ tách các phần đỏ/lục/lam của hình về phía rìa màn hình
@@ -151,7 +148,7 @@ Mô phỏng lỗi ống kính khi ánh sáng bị tách màu quanh rìa màn hì
 | :----------------------------: | :---------------------------: |
 | ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
-## Vignette
+## Tối góc (Vignette) {#vignette}
 Mô phỏng lỗi ống kính bằng cách làm tối rìa màn hình.
 
 * `Size` - Kích thước của ellipse đảo ngược đặt lên hình
@@ -161,7 +158,7 @@ Mô phỏng lỗi ống kính bằng cách làm tối rìa màn hình.
 | :------------------------------: | :-----------------------------: |
 | ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
-## Grain
+## Hạt phim {#grain}
 Thêm hiệu ứng hạt (grain), có thể giúp hình bớt cảm giác nhân tạo.
 
 * `Strength` - Lượng hạt/nhiễu thêm vào hình.
@@ -170,7 +167,7 @@ Thêm hiệu ứng hạt (grain), có thể giúp hình bớt cảm giác nhân 
 | :---------------------------: | :-------------------------: |
 | ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
-## Sharpness
+## Độ nét {#sharpness}
 Hiệu ứng làm nét tương tự trong Photoshop hoặc các ứng dụng xử lý ảnh.
 
 * `Strength` - Lượng làm nét áp dụng lên hình.
@@ -179,7 +176,7 @@ Hiệu ứng làm nét tương tự trong Photoshop hoặc các ứng dụng x�
 | :-----------------------------: | :---------------------------: |
 | ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
-## Pixel Art
+## Pixel Art {#pixel-art}
 Mô phỏng đồ họa pixel của game retro.
 
 * `Slider` - Kích thước pixel
@@ -189,7 +186,7 @@ Mô phỏng đồ họa pixel của game retro.
 | :--------------------------: | :-------------------------: |
 | ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
-## Scanline
+## Dòng quét {#scanline}
 Mô phỏng diện mạo của màn hình CRT cũ.
 
 * `Factor` - Cường độ của các đường
@@ -199,6 +196,6 @@ Mô phỏng diện mạo của màn hình CRT cũ.
 | :-----------------------------: | :----------------------------: |
 | ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
 
-## Dithering
+## Dithering {#dithering}
 
 Rải nhiễu điểm ảnh (dither) để giảm hiện tượng banding. Thông thường nên bật, nhưng có thể tắt cho một số thao tác đặc biệt (ví dụ xuất depth map hoặc các thao tác đặc thù dữ liệu khác).

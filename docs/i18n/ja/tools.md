@@ -1,4 +1,4 @@
-# ![](/icons/toolbox.webp) ツール
+# ![](/icons/toolbox.webp) ツール {#tools}
 
 ![](/images/tools_menu.webp)
 
@@ -6,7 +6,7 @@
 各ツールの説明は、このページ内の[ツール](#tools-1)までジャンプしてください。
 :::
 
-## 概要
+## 概要 {#overview}
 
 ツールは右側の`Toolbox`から選択し、左側の`Tool Controls`で操作します。追加の設定は右上メニューの一番左のアイコンである`Settings`メニューにあります。
 
@@ -31,7 +31,7 @@ Nomad のツールはツールボックス内で色分けされています:
 多くのツールは [Stroke](stroke.md) メニューから、ブラシ挙動、筆圧、テクスチャなどをカスタマイズできます。 
 
 
-### ブラシコントロール
+### ブラシコントロール {#brush-controls}
 
 左ツールバーには半径と強度のスライダーがあり、その下にツールカテゴリ固有のコントロールがあります（後述）。
 
@@ -41,17 +41,17 @@ Nomad のツールはツールボックス内で色分けされています:
 多くのツールでは強度スライダーは 100% を超えて設定できます。いろいろ試してみてください！
 :::
 
-### Sub モード
+### サブモード {#sub-mode}
 強度スライダーのすぐ下のボタンが `Sub` ボタンです。ラベルと機能はツールごとに変化し、押している間は通常そのツールの反対の挙動を呼び出します。例えば [Paint](#paint) では消しゴムモードになり、[Crease](#crease) では溝ではなく盛り上がったエッジを作ります。
 
 デフォルトでは「押している間だけ有効」なスティッキーボタンとして動作します。押している間だけ Sub モードが有効になり、離すとオフになります。タップすると Sub モードが常時有効になります。
 
-### ショートカット
+### ショートカット {#shortcuts}
 左ツールバーの一番下には [Smooth](#smooth), [Mask](#mask), [Hide](#hide), [Gizmo](#gizmo), [Color](painting.md#pbr-sliders), [Alpha](stroke.md#alpha) のショートカットがあります。 
 
 デフォルトではこれらもすべてスティッキーボタンとして動作します。押している間だけそのモードが有効になり、離すとオフになります。タップすると、そのショートカットモードが常時有効になります。
 
-### 選択コントロール
+### 選択コントロール {#selection-controls}
 
 [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Project](#project), [Facegroup](#facegroup), [Hide](#hide) ツールはすべて、メッシュの領域を選択するために似たコントロールを使用します。
 
@@ -69,7 +69,7 @@ Nomad のツールはツールボックス内で色分けされています:
 
 ほとんどのツールには自動バリデートのオプションがあります。これは、シェイプの描画が終わると同時に処理が実行されるという意味です。自動バリデートがオフの場合、シェイプの横に緑色のボタンが表示され、それを押すと処理が実行されます。この場合、処理前にシェイプを編集したりビューを調整したりできます。準備ができたら緑のボタンを押してシェイプを使用します。
 
-### シェイプ編集
+### 形状編集 {#shape-editing}
 ポリゴン編集とカーブ編集は似た挙動をします:
 
 * まず線をドラッグして 2 点を定義し、その線の中央からドラッグしてポリゴンまたはカーブを定義します。
@@ -78,13 +78,13 @@ Nomad のツールはツールボックス内で色分けされています:
 * 点を削除するには、その点を隣の点にドラッグし、赤くなったら離します。
 * ポリゴンまたはパスアイコンの角にあるゴミ箱アイコンでシェイプを削除します。
 
-### Settings メニュー
+### 設定メニュー {#settings-menu}
 
 多くのツールには追加設定があり、右上メニューの一番左のアイコンである Settings メニューにあります:
 
 ![](/images/tools_settings_menu.webp)
 
-## ツール
+## ツール {#tools-1}
 
 |                                                                     |                                                   |                                                                   |                                                         |                                                         |                                                                     |
 | :-----------------------------------------------------------------: | :-----------------------------------------------: | :---------------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------------------: |
@@ -97,24 +97,24 @@ Nomad のツールはツールボックス内で色分けされています:
 
 ------
 
-### ![](/icons/tool_clay.webp) Clay
+### ![](/icons/tool_clay.webp) クレイ {#clay}
 Clay ツールは造形を盛り上げていくのに便利です。`Sub` で造形から素材を削り取ります。
 
 ![](/videos/tool_clay.mp4)
 
-### ![](/icons/tool_brush.webp) Brush
+### ![](/icons/tool_brush.webp) ブラシ {#brush}
 標準的なブラシです。`Sub` で素材を削り取ります。
 
 ![](/videos/tool_brush.mp4)
 
-### ![](/icons/tool_move.webp) Move
+### ![](/icons/tool_move.webp) 移動 {#move}
 ブラシの下の領域がブラシに「くっつき」、弾性的な変形が行われます。ストローク中は選択が維持されるため、ブラシを離れた場所まで動かしてから元の位置に戻すと、変形は発生していないように見えます。
 
 Sub モードは `Normal` で、ブラシ下の領域をサーフェス法線方向に移動させます。
 
 このブラシは大きな形状変更にも、細かい調整にも適しています。
 
-#### Move 設定
+#### 移動設定 {#move-settings}
 
 * `Radius (Background)` - モデルのエッジからどれくらい離れていてもスカルプトできるかを決めます。シルエットを調整するときに便利です。 
 * `Same-side vertex only` - 変形方向と反対を向いている頂点を無視します。
@@ -122,40 +122,40 @@ Sub モードは `Normal` で、ブラシ下の領域をサーフェス法線方
 
 ![](/videos/tool_move.mp4)
 
-### ![](/icons/tool_drag.webp) Drag
+### ![](/icons/tool_drag.webp) ドラッグ {#drag}
 ブラシの下の領域がブラシに「くっつき」、弾性的な変形が行われます。Move ブラシと異なり、ストローク中に選択が継続的に更新されるため、特に Dynamic Topology を有効にしている場合、長く蛇のような形状を作ることができます。
 
 Sub モードは `Normal` で、ブラシ下の領域をサーフェス法線方向に移動させます。
 
 このブラシは、よりラフでジェスチャルな形状変更に向いています。
 
-#### Drag 設定
+#### ドラッグ設定 {#drag-settings}
 
 * `Radius (Background)` - モデルのエッジからどれくらい離れていてもスカルプトできるかを決めます。シルエットを調整するときに便利です。 
 * `Same-side vertex only` - 変形方向と反対を向いている頂点を無視します。
 
 ![](/videos/tool_drag.mp4)
 
-### ![](/icons/tool_smooth.webp) Smooth
+### ![](/icons/tool_smooth.webp) スムーズ {#smooth}
 ポイント位置の平均を取ることで領域をスムーズにします。このツールはポリゴン密度に大きく依存します。
 ポリゴン数が多いほど、スムージングの効果は弱くなります。
 
 Sub モードは `Relax` で、ワイヤーフレームのみをスムーズにし、形状ディテールは維持しようとします。
 
-#### Smooth 設定
+#### スムーズ設定 {#smooth-settings}
 
 ![](/images/tool_smooth_settings.webp)
 
-##### Facegroup
+##### フェイスグループ {#smooth-facegroup}
 
 * `Relax` - Facegroup の境界をスムーズにします。100% を超える強度で素早く境界をスムーズにできます。`Auto` は Facegroup プレビューが有効なときのみスムーズにし、`Off` は無効、`On` は常に有効です。 
 
-##### Vertex
+##### 頂点 {#vertex}
 * `Sticky vertex on border` - 平面など開いたエッジを持つメッシュでは、角をスムーズに潰してしまうことがあります。このオプションを有効にすると開いたエッジを固定します。
 * `Relax` - 左ツールバーの Sub モードである Relax と同じです。
 * `Stable smoothing` - トポロジに依存しないスムージングを試みます。トポロジ密度が不均一な場合や高いスムージング強度で最も効果的です。
 
-##### Painting
+##### ペイント {#painting}
 * `Screen Smoothing` - 高ポリゴン数でもトポロジに依存しないスムージングを行いたい場合に使用します。
 * `Screen samples` - スムージングの品質です。値が高いほど滑らかになりますが、処理は遅くなります。
 
@@ -165,7 +165,7 @@ Sub モードは `Relax` で、ワイヤーフレームのみをスムーズに�
 
 ![](/videos/tool_smooth.mp4)
 
-### ![](/icons/tool_mask.webp) Mask
+### ![](/icons/tool_mask.webp) マスク {#mask}
 頂点をマスクするツールです。マスクされた頂点はスカルプトやペイントから保護されます。 
 
 Sub モードは `Unmask` で、マスクを消去します。
@@ -195,7 +195,7 @@ Sub モードは `Unmask` で、マスクを消去します。
 |                                 On tap (mask)      | 有効時、マスクされた「島」または非マスクの島をタップすると、その島全体を塗りつぶします。   |
 | ![](/icons/vertex.webp)        Connected          | 有効時、マスクストロークは接続されたトポロジにのみ影響します。                             |
 
-##### Mask クイックジェスチャ
+##### マスククイックジェスチャー {#mask-quick-gesture}
 左ツールバーのクイックマスクボタンを押しながら、ZBrush 風のジェスチャを行えます:
 | Action  | Gesture (hold lower-left shortcut) |
 | :-----: | :--------------------------------: |
@@ -205,28 +205,28 @@ Sub モードは `Unmask` で、マスクを消去します。
 | Sharpen | 非マスク領域をタップ               |
 
 
-#### Mask 設定
+#### マスク設定 {#mask-settings}
 ![](/images/tool_mask_settings.webp)
 
 ![](/videos/tool_mask2.mp4)
 
 * `Preview` - Mask 設定メニューは主にマスクからジオメトリを作成するために使われます。そのためデフォルトでは新しいジオメトリがどのようになるかをプレビューします。プレビューなし、抽出プレビュー、分割プレビュー、さらにそのジオメトリを X-ray モードで表示するかどうかを選択できます。
 
-##### Thickness
+##### 厚み {#thickness}
 * `Height` - 抽出される形状の高さです。プラス／マイナスアイコンで、外側への押し出し、内側への押し出し、中心からの押し出しを切り替えられます。 
 * `Height/Height+Mask` - 高さを一定にするか、マスクのぼかし部分で高さを変化させるかを切り替えます。後者では柔らかく高さが変化する形状を作れます。 
 
-##### Smoothness
+##### スムーズさ {#smoothness}
 有効時、抽出形状の境界をスムーズにします。ポリゴン数が多いほど効果的です。 
 * `Iterations` - 適用するスムージング量です。値が高いほど非常に滑らかな曲線エッジになりますが、マスク形状からのズレが大きくなります。
 * `All/Sharp border/Borders only` - スムージングの方向を制御します。すべて（側面と上面）、シャープなエッジを保ちつつ側面と上面、境界のみ（上面はそのまま）から選択できます。
 
-##### Edge loop (side)
+##### エッジループ（側面） {#edge-loop-side}
 * `Auto Edge-loop (side)` - 抽出形状の側面に、マスク領域のポリゴンと揃った正方形ポリゴンができるよう分割数を自動計算します。無効時はスライダーでエッジループ数を手動設定します。
 
 ----
 
-##### Extract
+##### 抽出 {#extract}
 * `Extract` - 抽出ジオメトリを作成します。
 * `Closing action` - 抽出の挙動を指定します。`None` はマスクされたポリゴンを新しい形状として複製します。`Fill` は同様に複製し、背面を塞ごうとします。`Shell` は `thickness` で設定した量だけ押し出し、デフォルトです。
 
@@ -237,18 +237,18 @@ Sub モードは `Unmask` で、マスクを消去します。
 これは正常な挙動です。Mask 設定メニューを閉じて新しい形状と元の形状を確認し、必要であれば元のサーフェスを再選択してマスクをクリアしたり新しいマスクを描いたりしてください。
 :::
 
-##### Split
+##### 分割 {#split-mask}
 * `Split` - マスクされた領域と非マスク領域の両方を新しい形状として抽出します。 
 * `Closing action (masked)` - マスク側抽出の挙動です。`None` はマスクされたポリゴンを新しい形状として複製します。`Fill` は同様に複製し、背面を塞ごうとします。`Shell` は `thickness` で設定した量だけ押し出し、デフォルトです。
 * `Closing action (unmasked)` - 非マスク側抽出の挙動です。`None` は非マスクポリゴンを新しい形状として複製します。`Fill` は同様に複製し、背面を塞ごうとします。`Shell` は `thickness` で設定した量だけ押し出し、デフォルトです。
 * `Sync border` - マスク側と非マスク側の抽出形状の境界が近い位置に保たれるようにします。無効時は、Shell 操作が各面を法線方向に押し出すため、形状間に隙間が生じることがあります。
 
-##### Carve
+##### カーブ {#carve}
 * `Carve` - デフォルトモードでは、`thickness` 量だけ表面を削り取ったような挙動をし、オレンジの皮を切り取るような結果になります。 
 
 
 
-### ![](/icons/tool_maskSelector.webp) Selection Mask
+### ![](/icons/tool_maskSelector.webp) 選択マスク {#selection-mask}
 このツールは基本的に [Mask ツール](#mask) とほぼ同じですが、ストロークでマスクを塗るのではなく、[選択コントロール](#selection-controls) を使ってマスクを作成する点が異なります。
 
 Sub モードは `Unmask` で、選択コントロールを使ってマスクを消去します。
@@ -257,28 +257,28 @@ Selection Mask は `Mask` ツールと同じツール設定を共有します。
 
 ![](/videos/tool_selector_mask.mp4)
 
-### ![](/icons/tool_paint.webp) Paint
+### ![](/icons/tool_paint.webp) ペイント {#paint}
 色とマテリアルプロパティを適用します。マテリアルについて詳しくは [Painting](painting.md) セクションを参照してください。
 
 Sub モードは `Erase` で、ペイントを削除します。
 
-#### Paint 設定
+#### ペイント設定 {#paint-settings}
 * `Layer fitering` - Photoshop や Procreate のレイヤーアルファロックのように機能します。レイヤー上でペイントしている場合、これを有効にすると、すでにペイントされている部分のみ変更でき、未ペイント部分は保護されます。
 
 ![](/videos/tool_paint.mp4)
 
-### ![](/icons/tool_smudge.webp) Smudge
+### ![](/icons/tool_smudge.webp) ぼかし {#smudge}
 色とマテリアルプロパティをにじませます。Smudge 設定メニューには `Quality` スライダーがあり、値が低いほどストロークは高速になります。
 
 ![](/videos/tool_smudge.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Flatten
+### ![](/icons/tool_flatten.webp) フラット {#flatten}
 ポイントを平均平面に投影して領域をフラットにします。
 
 Sub モードは `Fill` で、最も高いポイントを基準に平面を定義し、ポイントを持ち上げる方向に引き寄せます。
 
-#### Flatten 設定
+#### フラット設定 {#flatten-settings}
 
 * `Lock plane direction` - 最初のクリックで計算された平面方向を使用します。デフォルトでは無効です。
 * `Lock plane origin`- 最初のクリック位置を平面の中心として使用します。デフォルトでは無効です。
@@ -292,7 +292,7 @@ Sub モードは `Fill` で、最も高いポイントを基準に平面を定�
 ![](/videos/tool_flatten.mp4)
 
 
-### ![](/icons/tool_planar.webp) Planar
+### ![](/icons/tool_planar.webp) プレーナー {#planar}
 ポイントを平均平面に投影して平面化しますが、Flatten ブラシよりも蓄積が少なくなります。これにより、よりクリーンなハードエッジ面が作られます。素早いストロークは表面を押し引きし、すでに平面な領域からゆっくり外側に向かってストロークすると、平面を維持しやすくなります。
 
 Sub モードは `Fill` で、最も高いポイントを基準に平面を定義し、ポイントを持ち上げる方向に引き寄せます。
@@ -301,19 +301,19 @@ Planar は実際には `Flatten` と同じツールですが、`Lock plane direc
 
 ![](/videos/tool_planar.mp4)
 
-### ![](/icons/tool_crease.webp) Crease
+### ![](/icons/tool_crease.webp) クリース {#crease}
 Crease ツールは小さな切れ込みや溝を彫るのに便利です。
 
 Sub モードは `Invert` で、溝ではなく盛り上がった線を作ります。
 
-#### Crease 設定
+#### クリース設定 {#crease-settings}
 
 * `Pinch factor` - 頂点をブラシ中心に向かって横方向にどれだけ引き寄せるかを決めます。Pinch が 1、Offset が 0 の場合、表面の高さは変わらず、エッジだけがストロークに向かって引き寄せられます。
 * `Offset factor` - 頂点を奥行き方向にどれだけ押し引きするかを決めます。Pinch が 0、Offset が 1 の場合、深い溝や盛り上がりができますが、溝の側面や底を定義するジオメトリが十分に引き寄せられないため、ギザギザに見えることがあります。
 
 ![](/videos/tool_crease.mp4)
 
-### ![](/icons/tool_pinch.webp) Pinch
+### ![](/icons/tool_pinch.webp) ピンチ {#pinch}
 エッジをシャープにするのに使えるツールです。
 
 Sub モードは `Invert` で、頂点を互いから遠ざけます。
@@ -321,7 +321,7 @@ Sub モードは `Invert` で、頂点を互いから遠ざけます。
 ![](/videos/tool_pinch.mp4)
 
 
-### ![](/icons/tool_trim.webp) Trim
+### ![](/icons/tool_trim.webp) トリム {#trim}
 Trim ツールはメッシュの一部を切り取るツールで、残された穴をどのように処理するかのオプションを提供します。切り取り範囲は [選択コントロール](#selection-controls) で定義します。
 
 ::: tip
@@ -330,7 +330,7 @@ Trim ツールはメッシュの一部を切り取るツールで、残された
 オルソビューでは、メッシュを切る平面はビューに平行になり、一般的に期待される結果になります。パースビューで行うと、手前側と奥側で切り口の見え方が変わります。
 :::
 
-#### Trim 設定
+#### トリム設定 {#trim-settings}
 
 * `Stroke painting` - Paint メニューでペイントが有効な場合、塞がれた領域は現在選択中の色で塗られます。
 * `Boolean` - Trim の穴を四角ポリゴンで埋めます。埋められた領域はフラットになります。
@@ -346,10 +346,10 @@ Trim ツールはメッシュの一部を切り取るツールで、残された
 
 ![](/videos/tool_trim.mp4)
 
-### ![](/icons/tool_split.webp) Split
+### ![](/icons/tool_split.webp) スプリット {#split}
 [Trim](#trim) ツールと似ていますが、Trim が選択部分を破棄するのに対し、Split は選択部分を新しいオブジェクトとして保持します。
 
-#### Split 設定
+#### スプリット設定 {#split-settings}
 
 * `Stroke painting` - Paint メニューでペイントが有効な場合、塞がれた領域は現在選択中の色で塗られます。
 * `Boolean` - Split の穴を四角ポリゴンで埋めます。埋められた領域はフラットになります。
@@ -366,7 +366,7 @@ Trim ツールはメッシュの一部を切り取るツールで、残された
 ![](/videos/tool_split.mp4)
 
 
-### ![](/icons/tool_project.webp) Project
+### ![](/icons/tool_project.webp) プロジェクト {#project}
 Project ツールは見た目は [Trim](#trim) ツールに似ていますが、ジオメトリを削除したり作成したりはせず、頂点を選択形状に沿うように移動させるだけです。
 
 ![](/videos/tool_project.mp4)
@@ -375,7 +375,7 @@ Project ツールは見た目は [Trim](#trim) ツールに似ていますが、
 レイヤー上で Project を使用すると、レイヤースライダーで元の形状と投影後の形状をブレンドできます。
 :::
 
-### ![](/icons/tool_layer.webp) Layer
+### ![](/icons/tool_layer.webp) レイヤー {#layer}
 表面を持ち上げますが、高さに上限を設けます。
 
 ペンを離さずに同じ場所を何度もなぞっても、Layer は一定の高さまでしか盛り上がらず、それ以上は増えません。他のツールはストロークを重ねるほど高さが蓄積していきます。
@@ -388,7 +388,7 @@ Project ツールは見た目は [Trim](#trim) ツールに似ていますが、
 
 `Sub` は最小深度を使用し、溝を作ります。
 
-#### Layer 設定
+#### レイヤー設定 {#layer-settings}
 
 * `Use layer data` - 有効時、かつレイヤーが選択されている場合、最大高さをレイヤーデータから取得します。
 * `Inflate`- 有効時、Layer の作用方向を調整し、より滑らかな結果を得ます。
@@ -397,10 +397,10 @@ Project ツールは見た目は [Trim](#trim) ツールに似ていますが、
 ![](/videos/tool_layer.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Inflate
+### ![](/icons/tool_flatten.webp) インフレート {#inflate}
 頂点をそれぞれの法線方向に移動させます。`Sub` は法線の反対方向に移動させます。
 
-#### Inflate 設定
+#### インフレート設定 {#inflate-setings}
 * `Relax (Normal)` - 法線に適用されるスムージング量です。
 
 ![](/videos/tool_inflate.mp4)
@@ -408,13 +408,13 @@ Project ツールは見た目は [Trim](#trim) ツールに似ていますが、
 
 
 
-### ![](/icons/tool_nudge.webp) Nudge
+### ![](/icons/tool_nudge.webp) ナッジ {#nudge}
 ストローク方向にポイントを移動（「にじませる」）させます。
 
 ![](/videos/tool_nudge.mp4)
 
 
-### ![](/icons/tool_stamp.webp) Stamp
+### ![](/icons/tool_stamp.webp) スタンプ {#stamp}
 
 クリック＆ドラッグで、選択中の Alpha の形状に沿って造形を盛り上げます。
 
@@ -435,13 +435,13 @@ Stamp は通常、高解像度ジオメトリで最も効果的です。オン�
 ![](/videos/tool_stamp.mp4)
 
 
-### ![](/icons/tool_clearLayer.webp) Delete Layer
+### ![](/icons/tool_clearLayer.webp) レイヤー削除 {#delete-layer}
 このツールはレイヤーをローカルにリセットできます。アクティブなレイヤーがない場合は何も起こりません。
 
 ![](/videos/tool_delete_layer.mp4)
 
 
-### ![](/icons/tool_tube.webp) Tube
+### ![](/icons/tool_tube.webp) チューブ {#tube}
 カーブを描いてチューブを作成します。 
 ![](/images/tool_tube_new.webp)
 
@@ -449,7 +449,7 @@ Stamp は通常、高解像度ジオメトリで最も効果的です。オン�
 
 ![](/videos/tool_tube.mp4)
 
-#### Tube 左ツールバー
+#### チューブ左ツールバー {#tube-left-toolbar}
 
 ![](/images/tool_tube_left_toolbar.webp)
 
@@ -468,7 +468,7 @@ Stamp は通常、高解像度ジオメトリで最も効果的です。オン�
     * `Closed` - チューブをループ状にします。
     * `Screen` - 有効時、パスは画面に「固定」され、ビューやオブジェクトを動かしてもパスはその場に留まります。無効時、パスは 3D シーンの一部となり、カメラやオブジェクトと一緒に動きます。
 
-##### Tube 上部ツールバー
+##### チューブ上部ツールバー {#tube-top-toolbar}
 ![](/images/tool_tube_toolbar.webp)
 チューブが選択されているとき、ビューポート上部に追加コントロールを持つツールバーが表示されます。ツールバーのタイトルをクリックすると展開／折りたたみができ、右上の矢印をクリックするとツールバーをビューポートの上部／下部に移動できます。
 
@@ -489,7 +489,7 @@ Stamp は通常、高解像度ジオメトリで最も効果的です。オン�
 * `Constant density` - 有効時、ポリゴンを正方形に保ちます。無効時、チューブ長手方向の `Y divisions` を設定できます。
 * `...` - Tube 設定メニューです。
 
-#### カーブポイント削除トグル
+#### カーブポイント削除トグル {#curve-point-delete-toggle}
 
 ![](/images/tool_tube_delete_toggle.webp)
 
@@ -497,7 +497,7 @@ Stamp は通常、高解像度ジオメトリで最も効果的です。オン�
 
 
 
-#### Tube 設定
+#### チューブ設定 {#tube-settings}
 * `Primitive` - UV の有効／無効や、チューブのバリデートを行うボタンです。
 * `Post subdivision` - バリデート前にマルチレゾリューションレベルを設定するショートカットです。
 * `Linear subdivision` - バリデート前にリニアサブディビジョンレベルを設定するショートカットです。 
@@ -510,14 +510,14 @@ Division を 4、Post subdivision を 3 にすると、先端が滑らかな丸�
 :::
 
 
-### ![](/icons/tool_lathe.webp) Lathe
+### ![](/icons/tool_lathe.webp) 旋盤 {#lathe}
 カーブを描いて回転体サーフェスを作成します。
 
 このツールは花瓶やワイングラスのような形状に最適です。
 
 ![](/videos/tool_lathe.mp4)
 
-#### Lathe 左ツールバー
+#### 旋盤左ツールバー {#lathe-left-toolbar}
 
 ![](/images/tool_lathe_left_toolbar.webp)
 
@@ -535,7 +535,7 @@ Division を 4、Post subdivision を 3 にすると、先端が滑らかな丸�
     * `Closed` - チューブをループ状にします。
     * `Screen` - 有効時、パスは画面に「固定」され、ビューやオブジェクトを動かしてもパスはその場に留まります。無効時、パスは 3D シーンの一部となり、カメラやオブジェクトと一緒に動きます。
 
-#### Lathe 上部ツールバー
+#### 旋盤上部ツールバー {#lathe-top-toolbar}
 ![](/images/tool_lathe_top_toolbar.webp)
 
 Lathe が選択されているとき、ビューポート上部に追加コントロールを持つツールバーが表示されます。ツールバーのタイトルをクリックすると展開／折りたたみができ、右上の矢印をクリックするとツールバーをビューポートの上部／下部に移動できます。
@@ -554,7 +554,7 @@ Lathe が選択されているとき、ビューポート上部に追加コン�
 * `Constant density` - 有効時、ポリゴンを正方形に保ちます。無効時、チューブ長手方向の `Y divisions` を設定できます。
 * `...` - Lathe 設定メニューです。
 
-#### Lathe 設定
+#### 旋盤設定 {#lathe-settings}
 * `Primitive` - UV の有効／無効や、Lathe のバリデートを行うボタンです。
 * `Post subdivision` - バリデート前にマルチレゾリューションレベルを設定するショートカットです。
 * `Linear subdivision` - バリデート前にリニアサブディビジョンレベルを設定するショートカットです。 
@@ -562,7 +562,7 @@ Lathe が選択されているとき、ビューポート上部に追加コン�
 * `Division Y` - ツールバーの Y Divisions と同じです。
 * `Curve (Repeater)` - カーブプロファイルを [Curve Repeater](scene.md#curve) に変換します。
 
-### ![](/icons/tool_insert.webp) Insert
+### ![](/icons/tool_insert.webp) インサート {#insert}
 あるオブジェクトの表面上に別のオブジェクトを配置します。使い方は Stamp ツールに似ていますが、フル 3D 形状を扱います。
 
 左ツールバーからプリミティブを選択した状態で、任意のサーフェス上をクリック＆ドラッグすると、その位置にプリミティブが配置され、ドラッグ量でサイズが決まります。ドラッグを終えると、Insert は [Transform](#transform) モードに切り替わります。
@@ -575,7 +575,7 @@ Instance モードでは、ドラッグで新しいインスタンスをサー�
 
 ![](/videos/tool_insert.mp4)
 
-### ![](/icons/tool_transform.webp) Transform
+### ![](/icons/tool_transform.webp) トランスフォーム {#transform}
 1 本指／2 本指で、主に他オブジェクトの表面上でモデルを移動／回転／スケールします。
 
 ツールは左ツールバーで制御し、5 つのボタンがあります:
@@ -609,7 +609,7 @@ Transform は 2 本指を使うことで、これら 3 モードのうち 2 つ�
 
 ![](/videos/tool_transform.mp4)
 
-### ![](/icons/tool_gizmo.webp) Gizmo
+### ![](/icons/tool_gizmo.webp) ギズモ {#gizmo}
 オブジェクトの移動、回転、スケール、およびピボットの変更を行うツールです。
 
 ビューポートのハンドルには次の機能があります:
@@ -620,7 +620,7 @@ Transform は 2 本指を使うことで、これら 3 モードのうち 2 つ�
 
 ![](/images/tool_gizmo.webp)
 
-#### ノードと頂点 
+#### ノードと頂点 {#nodes-and-vertices}
 
 Nomad のすべてのオブジェクトはノードと頂点で構成されています:
 
@@ -629,7 +629,7 @@ Nomad のすべてのオブジェクトはノードと頂点で構成されて�
 
 8 頂点からなる単純なボックスがあるとします。このボックスは、変換行列を変更して移動することも、頂点位置を変更して移動することもできます。スカルプト時は通常頂点を変更し、Gizmo でオブジェクトを動かすときは通常ノードを変更します。Nomad では両方が可能です。 
 
-#### 左メニューツールバー
+#### 左メニューツールバー {#left-menu-toolbar}
 
 左ツールバーでは、Gizmo がノードと頂点のどちらに作用するかなどを制御します:
 
@@ -642,7 +642,7 @@ Nomad のすべてのオブジェクトはノードと頂点で構成されて�
 * `Snap translation` - 平行移動値を一定刻みにスナップさせます。スナップ値は有効時に表示され、編集できます。
 * `Pivot` - 有効時、オブジェクトを動かさずに Gizmo を移動・回転できます。追加メニューは後述します。
 
-#### Pivot
+#### ピボット {#pivot}
 Pivot モードが有効なとき、ピボットを素早く変更するためのメニューが表示されます:
 
 **Reset** 
@@ -657,11 +657,11 @@ Pivot モードが有効なとき、ピボットを素早く変更するため�
 * `First` - タップしたサーフェス位置にピボットを移動します（回転は変更しません）。
 * `Medial` - タップしたサーフェスの真下にあるオブジェクトの中間位置にピボットを移動します。
 
-#### Gizmo 設定
+#### ギズモ設定 {#gizmo-settings}
 
 ![](/images/tool_gizmo_settings.webp)
 
-##### Matrix 
+##### マトリックス {#matrix}
 * ![](/icons/target.webp) `Move origin` - オブジェクトのピボットがシーンの中心（原点）に来るようにオブジェクトを移動します。
 * ![](/icons/bake.webp)  `Bake` - 現在位置を固定し、平行移動・回転を 0、スケールを 1 にリセットします。
 * ![](/icons/bake.webp) -> ![](/icons/tool_gizmo.webp) `Bake Pivot` - Gizmo ハンドルのワールド位置に変換行列の値を合わせます。
@@ -713,7 +713,7 @@ Pivot モードを有効にし、ハンドルを片側に移動してから Pivo
 
 ![](/videos/tool_gizmo.mp4)
 
-### ![](/icons/tool_faceGroup.webp) Facegroup
+### ![](/icons/tool_faceGroup.webp) フェイスグループ {#facegroup}
 
 Facegroup を使うと、オブジェクトを色分けされた面のグループとして整理できます。Nomad では Facegroup を次のように活用できます:
 
@@ -724,7 +724,7 @@ Facegroup を使うと、オブジェクトを色分けされた面のグルー�
 * Quad Remesher のガイド
 * Smooth などのツールに追加のコントロールを与える
 
-#### Facegroup 左ツールバー
+#### フェイスグループ左ツールバー {#facegroup-left-toolbar}
 
 * `Patch ` - 利用可能な Facegroup をパッチとして表示します。未使用パッチは削除できます。パッチをタップすると名前や色を変更できます。プラスアイコンで新しいパッチを作成します。
 * `Dot` - オブジェクト上をペイントして Facegroup を定義します。`+ Face Group` 有効時は、ストロークごとに自動的に新しい Facegroup が作成され、領域を素早く定義するのに便利です。タップで選択領域を塗りつぶします。スライダーでドットの半径を設定します。
@@ -732,7 +732,7 @@ Facegroup を使うと、オブジェクトを色分けされた面のグルー�
 * `Shape selector` - ブラシではなくシェイプで Facegroup を作成します。`Lock+Radius`, `Lasso`, `Polygon`, `Rect`, `Ellipse` が利用できます。[Shape Selector](#shape-selector) を参照してください。
 * `Auto-pick` - 有効時、ストローク開始位置のパッチを自動的に選択し、そのストローク全体に適用します。Facegroup 領域の整理に非常に便利です。Facegroup がはみ出している場合、Auto-pick を有効にし、正しいパッチのある場所からストロークを開始して境界までドラッグすると、正しいパッチに再割り当てできます。
 
-### ![](/icons/tool_hide.webp) Hide
+### ![](/icons/tool_hide.webp) 非表示 {#hide}
 オブジェクトの一部を非表示または単独表示にします。 
 
 主なモードは左メニューから制御します:
@@ -750,10 +750,10 @@ Facegroup を使うと、オブジェクトを色分けされた面のグルー�
 * `Delete` - 非表示部分を削除します。
 * `Split` - 非表示部分を新しい形状として分割します。
 
-### ![](/icons/tool_measure.webp) Measure
+### ![](/icons/tool_measure.webp) 測定 {#measure}
 ドラッグして 2 点間の距離を計測します。
 
-### ![](/icons/tool_remesh.webp) Quad Remesher
+### ![](/icons/tool_remesh.webp) クアッドリメッシャー {#quad-remesher}
 
 ![](/images/tool_quadremesher.webp)
 
@@ -780,7 +780,7 @@ Quad Remesher は Android では利用できません。Android では Topology 
 * `Rect` - スカルプトの表面上に長方形を描画します。Quad Remesher はこれらをエッジフローのガイドとして使用します。パスをタップすると削除できます。
 * `Ellipse` - スカルプトの表面上に楕円を描画します。Quad Remesher はこれらをエッジフローのガイドとして使用します。パスをタップすると削除できます。
 
-#### Quad remesher top toolbar
+#### クアッドリメッシャー上部ツールバー {#quad-remesher-top-toolbar}
 ![](/images/tool_quadremesher_toolbar.webp)
 
 ビューポート上部に、追加のコントロールを備えたツールバーが表示されます:
@@ -801,7 +801,7 @@ Quad Remesher は Android では利用できません。Android では Topology 
 * `Symmetry` - 対称な結果を有効にするかどうかを切り替えます。対称性は常にワールドの X 軸を中心に計算されるため、対称な結果を期待する場合はモデルが原点にあることを確認してください。
 * `...` - Quad Remesher の設定メニュー。
 
-#### Quad remesher settings menu
+#### クアッドリメッシャー設定メニュー {#quad-remesher-settings-menu}
 
 これらの設定のほとんどは上部ツールバーからも利用できます。
 
@@ -827,14 +827,14 @@ Quad Remesher のオプションでは、すでにメッシュをリラックス
 
 :::
 
-### ![](/icons/tool_select.webp) Select
+### ![](/icons/tool_select.webp) 選択 {#select}
 シェイプモードを使用してシーン内のオブジェクトを選択します。`Unselect` は選択からオブジェクトを除外します。
 
-### ![](/icons/tool_view.webp) View
+### ![](/icons/tool_view.webp) ビュー {#view}
 この「ツール」は特に何もしません。これは単に、シーンを変更せずにモデルを閲覧するための手段です。
 
 
-## Toolbox context menu
+## ツールボックスコンテキストメニュー {#toolbox-context-menu}
 
 ![](/images/tools_context_menu.webp)
 

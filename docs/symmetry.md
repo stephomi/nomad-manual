@@ -1,10 +1,10 @@
-# ![](/icons/symmetry.webp) Symmetry
+# ![](/icons/symmetry.webp) Symmetry {#symmetry}
 
 This menu controls how strokes will be repeated acroos a mirror plane or radially, and ways to restore symmetry on non-symmetrical objects.
 
 ![](/images/symmetry_overview.webp) 
 
-## Overview 
+## Overview {#overview}
 You can use symmetry in several ways:
 
 * As a mirror, flipping work across X (left/right), Y (top/bottom), Z(back/front), or a combination. 
@@ -23,10 +23,10 @@ The only exceptions are the transform tools ([Move](#translate), [Rotate](#rotat
 The symmetry menu is mainly for controlling stroke symmetry. You can also mirror and repeat objects via [repeaters found in the scene menu](scene#repeaters). 
 :::
 
-## Enabled
+## Enabled {#enabled}
 Toggle the mirror mode, this is the same as the `Sym` button in the left quick panel. 
 
-## Planes
+## Planes {#planes}
 
 Enable plane(s) of symmetry, and number of repeats for radial symmetry. Note that you don't have to just chose a single plane, you can have all 1, 2 or 3 planes enabled for complex symmetry.
 
@@ -34,10 +34,10 @@ The axis and repeat count for radial symmetry. Note that these also aren't restr
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Method
+## Method {#method}
 The mirror can either be 'Local', and move with the object, or be 'World', and not move. If you're not sure which mode you need, observe the mirror plane and radial indicators that are overlaid on the object. When in local mode, if you use the transform gizmo and move the model, the mirror indicators will move as well. When in world mode, the mirror indicators will stay fixed, and the object will slide through them.
 
-## Mirroring
+## Mirroring {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
 When sculpting near the symmetry planes, some brushes will have imperfect symmetry behavior. This section allows you to restore symmetry by copying one side of your sculpt to the other. 
@@ -53,11 +53,11 @@ When sculpting near the symmetry planes, some brushes will have imperfect symmet
 
 `Split & Mirror` will essentially cut the object along the mirror, copy one side, mirror it to the other, and weld vertices along the mirror. It is a more destructive option, and will delete multiresolution, but sometimes this method is required if the model is very different across the mirror.
 
-### Flip object
+### Flip object {#flip-object}
 ![](/images/symmetry_flip.webp)
 Make the left side to the right side, and vice versa. Similar in appearance to if you used the gizmo tool menu and set the scale to -1 on X.
 
-## Reset and Edit
+## Reset and Edit {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
@@ -72,10 +72,8 @@ So if it doesn't work as you would expect, make sure to check if you are in the 
 The `Gizmo (Edit)` button is intentionally grayed out as a reminder that you probably shouldn't use this!
 :::
 
-## Show options
+## Show options {#show-options}
 ![](/images/symmetry_show.webp)
 
 
 `Show line` and `Show plane` will toggle a viewport overlay of the symmetry locations. Note that turning off these options will only take effect when the symmetry menu is closed.
-
-

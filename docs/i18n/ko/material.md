@@ -1,4 +1,4 @@
-# ![](/icons/material.webp) 머티리얼(Material)
+# ![](/icons/material.webp) 머티리얼 {#material}
 
 이 메뉴에서는 현재 오브젝트의 머티리얼을 변경하고, 오브젝트/머티리얼의 렌더 속성을 조정하며, 머티리얼에 텍스처를 할당할 수 있습니다.
 
@@ -24,16 +24,16 @@ Material type, reflectance, emissive/unlit은 아래에서 설명하는 머티�
 
 Nomad의 렌더러는 실시간 렌더러입니다. 강력하지만, 특정 효과에 대해서는 정확도보다 속도를 우선합니다. 
 
-## Material types
+## 머티리얼 종류 {#material-types}
 
 ![](/images/material_types.webp)
 
 Nomad의 머티리얼 타입은 Opaque, Subsurface, Blending, Additive, Refraction, Dithering, Shadow Catcher입니다.
 
-### ![](/icons/material_opaque.webp) Opaque
+### ![](/icons/material_opaque.webp) 불투명 {#opaque}
 기본 모드로, 표면을 단순한 머티리얼로 취급하며, 색상, 러프니스, 메탈니스, 불투명도(Opacity) 페인팅을 지원합니다.
 
-### ![](/icons/material_subsurface.webp) Subsurface
+### ![](/icons/material_subsurface.webp) 서브서피스 {#subsurface}
 피부, 왁스, 비취(jade)처럼 내부에서 빛이 퍼지고 산란되는 재질을 시뮬레이션할 수 있는 모드입니다.
 
 최상의 결과를 얻으려면 PBR 셰이딩 모드로 전환하고, 최소 하나의 디렉셔널 라이트 또는 스포트라이트를 사용하며, 가능하면 환경광은 어둡게 설정하세요.
@@ -42,7 +42,7 @@ Nomad의 머티리얼 타입은 Opaque, Subsurface, Blending, Additive, Refracti
 
 `Translucency`는 잎 뒷면을 통과하는 빛이나, 귀가 강하게 역광을 받을 때처럼, 전면에서 후면으로 빛이 얼마나 산란되는지를 제어합니다. 
 
-### ![](/icons/material_blending.webp) Blending
+### ![](/icons/material_blending.webp) 블렌딩 {#blending}
 
 Opaque와 비슷하지만, 머티리얼이 불투명과 투명 사이를 섞을 수 있도록 하는 opacity 슬라이더를 지원합니다. Opaque 머티리얼이 페인팅 가능한 opacity를 지원하는 것과 달리, 이 모드는 단일 슬라이더로 opacity를 제어합니다. 
 
@@ -50,7 +50,7 @@ Opaque와 비슷하지만, 머티리얼이 불투명과 투명 사이를 섞을 
 Blending 모드는 복잡하거나 서로 교차하는 형태에서 깜빡임(flickering)이나 튐(popping) 현상을 유발할 수 있습니다.
 :::
 
-### ![](/icons/material_additive.webp) Additive
+### ![](/icons/material_additive.webp) 가산 {#additive}
 이 머티리얼을 사용하면 메시를 반투명하게 만들 수 있습니다. Blending 머티리얼과 비슷하지만, Blending이 주변과 색을 섞는 반면, Additive는 항상 뒤에 있는 오브젝트보다 더 밝게 표현됩니다. 빛줄기, 불꽃, 폭발 같은 밝은 효과에 적합합니다.
 
 Opacity 값을 1보다 크게 설정할 수 있으며, 이 경우 오브젝트는 더 밝게 보입니다.  
@@ -58,7 +58,7 @@ Opacity 값을 1보다 크게 설정할 수 있으며, 이 경우 오브젝트�
 
 이 모드는 [Blending](#blending)보다 아티팩트가 적은 경향이 있습니다(순서에 독립적인 투명도).
 
-### ![](/icons/material_refraction.webp) Refraction
+### ![](/icons/material_refraction.webp) 굴절 {#refraction}
 이 모드는 유리(glass) 재질을 시뮬레이션하는 데 사용할 수 있습니다. 실시간 렌더링 제약으로 인해, 자기 굴절(self-refraction)과 다중 레이어 굴절은 다소 제한적입니다.
 
 모델에 페인팅된 러프니스는 굴절이 얼마나 흐릿하게 보이는지에 영향을 줍니다.  
@@ -72,10 +72,10 @@ Opacity 값을 1보다 크게 설정할 수 있으며, 이 경우 오브젝트�
 ![](/videos/refraction.mp4)
 
 
-### ![](/icons/material_dithering.webp) Dithering
+### ![](/icons/material_dithering.webp) 디더링 {#dithering}
 일부 픽셀을 무작위로 버리는 방식으로 오브젝트를 반투명하게 만듭니다.
 
-### ![](/icons/material_shadow_catcher.webp) Shadow Catcher
+### ![](/icons/material_shadow_catcher.webp) 그림자 수집기 {#shadow-catcher}
 
 오브젝트를 보이지 않게 만들고, 그림자만 받도록 합니다. Nomad 렌더를 다른 이미지와 합성할 때 유용합니다. 
 
@@ -85,49 +85,49 @@ Opacity 값을 1보다 크게 설정할 수 있으며, 이 경우 오브젝트�
 
 :::
 
-## Controls
+## 컨트롤 {#controls}
 
 ![](/images/material_controls.webp)
 
-### Always unlit
+### 항상 언릿 {#always-unlit}
 활성화하면 오브젝트는 PBR과 Matcap을 무시하고, 셰이딩 없이 페인팅된 색상만 표시합니다.  
 [Additive](#additive)를 사용하는 경우, 검은색으로 페인팅하여 직접 투명도를 표현할 수 있습니다.
 
-### Opacity
+### 불투명도 {#opacity}
 오브젝트가 얼마나 단단하거나 불투명하게 보일지를 제어합니다. 100%는 완전 불투명, 0%는 완전 투명입니다. 더 세밀한 제어를 위해 opacity를 페인팅할 수도 있습니다.
 
-### Reflectance
+### 반사율 {#reflectance}
 비금속 머티리얼이 받는 반사의 양을 제어합니다. 대부분의 경우 기본값을 사용하는 것이 좋으며(법선 방향에서 약 4%의 빛을 반사하는 표준값에 해당), 예를 들어 캐릭터의 눈에 반사와 하이라이트를 강조하고 싶을 때 값을 높일 수 있습니다.
 
-### Inverse culling
+### 역 컬링 {#inverse-culling}
 표면의 노멀 방향을 반전합니다. 일반적으로 필요하지 않지만, 모델이 안팎이 뒤집혀 보이거나, `Two sided`를 비활성화한 상태와 조합하여 카메라에 가장 가까운 벽이 항상 숨겨지는 실내 공간을 만들 때 사용할 수 있습니다.
 
-### Smooth Shading
+### 스무스 셰이딩 {#smooth-shading}
 [글로벌 옵션](settings.md#smooth-shading)을 참고하세요.  
 `Auto` 값은 글로벌 옵션을 사용합니다.
 
-### Two sided
+### 양면 {#two-sided}
 [글로벌 옵션](settings.md#two-sided)을 참고하세요.  
 `Auto` 값은 글로벌 옵션을 사용합니다.
 
-### Coloured backface
+### 색상 백페이스 {#coloured-backface}
 [글로벌 옵션](settings#two-sided)을 참고하세요.  
 `Auto` 값은 글로벌 옵션을 사용합니다.
 
-### Casts shadows
+### 그림자 생성 {#casts-shadows}
 현재 `Auto`는 `On`과 동일합니다.  
 투명 오브젝트도 그림자를 투사하며(블렌딩된 그림자를 흉내 내기 위해 디더링 패턴 사용),  
 예를 들어 큰 바닥처럼, 장면에 크지만 그림자를 투사할 필요가 없는 오브젝트가 있다면 그림자 투사를 비활성화하는 것이 좋습니다.
 
-### Recieve shadows
+### 그림자 수신 {#recieve-shadows}
 현재 `Auto`는 `On`과 동일합니다.
 
-### Wireframe
+### 와이어프레임 {#wireframe}
 [글로벌 옵션](settings.md#wireframe)을 참고하세요.  
 `Auto` 값은 글로벌 옵션을 사용합니다.
 
 
-## Textures
+## 텍스처 {#textures}
 
 ![](/images/material_textures.webp)
 
@@ -144,28 +144,28 @@ Opacity 값을 1보다 크게 설정할 수 있으며, 이 경우 오브젝트�
 
 텍스처 슬롯을 클릭하면 선택 창이 나타납니다. 머티리얼 슬롯에 텍스처를 할당한 후 다시 클릭하면 텍스처 패널이 열립니다:
 
-### Texture panel options
+### 텍스처 패널 옵션 {#texture-panel-options}
 
 ![](/images/material_texture_panel.webp)
 
-### Open
+### 열기 {#open}
 다른 텍스처를 선택합니다.
 
-### None
+### 없음 {#none}
 텍스처를 제거합니다.
 
-### Opacity
+### 불투명도 {#texture-opacity}
 
 이미지에 알파 채널이 있는 경우, 이를 Opacity에 사용할지 무시할지를 선택할 수 있습니다.
 
-### ![](/icons/link.webp) Chain/Link icon 
+### ![](/icons/link.webp) 체인/링크 아이콘 {#chainlink-icon}
 
 아래 섹션들에서 링크 아이콘을 활성화하면, 해당 옵션 설정이 링크 아이콘이 활성화된 다른 텍스처들(color, normal, roughness, metalness, opacity, emissive)과 공유됩니다. 
 
 이를 통해 정렬된 텍스처들을 사용할 때, 파라미터나 프로젝션 타입을 변경하더라도 서로 계속 정렬된 상태를 유지할 수 있습니다.
 
 
-### Projection
+### 프로젝션 {#projection}
 ![](/images/material_projection.webp)
 
 텍스처를 오브젝트에 어떻게 적용할지 설정합니다.
@@ -174,7 +174,7 @@ Opacity 값을 1보다 크게 설정할 수 있으며, 이 경우 오브젝트�
 * `UV` - 메시의 UV 좌표를 사용해 텍스처를 적용합니다. 메시와 텍스처가 Nomad 외부에서 왔거나, Nomad에서 내보내 다른 곳에서 사용할 예정이라면 UV가 올바른 선택입니다.
 * `Triplanar` - X, Y, Z 축 방향으로 텍스처를 투영하고, 이음새를 블렌딩합니다. 
 
-### Triplanar
+### 트라이플래너 {#triplanar}
 ![](/images/material_triplanar.webp)
 
 Triplanar 프로젝션은 텍스처를 오브젝트에 적용하는 강력하면서도 간단한 방법입니다.
@@ -186,45 +186,45 @@ Triplanar는 같은 이미지를 가진 6개의 프로젝터가 오브젝트의 
 
 ![](/images/material_triplanar_example.webp)
 
-#### Method
+#### 방식 {#method}
 
 * `Local` - 프로젝션이 오브젝트의 트랜스폼과 함께 이동합니다.
 * `World` - 프로젝션은 고정되고, 오브젝트를 움직이면 오브젝트가 프로젝션을 가로질러 미끄러지듯 이동합니다.
 
-#### Hardness
+#### 경도 {#hardness}
 
 프로젝션들이 어떻게 섞이는지를 제어합니다. 100%는 블렌딩을 하지 않아 프로젝션 경계가 날카롭게 보입니다. 0%는 넓은 각도에 걸쳐 경계를 블렌딩합니다. 기본값은 90%로, 경계를 숨기기에 충분한 블렌딩을 하면서 나머지 영역은 선명하게 유지합니다.
 
-### Uniform
+### 유니폼 {#uniform}
 
 체크하면 모든 프로젝션에 동일한 hardness가 사용됩니다. 체크를 해제하면 X, Y, Z 프로젝션 각각에 대한 추가 hardness 컨트롤이 표시됩니다.
 
 
-### Parameter
+### 파라미터 {#parameter}
 ![](/images/material_parameter.webp)
 
-#### Filtering
+#### 필터링 {#filtering}
 텍스처 필터링 방식을 설정합니다. 기본값은 `Auto`이며, 사용 가능한 방식은 `Nearest`, `Linear`, `Mipmap`입니다. Nearest는 필터링을 하지 않아, 가까이에서 볼 때 텍스처에 톱니 모양 아티팩트가 생길 수 있습니다. Linear와 Mipmap은 더 나은 필터링을 제공하여, 가까이에서 볼 때 텍스처가 톱니 모양 대신 블러 처리된 것처럼 보입니다.
 
-#### Tiling-X
+#### 타일링-X {#tiling-x}
 Scale 파라미터가 1보다 커서 텍스처가 오브젝트 UV보다 작아질 때, X축 방향으로 텍스처를 어떻게 타일링할지 설정합니다. `None`은 반복 없음, `Repeat`는 텍스처를 복제하여 반복, `Mirror`는 텍스처를 복제하되, 두 번째마다 좌우 반전하여 타일링 아티팩트를 줄이는 데 도움이 됩니다.
 
-#### Tiling-Y
+#### 타일링-Y {#tiling-y}
 Tiling-X와 동일하지만 Y축 방향에 적용됩니다.
 
-### Transform
+### 트랜스폼 {#transform}
 ![](/images/material_transform.webp)
 
 UV 공간에서 텍스처에 적용되는 추가 2D 변환입니다. 리셋 버튼은 기본값으로 되돌리고, (color 이외의 텍스처가 선택된 경우) 체인 아이콘은 color 텍스처와 동일한 Transform을 링크/언링크합니다.
 
-#### Translation
+#### 이동 {#translation}
 텍스처의 X, Y 오프셋입니다.
 
-#### Rotation
+#### 회전 {#rotation}
 텍스처의 회전입니다.
 
-#### Scale
+#### 스케일 {#scale}
 텍스처의 스케일입니다. 값이 클수록 오브젝트 위에서 텍스처가 더 작게 보입니다. Tiling-X와 Tiling-Y 슬라이더를 사용해 그때의 동작을 제어합니다.
 
-### Uniform scale
+### 균일 스케일 {#uniform-scale}
 비활성화하면 Nomad는 Scale-X와 Scale-Y에 대한 개별 컨트롤을 표시합니다.

@@ -1,4 +1,4 @@
-# ![](/icons/sun.webp) Gölgelendirme
+# ![](/icons/sun.webp) Gölgelendirme {#shading}
 
 Bu menü, Nomad tarafından kullanılan gölgelendirme kiplerini, ışık özelliklerini ve ortam ışığı/matcap özelliklerini kontrol eder.
 
@@ -22,24 +22,24 @@ Metaliklik ve pürüzlülük hakkında daha fazla bilgi edinmek istiyorsanız [V
 
 ![](/images/shading_second.webp)
 
-### Yüz Grubu
+### Yüz Grubu {#face-group}
 Yüz grubu renklerini bindirme olarak gösterir. Yüz grupları, [Face group](tools#facegroup) aracıyla oluşturulabilen ve çoğu primitif ile otomatik olarak yapılan, çokgenlerin renkli seçimleridir.
 
 Bazı araçlar, yüz grupları görünürken otomatik olarak yüz gruplarına göre filtre uygular.
 
-### Boyayı göster
+### Boyayı göster {#show-paint}
 Nomad, yontunuzun tepe noktalarında renk, pürüzlülük ve metalikliği saklayabilir. Bu özelliklerin görüntülenmesini bu onay kutusuyla küresel olarak açıp kapatabilirsiniz.
 
 Hem tepe noktası özellikleriniz hem de dokularınız varsa ve ikisi de etkinse, değerlerin birbiriyle çarpılacağını unutmayın.
 
-### Maskeyi göster
+### Maskeyi göster {#show-mask}
 [Maske araçlarının](tools#mask) gri tonlu maske bindirmesini açıp kapatır. Bu devre dışı bırakıldığında maske de devre dışı kalır; bu, maskesiz hızlı değişiklikler yapmak, ardından maskenizi kaybetmeden tekrar etkinleştirmek için kullanışlıdır.
 
-### Gizlemeyi kullan
+### Gizlemeyi kullan {#use-hide}
 
 Gizli yüzleri açıp kapatır. Bunun yalnızca gizleme aracında DEĞİLSENİZ çalıştığını unutmayın!
 
-### Dokuları kullan
+### Dokuları kullan {#use-textures}
 
 Nomad, [malzeme](material) menüsünden nesnelere dokular atanmasına izin verir. Dokular atanmışsa, bu onay kutusuyla küresel olarak açılıp kapatılabilirler.
 
@@ -49,7 +49,7 @@ Nomad, [malzeme](material) menüsünden nesnelere dokular atanmasına izin verir
 
 
 
-### PBR ve ışıklar genel bakış
+### PBR ve ışıklar genel bakış {#pbr}
 Bu kılavuz, Fiziksel Tabanlı İşleme ayrıntılarına girmeyecektir.
 
 Aklınızda tutmanız gereken önemli bir nokta, aydınlatma ve malzemenin tamamen ayrılmış olmasıdır.
@@ -68,7 +68,7 @@ Ancak performans iyi olmayabilir.
 Birçok ışığı, nesneleri aydınlatmasız/emissive yapıp ardından [post process](postprocess) menüsünde küresel aydınlatmayı etkinleştirerek taklit edebilirsiniz.
 :::
 
-### Işık türleri genel bakış
+### Işık tipleri genel bakış {#light-types-overview}
 
 Şu anda desteklenen ışık türleri şunlardır:
 
@@ -79,42 +79,42 @@ Birçok ışığı, nesneleri aydınlatmasız/emissive yapıp ardından [post pr
 | [Spot](#spot)               | Konik şekilli ışıklar				                 | Evet                                                     |
 | [Point](#point)             | Her yöne yayılan noktasal ışık                       | Evet, ancak yalnızca daha az sağlam ekran-uzayı gölgeleriyle |
 
-#### Yönlü
+#### Yönlü {#directional}
 Sonsuz uzaktan, tekdüze yoğunlukta ışık yayar.
 Sahnedeki 3B konumu önemli değildir, yalnızca yönelimi önemlidir.
 
 Bu ışığı kameraya bağlayabilirsiniz; böylece aydınlatma tutarlı olur.  
 Örneğin, modelinizin arkasından, kameraya doğru ışık yayan güçlü bir ışık (rim light) kullanarak, modelinizin arkasını her zaman aydınlatan bir ışık elde edebilirsiniz.
 
-#### Ortam ışığı
+#### Ortam ışığı {#env-light}
 [Ortam hdr](#environment) kullanmak genel yumuşak aydınlatma için iyi çalışır, ancak HDR’de görünen güçlü, keskin bir ışık varsa, bunun oluşturduğu gölge çok yumuşak olur, çoğu zaman hiç görünmez. Ortam HDR ile birlikte yönlü ışık kullanmak yardımcı olabilir, ancak bunları hizalamak zor olabilir.
 
 Bu ışık işi sizin yerinize yapar. Işık, HDR’nin en parlak kısmıyla hizalanacak şekilde otomatik olarak döndürülür, ardından yoğunluğunu ve açısını (gölge yumuşaklığı) ayrı ayrı kontrol edebilirsiniz. 
 
-#### Spot
+#### Spot {#spot}
 Spot ışık, tek bir yönde, koni şekliyle sınırlandırılmış ışık yayar.
 
-#### Noktasal
+#### Nokta {#point}
 Noktasal ışık her yöne ışık yayar.  
 Şu anda noktasal ışık gölge desteklemez.
 
-#### Gölgeler
+#### Gölgeler {#shadows}
 `normal bias` seçeneği, yaygın gölge yapıtlarını (acne/peter-panning) azaltmak için kullanılabilir.
 
 Gölge kalitesi, nesnelerin tüm sahneye göre boyutuna bağlıdır.  
 Sahnenizde gölge oluşturmasına gerek olmayan büyük bir nesne varsa (örneğin büyük bir düzlem), [malzeme ayarlarında](material.md#cast-shadows) gölge oluşturmayı devre dışı bıraktığınızdan emin olun.
 
-## Işıklar
+## Işıklar {#lights}
 
 ![](/images/shading_lights.webp)
 
-### ![](/icons/checked.webp) Işıklar onay kutusu
+### ![](/icons/checked.webp) Işıklar onay kutusu {#lights-checkbox}
 
 Sahnedeki tüm doğrudan ışıkları açıp kapatır.
 
 
 
-### Işık ekle
+### Işık ekle {#add-light}
 
 Sahneye en fazla 4’e kadar ışık ekler. Bir ışık eklendiğinde, ışık listesi düğmelerle birlikte görüntülenir ve görünüm penceresinin üstüne bir ışık araç çubuğu eklenir.
 
@@ -127,11 +127,11 @@ Sahneye en fazla 4’e kadar ışık ekler. Bir ışık eklendiğinde, ışık l
 * Kopya simgesi bir ışığı çoğaltır. 
 * 3 nokta simgesi tam bir ışık düzenleyici açar. Bu işlevlerin çoğu, görünüm penceresinde beliren araç çubuğundan da kullanılabilir. 
 
-### ![](/icons/spotlight.webp)  Simgeler
+### ![](/icons/spotlight.webp)  Simgeler {#icons}
 
 Görünüm penceresinde ışık simgelerinin görüntülenmesini açıp kapatır
 
-### Işık araç çubuğu
+### Işık araç çubuğu {#light-toolbar}
 ![](/images/shading_lights_toolbar.webp) 
 
 Bu araç çubuğu, bir ışık seçildiğinde görünüm penceresinin üst kısmında görünür.
@@ -144,7 +144,7 @@ Bu araç çubuğu, bir ışık seçildiğinde görünüm penceresinin üst kısm
 * Size, ışığın genişliğini ayarlar. Daha geniş ışıklar yumuşak gölgeler, yumuşak aydınlatma ve nesneler üzerinde daha yumuşak bir parlama oluşturur.
 * ... ek denetimleri açar.
 
-### Işık ek denetimleri
+### Işık ekstra kontrolleri {#light-extra-controls}
 
 ![](/images/shading_extra_controls.webp) 
 
@@ -166,7 +166,7 @@ Bazı seçeneklerin belirli ışık türlerine özgü olduğunu unutmayın.
 * `Tolerance` eğer gölge yapıtları görünürse (gölgeler yüzeylere temas etmiyor gibi görünüyorsa veya gölgelerin içinde gürültü ve desenler varsa), toleransı ayarlamak bu sorunları gidermeye yardımcı olabilir.
 
 
-## Ortam
+## Ortam {#environment}
 
 ![](/images/shading_environment.webp)
 
@@ -176,20 +176,20 @@ Nomad, iç ve dış mekânlar için, farklı ton ve parlaklık seviyelerine sahi
 
 Görüntüye dokunarak mevcut ortam haritalarını görebilirsiniz. Bu iletişim kutusundan kendi haritanızı yüklemek için ‘Import...’ seçin. En iyisi, latlong veya equirectangular formatında, .hdr veya .exr dosyaları olarak Yüksek Dinamik Aralıklı (HDR) görüntüler kullanmaktır. [www.polyhaven.com](https://polyhaven.com/hdris), kullanılabilecek iyi bir ücretsiz ortam haritası koleksiyonuna sahiptir; genellikle 1k hdr haritalar iyi boyut ve iyi kalitededir.
 
-### Pozlama
+### Pozlama {#env-exposure}
 Ortam haritasının parlaklığını ayarlar. Haritalar, normal ışıklarla birlikte kullanıldığında çoğu zaman fazla parlak olabilir; özellikle [Post Process](postprocess) ayarlarında Küresel Aydınlatma ile birlikte kullanıldığında, pozlamayı kısmak denge kurmaya yardımcı olabilir.
 
-### Döndürme
+### Döndürme {#env-rotation}
 
 Ortam haritaları tüm yönlerden gelen ışığı yakaladığından, yansımaların ve genel aydınlatmanın yontunuzla iyi birleşmesi için bunları döndürebilirsiniz.
 
-### Kameraya bağlı
+### Kameraya bağlı {#env-attached}
 Ortamı kameraya bağlar.
 
 Bu, aydınlatmayı tutarlı olmaya zorlar; bu da yontma sırasında kullanışlı olabilir.
 
 
-## ![](/icons/sphere_smooth.webp) Matcap
+## ![](/icons/sphere_smooth.webp) Matcap {#matcap}
 
 ![](/images/shading_matcap.webp)
 
@@ -201,7 +201,7 @@ Sanatçılar, şekle ve geometrinin kendisine odaklanmalarına izin verdiği iç
 
 Küreye dokunmak bir görüntü tarayıcısı açar. Kendi matcap’inizi de ekleyebilirsiniz; genel olarak, kareye sıkıca kırpılmış herhangi bir küre fotoğrafı, render’ı, hatta resmi kullanılabilir. Çevrimiçi birçok matcap kütüphanesi mevcuttur; yararlı bir kaynak [nidorx matcap kütüphanesidir](https://github.com/nidorx/matcaps).
 
-### Küresel Matcap kullan
+### Global Matcap kullan {#matcap-global}
 
 Genellikle sanatçılar tüm yontu için tek bir matcap kullanır, ancak bu anahtar devre dışı bırakılırsa, her nesnenin kendi matcap’i olabilir. Bu, çarpıcı sonuçlar elde etmek için sanatsal olarak kullanılabilir.
 
@@ -209,31 +209,31 @@ Genellikle sanatçılar tüm yontu için tek bir matcap kullanır, ancak bu anah
 Bu seçeneği devre dışı bırakın ve karakterlerinizin gözleri için bir göz küresi görüntüsü kullanın!
 :::
 
-### Döndürme
+### Döndürme {#matcap-rotation}
 Matcap, ortam haritasının özel bir biçimidir; bu nedenle ortam haritası gibi döndürülebilir. Bunu, görünüm penceresinde üç parmakla sola ve sağa sürükleyerek istediğiniz zaman yapabilirsiniz.
 
 
 
-## ![](/icons/circle_fill.webp) Aydınlatmasız
+## ![](/icons/circle_fill.webp) Işıksız {#unlit}
 
 Bu kip yalnızca yüzey rengini gösterir. Işıklar, gölgeler, yansıma, saydamlık tarafından dikkatiniz dağılmadan nesnelerinizin yüzey renginin beklediğiniz gibi olup olmadığını kontrol etmek için yararlı olabilir. 
 
 Bu kip, fotogerçekçi olmayan render’lar için de kullanılabilir ve düz, çizgi film tarzı bir görünüm elde edilebilir.
 
-## ![](/icons/cube.webp) Nesne Kimliği
+## ![](/icons/cube.webp) Nesne ID {#object-id}
 
 Tüm aydınlatma ve yüzey bilgisi yok sayılır ve her nesne benzersiz düz bir renkle gölgelenir. Bu, bir PBR render’ı ile birlikte oluşturulursa, bir boyama programında renge göre seçim yapmak ve böylece belirli nesneler üzerinde renk düzeltmeleri yapabilmek için kullanılabilir.
 
 Bu renklerin [Sahne menüsü ağaç görünümünde](scene#tree-view) de görüneceğini unutmayın.
 
-### Kimliği rastgeleleştir
+### Kimliği rastgele yap {#object-random}
 
 Yeni bir rastgele renk kümesi oluşturur. 
 
-## ![](/icons/link.webp) Örnek Kimliği
+## ![](/icons/link.webp) Örnek ID {#instance-id}
 
 Nesne Kimliği ile aynıdır, ancak örnekler aynı renge sahip olur. 
 
-### Kimliği rastgeleleştir
+### Kimliği rastgele yap {#instance-random}
 
 Yeni bir rastgele renk kümesi oluşturur.

@@ -1,9 +1,9 @@
-# ![](/icons/pencil.webp) Goresan    
+# ![](/icons/pencil.webp) Lorekan {#stroke}
 
 ---
 ![](/images/stroke_overview.webp) 
 
-## Gambaran keseluruhan 
+## Gambaran keseluruhan {#overview}
 
 Anda boleh menyesuaikan kelakuan goresan bagi kebanyakan berus alat.
 Tetapannya adalah serupa dengan yang terdapat dalam aplikasi lukisan 2D, namun beberapa pilihan adalah khusus untuk pengukiran dan 3D.
@@ -23,33 +23,33 @@ Tidak semua pilihan goresan terpakai untuk semua alat. Pilihan goresan yang tida
 :::
 
 
-## Stroke
+## Lorekan {#stroke-1}
 
-### Radius
+### Jejari {#radius}
 
 ![](/images/stroke_radius.webp)
 
-#### Share radius
+#### Kongsi jejari {#share-radius}
 
 Apabila diaktifkan, semua alat akan menggunakan radius yang sama, lalainya ialah setiap alat mempunyai radius sendiri.
 
-#### Size
+#### Saiz {#size}
 
 * Screen - radius ditetapkan dalam unit skrin. Jika anda menetapkan radius selebar 100 piksel, ia akan kekal 100 piksel tanpa mengira zum masuk atau keluar.
 * Constant (3d) - radius ditetapkan dalam unit 3D. Contohnya jika anda mencipta sfera dan menjadikan radius sama besar dengan sfera, radius akan kekal sama besar dengan sfera apabila anda zum masuk dan keluar.
 
 
-### Stroke
+### Lorekan {#stroke-type}
 
 ![](/images/stroke_strokemode.webp)
 
 Goresan boleh bertindak dalam beberapa mod:
 
-### ![](/icons/stroke_dot.webp) Dot
+### ![](/icons/stroke_dot.webp) Titik {#dot}
 Seret seperti goresan cat biasa. 
 ![](/videos/stroke_dot.mp4) 
 
-### ![](/icons/stroke_roll.webp) Roll
+### ![](/icons/stroke_roll.webp) Gulung {#roll}
 Alpha berus akan diputar untuk mengikut arah goresan, berguna untuk membuat jahitan fabrik. 
 ![](/videos/stroke_roll.mp4) 
 
@@ -57,7 +57,7 @@ Alpha berus akan diputar untuk mengikut arah goresan, berguna untuk membuat jahi
  Cap goresan berus dengan **_ketinggian_** tetap. Seretan akan menetapkan skala dan putaran.
 ![](/videos/stroke_lock_radius.mp4) 
 
-### ![](/icons/falloff.webp) Lock + intensity 
+### ![](/icons/falloff.webp) Kunci + keamatan {#lock-intensity}
 Cap goresan berus dengan **_radius_** tetap. Seretan akan menetapkan ketinggian dan putaran.
 ![](/videos/stroke_lock_intensity.mp4) 
 
@@ -65,44 +65,44 @@ Cap goresan berus dengan **_radius_** tetap. Seretan akan menetapkan ketinggian 
 
 Alat `Move` dan `Drag` mempunyai 3 pilihan tersendiri:
 
-### ![](/icons/snake.webp) Drag
+### ![](/icons/snake.webp) Seret {#drag}
 
 Akan terus mengemas kini apa yang berada di dalam radius berus semasa goresan. Goresan pantas akan meninggalkan permukaan di belakang, manakala goresan perlahan akan memegang bahan, menghasilkan bentuk yang lebih panjang. Ini ialah mod lalai untuk alat `Drag`. Dengan `Dynamic Topology` ini boleh digunakan untuk membuat ekstrusi seperti ular. 
 ![](/videos/stroke_drag.mp4) 
 
 
-### ![](/icons/grab.webp) Grab
+### ![](/icons/grab.webp) Cengkam {#grab}
 Akan memilih apa yang berada di dalam radius berus apabila berus dimulakan, dan mengekalkan pemilihan itu. Ini berguna untuk operasi alih yang lebih tepat, kerana anda boleh melaraskan jarak alihan dengan teliti dan tidak secara tidak sengaja menggerakkan lebih daripada yang anda pilih pada asalnya. Ini ialah mod lalai untuk alat `Move`.
 ![](/videos/stroke_grab.mp4) 
 
 
-### ![](/icons/radius.webp) Lock + radius (drag) 
+### ![](/icons/radius.webp) Kunci + jejari (seret) {#lock-radius-drag}
 Radius pengguna diabaikan, dan ditetapkan secara dinamik berdasarkan sejauh mana goresan diseret dari titik permulaan. Jarak kecil = radius kecil, jarak lebih besar = radius lebih besar. Gunakan peluncur intensiti untuk mengawal bentuk falloff. Berguna untuk menyekat bentuk organik seperti getah.
 ![](/videos/stroke_lockradius_drag.mp4) 
 
 
 
-### Adjust spacing intensity
+### Laras keamatan sela {#adjust-spacing-intensity}
 ![](/images/stroke_space_smooth.webp)
 
 Goresan dengan jarak rendah (kurang daripada 50%) boleh terkumpul dengan cepat, menjadikan goresan lebih kuat berbanding nilai jarak yang lebih tinggi. Togol ini akan mengimbangi perkara ini, supaya goresan adalah kira-kira intensiti yang sama tanpa mengira jarak.
 
-### Stroke spacing
+### Jarak lorekan {#stroke-spacing}
 Sejauh mana jarak antara setiap cap berus digunakan semasa operasi seretan. Nilai kurang daripada 100% akan bertindih, memberikan rupa goresan berterusan. Nilai lebih besar daripada 100% akan mula meninggalkan jarak, berguna untuk mengukir perincian seperti jahitan atau zip.
 
-### Lazy rope stabilizer
+### Penstabil tali longgar {#lazy-rope-stabilizer}
 Goresan akan tertinggal di belakang kedudukan penuding dengan jarak tertentu. Ini boleh digunakan untuk melukis garisan licin.
 ![](/videos/stroke_lazy_rope.mp4) 
 
-### Stroke smoothing
+### Pengelusuran lorekan {#stroke-smoothing}
 Puratakan berbilang kedudukan penuding untuk mendapatkan goresan yang lebih licin.
 Dengan nilai tinggi, goresan akan tertinggal di belakang penuding tetapi akhirnya akan mengejar.
 Ini berguna untuk melukis garisan licin.
 
-### Snap radius
+### Jejari kancing {#snap-radius}
 Petik permulaan goresan ke hujung goresan sebelumnya. Radius menentukan sejauh mana untuk mencari hujung goresan sebelumnya. Ini boleh berguna apabila melukis garisan panjang berterusan, sambil kerap berhenti seketika.
 
-### ![](/icons/silhouette.webp) Silhouette
+### ![](/icons/silhouette.webp) Siluet {#silhouette}
 ![](/images/stroke_silhouette.webp)
 Secara lalai goresan hanya akan menjejaskan permukaan model dalam radius berus. Apabila siluet diaktifkan, goresan akan diproyeksikan menembusi keseluruhan model. Ini boleh sangat berguna semasa peringkat awal membentuk model, atau untuk bentuk yang memerlukan sisi kekal tegak lurus.
 
@@ -110,7 +110,7 @@ Arah unjuran boleh ditetapkan secara eksplisit, kaedah lalai 'Closest' akan meng
 
 ![](/videos/stroke_silhouette.mp4) 
 
-### ![](/icons/dice.webp)Randomize
+### ![](/icons/dice.webp) Rawak {#randomize}
 
 ![](/images/stroke_randomize.webp)
 
@@ -118,12 +118,12 @@ Intensiti, translasi, putaran dan skala goresan masing-masing boleh dijadikan ra
 
 ![](/videos/stroke_randomize.mp4) 
 
-### Stroke Offset
+### Ofset lorekan {#stroke-offset}
 
 Gunakan ofset malar pada goresan. Ini berguna untuk skrin kecil di mana jari anda akan menutupi goresan. 
 
 
-## ![](/icons/alpha.webp) Alpha
+## ![](/icons/alpha.webp) Alfa {#alpha}
 ![](/images/stroke_alpha.webp) 
 
 `Alpha` ialah tekstur yang akan memodulasi kelakuan berus anda.
@@ -137,7 +137,7 @@ Klik pada pratonton bahan untuk memuatkan alpha daripada pratetap bahan. Anda ju
 Tekstur tidak pernah diubah saiz, jadi tekstur besar boleh memperlahankan prestasi.
 :::
 
-### Invert pixels
+### Songsangkan piksel {#invert-pixels}
 Ini akan membalikkan nilai imej, jadi piksel hitam akan menjadi putih, dan piksel putih akan menjadi hitam.
 
 ::: tip
@@ -146,7 +146,7 @@ Alpha terbina dalam yang disertakan dengan Nomad tidak boleh diterbalikkan.
 
 :::
 
-### Scaling
+### Penskalaan {#scaling}
 
 Saiz berus dalam Nomad ialah bulatan dengan radius yang ditakrifkan pengguna. Tekstur selalunya segi empat sama atau segi empat tepat, parameter `Scaling` membolehkan anda memutuskan bagaimana tekstur harus muat dalam bulatan. Untuk tekstur segi empat sama, nilai 0.7 akan muat dalam bulatan. Nilai 1 akan menskalakan tekstur lebih besar supaya bulatan muat di dalam, memotong bahagian tepi.
 
@@ -156,11 +156,11 @@ Mengaktifkan `Scaling - Y` akan membolehkan anda meregangkan alpha secara menega
 
 ![](/images/alpha_scaling_y.webp) 
 
-### Rotation
+### Putaran {#rotation}
 
 Tekstur alpha akan diputar untuk mengikut arah goresan. Anda boleh menambah ofset putaran, dan jika ikon kunci diaktifkan, tekstur akan kekal terkunci pada putaran ini relatif kepada skrin.
 
-### Tiling
+### Pengjubinan {#tiling}
 ![](/images/stroke_tiling.webp) 
 
 Kekerapan tekstur diulang dalam profil berus. Mod tiling membolehkan anda mengehadkan kepada satu tekstur dalam goresan, atau tekstur berulang, atau cermin di mana setiap tekstur kedua diterbalikkan untuk mencipta corak atau membantu menjadikan tekstur lancar.
@@ -169,7 +169,7 @@ Kekerapan tekstur diulang dalam profil berus. Mod tiling membolehkan anda mengeh
 
 
 
-### Mid value
+### Nilai tengah {#mid-value}
 
 Secara lalai piksel hitam bermaksud tiada deformasi, dan piksel putih bermaksud deformasi positif penuh, jadi sebagai contoh, berus clay dengan tekstur alpha batu hanya akan menarik permukaan keluar di mana alpha tidak hitam.
 
@@ -178,7 +178,7 @@ Jika anda mahu berus menolak permukaan ke dalam, atau kedua-duanya menolak ke da
 
 
 
-## Falloff
+## Susutan {#falloff}
 
 ![](/images/falloff_menu.webp) 
 
@@ -188,10 +188,10 @@ Apabila lengkung berada di bahagian atas, ini ialah deformasi penuh, apabila ia 
 
 Anda boleh menganggap lengkung sebagai keratan rentas melalui hujung berus. Bahagian bawah memberikan pratonton rupa satu 'cap' berus pada permukaan model, dan jika terdapat tekstur alpha untuk berus, ini juga akan ditunjukkan untuk mempratonton bagaimana falloff dan alpha akan berinteraksi.
 
-### Preset
+### Pratetap {#preset}
 Dengan ini dipilih, mengklik pada graf lengkung akan memaparkan menu pratetap. Lengkung bulat akan memberikan hasil yang lebih lembut, lengkung bersudut akan memberikan hasil yang lebih tajam. Butang `Sub` dalam bar alat kiri akan secara berkesan membalikkan falloff, jadi bahagian atas lengkung akan menolak ke dalam permukaan dan bukannya menarik keluar, atau sebaliknya.
 
-### Catmull-Rom
+### Catmull-Rom {#catmull-rom}
 Apabila dipilih, pengguna boleh melukis lengkung falloff mereka sendiri. Penyunting lengkung berfungsi sama seperti lengkung di seluruh Nomad:
 
 * Klik pada lengkung untuk mencipta titik baharu
@@ -199,7 +199,7 @@ Apabila dipilih, pengguna boleh melukis lengkung falloff mereka sendiri. Penyunt
 * Klik pada titik untuk bertukar antara tajam dan licin
 * Seret titik ke titik jiran untuk menghapuskannya
 
-### B-spline
+### B-spline {#b-spline}
 Apabila dipilih, pengguna boleh melukis lengkung falloff mereka sendiri. Penyunting berfungsi sama seperti Catmull-Rom, tetapi titik lengkung mempengaruhi lengkung dan bukannya berada terus pada lengkung, yang boleh membantu dalam mencipta bentuk lengkung yang lebih licin.
 
 Penyunting lengkung mempunyai 3 butang:
@@ -211,37 +211,37 @@ Penyunting lengkung mempunyai 3 butang:
 | Symmetry | ![](/icons/symmetric.webp) | Paparkan lengkung sebagai 'hujung berus' simetri |
 
 
-### Influence
+### Pengaruh {#influence}
 
 * Sphere (3d) - Pengaruh dikira dengan mengambil jarak dari verteks ke pusat berus.
 * Circle (2d) - Verteks terlebih dahulu diproyeksikan pada satah kawasan, sebelum mengambil jaraknya ke pusat berus. Ini serupa dengan cara alpha disampel. 
 * Cylinder - Pengaruh diproyeksikan melalui kawasan sebagai silinder, digunakan oleh mod Silhouette di bawah.
 
-### Silhouette
+### Siluet {#silhouette-1}
 Secara lalai goresan hanya akan menjejaskan permukaan model dalam radius berus. Apabila siluet diaktifkan, goresan akan diproyeksikan menembusi keseluruhan model. Ini boleh sangat berguna semasa peringkat awal membentuk model, atau untuk bentuk yang memerlukan sisi kekal tegak lurus.
 
 
 
-## Filter
+## Penapis {#filter}
 
 ![](/images/filter_menu.webp) 
 
-### Accumulate stroke
+### Kumpul lorekan {#accumulate-stroke}
 Benarkan tiada had kepada berapa banyak bahan boleh ditambah/dibuang setiap goresan. Contohnya alat `Clay` mempunyai ini diaktifkan, jadi bahan boleh terus terkumpul, manakala alat `Brush` mempunyai ini dinyahdaya, jadi goresan akan berhenti menambah bahan jika anda terus menggerakkan goresan yang sama di kawasan mesh yang sama. 
 
-### Front-facing vertex only
+### Verteks menghadap hadapan sahaja {#front-facing-vertex-only}
 Pilihan ini akan mengabaikan verteks yang menghadap belakang.
 Ia boleh berguna jika anda mahu mengecat sebahagian geometri nipis tanpa menjejaskan bahagian lain.
 Ia juga berfungsi untuk pengukiran tetapi anda mungkin mengalami beberapa artifak.
 
-### Allow dynamic topology
+### Benarkan topologi dinamik {#allow-dynamic-topology}
 Pilihan ini hanya tersedia jika mesh anda berada dalam mod [Dynamic Topology](topology.md#dynamic-topology). Anda boleh menyahdaya atau mengaktifkan dynamic topology bagi setiap alat.
 
-### Connected topology
+### Topologi bersambung {#connected-topology}
 Aktifkan hanya pengukiran verteks yang dipautkan kepada permukaan yang anda sentuh dengan alat. Sebagai contoh apabila digunakan dengan alat `Move`, ini akan membolehkan anda menggerakkan satu bahagian walaupun ia bersilang dengan bahagian lain.
 ![](/videos/connected_topology.mp4)
 
-### Protect Area
+### Lindungi kawasan {#protect-area}
 ![](/images/filter_protect_area.webp) 
 
 Pilihan ini akan menghentikan alat daripada menjejaskan bahagian mesh anda di bawah pelbagai keadaan. 
@@ -254,7 +254,7 @@ Pilihan 'Auto' bermaksud jika anda mempunyai hide, atau mask, atau facegroup yan
 * `Facegroup` - Tetapkan sama ada anda hanya boleh menggunakan alat dalam facegroup pertama yang disentuh.
 
 
-### Keep sharp edges
+### Kekalkan tepi tajam {#keep-sharp-edges}
 Kecualikan titik yang normalnya terlalu berbeza daripada normal permukaan.
 
 Ia akan mengubah cara kawasan satah dikira (Area sampling).
@@ -263,7 +263,7 @@ Pilihan ini boleh berguna untuk alat berasaskan flatten, atau jika anda mahu mew
 
 ![](/videos/filter_keep_sharp_edges.mp4)
 
-### Area sampling
+### Persampelan kawasan {#area-sampling}
 Sesetengah berus atau pilihan goresan memerlukan normal satah dan kedudukan satah pada permukaan untuk berfungsi.
 
 Anda boleh mengawal cara mengira satah purata ini dengan menetapkan kawasan pensampelan sebagai nisbah radius alat.
@@ -273,7 +273,7 @@ Pada 100%, setiap titik di dalam bulatan pemilihan diambil kira.
 Pada 0%, hanya verteks atau segi tiga terdekat diambil kira. Nilai ini boleh dipautkan untuk kedua-dua `Normal radius` dan `Position radius`, atau dinyahkunci dan ditetapkan secara berasingan.
 
 
-### Depth masking
+### Pemaskaan kedalaman {#depth-masking}
 ![](/images/stroke_depthmask.webp)
 
 Kecualikan titik yang berada di atas atau di bawah jarak tertentu dari satah yang dikira (Area sampling).
@@ -282,24 +282,24 @@ Ini boleh digunakan untuk mengecat hanya pada kawasan berbonggol, atau hanya pad
 
 Graf mewakili keratan rentas permukaan; garisan mendatar ialah tempat permukaan berada, bulatan mewakili radius falloff cat relatif di atas dan di bawah permukaan. `Height offset` ialah peratusan di atas atau di bawah permukaan untuk memulakan pengiraan masking. `Top area` dan `Bottom area` membolehkan anda menskalakan falloff di atas dan di bawah titik ofset.
 
-#### Contoh: Cat dalam lekuk
+#### Contoh: Mewarna dalam lekuk {#example-paint-in-cavities}
 Untuk mengecat hanya kawasan lekuk, tetapkan height offset kepada -100%, dan laraskan peluncur top area supaya ia menjauhi garisan mendatar. Ini bermakna klik pertama menetapkan kedalaman 'sifar', dan kemudian hanya kawasan di bawah kedalaman ini akan terjejas.
 
 ![](/videos/stroke_depth_cavity.mp4)
 
-#### Contoh: Cat pada bonggol
+#### Contoh: Mewarna pada bonggol {#example-paint-on-bumps}
 Untuk mengecat hanya di kawasan tinggi, tetapkan height offset kepada +90%, supaya bahagian bawah bulatan bersilang dengan garisan mendatar sedikit sahaja. Apabila anda mengklik di bahagian atas zon 'tinggi', ini akan menetapkan kedalaman, supaya apa sahaja pada kedalaman itu, ditambah sedikit di bawahnya, dan apa sahaja yang lebih tinggi daripadanya, akan dicat. Lekuk dalam akan diabaikan.
 ![](/videos/stroke_depth_bump.mp4)
 
 
-## Pressure 
+## Tekanan {#pressure}
 ![](/images/pressure_menu.webp) 
 
 Kawal cara tekanan stylus/pen mempengaruhi berus.
 
 Secara lalai `Use global settings` diaktifkan, bermakna semua berus akan berkongsi nilai tekanan yang sama.
 
-### Pressure - Radius
+### Tekanan - Jejari {#pressure-radius}
 
 Lengkung ini mengawal bagaimana radius berus dipengaruhi oleh tekanan. Lalainya ialah hubungan linear, jadi jika stylus anda mempunyai tindak balas yang licin, maka perubahan radius juga sepatutnya terasa licin. Namun begitu, banyak stylus mempunyai tindak balas tidak linear, yang boleh anda imbangi dengan lengkung ini. Contohnya, jika radius tidak terasa seperti mencapai nilai maksimum pada tekanan tinggi, gunakan pratetap lengkung seperti 'out-pow3', dengan lengkung yang membengkok ke atas, untuk meningkatkan radius lebih awal.
 
@@ -307,10 +307,10 @@ Dialog ini serupa dengan paparan lengkung falloff, anda boleh menggunakan pratet
 
 Jika anda mahukan radius malar, nyahdayakan bahagian ini.
 
-### Pressure - Intensity
+### Tekanan - Keamatan {#pressure-intensity}
 
 Serupa dengan peluncur radius, tetapi untuk mengawal intensiti. Jika anda mahukan intensiti malar, nyahdayakan bahagian ini.
 
-### Pressure smoothing
+### Pengelusuran tekanan {#pressure-smoothing}
 
 Puratakan peristiwa tekanan stylus untuk hasil yang lebih licin.

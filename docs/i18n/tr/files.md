@@ -1,41 +1,41 @@
-# ![](/icons/open.webp) Dosyalar
+# ![](/icons/open.webp) Dosyalar {#files}
 
 Dosyalar menüsü, Nomad projelerini kaydetmenize ve yüklemenize, 3B modelleri içe ve dışa aktarmanıza ve oluşturulmuş görüntüleri dışa aktarmanıza olanak tanır.
 
 ![](/images/file_menu.webp)
 
-## Proje
+## Proje {#project}
 ![](/images/file_project.webp)
 
 Bu menünün üst kısmında son kaydın küçük bir önizlemesi gösterilir. Bu küçük resme tıklamak küçük bir tarayıcı açar, başka bir projeye iki kez dokunarak o projeyi açmak, eklemek, kaydetmek, klonlamak, yeniden adlandırmak, silmek için bir mini menü açabilirsiniz.
 
-### ![](/icons/nomad.webp) Hazır Ayar 
+### ![](/icons/nomad.webp) Ön ayar {#preset}
 Demo ve karakter bileşenlerinden oluşan bir koleksiyona erişin. Birini seçin, ardından tekrar seçerek Projeyi Aç, Sahneye Ekle veya girişin projeler klasörünüze Klonlanmasını seçin.
 
 ![](/images/file_preset_preview.webp)
 
-### ![](/icons/save.webp) Kaydet
+### ![](/icons/save.webp) Kaydet {#save}
 Nomad projesini kaydedin.
 
-### ![](/icons/save_as.webp) Farklı Kaydet...
+### ![](/icons/save_as.webp) Farklı kaydet... {#save-as}
 Nomad projesini yeni bir adla kaydetmenizi sağlayan proje tarayıcısını gösterir.
 
-### ![](/icons/pencil.webp) Yeniden Adlandır
+### ![](/icons/pencil.webp) Yeniden adlandır {#rename}
 Geçerli projeyi yeniden adlandırmak için bir metin kutusu gösterir.
 
-### ![](/icons/open.webp) Aç...
+### ![](/icons/open.webp) Aç... {#open}
 Bir projeyi açmak için proje tarayıcısını gösterir.
 
-### ![](/icons/add_file.webp) Sahneye ekle...
+### ![](/icons/add_file.webp) Sahneye ekle... {#add}
 Proje tarayıcısını gösterir, bir proje seçildiğinde içeriği mevcut sahneyle birleştirilir.
 
-### ![](/icons/trash.webp) Sil...
+### ![](/icons/trash.webp) Sil... {#delete}
 Proje tarayıcısını gösterir, seçilen projeler dosya sisteminden silinir.
 
-### ![](/icons/new_file.webp) Yeni
+### ![](/icons/new_file.webp) Yeni {#new}
 Yeni bir proje başlatır, kaydedilmemiş değişiklikler varsa kaydetmek isteyip istemediğiniz sorulur.
 
-### ![](/icons/autosave.webp) Otomatik Kaydet...
+### ![](/icons/autosave.webp) Otomatik kaydet... {#auto-save}
 Otomatik kaydetme seçeneklerini kontrol etmek için menü.
 
 Otomatik kaydetmeyi etkinleştirirseniz, düzenli aralıklarla bir açılır pencere görünecek şekilde bir zamanlayıcı ayarlayabilirsiniz.
@@ -44,19 +44,19 @@ Nomad'ın arka planda kaydetmemesinin nedeni, 3B dosyaların oldukça büyük ol
 Ek olarak, bellek yetersizliği sorunlarından kaçınmak için sahne genellikle kaydetme işleminden önce sıkıştırılır.
 Bu sıkıştırma/açma işlemi de kaydetme işlemini yavaşlatacaktır.
 
-### Zamanlayıcı açılır penceresi
+### Zamanlayıcı açılır penceresi {#timer-pop-up}
 Zamanlayıcı açılır penceresinin ne sıklıkla görüneceği.
 
-### Açılır pencere zaman aşımı
+### Açılır pencere zaman aşımı {#popup-timeout}
 Açılır pencere zaman aşımını etkinleştir.
 
-### Otomatik kaydı sil
+### Otomatik kaydetmeyi sil {#discard-autosave}
 Bir proje için otomatik kayıt dosyası varsa, orijinal proje yerine otomatik olarak o dosya yüklenir. Bu istenmiyorsa, bu düğme otomatik kaydı siler. Dosyayı yüklemek daha sonra projenin son manuel kaydını yükleyecektir.
 
 
-## İçe Aktar
+## İçe aktar {#import}
 
-### ![](/icons/add_file.webp) İçe Aktar
+### ![](/icons/add_file.webp) İçe aktar {#import-button}
 Nomad projesi olmayan 3B dosyaları içe aktarmak için.
 
 Harici bir sahne dosyasını Nomad'a aktardığınızda, onu *içe aktarabilir* veya *ekleyebilirsiniz*.
@@ -72,39 +72,39 @@ Nomad şu biçimleri içe aktarabilir:
 - PLY (.ply)
 - FBX (.fbx, deneysel)
 
-### ![](/icons/cog.webp) Gelişmiş
+### ![](/icons/cog.webp) Gelişmiş {#advanced}
 Gelişmiş içe aktarma seçeneklerini göster:
 
-### Proje/ glTF / OBJ / STL / FBX
-#### Topolojiyi koru
+### Proje/ glTF / OBJ / STL / FBX {#project-gltf-obj-stl-fbx}
+#### Topolojiyi koru {#keep-topology}
 Nomad varsayılan olarak yükleme sırasında sorunlu geometrileri düzeltmeye çalışır. Bunu etkinleştirmek, Nomad'ın tepe/ yüz yeniden sıralamasını, tepe/ yüz kopyalarının kaldırılmasını, kullanılmayan tepelerin kaldırılmasını durdurur.
 
-#### Dokuları atla
+#### Dokuları atla {#skip-textures}
 glTF gibi destekleyen biçimler için dokuların yüklenmesini atla.
 
-### Proje / glTF
-#### Arayüz ayarlarını koru
+### Proje / glTF {#project-gltf}
+#### Arayüz ayarlarını koru {#keep-gui-settings}
 Nomad .nom veya glTF dosyası içinde arayüz ve proje ayarlarının kaydedilmesini etkinleştir.
 
-### OBJ
-#### OBJ'yi gruplara göre böl
+### OBJ {#obj}
+#### OBJ’yi gruplara göre böl {#split-obj-by-groups}
 OBJ gruplarının ayrı nesnelere bölünmesini etkinleştir.
 
-#### Renk Uzayı
+#### Renk uzayı {#color-space}
 Obj'den yorumlanan renk modunu Linear, sRGB veya Auto olarak ayarla.
 
-### PLY
-#### Renk Uzayı
+### PLY {#ply}
+#### Renk uzayı {#color-space-ply}
 Ply'den yorumlanan renk modunu Linear, sRGB veya Auto olarak ayarla.
 
 
-### FBX
-#### Renk Uzayı
+### FBX {#fbx}
+#### Renk uzayı {#color-space-fbx}
 Obj'den yorumlanan renk modunu Linear, sRGB veya Auto olarak ayarla.
 
 
 
-## Dışa Aktar
+## Dışa aktar {#export}
 Diğer yazılımlarda kullanılabilecek bir 3B geometri biçimine kaydedin. 
 
 ![](/images/file_export.webp)
@@ -127,13 +127,13 @@ Farklı dosya biçimleri farklı özellikleri destekler, mevcut seçenekler seç
 | Primitives, Postprocess, etc    | ✅     | Nomad ✅<br>Other ❌ | ❌   | ❌ | ❌    | ❌    | ❌                     |
 
 
-### Tümü/Görünür/Seçili
+### Tümü/Görünür/Seçili {#allvisibleselected}
 Etkin düğme durumu hangi nesnelerin dışa aktarılacağını belirler. Simgelerin yanındaki sayı, o seçenek için kaç nesnenin dışa aktarılacağını gösterir.
 
-### Vertex renkleri
+### Tepe noktası renkleri {#vertex-colors}
 Dosya biçimi destekliyorsa vertex renklerini dışa aktar.
 
-### PBR Boyama
+### PBR Boyama {#pbr-paint}
 PBR vertex renkleri ikincil vertex renk öznitelikleri olarak dışa aktarılır.
 Kanallar şu şekilde paketlenir:
 
@@ -144,26 +144,26 @@ Kanallar şu şekilde paketlenir:
 | Maskeleme | B       |
 
 
-### Katmanlar
+### Katmanlar {#layers}
 Katmanlar glTF morph hedefleri aracılığıyla desteklenir.
 Nomad ayrıca katman başına renk, pürüzlülük ve metalik değerleri de dışa aktarır, ancak bu diğer yazılımlar tarafından yok sayılacaktır.
 
-### Katman boyama
+### Katman boyama {#layer-painting}
 Katman boyamasını dışa aktar, genellikle diğer yazılımlar tarafından yok sayılır.
 
-### Yüz Grubu
+### Yüz grubu {#face-group}
 Yüz gruplarını dışa aktar, dışa aktarma bazen diğer yazılımlarla çakışabilir.
 
-### Normaller
+### Normaller {#normals}
 Normal bilgilerini dışa aktar. Nomad'ın diğer dosya biçimlerini içe aktarırken her zaman kendi normallerini hesaplayacağını unutmayın.
 
-### Tanjantlar
+### Teğetler {#tangents}
 Normal haritalar varsa kullanılan tanjant bilgilerini dışa aktar. 
 
-### Dokular
+### Dokular {#textures}
 Malzemeye dokular eklendiyse dışa aktarılırlar. Bunun dokuları fırınlamayacağını unutmayın, bu topoloji bölümündeki fırınlama seçenekleriyle yapılır.
 
-### Dışa aktar düğmesi
+### Dışa aktar düğmesi {#export-button}
 Seçili ayarları kullanarak geometrinin dışa aktarılmasını başlatmak için buna tıklayın.
 
 ::: tip İpucu: Blender'a pürüzlülük ve metalik içe aktarma
@@ -182,28 +182,28 @@ USD karmaşık bir biçimdir, belirtimi birçok özelliği destekler, ancak tüm
 
 ::: 
 
-## Render
+## Render {#render}
 
 Projede bulunan tüm ayarların (ışıklar, malzemeler, son işlem vb.) birleşimi olan bir görüntü dışa aktarın. 
 
 ![](/images/file_render.webp)
-### Önizleme
+### Önizleme {#preview}
 
 Menü başlığının yanındaki küçük önizleme düğmesi, son sonucu önizlemeye yardımcı olmak için araç çubuklarını karartır.
 
-### Şeffaf arka plan
+### Şeffaf arka plan {#transparent-background}
 Render için alfa kanalını etkinleştirir, 2B programlarda render'ı diğer görüntülerle birleştirmek için kullanışlıdır. Kısmi saydamlığın desteklenmediğini unutmayın.
 
-### Arayüzü göster
+### Arayüzü göster {#show-interface}
 Render'a Nomad'ın arayüzünü dahil etmeyi etkinleştir.
 
-### Render oranı
+### Render oranı {#render-ratio}
 Görüntü çözünürlüğü üzerinde bir çarpan.
 
-### Nihai boyut
+### Nihai boyut {#final-size}
 Render için kullanılacak çözünürlük. `Custom` seçildiğinde, genişlik ve yükseklik kaydırıcıları etkinleştirilir. 
 
 Dosya menüsü etkin olduğunda, render bölgesi ekran çözünürlüğüyle eşleşmiyorsa görünüm alanında kesikli bir kaplama çizilir (bunun doğru olması için yatay modda olmanız gerektiğini unutmayın).
 
-### png dışa aktar
+### png dışa aktar {#export-png}
 Render işlemini başlatmak için bu düğmeye tıklayın. Tamamlandığında, görüntüyü nasıl kaydedeceğinizi veya paylaşacağınızı seçebilirsiniz.

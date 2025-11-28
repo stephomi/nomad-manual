@@ -1,10 +1,10 @@
-# ![](/icons/symmetry.webp) Symmetrie
+# ![](/icons/symmetry.webp) Symmetrie {#symmetry}
 
 Dit menu bepaalt hoe streken worden herhaald over een spiegelvlak of radiaal, en manieren om symmetrie te herstellen op niet-symmetrische objecten.
 
 ![](/images/symmetry_overview.webp) 
 
-## Overzicht 
+## Overzicht {#overview}
 Je kunt symmetrie op verschillende manieren gebruiken:
 
 * Als een spiegel, waarbij werk wordt gespiegeld over X (links/rechts), Y (boven/onder), Z (achter/voor), of een combinatie daarvan. 
@@ -23,10 +23,10 @@ De enige uitzonderingen zijn de transformtools ([Verplaatsen](#translate), [Rote
 Het symmetriemenu is voornamelijk bedoeld om streek-symmetrie te regelen. Je kunt ook objecten spiegelen en herhalen via [repeaters in het scenemenu](scene#repeaters). 
 :::
 
-## Ingeschakeld
+## Ingeschakeld {#enabled}
 Schakel de spiegelmodus in of uit, dit is hetzelfde als de `Sym`-knop in het snelle linkerpaneel. 
 
-## Vlakken
+## Vlakken {#planes}
 
 Schakel symmetrievlak(ken) in, en stel het aantal herhalingen in voor radiale symmetrie. Merk op dat je niet slechts één vlak hoeft te kiezen; je kunt 1, 2 of 3 vlakken tegelijk inschakelen voor complexe symmetrie.
 
@@ -34,10 +34,10 @@ De as en het aantal herhalingen voor radiale symmetrie. Merk op dat deze ook nie
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Methode
+## Methode {#method}
 De spiegel kan ofwel ‘Lokaal’ zijn, en meebewegen met het object, of ‘Wereld’, en niet meebewegen. Als je niet zeker weet welke modus je nodig hebt, let dan op het spiegelvlak en de radiale indicatoren die over het object worden gelegd. In de lokale modus zullen, als je de transform-gizmo gebruikt en het model verplaatst, de spiegelindicatoren ook meebewegen. In de wereldmodus blijven de spiegelindicatoren vast staan en schuift het object erdoorheen.
 
-## Spiegelen
+## Spiegelen {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
 Bij het sculpteren in de buurt van de symmetrievlakken zullen sommige brushes een onvolmaakt symmetriegedrag vertonen. In deze sectie kun je symmetrie herstellen door één kant van je sculpt naar de andere te kopiëren. 
@@ -52,11 +52,11 @@ Bij het sculpteren in de buurt van de symmetrievlakken zullen sommige brushes ee
 
 `Splitsen & Spiegelen` zal het object in feite langs de spiegel doorsnijden, één kant kopiëren, die naar de andere kant spiegelen en vertices langs de spiegel lassen. Dit is een destructievere optie en verwijdert multiresolutie, maar soms is deze methode nodig als het model sterk verschilt over de spiegel.
 
-### Object omkeren
+### Object omkeren {#flip-object}
 ![](/images/symmetry_flip.webp)
 Maak de linkerkant tot de rechterkant en omgekeerd. Dit lijkt op het gebruik van het gizmo-toolmenu en het instellen van de schaal op -1 op X.
 
-## Reset en bewerken
+## Resetten en bewerken {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
@@ -71,7 +71,7 @@ Als het dus niet werkt zoals je verwacht, controleer dan of je je in de juiste r
 De knop `Gizmo (Bewerken)` is expres grijs gemaakt als herinnering dat je deze waarschijnlijk niet zou moeten gebruiken!
 :::
 
-## Weergave-opties
+## Opties weergeven {#show-options}
 ![](/images/symmetry_show.webp)
 
 

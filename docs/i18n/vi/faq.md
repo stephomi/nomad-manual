@@ -1,9 +1,9 @@
-# ![](/icons/faq.webp) Câu hỏi thường gặp (FAQ)
+# ![](/icons/faq.webp) Câu hỏi thường gặp {#faq}
 
 [[toc]]
 
-## Nền tảng 
-### Dự án của tôi nằm ở đâu trên thiết bị?
+## Nền tảng {#platform}
+### Các dự án của tôi được lưu ở đâu trên thiết bị? {#locate}
 Các dự án nằm trong thư mục `projects` bên trong thư mục chính của Nomad.
 
 Trên iOS, bạn có thể truy cập thư mục Nomad bằng ứng dụng Files của iOS.
@@ -14,18 +14,18 @@ Bạn có thể truy cập nó thông qua một ứng dụng riêng, ví dụ [�
 <!-- [this one](https://play.google.com/store/apps/details?id=com.alphainventor.filemanager) -->
 <!-- [this one](https://play.google.com/store/apps/details?id=com.mi.android.globalFileexplorer) -->
 
-### Có cách nào để tham gia beta test không?
+### Có cách nào để tham gia beta test không? {#beta}
 Đối với Windows & MacOS, bản beta có thể có sẵn trên [Trang chủ](https://nomadsculpt.com).
 <br>
 Đối với iOS có TestFlight riêng, hãy vào [Discord](https://discord.com/invite/8h7BwpRz29) trong kênh #beta-ios.
 <br>
 [Web Demo](https://nomadsculpt.com/demo) thường được cập nhật với các tính năng mới nhất.
 
-### Tại sao Android có bản dùng thử miễn phí, còn iOS thì không?
+### Tại sao trên Android có dùng thử miễn phí nhưng trên iOS thì không? {#android-trial}
 Vì các thiết bị Android cũ khá tệ (và một số máy mới cũng vậy...), và tôi không muốn mọi người mua ứng dụng rồi chỉ thấy màn hình đen.
 Nhưng lý do chính là tôi cảm thấy ứng dụng trả phí trên Android không thực sự phổ biến.
 
-### Máy tính bảng nào chạy Nomad tốt nhất?
+### Máy tính bảng nào chạy Nomad tốt nhất? {#best-tablet}
 
 Tóm tắt: Một chiếc iPad.
 
@@ -73,7 +73,7 @@ Hãy dùng bản Nomad miễn phí (không lưu được) để thử trước.
 Hầu hết file Nomad thường dưới 100mb. Điều này có nghĩa là gần như bất kỳ tablet nào bạn mua hiện nay, iPad hay Android, đều sẽ có đủ chỗ cho các dự án Nomad của bạn.
 
 
-### Tôi đã mua Nomad cho một thiết bị, có dùng được trên thiết bị khác không?
+### Tôi đã mua Nomad cho một thiết bị, tôi có thể dùng trên thiết bị khác không? {#multi-devices}
 Miễn là dùng cùng kho ứng dụng và cùng tài khoản, thì được.
 
 Ví dụ nếu bạn mua trên App Store iOS, bạn có thể dùng trên các thiết bị iOS khác của mình.
@@ -85,7 +85,7 @@ Tuy nhiên nếu bạn mua Nomad trên Android rồi sau đó mua iPad, bạn s�
 Vì Nomad không có máy chủ cấp phép riêng hay mô hình thuê bao. Không có thỏa thuận nào giữa Apple/Google/AppGallery để chia sẻ giấy phép. 
 
 
-### Làm sao khôi phục mua hàng?
+### Làm sao để khôi phục mua hàng của tôi? {#restore}
 Google Play và AppGallery đều tự động đồng bộ.
 
 - Vào menu About (biểu tượng nomad góc trên trái), và nhấn `restore purchase`
@@ -110,25 +110,25 @@ Các thiết bị Huawei gần đây không truy cập được dịch vụ Goog
 Trong trường hợp đó bạn sẽ cần mua lại ứng dụng trên AppGallery (kho ứng dụng của Huawei).
 :::
 
-### Bạn có thể dịch hoặc sửa [ngôn-ngữ-của-tôi] không?
+### Bạn có thể dịch hoặc sửa ngôn ngữ của tôi không? {#locale}
 Tôi có thể tương đối dễ dàng thêm một ngôn ngữ khác, nhưng tôi đang dựa vào dịch máy AI vì nó dễ xử lý hơn cho các bản cập nhật thường xuyên.
 File dịch có thể tìm thấy [tại đây](https://github.com/stephomi/nomad-translation).
 
-## Tính năng
+## Tính năng {#features}
 
-### Tại sao gizmo không di chuyển?
+### Tại sao gizmo không di chuyển? {#gizmo-not-moving}
 Có thể bạn đã [bật pin trong thanh công cụ menu bên trái](tools#left-menu-toolbar). 
 
-### Có thể làm animation trong Nomad không?
+### Có thể làm animation bên trong Nomad không? {#animate}
 Hiện tại thì chưa. Một tính năng timeline có thể animate các layer sẽ khá thú vị, nhưng hiện chưa thực sự được lên kế hoạch.  
 
 Tôi muốn hỗ trợ rigging/skinning trong tương lai, nhưng nó đặt ra vài thách thức (đặc biệt là tương tác với các công cụ điêu khắc...) nên hiện chưa chắc chắn.
 
-### Có thể làm modeling low-poly đúng nghĩa không?
+### Có thể làm mô hình low-poly đúng chuẩn không? {#lowpoly}
 Hiện tại thì chưa.
 Đây không hẳn là phạm vi của Nomad *Sculpt*, nhưng có thể tôi sẽ cung cấp một vài công cụ trong tương lai.
 
-### Có thể làm uv và texturing không?
+### Có thể làm UV và texturing không? {#texturing}
 Câu ngắn: Có. Câu dài: Không trực tiếp, nhưng có nhiều cách kết hợp công cụ tô màu theo vertex rất tốt của Nomad với uv và texture.
 
 * Nomad cho phép bạn tô màu, độ nhám, thuộc tính vật liệu trực tiếp vào các vertex của mô hình.
@@ -141,29 +141,29 @@ Câu ngắn: Có. Câu dài: Không trực tiếp, nhưng có nhiều cách kế
 * Bake và project có thể thực hiện giữa các đối tượng đơn lẻ hoặc nhiều đối tượng, hoặc giữa mức subdivision cao nhất và thấp nhất của một đối tượng, cho phép nhiều quy trình bake và project khác nhau.
 * Sau khi bake, xuất obj cũng sẽ xuất texture, có thể đưa sang ứng dụng như Procreate để vẽ trực tiếp lên texture.
 
-### Tôi có thể ghi video turntable không?
+### Tôi có thể ghi lại video quay vòng (turntable) không? {#video}
 Hiện chưa có kế hoạch, iOS có [tính năng ghi màn hình](https://support.apple.com/en-au/guide/ipad/ipaddf78ce08/ipados) rất dễ dùng.
 
 Trên iOS, thao tác là vuốt xuống từ góc trên bên trái và nhấn nút ghi. Sẽ có đếm ngược 3 giây, vuốt ẩn menu để hiện Nomad, và dùng tính năng turntable. Khi xong, vuốt xuống lại từ góc trên bên phải và nhấn nút ghi lần nữa. Chỉnh sửa video trong thư viện ảnh để cắt bỏ phần thừa ở đầu và cuối.
 
-### Bạn có thể thêm [tính-năng-ưa-thích] thành nút cấp cao (top-level) không?
+### Bạn có thể thêm [tính-năng-ưa-thích] thành nút chính không? {#interface}
 Có, thanh công cụ phía dưới giờ có thể tùy biến từ menu [interface](interface.md), và bạn có thể tạo các thanh công cụ nổi.
 
-### Các tính năng tiếp theo là gì?
+### Những tính năng sắp tới là gì? {#next-features}
 Cho lộ trình trung/dài hạn tôi có rất nhiều ý tưởng nhưng chưa biết chắc.  
 
 Sửa lỗi và cải thiện tính năng hiện có sẽ luôn được ưu tiên cao hơn việc thêm tính năng mới.
 
-### Có thể rig trong Nomad không?
+### Có thể rig trong Nomad không? {#rigging}
 Không, nhưng đã được lên kế hoạch. Hiện tại bạn có thể gắn (parent) các khối với nhau và chỉnh điểm pivot, cho phép tạo các mô hình có thể tạo dáng đơn giản.
 
-### Có thể dùng hơn 4 đèn không?
+### Có thể dùng hơn 4 đèn không? {#lights}
 Không, đây là giới hạn của engine render thời gian thực trong Nomad. Có thể giả lập thêm bằng cách dùng các đối tượng phát sáng (emissive) và global illumination trong hậu kỳ, như trong [hướng dẫn này](https://www.youtube.com/watch?v=QhrUGH7CuUA)
 
-### Có thể import Zbrush tools không?
+### Có thể import ZBrush tool không? {#zbrush-import}
 Không, Zbrush dùng định dạng độc quyền. Bạn có thể trích xuất alpha map và dùng chúng trong Nomad. 
 
-### Tại sao màu không khớp với những gì tôi đã tô? Tại sao tôi không thể có màu trắng trong render?
+### Tại sao màu không khớp với những gì tôi đã vẽ? Tại sao tôi không thể có màu trắng trong render? {#paint-pbr}
 Hãy tưởng tượng chụp ảnh một tờ giấy, so với chụp ảnh một chiếc đèn bàn, so với chụp ảnh mặt trời. Máy ảnh và màn hình đời cũ sẽ chỉ hiển thị tất cả là “trắng”. Hệ thống hiện đại hơn có thể thể hiện sự khác biệt giữa màu trắng phản xạ của giấy, ánh sáng phát ra từ đèn, và độ sáng cực mạnh của mặt trời.
 
 Đồ họa máy tính hiện đại cố gắng hoạt động tương tự, mô phỏng vật lý của ánh sáng và bề mặt. Điều này gọi là `Physically Based Rendering` (render dựa trên vật lý), hay PBR, và renderer PBR của Nomad dựa trên nguyên lý này. Nó trông thực tế và cân bằng, nhưng thường các màu tô sáng sẽ trông tối hơn.
@@ -180,9 +180,9 @@ PBR:
 * `Tăng exposure của camera`. Nếu phòng tối không có thêm đèn, bạn có thể để máy ảnh mở màn trập lâu hơn, hoặc dùng ISO nhạy hơn. Trong Nomad bạn có thể đạt hiệu ứng tương tự bằng hậu kỳ. Vào post process, bật, kéo xuống tone mapping, bật, và tăng thanh trượt exposure cho đến khi màu trông ổn.
 * `Dùng màu phát sáng (emissive)`. Trong menu material, bạn có thể bật 'emissive' trong phần textures, khiến đối tượng trông như nguồn sáng. Nếu bật global illumination trong cài đặt post process, nó sẽ chiếu sáng lên các đối tượng khác trong cảnh. Bạn cũng có thể bật 'unlit' cho material đó, đạt hiệu ứng tương tự mà không cần texture.
 
-## Crash
+## Sự cố treo/thoát ứng dụng {#crashes}
 
-### Ứng dụng bị crash khi tôi lưu hoặc remesh model!
+### Ứng dụng bị thoát khi tôi lưu hoặc remesh mẫu! {#crash-remesh}
 Thiết bị của bạn đang hết bộ nhớ (RAM).  
 Để giảm mức dùng bộ nhớ trong cảnh, bạn có thể dùng một số tùy chọn trong [Topology](topology.md) để giảm số lượng polygon.
 
@@ -190,7 +190,7 @@ Thiết bị của bạn đang hết bộ nhớ (RAM).
 Điều quan trọng là lượng RAM, không phải dung lượng lưu trữ (thường lớn hơn nhiều).
 :::
 
-### Ứng dụng bị crash khi tôi load project!
+### Ứng dụng bị thoát khi tôi tải dự án! {#crash-load}
 Nếu file nhỏ, bạn có thể gửi cho tôi và tôi sẽ xem thử (qua email <support@nomadsculpt.com>).
 
 Nếu không thì có lẽ thiết bị đang hết RAM.
@@ -224,7 +224,7 @@ With homebrew, simply do `brew install lz4` and then `lz4 myproject.glb.lz4`.
 4. If it still crashes at loading, you can open the file on any 3d desktop software that supports `glTF`.
 ::: -->
 
-### Ứng dụng bị crash khi tôi khởi động Nomad!
+### Ứng dụng bị thoát khi tôi khởi động Nomad! {#crash-start}
 Nếu crash ngay khi load, nghĩa là Nomad gặp vấn đề với một file nào đó trong thư mục Nomad.
 
 Phần lớn thời gian, điều này xảy ra vì project quá nặng và không may là vượt quá giới hạn RAM.

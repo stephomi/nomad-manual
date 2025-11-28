@@ -1,10 +1,10 @@
-# ![](/icons/image.webp) Bakgrund
+# ![](/icons/image.webp) Bakgrund {#background}
 
 Den här menyn styr bakgrundsfärgen i Nomad, samt eventuella referensbilder som ska användas.
 
 ![](/images/background_overview.webp)
 
-## Bakgrund 
+## Bakgrund {#type}
 ![](/images/background_selector.webp)
 
 Det finns tre alternativ för vyfönstrets bakgrund.
@@ -13,14 +13,14 @@ Det finns tre alternativ för vyfönstrets bakgrund.
 * `Color` - En enfärgad bakgrund som du kan välja själv
 * `Gradient` - En färgövergång från topp till botten. Med reglaget Factor kan du bestämma mittpunkten för övergången.  
 
-## Referensbild
+## Referensbild {#reference}
 
 ![](/images/background_reference.webp)
 
 Du kan lägga till en valfri bild i bakgrunden som ska användas som referens.
 Du kan ändra position och skala, till exempel om du vill flytta den till ett hörn av skärmen.
 
-### ![](/icons/tool_transform.webp) Transform 
+### ![](/icons/tool_transform.webp) Transformera {#transform}
 
 Den här knappen låter dig placera referensbilden interaktivt. Använd två fingrar för att panorera, skala och rotera referensbilden på plats. Den slutliga placeringen återspeglas i reglagen nedan:
 

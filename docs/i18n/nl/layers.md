@@ -1,10 +1,10 @@
-# ![](/icons/layer.webp) Lagen 
+# ![](/icons/layer.webp) Lagen {#layers}
 
 Dit menu bevat de lagenstapel: een manier om bewerkingen op je object niet-destructief op te slaan, en veel manieren om lagen te combineren en opnieuw te gebruiken.
 
 ![](/images/layers_overview.webp) 
 
-## Overzicht
+## Overzicht {#overview}
 
 Nomad-lagen hebben meerdere functies.
 
@@ -19,7 +19,7 @@ Lagen kunnen gedeeltelijk worden gewist via het gereedschap [Delete Layer](tools
 ![](/videos/layer.mp4)
 
 ::: tip
-In tegenstelling tot de meeste sculptsoftware worden lagen niet verwijderd als je de topologie van een mesh wijzigt. Je kunt de [Voxel Remesher](topology.md#voxel-remesher), de [Multiresolution](topology.md#multiresolution) of de gereedschappen [Trim](tools.md#trim)/[Split](tools.md#split) gebruiken, maar houd er rekening mee dat bij gebruik van de [Voxel Remesher](topology.md#voxel-remesher) de kwaliteit van de laag wordt beïnvloed.
+In tegenstelling tot de meeste sculptsoftware worden lagen niet verwijderd als je de topologie van een mesh wijzigt. Je kunt de [Voxel Remesher](topology.md#voxel-remesher), de [Multiresolution](topology.md#multires) of de gereedschappen [Trim](tools.md#trim)/[Split](tools.md#split) gebruiken, maar houd er rekening mee dat bij gebruik van de [Voxel Remesher](topology.md#voxel-remesher) de kwaliteit van de laag wordt beïnvloed.
 :::
 
 ::: tip
@@ -27,7 +27,7 @@ Als je lagen gebruikt voor blendshapes/morph targets, is er extra laagfunctional
 :::
 ----
 
-## Lagenmenu 
+## Laagmenu {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
@@ -35,7 +35,7 @@ Druk op `Add layer` om een nieuwe laag te maken.
 
 Elke laag heeft een naam, een schuifregelaar om de sterkte/factor te regelen, en knopopties.
 
-### Opties
+### Opties {#options}
 
 | Actie        | Icoon                        | Beschrijving                                        |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
@@ -49,13 +49,13 @@ Elke laag heeft een naam, een schuifregelaar om de sterkte/factor te regelen, en
 
 Om een laag naar een andere positie in de lagenstapel te verplaatsen, houd je de naam ingedrukt en sleep je deze.
 
-### More...
+### Meer... {#more}
 
 De knop ‘More...’ toont extra opties voor de huidige laag:
 
 ![](/images/layers_more.webp) 
 
-#### Channelfactoren
+#### Kanalenfactoren {#channel-factors}
 
 Met deze bedieningselementen kun je de hoeveelheid sculpt/kleur/ruwheid/metalness/opaciteit voor de laag schalen. Deze waarden worden vermenigvuldigd met de factor-schuifregelaar van de laag. Dus als bijvoorbeeld de laagsterkte 1 is, maar de channelfactor voor kleur 0,5, dan wordt de kleur weergegeven met een sterkte van 0,5.
 
@@ -82,17 +82,17 @@ Misschien zal in de toekomst elk kanaal zijn eigen alfakanaal hebben om deze bep
 :::
 
 
-#### ![](/icons/tool_mask.webp) Mask
+#### ![](/icons/tool_mask.webp) Masker {#mask}
 De maskknop naast elke schuifregelaar maakt een masker van dat kanaal. Vergelijkbaar met het gebruik van lagen om selecties te maken in schilderapplicaties, kun je hiermee werk dat je in een laag hebt gedaan hergebruiken voor andere bewerkingen.
 
-#### ![](/icons/preview.webp) Preview
+#### ![](/icons/preview.webp) Voorbeeld {#preview}
 ![](/images/layers_preview.webp) 
 
 Indien ingeschakeld, wordt een voorbeeld getoond van de extract-instellingen voor deze laag (zie de volgende sectie).
 
 Wanneer röntgen (xray) is ingeschakeld, zal alleen de geëxtraheerde vorm solide zijn; de rest van de vorm wordt transparant gemaakt, wat handig is als je negatieve extractiehoogtes gebruikt.
 
-#### Extract
+#### Extractie {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -106,7 +106,7 @@ De knop `Extract` dupliceert de inhoud van de laag naar een nieuw object, meesta
 * Shell - Sluit de geëxtraheerde vorm met de diktewaarde en richtingsopties.
 * Layer - Extraheer het laagverschil.
 
-#### ![](/icons/height.webp) Thickness
+#### ![](/icons/height.webp) Dikte {#thickness}
 ![](/images/layers_thickness.webp) 
 
 De diepte van de shell-extrusie. Positieve waarden groeien uit het oppervlak, negatieve waarden groeien in het oppervlak.
@@ -116,12 +116,12 @@ De plus/min-knop naast deze waarde bepaalt de richting van de extrusie:
 * Plus ( + ) begint vanaf het huidige oppervlak en extrudeert naar boven.
 * PlusMinus ( ± ) duwt de boven- en onderkant van de extrusie met gelijke hoeveelheden uit elkaar, zodat deze half in het oorspronkelijke oppervlak wordt ingebed.
 
-#### Smoothness
+#### Gladheid {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
 Als de randen van het gebied dat moet worden geëxtraheerd gekarteld zijn, zal deze schuifregelaar proberen de rand te vervagen tot een gladdere vorm. 
 
-#### ![](/icons/height.webp) Edge loop (side)
+#### ![](/icons/height.webp) Randlus (zijkant) {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
 Deze sectie is zichtbaar wanneer de closing action ‘Shell’ is. 
@@ -132,10 +132,10 @@ Indien uitgeschakeld, bepaalt de schuifregelaar `Division` het aantal verdelinge
 
 _Einde van het submenu ‘More...’._
 
-### Advanced
+### Geavanceerd {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Keep top layers details
+#### Bovenste laagdetails behouden {#keep-top-layers-details}
 
 Zorgt ervoor dat kleine details op hogere lagen zichtbaar blijven wanneer grote veranderingen op lagere lagen worden aangebracht.
 
@@ -144,13 +144,13 @@ Standaard geldt: als je kleine rimpels op een laag sculpteert en vervolgens grot
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expand list
+#### UI: Lijst uitklappen {#ui-expand-list}
 
 In het standaard lagenmenu kun je de zichtbaarheid van lagen en de dekking van de laag aanpassen. Als je deze optie inschakelt, worden de volledige bedieningselementen voor elke laag uitgevouwen.
 
 ![](/images/layers_expand.webp)
 
-#### Sync transform
+#### Transformatie synchroniseren {#sync-transform}
 
 Indien ingeschakeld, worden alle niet-geselecteerde lagen aangepast op basis van de transformatierotatie, schaal en skew. 
 

@@ -1,4 +1,4 @@
-# ![](/icons/toolbox.webp) Araçlar
+# ![](/icons/toolbox.webp) Araçlar {#tools}
 
 ![](/images/tools_menu.webp)
 
@@ -6,7 +6,7 @@
 Tek tek araçların açıklamaları için aşağıda [Araçlar](#tools-1) bölümüne atlayın.
 :::
 
-## Genel Bakış
+## Genel bakış {#overview}
 
 Araçlar sağdaki `Toolbox` içinden seçilir ve soldaki `Tool Controls` ile kontrol edilir. Ek ayarlar, sağ üst menüdeki ilk simge olan `Settings` menüsünde bulunur.
 
@@ -31,7 +31,7 @@ Nomad'ın araçları araç kutusunda renk kodludur:
 Bu araçların çoğu, [Stroke](stroke.md) menüsü aracılığıyla farklı fırça davranışı, basınç, dokular vb. ile özelleştirilebilir. 
 
 
-### Fırça kontrolleri
+### Fırça kontrolleri {#brush-controls}
 
 Sol araç çubuğunda yarıçap ve yoğunluk için kaydırıcılar ve ardından aşağıda açıklanan araç kategorisine özel kontroller bulunur.
 
@@ -41,17 +41,17 @@ Sol araç çubuğunda yarıçap ve yoğunluk için kaydırıcılar ve ardından 
 Birçok araç için yoğunluk kaydırıcısı %100'ün üzerine çıkabilir, denemeye değer!
 :::
 
-### Alt mod
+### Alt kipi {#sub-mode}
 Yoğunluk kaydırıcısının hemen altındaki düğme `Sub` düğmesidir. Etiketi ve işlevi her araçla değişir ve basıldığında genellikle zıt olan alternatif bir davranışı çağırır. Örneğin [Paint](#paint) için Silme modunu çağırır, [Crease](#crease) için ise yarıklar yerine yükseltilmiş kenarlar oluşturur vb.
 
 Varsayılan olarak yapışkan düğme gibi çalışır; yani basılı tutarsanız geçici olarak devreye girer, bıraktığınızda kapanır. Dokunursanız alt mod kalıcı olarak etkinleştirilir.
 
-### Kısayollar
+### Kısayollar {#shortcuts}
 Sol araç çubuğunun altında [Smooth](#smooth), [Mask](#mask), [Hide](#hide), [Gizmo](#gizmo), [Color](painting.md#pbr-sliders), [Alpha](stroke.md#alpha) için kısayollar bulunur. 
 
 Varsayılan olarak bunların hepsi yapışkan düğme gibi çalışır; yani basılı tutarsanız geçici olarak devreye girer, bıraktığınızda kapanır. Dokunursanız, o kısayol modu kalıcı olarak etkinleştirilir.
 
-### Seçim kontrolleri
+### Seçim kontrolleri {#selection-controls}
 
 [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Project](#project), [Facegroup](#facegroup) ve [Hide](#hide) araçlarının tümü, ağın alanlarını seçmek için benzer kontroller kullanır.
 
@@ -69,7 +69,7 @@ Varsayılan olarak bunların hepsi yapışkan düğme gibi çalışır; yani bas
 
 Çoğu aracın otomatik onaylama seçeneği vardır, bu da işlemin şekli çizer çizmez gerçekleşeceği anlamına gelir. Otomatik onaylama kapalıyken, işlemi gerçekleştirecek olan şeklin yanında yeşil bir düğme çizilir. Bu, şekli düzenlemenize, görünümü ayarlamanıza olanak tanır; şekli kullanmaya hazır olduğunuzda yeşil düğmeye basın.
 
-### Şekil düzenleme
+### Şekil düzenleme {#shape-editing}
 Poligon düzenleme ve eğri düzenleme benzer şekilde davranır:
 
 * Başlamak için, 2 noktayı tanımlamak üzere bir çizgi sürükleyin, ardından bir poligon veya eğri tanımlamak için çizginin ortasından dışarı doğru sürükleyin.
@@ -78,13 +78,13 @@ Poligon düzenleme ve eğri düzenleme benzer şekilde davranır:
 * Bir noktayı silmek için, bir noktayı komşusuna doğru sürükleyin, kırmızıya dönene kadar.
 * Poligon veya path simgesinin köşesindeki çöp kutusu simgesi şekli siler.
 
-### Ayarlar menüsü
+### Ayarlar menüsü {#settings-menu}
 
 Birçok aracın, sağ üst menüdeki ilk simge olan ayarlar menüsünde bulunan ek ayarları vardır:
 
 ![](/images/tools_settings_menu.webp)
 
-## Araçlar
+## Araçlar {#tools-1}
 
 |                                                                     |                                                   |                                                                   |                                                         |                                                         |                                                                     |
 | :-----------------------------------------------------------------: | :-----------------------------------------------: | :---------------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------------------: |
@@ -97,64 +97,64 @@ Birçok aracın, sağ üst menüdeki ilk simge olan ayarlar menüsünde bulunan 
 
 ------
 
-### ![](/icons/tool_clay.webp) Clay
+### ![](/icons/tool_clay.webp) Kil {#clay}
 Clay aracı, heykelinizi inşa etmek için kullanışlıdır. `Sub` heykelinizden malzeme kaldırır.
 
 ![](/videos/tool_clay.mp4)
 
-### ![](/icons/tool_brush.webp) Brush
+### ![](/icons/tool_brush.webp) Fırça {#brush}
 Standart fırça. `Sub` malzeme kaldırır.
 
 ![](/videos/tool_brush.mp4)
 
-### ![](/icons/tool_move.webp) Move
+### ![](/icons/tool_move.webp) Taşı {#move}
 Fırçanın altındaki alan fırçaya yapışır, bu da esnek deformasyona izin verir. Seçim, hareket sırasında korunur, bu nedenle fırçayı uzaklaştırıp sonra başladığınız yere geri getirirseniz, hiçbir deformasyon görmezsiniz.
 
 Alt mod `Normal`dir ve fırçanın altındaki alanı yüzey normali boyunca hareket ettirir.
 
 Bu fırça hem büyük ölçekli deformasyon hem de dikkatli küçük deformasyon için iyidir.
 
-#### Move Ayarları
+#### Taşı ayarları {#move-settings}
 
 * `Radius (Background)` - Bir modelin kenarından ne kadar uzakta olup hâlâ yontu yapabileceğinizi belirler, bir nesnenin siluetinde çalışırken kullanışlıdır. 
 * `Same-side vertex only` - Deformasyonun ters yönüne bakan köşeleri yok say.
 
 ![](/videos/tool_move.mp4)
 
-### ![](/icons/tool_drag.webp) Drag
+### ![](/icons/tool_drag.webp) Sürükle {#drag}
 Fırçanın altındaki alan fırçaya yapışır, bu da esnek deformasyona izin verir. Move fırçasından farklı olarak, seçim vuruş boyunca sürekli güncellenir, bu nedenle özellikle Dinamik Topoloji etkinleştirildiğinde daha uzun, yılan benzeri nesneler yapmak mümkündür.
 
 Alt mod `Normal`dir ve fırçanın altındaki alanı yüzey normali boyunca hareket ettirir.
 
 Bu fırça daha gevşek, jestsel şekil değişiklikleri için iyidir.
 
-#### Drag Ayarları
+#### Sürükle ayarları {#drag-settings}
 
 * `Radius (Background)` - Bir modelin kenarından ne kadar uzakta olup hâlâ yontu yapabileceğinizi belirler, bir nesnenin siluetinde çalışırken kullanışlıdır. 
 * `Same-side vertex only` - Deformasyonun ters yönüne bakan köşeleri yok say.
 
 ![](/videos/tool_drag.mp4)
 
-### ![](/icons/tool_smooth.webp) Smooth
+### ![](/icons/tool_smooth.webp) Pürüzsüzleştir {#smooth}
 Noktaların konumlarını ortalayarak alanı yumuşatır. Bu araç, poligon yoğunluğuna oldukça bağlıdır.
 Yani çok fazla poligon varsa, yumuşatma daha az etkili olacaktır.
 
 Alt mod `Relax`tir, yalnızca tel kafesi yumuşatır ancak geometrik detayları korumaya çalışır.
 
-#### Smooth ayarları
+#### Pürüzsüzleştir ayarları {#smooth-settings}
 
 ![](/images/tool_smooth_settings.webp)
 
-##### Facegroup
+##### Yüz grubu {#smooth-facegroup}
 
 * `Relax` - Facegroup sınırlarını yumuşatır. Sınırları hızlıca yumuşatmak için yoğunluğu %100'ün üzerine çıkarın. `Auto` yalnızca facegroup önizlemesi etkinse yumuşatır, `Off` devre dışı bırakır, `On` etkinleştirir. 
 
-##### Vertex
+##### Tepe noktası {#vertex}
 * `Sticky vertex on border` - Açık kenarlı ağlar için, örneğin bir düzlem, köşeleri düzleştirmek mümkündür. Bu seçeneği etkinleştirmek açık kenarları kilitler.
 * `Relax` - sol araç çubuğundaki relax alternatif modu ile aynıdır.
 * `Stable smoothing` - Yumuşatmayı topolojiden bağımsız hale getirmeye çalışır. Bu, değişken topoloji yoğunluğu ve yüksek yumuşatma yoğunluğu değeriyle en iyi sonucu verir.
 
-##### Painting
+##### Boyama {#painting}
 * `Screen Smoothing` - Bu seçeneği, yüksek poligon sayılarında bile topolojiden bağımsız yumuşatma elde etmek için kullanın.
 * `Screen samples` - Yumuşatma kalitesi, daha yüksek değerler daha pürüzsüz ama daha yavaştır.
 
@@ -164,7 +164,7 @@ Daha yüksek poligon yoğunlukları, yoğunluğun %100'ün üzerine çıkarılma
 
 ![](/videos/tool_smooth.mp4)
 
-### ![](/icons/tool_mask.webp) Mask
+### ![](/icons/tool_mask.webp) Maske {#mask}
 Bu araç, köşeleri maskelemenizi sağlar. Maskelenmiş köşeler yontma veya boyamadan korunur. 
 
 Alt mod `Unmask`tir ve maskenin boyandığı yerleri siler.
@@ -194,7 +194,7 @@ Alt mod `Unmask`tir ve maskenin boyandığı yerleri siler.
 |                                 On tap (mask)      | Etkinleştirildiğinde, maskeli veya maskesiz poligonlardan oluşan bir 'ada'ya dokunmak o adayı doldurur. |
 | ![](/icons/vertex.webp)        Connected          | Etkinleştirildiğinde, yalnızca bağlı topolojiyi etkileyen maske vuruşlarına izin verilir. |
 
-##### Mask Hızlı jesti
+##### Maske hızlı hareketi {#mask-quick-gesture}
 Sol alt kısayol düğmesini basılı tutarken zbrush tarzı jestler yapabilirsiniz:
 | Action  | Gesture (hold lower-left shortcut) |
 | :-----: | :--------------------------------: |
@@ -204,28 +204,28 @@ Sol alt kısayol düğmesini basılı tutarken zbrush tarzı jestler yapabilirsi
 | Sharpen | Maskesiz alana dokun               |
 
 
-#### Mask ayarları
+#### Maske ayarları {#mask-settings}
 ![](/images/tool_mask_settings.webp)
 
 ![](/videos/tool_mask2.mp4)
 
 * `Preview` - Mask ayarları menüsü esas olarak maskeden geometri oluşturmak için kullanılır. Bu nedenle varsayılan davranış, yeni geometrinin nasıl görüneceğini önizlemektir. Hiç önizleme olmamasını, bir extract önizlemesini, bir split önizlemesini ve bu geometrinin x-ray modunda gösterilip gösterilmeyeceğini seçebilirsiniz.
 
-##### Thickness
+##### Kalınlık {#thickness}
 * `Height` - Çıkarılan şeklin yüksekliği. Artı/Eksi simgesi, dışa doğru ekstrüzyon, içe doğru veya ortalanmış arasında geçiş yapmanızı sağlar. 
 * `Height/Height+Mask` - Yüksekliğin sabit olup olmayacağını veya maskenin bulanık kısımlarının yüksekliği etkileyip etkilemeyeceğini değiştirir, bu da yumuşak ve değişken yükseklikte şekiller oluşturmanıza olanak tanır. 
 
-##### Smoothness
+##### Pürüzsüzlük {#smoothness}
 Etkin olduğunda, çıkarılan şeklin sınırını yumuşatır, daha yüksek poligon sayılarıyla daha iyi çalışır. 
 * `Iterations` - Uygulanan yumuşatma miktarı. Yüksek değerler çok pürüzsüz kavisli kenarlar üretir, ancak maskenin şeklinden uzaklaşmaya başlar.
 * `All/Sharp border/Borders only` - Yumuşatma tüm yönlerde çalışabilir, hem kenarları hem de çıkarılan şeklin üstünü yumuşatır veya üst ve kenarları yumuşatır ancak keskin bir kenarı korur ya da yalnızca sınırı yumuşatır, üst yüzeyi etkilemeden bırakır.
 
-##### Edge loop (side)
+##### Kenar döngüsü (yan) {#edge-loop-side}
 * `Auto Edge-loop (side)` - Çıkarılan şeklin kenarlarında, maskelenmiş alanın poligonlarıyla eşleşen kare poligonlar oluşturmak için bölümlerin sayısını hesaplar. Devre dışı bırakıldığında, kenar döngüsü kaydırıcısıyla kenar döngülerinin sayısını kendiniz ayarlayabilirsiniz.
 
 ----
 
-##### Extract
+##### Çıkar {#extract}
 * `Extract` - Çıkarılmış geometriyi oluştur.
 * `Closing action` - Extract'in nasıl davranması gerektiği. 'None' maskelenmiş poligonları yeni bir şekle kopyalar. 'Fill' aynı şeyi yapar ve arka yüzeyi yamalamaya çalışır. 'Shell' 'thickness'ta ayarlanan miktarda ekstrüde eder ve varsayılandır.
 
@@ -236,18 +236,18 @@ Etkin olduğunda, çıkarılan şeklin sınırını yumuşatır, daha yüksek po
 Bu normaldir, yeni şekli ve orijinali görmek için mask ayarları menüsünü kapatın ve maskeyi temizlemeniz veya yeni maskeler çizmeniz gerekiyorsa orijinal yüzeyi tekrar seçin.
 :::
 
-##### Split
+##### Böl {#split-mask}
 * `Split` - Hem maskelenmiş HEM de maskesiz bölgeleri yeni şekillere çıkarır. 
 * `Closing action (masked)` - Mask extract'in nasıl davranması gerektiği. 'None' maskelenmiş poligonları yeni bir şekle kopyalar. 'Fill' aynı şeyi yapar ve arka yüzeyi yamalamaya çalışır. 'Shell' 'thickness'ta ayarlanan miktarda ekstrüde eder ve varsayılandır.
 * `Closing action (unmasked)` - Maskesiz extract'in nasıl davranması gerektiği. 'None' maskelenmiş poligonları yeni bir şekle kopyalar. 'Fill' aynı şeyi yapar ve arka yüzeyi yamalamaya çalışır. 'Shell' 'thickness'ta ayarlanan miktarda ekstrüde eder ve varsayılandır.
 * `Sync border` - Maskelenmiş ve maskesiz çıkarılmış şekiller arasındaki sınırın birbirine yakın kalmasını sağlar. Devre dışı bırakıldığında, shell işlemi her yüzü normaline göre ekstrüde edeceğinden, şekiller arasında bir boşluk oluşabilir.
 
-##### Carve
+##### Oyarak çıkar {#carve}
 * `Carve` - Varsayılan modda, yüzeye 'thickness' miktarı kadar trim yapılmış gibi davranır, bir portakal kabuğu parçasını kesmek gibi. 
 
 
 
-### ![](/icons/tool_maskSelector.webp) Selection Mask
+### ![](/icons/tool_maskSelector.webp) Seçim Maskesi {#selection-mask}
 Bu araç çoğunlukla [Masking tool](#mask) ile benzerdir, temel fark, maskeyi boyamak için stroke kullanmamanız, bunun yerine [Selection Controls](#selection-controls) kullanmanızdır.
 
 Alt mod `Unmask`tir ve seçim kontrollerini kullanarak maskeyi siler.
@@ -256,28 +256,28 @@ Selection mask, `Mask` aracıyla aynı araç ayarlarını paylaşır.
 
 ![](/videos/tool_selector_mask.mp4)
 
-### ![](/icons/tool_paint.webp) Paint
+### ![](/icons/tool_paint.webp) Boya {#paint}
 Renk ve malzeme özellikleri uygular. Malzeme hakkında daha fazla bilgi edinmek için [Painting](painting.md) bölümünü ziyaret edebilirsiniz.
 
 Alt mod `Erase`tir ve boyayı kaldırır.
 
-#### Paint ayarları
+#### Boya ayarları {#paint-settings}
 * `Layer fitering` - Photoshop veya Procreate'teki layer alpha lock gibi çalışır. Bir katmanda boyuyorsanız, bu etkinleştirildiğinde yalnızca boyanın zaten bulunduğu yerleri değiştirebilirsiniz; boyanmamış alanlar korunur.
 
 ![](/videos/tool_paint.mp4)
 
-### ![](/icons/tool_smudge.webp) Smudge
+### ![](/icons/tool_smudge.webp) Bulaştır {#smudge}
 Renk ve malzeme özelliklerini dağıtır. Smudge ayarları menüsünde bir `Quality` kaydırıcısı bulunur, daha düşük değerler daha hızlı vuruşlar anlamına gelir.
 
 ![](/videos/tool_smudge.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Flatten
+### ![](/icons/tool_flatten.webp) Yassılaştır {#flatten}
 Noktaları ortalama düzleme projekte ederek alanı düzleştirir.
 
 Alt mod `Fill`dir ve en yüksek nokta tarafından belirlenen bir düzlem tanımlar ve noktaları yukarı çekme eğilimindedir.
 
-#### Flatten ayarları
+#### Yassılaştır ayarları {#flatten-settings}
 
 * `Lock plane direction` - İlk tıklamada hesaplanan düzlem yönünü kullan. Varsayılan olarak devre dışıdır.
 * `Lock plane origin`- İlk tıklamayı düzlemin merkezi olarak kullan. Varsayılan olarak devre dışıdır.
@@ -291,7 +291,7 @@ Yüksek eğrilikli alanlarda çalışırken, örneğin yanakları düzleştirmey
 ![](/videos/tool_flatten.mp4)
 
 
-### ![](/icons/tool_planar.webp) Planar
+### ![](/icons/tool_planar.webp) Düzlemsel {#planar}
 Noktaları ortalama düzleme projekte ederek düzlemsel hale getirir, ancak flatten fırçasına göre daha az birikimle. Bu, daha temiz sert kenarlı yüzeyler oluşturur. Hızlı vuruşlar yüzeyde daha fazla iter ve çeker, daha yavaş vuruşlar ise zaten düzlemsel alanlardan başlayıp dışa doğru çalışarak düzlemi daha fazla korur.
 
 Alt mod `Fill`dir ve en yüksek nokta tarafından belirlenen bir düzlem tanımlar ve noktaları yukarı çekme eğilimindedir.
@@ -300,19 +300,19 @@ Planar aslında `Flatten` ile aynı araçtır, ancak `Lock plane direction` etki
 
 ![](/videos/tool_planar.mp4)
 
-### ![](/icons/tool_crease.webp) Crease
+### ![](/icons/tool_crease.webp) Kıvrım {#crease}
 Crease araçları küçük kesikler veya çukurlar yontmak için kullanışlı olabilir.
 
 Alt mod `Invert`tir ve yükseltilmiş bir yarık oluşturur.
 
-#### Crease Ayarları
+#### Kıvrım ayarları {#crease-settings}
 
 * `Pinch factor` - Köşeleri fırçaya doğru yanlara ne kadar çekeceğini belirler. Pinch 1'de ve offset 0'da ise, yüzeyde derinlik değişikliği olmaz, sadece topoloji değişiklikleri olur, kenarlar vuruşa doğru çekilir.
 * `Offset factor` - Köşeleri derinlikte ne kadar itip çekeceğini belirler. Pinch 0'da ve offset 1'de ise, derin yarıklar veya yükseltilmiş çukurlar oluşturulur, ancak yarığın yanlarını veya tabanını doğru tanımlamak için yeterli geometri çekilmediğinden tırtıklı görünürler.
 
 ![](/videos/tool_crease.mp4)
 
-### ![](/icons/tool_pinch.webp) Pinch
+### ![](/icons/tool_pinch.webp) Sıkıştır {#pinch}
 Bu araç kenarları keskinleştirmek için kullanılabilir.
 
 Alt mod `Invert`tir ve köşeleri birbirinden uzaklaştırır.
@@ -320,7 +320,7 @@ Alt mod `Invert`tir ve köşeleri birbirinden uzaklaştırır.
 ![](/videos/tool_pinch.mp4)
 
 
-### ![](/icons/tool_trim.webp) Trim
+### ![](/icons/tool_trim.webp) Kes {#trim}
 Trim aracı, ağınızdan bir parçayı kaldırarak çalışır ve geride kalan boşluğun nasıl işleneceğine dair seçenekler sunar. Trim'i tanımlamak için [Selection controls](#selection-controls) kullanılır.
 
 ::: tip
@@ -329,7 +329,7 @@ Bu araç kameradan projeksiyon yaptığı için, kamera perspektif modundaysa bi
 Ortografik modda, ağ boyunca yapılan kesim görünüme paraleldir, bu da insanların genellikle beklediği şeydir. Perspektif kamerayla yapıldığında, nesnenin uzak tarafındaki kesim, yakın tarafındakinden farklı görünecektir.
 :::
 
-#### Trim ayarları
+#### Kes ayarları {#trim-settings}
 
 * `Stroke painting` - Paint menüsünde boya etkinse, yamalanan bölge mevcut seçili renkle doldurulur.
 * `Boolean` - Trim'in deliğini dörtgen poligon bölgesi kullanarak doldurur. Doldurulan bölge düz olur.
@@ -345,10 +345,10 @@ Ortografik modda, ağ boyunca yapılan kesim görünüme paraleldir, bu da insan
 
 ![](/videos/tool_trim.mp4)
 
-### ![](/icons/tool_split.webp) Split
+### ![](/icons/tool_split.webp) Böl {#split}
 [Trim](#trim) aracına benzer, ancak Trim seçimi atarken, Split seçimi yeni bir nesne olarak saklar.
 
-#### Split ayarları
+#### Böl ayarları {#split-settings}
 
 * `Stroke painting` - Paint menüsünde boya etkinse, yamalanan bölge mevcut seçili renkle doldurulur.
 * `Boolean` - Split'in deliğini dörtgen poligon bölgesi kullanarak doldurur. Doldurulan bölgeler düz olur.
@@ -365,7 +365,7 @@ Ortografik modda, ağ boyunca yapılan kesim görünüme paraleldir, bu da insan
 ![](/videos/tool_split.mp4)
 
 
-### ![](/icons/tool_project.webp) Project
+### ![](/icons/tool_project.webp) Yansıt {#project}
 Project aracı [Trim](#trim) aracına benzer görünür, ancak hiçbir geometriyi silmez veya oluşturmaz, yalnızca köşeleri seçime uydurmak için hareket ettirir.
 
 ![](/videos/tool_project.mp4)
@@ -374,7 +374,7 @@ Project aracı [Trim](#trim) aracına benzer görünür, ancak hiçbir geometriy
 Bir layer içindeyken Project kullanırsanız, layer kaydırıcısıyla orijinal ve projeksiyonlu şekil arasında geçiş yapabilirsiniz.
 :::
 
-### ![](/icons/tool_layer.webp) Layer
+### ![](/icons/tool_layer.webp) Katman {#layer}
 Yüzeyi yükseltir, ancak yüksekliği sınırlar.
 
 Kalemi basılı tutup bir alan üzerinde fırçalamaya devam ederseniz, Layer belirli bir yüksekliğe kadar yükselir ve daha fazla gitmez, diğer araçlar ise yüksekliği biriktirmeye devam eder.
@@ -387,7 +387,7 @@ Bir layer oluşturun ve bu aracı kullanın. Maksimum yükseklik artık layer'da
 
 `Sub` minimum derinlik kullanır, oluklar oluşturur.
 
-#### Layer Ayarları
+#### Katman ayarları {#layer-settings}
 
 * `Use layer data` - Etkin olduğunda ve bir layer seçiliyken, maksimum yüksekliği ayarlamak için layer verilerini kullanır.
 * `Inflate`- Etkin olduğunda, daha yumuşak sonuçlar elde etmek için layer'ın çalıştığı yönü ayarlar.
@@ -396,10 +396,10 @@ Bir layer oluşturun ve bu aracı kullanın. Maksimum yükseklik artık layer'da
 ![](/videos/tool_layer.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Inflate
+### ![](/icons/tool_flatten.webp) Şişir {#inflate}
 Köşeleri kendi normalleri boyunca hareket ettirir. `Sub` köşeleri ters normal boyunca hareket ettirir.
 
-#### Inflate Ayarları
+#### Şişirme ayarları {#inflate-setings}
 * `Relax (Normal)` - Normallere uygulanan yumuşatma miktarı.
 
 ![](/videos/tool_inflate.mp4)
@@ -407,13 +407,13 @@ Köşeleri kendi normalleri boyunca hareket ettirir. `Sub` köşeleri ters norma
 
 
 
-### ![](/icons/tool_nudge.webp) Nudge
+### ![](/icons/tool_nudge.webp) İt {#nudge}
 Noktaları vuruş yönünde hareket ettirir veya 'sürükler'.
 
 ![](/videos/tool_nudge.mp4)
 
 
-### ![](/icons/tool_stamp.webp) Stamp
+### ![](/icons/tool_stamp.webp) Damga {#stamp}
 
 Seçili Alpha'nın şekliyle heykelin bir alanını yükseltmek için tıklayıp sürükleyin.
 
@@ -434,13 +434,13 @@ Stamp genellikle yüksek çözünürlüklü geometriyle en iyi sonucu verir. İn
 ![](/videos/tool_stamp.mp4)
 
 
-### ![](/icons/tool_clearLayer.webp) Delete Layer
+### ![](/icons/tool_clearLayer.webp) Katmanı Sil {#delete-layer}
 Bu araç, layer'ları yerel olarak sıfırlayabilir, etkin bir layer'a ihtiyacınız vardır, aksi takdirde hiçbir şey olmaz.
 
 ![](/videos/tool_delete_layer.mp4)
 
 
-### ![](/icons/tool_tube.webp) Tube
+### ![](/icons/tool_tube.webp) Tüp {#tube}
 Bir eğri çizerek bir tüp oluşturun. 
 ![](/images/tool_tube_new.webp)
 
@@ -448,7 +448,7 @@ Tüp oluşturulduktan sonra, yol standart [Shape editing](#shape-editing) ve eğ
 
 ![](/videos/tool_tube.mp4)
 
-#### Tube sol araç çubuğu
+#### Tüp sol araç çubuğu {#tube-left-toolbar}
 
 ![](/images/tool_tube_left_toolbar.webp)
 
@@ -467,7 +467,7 @@ Sol araç çubuğunda aşağıdaki seçenekler bulunur:
     * `Closed` - Tüpü bir döngü haline getirin
     * `Screen` - Etkin olduğunda, yol ekrana 'sabitleme' yapılır, böylece görünümü ve nesneyi hareket ettirebilir, yol yerinde kalır. Devre dışı olduğunda, yol 3d sahnenin bir parçasıdır ve kamera ve nesnelerle birlikte hareket eder.
 
-##### Tube üst araç çubuğu
+##### Tüp üst araç çubuğu {#tube-top-toolbar}
 ![](/images/tool_tube_toolbar.webp)
 Bir tüp seçildiğinde, görüntü alanının üst kısmında ek kontroller içeren bir araç çubuğu görünür. Araç çubuğunu daraltmak/genişletmek için başlığına tıklayın ve görüntü alanının üstüne veya altına taşımak için sağ üstteki oka tıklayın.
 
@@ -488,7 +488,7 @@ Bir tüp seçildiğinde, görüntü alanının üst kısmında ek kontroller iç
 * `Constant density` - Etkin olduğunda, poligonları kare tutar. Devre dışı olduğunda, tüp boyunca `Y divisions` ayarlamanıza izin verir.
 * `...` - Tube ayarları menüsü.
 
-#### Eğri noktası silme geçişi
+#### Eğri noktası silme geçişi {#curve-point-delete-toggle}
 
 ![](/images/tool_tube_delete_toggle.webp)
 
@@ -496,7 +496,7 @@ Araç çubuğunun altında bir eğri noktası silme geçişi bulunur. Bir eğri 
 
 
 
-#### Tube ayarları
+#### Tüp ayarları {#tube-settings}
 * `Primitive` - UV'leri etkinleştirmek/devre dışı bırakmak veya tüpü onaylamak için düğmeler.
 * `Post subdivision` - Onaylamadan önce çoklu çözünürlük seviyesini ayarlamak için bir kısayol.
 * `Linear subdivision` - Onaylamadan önce lineer subdivision seviyesini ayarlamak için kısayol. 
@@ -509,14 +509,14 @@ Divisions 4 ve Post subdivision 3 iken, solucanlar, yılanlar, vücut parçalar�
 :::
 
 
-### ![](/icons/tool_lathe.webp) Lathe
+### ![](/icons/tool_lathe.webp) Tornalama {#lathe}
 Bir eğri çizerek bir dönel yüzey oluşturun.
 
 Bu araç, vazo, şarap kadehi gibi şekiller için harikadır.
 
 ![](/videos/tool_lathe.mp4)
 
-#### Lathe sol araç çubuğu
+#### Tornalama sol araç çubuğu {#lathe-left-toolbar}
 
 ![](/images/tool_lathe_left_toolbar.webp)
 
@@ -534,7 +534,7 @@ Sol araç çubuğunda aşağıdaki seçenekler bulunur:
     * `Closed` - Tüpü bir döngü haline getirin
     * `Screen` - Etkin olduğunda, yol ekrana 'sabitleme' yapılır, böylece görünümü ve nesneyi hareket ettirebilir, yol yerinde kalır. Devre dışı olduğunda, yol 3d sahnenin bir parçasıdır ve kamera ve nesnelerle birlikte hareket eder.
 
-#### Lathe üst araç çubuğu
+#### Tornalama üst araç çubuğu {#lathe-top-toolbar}
 ![](/images/tool_lathe_top_toolbar.webp)
 
 Bir lathe seçildiğinde, görüntü alanının üst kısmında ek kontroller içeren bir araç çubuğu görünür. Araç çubuğunu daraltmak/genişletmek için başlığına tıklayın ve görüntü alanının üstüne veya altına taşımak için sağ üstteki oka tıklayın.
@@ -553,7 +553,7 @@ Bir lathe seçildiğinde, görüntü alanının üst kısmında ek kontroller i�
 * `Constant density` - Etkin olduğunda, poligonları kare tutar. Devre dışı olduğunda, tüp boyunca `Y divisions` ayarlamanıza izin verir.
 * `...` - Lathe ayarları menüsü.
 
-#### Lathe ayarları
+#### Tornalama ayarları {#lathe-settings}
 * `Primitive` - UV'leri etkinleştirmek/devre dışı bırakmak veya tüpü onaylamak için düğmeler.
 * `Post subdivision` - Onaylamadan önce çoklu çözünürlük seviyesini ayarlamak için bir kısayol.
 * `Linear subdivision` - Onaylamadan önce lineer subdivision seviyesini ayarlamak için kısayol. 
@@ -561,7 +561,7 @@ Bir lathe seçildiğinde, görüntü alanının üst kısmında ek kontroller i�
 * `Division Y` - Araç çubuğundaki Y Divisions ile aynıdır.
 * `Curve (Repeater)` - Eğri profilini bir [Curve Repeater](scene.md#curve)'a dönüştürür.
 
-### ![](/icons/tool_insert.webp) Insert
+### ![](/icons/tool_insert.webp) Ekle {#insert}
 Bir nesneyi başka bir nesnenin yüzeyine yerleştirin. Kullanımda Stamp aracına benzer, ancak tam 3d şekiller içindir.
 
 Sol araç çubuğundan bir primitive seçerseniz, herhangi bir yüzeye tıklayıp sürüklemek, tıkladığınız yere bir primitive yerleştirir, sürükleme boyutu ayarlar. Sürüklemeyi bitirdiğinizde, Insert [Transform](#transform) moduna geçer.
@@ -574,7 +574,7 @@ Bir nesnenin özel bir pivotu varsa, bu bir çapa noktası olarak kullanılır. 
 
 ![](/videos/tool_insert.mp4)
 
-### ![](/icons/tool_transform.webp) Transform
+### ![](/icons/tool_transform.webp) Dönüştür {#transform}
 Bir modeli genellikle başka bir nesnenin yüzeyi üzerinde doğrudan 1 ve 2 parmakla Taşı/Döndür/Ölçekle.
 
 Araç sol araç çubuğuyla kontrol edilir ve 5 düğmesi vardır:
@@ -608,7 +608,7 @@ Bu, başka bir nesne üzerinde nesneleri çoğaltmak için hızlı bir iş akı�
 
 ![](/videos/tool_transform.mp4)
 
-### ![](/icons/tool_gizmo.webp) Gizmo
+### ![](/icons/tool_gizmo.webp) Gizmo {#gizmo}
 Bu araç, nesneleri hareket ettirmenize, döndürmenize ve ölçeklendirmenize ve nesnelerin pivotlarını değiştirmenize olanak tanır.
 
 Görüntü alanı tutamacının aşağıdaki özellikleri vardır:
@@ -619,7 +619,7 @@ Görüntü alanı tutamacının aşağıdaki özellikleri vardır:
 
 ![](/images/tool_gizmo.webp)
 
-#### Düğümler ve köşeler 
+#### Düğümler ve tepe noktaları {#nodes-and-vertices}
 
 Nomad'daki her nesne bir düğüm ve köşelerden oluşur:
 
@@ -628,7 +628,7 @@ Nomad'daki her nesne bir düğüm ve köşelerden oluşur:
 
 8 köşeden oluşan basit bir kutunuz varsa, onu transformasyon matrisini değiştirerek veya köşe konumlarını değiştirerek çevirebilirsiniz. Yontma yaparken genellikle köşeleri değiştirmek istersiniz, gizmo ile nesneleri hareket ettirirken genellikle düğümü değiştirmek istersiniz. Nomad her ikisini de yapmanıza izin verir. 
 
-#### Sol menü araç çubuğu
+#### Sol menü araç çubuğu {#left-menu-toolbar}
 
 Sol araç çubuğu, gizmo'nun düğüm veya köşeler üzerinde çalışıp çalışmayacağını ve diğer işlevleri kontrol eder:
 
@@ -641,7 +641,7 @@ Sol araç çubuğu, gizmo'nun düğüm veya köşeler üzerinde çalışıp çal
 * `Snap translation` - Çeviri değerlerinin artışlara sabitlenmesini etkinleştirir, snap değeri snap etkin olduğunda görüntülenir ve düzenlenebilir.
 * `Pivot` - Etkinleştirildiğinde, gizmo nesneyi hareket ettirmeden hareket ettirilebilir ve döndürülebilir. Aşağıda açıklanan ek bir menüsü vardır.
 
-#### Pivot
+#### Pivot {#pivot}
 Pivot modu etkin olduğunda, hızlı pivot değişikliklerine izin veren bir menü görüntülenir:
 
 **Reset** 
@@ -656,11 +656,11 @@ Pivot modu etkin olduğunda, hızlı pivot değişikliklerine izin veren bir men
 * `First` - Pivotu, yüzeye dokunulan yere taşır (ancak döndürmez)
 * `Medial` - Pivotu, yüzeye dokunulan yerin altındaki nesnenin ortasına taşır.
 
-#### Gizmo ayarları
+#### Gizmo ayarları {#gizmo-settings}
 
 ![](/images/tool_gizmo_settings.webp)
 
-##### Matrix 
+##### Matris {#matrix}
 * ![](/icons/target.webp) `Move origin` - Nesneyi, pivotu sahnenin merkezi olan orijine gelecek şekilde taşır.
 * ![](/icons/bake.webp)  `Bake` - Nesneyi mevcut konumunda dondurur ve translate/rotate değerlerini 0'a, scale'i 1'e ayarlar.
 * ![](/icons/bake.webp) -> ![](/icons/tool_gizmo.webp) `Bake Pivot` - Matris değerlerini, gizmo tutamacının dünyadaki konumuna karşılık gelecek şekilde ayarlar.
@@ -712,7 +712,7 @@ Bu, özellikle çeviriyi değiştirmediği için döndürme için kullanışlıd
 
 ![](/videos/tool_gizmo.mp4)
 
-### ![](/icons/tool_faceGroup.webp) Facegroup
+### ![](/icons/tool_faceGroup.webp) Yüz grubu {#facegroup}
 
 Facegroup'lar, nesnenizi farklı renkte yüzeylere ayırmanıza olanak tanır. Bu grupları Nomad'da birçok şekilde kullanabilirsiniz:
 
@@ -723,7 +723,7 @@ Facegroup'lar, nesnenizi farklı renkte yüzeylere ayırmanıza olanak tanır. B
 * Quad remesher'ı yönlendirme
 * Smooth gibi araçlar için ek kontrol.
 
-#### Facegroup sol araç çubuğu
+#### Yüz grubu sol araç çubuğu {#facegroup-left-toolbar}
 
 * `Patch ` - Kullanılabilir facegroup'ları patch olarak gösterir. Kullanılmayan patch'ler silinebilir. Bir patch'e dokunarak adını veya rengini değiştirebilirsiniz. Artı simgesi yeni patch'ler oluşturmanıza olanak tanır.
 * `Dot` - Nesne üzerinde boyayarak facegroup'ları tanımlayın. '+ Face Group' etkinleştirildiğinde, her yeni vuruş otomatik olarak yeni bir facegroup oluşturur, bu da bölgeleri hızlıca tanımlamak için kullanışlıdır. Bir dokunuş seçili bölgeyi doldurur. Kaydırıcı, noktanın yarıçapını ayarlar.
@@ -731,7 +731,7 @@ Facegroup'lar, nesnenizi farklı renkte yüzeylere ayırmanıza olanak tanır. B
 * `Shape selector` - Fırça yerine `Lock+Radius`, `Lasso`, `Polygon`, `Rect` ve `Ellipse` aracılığıyla şekillerle facegroup oluşturun. Daha fazla bilgi için [Shape Selector](#shape-selector) bölümüne bakın.
 * `Auto-pick` - Etkinleştirildiğinde, vuruşun başladığı yerdeki patch'i seçer ve vuruşun geri kalanı için o patch'i uygular. Facegroup bölgelerini düzenlemek için çok kullanışlıdır; bir facegroup çok uzağa taşmışsa, auto-pick'i etkinleştirin, vuruşa facegroup patch'inin doğru olduğu yerden başlayın ve doğru patch'i yeniden atamak için sınıra kadar sürükleyin.
 
-### ![](/icons/tool_hide.webp) Hide
+### ![](/icons/tool_hide.webp) Gizle {#hide}
 Nesnenin bölümlerini gizleyin veya izole edin. 
 
 Birincil modlar sol menüden kontrol edilir:
@@ -749,10 +749,10 @@ Görüntü alanının üst kısmında ek kontroller içeren bir araç çubuğu g
 * `Delete` - Nesnenin gizli bölümünü siler
 * `Split` - Nesnenin gizli bölümünü yeni bir şekle böler.
 
-### ![](/icons/tool_measure.webp) Measure
+### ![](/icons/tool_measure.webp) Ölç {#measure}
 İki nokta arasındaki mesafeyi ölçmek için sürükleyin.
 
-### ![](/icons/tool_remesh.webp) Quad Remesher
+### ![](/icons/tool_remesh.webp) Quad Remesher {#quad-remesher}
 
 ![](/images/tool_quadremesher.webp)
 
@@ -779,7 +779,7 @@ Bu araç ilk kez etkinleştirildiğinde, uygulama içi satın alma olarak etkinl
 * `Rect` - Heykelin yüzeyi üzerinde dikdörtgenler çizin, quad remesher bunları kenar akışı için kılavuz olarak kullanacaktır. Bir yola dokunarak onu silebilirsiniz.
 * `Ellipse` - Heykelin yüzeyi üzerinde elipsler çizin, quad remesher bunları kenar akışı için kılavuz olarak kullanacaktır. Bir yola dokunarak onu silebilirsiniz.
 
-#### Quad remesher üst araç çubuğu
+#### Quad Remesher üst araç çubuğu {#quad-remesher-top-toolbar}
 ![](/images/tool_quadremesher_toolbar.webp)
 
 Görünüm penceresinin üst kısmında ek kontroller içeren bir araç çubuğu görünecektir:
@@ -800,7 +800,7 @@ Görünüm penceresinin üst kısmında ek kontroller içeren bir araç çubuğu
 * `Symmetry` - Simetrik bir sonuç elde etmek için aç/kapat. Simetrinin her zaman dünya x ekseni etrafında hesaplandığını unutmayın, bu nedenle simetrik bir sonuç bekliyorsanız modelinizin orijinde olduğundan emin olun.
 * `...` - Quadremesher ayarları menüsü. 
 
-#### Quad remesher ayarları menüsü
+#### Quad Remesher ayarlar menüsü {#quad-remesher-settings-menu}
 
 Bu ayarların çoğu üst araç çubuğunda mevcuttur.
 
@@ -826,14 +826,14 @@ Quad remesh seçeneklerinde relax’in devre dışı olduğundan emin olun (mesh
 
 :::
 
-### ![](/icons/tool_select.webp) Select
+### ![](/icons/tool_select.webp) Seç {#select}
 Sahnedeki nesneleri seçmek için şekil modlarını kullanın. `Unselect` seçimi nesnelerden kaldırır.
 
-### ![](/icons/tool_view.webp) View
+### ![](/icons/tool_view.webp) Görünüm {#view}
 Bu "araç" özel olarak hiçbir şey yapmaz, bu yalnızca sahnenizi değiştirmeden modeli görüntülemenin bir yoludur.
 
 
-## Araç kutusu bağlam menüsü
+## Araç kutusu bağlam menüsü {#toolbox-context-menu}
 
 ![](/images/tools_context_menu.webp)
 

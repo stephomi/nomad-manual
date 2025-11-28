@@ -1,4 +1,4 @@
-# Overview
+# Gambaran keseluruhan {#overview}
 
 <!-- 
 [[toc]]
@@ -13,7 +13,7 @@ Baca panduan [Memulakan](gettingstarted.md).
 :::
 
 
-## Kandungan
+## Senarai kandungan {#table-of-contents}
 
 | Menu                           | Ikon                          | Penerangan                                           |
 | :----------------------------: | :---------------------------: | :--------------------------------------------------: |
@@ -37,7 +37,7 @@ Baca panduan [Memulakan](gettingstarted.md).
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Soalan Lazim                                        |
 | [Tips](tips.md)                | ![](/icons/manual.webp)      | Petua aliran kerja                                   |
 
-## Sumber komuniti
+## Sumber komuniti {#community-resources}
 
 <style>
 .video-grid {

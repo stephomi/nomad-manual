@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) Menu Interface 
+# ![](/icons/interface.webp) Menu da Interface {#interface-menu}
 
 Este menu controla muitas opções para personalizar a interface do Nomad. 
 
@@ -13,13 +13,13 @@ O Nomad pode ser personalizado em um nível bastante profundo; este menu é divi
 Esta página é sobre o menu de interface, não sobre a interface em si! A interface geral é descrita em [Getting Started](gettingstarted.md).
 :::
 
-## Interface 
+## Interface {#interface}
 
 A seção Interface permite adicionar atalhos, criar barras de ferramentas flutuantes e controlar a cor, tamanho e aparência da interface do usuário do Nomad.
 
 ![](/images/interface_overview3.webp)
 
-### Add shortcuts (bottom)...
+### Adicionar atalhos (parte inferior)... {#add-shortcuts-bottom}
 ![](/images/interface_shortcuts.webp)
 
 A barra inferior tem estes atalhos ativados por padrão:
@@ -35,7 +35,7 @@ A barra inferior tem estes atalhos ativados por padrão:
 
 Outros atalhos comuns estão disponíveis neste menu; muitos mais podem ser encontrados dentro do botão bindings.
 
-#### ![](/icons/more.webp) Bindings
+#### ![](/icons/more.webp) Associações {#bindings-list}
 
 Quase todas as funções do Nomad podem ser adicionadas à barra de atalhos através do botão bindings. Um menu de bindings será exibido quando o botão for clicado:
 
@@ -43,15 +43,15 @@ Quase todas as funções do Nomad podem ser adicionadas à barra de atalhos atra
 
 Você pode pesquisar por categoria através dos ícones na parte superior ou usar o campo de busca para encontrar funções pelo nome. Clique em uma função para adicioná-la à barra de ferramentas. Clique novamente para removê-la.
 
-#### ![](/icons/list.webp) Order
+#### ![](/icons/list.webp) Ordem {#order}
 
 Exibe uma lista dos atalhos. Pressione e segure e depois arraste para reordenar os atalhos.
 
-#### ![](/icons/reset.webp) Reset
+#### ![](/icons/reset.webp) Redefinir {#reset}
 
 Reset restaura a barra inferior para suas configurações padrão.
 
-### Add shortcuts (window)... +
+### Adicionar atalhos (janela)... + {#add-shortcuts-window}
 ![](/images/interface_add_shortcuts_window.webp)
 
 Clicar no + adicionará uma barra de ferramentas flutuante. Ela não ficará visível até que você clique no botão bindings e adicione alguns atalhos a ela; então você poderá torná-la visível. 
@@ -66,43 +66,41 @@ Você pode criar várias barras de ferramentas; cada barra tem as seguintes opç
 * ![](/icons/sort_down.webp) `Collapsable` - Alterna um controle de recolhimento no canto superior direito.
 * ![](/icons/trash.webp) `Delete` - Exclui a barra de ferramentas.
 
-### Toolbox
+### Caixa de ferramentas {#toolbox}
 
 Opções para o menu de ferramentas à direita da interface do Nomad.
 
 ![](/images/interface_toolbox.webp)
 
-#### ![](/icons/resize_bottom_right.webp) Ui Resize Corner
+#### ![](/icons/resize_bottom_right.webp) Canto de redimensionamento da interface {#ui-resize-corner}
 
 Alterna um controle de redimensionamento no canto inferior da barra de ferramentas.
 
-#### Hidden
+#### Oculto {#hidden}
 Normalmente o ícone da toolbox na barra superior alterna entre uma única coluna longa ou uma lista de ferramentas em várias colunas. Esta opção alterna entre a lista em várias colunas ou ficar oculta.
 
-#### Colored
+#### Colorido {#colored}
 Codifica por cor os ícones por categoria; por exemplo, todas as ferramentas de máscara são marrons, ferramentas de split são vermelhas, ferramentas de flatten são verdes etc.
 
-#### Rows: Auto (>1)
+#### Linhas: Automático (>1) {#rows-auto-1}
 
-#### Rows: Auto (>1)
-
-#### Reset order
+#### Redefinir ordem {#reset-order}
 Restaura as ferramentas padrão da toolbox para a ordem padrão. Ícones personalizados permanecerão na toolbox ao final da lista.
 
 
-### Presets
+### Predefinições {#presets}
 
 ![](/images/interface_presets.webp)
 
 Uma coleção de presets de cores para a interface.
 
-#### High-contrast button
+#### Botão de alto contraste {#high-contrast-button}
 Um estilo alternativo para botões que os torna mais visíveis quando estão ativados. Se definido como Auto, o Nomad usará este modo quando o contraste de cor da UI entre ativado/desativado for baixo.
 
-#### Color widget/Color base
+#### Widget de cor/Cor base {#color-widgetcolor-base}
 As cores primárias usadas na interface.
 
-#### Transparent panel, Color panel, Blur strength
+#### Painel transparente, Painel de cor, Intensidade do desfoque {#transparent-panel-color-panel-blur-strength}
 ![](/images/interface_transparent.webp)
 Quando ativado, opções extras aparecerão para controlar como menus e painéis são exibidos no Nomad. Sua cor, transparência e quantidade de desfoque podem ser ajustadas.
 
@@ -112,55 +110,55 @@ Em dispositivos pequenos pode ser útil deixar o painel de cor quase branco, tra
 
 ----
 
-### Mirror top bar
+### Espelhar barra superior {#mirror-top-bar}
 Inverte a ordem dos menus na barra superior.
 
-### Mirror side bars
+### Espelhar barras laterais {#mirror-side-bars}
 Troca as barras laterais para que a toolbox fique à esquerda e as opções da ferramenta à direita.
 
-### Mirror bottom bar
+### Espelhar barra inferior {#mirror-bottom-bar}
 Move a barra inferior para o canto inferior direito e inverte a ordem dos botões.
 
-### Material color preview
+### Pré-visualização da cor do material {#material-color-preview}
 Quando você seleciona uma cor para um material, uma pré-visualização desse material é exibida no objeto atualmente selecionado.
 
 ----
-### Help popup on hover
+### Pop-up de ajuda ao passar o cursor {#help-popup-on-hover}
 
 Para dispositivos que suportam hover, define se a ajuda contextual no Nomad, representada pelo ícone ![](/icons/help.webp), aparecerá ao passar o cursor ou apenas quando clicada.
 
 ----
 
-### Overall scale
+### Escala geral {#overall-scale}
 Um multiplicador de tamanho para todos os elementos da UI.
-### Panel width
+### Largura do painel {#panel-width}
 A largura dos menus e painéis.
-### Font scale
+### Escala da fonte {#font-scale}
 Escala das fontes.
-### Vertical spacing
+### Espaçamento vertical {#vertical-spacing}
 O espaçamento entre elementos em menus e painéis.
-### Vertical spacing (left)
+### Espaçamento vertical (esquerda) {#vertical-spacing-left}
 O espaçamento entre elementos na barra de ferramentas esquerda.
 
 ----
 
-### Edge offset
+### Margem da borda {#edge-offset}
 Você só deve alterar esses valores se tiver problemas ao interagir com os botões nas bordas da tela. Se esses controles deslizantes estiverem desativados, o Nomad usará os valores de área segura retornados pelo próprio dispositivo.
 
 ::: tip
 Ao migrar o Nomad para um novo dispositivo (por exemplo, trocar um iPhone 12 por um iPhone 15), certifique-se de redefinir as opções de borda para os padrões!
 :::
 
-### Reset style
+### Redefinir estilo {#reset-style}
 Restaura todos os elementos da UI para seus valores padrão.
 
 
-## Gesture
+## Gesto {#gesture}
 O menu Gesture controla como toques de caneta e dedo controlam o Nomad.
 
 ![](/images/interface_gesture.webp)
 
-### Gesture options
+### Opções de gesto {#gesture-options}
 ![](/images/interface_gesture_matrix.webp)
 
 O Nomad pode limitar operações com base no dispositivo de entrada. Por exemplo, um arrasto com o dedo pode apenas mover a câmera, enquanto um arrasto com a caneta pode apenas esculpir. Se você tiver um mouse ou trackpad, ele também pode ser atribuído para controlar operações específicas.
@@ -176,7 +174,7 @@ Atualmente o Nomad permite definir estes modos para serem controlados em qualque
 
 `Finger always smooths` - Smooth pode ser configurado para funcionar apenas com arrasto de dedo.
 
-### ![](/icons/tool_mask.webp) Mask
+### ![](/icons/tool_mask.webp) Máscara {#mask}
 
 ![](/images/interface_gesture_mask.webp)
 
@@ -185,19 +183,19 @@ Atualmente o Nomad permite definir estes modos para serem controlados em qualque
 * toque em uma área mascarada para desfocar a máscara
 * toque em uma área não mascarada para deixar a máscara mais nítida
 
-### Toggle Mask <-> SelMask
+### Alternar Máscara <-> SelMask {#toggle-mask-selmask}
 ![](/images/interface_gesture_togglemask.webp)
 * `Stroke` - Um toque longo alternará entre Mask e SelMask e iniciará um novo traço. Ao final do traço, a ferramenta anterior é reselecionada. 
 * `Tool` - Toque longo e soltar sem mover para alternar entre Mask e SelMask. 
 
-### ![](/icons/tool_hide.webp) Hide
+### ![](/icons/tool_hide.webp) Ocultar {#hide}
 ![](/images/interface_gesture_hide.webp)
 
 `One tap shortcuts` ativará os seguintes atalhos com a ferramenta Hide:
 * Toque em um face group para ocultá-lo
 * Toque em espaço vazio para inverter os polígonos ocultos
 
-### ![](/icons/finger3.webp) Three fingers
+### ![](/icons/finger3.webp) Três dedos {#three-fingers}
 ![](/images/interface_gesture_threefingers.webp)
 
 Se o seu dispositivo suportar gestos com 3 dedos, configure atalhos para esse gesto. 
@@ -208,28 +206,28 @@ A matriz de opções permite definir arrastos verticais e horizontais como atalh
 * `Tool Radius` - Edita o raio da ferramenta.
 * `Tool Intensity` - Edita a intensidade da ferramenta. 
 
-### ![](/icons/fingerprint.webp) History 2/3
+### ![](/icons/fingerprint.webp) Histórico 2/3 {#history-23}
 `History shortcuts` - quando ativado, os seguintes gestos ficam ativos:
 * Undo - toque com 2 dedos
 * Redo - toque com 3 dedos
 
 `Long press` - quando ativado, manter 2/3 dedos pressionados desfará/refará rapidamente.
 
-### Accessibility 
+### Acessibilidade {#accessibility}
 
 ![](/images/interface_gesture_accessibility.webp)
 
 `Assistive window` exibirá uma barra de ferramentas flutuante para controlar operações de arrasto, pinça, rotação e câmera.
 
-### Camera
+### Câmera {#camera}
 Um atalho para ir ao menu `Camera` (as opções de câmera ficavam aqui, mas foram movidas para o menu Camera).
 
-### Pencil double tap -> Bindings 
+### Toque duplo do lápis -> Associações {#pencil-tap}
 
 Um atalho para ir ao menu `Bindings` (as opções de toque e toque duplo do Pencil ficavam aqui, mas foram movidas para o menu bindings).
 
 
-## Bindings
+## Associações {#bindings}
 Atalhos de teclado e botões podem ser definidos no menu bindings:
 
 ![](/images/interface_bindings.webp)
@@ -241,7 +239,7 @@ Encontre funções pelos ícones de categoria na parte superior ou pela barra de
 
 Bindings individuais podem ser desativados pela caixa de seleção ao lado do nome do binding.
 
-### ![](/icons/more.webp) Context menu
+### ![](/icons/more.webp) Menu de contexto {#context-menu}
 O ícone ![](/icons/more.webp) após cada binding abre um menu de contexto:
 
 ![](/images/interface_bindings_context.webp)
@@ -251,7 +249,7 @@ O ícone ![](/icons/more.webp) após cada binding abre um menu de contexto:
 * `Delete` - Exclui o binding
 * `Toggle shortcut on key tap` - Configura se toque rápido e toque longo são tratados de forma diferente. Quando ativado, um toque rápido ativará a ferramenta. Um toque longo ativará a ferramenta apenas enquanto a tecla estiver pressionada; ao soltar, retornará à ferramenta anterior. Às vezes chamado de “sticky keys” em outros aplicativos 3D.
 
-### Advanced
+### Avançado {#advanced}
 Na parte inferior do menu bindings há um menu de engrenagem para opções avançadas:
 
 ![](/images/interface_bindings_advanced.webp)
@@ -262,7 +260,7 @@ Na parte inferior do menu bindings há um menu de engrenagem para opções avan�
 * `Reset bindings` - restaura todos os bindings para seus padrões.
 
 
-## iOS ⌘ Keyboard shortcuts display
+## iOS ⌘ Exibição de atalhos de teclado {#ios-keyboard-shortcuts-display}
 
 Em dispositivos iOS com teclado, mantenha pressionada a tecla ⌘ (cmd) para exibir uma lista de atalhos.
 
@@ -271,29 +269,29 @@ O suporte a teclado no Android ainda é um pouco experimental.
 ![](/images/shortcuts.webp)
 
 
-## Debug
+## Depuração {#debug}
 Algumas opções experimentais e de depuração ficam armazenadas neste menu. Muitas dessas opções devem ser deixadas em seus padrões e só alteradas após entrar em contato com o suporte do Nomad.
 
 ![](/images/interface_debug.webp)
-### UV
+### UV {#uv}
 * `Normalize Uvs` - O Nomad normalizará as UVs dentro do tile [0-1].
 
-### Quad Remesh
+### Remesh Quad {#quad-remesh}
 * `Instant Mesh` - Ativa o algoritmo de remesh instantâneo
 * `Quadriflow` - Um método alternativo de quad remesh.
 
-### Render
+### Renderização {#render}
 * `Heightmap` - Altera o viewport para renderizar a profundidade da cena. Isso pode ser usado para criar alpha maps para usar em pincéis.
 * `Refraction write depth (back)` - A face traseira de malhas com refração será escrita no depth buffer.
 * `Flip Y (normal map)` - Inverte o canal Y ao fazer bake de normal maps, necessário para certos motores de jogo e render.
 * `Angle weighted smooth normals` - Um ajuste em como o sombreamento suave funciona, que pode evitar vincos em certos casos.
 
-### Target FPS
+### FPS alvo {#target-fps}
 Quando desativado, o Nomad sincronizará seus frames por segundo com a taxa de atualização da sua tela.
 
 Quando ativado, você pode definir o número de frames por segundo que o Nomad irá renderizar.
 
-### Interface
+### Interface {#debug-interface}
 * `Top: layout` 
   * Collapse: Em dispositivos pequenos, a barra superior será recolhida em mais submenus. 
   * Scroll: Se você está acostumado ao Nomad em telas grandes e prefere o layout normal, ativar isto usará a barra superior larga padrão, que poderá ser rolada.
@@ -305,7 +303,7 @@ Quando ativado, você pode definir o número de frames por segundo que o Nomad i
 * `Panel: Blending` - Opção de depuração
 * `Pointer: hovering dot` - Para dispositivos que suportam hover da caneta, exibe um ponto quando a caneta está pairando sobre menus e painéis.
 
-### Gif turntable
+### Gif turntable {#gif-turntable}
 O Nomad pode exportar um turntable animado em gif. Observe que, devido a limitações do formato gif, a qualidade é baixa. Gravação de tela geralmente é um método melhor.
 
 * `Duration` - quanto tempo, em segundos, o turntable terá
@@ -314,21 +312,21 @@ O Nomad pode exportar um turntable animado em gif. Observe que, devido a limita�
 * `Max frame sampling` - Muitos dos efeitos de renderização de alta qualidade do Nomad vêm da combinação de vários frames. Este controle define quantos frames combinar.
 * `Export (GIF)` - inicia o processo de exportação do gif.
 
-### Post Process
+### Pós-processamento {#post-process}
 * `Filtering` - Opção de depuração
 * `Format` - Opção de depuração
 * `Buffer reuse` - Opção de depuração
 
-### Performance
+### Desempenho {#performance}
 * `Multicore general` - Opção de depuração
 * `Multicore sculpting` - Opção de depuração
 * `Partial Drawing` - Recurso experimental! Use se você estiver esculpindo uma parte relativamente pequena de uma malha de alta contagem de polígonos. Deve tornar a escultura mais suave, mas você não deve ativar o wireframe! Também pode adicionar artefatos visuais durante os traços do pincel.
 
-### Feature
+### Recurso {#feature}
 * `Flip quad split (on tap)` -  Opção de depuração
 * `Join: merge radius` - Vértices serão automaticamente soldados se estiverem próximos o suficiente quando malhas forem unidas. Você pode ajustar o raio com este controle.
 
-### Debug
+### Depuração {#dev}
 * `Logs` - Exibe uma janela de log
 * `App review popup` - Opção de depuração
 * `FPS` - adiciona um contador de frames por segundo às estatísticas do viewport.

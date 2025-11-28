@@ -1,23 +1,23 @@
-# ![](/icons/paint.webp) Mengecat  
+# ![](/icons/paint.webp) Melukis {#painting}
 
 Kawal warna, kekasaran, kemetalan sapuan cat, benarkan pengisian menyeluruh (flood fill) atribut cat, dan cara alat cat berinteraksi dengan lapisan, topeng (mask), serta pemilihan tersembunyi.
 
 ![](/images/paint_overview.webp)  
 
-## Gambaran keseluruhan
+## Gambaran keseluruhan {#overview}
 
 Nomad menggunakan pengecatan verteks PBR. Apa maksudnya?
 
-### PBR
+### PBR {#pbr}
 PBR, atau Physically Based Rendering ialah teknik grafik komputer yang popular untuk filem, televisyen, permainan dan mudah alih. Dengan memadankan cahaya pada sifat fizikal, dan mentakrifkan permukaan melalui warna, kekasaran, kemetalan, pelbagai rupa fotorealistik boleh dicapai.
 
-### Pengecatan verteks
+### Lukisan verteks {#vertex-painting}
 
 Pengecatan verteks bermaksud maklumat cat disimpan dalam verteks model, bukannya dalam tekstur. Oleh kerana Nomad boleh mengendalikan model dengan ratusan ribu, malah berjuta-juta verteks, model anda sepatutnya boleh mempunyai cat permukaan yang sangat terperinci; jika anda boleh mengukir perincian itu, anda juga boleh mengecat perincian tersebut.
 
 Ini juga bermakna mengecat dalam Nomad tidak memerlukan pemetaan UV, yang selalunya proses perlahan dan teknikal dalam aplikasi 3D lain. Banyak aplikasi 3D lain tidak menyokong kiraan verteks tinggi seperti Nomad, namun Nomad juga mempunyai alatan pembakaran tekstur (texture baking) dan pengurangan poligon (decimation) yang baik untuk membantu.
 
-### Tekstur
+### Pemberteksturan {#texturing}
 
 Nomad menyokong tekstur, tetapi ia perlu wujud dalam model yang diimport, atau melalui pembakaran pengecatan verteks ke tekstur. 
 
@@ -38,21 +38,21 @@ Salah satu contoh aliran kerja:
 Itu gambaran keseluruhan, sekarang mari terokai bahagian-bahagian menu mengecat:
 
 
-## Pengecatan strok
+## Lukisan strok {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
 Aktifkan pengecatan untuk alat ini, berguna jika anda perlu mengukir dan mengecat pada masa yang sama.
 
 Untuk alat di mana mengecat ialah fungsi utama (cth Paint, Smudge, Mask), kotak semak ini tidak wujud.
 
-### Keamatan cat
+### Keamatan cat {#paint-intensity}
 
 Gelangsar untuk membolehkan anda menggunakan keamatan berbeza daripada keamatan alat utama.
 
 Kotak semak `Alpha`, `Falloff` dan `Randomize` menentukan sama ada ciri tersebut akan mempengaruhi pengecatan. Contohnya anda boleh mengaktifkan randomize untuk alat clay, tetapi warna tidak akan dirandomkan.
 
 
-## Bahan
+## Bahan {#material}
 ![](/images/paint_material.webp) 
 
 Ikon pertama ialah bentuk pratonton bahan. Seret pada pratonton bahan 3D untuk memutarkannya. 
@@ -67,14 +67,14 @@ Butang pratonton di sebelah tajuk Material membolehkan anda bertukar antara none
 
 Pipet boleh digunakan untuk mengambil sampel semua sifat daripada objek dalam adegan anda.
 
-## Praset bahan
+## Praset Bahan {#material-presets}
 Mengetik bentuk pratonton 3D akan memaparkan menu praset bahan, ini boleh diklon untuk mentakrifkan praset anda sendiri.
 
 ![](/images/paint_presets.webp) 
 
 Togol `Embed Textures` dan `Alpha` apabila diaktifkan akan menyimpan sebarang tekstur yang digunakan oleh bahan ini di dalam praset. Ini diterangkan dengan lebih lanjut di bawah.
 
-## Gelangsar PBR
+## Gelangsar PBR {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 Pengecatan [PBR](shading.md#pbr) menggunakan 4 saluran:
@@ -113,7 +113,7 @@ Apabila menggunakan tekstur untuk pengecatan PBR, selalunya berguna untuk bertuk
 Anda mungkin mahu menghidupkan `Smooth Shading` [secara global](settings.md#smooth-shading) atau [per-objek](material.md#smooth-shading) jika anda mengecat permukaan logam pada objek dengan kiraan poligon rendah.
 :::
 
-## Cat semua
+## Cat semua {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
@@ -132,12 +132,12 @@ Butang tambahan mengawal cara paint all boleh dipengaruhi lagi:
 | ![](/icons/triplanar.webp) | Penunjuk tetapan triplanar                    |
 | ![](/icons/cog.webp)       | Buka tetapan Triplanar                        |
 
-### Tetapan Triplanar
+### Tetapan triplanar {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
 Serupa dengan [tetapan triplanar dalam menu bahan](material.md#triplanar), anda boleh mengawal pengadunan unjuran, pengjubinan (tiling) dan ofset. 
 
 Gunakan kotak semak pratonton di bahagian atas menu ini untuk mengaktifkan pratonton berterusan semasa melaras nilai.
 
-## Bahan global
+## Bahan global {#global-material}
 Jika pilihan ini diaktifkan, bahan yang dipilih akan sama seperti alat lain. Ambil perhatian bahawa ia hanya mengambil kira tetapan roughness, metalness dan color.
