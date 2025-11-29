@@ -32,7 +32,7 @@ function getSidebar(lang: string) {
         const file = base === '/' ? 'index.md' : base.slice(1) + '.md'
         const full = path.join(dir, file)
         const firstLine = fs.readFileSync(full, 'utf8').split('\n').find(l => l.trim().startsWith('#')) || ''
-        return firstLine.replace(/^#+\s*/, '').replace(/!\[[^\]]*]\([^)]*\)\s*/g, '').trim()
+        return firstLine.replace(/^#+\s*/, '').replace(/!\[[^\]]*]\([^)]*\)\s*/g, '').replace(/\s*\{#.*?\}\s*$/, '').trim()
     }
     return [{
         items: order.map(base => ({
@@ -173,8 +173,8 @@ export default defineConfig({
 
     locales: {
         root: { lang: 'en', label: 'English' },
-        zh_hans: { lang: 'zh-Hans', themeConfig: getLocaleTheme('zh-hans'), label: '简体中文' },
-        zh_hant: { lang: 'zh-Hant', themeConfig: getLocaleTheme('zh-hant'), label: '繁體中文' },
+        "zh-hans": { lang: 'zh-Hans', themeConfig: getLocaleTheme('zh-hans'), label: '简体中文' },
+        "zh-hant": { lang: 'zh-Hant', themeConfig: getLocaleTheme('zh-hant'), label: '繁體中文' },
         ja: { lang: 'ja', themeConfig: getLocaleTheme('ja'), label: '日本語' },
         ko: { lang: 'ko', themeConfig: getLocaleTheme('ko'), label: '한국어' },
         th: { lang: 'th', themeConfig: getLocaleTheme('th'), label: 'ไทย' },
@@ -193,8 +193,8 @@ export default defineConfig({
         tr: { lang: 'tr', themeConfig: getLocaleTheme('tr'), label: 'Türkçe' },
         vi: { lang: 'vi', themeConfig: getLocaleTheme('vi'), label: 'Tiếng Việt' },
         hi: { lang: 'hi', themeConfig: getLocaleTheme('hi'), label: 'हिन्दी' },
-        ar: { lang: 'ar', themeConfig: getLocaleTheme('ar'), label: 'العربية' },
-        he: { lang: 'he', themeConfig: getLocaleTheme('he'), label: 'עברית' },
+        ar: { lang: 'ar', themeConfig: getLocaleTheme('ar'), label: 'العربية', dir: 'rtl' },
+        he: { lang: 'he', themeConfig: getLocaleTheme('he'), label: 'עברית', dir: 'rtl' },
     },
 
 })
