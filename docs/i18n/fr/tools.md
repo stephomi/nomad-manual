@@ -184,7 +184,7 @@ Le titre de la barre peut être tapé pour l’agrandir/la réduire, ou la flèc
 
 | Action                                             | Description                                                                                 |
 | :------------------------------------------------- | :------------------------------------------------------------------------------------------ |
-| ![](/icons/cross_circle2.webp) Clear              | Effacer le masque                                                                           |
+| ![](/icons/circle_cross2.webp) Clear              | Effacer le masque                                                                           |
 | ![](/icons/invert.webp)        Invert             | Inverser le masque                                                                          |
 | ![](/icons/sharpen.webp)       Sharpen            | Accentuer le bord du masque                                                                 |
 | ![](/icons/blur.webp)          Blur               | Flouter le bord du masque                                                                   |

@@ -184,7 +184,7 @@ O título da barra pode ser tocado para expandir/recolher, ou a seta no canto su
 
 | Ação                                              | Descrição                                                                                  |
 | :------------------------------------------------ | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear             | Limpa a máscara                                                                            |
+| ![](/icons/circle_cross2.webp) Clear             | Limpa a máscara                                                                            |
 | ![](/icons/invert.webp)        Invert            | Inverte a máscara                                                                          |
 | ![](/icons/sharpen.webp)       Sharpen           | Acentua a borda da máscara                                                                 |
 | ![](/icons/blur.webp)          Blur              | Desfoca a borda da máscara                                                                 |

@@ -184,7 +184,7 @@ The title of the bar can be tapped to expand/collapse, or the arrow in the top r
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | Clear the mask                                                                             |
+| ![](/icons/circle_cross2.webp) Clear              | Clear the mask                                                                             |
 | ![](/icons/invert.webp)        Invert             | Invert the mask                                                                            |
 | ![](/icons/sharpen.webp)       Sharpen            | Sharpen the mask edge                                                                      |
 | ![](/icons/blur.webp)          Blur               | Blur the mask edge                                                                         |

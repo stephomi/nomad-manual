@@ -14,7 +14,7 @@ Questo menu consente di gestire oggetti, luci, camere e ripetitori in Nomad. Mos
 | Blocca                | ![](/icons/lock.webp)            | Rende l'oggetto non selezionabile nella viewport. Può comunque essere selezionato dalla vista ad albero.          |
 | Unisci                | ![](/icons/merge.webp)           | Unisce gli oggetti selezionati in un singolo oggetto senza modifiche alla geometria                               |
 | Separa                | ![](/icons/diagonal.webp)        | Se un oggetto è composto da gusci poligonali distinti, li suddivide in oggetti separati. L'operazione inversa di Unisci |
-| [Booleana...](#boolean) | ![](/icons/subtract_circle.webp) | Mostra il menu [Booleana](#boolean)                                                                                |
+| [Booleana...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Mostra il menu [Booleana](#boolean)                                                                                |
 | Clona                 | ![](/icons/clone.webp)           | Duplica l'oggetto in un nuovo oggetto                                                                              |
 | Istanza               | ![](/icons/link.webp)            | Duplica l'oggetto come istanza, così le modifiche di modellazione su uno vengono applicate a tutte le istanze      |
 | Rimuovi istanza       | ![](/icons/unlink.webp)          | Converte un'istanza in una forma unica, così le modifiche di modellazione non vengono più copiate alle altre istanze |

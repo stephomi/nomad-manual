@@ -252,7 +252,7 @@ Ikon di sebelah tombol decimate memungkinkan Anda mengaktifkan/mematikan opsi ya
 * ![](/icons/triforce.webp) `Uniform Faces` - Lebih memilih membuat segitiga dengan ukuran seragam.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - Decimate akan mencoba menjaga tepi dekat geometri terbuka dan lubang tetap tidak berubah.
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - Decimate akan mencoba menjaga tepi facegroup tetap tidak berubah.
-* ![](/icons/checkerboard.webp) `Preserve UV Borders` - Decimate akan mencoba menjaga tepi UV tetap tidak berubah.
+* ![](/icons/uv.webp) `Preserve UV Borders` - Decimate akan mencoba menjaga tepi UV tetap tidak berubah.
 
 #### ![](/icons/cog.webp) Menu roda gigi Desimate {#decimate-gear-menu}
 Menu gear memiliki opsi lanjutan berikut:

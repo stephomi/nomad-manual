@@ -184,7 +184,7 @@
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | مسح القناع                                                                                 |
+| ![](/icons/circle_cross2.webp) Clear              | مسح القناع                                                                                 |
 | ![](/icons/invert.webp)        Invert             | عكس القناع                                                                                |
 | ![](/icons/sharpen.webp)       Sharpen            | زيادة حدة حافة القناع                                                                      |
 | ![](/icons/blur.webp)          Blur               | تمويه حافة القناع                                                                          |

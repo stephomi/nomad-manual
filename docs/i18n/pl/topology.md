@@ -252,7 +252,7 @@ Ikony obok przycisku decimate pozwalają przełączać opcje wpływające na dek
 * ![](/icons/triforce.webp) `Uniform Faces` - Preferuje tworzenie równomiernie rozmiarowo trójkątów.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - Decimate spróbuje zachować granice w pobliżu otwartej geometrii i dziur bez zmian.
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - Decimate spróbuje zachować granice facegroup bez zmian.
-* ![](/icons/checkerboard.webp) `Preserve UV Borders` - Decimate spróbuje zachować granice UV bez zmian.
+* ![](/icons/uv.webp) `Preserve UV Borders` - Decimate spróbuje zachować granice UV bez zmian.
 
 #### ![](/icons/cog.webp) Menu koła zębatego decymacji {#decimate-gear-menu}
 Menu koła zębatego ma następujące zaawansowane opcje:

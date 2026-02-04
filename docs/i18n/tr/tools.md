@@ -183,7 +183,7 @@ Alt mod `Unmask`tir ve maskenin boyandığı yerleri siler.
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | Maskeyi temizle                                                                            |
+| ![](/icons/circle_cross2.webp) Clear              | Maskeyi temizle                                                                            |
 | ![](/icons/invert.webp)        Invert             | Maskeyi tersine çevir                                                                      |
 | ![](/icons/sharpen.webp)       Sharpen            | Maske kenarını keskinleştir                                                                |
 | ![](/icons/blur.webp)          Blur               | Maske kenarını bulanıklaştır                                                              |

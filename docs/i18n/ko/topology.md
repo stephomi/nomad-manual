@@ -272,7 +272,7 @@ Decimate 버튼 옆의 아이콘들은 디시메이션에 영향을 주는 옵�
 * ![](/icons/triforce.webp) `Uniform Faces` - 크기가 균일한 삼각형을 선호합니다.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - 열린 지오메트리와 구멍 주변의 경계를 최대한 유지합니다.
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - 페이스 그룹 경계를 최대한 유지합니다.
-* ![](/icons/checkerboard.webp) `Preserve UV Borders` - UV 경계를 최대한 유지합니다.
+* ![](/icons/uv.webp) `Preserve UV Borders` - UV 경계를 최대한 유지합니다.
 
 #### ![](/icons/cog.webp) 디시메이트 기어 메뉴 {#decimate-gear-menu}
 기어 메뉴에는 다음과 같은 고급 옵션이 있습니다:

@@ -14,7 +14,7 @@ Tato nabídka vám umožňuje spravovat objekty, světla, kamery a replikátory 
 | Zamknout              | ![](/icons/lock.webp)            | Způsobí, že objekt nelze ve viewportu vybrat. Stále jej však lze vybrat ve stromovém zobrazení.                   |
 | Sloučit               | ![](/icons/merge.webp)           | Sloučí vybrané objekty do jednoho objektu bez změny geometrie                                                     |
 | Oddělit               | ![](/icons/diagonal.webp)        | Pokud je objekt tvořen samostatnými polygonovými „skořápkami“, rozdělí jej na více objektů. Opak operace sloučení |
-| [Boolean...](#boolean) | ![](/icons/subtract_circle.webp) | Zobrazí nabídku [Boolean](#boolean)                                                                                |
+| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Zobrazí nabídku [Boolean](#boolean)                                                                                |
 | Klonovat              | ![](/icons/clone.webp)           | Duplikuje objekt do nového objektu                                                                                |
 | Instance              | ![](/icons/link.webp)            | Duplikuje objekt jako instanci, takže modelovací změny na jednom se projeví na všech instancích                   |
 | Zrušit instanci       | ![](/icons/unlink.webp)          | Převede instanci na unikátní tvar, takže modelovací změny se již nekopírují do ostatních instancí                 |

@@ -252,7 +252,7 @@ The icons next to the decimate button allow you toggle options that affect decim
 * ![](/icons/triforce.webp) `Uniform Faces` - Prefer making evenly sized triangles.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - Decimate will try to keep borders near open geometry and holes unchanged.
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - Decimate will try to keep facegroup borders unchanged.
-* ![](/icons/checkerboard.webp) `Preserve UV Borders` - Decimate will try to keep UV borders unchanged.
+* ![](/icons/uv.webp) `Preserve UV Borders` - Decimate will try to keep UV borders unchanged.
 
 #### ![](/icons/cog.webp) Decimate gear menu {#decimate-gear-menu}
 The gear menu has these advanced options:

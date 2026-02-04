@@ -14,7 +14,7 @@ Den här menyn låter dig hantera objekt, ljus, kameror och upprepare i Nomad. D
 | Lås                   | ![](/icons/lock.webp)            | Gör objektet icke-valbart i vyn. Det kan fortfarande väljas från trädvyn.                                          |
 | Sammanfoga            | ![](/icons/merge.webp)           | Slå ihop de markerade objekten till ett enda objekt utan geometriändringar                                        |
 | Separera              | ![](/icons/diagonal.webp)        | Om ett objekt består av separata polygon-skal, dela upp det i separata objekt. Motsatsen till sammanfogning        |
-| [Boolean...](#boolean) | ![](/icons/subtract_circle.webp) | Visa [Boolean](#boolean)-menyn                                                                                     |
+| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Visa [Boolean](#boolean)-menyn                                                                                     |
 | Klona                 | ![](/icons/clone.webp)           | Duplicera objektet till ett nytt objekt                                                                            |
 | Instans               | ![](/icons/link.webp)            | Duplicera objektet som en instans, så att modelländringar på ett påverkar alla instanser                          |
 | Av-instansiera        | ![](/icons/unlink.webp)          | Konvertera en instans till en unik form, så att modelländringar inte längre kopieras till andra instanser         |

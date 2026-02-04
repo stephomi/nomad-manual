@@ -14,7 +14,7 @@ Este menú te permite gestionar objetos, luces, cámaras y repetidores en Nomad.
 | Bloquear              | ![](/icons/lock.webp)            | Hace que el objeto no se pueda seleccionar en el visor. Todavía se puede seleccionar desde la vista en árbol.      |
 | Unir                  | ![](/icons/merge.webp)           | Une los objetos seleccionados en un solo objeto sin cambios en la geometría                                        |
 | Separar               | ![](/icons/diagonal.webp)        | Si un objeto está compuesto por cascarones de polígonos únicos, lo divide en objetos separados. Lo contrario de unir |
-| [Booleano...](#boolean) | ![](/icons/subtract_circle.webp) | Muestra el menú [Booleano](#boolean)                                                                               |
+| [Booleano...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Muestra el menú [Booleano](#boolean)                                                                               |
 | Clonar                | ![](/icons/clone.webp)           | Duplica el objeto en un nuevo objeto                                                                               |
 | Instancia             | ![](/icons/link.webp)            | Duplica el objeto como una instancia, de modo que los cambios de modelado en uno se apliquen a todas las instancias. |
 | Desinstanciar         | ![](/icons/unlink.webp)          | Convierte una instancia en una forma única, de modo que los cambios de modelado ya no se copien a otras instancias |

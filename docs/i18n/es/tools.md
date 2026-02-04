@@ -184,7 +184,7 @@ El título de la barra se puede tocar para expandir/contraer, o se puede tocar l
 
 | Acción                                            | Descripción                                                                               |
 | :------------------------------------------------ | :---------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear             | Limpia la máscara                                                                         |
+| ![](/icons/circle_cross2.webp) Clear             | Limpia la máscara                                                                         |
 | ![](/icons/invert.webp)        Invert            | Invierte la máscara                                                                       |
 | ![](/icons/sharpen.webp)       Sharpen           | Endurece el borde de la máscara                                                           |
 | ![](/icons/blur.webp)          Blur              | Difumina el borde de la máscara                                                           |

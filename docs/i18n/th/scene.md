@@ -14,7 +14,7 @@
 | Lock                   | ![](/icons/lock.webp)            | ทำให้อ็อบเจ็กต์ไม่สามารถเลือกได้จาก viewport แต่ยังเลือกได้จาก tree view                          |
 | Join                   | ![](/icons/merge.webp)           | รวมอ็อบเจ็กต์ที่เลือกให้กลายเป็นอ็อบเจ็กต์เดียว โดยไม่เปลี่ยนเรขาคณิต                                             |
 | Separate               | ![](/icons/diagonal.webp)        | ถ้าอ็อบเจ็กต์ประกอบด้วยเปลือกโพลิกอนที่ไม่เชื่อมต่อกัน จะแยกออกเป็นหลายอ็อบเจ็กต์ เป็นการทำงานตรงข้ามกับ Join |
-| [Boolean...](#boolean) | ![](/icons/subtract_circle.webp) | แสดงเมนู [Boolean](#boolean)                                                                                |
+| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | แสดงเมนู [Boolean](#boolean)                                                                                |
 | Clone                  | ![](/icons/clone.webp)           | ทำสำเนาอ็อบเจ็กต์เป็นอ็อบเจ็กต์ใหม่                                                                              |
 | Instance               | ![](/icons/link.webp)            | ทำสำเนาอ็อบเจ็กต์แบบ instance เพื่อให้การแก้ไขโมเดลในหนึ่งตัวสะท้อนไปยังทุก instance                         |
 | Un-instance            | ![](/icons/unlink.webp)          | แปลง instance ให้เป็นรูปทรงที่ไม่ซ้ำใคร เพื่อให้การแก้ไขโมเดลไม่ถูกคัดลอกไปยัง instance อื่น                 |

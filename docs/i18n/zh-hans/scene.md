@@ -14,7 +14,7 @@
 | 锁定                   | ![](/icons/lock.webp)            | 使物体在视图中不可选，但仍可在树视图中选中                                                                          |
 | 合并                   | ![](/icons/merge.webp)           | 将选中的多个物体合并为一个物体，不改变几何体                                                                       |
 | 分离                   | ![](/icons/diagonal.webp)        | 如果一个物体由多个独立的多边形壳体组成，则将其拆分为多个物体。是合并操作的反向操作                                   |
-| [布尔...](#boolean)    | ![](/icons/subtract_circle.webp) | 显示[布尔](#boolean)菜单                                                                                           |
+| [布尔...](#boolean)    | ![](/icons/bool_subtract_circle.webp) | 显示[布尔](#boolean)菜单                                                                                           |
 | 克隆                   | ![](/icons/clone.webp)           | 将物体复制为一个新的独立物体                                                                                       |
 | 实例                   | ![](/icons/link.webp)            | 将物体复制为实例，对其中一个实例的建模修改会同步到所有实例                                                          |
 | 取消实例               | ![](/icons/unlink.webp)          | 将实例转换为独立形状，之后的建模修改将不再同步到其他实例                                                            |

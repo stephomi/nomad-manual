@@ -184,7 +184,7 @@ Titeln på raden kan tryckas på för att fälla ut/fälla ihop, eller så kan p
 
 | Åtgärd                                            | Beskrivning                                                                               |
 | :------------------------------------------------ | :---------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear             | Rensa masken                                                                              |
+| ![](/icons/circle_cross2.webp) Clear             | Rensa masken                                                                              |
 | ![](/icons/invert.webp)        Invert            | Invertera masken                                                                          |
 | ![](/icons/sharpen.webp)       Sharpen           | Skärp maskkanten                                                                          |
 | ![](/icons/blur.webp)          Blur              | Suddar maskkanten                                                                         |

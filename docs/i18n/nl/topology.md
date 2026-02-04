@@ -252,7 +252,7 @@ De iconen naast de decimate-knop laten je opties in- of uitschakelen die de deci
 * ![](/icons/triforce.webp) `Uniform Faces` - Geef de voorkeur aan gelijkmatig grote driehoeken.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - Decimate zal proberen randen nabij open geometrie en gaten ongewijzigd te laten.
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - Decimate zal proberen facegroup-randen ongewijzigd te laten.
-* ![](/icons/checkerboard.webp) `Preserve UV Borders` - Decimate zal proberen UV-randen ongewijzigd te laten.
+* ![](/icons/uv.webp) `Preserve UV Borders` - Decimate zal proberen UV-randen ongewijzigd te laten.
 
 #### ![](/icons/cog.webp) Decimate-tandwielmenu {#decimate-gear-menu}
 Het tandwielmenu heeft deze geavanceerde opties:

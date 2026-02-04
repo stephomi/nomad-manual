@@ -184,7 +184,7 @@ Der Titel der Leiste kann angetippt werden, um sie ein- oder auszuklappen, oder 
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | Maske löschen                                                                              |
+| ![](/icons/circle_cross2.webp) Clear              | Maske löschen                                                                              |
 | ![](/icons/invert.webp)        Invert             | Maske invertieren                                                                          |
 | ![](/icons/sharpen.webp)       Sharpen            | Maskenkante schärfen                                                                       |
 | ![](/icons/blur.webp)          Blur               | Maskenkante weichzeichnen                                                                  |

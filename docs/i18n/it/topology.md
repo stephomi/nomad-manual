@@ -252,7 +252,7 @@ Le icone accanto al pulsante decimate consentono di attivare/disattivare opzioni
 * ![](/icons/triforce.webp) `Uniform Faces` - Preferisce creare triangoli di dimensioni uniformi.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - Decimate cercherà di mantenere invariati i bordi vicino a geometrie aperte e buchi.
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - Decimate cercherà di mantenere invariati i bordi dei facegroup.
-* ![](/icons/checkerboard.webp) `Preserve UV Borders` - Decimate cercherà di mantenere invariati i bordi delle UV.
+* ![](/icons/uv.webp) `Preserve UV Borders` - Decimate cercherà di mantenere invariati i bordi delle UV.
 
 #### ![](/icons/cog.webp) Menu ingranaggio Decima {#decimate-gear-menu}
 Il gear menu contiene queste opzioni avanzate:

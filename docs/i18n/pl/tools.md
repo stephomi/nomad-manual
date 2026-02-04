@@ -184,7 +184,7 @@ Tytuł paska można stuknąć, aby go rozwinąć/zwinąć, a strzałkę w prawym
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | Wyczyść maskę                                                                             |
+| ![](/icons/circle_cross2.webp) Clear              | Wyczyść maskę                                                                             |
 | ![](/icons/invert.webp)        Invert             | Odwróć maskę                                                                              |
 | ![](/icons/sharpen.webp)       Sharpen            | Wyostrz krawędź maski                                                                     |
 | ![](/icons/blur.webp)          Blur               | Rozmyj krawędź maski                                                                      |

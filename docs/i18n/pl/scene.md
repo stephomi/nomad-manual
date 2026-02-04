@@ -14,7 +14,7 @@ To menu pozwala zarządzać obiektami, światłami, kamerami i replikatorami (re
 | Zablokuj              | ![](/icons/lock.webp)            | Uczyń obiekt niemożliwym do zaznaczenia w widoku 3D. Nadal można go zaznaczyć z drzewa sceny.                    |
 | Połącz                | ![](/icons/merge.webp)           | Połącz zaznaczone obiekty w jeden obiekt bez zmiany geometrii                                                     |
 | Rozdziel              | ![](/icons/diagonal.webp)        | Jeśli obiekt składa się z oddzielnych „skorup” poligonów, rozbij go na osobne obiekty. Odwrotność operacji Połącz |
-| [Boolean...](#boolean) | ![](/icons/subtract_circle.webp) | Wyświetl menu [Boolean](#boolean)                                                                                 |
+| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Wyświetl menu [Boolean](#boolean)                                                                                 |
 | Klonuj                | ![](/icons/clone.webp)           | Duplikuj obiekt jako nowy, niezależny obiekt                                                                      |
 | Instancja             | ![](/icons/link.webp)            | Duplikuj obiekt jako instancję, tak aby zmiany modelowania jednego były stosowane do wszystkich instancji        |
 | Usuń instancję        | ![](/icons/unlink.webp)          | Zamień instancję w unikalny kształt, aby zmiany modelowania nie były już kopiowane do innych instancji           |

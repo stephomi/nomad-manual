@@ -14,7 +14,7 @@ Ce menu vous permet de gérer les objets, lumières, caméras et répéteurs dan
 | Verrouiller                   | ![](/icons/lock.webp)            | Rend l’objet impossible à sélectionner dans la vue 3D. Il peut toujours être sélectionné depuis l’arborescence.                          |
 | Fusionner                   | ![](/icons/merge.webp)           | Fusionne les objets sélectionnés en un seul objet sans modification de la géométrie                                             |
 | Séparer               | ![](/icons/diagonal.webp)        | Si un objet est composé de coques de polygones distinctes, les sépare en plusieurs objets. L’inverse de l’opération de fusion |
-| [Booléen...](#boolean) | ![](/icons/subtract_circle.webp) | Affiche le menu [Booléen](#boolean)                                                                                |
+| [Booléen...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Affiche le menu [Booléen](#boolean)                                                                                |
 | Cloner                  | ![](/icons/clone.webp)           | Duplique l’objet dans un nouvel objet                                                                              |
 | Instance               | ![](/icons/link.webp)            | Duplique l’objet en tant qu’instance, de sorte que les modifications de modélisation faites sur l’un soient répercutées sur toutes les instances.                         |
 | Dés-instancier            | ![](/icons/unlink.webp)          | Convertit une instance en forme unique, de sorte que les modifications de modélisation ne soient plus copiées sur les autres instances                 |

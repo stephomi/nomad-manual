@@ -14,7 +14,7 @@ Met dit menu kun je objecten, lichten, camera’s en repeaters beheren in Nomad.
 | Vergrendelen          | ![](/icons/lock.webp)            | Maak het object niet-selecteerbaar in de viewport. Het kan nog steeds geselecteerd worden in de boomweergave.     |
 | Samenvoegen           | ![](/icons/merge.webp)           | Voeg de geselecteerde objecten samen tot één object zonder geometrie te wijzigen                                   |
 | Splitsen              | ![](/icons/diagonal.webp)        | Als een object uit unieke polygoonschillen bestaat, splits het dan in afzonderlijke objecten. Het omgekeerde van samenvoegen |
-| [Boolean...](#boolean) | ![](/icons/subtract_circle.webp) | Toon het [Boolean](#boolean)-menu                                                                                  |
+| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Toon het [Boolean](#boolean)-menu                                                                                  |
 | Kloon                 | ![](/icons/clone.webp)           | Dupliceer het object naar een nieuw object                                                                         |
 | Instantie             | ![](/icons/link.webp)            | Dupliceer het object als een instantie, zodat modelleerwijzigingen op één instantie op alle instanties worden toegepast. |
 | De-instantiëren       | ![](/icons/unlink.webp)          | Zet een instantie om in een unieke vorm, zodat modelleerwijzigingen niet langer naar andere instanties worden gekopieerd |

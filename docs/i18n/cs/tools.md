@@ -184,7 +184,7 @@ Název panelu lze klepnutím rozbalit/sbalit, nebo klepnutím na šipku vpravo n
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | Vymazat masku                                                                              |
+| ![](/icons/circle_cross2.webp) Clear              | Vymazat masku                                                                              |
 | ![](/icons/invert.webp)        Invert             | Inverze masky                                                                              |
 | ![](/icons/sharpen.webp)       Sharpen            | Zostřit okraj masky                                                                        |
 | ![](/icons/blur.webp)          Blur               | Rozmazat okraj masky                                                                       |

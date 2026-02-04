@@ -184,7 +184,7 @@ De titel van de balk kan worden aangetikt om in/uit te klappen, of de pijl recht
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | Clear the mask                                                                             |
+| ![](/icons/circle_cross2.webp) Clear              | Clear the mask                                                                             |
 | ![](/icons/invert.webp)        Invert             | Invert the mask                                                                            |
 | ![](/icons/sharpen.webp)       Sharpen            | Sharpen the mask edge                                                                      |
 | ![](/icons/blur.webp)          Blur               | Blur the mask edge                                                                         |

@@ -252,7 +252,7 @@ Các biểu tượng cạnh nút decimate cho phép bật/tắt các tùy chọn
 * ![](/icons/triforce.webp) `Uniform Faces` - Ưu tiên tạo tam giác kích thước đồng đều.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - Decimate sẽ cố giữ biên gần hình học mở và lỗ không đổi.
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - Decimate sẽ cố giữ biên facegroup không đổi.
-* ![](/icons/checkerboard.webp) `Preserve UV Borders` - Decimate sẽ cố giữ biên UV không đổi.
+* ![](/icons/uv.webp) `Preserve UV Borders` - Decimate sẽ cố giữ biên UV không đổi.
 
 #### ![](/icons/cog.webp) Trình đơn bánh răng Giảm đa giác {#decimate-gear-menu}
 Menu bánh răng có các tùy chọn nâng cao sau:

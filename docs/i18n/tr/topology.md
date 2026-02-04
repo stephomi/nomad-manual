@@ -252,7 +252,7 @@ Decimate düğmesinin yanındaki simgeler, azaltmayı etkileyen seçenekleri aç
 * ![](/icons/triforce.webp) `Uniform Faces` - Eşit boyutlu üçgenler oluşturmayı tercih eder.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - Azaltma, açık geometri ve deliklerin yakınındaki sınırları mümkün olduğunca değiştirmemeye çalışır.
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - Azaltma, facegroup sınırlarını mümkün olduğunca değiştirmemeye çalışır.
-* ![](/icons/checkerboard.webp) `Preserve UV Borders` - Azaltma, UV sınırlarını mümkün olduğunca değiştirmemeye çalışır.
+* ![](/icons/uv.webp) `Preserve UV Borders` - Azaltma, UV sınırlarını mümkün olduğunca değiştirmemeye çalışır.
 
 #### ![](/icons/cog.webp) Azaltma dişli menüsü {#decimate-gear-menu}
 Dişli menüsü şu gelişmiş seçeneklere sahiptir:

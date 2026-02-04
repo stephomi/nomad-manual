@@ -14,7 +14,7 @@ Menu ini memungkinkan Anda mengelola objek, lampu, kamera, dan repeater di Nomad
 | Lock                   | ![](/icons/lock.webp)            | Membuat objek tidak dapat dipilih di viewport. Objek masih bisa dipilih dari tree view.                           |
 | Join                   | ![](/icons/merge.webp)           | Menggabungkan objek yang dipilih menjadi satu objek tanpa mengubah geometri                                       |
 | Separate               | ![](/icons/diagonal.webp)        | Jika sebuah objek terdiri dari beberapa shell poligon unik, pecah menjadi objek terpisah. Kebalikan dari join     |
-| [Boolean...](#boolean) | ![](/icons/subtract_circle.webp) | Menampilkan menu [Boolean](#boolean)                                                                               |
+| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Menampilkan menu [Boolean](#boolean)                                                                               |
 | Clone                  | ![](/icons/clone.webp)           | Menggandakan objek menjadi objek baru                                                                              |
 | Instance               | ![](/icons/link.webp)            | Menggandakan objek sebagai instance, sehingga perubahan modelling pada satu instance diterapkan ke semua instance  |
 | Un-instance            | ![](/icons/unlink.webp)          | Mengubah instance menjadi bentuk unik, sehingga perubahan modelling tidak lagi disalin ke instance lain            |

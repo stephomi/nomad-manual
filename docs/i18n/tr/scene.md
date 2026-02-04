@@ -14,7 +14,7 @@ Bu menü, Nomad'da nesneleri, ışıkları, kameraları ve tekrarlayıcıları (
 | Kilitle                   | ![](/icons/lock.webp)            | Nesneyi görünüm penceresinde seçilemez yapar. Ağaç görünümünden hâlâ seçilebilir.                          |
 | Birleştir                   | ![](/icons/merge.webp)           | Seçili nesneleri, geometrilerinde değişiklik yapmadan tek bir nesnede birleştirir                                             |
 | Ayır               | ![](/icons/diagonal.webp)        | Bir nesne benzersiz çokgen kabuklardan oluşuyorsa, onu ayrı nesnelere böler. Birleştirme işleminin tersidir |
-| [Boolean...](#boolean) | ![](/icons/subtract_circle.webp) | [Boolean](#boolean) menüsünü gösterir                                                                                |
+| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | [Boolean](#boolean) menüsünü gösterir                                                                                |
 | Kopya oluştur                  | ![](/icons/clone.webp)           | Nesnenin yeni bir kopyasını oluşturur                                                                              |
 | Örnek (Instance)               | ![](/icons/link.webp)            | Nesneyi bir instance olarak çoğaltır; böylece birinde yapılan modelleme değişiklikleri tüm instance'lara uygulanır.                         |
 | Instance kaldır            | ![](/icons/unlink.webp)          | Bir instance'ı benzersiz bir şekle dönüştürür; böylece modelleme değişiklikleri artık diğer instance'lara kopyalanmaz                 |

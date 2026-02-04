@@ -14,7 +14,7 @@
 | 鎖定                   | ![](/icons/lock.webp)            | 讓物件在視窗中無法被選取，但仍可在樹狀檢視中選取                                                                  |
 | 合併                   | ![](/icons/merge.webp)           | 將選取的多個物件合併為單一物件，不改變幾何結構                                                                    |
 | 分離                   | ![](/icons/diagonal.webp)        | 若物件由多個獨立的多邊形殼層組成，將其拆分為多個物件。為合併操作的反向動作                                         |
-| [布林運算...](#boolean) | ![](/icons/subtract_circle.webp) | 顯示 [布林運算](#boolean) 選單                                                                                    |
+| [布林運算...](#boolean) | ![](/icons/bool_subtract_circle.webp) | 顯示 [布林運算](#boolean) 選單                                                                                    |
 | 複製                   | ![](/icons/clone.webp)           | 將物件複製為新的獨立物件                                                                                          |
 | 實例                   | ![](/icons/link.webp)            | 將物件複製為實例，之後對任一實例的建模修改都會套用到所有實例                                                      |
 | 解除實例               | ![](/icons/unlink.webp)          | 將實例轉換為獨立形狀，之後的建模修改不再同步到其他實例                                                            |

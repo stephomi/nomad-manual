@@ -184,7 +184,7 @@ Tiêu đề thanh có thể chạm để mở/thu gọn, hoặc chạm vào mũi
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | Xóa mask                                                                                   |
+| ![](/icons/circle_cross2.webp) Clear              | Xóa mask                                                                                   |
 | ![](/icons/invert.webp)        Invert             | Đảo mask                                                                                   |
 | ![](/icons/sharpen.webp)       Sharpen            | Làm sắc cạnh mask                                                                          |
 | ![](/icons/blur.webp)          Blur               | Làm mờ cạnh mask                                                                           |

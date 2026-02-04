@@ -184,7 +184,7 @@ Sub 模式是 `Unmask`，會擦除已繪製的遮罩。
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | 清除遮罩                                                                                   |
+| ![](/icons/circle_cross2.webp) Clear              | 清除遮罩                                                                                   |
 | ![](/icons/invert.webp)        Invert             | 反轉遮罩                                                                                   |
 | ![](/icons/sharpen.webp)       Sharpen            | 銳化遮罩邊緣                                                                               |
 | ![](/icons/blur.webp)          Blur               | 模糊遮罩邊緣                                                                               |

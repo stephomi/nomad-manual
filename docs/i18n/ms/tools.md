@@ -184,7 +184,7 @@ Tajuk bar boleh diketuk untuk kembang/kuncup, atau anak panah di kanan-atas bole
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | Kosongkan mask                                                                             |
+| ![](/icons/circle_cross2.webp) Clear              | Kosongkan mask                                                                             |
 | ![](/icons/invert.webp)        Invert             | Songsangkan mask                                                                           |
 | ![](/icons/sharpen.webp)       Sharpen            | Tajamkan tepi mask                                                                         |
 | ![](/icons/blur.webp)          Blur               | Kaburkan tepi mask                                                                         |

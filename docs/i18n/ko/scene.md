@@ -14,7 +14,7 @@
 | Lock                   | ![](/icons/lock.webp)            | 뷰포트에서 오브젝트를 선택할 수 없게 만듭니다. 트리 뷰에서는 여전히 선택할 수 있습니다.                          |
 | Join                   | ![](/icons/merge.webp)           | 선택된 오브젝트들을 기하 구조 변경 없이 하나의 오브젝트로 결합합니다                                             |
 | Separate               | ![](/icons/diagonal.webp)        | 오브젝트가 여러 개의 독립된 폴리곤 셸로 구성된 경우, 이를 개별 오브젝트로 분리합니다. Join의 반대 작업입니다 |
-| [Boolean...](#boolean) | ![](/icons/subtract_circle.webp) | [Boolean](#boolean) 메뉴를 표시합니다                                                                                |
+| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | [Boolean](#boolean) 메뉴를 표시합니다                                                                                |
 | Clone                  | ![](/icons/clone.webp)           | 오브젝트를 복제하여 새 오브젝트를 만듭니다                                                                              |
 | Instance               | ![](/icons/link.webp)            | 오브젝트를 인스턴스로 복제하여, 하나를 수정하면 모든 인스턴스에 모델링 변경이 반영되도록 합니다.                         |
 | Un-instance            | ![](/icons/unlink.webp)          | 인스턴스를 고유한 형태로 변환하여, 이후 모델링 변경이 다른 인스턴스에 더 이상 복사되지 않도록 합니다                 |

@@ -252,7 +252,7 @@ Ikon di sebelah butang decimate membolehkan anda togol pilihan yang mempengaruhi
 * ![](/icons/triforce.webp) `Uniform Faces` - Lebih suka menghasilkan segi tiga bersaiz sekata.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - Decimate akan cuba mengekalkan sempadan berhampiran geometri terbuka dan lubang tidak berubah.
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - Decimate akan cuba mengekalkan sempadan facegroup tidak berubah.
-* ![](/icons/checkerboard.webp) `Preserve UV Borders` - Decimate akan cuba mengekalkan sempadan UV tidak berubah.
+* ![](/icons/uv.webp) `Preserve UV Borders` - Decimate akan cuba mengekalkan sempadan UV tidak berubah.
 
 #### ![](/icons/cog.webp) Menu gear Decimate {#decimate-gear-menu}
 Menu gear mempunyai pilihan lanjutan berikut:

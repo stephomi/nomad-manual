@@ -184,7 +184,7 @@
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | ניקוי המסכה                                                                                |
+| ![](/icons/circle_cross2.webp) Clear              | ניקוי המסכה                                                                                |
 | ![](/icons/invert.webp)        Invert             | היפוך המסכה                                                                                |
 | ![](/icons/sharpen.webp)       Sharpen            | חידוד קצה המסכה                                                                            |
 | ![](/icons/blur.webp)          Blur               | טשטוש קצה המסכה                                                                            |

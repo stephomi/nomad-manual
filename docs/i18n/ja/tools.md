@@ -184,7 +184,7 @@ Sub モードは `Unmask` で、マスクを消去します。
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | マスクをクリアします                                                                       |
+| ![](/icons/circle_cross2.webp) Clear              | マスクをクリアします                                                                       |
 | ![](/icons/invert.webp)        Invert             | マスクを反転します                                                                         |
 | ![](/icons/sharpen.webp)       Sharpen            | マスクのエッジをシャープにします                                                           |
 | ![](/icons/blur.webp)          Blur               | マスクのエッジをぼかします                                                                 |

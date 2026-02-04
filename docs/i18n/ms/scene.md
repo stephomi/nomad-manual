@@ -14,7 +14,7 @@ Menu ini membolehkan anda mengurus objek, cahaya, kamera dan pengulang (repeater
 | Kunci                  | ![](/icons/lock.webp)            | Jadikan objek tidak boleh dipilih dalam viewport. Ia masih boleh dipilih dari paparan pokok.                      |
 | Gabung                 | ![](/icons/merge.webp)           | Gabungkan objek terpilih menjadi satu objek tanpa perubahan geometri                                               |
 | Pisah                  | ![](/icons/diagonal.webp)        | Jika objek terdiri daripada kulit poligon unik, pecahkan ia kepada objek berasingan. Songsang kepada operasi gabung |
-| [Boolean...](#boolean) | ![](/icons/subtract_circle.webp) | Paparkan menu [Boolean](#boolean)                                                                                  |
+| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Paparkan menu [Boolean](#boolean)                                                                                  |
 | Klon                   | ![](/icons/clone.webp)           | Gandakan objek menjadi objek baharu                                                                                |
 | Instans                | ![](/icons/link.webp)            | Gandakan objek sebagai instans, supaya perubahan pemodelan pada satu akan digunakan pada semua instans            |
 | Nyah-instans           | ![](/icons/unlink.webp)          | Tukar instans kepada bentuk unik, supaya perubahan pemodelan tidak lagi disalin ke instans lain                   |

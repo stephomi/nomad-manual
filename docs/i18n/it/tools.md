@@ -184,7 +184,7 @@ Il titolo della barra può essere toccato per espandere/comprimere, oppure la fr
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | Cancella la maschera                                                                       |
+| ![](/icons/circle_cross2.webp) Clear              | Cancella la maschera                                                                       |
 | ![](/icons/invert.webp)        Invert             | Inverte la maschera                                                                        |
 | ![](/icons/sharpen.webp)       Sharpen            | Affila il bordo della maschera                                                             |
 | ![](/icons/blur.webp)          Blur               | Sfoca il bordo della maschera                                                              |

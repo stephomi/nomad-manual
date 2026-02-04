@@ -14,7 +14,7 @@ Menu này cho phép bạn quản lý đối tượng, đèn, camera và repeater
 | Lock                   | ![](/icons/lock.webp)            | Làm cho đối tượng không thể được chọn trong viewport. Vẫn có thể chọn từ tree view.                               |
 | Join                   | ![](/icons/merge.webp)           | Gộp các đối tượng đã chọn thành một đối tượng duy nhất mà không thay đổi hình học                                 |
 | Separate               | ![](/icons/diagonal.webp)        | Nếu một đối tượng được tạo từ nhiều “vỏ” polygon tách biệt, tách nó thành nhiều đối tượng riêng. Ngược lại với Join |
-| [Boolean...](#boolean) | ![](/icons/subtract_circle.webp) | Hiển thị menu [Boolean](#boolean)                                                                                 |
+| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Hiển thị menu [Boolean](#boolean)                                                                                 |
 | Clone                  | ![](/icons/clone.webp)           | Nhân bản đối tượng thành một đối tượng mới                                                                         |
 | Instance               | ![](/icons/link.webp)            | Nhân bản đối tượng dưới dạng instance, để thay đổi modelling trên một đối tượng sẽ áp dụng cho tất cả instance    |
 | Un-instance            | ![](/icons/unlink.webp)          | Chuyển một instance thành hình dạng độc lập, để thay đổi modelling không còn được sao chép sang các instance khác |

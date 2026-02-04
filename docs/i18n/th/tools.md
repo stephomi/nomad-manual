@@ -184,7 +184,7 @@
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | ล้างมาสก์                                                                                 |
+| ![](/icons/circle_cross2.webp) Clear              | ล้างมาสก์                                                                                 |
 | ![](/icons/invert.webp)        Invert             | กลับด้านมาสก์                                                                             |
 | ![](/icons/sharpen.webp)       Sharpen            | ทำให้ขอบมาสก์คมขึ้น                                                                       |
 | ![](/icons/blur.webp)          Blur               | ทำให้ขอบมาสก์เบลอ                                                                         |

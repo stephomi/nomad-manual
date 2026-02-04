@@ -14,7 +14,7 @@ This menu lets you manage objects, lights, cameras and repeaters in Nomad. It di
 | Lock                   | ![](/icons/lock.webp)            | Make the object unselectable in the viewport. It can still be selected from the tree view.                          |
 | Join                   | ![](/icons/merge.webp)           | Join the selected objects into a single object with no geometry changes                                             |
 | Separate               | ![](/icons/diagonal.webp)        | If an object is made up of unique polygon shells, break it into separate objects. The reverse of the join operation |
-| [Boolean...](#boolean) | ![](/icons/subtract_circle.webp) | Display the [Boolean](#boolean) menu                                                                                |
+| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Display the [Boolean](#boolean) menu                                                                                |
 | Clone                  | ![](/icons/clone.webp)           | Duplicate the object into a new object                                                                              |
 | Instance               | ![](/icons/link.webp)            | Duplicate the object as an instance, so modelling changes to one are made to all instances.                         |
 | Un-instance            | ![](/icons/unlink.webp)          | Convert an instance to a unique shape, so modelling changes are no longer copied to other instances                 |

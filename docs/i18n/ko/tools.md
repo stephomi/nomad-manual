@@ -184,7 +184,7 @@ Sub 모드는 `Unmask` 로, 그려진 마스크를 지웁니다.
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | 마스크를 모두 지웁니다                                                                    |
+| ![](/icons/circle_cross2.webp) Clear              | 마스크를 모두 지웁니다                                                                    |
 | ![](/icons/invert.webp)        Invert             | 마스크를 반전합니다                                                                       |
 | ![](/icons/sharpen.webp)       Sharpen            | 마스크 가장자리를 선명하게 합니다                                                         |
 | ![](/icons/blur.webp)          Blur               | 마스크 가장자리를 블러 처리합니다                                                         |

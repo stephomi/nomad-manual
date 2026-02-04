@@ -184,7 +184,7 @@ Judul bar dapat diketuk untuk memperluas/meruntuhkan, atau panah di kanan atas d
 
 | Action                                             | Description                                                                                |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/cross_circle2.webp) Clear              | Menghapus mask                                                                             |
+| ![](/icons/circle_cross2.webp) Clear              | Menghapus mask                                                                             |
 | ![](/icons/invert.webp)        Invert             | Membalik mask                                                                              |
 | ![](/icons/sharpen.webp)       Sharpen            | Menajamkan tepi mask                                                                       |
 | ![](/icons/blur.webp)          Blur               | Memburamkan tepi mask                                                                      |

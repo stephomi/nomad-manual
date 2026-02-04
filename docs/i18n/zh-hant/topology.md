@@ -252,7 +252,7 @@ Decimate 按鈕旁的圖示可切換影響簡化的各種選項。圖示旁的�
 * ![](/icons/triforce.webp) `Uniform Faces` - 優先產生大小均勻的三角形。
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - 儘量保持開放幾何與洞口附近的邊界不變。
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - 儘量保持 Facegroup 邊界不變。
-* ![](/icons/checkerboard.webp) `Preserve UV Borders` - 儘量保持 UV 邊界不變。
+* ![](/icons/uv.webp) `Preserve UV Borders` - 儘量保持 UV 邊界不變。
 
 #### ![](/icons/cog.webp) 簡化齒輪選單 {#decimate-gear-menu}
 齒輪選單包含以下進階選項：

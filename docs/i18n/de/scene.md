@@ -14,7 +14,7 @@ Dieses Menü ermöglicht es dir, Objekte, Lichter, Kameras und Repeater in Nomad
 | Sperren               | ![](/icons/lock.webp)            | Macht das Objekt im Viewport nicht auswählbar. Es kann weiterhin in der Baumansicht ausgewählt werden.            |
 | Verbinden             | ![](/icons/merge.webp)           | Verbindet die ausgewählten Objekte zu einem einzigen Objekt ohne Geometrieänderungen                              |
 | Trennen               | ![](/icons/diagonal.webp)        | Wenn ein Objekt aus separaten Polygon-Schalen besteht, wird es in einzelne Objekte aufgeteilt. Umkehrung von Verbinden |
-| [Boolean...](#boolean) | ![](/icons/subtract_circle.webp) | Zeigt das [Boolean](#boolean)-Menü an                                                                             |
+| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Zeigt das [Boolean](#boolean)-Menü an                                                                             |
 | Klonen                | ![](/icons/clone.webp)           | Dupliziert das Objekt als neues Objekt                                                                            |
 | Instanz               | ![](/icons/link.webp)            | Dupliziert das Objekt als Instanz, sodass Modellieränderungen an einem auf alle Instanzen angewendet werden       |
 | Instanz auflösen      | ![](/icons/unlink.webp)          | Wandelt eine Instanz in eine einzigartige Form um, sodass Modellieränderungen nicht mehr auf andere Instanzen kopiert werden |

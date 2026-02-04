@@ -252,7 +252,7 @@ Die Symbole neben der Decimate-Schaltfläche erlauben dir, Optionen umzuschalten
 * ![](/icons/triforce.webp) `Uniform Faces` – Bevorzugt gleichmäßig große Dreiecke.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` – Decimate versucht, Ränder an offener Geometrie und Löchern unverändert zu lassen.
 * ![](/icons/facegroup.webp) `Preserve Facegroup Borders` – Decimate versucht, Facegroup-Grenzen unverändert zu lassen.
-* ![](/icons/checkerboard.webp) `Preserve UV Borders` – Decimate versucht, UV-Grenzen unverändert zu lassen.
+* ![](/icons/uv.webp) `Preserve UV Borders` – Decimate versucht, UV-Grenzen unverändert zu lassen.
 
 #### ![](/icons/cog.webp) Zahnrad-Menü Reduzierung {#decimate-gear-menu}
 Das Gear-Menü hat diese erweiterten Optionen:
