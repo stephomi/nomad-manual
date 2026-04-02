@@ -47,13 +47,14 @@ function getLocaleTheme(lang: String) {
 }
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+let conf = {
     title: 'Nomad',
     description: 'Nomad Sculpt Manual',
-    cleanUrls: true,
     appearance: 'dark',
-    base: '/manual/',
     outDir: '../dist/manual',
+
+    cleanUrls: true,
+    base: '/manual/',
 
     // https://vitepress.dev/reference/default-theme-config
     themeConfig: {
@@ -196,5 +197,15 @@ export default defineConfig({
         ar: { lang: 'ar', themeConfig: getLocaleTheme('ar'), label: 'العربية', dir: 'rtl' },
         he: { lang: 'he', themeConfig: getLocaleTheme('he'), label: 'עברית', dir: 'rtl' },
     },
+};
 
-})
+// find docs -maxdepth 1 -name "*.md" -exec sed -i '' 's|\](/|\](./|g' {} +
+// find docs/i18n -name "*.md" -exec sed -i '' 's|\](/|\](../../|g' {} +
+// "mpa": "vitepress build --mpa docs",
+if (false) {
+    conf.mpa = true;
+    conf.cleanUrls = false;
+    conf.base = './';
+}
+
+export default defineConfig(conf)
