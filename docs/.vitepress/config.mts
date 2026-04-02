@@ -2,6 +2,9 @@ import { defineConfig } from 'vitepress'
 import fs from 'node:fs'
 import path from 'node:path'
 
+const IS_MPA = false;
+const ONLY_EN = false;
+
 const order = [
     '/',
     '/gettingstarted',
@@ -40,7 +43,7 @@ function getSidebar(lang: string) {
             link: lang ? base === '/' ? `/${lang}/` : `/${lang}${base}` : base
         }))
     }]
-}
+};
 
 function getLocaleTheme(lang: String) {
     return { sidebar: getSidebar(lang) }
@@ -53,8 +56,9 @@ let conf = {
     appearance: 'dark',
     outDir: '../dist/manual',
 
-    cleanUrls: true,
-    base: '/manual/',
+    cleanUrls: IS_MPA ? false : true,
+    base: IS_MPA ? './' : '/manual/',
+    mpa: IS_MPA,
 
     // https://vitepress.dev/reference/default-theme-config
     themeConfig: {
@@ -132,7 +136,7 @@ let conf = {
             md.renderer.rules.image = function (tokens, idx, options, env, self) {
                 const token = tokens[idx]
                 const src = token.attrGet('src')
-                if (src && src.startsWith('/videos')) {
+                if (src && src.includes('/videos')) {
                     var srcImg = src.replace('.mp4', '.webp')
                     var tag = '<video controls preload="metadata" poster="$0">'
                     tag += '<source src="$1" type="video/mp4">'
@@ -141,10 +145,10 @@ let conf = {
                     tag = tag.replace('$1', src)
                     return tag
                 }
-                if (src && src.startsWith('/images')) {
+                if (src && src.includes('/images')) {
                     token.attrJoin('class', 'image')
                 }
-                if (src && src.startsWith('/icons')) {
+                if (src && src.includes('/icons')) {
                     token.attrJoin('class', 'icon')
                     if (!colored.some(color => src.includes(color))) token.attrJoin('class', 'can_invert')
                 }
@@ -167,10 +171,6 @@ let conf = {
             function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-DSF8ZS1RCC');`
         ]
     ],
-
-    rewrites: {
-        'i18n/:locale/:file*': ':locale/:file*'
-    },
 
     locales: {
         root: { lang: 'en', label: 'English' },
@@ -197,15 +197,35 @@ let conf = {
         ar: { lang: 'ar', themeConfig: getLocaleTheme('ar'), label: 'العربية', dir: 'rtl' },
         he: { lang: 'he', themeConfig: getLocaleTheme('he'), label: 'עברית', dir: 'rtl' },
     },
+
+    rewrites: {
+        'i18n/:locale/:file*': ':locale/:file*'
+    },
+
+    async transformHtml(code, id) {
+        if (!this.mpa) return code;
+
+        const isLocale = Object.keys(conf.locales).some(k => k !== 'root' && id.replace(/\\/g, '/').includes(`/${k}/`));
+        const prefix = isLocale ? '../' : './';
+        const baseReg = conf.base.replace(/\//g, '\\/');
+
+        return code
+            // 1. Fix assets (CSS, JS, images)
+            .replace(/(src|href)="(?:\.\/|\/)(assets|icons|images|videos)\//g, `$1="${prefix}$2/`)
+            // 2. Fix internal links for offline (append index.html / .html)
+            .replace(new RegExp(`href="(?:${baseReg}|\\/)(?!http|\\/\\/|mailto)([^"]*)"`, 'g'), (_, p) => {
+                p = p.replace(/^\//, '');
+                p = (p === '' || p.endsWith('/')) ? p + 'index.html' : (!p.includes('.') ? p + '.html' : p);
+                return `href="${prefix}${p}"`;
+            });
+    }
 };
 
-// find docs -maxdepth 1 -name "*.md" -exec sed -i '' 's|\](/|\](./|g' {} +
-// find docs/i18n -name "*.md" -exec sed -i '' 's|\](/|\](../../|g' {} +
-// "mpa": "vitepress build --mpa docs",
-if (false) {
-    conf.mpa = true;
-    conf.cleanUrls = false;
-    conf.base = './';
+if (ONLY_EN) {
+    conf.rewrites = {};
+    conf.locales = {};
+    conf.srcExclude = ['i18n/**'];
+    conf.themeConfig.sidebar = getSidebar('');
 }
 
 export default defineConfig(conf)
