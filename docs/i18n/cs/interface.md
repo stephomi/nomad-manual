@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) Nabídka rozhraní {#interface-menu}
+# ![](/icons/sliders.webp) Nabídka rozhraní {#interface-menu}
 
 Tato nabídka ovládá mnoho možností pro přizpůsobení rozhraní Nomadu. 
 

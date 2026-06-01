@@ -36,7 +36,7 @@ Do NOT summarize, reorder or comment.
 Output ONLY the translated Markdown.
 
 For headings, translate it but keep anchor intact in English.
-If there is no anchor add it.
+If there is no anchor, add it.
 For example if you have
 # my title
 It should become

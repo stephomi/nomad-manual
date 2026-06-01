@@ -31,7 +31,7 @@
 | [Simetri](symmetry.md)         | ![](/icons/symmetry.webp)    | Geçerli örgünüzün ayna düzlemini yönetin            |
 | [Katmanlar](layers.md)         | ![](/icons/layer.webp)       | Geçerli nesne katmanlarınızı yönetin               |
 | [Ayarlar](settings.md)         | ![](/icons/cog.webp)         | 3B görünümü özelleştirin                            |
-| [Arayüz](interface.md)         | ![](/icons/interface.webp)   | Arayüzü özelleştirin                                |
+| [Arayüz](interface.md)         | ![](/icons/sliders.webp)   | Arayüzü özelleştirin                                |
 | [Araçlar](tools.md)            | ![](/icons/toolbox.webp)     | Tüm araçların/fırçaların listesi                    |
 | [Geçmiş](history.md)           | ![](/icons/history.webp)     | Geri al/yeniden yap geçmiş yığınını yönetin         |
 | [SSS](faq.md)                  | ![](/icons/faq.webp)         | Sıkça Sorulan Sorular                               |

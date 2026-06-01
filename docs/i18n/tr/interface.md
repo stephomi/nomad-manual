@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) Arayüz Menüsü {#interface-menu}
+# ![](/icons/sliders.webp) Arayüz Menüsü {#interface-menu}
 
 Bu menü, Nomad'ın arayüzünü özelleştirmek için birçok seçeneği kontrol eder. 
 

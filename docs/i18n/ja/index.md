@@ -31,7 +31,7 @@
 | [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | 現在のメッシュのミラープレーンを管理              |
 | [Layers](layers.md)            | ![](/icons/layer.webp)       | 現在のオブジェクトのレイヤーを管理                |
 | [Settings](settings.md)        | ![](/icons/cog.webp)         | 3D ビューポートのカスタマイズ                     |
-| [Interface](interface.md)      | ![](/icons/interface.webp)   | インターフェースのカスタマイズ                    |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)   | インターフェースのカスタマイズ                    |
 | [Tools](tools.md)              | ![](/icons/toolbox.webp)     | すべてのツール／ブラシの一覧                      |
 | [History](history.md)          | ![](/icons/history.webp)     | アンドゥ／リドゥ履歴スタックの管理                |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | よくある質問                                      |

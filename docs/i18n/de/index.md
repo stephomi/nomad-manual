@@ -31,7 +31,7 @@ Lies die Anleitung [Erste Schritte](gettingstarted.md).
 | [Symmetrie](symmetry.md)       | ![](/icons/symmetry.webp)    | Verwalte die Spiegel­ebene deines aktuellen Meshes |
 | [Ebenen](layers.md)            | ![](/icons/layer.webp)       | Verwalte die Ebenen deines aktuellen Objekts       |
 | [Einstellungen](settings.md)   | ![](/icons/cog.webp)         | Passe den 3D‑Viewport an                           |
-| [Oberfläche](interface.md)     | ![](/icons/interface.webp)   | Passe die Benutzeroberfläche an                    |
+| [Oberfläche](interface.md)     | ![](/icons/sliders.webp)   | Passe die Benutzeroberfläche an                    |
 | [Werkzeuge](tools.md)          | ![](/icons/toolbox.webp)     | Liste aller Werkzeuge/Pinsel                       |
 | [Verlauf](history.md)          | ![](/icons/history.webp)     | Verwalte den Undo/Redo‑Verlaufsstapel              |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Häufig gestellte Fragen                            |

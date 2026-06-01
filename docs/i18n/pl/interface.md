@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) Menu interfejsu {#interface-menu}
+# ![](/icons/sliders.webp) Menu interfejsu {#interface-menu}
 
 To menu kontroluje wiele opcji dostosowywania interfejsu Nomada. 
 

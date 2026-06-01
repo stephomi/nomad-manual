@@ -31,7 +31,7 @@ Läs guiden [Kom igång](gettingstarted.md).
 | [Symmetri](symmetry.md)        | ![](/icons/symmetry.webp)    | Hantera spegelplanet för ditt aktuella mesh       |
 | [Lager](layers.md)             | ![](/icons/layer.webp)       | Hantera lagren för ditt aktuella objekt           |
 | [Inställningar](settings.md)   | ![](/icons/cog.webp)         | Anpassa 3D-vyn                                    |
-| [Gränssnitt](interface.md)     | ![](/icons/interface.webp)   | Anpassa gränssnittet                              |
+| [Gränssnitt](interface.md)     | ![](/icons/sliders.webp)   | Anpassa gränssnittet                              |
 | [Verktyg](tools.md)            | ![](/icons/toolbox.webp)     | Lista över alla verktyg/penslar                   |
 | [Historik](history.md)         | ![](/icons/history.webp)     | Hantera ångra/gör om-historiken                   |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Vanliga frågor                                    |

@@ -31,7 +31,7 @@
 | [对称](symmetry.md)           | ![](/icons/symmetry.webp)    | 管理当前网格的镜像平面                             |
 | [图层](layers.md)             | ![](/icons/layer.webp)       | 管理当前对象的图层                                 |
 | [设置](settings.md)           | ![](/icons/cog.webp)         | 自定义 3D 视口                                     |
-| [界面](interface.md)          | ![](/icons/interface.webp)   | 自定义界面                                         |
+| [界面](interface.md)          | ![](/icons/sliders.webp)   | 自定义界面                                         |
 | [工具](tools.md)              | ![](/icons/toolbox.webp)     | 所有工具/笔刷列表                                  |
 | [历史记录](history.md)        | ![](/icons/history.webp)     | 管理撤销/重做历史栈                                |
 | [常见问题](faq.md)            | ![](/icons/faq.webp)         | 常见问题                                           |

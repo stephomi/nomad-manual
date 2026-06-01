@@ -31,7 +31,7 @@ Baca panduan [Memulakan](gettingstarted.md).
 | [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Urus satah cermin bagi jejaring semasa anda         |
 | [Layers](layers.md)            | ![](/icons/layer.webp)       | Urus lapisan objek semasa anda                      |
 | [Settings](settings.md)        | ![](/icons/cog.webp)         | Suaikan paparan 3D                                  |
-| [Interface](interface.md)      | ![](/icons/interface.webp)   | Suaikan antara muka                                  |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Suaikan antara muka                                  |
 | [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Senarai semua alat/berus                            |
 | [History](history.md)          | ![](/icons/history.webp)     | Urus timbunan sejarah nyahbuat/buat semula          |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Soalan Lazim                                        |

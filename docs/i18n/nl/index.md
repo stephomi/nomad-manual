@@ -31,7 +31,7 @@ Lees de gids [Aan de slag](gettingstarted.md).
 | [Symmetrie](symmetry.md)       | ![](/icons/symmetry.webp)    | Beheer het spiegelvlak van je huidige mesh         |
 | [Lagen](layers.md)             | ![](/icons/layer.webp)       | Beheer de lagen van je huidige object              |
 | [Instellingen](settings.md)    | ![](/icons/cog.webp)         | Pas het 3D‑viewport aan                            |
-| [Interface](interface.md)      | ![](/icons/interface.webp)   | Pas de interface aan                               |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Pas de interface aan                               |
 | [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Lijst van alle tools/penselen                      |
 | [Geschiedenis](history.md)     | ![](/icons/history.webp)     | Beheer de stapel voor ongedaan maken/opnieuw       |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Veelgestelde vragen                                |

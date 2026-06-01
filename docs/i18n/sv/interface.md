@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) Meny för gränssnitt {#interface-menu}
+# ![](/icons/sliders.webp) Meny för gränssnitt {#interface-menu}
 
 Den här menyn styr många alternativ för att anpassa Nomads gränssnitt. 
 

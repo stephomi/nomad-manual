@@ -31,7 +31,7 @@ Przeczytaj przewodnik [Pierwsze kroki](gettingstarted.md).
 | [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Zarządzaj płaszczyzną lustrzaną bieżącej siatki    |
 | [Layers](layers.md)            | ![](/icons/layer.webp)       | Zarządzaj warstwami bieżącego obiektu              |
 | [Settings](settings.md)        | ![](/icons/cog.webp)         | Dostosuj widok 3D                                   |
-| [Interface](interface.md)      | ![](/icons/interface.webp)   | Dostosuj interfejs                                 |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Dostosuj interfejs                                 |
 | [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Lista wszystkich narzędzi/pędzli                   |
 | [History](history.md)          | ![](/icons/history.webp)     | Zarządzaj stosem historii cofania/przywracania     |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Najczęściej zadawane pytania                       |

@@ -31,7 +31,7 @@
 | [สมมาตร](symmetry.md)         | ![](/icons/symmetry.webp)    | จัดการระนาบกระจกของเมชปัจจุบันของคุณ             |
 | [เลเยอร์](layers.md)          | ![](/icons/layer.webp)       | จัดการเลเยอร์ของอ็อบเจ็กต์ปัจจุบันของคุณ         |
 | [การตั้งค่า](settings.md)     | ![](/icons/cog.webp)         | ปรับแต่งวิวพอร์ต 3 มิติ                           |
-| [อินเทอร์เฟซ](interface.md)   | ![](/icons/interface.webp)   | ปรับแต่งอินเทอร์เฟซ                                |
+| [อินเทอร์เฟซ](interface.md)   | ![](/icons/sliders.webp)   | ปรับแต่งอินเทอร์เฟซ                                |
 | [เครื่องมือ](tools.md)        | ![](/icons/toolbox.webp)     | รายการเครื่องมือ/บรัชทั้งหมด                      |
 | [ประวัติ](history.md)         | ![](/icons/history.webp)     | จัดการสแต็กประวัติการเลิกทำ/ทำซ้ำ                 |
 | [คำถามที่พบบ่อย](faq.md)      | ![](/icons/faq.webp)         | คำถามที่พบบ่อย                                     |

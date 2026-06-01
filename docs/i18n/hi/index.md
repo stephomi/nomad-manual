@@ -31,7 +31,7 @@
 | [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | अपनी वर्तमान मेष के मिरर प्लेन को प्रबंधित करें   |
 | [Layers](layers.md)            | ![](/icons/layer.webp)       | अपने वर्तमान ऑब्जेक्ट लेयर्स प्रबंधित करें        |
 | [Settings](settings.md)        | ![](/icons/cog.webp)         | 3D व्यूपोर्ट को कस्टमाइज़ करें                     |
-| [Interface](interface.md)      | ![](/icons/interface.webp)   | इंटरफ़ेस को कस्टमाइज़ करें                         |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)   | इंटरफ़ेस को कस्टमाइज़ करें                         |
 | [Tools](tools.md)              | ![](/icons/toolbox.webp)     | सभी टूल्स/ब्रश की सूची                             |
 | [History](history.md)          | ![](/icons/history.webp)     | undo/redo हिस्ट्री स्टैक प्रबंधित करें             |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | अक्सर पूछे जाने वाले प्रश्न                        |

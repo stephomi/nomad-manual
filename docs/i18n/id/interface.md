@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) Menu Antarmuka {#interface-menu}
+# ![](/icons/sliders.webp) Menu Antarmuka {#interface-menu}
 
 Menu ini mengontrol banyak opsi untuk menyesuaikan antarmuka Nomad. 
 

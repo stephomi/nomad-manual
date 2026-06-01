@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) قائمة الواجهة {#interface-menu}
+# ![](/icons/sliders.webp) قائمة الواجهة {#interface-menu}
 
 تتحكم هذه القائمة في العديد من الخيارات لتخصيص واجهة Nomad. 
 

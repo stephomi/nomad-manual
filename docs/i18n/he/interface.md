@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) תפריט ממשק {#interface-menu}
+# ![](/icons/sliders.webp) תפריט ממשק {#interface-menu}
 
 תפריט זה שולט באפשרויות רבות להתאמת הממשק של Nomad. 
 

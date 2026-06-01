@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) Interfacemenü {#interface-menu}
+# ![](/icons/sliders.webp) Interfacemenü {#interface-menu}
 
 Dieses Menü steuert viele Optionen zur Anpassung der Nomad-Oberfläche. 
 

@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) Меню интерфейса {#interface-menu}
+# ![](/icons/sliders.webp) Меню интерфейса {#interface-menu}
 
 Это меню управляет множеством параметров для настройки интерфейса Nomad. 
 

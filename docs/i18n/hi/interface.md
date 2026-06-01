@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) इंटरफ़ेस मेनू {#interface-menu}
+# ![](/icons/sliders.webp) इंटरफ़ेस मेनू {#interface-menu}
 
 यह मेनू Nomad के इंटरफ़ेस को कस्टमाइज़ करने के लिए कई विकल्पों को नियंत्रित करता है। 
 

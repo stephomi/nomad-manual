@@ -31,7 +31,7 @@
 | [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Управление плоскостью зеркалирования текущей сетки |
 | [Layers](layers.md)            | ![](/icons/layer.webp)       | Управление слоями текущего объекта                 |
 | [Settings](settings.md)        | ![](/icons/cog.webp)         | Настройка 3D-вьюпорта                               |
-| [Interface](interface.md)      | ![](/icons/interface.webp)   | Настройка интерфейса                               |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Настройка интерфейса                               |
 | [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Список всех инструментов/кистей                    |
 | [History](history.md)          | ![](/icons/history.webp)     | Управление стеком истории отмен/повторов           |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Часто задаваемые вопросы                           |

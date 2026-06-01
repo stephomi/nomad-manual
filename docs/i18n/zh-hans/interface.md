@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) 界面菜单 {#interface-menu}
+# ![](/icons/sliders.webp) 界面菜单 {#interface-menu}
 
 此菜单控制许多用于自定义 Nomad 界面的选项。 
 

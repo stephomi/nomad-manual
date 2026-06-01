@@ -31,7 +31,7 @@ Leia o guia [Primeiros Passos](gettingstarted.md).
 | [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Gerencie o plano de espelhamento da malha atual    |
 | [Layers](layers.md)            | ![](/icons/layer.webp)       | Gerencie as camadas do objeto atual                |
 | [Settings](settings.md)        | ![](/icons/cog.webp)         | Personalize a viewport 3D                          |
-| [Interface](interface.md)      | ![](/icons/interface.webp)   | Personalize a interface                            |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Personalize a interface                            |
 | [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Lista de todas as ferramentas/pincéis              |
 | [History](history.md)          | ![](/icons/history.webp)     | Gerencie a pilha de histórico de desfazer/refazer  |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Perguntas Frequentes                               |

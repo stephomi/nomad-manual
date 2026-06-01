@@ -31,7 +31,7 @@
 | [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Quản lý mặt phẳng đối xứng của lưới hiện tại             |
 | [Layers](layers.md)            | ![](/icons/layer.webp)       | Quản lý các lớp của đối tượng hiện tại                   |
 | [Settings](settings.md)        | ![](/icons/cog.webp)         | Tùy chỉnh khung nhìn 3D                                  |
-| [Interface](interface.md)      | ![](/icons/interface.webp)   | Tùy chỉnh giao diện                                      |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Tùy chỉnh giao diện                                      |
 | [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Danh sách tất cả công cụ/cọ                              |
 | [History](history.md)          | ![](/icons/history.webp)     | Quản lý ngăn xếp lịch sử hoàn tác/làm lại                |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Câu hỏi thường gặp                                       |

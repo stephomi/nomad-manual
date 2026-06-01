@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) Menu Giao diện {#interface-menu}
+# ![](/icons/sliders.webp) Menu Giao diện {#interface-menu}
 
 Menu này điều khiển nhiều tùy chọn để tùy biến giao diện của Nomad. 
 

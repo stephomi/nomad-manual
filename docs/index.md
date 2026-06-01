@@ -31,7 +31,7 @@ Read the [Getting Started](gettingstarted.md) guide.
 | [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Manage the mirror plane of your current mesh       |
 | [Layers](layers.md)            | ![](/icons/layer.webp)       | Manage your current object layers                  |
 | [Settings](settings.md)        | ![](/icons/cog.webp)         | Customize the 3d viewport                          |
-| [Interface](interface.md)      | ![](/icons/interface.webp)   | Customize the interface                            |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)     | Customize the interface                            |
 | [Tools](tools.md)              | ![](/icons/toolbox.webp)     | List of every tools/brushes                        |
 | [History](history.md)          | ![](/icons/history.webp)     | Manage the undo/redo history stack                 |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Frequently Asked Questions                         |

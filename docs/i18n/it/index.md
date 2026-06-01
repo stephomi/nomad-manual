@@ -31,7 +31,7 @@ Leggi la guida [Per iniziare](gettingstarted.md).
 | [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Gestisci il piano di simmetria della mesh corrente |
 | [Layers](layers.md)            | ![](/icons/layer.webp)       | Gestisci i livelli dell'oggetto corrente           |
 | [Settings](settings.md)        | ![](/icons/cog.webp)         | Personalizza la viewport 3D                        |
-| [Interface](interface.md)      | ![](/icons/interface.webp)   | Personalizza l'interfaccia                         |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Personalizza l'interfaccia                         |
 | [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Elenco di tutti gli strumenti/pennelli             |
 | [History](history.md)          | ![](/icons/history.webp)     | Gestisci lo stack di cronologia annulla/ripristina |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Domande frequenti                                  |

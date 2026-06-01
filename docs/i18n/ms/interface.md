@@ -1,4 +1,4 @@
-# ![](/icons/interface.webp) Menu Antara Muka {#interface-menu}
+# ![](/icons/sliders.webp) Menu Antara Muka {#interface-menu}
 
 Menu ini mengawal banyak pilihan untuk menyesuaikan antara muka Nomad. 
 

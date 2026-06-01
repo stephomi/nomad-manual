@@ -31,7 +31,7 @@
 | [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | 管理目前網格的鏡射平面                            |
 | [Layers](layers.md)            | ![](/icons/layer.webp)       | 管理目前物件的圖層                                |
 | [Settings](settings.md)        | ![](/icons/cog.webp)         | 自訂 3D 視窗                                      |
-| [Interface](interface.md)      | ![](/icons/interface.webp)   | 自訂介面                                          |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)   | 自訂介面                                          |
 | [Tools](tools.md)              | ![](/icons/toolbox.webp)     | 所有工具／筆刷一覽                                |
 | [History](history.md)          | ![](/icons/history.webp)     | 管理復原／重做的歷史堆疊                          |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | 常見問題                                          |

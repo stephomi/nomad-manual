@@ -31,7 +31,7 @@ Přečtěte si průvodce [Začínáme](gettingstarted.md).
 | [Symetrie](symmetry.md)        | ![](/icons/symmetry.webp)    | Správa zrcadlicí roviny aktuální sítě              |
 | [Vrstvy](layers.md)            | ![](/icons/layer.webp)       | Správa vrstev aktuálního objektu                   |
 | [Nastavení](settings.md)       | ![](/icons/cog.webp)         | Přizpůsobení 3D zobrazení                          |
-| [Rozhraní](interface.md)       | ![](/icons/interface.webp)   | Přizpůsobení rozhraní                              |
+| [Rozhraní](interface.md)       | ![](/icons/sliders.webp)   | Přizpůsobení rozhraní                              |
 | [Nástroje](tools.md)           | ![](/icons/toolbox.webp)     | Seznam všech nástrojů/štětců                       |
 | [Historie](history.md)         | ![](/icons/history.webp)     | Správa zásobníku historie zpět/znovu               |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Často kladené otázky                               |

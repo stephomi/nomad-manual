@@ -31,7 +31,7 @@
 | [التناظر](symmetry.md)        | ![](/icons/symmetry.webp)    | إدارة مستوى الانعكاس للشبكة الحالية               |
 | [الطبقات](layers.md)          | ![](/icons/layer.webp)       | إدارة طبقات الكائن الحالي                          |
 | [الإعدادات](settings.md)      | ![](/icons/cog.webp)         | تخصيص منفذ العرض ثلاثي الأبعاد                     |
-| [الواجهة](interface.md)       | ![](/icons/interface.webp)   | تخصيص الواجهة                                      |
+| [الواجهة](interface.md)       | ![](/icons/sliders.webp)   | تخصيص الواجهة                                      |
 | [الأدوات](tools.md)           | ![](/icons/toolbox.webp)     | قائمة بجميع الأدوات/الفرش                          |
 | [السجل](history.md)           | ![](/icons/history.webp)     | إدارة مكدس التراجع/الإعادة                         |
 | [الأسئلة الشائعة](faq.md)     | ![](/icons/faq.webp)         | الأسئلة المتكررة                                   |

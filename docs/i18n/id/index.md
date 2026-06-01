@@ -31,7 +31,7 @@ Baca panduan [Memulai](gettingstarted.md).
 | [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Kelola bidang cermin dari mesh Anda saat ini        |
 | [Layers](layers.md)            | ![](/icons/layer.webp)       | Kelola layer objek Anda saat ini                    |
 | [Settings](settings.md)        | ![](/icons/cog.webp)         | Kustomisasi viewport 3D                             |
-| [Interface](interface.md)      | ![](/icons/interface.webp)   | Kustomisasi antarmuka                               |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Kustomisasi antarmuka                               |
 | [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Daftar semua tool/kuas                              |
 | [History](history.md)          | ![](/icons/history.webp)     | Kelola tumpukan riwayat undo/redo                   |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Pertanyaan yang Sering Diajukan                     |

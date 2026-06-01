@@ -31,7 +31,7 @@ Lisez le guide [Bien démarrer](gettingstarted.md).
 | [Symétrie](symmetry.md)        | ![](/icons/symmetry.webp)    | Gérer le plan miroir de votre maillage actuel      |
 | [Calques](layers.md)           | ![](/icons/layer.webp)       | Gérer les calques de votre objet actuel            |
 | [Paramètres](settings.md)      | ![](/icons/cog.webp)         | Personnaliser la vue 3D                            |
-| [Interface](interface.md)      | ![](/icons/interface.webp)   | Personnaliser l’interface                          |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Personnaliser l’interface                          |
 | [Outils](tools.md)             | ![](/icons/toolbox.webp)     | Liste de tous les outils/pinceaux                  |
 | [Historique](history.md)       | ![](/icons/history.webp)     | Gérer la pile d’historique annuler/rétablir        |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Foire aux questions                                |

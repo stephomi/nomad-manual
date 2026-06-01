@@ -32,7 +32,7 @@ Each output item must include the leading hashes and icon if present, but NOT an
 Example format (headings only):
 [
   "# Mon titre",
-  "## ![](/icons/x.webp) Lumière",
+  "## ![](/icons/x.png) Lumière",
   "### Paramètres du matériau"
 ]
 """

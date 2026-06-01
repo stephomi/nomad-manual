@@ -31,7 +31,7 @@
 | [סימטריה](symmetry.md)        | ![](/icons/symmetry.webp)    | ניהול מישור המראה של הרשת הנוכחית                  |
 | [שכבות](layers.md)            | ![](/icons/layer.webp)       | ניהול שכבות האובייקט הנוכחי                        |
 | [הגדרות](settings.md)         | ![](/icons/cog.webp)         | התאמת חלון התצוגה התלת־ממדי                        |
-| [ממשק](interface.md)          | ![](/icons/interface.webp)   | התאמת הממשק                                        |
+| [ממשק](interface.md)          | ![](/icons/sliders.webp)   | התאמת הממשק                                        |
 | [כלים](tools.md)              | ![](/icons/toolbox.webp)     | רשימת כל הכלים/המברשות                             |
 | [היסטוריה](history.md)        | ![](/icons/history.webp)     | ניהול מחסנית ביטול/ביצוע חוזר                      |
 | [שאלות נפוצות](faq.md)        | ![](/icons/faq.webp)         | שאלות ותשובות נפוצות                               |

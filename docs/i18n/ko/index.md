@@ -31,7 +31,7 @@
 | [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | 현재 메쉬의 미러 평면 관리                         |
 | [Layers](layers.md)            | ![](/icons/layer.webp)       | 현재 오브젝트 레이어 관리                          |
 | [Settings](settings.md)        | ![](/icons/cog.webp)         | 3D 뷰포트 사용자 정의                              |
-| [Interface](interface.md)      | ![](/icons/interface.webp)   | 인터페이스 사용자 정의                             |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)   | 인터페이스 사용자 정의                             |
 | [Tools](tools.md)              | ![](/icons/toolbox.webp)     | 모든 도구/브러시 목록                              |
 | [History](history.md)          | ![](/icons/history.webp)     | 실행 취소/다시 실행 히스토리 스택 관리             |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | 자주 묻는 질문                                     |
