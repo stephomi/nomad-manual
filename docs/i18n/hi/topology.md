@@ -251,7 +251,7 @@ Decimate बटन के बगल के आइकन वे विकल्�
 * ![](/icons/palette.webp)  `Preserve Painting` - जहाँ पेंटिंग डिटेल है वहाँ ज़्यादा त्रिभुज रखें।
 * ![](/icons/triforce.webp) `Uniform Faces` - समान आकार के त्रिभुज बनाने को प्राथमिकता दें।
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - डेसिमेट खुली ज्योमेट्री और holes के पास बॉर्डर को यथासंभव अपरिवर्तित रखने की कोशिश करेगा।
-* ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - डेसिमेट फेसग्रुप बॉर्डर को यथासंभव अपरिवर्तित रखने की कोशिश करेगा।
+* ![](/icons/group.webp) `Preserve Facegroup Borders` - डेसिमेट फेसग्रुप बॉर्डर को यथासंभव अपरिवर्तित रखने की कोशिश करेगा।
 * ![](/icons/uv.webp) `Preserve UV Borders` - डेसिमेट UV बॉर्डर को यथासंभव अपरिवर्तित रखने की कोशिश करेगा।
 
 #### ![](/icons/cog.webp) डेसिमेट गियर मेनू {#decimate-gear-menu}

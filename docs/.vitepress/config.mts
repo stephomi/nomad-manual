@@ -112,7 +112,7 @@ let conf = {
     markdown: {
         config: md => {
             const colored = [
-                'faceGroup.webp',
+                'group.webp',
                 'gizmo.webp',
                 'flag_',
                 'tool_planar.webp',

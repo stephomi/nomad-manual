@@ -3,12 +3,12 @@ import os
 import re
 from typing import List, Dict, Tuple
 
-EN_DIR    = "docs"
+EN_DIR   = "docs"
 I18N_DIR = "docs/i18n"
 
-HEAD    = re.compile(r'^(#+)\s+(.*)$')
+HEAD   = re.compile(r'^(#+)\s+(.*)$')
 ANCHOR = re.compile(r'\s*\{#([^}]+)\}\s*$')
-ICON    = re.compile(r'^!\[[^\]]*\]\([^)]+\)\s*')
+ICON   = re.compile(r'^!\[[^\]]*\]\([^)]+\)\s*')
 
 try:
     langs = [

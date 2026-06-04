@@ -58,7 +58,7 @@
 |       Delete+       |            ![](/icons/removeNode.webp)         | 오브젝트와 그 자식을 모두 삭제합니다                                                                                                                                      |
 |     Un-instance     |              ![](/icons/unlink.webp)           | 인스턴스를 고유한 형태로 변환하여, 이후 모델링 변경이 다른 인스턴스에 더 이상 복사되지 않도록 합니다.                                                                    |
 |  Separate Topology  |             ![](/icons/separate.webp)          | 오브젝트가 여러 개의 독립된 폴리곤 셸로 구성된 경우, 이를 개별 오브젝트로 분리합니다. Join 작업의 반대입니다.                                                    |
-| Separate Face Group |            ![](/icons/faceGroup.webp)          | 오브젝트에 여러 페이스 그룹이 있는 경우, 메시를 개별 오브젝트로 분리합니다.                                                                                            |
+| Separate Face Group |            ![](/icons/group.webp)          | 오브젝트에 여러 페이스 그룹이 있는 경우, 메시를 개별 오브젝트로 분리합니다.                                                                                            |
 |   Separate Layers   |              ![](/icons/layer.webp)            | 오브젝트에 레이어가 있는 경우, 각 레이어를 개별 오브젝트로 분리합니다. 블렌드셰이프를 다른 애플리케이션으로 보낼 때 유용합니다.                                                 |
 |   Join -> Layers    | ![](/icons/merge.webp) -> ![](/icons/layer.webp) <span style="visibility:hidden">_________</span> | 여러 오브젝트가 선택되어 있고 토폴로지가 일치하는 경우, 이 오브젝트들을 기본 오브젝트의 레이어로 병합합니다(다른 오브젝트는 삭제됨). 마찬가지로, 다른 애플리케이션에서 넘어온 블렌드셰이프에 유용합니다.<br><br> 레이어는 기본적으로 비활성화되어 있습니다. 슬라이더를 조정하려면 활성화해야 합니다. |
 

@@ -251,7 +251,7 @@ Decimate ボタン横のアイコンで、ディシメーションに影響す�
 * ![](/icons/palette.webp)  `Preserve Painting` - ペイントディテールがある箇所に多くの三角形を配置します。
 * ![](/icons/triforce.webp) `Uniform Faces` - 均一なサイズの三角形を優先します。
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - 開いたジオメトリや穴の近くの境界をできるだけ保持します。
-* ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - フェイスグループ境界をできるだけ保持します。
+* ![](/icons/group.webp) `Preserve Facegroup Borders` - フェイスグループ境界をできるだけ保持します。
 * ![](/icons/uv.webp) `Preserve UV Borders` - UV 境界をできるだけ保持します。
 
 #### ![](/icons/cog.webp) ディシメート歯車メニュー {#decimate-gear-menu}

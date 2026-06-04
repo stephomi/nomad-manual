@@ -251,7 +251,7 @@ Dynamic Topology เป็นวิธีทางเลือก ระหว�
 * ![](/icons/palette.webp)  `Preserve Painting` - วางสามเหลี่ยมมากขึ้นในบริเวณที่มีรายละเอียดการเพนต์
 * ![](/icons/triforce.webp) `Uniform Faces` - ให้ความสำคัญกับการสร้างสามเหลี่ยมขนาดใกล้เคียงกัน
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - Decimate จะพยายามรักษาขอบใกล้เรขาคณิตเปิดและรูให้ไม่เปลี่ยนแปลง
-* ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - Decimate จะพยายามรักษาขอบ facegroup ให้ไม่เปลี่ยนแปลง
+* ![](/icons/group.webp) `Preserve Facegroup Borders` - Decimate จะพยายามรักษาขอบ facegroup ให้ไม่เปลี่ยนแปลง
 * ![](/icons/uv.webp) `Preserve UV Borders` - Decimate จะพยายามรักษาขอบ UV ให้ไม่เปลี่ยนแปลง
 
 #### ![](/icons/cog.webp) เมนูลดจำนวนเฟือง {#decimate-gear-menu}

@@ -251,7 +251,7 @@ Les icônes à côté du bouton Decimate vous permettent d’activer/désactiver
 * ![](/icons/palette.webp)  `Preserve Painting` - Place plus de triangles là où il y a des détails de peinture.
 * ![](/icons/triforce.webp) `Uniform Faces` - Préfère créer des triangles de taille homogène.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - La décimation essaiera de conserver les bords proches de la géométrie ouverte et des trous.
-* ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - La décimation essaiera de conserver les bords de facegroup.
+* ![](/icons/group.webp) `Preserve Facegroup Borders` - La décimation essaiera de conserver les bords de facegroup.
 * ![](/icons/uv.webp) `Preserve UV Borders` - La décimation essaiera de conserver les bords d’UV.
 
 #### ![](/icons/cog.webp) Menu engrenage de décimation {#decimate-gear-menu}

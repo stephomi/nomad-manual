@@ -251,7 +251,7 @@ Ikonerna bredvid Decimate-knappen låter dig slå av/på alternativ som påverka
 * ![](/icons/palette.webp)  `Preserve Painting` - Placera fler trianglar där det finns målningsdetaljer.
 * ![](/icons/triforce.webp) `Uniform Faces` - Föredra att skapa jämnstora trianglar.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - Decimate försöker hålla kanter nära öppen geometri och hål oförändrade.
-* ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - Decimate försöker hålla facegroup-gränser oförändrade.
+* ![](/icons/group.webp) `Preserve Facegroup Borders` - Decimate försöker hålla facegroup-gränser oförändrade.
 * ![](/icons/uv.webp) `Preserve UV Borders` - Decimate försöker hålla UV-gränser oförändrade.
 
 #### ![](/icons/cog.webp) Kugghjulsmeny för decimering {#decimate-gear-menu}

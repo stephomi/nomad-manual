@@ -251,7 +251,7 @@ Dynamic Topology היא שיטה חלופית. בזמן שאתה מפסל, Nomad
 * ![](/icons/palette.webp)  `Preserve Painting` – להציב יותר משולשים היכן שיש פרטי ציור.
 * ![](/icons/triforce.webp) `Uniform Faces` – העדפת יצירת משולשים בגודל אחיד.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` – Decimate ינסה לשמור גבולות ליד גאומטריה פתוחה וחורים ללא שינוי.
-* ![](/icons/facegroup.webp) `Preserve Facegroup Borders` – Decimate ינסה לשמור גבולות Facegroup ללא שינוי.
+* ![](/icons/group.webp) `Preserve Facegroup Borders` – Decimate ינסה לשמור גבולות Facegroup ללא שינוי.
 * ![](/icons/uv.webp) `Preserve UV Borders` – Decimate ינסה לשמור גבולות UV ללא שינוי.
 
 #### ![](/icons/cog.webp) תפריט גלגל שיניים של דצימציה {#decimate-gear-menu}

@@ -251,7 +251,7 @@ Ikony vedle tlačítka decimate umožňují přepínat volby, které ovlivňují
 * ![](/icons/palette.webp)  `Preserve Painting` - Umístí více trojúhelníků tam, kde je detail v malbě.
 * ![](/icons/triforce.webp) `Uniform Faces` - Preferuje vytváření rovnoměrně velkých trojúhelníků.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - Decimate se pokusí zachovat hranice u otevřené geometrie a děr beze změny.
-* ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - Decimate se pokusí zachovat hranice facegroup beze změny.
+* ![](/icons/group.webp) `Preserve Facegroup Borders` - Decimate se pokusí zachovat hranice facegroup beze změny.
 * ![](/icons/uv.webp) `Preserve UV Borders` - Decimate se pokusí zachovat UV hranice beze změny.
 
 #### ![](/icons/cog.webp) Menu decimace (ozubené kolo) {#decimate-gear-menu}

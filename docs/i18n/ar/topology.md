@@ -251,7 +251,7 @@ Dynamic Topology هو أسلوب بديل. أثناء النحت، سيقوم No
 * ![](/icons/palette.webp)  `Preserve Painting` - وضع المزيد من المثلثات حيث توجد تفاصيل في التلوين.
 * ![](/icons/triforce.webp) `Uniform Faces` - تفضيل إنشاء مثلثات متساوية الحجم.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` - سيحاول Decimate الحفاظ على الحواف قرب الهندسة المفتوحة والثقوب دون تغيير.
-* ![](/icons/facegroup.webp) `Preserve Facegroup Borders` - سيحاول Decimate الحفاظ على حواف مجموعات الأوجه دون تغيير.
+* ![](/icons/group.webp) `Preserve Facegroup Borders` - سيحاول Decimate الحفاظ على حواف مجموعات الأوجه دون تغيير.
 * ![](/icons/uv.webp) `Preserve UV Borders` - سيحاول Decimate الحفاظ على حواف الـ UV دون تغيير.
 
 #### ![](/icons/cog.webp) قائمة ترس تقليل المضلعات {#decimate-gear-menu}

@@ -15,12 +15,10 @@ npm run dev
 ```
 
 <!-- 
-crowdin upload && crowdin upload translations --auto-approve-imported --import-eq-suggestions
-crowdin pre-translate --method ai --ai-prompt=130
-crowdin download
+sed -i '' 's|/facegroup.webp|/group.webp|g' docs/**/*.md
 
 npm view vitepress versions
- -->
+-->
 
 # Nomad colors
 ```

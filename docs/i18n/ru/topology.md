@@ -250,7 +250,7 @@ Dynamic Topology — альтернативный метод. Во время с
 * ![](/icons/palette.webp)  `Preserve Painting` — размещать больше треугольников там, где есть детализация покраски.
 * ![](/icons/triforce.webp) `Uniform Faces` — стремиться к равномерному размеру треугольников.
 * ![](/icons/hole.webp)  `Preserve Geometry Borders` — децимация постарается сохранить границы возле открытой геометрии и отверстий.
-* ![](/icons/facegroup.webp) `Preserve Facegroup Borders` — децимация постарается сохранить границы facegroup.
+* ![](/icons/group.webp) `Preserve Facegroup Borders` — децимация постарается сохранить границы facegroup.
 * ![](/icons/uv.webp) `Preserve UV Borders` — децимация постарается сохранить границы UV.
 
 #### ![](/icons/cog.webp) Меню шестерёнки децимации {#decimate-gear-menu}
