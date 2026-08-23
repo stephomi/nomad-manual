@@ -204,9 +204,7 @@ Caso contrário, o dispositivo provavelmente está ficando sem memória RAM.
 - Se ainda travar, a única solução é carregar [seu arquivo de projeto](#where-are-my-projects-located-on-my-device) em um dispositivo com mais memória.
 
 ::: tip
-Em um navegador de desktop, você pode tentar carregar seu arquivo [nesta URL](https://nomadsculpt.com/demo_save/) e então exportá-lo de volta após simplificar sua cena.
-
-Alguns navegadores limitam a quantidade de RAM que uma única aba pode usar, então é possível que essa técnica não funcione.
+Se o dispositivo móvel não conseguir carregar o projeto, experimente a [versão para desktop](https://nomadsculpt.com). Você pode usá-la gratuitamente no modo Demo para importar e exportar projetos, embora apenas algumas ferramentas de edição estejam disponíveis.
 
 Se seu projeto estiver usando [Layers](layers.md), talvez você queira achatá-las para reduzir o uso de memória.
 :::

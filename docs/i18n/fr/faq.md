@@ -204,9 +204,7 @@ Sinon, l’appareil manque probablement de mémoire RAM.
 - Si ça plante toujours, la seule solution est de charger [votre fichier projet](#where-are-my-projects-located-on-my-device) sur un appareil avec plus de mémoire.
 
 ::: tip
-Sur un navigateur de bureau, vous pouvez essayer de charger votre fichier [à cette adresse](https://nomadsculpt.com/demo_save/) puis de l’exporter à nouveau après avoir simplifié votre scène.
-
-Certains navigateurs limitent la quantité de RAM qu’un seul onglet peut utiliser, il est donc possible que cette technique ne fonctionne pas.
+Si votre appareil mobile ne parvient pas à charger le projet, essayez la [version de bureau](https://nomadsculpt.com). Vous pouvez l’utiliser gratuitement en mode Démo pour importer et exporter des projets, mais seuls quelques outils d’édition sont disponibles.
 
 Si votre projet utilise des [Calques](layers.md), vous pouvez les aplatir pour réduire l’utilisation de la mémoire.
 :::

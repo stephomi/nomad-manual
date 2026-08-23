@@ -204,9 +204,7 @@ Altrimenti il dispositivo probabilmente sta esaurendo la memoria RAM.
 - Se va ancora in crash, l’unica soluzione è caricare [il file del progetto](#where-are-my-projects-located-on-my-device) su un dispositivo con più memoria.
 
 ::: tip
-Su un browser desktop, puoi provare a caricare il file [a questo url](https://nomadsculpt.com/demo_save/) e poi esportarlo di nuovo dopo aver semplificato la scena.
-
-Alcuni browser limitano la quantità di RAM che una singola scheda può usare, quindi è possibile che questa tecnica non funzioni.
+Se il tuo dispositivo mobile non riesce a caricare il progetto, prova la [versione desktop](https://nomadsculpt.com). Puoi usarla gratuitamente in modalità Demo per importare ed esportare progetti, anche se sono disponibili solo pochi strumenti di modifica.
 
 Se il tuo progetto usa i [Layers](layers.md), potresti volerli unire (squash) per ridurre l’uso di memoria.
 :::

@@ -204,9 +204,7 @@ Otherwise the device is probably running out of RAM memory.
 - If it still crashes, the only solution is to load [your file project](#locate) on a device with more memory.
 
 ::: tip
-On a desktop browser, you can try loading your file [in this url](https://nomadsculpt.com/demo_save/) and then export it back after simplifying your scene.
-
-Some browsers limit the amount of RAM a single tab can take, so it's possible that this technique won't work.
+If your mobile device cannot load the project, try the [desktop version](https://nomadsculpt.com). You can use it for free in Demo mode to import and export projects, although only a few editing tools are available.
 
 If your project is using [Layers](layers.md), you might want to squash them to reduce memory usage.
 :::

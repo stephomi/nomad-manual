@@ -204,9 +204,7 @@ Jinak zařízení pravděpodobně dochází RAM.
 - Pokud to stále padá, jediným řešením je načíst [soubor projektu](#where-are-my-projects-located-on-my-device) na zařízení s větší pamětí.
 
 ::: tip
-Na desktopovém prohlížeči můžete zkusit načíst soubor [na této adrese](https://nomadsculpt.com/demo_save/) a po zjednodušení scény ho znovu exportovat.
-
-Některé prohlížeče omezují množství RAM, které může zabrat jedna karta, takže je možné, že tato technika nebude fungovat.
+Pokud mobilní zařízení nedokáže projekt načíst, zkuste [desktopovou verzi](https://nomadsculpt.com). V režimu Demo ji můžete zdarma používat k importu a exportu projektů, k dispozici je však jen několik editačních nástrojů.
 
 Pokud váš projekt používá [Layers](layers.md), možná je budete chtít sloučit, abyste snížili využití paměti.
 :::

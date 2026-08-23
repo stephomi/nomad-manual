@@ -204,9 +204,7 @@ Jika tidak, perangkat mungkin kehabisan memori RAM.
 - Jika masih crash, satu-satunya solusi adalah memuat [file proyek Anda](#where-are-my-projects-located-on-my-device) di perangkat dengan memori lebih besar.
 
 ::: tip
-Di browser desktop, Anda bisa mencoba memuat file Anda [di url ini](https://nomadsculpt.com/demo_save/) lalu mengekspornya kembali setelah menyederhanakan scene Anda.
-
-Beberapa browser membatasi jumlah RAM yang bisa digunakan satu tab, jadi mungkin teknik ini tidak akan berhasil.
+Jika perangkat seluler Anda tidak dapat memuat proyek, coba [versi desktop](https://nomadsculpt.com). Anda dapat menggunakannya secara gratis dalam mode Demo untuk mengimpor dan mengekspor proyek, meskipun hanya tersedia sedikit alat pengeditan.
 
 Jika proyek Anda menggunakan [Layers](layers.md), Anda mungkin ingin men-squash-nya untuk mengurangi penggunaan memori.
 :::

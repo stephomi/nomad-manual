@@ -204,9 +204,7 @@ Andernfalls geht dem Gerät wahrscheinlich der RAM‑Speicher aus.
 - Wenn es immer noch abstürzt, ist die einzige Lösung, [deine Projektdatei](#where-are-my-projects-located-on-my-device) auf einem Gerät mit mehr Speicher zu laden.
 
 ::: tip
-In einem Desktop‑Browser kannst du versuchen, deine Datei [unter dieser URL](https://nomadsculpt.com/demo_save/) zu laden und sie nach dem Vereinfachen deiner Szene wieder zu exportieren.
-
-Einige Browser begrenzen die Menge an RAM, die ein einzelner Tab verwenden darf, daher ist es möglich, dass diese Technik nicht funktioniert.
+Wenn dein Mobilgerät das Projekt nicht laden kann, versuche es mit der [Desktop-Version](https://nomadsculpt.com). Du kannst sie im Demo-Modus kostenlos zum Importieren und Exportieren von Projekten verwenden; allerdings sind nur wenige Bearbeitungswerkzeuge verfügbar.
 
 Wenn dein Projekt [Ebenen](layers.md) verwendet, solltest du sie eventuell zusammenführen, um den Speicherverbrauch zu reduzieren.
 :::

@@ -200,9 +200,7 @@ Nếu không thì có lẽ thiết bị đang hết RAM.
 - Nếu vẫn crash, giải pháp duy nhất là load [file project của bạn](#where-are-my-projects-located-on-my-device) trên một thiết bị có nhiều bộ nhớ hơn.
 
 ::: tip
-Trên trình duyệt desktop, bạn có thể thử load file tại [url này](https://nomadsculpt.com/demo_save/) rồi export lại sau khi đơn giản hóa cảnh.
-
-Một số trình duyệt giới hạn lượng RAM mà một tab có thể dùng, nên có thể kỹ thuật này sẽ không hoạt động.
+Nếu thiết bị di động không thể mở project, hãy thử [phiên bản desktop](https://nomadsculpt.com). Bạn có thể dùng miễn phí ở chế độ Demo để import và export project, tuy nhiên chỉ có một vài công cụ chỉnh sửa.
 
 Nếu project của bạn dùng [Layers](layers.md), bạn có thể squash chúng để giảm mức dùng bộ nhớ.
 :::

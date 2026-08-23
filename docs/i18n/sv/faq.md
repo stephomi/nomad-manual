@@ -204,9 +204,7 @@ Annars får enheten troligen slut på RAM-minne.
 - Om det fortfarande kraschar är den enda lösningen att ladda [din projektfil](#where-are-my-projects-located-on-my-device) på en enhet med mer minne.
 
 ::: tip
-På en skrivbordswebbläsare kan du försöka ladda din fil [på den här url:en](https://nomadsculpt.com/demo_save/) och sedan exportera den igen efter att du förenklat din scen.
-
-Vissa webbläsare begränsar mängden RAM en enskild flik kan använda, så det är möjligt att den här tekniken inte fungerar.
+Om din mobila enhet inte kan läsa in projektet kan du prova [skrivbordsversionen](https://nomadsculpt.com). Du kan använda den gratis i demoläge för att importera och exportera projekt, men bara ett fåtal redigeringsverktyg är tillgängliga.
 
 Om ditt projekt använder [Layers](layers.md) kan du vilja platta ihop dem för att minska minnesanvändningen.
 :::

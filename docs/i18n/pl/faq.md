@@ -200,9 +200,7 @@ W przeciwnym razie urządzenie prawdopodobnie kończy pamięć RAM.
 - Jeśli nadal crashuje, jedynym rozwiązaniem jest wczytanie [twojego pliku projektu](#where-are-my-projects-located-on-my-device) na urządzeniu z większą ilością pamięci.
 
 ::: tip
-W przeglądarce desktopowej możesz spróbować wczytać swój plik [pod tym adresem](https://nomadsculpt.com/demo_save/), a następnie wyeksportować go z powrotem po uproszczeniu sceny.
-
-Niektóre przeglądarki ograniczają ilość RAM, jaką może zająć pojedyncza karta, więc możliwe, że ta technika nie zadziała.
+Jeśli urządzenie mobilne nie może wczytać projektu, wypróbuj [wersję desktopową](https://nomadsculpt.com). W trybie Demo możesz używać jej bezpłatnie do importowania i eksportowania projektów, choć dostępnych jest tylko kilka narzędzi do edycji.
 
 Jeśli twój projekt używa [Layers](layers.md), możesz je spłaszczyć (squash), aby zmniejszyć użycie pamięci.
 :::

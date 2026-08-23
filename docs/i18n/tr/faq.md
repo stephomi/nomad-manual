@@ -204,9 +204,7 @@ Aksi halde cihaz muhtemelen RAM belleğinin sınırına ulaşıyordur.
 - Hâlâ çöküyorsa, [proje dosyanızı](#where-are-my-projects-located-on-my-device) daha fazla belleğe sahip bir cihaza yüklemek tek çözümdür.
 
 ::: tip
-Masaüstü bir tarayıcıda, dosyanızı [bu adreste](https://nomadsculpt.com/demo_save/) yüklemeyi deneyebilir ve ardından sahnenizi basitleştirdikten sonra tekrar dışa aktarabilirsiniz.
-
-Bazı tarayıcılar tek bir sekmenin kullanabileceği RAM miktarını sınırlar, bu nedenle bu tekniğin işe yaramaması mümkündür.
+Mobil cihazınız projeyi yükleyemiyorsa [masaüstü sürümünü](https://nomadsculpt.com) deneyin. Demo modunda projeleri içe ve dışa aktarmak için ücretsiz kullanabilirsiniz, ancak yalnızca birkaç düzenleme aracı mevcuttur.
 
 Projeniz [Katmanlar](layers.md) kullanıyorsa, bellek kullanımını azaltmak için onları birleştirmek isteyebilirsiniz.
 :::

@@ -204,9 +204,7 @@ De lo contrario, probablemente el dispositivo se esté quedando sin memoria RAM.
 - Si sigue bloqueándose, la única solución es cargar [tu archivo de proyecto](#where-are-my-projects-located-on-my-device) en un dispositivo con más memoria.
 
 ::: tip
-En un navegador de escritorio, puedes intentar cargar tu archivo [en esta URL](https://nomadsculpt.com/demo_save/) y luego exportarlo de nuevo tras simplificar tu escena.
-
-Algunos navegadores limitan la cantidad de RAM que puede usar una sola pestaña, así que es posible que esta técnica no funcione.
+Si tu dispositivo móvil no puede cargar el proyecto, prueba la [versión de escritorio](https://nomadsculpt.com). Puedes usarla gratis en modo Demo para importar y exportar proyectos, aunque solo dispone de unas pocas herramientas de edición.
 
 Si tu proyecto usa [Capas](layers.md), quizá quieras aplanarlas para reducir el uso de memoria.
 :::

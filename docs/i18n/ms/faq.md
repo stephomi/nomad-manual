@@ -204,9 +204,7 @@ Jika tidak, peranti mungkin kehabisan memori RAM.
 - Jika masih runtuh, satu-satunya penyelesaian ialah memuatkan [fail projek anda](#where-are-my-projects-located-on-my-device) pada peranti dengan lebih banyak memori.
 
 ::: tip
-Pada pelayar desktop, anda boleh cuba memuatkan fail anda [di url ini](https://nomadsculpt.com/demo_save/) dan kemudian mengeksportnya semula selepas memudahkan adegan anda.
-
-Sesetengah pelayar mengehadkan jumlah RAM yang boleh diambil oleh satu tab, jadi ada kemungkinan teknik ini tidak akan berfungsi.
+Jika peranti mudah alih anda tidak dapat memuatkan projek, cuba [versi desktop](https://nomadsculpt.com). Anda boleh menggunakannya secara percuma dalam mod Demo untuk mengimport dan mengeksport projek, walaupun hanya beberapa alat penyuntingan tersedia.
 
 Jika projek anda menggunakan [Layers](layers.md), anda mungkin mahu squash lapisan untuk mengurangkan penggunaan memori.
 :::

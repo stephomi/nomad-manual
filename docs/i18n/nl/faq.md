@@ -204,9 +204,7 @@ Anders raakt het apparaat waarschijnlijk door het RAM-geheugen heen.
 - Als het nog steeds crasht, is de enige oplossing om [je projectbestand](#where-are-my-projects-located-on-my-device) te laden op een apparaat met meer geheugen.
 
 ::: tip
-Op een desktopbrowser kun je proberen je bestand te laden [op deze url](https://nomadsculpt.com/demo_save/) en het daarna weer te exporteren nadat je je scène hebt vereenvoudigd.
-
-Sommige browsers beperken de hoeveelheid RAM die één tabblad kan gebruiken, dus het is mogelijk dat deze techniek niet werkt.
+Als je mobiele apparaat het project niet kan laden, probeer dan de [desktopversie](https://nomadsculpt.com). Je kunt deze gratis in de demomodus gebruiken om projecten te importeren en exporteren, al zijn er maar enkele bewerkingstools beschikbaar.
 
 Als je project [Layers](layers.md) gebruikt, kun je overwegen ze samen te voegen om het geheugengebruik te verminderen.
 :::
