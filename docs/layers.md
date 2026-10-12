@@ -10,7 +10,7 @@ Nomad layers serve multiple purposes.
 
 Paint information (Color, Roughness, Metalness, Opacity) work with layers similar to 2d paint applications. A layer can be created and paint applied to a model. The layer can be toggled on or off, have its opacity adjusted, the layer can be duplicated, its order can be changed in the layer stack, its blending mode adjusted.
 
-Nomad also users layers for sculpting. A layer can store fine details like wrinkles, or it can store large changes, allowing them to function like blendshapes/shape keys/morph targets in other 3d applications. For example you could sculpt different facial expressions on different layers, and adjust the layer sliders to combine them into new expressions.
+Nomad also uses layers for sculpting. A layer can store fine details like wrinkles, or it can store large changes, allowing them to function like blendshapes/shape keys/morph targets in other 3d applications. For example you could sculpt different facial expressions on different layers, and adjust the layer sliders to combine them into new expressions.
 
 In this case the changes stored in a layer are purely additive, layer order doesn't matter like it does for paint.
 

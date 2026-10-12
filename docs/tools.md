@@ -64,7 +64,7 @@ The [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Project]
 * `Path` - (Project only) - A curve defined by points. See [Shape editing](#shape-editing) below for more info.
 * `Line` - Drag a line to define a planar segment. By default it will operate on the mesh immediately, turn off auto validate if you don't want this (long press or swipe on the line icon)
 * `Rect` -  Drag a diagonal line, this will define the corners of a rectangle shape. Long press or swipe to reveal options for auto validate, force to a square shape, and for the first click to be the center of the rectangle.
-* `Ellipse` - Drag a diagonal line, this will define the size of an ellipse. Long press or swipe to reveal options for auto validate, force to a circle shape, and for the the first click to be the center of the ellipse.
+* `Ellipse` - Drag a diagonal line, this will define the size of an ellipse. Long press or swipe to reveal options for auto validate, force to a circle shape, and for the first click to be the center of the ellipse.
 * `Flip` - invert the shape mask, or the direction of the project tool.
 
 Most tools have an option to auto validate, meaning the operation will happen as soon as you have finished drawing the shape. When auto validate is off, A green button will be drawn next to the shape which will execute the operation. This allows you to edit the shape, adjust the view, when you're ready to use the shape, press the green button.
@@ -384,7 +384,7 @@ Note that by default the limit is only set per stroke! If you start a new stroke
 
 To set a constant maximum height acrosss many strokes, use the Layer tool with Nomad's [Layers](layers.md) system.
 
-Create a layer, and use this tool. The the maximum height is now set from the layer, so you can apply many brush strokes and the height will always be the same.
+Create a layer, and use this tool. The maximum height is now set from the layer, so you can apply many brush strokes and the height will always be the same.
 
 `Sub` will use a minimum depth, creating grooves.
 
@@ -776,9 +776,9 @@ When this tool is activated for the first time, it will ask if you want to enabl
 * `Dot` - This brush will set the target density. Intensity at 100% will paint in red, which will use twice the target quad density at those regions. Intensity at 0% will paint in cyan, which will use half the target quad density in those regions. Intensity at 50% will paint in gray, which will use the default target quad density.
 * `Smooth` - Smooth the red/gray/cyan density transitions.
 * `Curve` - Sketch curves on the surface of the sculpt, quad remesher will use these as guides for the edge flow. Tap on a curve to delete it.
-* `Path` - Draw paths on the the surface of the sculpt, quad remesher will use these as guides for the edge flow. Tap on a path to delete it. 
-* `Rect` - Draw rectangles on the the surface of the sculpt, quad remesher will use these as guides for the edge flow. Tap on a path to delete it.
-* `Ellipse` - Draw ellipses on the the surface of the sculpt, quad remesher will use these as guides for the edge flow. Tap on a path to delete it.
+* `Path` - Draw paths on the surface of the sculpt, quad remesher will use these as guides for the edge flow. Tap on a path to delete it. 
+* `Rect` - Draw rectangles on the surface of the sculpt, quad remesher will use these as guides for the edge flow. Tap on a path to delete it.
+* `Ellipse` - Draw ellipses on the surface of the sculpt, quad remesher will use these as guides for the edge flow. Tap on a path to delete it.
 
 #### Quad remesher top toolbar {#quad-remesher-top-toolbar}
 ![](/images/tool_quadremesher_toolbar.webp)
