@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "หน้าแรก",
+    "forum": "ฟอรัม"
+  },
+  "theme": {
+    "outlineLabel": "ในหน้านี้",
+    "docFooter": {
+      "prev": "หน้าก่อนหน้า",
+      "next": "หน้าถัดไป"
+    },
+    "darkModeSwitchLabel": "ลักษณะที่ปรากฏ",
+    "lightModeSwitchTitle": "เปลี่ยนเป็นธีมสว่าง",
+    "darkModeSwitchTitle": "เปลี่ยนเป็นธีมมืด",
+    "sidebarMenuLabel": "เมนู",
+    "returnToTopLabel": "กลับขึ้นด้านบน",
+    "langMenuLabel": "เปลี่ยนภาษา",
+    "skipToContentLabel": "ข้ามไปยังเนื้อหา",
+    "notFound": {
+      "title": "ไม่พบหน้านี้",
+      "quote": "แต่ถ้าคุณไม่เปลี่ยนทิศทาง และยังคงมองหาต่อไป คุณอาจไปถึงจุดหมายที่กำลังมุ่งหน้าไปก็ได้",
+      "linkLabel": "ไปที่หน้าแรก",
+      "linkText": "พาฉันกลับหน้าแรก"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "ค้นหา",
+      "buttonAriaLabel": "ค้นหา"
+    },
+    "modal": {
+      "displayDetails": "แสดงรายการแบบละเอียด",
+      "resetButtonTitle": "ล้างการค้นหา",
+      "backButtonTitle": "ปิดการค้นหา",
+      "noResultsText": "ไม่พบผลลัพธ์สำหรับ",
+      "footer": {
+        "selectText": "เพื่อเลือก",
+        "selectKeyAriaLabel": "ปุ่ม Enter",
+        "navigateText": "เพื่อเลื่อนไปมา",
+        "navigateUpKeyAriaLabel": "ลูกศรขึ้น",
+        "navigateDownKeyAriaLabel": "ลูกศรลง",
+        "closeText": "เพื่อปิด",
+        "closeKeyAriaLabel": "ปุ่ม Escape"
+      }
+    }
+  }
+}

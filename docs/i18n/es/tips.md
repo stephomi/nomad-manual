@@ -4,188 +4,188 @@
 
 ## Cómo empezar un modelo {#how-to-start-a-model}
 
-Quienes empiezan en el esculpido 3D suelen preguntar cuál es la mejor forma de empezar un modelo. No hay una única mejor forma, distintas personas tienen preferencias distintas. Aquí tienes algunos de los enfoques más comunes.
+Quienes empiezan en la escultura 3d suelen preguntar cuál es la mejor forma de empezar un modelo. No hay una forma mejor: cada persona tiene sus preferencias. Estos son algunos de los enfoques más habituales.
 
-### Esculpir sobre esfera, multires {#sculpt-on-sphere-multires}
+### Esculpir sobre una esfera con multiresolución {#sculpt-on-sphere-multires}
 
-El modelo por defecto cuando se inicia Nomad es la forma más común. Usa las herramientas mover, arcilla (clay), pliegue (crease) para empujar y tirar de la esfera hasta darle forma; usa los niveles de subdivisión bajos cuando quieras hacer cambios grandes rápidamente, y los niveles de subdivisión altos para el trabajo de detalle.
+El modelo por defecto al abrir Nomad es la forma más habitual. Usa las herramientas de mover, arcilla y pliegue para empujar y estirar la esfera hasta darle forma; usa los niveles de subdivisión bajos cuando quieras hacer cambios grandes rápidamente, y los niveles altos para el trabajo de detalle.
 
-Un problema común es que a menudo te quedarás sin polígonos donde los necesitas, mientras que tendrás demasiados polígonos en otras zonas. Por ejemplo, si empujas la esfera por defecto hasta convertirla en un cuerpo completo, es probable que no tengas suficiente detalle para hacer los dedos, mientras que tendrás muchos polígonos desperdiciados en la parte trasera de la cabeza. Para formas mayormente esféricas como una cabeza, sin embargo, esto puede estar bien.
+Un problema habitual es que a menudo te faltan polígonos donde los necesitas mientras te sobran en otras partes. Por ejemplo, si conviertes la esfera por defecto en un cuerpo entero, lo más probable es que no tengas detalle suficiente para los dedos, mientras desperdicias un montón de polígonos en la nuca. Aun así, para formas casi esféricas como una cabeza, puede funcionar bien.
 
-### Dyntopo {#dyntopo}
+### Topología dinámica {#dyntopo}
 
-Al activar Dyntopo se añadirán y eliminarán polígonos de forma adaptativa mientras esculpes. Estos polígonos serán triángulos, y a los principiantes a menudo no les gusta la disposición desordenada comparada con el aspecto limpio de multires. ¡Vale la pena insistir! Si activas el sombreado suave, desactivas el modo alámbrico y dejas de preocuparte por la disposición, este modo puede dar una sensación muy similar a la arcilla. No olvides que si usas un pincel grande, o un pincel de suavizado, este modo también puede eliminar polígonos, así que la herramienta siempre se siente rápida y reactiva. Una vez que tengas una primera pasada del esculpido terminada, puedes clonarla y pasarla por quad remesher para obtener una buena disposición, y reproyectar los detalles originales en un nivel de subdivisión alto.
+Al activar la topología dinámica, se añaden y quitan polígonos de forma adaptativa mientras esculpes. Estos polígonos son triángulos, y a quienes empiezan no suele gustarles su distribución desordenada comparada con el aspecto limpio de la multiresolución. ¡Merece la pena insistir! Si activas el sombreado suave, desactivas la malla alámbrica y te olvidas de la distribución, este modo da una sensación muy parecida a la arcilla. No olvides que, con un pincel grande o un pincel de suavizado, este modo también puede quitar polígonos, así que la herramienta siempre responde rápido. Cuando tengas terminada una primera pasada de la escultura, puedes clonarla, pasarla por Quad Remesher para obtener una buena distribución y reproyectar los detalles originales sobre un nivel de subdivisión alto.
 
-### Remallado de vóxeles {#voxel-remesh}
+### Remallado por vóxeles {#voxel-remesh}
 
-El remallado por vóxeles aplicará una topología mayormente basada en quads sobre tu escultura. Esta operación es rápida a resoluciones bajas, y puede usarse para reemplazar rápidamente polígonos estirados o excesivamente densos por una disposición de polígonos uniformemente espaciados. Esta puede ser una gran forma de empezar un cuerpo completo desde una esfera; por ejemplo, empiezas con una cabeza, la estiras para formar un cuello, remallas por vóxeles. Estiras un cuerpo, remallas por vóxeles, brazos, remallas por vóxeles, y así sucesivamente, hasta que tengas las formas básicas.
+El remallado por vóxeles aplica a tu escultura una topología basada casi siempre en cuadrángulos. Es una operación rápida a resoluciones bajas, y sirve para sustituir enseguida los polígonos estirados o demasiado densos por una distribución uniforme. Es una gran forma de empezar un cuerpo entero a partir de una esfera: por ejemplo, empiezas con una cabeza, estiras un cuello y haces un remallado por vóxeles. Estiras un cuerpo, remallado por vóxeles; los brazos, remallado por vóxeles, y así sucesivamente hasta tener las formas básicas.
 
-### Usar múltiples objetos {#use-multiple-objects}
+### Usar varios objetos {#use-multiple-objects}
 
-Muchas guías de anatomía representan un cuerpo con esferas, cilindros y cubos simples. También puedes esculpir de esta forma en Nomad. Esto tiene la ventaja de permitirte hacer parentescos entre objetos en la jerarquía de la escena, de modo que puedas rotar el cuello y que la cabeza lo siga, por ejemplo. Poder usar la herramienta gizmo para traslaciones/rotaciones/escalados precisos también es muy útil, y además puedes definir pivotes por forma para que se muevan exactamente como esperas. Cuando los bloques básicos estén en el lugar correcto, puedes seleccionarlos todos y remallar por vóxeles o hacer booleanas para combinarlos en una única superficie para un esculpido más detallado.
+Muchas guías de anatomía representan el cuerpo con esferas, cilindros y cubos sencillos. En Nomad también puedes esculpir así. La ventaja es que puedes emparentar objetos en la jerarquía de la escena, de modo que, por ejemplo, si giras el cuello, la cabeza le sigue. También es muy útil poder usar la herramienta Gizmo para traslaciones, rotaciones y escalados precisos, y puedes fijar un pivote para cada forma, para que se mueva exactamente como esperas. Cuando los bloques básicos estén en su sitio, puedes seleccionarlos todos y unirlos en una sola superficie con un remallado por vóxeles o un booleano, para esculpir con más detalle.
 
-Un truco útil para trabajar de esta manera es empezar con una esfera, escalarla hasta convertirla en una salchicha alargada, pulsar pivot, hacer clic en “bottom”, pulsar pivot de nuevo. Ahora tienes una parte del cuerpo que puede clonarse, trasladarse a lo largo de la longitud de la primera esfera, clonarse, rotarse, clonarse, deslizarse, clonarse, etc., para maquetar un cuerpo rápidamente.
+Un truco práctico para trabajar así: empieza con una esfera, escálala hasta que parezca una salchicha alargada, pulsa Pivote, toca 'Inferior' y vuelve a pulsar Pivote. Ya tienes una parte del cuerpo que puedes clonar, desplazar a lo largo de la primera esfera, clonar, girar, clonar, deslizar, clonar, etc., para encajar un cuerpo rápidamente.
 
 ### Tubos {#tubes}
 
-La herramienta de tubos es una gran forma de empezar una escultura. Colas de reptiles, brazos, piernas, dedos, cejas, todo se puede esbozar rápidamente con la herramienta de tubos y luego editar fácilmente. También te permite modificar el perfil de la sección transversal, lo que permite cambios de forma rápidos. Puedes validar la forma para empezar a esculpir sobre ella, y remallar por vóxeles junto con otros objetos para obtener una malla de cuerpo completo.
+La herramienta Tubo es una forma estupenda de empezar una escultura. Colas de reptil, brazos, piernas, dedos, cejas: todo se puede esbozar rápidamente con la herramienta Tubo y editarse con facilidad después. También te permite modificar el perfil de la sección, para cambiar la forma rápidamente. Puedes validar la forma para empezar a esculpir sobre ella, y hacer un remallado por vóxeles junto con otros objetos para obtener la malla de un cuerpo entero.
 
-### Usar otras apps {#use-other-apps}
+### Usar otras aplicaciones {#use-other-apps}
 
-Algunas personas prefieren empezar un modelo en otras aplicaciones, y eso también está bien. Herramientas como Blender o Valence permiten empezar modelos usando técnicas de low poly, que luego pueden importarse en Nomad para el esculpido.
+Hay quien prefiere empezar un modelo en otras aplicaciones, y también está bien. Herramientas como Blender o Valence permiten empezar los modelos con técnicas low poly; después se pueden importar en Nomad para esculpirlos.
 
-### Usar los preajustes integrados {#use-the-built-in-presets}
+### Usar los preajustes incluidos {#use-the-built-in-presets}
 
-En el menú de proyecto haz clic en `Preset...` en la parte superior derecha. Aquí encontrarás varias formas de cabeza y cuerpo de la Blender Foundation. Selecciona una que te guste, tócala de nuevo y añádela a tu escena. 
+En el menú [Archivos](files.md), toca `Preajuste…` a la izquierda de la sección del proyecto. Ahí encontrarás varios preajustes de cabezas y cuerpos de la Blender Foundation. Elige uno que te guste, tócalo otra vez y añádelo a tu escena. 
 
-### Usar modelos en línea {#use-online-models}
+### Usar modelos de internet {#use-online-models}
 
-Hay muchos modelos gratuitos disponibles en línea, por ejemplo polyhaven, sketchfab, turbosquid. Normalmente estos modelos pueden importarse en Nomad, y esculpirse directamente sobre ellos o usarse como referencia.
+Hay muchos modelos gratuitos en internet, por ejemplo en Poly Haven, Sketchfab o TurboSquid. Normalmente se pueden importar en Nomad y esculpir directamente sobre ellos, o usarlos como referencia.
 
 ### ¡Sin reglas! {#no-rules}
 
-En última instancia puedes usar cualquier combinación de estas técnicas, ¡o ninguna! Nomad es muy flexible en este sentido; usuarios avanzados podrían usar tubos para empezar, luego dyntopo, luego combinar con un pie descargado, luego hacer quad remesh a todo, y después multires para el detalle final. Lo que te funcione.
+Al final puedes combinar estas técnicas como quieras, ¡o no usar ninguna! Nomad es muy flexible en este sentido: un usuario avanzado puede empezar con tubos, seguir con la topología dinámica, combinarlo con un pie descargado, pasarlo todo por Quad Remesher y terminar con la multiresolución para el detalle final. Lo que mejor te funcione.
 
 ## Grupos de caras {#facegroups}
 
-La herramienta de facegroups puede usarse para muchas cosas, como se explica en este vídeo de YouTube: https://youtu.be/qtjYcxS8f9s?si=HGWTG-NqXGstWehx
+La herramienta Grupo de caras sirve para muchas cosas, como se explica en este vídeo de YouTube: https://youtu.be/qtjYcxS8f9s?si=HGWTG-NqXGstWehx
 
-Este es un resumen en texto de las funciones tratadas en ese vídeo.
+Aquí tienes un resumen escrito de las funciones que trata el vídeo.
 
-### ¿Por qué grupos de caras? {#why-facegroups}
+### ¿Para qué sirven los grupos de caras? {#why-facegroups}
 
-Los facegroups te permiten organizar y seleccionar caras (en este manual se usan “caras” y “polígonos” de forma intercambiable). Esto es más fácil de explicar en comparación con las otras herramientas de selección y organización de Nomad. Nomad te permite crear objetos, nombrarlos, hacer parentescos entre ellos; es fácil crear una estructura de objetos para definir una habitación compuesta por suelo, paredes, silla, mesa, etc.
+Los grupos de caras te permiten organizar y seleccionar caras (en este manual, «caras» y «polígonos» significan lo mismo). Es más fácil explicarlo comparándolo con las demás herramientas de selección y organización de Nomad. Nomad te permite crear objetos, ponerles nombre y emparentarlos: es fácil crear una estructura de objetos para definir una habitación formada por suelo, paredes, silla, mesa, etc.
 
-Para un personaje podrías hacer un bloque inicial usando objetos separados para cabeza, brazo, pierna, pero una vez que fusionas todas las piezas en una sola malla, esta estructura se pierde. Puedes trabajar en subsecciones de un personaje con máscaras, pero puede volverse tedioso tener que pintar una máscara para las manos, luego la nariz, luego las manos otra vez.
+Para un personaje, puedes hacer un primer encaje con objetos separados para la cabeza, los brazos y las piernas, pero en cuanto fusionas todas las piezas en una sola malla, esa estructura se pierde. Puedes trabajar en zonas concretas del personaje con máscaras, pero acaba siendo pesado pintar una máscara para las manos, luego para la nariz, luego otra vez para las manos.
 
-Aquí es donde los facegroups son útiles. Te permiten etiquetar caras de polígonos con un color, y luego poder seleccionar y manipular polígonos que tengan el mismo color. Ten en cuenta que el color de facegroup y el color de vértice son cosas distintas.
+Aquí es donde los grupos de caras resultan útiles. Te permiten etiquetar caras de polígonos con un color, y después seleccionar y manipular los polígonos que tienen el mismo color. Ten en cuenta que el color del grupo de caras y el color de vértices son cosas distintas.
 
-La analogía más cercana sería pintar colores en un mapa y luego poder seleccionar países o regiones basándote en el color.
+La analogía más cercana sería pintar colores en un mapa para luego poder seleccionar países o regiones según su color.
 
-Para cabezas de personajes podrías pintar zonas para marcar las cuencas de los ojos, la nariz, los labios, la barbilla, las orejas, y luego seleccionar fácilmente esas zonas más tarde. Para esculpido hard surface y mecánico puede ser útil definir paneles y secciones.
+En la cabeza de un personaje, podrías pintar zonas para marcar las cuencas de los ojos, la nariz, los labios, la barbilla y las orejas, y seleccionarlas fácilmente más tarde. En el esculpido de superficies duras y piezas mecánicas, puede servir para definir paneles y secciones.
 
 ### Crear y editar grupos de caras {#creating-and-editing-facegroups}
 
-Los facegroups pueden aplicarse con un pincel, donde cada nueva pasada crea un nuevo facegroup, o pueden seleccionar el facegroup bajo el cursor y extenderlo. También pueden crearse usando formas.
+Los grupos de caras se pueden aplicar con un pincel, en el que cada trazo nuevo crea un grupo de caras nuevo, o se puede tomar el grupo de caras que hay bajo el cursor y extenderlo. También se pueden crear con formas.
 
-* Punto, auto-pick activado: un solo arrastre definirá un nuevo color de facegroup y lo asignará a las caras sobre las que arrastres. Cada nuevo arrastre definirá un nuevo facegroup. Un toque rellenará un nuevo facegroup.
-* Punto, auto-pick desactivado: cuando el botón auto-pick está en su modo “sub”, Nomad seleccionará el facegroup bajo el cursor y lo aplicará durante el resto del arrastre. Esto es útil para refinar facegroups sin tener que seleccionarlos manualmente.
+* Punto, modo por defecto: cada arrastre define un nuevo color de grupo de caras y lo asigna a las caras por las que pasas. Cada nuevo arrastre define un nuevo grupo de caras. Un toque rellena un grupo de caras nuevo.
+* Punto, modo `Elegir`: cuando el botón `Elegir` de la barra de herramientas izquierda está activo, Nomad toma el grupo de caras que hay bajo el cursor y lo aplica durante el resto del arrastre. Es útil para afinar los grupos de caras sin tener que seleccionarlos a mano.
 
-### Enmascarado {#masking}
+### Máscara {#masking}
 
-Cuando la herramienta de máscara está activa y el botón de facegroup está activo en su barra de herramientas, tocar un facegroup lo enmascarará.
+Con la herramienta Máscara activa y el botón de grupo de caras activado en su barra de herramientas, al tocar un grupo de caras se le aplica la máscara.
 
 
 ### Ocultar {#hiding}
 
-Cuando la herramienta de ocultar está activa y el botón de facegroup está activo en su barra de herramientas, tocar un facegroup lo ocultará.
+Con la herramienta Ocultar activa y el botón de grupo de caras activado en su barra de herramientas, al tocar un grupo de caras se oculta.
 
-### Organización {#organizing}
+### Organizar {#organizing}
 
-Como se mencionó antes, los facegroups pueden usarse para organizar tu malla sin necesidad de crear objetos separados. Puede que no quieras dividir una cabeza en objetos separados para nariz, barbilla, orejas, pero es muy útil tenerlos definidos mediante facegroups.
+Como hemos dicho antes, los grupos de caras sirven para organizar tu malla sin necesidad de crear objetos separados. Puede que no quieras dividir una cabeza en objetos separados para la nariz, la barbilla y las orejas, pero sí es muy útil tenerlas definidas con grupos de caras.
 
 ### Regiones UV {#uv-regions}
 
-La herramienta UV Atlas intentará definir costuras automáticamente, pero a veces pondrá costuras donde no las quieres. Si existen facegroups en un objeto, y la opción de facegroup está activa en las opciones de UV Atlas, usará los bordes de los facegroups como costuras UV en su lugar.
+La herramienta UV Atlas intenta definir las costuras automáticamente, pero a veces las pone donde no quieres. Si un objeto tiene grupos de caras y la opción de grupos de caras está activa en las opciones de UV Atlas, usará los bordes de los grupos de caras como costuras UV.
 
-### Remallador en quads {#quad-remesher}
+### Quad Remesher {#quad-remesher}
 
-El plugin quad remesher normalmente hará fluir los bordes de forma agradable en tu modelo, pero puedes usar facegroups para ayudar a dirigirlo cuando la opción de facegroup está activada. Esto puede facilitar definir un flujo de bordes limpio alrededor de los ojos, un arco de ceja, labios, pliegue de la mejilla, por ejemplo.
+El complemento Quad Remesher suele hacer fluir bien las aristas por tu modelo, pero puedes usar los grupos de caras para guiarlo cuando la opción de grupos de caras está activada. Así es fácil definir un flujo de aristas limpio alrededor de los ojos, del arco de las cejas, de los labios o de un pliegue de la mejilla, por ejemplo.
 
 ### Filtrar con otras herramientas {#filter-with-other-tools}
 
-Muchas herramientas tendrán opciones para ser conscientes de los facegroups, ya sea desde su menú principal de herramienta o mediante el menú stroke -> filtering. Por ejemplo, la herramienta de suavizado con intensidades por encima del 100% puede suavizar agresivamente el detalle dentro de un facegroup, pero mantener el borde del facegroup relativamente intacto.
+Muchas herramientas tienen opciones para tener en cuenta los grupos de caras, ya sea en su menú principal o en el menú Trazo -> Filtro. Por ejemplo, la herramienta Suavizar con una intensidad superior al 100 % puede borrar con fuerza el detalle dentro de un grupo de caras, manteniendo el borde del grupo prácticamente intacto.
 
-### Relajar y suavizar bordes de grupos de caras {#relax-and-smooth-facegroup-borders}
+### Relajar y suavizar los bordes de los grupos de caras {#relax-and-smooth-facegroup-borders}
 
-La opción de relajar dentro de la herramienta de facegroup hace un excelente trabajo al suavizar los bordes de los facegroups mientras mantiene intactas otras características. Esta puede ser una gran forma de definir regiones de borde de facegroup suaves antes de hacer quad remesh.
+La opción `Relajar` de la herramienta Grupo de caras suaviza de maravilla los bordes de los grupos de caras sin tocar el resto de los rasgos. Es una gran forma de definir bordes de grupos de caras suaves antes de pasar por Quad Remesher.
 
-## Limitaciones en tablet/móvil {#limitations-on-tabletmobile}
+## Limitaciones en tableta y móvil {#limitations-on-tabletmobile}
 
-Las tablets y móviles actuales son muy potentes, pero tienen diferencias importantes respecto a los ordenadores de sobremesa y portátiles:
+Las tabletas y los móviles actuales son muy potentes, pero tienen diferencias importantes con los ordenadores de sobremesa y los portátiles:
 
 ### Sin refrigeración activa {#no-active-cooling}
 
-Los ordenadores tienen ventiladores y/o grandes disipadores para mantenerse fríos, y están diseñados para funcionar a altas temperaturas. El hardware móvil suele estar diseñado priorizando la delgadez, no ayudar a mantener fríos los componentes internos. Si Nomad se lleva a sus ajustes de máxima calidad (modo de iluminación PBR, materiales complejos, muchos objetos, muchas opciones de postprocesado activadas), esto puede sobrecalentar el dispositivo y agotar la batería muy rápidamente. 
+Los ordenadores tienen ventiladores o grandes disipadores para mantenerse frescos, y están diseñados para funcionar a altas temperaturas. El hardware móvil suele diseñarse ante todo para ser fino, no para ayudar a refrigerar sus componentes. Si llevas Nomad a sus ajustes de máxima calidad (modo de iluminación PBR, materiales complejos, muchos objetos, muchas opciones de posprocesado activadas), el dispositivo puede sobrecalentarse y la batería agotarse muy rápido. 
 
-Un enfoque mejor es usar un modo de iluminación matcap y usar un multiplicador de render más bajo (parte superior del menú de postprocesado). Estas elecciones mantendrán el dispositivo frío y te permitirán esculpir durante más tiempo.
+Es mejor usar el modo de iluminación MatCap y una `Resolución de renderizado` más baja (arriba del todo en el menú Posprocesado). Así el dispositivo se mantiene fresco y puedes esculpir durante más tiempo.
 
 ### Memoria limitada {#limited-memory}
 
-Nomad puede lograr resultados iguales a la mayoría de las aplicaciones de esculpido de escritorio, pero no puede doblar las leyes de la física. La mayoría de los ordenadores de sobremesa tienen el doble de memoria que los dispositivos móviles; las estaciones de trabajo construidas para animación 3D a menudo tienen 4x u 8x la memoria. Por ello, es bueno ser consciente de cuántos polígonos estás usando, hacer algunas pruebas en tu dispositivo para ver cuándo empieza a volverse lento. Casi todos los dispositivos que pueden ejecutar Nomad pueden manejar 1 millón de polígonos con bastante facilidad. Un iPad Pro M2 puede manejar 8 millones cómodamente; la gente ha probado en los últimos iPads y han llegado muy por encima de eso.
+Nomad puede conseguir resultados a la altura de la mayoría de las aplicaciones de escultura de escritorio, ¡pero no puede saltarse las leyes de la física! La mayoría de los ordenadores tienen el doble de memoria que los dispositivos móviles, y las estaciones de trabajo para animación 3d suelen tener 4 u 8 veces más. Por eso conviene estar atento a cuántos polígonos usas: haz algunas pruebas en tu dispositivo para ver cuándo empieza a ir lento. Casi todos los dispositivos capaces de ejecutar Nomad manejan 1 millón de polígonos sin problema. Un iPad Pro M2 maneja 8 millones con soltura, y hay quien ha probado en los últimos iPad con bastantes más.
 
-Dicho esto, solo los esculpidos más detallados necesitan más de 4 millones de polígonos; si estás haciendo objetos relativamente simples y te encuentras a menudo superando 500.000, 1 millón, 4 millones, ¡estás usando demasiados polígonos! Asegúrate de tener activado el modo de sombreado suave en las opciones.
+Dicho esto, solo las esculturas más detalladas necesitan más de 4 millones de polígonos; si haces objetos relativamente sencillos y a menudo pasas de 500 000, 1 millón o 4 millones, ¡estás usando demasiados polígonos! Asegúrate de tener activado el `Sombreado suave` en la [Configuración](settings.md).
 
-### El SO es menos tolerante con apps intensivas {#os-is-less-forgiving-with-intensive-apps}
+### El sistema es menos tolerante con las aplicaciones exigentes {#os-is-less-forgiving-with-intensive-apps}
 
-Apple y Android esperan que las apps guarden y carguen archivos pequeños muy rápidamente. También asumen que las apps pueden cambiar de tarea muy rápido. De nuevo, Nomad hace algunos trucos inteligentes para mantener los tamaños de archivo relativamente pequeños y guardarlos muy rápido, pero si el sistema operativo móvil decide que Nomad está tardando demasiado, simplemente lo matará antes de que termine su tarea. Esta es otra razón para mantener los archivos en el lado pequeño; es posible trabajar con esculpidos de 37 millones de polígonos como reportó un usuario en Discord, ¡pero no es recomendable!
+Apple y Android esperan que las aplicaciones guarden y carguen archivos pequeños muy rápido. También dan por hecho que las aplicaciones pueden cambiar de tarea muy rápido. Nomad usa algunos trucos ingeniosos para que los archivos sean relativamente pequeños y se guarden muy rápido, pero si el sistema móvil decide que Nomad tarda demasiado, simplemente lo cierra antes de que termine su tarea. Es otro motivo para mantener los archivos más bien pequeños: se puede trabajar con esculturas de 37 millones de polígonos, como contó un usuario en Discord, ¡pero no es recomendable!
 
 ## Trabajar en pantallas pequeñas {#working-on-small-screens}
 
-Nomad está diseñado para funcionar en tablets, pero también funciona bien en teléfonos. Esculpir en una pantalla pequeña como la de un teléfono puede hacerse más fácil con algunos ajustes de interfaz y flujo de trabajo:
+Nomad está pensado para tabletas, pero también funciona bien en teléfonos. Esculpir en una pantalla pequeña como la de un teléfono resulta más fácil con algunos ajustes en la interfaz y en tu forma de trabajar:
 
-* Un toque con 4 dedos alternará toda la interfaz, dándote más espacio para esculpir.
-* Un arrastre con 3 dedos hacia arriba y hacia abajo cambiará el radio del pincel.
-* La escala de la interfaz puede hacerse más pequeña para que quepan más botones si tienes buena vista, o más grande si tienes mala vista.
-* Los menús más anchos a veces pueden estorbar a la escultura; puedes hacerlos transparentes y sin desenfoque para permitirte ver la escultura bajo el menú.
-* Si esculpes con el dedo, usa la opción de desplazamiento (offset) para mover el centro del pincel un poco lejos de tu dedo.
-* Estas y muchas más opciones pueden encontrarse en el [menú Interface](./interface.md). 
+* Un toque con 4 dedos muestra u oculta toda la interfaz, para dejarte más espacio para esculpir.
+* Arrastrar 3 dedos arriba y abajo cambia el radio del pincel
+* Puedes reducir la escala de la interfaz para que quepan más botones si tienes buena vista, ¡o agrandarla si no la tienes tanto!
+* Los menús más anchos a veces tapan la escultura: puedes hacerlos transparentes y sin desenfoque para ver la escultura debajo del menú.
+* Si esculpes con el dedo, usa la opción [`Desplazamiento de trazo`](stroke.md#stroke-offset) para alejar un poco el centro del pincel de tu dedo.
+* Encontrarás estas y muchas más opciones en el [menú Interfaz](./interface.md). 
 
 
-## Deformador Inflar o Pico {#inflate-or-peak-deformer}
+## Deformador de inflado o de picos {#inflate-or-peak-deformer}
 
-Muchas aplicaciones 3D incluyen un deformador de inflado, que empuja todos los vértices a lo largo de su normal en una cantidad controlable. Aunque Nomad actualmente carece de deformadores, es posible emular este comportamiento con el pincel de inflado:
+Muchas aplicaciones 3d tienen un deformador de inflado que empuja todos los vértices a lo largo de su normal una cantidad ajustable. Aunque Nomad todavía no tiene deformadores, puedes imitar este comportamiento con el pincel Inflar:
 
-* Selecciona el pincel de inflado (inflate)
-* En el [menú Stroke](./stroke.md#stroke) cambia el método de trazo a `Lock + Radius`
-* Haz el radio del pincel más grande que tu escultura; aleja la cámara de la escultura si es necesario.
-* Haz clic y luego arrastra un trazo sobre la superficie de tu objeto; cuando el radio sea mayor que el objeto, toda la forma se inflará de manera uniforme en una cantidad fija.
-* Ajusta la intensidad del pincel para controlar la cantidad de inflado.
-* Usa máscaras si es necesario para proteger o reducir el efecto del inflado en ciertas áreas.
+* Selecciona el pincel Inflar
+* En el [menú Trazo](./stroke.md#stroke), cambia el modo de trazo a `Bloqueo + radio`
+* Haz el radio del pincel más grande que tu escultura; aleja la cámara de la escultura si hace falta.
+* Toca y arrastra un trazo sobre la superficie del objeto: cuando el radio es más grande que el objeto, toda la forma se infla por igual una cantidad fija.
+* Ajusta la intensidad del pincel para controlar cuánto se infla
+* Usa una máscara si hace falta para proteger ciertas zonas o reducir en ellas el efecto del inflado.
 
-## Eliminar bultos o 'granitos' tras una operación de remallado de vóxeles {#remove-lumps-or-pimples-from-a-voxel-remesh-operation}
+## Eliminar bultos o «granos» tras un remallado por vóxeles {#remove-lumps-or-pimples-from-a-voxel-remesh-operation}
 
-El remallado por vóxeles es excelente para crear polígonos uniformemente espaciados, pero a veces crea una topología que causará pequeños bultos o granos al suavizar. Por ejemplo:
+El remallado por vóxeles va muy bien para crear polígonos repartidos de forma uniforme, pero a veces genera una topología que provoca pequeños bultos o granos al suavizar. Por ejemplo:
 
-* Usa el pincel de pliegue (crease) en la esfera por defecto y haz un remolino.
-* Remalla por vóxeles con “build multiresolution at 3”.
-* Suaviza con alta intensidad.
-* Aparecen artefactos (más fácil de ver con un material matcap de alto contraste):
+* Usa el pincel Pliegue sobre la esfera por defecto y haz una espiral
+* Haz un remallado por vóxeles con `Construir multiresolución` a 3
+* Suaviza con una intensidad alta
+* aparecen artefactos (se ven mejor con un material matcap de alto contraste):
 
 ![](/videos/tip_pimples_before.mp4)
 
-Para arreglarlo mediante esculpido, prueba la opción `Stable smoothing` en los ajustes de suavizado. Esto puede manejar la disposición de topología irregular del remallado por vóxeles y obtener resultados limpios.
+Para corregirlo esculpiendo, prueba la opción `Suavizado estable` en los ajustes de Suavizar. Gestiona bien la topología irregular del remallado por vóxeles y da resultados limpios.
 
 ![](/videos/tip_pimples_stable_smooth.mp4)
 
-Para arreglar la topología en sí, usa una nueva primitiva, o las herramientas de quad remesh, o un modelador 3D externo, y proyecta el detalle desde la malla original a la nueva mediante `Topology -> Misc -> Reproject`. 
+Para corregir la propia topología, usa una primitiva nueva, las herramientas de Quad Remesher o un modelador 3d externo, y proyecta el detalle de la malla original sobre la nueva con `Topología -> Hornear -> Reproyectar → Vértice`. 
 
 ![](/videos/tip_pimples_reproject.mp4)
 
-## Iluminación diurna {#daylight-lighting}
+## Iluminación de luz diurna {#daylight-lighting}
 
-El render PBR por defecto es, como su nombre sugiere, físicamente basado, lo que puede hacer que, como una foto digital sin procesar, se vea un poco deslavado y plano. Las luces y el postprocesado de Nomad pueden usarse para hacer que los renders se vean más vibrantes.
+El render PBR por defecto está, como su nombre indica, basado en la física, y al igual que una foto digital sin procesar, puede verse algo apagado y plano. Las luces y el posprocesado de Nomad sirven para que los renders se vean más vivos.
 
-Aquí hay un render por defecto; veamos si podemos hacerlo ver mejor:
+Este es un render por defecto; veamos si podemos mejorarlo:
 ![](/images/tips_lighting_default.webp)
 
-Activar el postprocesado y el tonemapping puede añadir brillo y contraste:
+Activar el posprocesado y el mapeo de tonos añade brillo y contraste:
 
 ![](/images/tips_lighting_tonemap.webp)
 
-Para centrarnos en las luces, la luz de entorno por defecto es buena para esculpir, pero puede mejorarse para un render final. Una forma de pensar en esto es separar la luz directa (por ejemplo, el sol) de la luz de entorno (por ejemplo, la luz del azul del cielo, el suelo). Al reducir la luz de entorno y rotarla, se empieza a capturar cómo debería verse la iluminación si el sujeto estuviera en una zona sombreada:
+En cuanto a las luces, la luz de entorno por defecto va bien para esculpir, pero se puede mejorar para un render final. Una forma de verlo es separar la luz directa (por ejemplo, el sol) de la luz de entorno (por ejemplo, la luz del azul del cielo o del suelo). Al reducir la luz de entorno y girarla, empezamos a captar cómo sería la iluminación si el sujeto estuviera en una zona de sombra:
 
 ![](/images/tips_lighting_env.webp)
 
-Se puede añadir una luz directa y aumentar su intensidad para simular una luz solar dura. Equilibrar esto con la luz de entorno logrará un resultado agradable:
+Se puede añadir una luz directa y subir su intensidad para simular una luz solar intensa. Equilibrarla con la luz de entorno da un resultado agradable:
 
 ![](/images/tips_lighting_sunlight.webp)
 
-Los personajes pueden beneficiarse de cambiar su material a subsurface y colocar un foco detrás del personaje apuntando a las orejas para hacer que brillen:
+A los personajes les sienta bien cambiar su material a subsuperficie y colocar un foco detrás del personaje apuntando a las orejas para que brillen:
 
 ![](/images/tips_lighting_sss.webp)
 
-¡Luego experimenta con el resto de los ajustes de postprocesado! Global Illumination y Ambient Occlusion ayudan con una iluminación más realista. Curvature y Sharpen pueden ayudar a resaltar más detalle en la escultura. Chromatic Aberration, Depth of Field, Grain, Bloom, Vignette ayudan a simular efectos de cámara. Ten en cuenta que a medida que se activan funciones, es necesario ajustar la iluminación y otros valores de postprocesado para compensar.
+¡Después, experimenta con el resto de los ajustes de posprocesado! La iluminación global y la oclusión ambiental ayudan a lograr una iluminación más realista. La curvatura y el enfoque ayudan a resaltar el detalle de la escultura. La aberración cromática, la profundidad de campo, el grano, el resplandor y la viñeta simulan efectos de cámara. Ten en cuenta que, a medida que activas funciones, hay que ajustar la iluminación y los demás valores de posprocesado para compensar.
 
-Aquí está el render con un conjunto completo de ajustes de postprocesado:
+Este es el render con todos los retoques de posprocesado:
 ![](/images/tips_lighting_final.webp)

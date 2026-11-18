@@ -1,142 +1,167 @@
-# ![](/icons/paint.webp) Tô màu {#painting}
+# ![](/icons/paint.webp) Sơn {#painting}
 
-Điều khiển màu sắc, độ nhám (roughness), độ kim loại (metalness) của các nét sơn, cho phép tô tràn (flood fill) các thuộc tính sơn, và cách các công cụ sơn tương tác với layer, mask, vùng ẩn.
+Điều khiển màu, độ nhám, độ kim loại của nét vẽ, cho phép tô tràn các thuộc tính vẽ, và quyết định cách công cụ vẽ tương tác với lớp, mặt nạ và vùng bị ẩn.
 
 ![](/images/paint_overview.webp)  
 
 ## Tổng quan {#overview}
 
-Nomad sử dụng kỹ thuật tô màu theo đỉnh (PBR vertex painting). Điều này có nghĩa là gì?
+Nomad dùng phương pháp vẽ đỉnh PBR. Điều đó có nghĩa là gì?
 
 ### PBR {#pbr}
-PBR, hay Physically Based Rendering (kết xuất dựa trên vật lý), là một kỹ thuật đồ họa máy tính phổ biến trong phim ảnh, truyền hình, game và di động. Bằng cách dựa ánh sáng trên các thuộc tính vật lý, và định nghĩa bề mặt thông qua màu sắc, độ nhám, độ kim loại, có thể đạt được rất nhiều kiểu hiển thị chân thực.
+PBR, hay Physically Based Rendering (kết xuất dựa trên vật lý), là một kỹ thuật đồ họa máy tính phổ biến trong điện ảnh, truyền hình, game và thiết bị di động. Bằng cách dựa ánh sáng trên các thuộc tính vật lý, và mô tả bề mặt qua màu sắc, độ nhám và độ kim loại, bạn có thể đạt được rất nhiều vẻ ngoài chân thực như ảnh chụp.
 
-### Tô đỉnh (Vertex) {#vertex-painting}
+### Vẽ đỉnh {#vertex-painting}
 
-Vertex painting có nghĩa là thông tin sơn được lưu trong các đỉnh (vertex) của mô hình, thay vì trong texture. Vì Nomad có thể xử lý các mô hình với hàng trăm nghìn, thậm chí hàng triệu đỉnh, mô hình của bạn có thể có lớp sơn bề mặt rất chi tiết; nếu bạn có thể điêu khắc chi tiết đó, bạn cũng có thể tô màu chi tiết đó.
+Vẽ đỉnh nghĩa là thông tin vẽ được lưu trong các đỉnh của mô hình, thay vì trong kết cấu. Vì Nomad xử lý được những mô hình có hàng trăm nghìn, thường là hàng triệu đỉnh, mô hình của bạn có thể mang lớp vẽ bề mặt rất chi tiết: nếu bạn điêu khắc được chi tiết nào, bạn cũng vẽ được chi tiết đó.
 
-Điều này cũng có nghĩa là tô màu trong Nomad không cần UV mapping, vốn thường là một quy trình chậm và kỹ thuật trong các ứng dụng 3D khác. Nhiều ứng dụng 3D khác không hỗ trợ số lượng đỉnh cao như Nomad, tuy nhiên Nomad cũng có các công cụ bake texture và giảm đa giác (decimation) rất tốt để hỗ trợ.
+Điều này cũng có nghĩa là vẽ trong Nomad không cần UV, một quy trình thường chậm và nặng về kỹ thuật trong các ứng dụng 3d khác. Nhiều ứng dụng 3d khác không xử lý được số đỉnh lớn như Nomad, nhưng Nomad cũng có các công cụ bake kết cấu và tinh giảm tốt để hỗ trợ.
 
-### Tạo kết cấu (Texturing) {#texturing}
+### Kết cấu {#texturing}
 
-Nomad hỗ trợ texture, nhưng chúng phải có sẵn trong mô hình được import, hoặc thông qua việc bake tô màu theo đỉnh sang texture. 
+Nomad hỗ trợ kết cấu (texture), nhưng chúng phải có sẵn trong một mô hình được nhập vào, hoặc được tạo bằng cách bake phần vẽ đỉnh thành kết cấu.
 
-Texture đơn giản là một hình ảnh, nhưng trong ngữ cảnh 3D nó thường chỉ một hình ảnh được gán cho một đối tượng.
-Để quấn một hình ảnh quanh mô hình, mô hình cần có tọa độ texture (UV).
+Kết cấu đơn giản là một hình ảnh, nhưng trong bối cảnh 3d, nó thường chỉ một hình ảnh được gán cho một đối tượng.
+Để bọc một hình ảnh quanh mô hình, mô hình cần có tọa độ kết cấu (UV).
 
-Nomad có thể [tự động tính UV](topology.md#uv-unwrap) nhưng bạn sẽ không có nhiều quyền kiểm soát chất lượng tổng thể.
+Nomad có thể [tự động tính toán chúng](topology.md#uv-unwrap) nhưng bạn không kiểm soát được nhiều về chất lượng tổng thể.
 
 ::: tip
 Một ví dụ về quy trình làm việc:
-- Điêu khắc trong Nomad, sau đó [UV unwrap](topology.md#uv-unwrap)
-- Nếu bạn đã bắt đầu tô màu trong Nomad, bạn có thể [chuyển tô màu theo đỉnh sang texture](topology.md#bake-vertex-colors-to-texture)
-- Export sang Procreate
-- Tô texture trong Procreate
-- Export trở lại Nomad để render
+- Điêu khắc trong Nomad, rồi [Unwrap UV](topology.md#uv-unwrap)
+- Nếu bạn đã bắt đầu vẽ trong Nomad, bạn có thể [chuyển phần vẽ đỉnh sang kết cấu](topology.md#bake-texture)
+- Xuất sang Procreate
+- Vẽ kết cấu trong Procreate
+- Xuất ngược về Nomad để render
 :::
 
-Đó là phần tổng quan, giờ hãy khám phá các mục trong menu tô màu:
+Đó là phần tổng quan, giờ hãy cùng khám phá các phần của menu Sơn:
 
 
-## Tô theo nét vẽ {#stroke-painting}
+## Vẽ nét {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
-Bật tô màu cho công cụ này, hữu ích nếu bạn cần điêu khắc và tô màu cùng lúc.
+Bật tính năng vẽ cho công cụ này, hữu ích khi bạn cần vừa điêu khắc vừa vẽ cùng lúc. Khi một công cụ có thể vẽ nhưng ô này đang tắt, một biểu tượng cảnh báo cạnh tiêu đề sẽ nhắc bạn.
 
-Với các công cụ mà tô màu là chức năng chính (ví dụ Paint, Smudge, Mask), checkbox này sẽ không xuất hiện.
+Với những công cụ mà vẽ là chức năng chính (ví dụ Vẽ, Bôi nhòe, Mặt nạ), ô này không tồn tại.
 
-### Cường độ tô {#paint-intensity}
+### ![](/icons/opacity.webp) Độ mạnh màu {#paint-intensity}
 
-Thanh trượt cho phép bạn dùng cường độ tô màu khác với cường độ chính của công cụ.
+Một thanh trượt cho phép bạn dùng cường độ vẽ khác với cường độ chính của công cụ.
 
-Các checkbox `Alpha`, `Falloff` và `Randomize` quyết định liệu các tính năng đó có ảnh hưởng đến tô màu hay không. Ví dụ bạn có thể bật randomize cho công cụ clay, nhưng màu sắc sẽ không bị random.
+Nút thanh trượt bên cạnh thêm một thanh trượt độ mạnh màu nhanh vào thanh bên, dành cho những công cụ vừa điêu khắc vừa vẽ.
+
+Các nút `Alpha`, `Giảm dần` và `Ngẫu nhiên hóa cường độ` quyết định các tính năng đó có ảnh hưởng đến việc vẽ hay không. Ví dụ, bạn có thể bật ngẫu nhiên cho công cụ Đất sét, nhưng màu thì không bị ngẫu nhiên hóa.
+
+* `Alpha` - khi tắt, phần vẽ bỏ qua alpha và phủ toàn bộ vùng cọ. Với công cụ VDM, nút này được thay bằng `Vật liệu con dấu`, dùng để bật hoặc tắt vật liệu lưu trong con dấu.
+* `Giảm dần` - khi tắt, phần vẽ giữ nguyên cường độ tối đa cho đến tận mép cọ.
+* `Ngẫu nhiên hóa cường độ` - phần cường độ của bộ ngẫu nhiên hóa nét vẽ có ảnh hưởng đến việc vẽ hay không. Ngẫu nhiên hóa vị trí, góc xoay và tỷ lệ thì luôn di chuyển toàn bộ con dấu.
+
+Các tùy chọn này bị [Vẽ tất cả](#paint-all) bỏ qua, nhưng biến thể triplanar của nó vẫn dùng alpha.
+
+### ![](/icons/link.webp) Vật liệu toàn cầu {#global-material}
+Nếu bật tùy chọn này, vật liệu được chọn sẽ giống với các công cụ khác. Lưu ý rằng nó chỉ tính đến các cài đặt độ nhám, độ kim loại và màu sắc. Tắt đi để công cụ này có vật liệu riêng.
+
 
 ## Vật liệu {#material}
 ![](/images/paint_material.webp) 
 
-Biểu tượng đầu tiên là hình xem trước chất liệu. Kéo trên hình xem trước 3D sẽ xoay nó. 
+Biểu tượng đầu tiên là hình xem trước vật liệu. Kéo trên bản xem trước vật liệu 3d sẽ xoay nó.
 
-Biểu tượng thứ hai là xem trước nét sơn với alpha và falloff đã chọn.
+Biểu tượng thứ hai là bản xem trước nét vẽ với các tùy chọn alpha và giảm dần đã chọn.
 
-Nút xem trước cạnh tiêu đề Material cho phép bạn chuyển giữa none, Material hoặc Triplanar. Điều này quyết định điều gì sẽ xảy ra khi bạn thay đổi thuộc tính sơn một cách tương tác:
+### ![](/icons/falloff.webp) Đường cong {#curves}
 
-* `None` - Không hiển thị xem trước trên mô hình khi bạn chỉnh thuộc tính
-* `Material` - Giá trị chất liệu sẽ được xem trước trên đối tượng khi bạn chỉnh. Nếu bạn dùng texture và mô hình có UV, UV sẽ được sử dụng.
-* `Triplanar` - Chất liệu sẽ được xem trước dưới dạng chiếu Triplanar. 
+Mở trình chỉnh sửa đường cong cho các ô kết cấu của [các thanh trượt PBR](#pbr-sliders). Nó ánh xạ lại giá trị kết cấu trước khi được vẽ, mà không động đến tệp ảnh. Một biểu tượng đường cong nhỏ trên ô kết cấu cho biết đường cong của nó đã được chỉnh sửa.
 
-Ống nhỏ giọt có thể dùng để lấy mẫu tất cả thuộc tính từ một đối tượng trong cảnh của bạn.
+### ![](/icons/cog.webp) Tùy chọn vật liệu {#material-options}
 
-## Các preset vật liệu {#material-presets}
-Chạm vào hình xem trước 3D sẽ mở menu preset chất liệu, bạn có thể clone chúng để tạo preset riêng.
+Nút `Vật liệu` cạnh tiêu đề chứa hai cài đặt.
+
+`Xem trước hiển thị vật liệu` quyết định điều gì xảy ra trên đối tượng được chọn khi bạn thay đổi các thanh trượt màu, độ nhám, độ kim loại, độ mờ đục và cường độ:
+
+* `Không có` - Không hiển thị bản xem trước nào trên mô hình khi bạn chỉnh thuộc tính
+* `Vật liệu` - Các giá trị vật liệu được xem trước trên đối tượng khi bạn chỉnh thuộc tính.
+* `Triplanar` - Vật liệu được xem trước dưới dạng phép chiếu Triplanar.
+
+Các ô đánh dấu màu, độ nhám, độ kim loại và độ mờ đục bên dưới chọn những kênh mà [Bộ chọn vật liệu](#material-picker) sẽ thay thế.
+
+### ![](/icons/dropper.webp) Bộ chọn vật liệu {#material-picker}
+
+Ống hút màu lấy vật liệu dưới con trỏ, từ bất kỳ đối tượng nào trong cảnh. Chỉ những kênh được đánh dấu trong [Tùy chọn vật liệu](#material-options) mới bị thay thế.
+
+## Vật liệu thiết lập sẵn {#material-presets}
+Chạm vào hình xem trước 3d sẽ mở menu các vật liệu thiết lập sẵn; bạn có thể nhân bản chúng để tạo thiết lập sẵn của riêng mình.
 
 ![](/images/paint_presets.webp) 
 
-Khi bật, các công tắc `Embed Textures` và `Alpha` sẽ lưu mọi texture được chất liệu này sử dụng bên trong preset. Điều này được giải thích kỹ hơn bên dưới.
+Nút `Nhúng kết cấu` lưu một bản sao của các kết cấu mà vật liệu này dùng vào bên trong thiết lập sẵn. Nếu không bật, thiết lập sẵn chỉ tham chiếu đến các kết cấu trong thư mục textures/ của Nomad. Hãy bật khi bạn muốn chia sẻ một thiết lập sẵn có kết cấu mà không phải gửi riêng các kết cấu của nó.
 
-## Thanh trượt PBR {#pbr-sliders}
+`Bao gồm Alpha` cũng lưu alpha của cọ vào vật liệu thiết lập sẵn.
+
+## Các thanh trượt PBR {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
-Tô màu [PBR](shading.md#pbr) sử dụng 4 kênh:
-- `Color` Màu sẽ được tô. Ống nhỏ giọt có thể dùng để chọn màu từ phần khác của mô hình, hoặc từ ảnh tham chiếu.
-- `Roughness` Cho biết bề mặt "nhám" hay "mịn". Giá trị roughness thấp nghĩa là phản xạ sẽ sắc nét.
-- `Metalness` Cho biết bề mặt có phải kim loại hay không. Giá trị hầu hết nên là 0% hoặc 100%, giá trị ở giữa chỉ nên dùng trong trường hợp đặc biệt.
-- `Opacity` Mức độ có thể nhìn xuyên qua chất liệu. Về mặt lý thuyết nó không thuộc đặc tả PBR, nhưng rất hữu ích trong nhiều tình huống. 1 là hoàn toàn đục, 0 là trong suốt. Lưu ý độ mờ (opacity) và khúc xạ (refraction) là hai thứ khác nhau, khúc xạ trong Nomad được xử lý qua chất liệu refraction. 
+Vẽ [PBR](shading.md#pbr) dùng 4 kênh:
+- `Màu sắc` Màu sẽ được vẽ. Bạn có thể dùng ống hút màu để lấy màu từ những phần khác của mô hình, hoặc từ ảnh tham chiếu.
+- `Độ nhám` Cho biết bề mặt "nhám" hay "mịn" đến đâu. Độ nhám thấp nghĩa là phản chiếu sẽ sắc nét.
+- `Độ kim loại` Đơn giản cho biết bề mặt có phải kim loại hay không. Phần lớn thời gian giá trị nên là 0% hoặc 100%, các giá trị ở giữa chỉ nên là ngoại lệ.
+- `Độ mờ` Mức độ có thể nhìn xuyên qua vật liệu. Nói chính xác thì nó không thuộc chuẩn PBR, nhưng lại hữu ích trong nhiều tình huống. 1 là đặc hoàn toàn, 0 là trong suốt. Lưu ý rằng độ mờ đục và khúc xạ là hai thứ khác nhau: khúc xạ trong Nomad được xử lý bằng vật liệu Khúc xạ.
 
-Nếu bạn chọn một preset chất liệu, 3 kênh sẽ được tô đồng thời (opacity thường cố ý bị loại trừ). Điều này có nghĩa là thay vì chỉ tô "màu đỏ", bạn có thể đang tô "một kim loại đỏ nhám" hoặc "một nhựa trắng mịn".
+Nếu bạn chọn một vật liệu thiết lập sẵn, 3 kênh sẽ được vẽ cùng lúc (độ mờ đục thường được cố ý loại ra). Nghĩa là thay vì chỉ vẽ 'màu đỏ', bạn có thể vẽ 'một kim loại đỏ nhám' hay 'một chất nhựa trắng mịn'.
 
-Ô vuông là một ô texture, nhấn vào để dùng texture cho thuộc tính đó thay vì một giá trị đơn sắc.
+Ô vuông là ô kết cấu: nhấn vào để dùng một kết cấu cho thuộc tính đó thay vì một giá trị cố định. Kết cấu màu sẽ nhuộm màu, còn kết cấu độ nhám, độ kim loại hay độ mờ đục thì thay thế giá trị của thanh trượt (nhãn của nó bị gạch ngang để thể hiện điều đó). Với kết cấu độ mờ đục, `Dùng Alpha làm Giá trị` đọc kênh alpha của kết cấu thay vì giá trị thang xám.
 
-Biểu tượng cây cọ cạnh các thanh trượt sẽ tô tràn (flood fill) thuộc tính đó lên toàn bộ đối tượng.
+Với công cụ VDM, khi con dấu mang vật liệu riêng, một ô bổ sung hiển thị nó cạnh ô kết cấu. Chạm vào để dùng hoặc bỏ qua kênh đó của con dấu.
 
-Checkbox sẽ bật/tắt thuộc tính cụ thể đó, vì vậy bạn có thể chỉ tô màu, hoặc chỉ tô roughness và opacity, chẳng hạn. 
+Biểu tượng cọ cạnh các thanh trượt sẽ tô tràn thuộc tính đó lên toàn bộ đối tượng.
 
-Dưới đây là một số ví dụ về các thuộc tính roughness và metalness khác nhau:
+Ô đánh dấu bật hoặc tắt từng thuộc tính, ví dụ bạn có thể chỉ vẽ màu, hoặc chỉ vẽ độ nhám và độ mờ đục.
 
-|                | Metalness 0%                      | Metalness 100%               |
+Dưới đây là vài ví dụ về các mức độ nhám và độ kim loại khác nhau:
+
+|                | Độ kim loại 0%                    | Độ kim loại 100%             |
 | :------------: | :-------------------------------: | :--------------------------: |
-| Roughness 0%   | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
-| Roughness 50%  | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
-| Roughness 100% | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
+| Độ nhám 0%     | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
+| Độ nhám 50%    | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
+| Độ nhám 100%   | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
 
 ::: warning
-Chỉ màu sắc được hỗ trợ trong chế độ [Matcap rendering](shading.md#matcap), metalness và roughness sẽ bị bỏ qua.
+Độ nhám và độ kim loại cần chế độ tô bóng [Chiếu sáng (PBR)](shading.md#pbr). Ở chế độ [MatCap](shading.md#matcap) hoặc [Không sáng](shading.md#unlit), chúng bị bỏ qua và menu sẽ hiện cảnh báo.
 :::
 
 ::: tip
-Khi dùng texture cho tô màu PBR, thường hữu ích nếu chuyển sang công cụ như `Stamp`, hoặc dùng menu stroke để chọn chế độ khác dot, vì dot có thể làm nhòe texture.
+Khi dùng kết cấu để vẽ PBR, bạn thường nên chuyển sang công cụ như `Dấu Triện`, hoặc dùng menu Nét vẽ để chọn một chế độ khác ngoài chấm, vốn có thể làm nhòe kết cấu.
 
 ![](/videos/paint_color_texture.mp4)  
 :::
 
 ::: tip
-Bạn có thể cân nhắc bật `Smooth Shading` [toàn cục](settings.md#smooth-shading) hoặc [theo từng đối tượng](material.md#smooth-shading) nếu bạn đang tô bề mặt kim loại trên một đối tượng có số lượng polygon thấp.
+Bạn có thể cân nhắc bật `Tô bóng mượt` [cho toàn bộ](settings.md#smooth-shading) hoặc [cho từng đối tượng](material.md#smooth-shading) nếu bạn vẽ bề mặt kim loại trên một đối tượng có ít đa giác.
 :::
 
-## Tô tất cả {#paint-all}
+## ![](/icons/paint.webp) Vẽ tất cả {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
-Áp dụng chất liệu hiện tại lên đối tượng, hoặc ở chế độ tiêu chuẩn với 'Paint All', hoặc dưới dạng chiếu Triplanar.
+Áp vật liệu hiện tại lên các đối tượng được chọn, theo chế độ thường với `Vẽ tất cả`, hoặc dưới dạng phép chiếu Triplanar với `Vẽ tất cả + Triplanar`. Biến thể triplanar không khả dụng với những hình cơ bản chưa được hoàn tất.
 
-Các checkbox cạnh thanh trượt color/metalness/roughness/opacity sẽ được tôn trọng, mọi thuộc tính bị tắt sẽ không được tô.
+Các ô đánh dấu cạnh thanh trượt màu/độ kim loại/độ nhám/độ mờ đục được tôn trọng: những thuộc tính bị tắt sẽ không được tô.
 
-Các nút bổ sung điều khiển cách Paint All có thể bị ảnh hưởng thêm:
+Các nút bổ sung điều khiển những yếu tố khác tác động lên Vẽ tất cả. Hầu hết hiển thị một tỷ lệ phần trăm, và bị làm mờ khi chúng không có tác dụng gì:
 
-| Icon                        | Mô tả                                         |
+| Biểu tượng                  | Mô tả                                         |
 | :-------------------------: | :-------------------------------------------: |
-| ![](/icons/tool_mask.webp) | Vùng bị mask sẽ không bị ảnh hưởng.          |
-| ![](/icons/tool_hide.webp) | Vùng bị ẩn sẽ không bị ảnh hưởng.            |
-| ![](/icons/opacity.webp)   | Dùng hệ số tô màu của công cụ phía trên.     |
-| ![](/icons/layer.webp)     | Vùng chưa tô của một layer sẽ không bị ảnh hưởng. |
-| ![](/icons/triplanar.webp) | Chỉ báo thiết lập triplanar                   |
-| ![](/icons/cog.webp)       | Mở thiết lập Triplanar                        |
+| ![](/icons/shield.webp)    | Khu vực mặt nạ sẽ không bị ảnh hưởng.         |
+| ![](/icons/tool_hide.webp) | Khu vực ẩn sẽ không bị ảnh hưởng.             |
+| ![](/icons/opacity.webp)   | Sử dụng hệ số vẽ công cụ ở trên.              |
+| ![](/icons/layer.webp)     | Khu vực chưa sơn của một lớp sẽ không bị ảnh hưởng. |
+| ![](/icons/triplanar.webp) | `Đỉnh`: biến thể triplanar còn đẩy lệch bề mặt theo alpha, với cường độ công cụ hiển thị trên nút. |
+| ![](/icons/cog.webp)       | Mở cài đặt Triplanar                          |
 
-### Cài đặt triplanar {#triplanar-settings}
+### ![](/icons/cog.webp) Cài đặt Triplanar {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
-Tương tự [thiết lập triplanar trong menu material](material.md#triplanar), bạn có thể điều khiển độ hòa trộn giữa các phép chiếu, độ lặp (tiling) và độ lệch (offset). 
+Tương tự [cài đặt triplanar trong menu Vật liệu](material.md#triplanar), bạn có thể điều khiển cách hòa trộn các phép chiếu, cách lát gạch và độ dời.
 
-Dùng checkbox preview ở đầu menu này để bật xem trước liên tục trong khi chỉnh giá trị.
-
-## Vật liệu toàn cục {#global-material}
-Nếu tùy chọn này được bật, chất liệu đã chọn sẽ giống nhau cho các công cụ khác. Lưu ý nó chỉ tính đến thiết lập roughness, metalness và color.
+Dùng ô xem trước ở đầu menu này để bật bản xem trước liên tục trong khi chỉnh giá trị.

@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Hem",
+    "forum": "Forum"
+  },
+  "theme": {
+    "outlineLabel": "På den här sidan",
+    "docFooter": {
+      "prev": "Föregående sida",
+      "next": "Nästa sida"
+    },
+    "darkModeSwitchLabel": "Utseende",
+    "lightModeSwitchTitle": "Byt till ljust tema",
+    "darkModeSwitchTitle": "Byt till mörkt tema",
+    "sidebarMenuLabel": "Meny",
+    "returnToTopLabel": "Tillbaka till toppen",
+    "langMenuLabel": "Byt språk",
+    "skipToContentLabel": "Hoppa till innehållet",
+    "notFound": {
+      "title": "SIDAN HITTADES INTE",
+      "quote": "Men om du inte ändrar riktning och fortsätter att leta, kanske du hamnar där du är på väg.",
+      "linkLabel": "gå till startsidan",
+      "linkText": "Ta mig hem"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "Sök",
+      "buttonAriaLabel": "Sök"
+    },
+    "modal": {
+      "displayDetails": "Visa detaljerad lista",
+      "resetButtonTitle": "Återställ sökningen",
+      "backButtonTitle": "Stäng sökningen",
+      "noResultsText": "Inga resultat för",
+      "footer": {
+        "selectText": "för att välja",
+        "selectKeyAriaLabel": "retur",
+        "navigateText": "för att navigera",
+        "navigateUpKeyAriaLabel": "uppåtpil",
+        "navigateDownKeyAriaLabel": "nedåtpil",
+        "closeText": "för att stänga",
+        "closeKeyAriaLabel": "escape"
+      }
+    }
+  }
+}

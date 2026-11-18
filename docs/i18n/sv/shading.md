@@ -1,6 +1,6 @@
 # ![](/icons/sun.webp) Skuggning {#shading}
 
-Den här menyn styr skuggningslägena som används av Nomad, ljusegenskaper och miljöljus-/matcap‑egenskaper.
+Den här menyn styr Nomads skuggningslägen, ljusens egenskaper, miljön och matcap samt dimman.
 
 ![](/images/shading_overview.webp)
 
@@ -8,232 +8,274 @@ Den här menyn styr skuggningslägena som används av Nomad, ljusegenskaper och 
 
 Du kan välja mellan flera renderingslägen:
 
-| Läge                        | Betydelse                 | Beskrivning                                                    |
-| :-------------------------: | :-----------------------: | :------------------------------------------------------------: |
-| [Lit(PBR)](#pbr)            | Fysikbaserad rendering    | Målning med metallikhet/roughness                              |
-| [Matcap](#matcap)           | Material Capture          | Används under skulptering med lägre gpu/cpu‑användning än PBR  |
-| [Unlit](#unlit)             | Ytfärg                    | Endast ytfärg utan skuggning eller belysning                   |
-| [Object Id](#object-id)      | Objekt‑ID                 | En slumpmässig färg per objekt, användbart i målningsprogram   |
-| [Instance Id](#instance-id)  | Instans‑ID                | En slumpmässig färg per instans, användbart för att identifiera delade mesh:er |
+| Läge                        | Betydelse                    | Beskrivning                                                     |
+| :-------------------------: | :------------------------: | :-------------------------------------------------------------: |
+| [Upplyst (PBR)](#pbr)           | Physically Based Rendering (fysikaliskt baserad rendering) | Ljus, skuggor, miljö och målad metallitet/grovhet   |
+| [MatCap](#matcap)           | Material Capture           | Snabbt läge för skulptering, som belastar gpu/cpu mindre än PBR        |
+| [Obelyst](#unlit)             | Ytfärg              | Bara ytfärgen, utan skuggning eller belysning                  |
+| [Objekt-ID](#object-id)     | Objekt-ID                  | En slumpmässig färg per objekt, användbart i målarprogram.    |
+| [Instans-ID](#instance-id) | Instans-ID                | En slumpmässig färg per instans, användbart för att hitta delade mesher   |
 
-Om du vill lära dig mer om metallikhet och roughness, se avsnittet [Vertex Paint](painting.md).
+Om du vill veta mer om metallitet och grovhet, se avsnittet [Vertexmålning](painting.md).
 
 ---
 
 ![](/images/shading_second.webp)
 
-### Ytgrupp {#face-group}
-Visa överlägg med facegroup‑färger. Facegroups är färglagda polygonval som kan skapas med verktyget [Face group](tools#facegroup), och skapas automatiskt med de flesta primitiver.
+### ![](/icons/group_gray.webp) Ytgrupp {#face-group}
+Visar ytgruppernas färger ovanpå modellen. Ytgrupper är färgade urval av polygoner som du kan skapa med verktyget [Ytgrupp](tools#facegroup), och de skapas automatiskt för de flesta primitiver.
 
-Vissa verktyg kommer automatiskt att filtrera efter facegroups när facegroups är synliga.
+En del verktyg filtrerar automatiskt efter ytgrupper när ytgrupperna är synliga.
 
-### Visa färg {#show-paint}
-Nomad kan lagra färg, roughness, metallikhet i vertexarna på din skulpt. Du kan slå av/på visningen av dessa egenskaper globalt med den här kryssrutan.
+### ![](/icons/palette.webp) Visa måleri {#show-paint}
+Nomad kan lagra färg, grovhet och metallitet i din skulpturs vertices. Med den här kryssrutan slår du på eller av visningen av de här egenskaperna globalt.
 
-Observera att om du har både vertex‑egenskaper och texturer, och båda är aktiverade, kommer värdena att multipliceras med varandra.
+Observera att om du har både vertexegenskaper och texturer, och båda är aktiverade, multipliceras värdena med varandra.
 
-### Visa mask {#show-mask}
-Slå av/på gråskalemaskens överlägg från [maskverktygen](tools#mask). När detta är avstängt är masken också avstängd, vilket är användbart för att göra snabba ändringar utan mask, sedan kan du slå på den igen utan att förlora masken.
+### ![](/icons/shield.webp) Visa mask {#show-mask}
+Slår på eller av gråskaleöverlägget från [maskverktygen](tools#mask). När det är avaktiverat är även masken avaktiverad. Det är användbart för att göra snabba ändringar utan masken: sedan kan du aktivera den igen utan att förlora din mask.
 
-### Använd dölj {#use-hide}
+### ![](/icons/tool_hide.webp) Använd Dölj {#use-hide}
 
-Slå av/på dolda ytor. Observera att detta bara fungerar om du INTE är i hide‑verktyget!
+Slår på eller av dolda ytor. Observera att det bara fungerar om du INTE använder döljverktyget!
 
-### Använd texturer {#use-textures}
+### ![](/icons/image.webp) Använd texturer {#use-textures}
 
-Nomad tillåter att texturer tilldelas objekt från [materialmenyn](material). Om texturer är tilldelade kan de slås av/på globalt med den här kryssrutan.
+I Nomad kan du tilldela objekt texturer från menyn [Material](material). Om texturer är tilldelade kan du slå på eller av dem globalt med den här kryssrutan.
 
+Du kan inte skapa eller redigera texturer i Nomad, men texturer från importerade filer fungerar. Opacitetstexturer fungerar i Upplyst, MatCap och Obelyst, normal maps i Upplyst och MatCap, färg i Upplyst och Obelyst, och emission, grovhet och metallitet bara i Upplyst. Knappen är gråtonad när scenen inte har någon textur.
 
+### Översikt över PBR och ljus {#pbr}
+Den här manualen går inte in på detaljerna kring fysikaliskt baserad rendering (PBR).
 
+En viktig sak att komma ihåg är att belysning och material är helt åtskilda.
+Det betyder att du kan måla objektets färg, grovhet och metallitet medan belysningen hanteras separat.
+Du kan alltså måla ditt objekt och justera belysningen senare, utan att förstöra modellens helhetsintryck.
 
-
-
-
-### PBR- och ljusöversikt {#pbr}
-Den här manualen går inte in på detaljerna kring fysikbaserad rendering (PBR).
-
-En viktig sak att komma ihåg är att belysning och material är helt separerade.
-Det betyder att du kan måla objektets färg, roughness och metallikhet medan belysningen hanteras oberoende.
-Det gör att du kan måla ditt objekt och sedan justera belysningen senare utan att förstöra helhetsintrycket av din modell.
-
-Ljus är endast tillgängliga med [PBR‑läge](#pbr).
-Av prestandaskäl är du begränsad till endast 4 ljus.
+Ljuskällor, miljön och dimman finns bara i [PBR-läget](#pbr).
+Av prestandaskäl är du begränsad till 4 ljuskällor på mobilen och 6 på datorn.
 
 ::: tip
-Du kan ladda en glTF‑fil med fler än 4 ljus och Nomad kommer att behålla alla.
-Det kommer dock inte nödvändigtvis att fungera bra prestandamässigt.
+Du kan läsa in en glTF-fil med fler ljuskällor, och Nomad behåller dem alla.
+Men det kommer inte nödvändigtvis att fungera smidigt.
 :::
 
 ::: tip
-Du kan fejka många ljus genom att göra objekt unlit/emissiva och sedan aktivera global illumination i menyn [post process](postprocess).
+Du kan fejka många ljuskällor genom att göra objekt obelysta/självlysande och sedan aktivera global belysning i menyn [Efterbehandling](postprocess).
 :::
 
 ### Översikt över ljustyper {#light-types-overview}
 
-Här är de ljustyper som för närvarande stöds:
+Det här är de typer av ljus som stöds just nu:
 
-| Läge                        | Beskrivning                                              | Kan kasta skuggor                                      |
-| :-------------------------: | :------------------------------------------------------: | :----------------------------------------------------: |
-| [Directional](#directional) | Oändligt avlägset solljus                                | ja                                                     |
-| [Environment](#environment) | Ett avlägset ljus som matchas mot miljöns HDR           | ja                                                     |
-| [Spot](#spot)               | Konformade ljus				                            | Ja                                                     |
-| [Point](#point)             | Punktljus i alla riktningar                             | Ja, men endast via mindre robusta skärmbaserade skuggor |
+| Läge                        | Beskrivning                                             | Kan kasta skuggor |
+| :-------------------------: | :-----------------------------------------------------: | :--------------: |
+| [Riktad](#directional) | Solljus från oändligt långt bort                           | Ja              |
+| [Miljö](#env-light)   | Ett avlägset ljus som matchas mot miljöns HDR  | Ja              |
+| [Spot](#spot)               | Konformade ljus                                      | Ja              |
+| [Punkt](#point)             | Punktljus som lyser åt alla håll                         | Ja              |
 
-#### Riktad {#directional}
-Det avger ljus från oändligt långt bort, med jämn intensitet.
-Dess 3D‑position i scenen spelar ingen roll, endast dess orientering.
+#### ![](/icons/sun.webp) Riktad {#directional}
+Det skickar ut ljus från oändligt långt bort, med en jämn intensitet.
+Dess 3d-position i scenen spelar ingen roll, bara dess orientering.
 
-Du kan fästa detta ljus vid kameran, så att det ger konsekvent belysning.  
-Till exempel kan du använda det för att skapa ett kantljus (ett starkt ljus som kommer bakifrån din modell och pekar mot kameran) som alltid lyser upp baksidan av din modell.
+Du kan fästa det här ljuset vid kameran, så att belysningen förblir konsekvent.  
+Du kan till exempel använda det för att göra ett kantljus (rim light, ett starkt ljus som kommer bakifrån modellen och pekar mot kameran) som alltid lyser upp modellens baksida.
 
-#### Miljöljus {#env-light}
-Att använda en [environment HDR](#environment) fungerar bra för övergripande mjuk belysning, men om det finns en stark, skarp ljuskälla synlig i HDR‑bilden blir skuggan från den ofta väldigt mjuk, ibland knappt synlig. Att använda ett riktat ljus (directional) i kombination med environment‑HDR kan hjälpa, men det kan vara svårt att få dem att linjera.
+#### ![](/icons/panorama.webp) Miljöljus {#env-light}
+En [miljö-HDR](#environment) fungerar bra för mjuk allmänbelysning, men om det finns ett starkt, skarpt ljus i HDR-bilden blir skuggan det skapar väldigt mjuk, ofta knappt synlig. Att kombinera ett riktat ljus med miljö-HDR:en kan hjälpa, men det kan vara svårt att få dem att linjera.
 
-Det här ljuset gör jobbet åt dig. Ljuset roteras automatiskt för att linjera med den ljusaste delen av HDR‑bilden, sedan kan du styra dess intensitet och vinkel (skuggmjukhet) separat. 
+Det här ljuset gör jobbet åt dig. Ljuset roteras automatiskt så att det linjerar med den ljusaste delen av HDR-bilden, och sedan kan du styra dess intensitet och vinkel (skuggornas mjukhet) separat.
 
-#### Spot {#spot}
-Spotlight avger ljus i en enda riktning, begränsat av en konform.
+#### ![](/icons/spotlight.webp) Spot {#spot}
+En spotlight skickar ut ljus i en enda riktning, begränsat av en konform.
 
-#### Punkt {#point}
-Punktljus avger ljus i alla riktningar.  
-För närvarande stöder punktljus inte skuggor.
+#### ![](/icons/light.webp) Punkt {#point}
+Ett punktljus skickar ut ljus åt alla håll, och det kan också kasta skuggor.
 
 #### Skuggor {#shadows}
-Alternativet `normal bias` kan användas för att minska vanliga skuggartefakter (acne/peter‑panning).
+Varje ljus kan kasta skuggor, och du kan välja hur de beräknas i dess [inställningar](#light-extra-controls). Om du ser artefakter i skuggorna kan reglagen för `Tolerans` där hjälpa.
 
-Skuggkvaliteten beror på objektens storlek relativt hela scenen.  
-Om du har ett stort objekt i scenen som inte behöver kasta skuggor (till exempel ett stort plan), se till att inaktivera skuggkastning i dess [materialinställningar](material.md#cast-shadows).
+Skuggornas kvalitet beror på objektens storlek i förhållande till hela scenen.  
+Om du har ett stort objekt i scenen som inte behöver kasta skuggor (till exempel ett stort plan), se till att avaktivera skuggkastning i dess [materialinställningar](material.md#casts-shadows).
 
-## Ljus {#lights}
+## ![](/icons/sun.webp) Belysning {#lights}
 
 ![](/images/shading_lights.webp)
 
-### ![](/icons/checked.webp) Ljusruta {#lights-checkbox}
+### ![](/icons/checked.webp) Kryssruta för belysning {#lights-checkbox}
 
-Slå av/på alla direkta ljus i scenen.
+Slår på eller av alla direkta ljuskällor i scenen.
 
 
 
 ### Lägg till ljus {#add-light}
 
-Lägg till ett ljus i scenen, upp till maximalt 4. När ett ljus läggs till visas ljuslistaren med knappar, och en ljusverktygsrad läggs till högst upp i vyn.
+Lägger till ett ljus i scenen, upp till 4 ljuskällor på mobilen och 6 på datorn. När ett ljus läggs till visas ljuslistan med knappar, och ett verktygsfält för ljuset läggs till högst upp i vyn.
 
 ![](/images/shading_lights_icons.webp)
 
-* Texten visar ljusets namn och ljusstyrka.
-* Ögonikonen slår av/på synlighet.
+* Texten visar ljusets namn och ljusstyrka. Tryck på den för att välja ljuset.
+* Ögonikonen slår på eller av synligheten.
 * Pennikonen låter dig byta namn på ljuset.
-* Papperskorgsikonen tar bort ett ljus.
-* Kopieringsikonen duplicerar ett ljus. 
-* Ikonen med 3 prickar öppnar en fullständig ljuseditor. Det mesta av denna funktionalitet finns också i verktygsraden som visas i vyn. 
+* Papperskorgsikonen raderar ett ljus.
+* Kopieringsikonen duplicerar ett ljus.
+* Ikonen med 3 punkter öppnar en komplett ljusredigerare. Det mesta av funktionerna finns också i verktygsfältet som visas i vyn.
 
-### ![](/icons/spotlight.webp) Ikoner {#icons}
+Du kan också dra ett ljus i listan för att ändra ordningen.
 
-Slå av/på visning av ljusikoner i vyn.
+### ![](/icons/spotlight.webp)  Ikoner {#icons}
 
-### Ljusrad {#light-toolbar}
+Slår på eller av visningen av ljusikoner i vyn.
+
+### Verktygsfält för ljus {#light-toolbar}
 ![](/images/shading_lights_toolbar.webp) 
 
-Den här verktygsraden visas högst upp i vyn när ett ljus är markerat.
+Det här verktygsfältet visas högst upp i vyn när ett ljus är valt.
 
-* Show slår av/på ljusets synlighet.
-* Directional/Environment/Spot/Point ändrar ljustyp. Tryck för att växla, eller håll ned för att se en meny.
-* Intensity styr ljusstyrkan, värdet kan gå över 1,0 för mycket intensiva ljus, användbart tillsammans med Global Illumination i Post Process.
-* Färgrutan öppnar en färgväljare när du trycker på den. Nomad erbjuder flera sätt att välja färg. Kelvin‑kontroll ger ett naturligt sätt att välja varmt/kallt ljus.
-* Shadow slår av/på skuggor.
-* Size ställer in ljusets bredd. Bredare ljus ger mjukare skuggor, mjukare belysning och en mjukare highlight på objekt.
-* ... öppnar extra kontroller.
+* `Synlig` slår på eller av ljusets synlighet.
+* Riktad/Miljö/Spot/Punkt ändrar ljustypen. Tryck för att växla mellan dem, eller håll intryckt för att se en meny.
+* Intensitet styr ljusets styrka. Värdet kan gå över 1,0 för mycket starka ljus, vilket är användbart tillsammans med global belysning i Efterbehandling.
+* Färgrutan öppnar en färgväljare när du klickar på den. Nomad har flera sätt att välja färg. Kelvin-reglaget ger ett naturligt sätt att välja varm eller kall belysning.
+* Skugga slår på eller av skuggor.
+* Vinkel (_riktat ljus och miljöljus_) eller Storlek (_spot och punkt_) anger hur brett ljuset är. Bredare ljus ger mjukare skuggor, mjukare belysning och mjukare högdagrar på objekten.
+* Fäste (_bara riktat ljus_), Konvinkel och Mjukhet (_bara spot_) beskrivs i [ljusredigeraren](#light-extra-controls) nedan.
+* ... visar `Klona`, `Centrera om` och `Radera`, tillsammans med skugginställningarna.
 
-### Extra ljuskontroller {#light-extra-controls}
+### Extra ljusinställningar {#light-extra-controls}
 
 ![](/images/shading_extra_controls.webp) 
 
-Observera att vissa alternativ är specifika för vissa ljustyper.
+Ikonen med 3 punkter för ett ljus i listan öppnar dess kompletta redigerare. Observera att en del alternativ bara gäller vissa ljustyper.
 
-* `Clone` duplicerar ljuset.
-* `Recenter` flyttar ljuset tillbaka till origo.
-* `Delete` tar bort ljuset.
-* `Directional/Environment/Spot/Point` låter dig ändra ljustyp.
-* `Colour swatch` öppnar en färgväljare när du trycker på den. 
-* `Intensity` styr ljusstyrkan.
-* `Attachment` (_endast directional_) ställer in om ljuset ska vara förälder till världen eller till kameran. T.ex. om du använder ett riktat ljus bakom din karaktär som kantljus, kommer ljuset alltid att ligga bakom karaktären när Attachment är satt till camera och du roterar kameran.
-* `Angle` (_endast directional och environment_) är ljusets skenbara storlek, tänk på det som hur stor solen ser ut på himlen. Större vinklar ger mjukare skuggor och bredare highlights.
-* `Softness` (_endast spotlight_) styr skärpan på kanten av spotlight‑konen. 0 är en mycket skarp kant. 1 är mycket mjuk, med en gradient in mot mitten av ljuskäglan. I vyn kan den lilla blå pricken på spotlight‑konen användas för att ställa in softness interaktivt.
-* `Cone angle` (_endast spotlight_) styr spridningsvinkeln för spotlighten. En liten vinkel ger en mycket smal ljusstråle, 170 ger en mycket bred ljusspridning. I vyn kan den orange pricken användas för att ställa in cone angle interaktivt.
-* `Shadow` slår av/på skuggor för det aktuella ljuset.
-* `Shadow map` och `screenspace` är olika sätt att beräkna skuggor, generellt är shadow map mer pålitligt.
-* `Contact` justerar hur skuggor beräknas. Skuggor är ett svårt problem inom datorgrafik och kan orsaka artefakter i rendering. Mer exakta skuggor kan väljas för det viktigaste ljuset i en scen; den här kontrollen avgör om det viktigaste ljuset väljs automatiskt av Nomad eller av användaren.
-* `Tolerance` om skuggartefakter är synliga (antingen att skuggor inte verkar ha kontakt med ytor, eller att det finns brus och mönster i skuggorna) kan justering av tolerance hjälpa till att lösa dessa problem.
+* `Riktad/Miljö/Spot/Punkt` låter dig ändra ljustypen.
+* `Färgrutan` öppnar en färgväljare när du klickar på den.
+* `Intensitet` styr ljusets styrka.
+* `Fäste` (_bara riktat ljus_) anger om ljuset ska vara fäst vid världen (`Fast`) eller vid kameran (`Kamera`). Om du till exempel använder ett riktat ljus bakom din karaktär som kantljus, och fästet är satt till kameran, hamnar ljuset alltid bakom karaktären när du roterar kameran.
+* `Mjukhet` (_bara spotlight_) styr hur skarp kanten på spotlightens kon är. 0 ger en mycket skarp kant. 1 är mycket mjukt, med en gradient in mot ljuskonens mitt. I vyn kan du använda den lilla blå punkten på spotlightens kon för att ställa in mjukheten direkt.
+* `Konvinkel` (_bara spotlight_) styr spotlightens spridningsvinkel. En liten vinkel ger en mycket smal ljusstråle, 170 ger en mycket bred spridning. I vyn kan du använda den orange punkten för att ställa in konvinkeln direkt.
+* `Vinkel` (_bara riktat ljus och miljöljus_) är ljusets skenbara storlek, ungefär som hur stor solen ser ut på himlen. Större vinklar ger mjukare skuggor och bredare högdagrar.
+* `Storlek` (_bara spot och punkt_) är ljusets bredd. Större ljus ger mjukare skuggor.
+* `Skugga` slår på eller av skuggor för det aktuella ljuset.
+* Skuggtypen bestämmer hur skuggorna beräknas. En `Skuggkarta` renderar scenen från ljuset, så den skuggar också geometri som kameran inte ser. `Skärmyta` använder bara det som redan syns på skärmen: det är billigare, men experimentellt. Generellt är skuggkartan mer pålitlig.
+* `Tolerans` (_bara skärmyta_): om det syns artefakter i skuggorna (antingen verkar skuggorna inte nå ända fram till ytorna, eller så finns det brus och mönster i skuggorna) kan du justera toleransen för att åtgärda det.
+* `Kontakt` lägger till mer exakta skuggor över korta avstånd, där objekt nuddar varandra. Med `Auto` får bara det mest dominerande ljuset i scenen kontaktskuggor; `Nej` och `Ja` tvingar dem av eller på för det här ljuset. Dess reglage `Tolerans` fungerar som det ovan.
+
+Knappen `...` i vyns verktygsfält har samma skugginställningar, plus:
+
+* `Klona` duplicerar ljuset.
+* `Centrera om` flyttar ljuset framför kameran och behåller dess orientering.
+* `Radera` raderar ljuset.
 
 
-## Miljö {#environment}
+## ![](/icons/panorama.webp) Miljö {#environment}
 
 ![](/images/shading_environment.webp)
 
-Ljus i den verkliga världen kommer från alla riktningar; himlens blå, gräsets gröna, en byggnads röda – allt detta ljus från ”miljön” kan simuleras med en environment‑karta. 
+I verkligheten kommer ljuset från alla håll: himlens blå, gräsets gröna, en byggnads röda. Allt det här ljuset från "miljön" kan simuleras med en miljökarta (environment map).
 
-Nomad levereras med flera exempel på environment‑kartor för inomhus‑ och utomhusmiljöer, med olika färgstick och ljusstyrkenivåer. Prova olika kartor för att se vilka som framhäver mest detaljer i dina skulpturer.
+Använd kryssrutan bredvid rubriken för att slå på eller av miljöbelysningen.
 
-Tryck på bilden för att se tillgängliga environment‑kartor. I den dialogen kan du välja ”Import...” för att ladda dina egna. Det är bäst att använda High Dynamic Range (HDR)‑bilder i latlong‑ eller equirectangular‑format, som .hdr‑ eller .exr‑filer. [www.polyhaven.com](https://polyhaven.com/hdris) har en bra samling gratis environment‑kartor att använda; generellt är 1k HDR‑kartor en bra storlek och kvalitet.
+Nomad levereras med flera exempel på miljökartor för inomhus- och utomhusmiljöer, med olika färgtoner och ljusstyrka. Prova olika kartor för att se vilken som lyfter fram flest detaljer i dina skulpturer.
+
+Tryck på bilden för att se de tillgängliga miljökartorna. I den dialogen väljer du `Importera...` för att läsa in dina egna. Det är bäst att använda HDR-bilder (High Dynamic Range) i latlong- eller ekvirektangulärt format, som .hdr- eller .exr-filer. Bläddraren kan också ladda ner miljöer direkt från [Poly Haven](https://polyhaven.com/hdris), som har en bra samling gratis miljökartor.
 
 ### Exponering {#env-exposure}
-Justera ljusstyrkan på environment‑kartan. Ofta kan kartorna vara för ljusa när de används tillsammans med vanliga ljus; att sänka exposure kan hjälpa balansen, särskilt tillsammans med Global Illumination i [Post Process](postprocess)‑inställningarna.
+Justerar miljökartans ljusstyrka. Kartorna kan ofta bli för ljusa tillsammans med vanliga ljuskällor. Att sänka exponeringen kan hjälpa till att balansera, särskilt tillsammans med global belysning i inställningarna för [Efterbehandling](postprocess).
 
 ### Rotation {#env-rotation}
 
-Eftersom environment‑kartor fångar ljus från alla riktningar kan du rotera dem för att få reflektioner och övergripande belysning att samspela bra med din skulpt.
+Eftersom miljökartor fångar ljus från alla håll kan du rotera dem så att reflektionerna och den övergripande belysningen passar bra ihop med din skulptur. Du kan också rotera miljön genom att dra vågrätt med 3 fingrar i vyn.
 
 ### Fäst vid kamera {#env-attached}
-Fäst environment‑kartan vid kameran.
+Fäster miljön vid kameran.
 
-Det tvingar belysningen att vara konsekvent, vilket kan vara användbart under skulptering.
+Det gör att belysningen förblir konsekvent, vilket kan vara användbart när du skulpterar.
+
+### Oskärpa (bakgrund) {#env-background-blur}
+Det här reglaget visas bara när [bakgrunden](background.md) är inställd på miljön. Det gör miljöbilden bakom din modell suddig, utan att ändra belysningen.
 
 
-## ![](/icons/sphere_smooth.webp) Matcap {#matcap}
+## ![](/icons/fog.webp) Dimma {#fog}
+
+Dimma ger scenen atmosfäriskt djup och gör ljusstrålar synliga. Aktivera den med kryssrutan bredvid rubriken. Precis som ljuskällorna och miljön finns den bara i läget [Upplyst (PBR)](#pbr).
+
+::: tip Kraftigare ljusstrålar
+Sänk dimmans `Miljö` och använd en stark spot eller ett starkt punktljus. Öka `Täthet` tills dimman syns tydligt. För synliga strålar i tunnare dimma, sätt `Spridningsriktning` till ett högt positivt värde och rikta kameran mot ljuset.
+:::
+
+### Färg {#fog-color}
+Dimmans färg och färgen på ljuset den sprider.
+
+### Täthet {#fog-density}
+Hur snabbt dimman tätnar med avståndet.
+
+### Maximal opacitet {#fog-opacity}
+Begränsar hur mycket dimman kan täcka scenen, även vid hög täthet.
+
+### Spridningsriktning {#fog-scattering}
+Riktningen som dimman sprider ljuset i (kallas även anisotropi). Positiva värden gör dimman ljusare när du tittar mot ett ljus, negativa värden när du tittar bort från det, och noll sprider ljuset jämnt åt alla håll.
+
+### ![](/icons/panorama.webp) Miljö {#fog-environment}
+Hur mycket [miljön](#environment) lyser upp dimman. Den är gråtonad när miljön är avstängd.
+
+### Brus {#fog-noise}
+Blandar in brus i dimman så att den bryts upp i fläckar, utan att ändra dess totala täthet. När bruset är över 0 anger reglaget `Storlek` mönstrets storlek.
+
+### Form {#fog-shape}
+Var dimman fyller scenen:
+
+* `Jämn` - fyller hela scenen.
+* `Vertikal` - håller dimman inom ett lodrätt band med mjuka kanter. Reglagen `Nederkant` och `Överkant` anger höjden på dess nedre och övre kant, och deras ögonknapp visar bandet i vyn medan du justerar dem.
+
+
+## ![](/icons/sphere_smooth.webp) MatCap {#matcap}
 
 ![](/images/shading_matcap.webp)
 
-Som namnet antyder (MATerial CAPture) tar en matcap hand om både belysning och materialinformation i en enda bild.
-Eftersom materialet redan finns i matcap:en ignoreras målkanalerna för roughness och metallikhet.
-Målningsfärgen multipliceras med matcap:en, vilket betyder att om du har en svart/grå matcap kommer vit färg inte att göra den ljusare.
+Som namnet antyder (MATerial CAPture) hanterar en matcap både belysning och materialinformation i en enda bild.
+Eftersom själva materialet redan finns i matcap-bilden ignoreras målningskanalerna för grovhet och metallitet.
+Målningsfärgen multipliceras med matcap-bilden, vilket betyder att om du har en svart/grå matcap blir den inte ljusare av vit färg.
 
-Konstnärer föredrar ofta detta läge för skulptering eftersom det låter dem fokusera på formen och geometrin i sig.
+Många föredrar det här läget när de skulpterar, eftersom det låter dem fokusera på själva formen och geometrin.
 
-Att trycka på sfären öppnar en bildbläddrare. Du kan också lägga till din egen matcap; i princip kan vilket foto, rendering eller till och med en målning av en sfär som beskärts tajt till en kvadrat användas. Många matcap‑bibliotek finns online, en användbar resurs är [nidorx matcap library](https://github.com/nidorx/matcaps).
+Om du trycker på sfären öppnas en bildbläddrare. Du kan också lägga till din egen matcap: i stort sett vilket foto, vilken rendering eller till och med målning av en sfär som helst kan användas, så länge den är tätt beskuren till en kvadrat. Det finns många matcap-bibliotek på nätet, ett användbart är [nidorx matcap-bibliotek](https://github.com/nidorx/matcaps).
 
-### Använd global Matcap {#matcap-global}
+### Använd global MatCap {#matcap-global}
 
-Vanligtvis använder konstnärer en enda matcap för hela skulpten, men om denna växel är avstängd kan varje objekt ha sin egen matcap. Detta kan användas konstnärligt för att få slående resultat.
+Oftast används en enda matcap för hela skulpturen, men om det här alternativet är avaktiverat kan det valda objektet ha sin egen matcap. Det kan användas konstnärligt för att få slående resultat.
 
 ::: tip
-Inaktivera det här alternativet och använd en bild av ett öga för din karaktärs ögon!
+Avaktivera det här alternativet och använd en bild av ett öga till dina karaktärers ögon!
 :::
 
 ### Rotation {#matcap-rotation}
-En matcap är en specialiserad form av environment‑karta, så precis som en environment‑karta kan den roteras. Du kan också göra detta när som helst i vyn genom att dra med tre fingrar åt vänster och höger.
+En matcap är en särskild sorts miljökarta, så precis som en miljökarta kan den roteras. Du kan också göra det när som helst i vyn genom att dra med 3 fingrar åt vänster och höger.
+
+Låsknappen bredvid reglaget låser rotationen, så att en dragning med 3 fingrar inte vrider matcap-bilden av misstag.
 
 
 
-## ![](/icons/circle_fill.webp) Oupplyst {#unlit}
+## ![](/icons/circle_fill.webp) Obelyst {#unlit}
 
-Detta läge visar endast ytfärgen. Det kan vara användbart för att kontrollera att ytfärgen på dina objekt är som du förväntar dig, utan att distraheras av ljus, skuggor, reflektioner eller transparens. 
+Det här läget visar bara ytfärgen. Det kan vara användbart för att kontrollera att objektens ytfärg är som du förväntar dig, utan att distraheras av ljus, skuggor, reflektioner och transparens.
 
-Detta läge kan också användas för icke‑fotorealistiska renderingar, för att uppnå ett platt, tecknat utseende.
+Läget kan också användas för icke-fotorealistiska renderingar, för en platt, tecknad stil.
 
 ## ![](/icons/cube.webp) Objekt-ID {#object-id}
 
-All belysnings‑ och ytinformation ignoreras, och varje objekt skuggas med en unik platt färg. Om detta renderas tillsammans med en PBR‑render kan det användas i ett målningsprogram för att välja efter färg och därmed kunna göra färgkorrigeringar på specifika objekt.
+All information om belysning och ytor ignoreras, och varje objekt skuggas med en unik, platt färg. Om du renderar det här tillsammans med en PBR-rendering kan du använda det i ett målarprogram för att markera efter färg och på så sätt färgkorrigera specifika objekt.
 
-Observera att dessa färger också visas i [Scenmenyns trädvy](scene#tree-view).
+Observera att de här färgerna också visas i [trädvyn i menyn Scen](scene#tree-view).
 
-### Slumpa id {#object-random}
+### Slumpmässigt ID {#object-random}
 
-Generera en ny uppsättning slumpmässiga färger. 
+Skapar en ny uppsättning slumpmässiga färger.
 
 ## ![](/icons/link.webp) Instans-ID {#instance-id}
 
-Samma som Object ID, men instanser får samma färg. 
+Samma som Objekt-ID, men instanser får samma färg.
 
-### Slumpa id {#instance-random}
+### Slumpmässigt ID {#instance-random}
 
-Generera en ny uppsättning slumpmässiga färger.
+Skapar en ny uppsättning slumpmässiga färger.

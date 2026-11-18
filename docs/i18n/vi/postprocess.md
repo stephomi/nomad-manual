@@ -1,201 +1,232 @@
 # ![](/icons/postprocess.webp) Hậu kỳ {#post-process}
 
-Menu này điều khiển nhiều khía cạnh của Nomad để ảnh hưởng đến diện mạo của bản render.
+Menu này điều khiển nhiều khía cạnh của Nomad để thay đổi vẻ ngoài của ảnh render.
 
 ![](/images/postprocess_overview_drac.webp)
 
-Việc dùng hậu kỳ có thể thay đổi đáng kể diện mạo cuối cùng của cảnh.
+Dùng hậu kỳ có thể thay đổi đáng kể vẻ ngoài cuối cùng của cảnh.
 
 ![](/images/postprocess_overview.webp)
-*Cùng một cảnh trước và sau khi hậu kỳ, không thêm đèn hay thay đổi vật liệu.*
+*Cùng một cảnh trước và sau khi áp hậu kỳ, không thêm đèn hay thay đổi vật liệu nào.*
 
-Hậu kỳ có thể ảnh hưởng rất nhiều đến hiệu năng tùy theo thiết bị của bạn.
-Có một ô chọn (checkbox) toàn cục để tắt toàn bộ hậu kỳ, giúp bạn nhanh chóng quay lại điêu khắc/mô hình mà không mất các thiết lập sẵn.
-Đối với render PBR, nên bật [Ambient Occlusion](#ambient-occlusion-ssao), [Reflection](#reflection-ssr) và [Tone Mapping](#tone-mapping).
+Tùy thiết bị, hậu kỳ có thể ảnh hưởng rất nhiều đến hiệu năng.
+Có một ô `Hậu kỳ` chung để tắt toàn bộ hậu kỳ, giúp bạn nhanh chóng quay lại điêu khắc/dựng hình mà không mất các thiết lập sẵn.
+Với kết xuất PBR, bạn nên bật [Tắc sáng môi trường](#ambient-occlusion-ssao), [Phản chiếu](#reflection-ssr) và [Ánh xạ sắc độ](#tone-mapping).
 
-Tuy nhiên, hầu hết thời gian bạn sẽ muốn tắt hậu kỳ khi đang điêu khắc, để tập trung vào hình khối của bản render.
+Tuy vậy, phần lớn thời gian bạn sẽ muốn tắt hậu kỳ khi đang điêu khắc, để tập trung vào chính hình khối thay vì phần hiển thị.
+
 
 ## Chất lượng {#quality}
 
 ![](/images/postprocess_quality.webp)
-### Lấy mẫu khung hình tối đa {#max-frame-sampling}
-Nomad sẽ tính toán một lượng hiệu ứng hậu kỳ nhất định cho một khung hình đơn, điều này có thể trông nhiễu. Điều khiển này xác định có bao nhiêu khung hình sẽ được render rồi trộn lại với nhau để loại bỏ phần lớn nhiễu. Một số hiệu ứng không cần thêm mẫu (ví dụ color grading), trong khi các hiệu ứng khác như global illumination có thể cần hàng trăm mẫu để hết nhiễu. 
 
-Trong viewport, điều này có thể thấy khi bạn để Nomad đứng yên, chất lượng hình ảnh sẽ dần được tinh chỉnh cho đến khi đạt số mẫu tối đa rồi dừng. Số lượng tính toán này cũng được dùng trong phần render của [menu Files](files) khi nhấn 'export png'.
+Các tùy chọn này cải thiện chất lượng ảnh render, đổi lại là hiệu năng.
 
-### Hệ số nhân độ phân giải {#resolution-multiplier}
-Thanh trượt này điều khiển độ phân giải của hậu kỳ. Giá trị x1.0 nghĩa là render được thực hiện ở độ phân giải điểm ảnh của thiết bị. Giá trị x0.5 sẽ render ở nửa độ phân giải, nhanh nhưng chất lượng thấp. Giá trị lớn hơn 1 sẽ render ở kích thước lớn hơn rồi thu nhỏ xuống. Điều này cho chất lượng cao hơn, ít nhiễu hơn nhưng thời gian render lâu hơn.
+### Lấy mẫu khung tối đa {#max-frame-sampling}
+Với mỗi khung hình, Nomad chỉ tính một phần hậu kỳ, nên ảnh có thể trông bị nhiễu. Tùy chọn này quyết định số khung hình được render rồi trộn lại với nhau để loại bỏ phần lớn nhiễu. Một số hiệu ứng không cần thêm mẫu nào (ví dụ chỉnh màu), trong khi những hiệu ứng khác như bóng mềm và chiếu sáng toàn cục có thể cần hàng trăm mẫu mới hết nhiễu.
 
-### Số mẫu tối đa {#max-samples}
+Trong khung nhìn, bạn sẽ thấy điều này mỗi khi để yên Nomad: chất lượng ảnh dần được tinh chỉnh cho đến khi đạt số mẫu tối đa, rồi dừng lại. Khi đã dừng, Nomad không làm gì nữa, giúp tiết kiệm pin. Số lần tính toán này cũng được dùng trong phần kết xuất của [menu Tệp tin](files) khi bạn nhấn 'export png'.
 
-Tùy chọn này sẽ tăng chất lượng hậu kỳ, nhưng nhìn chung `Full resolution` sẽ có tác động nhiều hơn. 
+Ô đánh dấu cạnh thanh trượt bật hoặc tắt việc lấy mẫu khung hình.
 
-### Khử nhiễu (oidn) {#oidn}
+### Độ phân giải render {#resolution-multiplier}
+Thanh trượt này điều khiển độ phân giải của ảnh render. Giá trị x1.0 nghĩa là render ở đúng độ phân giải điểm ảnh của thiết bị. Giá trị x0.5 sẽ render ở một nửa độ phân giải, nhanh nhưng chất lượng thấp. Giá trị lớn hơn 1 sẽ render ở kích thước lớn hơn rồi thu nhỏ lại, cho chất lượng cao hơn, ít nhiễu hơn, nhưng thời gian render lâu hơn.
 
-Áp dụng bộ khử nhiễu cho hình ảnh. Điều này cho phép bạn dùng số mẫu thấp hơn nhiều. Tùy chọn này chỉ hoạt động nếu `Full Resolution` được bật. Lưu ý việc khử nhiễu diễn ra sau khi tất cả mẫu đã được tính toán, và có thể tốn tài nguyên xử lý.
+Nó ảnh hưởng rất lớn đến hiệu năng, vì vậy hãy cố giữ ở mức x1.25 trở xuống. Giá trị này không được lưu trong cài đặt, và hiệu ứng [Nghệ thuật pixel](#pixel-art) sẽ ghi đè lên nó.
 
-## Trình duyệt preset {#preset-browser}
+### ![](/icons/intensity.webp) Mẫu tối đa {#max-samples}
+
+Cải thiện chất lượng các hiệu ứng hậu kỳ, đổi lại là hiệu năng.
+
+### ![](/icons/material_dithering.webp) Dithering {#dithering}
+
+Rải nhiễu điểm ảnh để giảm hiện tượng phân dải màu (trong các dải chuyển màu hay hiệu ứng tối góc chẳng hạn). Thường thì nên bật, nhưng có thể tắt cho những thao tác đặc thù (ví dụ xuất bản đồ độ sâu hay các thao tác xử lý dữ liệu khác).
+
+### ![](/icons/denoise.webp) Bộ lọc khử nhiễu (oidn) {#oidn}
+
+Áp bộ khử nhiễu lên ảnh khi đã tích lũy đủ mọi khung hình. Nhờ vậy bạn có thể dùng số mẫu thấp hơn nhiều. Khử nhiễu tốn nhiều sức xử lý, nên chỉ bật khi ảnh của bạn bị nhiễu. Tính năng này không có trên mọi thiết bị.
+
+## Trình duyệt thiết lập sẵn {#preset-browser}
 ![](/images/postprocess_presets.webp)
-Nhấn vào hình sẽ hiển thị một bộ sưu tập preset hậu kỳ. Để tạo preset riêng, chọn một preset, nhấn 'clone', rồi chỉnh sửa. Để lưu, nhấn vào hình preset, nhấn lần nữa trong trình duyệt preset và chọn 'save'.
+Nhấn vào hình ảnh bên dưới tiêu đề `Hậu kỳ` sẽ hiện một bộ sưu tập các thiết lập sẵn cho hậu kỳ. Dùng `Mới` để tạo một thiết lập sẵn từ cài đặt hiện tại. Các thiết lập sẵn có sẵn chỉ có thể nhân bản: để tạo thiết lập của riêng bạn, hãy chọn một mẫu, nhấn `Nhân bản` rồi chỉnh sửa. Khi một thiết lập sẵn có thay đổi chưa được lưu, nó hiện `Thay đổi chưa lưu!`; để lưu, nhấn vào hình ảnh thiết lập sẵn, nhấn thêm lần nữa bên trong trình duyệt thiết lập sẵn, rồi chọn `Lưu`.
 
-## Phản xạ (SSR) {#reflection-ssr}
-Với tùy chọn này, các đối tượng có thể phản chiếu những đối tượng khác trong cảnh, miễn là các đối tượng đó hiển thị trên màn hình.
-Nếu bạn có các vật thể kim loại và bóng trong cảnh, thì nên dùng tùy chọn này.
-Tùy chọn này chỉ hiệu quả với chế độ PBR.
+## Thanh lối tắt {#shortcut-bar}
+Khi hậu kỳ được bật, một thanh ở cuối menu liệt kê mọi hiệu ứng (`SSR`, `SSGI`, `SSAO`, `DoF`, `Hiệu ứng Bloom`...). Chạm vào một hiệu ứng để nhảy đến phần của nó. Các hiệu ứng đang tắt sẽ bị làm mờ, nên thanh này cũng là bản tóm tắt nhanh những gì thiết lập sẵn hiện tại đang làm.
 
-| SSR off                    | SSR on                    |
+## ![](/icons/postprocess_ssr.webp) Phản chiếu (SSR) {#reflection-ssr}
+Với tùy chọn này, các đối tượng có thể phản chiếu những đối tượng khác trong cảnh, miễn là chúng đang hiển thị trên màn hình.
+Nếu cảnh của bạn có các vật thể kim loại và bóng loáng, có lẽ bạn nên dùng tùy chọn này.
+Tùy chọn này cần chế độ tô bóng [Chiếu sáng (PBR)](shading.md#pbr).
+
+
+| Tắt SSR                    | Bật SSR                   |
 | :------------------------: | :-----------------------: |
 | ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
-## Chiếu sáng toàn cục (SSGI) {#global-illumination-ssgi}
+## ![](/icons/postprocess_ssgi.webp) Chiếu sáng toàn cầu (SSGI) {#global-illumination-ssgi}
 
-Global illumination mô phỏng cách ánh sáng dội giữa các bề mặt, ví dụ một bức tường đỏ sẽ hắt đỏ lên một vật thể trắng gần đó. Điều này có thể tăng mạnh tính chân thực của bản render khi dùng cùng ambient occlusion và reflection. 
+Chiếu sáng toàn cục mô phỏng cách ánh sáng nảy qua lại giữa các bề mặt, chẳng hạn một bức tường đỏ sẽ hắt sắc đỏ lên vật thể màu trắng ở gần. Khi dùng cùng tắc sáng môi trường và phản chiếu, nó có thể tăng đáng kể độ chân thực của ảnh render. Giống như phản chiếu, nó cần chế độ tô bóng [Chiếu sáng (PBR)](shading.md#pbr).
 
-`Strength` - Cường độ của global illumination. 
+`Độ mạnh` - Cường độ của chiếu sáng toàn cục.
 
-| SSGI off                     | SSGI on                    |
-| :--------------------------: | :------------------------: |
+
+
+| Tắt SSGI                   | Bật SSGI                  |
+| :------------------------: | :-----------------------: |
 | ![](/images/ssgi_off.webp) | ![](/images/ssgi_on.webp) |
 
-_Một spotlight ở phía sau hình cầu, chiếu lên trần. Khi tắt SSGI, chỉ có trần được chiếu sáng. Khi bật SSGI, ánh sáng dội từ trần xuống tường rồi tới hình cầu._
+_Một đèn rọi đặt sau quả cầu, chiếu lên trần nhà. Khi tắt SSGI, chỉ trần nhà được chiếu sáng. Khi bật SSGI, ánh sáng nảy từ trần xuống các bức tường rồi đến quả cầu._
 
-## Đổ bóng môi trường (SSAO) {#ambient-occlusion-ssao}
-Ambient occlusion sẽ làm tối các vùng mà ánh sáng khó tiếp cận (góc cạnh, khe, v.v.).
-Hiệu ứng này chỉ phụ thuộc vào hình học của mô hình.
+## ![](/icons/postprocess_ssao.webp) Tắc sáng môi trường (SSAO) {#ambient-occlusion-ssao}
+Tắc sáng môi trường làm tối những vùng mà ánh sáng khó chạm tới (các góc khuất, v.v.).
+Hiệu ứng chỉ phụ thuộc vào hình học của mô hình.
 
-* `Strength` - Cường độ hiệu ứng.
-* `Size` - Độ lan rộng của hiệu ứng.
-* `Curvature bias` - Độ nhạy của hiệu ứng so với biến thiên bề mặt.
-* `Color` - Màu pha vào vùng tối, dùng cho các hiệu ứng sáng tạo.
+* `Độ mạnh` - Cường độ của hiệu ứng.
+* `Kích thước` - Phạm vi lan rộng của hiệu ứng.
+* `Độ dày` - Độ dày theo chiều sâu được giả định cho các vật che khuất, tính theo phần trăm của `Kích thước`.
+* `Màu phủ` - Một màu được nhân vào vùng tắc sáng, dùng cho các hiệu ứng sáng tạo.
 
-| SSAO off                     | SSAO on                     |
-| :--------------------------: | :-------------------------: |
+
+| Tắt SSAO                    | Bật SSAO                   |
+| :-------------------------: | :------------------------: |
 | ![](/images/ssao_off.webp) | ![](/images/ssao_on.webp) |
 
 ::: tip
-AO sẽ thấy rõ nhất ở những vùng chủ yếu được chiếu sáng bởi ánh sáng môi trường. Những vùng dưới nguồn sáng trực tiếp mạnh sẽ nhận hiệu ứng AO yếu hơn nhiều.
+AO thấy rõ nhất ở những vùng được chiếu chủ yếu bằng ánh sáng môi trường. Những vùng chịu ánh sáng trực tiếp mạnh sẽ nhận hiệu ứng AO yếu hơn nhiều.
 
 :::
 
-## Độ sâu trường ảnh (DOF) {#depth-of-field-dof}
-Thêm hiệu ứng nhòe cho vùng nằm ngoài điểm lấy nét.
+## ![](/icons/postprocess_dof.webp) Chiều sâu trường ảnh {#depth-of-field-dof}
+Thêm hiệu ứng nhòe cho vùng nằm ngoài tiêu điểm.
 
-Chỉ cần chạm vào mô hình để thay đổi điểm lấy nét.
+Chỉ cần chạm vào mô hình để đổi điểm lấy nét.
 
-* `Far blur` - Lượng nhòe áp dụng cho vùng phía sau điểm lấy nét.
-* `Near blur` - Lượng nhòe áp dụng cho vùng giữa điểm lấy nét và camera.
+* `Chế độ khẩu độ` - Điều khiển độ nhòe bằng một khẩu độ camera duy nhất, thay vì hai thanh trượt độ nhòe bên dưới.
+* `Khẩu độ` (_chỉ ở chế độ khẩu độ_) - Số f của ống kính, như trên một chiếc máy ảnh thật. Giá trị thấp hơn sẽ mở ống kính rộng hơn và nhòe nhiều hơn.
+* `Mờ xa` - Mức độ nhòe áp cho phía xa của điểm lấy nét.
+* `Mờ gần` - Mức độ nhòe áp cho khoảng giữa điểm lấy nét và camera.
 
-| DOF off                    | DOF focus on far ring       | DOF focus on close ring    |
-| :------------------------: | :-------------------------: | :------------------------: |
+
+| Tắt DOF                   | DOF lấy nét vòng xa         | DOF lấy nét vòng gần       |
+| :-----------------------: | :-------------------------: | :------------------------: |
 | ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp) |
 
-## Bloom {#bloom}
-Bloom sẽ làm các vùng sáng trong cảnh phát sáng (glow).
 
-* `Intensity` - Cường độ hiệu ứng.
-* `Radius` - Độ lan của hiệu ứng.
-* `Threshold` - Độ sáng tối thiểu của điểm ảnh trong cảnh trước khi bắt đầu bloom. Đặt thấp sẽ khiến mọi thứ đều bloom, đặt cao sẽ chỉ cho những điểm ảnh sáng nhất bloom.
-* `Color` - Màu pha thêm vào bloom cho các hiệu ứng sáng tạo.
+## ![](/icons/sun.webp) Hiệu ứng Bloom {#bloom}
+Bloom làm các vùng sáng trong cảnh tỏa sáng rực rỡ.
 
-| Bloom off                     | Bloom với radius 0          | Bloom với radius 1          |
-| :---------------------------: | :-------------------------: | :-------------------------: |
+* `Cường độ` - độ mạnh của hiệu ứng.
+* `Bán kính` - độ lan tỏa của hiệu ứng.
+* `Ngưỡng` - Điểm ảnh trong cảnh phải sáng đến mức nào thì mới bắt đầu tỏa sáng. Ở mức 0 mọi thứ đều tỏa sáng, đặt cao thì chỉ những điểm ảnh sáng nhất mới tỏa sáng.
+* `Màu phủ` - một màu có thể thêm vào bloom cho các hiệu ứng sáng tạo.
+
+| Tắt Bloom                    | Bloom bán kính 0            | Bloom bán kính 1            |
+| :--------------------------: | :-------------------------: | :-------------------------: |
 | ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
-## Ánh xạ tông màu {#tone-mapping}
-Tone Mapping là thao tác ánh xạ các giá trị HDR về khoảng `[0, 1]`.
-Nếu bạn không dùng (hoặc chọn `none`), mọi thành phần màu lớn hơn 1 sẽ bị cắt ngưỡng (clipped).
-Mọi biến thiên màu sắc trên khoảng này sẽ bị mất.
 
-* `None/Neutral/Agx/ACES` - chọn bộ tone mapper. `None` không ánh xạ lại (nhưng các điều khiển khác vẫn hoạt động). Các tùy chọn còn lại giống như chọn loại phim khác nhau, chúng xử lý vùng cháy sáng và màu sắc theo những cách khác nhau. Đây là chủ đề rất sâu, hãy tìm thêm về tone mapping, Agx, ACES để biết thêm!
-* `Exposure` - Độ sáng tổng thể của hình, tương tự chỉnh khẩu độ trên máy ảnh. Đây là cách nhanh để làm sáng hoặc tối toàn bộ hình.
-* `Saturation` - Độ đậm màu. 1 là trung tính, 0 là đơn sắc, lớn hơn 1 là tăng bão hòa.
-* `Contrast` - Làm vùng tối tối hơn và vùng sáng sáng hơn. Dùng cẩn thận, giá trị cao có thể gây lỗi hình (artifact).
+## ![](/icons/postprocess_tone.webp) Ánh xạ sắc độ {#tone-mapping}
+Ánh xạ sắc độ là phép biến đổi đưa các giá trị HDR về khoảng `[0, 1]`.
+Nếu bạn không dùng nó (hoặc chọn `Không có`), mọi thành phần màu lớn hơn 1 sẽ bị cắt bỏ.
+Mọi biến đổi màu vượt quá khoảng này sẽ bị mất.
 
-Lưu ý khi tắt `Tone Mapping`, một số chi tiết biến mất vì điểm ảnh quá sáng.
+* `Không có/Trung tính/Agx/ACES` - bộ ánh xạ sắc độ được dùng. `Không có` không ánh xạ lại gì (nhưng các điều khiển khác vẫn hoạt động). Các lựa chọn còn lại giống như chọn những loại phim khác nhau, chúng xử lý các giá trị và màu sắc bị cháy sáng theo những cách khác nhau. Đây là một chủ đề rất sâu, hãy tìm hiểu thêm về tone mapping, Agx, ACES nếu bạn muốn biết nhiều hơn!
+* `Phơi sáng` - độ sáng tổng thể của ảnh, giống như chỉnh khẩu độ trên máy ảnh. Đây là cách nhanh để làm sáng hoặc tối toàn bộ ảnh.
+* `Bão hòa` - độ đậm của màu. 1 là trung tính, 0 là đơn sắc, giá trị trên 1 cho màu ngày càng rực.
+* `Tương phản` - Làm vùng tối tối hơn và vùng sáng sáng hơn. Hãy dùng cẩn thận, giá trị cao có thể gây lỗi hiển thị.
 
-| Tone Mapping off             | Tone Mapping on             |
-| :--------------------------: | :-------------------------: |
+Hãy để ý rằng khi tắt `Ánh xạ sắc độ`, một số chi tiết biến mất vì các điểm ảnh quá sáng.
+
+| Tắt ánh xạ sắc độ           | Bật ánh xạ sắc độ          |
+| :-------------------------: | :------------------------: |
 | ![](/images/tone_off.webp) | ![](/images/tone_on.webp) |
 
 ::: tip
-Tone mapping có thể tăng hiệu ứng của global illumination. Nếu bạn giảm cường độ bản đồ môi trường, tăng nguồn sáng chính, sau đó tăng `exposure` trong tone mapping để thấy rõ hơn hiệu ứng ánh sáng dội.
+Ánh xạ sắc độ có thể làm nổi bật hiệu ứng chiếu sáng toàn cục. Nếu bạn giảm cường độ của bản đồ môi trường, tăng nguồn sáng chính, bạn có thể tăng `Phơi sáng` của ánh xạ sắc độ để thấy rõ hơn hiệu ứng ánh sáng nảy.
 :::
 
-## Chỉnh màu {#color-grading}
-Tương tự công cụ Curves trong Photoshop, tính năng này cho phép bạn điều khiển cân bằng và phân bố màu trong hình. Điều khiển `main` ảnh hưởng đến cân bằng màu tổng thể, các điều khiển `red`/`green`/`blue` cho phép tinh chỉnh chi tiết. 
+## ![](/icons/postprocess_tone_curve.webp) Chỉnh màu {#color-grading}
+Tương tự công cụ Curves trong Photoshop, tính năng này cho phép bạn điều khiển sự cân bằng và phân bố màu trong ảnh. Điều khiển `Chính` tác động lên toàn bộ cân bằng màu, còn các điều khiển `Đỏ`/`Xanh lá`/`Xanh dương` cho phép tinh chỉnh chi tiết.
 
-| Color Grading off              | Color Grading on              |
-| :----------------------------: | :---------------------------: |
+| Tắt chỉnh màu                 | Bật chỉnh màu                |
+| :---------------------------: | :--------------------------: |
 | ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
-## Độ cong {#curvature}
-Phát hiện nơi có thay đổi độ cong nhanh và áp màu lên những vùng đó.
+## ![](/icons/postprocess_cavity.webp) Độ cong {#curvature}
+Phát hiện những nơi độ cong thay đổi đột ngột, và tô một màu lên các vùng đó.
 
-* `Factor` - Cường độ tổng thể của hiệu ứng
-* `Bump` - Mức độ phát hiện các thay đổi lồi sắc nét và đặt màu đã chọn ở đó (mặc định là trắng)
-* `Cavity` - Mức độ phát hiện các thay đổi lõm và đặt màu đã chọn ở đó (mặc định là đen)
+* `Yếu tố` - cường độ tổng thể của hiệu ứng
+* `Lồi` - mức độ phát hiện các thay đổi lồi sắc nét, và tô màu đã chọn lên đó (mặc định là trắng)
+* `Khoang` - mức độ phát hiện các thay đổi lõm, và tô màu đã chọn lên đó (mặc định là đen)
+* `Độ dày` - độ rộng của các cạnh được phát hiện.
 
-| Curvature off                     | Curvature on                    |
-| :-------------------------------: | :-----------------------------: |
+Cạnh `Lồi` và `Khoang`, một ô màu dùng để chọn màu, và một nút nhỏ chọn cách màu đó hòa trộn với ảnh.
+
+
+| Tắt độ cong                      | Bật độ cong                    |
+| :------------------------------: | :----------------------------: |
 | ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
-## Quang sai sắc {#chromatic-aberration}
-Mô phỏng lỗi ống kính khi ánh sáng bị tách màu quanh rìa màn hình.
 
-* `Strength` - Mức độ tách các phần đỏ/lục/lam của hình về phía rìa màn hình
+## ![](/icons/postprocess_chromatic.webp) Sai sắc {#chromatic-aberration}
+Mô phỏng lỗi ống kính khi ánh sáng bị tách màu ở các mép màn hình.
 
-| Chromatic off                  | Chromatic on                  |
-| :----------------------------: | :---------------------------: |
+* `Độ mạnh` - mức độ các thành phần đỏ/xanh lá/xanh dương của ảnh bị tách ra về phía mép màn hình
+
+| Tắt sai sắc                   | Bật sai sắc                  |
+| :---------------------------: | :--------------------------: |
 | ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
-## Tối góc (Vignette) {#vignette}
-Mô phỏng lỗi ống kính bằng cách làm tối rìa màn hình.
 
-* `Size` - Kích thước của ellipse đảo ngược đặt lên hình
-* `Hardness` - Độ mờ hoặc sắc nét của ellipse khi trộn lên hình.
+## ![](/icons/postprocess_vignette.webp) Tối góc {#vignette}
+Mô phỏng lỗi ống kính bằng cách làm tối các mép màn hình.
 
-| Vignette off                     | Vignette on                     |
-| :------------------------------: | :-----------------------------: |
+* `Kích thước` - Kích thước của một hình elip đảo ngược phủ lên ảnh
+* `Độ cứng` - Hình elip hòa lên ảnh nhòe hay sắc nét đến mức nào.
+* `Màu phủ` - Màu của hiệu ứng tối góc, mặc định là đen.
+
+
+| Tắt tối góc                     | Bật tối góc                    |
+| :-----------------------------: | :----------------------------: |
 | ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
-## Hạt phim {#grain}
-Thêm hiệu ứng hạt (grain), có thể giúp hình bớt cảm giác nhân tạo.
+## ![](/icons/postprocess_grain.webp) Nhiễu {#grain}
+Thêm hiệu ứng hạt nhiễu, giúp ảnh trông bớt giả tạo một chút.
 
-* `Strength` - Lượng hạt/nhiễu thêm vào hình.
+* `Cường độ` - lượng hạt/nhiễu thêm vào ảnh.
 
-| Grain off                     | Grain on                    |
-| :---------------------------: | :-------------------------: |
+
+| Tắt nhiễu                    | Bật nhiễu                  |
+| :--------------------------: | :------------------------: |
 | ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
-## Độ nét {#sharpness}
-Hiệu ứng làm nét tương tự trong Photoshop hoặc các ứng dụng xử lý ảnh.
 
-* `Strength` - Lượng làm nét áp dụng lên hình.
+## ![](/icons/sharpen.webp) Độ nét {#sharpness}
+Hiệu ứng làm sắc nét giống như trong Photoshop hay các ứng dụng xử lý ảnh.
 
-| Sharpness off                   | Sharpness on                  |
-| :-----------------------------: | :---------------------------: |
+* `Độ mạnh` - mức làm sắc nét áp cho ảnh.
+
+
+| Tắt độ nét                     | Bật độ nét                   |
+| :----------------------------: | :--------------------------: |
 | ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
-## Pixel Art {#pixel-art}
-Mô phỏng đồ họa pixel của game retro.
+## ![](/icons/postprocess_pixel_art.webp) Nghệ thuật pixel {#pixel-art}
+Mô phỏng phong cách pixel art của game cổ điển. Hiệu ứng này ghi đè lên [Độ phân giải render](#resolution-multiplier).
 
-* `Slider` - Kích thước pixel
-* `Allow frame sampling` - nếu bạn gặp nhiều điểm ảnh đen, hãy thử bật tùy chọn này, nó sẽ ghi đè thiết lập lấy mẫu mặc định.
+* `Thanh trượt` - kích thước của điểm ảnh
+* `Cho phép lấy mẫu khung hình` - nếu bạn thấy nhiều điểm ảnh đen, hãy thử bật tùy chọn này. Khi tắt, hiệu ứng pixel art sẽ tắt [lấy mẫu khung hình](#max-frame-sampling).
 
-| Pixel off                    | Pixel on                    |
-| :--------------------------: | :-------------------------: |
+| Tắt pixel                   | Bật pixel                  |
+| :-------------------------: | :------------------------: |
 | ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
-## Dòng quét {#scanline}
-Mô phỏng diện mạo của màn hình CRT cũ.
+## ![](/icons/postprocess_scanline.webp) Đường quét {#scanline}
+Mô phỏng vẻ ngoài của màn hình CRT đời cũ.
 
-* `Factor` - Cường độ của các đường
-* `Spacing` - Kích thước các đường
+* `Yếu tố` - độ đậm của các đường
+* `Khoảng cách` - kích thước của các đường
 
-| Scanline off                    | Scanline on                    |
-| :-----------------------------: | :----------------------------: |
+| Tắt đường quét                 | Bật đường quét                |
+| :----------------------------: | :---------------------------: |
 | ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
-
-## Dithering {#dithering}
-
-Rải nhiễu điểm ảnh (dither) để giảm hiện tượng banding. Thông thường nên bật, nhưng có thể tắt cho một số thao tác đặc biệt (ví dụ xuất depth map hoặc các thao tác đặc thù dữ liệu khác).

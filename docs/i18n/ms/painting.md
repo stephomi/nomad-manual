@@ -1,143 +1,167 @@
-# ![](/icons/paint.webp) Melukis {#painting}
+# ![](/icons/paint.webp) Cat {#painting}
 
-Kawal warna, kekasaran, kemetalan sapuan cat, benarkan pengisian menyeluruh (flood fill) atribut cat, dan cara alat cat berinteraksi dengan lapisan, topeng (mask), serta pemilihan tersembunyi.
+Kawal warna, kekasaran dan kemetalan sapuan cat, isi penuh atribut cat, dan tentukan cara alat cat berinteraksi dengan lapisan, topeng dan kawasan tersembunyi.
 
 ![](/images/paint_overview.webp)  
 
 ## Gambaran keseluruhan {#overview}
 
-Nomad menggunakan pengecatan verteks PBR. Apa maksudnya?
+Nomad menggunakan pengecatan verteks PBR. Apakah maksudnya?
 
 ### PBR {#pbr}
-PBR, atau Physically Based Rendering ialah teknik grafik komputer yang popular untuk filem, televisyen, permainan dan mudah alih. Dengan memadankan cahaya pada sifat fizikal, dan mentakrifkan permukaan melalui warna, kekasaran, kemetalan, pelbagai rupa fotorealistik boleh dicapai.
+PBR, atau Physically Based Rendering (pemaparan berasaskan fizik), ialah teknik grafik komputer yang popular untuk filem, televisyen, permainan dan peranti mudah alih. Dengan mendasarkan pencahayaan pada sifat fizikal, dan mentakrifkan permukaan melalui warna, kekasaran dan kemetalan, pelbagai rupa fotorealistik boleh dicapai.
 
-### Lukisan verteks {#vertex-painting}
+### Pengecatan verteks {#vertex-painting}
 
-Pengecatan verteks bermaksud maklumat cat disimpan dalam verteks model, bukannya dalam tekstur. Oleh kerana Nomad boleh mengendalikan model dengan ratusan ribu, malah berjuta-juta verteks, model anda sepatutnya boleh mempunyai cat permukaan yang sangat terperinci; jika anda boleh mengukir perincian itu, anda juga boleh mengecat perincian tersebut.
+Pengecatan verteks bermaksud maklumat cat disimpan dalam verteks model, bukan dalam tekstur. Oleh sebab Nomad boleh mengendalikan model dengan ratusan ribu, malah selalunya jutaan verteks, model anda boleh mempunyai cat permukaan yang sangat terperinci; jika anda boleh memahat butiran itu, anda juga boleh mengecatnya.
 
-Ini juga bermakna mengecat dalam Nomad tidak memerlukan pemetaan UV, yang selalunya proses perlahan dan teknikal dalam aplikasi 3D lain. Banyak aplikasi 3D lain tidak menyokong kiraan verteks tinggi seperti Nomad, namun Nomad juga mempunyai alatan pembakaran tekstur (texture baking) dan pengurangan poligon (decimation) yang baik untuk membantu.
+Ini juga bermakna mengecat dalam Nomad tidak memerlukan pemetaan UV, proses yang selalunya lambat dan teknikal dalam aplikasi 3d lain. Banyak aplikasi 3d lain tidak menyokong bilangan verteks setinggi Nomad, namun Nomad juga mempunyai alat yang baik untuk membantu: bake tekstur dan Kurangkan (decimate).
 
-### Pemberteksturan {#texturing}
+### Penteksturan {#texturing}
 
-Nomad menyokong tekstur, tetapi ia perlu wujud dalam model yang diimport, atau melalui pembakaran pengecatan verteks ke tekstur. 
+Nomad menyokong tekstur, tetapi tekstur mesti sudah ada dalam model yang diimport, atau dihasilkan dengan bake pengecatan verteks ke tekstur. 
 
-Tekstur hanyalah imej, tetapi dalam konteks 3D ia biasanya merujuk kepada imej yang ditetapkan pada objek.
+Tekstur hanyalah sebuah imej, tetapi dalam konteks 3d ia biasanya merujuk kepada imej yang diberikan kepada sesuatu objek.
 Untuk membalut imej di sekeliling model, model memerlukan koordinat tekstur (UV).
 
-Nomad boleh mengiranya [secara automatik](topology.md#uv-unwrap) tetapi anda tidak mempunyai banyak kawalan ke atas kualiti keseluruhan.
+Nomad boleh [mengiranya secara automatik](topology.md#uv-unwrap) tetapi anda tidak mempunyai banyak kawalan terhadap kualiti keseluruhannya.
 
 ::: tip
-Salah satu contoh aliran kerja:
-- Ukir dalam Nomad, kemudian lakukan [UV unwrap](topology.md#uv-unwrap)
-- Jika anda sudah mula mengecat dalam Nomad anda boleh [pindahkan pengecatan verteks ke tekstur](topology.md#bake-vertex-colors-to-texture)
+Satu contoh aliran kerja:
+- Pahat dalam Nomad, kemudian [buka balut UV](topology.md#uv-unwrap)
+- Jika anda sudah mula mengecat dalam Nomad, anda boleh [memindahkan cat verteks ke tekstur](topology.md#bake-texture)
 - Eksport ke Procreate
-- Tekstur dalam Procreate
-- Eksport kembali ke Nomad untuk tujuan rendering
+- Buat tekstur dalam Procreate
+- Eksport semula ke Nomad untuk tujuan pemaparan
 :::
 
-Itu gambaran keseluruhan, sekarang mari terokai bahagian-bahagian menu mengecat:
+Itulah gambaran keseluruhannya; sekarang mari kita terokai bahagian-bahagian menu cat:
 
 
-## Lukisan strok {#stroke-painting}
+## Pewarnaan Goresan {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
-Aktifkan pengecatan untuk alat ini, berguna jika anda perlu mengukir dan mengecat pada masa yang sama.
+Dayakan pengecatan untuk alat ini, berguna jika anda perlu memahat dan mengecat pada masa yang sama. Apabila sesuatu alat boleh mengecat tetapi kotak semak ini dimatikan, ikon amaran di sebelah tajuk akan mengingatkan anda.
 
-Untuk alat di mana mengecat ialah fungsi utama (cth Paint, Smudge, Mask), kotak semak ini tidak wujud.
+Bagi alat yang fungsi utamanya ialah mengecat (contohnya Lukis, Smudge, Topeng), kotak semak ini tidak wujud.
 
-### Keamatan cat {#paint-intensity}
+### ![](/icons/opacity.webp) Keamatan cat {#paint-intensity}
 
-Gelangsar untuk membolehkan anda menggunakan keamatan berbeza daripada keamatan alat utama.
+Peluncur yang membolehkan anda menggunakan keamatan yang berbeza daripada keamatan utama alat.
 
-Kotak semak `Alpha`, `Falloff` dan `Randomize` menentukan sama ada ciri tersebut akan mempengaruhi pengecatan. Contohnya anda boleh mengaktifkan randomize untuk alat clay, tetapi warna tidak akan dirandomkan.
+Butang peluncur di sebelahnya menambah peluncur keamatan cat pantas pada bar sisi, untuk alat yang memahat dan mengecat pada masa yang sama.
+
+Butang `Alpha`, `Pengurangan` dan `Rawakkan keamatan` menentukan sama ada ciri-ciri tersebut akan mempengaruhi pengecatan. Contohnya, anda boleh mendayakan rawak untuk alat clay, tetapi warnanya tidak akan dirawakkan.
+
+* `Alpha` - apabila dinyahdayakan, pengecatan mengabaikan alpha dan meliputi seluruh kawasan berus. Dengan alat VDM, butang ini digantikan dengan `Bahan cop`, yang menghidupkan atau mematikan bahan yang disimpan dalam cop.
+* `Pengurangan` - apabila dinyahdayakan, pengecatan kekal pada keamatan penuh hingga ke tepi berus.
+* `Rawakkan keamatan` - sama ada bahagian keamatan dalam perawak sapuan mempengaruhi pengecatan. Perawakan kedudukan, putaran dan skala sentiasa menggerakkan keseluruhan cop.
+
+Pilihan ini diabaikan oleh [Cat semua](#paint-all), tetapi alpha digunakan oleh varian triplanarnya.
+
+### ![](/icons/link.webp) Bahan global {#global-material}
+Jika pilihan ini didayakan, bahan yang dipilih akan sama dengan alat-alat lain. Perhatikan bahawa ia hanya mengambil kira tetapan kekasaran, kemetalan dan warna. Nyahdayakannya untuk memberikan alat ini bahannya sendiri.
 
 
 ## Bahan {#material}
 ![](/images/paint_material.webp) 
 
-Ikon pertama ialah bentuk pratonton bahan. Seret pada pratonton bahan 3D untuk memutarkannya. 
+Ikon pertama ialah bentuk pratonton bahan. Menyeret pada pratonton bahan 3d akan memutarnya. 
 
-Ikon kedua ialah pratonton sapuan cat dengan pilihan alpha dan falloff yang dipilih.
+Ikon kedua ialah pratonton sapuan cat dengan pilihan alpha dan pengurangan yang dipilih.
 
-Butang pratonton di sebelah tajuk Material membolehkan anda bertukar antara none, Material atau Triplanar. Ini menentukan apa yang akan berlaku apabila anda menukar sifat cat secara interaktif:
+### ![](/icons/falloff.webp) Lengkung {#curves}
 
-* `None` - Tiada pratonton akan dipaparkan pada model apabila anda melaras sifat
-* `Material` - Nilai bahan akan dipratonton pada objek apabila anda melaras sifat. Jika anda menggunakan tekstur dan model mempunyai UV, UV tersebut akan digunakan.
-* `Triplanar` - Bahan akan dipratonton sebagai unjuran Triplanar. 
+Membuka penyunting lengkung untuk slot tekstur [peluncur PBR](#pbr-sliders). Ia memetakan semula nilai tekstur sebelum ia dicat, tanpa menyentuh fail imej. Ikon lengkung kecil pada slot tekstur memberitahu anda bahawa lengkungnya telah disunting.
 
-Pipet boleh digunakan untuk mengambil sampel semua sifat daripada objek dalam adegan anda.
+### ![](/icons/cog.webp) Pilihan bahan {#material-options}
 
-## Praset Bahan {#material-presets}
-Mengetik bentuk pratonton 3D akan memaparkan menu praset bahan, ini boleh diklon untuk mentakrifkan praset anda sendiri.
+Butang `Bahan` di sebelah tajuk mengandungi dua tetapan.
+
+`Pratonton paparan bahan` menentukan apa yang berlaku pada objek yang dipilih semasa anda mengubah peluncur warna, kekasaran, kemetalan, kelegapan dan keamatan:
+
+* `Tiada` - Tiada pratonton dipaparkan pada model semasa anda melaraskan sifat
+* `Bahan` - Nilai bahan dipratonton pada objek semasa anda melaraskan sifat.
+* `Triplanar` - Bahan dipratonton sebagai unjuran Triplanar. 
+
+Kotak semak warna, kekasaran, kemetalan dan kelegapan di bawahnya memilih saluran yang digantikan oleh [Pemilih bahan](#material-picker).
+
+### ![](/icons/dropper.webp) Pemilih bahan {#material-picker}
+
+Penitis mata memilih bahan di bawah kursor, daripada mana-mana objek dalam adegan anda. Hanya saluran yang ditanda dalam [Pilihan bahan](#material-options) akan digantikan.
+
+## Pratetap Bahan {#material-presets}
+Mengetuk bentuk pratonton 3d akan memaparkan menu pratetap bahan; pratetap ini boleh diklon untuk mentakrifkan pratetap anda sendiri.
 
 ![](/images/paint_presets.webp) 
 
-Togol `Embed Textures` dan `Alpha` apabila diaktifkan akan menyimpan sebarang tekstur yang digunakan oleh bahan ini di dalam praset. Ini diterangkan dengan lebih lanjut di bawah.
+Togol `Benamkan tekstur` menyimpan salinan tekstur yang digunakan oleh bahan ini di dalam pratetap. Tanpanya, pratetap hanya merujuk kepada tekstur dalam folder textures/ Nomad. Hidupkannya apabila anda mahu berkongsi pratetap bertekstur tanpa menghantar teksturnya secara berasingan.
 
-## Gelangsar PBR {#pbr-sliders}
+`Sertakan Alfa` turut menyimpan alpha berus dalam pratetap bahan.
+
+## Peluncur PBR {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 Pengecatan [PBR](shading.md#pbr) menggunakan 4 saluran:
-- `Color` Warna yang akan dicat. Pipet boleh digunakan untuk memilih warna daripada bahagian lain model, atau daripada imej rujukan.
-- `Roughness` Menunjukkan betapa "kasar" atau "licin" sesuatu permukaan. Nilai rendah untuk kekasaran bermakna pantulan akan tajam.
-- `Metalness` Menunjukkan sama ada permukaan itu logam atau tidak. Nilai sepatutnya sama ada 0% atau 100% kebanyakan masa, nilai di antara sepatutnya luar biasa.
-- `Opacity` Sejauh mana bahan boleh dilihat tembus. Secara teknikal ia bukan sebahagian daripada spesifikasi PBR, tetapi ia berguna dalam banyak situasi. 1 ialah legap sepenuhnya, 0 ialah lutsinar. Ambil perhatian bahawa kelegapan dan pembiasan (refraction) adalah perkara berbeza, pembiasan dalam Nomad dikendalikan melalui bahan pembiasan.
+- `Warna` Warna yang akan dicat. Penitis mata boleh digunakan untuk memilih warna daripada bahagian lain model, atau daripada imej rujukan.
+- `Kekasaran` Menunjukkan sejauh mana permukaan itu "kasar" atau "licin". Nilai kekasaran yang rendah bermakna pantulan akan menjadi tajam.
+- `Kemetalan` Hanya menunjukkan sama ada permukaan itu logam atau tidak. Nilainya biasanya sama ada 0% atau 100%; nilai di antaranya sepatutnya jarang digunakan.
+- `Kelegapan` Sejauh mana bahan boleh dilihat tembus. Secara tegasnya ia bukan sebahagian daripada spesifikasi PBR, tetapi ia berguna dalam banyak situasi. 1 ialah legap sepenuhnya, 0 ialah lut sinar. Perhatikan bahawa kelegapan dan pembiasan ialah dua perkara berbeza; pembiasan dalam Nomad dikendalikan melalui bahan pembiasan. 
 
-Jika anda memilih praset bahan, 3 saluran akan dicat serentak (opacity selalunya sengaja dikecualikan). Ini bermakna bukannya hanya mengecat 'merah', anda boleh mengecat 'logam merah kasar' atau 'plastik putih licin'.
+Jika anda memilih pratetap bahan, 3 saluran dicat serentak (kelegapan selalunya sengaja dikecualikan). Ini bermakna, daripada hanya mengecat 'merah', anda boleh mengecat 'logam merah yang kasar' atau 'plastik putih yang licin'.
 
-Petak ialah slot tekstur, ketik untuk menggunakan tekstur bagi sifat tersebut dan bukannya nilai pepejal.
+Petak itu ialah slot tekstur; klik padanya untuk menggunakan tekstur bagi sifat tersebut dan bukannya nilai tetap. Tekstur warna mewarnai warna, manakala tekstur kekasaran, kemetalan atau kelegapan menggantikan nilai peluncur (labelnya dipotong garis untuk menunjukkannya). Bagi tekstur kelegapan, `Guna Alfa sebagai Nilai` membaca saluran alpha tekstur dan bukannya nilai skala kelabunya.
 
-Ikon berus di sebelah gelangsar akan mengisi penuh (flood fill) sifat tersebut ke seluruh objek anda.
+Dengan alat VDM, apabila cop mempunyai bahannya sendiri, slot tambahan memaparkannya di sebelah slot tekstur. Ketuk untuk menggunakan atau mengabaikan saluran cop tersebut.
 
-Kotak semak akan mengaktifkan atau menyahaktifkan sifat tertentu itu, jadi anda boleh hanya mengecat warna, atau hanya mengecat kekasaran dan kelegapan, sebagai contoh. 
+Ikon berus di sebelah peluncur akan mengisi penuh sifat itu pada objek anda.
 
-Berikut beberapa contoh sifat kekasaran dan kemetalan berbeza:
+Kotak semak akan mendayakan atau menyahdayakan sifat tertentu itu, jadi anda boleh mengecat warna sahaja, atau hanya kekasaran dan kelegapan, sebagai contoh. 
 
-|                | Metalness 0%                      | Metalness 100%               |
+Berikut ialah beberapa contoh sifat kekasaran dan kemetalan yang berbeza:
+
+|                | Kemetalan 0%                      | Kemetalan 100%               |
 | :------------: | :-------------------------------: | :--------------------------: |
-| Roughness 0%   | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
-| Roughness 50%  | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
-| Roughness 100% | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
+| Kekasaran 0%   | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
+| Kekasaran 50%  | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
+| Kekasaran 100% | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
 
 ::: warning
-Hanya warna disokong dalam mod [Matcap rendering](shading.md#matcap), kemetalan dan kekasaran diabaikan.
+Kekasaran dan kemetalan memerlukan mod shading [Cerah (PBR)](shading.md#pbr). Dalam mod [MatCap](shading.md#matcap) atau [Tanpa cahaya](shading.md#unlit), kedua-duanya diabaikan, dan menu memaparkan amaran.
 :::
 
 ::: tip
-Apabila menggunakan tekstur untuk pengecatan PBR, selalunya berguna untuk bertukar kepada alat seperti `Stamp`, atau gunakan menu stroke untuk menggunakan mod selain dot, yang boleh mengheret (smear) tekstur.
+Apabila menggunakan tekstur untuk pengecatan PBR, selalunya berguna untuk bertukar kepada alat seperti `Cap`, atau menggunakan menu sapuan untuk memilih mod selain titik, yang boleh mencomotkan tekstur.
 
 ![](/videos/paint_color_texture.mp4)  
 :::
 
 ::: tip
-Anda mungkin mahu menghidupkan `Smooth Shading` [secara global](settings.md#smooth-shading) atau [per-objek](material.md#smooth-shading) jika anda mengecat permukaan logam pada objek dengan kiraan poligon rendah.
+Anda mungkin mahu menghidupkan `Shading licin` [secara global](settings.md#smooth-shading) atau [bagi setiap objek](material.md#smooth-shading) jika anda mengecat permukaan logam pada objek dengan bilangan poligon yang lebih rendah.
 :::
 
-## Cat semua {#paint-all}
+## ![](/icons/paint.webp) Cat semua {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
-Gunakan bahan semasa pada objek, sama ada dalam mod standard dengan 'Paint All', atau sebagai unjuran Triplanar.
+Gunakan bahan semasa pada objek yang dipilih, sama ada dalam mod biasa dengan `Cat semua`, atau sebagai unjuran Triplanar dengan `Cat semua + Triplanar`. Varian triplanar tidak tersedia untuk primitif yang belum disahkan.
 
-Kotak semak di sebelah gelangsar color/metalness/roughness/opacity akan diambil kira, sebarang sifat yang dinyahaktif tidak akan diisi.
+Kotak semak di sebelah peluncur warna/kemetalan/kekasaran/kelegapan dipatuhi; sebarang sifat yang dinyahdayakan tidak akan diisi.
 
-Butang tambahan mengawal cara paint all boleh dipengaruhi lagi:
+Butang tambahan mengawal cara cat semua boleh dipengaruhi lagi. Kebanyakannya memaparkan peratusan, dan ia dikelabukan apabila ia tidak akan memberi kesan:
 
-| Icon                        | Description                                   |
+| Ikon                        | Penerangan                                    |
 | :-------------------------: | :-------------------------------------------: |
-| ![](/icons/tool_mask.webp) | Kawasan bertopeng tidak akan terjejas.        |
+| ![](/icons/shield.webp)    | Kawasan bertopeng tidak akan terjejas.        |
 | ![](/icons/tool_hide.webp) | Kawasan tersembunyi tidak akan terjejas.      |
-| ![](/icons/opacity.webp)   | guna faktor pengecatan alat di atas.          |
-| ![](/icons/layer.webp)     | Kawasan tidak dicat pada lapisan tidak akan terjejas. |
-| ![](/icons/triplanar.webp) | Penunjuk tetapan triplanar                    |
+| ![](/icons/opacity.webp)   | Gunakan faktor pengecatan alat di atas.       |
+| ![](/icons/layer.webp)     | Kawasan lapisan yang tidak dicat tidak akan terjejas. |
+| ![](/icons/triplanar.webp) | `Verteks`: varian triplanar juga mengofset permukaan dengan alpha, mengikut keamatan alat yang dipaparkan. |
 | ![](/icons/cog.webp)       | Buka tetapan Triplanar                        |
 
-### Tetapan triplanar {#triplanar-settings}
+### ![](/icons/cog.webp) Tetapan Triplanar {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
-Serupa dengan [tetapan triplanar dalam menu bahan](material.md#triplanar), anda boleh mengawal pengadunan unjuran, pengjubinan (tiling) dan ofset. 
+Sama seperti [tetapan triplanar dalam menu bahan](material.md#triplanar), anda boleh mengawal pencampuran unjuran, jubinan dan ofset. 
 
-Gunakan kotak semak pratonton di bahagian atas menu ini untuk mengaktifkan pratonton berterusan semasa melaras nilai.
-
-## Bahan global {#global-material}
-Jika pilihan ini diaktifkan, bahan yang dipilih akan sama seperti alat lain. Ambil perhatian bahawa ia hanya mengambil kira tetapan roughness, metalness dan color.
+Gunakan kotak semak pratonton di bahagian atas menu ini untuk mendayakan pratonton berterusan semasa melaraskan nilai.

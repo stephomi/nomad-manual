@@ -1,4 +1,4 @@
-# Ikhtisar {#overview}
+# ![](/icons/home.webp) Ikhtisar {#overview}
 
 <!-- 
 [[toc]]
@@ -15,27 +15,29 @@ Baca panduan [Memulai](gettingstarted.md).
 
 ## Daftar isi {#table-of-contents}
 
-| Menu                           | Icon                          | Deskripsi                                           |
-| :----------------------------: | :---------------------------: | :------------------------------------------------: |
-| [Files](files.md)              | ![](/icons/open.webp)        | Kelola proyek Anda, ekspor, impor, dll             |
-| [Scene](scene.md)              | ![](/icons/scene.webp)       | Tambahkan primitif baru dan kelola objek skena Anda |
-| [Topology](topology.md)        | ![](/icons/multires.webp)    | Edit topologi model                                 |
-| [Material](material.md)        | ![](/icons/material.webp)    | Material (level objek)                              |
-| [Shading](shading.md)          | ![](/icons/sun.webp)         | Cara menerangi skena Anda                           |
-| [Post Process](postprocess.md) | ![](/icons/postprocess.webp) | Pemrosesan Akhir (efek visual ruang-layar)         |
-| [Background](background.md)    | ![](/icons/image.webp)       | Ubah latar belakang dan tambahkan gambar referensi  |
-| [Camera](camera.md)            | ![](/icons/camera.webp)      | Kontrol dan interaksi kamera                        |
-| [Stroke](stroke.md)            | ![](/icons/pencil.webp)      | Edit pengaturan tool saat ini, stroke, falloff...   |
-| [Pressure](pressure.md)        | ![](/icons/pressure.webp)    | Kelola tekanan pensil Anda                          |
-| [Painting](painting.md)	     | ![](/icons/paint.webp)       | Pengaturan pengecatan untuk tool melukis            |
-| [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Kelola bidang cermin dari mesh Anda saat ini        |
-| [Layers](layers.md)            | ![](/icons/layer.webp)       | Kelola layer objek Anda saat ini                    |
-| [Settings](settings.md)        | ![](/icons/cog.webp)         | Kustomisasi viewport 3D                             |
-| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Kustomisasi antarmuka                               |
-| [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Daftar semua tool/kuas                              |
-| [History](history.md)          | ![](/icons/history.webp)     | Kelola tumpukan riwayat undo/redo                   |
-| [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Pertanyaan yang Sering Diajukan                     |
-| [Tips](tips.md)                | ![](/icons/manual.webp)      | Tips alur kerja                                     |
+| Menu                           | Ikon                         | Deskripsi                                          |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
+| [File](files.md)               | ![](/icons/open.webp)        | Kelola proyek Anda, ekspor, impor, dan lainnya     |
+| [Adegan](scene.md)             | ![](/icons/scene.webp)       | Tambahkan primitif baru dan kelola objek di adegan |
+| [Topologi](topology.md)        | ![](/icons/multires.webp)    | Ubah topologi model                                |
+| [Material](material.md)        | ![](/icons/material.webp)    | Material (tingkat objek)                           |
+| [Shading](shading.md)          | ![](/icons/sun.webp)         | Cara menerangi adegan Anda                         |
+| [PascaProses](postprocess.md) | ![](/icons/postprocess.webp) | Pemrosesan pasca (efek visual di ruang layar)  |
+| [Latar Belakang](background.md) | ![](/icons/image.webp)      | Ganti latar belakang dan tambahkan gambar referensi |
+| [Kamera](camera.md)            | ![](/icons/camera.webp)      | Kontrol dan interaksi kamera                       |
+| [Transformasi](transform.md)   | ![](/icons/transform.webp)   | Ketik posisi, rotasi, dan ukuran objek             |
+| [Goresan](stroke.md)           | ![](/icons/brush.webp)       | Ubah pengaturan alat saat ini, goresan, penurunan... |
+| [Tekanan](stroke.md#pressure)  | ![](/icons/pressure.webp)    | Atur tekanan pena Anda                             |
+| [Lukis](painting.md)	       | ![](/icons/paint.webp)       | Pengaturan pengecatan untuk alat lukis             |
+| [Simetri](symmetry.md)         | ![](/icons/symmetry.webp)    | Atur bidang cermin mesh Anda saat ini              |
+| [Operasi](operation.md)        | ![](/icons/operation.webp)   | Haluskan, kembungkan, warnai ulang, atau buramkan seluruh mesh |
+| [Lapisan](layers.md)           | ![](/icons/layer.webp)       | Kelola lapisan objek Anda saat ini                 |
+| [Pengaturan](settings.md)      | ![](/icons/cog.webp)         | Sesuaikan viewport 3d                              |
+| [Antarmuka](interface.md)      | ![](/icons/sliders.webp)     | Sesuaikan antarmuka                                |
+| [Alat](tools.md)               | ![](/icons/toolbox.webp)     | Daftar semua alat/kuas                             |
+| [Riwayat](history.md)          | ![](/icons/history.webp)     | Kelola tumpukan riwayat urungkan/ulangi            |
+| [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Pertanyaan yang sering diajukan                    |
+| [Tips](tips.md)                | ![](/icons/manual.webp)      | Tips alur kerja                                    |
 
 ## Sumber daya komunitas {#community-resources}
 

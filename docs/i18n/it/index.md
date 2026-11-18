@@ -1,4 +1,4 @@
-# Panoramica {#overview}
+# ![](/icons/home.webp) Panoramica {#overview}
 
 <!-- 
 [[toc]]
@@ -13,31 +13,33 @@ Leggi la guida [Per iniziare](gettingstarted.md).
 :::
 
 
-## Indice dei contenuti {#table-of-contents}
+## Indice {#table-of-contents}
 
-| Menu                           | Icona                         | Descrizione                                         |
-| :----------------------------: | :---------------------------: | :------------------------------------------------: |
-| [Files](files.md)              | ![](/icons/open.webp)        | Gestisci i tuoi progetti, esporta, importa, ecc.   |
-| [Scene](scene.md)              | ![](/icons/scene.webp)       | Aggiungi nuove primitive e gestisci gli oggetti della scena |
-| [Topology](topology.md)        | ![](/icons/multires.webp)    | Modifica la topologia del modello                  |
-| [Material](material.md)        | ![](/icons/material.webp)    | Materiale (a livello di oggetto)                   |
-| [Shading](shading.md)          | ![](/icons/sun.webp)         | Come illuminare la tua scena                       |
-| [Post Process](postprocess.md) | ![](/icons/postprocess.webp) | Post-processing (effetti visivi in screen-space)   |
-| [Background](background.md)    | ![](/icons/image.webp)       | Cambia lo sfondo e aggiungi un'immagine di riferimento |
-| [Camera](camera.md)            | ![](/icons/camera.webp)      | Controllo e interazione della camera               |
-| [Stroke](stroke.md)            | ![](/icons/pencil.webp)      | Modifica le impostazioni dello strumento corrente, tratto, falloff... |
-| [Pressure](pressure.md)        | ![](/icons/pressure.webp)    | Gestisci la pressione della tua penna              |
-| [Painting](painting.md)	     | ![](/icons/paint.webp)       | Impostazioni di pittura per gli strumenti di painting |
-| [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Gestisci il piano di simmetria della mesh corrente |
-| [Layers](layers.md)            | ![](/icons/layer.webp)       | Gestisci i livelli dell'oggetto corrente           |
-| [Settings](settings.md)        | ![](/icons/cog.webp)         | Personalizza la viewport 3D                        |
-| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Personalizza l'interfaccia                         |
-| [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Elenco di tutti gli strumenti/pennelli             |
-| [History](history.md)          | ![](/icons/history.webp)     | Gestisci lo stack di cronologia annulla/ripristina |
+| Menu                           | Icona                        | Descrizione                                        |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
+| [File](files.md)               | ![](/icons/open.webp)        | Gestisci i tuoi progetti, esporta, importa, ecc.   |
+| [Scena](scene.md)              | ![](/icons/scene.webp)       | Aggiungi nuove primitive e gestisci gli oggetti della scena |
+| [Topologia](topology.md)       | ![](/icons/multires.webp)    | Modifica la topologia del modello                  |
+| [Materiale](material.md)       | ![](/icons/material.webp)    | Materiale (a livello di oggetto)                   |
+| [Shading](shading.md)          | ![](/icons/sun.webp)         | Come illuminare la scena                           |
+| [Post processing](postprocess.md) | ![](/icons/postprocess.webp) | Post processing (effetti visivi in spazio schermo) |
+| [Sfondo](background.md)        | ![](/icons/image.webp)       | Cambia lo sfondo e aggiungi un'immagine di riferimento |
+| [Fotocamera](camera.md)        | ![](/icons/camera.webp)      | Controllo della fotocamera e interazione           |
+| [Trasforma](transform.md)      | ![](/icons/transform.webp)   | Inserisci posizione, rotazione e dimensione di un oggetto |
+| [Tratto](stroke.md)            | ![](/icons/brush.webp)       | Modifica le impostazioni dello strumento attivo, il tratto, il decadimento... |
+| [Pressione](stroke.md#pressure)       | ![](/icons/pressure.webp)    | Gestisci la pressione della tua penna              |
+| [Pittura](painting.md)	       | ![](/icons/paint.webp)       | Impostazioni di pittura per gli strumenti di pittura |
+| [Simmetria](symmetry.md)       | ![](/icons/symmetry.webp)    | Gestisci il piano di specchio della mesh attiva    |
+| [Operazione](operation.md)     | ![](/icons/operation.webp)   | Leviga, gonfia, ricolora o sfoca un'intera mesh    |
+| [Livelli](layers.md)           | ![](/icons/layer.webp)       | Gestisci i livelli dell'oggetto attivo             |
+| [Impostazioni](settings.md)    | ![](/icons/cog.webp)         | Personalizza il viewport 3d                        |
+| [Interfaccia](interface.md)    | ![](/icons/sliders.webp)     | Personalizza l'interfaccia                         |
+| [Strumenti](tools.md)          | ![](/icons/toolbox.webp)     | Elenco di tutti gli strumenti e pennelli           |
+| [Cronologia](history.md)       | ![](/icons/history.webp)     | Gestisci la pila di annulla/ripeti                 |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Domande frequenti                                  |
-| [Tips](tips.md)                | ![](/icons/manual.webp)      | Suggerimenti di workflow                           |
+| [Consigli](tips.md)            | ![](/icons/manual.webp)      | Consigli sul flusso di lavoro                      |
 
-## Risorse della comunità {#community-resources}
+## Risorse della community {#community-resources}
 
 <style>
 .video-grid {

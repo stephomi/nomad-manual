@@ -1,30 +1,30 @@
-# Primeiros Passos {#getting-started}
+# ![](/icons/play.webp) Primeiros passos {#getting-started}
 
 ## Bem-vindo ao Nomad! {#welcome-to-nomad}
 
-Nomad é um aplicativo de escultura 3D que funciona em muitos dispositivos, e funciona melhor em tablets com caneta sensível à pressão, por exemplo um iPad com Apple Pencil, ou um Samsung Galaxy Tab com caneta.
+O Nomad é um app de escultura 3d que funciona em vários dispositivos, e funciona melhor em tablets com uma caneta sensível à pressão, como um iPad com Apple Pencil ou um Samsung Galaxy Tab com S Pen.
 
-Ele é inspirado em aplicativos de escultura para desktop como ZBrush e Blender, com foco em uma interface fácil de entender, sem sacrificar recursos. Se você já usou aplicativos de escultura 3D antes, o Nomad será muito familiar.
+Ele se inspira em apps de escultura para computador como o ZBrush e o Blender, com foco em uma interface fácil de entender, sem abrir mão de recursos. Se você já usou apps de escultura 3d antes, vai se sentir em casa no Nomad.
 
-Se esta é a sua primeira vez fazendo escultura 3D, é bom conhecer alguns conceitos básicos.
+Se esta é a sua primeira vez esculpindo em 3d, é bom conhecer algumas noções básicas.
 
 ::: tip Prefere vídeo?
 O YouTube agora tem MUITOS tutoriais em vídeo para iniciantes, aqui vão alguns ótimos links:
 
-* [Nomad Sculpt Crash Course by Dave Reed](https://www.youtube.com/watch?v=69m86ICy2Q4)
-* [Nomad Sculpt Beginner tutorial by Small Robot Studio](https://www.youtube.com/watch?v=J644wXoTiww)
-* [NOMAD FOR BEGINNERS series by SouthernGFX](https://www.youtube.com/watch?v=bEh0WxRoOmg)
+* [Curso intensivo de Nomad Sculpt, por Dave Reed](https://www.youtube.com/watch?v=69m86ICy2Q4)
+* [Tutorial de Nomad Sculpt para iniciantes, por Small Robot Studio](https://www.youtube.com/watch?v=J644wXoTiww)
+* [Série NOMAD FOR BEGINNERS, por SouthernGFX](https://www.youtube.com/watch?v=bEh0WxRoOmg)
 
-Vale a pena conferir o canal principal desses criadores, eles frequentemente publicam novos tutoriais.
+Vale a pena conferir o canal principal desses criadores, eles publicam novos tutoriais com frequência.
 :::
 
 ## Sua primeira escultura {#your-first-sculpt}
 
-Quando você inicia o Nomad pela primeira vez verá uma esfera na tela. Basta arrastar a caneta sobre a esfera para começar a esculpir. A simetria é ativada por padrão para facilitar a escultura.
+Quando você abre o Nomad pela primeira vez, verá uma esfera na tela. Basta arrastar a caneta sobre a esfera para começar a esculpir. A simetria vem ativada por padrão para facilitar a escultura.
 
 ![](/videos/gettingstarted_01.mp4)
 
-Para deixar o pincel maior ou menor, use o controle deslizante de raio à esquerda.
+Para aumentar ou diminuir o pincel, use o controle deslizante de raio à esquerda.
 
 ![](/videos/gettingstarted_02.mp4)
 
@@ -32,15 +32,15 @@ Para deixar o pincel mais forte ou mais fraco, use o controle deslizante de inte
 
 ![](/videos/gettingstarted_03.mp4)
 
-A ferramenta padrão é a `Clay tool`, e ela adiciona material à superfície. Para subtrair da superfície, toque no botão `Sub` à esquerda. Para voltar a adicionar à superfície, toque no botão Sub novamente.
+A ferramenta padrão é a `Argila`, que adiciona volume à superfície. Para remover volume, toque no botão `Sub` à esquerda. Para voltar a adicionar, toque de novo no botão Sub.
 
 ![](/videos/gettingstarted_04.mp4)
 
-Para suavizar a superfície, toque no botão `Smooth`. Para voltar à escultura normal, toque no botão Smooth novamente.
+Para suavizar a superfície, toque no botão `Suavizar`. Para voltar a esculpir normalmente, toque de novo no botão Suavizar.
 
 ![](/videos/gettingstarted_05.mp4)
 
-Para girar em torno do modelo, arraste em um espaço vazio fora do modelo.
+Para girar em volta do modelo, arraste em um espaço vazio fora do modelo.
 
 ![](/videos/gettingstarted_06.mp4)
 
@@ -48,54 +48,54 @@ Para dar zoom, use o gesto de pinça com dois dedos.
 
 ![](/videos/gettingstarted_07.mp4)
 
-Para mover a câmera (pan), pressione 2 dedos na tela e arraste.
+Para mover a câmera lateralmente, coloque 2 dedos na tela e arraste.
 
 ![](/videos/gettingstarted_08.mp4)
 
-Se você cometer um erro, um toque com 2 dedos desfaz a ação, ou use o botão de desfazer no canto inferior esquerdo. 
+Se errar, um toque com 2 dedos desfaz a ação, ou use o botão de desfazer no canto inferior esquerdo.
 
 ![](/videos/gettingstarted_09.mp4)
 
-::: tip Versão desktop
-No desktop, a tecla alt/opt é usada para controlar a câmera:
+::: tip Versão para computador
+No computador, a tecla alt/opt é usada para controlar a câmera:
 
-* toque e arraste em espaço vazio = girar a câmera
-* alt+toque e arraste = pan
-* alt+toque e arraste, depois solte o alt = zoom (igual ao ZBrush)
+* arrastar a ponta em um espaço vazio = girar a câmera
+* alt + arrastar a ponta = mover lateralmente
+* alt + arrastar a ponta, depois soltar o alt = zoom (como no ZBrush)
 
-Com mesas digitalizadoras Wacom que têm 2 ou mais botões na caneta, use as configurações da Wacom para configurar a ponta e os botões assim:
+Com tablets Wacom que têm 2 ou mais botões na caneta, use os ajustes da Wacom para configurar a ponta e os botões assim:
 
 * ponta = clique esquerdo
-* botão inferior (rocker) = clique do meio
-* botão superior (rocker) = clique direito
+* botão inferior = clique do meio
+* botão superior = clique direito
 
-Com essas configurações, você pode manipular a câmera apenas com a caneta:
+Com esses ajustes, você consegue controlar a câmera só com a caneta:
 
-* botão superior e movimento em hover = girar a câmera
-* botão inferior e movimento em hover = pan
+* botão superior e movimento sem encostar = girar a câmera
+* botão inferior e movimento sem encostar = mover lateralmente
 :::
 
 ## Adicionar cor {#add-color}
 
-O Nomad permite pintar a superfície da sua escultura. No menu de ferramentas à direita, encontre a ferramenta `Paint` e clique nela. Na barra de ferramentas à esquerda aparecerá uma esfera colorida. Clique nela, isso abrirá um seletor de cores. Escolha uma cor e pinte no seu modelo.
+O Nomad permite pintar a superfície da sua escultura. No menu de ferramentas à direita, encontre a ferramenta `Pintar` e clique nela. Uma esfera colorida vai aparecer na barra de ferramentas à esquerda. Clique nela para abrir um seletor de cores. Escolha uma cor e pinte o seu modelo.
 
 ![](/videos/gettingstarted_10.mp4)
 
-Para apagar, toque no botão `Erase` na barra de ferramentas à esquerda, depois apague na superfície. Toque no botão Erase novamente para voltar ao modo de pintura.
+Para apagar, toque no botão `Apagar` na barra de ferramentas à esquerda e passe o pincel na superfície. Toque de novo no botão Apagar para voltar ao modo de pintura.
 
 ![](/videos/gettingstarted_11.mp4)
 
-Usando o pincel de clay nos modos add/sub, smooth e paint, veja se você consegue fazer uma cabeça de desenho animado simples:
+Usando o pincel de argila nos modos adicionar/subtrair, a suavização e a pintura, tente fazer uma cabeça simples de desenho animado:
 
 ![](/images/gettingstarted_head1.webp)
 
 ## Outras ferramentas {#other-tools}
 
-A paleta de ferramentas tem muitas ferramentas para ajudar na escultura. Até agora você usou o pincel de clay (a ferramenta padrão inicial), smooth e paint. Como o smooth é usado com frequência, ele tem um atalho extra na barra de ferramentas à esquerda.
+A paleta de ferramentas tem muitas ferramentas para ajudar na escultura. Até agora você usou o pincel de argila (a ferramenta inicial padrão), a suavização e a pintura. Como a suavização é usada com muita frequência, ela tem um atalho extra na barra de ferramentas à esquerda.
 
-As ferramentas no Nomad podem fazer uma grande variedade de coisas, desde ferramentas relacionadas à escultura como move, crease, inflate, até ferramentas como split e trim que são mais parecidas com ferramentas de carpintaria ou metalurgia. A página [Tools](tools.md) tem mais informações.
+As ferramentas do Nomad fazem coisas bem variadas, desde ferramentas de escultura como mover, vincar e inflar até ferramentas como dividir e aparar, que lembram mais carpintaria ou serralheria. A página [Ferramentas](tools.md) tem mais informações.
 
-Veja se você consegue usar as ferramentas move, crease, inflate e smooth para adicionar mais detalhes à sua cabeça, mudando sua forma:
+Tente usar as ferramentas de mover, vincar, inflar e suavizar para adicionar mais detalhes à sua cabeça e mudar a forma dela:
 
 ![](/images/gettingstarted_head2.webp)
 
@@ -105,52 +105,56 @@ Agora que você conhece o básico do Nomad, vamos ver o resto da interface.
 
 ![](/images/interface_overview1.webp)
 
-* `Top menus` - Os menus para acessar a maioria dos recursos do Nomad. Os menus no canto superior esquerdo cobrem principalmente recursos de cena e objeto, os menus no canto superior direito estão relacionados às ferramentas. Em telas menores esses menus serão agrupados para economizar espaço.
-* `Stats` - Informações sobre a cena, o objeto atual, status da máscara, uso de memória.
-* `Nav Cube` - Um auxiliar para mostrar de que lado da escultura você está olhando, além de um atalho para pular para diferentes vistas. Tocar no cubo fará a vista pular para o lado tocado. Arrastar o cubo irá girá‑lo. Toque nos pequenos ícones ao lado do cubo para enquadrar o objeto atual ou redefinir para a vista inicial padrão.
-* `Toolbox` - As ferramentas do Nomad estão disponíveis nesta região rolável.
-* `Left toolbar` - Controles deslizantes para raio e intensidade para a maioria das ferramentas, botões específicos de contexto para outras ferramentas e atalhos para simetria, o modo alt/sub da ferramenta, máscara, suavização, gizmo e opções de pintura.
-* `Bottom toolbar` - Atalhos para recursos usados com frequência, explicados abaixo.
+* `Menus superiores` - Os menus que dão acesso à maioria dos recursos do Nomad. Os menus do canto superior esquerdo cuidam principalmente da cena e dos objetos, e os do canto superior direito estão ligados às ferramentas. Em telas menores, esses menus se agrupam para economizar espaço.
+* `Estatísticas` - Informações sobre a cena, o objeto atual, o estado da máscara e o uso de memória.
+* `Navegador` - Um auxiliar que mostra de que lado você está olhando a escultura, além de servir de atalho para pular entre as vistas. Tocar em um lado leva a vista para ele. Arrastar o navegador gira a vista. Toque nos pequenos ícones ao lado dele para enquadrar o objeto atual, voltar à vista inicial padrão, travar a câmera ou mostrar/ocultar a grade. A aparência dele (um cubo, uma esfera ou um gnômon) e a posição podem ser alteradas nos [Ajustes](settings.md#snap-cube).
+* `Caixa de ferramentas` - As ferramentas do Nomad ficam nesta área rolável.
+* `Barra lateral esquerda` - Controles deslizantes de raio e intensidade para a maioria das ferramentas, botões específicos para outras ferramentas, e atalhos para simetria, o modo alternativo/sub da ferramenta, suavização, máscara, ocultação, grupos de faces, o gizmo e as opções de pintura. Você pode reordenar os atalhos no menu [Interface](interface.md#side-bar).
+* `Barra inferior` - Atalhos para os recursos mais usados, explicados abaixo.
 
 ::: tip Canhoto?
-Você pode espelhar a posição e a ordem de todas as barras de ferramentas, veja [Mirror top bar](interface.md#mirror-top-bar) e outras opções relacionadas.
+Você pode espelhar a posição e a ordem de todas as barras de ferramentas, veja [Espelhar barra superior](interface.md#mirror-top-bar) e outras opções relacionadas.
 :::
 
-## Barra de ferramentas inferior {#bottom-toolbar}
+## Barra inferior {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
-* `Undo` - reverte a última operação
-* `Redo` - restaura a última operação desfeita
-* `History` - acessa as opções de histórico, explicadas no menu [History](history.md).
+* `Desfazer` - desfaz a última operação
+* `Refazer` - restaura a última operação desfeita
+* `Histórico` - acessa as opções de histórico, explicadas no menu [Histórico](history.md).
 * `Solo` - Alterna entre mostrar apenas o objeto atual ou todos os objetos
-* `X-Ray` - Faz com que todos os outros objetos sejam renderizados em modo raio‑X, e o objeto atual fique sólido. Um toque longo ou deslizar para cima permite definir a cor e a opacidade do modo raio‑X.
-* `Voxel` - Um atalho para o botão de remesh do [Voxel Remesher](topology.md#voxel-remesher). Um toque longo ou deslizar para cima revela atalhos para definir a qualidade do voxel remesh.
-* `Grid` - Alterna a exibição da grade. Um toque longo ou deslizar para cima revela opções para a grade.
-* `Wire` - Alterna uma sobreposição de wireframe. Um toque longo ou deslizar para cima revela opções para o wireframe.
-* `Inspect` - Alterna a visualização de dados extras sobre a malha atual. Por padrão exibirá UVs, mas um toque longo ou deslizar para cima permite inspecionar outras propriedades, se existirem, e se isso é exibido no fundo ou na própria malha.
+* `Raio-X` - Mostra todos os outros objetos em modo raio-x, e o objeto atual sólido. Um toque longo ou deslizar para cima permite escolher o matcap e a cor do raio-x, e a quais objetos ele se aplica.
+* `Voxel` - Um atalho para o botão de remalhar do [Remalhamento por voxels](topology.md#voxel-remesher). Um toque longo ou deslizar para cima mostra as opções de remalhamento, como a resolução.
+* `Grade` - Mostra ou oculta a grade. Um toque longo ou deslizar para cima mostra as opções da grade, como a cor e o encaixe.
+* `Armação` - Mostra ou oculta a sobreposição de armação. Um toque longo ou deslizar para cima mostra as opções da armação.
+* `Inspetor` - Mostra ou oculta dados extras sobre a malha atual. Por padrão ele mostra as UVs, mas um toque longo ou deslizar para cima permite inspecionar outras propriedades, se existirem, e escolher se isso aparece no fundo ou sobre a malha.
+* `Registros` - Mostra ou oculta uma janela com os registros de depuração do Nomad.
+* `Grupo de faces` - Mostra ou oculta a sobreposição dos grupos de faces, veja a ferramenta [Grupo de faces](tools.md#facegroup).
+
+Você pode adicionar, remover e reordenar esses atalhos no menu [Interface](interface.md#add-shortcuts-bottom).
 
 ## Próximos passos {#next-steps}
 
-O que você deve aprender em seguida depende de você e do que achar interessante! Aqui vão algumas sugestões:
+O que aprender em seguida depende de você e do que achar interessante! Aqui vão algumas sugestões:
 
-Quer aprender mais sobre as ferramentas de escultura? Vá para a seção [Tools](tools.md).
+Quer saber mais sobre as ferramentas de escultura? Vá para a seção [Ferramentas](tools.md).
 
-Quer exportar seus modelos? Ou importar modelos para esculpir? Ou criar imagens das suas esculturas? Vá para a seção [Files](files.md).
+Quer exportar seus modelos? Ou importar modelos para esculpir? Ou criar imagens das suas esculturas? Vá para a seção [Arquivo](files.md).
 
-Quer aprender mais sobre como controlar o nível de detalhe na sua escultura? Vá para a seção [Topology](topology.md) e aprenda sobre multires e decimation.
+Quer aprender a controlar o nível de detalhe da sua escultura? Vá para a seção [Diversos](topology.md) e conheça a multirresolução e a decimação.
 
-Quer trabalhar com mais objetos? Combinar objetos simples e primitivas em uma cena maior? Vá para a seção [Scene](scene.md).
+Quer trabalhar com mais objetos? Combinar objetos simples e primitivas em uma cena maior? Vá para a seção [Cena](scene.md).
 
-Quer aprender *tudo* sobre o Nomad? Boa escolha! Este manual cobre todo o Nomad, inclui muitas dicas e truques e tem uma ótima função de busca no topo. Use a navegação à esquerda para aprender mais.
+Quer aprender *tudo* sobre o Nomad? Boa escolha! Este manual cobre o Nomad inteiro, traz muitas dicas e truques e tem uma ótima busca no topo. Use a navegação à esquerda para saber mais.
 
-Se você prefere vídeo, Holger Schönischka fez uma enorme coleção de dicas e truques para o Nomad no YouTube: https://www.youtube.com/@ProcreateFX/videos
+Se preferir vídeo, Holger Schönischka fez uma enorme coleção de dicas e truques do Nomad no YouTube: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Obtendo ajuda {#getting-help}
+## Obter ajuda {#getting-help}
 
-Se você ainda tiver dúvidas depois de ler o manual e assistir aos vídeos tutoriais, há três maneiras principais de falar com outros usuários do Nomad ou com o desenvolvedor do Nomad:
+Se ainda tiver dúvidas depois de ler o manual e assistir aos tutoriais em vídeo, há três formas principais de falar com outros usuários do Nomad ou com o desenvolvedor:
 
-* Visite os fóruns: [forum.nomadsculpt.com](http://forum.nomadsculpt.com)
-* Entre no chat do Discord do Nomad: [https://discord.com/invite/8h7BwpRz29](https://discord.com/invite/8h7BwpRz29)
-* Contate o desenvolvedor diretamente em support@nomadsculpt.com
+* Visite o fórum: [forum.nomadsculpt.com](http://forum.nomadsculpt.com)
+* Entre no chat do Nomad no Discord: [https://discord.com/invite/8h7BwpRz29](https://discord.com/invite/8h7BwpRz29)
+* Fale diretamente com o desenvolvedor em support@nomadsculpt.com

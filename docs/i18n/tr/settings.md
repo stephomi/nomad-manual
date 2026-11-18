@@ -1,187 +1,245 @@
 # ![](/icons/cog.webp) Ayarlar {#reset-to-default}
 
-Ayarlar menüsü, Nomad’in görünümünü ve davranışını kontrol etmek için birçok seçenek içerir.
+Ayarlar menüsü, Nomad'ın görünümünü ve davranışını kontrol eden birçok seçenek içerir.
 
 ![](/images/settings_overview.webp)
 
-## Görüntü ayarları {#display-settings}
-Bu bölüm, bu menünün ilerleyen kısımlarındaki çoğu ayar için hızlı başlatma kısayolları içerir.
+Menünün üstündeki düğme sırası doğrudan bir bölüme atlar: `İmleç`, `Gösterge`, `Taslak`, `Izgara`, `İki taraflı`, `Dış Hatlar`, `Vurgula`, `Gezgin`, `İstatistik`, `Tutamaklar`, `Biçim`, `Tekrarlayıcılar` ve `Çoklu Çözünürlük`.
+
+## Ekran ayarları {#display-settings}
+Bu bölüm, menünün aşağısındaki ayarların çoğu için hızlı erişim kısayolları içerir.
 
 ![](/images/settings_display_settings.webp)
 
-### Yumuşak Gölgelendirme {#smooth-shading}
-Yumuşak ve köşeli (faceted) gölgelendirme arasında geçiş yapar. Köşeli modda, çokgenler birbirinden bağımsız gölgelendirilir, böylece alttaki topolojiyi görebilirsiniz.
-Heykel aşamasında köşeli gölgelendirmeyi görmek, ardından render için yumuşak gölgelendirmeye geçmek faydalı olabilir.
+### ![](/icons/sphere_smooth.webp) Yumuşak gölgelendirme {#smooth-shading}
+Yumuşak ve fasetli gölgelendirme arasında geçiş yapar. Fasetli modda poligonlar birbirinden bağımsız gölgelendirilir; böylece alttaki topolojiyi görebilirsiniz.
+Şekillendirme aşamasında fasetli gölgelendirmeyi görmek, işleme için ise yumuşak gölgelendirmeye geçmek faydalı olabilir.
 
-Yumuşak Gölgelendirme’yi devre dışı bırakmak performansı biraz artırır.
+Yumuşak gölgelendirmeyi kapatmak performansı biraz artırır.
 
-### Dış Hat {#outline-quick}
-Geçerli seçiminiz için bir dış çizgiyi açıp kapatır.
+### ![](/icons/outline.webp) Dış Hatlar {#outline-quick}
+Geçerli seçiminizin etrafında bir dış hat gösterir veya gizler.
 
-Bu, [Seçilmemişleri Karart](#darken-unselected-objects) devre dışıysa, seçili ağ(lar)ınızı görsel olarak takip etmek için kullanışlıdır.
+[Seçilmemiş nesneleri karart](#darken-unselected-objects) devre dışıysa, seçili ağ örgünüz (veya örgüleriniz) hakkında görsel geri bildirim almak için kullanışlıdır.
 
-Performans açısından bakıldığında, dış çizgi çözümünü kullanmaktansa [Seçilmemişleri Karart](#darken-unselected-objects) kullanmak çok daha iyidir.
+Performans açısından, [Seçilmemiş nesneleri karart](#darken-unselected-objects) kullanmak dış hat çözümünden çok daha iyidir.
 
-### Izgara {#grid-quick}
-Arka plan ızgarasını açıp kapatır; nesne yerleşimini ve ölçeğini anlamak için kullanışlıdır.
+### ![](/icons/grid.webp) Izgara {#grid-quick}
+Arka planda bir ızgara gösterir veya gizler; nesnelerin yerleşimini ve ölçeğini anlamak için kullanışlıdır.
 
-### Çift taraflı {#two-sided-quick}
-Çift taraflı çokgen gösterimini açıp kapatır. Tüm yüzler belirli bir yöne bakar.
-*Kamera arkasına bakan yüzler* (backface), kamera bakış açısından “uzaklaşan” yönde olanlardır.
+### ![](/icons/culling.webp) İki taraflı {#two-sided-quick}
+Poligonların iki taraflı gösterimini açıp kapatır. Tüm yüzler belirli bir yöne bakar.
+*Arka yüz* sayılan yüzler, kameranın bakış noktasından "uzağa" bakan yüzlerdir.
 
-Örneğin başlangıçtaki basit kürenin yüzleri dışarıya doğru bakar.
-Kamerayı kürenin içine taşırsanız, bu yüzlerin arka tarafını görürsünüz.
+Örneğin açılıştaki basit kürenin yüzleri dışarıya bakar.
+Kamerayı kürenin içine taşırsanız bu yüzlerin arka tarafını görürsünüz.
 
-Çoğu zaman yüzlerin arka tarafını görmemeniz gerekir, bu yüzden onları renklendirmek olası sorunları veya hatalı topolojiyi tespit etmenize yardımcı olabilir.
+Çoğu zaman yüzlerin arka tarafını görmemeniz gerekir; bu yüzden onları renklendirmek olası sorunları veya hatalı topolojiyi fark etmenize yardımcı olabilir.
 
-`Çift taraflı` render’ı devre dışı bırakmak, render performansını biraz artırabilir.
+`İki taraflı` gösterimi kapatmak işleme performansını biraz artırabilir.
 
 
-### Tel Kafes {#wireframe-quick}
-Tel kafes bindirmesini açıp kapatır. 
+### ![](/icons/wireframe.webp) Genel taslak {#wireframe-quick}
+Bir tel kafes katmanını açıp kapatır.
 
 Tel kafesi etkinleştirmenin performansı düşüreceğini unutmayın.
 
-### Küpü yakala {#snap-cube-quick}
-Sahnenin köşesinde, uzayda yönünüzü bulmak ve ön/arka/sol/sağ/üst/alt görünümler arasında hızlıca geçiş yapmak için yardımcı bir simgeyi açıp kapatır.
+### ![](/icons/navigator.webp) Gezgin {#snap-cube-quick}
+Sahnenin köşesinde bir yardımcı simge gösterir veya gizler; uzayda yönünüzü bulmak ve ön/arka/sol/sağ/üst/alt görünümler arasında hızlıca geçiş yapmak için kullanışlıdır.
 
-### Boyamayı Göster {#show-painting}
-Boya gösterimini açıp kapatır. Varsayılan boya, %25 pürüzlülükte, beyaz, metalik olmayan bir malzemedir.
+### ![](/icons/palette.webp) Boyamayı göster {#show-painting}
+Boya gösterimini açıp kapatır. Kapalıyken nesneler, boyamaları yerine %25 pürüzlükte, beyaz, metalik olmayan bir malzemeyle gösterilir.
 
-### Gizlemeyi Kullan {#use-hide}
-Gizleme modunu açıp kapatır. Kapalıyken hâlâ mevcuttur, sadece devre dışıdır. Bu düğme, şu anda gizleme aracını kullanıyorsanız devre dışı kalır.
+### ![](/icons/tool_hide.webp) Gizlemeyi Kullan {#use-hide}
+Gizleme modunu açıp kapatır. Kapatıldığında gizleme hâlâ oradadır, yalnızca devre dışıdır. Şu anda gizleme aracını kullanıyorsanız bu düğme devre dışıdır.
 
-### Maskeyi Göster {#show-mask}
-Maske modunu açıp kapatır. Kapalıyken hâlâ mevcuttur, sadece devre dışıdır. Yeniden etkinleştirmek için bu düğmeye tekrar basın.
+### ![](/icons/shield.webp) Maskeyi göster {#show-mask}
+Maske modunu açıp kapatır. Kapatıldığında maske hâlâ oradadır, yalnızca devre dışıdır. Yeniden etkinleştirmek için bu düğmeye tekrar basın.
 
-Maskeyi gizlemeniz ve yine de etkin kalmasını istemeniz durumunda, aşağıdaki maske rengini kullanın ve beyaza ayarlayın. İşiniz bittiğinde tekrar griye çevirmeyi unutmayın!
+Maskeyi gizleyip YİNE DE etkin tutmanız gerekiyorsa, aşağıdaki maske rengini kullanıp beyaza ayarlayın. İşiniz bitince griye geri almayı unutmayın!
 
-Bu düğmenin, şu anda bir maske aracı kullanıyorsanız devre dışı olduğunu unutmayın. 
+Şu anda bir maske aracı kullanıyorsanız bu düğmenin devre dışı olduğunu unutmayın.
 
-### Maske -> Opak {#mask-opaque}
-Maske -> opak, maskelenmiş maske için şeffaf verteksleri yok sayar. Bu yalnızca verteks ve doku opaklığı için geçerlidir, “gizle” ile gizlenen yüzler yine gizli kalacaktır.
+### ![](/icons/shield.webp) Maske → Opak {#mask-opaque}
+`Maske → Opak`, maskelenmiş maske için saydam verteksleri yok sayar. Bu yalnızca verteks ve doku opaklığı için geçerlidir; “gizle” ile gizlenen yüzler yine gizli kalır. Yalnızca `Maskeyi göster` açıkken kullanılabilir.
 
-### Vurgu {#highlight-quick}
-Seçim vurgu flaşını açıp kapatır. Nesneleri seçerken, seçilen nesneyi 500 milisaniyeliğine sıcak pembe renkte yanıp söner. Flaşın rengi ve süresi aşağıdan özelleştirilebilir.
+### ![](/icons/bang.webp) Vurgula {#highlight-quick}
+Seçim vurgusu parlamasını açıp kapatır. Nesneleri seçerken, seçili nesne 500 milisaniye boyunca kısa bir süreliğine parlar. Parlamanın rengi ve süresi aşağıda özelleştirilebilir.
 
-### İstatistikler {#stats-quick}
-3B görünümde durum metni gösterimini açıp kapatır. Bu, sistem belleğiniz, toplam sahne verteks sayısı ve geçerli seçimin verteks sayısı hakkında bilgi gösterir.
+### ![](/icons/list.webp) İstatistik {#stats-quick}
+3d görüntü alanındaki durum bilgisi metnini açıp kapatır. Bu metin sistem belleğiniz, sahnedeki toplam verteks sayısı ve geçerli seçimin verteks sayısı hakkında bilgi gösterir.
 
 ----- 
 
-### Seçilmemiş nesneleri karart {#darken-unselected-objects}
-Seçili olmayan nesneler karartılır, böylece geçerli seçim öne çıkar.
+### ![](/icons/cube.webp) Seçilmemiş nesneleri karart {#darken-unselected-objects}
+Seçili olmayan nesneler karartılır; böylece geçerli seçim öne çıkar.
 
-### Maske {#mask}
-Varsayılan olarak orta gri olan, nesne renginizle çarpılan maskeleme rengi. Maskeyi görünmez yapmak için bunu beyaza ayarlayın, ancak işiniz bittiğinde tekrar griye çevirmeyi unutmayın!
+### ![](/icons/shield.webp) Maske {#mask}
+Maskeleme için kullanılan, nesnenizin rengiyle çarpılan renk; varsayılan olarak orta gridir. Maskeyi görünmez yapmak için beyaza ayarlayın, ama işiniz bitince griye geri almayı unutmayın!
 
 ## ![](/icons/cursor.webp) İmleç {#cursor}
 
-### Heykelleme sırasında daireyi göster {#show-circle-while-sculpting}
-Heykelleme sırasında fırça yarıçapını göstermeye devam eder.
+### Daire {#show-circle-while-sculpting}
+Fırça yarıçapı dairesinin ne zaman gösterileceği:
+
+* `Otomatik` - daireyi gösterir, ama şekillendirirken gizler.
+* `Hayır` - daireyi hiçbir zaman göstermez.
+* `Evet` - daireyi her zaman, şekillendirirken bile gösterir.
 
 ### Küçük noktayı göster {#show-small-dot}
-Heykelleme sırasında veya kamera pivotu değiştirildiğinde, fırça darbesinin merkezinde bir nokta gösterir.
+Şekillendirirken veya kameranın pivot noktası değiştiğinde fırça darbesinin ortasında bir nokta gösterir.
 
-### Halat sabitleyiciyi göster {#show-rope-stabilizer}
-Vuruş ayarlarında tembel halat sabitleyici etkin olduğunda, halat uzunluğunu göstermek için bir çizgi çizer.
+### Dengeleyici ipi göster {#show-rope-stabilizer}
+Darbe ayarlarında [Yavaş dengeleyici ip](stroke.md#lazy-rope-stabilizer) etkinken ipin uzunluğunu gösteren bir çizgi çizer.
 
-## ![](/icons/cursor.webp) Göstergesi {#indicator}
+### Kamera yatışı ipucunu göster {#show-roll-hint}
+Bir yuvarlama tuş ataması kullanırken yuvarlama yönü kılavuzunu gösterir.
+
+### ![](/icons/radius.webp) Büyüklük {#dot-size}
+Küçük noktanın büyüklüğü.
+
+### Renkler {#cursor-colors}
+İmleç, ne yaptığınıza göre renk değiştirir: `Şekillendir`, `Arka Plan` (arka planın üzerinde gezinirken), `Maske`, `Pürüzsüzleştir`, `Kamera` ve `Yarıçap`. Her renk burada özelleştirilebilir.
+
+## ![](/icons/cursor.webp) Gösterge {#indicator}
 ![](/images/settings_indicator.webp)
 
-Öğreticiler ve ekran kayıtları için görsel gösterge(ler) görüntüler.
+Eğitimler ve ekran kayıtları için görsel gösterge(ler) görüntüler. Açmak için `Evet` olarak ayarlayın (iOS'ta ayrıca bir `Otomatik` seçeneği de vardır).
 
-`Parmak`, `Kalem` ve `Fare` düğmeleri, bu tür bir girdi algılandığında bir simge görüntülenmesini etkinleştirir.
+`Parmak`, `Stylus` ve `Fare` düğmeleri, o türde bir giriş algılandığında bir simge gösterilmesini sağlar.
 
 ### Renk {#indicator-color}
-Gösterge rengi.
+Göstergenin rengi.
 
-### Boyut/Simge/Daire {#indicator-shape}
-Gösterge boyutunu ve gösterge içindeki şekilleri ayarlamak için denetimler.
+### Büyüklük/Simge/Daire {#indicator-shape}
+Göstergenin büyüklüğünü ve içindeki simge ile dairenin opaklığını ayarlayan kontroller.
 
-## ![](/icons/wireframe.webp) Tel kafes {#wireframe}
+## ![](/icons/wireframe.webp) Genel taslak {#wireframe}
 ![](/images/settings_wireframe.webp)
-Tel kafes bindirmesini etkinleştirir.
+Tel kafes katmanını etkinleştirir.
 
 ### Hedef {#target}
-Tel kafesin yalnızca seçili nesnelerde mi, seçili olmayan nesnelerde mi, yoksa tüm nesnelerde mi gösterileceğini ayarlar.
+Tel kafesin seçilmemiş nesnelerde mi, yalnızca seçili nesnelerde mi, yoksa tüm nesnelerde mi gösterileceğini belirler.
 
 ### Gizle {#hide}
-Gizli çokgenler için tel kafesin gösterilmeye devam edip etmeyeceğini ayarlar.
+Gizlenmiş poligonlar için tel kafesin yine de gösterilip gösterilmeyeceğini belirler.
 
-### Çoklu çözünürlük: Yalnızca seviye 0 {#multiresolution-level-0-only}
-Çoklu çözünürlük, seviye 0 için tel kafesi daha koyu, daha yüksek seviyeler için giderek daha açık gösterir. Etkinleştirildiğinde, bu seçenek yalnızca seviye 0 tel kafesini gösterir.
+### Çoklu Çözünürlük: Yalnızca seviye 0 {#multiresolution-level-0-only}
+Çoklu çözünürlük, seviye 0'ın tel kafesini daha koyu, daha yüksek seviyeleri ise giderek daha açık gösterir. Etkinleştirildiğinde bu seçenek yalnızca seviye 0'ın tel kafesini gösterir.
 
 ### Renk {#wireframe-color}
-Tel kafes için renk ve opaklığı ayarlar.
+Tel kafesin rengini ve opaklığını ayarlar.
 
 ## ![](/icons/grid.webp) Izgara {#grid}
 ![](/images/settings_grid.webp)
 Izgarayı etkinleştirir.
 
+### Tuttur {#snap}
+Bu seçenekler, eğri ve şekil tabanlı araçların (`Torna`, `Tüp`, çokgen ve yol şekilleri...) noktalarının siz çizerken bir yere tutturulmasını sağlar:
+
+* `Izgaraya tuttur` - ızgaraya tutturur.
+* `Noktalara tuttur (hizalanmış görünüm)` - kamera bir eksene hizalıyken yakındaki mevcut noktalara tutturur.
+* `Noktalara tuttur (serbest görünüm)` - kamera hizalı değilken yakındaki mevcut noktalara tutturur.
+
 ### Renk {#grid-color}
-Izgara rengi ve opaklığını ayarlar.
+Izgaranın rengini ve opaklığını ayarlar. Bu seçenekler ızgara görünürken belirir.
 
-### Yakalama {#snap}
-Eğri tabanlı araçlar için ızgaraya yakalamayı etkinleştirir.
+`Vinyet`, ızgarayı kenarlarına doğru soldurur. `Bölümün eşiğini yakala`, ızgara başka bir alt bölüm seviyesine geçmeden önce ızgara çizgilerinin ekranda ne kadar sıklaşabileceğini piksel cinsinden belirler.
 
-## ![](/icons/culling.webp)Çift taraflı {#two-sided}
-Çokgen yüzlerini her iki taraftan da görmeyi etkinleştirir.
+## ![](/icons/culling.webp)İki taraflı {#two-sided}
+Poligon yüzlerinin iki taraftan da görünmesini sağlar.
 
-### Arka yüzeyi renklendir, Arka yüzey rengi {#backface-color}
-Arka yüzlerin renklendirilmesini ve renklendirme rengini etkinleştirir.
+### Arka yüzün rengi {#backface-color}
+`Renklendirilmiş arka yüz` arka yüzlerin renklendirilmesini etkinleştirir, `Arka yüzün rengi` de bu rengi belirler.
 
-## ![](/icons/outline.webp)Dış hat {#outline}
-Etkin nesnenin etrafında bir dış çizgiyi etkinleştirir.
+## ![](/icons/outline.webp)Dış Hatlar {#outline}
+Seçili nesnelerin etrafında bir dış hat gösterir.
 
 ### Dış hat rengi, Kalınlık {#outline-color-thickness}
-Dış çizginin rengini ve kalınlığını ayarlar.
+Dış hattın rengini ve `Kalınlık` değerini ayarlar.
 
 
-## ![](/icons/bang.webp) Vurgu {#highlight}
-Etkin nesne değiştiğinde kısa bir flaşı etkinleştirir.
+## ![](/icons/bang.webp) Vurgula {#highlight}
+Seçim değiştiğinde kısa bir parlama gösterir.
 ### Renk, Süre {#color-duration}
-Flaşın rengini ve süresini milisaniye cinsinden ayarlar.
+Parlamanın rengini ve milisaniye cinsinden süresini ayarlar.
 
-## ![](/icons/snap_cube.webp) Küpü yakala {#snap-cube}
+## ![](/icons/navigator.webp) Gezgin {#snap-cube}
 ![](/images/settings_snapcube.webp)
 
-Sahnenin köşesinde, ön/arka/sol/sağ/üst/alt görünümler arasında hızlıca geçiş yapmak için yardımcı bir simge görüntüler. Ortografik görünümler arasında geçiş yapmak için küpün yüzlerine dokunun.
+Sahnenin köşesinde bir yardımcı simge gösterir; ön/arka/sol/sağ/üst/alt görünümler arasında hızlıca geçiş yapmak için kullanışlıdır. Ortografik görünümler arasında geçiş yapmak için yüzlerine dokunun.
 
-### Şekil {#shape}
-Yakalama küpü için küp, küre veya gnomon şekli arasında seçim yapın.
+### Biçim {#shape}
+Gezgin için küre, küp veya gnomon (eksen göstergesi) biçimi arasında seçim yapın.
 
-### Hizalamayı kısıtla {#restrict-alignment}
-Yakalama küpü üzerinde sürüklerken kamera döndürme kilitlemesini etkinleştirir. Etkin olduğunda, yakalama küpü üzerindeki sürükleme hareketi yalnızca sola/sağa veya yukarı/aşağı gider.
+### Hizalamayı Sınırla {#restrict-alignment}
+Yaslama görünümlerini dünya eksenlerine hizalar. Etkinleştirildiğinde yalnızca 6 ana görünüm mümkündür. `Otomatik` ayarında bu kısıtlama yalnızca kamera `Döner platform` modundayken uygulanır.
 
-### Boyut {#size}
-Yakalama küpünün boyutunu ayarlar.
+### Büyüklük {#size}
+Gezgin'in büyüklüğünü ayarlar.
 
-### 180 Çevir {#flip-180}
-Görünüm sabitlenmişse, küpün ortasına dokunulduğunda görünümü 180 derece döndürecek bir dokunma davranışını etkinleştirir. Örneğin görünüm öne sabitlenmişse, görünüm küpüne dokunmak arkaya döndürür.
+### 180° Çevir {#flip-180}
+Görünüm yaslanmışken Gezgin'in ortasına dokunmanın görünümü 180 derece döndürmesini sağlar. Örneğin görünüm öne yaslanmışsa, Gezgin'e dokunmak arka görünüme döner.
+
+### Kenarlar ve köşeler {#edges-corners}
+Kenarlara ve köşelere (amber renkli bölgeler) yaslama görünümleri ekler. Gnomon biçiminde kullanılamaz.
+
+### Döner platform sürüklemesi {#turntable-drag}
+Gezgin'i sürüklemek, kamerayı yuvarlamadan döndürür ve her yaslama görünümünde bir an durur. Gezgin'i bunun yerine `İztopu` döndürmesiyle sürüklemek için devre dışı bırakın. Her iki durumda da sürükleme yatay veya dikey kalır. `Döner platform` kamerasında Gezgin her zaman bu şekilde sürüklenir.
 
 ### Konum {#snap-position}
-Yakalama küpünün hangi köşede olacağını ayarlar.
+Gezgin'in hangi köşede olacağını belirler.
 
 
-## ![](/icons/edit_radius_n.webp) İstatistikler {#stats}
+## ![](/icons/list.webp) İstatistik {#stats}
 ![](/images/settings_stats.webp)
 
-Sistem belleğiniz, toplam sahne verteks sayısı ve geçerli seçimin verteks sayısı hakkında bilgi görüntüler.
+Sistem belleğiniz, sahnedeki toplam verteks sayısı ve geçerli seçimin verteks sayısı hakkında bilgi gösterir.
 
 ### Konum {#stats-position}
-İstatistiklerin hangi köşede olacağını ayarlar.
+İstatistiklerin hangi köşede olacağını belirler.
 
-## İlkel/Tekrarlayıcılar {#primitive-repeaters}
-## Sayısal giriş {#gizmo-input}
-Gizmo bileşenlerine dokunurken sayısal girişe izin verir.
+## ![](/icons/edit_radius.webp) Tutamak {#handle}
+Gizmo gibi, görüntü alanında sürüklediğiniz tutamakların ayarları.
 
-## Çoklu çözünürlük {#multires}
-### Maksimum vertex sayısı {#multires-lowres-count}
-Nomad’in muhtemelen çökmesine neden olacak bu poligon sayısından daha yüksek bir çoklu çözünürlük bölme işleminin yapılmasına izin vermemek için bir eşik ayarlar. Varsayılan 10 milyondur.
+### Sayısal girdi {#gizmo-input}
+Gizmo kontrollerinden birine dokunulduğunda sayısal değer girmeye izin verir.
+
+### Etkileşimde gizle {#hide-on-interaction}
+Gizmo ile etkileşim halindeyken onu soldurur, böylece yolunuza çıkmaz.
+
+### ![](/icons/opacity.webp) Opaklık {#handle-opacity}
+Tutamakların opaklığı.
+
+## ![](/icons/shape_lasso.webp) Biçim {#shape-settings}
+Şekil darbeleriyle (kement, dikdörtgen, eğri...) çizdiğiniz şekillerin ekranda nasıl görüneceği.
+
+### ![](/icons/opacity.webp) Dolgu, Dış çizgi {#shape-fill-outline}
+Şeklin içinin ve etrafındaki çizginin opaklığı.
+
+### Renkler {#shape-colors}
+Her araç türü için şeklin rengi: `Maske`, `Gizle`, `Yüz Grubu` ve `Kes`.
+
+## ![](/icons/array.webp) Tekrarlayıcılar {#primitive-repeaters}
+[Tekrarlayıcıların](scene#repeaters) (dizi, radyal, eğri, yüzey) oluşturduğu kopyalar için sınırlar. Bir tekrarlayıcı kontrolden çıktığında Nomad'ın akıcı kalmasını sağlarlar.
+
+### ![](/icons/cube.webp) En fazla kopya {#repeater-max-copies}
+Tek bir tekrarlayıcının oluşturabileceği en fazla kopya sayısı. Nomad, boyutları ne olursa olsun çok sayıda nesneyle zorlanır.
+
+### ![](/icons/cube.webp) Sahnedeki kopyalar {#repeater-scene-copies}
+Tüm sahne için kopya bütçesi. Düşük poligonlu bir kopya az geometri tüketir ama yine de tam bir nesnedir; bu yüzden küçük kopyaların ilk ulaştığı sınır budur.
+
+### ![](/icons/triangle.webp) Maks yüz {#repeater-max-faces}
+Sahnedeki tüm kopyalar için yüz bütçesi. Bu aşıldığında, en ağır nesneler kopyalarını ilk kaybeder.
+
+## ![](/icons/multires.webp) Çoklu Çözünürlük {#multires}
+### Maks. verteks sayısı {#multires-lowres-count}
+Bu verteks sayısının üzerine çıkan bir çoklu çözünürlük alt bölme işlemine izin vermemek için bir eşik belirler; böyle bir işlem büyük olasılıkla Nomad'ı çökertir: Nomad, alt bölmeden önce kullanılabilir belleği kontrol etmez. Varsayılan değer 10 milyondur.
 ### Düşük çözünürlük eşiği {#multires-lowres-threshold}
-Kamerayı hareket ettirdiğinizde, ağın daha düşük çözünürlüklü bir hali görüntülenebilir. Ağın daha yüksek çözünürlüklü halini görüntülemek istiyorsanız bu değeri artırabilirsiniz.
+Kamerayı hareket ettirdiğinizde ağ örgüsünün daha düşük çözünürlüklü bir hali gösterilebilir. Ağ örgüsünün daha yüksek bir çözünürlüğünü göstermek istiyorsanız bu değeri artırabilirsiniz.
 
 ## Ayarlar {#advanced}
-### Varsayılana sıfırla {#reset}
-Tüm ayarları varsayılan değerlerine sıfırlar.
+### ![](/icons/reset.webp) Varsayılan ayara sıfırla {#reset}
+Uygulamanın tüm tercih ayarlarını varsayılan değerlerine sıfırlar.
+
+Bazı kaynaklar ayrı kaydedilir ve sıfırlanMAZ: projeler, tuş atamaları, araç önayarları, HDR ortamları, MatCap'ler, alfalar, fırça dokuları ve referans görselleri. Aydınlatma, süreç sonrası işlemler veya kamera görünümleri gibi projeyle birlikte kaydedilen her şey de olduğu gibi korunur.

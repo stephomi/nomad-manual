@@ -1,4 +1,4 @@
-# Overzicht {#overview}
+# ![](/icons/home.webp) Overzicht {#overview}
 
 <!-- 
 [[toc]]
@@ -8,36 +8,38 @@
 ::: details
 -->
 
-::: tip Nieuw bij Nomad?
-Lees de gids [Aan de slag](gettingstarted.md).
+::: tip Nieuw in Nomad?
+Lees eerst de gids [Aan de slag](gettingstarted.md).
 :::
 
 
 ## Inhoudsopgave {#table-of-contents}
 
-| Menu                           | Pictogram                     | Beschrijving                                       |
-| :----------------------------: | :---------------------------: | :------------------------------------------------: |
-| [Bestanden](files.md)          | ![](/icons/open.webp)        | Beheer je projecten, exporteer, importeer, etc.    |
-| [Scene](scene.md)              | ![](/icons/scene.webp)       | Voeg nieuwe primitieven toe en beheer je scene‑objecten |
-| [Topologie](topology.md)       | ![](/icons/multires.webp)    | Bewerk de topologie van het model                  |
-| [Materiaal](material.md)       | ![](/icons/material.webp)    | Materiaal (objectniveau)                           |
-| [Belichting](shading.md)       | ![](/icons/sun.webp)         | Hoe je je scene belicht                            |
-| [Nabewerking](postprocess.md)  | ![](/icons/postprocess.webp) | Nabewerking (screen‑space visuele effecten)        |
-| [Achtergrond](background.md)   | ![](/icons/image.webp)       | Verander de achtergrond en voeg een referentie‑afbeelding toe |
+| Menu                           | Icoon                        | Beschrijving                                       |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
+| [Bestanden](files.md)          | ![](/icons/open.webp)        | Je projecten beheren, exporteren, importeren, enz. |
+| [Scène](scene.md)              | ![](/icons/scene.webp)       | Nieuwe primitieven toevoegen en de objecten in je scène beheren |
+| [Topologie](topology.md)       | ![](/icons/multires.webp)    | De topologie van het model bewerken                |
+| [Materiaal](material.md)       | ![](/icons/material.webp)    | Materiaal (per object)                             |
+| [Shading](shading.md)          | ![](/icons/sun.webp)         | Hoe je je scène belicht                            |
+| [Nabewerking](postprocess.md)  | ![](/icons/postprocess.webp) | Nabewerking (visuele effecten in schermruimte)     |
+| [Achtergrond](background.md)   | ![](/icons/image.webp)       | De achtergrond wijzigen en een referentiebeeld toevoegen |
 | [Camera](camera.md)            | ![](/icons/camera.webp)      | Camerabediening en interactie                      |
-| [Streek](stroke.md)            | ![](/icons/pencil.webp)      | Bewerk de huidige toolinstellingen, streek, verloop, enz. |
-| [Druk](pressure.md)            | ![](/icons/pressure.webp)    | Beheer de druk van je pen                          |
-| [Schilderen](painting.md)      | ![](/icons/paint.webp)       | Schilderinstellingen voor schildergereedschappen   |
-| [Symmetrie](symmetry.md)       | ![](/icons/symmetry.webp)    | Beheer het spiegelvlak van je huidige mesh         |
-| [Lagen](layers.md)             | ![](/icons/layer.webp)       | Beheer de lagen van je huidige object              |
-| [Instellingen](settings.md)    | ![](/icons/cog.webp)         | Pas het 3D‑viewport aan                            |
-| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Pas de interface aan                               |
-| [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Lijst van alle tools/penselen                      |
-| [Geschiedenis](history.md)     | ![](/icons/history.webp)     | Beheer de stapel voor ongedaan maken/opnieuw       |
+| [Transformeren](transform.md)  | ![](/icons/transform.webp)   | Positie, rotatie en grootte van een object intypen |
+| [Streek](stroke.md)            | ![](/icons/brush.webp)       | Instellingen van het huidige gereedschap, streek, afname... |
+| [Druk](stroke.md#pressure)     | ![](/icons/pressure.webp)    | De druk van je stylus beheren                      |
+| [Schilderen](painting.md)	       | ![](/icons/paint.webp)       | Instellingen voor de schildergereedschappen        |
+| [Symmetrie](symmetry.md)       | ![](/icons/symmetry.webp)    | Het spiegelvlak van je huidige mesh beheren        |
+| [Operatie](operation.md)       | ![](/icons/operation.webp)   | Een hele mesh gladstrijken, opblazen, herkleuren of vervagen |
+| [Lagen](layers.md)             | ![](/icons/layer.webp)       | De lagen van je huidige object beheren             |
+| [Instellingen](settings.md)    | ![](/icons/cog.webp)         | De 3d-viewport aanpassen                           |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)     | De interface aanpassen                             |
+| [Gereedschappen](tools.md)     | ![](/icons/toolbox.webp)     | Lijst van alle gereedschappen en kwasten           |
+| [Geschiedenis](history.md)     | ![](/icons/history.webp)     | De geschiedenis van ongedaan maken/opnieuw beheren |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Veelgestelde vragen                                |
-| [Tips](tips.md)                | ![](/icons/manual.webp)      | Workflow‑tips                                      |
+| [Tips](tips.md)                | ![](/icons/manual.webp)      | Tips voor je workflow                              |
 
-## Communitybronnen {#community-resources}
+## Bronnen uit de community {#community-resources}
 
 <style>
 .video-grid {

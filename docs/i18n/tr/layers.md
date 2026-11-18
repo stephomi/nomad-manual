@@ -1,29 +1,29 @@
 # ![](/icons/layer.webp) Katmanlar {#layers}
 
-Bu menü, nesnenize yaptığınız düzenlemeleri yıkıcı olmayan bir şekilde saklamanızı sağlayan katman yığını ile katmanları birleştirmenin ve yeniden amaçlandırmanın birçok yolunu içerir.
+Bu menü katman yığınını içerir: nesnenizdeki düzenlemeleri tahribatsız bir şekilde saklamanın bir yolu ve katmanları birleştirip yeniden kullanmanın birçok yolu.
 
 ![](/images/layers_overview.webp) 
 
 ## Genel bakış {#overview}
 
-Nomad katmanları birden fazla amaca hizmet eder.
+Nomad'da katmanların birden fazla amacı vardır.
 
-Boya bilgisi (Renk, Pürüzlülük, Metalik, Opaklık) katmanlarla, 2B boyama uygulamalarına benzer şekilde çalışır. Bir katman oluşturulabilir ve modele boya uygulanabilir. Katman açılıp kapatılabilir, opaklığı ayarlanabilir, katman çoğaltılabilir, katman yığını içindeki sırası değiştirilebilir, karışım modu ayarlanabilir.
+Boya bilgileri (Renk, Pürüzlük, Metaliklik, Opaklık), 2d boyama uygulamalarındakine benzer şekilde katmanlarla çalışır. Bir katman oluşturulabilir ve modele boya uygulanabilir. Katman açılıp kapatılabilir, opaklığı ayarlanabilir, çoğaltılabilir, katman yığınındaki sırası değiştirilebilir ve karışım modu ayarlanabilir.
 
-Nomad ayrıca yontma (sculpt) için de katmanlar kullanır. Bir katman kırışıklık gibi ince detayları saklayabilir veya büyük değişiklikleri saklayabilir; bu sayede diğer 3B uygulamalardaki blendshape/shape key/morph target’lar gibi çalışabilir. Örneğin farklı yüz ifadelerini farklı katmanlara yontabilir ve katman kaydırıcılarını ayarlayarak bunları yeni ifadelere dönüştürebilirsiniz.
+Nomad katmanları şekillendirme için de kullanır. Bir katman kırışıklıklar gibi ince ayrıntıları saklayabilir ya da büyük değişiklikleri saklayarak diğer 3d uygulamalarındaki blendshape/shape key/morph target gibi çalışabilir. Örneğin farklı yüz ifadelerini farklı katmanlarda şekillendirip, katman kaydırıcılarını ayarlayarak bunları yeni ifadelerde birleştirebilirsiniz.
 
-Bu durumda, bir katmanda saklanan değişiklikler tamamen toplayıcıdır; boya için olduğu gibi katman sırası önemli değildir.
+Bu durumda bir katmanda saklanan değişiklikler tamamen toplanır; katman sırası, boyadaki gibi önem taşımaz.
 
-Katmanlar [Delete Layer](tools.md#delete-layer) aracıyla kısmen silinebilir ve katmanlarda saklanan farklı bilgilere göre maskeler oluşturmak için de kullanılabilir.
+Katmanlar [KatmanSil](tools.md#delete-layer) aracıyla kısmen silinebilir; ayrıca katmanlar, içlerinde saklanan farklı bilgilere dayanarak maske oluşturmak için de kullanılabilir.
 
 ![](/videos/layer.mp4)
 
 ::: tip
-Çoğu yontma yazılımının aksine, bir ağın topolojisini değiştirmek katmanları silmez. [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multires) veya [Trim](tools.md#trim)/[Split](tools.md#split) araçlarını kullanabilirsiniz, ancak [Voxel Remesher](topology.md#voxel-remesher) kullanırken katman kalitesinin etkileneceğini unutmayın.
+Çoğu şekillendirme yazılımının aksine, bir ağ örgüsünün topolojisini değiştirmek katmanları silmez. [Voksel yeniden ağ örgülendirme](topology.md#voxel-remesher), [Çoklu Çözünürlük](topology.md#multiresolution) veya [Kes](tools.md#trim)/[Ayır](tools.md#split) araçlarını kullanabilirsiniz; ancak [Voksel yeniden ağ örgülendirme](topology.md#voxel-remesher) kullanırken katmanın kalitesinin etkileneceğini unutmayın.
 :::
 
 ::: tip
-Katmanları blendshape/morph target olarak kullanıyorsanız, [sahne menüsünde](scene.md#object-menu) ek katman işlevleri vardır. Katmanları nesnelere ayırabilir ve eşleşen nesneleri katmanlara birleştirebilirsiniz.
+Katmanları blendshape/morph target olarak kullanıyorsanız, [sahne menüsünde](scene.md#object-menu) ek katman işlevleri bulunur: katmanları nesnelere ayırabilir ve eşleşen nesneleri katmanlarda birleştirebilirsiniz.
 :::
 ----
 
@@ -31,129 +31,143 @@ Katmanları blendshape/morph target olarak kullanıyorsanız, [sahne menüsünde
 
 ![](/images/layers_menu.webp)
 
-Yeni bir katman oluşturmak için `Add layer` düğmesine basın.
+Başlık seçili nesnenin adını gösterir. Katmanlar primitiflerde kullanılamaz, bu yüzden önce primitifi tamamlayın.
 
-Her katmanın bir adı, gücünü/faktörünü kontrol eden bir kaydırıcısı ve seçenek düğmeleri vardır.
+Yeni bir katman oluşturmak için `Katman ekle` düğmesine basın. `Katmanları Birleştir`, tüm katmanları taban ağ örgüsüne birleştirir; simgesinin yanındaki sayı kaç katman olduğunu gösterir.
+
+Her katmanın bir adı, gücünü/faktörünü kontrol eden bir kaydırıcısı ve seçenek düğmeleri vardır. Bir katmana dokunarak onu etkin katman yapın: şekillendirme ve boyama o katmana gider. Yeniden taban ağ örgüsü üzerinde çalışmak için `Taban` satırına dokunun.
+
+### ![](/icons/sort_right.webp) Listeyi genişlet {#ui-expand-list}
+
+Varsayılan olarak katman listesi her katmanın yalnızca görünürlüğünü, karışım modunu ve gücünü gösterir; etkin katman ise tüm kontrolleriyle genişletilmiş olarak görünür. Başlığın solundaki ok, her katmanın tüm kontrollerini genişletir.
+
+![](/images/layers_expand.webp)
 
 ### Seçenekler {#options}
 
-| Eylem        | Simge                        | Açıklama                                            |
+| Eylem       | Simge                         | Açıklama                                         |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
-| Görünür      | ![](/icons/eye_open.webp)   | Katmanı göster/gizle                                |
-| Karışım Modu | ![](/icons/opacity.webp)    | Photoshop tarzı karışım modu. 4 simge, Renk, Pürüzlülük, Metalik, Opaklık için modları gösterir. |
-| Adı Düzenle  | ![](/icons/pencil.webp)     | Katman adını düzenle                                |
-| Sil          | ![](/icons/trash.webp)      | Katmanı sil                                         |
-| Çoğalt       | ![](/icons/clone.webp)      | Katmanı çoğalt                                      |
-| Aşağı Birleştir | ![](/icons/merge_down.webp) | Katmanı alttaki katmanla (veya temel ağla) birleştir |
-| Daha Fazla   | ![](/icons/more.webp)       | [Daha fazla...](#more) seçenekleri                 |
+| Görülebilir      | ![](/icons/eye_open.webp)   | Katmanı gösterir/gizler                                 |
+| Karışım   | ![](/icons/opacity.webp)    | Photoshop tarzı karışım modu. 4 simge, Renk, Pürüzlük, Metaliklik ve Opaklık için modları gösterir.                                 |
+| Yeniden Adlandır    | ![](/icons/pencil.webp)     | Katmanın adını düzenler                                 |
+| Sil       | ![](/icons/trash.webp)      | Katmanı siler                                    |
+| Çoğalt    | ![](/icons/clone.webp)      | Katmanı çoğaltır                                 |
+| Aşağı birleştir   | ![](/icons/merge_down.webp) | Katmanı alttaki katmanla (veya taban ağ örgüsüyle) birleştirir |
+| Daha fazla         | ![](/icons/more.webp)       | [Daha fazla...](#more) seçenek                            |
 
-Bir katmanı katman yığınının başka bir bölümüne taşımak için, adına basılı tutun ve sürükleyin.
+Bir katman genişletilmemişse, `Yeniden Adlandır`, `Sil`, `Çoğalt` ve `Aşağı birleştir` onun [Daha fazla...](#more) menüsünde bulunur.
 
-### Daha fazla... {#more}
+Bir katmanı katman yığınının başka bir yerine taşımak için adına basılı tutun, ardından sürükleyin.
 
-‘Daha fazla...’ düğmesi, geçerli katman için ek seçenekler gösterir:
+### Taban {#base}
+
+`Taban` satırındaki 3 nokta düğmesi, `Taban → Katman` düğmesiyle taban ağ örgüsünün boyasını yeni bir katmana taşır. Taban daha sonra arka plan malzemesine sıfırlanır. Herhangi bir katman oluşturmadan önce çok fazla boyama yaptıysanız bu çok kullanışlıdır.
+
+* Yanındaki maske ve gizleme düğmeleri, maskelenmiş ve gizlenmiş alanlara dokunmaz.
+* `Çıkar` - taşınacak kanallar: `Renk`, `Opaklık`, `Pürüzlük` ve `Metaliklik seviyesi`.
+* `Arka plan malzemesi` - etkinse, yalnızca bu malzemeden farklı olan değerler taşınır. Kaydırıcılarla ayarlayın ya da damlalıkla modelden alın.
+
+### ![](/icons/more.webp) Daha fazla... {#more}
+
+'Daha fazla...' düğmesi, geçerli katman için iki sekmede ek seçenekler gösterir: ayarlar (dişli simgesi) ve çıkarma (küp simgesi).
 
 ![](/images/layers_more.webp) 
 
 #### Kanal faktörleri {#channel-factors}
 
-Bu kontroller, katman için yontma/renk/pürüzlülük/metalik/opaklık miktarını ölçeklendirmenizi sağlar. Bu değerler, katman faktörü kaydırıcısıyla çarpılır; örneğin katman gücü 1 ise, ancak renk kanal faktörü 0,5 ise, görüntülenen renk 0,5 güçte olur.
+Bu kontroller, katman için şekillendirme/renk/pürüzlük/metaliklik/opaklık miktarını ölçeklendirmenizi sağlar. Bu değerler katmanın faktör kaydırıcısıyla çarpılır; örneğin katman gücü 1 ama renk kanalı faktörü 0,5 ise, görüntülenen renk 0,5 güçte olur.
 
-`Offset` katman yontma gücünü kontrol eder. Renk/pürüzlülük/metalik 0 ile 1 arasında sınırlandırılırken, offset hem pozitif hem negatif olmak üzere herhangi bir değer olabilir. 
+`Kaydırma`, katmanın şekillendirme gücünü kontrol eder. Renk/pürüzlük/metaliklik 0 ile 1 arasında sınırlıyken, kaydırma pozitif ya da negatif herhangi bir değer olabilir.
 
 ::: tip
-Offset, bir kabartma katmanını oyuk katmanına veya bir gülümsemeyi somurtmaya dönüştürmek için kullanılabilir:
+Kaydırma, bir tümsek katmanını bir çukur katmanına ya da bir gülümsemeyi kaş çatmaya dönüştürmek için kullanılabilir:
 ![](/videos/layer_happysad.mp4)
 
 
-Simetrik bir katman klonlanabilir ve ardından del layer ile sol/sağ şekillere bölünebilir:
+Simetrik bir katman klonlanabilir, ardından KatmanSil ile sol/sağ şekillere ayrılabilir:
 ![](/videos/layer_leftright.mp4)
 
-Negatif offset faktörlü katmanlar, yeni pozitif şekiller oluşturmak için boş katmanlara pişirilebilir.
+Negatif kaydırma faktörlü katmanlar, yeni pozitif şekiller elde etmek için boş katmanlara pişirilebilir.
 
-1’in üzerindeki pozitif offset faktörlü katmanlar, daha uç blendshape’lerle denemeler yapmak için kullanılabilir.
+1'in üzerinde pozitif kaydırma faktörlü katmanlar, daha uç blendshape'ler denemek için kullanılabilir.
 :::
 
 ::: warning
-Şu anda katmanlar, 3 kanalın (renk/metalik/pürüzlülük) tamamı için yalnızca tek bir opaklık kanalı paylaşmaktadır.
-Kanal başına yoğunluğu tam olmayan birden fazla katmanı birleştirirseniz, nihai sonucun farklı görünmesi mümkündür.
+Şu an için katmanlar, 3 kanal (renk/metaliklik/pürüzlük) için tek bir opaklık kanalını paylaşır.
+Tam yoğunlukta olmayan kanal başına yoğunluklara sahip birden fazla katmanı birleştirirseniz, nihai sonuç farklı görünebilir.
 
-Belki gelecekte, bu sınırlamayı kaldırmak için her kanalın kendi alfa kanalı olacaktır.
+Belki ileride, bu sınırlamayı kaldırmak için her kanalın kendi alfa kanalı olur.
 :::
 
 
-#### ![](/icons/tool_mask.webp) Maske {#mask}
-Her kaydırıcının yanındaki maske düğmesi, o kanaldan bir maske oluşturur. Boyama uygulamalarında seçim yapmak için katman kullanmaya benzer şekilde, bu, bir katmanda yaptığınız çalışmayı diğer işlemler için yeniden kullanmanıza olanak tanır.
+#### ![](/icons/shield.webp) Maske {#mask}
+Her kaydırıcının yanındaki maske düğmesi, o kanaldan bir maske oluşturur. Boyama uygulamalarında seçim yapmak için katmanları kullanmaya benzer şekilde, bir katmanda yaptığınız çalışmayı başka işlemler için yeniden kullanmanızı sağlar.
 
 #### ![](/icons/preview.webp) Önizleme {#preview}
 ![](/images/layers_preview.webp) 
 
-Etkinleştirildiğinde, bu katman için çıkarma ayarlarını önizler (bir sonraki bölüme bakın).
+Aşağıdaki seçenekler 'Daha fazla...' menüsünün çıkarma sekmesindedir.
 
-X-ray etkinleştirildiğinde, yalnızca çıkarılan şekil katı olur, şeklin geri kalanı saydam yapılır; bu, negatif çıkarma yükseklikleri kullanıyorsanız kullanışlıdır.
+Etkinleştirildiğinde, bu katmanın çıkarma ayarlarını önizler (bir sonraki bölüme bakın).
 
-#### Çıkar {#extract}
+`X-Ray`, önizleme sırasında hangi nesnelerin saydam yapılacağını seçer (`Yok`, `Seçilmemiş`, `Seçilen` veya `Tümü`); böylece çıkarılan şekil katı kalır. Negatif çıkarma yükseklikleri kullanıyorsanız kullanışlıdır.
+
+#### ![](/icons/mask_extract.webp) Çıkar {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
 
-`Extract` düğmesi, katmanın içeriğini genellikle bir sonraki bölümde ayarlanan, kullanıcı tanımlı bir kalınlıkla yeni bir nesneye kopyalar.
+`Çıkar` düğmesi, katmanın içeriğini yeni bir nesneye çoğaltır; genellikle bir sonraki bölümde kullanıcının belirlediği bir kalınlıkla.
 
-`Closing action`, kopyalamanın nasıl yapılacağını belirler:
+`Kapatma eylemi:` çoğaltmanın nasıl yapılacağını belirler:
 
-* None - Sadece kısmı çıkar, yan yüzeyler oluşturmaya veya delikleri doldurmaya çalışma.
-* Fill - Delik üçgenlerle doldurulur ve yumuşatılır. Düz yüzeyler için bu seçeneği kullanmayın.
-* Shell - Çıkarılan şekli kalınlık değeri ve yön seçenekleriyle kapat.
-* Layer - Katman farkını çıkar.
+* `Yok` - Parçayı yalnızca çıkarır; yan yüzeyler oluşturmaya veya delikleri doldurmaya çalışmaz.
+* `Doldur` - Delik üçgenlerle doldurulur ve pürüzsüzleştirilir. Bu seçeneği düz yüzeyler için kullanmayın.
+* `Kabuk` - Çıkarılan şekli, kalınlık değeri ve yön seçenekleriyle kapatır.
+* `Katman` - Katman farkını çıkarır.
 
-#### ![](/icons/height.webp) Kalınlık {#thickness}
+#### ![](/icons/height.webp) Yükseklik {#thickness}
 ![](/images/layers_thickness.webp) 
 
-Kabuk ekstrüzyonunun derinliği. Pozitif değerler yüzeyden dışarı doğru, negatif değerler yüzeyin içine doğru büyür.
+Kabuk ekstrüzyonunun derinliği. Pozitif değerler yüzeyden dışarı, negatif değerler yüzeyin içine doğru büyür. Kapatma eylemi `Katman` olduğunda gizlenir.
 
-Bu değerin yanındaki artı/eksi, ekstrüzyonun yönünü ayarlar:
-* Eksi ( - ) mevcut yüzeyden başlayıp aşağı doğru ekstrüde eder. 
-* Artı ( + ) mevcut yüzeyden başlayıp yukarı doğru ekstrüde eder.
-* ArtıEksi ( ± ) ekstrüzyonun üst ve altını eşit miktarda dışarı iter, böylece orijinal yüzeye yarı gömülü olur.
+Bu değerin yanındaki artı/eksi, ekstrüzyonun yönünü belirler:
+* Eksi ( - ) mevcut yüzeyden başlar ve aşağı doğru ekstrüde eder.
+* Artı ( + ) mevcut yüzeyden başlar ve yukarı doğru ekstrüde eder.
+* ArtıEksi ( ± ) ekstrüzyonun üstünü ve altını eşit miktarda uzaklaştırır; böylece ekstrüzyon orijinal yüzeye yarı yarıya gömülü olur.
 
-#### Pürüzsüzlük {#smoothness}
-![](/images/layers_smoothness.webp) 
-
-Çıkarılacak bölgenin kenarları tırtıklıysa, bu kaydırıcı kenarı daha pürüzsüz bir şekle bulanıklaştırmaya çalışır. 
-
-#### ![](/icons/height.webp) Kenar döngüsü (yan) {#edge-loop-side}
+#### Yanlar {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
-Bu bölüm, kapatma eylemi ‘Shell’ olduğunda görünür. 
+Bu bölüm, kapatma eylemi `Kabuk` olduğunda görünür.
 
-`Auto Edge-loop (side)` kabuk yanları boyunca kare poligonlar oluşturmak için kenar döngüsü sayısını hesaplar. 
+`Duvar bölümleri`, kabuğun yanları boyunca bölüm sayısını belirler. `Otomatik` anahtarı açıkken Nomad, kare poligonlar oluşturmak için gereken kenar döngüsü sayısını hesaplar.
 
-Devre dışı bırakılırsa, `Division` kaydırıcısı yanlardaki bölme sayısını ayarlar.
+#### Düzleştirme seviyesi {#smoothness}
+![](/images/layers_smoothness.webp) 
 
-_Bu, ‘Daha fazla...’ alt menüsünün sonudur._
+Çıkarılacak bölgenin kenarları tırtıklıysa, onları daha güzel bir şekle pürüzsüzleştirmek için bu seçeneği etkinleştirin. `Tümü` çıkarılan yüzeyin tamamını, `Yalnızca kenarlar` ise yalnızca kenarlarını pürüzsüzleştirir. `İterasyonlar` pürüzsüzleştirmenin ne kadar güçlü olacağını belirler.
 
-### Gelişmiş {#advanced}
+_'Daha fazla...' alt menüsü burada sona eriyor._
+
+### ![](/icons/cog.webp) Gelişmiş {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Üst katman detaylarını koru {#keep-top-layers-details}
+Menünün altındaki `Gelişmiş` düğmesi, nesnenin katmanları olduğunda görünür.
 
-Alt katmanlarda büyük değişiklikler yapıldığında, üst katmanlardaki küçük detayların görünür kalmasını sağlar.
+#### Üst katmanların detaylarını koru {#keep-top-layers-details}
 
-Varsayılan olarak, bir katmanda küçük kırışıklıklar yontarsanız ve ardından temel katmanda büyük değişiklikler yaparsanız, kırışıklıklar kaybolur. Bu anahtarı etkinleştirmek, bu küçük detayların her zaman alttaki büyük değişikliklerin üzerinde yüzmesini sağlar. Aşağıdaki videoda, kırışıklık detayının varsayılan olarak nasıl kaldırıldığını, ancak ‘keep top layers details’ etkinleştirildiğinde görünür kaldığını görebilirsiniz:
+Alt katmanlarda büyük değişiklikler yapıldığında üst katmanlardaki küçük ayrıntıların görünür kalmasını sağlar. Siz şekillendirirken üst katmanlardan gelen deformasyon yok sayılır, ama ayrıntıları görünür kalır. Yalnızca bu üst katmanlar görece küçük ayrıntılar içeriyorsa iyi çalışır.
+
+Varsayılan olarak, bir katmanda küçük kırışıklıklar şekillendirip ardından taban katmanda büyük değişiklikler yaparsanız kırışıklıklar kaybolur. Bu seçeneği etkinleştirmek, bu küçük ayrıntıların alttaki büyük değişikliklerin üzerinde her zaman yüzmesini sağlar. Aşağıdaki videoda, kırışıklık ayrıntısının varsayılan olarak nasıl silindiğini, ama 'Üst katmanların detaylarını koru' etkinken nasıl görünür kaldığını izleyin:
 
 ![](/videos/layers_details.mp4)
 
 
-#### Arayüz: Listeyi genişlet {#ui-expand-list}
+#### Dönüşümü Senkronize Et {#sync-transform}
 
-Varsayılan katman menüsü, katman görünürlüğünü ve katman opaklığını değiştirmenize olanak tanır. Bu seçeneği etkinleştirmek, her katman için tam kontrolleri genişletir.
+Açıkken, Gizmo veya Dönüştür araçlarını kullandığınızda seçili olmayan tüm katmanlar dönüşümün döndürme, ölçek ve yatırma değerlerine göre ayarlanır. `Otomatik`, `Hayır` veya `Evet` olabilir.
 
-![](/images/layers_expand.webp)
+Diğer katmanlar, uyguladığınız yeni dönüşüm olmadan kullanılmak üzere tasarlanmışsa bu seçeneği devre dışı bırakın.
 
-#### Dönüşümü senkronize et {#sync-transform}
-
-Etkinleştirilirse, seçili olmayan tüm katmanlar dönüşümün dönüş, ölçek, eğrilik (skew) değerlerine bağlı olarak ayarlanır. 
-
-Uyguladığınız yeni dönüşüm diğer katmanlarla kullanılmayacaksa bu seçeneği devre dışı bırakın.
-
-`Auto` olarak ayarlandığında, yalnızca görünür katmanlar ayarlanır.
+`Otomatik` olarak ayarlandığında yalnızca görünür katmanlar ayarlanır.

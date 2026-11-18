@@ -1,149 +1,158 @@
 # ![](/icons/camera.webp) Kamera {#camera}
 
-Den här menyn låter dig skapa och ändra kameror, samt styra hur du interagerar med kameror.
+I den här menyn skapar och ändrar du kameror, och styr hur du interagerar med kameran.
 
 ![](/images/camera_overview2.webp)
 
 Kameror i Nomad har flera användningsområden:
 
-* Ställa in vyer för skulptering från precisa vinklar
-* Användas som en fotokamera för att komponera dina objekt
-* som en förstapersonskamera för att navigera i din scen
+* Ställa in vyer för att skulptera från exakta vinklar
+* Används som en fotokamera för att rama in dina objekt
+* som en förstapersonskamera för att röra dig genom scenen
 * som en ortografisk kamera för isometriska spel eller rendering i industriell stil.
 
 ## Styra kameran {#control}
 
 ### Rotation {#rotation}
-Du roterar kameran genom att dra *ett* finger på bakgrunden.
-Om du drar fingret på din modell startar du istället skulpteringsåtgärden.
+Du roterar kameran genom att dra med *ett* finger på bakgrunden.
+Om du drar fingret på modellen börjar du i stället skulptera.
 
 ::: tip Kan jag rotera kameran om jag inte kommer åt bakgrunden?
-Ja, du kan lägga *två* fingrar på skärmen – som om du ville starta en panorerings-/zoomgest – och sedan släppa *ett* finger.
+Ja, du kan sätta *två* fingrar på skärmen - som om du ville panorera/zooma - och sedan släppa *ett* finger.
 :::
 
 ### Fokusera / Återställ {#focus}
-*Dubbeltryck* på modellen för att fokusera den punkt du valt.
-Om du *dubbeltrycker* på bakgrunden kommer kameran istället att fokusera på det valda meshet.
+*Dubbeltryck* på modellen för att fokusera på den punkten.
+Om du *dubbeltrycker* på bakgrunden fokuserar kameran i stället på det valda nätet eller hela scenen, se [Dubbeltryck på bakgrunden](#dtap-tap-background).
 
 
 ### Förflyttning {#translation}
-Genom att flytta *två* fingrar kan du panorera kameran.
+Genom att röra *två* fingrar kan du panorera kameran.
 
 
-### Zooma {#zooming}
-Genom att använda nypgesten kan du zooma in/ut.
+### Zoomning {#zooming}
+Med nypgesten zoomar du in och ut.
 
 
-### Rulla {#rolling}
-Du kan *rulla* vyn genom att rotera *två* fingrar.
+### Rullning {#rolling}
+Du kan *rulla* vyn genom att vrida *två* fingrar.
 ::: warning
-Den här gesten är endast tillgänglig för rotationsläget `trackball`.
+Den här gesten är bara tillgänglig i rotationslägena `Trackball`.
 :::
 
-### Stationära kontroller {#desktop}
+### Datorkontroller {#desktop}
 
-På skrivbord används alt/opt-tangenten för att styra kameran:
+På datorn används alt/opt-tangenten för att styra kameran:
 
-* tip dra i tomt utrymme = rotera kamera
-* alt+tip dra = panorera
-* alt+tip dra, släpp sedan alt = zooma (samma som i ZBrush)
+* dra med spetsen på tom yta = rotera kameran
+* alt+dra med spetsen = panorera
+* alt+dra med spetsen, släpp sedan alt = zooma (som i zbrush)
 
-Med Wacom-ritplattor som har 2 eller fler knappar på pennan, använd Wacom-inställningarna för att konfigurera spets och knappar så här:
+Med Wacom-plattor som har 2 eller fler knappar på pennan kan du ställa in spets och knappar så här i Wacoms inställningar:
 
 * spets = vänsterklick
-* nedre vippa = mittenklick
-* övre vippa = högerklick
+* nedre vippknapp = mittenklick
+* övre vippknapp = högerklick
 
-Med dessa inställningar kan du manipulera kameran enbart med pennan:
+Med de inställningarna kan du styra kameran helt med pennan:
 
-* övre vippa och hovra-rörelse = rotera kamera
-* nedre vippa och hovra-rörelse = panorera
+* övre vippknapp och svävande rörelse = rotera kameran
+* nedre vippknapp och svävande rörelse = panorera
 
 ## Kamerakontroller {#camera-controls}
 
 ![](/images/camera_list.webp)
 
-### Vy(er) {#views}
-Du kan spara kamerapositioner genom att använda `Add View`.
-Om du klickar på vynamnet kommer kameran att återställa vyn.
+### Vyer {#views}
+Du kan spara kameravyer med `Lägg till visning`.
+Om du klickar på vyns namn återställer kameran den vyn.
 
 
 ::: tip
-En sparad vy kommer att spara inställningarna för [Projection Type](#projection-type) och även [Reference image](background.md).  
-Det kan vara användbart om du vill växla mellan fram-/vänster-/bakre referensvyer med olika bakgrunder.
+En sparad vy sparar inställningarna för [Projektionstyp](#projection) och även [Referensbilden](background.md).  
+Det kan vara användbart om du vill växla mellan referensvyer framifrån/från vänster/bakifrån med olika bakgrunder.
 :::
 
-| Action      | Icon                          | Description                                                                 |
+| Åtgärd      | Ikon                          | Beskrivning                                                                 |
 | :---------: | :---------------------------: | :-------------------------------------------------------------------------: |
-| Visibility  | ![](/icons/eye_open.webp)    | Toggle the camera. Hidden cameras will be skipped from previous/next button |
-| Name        |                               | Select the camera                                                           |
-| Image       | ![](/icons/image.webp)       | A thumbnail of a reference image if it is linked to the camera              |
-| Update View | ![](/icons/update_view.webp) | Update the saved view with the current view point                           |
-| Edit Name   | ![](/icons/pencil.webp)      | Edit the camera name                                                        |
-| Delete      | ![](/icons/trash.webp)       | Delete the camera                                                           |
+| Synlighet   | ![](/icons/eye_open.webp)    | Slå på/av kameran. Dolda kameror hoppas över av knapparna föregående/nästa |
+| Namn        |                               | Välj kameran                                                                |
+| Bild        | ![](/icons/image.webp)       | En miniatyr av referensbilden, om en är länkad till kameran                 |
+| Projektion  | ![](/icons/perspective.webp) | Kamerans projektion, med dess synfält när den är i perspektiv               |
+| Uppdatera vy | ![](/icons/update_view.webp) | Uppdatera den sparade vyn med den aktuella vyn                             |
+| Redigera namn | ![](/icons/pencil.webp)    | Redigera kamerans namn                                                      |
+| Radera      | ![](/icons/trash.webp)       | Radera kameran                                                              |
 
-### ![](/icons/tool_view.webp) Lägg till vy {#add}
-Skapa en ny kamera baserad på den aktuella vyn.
+### ![](/icons/camera_add.webp) Lägg till visning {#add}
+Skapa en ny kamera utifrån den aktuella vyn.
 
 ### ![](/icons/camera.webp) Ikoner {#icons-test}
 
-Växla om kameraikoner är synliga i vyn. Om en kamera är vald är dess ikon alltid synlig.
+Bestämmer om kameraikonerna syns i vyn. Knappen visas bredvid `Lägg till visning` när du har en kamera. Om en kamera är vald syns dess ikon alltid.
 
 ### Projektionstyp {#projection}
-Du kan ändra `Field of View` (FOV / brännvidd) för din kamera.
-Det rekommenderas vanligtvis att använda låg FOV för skulpteringsändamål, eftersom det kan hjälpa med proportioner.  
-Du kan också använda läget `Orthographic`, som mer eller mindre motsvarar en FOV lika med 0
+Välj mellan `Perspektiv` och `Ortografisk`.
+
+I perspektiv kan du ändra kamerans `Vertikal Fov` (synfält). Motsvarande brännvidd för en 35mm-kamera visas ovanför reglaget, praktiskt om du är van vid fotografering.
+Ett lågt synfält rekommenderas oftast när du skulpterar, eftersom det hjälper dig att bedöma proportionerna.  
+Läget `Ortografisk` motsvarar ungefär ett synfält lika med 0.
 
 ### Första person {#fps}
-Aktivera så att pivotpunkten sätts direkt på kameran istället för på skulpturen. Att dra ett finger på bakgrunden kommer att hålla kamerapositionen låst men ändra rotationen, liknande hur förstapersonsspel fungerar. Användbart när du skulpterar miljöer snarare än enstaka objekt.
+Bara i perspektiv. Placerar pivoten direkt på kameran i stället för på skulpturen. När du drar med ett finger på bakgrunden står kamerans position still men rotationen ändras, ungefär som i förstapersonsspel. Användbart när du skulpterar miljöer snarare än enstaka objekt.
 
 ![](/images/camera_rotation_ortho_view.webp)
 
 ### Rotationstyp {#rotation-type}
-Som standard använder kameran rotationsläget `Turntable`.
-Det betyder att du bara har två frihetsgrader, det är mer intuitivt men i vissa fall vill du ha mer flexibilitet.  
-Du kan växla till `Trackball`, då kan du *rulla* vyn genom att rotera *två* fingrar i vyn. På skrivbord finns ett alternativt trackball-läge som kan kännas mer bekant för vissa användare.
+Som standard använder kameran rotationsläget `Vändskiva`.
+Det betyder att du bara har två frihetsgrader; det är mer intuitivt, men ibland vill du ha mer flexibilitet.  
+Du kan byta till `Trackball`, då kan du *rulla* vyn genom att vrida *två* fingrar i vyn. Det finns två `Trackball`-lägen: det första rullar vyn som en boll under fingret, medan det andra (med pilikonen) vrider vyn utifrån den vågräta och lodräta rörelsen i ditt drag, vilket kan kännas mer bekant för vissa användare.
 
-### Ortografiskt läge {#orthographic}
+### Ortografisk fast {#orthographic}
 
-När detta är aktiverat, om du har ett tangentbord och håller ned shift medan du roterar vyn, kommer kameran att snäppa till närmaste fram-/bak-/topp-/botten-/vänster-/höger-vy och göra kameran ortografisk. Kameran kommer också att göras ortografisk när vykuben klickas för att snäppa till fram/bak/vänster/höger/topp/botten.
+När den är aktiverad och du har ett tangentbord fäster kameran mot närmaste vy framifrån/bakifrån/ovanifrån/underifrån/från vänster/från höger om du håller ned shift medan du roterar vyn, och kameran blir ortografisk. Kameran blir också ortografisk när du klickar på navigatorn för att fästa mot fram/bak/vänster/höger/ovan/under.
 
 ### Återställ vy {#reset}
 
-Flytta kameran till frontvy och anpassa scenen så att den passar i vyn
+Flytta kameran framåt och få in hela scenen i vyn
 
-### Lås vy {#snap}
-Snäpp till närmaste fram-/bak-/vänster-/höger-/topp-/botten-vy. Om du redan är i en av dessa vyer kommer ett nytt klick att snäppa 180 grader till motsatt sida.
+### Fäst vy {#snap}
+Fäster mot närmaste vy framifrån/bakifrån/från vänster/från höger/ovanifrån/underifrån. Om du redan är i en av de vyerna fäster ett nytt klick 180 grader mot motsatt sida.
 
 ### Hastighet {#speed}
 
-Om du tycker att kameran rör sig för långsamt eller för snabbt kan du ställa in en hastighetsmultiplikator för `rotation`, `translation` och `zooming`. Användbart om din skulpt är väldigt stor eller väldigt liten.
+Om du tycker att kameran rör sig för långsamt eller för snabbt kan du ställa in en hastighetsmultiplikator för `Rotation`, `Zoomning` och `Förflyttning`. Användbart om din skulptur är väldigt stor eller väldigt liten.
 
-### Pivot-översikt {#pivot}
+### Översikt över pivoten {#pivot}
 
-När du roterar kameran kan du se en liten rosa prick, detta är din kamerapivotpunkt.  
-Det är väldigt viktigt att förstå var din pivot är så att du inte går vilse eller blir frustrerad av kameran.
+När du roterar kameran ser du en liten rosa prick, det är kamerans pivotpunkt.  
+Det är väldigt viktigt att förstå var pivoten är, så att du inte går vilse eller blir frustrerad av kameran.
 
-Som standard uppdateras pivotpunkten genom dessa åtgärder:
+Som standard uppdateras pivoten av följande:
 - dubbeltryck på modellen
-- dubbeltryck på bakgrunden (den nya pivotpunkten kommer att vara i mitten av ditt mesh)
-- att lägga *två* fingrar på skärmen (panorera/zooma/rulla) uppdaterar pivotpunkten till mitten av de *två* fingrarna
+- dubbeltryck på bakgrunden (den nya pivoten hamnar i mitten av ditt nät)
+- att sätta *två* fingrar på skärmen (panorera/zooma/rulla) lägger pivoten i mitten mellan de *två* fingrarna
 
 ### Uppdatera pivot... {#update-pivot}
 
-Du kan ytterligare anpassa hur pivotpunkten uppdateras med dessa alternativ:
+Du kan anpassa när pivoten uppdateras ytterligare med de här alternativen:
 
-* When camera starts moving 
-* Allow air pivot
-* When double tapping
-* Sculpt (stroke)
+* `När kameran börjar röra sig` - Uppdatera pivoten när du börjar interagera med kameran.
+* `Tillåt pivot utanför objekt` - Tillåt en ny pivot även när du zoomar utanför objektets yta. Kräver `När kameran börjar röra sig`.
+* `När dubbeltryck utförs` - Uppdatera rotationspivoten när du dubbeltrycker på objektets yta.
+* `Skulptera (Penseldrag)` - Uppdatera pivoten när du skulpterar.
 
 ::: tip
-När du har vant dig kan du dölja den (hint) rosa pricken om du går in i menyn [Settings](settings.md).
+När du har vant dig kan du dölja den rosa (hjälp)pricken i menyerna under [Inställningar](settings.md).
 :::
 
-### Dubbeltryck på objekt {#dtap-object}
-När `Focus` är aktiverat kommer dubbeltryck att flytta pivotpunkten till det objekt du tryckte på.
+### Centrera vy när man zoomar ut {#center-view-when-zooming-out}
+När du zoomar ut panorerar kameran inte i sidled: den rör sig bara bakåt, så vyn förblir centrerad.
 
-### Dubbeltryck på bakgrund {#dtap-tap-background}
-När detta är aktiverat ställs pivotpunkten in till antingen Selection, Scene eller växlar mellan dem.
+### Dubbeltryck på objektet {#dtap-object}
+När det är aktiverat fokuserar kameran på den punkt du dubbeltrycker på ett objekt.
+
+### Dubbeltryck på bakgrunden {#dtap-tap-background}
+När det är aktiverat fokuserar kameran, när du dubbeltrycker på bakgrunden, på:
+* `Val` - De valda objekten.
+* `Scen` - Hela scenen.
+* `Växla` - Växlar mellan de två vid varje dubbeltryck. Det finns två `Växla`-alternativ, de skiljer sig i vilket som kommer först, som deras ikoner visar.

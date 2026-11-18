@@ -1,43 +1,58 @@
 # ![](/icons/image.webp) Tło {#background}
 
-To menu kontroluje kolor tła Nomada, a także wszelkie obrazy referencyjne, które mają być używane.
+To menu ustala kolor tła w Nomadzie, a także obrazy referencyjne, z których chcesz korzystać.
 
 ![](/images/background_overview.webp)
 
-## Tło {#type}
+## Typ {#type}
 ![](/images/background_selector.webp)
 
-Istnieją trzy opcje tła widoku.
+Tło widoku może być jednego z trzech rodzajów.
 
-* `Environment` - Pokazuje mapę otoczenia wybraną w [Shading](shading). Może być dodatkowo kontrolowana za pomocą rozmycia (Blur) i ekspozycji (Exposure – jasność).
-* `Color` - Jednolity kolor, który możesz wybrać.
-* `Gradient` - Przejście koloru z góry na dół. Suwak Factor pozwala określić punkt środkowy gradientu.  
+* `Środowisko` - Pokazuje mapę otoczenia wybraną w menu [Cieniowanie](shading.md). Możesz ją dodatkowo regulować suwakami `Rozmycie` i `Ekspozycja` (jasność).
+* `Kolor` - Jednolity kolor, który wybierasz sam.
+* `Gradient` - Przejście między dwoma kolorami. Suwak `Współczynnik` przesuwa środek gradientu.
+
+### Rodzaj gradientu {#gradient-type}
+Przy opcji `Gradient` wybierasz jego kształt:
+* `Liniowy` - Prosty gradient, którego kierunek ustawia suwak `Kąt`.
+* `Promieniowy` - Okrągły gradient rozchodzący się od środka ekranu.
+* `Niebo` - Gradient zaczepiony o horyzont świata, więc podąża za kamerą, gdy patrzysz w górę i w dół.
+
+Każdy kolor ma przycisk resetu i pipetę, za pomocą której pobierzesz kolor z ekranu.
+
+## ![](/icons/lock.webp) Synchronizuj z blokadą kamery {#sync-on-camera-lock}
+Gdy kamera jest zablokowana [Nawigatorem](settings.md#snap-cube), obraz referencyjny podąża za ruchem kamery, dzięki czemu pozostaje dopasowany do rzeźby.
+
+* `Zezwól na obrót` (trackball) - Pozwala kamerze się przechylać po wyjściu z blokady kamery.
+* `Reset widoku przy odblokowaniu` - Resetuje widok po wyjściu z blokady kamery.
 
 ## Obraz referencyjny {#reference}
 
 ![](/images/background_reference.webp)
 
-Możesz dodać wybrany przez siebie obraz w tle, aby używać go jako referencji.
-Możesz zmieniać jego pozycję i skalę, na przykład jeśli chcesz przenieść go do rogu ekranu.
+Możesz dodać w tle dowolny obraz, który posłuży ci za referencję. Stuknij `Importuj...`, aby go dodać, a potem zaznacz `Obraz referencyjny`, żeby go pokazać.
+Możesz zmienić jego pozycję i skalę, na przykład gdy chcesz go przesunąć w róg ekranu.
 
-### ![](/icons/tool_transform.webp) Przekształć {#transform}
+### ![](/icons/tool_transform.webp) Przekształcenie {#transform}
 
-Ten przycisk pozwala interaktywnie umieścić obraz referencyjny. Użyj 2 palców, aby przesuwać, skalować i obracać obraz referencyjny. Końcowe położenie zostanie odzwierciedlone w suwakach poniżej:
+Ten przycisk pozwala ustawić obraz referencyjny interaktywnie. Dwoma palcami przesuwasz, skalujesz i obracasz obraz, aż znajdzie się na miejscu. `Resetuj ustawienia` przywraca domyślne położenie obrazu. Końcowe ustawienie widać na suwakach poniżej:
 
-* `Overlay` - przy 0% obraz referencyjny będzie zawsze za obiektami, przy 100% jest przed nimi.
-* `Opacity` - Jak bardzo przezroczysty jest obraz.
-* `Position` - Pozycja X i Y obrazu.
-* `Rotation` - Obrót obrazu.
-* `Scale` - Skala obrazu.
+* `Nakładka` - Przy 0% obraz referencyjny jest zawsze za obiektami, przy 100% przed nimi.
+* `Krycie` - Jak bardzo przezroczysty jest obraz.
+* `Postprocessing` - Stosuje efekty postprocessingu również do obrazu referencyjnego. Wyłącz, aby zachować oryginalne kolory.
+* `Pozycja X` / `Pozycja Y` - Położenie obrazu w poziomie i w pionie.
+* `Skala` - Skala obrazu.
+* `Obrót` - Obrót obrazu.
 
 
 ::: tip
 
-Kamery i obrazy referencyjne są ze sobą powiązane. 
+Kamery i obrazy referencyjne są ze sobą powiązane.
 
-Oznacza to, że jeśli ustawisz obraz referencyjny tak, aby pokrywał się z rzeźbą, a następnie utworzysz kamerę z [Camera menu](camera), pozycja, obrót i skala obrazu referencyjnego zostaną również zapisane z kamerą. Możesz wyłączyć obraz referencyjny, obrócić się do innego widoku. Jeśli ponownie spojrzysz przez kamerę, obraz referencyjny zostanie aktywowany z użytymi wcześniej ustawieniami.
+Jeśli więc ustawisz obraz referencyjny tak, by pasował do rzeźby, a potem utworzysz kamerę w [menu Kamera](camera.md), pozycja, obrót i skala obrazu referencyjnego zostaną zapisane razem z kamerą. Możesz wtedy wyłączyć obraz referencyjny i obrócić widok gdzie indziej. Gdy znów spojrzysz przez tę kamerę, obraz referencyjny włączy się z ustawieniami, których użyłeś.
 
-Dotyczy to nawet wybierania różnych obrazów dla różnych kamer!
+Możesz nawet wybrać różne obrazy dla różnych kamer!
 
  ![](/videos/reference_camera.mp4)
 

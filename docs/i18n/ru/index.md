@@ -1,4 +1,4 @@
-# Обзор {#overview}
+# ![](/icons/home.webp) Обзор {#overview}
 
 <!-- 
 [[toc]]
@@ -13,29 +13,31 @@
 :::
 
 
-## Оглавление {#table-of-contents}
+## Содержание {#table-of-contents}
 
-| Меню                           | Значок                        | Описание                                            |
-| :----------------------------: | :---------------------------: | :------------------------------------------------: |
-| [Files](files.md)              | ![](/icons/open.webp)        | Управление проектами, экспорт, импорт и т. д.      |
-| [Scene](scene.md)              | ![](/icons/scene.webp)       | Добавление примитивов и управление объектами сцены |
-| [Topology](topology.md)        | ![](/icons/multires.webp)    | Редактирование топологии модели                    |
-| [Material](material.md)        | ![](/icons/material.webp)    | Материал (на уровне объекта)                       |
-| [Shading](shading.md)          | ![](/icons/sun.webp)         | Настройка освещения сцены                          |
-| [Post Process](postprocess.md) | ![](/icons/postprocess.webp) | Постобработка (экранные визуальные эффекты)        |
-| [Background](background.md)    | ![](/icons/image.webp)       | Изменение фона и добавление референсного изображения |
-| [Camera](camera.md)            | ![](/icons/camera.webp)      | Управление камерой и взаимодействием               |
-| [Stroke](stroke.md)            | ![](/icons/pencil.webp)      | Настройка текущего инструмента, штриха, затухания… |
-| [Pressure](pressure.md)        | ![](/icons/pressure.webp)    | Управление чувствительностью пера                  |
-| [Painting](painting.md)	     | ![](/icons/paint.webp)       | Настройки рисования для инструментов покраски      |
-| [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Управление плоскостью зеркалирования текущей сетки |
-| [Layers](layers.md)            | ![](/icons/layer.webp)       | Управление слоями текущего объекта                 |
-| [Settings](settings.md)        | ![](/icons/cog.webp)         | Настройка 3D-вьюпорта                               |
-| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Настройка интерфейса                               |
-| [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Список всех инструментов/кистей                    |
-| [History](history.md)          | ![](/icons/history.webp)     | Управление стеком истории отмен/повторов           |
+| Меню                           | Значок                       | Описание                                           |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
+| [Файлы](files.md)              | ![](/icons/open.webp)        | Управление проектами, экспорт, импорт и т. д.      |
+| [Сцена](scene.md)              | ![](/icons/scene.webp)       | Добавление примитивов и управление объектами сцены |
+| [Топология](topology.md)       | ![](/icons/multires.webp)    | Изменение топологии модели                         |
+| [Материал](material.md)        | ![](/icons/material.webp)    | Материал (на уровне объекта)                       |
+| [Затенение](shading.md)        | ![](/icons/sun.webp)         | Освещение сцены                                    |
+| [Пост-обработка](postprocess.md) | ![](/icons/postprocess.webp) | Пост-обработка (визуальные эффекты в экранном пространстве) |
+| [Фон](background.md)           | ![](/icons/image.webp)       | Смена фона и добавление эталонного изображения     |
+| [Камера](camera.md)            | ![](/icons/camera.webp)      | Управление камерой и работа с ней                  |
+| [Трансформация](transform.md)  | ![](/icons/transform.webp)   | Ввод положения, поворота и размера объекта         |
+| [Штрих](stroke.md)             | ![](/icons/brush.webp)       | Настройки текущего инструмента, штрих, спад...     |
+| [Нажим](stroke.md#pressure)    | ![](/icons/pressure.webp)    | Управление нажимом стилуса                         |
+| [Рисовать](painting.md)	       | ![](/icons/paint.webp)       | Параметры рисования для инструментов окрашивания   |
+| [Симметрия](symmetry.md)       | ![](/icons/symmetry.webp)    | Управление плоскостью отражения текущей сетки      |
+| [Операция](operation.md)       | ![](/icons/operation.webp)   | Сглаживание, раздувание, перекраска или размытие всей сетки |
+| [Слои](layers.md)              | ![](/icons/layer.webp)       | Управление слоями текущего объекта                 |
+| [Параметры](settings.md)       | ![](/icons/cog.webp)         | Настройка 3d-вьюпорта                              |
+| [Интерфейс](interface.md)      | ![](/icons/sliders.webp)     | Настройка интерфейса                               |
+| [Инструменты](tools.md)        | ![](/icons/toolbox.webp)     | Список всех инструментов и кистей                  |
+| [История](history.md)          | ![](/icons/history.webp)     | Управление стеком отмены и повтора                 |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Часто задаваемые вопросы                           |
-| [Tips](tips.md)                | ![](/icons/manual.webp)      | Советы по рабочему процессу                        |
+| [Советы](tips.md)              | ![](/icons/manual.webp)      | Советы по рабочему процессу                        |
 
 ## Ресурсы сообщества {#community-resources}
 

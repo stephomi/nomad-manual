@@ -3,5 +3,8 @@ ErrorDocument 404 /manual/404.html
 Header set Cross-Origin-Embedder-Policy ""
 Header set Cross-Origin-Opener-Policy ""
 
+# Never cache a 404: a file requested mid-upload would stay missing for hours (Cloudflare, browsers).
+Header always set Cache-Control "no-store" "expr=%{REQUEST_STATUS} == 404"
+
 # RewriteCond %{REQUEST_FILENAME} -d
 # RewriteRule ^(.*?[^/])$ %{REQUEST_URI}/ [L,R=301]

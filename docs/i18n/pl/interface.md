@@ -1,332 +1,421 @@
-# ![](/icons/sliders.webp) Menu interfejsu {#interface-menu}
+# ![](/icons/sliders.webp) Menu Interfejs {#interface-menu}
 
-To menu kontroluje wiele opcji dostosowywania interfejsu Nomada. 
+To menu zawiera wiele opcji dostosowywania interfejsu Nomada. 
 
 ![](/images/interface_overview2.webp)
 
-Nomad może być dostosowany na bardzo głębokim poziomie, to menu jest podzielone na 4 sekcje: Interface, Gesture, Bindings, Debug.
+Nomada można dopasować do siebie bardzo dokładnie; to menu dzieli się na 5 kart: Interfejs, Skróty, Gest, Powiązania i Debuguj.
 
 ![](/images/interface_menu.webp)
 
 
 ::: tip
-Ta strona dotyczy menu interfejsu, a nie samego interfejsu! Ogólny interfejs jest opisany w [Getting Started](gettingstarted.md).
+Ta strona opisuje menu Interfejs, a nie sam interfejs! Ogólny interfejs jest opisany w [Pierwszych krokach](gettingstarted.md).
 :::
 
-## Interfejs {#interface}
+## ![](/icons/sliders.webp) Interfejs {#interface}
 
-Sekcja interfejsu pozwala dodawać skróty, tworzyć pływające paski narzędzi oraz kontrolować kolor, rozmiar i wygląd interfejsu użytkownika Nomada.
+Karta Interfejs określa kolory, rozmiar i układ interfejsu Nomada. Ma dwie podkarty: `Wygląd` i `Układ`.
 
 ![](/images/interface_overview3.webp)
 
-### Dodaj skróty (dół)... {#add-shortcuts-bottom}
-![](/images/interface_shortcuts.webp)
-
-Dolny pasek narzędzi ma domyślnie włączone następujące skróty:
-* `Undo` - cofnij poprzednią operację
-* `Redo` - przywróć poprzednio cofniętą operację
-* `Solo` - Tymczasowo ukryj wszystkie inne obiekty, pozostawiając widoczny tylko zaznaczony. Naciśnij ponownie, aby przywrócić wszystkie obiekty.
-* `X-ray` - Tymczasowo spraw, by wszystkie inne obiekty były półprzezroczyste, pozostawiając tylko zaznaczony obiekt jako pełny. Naciśnij ponownie, aby przywrócić domyślne materiały.
-* `Voxel remesh` - Przemeszuj bieżący obiekt, używając ostatnio użytej rozdzielczości wokseli. Długie przytrzymanie lub przesunięcie w górę wywoła suwak rozdzielczości i przełącznik ostrych krawędzi.
-* `Grid` - Przełącz widok siatki. Długie przytrzymanie lub przesunięcie w górę pozwoli zmienić kolor i krycie siatki.
-* `Wireframe` - Przełącz nakładkę siatki krawędzi. Długie przytrzymanie lub przesunięcie w górę pozwoli zmienić kolor i krycie siatki krawędzi.
-* `Inspector` - pozwala wyświetlać właściwości siatki, takie jak UV, wypalone tekstury i inne właściwości, nakładane na tło Nomada.
-* `Face Group` - Przełącz nakładkę grup powierzchni, więcej informacji w [Tools->FaceGroup](tools.md#facegroup) 
-
-Inne często używane skróty są dostępne z tego menu, znacznie więcej można znaleźć w przycisku bindings.
-
-#### ![](/icons/more.webp) Powiązania {#bindings-list}
-
-Prawie każdą funkcję Nomada można dodać do paska skrótów za pomocą przycisku bindings. Po kliknięciu przycisku zostanie wyświetlone menu powiązań:
-
-![](/images/interface_bindings_search.webp)
-
-Możesz wyszukiwać według kategorii za pomocą ikon u góry lub użyć pola wyszukiwania, aby znaleźć funkcje po nazwie. Kliknij funkcję, aby dodać ją do paska narzędzi. Kliknij ponownie, aby ją usunąć.
-
-#### ![](/icons/list.webp) Kolejność {#order}
-
-Wyświetli listę skrótów. Przytrzymaj długo, a następnie przeciągnij, aby zmienić kolejność skrótów.
-
-#### ![](/icons/reset.webp) Resetuj {#reset}
-
-Reset przywróci dolny pasek narzędzi do ustawień domyślnych.
-
-### Dodaj skróty (okno)... + {#add-shortcuts-window}
-![](/images/interface_add_shortcuts_window.webp)
-
-Kliknięcie + doda pływający pasek narzędzi. Nie będzie widoczny, dopóki nie klikniesz przycisku bindings i nie dodasz do niego skrótów, a następnie możesz go uczynić widocznym. 
-
-Możesz utworzyć wiele pasków narzędzi, każdy pasek ma w tym menu następujące opcje:
-
-* ![](/icons/checked.webp) `Visible` - Przełącz widoczność paska narzędzi
-* ![](/icons/more.webp)`Bindings` - Wyświetl okno powiązań, aby wybrać funkcje do dodania lub usunięcia z paska narzędzi.
-* ![](/icons/list.webp)`Order` - Wyświetl menu zmiany kolejności paska narzędzi.
-* ![](/icons/reset.webp) `Reset` - Zresetuj pasek narzędzi do stanu domyślnego.
-* ![](/icons/resize_bottom_right.webp) `Resize corner` - Przełącz uchwyt zmiany rozmiaru w prawym dolnym rogu paska narzędzi.
-* ![](/icons/sort_down.webp) `Collapsable` - Przełącz uchwyt zwijania w prawym górnym rogu.
-* ![](/icons/trash.webp) `Delete` - Usuń pasek narzędzi.
-
-### Pasek narzędzi {#toolbox}
-
-Opcje dla menu narzędzi po prawej stronie interfejsu Nomada.
-
-![](/images/interface_toolbox.webp)
-
-#### ![](/icons/resize_bottom_right.webp) Róg zmiany rozmiaru UI {#ui-resize-corner}
-
-Przełącz uchwyt zmiany rozmiaru w dolnym rogu paska narzędzi.
-
-#### Ukryte {#hidden}
-Normalnie ikona toolbox w górnym pasku przełącza się między długą pojedynczą kolumną a wielokolumnową listą narzędzi. Ta opcja przełącza między listą wielokolumnową a ukryciem.
-
-#### Kolorowe {#colored}
-Koloruje ikony według kategorii, np. wszystkie narzędzia maskujące są brązowe, narzędzia dzielące czerwone, narzędzia spłaszczające zielone itd.
-
-#### Wiersze: Auto (>1) {#rows-auto-1}
-
-#### Resetuj kolejność {#reset-order}
-Zresetuj domyślne narzędzia w toolboxie do domyślnej kolejności. Niestandardowe ikony pozostaną w toolboxie na końcu listy.
-
-
-### Presety {#presets}
+### ![](/icons/palette.webp) Kolory {#presets}
 
 ![](/images/interface_presets.webp)
 
-Zbiór kolorystycznych presetów dla interfejsu.
+Podkarta `Wygląd` zaczyna się od zestawu gotowych schematów kolorów interfejsu. Stuknij jeden, aby go zastosować, a potem dopracuj go opcjami poniżej.
 
-#### Przycisk o wysokim kontraście {#high-contrast-button}
-Alternatywny styl przycisków, który sprawia, że są bardziej widoczne, gdy są włączone. Jeśli ustawione na Auto, Nomad użyje tego trybu, gdy kontrast kolorów UI między stanem włączonym/wyłączonym jest niski.
+#### Akcent i Podstawowa {#color-widgetcolor-base}
+Główne kolory interfejsu: `Akcent` dla zaznaczonych przycisków i pasków suwaków, `Podstawowa` dla paneli.
 
-#### Widżet koloru/Kolor bazowy {#color-widgetcolor-base}
-Główne kolory używane w interfejsie.
+#### Krycie tekstu {#text-opacity}
+Łagodzi kontrast tekstu i ikon względem paneli.
 
-#### Przezroczysty panel, Panel koloru, Siła rozmycia {#transparent-panel-color-panel-blur-strength}
+#### Przełączniki, Pole wyboru, Karty {#high-contrast-button}
+Styl przełączników (`Miękkie` lub `Pełne`), pól wyboru (`Kontur`, `Akcent` lub `Wypełnienie`) i kart (`Podkreślenie`, `Miękkie` lub `Pełne`).
+
+#### Kolorowe narzędzia {#colored}
+Koloruje ikony według kategorii, np. wszystkie narzędzia maski są brązowe, narzędzia podziału czerwone, narzędzia spłaszczające zielone itd.
+
+#### Cień paneli {#material-color-preview}
+Panele rzucają cień, który odróżnia je od sceny.
+
+#### Przezroczysty panel {#transparent-panel-color-panel-blur-strength}
 ![](/images/interface_transparent.webp)
-Po włączeniu pojawią się dodatkowe opcje kontrolujące wygląd menu i paneli w Nomadzie. Można dostosować ich kolor, przezroczystość i poziom rozmycia.
+Po włączeniu pojawiają się dodatkowe opcje wyglądu menu i paneli w Nomadzie: `Odcień paneli` ustala ich kolor, `Siła rozmycia` to, jak bardzo rozmyta jest scena za nimi, a `Szkło` dodaje załamanie światła i odblaski na krawędziach, najlepiej widoczne przy słabym rozmyciu.
 
 ::: tip
-Na małych urządzeniach może być użyteczne ustawienie panelu kolorów na prawie biały, przezroczysty i z niską siłą rozmycia, aby menu nie zasłaniały sceny.
+Na małych urządzeniach warto ustawić odcień paneli na prawie biały, przezroczysty, ze słabym rozmyciem, żeby menu nie zasłaniały sceny.
 :::
 
-----
+#### ![](/icons/reset.webp) Przywróć wygląd {#reset-style}
+Przywraca domyślne wartości wszystkich opcji wyglądu.
 
-### Odbij górny pasek {#mirror-top-bar}
-Odwróć kolejność menu w górnym pasku.
+### ![](/icons/panel_detach.webp) Układ {#layout}
 
-### Odbij boczne paski {#mirror-side-bars}
-Zamień paski boczne tak, aby toolbox był po lewej, a opcje narzędzi po prawej.
+Podkarta `Układ` określa, gdzie znajdują się elementy i jak są duże.
 
-### Odbij dolny pasek {#mirror-bottom-bar}
-Przenieś dolny pasek do prawego dolnego rogu i odwróć kolejność przycisków.
+#### Przybornik {#toolbox}
 
-### Podgląd koloru materiału {#material-color-preview}
-Gdy wybierasz kolor materiału, podgląd tego materiału jest wyświetlany na aktualnie zaznaczonym obiekcie.
+Opcje menu narzędzi po prawej stronie interfejsu Nomada.
 
-----
-### Okno pomocy przy najechaniu {#help-popup-on-hover}
+![](/images/interface_toolbox.webp)
 
-Dla urządzeń obsługujących najechanie (hover), włącz, aby pomoc kontekstowa w Nomadzie, reprezentowana ikoną ![](/icons/help.webp), pojawiała się przy najechaniu lub tylko po kliknięciu.
+##### ![](/icons/resize_bottom_right.webp) Zmień rozmiar {#ui-resize-corner}
 
-----
+Włącza uchwyt zmiany rozmiaru w dolnym rogu przybornika.
 
-### Ogólna skala {#overall-scale}
-Mnożnik rozmiaru wszystkich elementów UI.
-### Szerokość panelu {#panel-width}
+##### Ukryj {#hidden}
+Zwykle ikona przybornika na górnym pasku przełącza między długą pojedynczą kolumną a listą narzędzi w wielu kolumnach. Ta opcja sprawia, że przełącza między listą w wielu kolumnach a ukryciem przybornika.
+
+##### Zresetuj kolejność {#reset-order}
+Przywraca domyślną kolejność narzędzi w przyborniku. Własne ikony pozostają w przyborniku na końcu listy.
+
+#### Górny pasek {#rows-auto-1}
+`Responsywność` określa, co robi górny pasek, gdy nie mieści się na ekranie, co ma znaczenie głównie na małych ekranach: `Wiele linii` zawija menu w kilka linii, a `Przewiń` zostawia jedną linię, którą można przewijać.
+
+#### Odbij górny pasek {#mirror-top-bar}
+Odwraca kolejność menu na górnym pasku.
+
+#### Odbij paski boczne {#mirror-side-bars}
+Zamienia paski boczne miejscami, tak że przybornik jest po lewej, a opcje narzędzi po prawej.
+
+#### Odbij dolny pasek {#mirror-bottom-bar}
+Przenosi dolny pasek do prawego dolnego rogu i odwraca kolejność przycisków.
+
+#### ![](/icons/move.webp) Przeciągaj panel {#drag-panel}
+Pływający panel zawsze przesuwasz, przeciągając jego pasek; ta opcja pozwala przeciągać go także za resztę panelu. W trybie `Auto` palec lub rysik przesuwa panel tylko wtedy, gdy ruch jest bardziej poziomy niż pionowy, więc przeciągnięcie w pionie nadal przewija zawartość. Ustaw `Tak`, aby przeciągać panel również myszą, w dowolnym kierunku.
+
+#### ![](/icons/pencil.webp) Użyj okna dialogowego Nomad {#use-nomad-dialog}
+Gdy wpisujesz nazwę lub wartość, pokazuje własne okno tekstowe Nomada zamiast systemowego.
+
+#### ![](/icons/stylus.webp) Kropka przy najechaniu {#hover-dot}
+Pokazuje w interfejsie małą kropkę, gdy wykryty zostanie rysik zawieszony nad ekranem.
+
+#### ![](/icons/help.webp) Pomoc po najechaniu {#help-popup-on-hover}
+
+Na urządzeniach obsługujących najeżdżanie określa, czy pomoc kontekstowa Nomada, oznaczona ikoną ![](/icons/help.webp), pojawia się po najechaniu, czy dopiero po stuknięciu.
+
+#### Ogólna skala {#overall-scale}
+Mnożnik rozmiaru wszystkich elementów interfejsu.
+#### Szerokość panelu {#panel-width}
 Szerokość menu i paneli.
-### Skala czcionki {#font-scale}
-Skalowanie czcionek.
-### Odstęp pionowy {#vertical-spacing}
+#### Skala czcionki {#font-scale}
+Skaluje czcionki.
+#### Odstęp pionowy {#vertical-spacing}
 Odstęp między elementami w menu i panelach.
-### Odstęp pionowy (lewy) {#vertical-spacing-left}
-Odstęp między elementami w lewym pasku narzędzi.
+#### Odstęp pionowy (Lewo) {#vertical-spacing-left}
+Odstęp między elementami na lewym pasku narzędzi.
 
-----
-
-### Margines krawędzi {#edge-offset}
-Powinieneś zmieniać te wartości tylko wtedy, gdy masz problemy z interakcją z przyciskami przy krawędziach ekranu. Jeśli te suwaki są wyłączone, Nomad użyje wartości bezpiecznego obszaru zwróconych przez samo urządzenie.
+#### Przesunięcia krawędzi {#edge-offset}
+Zmieniaj te wartości tylko wtedy, gdy masz problem ze stukaniem w przyciski przy krawędziach ekranu. Jeśli suwaki są wyłączone, Nomad używa wartości bezpiecznego obszaru podawanych przez samo urządzenie.
 
 ::: tip
-Przy przenoszeniu Nomada na nowe urządzenie (np. wymiana iPhone 12 na iPhone 15) upewnij się, że zresetujesz opcje krawędzi do wartości domyślnych!
+Przy przenoszeniu Nomada na nowe urządzenie (np. z iPhone 12 na iPhone 15) pamiętaj, by przywrócić domyślne wartości przesunięć krawędzi!
 :::
 
-### Resetuj styl {#reset-style}
-Zresetuj wszystkie elementy UI do wartości domyślnych.
+#### ![](/icons/reset.webp) Przywróć układ {#reset-layout}
+Przywraca domyślne wartości wszystkich opcji układu.
+
+## ![](/icons/window.webp) Skróty {#shortcuts}
+
+Karta Skróty określa, które szybkie przyciski pojawiają się wokół widoku, i pozwala tworzyć własne pływające paski narzędzi.
+
+### Pasek boczny {#side-bar}
+Przyciski szybkich narzędzi na dole lewego paska bocznego: `Gładkie`, `Maska`, `Ukryj`, `Grupa powierzchni` i `Gizmo`. Przeciągaj je, aby zmienić ich kolejność.
+
+### Dolny pasek {#add-shortcuts-bottom}
+![](/images/interface_shortcuts.webp)
+
+Stuknij skrót, aby dodać go do dolnego paska lub z niego usunąć. Domyślnie włączone są:
+* `Cofnij` - cofa poprzednią operację
+* `Przywróć` - przywraca ostatnio cofniętą operację
+* `Solo` - Tymczasowo ukrywa wszystkie inne obiekty, zostawiając widoczny tylko zaznaczony. Naciśnij ponownie, aby przywrócić wszystkie obiekty.
+* `Prześwietlenie` - Tymczasowo czyni wszystkie inne obiekty półprzezroczystymi, zostawiając pełny tylko zaznaczony. Naciśnij ponownie, aby przywrócić domyślne materiały.
+* `Woksel` - Przebudowuje bieżący obiekt remeshem wokselowym z ostatnio użytą rozdzielczością. Przytrzymanie lub przesunięcie w górę wyświetla suwak rozdzielczości i przełącznik ostrych krawędzi.
+* `Siatka` - Pokazuje lub ukrywa siatkę widoku. Przytrzymanie lub przesunięcie w górę pozwala zmienić kolor i krycie siatki.
+* `Szkielet` - Włącza lub wyłącza nakładkę szkieletu. Przytrzymanie lub przesunięcie w górę pozwala zmienić kolor i krycie szkieletu.
+* `Inspekcja` - pozwala oglądać właściwości siatki, takie jak UV, wypalone tekstury i inne, nałożone na tło Nomada.
+* `Grupa powierzchni` - Włącza lub wyłącza nakładkę grup powierzchni, więcej w [Narzędzia->Grupa powierzchni](tools.md#facegroup)
+
+Dostępne są też inne często używane skróty: `Kontur`, `Projekcja` (perspektywiczna lub ortograficzna), `MatCap`, `DynTopo` oraz przyciski [wielokrotnej rozdzielczości](topology.md#multiresolution) `Podziel`, `Odwróć` i poziomów.
+
+#### ![](/icons/more.webp) Powiązania {#bindings-list}
+
+Prawie każdą funkcję Nomada można dodać do dolnego paska przyciskiem powiązań, który pokazuje, ile skrótów zawiera pasek. Po jego stuknięciu pojawia się menu powiązań:
+
+![](/images/interface_bindings_search.webp)
+
+Możesz szukać według kategorii ikonami na górze albo wpisać nazwę funkcji w polu wyszukiwania. Stuknij funkcję, aby dodać ją do paska. Stuknij ponownie, aby ją usunąć.
+
+#### ![](/icons/eye_open.webp) Widoczne {#order}
+
+Pokazuje lub ukrywa cały dolny pasek.
+
+#### ![](/icons/reset.webp) Wyzeruj {#reset}
+
+Przywraca domyślne ustawienia dolnego paska.
+
+### Okna pływające {#add-shortcuts-window}
+![](/images/interface_add_shortcuts_window.webp)
+
+Przycisk + dodaje pływający pasek narzędzi. Nie będzie widoczny, dopóki przyciskiem powiązań nie dodasz do niego skrótów; potem możesz go pokazać.
+
+Możesz utworzyć wiele pasków, a każdy ma wiersz z tymi opcjami:
+
+* Przeciągnij uchwyt po lewej stronie wiersza, aby zmienić kolejność pasków.
+* `Nazwa` - Nazwa paska narzędzi.
+* `Widoczne` - Pokazuje lub ukrywa pasek.
+* `Pasek` - Pokazuje pasek tytułu nad paskiem narzędzi.
+* `Minimalny` - Zostawia pasek na ekranie, gdy interfejs jest zminimalizowany.
+* `Powiązania` - Otwiera okno powiązań, w którym dodajesz funkcje do paska lub je z niego usuwasz.
+* `Usuń` - Usuwa pasek narzędzi.
 
 
-## Gest {#gesture}
-Menu gestów kontroluje, jak rysik i dotknięcia palcem sterują Nomadem.
+## ![](/icons/gesture.webp) Gest {#gesture}
+Menu Gest określa, jak palec, rysik, mysz i gładzik sterują Nomadem.
 
 ![](/images/interface_gesture.webp)
 
 ### Opcje gestów {#gesture-options}
 ![](/images/interface_gesture_matrix.webp)
 
-Nomad może ograniczać operacje w zależności od urządzenia wejściowego. Na przykład przeciągnięcie palcem może tylko poruszać kamerą, podczas gdy przeciągnięcie rysikiem może tylko rzeźbić. Jeśli masz mysz lub gładzik, można je również przypisać do kontrolowania konkretnych operacji.
+Nomad może ograniczać operacje w zależności od urządzenia wejściowego. Na przykład przeciągnięcie palcem może tylko poruszać kamerą, a przeciągnięcie rysikiem tylko rzeźbić. Jeśli masz mysz lub gładzik, je też możesz przypisać do określonych operacji.
 
-Nomad pozwala obecnie ustawić, aby te tryby były kontrolowane przez dowolną kombinację gestów palcem, rysikiem lub myszą:
+Każdy wiersz to jedna operacja: włącz `Palec`, `Piórko` i `Mysz`, aby wybrać, które urządzenia mogą ją wykonywać.
 
-* Camera
-* Sculpt
-* Gizmo
-* Material picking (przez długie przytrzymanie)
-* Select object
+* `Aparat` - Porusza kamerą.
+* `Edycja węzła` - Przeciąganie uchwytów rysowanych w widoku, na przykład przy edycji prymitywu, krzywej, repeatera czy światła.
+* `Rzeźbienie` - Rzeźbienie pędzlami. Narzędzia, które mają poniżej własny wiersz, stosują się do niego.
+* `Wybierz obiekt` - Stuknięcie obiektu zaznacza go.
+* `Wybór materiału` - Przytrzymanie w widoku pobiera kolor lub materiał spod kursora. Działa tylko wtedy, gdy bieżący pędzel ma włączone malowanie.
+* `Po stuknięciu` - Skróty stuknięć narzędzi takich jak Maska, Ukryj i Grupa powierzchni (patrz niżej).
+* `Malowanie` - Narzędzia Farba i Smużenie.
+* `Maska` - Narzędzie Maska.
+* `Ściana` - Narzędzia Ukryj i Grupa powierzchni.
+* `Utwórz` - Narzędzia Rura, Bryła obrotowa i Wstaw.
+* `Wytnij` - Narzędzia Przytnij, Podziel i Rzutuj.
+* `Wybierz` - Narzędzia Wybierz i Zmierz.
+* `Gizmo` - Narzędzia Gizmo i Krata.
+* `Przekształcenie` - Narzędzia Przekształcenie i Rozmieść.
 
+::: tip
+Na tablecie często ustawia się tak, by rzeźbić i malować mógł tylko rysik, a palce służyły do kamery. Dzięki temu dłoń czy przypadkowy palec nigdy nie zostawią pociągnięcia na modelu.
+:::
 
-`Finger always smooths` - Wygładzanie może być ustawione tak, aby działało tylko przy przeciąganiu palcem.
+### ![](/icons/tool_smooth.webp) Palec zawsze wygładza {#finger-always-smooths}
+Gdy opcja jest włączona, palec zawsze wygładza, gdy aktywne jest narzędzie do rzeźbienia, niezależnie od pędzla. Włączenie jej usuwa `Palec` z wiersza `Rzeźbienie`, więc rysik rzeźbi, a palec wygładza.
+
+### Zezwól na ruch poza obiektem {#allow-air-stroke}
+Pozwala rozpocząć pociągnięcie, nawet jeśli kursor najpierw trafi poza siatkę. Wybierz narzędzia, których to dotyczy: `Narzędzie` (wszystkie pozostałe pędzle), `Gładkie`, `Maska` i `Ukryj`. Działa tylko dla urządzeń, które mogą rzeźbić, ale nie poruszają kamerą, więc te przyciski są wyłączone, dopóki któreś z twoich urządzeń nie zostanie tak ustawione.
+
+### ![](/icons/stroke.webp) Przyciąganie pociągnięcia {#stroke-snap}
+Zatrzymaj kursor na końcu pociągnięcia, aby zamienić je w prostą linię lub gładką krzywą. Przeciągaj dalej, aby obracać i skalować przyciągnięte pociągnięcie wokół jego punktu początkowego.
+
+`Czas przytrzymania` określa, jak długo musisz trzymać kursor nieruchomo, zanim pociągnięcie zostanie przyciągnięte albo kształt przejdzie w tryb edycji.
+
+### ![](/icons/stylus.webp) Użyj dodatkowych próbek wejściowych {#use-extra-input-samples}
+Używa dodatkowych próbek wejściowych zgłaszanych przez urządzenie. Wyłącz tę opcję, jeśli pociągnięcia są poszarpane albo nacisk działa niepoprawnie. Ta opcja nie jest widoczna na iOS.
 
 ### ![](/icons/tool_mask.webp) Maska {#mask}
 
 ![](/images/interface_gesture_mask.webp)
 
-`One tap shortcuts` - Włącz następujące skróty na jedno stuknięcie bez konieczności przytrzymywania przycisku mask. Umożliwi to następujące gesty:
-* stuknij w tło, aby odwrócić maskę
-* stuknij w zamaskowany obszar, aby rozmyć maskę
-* stuknij w niezamaskowany obszar, aby wyostrzyć maskę
+`Skróty jednym stuknięciem` - Włącza poniższe skróty jednym stuknięciem bez przytrzymywania przycisku maski. Dostępne są wtedy gesty:
+* stuknięcie tła odwraca maskę
+* stuknięcie zamaskowanego obszaru rozmywa maskę
+* stuknięcie niezamaskowanego obszaru wyostrza maskę
 
-### Przełącz Maska <-> SelMask {#toggle-mask-selmask}
+#### Naciśnięcie i przytrzymanie {#toggle-mask-selmask}
 ![](/images/interface_gesture_togglemask.webp)
-* `Stroke` - Długie przytrzymanie przełączy między Mask i SelMask i rozpocznie nowy pociągnięcie. Po zakończeniu pociągnięcia poprzednie narzędzie zostanie ponownie wybrane. 
-* `Tool` - Długie przytrzymanie i puszczenie bez poruszania, aby przełączyć między Mask i SelMask. 
+
+Przytrzymanie w narzędziu Maska przełącza między pędzlem maski a lassem (SelMask):
+* `Naciśnięcie i przytrzymanie - Rzeźbienie` - Przytrzymaj i przeciągaj dalej: pociągnięcie jest rysowane w drugim trybie, a poprzedni wraca po jego zakończeniu.
+* `Naciśnięcie i przytrzymanie - Przełącz` - Przytrzymaj i puść bez ruszania, aby przełączyć między tymi trybami.
+
+### ![](/icons/tool_smooth.webp) Gładkie {#smooth}
+`Naciśnięcie i przytrzymanie - Lasso` - Przytrzymanie w narzędziu Gładkie przełącza na narzędzie Wybierz na czas pociągnięcia zaznaczającego.
 
 ### ![](/icons/tool_hide.webp) Ukryj {#hide}
 ![](/images/interface_gesture_hide.webp)
 
-`One tap shortcuts` włączy następujące skróty dla narzędzia hide:
-* Stuknij w grupę powierzchni, aby ją ukryć
-* Stuknij w pustą przestrzeń, aby odwrócić ukryte poligony
+`Skróty jednym stuknięciem` włącza w narzędziu Ukryj te skróty:
+* Stuknięcie grupy powierzchni ukrywa ją
+* Stuknięcie pustego miejsca odwraca ukryte wielokąty
 
 ### ![](/icons/finger3.webp) Trzy palce {#three-fingers}
 ![](/images/interface_gesture_threefingers.webp)
 
-Jeśli twoje urządzenie obsługuje gesty trzema palcami, skonfiguruj skróty dla tego gestu. 
+Jeśli twoje urządzenie obsługuje gesty trzema palcami, możesz przypisać do nich skróty. 
 
-Macierz opcji pozwala zdefiniować pionowe i poziome przeciągnięcia jako osobne skróty. Zauważ, że jeśli ten sam gest zostanie wybrany dla 2 opcji, jedna zostanie wyłączona.
+Macierz opcji pozwala przypisać przeciągnięcia w pionie i w poziomie do osobnych skrótów albo wybrać `Nie`, by je wyłączyć. Jeśli ten sam gest zostanie wybrany dla 2 opcji, jedna z nich zostanie wyłączona, a jej nazwa przekreślona.
 
-* `Rotate lighting` - Obracaj środowisko, światła i Matcap.
-* `Tool Radius` - Edytuj promień narzędzia.
-* `Tool Intensity` - Edytuj intensywność narzędzia. 
+* `Obróć oświetlenie` - Obraca otoczenie, światła i MatCap.
+* `Promień narzędzia` - Zmienia promień narzędzia.
+* `Intensywność narzędzia` - Zmienia intensywność narzędzia. 
 
 ### ![](/icons/fingerprint.webp) Historia 2/3 {#history-23}
-`History shortcuts` - po włączeniu aktywne są następujące gesty:
-* Undo - stuknij dwoma palcami
-* Redo - stuknij trzema palcami
+`Skróty historii` - po włączeniu działają te gesty:
+* Cofnij - stuknięcie 2 palcami
+* Przywróć - stuknięcie 3 palcami
 
-`Long press` - po włączeniu, przytrzymanie 2/3 palców spowoduje szybkie cofanie/ponawianie.
+`Naciśnięcie i przytrzymanie` - po włączeniu przytrzymanie 2 lub 3 palców szybko cofa lub przywraca kolejne operacje.
 
-### Ułatwienia dostępu {#accessibility}
+### ![](/icons/mouse.webp) Kółko myszy {#mouse-wheel}
+`Prędkość (3d zoom)` określa, jak szybko kółko przybliża widok, a `Prędkość (interfejs 2d)`, jak szybko przewija menu i panele. Przycisk minus obok każdego suwaka odwraca kierunek.
+
+### ![](/icons/fingerprint.webp) Gładzik {#trackpad}
+Na Macu `Dwa palce` określa, co robią dwa palce na gładziku. Szczypanie zawsze przybliża, a obracanie palcami zawsze przechyla widok.
+* `Wyłączone` - Przewijanie dwoma palcami przybliża, jak kółko myszy. Palce nie są odczytywane osobno.
+* `Przesuwanie` - Dwa palce przesuwają widok, a podniesienie jednego z nich obraca. Tak samo jak na tablecie.
+* `Obrót orbitalny` - Dwa palce obracają widok, a podniesienie jednego z nich przesuwa.
+
+### Dostępność {#accessibility}
 
 ![](/images/interface_gesture_accessibility.webp)
 
-`Assistive window` wyświetli pływający pasek narzędzi do kontrolowania przeciągania, szczypania, obracania i operacji kamery.
+`Okno pomocnicze` wyświetla pływający pasek narzędzi do przeciągania, szczypania, przechylania i sterowania kamerą.
 
 ### Kamera {#camera}
-Skrót do przejścia do menu `Camera` (opcje kamery były kiedyś tutaj, ale zostały przeniesione do menu kamery).
+Skrót do menu `Kamera` (opcje kamery były kiedyś tutaj, ale zostały przeniesione do menu Kamera).
 
-### Podwójne stuknięcie rysikiem -> Powiązania {#pencil-tap}
+### Dwukrotne stuknięcie ołówkiem → Powiązania {#pencil-tap}
 
-Skrót do przejścia do menu `Bindings` (opcje pojedynczego i podwójnego stuknięcia Pencil były kiedyś tutaj, ale zostały przeniesione do menu bindings).
+Skrót do menu `Powiązania`, w którym ustawiasz, co robi dwukrotne stuknięcie ołówkiem. Poza iOS opcja nazywa się `Przycisk ołówka → Powiązania` i dotyczy przycisku rysika.
+
+### Odrzucanie dłoni {#palm-rejection}
+Na telefonach i tabletach ignoruje dotyk, którego powierzchnia styku przekracza `Maks. próg rozmiaru`, na przykład dłoń opartą o ekran. Może nie działać na każdym urządzeniu, więc wyłącz tę opcję, jeśli masz problem z obsługą widoku.
 
 
-## Powiązania {#bindings}
-Skróty klawiaturowe i przycisków można zdefiniować w menu bindings:
+## ![](/icons/keyboard.webp) Powiązania {#bindings}
+Skróty klawiszowe i przyciskowe ustawiasz w menu powiązań:
 
 ![](/images/interface_bindings.webp)
-Prawie wszystkie funkcje w Nomadzie można przypisać do skrótów klawiaturowych, jeśli twoje urządzenie ma klawiaturę, lub do dodatkowych przycisków na rysiku, a nawet kontrolerów gamepada.
+Prawie wszystkie funkcje Nomada można przypisać do skrótów klawiszowych, jeśli urządzenie ma klawiaturę, do dodatkowych przycisków rysika, a nawet do kontrolerów do gier.
 
-Aby utworzyć powiązanie, kliknij prostokąt obok funkcji i naciśnij klawisz/przycisk. 
+Aby utworzyć powiązanie, stuknij prostokąt obok funkcji i naciśnij klawisz lub przycisk. 
 
-Znajdź funkcje za pomocą ikon kategorii u góry lub za pomocą paska wyszukiwania, aby znaleźć po nazwie. 
+Funkcje znajdziesz ikonami kategorii na górze albo wpisując nazwę w pasku wyszukiwania. 
 
-Poszczególne powiązania można wyłączyć za pomocą pola wyboru obok nazwy powiązania.
+Poszczególne powiązania można wyłączyć polem wyboru obok ich nazwy. Przytrzymaj pole wyboru i przeciągnij, aby zmienić kolejność na liście.
+
+Gdy dwa włączone powiązania używają tego samego skrótu, obok nich pojawia się ikona ![](/icons/help.webp), która wymienia kolidujące funkcje.
 
 ### ![](/icons/more.webp) Menu kontekstowe {#context-menu}
-Ikona ![](/icons/more.webp) za każdym powiązaniem wyświetla menu kontekstowe:
+Ikona ![](/icons/more.webp) za każdym powiązaniem otwiera menu kontekstowe:
 
 ![](/images/interface_bindings_context.webp)
 
-* `Clone` - Sklonuj powiązanie
-* `Reset` - Zresetuj powiązanie
-* `Delete` - Usuń powiązanie
-* `Toggle shortcut on key tap` - Skonfiguruj, czy stuknięcie vs długie przytrzymanie są traktowane inaczej. Po włączeniu stuknięcie aktywuje narzędzie. Długie przytrzymanie aktywuje narzędzie tylko podczas trzymania klawisza, po puszczeniu powróci ono do poprzedniego narzędzia. Czasem nazywane „sticky keys” w innych aplikacjach 3D.
+* `Klonuj` - Klonuje powiązanie, na przykład by nadać funkcji drugi skrót.
+* `Wyzeruj` - Resetuje powiązanie
+* `Usuń` - Usuwa powiązanie. Możliwe tylko wtedy, gdy funkcja ma więcej niż jedno powiązanie.
 
-### Zaawansowane {#advanced}
-Na dole menu bindings znajduje się menu zębatki dla zaawansowanych opcji:
+Pod nimi niektóre powiązania mają dodatkowe opcje:
+
+* `Tryb klawiszy` - Dla skrótów narzędzi i szybkich skrótów (Maska, Gładkie, Gizmo, Ukryj, Grupa powierzchni, Dodaj/odejmij) określa, jak naciśnięcie klawisza przełącza narzędzia. `Auto` używa domyślnego ustawienia z opcji [Zaawansowane](#advanced).
+  * `Przytrzymaj` - Trzymaj klawisz, aby używać narzędzia, puść go, aby wrócić do poprzedniego narzędzia.
+  * `Przełącz` - Jedno naciśnięcie przełącza narzędzie.
+  * `Szybkie naciśnięcie` - Przytrzymaj, aby użyć narzędzia chwilowo, albo naciśnij krótko, aby się na nie przełączyć.
+* `Przytrzymaj Cofnij` - Dla szybkich skrótów określa, czy puszczenie przytrzymanego klawisza zawsze wraca do poprzedniego narzędzia, nawet gdy to narzędzie było już aktywne.
+* `Przełącz poprzednie narzędzie` - Dla skrótów narzędzi: naciśnięcie skrótu bieżącego narzędzia wraca do ostatniego narzędzia. Wymaga `Tryb klawiszy` ustawionego na `Przełącz` lub `Szybkie naciśnięcie`.
+* `Pozycja` - Dla skrótów okien pływających: otwiera okno tam, gdzie było (`Zachowaj poprzedni`), lub pod kursorem (`Przy kursorze`).
+* `Przesuwanie (po zwolnieniu)` / `Powiększanie (po zwolnieniu)` - Dla powiązań przybliżania i przesuwania kamery: po puszczeniu klawisza przełącza na drugie z nich.
+* Kierunek przeciągania - Dla `Obróć oświetlenie`, `Promień narzędzia` i `Intensywność narzędzia` wybiera przeciąganie w poziomie lub w pionie.
+* `Synchronizacja` - Dla funkcji, które dodają, klonują lub tworzą instancje obiektów, określa, czy wynik ma być synchronizowany. Domyślnie używa ustawienia synchronizacji z menu Scena.
+* `Na tle` - Dla szybkich skrótów Gładkie i Maska: przeciąganie po tle z wciśniętym klawiszem rysuje lasso, zaznaczające dla Gładkie i maskujące dla Maska.
+* `Wymuś kamerę` - Dla powiązań kamery: porusza kamerą, nawet jeśli ten sam skrót jest używany przez inne powiązanie, zwykle skrót narzędzia lub Dodaj/odejmij.
+* `Obrót liniowy` - Dla powiązania przechyłu: przechyla widok przeciąganiem w poziomie, w pionie lub po przekątnej, zamiast ruchem wokół punktu obrotu.
+
+::: tip
+Z `Szybkie naciśnięcie` jeden klawisz robi obie rzeczy: przytrzymaj go, by szybko wygładzić lub zamaskować i wrócić do pędzla po puszczeniu, albo stuknij, by zostać przy tym narzędziu.
+:::
+
+### ![](/icons/cog.webp) Zaawansowane {#advanced}
+Na dole menu powiązań jest menu z kołem zębatym z opcjami zaawansowanymi:
 
 ![](/images/interface_bindings_advanced.webp)
 
-* `Toggle shortcut on key tap` - Stuknięcie standardowych skrótów dla mask, smooth, gizmo, hide, sub przełączy w ten tryb, ale przytrzymanie klawisza przełączy w ten tryb tylko na czas trzymania, a po puszczeniu tryb powróci do poprzedniego. Czasem nazywane „sticky keys” w innych aplikacjach 3D.
-* `Toggle tool shortcuts` - Przy użyciu jednego ze skrótów narzędzi, jeśli ten sam skrót zostanie naciśnięty dwa razy, przełączy z powrotem na poprzednie narzędzie. W ten sposób możesz przełączać się między dwoma narzędziami tym samym skrótem.
-* `Invert Y (Zooming)` - Odwróci kierunek zoomu
-* `Reset bindings` - zresetuj wszystkie powiązania do wartości domyślnych.
+* `Szybkie skróty` - Domyślne `Tryb klawiszy` i `Przytrzymaj Cofnij` dla skrótów Maska, Gładkie, Gizmo, Ukryj, Grupa powierzchni i Dodaj/odejmij.
+* `Skróty narzędzi` - Domyślne `Tryb klawiszy` i `Przełącz poprzednie narzędzie` dla skrótów narzędzi. Z `Przełącz poprzednie narzędzie` możesz przełączać się między dwoma narzędziami tym samym klawiszem.
+* `Okno skrótów` - `Tryb klawiszy` skrótów, które pokazują okna pływające.
+* `Odwróć zoom Y` - Odwraca kierunek przeciągania w pionie przy przybliżaniu powiązaniem.
+* `Obrót liniowy` - Przechyla widok przeciąganiem w poziomie, w pionie lub po przekątnej, zamiast ruchem wokół punktu obrotu.
+* `SpaceMouse` - Włącza obsługę 3Dconnexion SpaceMouse. W niektórych systemach pojawiają się dodatkowe opcje: czym porusza (`Obiekt`, `Kamera`, `Pierwsza osoba`, `Dron`), `Automatycznie aktualizuj punkt obrotu`, czyli przenoszenie punktu obrotu na powierzchnię pod kursorem, gdy zaczyna się ruch, oraz prędkości `Przesuwanie`, `Powiększanie` i `Obrót`.
+* `Strefy martwe (dryf)` - Dla kontrolerów `Gamepad`, `Joystick` i `Przycisk`. Zwiększ te wartości, jeśli kamera porusza się, gdy nie dotykasz kontrolera.
+* `Promień narzędzia` - Jak przeciąganie powiązaniem promienia zmienia rozmiar pędzla (`Okrąg`, `Wyśrodkowany` lub `dx`), a następnie ile powiązania promienia dodają (w pikselach) lub mnożą przy każdym naciśnięciu.
+* `Intensywność narzędzia` - Ile powiązania intensywności dodają lub mnożą przy każdym naciśnięciu.
+* `Kamera - Szybkość` - Prędkości `Przesuwanie` i `Obrót` powiązań, które przesuwają i obracają widok.
+* `Resetuj powiązania` - przywraca domyślne wszystkie powiązania.
+* `Zresetuj kolejność` - przywraca domyślną kolejność listy powiązań.
 
 
-## iOS ⌘ Wyświetlanie skrótów klawiatury {#ios-keyboard-shortcuts-display}
+## Wyświetlanie skrótów klawiszowych ⌘ na iOS {#ios-keyboard-shortcuts-display}
 
-Na urządzeniach iOS z klawiaturą przytrzymaj klawisz ⌘ (cmd), aby wyświetlić listę skrótów.
+Na urządzeniach z iOS z klawiaturą przytrzymaj klawisz ⌘ (cmd), aby wyświetlić listę skrótów.
 
 Obsługa klawiatury na Androidzie jest nieco eksperymentalna.
 
 ![](/images/shortcuts.webp)
 
 
-## Debugowanie {#debug}
-W tym menu znajdują się niektóre eksperymentalne i debugowe opcje. Wiele z nich powinno pozostać w ustawieniach domyślnych i być zmieniane dopiero po kontakcie z pomocą techniczną Nomada.
+## ![](/icons/bug.webp) Debuguj {#debug}
+W tym menu są opcje eksperymentalne i debugowania. Większość z nich należy zostawić z wartościami domyślnymi i zmieniać tylko po kontakcie z pomocą techniczną Nomada. Ikony na górze przenoszą do poszczególnych sekcji.
 
 ![](/images/interface_debug.webp)
-### UV {#uv}
-* `Normalize Uvs` - Nomad znormalizuje UV w obrębie kafelka [0-1].
+### ![](/icons/uv.webp) UV {#uv}
+* `Normalizuj UV` - Nomad normalizuje UV zaznaczonej siatki do kafelka [0-1].
 
-### Quad Remesh {#quad-remesh}
-* `Instant Mesh` - Włącz algorytm instant remesh
-* `Quadriflow` - Alternatywna metoda quad remesh.
+### ![](/icons/sun.webp) Cieniowanie {#render}
+* `Zapis głębokości refrakcji (tył)` - Tylne ściany siatek z refrakcją są zapisywane do bufora głębokości.
+* `Gładkie normalne ważone kątem` - Zmiana w działaniu płynnego cieniowania, która w niektórych przypadkach pozwala uniknąć zagnieceń.
 
-### Render {#render}
-* `Heightmap` - Zmień widok na renderowanie głębokości sceny. Może to być użyte do tworzenia map alfa do użycia w pędzlach.
-* `Refraction write depth (back)` - Tylna strona siatek refrakcyjnych będzie zapisywana do bufora głębokości.
-* `Flip Y (normal map)` - Odwróć kanał Y podczas wypalania map normalnych, wymagane przez niektóre silniki gier i renderery.
-* `Angle weighted smooth normals` - Modyfikacja sposobu działania gładkiego cieniowania, która może zapobiegać załamaniom w niektórych przypadkach.
+### ![](/icons/speed.webp) Docelowe FPS {#target-fps}
+Gdy opcja jest wyłączona, Nomad synchronizuje liczbę klatek na sekundę z częstotliwością odświeżania ekranu.
 
-### Docelowy FPS {#target-fps}
-Po wyłączeniu Nomad zsynchronizuje liczbę klatek na sekundę z częstotliwością odświeżania wyświetlacza.
+Gdy jest włączona, możesz ustawić, ile klatek na sekundę renderuje Nomad.
 
-Po włączeniu możesz ustawić liczbę klatek na sekundę, z jaką Nomad będzie renderował.
+### ![](/icons/window.webp) Interfejs {#debug-interface}
+* `Przybornik: pokaż wszystko` - Nomad ukrywa narzędzia, które nie mają zastosowania przy bieżącym zaznaczeniu, np. wszystkie pędzle rzeźbiarskie są ukryte na niezatwierdzonych prymitywach. Ta opcja przyciemnia wyłączone narzędzia zamiast je ukrywać.
 
-### Interfejs {#debug-interface}
-* `Top: layout` 
-  * Collapse: Na małych urządzeniach górny pasek zostanie zredukowany do większej liczby podmenu. 
-  * Scroll: Jeśli jesteś przyzwyczajony do Nomada na dużych ekranach i wolisz normalny układ, włączenie tego użyje standardowego szerokiego górnego paska, który można przewijać.
-  * Multiline: Wyświetl całe górne menu w kilku wierszach.
-* `Bottom: draggable popup` - Dolny pasek narzędzi ma kilka przycisków, które wyświetlają okno dialogowe. Jeśli ta opcja jest włączona, te okna dialogowe można przenosić w inne miejsce na ekranie.  
-* `Toolbox: show all` - Nomad ukrywa narzędzia, które nie są istotne dla bieżącego zaznaczenia, np. wszystkie pędzle rzeźbiące są ukryte na prymitywach, które nie są zatwierdzone. Ta opcja przyciemni wyłączone narzędzia zamiast je ukrywać.
-* `Toolbox: colored` - Koloruje ikony toolboxa w zależności od ich typu.
-* `Panel: Drop shadows` - Rysuj cienie pod menu i panelami. Na niektórych starszych urządzeniach może to wpływać na wydajność.
-* `Panel: Blending` - Opcja debugowa
-* `Pointer: hovering dot` - Dla urządzeń obsługujących najechanie rysikiem wyświetlaj kropkę, gdy rysik unosi się nad menu i panelami.
+Pozostałe opcje interfejsu, które kiedyś były tutaj, znajdują się teraz w karcie [Interfejs](#interface).
 
-### Gif – obrotnica {#gif-turntable}
-Nomad może eksportować animowany gif typu turntable. Zwróć uwagę, że z powodu ograniczeń formatu gif jakość jest niska. Nagrywanie ekranu jest zwykle lepszą metodą.
+### ![](/icons/turntable.webp) Obrotnica {#gif-turntable}
+Nomad potrafi wyeksportować animowany GIF z obracającym się modelem. Z powodu ograniczeń formatu GIF jakość jest niska. Nagrywanie ekranu zwykle sprawdza się lepiej.
 
-* `Duration` - jak długo w sekundach będzie trwał turntable
-* `Rotation center` - gdzie znajduje się pivot kamery, a więc wokół której części sceny będzie się obracać kamera
-* `Transparent background` - Użyj opcji przezroczystości dla gifów. Zauważ, że gify obsługują tylko 1-bitową przezroczystość, więc krawędzie mogą być mocno postrzępione.
-* `Max frame sampling` - Wiele wysokiej jakości efektów renderowania Nomada pochodzi z łączenia kilku klatek. Ten suwak ustawia, ile klatek łączyć.
-* `Export (GIF)` - rozpocznij proces eksportu gifa.
+* `Czas trwania` - ile sekund trwa obrót
+* `Maks. próbkowanie klatek` - Wiele efektów wysokiej jakości w renderowaniu Nomada powstaje przez łączenie kilku klatek. Ten suwak ustala, ile klatek połączyć, a jego pole wyboru włącza lub wyłącza tę funkcję.
+* `Centrum obrotu` - wokół czego obraca się kamera: `Zachowaj aktualne` zachowuje bieżący punkt obrotu, `(0, 0, 0)` używa środka świata, a `Scena` środka sceny.
+* `Przezroczyste tło` - Używa przezroczystości w GIF-ach. GIF obsługuje tylko 1-bitową przezroczystość, więc krawędzie mogą być mocno poszarpane.
+* `Eksportuj (GIF)` - rozpoczyna eksport GIF-a.
 
-### Postprocess {#post-process}
-* `Filtering` - Opcja debugowa
-* `Format` - Opcja debugowa
-* `Buffer reuse` - Opcja debugowa
+### ![](/icons/postprocess.webp) Postprocessing {#post-process}
+* `Filtrowanie` - Opcja debugowania
+* `Format` - Opcja debugowania
+* `Ponowne użycie buforów` - Opcja debugowania
 
-### Wydajność {#performance}
-* `Multicore general` - Opcja debugowa
-* `Multicore sculpting` - Opcja debugowa
-* `Partial Drawing` - Funkcja eksperymentalna! Używaj, jeśli rzeźbisz stosunkowo małą część siatki o wysokiej liczbie polygonów. Powinna sprawić, że rzeźbienie będzie płynniejsze, ale nie powinieneś włączać siatki krawędzi! Może też powodować artefakty wizualne podczas pociągnięć pędzlem.
+### ![](/icons/ram.webp) Wydajność {#performance}
+* `Wielowątkowość: ogólna` - Opcja debugowania
+* `Wielowątkowość: rzeźbienie` - Opcja debugowania
+* `Rysuj powtórzenia przez instancje` - Rysuje wszystkie kopie repeatera jednym wywołaniem rysowania. Opcja debugowania.
 
-### Funkcja {#feature}
-* `Flip quad split (on tap)` -  Opcja debugowa
-* `Join: merge radius` - Wierzchołki zostaną automatycznie zespawane, jeśli są wystarczająco blisko siebie podczas łączenia siatek. Możesz dostosować promień tym suwakiem.
+### ![](/icons/star.webp) Funkcja {#feature}
+* `nom: kompresja multires` - Zmniejsza rozmiar projektów i eksportów Nomada, które używają wielokrotnej rozdzielczości. Takich plików nie otworzą starsze wersje Nomada. Ta opcja może w przyszłości zniknąć i stać się domyślnie włączona.
+* `Odwróć przekątną czworokąta (dotknięciem)` -  Opcja debugowania
 
-### Debugowanie {#dev}
-* `Logs` - Wyświetl okno logów
-* `App review popup` - Opcja debugowa
-* `FPS` - dodaj licznik klatek na sekundę do statystyk widoku.
+### ![](/icons/bug.webp) Debuguj {#dev}
+* `Dzienniki` - Otwiera okno dziennika
+* `Rejestruj zdarzenia` - Zapisuje zdarzenia wskaźnika (palec, rysik, mysz) w oknie dziennika, by pomóc zbadać problemy z obsługą wejścia.
+* `FPS` - dodaje licznik klatek na sekundę do statystyk widoku.
+* `Okno oceny aplikacji` - Opcja debugowania, na iOS i Androidzie.
+
+### ![](/icons/image.webp) Niestandardowe ikony {#custom-icons}
+Zastępuje ikony Nomada twoimi własnymi plikami png.
+* `Importuj ikony` - Importuje pliki png do `tmp_session/icons`. Każdy zastępuje ikonę bazową o tej samej nazwie. Znikają po ponownym uruchomieniu Nomada.
+* `Eksportuj ikony narzędzi` - Kopiuje bazowe ikony `tool_<tool>.png` do `tmp_session/icons`, bez nadpisywania. Możesz je tam edytować i zastosować przyciskiem `Wczytaj ikony ponownie`.
+* `Wczytaj ikony ponownie` - Stosuje ikony z `tmp_session/icons`.
+
+### Przebudowa na czworokąty {#quad-remesh}
+Opcji przebudowy na czworokąty nie ma już w tym menu: zobacz [Przebudowa na czworokąty](topology.md#quad-remesh-instant) w menu Topologia i narzędzie [Quad Remesher](tools.md#quad-remesher).
+
+### Utwórz miniatury dla sklepu {#make-store-thumbnails}
+Renderuje zrzuty ekranu w rozmiarach pasujących do App Store na iOS.

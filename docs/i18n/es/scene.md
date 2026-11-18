@@ -1,372 +1,462 @@
 # ![](/icons/scene.webp) Escena {#scene}
 
-Este menú te permite gestionar objetos, luces, cámaras y repetidores en Nomad. Muestra la jerarquía de la escena como una vista en árbol, lo que te permite modificar muchos aspectos de tus objetos. También te permite crear nuevos objetos, así como combinar y separar objetos de varias maneras.
+Este menú te permite gestionar los objetos, luces, cámaras y repetidores de Nomad. Muestra la jerarquía de la escena en una vista de árbol, desde la que puedes modificar muchos aspectos de tus objetos. También te permite crear objetos nuevos, así como combinarlos y separarlos de varias formas.
 
 
 ![](/images/scene_menu_summary.webp)
 
 
-## Barra de atajos {#shortcut-bar}
-| Acción                | Icono                             | Descripción                                                                                                         |
-| :-------------------: | :-------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
-| [Añadir...](#add-menu) | ![](/icons/plus.webp)           | Muestra el [Menú Añadir](#add-menu) para añadir un objeto a la escena                                               |
-| Eliminar              | ![](/icons/trash.webp)           | Elimina el objeto                                                                                                   |
-| Bloquear              | ![](/icons/lock.webp)            | Hace que el objeto no se pueda seleccionar en el visor. Todavía se puede seleccionar desde la vista en árbol.      |
-| Unir                  | ![](/icons/merge.webp)           | Une los objetos seleccionados en un solo objeto sin cambios en la geometría                                        |
-| Separar               | ![](/icons/diagonal.webp)        | Si un objeto está compuesto por cascarones de polígonos únicos, lo divide en objetos separados. Lo contrario de unir |
-| [Booleano...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Muestra el menú [Booleano](#boolean)                                                                               |
-| Clonar                | ![](/icons/clone.webp)           | Duplica el objeto en un nuevo objeto                                                                               |
-| Instancia             | ![](/icons/link.webp)            | Duplica el objeto como una instancia, de modo que los cambios de modelado en uno se apliquen a todas las instancias. |
-| Desinstanciar         | ![](/icons/unlink.webp)          | Convierte una instancia en una forma única, de modo que los cambios de modelado ya no se copien a otras instancias |
-| Sincronizar           | ![](/icons/link.webp)            | Si las instancias tienen hijos, asegura que todas las instancias compartan la misma jerarquía de hijos             |
+## Barra de accesos directos {#shortcut-bar}
+| Acción                 | Icono                             | Descripción                                                                                                         |
+| :--------------------: | :-------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
+| [Añadir...](#add-menu) | ![](/icons/plus.webp)            | Muestra el [menú Añadir](#add-menu) para añadir un objeto a la escena                                               |
+| Eliminar               | ![](/icons/trash.webp)           | Elimina los objetos seleccionados. Sus hijos se conservan.                                                          |
+| Bloquear               | ![](/icons/lock.webp)            | Impide seleccionar los objetos seleccionados en la vista 3d. Aún se pueden seleccionar desde la vista de árbol. Bloquear un grupo bloquea todo lo que contiene. Vuelve a tocar para desbloquear. |
+| [Unir](#join)          | ![](/icons/merge.webp)           | Une los objetos seleccionados en un solo objeto, sin cambiar la geometría                                           |
+| [Separar...](#separate) | ![](/icons/separate.webp)       | Muestra la ventana [Separar](#separate), para dividir un objeto en varios. Es lo contrario de la operación Unir      |
+| [Booleano...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Muestra la ventana [Booleano](#boolean)                                                                       |
+| Clonar                 | ![](/icons/clone.webp)           | Duplica los objetos seleccionados como objetos nuevos                                                               |
+| Instancia              | ![](/icons/link.webp)            | Duplica los objetos seleccionados como instancias, de modo que los cambios de modelado en una se aplican a todas.   |
+| Desinstanciar          | ![](/icons/unlink.webp)          | Convierte una instancia en una forma única, para que los cambios de modelado ya no se copien a las demás instancias |
+| Sincronizar            | ![](/icons/checked.webp)         | Si está marcada, las operaciones se aplican a todas las instancias de los objetos seleccionados, no solo a los seleccionados. Solo está disponible cuando la selección contiene instancias. La [pestaña Sincronizar](#sync) de la ventana `Avanzado` define qué operaciones siguen esta casilla. |
+
+::: tip
+Cuando una operación vaya a afectar también a las demás instancias, aparece un pequeño icono de enlace en su botón.
+:::
 
 
 ## Vista de árbol {#tree-view}
 ![](/images/scene_treeview.webp) 
 
+La vista de árbol muestra los objetos, grupos, repetidores, luces y cámaras de la escena. Junto al nombre de una malla verás su número de vértices, con un icono de capa en color si tiene capas. Cada fila tiene estos botones:
+
 | Acción       | Icono                      | Descripción              |
 | :----------: | :------------------------: | :----------------------: |
-| Seleccionar  | ![](/icons/checked.webp)  | Alterna seleccionado/no seleccionado |
-| Visible      | ![](/icons/eye_open.webp) | Alterna visibilidad      |
-| Menú         | ![](/icons/more.webp)     | Muestra el menú del objeto |
+| Nombre       | ![](/icons/pencil.webp)   | Cambia el nombre del objeto. Si está seleccionado, se renombran a la vez todos los objetos seleccionados, añadiendo un número. Mantén pulsado para renombrarlo junto con sus hijos. |
+| Seleccionar  | ![](/icons/checked.webp)  | Selecciona o deselecciona |
+| Visible      | ![](/icons/eye_open.webp) | Muestra u oculta         |
+| Menú         | ![](/icons/more.webp)     | Muestra el [menú del objeto](#object-menu) |
 
-::: tip CONSEJO: Seleccionar u ocultar rápidamente muchos objetos
+::: tip CONSEJO: Seleccionar u ocultar muchos objetos rápidamente
 
-Toca el icono de selección para alternar un solo objeto, o arrastra verticalmente en la columna de selección para seleccionar muchos objetos. Lo mismo se puede hacer con la columna de visibilidad.
+Toca el icono de selección para cambiar un solo objeto, o arrastra en vertical sobre la columna de selección para seleccionar muchos objetos. Lo mismo funciona con la columna de visibilidad.
+
+Mantén pulsado el icono de selección o de visibilidad para que afecte también a los hijos.
 
 :::
 
-### Manipulación de la vista de árbol {#tree-view-manipulation}
+### Cabecera de la vista de árbol {#tree-view-header}
 
-Mantén pulsado un elemento en la vista en árbol hasta que se vuelva amarillo. Entonces podrás moverlo hacia arriba o hacia abajo en la vista en árbol, así como arrastrarlo sobre otro elemento para convertirlo en hijo de ese elemento.
+La fila que hay encima de la lista tiene algunas ayudas:
 
-Cuando muchos elementos están seleccionados, la mayoría serán de un amarillo oscuro y uno será de un amarillo más claro. Mantén pulsado y arrastra el elemento más claro para mover todos los objetos a la vez.
+* ![](/icons/sort_down.webp) - pliega o despliega todos los grupos a la vez.
+* ![](/icons/preview.webp) - activa o desactiva las `Vistas previas de objetos`, una pequeña miniatura renderizada de cada objeto de la lista.
+* ![](/icons/search.webp) - filtra la lista por nombre.
 
-Cuando seleccionas un elemento padre, por defecto todos los elementos hijos también se seleccionarán. Tocar el icono del padre alternará entre seleccionar solo el padre, o el padre y los hijos.
+### Manipular la vista de árbol {#tree-view-manipulation}
 
-### Menú de objeto {#object-menu}
+Mantén pulsado un elemento de la vista de árbol hasta que se resalte. Entonces puedes moverlo hacia arriba o hacia abajo, o arrastrarlo sobre otro elemento para convertirlo en hijo de ese elemento.
 
-Al hacer clic en el botón de puntos suspensivos (...) de un objeto en la vista en árbol se mostrará el menú del objeto.  
-Muchas de estas opciones son similares a la barra de atajos de la parte superior, repetidas por comodidad.
+Cuando hay muchos elementos seleccionados, uno de ellos es la selección principal y se muestra más brillante. Mantén pulsado y arrastra cualquiera de ellos para mover todos los objetos seleccionados a la vez.
 
-|       Acción        |                        Icono                        | Descripción                                                                                                                                                             |
-| :-----------------: | :-------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|      Instancia      |               ![](/icons/link.webp)            | Duplica el objeto como una instancia, de modo que los cambios de modelado en uno se apliquen a todas las instancias.                                                   |
-|        Clonar       |              ![](/icons/clone.webp)            | Duplica el objeto en un nuevo objeto                                                                                                                                   |
+Al seleccionar un elemento padre, por defecto también se seleccionan todos sus hijos. Si vuelves a tocar el padre, alternas entre seleccionar solo el padre o el padre y sus hijos.
+
+Toca dos veces un elemento para centrar la cámara en él (ver [Avanzado](#focus-on-item)).
+
+### Menú del objeto {#object-menu}
+
+Al pulsar el botón de puntos suspensivos (...) de un objeto en la vista de árbol, se abre el menú del objeto.
+Muchas de estas opciones son las mismas que las de la barra de accesos directos de arriba, repetidas por comodidad.
+
+|       Acción        |                        Icono                       | Descripción                                                                                                                                                             |
+| :-----------------: | :------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |        Nombre       |              ![](/icons/pencil.webp)           | Cambia el nombre del objeto                                                                                                                                             |
-|       Eliminar      |              ![](/icons/trash.webp)            | Elimina el objeto                                                                                                                                                       |
-|      Eliminar+      |            ![](/icons/removeNode.webp)         | Elimina el objeto y sus hijos                                                                                                                                           |
-|    Desinstanciar    |              ![](/icons/unlink.webp)           | Convierte una instancia en una forma única, de modo que los cambios de modelado ya no se copien a otras instancias.                                                    |
-| Separar topología   |             ![](/icons/separate.webp)          | Si un objeto está compuesto por cascarones de polígonos únicos, lo divide en objetos separados. Lo contrario de la operación de unir.                                  |
-| Separar grupo de caras |         ![](/icons/group.webp)          | Si un objeto tiene varios grupos de caras, divide la malla en objetos separados.                                                                                        |
-|  Separar capas      |              ![](/icons/layer.webp)            | Si un objeto tiene capas, divide cada capa en un objeto separado. Útil para enviar blendshapes a otras aplicaciones.                                                   |
-|   Unir -> Capas     | ![](/icons/merge.webp) -> ![](/icons/layer.webp) <span style="visibility:hidden">_________</span> | Si se seleccionan varios objetos y tienen topología coincidente, fusiona esos objetos en capas para el objeto principal (los otros objetos se eliminarán). De nuevo, útil para blendshapes que vienen DE otras aplicaciones.<br><br> Ten en cuenta que las capas estarán desactivadas por defecto. Actívalas si necesitas ajustar sus deslizadores. |
+|    Desinstanciar    |              ![](/icons/unlink.webp)           | Convierte una instancia en una forma única, para que los cambios de modelado ya no se copien a las demás instancias.                                                   |
+|      Instancia      |               ![](/icons/link.webp)            | Duplica el objeto como instancia, de modo que los cambios de modelado en una se aplican a todas.                                                                        |
+|       Clonar        |              ![](/icons/clone.webp)            | Duplica el objeto como un objeto nuevo                                                                                                                                  |
+|      Eliminar       |              ![](/icons/trash.webp)            | Elimina el objeto. Sus hijos se conservan, salvo que `Hijos` esté marcado.                                                                                              |
+|        Hijos        |            ![](/icons/hierarchy.webp)          | Si está marcado, `Instancia`, `Clonar` y `Eliminar` también actúan sobre los hijos del objeto.                                                                          |
+| Separar por Partes  |             ![](/icons/separate.webp)          | Si un objeto está formado por partes desconectadas, crea un objeto distinto para cada una. Es lo contrario de la operación Unir.                                       |
+| Separar por Grupos  |            ![](/icons/group.webp)          | Si un objeto tiene varios grupos de caras, crea un objeto distinto para cada grupo de caras.                                                                               |
+| Separar por Capas   |              ![](/icons/layer.webp)            | Si un objeto tiene capas, crea objetos distintos para la malla base y para cada capa. Útil para enviar blendshapes a otras aplicaciones.                                 |
+|   Unir → Capas      | ![](/icons/merge.webp) -> ![](/icons/layer.webp) <span style="visibility:hidden">_________</span> | Si hay varios objetos seleccionados con la misma topología, los fusiona como capas del objeto principal (los demás objetos se eliminan). De nuevo, útil para blendshapes que vienen DE otras aplicaciones.<br><br> Ten en cuenta que las capas estarán desactivadas por defecto. Actívalas si necesitas ajustar sus reguladores. |
+|  Curva (Repetidor)  |              ![](/icons/curve.webp)            | Solo para un tubo o un torno: añade un repetidor [Curva](#curve) que sigue la misma curva, como hijo del objeto.                                                        |
+|        Tubo         |             ![](/icons/tube.webp)              | Para un torno, añade un [tubo](tools.md#tube) que sigue su perfil, como hijo. Para un cilindro, un cono o un toro, lo convierte en un tubo con la misma forma, para que puedas doblarlo a lo largo de una curva. |
 
 
 
 
-### Multiselección {#multiselection}
-Puedes seleccionar varios objetos para ayudar a lograr dos cosas:
-- usar la herramienta de gizmo para mover varios objetos a la vez
-- fusionar objetos usando operaciones de unión y booleanas.
+### Selección múltiple {#multiselection}
+Puedes seleccionar varios objetos para conseguir dos cosas:
+- usar la herramienta gizmo para mover varios objetos a la vez
+- fusionar objetos con las operaciones Unir y Booleano.
 
-Puedes hacerlo usando la casilla `Multiselection` y luego haciendo clic en el objeto en la lista.
+En la vista de árbol, toca el icono de selección de cada objeto o arrastra a lo largo de la columna de selección. Al tocar los nombres, mantén pulsado el acceso directo `Máscara` (o `Ctrl` en un teclado) para añadir o quitar un solo objeto, o el acceso directo `Suavizar` (o `Shift`) para seleccionar todos los objetos entre el actual y el que toques.
 
-::: tip Multiselección rápida
-También puedes hacer multiselección en el visor manteniendo pulsado el atajo `Smooth` y tocando otra malla.
+::: tip Selección múltiple rápida
+También puedes seleccionar varios objetos en la vista 3d manteniendo pulsado el acceso directo `Suavizar` (o `Shift`) y tocando otra malla.
 
-Puedes deseleccionar un objeto tocándolo de nuevo (solo si tu selección tiene más de un objeto).
+Para deseleccionar un objeto, vuelve a tocarlo (solo si la selección tiene más de un objeto).
 :::
 
-::: warning Función limitada del gizmo
-Cuando se usa multiselección, la herramienta de gizmo siempre ignorará el enmascarado.  
-Además, se elimina el escalado X/Y/Z.
-
-La razón es que la multiselección solo permite la transformación de la malla completa, no la transformación por vértice.  
-Esto podría mejorarse en el futuro.
-:::
+El gizmo mueve juntos todos los objetos seleccionados, ver [Gizmo](tools.md#gizmo).
 
 
-## Unir {#join}
-Esta opción simplemente creará una única entrada de objeto a partir de varios objetos seleccionados.
+## ![](/icons/merge.webp) Unir {#join}
+Esta opción simplemente convierte varios objetos seleccionados en una sola entrada.
+Los puntos y las UVs más cercanos que el [radio de soldadura](#weld-radius) se fusionan.
 
 Puedes ver un ejemplo en vídeo en la sección [Separar](#separate).
 
-## Booleano {#boolean}
+## ![](/icons/bool_subtract_circle.webp) Booleano {#boolean}
 ![](/images/scene_boolean_menu.webp) 
 Combina objetos en una sola superficie.
 
-`Voxel merge` conservará el volumen de los objetos y calculará nuevos polígonos uniformemente espaciados en la superficie. Debido al paso de cálculo, una fusión de vóxeles puede manejar geometría compleja, pero puede perder detalles finos si la resolución objetivo no es lo suficientemente alta.
+`Combinar Vóxel` conserva el volumen de los objetos y calcula nuevos polígonos regulares sobre la superficie. Gracias a este paso de cálculo, una combinación por vóxeles puede con geometrías complejas, pero puede perder detalle fino si la resolución elegida no es lo bastante alta.
 
-`Boolean` intentará dejar los polígonos en su disposición original y coser los polígonos donde los objetos se superponen. Esto puede producir resultados mucho más limpios y nítidos que una fusión de vóxeles; sin embargo, requiere mallas "estancas": no puede haber agujeros ni formas malformadas en los objetos. Si esto falla, normalmente una fusión de vóxeles funcionará.
+`Booleano` intenta dejar los polígonos con su distribución original y cose los polígonos donde los objetos se solapan. El resultado puede ser mucho más limpio y nítido que con una combinación por vóxeles, pero requiere mallas "estancas": los objetos no pueden tener agujeros ni formas defectuosas. Si falla, normalmente funcionará una combinación por vóxeles.
 
 ### Operaciones booleanas {#boolean-operations}
-Tanto Voxel Merge como Boolean usarán la visibilidad de los objetos para controlar la operación:
+Tanto Combinar Vóxel como Booleano usan la visibilidad de los objetos para controlar la operación, como recuerdan las indicaciones de la parte inferior de la ventana:
 
 #### Unión {#union}
-Ambos objetos visibles crearán una **unión** booleana, la piel exterior de los objetos se combina, sin superficies interiores. ![](/images/boolean_union.webp)
+Con los dos objetos visibles se obtiene una **unión** booleana: se combina la piel exterior de los objetos, sin superficies interiores. ![](/images/boolean_union.webp)
 
-#### Sustraer {#subtract}
-Un objeto invisible = **sustracción** booleana, el objeto invisible se restará del objeto visible. ![](/images/boolean_subtract.webp)
+#### Resta {#subtract}
+Un objeto invisible = **resta** booleana: el objeto invisible se resta del visible. ![](/images/boolean_subtract.webp)
 
-#### Intersecar {#intersect}
-Ambos objetos invisibles = **intersección** booleana, crea una nueva forma solo donde los dos objetos se superponen. ![](/images/boolean_intersect.webp)
+#### Intersección {#intersect}
+Los dos objetos invisibles = **intersección** booleana: se crea una nueva forma solo donde los dos objetos se solapan. ![](/images/boolean_intersect.webp)
 
 
-### Botón de fusión de vóxeles {#voxel-merge-button}
-Al pulsar este botón se realizará una operación de fusión de vóxeles en los objetos seleccionados. Cuando se hace en un solo objeto, lo retopologiza en polígonos uniformemente espaciados, útil cuando un objeto tiene polígonos estirados.
+### ![](/icons/voxel.webp) Combinar Vóxel {#voxel-merge-button}
+Este botón combina por vóxeles los objetos seleccionados. Si se aplica a un solo objeto, lo retopologiza con polígonos regulares, algo útil cuando un objeto tiene polígonos estirados. Las opciones de abajo funcionan como las del [Remallado por vóxeles](topology.md#voxel-remesher).
 
 ### Resolución {#resolution}
-La resolución de la rejilla 3D de vóxeles utilizada para hacer el cálculo. Cuando se cambia este valor, se superpone un patrón de tablero de ajedrez en el objeto para previsualizar el tamaño de los polígonos.
+La resolución de la cuadrícula 3d de vóxeles usada en el cálculo. Al cambiar este valor, se superpone un tablero de ajedrez sobre el objeto para previsualizar el tamaño de los polígonos.
 
-### Construir multirresolución {#build-multiresolution}
-Crea niveles de multirresolución por debajo de tu resolución objetivo. Así que si tu resolución es 400 y construir multirresolución es 3, obtendrás una nueva malla con, digamos, 296.000 polígonos, pero habrá 3 niveles de subdivisión inferiores de 74.000, 18.000, 4.000k.
+El cuentagotas junto al regulador toma el detalle de la densidad de la malla bajo tu dedo. El botón de al lado cambia el regulador a `Longitud del borde`, un tamaño en el mundo: así, el mismo valor da el mismo detalle en cualquier objeto.
 
-### Mantener bordes nítidos {#keep-sharp-edges}
-Activa el ajuste de la malla de vóxeles a los bordes. Esto funciona mejor en formas simples.
+### Construir multiresolución {#build-multiresolution}
+Crea niveles de multiresolución por debajo de la resolución elegida. Así, si la resolución es 400 y Construir multiresolución está a 3, obtendrás una malla nueva de, por ejemplo, 296.000 polígonos, pero con 3 niveles de subdivisión inferiores de unos 74.000, 18.500 y 4.600.
 
-### Botón booleano {#boolean-button}
-Al pulsar este botón se realizará una operación booleana de polígonos usando la biblioteca Manifold de Emmett Lalish. 
+### Engrosar las partes finas {#thicken-thin-parts}
+Engrosa las partes demasiado finas para la cuadrícula de vóxeles, para que no se rompan. No está disponible con `Bordes nítidos` ni con `Borde nítido`.
+
+### Agujeros {#holes}
+Cómo se cierran los agujeros de los objetos abiertos antes de combinarlos:
+* `Rellenar` - cada agujero se cierra por separado, a partir de su borde.
+* `Forma` - los agujeros se cierran siguiendo la superficie que los rodea, y las piezas abiertas que se solapan se unen.
+
+### ![](/icons/angle.webp) Mantener bordes nítidos {#keep-sharp-edges}
+El botón `Bordes nítidos` ajusta la malla de vóxeles a las aristas vivas de los objetos. Funciona mejor con formas sencillas y puede introducir deformaciones en algunas zonas.
+
+### ![](/icons/group.webp) Borde nítido {#sharp-border}
+Las nuevas caras siguen los bordes de los grupos de caras, y un borde se mantiene nítido allí donde la superficie forma un pliegue a lo largo de él.
+
+### ![](/icons/group_separate.webp) Mantener grupos separados {#keep-groups-separate}
+Cada grupo de caras se remalla por separado: los grupos nunca se fusionan, y cada uno queda como una pieza cerrada en su propio grupo. En este modo no se construye la multiresolución.
+
+### ![](/icons/bool_subtract_circle.webp) Botón Booleano {#boolean-button}
+Este botón realiza una operación booleana de polígonos con la biblioteca Manifold de Emmett Lalish.
+
+### ![](/icons/bool_unite_circle.webp) Limpiar solapamientos {#clean-overlaps}
+Cuando solo hay un objeto seleccionado, el botón `Booleano` se convierte en `Limpiar solapamientos`: fusiona las partes del objeto que se cruzan entre sí en una superficie limpia.
 
 
-## Separar {#separate}
-Si tienes un solo objeto basado en varias partes desconectadas, puedes dividir este objeto en varios objetos.  
-Esto puede verse como lo opuesto a la [Unión simple](#simple-merge).
+## ![](/icons/separate.webp) Separar {#separate}
+Si tienes un solo objeto formado por varias partes desconectadas, puedes separarlo en varios objetos.
+Puedes verlo como lo contrario de [Unir](#join).
+
+La ventana `Separar...` ofrece tres formas de separar los objetos seleccionados:
+* `Separar por Partes` - crea un objeto distinto para cada parte desconectada.
+* `Separar por Grupos` - crea un objeto distinto para cada grupo de caras.
+* `Separar por Capas` - crea objetos distintos para la malla base y para cada capa.
 
 ![](/videos/merge_separate.mp4)
 
 
-## Menú Añadir {#add-menu}
+## ![](/icons/plus.webp) Menú Añadir {#add-menu}
 
 ![](/images/scene_addmenu_overview.webp)
 
-Este menú creará primitivas, grupos, cámaras, repetidores y luces.
+Este menú crea primitivas, grupos, cámaras, repetidores y luces.
 
-Las primitivas son tipos de formas básicas que se pueden ajustar usando parámetros. Una vez que tengas la primitiva ajustada a tus necesidades, la "validas", lo que hornea esos parámetros en una malla de polígonos que se puede esculpir y pintar. Una primitiva no puede tener sus parámetros ajustados después de haber sido validada.
+Las primitivas son formas básicas que se ajustan mediante parámetros. Cuando la primitiva está a tu gusto, la "validas", lo que convierte esos parámetros en una malla de polígonos que se puede esculpir y pintar. Una vez validada, ya no se pueden ajustar los parámetros de la primitiva.
 
 
 ![](/images/scene_addmenu_top.webp)
 
-### En el gizmo {#on-gizmo}
-Activa colocar la nueva primitiva donde esté la forma seleccionada actual o el gizmo. Cuando está desactivado, la primitiva se colocará en el centro de la escena.
+### ![](/icons/gizmo.webp) En gizmo {#on-gizmo}
+Coloca la nueva primitiva donde estén la forma seleccionada o el gizmo. Si está desactivado, la primitiva se coloca en el centro de la escena.
 
-### Seleccionar gizmo {#select-gizmo}
-Activa cambiar automáticamente a la herramienta de gizmo cuando se crea una nueva primitiva. 
+### ![](/icons/gizmo.webp) Seleccionar gizmo {#select-gizmo}
+Cambia automáticamente a la herramienta gizmo al crear una nueva primitiva.
 
-### Avanzado {#add-advanced}
+### ![](/icons/cog.webp) Avanzado {#add-advanced}
 
-Este menú te permite establecer tu preferencia sobre dónde se crearán las nuevas primitivas, grupos y repetidores. Pueden estar en el objeto seleccionado, en el origen del mundo o en la ubicación del gizmo.
+Este menú te permite elegir dónde se crean las nuevas primitivas, grupos y repetidores: sobre el objeto seleccionado, en el origen del mundo o en la posición del gizmo.
 
 
-### UV's {#uvs}
-Activa las UV en las primitivas. Las UV (a menudo llamadas coordenadas de textura) son datos adicionales usados en 3D para permitir que las texturas se apliquen a las superficies. Ocupan más memoria, pero para la mayoría de los dispositivos esto no debería ser un problema a menos que entres en recuentos de polígonos muy altos (por ejemplo, 10 millones de polígonos o más). 
+### UVs {#uvs}
+La opción `UVs` junto al título Primitivo activa las UVs en las primitivas. Las UVs (a menudo llamadas coordenadas de textura) son datos adicionales que se usan en 3d para poder aplicar texturas a las superficies. Ocupan más memoria, pero en la mayoría de los dispositivos no debería preocuparte, salvo que trabajes con muchísimos polígonos (por ejemplo, 10 millones o más).
 
 ### Primitivas {#primitives}
 
 | Primitiva      | Icono                                     | Descripción                                                                                                     |
 | :------------: | :---------------------------------------: | :-------------------------------------------------------------------------------------------------------------: |
-| Caja           | ![](/icons/cube.webp)                    | Es un cubo simple, puedes controlar la división en X, Y y Z                                                     |
-| Esfera         | ![](/icons/circle.webp)                  | Por comodidad se llama Esfera, pero en realidad es una caja subdividida, con `Project on sphere` forzado       |
+| Caja           | ![](/icons/cube.webp)                    | Un simple cubo; puedes controlar las divisiones en X, Y y Z                                                     |
+| Esfera de quads | ![](/icons/circle.webp)                 | Una caja subdividida con `Proyectar en esfera` forzado, así que tiene una distribución regular de cuadrángulos, ideal para esculpir |
 | Cilindro       | ![](/icons/cylinder.webp)                | Puedes añadir un agujero central al cilindro, por ejemplo para hacer un tubo hueco                              |
-| Toro           | ![](/icons/torus.webp)                   | El toro puede ser un buen punto de partida para anillos                                                         |
+| Toro           | ![](/icons/torus.webp)                   | El toro puede ser un buen punto de partida para hacer anillos                                                   |
 | Cono           | ![](/icons/cone.webp)                    | -                                                                                                               |
 | Icosaedro      | ![](/icons/icosahedron.webp)             | -                                                                                                               |
-| Esfera UV      | ![](/icons/circle.webp)                  | Una esfera con distribución de polígonos desigual, ver [Advertencia abajo](#uv-sphere)                         |
-| Plano          | ![](/icons/rectangle.webp)               | Es un plano simple, ten en cuenta que esta es la única primitiva que no está cerrada                           |
-| Tubo           | ![](/icons/tool_tube.webp)               | ver [Tubo](tools#tube)                                                                                          |
-| Torno          | ![](/icons/tool_lathe.webp)              | ver [Lathe](tools#lathe)                                                                                        |
+| Esfera UV      | ![](/icons/circle.webp)                  | Una esfera con una distribución irregular de polígonos, ver la [advertencia de abajo](#uv-sphere)               |
+| Plano          | ![](/icons/rectangle.webp)               | Un simple plano; ten en cuenta que es la única primitiva que no está cerrada                                    |
+| Texto          | ![](/icons/text.webp)                    | Texto en 3d, con fuente, estilo, alineación, profundidad y curvatura. `Fusionar letras` une las letras que se tocan |
+| Tubo           | ![](/icons/tube.webp)                    | ver [Tubo](tools#tube)                                                                                          |
+| Torno          | ![](/icons/lathe.webp)                   | ver [Torno](tools#lathe)                                                                                        |
 | Triplanar      | ![](/icons/triplanar.webp)               | ver [Triplanar](#triplanar)                                                                                     |
-| Captura de sombras | ![](/icons/material_shadow_catcher.webp) | ver [Shadow Catcher](#shadow-catcher)                                                                       |
-| Cabeza         | ![](/icons/face.webp)                    | Una cabeza simple con una capa para mezclar entre masculino/femenino                                            |
+| VDM            | ![](/icons/vdm.webp)                     | Un plano preparado para esculpir un sello de desplazamiento vectorial: incluye UVs y mira hacia la cámara       |
+| Capturador de sombras | ![](/icons/material_shadow_catcher.webp) | ver [Capturador de sombras](#shadow-catcher)                                                             |
+| Cabeza         | ![](/icons/face.webp)                    | Una cabeza sencilla con una capa para pasar de masculina a femenina                                             |
 
 ::: tip
-Si te preguntas cuál es la malla base cuando inicias Nomad: también es una caja subdividida.  
-Sin embargo, la malla base en Nomad no usa `Project on sphere`, lo que significa que no es perfectamente redonda.
+Si te preguntas qué es la malla base que aparece al abrir Nomad: también es una caja subdividida.
+Sin embargo, la malla base de Nomad no usa `Proyectar en esfera`, así que no es perfectamente redonda.
 :::
 
-### Barra de herramientas de primitivas {#primitive-toolbar}
+### Barra de herramientas de la primitiva {#primitive-toolbar}
 
-![](/images/scene_primitive_toolbar.gif)
+![](/images/scene_primitive_toolbar.webp)
 
-Una vez que se crea una primitiva, aparecerá una barra de herramientas para controlar sus parámetros.
+Al crear una primitiva, aparece una barra de herramientas para controlar sus parámetros.
 
-* `Validate` Hornea la primitiva en un objeto estándar para que pueda ser esculpido y pintado.
-* `Edit` Alterna la visualización del gizmo de la primitiva. Se muestra directamente en la primitiva para controlar sus parámetros, por ejemplo, el ancho del cubo o el radio del agujero de un cilindro.
-* `Mirror` Alterna colocar un repetidor de espejo sobre la primitiva.
+* `Validar` Convierte la primitiva en un objeto normal para poder esculpirla y pintarla.
+* `Espejo` Coloca o quita un repetidor espejo por encima de la primitiva.
+* `Todo` (icono del ojo) Elige qué controladores se muestran directamente sobre la primitiva para ajustar sus parámetros, por ejemplo el ancho del cubo o el radio del agujero de un cilindro: `Ninguno`, `Todo` o solo un tipo (radio, agujero, perfil...) según la primitiva.
+* `División` El número de divisiones de la primitiva, aquí a lo largo de X para una caja.
+* `Densidad constante` Cuando estiras la primitiva a lo largo de un eje con el gizmo, crecen su tamaño y sus divisiones en lugar de estirarse los polígonos, así que las caras siguen siendo cuadradas. Disponible en cajas, planos y cilindros.
 * `...` Muestra el menú de la primitiva.
 
-Las diferentes primitivas tendrán opciones adicionales en la barra de herramientas:
+Algunas primitivas tienen opciones adicionales en la barra:
 
-* `Project` La esfera se construye como un cubo subdividido, ya que esto es mejor para esculpir, pero significa que no es perfectamente redonda. Esta opción forzará la forma más cerca de una esfera perfecta. El icosaedro comparte esta opción.
-* `Cap` Alterna tapas en los extremos de una forma, por ejemplo, un cilindro puede tener tapas arriba, abajo, ambas o ninguna.
-* `Hole` Alterna la creación de un agujero a través del centro de una forma. Esto cicla entre sin agujeros, agujero con un solo radio o agujero con radio diferente arriba y abajo.
-* `Radius` Alterna si un cilindro debe tener un solo radio o un radio diferente en su parte superior e inferior.
-* `Disk` Alterna si un plano debe ser una forma de 4 lados o una forma circular.
+* `Esfera` La esfera se construye como un cubo subdividido, porque es mejor para esculpir, pero eso significa que no es perfectamente redonda. Esta opción acerca la forma a una esfera perfecta. El icosaedro también tiene esta opción.
+* `Tapa` Activa o desactiva las tapas de los extremos de una forma; por ejemplo, un cilindro puede tener tapa arriba, abajo, en ambos lados o en ninguno.
+* `Agujero` Crea un agujero que atraviesa el centro de la forma. Alterna entre sin agujero, agujero con un solo radio o agujero con un radio distinto arriba y abajo.
+* `Radio` Elige si un cilindro tiene un solo radio o uno distinto arriba y abajo.
+* `Disco` Elige si un plano tiene forma de cuadrilátero o de círculo.
 
-La pequeña barra de herramientas debajo de la barra principal te permitirá alternar entre el gizmo de la primitiva y el gizmo de transformación.
+La pequeña barra que hay debajo de la barra principal te permite cambiar entre el gizmo de la primitiva y el gizmo de transformación.
 
 ::: tip
 
-Al hacer clic en el título de la barra de herramientas se alternará entre la parte superior o inferior de la pantalla. Al hacer clic en la flecha de la esquina se colapsará.
+Al pulsar el título de la barra, esta se mueve a la parte superior o inferior de la pantalla. Al pulsar la flecha de la esquina, se pliega.
 
 :::
 
 
-### Menú de primitivas {#primitive-menu}
+### Menú de la primitiva {#primitive-menu}
 
 ![](/images/scene_primitive_menu.webp)
 
-Contiene todos los parámetros de la primitiva seleccionada. Los parámetros son las descripciones básicas de una forma. Para describir un anillo, por ejemplo, describirías su radio exterior, su radio interior y el número de polígonos.
+Contiene todos los parámetros de la primitiva seleccionada. Los parámetros son la descripción básica de una forma. Para describir un anillo, por ejemplo, darías su radio exterior, su radio interior y el número de polígonos.
 
-La mayoría de los parámetros de las primitivas deberían ser autoexplicativos, y hay algunos parámetros comunes compartidos por todas las primitivas:
+La mayoría de los parámetros de las primitivas se explican por sí solos, y hay algunos comunes a todas las primitivas:
 
-* `UVs` El pequeño botón de UVs en la parte superior del menú alterna la creación de coordenadas UV
-* `Validate` El pequeño botón de validar hornea la primitiva en un objeto estándar para que pueda ser esculpido y pintado.
-* `Max faces` Establece un límite superior en la cantidad de polígonos del objeto para evitar que tu dispositivo se bloquee.
-* `Post subdivision` Activa el número elegido de subdivisiones de la sección de multirresolución del menú de topología. Esto se puede usar para hacer primitivas suavizadas, con esquinas suaves, en combinación con divisiones de topología bajas. Por ejemplo, establecer las divisiones de topología de una caja en 2 y las subdivisiones posteriores en 4 hará una caja con esquinas suaves.
-* `Linear subdivision` Establece cuántos niveles de subdivisión lineal usar antes de usar la subdivisión suave normal. Esto se puede usar para controlar cuán afiladas o suaves son las esquinas en las superficies subdivididas. Por ejemplo, establece las divisiones de topología de una caja en 2, subdivisiones posteriores en 4 y luego prueba a cambiar las subdivisiones lineales entre 0 y 4. Las esquinas de la caja pasarán de suaves a afiladas.
+* `UVs` El pequeño botón UVs de la parte superior del menú activa o desactiva la creación de coordenadas UV
+* `Validar` El pequeño botón de validar convierte la primitiva en un objeto normal para poder esculpirla y pintarla.
+* `Caras máx.` Fija un límite de polígonos para el objeto, para evitar que el dispositivo se bloquee.
+* `Postsubdivisión` Aplica el número de subdivisiones elegido desde la sección Multiresolución del menú Topología. Combinado con pocas divisiones de topología, sirve para crear primitivas suavizadas, con esquinas redondeadas. Por ejemplo, con las divisiones de topología de una caja a 2 y la postsubdivisión a 4, obtendrás una caja con esquinas suaves.
+* `Subdivisión lineal` Fija cuántos niveles de subdivisión lineal se usan antes de pasar a la subdivisión suave normal. Sirve para controlar lo vivas o suaves que quedan las esquinas en las superficies subdivididas. Por ejemplo, pon las divisiones de topología de una caja a 2 y la postsubdivisión a 4, y luego prueba a cambiar la subdivisión lineal entre 0 y 4. Las esquinas de la caja pasarán de suaves a vivas.
 
 ### Topología {#topology}
 
-Controla el número de polígonos en una primitiva. Normalmente los controles están vinculados, por lo que cambiar el único control deslizante activo ajustará todos los polígonos de manera uniforme. Puedes tocar el botón de desvincular y controlar por separado las divisiones X/Y/Z de una forma.
+Controla el número de polígonos de una primitiva. Normalmente los controles están vinculados, así que al cambiar el único regulador activo se ajustan todos los polígonos por igual. Puedes tocar el botón de desvincular para controlar por separado las divisiones X/Y/Z de una forma.
 
 ### Geometría {#geometry}
 
-Controla el tamaño general de una primitiva, en unidades X/Y/Z para formas cuadradas y en radio para formas redondas.
+Controla el tamaño general de una primitiva, en unidades X/Y/Z para las formas cuadradas y en radio para las redondas.
 
 
-### Esfera UV {#uv-sphere}
+### ![](/icons/circle.webp) Esfera UV {#uv-sphere}
 ::: warning
-La Esfera UV no es adecuada para esculpir, especialmente en los polos.
+La esfera UV no es muy adecuada para esculpir, sobre todo en los polos.
 
-Por favor, prefiere las primitivas [Esfera](#sphere), [Caja](#box) o [Icosaedro](#icosahedron), junto con la opción `Project on sphere`.
+Es preferible usar la [primitiva](#primitives) Esfera de quads, Caja o Icosaedro, con la opción `Proyectar en esfera`.
 
-Ten en cuenta que la topología puede ser aceptable para esculpir si usas un valor muy bajo para los deslizadores de `Division`.  
-Luego puedes usar el deslizador `Overall Subdivision` para aumentar el número de polígonos.
+Ten en cuenta que la topología puede ser aceptable para esculpir si usas un valor muy bajo en los reguladores `División`.
+Después puedes usar el regulador `Subdivisión general` para aumentar el número de polígonos.
 
-Aunque no es adecuada para esculpido general, es útil para ojos; si rotas la esfera de modo que los polos se sitúen en la pupila, la distribución de polígonos se ajustará de forma natural para pintar y esculpir el iris y la pupila.
+Aunque no sirve para esculpir en general, es útil para los ojos: si giras la esfera para que los polos queden en la pupila, la distribución de los polígonos se adapta de forma natural para pintar y esculpir el iris y la pupila.
 :::
 
 
-### Triplanar {#triplanar}
-Esta primitiva es especial en el sentido de que deberías usar la [herramienta de máscara](tools.md#mask) sobre ella para dar forma a la geometría.
+### ![](/icons/triplanar.webp) Triplanar {#triplanar}
+Esta primitiva es especial: para dar forma a la geometría, debes usar la [herramienta Máscara](tools.md#mask) sobre ella.
 
 ![](/videos/triplanar.mp4)
 
 
 ::: tip
-Toca dos veces en un plano y la cámara se centrará en ese plano en particular.  
-Sin embargo, esto no funcionará si rotas la primitiva con el gizmo.
+Toca dos veces un plano y la cámara se centrará en ese plano en concreto.
+Eso sí, no funciona si giras la primitiva con el gizmo.
 :::
 
-Triplanar usa la información de máscara de 3 planos para rellenar una rejilla de vóxeles que luego se poligoniza (gracias al [Remallador de vóxeles](topology.md#voxel-remeshere)).
+Triplanar usa la información de máscara de 3 planos para rellenar una cuadrícula de vóxeles que luego se convierte en polígonos (gracias al [Remallado por vóxeles](topology.md#voxel-remesher)).
 
 Cada plano tiene su propio plano de simetría.
 
 ::: warning
-Cada vez que actualices el tamaño de la primitiva Triplanar, la calidad del pintado de la máscara se degradará.
+Cada vez que cambias el tamaño de la primitiva Triplanar, la calidad de la máscara pintada se degrada.
 
-Por ahora no hay opción para "bloquear" el pintado en un solo plano, pero quizá llegue en el futuro.  
-Puedes usar la [Topología conectada](stroke.md#connected-topology) para ayudar un poco, en el sentido de que si tu cursor se encuentra precisamente en un plano no afectará a los otros planos.
+Por ahora no hay ninguna opción para "bloquear" la pintura en un solo plano, aunque quizá llegue en el futuro.
+Puedes usar la [Topología conectada](stroke.md#connected-topology) para ayudarte un poco: si el cursor está justo sobre un plano, no afectará a los demás.
 :::
 
-### Capturador de sombra {#shadow-catcher}
-Añade un plano con el material de captura de sombras. Consulta el [material Shadow Catcher](material.md#shadow-catcher) para más detalles. 
+### ![](/icons/material_shadow_catcher.webp) Capturador de sombras {#shadow-catcher}
+Añade un plano con el material capturador de sombras. Consulta [Material capturador de sombras](material.md#shadow-catcher) para más detalles.
 
 
 ## Grupo/Cámara {#groupcamera}
-### Grupo {#group}
-Crea un objeto "vacío" en el que puedes agrupar otros objetos como hijos. Esto se puede usar simplemente para organizar la jerarquía colocando muchos objetos bajo un grupo y luego cerrándolo. Un grupo también se puede usar como ayuda para mover objetos; muchos objetos se pueden colocar bajo un grupo y luego mover, rotar y escalar el grupo con la herramienta de gizmo.
+### ![](/icons/share.webp) Grupo {#group}
+Crea un objeto "vacío" del que pueden colgar otros objetos. Sirve simplemente para organizar la jerarquía: metes muchos objetos en un grupo y luego lo pliegas. Un grupo también puede ayudarte a mover objetos: colocas muchos objetos dentro de un grupo y luego mueves, giras o escalas el grupo con la herramienta gizmo.
 
-### Añadir vista {#add-view}
+### ![](/icons/camera.webp) Cámara {#add-view}
 Crea una cámara.
 
 ## Repetidores {#repeaters}
 ![](/images/scene_primitive_repeaters.webp)
 
-Los repetidores son nodos que crean instancias de los objetos que tienen debajo. 
+Los repetidores son nodos que crean instancias de los objetos que cuelgan de ellos.
 
-### Matriz {#array}
+### ![](/icons/array.webp) Matriz {#array}
 ![](/images/scene_primitive_array.webp)
 
-Cuando los objetos se convierten en hijos de este nodo, pueden instanciarse en una disposición de rejilla. Cuando está seleccionado, tiene controles para:
-* Fit inside - alterna entre controlar el tamaño de la rejilla/caja de la matriz o controlar el espacio entre las instancias de la matriz
-* CountX/Y/Z - el número de instancias en cada eje
-* OffsetX/Y/Z - distancia entre las instancias cuando Fit inside está activado
-* SizeX/Y/Z - el ancho/alto/profundidad de la rejilla total de la matriz cuando Fit inside está activado.
+Los objetos que se hacen hijos de este nodo se pueden repetir como instancias en una cuadrícula. Cuando está seleccionado, tiene controles para:
+* `Ajustar dentro` - si está activado, todas las copias se colocan dentro de los límites de la matriz; si no, los reguladores fijan el espacio entre copias
+* `Cantidad X/Y/Z` - el número de instancias en cada eje
+* `Tamaño X/Y/Z` - el tamaño de la cuadrícula en cada eje, o la distancia entre copias cuando `Ajustar dentro` está desactivado
+* `Aleatorizar...` - añade variaciones aleatorias a las copias, ver [Aleatorizar](#curve) más abajo.
 
-### Curva {#curve}
+### ![](/icons/curve.webp) Curva {#curve}
 ![](/images/scene_primitive_curve.webp)
-Esto creará una curva; los hijos de este nodo se repetirán a lo largo de la curva. Cuando está seleccionado, tiene controles para:
-* Edit - permite añadir puntos a la curva y mover puntos en la curva.
-* Snap - ajusta los puntos de la curva a otra geometría
-* Align - rotará las formas hijas para alinearlas en la dirección de la curva
-* Count - el número de instancias
-* Closed - alterna la curva para unir el inicio y el final, o para que sea una curva abierta
-* Radius - alterna controles en cada punto de la curva para controlar la escala de las instancias
-* Twist - alterna controles en cada punto de la curva para controlar la rotación de torsión de las instancias 
-* B-spline - alterna para que las instancias sigan la curva exactamente o usen interpolación B-spline, que tiene resultados más suaves. 
+Crea una curva; los hijos de este nodo se repiten a lo largo de ella. Cuando está seleccionado, tiene controles para:
+* `Curva` - edita la curva: añade puntos y mueve los puntos de la curva.
+* `Mostrar` - muestra u oculta la curva y sus puntos.
+* `Ajustar` - ajusta los puntos de la curva a otra geometría.
+* `Sim` - edita la curva de forma simétrica.
+* `Cerrado` - une el principio y el final de la curva, o la deja abierta.
+* `B-spline` - hace que las instancias sigan la curva exactamente, o usa una interpolación B-spline, que da resultados más suaves.
+* `Deformar` - dobla cada copia a lo largo de la curva para que se una a sus vecinas (`Suave` curva sus lados para que se unan sin ángulo).
+* `Alinear` - gira las copias para que sigan la dirección de la curva.
+* `Pivote` - el pivote de las copias: la propia curva (`Propia`) o sus hijos.
+* `Cantidad` - el número de instancias. El botón de modo que hay al lado cambia a `Distancia`: un espaciado fijo entre copias, y la cantidad depende de la longitud de la curva.
+* `Radio` - controles en cada punto de la curva para fijar la escala de las instancias.
+* `Torsión` - controles en cada punto de la curva para fijar la torsión de las instancias.
+* `Alternar` - gira una de cada dos copias alrededor de la curva: 90° para los eslabones de una cadena, 180° para hojas o dientes de cremallera, alrededor del `Eje` que elijas.
+* `Espiral...` - enrolla las copias alrededor de la curva, en varias hebras (cuerda, trenza, cinta...).
+* `Aleatorizar...` - añade variaciones aleatorias a las copias; cada fila puede, en cambio, sumar la misma cantidad en cada copia.
 
-### Radial {#radial}
+Debajo de la barra, la opción `(fusionar)` fusiona un punto con otro cuando lo arrastras sobre él. `IK` (cinemática inversa) te permite posar la curva: arrastra un punto y los puntos conectados lo siguen. Toca un punto para bloquearlo o desbloquearlo, o mantén pulsado para bloquearlos o desbloquearlos todos; los puntos bloqueados no se mueven.
+
+### ![](/icons/radial.webp) Radial {#radial}
 ![](/images/scene_primitive_radial.webp)
 
-Los hijos de este nodo se instanciarán en un círculo. Mueve el objeto hijo para modificar el radio de este repetidor. Cuando está seleccionado, tiene controles para:
-* RadialX/Y/Z - al seleccionar estos botones se establecerá el eje radial y el número de instancias.
+Los hijos de este nodo se repiten en círculo. Mueve el objeto hijo para cambiar el radio de este repetidor. Cuando está seleccionado, tiene controles para:
+* RadialX/Y/Z - estos botones fijan el eje radial y el número de instancias.
 
 
 
-### Espejo {#mirror}
+### ![](/icons/mirror.webp) Espejo {#mirror}
 ![](/images/scene_primitive_mirror.webp)
 
-Los hijos de este nodo se reflejarán a través de un eje. Cuando está seleccionado tiene controles para:
-* Gizmo - activa el gizmo de transformación para establecer el centro del espejo. También se puede rotar y escalar. Cuando termines, toca Gizmo de nuevo para mostrar los controles estándar.
-* X/Y/Z - establece el plano de espejo
+Los hijos de este nodo se reflejan respecto a un eje. Cuando está seleccionado, tiene controles para:
+* Gizmo - activa el gizmo de transformación para fijar el centro del espejo, que también se puede girar y escalar. Cuando termines, vuelve a tocar Gizmo para ver los controles normales.
+* X/Y/Z - fija el plano del espejo
 
-Todos los repetidores tienen un control `Validate`, que horneará los resultados del repetidor y preguntará cómo realizar el horneado:
-* Join children - las instancias se unen en un solo objeto
-* Keep instances - las instancias permanecen como instancias, pero ya no tienen el repetidor como "padre"
-* Un-instances - las instancias se convierten en objetos únicos
+### ![](/icons/surface.webp) Superficie {#surface}
+
+Los hijos de este nodo se copian sobre la superficie de un objeto: una copia por cara, por arista o por vértice, o repartidas al azar. Cuando está seleccionado, tiene controles para:
+* Modo - coloca las copias en las `Caras`, las `Aristas` o los vértices, o las reparte con `Dispersar`.
+* Cada - una copia cada N caras, aristas o vértices. `Aleatorio` las elige al azar, y `Redistribuir` saca otra tanda aleatoria.
+* Espaciado - al dispersar, la distancia mínima entre dos copias.
+* Alinear - las copias se apoyan sobre la superficie siguiendo su normal, en lugar de mantener la orientación del original.
+* Ajustar - proyecta el original sobre el punto más cercano de la superficie, y las copias lo siguen.
+* Ajustar tamaño, Cizallamiento - escalan y estiran las copias según la forma de cada cara.
+* Deformar - dobla cada copia sobre su cara, o a lo largo de su arista, para que las copias vecinas se unan sin huecos.
+
+Todos los repetidores tienen un control `Validar`, que convierte el resultado del repetidor en objetos fijos y te pregunta cómo hacerlo:
+* Unir hijos - las instancias se unen en un solo objeto
+* Mantener instancias - las instancias siguen siendo instancias, pero ya no tienen el repetidor como "padre"
+* Desinstanciar - las instancias se convierten en objetos únicos
+
+`Aplanar todo` también valida los repetidores anidados dentro de este, de modo que cada copia se convierte en un objeto normal.
 
 ::: tip Consejo: Combinar repetidores
-Los repetidores se pueden agrupar unos bajo otros y varios objetos se pueden convertir en hijos de repetidores, lo que lleva a efectos complejos.
+Los repetidores pueden colgar unos de otros, y puedes hacer varios objetos hijos de un repetidor, lo que permite crear efectos complejos.
 
 ![](/images/scene_repeater_combine.webp)
 :::
 
-::: tip Consejo: Pivotes de repetidores
+::: tip Consejo: Pivotes de los repetidores
 
-Algunos repetidores intentarán autoajustar el pivote de los objetos hijos, por lo que incluso si los mueves o rotas con la herramienta de gizmo, no se moverán. Si necesitas anular este comportamiento, inserta un grupo entre el repetidor y el hijo. Ahora puedes mover la forma hija independientemente del repetidor.
+Algunos repetidores intentan fijar automáticamente el pivote de los objetos hijos, así que aunque los muevas o gires con la herramienta gizmo, no se moverán. Si necesitas evitarlo, inserta un grupo entre el repetidor y el hijo. Así podrás mover la forma hija independientemente del repetidor.
 :::
 
 ## Luz {#light}
 
 ![](/images/scene_primitive_light.webp)
 
-### Direccional {#directional}
-Crea una luz direccional, una fuente de luz infinitamente lejana como el sol.
+### ![](/icons/sun.webp) Direccional {#directional}
+Crea una luz direccional, una fuente de luz infinitamente lejana, como el sol.
 
-### Foco {#spot}
-Crea una luz de foco, con controles sobre el ancho del cono y la suavidad
+### ![](/icons/panorama.webp) Entorno {#environment}
+Crea una luz de entorno, que ilumina la escena a partir de una imagen que la rodea por completo (iluminación basada en imagen, como un HDRI).
 
-### Punto {#point}
+### ![](/icons/spotlight.webp) Foco {#spot}
+Crea un foco, con controles para la apertura y la suavidad del cono
+
+### ![](/icons/light.webp) Punto {#point}
 Crea una luz puntual
 
-## Avanzado {#advanced}
-### Enfocar en elemento {#focus-on-item}
-Al hacer doble clic en un elemento de la lista de Escena se centrará la cámara en ese elemento en la vista 3D.
+## ![](/icons/cog.webp) Avanzado {#advanced}
+El botón `Avanzado`, abajo a la izquierda del panel, abre una ventana con dos pestañas: `General` y `Sincronizar`.
 
-### Sincronizar visibilidad {#sync-visibility}
-Usar el icono del ojo afectará a todos los elementos seleccionados. 
+### ![](/icons/focus.webp) IU: Enfocar en el elemento al hacer doble toque {#focus-on-item}
+Al tocar dos veces un elemento de la lista de la escena, la cámara se centra en él en la vista 3d.
 
-### Instancia: Mostrar {#instance-show}
-Muestra una cápsula de color a la izquierda de la lista de escena para indicar instancias.
+### ![](/icons/eye_open.webp) Sincronizar visibilidad {#sync-visibility}
+Si está activado, al usar el icono del ojo de un elemento seleccionado se ven afectados todos los elementos seleccionados.
 
+### ![](/icons/bang.webp) Resaltar selección {#highlight}
+Resalta los objetos seleccionados en la vista 3d cuando cambia la selección.
+
+### ![](/icons/link.webp) Mostrar (Instancia) {#instance-show}
+Muestra una cápsula de color a la izquierda de la lista de la escena para indicar las instancias.
+
+### ![](/icons/preview.webp) Vistas previas de objetos {#object-previews}
+Muestra una miniatura renderizada de cada objeto en la lista de la escena. Es lo mismo que el botón de vista previa que hay encima de la lista.
+
+### Radio de soldadura {#weld-radius}
+Bajo el título `Unir`, `Radio de soldadura de posición` y `Radio de soldadura de UV`: los puntos y las UVs más cercanos que estos radios se fusionan. Cada uno se puede desactivar con su casilla. Se aplica a Unir, Booleano, Recortar, Diezmar, los remallados y la importación de archivos.
 
 ### Iconos {#icons}
-Establece el tamaño y la opacidad de los iconos de grupo, luz, cámara y espejo en el visor
+Fija el `Tamaño` mínimo y máximo y la `Opacidad` de los iconos de grupos, luces, cámaras y repetidores en la vista 3d.
 
-### Líneas de jerarquía {#hierarchy-lines}
-Muestra una línea entre el padre y sus hijos en el visor
+### ![](/icons/hierarchy.webp) Líneas de jerarquía {#hierarchy-lines}
+Muestra una línea entre cada padre y sus hijos en la vista 3d. Si está activado, también puedes ajustar:
+* `Usar pivote de Nomad` - las líneas parten del pivote que usan las herramientas Transformar y Gizmo. Si está desactivado, usan el pivote base natural, que puede estar lejos del centro del objeto.
+* `Espesor` - el grosor de las líneas. El botón junto al regulador les añade un contorno.
+* El color de las líneas.
+
+### ![](/icons/link.webp) Sincronizar {#sync}
+La pestaña `Sincronizar` define, para cada operación (`Añadir`, `Eliminar`, `Bloquear`, `Clonar`, `Instancia`, `Desinstanciar`, `Unir`, `Separar` y `Booleano`), si se aplica a todas las instancias de la selección:
+* `Auto` - sigue la casilla `Sincronizar` de la parte superior del menú Escena.
+* `No` - solo los objetos seleccionados.
+* `Sí` - siempre todas las instancias.
+
+Por defecto, `Unir`, `Separar` y `Booleano` están en `Sí` y las demás en `Auto`. `Restablecer` recupera estos valores por defecto.
 
 ## Barra de herramientas inferior {#bottom-toolbar}
-Estos iconos alternarán la visibilidad de Grupo, Luz, Cámara, Repetidor y líneas de Jerarquía en el visor.
+Estos iconos muestran u ocultan en la vista 3d los grupos, las luces, las cámaras, los repetidores y las líneas de jerarquía. Los iconos que aparecen en el lienzo se pueden tocar para seleccionarlos y editarlos directamente.

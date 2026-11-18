@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Home",
+    "forum": "Forum"
+  },
+  "theme": {
+    "outlineLabel": "Op deze pagina",
+    "docFooter": {
+      "prev": "Vorige pagina",
+      "next": "Volgende pagina"
+    },
+    "darkModeSwitchLabel": "Weergave",
+    "lightModeSwitchTitle": "Overschakelen naar licht thema",
+    "darkModeSwitchTitle": "Overschakelen naar donker thema",
+    "sidebarMenuLabel": "Menu",
+    "returnToTopLabel": "Terug naar boven",
+    "langMenuLabel": "Taal wijzigen",
+    "skipToContentLabel": "Naar inhoud gaan",
+    "notFound": {
+      "title": "PAGINA NIET GEVONDEN",
+      "quote": "Maar als je niet van richting verandert en blijft zoeken, kom je misschien precies uit waar je naartoe gaat.",
+      "linkLabel": "ga naar home",
+      "linkText": "Breng me naar home"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "Zoeken",
+      "buttonAriaLabel": "Zoeken"
+    },
+    "modal": {
+      "displayDetails": "Gedetailleerde lijst tonen",
+      "resetButtonTitle": "Zoekopdracht wissen",
+      "backButtonTitle": "Zoeken sluiten",
+      "noResultsText": "Geen resultaten voor",
+      "footer": {
+        "selectText": "om te selecteren",
+        "selectKeyAriaLabel": "Enter-toets",
+        "navigateText": "om te navigeren",
+        "navigateUpKeyAriaLabel": "pijl omhoog",
+        "navigateDownKeyAriaLabel": "pijl omlaag",
+        "closeText": "om te sluiten",
+        "closeKeyAriaLabel": "Escape-toets"
+      }
+    }
+  }
+}

@@ -1,143 +1,167 @@
-# ![](/icons/paint.webp) Malen {#painting}
+# ![](/icons/paint.webp) Zeichnen {#painting}
 
-Steuern Sie Farbe, Rauheit und Metallizität von Pinselstrichen, ermöglichen Sie Flutfüllungen von Malattributen und legen Sie fest, wie Malwerkzeuge mit Ebenen, Masken und versteckten Auswahlen interagieren.
+Hier steuern Sie Farbe, Rauheit und Metallizität der Malstriche, füllen Malattribute flächig auf und legen fest, wie Malwerkzeuge mit Ebenen, Masken und ausgeblendeten Bereichen zusammenspielen.
 
 ![](/images/paint_overview.webp)  
 
-## Übersicht {#overview}
+## Überblick {#overview}
 
 Nomad verwendet PBR-Vertex-Painting. Was bedeutet das?
 
 ### PBR {#pbr}
-PBR, oder Physically Based Rendering, ist eine beliebte Computergrafik-Technik für Film, Fernsehen, Spiele und Mobile. Durch die physikalische Grundlage der Beleuchtung und die Definition von Oberflächen über Farbe, Rauheit und Metallizität kann eine große Bandbreite fotorealistischer Looks erzielt werden.
+PBR (Physically Based Rendering, physikalisch basiertes Rendering) ist eine verbreitete Computergrafik-Technik für Film, Fernsehen, Spiele und Mobilgeräte. Indem das Licht auf physikalischen Eigenschaften beruht und Oberflächen über Farbe, Rauheit und Metallizität beschrieben werden, lässt sich eine große Vielfalt fotorealistischer Looks erzielen.
 
-### Vertex-Malerei {#vertex-painting}
+### Vertex-Painting {#vertex-painting}
 
-Vertex-Painting bedeutet, dass die Malinformationen in den Vertices des Modells gespeichert werden, anstatt in Texturen. Da Nomad Modelle mit Hunderttausenden, oft Millionen von Vertices verarbeiten kann, sollten Ihre Modelle sehr detaillierte Oberflächenbemalung haben können; wenn Sie ein Detail modellieren können, können Sie dieses Detail auch bemalen.
+Vertex-Painting bedeutet, dass die Malinformationen in den Vertices des Modells gespeichert werden statt in Texturen. Da Nomad Modelle mit Hunderttausenden, oft Millionen von Vertices verarbeiten kann, können Ihre Modelle sehr detailreich bemalt sein: Was Sie an Details sculpten können, können Sie auch malen.
 
-Das bedeutet auch, dass Malen in Nomad kein UV-Mapping erfordert, was in anderen 3D-Anwendungen oft ein langsamer und technischer Prozess ist. Viele andere 3D-Anwendungen unterstützen nicht die hohen Vertex-Anzahlen, die Nomad verarbeiten kann, allerdings verfügt Nomad auch über gute Werkzeuge zum Textur-Backen und zur Reduktion (Decimation).
+Das bedeutet auch, dass Sie zum Malen in Nomad kein UV-Mapping brauchen, das in anderen 3d-Programmen oft ein langsamer und technischer Vorgang ist. Viele andere 3d-Programme kommen nicht mit so hohen Vertex-Zahlen zurecht wie Nomad, doch Nomad bietet auch gute Werkzeuge zum Backen von Texturen und zum Dezimieren, die dabei helfen.
 
 ### Texturierung {#texturing}
 
-Nomad unterstützt Texturen, aber sie müssen in einem importierten Modell vorhanden sein oder über das Backen von Vertex-Painting in Texturen erzeugt werden. 
+Nomad unterstützt Texturen, allerdings müssen sie in einem importierten Modell enthalten sein oder durch Backen des Vertex-Paintings in Texturen entstehen.
 
-Eine Textur ist einfach ein Bild, aber im 3D-Kontext bezieht sie sich üblicherweise auf ein Bild, das einem Objekt zugewiesen ist.
-Um ein Bild um ein Modell zu legen, benötigt das Modell Texturkoordinaten (UV).
+Eine Textur ist einfach ein Bild, aber im 3d-Kontext meint man damit meist ein Bild, das einem Objekt zugewiesen ist.
+Damit sich ein Bild um ein Modell legen lässt, braucht das Modell Texturkoordinaten (UV).
 
-Nomad kann [sie automatisch berechnen](topology.md#uv-unwrap), aber Sie haben nicht viel Kontrolle über die Gesamtqualität.
+Nomad kann [sie automatisch berechnen](topology.md#uv-unwrap), aber Sie haben dabei wenig Einfluss auf die Gesamtqualität.
 
 ::: tip
-Ein Beispiel-Workflow:
-- In Nomad modellieren, dann [UV-Unwrap](topology.md#uv-unwrap)
-- Wenn Sie in Nomad bereits mit dem Malen begonnen haben, können Sie [das Vertex-Painting auf Texturen übertragen](topology.md#bake-vertex-colors-to-texture)
-- Export nach Procreate
-- Texturieren in Procreate
-- Export zurück nach Nomad zum Rendern
+Ein Beispiel für einen Arbeitsablauf:
+- In Nomad sculpten, dann ein [UV-Unwrapping](topology.md#uv-unwrap) durchführen
+- Wenn Sie in Nomad schon zu malen begonnen haben, können Sie [das Vertex-Painting in Texturen übertragen](topology.md#bake-texture)
+- Nach Procreate exportieren
+- In Procreate texturieren
+- Zurück nach Nomad exportieren, um zu rendern
 :::
 
-Das ist die Übersicht, nun sehen wir uns die Bereiche des Malmenüs an:
+So viel zum Überblick; sehen wir uns nun die Bereiche des Malmenüs an:
 
 
-## Pinselstrich-Malerei {#stroke-painting}
+## Striche malen {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
-Aktiviert das Malen für dieses Werkzeug, nützlich, wenn Sie gleichzeitig modellieren und malen müssen.
+Aktiviert das Malen für dieses Werkzeug; nützlich, wenn Sie gleichzeitig sculpten und malen möchten. Kann ein Werkzeug malen, ist dieses Kontrollkästchen aber ausgeschaltet, erinnert Sie ein Warnsymbol neben dem Titel daran.
 
-Für Werkzeuge, bei denen Malen die Hauptfunktion ist (z. B. Paint, Smudge, Mask), existiert dieses Kontrollkästchen nicht.
+Bei Werkzeugen, deren Hauptaufgabe das Malen ist (z. B. Zeichnen, Wischfinger, Maske), gibt es dieses Kontrollkästchen nicht.
 
-### Malintensität {#paint-intensity}
+### ![](/icons/opacity.webp) Malintensität {#paint-intensity}
 
-Ein Schieberegler, mit dem Sie eine andere Intensität als die primäre Werkzeugintensität verwenden können.
+Ein Regler, mit dem Sie beim Malen eine andere Intensität als die Hauptintensität des Werkzeugs verwenden können.
 
-Die Kontrollkästchen `Alpha`, `Falloff` und `Randomize` bestimmen, ob diese Funktionen das Malen beeinflussen. Sie könnten z. B. Randomize für das Clay-Werkzeug aktiviert haben, aber die Farbe wird nicht zufällig verändert.
+Die Regler-Schaltfläche daneben fügt der Seitenleiste einen Schnellregler für die Malintensität hinzu, für Werkzeuge, die gleichzeitig sculpten und malen.
+
+Die Schaltflächen `Alpha`, `Falloff` und `Intensität randomisieren` legen fest, ob diese Funktionen das Malen beeinflussen. So können Sie zum Beispiel beim Werkzeug Ton die Zufallsvariation aktivieren, ohne dass die Farbe zufällig variiert.
+
+* `Alpha` - ist diese Option deaktiviert, ignoriert das Malen das Alpha und deckt die gesamte Pinselfläche ab. Beim Werkzeug VDM wird diese Schaltfläche durch `Stempelmaterial` ersetzt, das das im Stempel gespeicherte Material ein- oder ausschaltet.
+* `Falloff` - ist diese Option deaktiviert, bleibt die Malintensität bis zum Pinselrand voll erhalten.
+* `Intensität randomisieren` - legt fest, ob der Intensitätsanteil der Zufallsvariation des Strichs das Malen beeinflusst. Die Zufallsvariation von Position, Rotation und Skalierung bewegt immer den ganzen Stempel.
+
+[Füllen](#paint-all) ignoriert diese Optionen, seine Triplanar-Variante verwendet aber das Alpha.
+
+### ![](/icons/link.webp) Globales Material {#global-material}
+Ist diese Option aktiviert, ist das ausgewählte Material dasselbe wie bei den anderen Werkzeugen. Beachten Sie, dass dabei nur die Einstellungen für Rauheit, Metallizität und Farbe berücksichtigt werden. Deaktivieren Sie die Option, um diesem Werkzeug ein eigenes Material zu geben.
 
 
 ## Material {#material}
 ![](/images/paint_material.webp) 
 
-Das erste Symbol ist eine Materialvorschauform. Durch Ziehen an der 3D-Materialvorschau drehen Sie diese. 
+Das erste Icon ist eine Vorschauform des Materials. Ziehen Sie auf der 3d-Materialvorschau, um sie zu drehen.
 
-Das zweite Symbol ist eine Vorschau des Pinselstrichs mit den ausgewählten Alpha- und Falloff-Optionen.
+Das zweite Icon ist eine Vorschau des Malstrichs mit den gewählten Alpha- und Falloff-Optionen.
 
-Die Vorschau-Schaltfläche neben dem Titel „Material“ lässt Sie zwischen None, Material oder Triplanar umschalten. Dies bestimmt, was passiert, wenn Sie Mal-Eigenschaften interaktiv ändern:
+### ![](/icons/falloff.webp) Kurven {#curves}
 
-* `None` – Auf dem Modell wird keine Vorschau angezeigt, wenn Sie Eigenschaften anpassen.
-* `Material` – Die Materialwerte werden auf dem Objekt in der Vorschau angezeigt, wenn Sie Eigenschaften anpassen. Wenn Sie Texturen verwenden und das Modell UVs hat, werden die UVs verwendet.
-* `Triplanar` – Das Material wird als Triplanar-Projektion in der Vorschau angezeigt. 
+Öffnet einen Kurveneditor für die Textur-Slots der [PBR-Regler](#pbr-sliders). Er rechnet die Texturwerte um, bevor sie gemalt werden, ohne die Bilddatei anzutasten. Ein kleines Kurven-Icon auf einem Textur-Slot zeigt Ihnen, dass seine Kurve bearbeitet wurde.
 
-Die Pipette kann verwendet werden, um alle Eigenschaften von einem Objekt in Ihrer Szene zu übernehmen.
+### ![](/icons/cog.webp) Materialoptionen {#material-options}
 
-## Material-Voreinstellungen {#material-presets}
-Durch Tippen auf die 3D-Vorschauform wird ein Preset-Menü mit Materialien geöffnet, die geklont werden können, um eigene Presets zu definieren.
+Die Schaltfläche `Material` neben dem Titel enthält zwei Einstellungen.
+
+`Materialvorschau im Viewport` legt fest, was auf dem ausgewählten Objekt geschieht, während Sie die Regler für Farbe, Rauheit, Metallizität, Deckkraft und Intensität verändern:
+
+* `Keine` - Beim Anpassen der Eigenschaften wird keine Vorschau auf dem Modell angezeigt
+* `Material` - Beim Anpassen der Eigenschaften werden die Materialwerte als Vorschau auf dem Objekt angezeigt.
+* `Triplanar` - Das Material wird als Triplanar-Projektion in der Vorschau angezeigt.
+
+Mit den Kontrollkästchen für Farbe, Rauheit, Metallizität und Deckkraft darunter wählen Sie, welche Kanäle die [Materialpipette](#material-picker) ersetzt.
+
+### ![](/icons/dropper.webp) Materialpipette {#material-picker}
+
+Die Pipette nimmt das Material unter dem Cursor auf, von jedem Objekt in Ihrer Szene. Ersetzt werden nur die Kanäle, die in den [Materialoptionen](#material-options) angehakt sind.
+
+## Material-Presets {#material-presets}
+Tippen Sie auf die 3d-Vorschauform, um ein Preset-Menü mit Materialien zu öffnen. Diese können Sie klonen, um eigene Presets anzulegen.
 
 ![](/images/paint_presets.webp) 
 
-Die Umschalter `Embed Textures` und `Alpha` speichern bei Aktivierung alle von diesem Material verwendeten Texturen innerhalb des Presets. Dies wird weiter unten näher erläutert.
+Der Schalter `Texturen einbetten` speichert eine Kopie der von diesem Material verwendeten Texturen im Preset. Ohne ihn verweist das Preset nur auf die Texturen im Nomad-Ordner textures/. Aktivieren Sie ihn, wenn Sie ein texturiertes Preset weitergeben möchten, ohne seine Texturen separat zu verschicken.
+
+`Alpha einbeziehen` speichert außerdem das Pinsel-Alpha im Material-Preset.
 
 ## PBR-Regler {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
-[PBR](shading.md#pbr)-Malen verwendet 4 Kanäle:
-- `Color` Die Farbe, die gemalt wird. Die Pipette kann verwendet werden, um Farbe von anderen Teilen des Modells oder von Referenzbildern auszuwählen.
-- `Roughness` Gibt an, wie „rau“ oder „glatt“ eine Oberfläche ist. Ein niedriger Rauheitswert bedeutet, dass die Spiegelungen scharf sind.
-- `Metalness` Gibt einfach an, ob die Oberfläche metallisch ist oder nicht. Der Wert sollte die meiste Zeit entweder 0 % oder 100 % betragen, Zwischenwerte sollten die Ausnahme sein.
-- `Opacity` Wie stark das Material durchscheinend ist. Streng genommen ist es nicht Teil der PBR-Spezifikation, aber in vielen Situationen nützlich. 1 ist vollständig deckend, 0 ist transparent. Beachten Sie, dass Deckkraft und Brechung unterschiedliche Dinge sind; Brechung wird in Nomad über das Refraction-Material gehandhabt. 
+Das [PBR](shading.md#pbr)-Malen verwendet 4 Kanäle:
+- `Farbe` Die Farbe, die gemalt wird. Mit der Pipette können Sie Farben von anderen Stellen des Modells oder aus Referenzbildern aufnehmen.
+- `Matt` Gibt an, wie „rau“ oder „glatt“ eine Oberfläche ist. Ein niedriger Rauheitswert bedeutet scharfe Spiegelungen.
+- `Metallisch` Gibt schlicht an, ob die Oberfläche metallisch ist oder nicht. Meist sollte der Wert entweder 0 % oder 100 % betragen; Zwischenwerte sollten die Ausnahme sein.
+- `Deckkraft` Wie stark man durch das Material hindurchsehen kann. Streng genommen gehört sie nicht zur PBR-Spezifikation, ist aber in vielen Situationen nützlich. 1 ist vollständig deckend, 0 ist transparent. Beachten Sie, dass Deckkraft und Refraktion zwei verschiedene Dinge sind: Die Refraktion wird in Nomad über das Refraktionsmaterial gesteuert.
 
-Wenn Sie ein Material-Preset auswählen, werden 3 Kanäle gleichzeitig gemalt (Deckkraft wird oft absichtlich ausgeschlossen). Das bedeutet, dass Sie statt nur „Rot“ zu malen, z. B. „ein rotes raues Metall“ oder „einen weißen glatten Kunststoff“ malen können.
+Wenn Sie ein Material-Preset auswählen, werden 3 Kanäle gleichzeitig gemalt (die Deckkraft ist oft absichtlich ausgenommen). Statt einfach nur „Rot“ malen Sie so zum Beispiel „ein rotes, raues Metall“ oder „einen weißen, glatten Kunststoff“.
 
-Das Quadrat ist ein Textur-Slot, klicken Sie darauf, um für diese Eigenschaft eine Textur anstelle eines festen Werts zu verwenden.
+Das Quadrat ist ein Textur-Slot: Tippen Sie darauf, um für diese Eigenschaft eine Textur statt eines festen Werts zu verwenden. Eine Farbtextur färbt die Farbe ein, während eine Textur für Rauheit, Metallizität oder Deckkraft den Reglerwert ersetzt (sein Label wird dann durchgestrichen). Bei der Deckkraft-Textur liest `Alpha als Wert verwenden` den Alphakanal der Textur statt ihres Graustufenwerts.
 
-Das Pinselsymbol neben den Schiebereglern füllt diese Eigenschaft über Ihr Objekt hinweg.
+Wenn beim Werkzeug VDM der Stempel sein eigenes Material mitbringt, zeigt ein zusätzlicher Slot neben dem Textur-Slot dieses Material an. Tippen Sie darauf, um diesen Kanal des Stempels zu verwenden oder zu ignorieren.
 
-Das Kontrollkästchen aktiviert oder deaktiviert diese bestimmte Eigenschaft, sodass Sie z. B. nur Farbe oder nur Rauheit und Deckkraft malen könnten. 
+Das Pinsel-Icon neben den Reglern füllt Ihr Objekt flächig mit dieser Eigenschaft.
 
-Hier einige Beispiele für unterschiedliche Rauheits- und Metallizitäts-Eigenschaften:
+Das Kontrollkästchen aktiviert oder deaktiviert die jeweilige Eigenschaft. So können Sie zum Beispiel nur Farbe malen oder nur Rauheit und Deckkraft.
 
-|                | Metalness 0%                      | Metalness 100%               |
+Hier einige Beispiele für verschiedene Werte von Rauheit und Metallizität:
+
+|                | Metallizität 0 %                  | Metallizität 100 %           |
 | :------------: | :-------------------------------: | :--------------------------: |
-| Roughness 0%   | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
-| Roughness 50%  | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
-| Roughness 100% | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
+| Rauheit 0 %    | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
+| Rauheit 50 %   | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
+| Rauheit 100 %  | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
 
 ::: warning
-Im [Matcap-Rendering](shading.md#matcap)-Modus wird nur Farbe unterstützt, Metallizität und Rauheit werden ignoriert.
+Rauheit und Metallizität erfordern den Shading-Modus [PBR](shading.md#pbr). Im Modus [MatCap](shading.md#matcap) oder [Unbeleuchtet](shading.md#unlit) werden sie ignoriert, und das Menü zeigt eine Warnung an.
 :::
 
 ::: tip
-Wenn Sie Texturen für PBR-Malen verwenden, ist es oft hilfreich, auf ein Werkzeug wie `Stamp` zu wechseln oder im Stroke-Menü einen anderen Modus als Dot zu verwenden, der die Textur verschmieren kann.
+Wenn Sie Texturen für das PBR-Malen verwenden, ist es oft sinnvoll, zu einem Werkzeug wie `Stempel` zu wechseln oder im Strich-Menü einen anderen Modus als Punkt zu wählen, da dieser die Textur verschmieren kann.
 
 ![](/videos/paint_color_texture.mp4)  
 :::
 
 ::: tip
-Sie sollten in Erwägung ziehen, `Smooth Shading` [global](settings.md#smooth-shading) oder [pro Objekt](material.md#smooth-shading) zu aktivieren, wenn Sie eine metallische Oberfläche auf einem Objekt mit niedriger Polygonanzahl bemalen.
+Wenn Sie eine metallische Oberfläche auf ein Objekt mit eher wenigen Polygonen malen, lohnt es sich, `Smooth Shading` [global](settings.md#smooth-shading) oder [pro Objekt](material.md#smooth-shading) zu aktivieren.
 :::
 
-## Alles malen {#paint-all}
+## ![](/icons/paint.webp) Füllen {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
-Wendet das aktuelle Material auf das Objekt an, entweder im Standardmodus mit „Paint All“ oder als Triplanar-Projektion.
+Wendet das aktuelle Material auf die ausgewählten Objekte an, entweder im Standardmodus mit `Füllen` oder als Triplanar-Projektion mit `Füllen + Triplanar`. Die Triplanar-Variante ist bei nicht validierten Grundformen nicht verfügbar.
 
-Die Kontrollkästchen neben den Color-/Metalness-/Roughness-/Opacity-Schiebereglern werden berücksichtigt, deaktivierte Eigenschaften werden nicht gefüllt.
+Die Kontrollkästchen neben den Reglern für Farbe/Metallizität/Rauheit/Deckkraft werden berücksichtigt: Deaktivierte Eigenschaften werden nicht gefüllt.
 
-Die zusätzlichen Schaltflächen steuern, wie „Paint All“ weiter beeinflusst werden kann:
+Mit den zusätzlichen Schaltflächen können Sie das Füllen weiter beeinflussen. Die meisten zeigen einen Prozentwert und sind ausgegraut, wenn sie keine Wirkung hätten:
 
-| Icon                        | Beschreibung                                   |
-| :-------------------------: | :--------------------------------------------: |
-| ![](/icons/tool_mask.webp) | Maskierte Bereiche werden nicht beeinflusst.   |
-| ![](/icons/tool_hide.webp) | Versteckte Bereiche werden nicht beeinflusst.  |
-| ![](/icons/opacity.webp)   | Verwendet den obenstehenden Werkzeug-Malfaktor.|
-| ![](/icons/layer.webp)     | Unbemalte Bereiche einer Ebene werden nicht beeinflusst. |
-| ![](/icons/triplanar.webp) | Indikator für Triplanar-Einstellungen          |
-| ![](/icons/cog.webp)       | Öffnet die Triplanar-Einstellungen             |
+| Symbol                      | Beschreibung                                  |
+| :-------------------------: | :-------------------------------------------: |
+| ![](/icons/shield.webp)    | Maskierte Bereiche bleiben unverändert.       |
+| ![](/icons/tool_hide.webp) | Ausgeblendete Bereiche bleiben unverändert.   |
+| ![](/icons/opacity.webp)   | Verwendet den Malfaktor des Werkzeugs von oben. |
+| ![](/icons/layer.webp)     | Unbemalte Bereiche einer Ebene bleiben unverändert. |
+| ![](/icons/triplanar.webp) | `Vertex`: Die Triplanar-Variante verschiebt die Oberfläche zusätzlich mit dem Alpha, um die angezeigte Werkzeugintensität. |
+| ![](/icons/cog.webp)       | Öffnet die Triplanar-Einstellungen            |
 
-### Triplanare Einstellungen {#triplanar-settings}
+### ![](/icons/cog.webp) Triplanar-Einstellungen {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
-Ähnlich wie die [Triplanar-Einstellungen im Materialmenü](material.md#triplanar) können Sie das Blending der Projektionen, das Tiling und die Offsets steuern. 
+Wie bei den [Triplanar-Einstellungen im Material-Menü](material.md#triplanar) können Sie die Überblendung der Projektionen, die Kachelung und die Versätze steuern.
 
-Verwenden Sie das Vorschau-Kontrollkästchen oben in diesem Menü, um eine dauerhafte Vorschau beim Anpassen der Werte zu aktivieren.
-
-## Globales Material {#global-material}
-Wenn diese Option aktiviert ist, ist das ausgewählte Material dasselbe wie bei den anderen Werkzeugen. Beachten Sie, dass dabei nur Rauheits-, Metallizitäts- und Farbeinstellungen berücksichtigt werden.
+Mit dem Vorschau-Kontrollkästchen oben in diesem Menü aktivieren Sie eine dauerhafte Vorschau, während Sie die Werte anpassen.

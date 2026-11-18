@@ -1,26 +1,26 @@
-# Memulai {#getting-started}
+# ![](/icons/play.webp) Memulai {#getting-started}
 
 ## Selamat datang di Nomad! {#welcome-to-nomad}
 
-Nomad adalah aplikasi pemodelan 3D (3D sculpting) yang bekerja di banyak perangkat, dan paling optimal digunakan pada tablet dengan stylus yang sensitif terhadap tekanan, misalnya Apple iPad dengan Apple Pencil, atau Samsung Galaxy Tab dengan stylus.
+Nomad adalah aplikasi pahat 3d yang berjalan di banyak perangkat, dan paling nyaman dipakai di tablet dengan stylus yang peka tekanan, misalnya Apple iPad dengan Pencil, atau Samsung Galaxy Tab dengan stylus.
 
-Aplikasi ini terinspirasi dari aplikasi sculpting desktop seperti ZBrush dan Blender, dengan fokus pada antarmuka yang mudah dipahami tanpa mengorbankan fitur. Jika Anda sudah pernah menggunakan aplikasi sculpting 3D sebelumnya, Nomad akan terasa sangat familiar.
+Nomad terinspirasi dari aplikasi pahat desktop seperti ZBrush dan Blender, dengan fokus pada antarmuka yang mudah dipahami tanpa mengorbankan fitur. Jika Anda pernah memakai aplikasi pahat 3d sebelumnya, Nomad akan terasa sangat familier.
 
-Jika ini adalah pertama kalinya Anda melakukan sculpting 3D, ada baiknya mengetahui beberapa dasar terlebih dahulu.
+Jika ini pertama kalinya Anda memahat 3d, ada baiknya Anda mengenal beberapa dasarnya.
 
 ::: tip Lebih suka video?
-Youtube sekarang memiliki BANYAK video tutorial untuk pemula, berikut beberapa tautan yang bagus:
+Di YouTube sekarang ada BANYAK sekali video tutorial untuk pemula, berikut beberapa tautan yang bagus:
 
 * [Nomad Sculpt Crash Course oleh Dave Reed](https://www.youtube.com/watch?v=69m86ICy2Q4)
 * [Tutorial pemula Nomad Sculpt oleh Small Robot Studio](https://www.youtube.com/watch?v=J644wXoTiww)
 * [Seri NOMAD FOR BEGINNERS oleh SouthernGFX](https://www.youtube.com/watch?v=bEh0WxRoOmg)
 
-Ada baiknya memeriksa kanal utama para kreator tersebut, mereka sering mengunggah tutorial baru.
+Saluran utama para kreator ini layak Anda kunjungi, mereka sering mengunggah tutorial baru.
 :::
 
-## Sculpt pertama Anda {#your-first-sculpt}
+## Pahatan pertama Anda {#your-first-sculpt}
 
-Saat pertama kali menjalankan Nomad, Anda akan melihat sebuah bola di layar. Cukup seret stylus Anda di atas bola tersebut untuk mulai melakukan sculpting. Simetri diaktifkan secara bawaan untuk memudahkan proses sculpting.
+Saat pertama kali membuka Nomad, Anda akan melihat sebuah bola di layar. Cukup seret stylus Anda di atas bola untuk mulai memahat. Simetri aktif secara bawaan agar memahat lebih mudah.
 
 ![](/videos/gettingstarted_01.mp4)
 
@@ -28,129 +28,133 @@ Untuk memperbesar atau memperkecil kuas, gunakan penggeser radius di sebelah kir
 
 ![](/videos/gettingstarted_02.mp4)
 
-Untuk memperkuat atau memperlemah kuas, gunakan penggeser intensitas di sebelah kiri.
+Untuk membuat kuas lebih kuat atau lebih lemah, gunakan penggeser intensitas di sebelah kiri.
 
 ![](/videos/gettingstarted_03.mp4)
 
-Alat bawaan adalah `Clay tool`, dan alat ini menambahkan volume ke permukaan. Untuk mengurangi volume dari permukaan, ketuk tombol `Sub` di sebelah kiri. Untuk kembali menambahkan volume ke permukaan, ketuk tombol Sub lagi.
+Alat bawaannya adalah alat `Tanah Liat`, yang menambahkan material ke permukaan. Untuk mengurangi permukaan, ketuk tombol `Kurang` di sebelah kiri. Untuk kembali menambah, ketuk tombol Kurang sekali lagi.
 
 ![](/videos/gettingstarted_04.mp4)
 
-Untuk menghaluskan permukaan, ketuk tombol `Smooth`. Untuk kembali ke sculpting biasa, ketuk tombol Smooth lagi.
+Untuk menghaluskan permukaan, ketuk tombol `Haluskan`. Untuk kembali memahat seperti biasa, ketuk tombol Haluskan sekali lagi.
 
 ![](/videos/gettingstarted_05.mp4)
 
-Untuk memutar kamera mengelilingi model, seret di area kosong di luar model.
+Untuk berputar mengelilingi model, seret di ruang kosong di luar model.
 
 ![](/videos/gettingstarted_06.mp4)
 
-Untuk melakukan zoom, gunakan gestur cubit/zoom dengan dua jari.
+Untuk zoom, gunakan gerakan mencubit dengan dua jari.
 
 ![](/videos/gettingstarted_07.mp4)
 
-Untuk menggeser (pan) kamera, tekan 2 jari di layar lalu seret.
+Untuk menggeser kamera, tekan 2 jari di layar lalu seret.
 
 ![](/videos/gettingstarted_08.mp4)
 
-Jika Anda melakukan kesalahan, ketukan dua jari akan melakukan undo, atau gunakan tombol undo di kiri bawah. 
+Jika Anda membuat kesalahan, ketukan 2 jari akan membatalkannya, atau gunakan tombol urungkan di kiri bawah. 
 
 ![](/videos/gettingstarted_09.mp4)
 
-::: tip Rilis desktop
-Di desktop, tombol alt/opt digunakan untuk mengontrol kamera:
+::: tip Versi desktop
+Di desktop, tombol alt/opt dipakai untuk mengendalikan kamera:
 
-* tip seret di area kosong = memutar kamera
-* alt+tip seret = pan
-* alt+tip seret, lalu lepaskan alt = zoom (sama seperti zbrush)
+* seret ujung pena di ruang kosong = putar kamera
+* alt+seret ujung pena = geser
+* alt+seret ujung pena, lalu lepaskan alt = zoom (sama seperti ZBrush)
 
-Dengan tablet Wacom yang memiliki 2 tombol atau lebih pada pena, gunakan pengaturan Wacom untuk mengonfigurasi ujung pena dan tombol seperti ini:
+Dengan tablet Wacom yang penanya memiliki 2 tombol atau lebih, gunakan pengaturan Wacom untuk mengonfigurasi ujung pena dan tombol-tombolnya seperti ini:
 
-* tip = klik kiri
-* rocker bawah = klik tengah
-* rocker atas = klik kanan
+* ujung pena = klik kiri
+* tombol rocker bawah = klik tengah
+* tombol rocker atas = klik kanan
 
-Dengan pengaturan tersebut, Anda dapat memanipulasi kamera hanya dengan pena:
+Dengan pengaturan tersebut, Anda bisa mengendalikan kamera sepenuhnya dengan pena:
 
-* rocker atas dan gerakan hover = memutar kamera
-* rocker bawah dan gerakan hover = pan
+* tombol rocker atas dan gerakkan pena di atas layar tanpa menyentuh = putar kamera
+* tombol rocker bawah dan gerakkan pena di atas layar tanpa menyentuh = geser
 :::
 
-## Tambahkan warna {#add-color}
+## Menambahkan warna {#add-color}
 
-Nomad memungkinkan Anda mengecat permukaan sculpt Anda. Dari menu alat di sebelah kanan, cari alat `Paint`, lalu klik. Di toolbar kiri akan muncul sebuah bola berwarna. Klik bola tersebut, ini akan menampilkan pemilih warna. Pilih warna, lalu lukis di model Anda.
+Nomad memungkinkan Anda mewarnai permukaan pahatan. Dari menu alat di sebelah kanan, cari alat `Melukis`, lalu klik. Di bilah alat kiri akan muncul sebuah bola berwarna. Klik bola itu untuk membuka pemilih warna. Pilih sebuah warna, lalu lukis di atas model Anda.
 
 ![](/videos/gettingstarted_10.mp4)
 
-Untuk menghapus, ketuk tombol `Erase` di toolbar kiri, lalu hapus di permukaan. Ketuk tombol erase lagi untuk kembali ke mode paint.
+Untuk menghapus, ketuk tombol `Hapus` di bilah alat kiri, lalu hapus di permukaan. Ketuk tombol hapus sekali lagi untuk kembali ke mode melukis.
 
 ![](/videos/gettingstarted_11.mp4)
 
-Dengan menggunakan kuas clay dalam mode add/sub, smooth, dan paint, coba lihat apakah Anda bisa membuat kepala kartun sederhana:
+Dengan memakai kuas tanah liat dalam mode tambah/kurang, haluskan, dan lukis, cobalah membuat kepala kartun sederhana:
 
 ![](/images/gettingstarted_head1.webp)
 
 ## Alat lainnya {#other-tools}
 
-Palet alat memiliki banyak tool untuk membantu proses sculpting. Sejauh ini Anda telah menggunakan kuas clay (alat awal bawaan), smooth, dan paint. Karena smooth sering digunakan, alat ini memiliki pintasan tambahan di toolbar kiri.
+Palet alat berisi banyak alat untuk membantu Anda memahat. Sejauh ini Anda sudah memakai kuas tanah liat (alat awal bawaan), haluskan, dan lukis. Karena haluskan sangat sering dipakai, alat ini punya pintasan tambahan di bilah alat sebelah kiri.
 
-Alat-alat di Nomad dapat melakukan berbagai hal, mulai dari alat yang berhubungan langsung dengan sculpting seperti move, crease, inflate, hingga alat seperti split dan trim yang lebih mirip alat pertukangan kayu atau logam. Halaman [Tools](tools.md) memiliki informasi lebih lanjut.
+Alat-alat di Nomad bisa melakukan banyak hal, mulai dari alat yang berkaitan dengan pahat seperti pindah, lipatan, dan kembung, hingga alat seperti pisah dan pangkas yang lebih mirip perkakas tukang kayu atau pandai logam. Halaman [Alat](tools.md) berisi informasi lebih lanjut.
 
-Coba gunakan alat move, crease, inflate, dan smooth untuk menambahkan lebih banyak detail pada kepala Anda, mengubah bentuknya:
+Cobalah memakai alat pindah, lipatan, kembung, dan haluskan untuk menambahkan detail pada kepala Anda dan mengubah bentuknya:
 
 ![](/images/gettingstarted_head2.webp)
 
-Sekarang setelah Anda mengetahui dasar-dasar Nomad, mari kita lihat bagian lain dari antarmuka.
+Sekarang setelah Anda mengenal dasar-dasar Nomad, mari kita lihat bagian antarmuka lainnya.
 
 ## Antarmuka {#interface}
 
 ![](/images/interface_overview1.webp)
 
-* `Top menus` - Menu untuk mengakses sebagian besar fitur Nomad. Menu kiri atas terutama mencakup fitur scene dan objek, menu kanan atas terkait dengan alat. Pada layar yang lebih kecil, menu-menu ini akan digabung untuk menghemat ruang.
-* `Stats` - Informasi tentang scene, objek saat ini, status mask, penggunaan memori.
-* `Nav Cube` - Bantuan visual untuk menunjukkan sisi mana dari sculpt yang sedang Anda lihat, sekaligus pintasan untuk melompat ke berbagai sudut pandang. Mengetuk kubus akan mengubah tampilan ke sisi yang diketuk. Menyeret kubus akan memutarnya. Ketuk ikon kecil di samping kubus untuk memusatkan tampilan pada objek saat ini, atau mengatur ulang ke tampilan awal bawaan.
-* `Toolbox` - Alat-alat Nomad tersedia di area yang dapat digulir ini.
-* `Left toolbar` - Penggeser untuk radius dan intensitas untuk sebagian besar alat, tombol kontekstual untuk alat lain, dan pintasan untuk simetri, mode alt/sub alat, masking, smoothing, gizmo, dan opsi paint.
-* `Bottom toolbar` - Pintasan untuk fitur yang sering digunakan, dijelaskan di bawah.
+* `Menu atas` - Menu untuk mengakses sebagian besar fitur Nomad. Menu di kiri atas terutama berisi fitur adegan dan objek, sedangkan menu di kanan atas berkaitan dengan alat. Di layar yang lebih kecil, menu-menu ini akan digabung untuk menghemat ruang.
+* `Statistik` - Informasi tentang adegan, objek saat ini, status topeng, dan penggunaan memori.
+* `Navigator` - Alat bantu yang menunjukkan sisi pahatan mana yang sedang Anda lihat, sekaligus pintasan untuk melompat ke tampilan yang berbeda. Mengetuk salah satu sisi akan memindahkan tampilan ke sisi tersebut. Menyeret navigator akan memutar tampilan. Ketuk ikon kecil di sampingnya untuk membingkai objek saat ini, kembali ke tampilan awal bawaan, mengunci kamera, atau menampilkan/menyembunyikan kisi. Tampilannya (kubus, bola, atau gnomon) serta posisinya bisa diubah di [Pengaturan](settings.md#snap-cube).
+* `Kotak peralatan` - Alat-alat Nomad tersedia di area yang bisa digulir ini.
+* `Bilah alat kiri` - Penggeser radius dan intensitas untuk sebagian besar alat, tombol khusus untuk alat lainnya, serta pintasan untuk simetri, mode alt/kurang alat, penghalusan, topeng, menyembunyikan, grup face, gizmo, dan opsi melukis. Anda bisa mengatur ulang urutan pintasan di menu [Antarmuka](interface.md#side-bar).
+* `Bilah alat bawah` - Pintasan untuk fitur yang sering dipakai, dijelaskan di bawah.
 
 ::: tip Kidal?
-Anda dapat mencerminkan posisi dan urutan semua toolbar, lihat [Mirror top bar](interface.md#mirror-top-bar) dan opsi terkait lainnya.
+Anda bisa mencerminkan posisi dan urutan semua bilah alat, lihat [Cermin bilah atas](interface.md#mirror-top-bar) dan opsi terkait lainnya.
 :::
 
 ## Bilah alat bawah {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
-* `Undo` - mengembalikan operasi terakhir
-* `Redo` - mengulang kembali operasi yang di-undo terakhir
-* `History` - mengakses opsi riwayat, dijelaskan di menu [History](history.md).
-* `Solo` - Mengaktifkan tampilan hanya objek saat ini, atau semua objek
-* `X-Ray` - Membuat semua objek lain dirender dalam mode x-ray, dan objek saat ini tetap solid. Tekan lama atau geser ke atas untuk mengatur warna dan opasitas mode x-ray.
-* `Voxel` - Pintasan untuk tombol [Voxel Remesher](topology.md#voxel-remesher). Tekan lama atau geser ke atas untuk menampilkan pintasan pengaturan kualitas voxel remesh.
-* `Grid` - Mengaktifkan/menonaktifkan tampilan grid. Tekan lama atau geser ke atas untuk menampilkan opsi grid.
-* `Wire` - Mengaktifkan/menonaktifkan overlay wireframe. Tekan lama atau geser ke atas untuk menampilkan opsi wireframe.
-* `Inspect` - Mengaktifkan tampilan data tambahan tentang mesh saat ini. Secara bawaan akan menampilkan UV, tetapi tekan lama atau geser ke atas untuk memeriksa properti lain jika ada, dan apakah ini ditampilkan di latar belakang atau langsung pada mesh.
+* `Urungkan` - membatalkan operasi terakhir
+* `Ulangi` - mengembalikan operasi yang terakhir dibatalkan
+* `Riwayat` - mengakses opsi riwayat, dijelaskan di menu [Riwayat](history.md).
+* `Solo` - Beralih antara hanya menampilkan objek saat ini, atau semua objek
+* `X-Ray` - Menampilkan semua objek lain dalam mode x-ray, sementara objek saat ini tetap padat. Tekan lama atau geser ke atas untuk memilih matcap dan warna x-ray, serta objek mana yang terkena.
+* `Voxel` - Pintasan untuk tombol remesh voxel di [Remesh voxel](topology.md#voxel-remesher). Tekan lama atau geser ke atas untuk memunculkan opsi remesh voxel, seperti resolusinya.
+* `Grid` - Menampilkan atau menyembunyikan kisi. Tekan lama atau geser ke atas untuk memunculkan opsi kisi, seperti warnanya dan snapping.
+* `Kerangka kawat` - Menampilkan atau menyembunyikan overlay kerangka kawat. Tekan lama atau geser ke atas untuk memunculkan opsi kerangka kawat.
+* `Inspektur` - Menampilkan data tambahan tentang mesh saat ini. Secara bawaan yang ditampilkan adalah UV, tetapi dengan menekan lama atau menggeser ke atas Anda bisa memeriksa properti lain jika ada, dan memilih apakah ditampilkan di latar belakang atau di atas mesh.
+* `Log` - Menampilkan atau menyembunyikan jendela berisi log debug Nomad.
+* `Grup Face` - Menampilkan atau menyembunyikan overlay grup face, lihat alat [Grup Face](tools.md#facegroup).
+
+Anda bisa menambah, menghapus, dan mengatur ulang urutan pintasan ini di menu [Antarmuka](interface.md#add-shortcuts-bottom).
 
 ## Langkah berikutnya {#next-steps}
 
-Apa yang sebaiknya Anda pelajari selanjutnya terserah Anda, dan apa yang Anda anggap menarik! Berikut beberapa saran:
+Apa yang ingin Anda pelajari selanjutnya terserah Anda, tergantung apa yang menurut Anda menarik! Berikut beberapa saran:
 
-Ingin belajar lebih banyak tentang alat-alat sculpting? Buka bagian [Tools](tools.md).
+Ingin mempelajari alat-alat pahat lebih dalam? Kunjungi bagian [Alat](tools.md).
 
-Ingin mengekspor model Anda? Atau mengimpor model untuk di-sculpt? Atau membuat gambar dari sculpt Anda? Buka bagian [Files](files.md).
+Ingin mengekspor model Anda? Atau mengimpor model untuk dipahat? Atau membuat gambar dari pahatan Anda? Kunjungi bagian [File](files.md).
 
-Ingin belajar lebih banyak tentang cara mengontrol detail pada sculpt Anda? Buka bagian [Topology](topology.md) dan pelajari tentang multires dan decimation.
+Ingin belajar lebih banyak tentang mengatur tingkat detail pahatan Anda? Kunjungi bagian [Topologi](topology.md) dan pelajari tentang multiresolution dan desimasi.
 
-Ingin bekerja dengan lebih banyak objek? Menggabungkan objek sederhana dan primitif menjadi scene yang lebih besar? Buka bagian [Scene](scene.md).
+Ingin bekerja dengan lebih banyak objek? Menggabungkan objek sederhana dan primitif menjadi adegan yang lebih besar? Kunjungi bagian [Adegan](scene.md).
 
-Ingin mempelajari *semua hal* tentang Nomad? Pilihan yang bagus! Manual ini mencakup seluruh Nomad, berisi banyak tips dan trik, dan memiliki fungsi pencarian yang sangat baik di bagian atas. Gunakan navigasi di sebelah kiri untuk mempelajari lebih lanjut.
+Ingin mempelajari *segala hal* tentang Nomad? Pilihan yang bagus! Manual ini mencakup seluruh fitur Nomad, berisi banyak tips dan trik, dan punya fungsi pencarian yang bagus di bagian atas. Gunakan navigasi di sebelah kiri untuk mempelajari lebih lanjut.
 
-Jika Anda lebih suka video, Holger Schönischka telah membuat koleksi besar tips dan trik untuk Nomad di Youtube: https://www.youtube.com/@ProcreateFX/videos
+Jika Anda lebih suka video, Holger Schönischka telah membuat koleksi besar tips dan trik Nomad di YouTube: https://www.youtube.com/@ProcreateFX/videos
 
 
 ## Mendapatkan bantuan {#getting-help}
 
-Jika Anda masih memiliki pertanyaan setelah membaca manual dan menonton video tutorial, ada tiga cara utama untuk berbicara dengan pengguna Nomad lainnya atau pengembang Nomad:
+Jika Anda masih punya pertanyaan setelah membaca manual dan menonton video tutorial, ada tiga cara utama untuk berbicara dengan pengguna Nomad lainnya atau dengan pengembang Nomad:
 
 * Kunjungi forum: [forum.nomadsculpt.com](http://forum.nomadsculpt.com)
-* Bergabung dengan obrolan Discord Nomad: [https://discord.com/invite/8h7BwpRz29](https://discord.com/invite/8h7BwpRz29)
-* Hubungi pengembang secara langsung di support@nomadsculpt.com
+* Bergabunglah di obrolan Discord Nomad: [https://discord.com/invite/8h7BwpRz29](https://discord.com/invite/8h7BwpRz29)
+* Hubungi pengembang langsung di support@nomadsculpt.com

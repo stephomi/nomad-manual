@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "होम",
+    "forum": "फ़ोरम"
+  },
+  "theme": {
+    "outlineLabel": "इस पेज पर",
+    "docFooter": {
+      "prev": "पिछला पेज",
+      "next": "अगला पेज"
+    },
+    "darkModeSwitchLabel": "रूप",
+    "lightModeSwitchTitle": "लाइट थीम पर जाएँ",
+    "darkModeSwitchTitle": "डार्क थीम पर जाएँ",
+    "sidebarMenuLabel": "मेनू",
+    "returnToTopLabel": "ऊपर लौटें",
+    "langMenuLabel": "भाषा बदलें",
+    "skipToContentLabel": "सामग्री पर जाएँ",
+    "notFound": {
+      "title": "पेज नहीं मिला",
+      "quote": "पर अगर आप अपनी दिशा नहीं बदलते, और ढूँढ़ते रहते हैं, तो आप शायद वहीं पहुँच जाएँ जहाँ आप जा रहे हैं।",
+      "linkLabel": "होम पर जाएँ",
+      "linkText": "मुझे होम पर ले चलें"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "खोजें",
+      "buttonAriaLabel": "खोजें"
+    },
+    "modal": {
+      "displayDetails": "विस्तृत सूची दिखाएँ",
+      "resetButtonTitle": "खोज रीसेट करें",
+      "backButtonTitle": "खोज बंद करें",
+      "noResultsText": "इसके लिए कोई नतीजा नहीं",
+      "footer": {
+        "selectText": "चुनने के लिए",
+        "selectKeyAriaLabel": "एंटर",
+        "navigateText": "आगे-पीछे जाने के लिए",
+        "navigateUpKeyAriaLabel": "ऊपर तीर",
+        "navigateDownKeyAriaLabel": "नीचे तीर",
+        "closeText": "बंद करने के लिए",
+        "closeKeyAriaLabel": "एस्केप"
+      }
+    }
+  }
+}

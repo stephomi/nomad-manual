@@ -1,187 +1,245 @@
 # ![](/icons/cog.webp) Instellingen {#reset-to-default}
 
-Het instellingenmenu bevat veel opties om het uiterlijk en gedrag van Nomad te regelen.
+Het menu Instellingen bevat veel opties voor het uiterlijk en het gedrag van Nomad.
 
 ![](/images/settings_overview.webp)
 
+Met de rij knoppen bovenaan het menu spring je meteen naar een sectie: `Cursor`, `Aanwijzer`, `Draad`, `Raster`, `Twee zijden`, `Omlijning`, `Markering`, `Navigator`, `Statistieken`, `Handvatten`, `Vorm`, `Repeaters` en `Multires`.
+
 ## Weergave-instellingen {#display-settings}
-Deze sectie bevat snelkoppelingen voor de meeste instellingen verderop in dit menu.
+Deze sectie bevat snelkoppelingen naar de meeste instellingen verderop in dit menu.
 
 ![](/images/settings_display_settings.webp)
 
-### Gladde arcering {#smooth-shading}
-Schakel tussen gladde en gefacetteerde arcering. Bij gefacetteerde arcering worden de polygonen onafhankelijk van elkaar gearceerd, zodat je de onderliggende topologie kunt zien.
-Het kan nuttig zijn om gefacetteerde arcering te gebruiken tijdens het beeldhouwen en daarna over te schakelen naar gladde arcering voor het renderen.
+### ![](/icons/sphere_smooth.webp) Vloeiende shading {#smooth-shading}
+Wisselt tussen vloeiende en facetshading. Bij facetshading krijgt elke polygoon zijn eigen shading, zodat je de onderliggende topologie ziet.
+Het kan handig zijn om tijdens het sculpten facetshading te gebruiken en voor het renderen over te schakelen naar vloeiende shading.
 
-Het uitschakelen van gladde arcering verbetert de prestaties een beetje.
+Vloeiende shading uitzetten verbetert de prestaties een klein beetje.
 
-### Omlijning {#outline-quick}
-Schakel een omtreklijn in op je huidige selectie.
+### ![](/icons/outline.webp) Omlijning {#outline-quick}
+Zet een omlijning rond je huidige selectie aan of uit.
 
-Dit is handig om visuele feedback te krijgen over je huidige geselecteerde mesh(es) in het geval dat [Donker niet-geselecteerd](#darken-unselected-objects) is uitgeschakeld.
+Zo zie je welke mesh(es) geselecteerd zijn, ook als [Verduister niet-geselecteerde objecten](#darken-unselected-objects) uitstaat.
 
-Vanuit prestatie-oogpunt is [Donker niet-geselecteerd](#darken-unselected-objects) veel beter dan de omtrekoplossing.
+Voor de prestaties is [Verduister niet-geselecteerde objecten](#darken-unselected-objects) veel beter dan de omlijning.
 
-### Raster {#grid-quick}
-Schakel een achtergrondraster in, handig om de plaatsing en schaal van objecten te begrijpen.
+### ![](/icons/grid.webp) Raster {#grid-quick}
+Zet een raster op de achtergrond aan of uit, handig om de plaatsing en schaal van objecten te beoordelen.
 
-### Tweeledig {#two-sided-quick}
-Schakel tweezijdige polygonweergave in. Alle vlakken wijzen in een bepaalde richting.
-Vlakken die als *achterzijde* worden beschouwd, zijn de vlakken die "van" het camerastandpunt af wijzen.
+### ![](/icons/culling.webp) Twee zijden {#two-sided-quick}
+Zet de weergave van polygonen van twee kanten aan of uit. Elk vlak wijst in een bepaalde richting.
+Vlakken die als *achterzijde* gelden, zijn de vlakken die van het standpunt van de camera "weg" wijzen.
 
-Bijvoorbeeld: de eenvoudige bol bij het opstarten heeft zijn vlakken naar buiten gericht.
-Als je de camera in de bol verplaatst, zie je vervolgens de achterzijde van deze vlakken.
+De eenvoudige bol bij het opstarten heeft bijvoorbeeld vlakken die naar buiten wijzen.
+Beweeg je de camera in de bol, dan zie je de achterzijde van die vlakken.
 
-Meestal zou je de achterzijde van vlakken niet moeten zien, dus het inkleuren ervan kan je helpen om mogelijke problemen of onjuiste topologie te detecteren.
+Meestal hoort de achterzijde van vlakken niet zichtbaar te zijn, dus door ze een kleur te geven spoor je mogelijke problemen of foute topologie op.
 
-Het uitschakelen van `tweeledig` renderen kan de renderprestaties een beetje verbeteren.
+`Twee zijden` uitzetten kan de renderprestaties wat verbeteren.
 
 
-### Draadmodel {#wireframe-quick}
-Schakel een draadmodel-overlay in. 
+### ![](/icons/wireframe.webp) Draadmodel {#wireframe-quick}
+Zet een draadmodel over het model aan of uit.
 
-Merk op dat het inschakelen van het draadmodel de prestaties verlaagt.
+Let op: het draadmodel aanzetten verlaagt de prestaties.
 
-### Snap-kubus {#snap-cube-quick}
-Schakel een hulppictogram in de hoek van de scène in, handig om je te oriënteren in de ruimte en snel te wisselen tussen voor-/achter-/links-/rechts-/boven-/onderaanzichten.
+### ![](/icons/navigator.webp) Navigator {#snap-cube-quick}
+Zet een hulpicoon in de hoek van de scène aan of uit. Handig om je in de ruimte te oriënteren en snel te wisselen tussen voor-, achter-, linker-, rechter-, boven- en onderaanzicht.
 
-### Schildering tonen {#show-painting}
-Schakel de verfweergave in. De standaardverf is een wit niet-metallisch materiaal, met 25% ruwheid.
+### ![](/icons/palette.webp) Toon schilderen {#show-painting}
+Zet de weergave van het schilderwerk aan of uit. Staat het uit, dan worden objecten getoond met een wit, niet-metallisch materiaal met 25% ruwheid in plaats van hun schilderwerk.
 
-### Verbergen gebruiken {#use-hide}
-Schakel de verbergmodus in. Wanneer deze is uitgeschakeld, bestaat hij nog steeds, maar is gedeactiveerd. Deze knop is uitgeschakeld als je momenteel de verbergtool gebruikt.
+### ![](/icons/tool_hide.webp) Gebruik Verberg {#use-hide}
+Zet de verbergmodus aan of uit. Uitgezet is het verbergen er nog steeds, alleen gedeactiveerd. Deze knop is uitgeschakeld als je het gereedschap Verbergen gebruikt.
 
-### Masker tonen {#show-mask}
-Schakel de maskermodus in. Wanneer deze is uitgeschakeld, bestaat hij nog steeds, maar is gedeactiveerd. Druk nogmaals op deze knop om hem opnieuw in te schakelen.
+### ![](/icons/shield.webp) Toon masker {#show-mask}
+Zet de maskermodus aan of uit. Uitgezet is het masker er nog steeds, alleen gedeactiveerd. Druk nogmaals op deze knop om het weer te activeren.
 
-Als je het masker moet verbergen EN het toch actief wilt houden, gebruik dan de maskerkleur hieronder en stel deze in op wit. Vergeet niet om hem weer naar grijs te zetten als je klaar bent!
+Wil je het masker verbergen terwijl het actief blijft, gebruik dan de maskerkleur hieronder en zet die op wit. Vergeet niet om hem daarna weer grijs te maken!
 
-Merk op dat deze knop is uitgeschakeld als je momenteel een masker-tool gebruikt. 
+Let op: deze knop is uitgeschakeld als je een maskergereedschap gebruikt.
 
-### Masker -> Opaque {#mask-opaque}
-Masker -> opaak zal transparante vertices negeren voor gemaskeerde maskers. Dit is alleen relevant voor vertex- en textuuropaciteit; vlakken die door “verbergen” verborgen zijn, blijven verborgen.
+### ![](/icons/shield.webp) Masker → Ondoorzichtig {#mask-opaque}
+`Masker → Ondoorzichtig` negeert transparante vertices voor het gemaskeerde masker. Dit geldt alleen voor vertex- en textuurdekking: vlakken die met "verbergen" verborgen zijn, blijven verborgen. Het is alleen beschikbaar zolang `Toon masker` aanstaat.
 
-### Markering {#highlight-quick}
-Schakel de selectie-highlightflits in. Wanneer je objecten selecteert, wordt het geselecteerde object tijdelijk felroze weergegeven gedurende 500 milliseconden. De kleur en duur van de flits kunnen hieronder worden aangepast.
+### ![](/icons/bang.webp) Markering {#highlight-quick}
+Zet het oplichten van de selectie aan of uit. Bij het selecteren licht het geselecteerde object 500 milliseconden op. De kleur en duur van het oplichten stel je hieronder in.
 
-### Statistieken {#stats-quick}
-Schakel de statusweergavetekst in het 3D-viewport in. Dit toont informatie over je systeemgeheugen, het totale aantal vertices in de scène en het aantal vertices van de huidige selectie.
+### ![](/icons/list.webp) Statistieken {#stats-quick}
+Zet de statustekst in de 3d-viewport aan of uit. Die toont informatie over het systeemgeheugen, het totale aantal vertices in de scène en het aantal vertices in de huidige selectie.
 
 ----- 
 
-### Donkerder maken niet-geselecteerde objecten {#darken-unselected-objects}
-De objecten die niet zijn geselecteerd, worden donkerder gemaakt zodat de huidige selectie beter opvalt.
+### ![](/icons/cube.webp) Verduister niet-geselecteerde objecten {#darken-unselected-objects}
+Objecten die niet geselecteerd zijn worden donkerder, zodat de huidige selectie opvalt.
 
-### Masker {#mask}
-De kleur die wordt gebruikt voor maskering, standaard een middengrijs, vermenigvuldigd met je objectkleur. Stel dit in op wit om het masker onzichtbaar te maken, maar vergeet niet om het weer naar grijs te zetten als je klaar bent!
+### ![](/icons/shield.webp) Masker {#mask}
+De kleur voor het masker, standaard middengrijs, vermenigvuldigd met de kleur van je object. Zet hem op wit om het masker onzichtbaar te maken, maar vergeet niet om hem daarna weer grijs te maken!
 
 ## ![](/icons/cursor.webp) Cursor {#cursor}
 
-### Cirkel tonen tijdens sculpteren {#show-circle-while-sculpting}
-Blijf de straal van de penseel tonen tijdens het beeldhouwen.
+### Cirkel {#show-circle-while-sculpting}
+Wanneer de cirkel van de penseelradius wordt getoond:
 
-### Kleine stip tonen {#show-small-dot}
-Toon een stip in het midden van de penseelstreek tijdens het beeldhouwen, of wanneer het camerapunt wordt gewijzigd.
+* `Auto` - toont de cirkel, maar verbergt hem tijdens het sculpten.
+* `Nee` - toont de cirkel nooit.
+* `Ja` - toont de cirkel altijd, ook tijdens het sculpten.
 
-### Touwstabilisator tonen {#show-rope-stabilizer}
-Teken een lijn om de touwlengte aan te geven wanneer de lazy rope-stabilisator actief is in de streekinstellingen.
+### Toon kleine stip {#show-small-dot}
+Toont een stip in het midden van de penseelstreek tijdens het sculpten, of wanneer het draaipunt van de camera verandert.
 
-## ![](/icons/cursor.webp) Indicator {#indicator}
+### Toon touwstabilisator {#show-rope-stabilizer}
+Tekent een lijn die de lengte van het touw aangeeft wanneer [Trage touwstabilisator](stroke.md#lazy-rope-stabilizer) actief is in de streekinstellingen.
+
+### Rolhint weergeven {#show-roll-hint}
+Toont de hulplijn voor de rolrichting terwijl je een toetsbinding voor rollen gebruikt.
+
+### ![](/icons/radius.webp) Grootte {#dot-size}
+De grootte van de kleine stip.
+
+### Kleuren {#cursor-colors}
+De cursor verandert van kleur afhankelijk van wat je doet: `Beeldhouwen`, `Achtergrond` (boven de achtergrond zweven), `Masker`, `Gladstrijken`, `Camera` en `Straal`. Elke kleur kun je hier aanpassen.
+
+## ![](/icons/cursor.webp) Aanwijzer {#indicator}
 ![](/images/settings_indicator.webp)
 
-Toon visuele indicator(en) voor tutorials en schermopnames.
+Toont visuele aanwijzer(s) voor tutorials en schermopnames. Zet het op `Ja` om het aan te zetten (op iOS is er ook een optie `Auto`).
 
-De knoppen `Vinger`, `Stylus` en `Muis` schakelen het weergeven van een pictogram in wanneer dat type invoer wordt gedetecteerd.
+Met de knoppen `Vinger`, `Stylus` en `Muis` wordt een icoon getoond wanneer dat type invoer wordt herkend.
 
 ### Kleur {#indicator-color}
-De kleur van de indicator.
+De kleur van de aanwijzer.
 
-### Grootte/Pictogram/Cirkel {#indicator-shape}
-Regelaars om de grootte van de indicator en de vormen binnen de indicator aan te passen.
+### Grootte/Icoon/Cirkel {#indicator-shape}
+Regelaars voor de grootte van de aanwijzer en de dekking van het icoon en de cirkel in de aanwijzer.
 
 ## ![](/icons/wireframe.webp) Draadmodel {#wireframe}
 ![](/images/settings_wireframe.webp)
-Activeer de draadmodel-overlay.
+Zet het draadmodel aan.
 
 ### Doel {#target}
-Stel in of niet-geselecteerde objecten het draadmodel tonen, of alleen geselecteerde objecten, of alle objecten.
+Bepaalt of niet-geselecteerde objecten een draadmodel tonen, of alleen geselecteerde objecten, of alle objecten.
 
 ### Verbergen {#hide}
-Stel in of het draadmodel nog steeds wordt weergegeven voor verborgen polygonen.
+Bepaalt of het draadmodel ook getoond wordt voor verborgen polygonen.
 
 ### Multiresolutie: Alleen niveau 0 {#multiresolution-level-0-only}
-Multiresolution toont draadmodellen voor niveau 0 donkerder en hogere niveaus geleidelijk lichter. Wanneer deze optie is ingeschakeld, wordt alleen het draadmodel van niveau 0 weergegeven.
+Bij multiresolutie is het draadmodel van niveau 0 donkerder en worden hogere niveaus steeds lichter. Met deze optie wordt alleen het draadmodel van niveau 0 getoond.
 
 ### Kleur {#wireframe-color}
-Stel de kleur en opaciteit van het draadmodel in.
+Stelt de kleur en dekking van het draadmodel in.
 
 ## ![](/icons/grid.webp) Raster {#grid}
 ![](/images/settings_grid.webp)
-Activeer het raster.
-
-### Kleur {#grid-color}
-Stel de rasterkleur en opaciteit in.
+Zet het raster aan.
 
 ### Snappen {#snap}
-Schakel snappen naar het raster in voor curve-gebaseerde tools.
+Met deze opties snappen de punten van gereedschappen op basis van curves en vormen (`Draaibank`, `Buis`, polygoon- en padvormen...) terwijl je ze tekent:
 
-## ![](/icons/culling.webp)Tweeledig {#two-sided}
-Schakel het zien van polygonvlakken vanaf beide zijden in.
+* `Naar raster snappen` - snapt naar het raster.
+* `Uitlijnen op punten (uitgelijnde weergave)` - snapt naar bestaande punten in de buurt wanneer de camera op een as is uitgelijnd.
+* `Uitlijnen op punten (vrije weergave)` - snapt naar bestaande punten in de buurt wanneer de camera niet is uitgelijnd.
 
-### Achtervlak inkleuren, Achtervlak-kleur {#backface-color}
-Schakel het tinten van de achterzijden in en stel de tintkleur in.
+### Kleur {#grid-color}
+Stelt de kleur en dekking van het raster in. Deze opties verschijnen wanneer het raster zichtbaar is.
+
+`Vignet` laat het raster naar de randen toe vervagen. `Snapdrempel voor verdelingen` bepaalt, in pixels, hoe dicht de rasterlijnen op het scherm mogen komen voordat het raster naar een ander onderverdelingsniveau overschakelt.
+
+## ![](/icons/culling.webp)Twee zijden {#two-sided}
+Maakt polygoonvlakken van beide kanten zichtbaar.
+
+### Achterzijde kleur {#backface-color}
+`Gekleurde achterzijde` geeft de achterzijden een tint, en `Achterzijde kleur` bepaalt die tint.
 
 ## ![](/icons/outline.webp)Omlijning {#outline}
-Schakel een omtrek rond het actieve object in.
+Zet een omlijning rond de geselecteerde objecten aan.
 
 ### Omlijningskleur, Dikte {#outline-color-thickness}
-Stel de kleur en dikte van de omtrek in.
+Stelt de kleur en de `Dikte` van de omlijning in.
 
 
 ## ![](/icons/bang.webp) Markering {#highlight}
-Schakel een korte flits in wanneer het actieve object wordt gewijzigd.
+Laat de selectie kort oplichten wanneer die verandert.
 ### Kleur, Duur {#color-duration}
-Stel de kleur en duur van de flits in milliseconden in.
+Stelt de kleur en de duur van het oplichten in milliseconden in.
 
-## ![](/icons/snap_cube.webp) Snap-kubus {#snap-cube}
+## ![](/icons/navigator.webp) Navigator {#snap-cube}
 ![](/images/settings_snapcube.webp)
 
-Toon een hulppictogram in de hoek van de scène, handig om snel te wisselen tussen voor-/achter-/links-/rechts-/boven-/onderaanzichten. Tik op de zijden van de cube om tussen orthografische aanzichten te wisselen.
+Toont een hulpicoon in de hoek van de scène, handig om snel te wisselen tussen voor-, achter-, linker-, rechter-, boven- en onderaanzicht. Tik op de zijden ervan om tussen de orthografische aanzichten te wisselen.
 
 ### Vorm {#shape}
-Kies tussen een cube, een bol of een gnomon-vorm voor de snap-cube.
+Kies tussen een bol, een kubus of een gnomon als vorm voor de navigator.
 
 ### Uitlijning beperken {#restrict-alignment}
-Schakel vergrendeling van cameradraaien in bij slepen op de snap-cube. Wanneer actief, zal een sleepbeweging op de snap-cube alleen naar links/rechts of omhoog/omlaag gaan.
+Lijnt de aanzichten uit op de wereldassen. Staat dit aan, dan zijn alleen de 6 hoofdaanzichten mogelijk. Op `Auto` geldt deze beperking alleen wanneer de camera in de modus `Draaischijf` staat.
 
 ### Grootte {#size}
-Stel de grootte van de snap-cube in.
+Stelt de grootte van de navigator in.
 
-### 180 graden draaien {#flip-180}
-Schakel een tikgedrag in zodat, als het aanzicht is vastgeklikt, tikken op het midden van de cube het aanzicht 180 graden draait. Als het aanzicht bijvoorbeeld op “voor” is vastgeklikt, zal tikken op de view-cube naar het achteraanzicht draaien.
+### Draai 180° {#flip-180}
+Is de weergave uitgelijnd, dan draait een tik op het midden van de navigator de weergave 180 graden. Sta je bijvoorbeeld op het vooraanzicht, dan draait een tik op de navigator naar het achteraanzicht.
+
+### Randen en hoeken {#edges-corners}
+Voegt aanzichten toe op de randen en hoeken (de amberkleurige zones). Niet beschikbaar met de gnomonvorm.
+
+### Slepen als draaischijf {#turntable-drag}
+Slepen aan de navigator draait de camera zonder te rollen, en blijft even hangen op elk aanzicht. Zet het uit om de navigator te slepen met de rotatie `Trackball`. In beide gevallen blijft het slepen horizontaal of verticaal. Met een camera in `Draaischijf` sleept de navigator altijd op deze manier.
 
 ### Positie {#snap-position}
-Stel in in welke hoek de snap-cube zal staan.
+Bepaalt in welke hoek de navigator staat.
 
 
-## ![](/icons/edit_radius_n.webp) Statistieken {#stats}
+## ![](/icons/list.webp) Statistieken {#stats}
 ![](/images/settings_stats.webp)
 
-Toon informatie over je systeemgeheugen, het totale aantal vertices in de scène en het aantal vertices van de huidige selectie.
+Toont informatie over het systeemgeheugen, het totale aantal vertices in de scène en het aantal vertices in de huidige selectie.
 
 ### Positie {#stats-position}
-Stel in in welke hoek de statistieken zullen staan.
+Bepaalt in welke hoek de statistieken staan.
 
-## Primitief/Repeaters {#primitive-repeaters}
-## Numerieke invoer {#gizmo-input}
-Sta numerieke invoer toe wanneer je op de gizmo-widgets tikt.
+## ![](/icons/edit_radius.webp) Handvat {#handle}
+Instellingen voor de handvatten die je in de viewport versleept, zoals de gizmo.
 
-## Multiresolutie {#multires}
+### Numerieke invoer {#gizmo-input}
+Maakt numerieke invoer mogelijk wanneer je op een van de bedieningselementen van de gizmo tikt.
+
+### Verberg bij interactie {#hide-on-interaction}
+Laat de gizmo vervagen terwijl je ermee werkt, zodat hij niet in de weg zit.
+
+### ![](/icons/opacity.webp) Dekking {#handle-opacity}
+De dekking van de handvatten.
+
+## ![](/icons/shape_lasso.webp) Vorm {#shape-settings}
+Hoe de vormen die je met vormstreken tekent (lasso, rechthoek, curve...) er op het scherm uitzien.
+
+### ![](/icons/opacity.webp) Vulling, Omtrek {#shape-fill-outline}
+De dekking van de binnenkant van de vorm en van de lijn eromheen.
+
+### Kleuren {#shape-colors}
+De kleur van de vorm voor elk soort gereedschap: `Masker`, `Verbergen`, `Vlakkengroep` en `Trimmen`.
+
+## ![](/icons/array.webp) Repeaters {#primitive-repeaters}
+Limieten voor de kopieën die [repeaters](scene#repeaters) maken (array, radiaal, curve, oppervlak). Ze houden Nomad vlot wanneer een repeater uit de hand loopt.
+
+### ![](/icons/cube.webp) Max. kopieën {#repeater-max-copies}
+Het maximale aantal kopieën dat één repeater maakt. Nomad heeft moeite met veel objecten, ongeacht hun grootte.
+
+### ![](/icons/cube.webp) Kopieën in de scène {#repeater-scene-copies}
+Het kopieënbudget voor de hele scène. Een low-poly kopie kost weinig geometrie maar blijft een volwaardig object, dus kleine kopieën lopen als eerste tegen deze limiet aan.
+
+### ![](/icons/triangle.webp) Max. vlakken {#repeater-max-faces}
+Het vlakkenbudget voor alle kopieën in de scène. Wordt het overschreden, dan verliezen de zwaarste objecten als eerste kopieën.
+
+## ![](/icons/multires.webp) Multiresolutie {#multires}
 ### Maximaal aantal vertices {#multires-lowres-count}
-Stel een drempel in om niet toe te staan dat een multires-subdivide-bewerking hoger gaat dan deze polycount, wat Nomad waarschijnlijk zou laten crashen. De standaardwaarde is 10 miljoen.
+Een drempel die voorkomt dat een multires-subdivisie boven dit aantal vertices uitkomt, wat Nomad waarschijnlijk zou laten crashen: Nomad controleert het beschikbare geheugen niet voordat het onderverdeelt. De standaard is 10 miljoen.
 ### Drempel lage resolutie {#multires-lowres-threshold}
-Een lagere resolutie van de mesh kan worden weergegeven wanneer je de camera verplaatst. Je kunt deze waarde verhogen als je een hogere resolutie van de mesh wilt weergeven.
+Terwijl je de camera beweegt, kan een lagere resolutie van de mesh worden getoond. Verhoog deze waarde als je een hogere resolutie van de mesh wilt zien.
 
 ## Instellingen {#advanced}
-### Terugzetten naar standaard {#reset}
-Zet alle instellingen terug naar hun standaardwaarden.
+### ![](/icons/reset.webp) Herstel naar standaard {#reset}
+Zet alle voorkeursinstellingen van de app terug op hun standaardwaarden.
+
+Sommige bronnen worden apart opgeslagen en worden NIET hersteld: projecten, toetsbindingen, gereedschapspresets, HDR-omgevingen, MatCaps, alpha's, penseeltexturen en referentieafbeeldingen. Alles wat met het project wordt opgeslagen, zoals belichting, nabewerking of camera-aanzichten, blijft ook behouden.

@@ -1,4 +1,4 @@
-# Getting Started {#getting-started}
+# ![](/icons/play.webp) Getting Started {#getting-started}
 
 ## Welcome to Nomad! {#welcome-to-nomad}
 
@@ -32,7 +32,7 @@ To make the brush stronger or weaker, use the intensity slider on the left.
 
 ![](/videos/gettingstarted_03.mp4)
 
-The default tool is the `Clay tool`, and it adds to the surface. To subtract from the surface, tap the `Sub` button on the left. To add to the surface, tap the Sub button again.
+The default tool is the `Clay` tool, and it adds to the surface. To subtract from the surface, tap the `Sub` button on the left. To add to the surface, tap the Sub button again.
 
 ![](/videos/gettingstarted_04.mp4)
 
@@ -77,7 +77,7 @@ With those settings, you can manipulate the camera purely with the pen:
 
 ## Add color {#add-color}
 
-Nomad allows you to paint the surface of your sculpt. From the tool menu on the right, find the `Paint` tool, and click it. On the left toolbar a colored sphere will appear. Click it, this will bring up a color selector. Choose a color, and paint on your model.
+Nomad allows you to paint the surface of your sculpt. From the tool menu on the right, find the `Paint` tool, and click it. At the bottom of the left toolbar, a preview of the current color and material appears. Tap it to open the paint menu, scroll down to the color selector, choose a color, and paint on your model.
 
 ![](/videos/gettingstarted_10.mp4)
 
@@ -107,9 +107,9 @@ Now that you know the basics of Nomad, lets look at the rest of the interface.
 
 * `Top menus` - The menus to access most of Nomads features. The top-left menus mainly cover scene and object features, the top-right menus are related to tools. On smaller screens these menus will collapse together to save space.
 * `Stats` - Information about the scene, the current object, mask status, memory usage.
-* `Nav Cube` - A helper to show what side of the sculpt you're looking at, as well as a shortcut to jump to different views. Tapping the cube will jump the view to the tapped side. Dragging the cube will rotate. Tap the small icons to the side of the cube to frame the current object, or reset to the default home view.
+* `Navigator` - A helper to show what side of the sculpt you're looking at, as well as a shortcut to jump to different views. Tapping a side will jump the view to it. Dragging the navigator will rotate. Tap the small icons next to it to frame the current object, reset to the default home view, lock the camera, or toggle the grid. Its look (a cube, a sphere or a gnomon) and placement can be changed in the [Settings](settings.md#snap-cube).
 * `Toolbox` - Nomad's tools are available from this scrollable region.
-* `Left toolbar` - Sliders for radius and intensity for most tools, context specific buttons for other tools, and shortcuts for symmetry, the tool alt/sub mode, masking, smoothing, the gizmo, and paint options.
+* `Left toolbar` - Sliders for radius and intensity for most tools, context specific buttons for other tools, and shortcuts for symmetry, the tool alt/sub mode, smoothing, masking, hiding, face groups, the gizmo, and paint options. You can reorder the shortcuts in the [Interface](interface.md#side-bar) menu.
 * `Bottom toolbar` - Shortcuts for commonly used features, explained below.
 
 ::: tip Left handed?
@@ -124,11 +124,15 @@ You can mirror the placement and ordering of all the toolbars, see [Mirror top b
 * `Redo` - restore the last undo operation
 * `History` - acccess history options, explained in the [History](history.md) menu.
 * `Solo` - Toggle showing only the current object, or all objects
-* `X-Ray` - Make all other objects render in x-ray mode, and the current object solid. A long press or swipe up will allow you to set the colour and opacity of the x-ray mode.
-* `Voxel` - A shortcut for the [Voxel Remesher](topology.md#voxel-remesher) voxel remesh button. A long press or swipe up will reveal shortcuts to set voxel remesh quality.
-* `Grid` - Toggle displaying the grid. A long press or swipe up will reveal options for the grid.
-* `Wire` - Toggle a wireframe overlay. A long press or swipe up will reveal options for the wireframe.
-* `Inspect` - Toggle viewing extra data about the current mesh. By default it will display UVs, but a long press or swipe up will allow you to inspect other properties if they exist, and if this is displayed in the background or on the mesh.
+* `X-Ray` - Make all other objects render in x-ray mode, and the current object solid. A long press or swipe up will allow you to pick the x-ray matcap and color, and which objects it applies to.
+* `Voxel` - A shortcut for the [Voxel Remesher](topology.md#voxel-remesher) voxel remesh button. A long press or swipe up will reveal the voxel remesh options, such as the resolution.
+* `Grid` - Toggle displaying the grid. A long press or swipe up will reveal options for the grid, such as its color and snapping.
+* `Wireframe` - Toggle a wireframe overlay. A long press or swipe up will reveal options for the wireframe.
+* `Inspector` - Toggle viewing extra data about the current mesh. By default it will display UVs, but a long press or swipe up will allow you to inspect other properties if they exist, and if this is displayed in the background or on the mesh.
+* `Logs` - Show or hide a window with Nomad's debugging logs.
+* `Face Group` - Toggle the face group overlay, see the [Face Group](tools.md#facegroup) tool.
+
+You can add, remove and reorder these shortcuts in the [Interface](interface.md#add-shortcuts-bottom) menu.
 
 ## Next steps {#next-steps}
 

@@ -1,187 +1,245 @@
 # ![](/icons/cog.webp) Einstellungen {#reset-to-default}
 
-Das Einstellungsmenü enthält viele Optionen zur Steuerung des Erscheinungsbilds und des Verhaltens von Nomad.
+Das Einstellungsmenü enthält viele Optionen, mit denen Sie Aussehen und Verhalten von Nomad steuern.
 
 ![](/images/settings_overview.webp)
 
+Die Reihe von Schaltflächen oben im Menü springt direkt zu einem Abschnitt: `Cursor`, `Indikator`, `Draht`, `Raster`, `Backface`, `Umriss`, `Hervorheben`, `Navigator`, `Statistik`, `Griffe`, `Form`, `Repeater` und `Multiaufl.`.
+
 ## Anzeigeeinstellungen {#display-settings}
-Dieser Abschnitt enthält Schnellzugriffe für die meisten Einstellungen weiter unten in diesem Menü.
+Dieser Abschnitt enthält Schnellzugriffe auf die meisten Einstellungen weiter unten in diesem Menü.
 
 ![](/images/settings_display_settings.webp)
 
-### Glatte Schattierung {#smooth-shading}
-Zwischen glatter und facettierter Schattierung umschalten. Bei facettierter Schattierung werden die Polygone unabhängig voneinander schattiert, sodass du die zugrunde liegende Topologie sehen kannst.
-Es kann nützlich sein, während der Sculpting-Phase die facettierte Schattierung zu verwenden und dann für das Rendering auf glatte Schattierung zu wechseln.
+### ![](/icons/sphere_smooth.webp) Smooth Shading {#smooth-shading}
+Wechselt zwischen glattem und facettiertem Shading. Im facettierten Modus werden die Polygone einzeln schattiert, sodass Sie die zugrunde liegende Topologie sehen.
+Es kann nützlich sein, beim Sculpten das facettierte Shading zu verwenden und für das Rendering auf glattes Shading umzuschalten.
 
-Das Deaktivieren der glatten Schattierung verbessert die Leistung ein wenig.
+Das Deaktivieren von Smooth Shading verbessert die Leistung ein wenig.
 
-### Kontur {#outline-quick}
-Eine Kontur um deine aktuelle Auswahl ein- oder ausschalten.
+### ![](/icons/outline.webp) Umriss {#outline-quick}
+Blendet einen Umriss um Ihre aktuelle Auswahl ein und aus.
 
-Dies ist nützlich, um visuelles Feedback zu deiner aktuell ausgewählten Mesh(es) zu erhalten, falls [Nicht ausgewählte abdunkeln](#darken-unselected-objects) deaktiviert ist.
+Das ist nützlich, um zu sehen, welche Meshes gerade ausgewählt sind, falls [Nicht gewählte Meshes abdunkeln](#darken-unselected-objects) deaktiviert ist.
 
-Aus Leistungssicht ist die Verwendung von [Nicht ausgewählte abdunkeln](#darken-unselected-objects) deutlich besser als die Kontur-Lösung.
+Was die Leistung angeht, ist [Nicht gewählte Meshes abdunkeln](#darken-unselected-objects) deutlich besser als der Umriss.
 
-### Gitter {#grid-quick}
-Ein Hintergrundgitter ein- oder ausschalten, nützlich zum Verständnis von Objektplatzierung und Maßstab.
+### ![](/icons/grid.webp) Raster {#grid-quick}
+Blendet ein Hintergrundraster ein und aus; nützlich, um Platzierung und Größe von Objekten einzuschätzen.
 
-### Zweiseitig {#two-sided-quick}
-Zweiseitige Polygonanzeige ein- oder ausschalten. Alle Flächen zeigen in eine bestimmte Richtung.
-Flächen, die als *Rückseite* gelten, sind diejenigen, die „von“ der Kameraposition „weg“ zeigen.
+### ![](/icons/culling.webp) Backface {#two-sided-quick}
+Schaltet die beidseitige Darstellung der Polygone ein und aus. Jede Fläche zeigt in eine bestimmte Richtung.
+Als *Rückseite* (Backface) gelten Flächen, die vom Blickpunkt der Kamera „weg“ zeigen.
 
-Zum Beispiel zeigen beim Start die Flächen der einfachen Kugel nach außen.
-Wenn du die Kamera in die Kugel hineinbewegst, siehst du dann die Rückseite dieser Flächen.
+Bei der einfachen Kugel beim Start zeigen die Flächen zum Beispiel nach außen.
+Wenn Sie die Kamera in die Kugel hineinbewegen, sehen Sie die Rückseiten dieser Flächen.
 
-Meistens solltest du die Rückseite von Flächen nicht sehen, daher kann das Einfärben helfen, potenzielle Probleme oder fehlerhafte Topologie zu erkennen.
+Normalerweise sollten Sie keine Rückseiten sehen. Wenn Sie sie einfärben, erkennen Sie also leichter mögliche Probleme oder fehlerhafte Topologie.
 
-Das Deaktivieren des `zweiseitigen` Renderings kann die Renderleistung etwas verbessern.
+Das Deaktivieren der Darstellung `Backface` kann die Render-Leistung etwas verbessern.
 
 
-### Drahtgitter {#wireframe-quick}
-Ein Drahtgitter-Overlay ein- oder ausschalten. 
+### ![](/icons/wireframe.webp) Drahtgitter {#wireframe-quick}
+Blendet eine Drahtgitter-Überlagerung ein und aus.
 
-Beachte, dass das Aktivieren des Drahtgitters die Leistung verringert.
+Beachten Sie, dass das Drahtgitter die Leistung verringert.
 
-### Snap-Würfel {#snap-cube-quick}
-Ein Hilfssymbol in der Ecke der Szene ein- oder ausschalten, nützlich zur Orientierung im Raum und zum schnellen Wechsel zwischen Vorder-/Rück-/Links-/Rechts-/Oben-/Unten-Ansichten.
+### ![](/icons/navigator.webp) Navigator {#snap-cube-quick}
+Blendet ein Hilfs-Icon in der Ecke der Szene ein und aus; nützlich, um sich im Raum zu orientieren und schnell zwischen den Ansichten von vorne/hinten/links/rechts/oben/unten zu wechseln.
 
-### Malerei anzeigen {#show-painting}
-Die Farbdarstellung ein- oder ausschalten. Die standardmäßig verwendete Farbe ist ein weißes, nichtmetallisches Material mit 25 % Rauheit.
+### ![](/icons/palette.webp) Painting anzeigen {#show-painting}
+Schaltet die Anzeige der Bemalung ein und aus. Ist sie ausgeschaltet, werden die Objekte statt mit ihrer Bemalung mit einem weißen, nicht-metallischen Material mit 25 % Rauheit angezeigt.
 
-### Verbergen verwenden {#use-hide}
-Den Verbergen-Modus ein- oder ausschalten. Wenn er ausgeschaltet ist, ist er weiterhin vorhanden, nur deaktiviert. Diese Schaltfläche ist deaktiviert, wenn du aktuell das Verbergen-Werkzeug verwendest.
+### ![](/icons/tool_hide.webp) Ausblenden verwenden {#use-hide}
+Schaltet den Ausblendmodus ein und aus. Ausgeschaltet bleibt die Ausblendung erhalten, ist aber deaktiviert. Diese Schaltfläche ist deaktiviert, wenn Sie gerade das Ausblenden-Werkzeug verwenden.
 
-### Maske anzeigen {#show-mask}
-Den Maskenmodus ein- oder ausschalten. Wenn er ausgeschaltet ist, ist er weiterhin vorhanden, nur deaktiviert. Drücke diese Schaltfläche erneut, um ihn wieder zu aktivieren.
+### ![](/icons/shield.webp) Maske anzeigen {#show-mask}
+Schaltet den Maskenmodus ein und aus. Ausgeschaltet bleibt die Maske erhalten, ist aber deaktiviert. Tippen Sie erneut auf die Schaltfläche, um sie wieder zu aktivieren.
 
-Wenn du die Maske ausblenden UND trotzdem aktiv haben möchtest, verwende die Maskenfarbe unten und setze sie auf Weiß. Denk daran, sie wieder auf ein Grau zu stellen, wenn du fertig bist!
+Wenn Sie die Maske ausblenden möchten, sie aber trotzdem aktiv bleiben soll, stellen Sie die Maskenfarbe weiter unten auf Weiß. Denken Sie daran, sie danach wieder auf ein Grau zurückzustellen!
 
-Beachte, dass diese Schaltfläche deaktiviert ist, wenn du aktuell ein Maskenwerkzeug verwendest. 
+Beachten Sie, dass diese Schaltfläche deaktiviert ist, wenn Sie gerade ein Maskenwerkzeug verwenden.
 
-### Maske -> Deckend {#mask-opaque}
-Maske -> deckend ignoriert transparente Vertices für maskierte Masken. Dies ist nur für Vertex- und Textur-Deckkraft relevant, durch „Verbergen“ ausgeblendete Flächen bleiben weiterhin verborgen.
+### ![](/icons/shield.webp) Maske → Opak {#mask-opaque}
+`Maske → Opak` ignoriert transparente Vertices für die maskierte Maske. Das betrifft nur die Vertex- und Textur-Deckkraft; Flächen, die mit „Ausblenden“ verborgen wurden, bleiben weiterhin verborgen. Die Option ist nur verfügbar, solange `Maske anzeigen` aktiviert ist.
 
-### Hervorheben {#highlight-quick}
-Das Aufblitzen der Auswahlhervorhebung ein- oder ausschalten. Beim Auswählen von Objekten wird das ausgewählte Objekt für 500 Millisekunden kurz in kräftigem Pink aufblitzen. Farbe und Dauer des Aufblitzens können unten angepasst werden.
+### ![](/icons/bang.webp) Hervorheben {#highlight-quick}
+Schaltet das kurze Aufblitzen der Auswahl ein und aus. Beim Auswählen von Objekten blitzt das ausgewählte Objekt kurz für 500 Millisekunden auf. Farbe und Dauer des Aufblitzens können Sie weiter unten anpassen.
 
-### Statistiken {#stats-quick}
-Die Statusanzeige im 3D-Viewport ein- oder ausschalten. Sie zeigt Informationen über deinen Systemspeicher, die Gesamtanzahl der Vertices in der Szene und die Vertexanzahl der aktuellen Auswahl an.
+### ![](/icons/list.webp) Statistik {#stats-quick}
+Blendet die Statusanzeige im 3d-Viewport ein und aus. Sie zeigt Informationen über Ihren Arbeitsspeicher, die Gesamtzahl der Vertices in der Szene und die Vertex-Anzahl der aktuellen Auswahl.
 
 ----- 
 
-### Nicht ausgewählte Objekte abdunkeln {#darken-unselected-objects}
-Objekte, die nicht ausgewählt sind, werden abgedunkelt, sodass die aktuelle Auswahl hervorsticht.
+### ![](/icons/cube.webp) Nicht gewählte Meshes abdunkeln {#darken-unselected-objects}
+Nicht ausgewählte Objekte werden abgedunkelt, damit die aktuelle Auswahl hervorsticht.
 
-### Maske {#mask}
-Die für Maskierung verwendete Farbe, standardmäßig ein mittleres Grau, das mit deiner Objektfarbe multipliziert wird. Setze dies auf Weiß, um die Maske unsichtbar zu machen, aber denk daran, sie wieder auf ein Grau zu stellen, wenn du fertig bist!
+### ![](/icons/shield.webp) Maske {#mask}
+Die Farbe für die Maskierung, standardmäßig ein mittleres Grau, das mit der Farbe Ihres Objekts multipliziert wird. Stellen Sie sie auf Weiß, um die Maske unsichtbar zu machen, aber denken Sie daran, sie danach wieder auf ein Grau zurückzustellen!
 
 ## ![](/icons/cursor.webp) Cursor {#cursor}
 
-### Kreis beim Sculpten anzeigen {#show-circle-while-sculpting}
-Den Pinselradius während des Sculptens weiterhin anzeigen.
+### Kreis {#show-circle-while-sculpting}
+Wann der Kreis für den Pinselradius angezeigt wird:
+
+* `Auto` - zeigt den Kreis an, blendet ihn aber beim Sculpten aus.
+* `Nein` - zeigt den Kreis nie an.
+* `Ja` - zeigt den Kreis immer an, auch beim Sculpten.
 
 ### Kleinen Punkt anzeigen {#show-small-dot}
-Einen Punkt im Zentrum des Pinselstrichs während des Sculptens oder wenn der Kamerapivot geändert wird anzeigen.
+Zeigt beim Sculpten einen Punkt in der Mitte des Pinselstrichs an, oder wenn sich der Drehpunkt der Kamera ändert.
 
-### Seilstabilisator anzeigen {#show-rope-stabilizer}
-Eine Linie zeichnen, um die Seillänge anzuzeigen, wenn der Lazy-Rope-Stabilisator in den Stricheinstellungen aktiv ist.
+### Rope-Stabilisator anzeigen {#show-rope-stabilizer}
+Zeichnet eine Linie, die die Seillänge anzeigt, wenn in den Strich-Einstellungen der [Lazy Rope Stabilisator](stroke.md#lazy-rope-stabilizer) aktiv ist.
+
+### Rollhinweis anzeigen {#show-roll-hint}
+Zeigt die Hilfslinie für die Rollrichtung an, während Sie eine Tastenbelegung zum Rollen verwenden.
+
+### ![](/icons/radius.webp) Größe {#dot-size}
+Die Größe des kleinen Punkts.
+
+### Farben {#cursor-colors}
+Der Cursor ändert seine Farbe je nachdem, was Sie gerade tun: `Bearbeiten`, `Hintergrund` (über dem Hintergrund schweben), `Maske`, `Glätten`, `Kamera` und `Radius`. Jede Farbe lässt sich hier anpassen.
 
 ## ![](/icons/cursor.webp) Indikator {#indicator}
 ![](/images/settings_indicator.webp)
 
-Visuelle Indikator(en) für Tutorials und Bildschirmaufnahmen anzeigen.
+Zeigt visuelle Indikatoren für Tutorials und Bildschirmaufnahmen an. Stellen Sie die Option auf `Ja`, um sie einzuschalten (unter iOS gibt es außerdem die Option `Auto`).
 
-Die Schaltflächen `Finger`, `Stift` und `Maus` aktivieren die Anzeige eines Symbols, wenn diese Art von Eingabe erkannt wird.
+Die Schaltflächen `Finger`, `Stylus` und `Maus` lassen ein Icon erscheinen, sobald diese Art von Eingabe erkannt wird.
 
 ### Farbe {#indicator-color}
 Die Farbe des Indikators.
 
 ### Größe/Icon/Kreis {#indicator-shape}
-Steuerelemente zur Anpassung der Größe des Indikators und der Formen innerhalb des Indikators.
+Regler für die Größe des Indikators und für die Deckkraft von Icon und Kreis im Indikator.
 
 ## ![](/icons/wireframe.webp) Drahtgitter {#wireframe}
 ![](/images/settings_wireframe.webp)
-Das Drahtgitter-Overlay aktivieren.
+Aktiviert die Drahtgitter-Überlagerung.
 
 ### Ziel {#target}
-Festlegen, ob nicht ausgewählte Objekte ein Drahtgitter anzeigen, oder nur ausgewählte Objekte, oder alle Objekte.
+Legt fest, ob das Drahtgitter bei nicht ausgewählten Objekten, nur bei ausgewählten Objekten oder bei allen Objekten angezeigt wird.
 
-### Verbergen {#hide}
-Festlegen, ob das Drahtgitter auch für verborgene Polygone angezeigt wird.
+### Ausblenden {#hide}
+Legt fest, ob das Drahtgitter auch für ausgeblendete Polygone angezeigt wird.
 
-### Multiresolution: Nur Stufe 0 {#multiresolution-level-0-only}
-Multiresolution zeigt Drahtgitter für Level 0 dunkler und höhere Level schrittweise heller an. Wenn aktiviert, zeigt diese Option nur das Drahtgitter von Level 0 an.
+### Multiauflösung: Nur Ebene 0 {#multiresolution-level-0-only}
+Bei der Multiauflösung wird das Drahtgitter der Stufe 0 dunkler angezeigt und das der höheren Stufen zunehmend heller. Ist diese Option aktiviert, wird nur das Drahtgitter der Stufe 0 angezeigt.
 
 ### Farbe {#wireframe-color}
-Farbe und Deckkraft für das Drahtgitter festlegen.
+Legt Farbe und Deckkraft des Drahtgitters fest.
 
-## ![](/icons/grid.webp) Gitter {#grid}
+## ![](/icons/grid.webp) Raster {#grid}
 ![](/images/settings_grid.webp)
-Das Gitter aktivieren.
-
-### Farbe {#grid-color}
-Gitterfarbe und Deckkraft festlegen.
+Aktiviert das Raster.
 
 ### Einrasten {#snap}
-Einrasten für kurvenbasierte Werkzeuge am Gitter aktivieren.
+Mit diesen Optionen rasten die Punkte von kurven- und formbasierten Werkzeugen (`Drehbank`, `Röhre`, Polygon- und Pfadformen...) beim Zeichnen ein:
 
-## ![](/icons/culling.webp)Zweiseitig {#two-sided}
-Das Anzeigen von Polygonflächen von beiden Seiten aktivieren.
+* `Am Raster einrasten` - rastet am Raster ein.
+* `An Punkten einrasten (ausgerichtete Ansicht)` - rastet an nahe gelegenen vorhandenen Punkten ein, wenn die Kamera an einer Achse ausgerichtet ist.
+* `An Punkten einrasten (freie Ansicht)` - rastet an nahe gelegenen vorhandenen Punkten ein, wenn die Kamera nicht ausgerichtet ist.
 
-### Rückseitenfarbe, Rückseitenfarbe {#backface-color}
-Einfärben der Rückseiten aktivieren und die Einfärbefarbe festlegen.
+### Farbe {#grid-color}
+Legt Farbe und Deckkraft des Rasters fest. Diese Optionen erscheinen, wenn das Raster sichtbar ist.
 
-## ![](/icons/outline.webp)Kontur {#outline}
-Eine Kontur um das aktive Objekt aktivieren.
+`Vignette` lässt das Raster zu seinen Rändern hin ausblenden. `Einrastschwelle für Unterteilungen` legt in Pixeln fest, wie dicht die Rasterlinien auf dem Bildschirm werden dürfen, bevor das Raster zu einer anderen Unterteilungsstufe wechselt.
 
-### Konturfarbe, Dicke {#outline-color-thickness}
-Farbe und Dicke der Kontur festlegen.
+## ![](/icons/culling.webp)Backface {#two-sided}
+Macht Polygonflächen von beiden Seiten sichtbar.
+
+### Backface-Farbe {#backface-color}
+`Backfaces einfärben` aktiviert das Einfärben der Rückseiten, und `Backface-Farbe` legt die Farbe dafür fest.
+
+## ![](/icons/outline.webp)Umriss {#outline}
+Aktiviert einen Umriss um die ausgewählten Objekte.
+
+### Umrissfarbe, Stärke {#outline-color-thickness}
+Legt Farbe und `Stärke` des Umrisses fest.
 
 
 ## ![](/icons/bang.webp) Hervorheben {#highlight}
-Ein kurzes Aufblitzen aktivieren, wenn das aktive Objekt geändert wird.
+Aktiviert ein kurzes Aufblitzen, wenn sich die Auswahl ändert.
 ### Farbe, Dauer {#color-duration}
-Farbe und Dauer des Aufblitzens in Millisekunden festlegen.
+Legt Farbe und Dauer des Aufblitzens in Millisekunden fest.
 
-## ![](/icons/snap_cube.webp) Snap-Würfel {#snap-cube}
+## ![](/icons/navigator.webp) Navigator {#snap-cube}
 ![](/images/settings_snapcube.webp)
 
-Ein Hilfssymbol in der Ecke der Szene anzeigen, nützlich zum schnellen Wechsel zwischen Vorder-/Rück-/Links-/Rechts-/Oben-/Unten-Ansichten. Tippe auf die Seiten des Würfels, um zwischen orthografischen Ansichten zu wechseln.
+Zeigt ein Hilfs-Icon in der Ecke der Szene an; nützlich, um schnell zwischen den Ansichten von vorne/hinten/links/rechts/oben/unten zu wechseln. Tippen Sie auf seine Seiten, um zwischen den orthographischen Ansichten zu wechseln.
 
 ### Form {#shape}
-Zwischen einem Würfel, einer Kugel oder einer Gnomon-Form für den Snap-Würfel wählen.
+Wählen Sie für den Navigator zwischen einer Kugel, einem Würfel oder einem Achsenkreuz.
 
-### Ausrichtung beschränken {#restrict-alignment}
-Sperren der Kamerarotation beim Ziehen am Snap-Würfel aktivieren. Wenn aktiv, wird eine Ziehbewegung am Snap-Würfel nur nach links/rechts oder oben/unten ausgeführt.
+### Ausrichtung einschränken {#restrict-alignment}
+Richtet die Einrast-Ansichten an den Weltachsen aus. Ist die Option aktiviert, sind nur die 6 Hauptansichten möglich. Bei `Auto` gilt diese Einschränkung nur, wenn sich die Kamera im Modus `Orbit` befindet.
 
 ### Größe {#size}
-Die Größe des Snap-Würfels festlegen.
+Legt die Größe des Navigators fest.
 
-### 180° drehen {#flip-180}
-Ein Tippverhalten aktivieren, sodass bei eingerasteter Ansicht ein Tippen auf die Mitte des Würfels die Ansicht um 180 Grad dreht. Wenn zum Beispiel die Ansicht auf „Vorne“ eingerastet ist, dreht ein Tippen auf den Würfel zur Rückansicht.
+### 180° umdrehen {#flip-180}
+Aktiviert ein Tippverhalten: Ist die Ansicht eingerastet, dreht ein Tippen auf die Mitte des Navigators die Ansicht um 180 Grad. Ist die Ansicht zum Beispiel auf vorne eingerastet, springt sie durch Tippen auf den Navigator zur Ansicht von hinten.
+
+### Kanten und Ecken {#edges-corners}
+Fügt an den Kanten und Ecken zusätzliche Einrast-Ansichten hinzu (die bernsteinfarbenen Zonen). Nicht verfügbar mit dem Achsenkreuz.
+
+### Ziehen mit Drehscheibe {#turntable-drag}
+Ziehen am Navigator dreht die Ansicht, ohne die Kamera zu rollen, und hält bei jeder Einrast-Ansicht an. Deaktivieren Sie die Option, um den Navigator stattdessen mit der Rotation `Trackball` zu ziehen. In beiden Fällen bleibt das Ziehen waagerecht oder senkrecht. Bei einer Kamera im Modus `Orbit` wird der Navigator immer auf diese Weise gezogen.
 
 ### Position {#snap-position}
-Festlegen, in welcher Ecke sich der Snap-Würfel befindet.
+Legt fest, in welcher Ecke sich der Navigator befindet.
 
 
-## ![](/icons/edit_radius_n.webp) Statistiken {#stats}
+## ![](/icons/list.webp) Statistik {#stats}
 ![](/images/settings_stats.webp)
 
-Informationen über deinen Systemspeicher, die Gesamtanzahl der Vertices in der Szene und die Vertexanzahl der aktuellen Auswahl anzeigen.
+Zeigt Informationen über Ihren Arbeitsspeicher, die Gesamtzahl der Vertices in der Szene und die Vertex-Anzahl der aktuellen Auswahl an.
 
 ### Position {#stats-position}
-Festlegen, in welcher Ecke die Statistiken angezeigt werden.
+Legt fest, in welcher Ecke die Statistik angezeigt wird.
 
-## Primitive/Wiederholer {#primitive-repeaters}
-## Numerische Eingabe {#gizmo-input}
-Numerische Eingabe beim Tippen auf die Gizmo-Widgets erlauben.
+## ![](/icons/edit_radius.webp) Griff {#handle}
+Einstellungen für die Griffe, die Sie im Viewport ziehen, etwa das Gizmo.
 
-## Multiresolution {#multires}
-### Maximale Anzahl Scheitelpunkte {#multires-lowres-count}
-Einen Schwellenwert festlegen, um eine Multires-Subdivide-Operation oberhalb dieser Polygonanzahl zu verhindern, da dies Nomad wahrscheinlich zum Absturz bringen würde. Der Standardwert ist 10 Millionen.
-### Niedrigauflösungs-Schwellenwert {#multires-lowres-threshold}
-Eine niedrigere Auflösung des Meshes kann angezeigt werden, wenn du die Kamera bewegst. Du kannst diesen Wert erhöhen, wenn du eine höhere Auflösung des Meshes anzeigen möchtest.
+### Numerische Eingabe {#gizmo-input}
+Erlaubt die Eingabe von Zahlen, wenn Sie auf eines der Steuerelemente des Gizmos tippen.
+
+### Ausblenden bei Interaktion {#hide-on-interaction}
+Blendet das Gizmo aus, während Sie damit arbeiten, damit es nicht im Weg ist.
+
+### ![](/icons/opacity.webp) Deckkraft {#handle-opacity}
+Die Deckkraft der Griffe.
+
+## ![](/icons/shape_lasso.webp) Form {#shape-settings}
+Wie die Formen, die Sie mit Formstrichen zeichnen (Lasso, Rechteck, Kurve...), auf dem Bildschirm aussehen.
+
+### ![](/icons/opacity.webp) Füllung, Umriss {#shape-fill-outline}
+Die Deckkraft des Inneren der Form und der Linie um sie herum.
+
+### Farben {#shape-colors}
+Die Farbe der Form für jede Art von Werkzeug: `Maske`, `Ausblenden`, `Face-Gruppe` und `Trimmen`.
+
+## ![](/icons/array.webp) Repeater {#primitive-repeaters}
+Grenzen für die Kopien, die [Repeater](scene#repeaters) erzeugen (Array, radial, Kurve, Oberfläche). Sie sorgen dafür, dass Nomad reaktionsschnell bleibt, wenn ein Repeater aus dem Ruder läuft.
+
+### ![](/icons/cube.webp) Max. Kopien {#repeater-max-copies}
+Die maximale Anzahl an Kopien, die ein einzelner Repeater erzeugt. Viele Objekte machen Nomad zu schaffen, egal wie groß sie sind.
+
+### ![](/icons/cube.webp) Kopien in der Szene {#repeater-scene-copies}
+Das Kopienbudget für die gesamte Szene. Eine Low-Poly-Kopie kostet wenig Geometrie, bleibt aber ein vollwertiges Objekt; diese Grenze erreichen kleine Kopien also zuerst.
+
+### ![](/icons/triangle.webp) Max. Faces {#repeater-max-faces}
+Das Flächenbudget für alle Kopien in der Szene. Wird es überschritten, verlieren die schwersten Objekte zuerst Kopien.
+
+## ![](/icons/multires.webp) Multiauflösung {#multires}
+### Max. Anzahl an Vertices {#multires-lowres-count}
+Legt eine Schwelle fest, oberhalb derer keine Multiauflösungs-Unterteilung erlaubt ist, weil Nomad sonst wahrscheinlich abstürzen würde: Nomad prüft vor dem Unterteilen nicht den verfügbaren Speicher. Der Standardwert ist 10 Millionen.
+### Schwelle für niedrige Auflösung {#multires-lowres-threshold}
+Während Sie die Kamera bewegen, kann eine niedrigere Auflösung des Meshes angezeigt werden. Erhöhen Sie diesen Wert, wenn eine höhere Auflösung des Meshes angezeigt werden soll.
 
 ## Einstellungen {#advanced}
-### Auf Standard zurücksetzen {#reset}
-Alle Einstellungen auf ihre Standardwerte zurücksetzen.
+### ![](/icons/reset.webp) Zurücksetzen {#reset}
+Setzt alle Einstellungen der App auf ihre Standardwerte zurück.
+
+Einige Ressourcen werden separat gespeichert und NICHT zurückgesetzt: Projekte, Tastenbelegungen, Werkzeug-Presets, HDR-Umgebungen, MatCaps, Alphas, Pinseltexturen und Referenzbilder. Alles, was mit dem Projekt gespeichert wird, etwa Beleuchtung, Nachbearbeitung oder Kameraansichten, bleibt ebenfalls erhalten.

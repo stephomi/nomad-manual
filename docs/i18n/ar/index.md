@@ -1,4 +1,4 @@
-# نظرة عامة {#overview}
+# ![](/icons/home.webp) نظرة عامة {#overview}
 
 <!-- 
 [[toc]]
@@ -15,27 +15,29 @@
 
 ## جدول المحتويات {#table-of-contents}
 
-| القائمة                        | الأيقونة                      | الوصف                                              |
-| :----------------------------: | :---------------------------: | :------------------------------------------------: |
-| [الملفات](files.md)           | ![](/icons/open.webp)        | إدارة مشاريعك، التصدير، الاستيراد، إلخ            |
-| [المشهد](scene.md)            | ![](/icons/scene.webp)       | إضافة أشكال أولية جديدة وإدارة كائنات المشهد      |
-| [الطوبولوجيا](topology.md)    | ![](/icons/multires.webp)    | تعديل طوبولوجيا النموذج                            |
-| [الخامة](material.md)         | ![](/icons/material.webp)    | الخامة (على مستوى الكائن)                         |
-| [الإضاءة](shading.md)         | ![](/icons/sun.webp)         | كيفية إضاءة المشهد                                 |
-| [المعالجة اللاحقة](postprocess.md) | ![](/icons/postprocess.webp) | المعالجة اللاحقة (تأثيرات بصرية في مساحة الشاشة)  |
-| [الخلفية](background.md)      | ![](/icons/image.webp)       | تغيير الخلفية وإضافة صورة مرجعية                  |
-| [الكاميرا](camera.md)         | ![](/icons/camera.webp)      | التحكم في الكاميرا والتفاعل معها                   |
-| [الخط](stroke.md)             | ![](/icons/pencil.webp)      | تعديل إعدادات الأداة الحالية، الخط، التلاشي...     |
-| [الضغط](pressure.md)          | ![](/icons/pressure.webp)    | إدارة ضغط قلمك                                     |
-| [التلوين](painting.md)	     | ![](/icons/paint.webp)       | إعدادات التلوين لأدوات الرسم                       |
-| [التناظر](symmetry.md)        | ![](/icons/symmetry.webp)    | إدارة مستوى الانعكاس للشبكة الحالية               |
-| [الطبقات](layers.md)          | ![](/icons/layer.webp)       | إدارة طبقات الكائن الحالي                          |
-| [الإعدادات](settings.md)      | ![](/icons/cog.webp)         | تخصيص منفذ العرض ثلاثي الأبعاد                     |
-| [الواجهة](interface.md)       | ![](/icons/sliders.webp)   | تخصيص الواجهة                                      |
-| [الأدوات](tools.md)           | ![](/icons/toolbox.webp)     | قائمة بجميع الأدوات/الفرش                          |
-| [السجل](history.md)           | ![](/icons/history.webp)     | إدارة مكدس التراجع/الإعادة                         |
-| [الأسئلة الشائعة](faq.md)     | ![](/icons/faq.webp)         | الأسئلة المتكررة                                   |
-| [نصائح](tips.md)              | ![](/icons/manual.webp)      | نصائح سير العمل                                    |
+| القائمة                           | الأيقونة                         | الوصف                                        |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
+| [الملفات](files.md)              | ![](/icons/open.webp)        | إدارة مشاريعك، والتصدير، والاستيراد، إلخ          |
+| [المشهد](scene.md)              | ![](/icons/scene.webp)       | إضافة أشكال أساسية جديدة وإدارة كائنات المشهد    |
+| [طوبولوجيا](topology.md)        | ![](/icons/multires.webp)    | تعديل طوبولوجيا النموذج                     |
+| [مادة](material.md)        | ![](/icons/material.webp)    | المادة (على مستوى الكائن)                            |
+| [التظليل](shading.md)          | ![](/icons/sun.webp)         | طريقة إضاءة المشهد                            |
+| [ما بعد المعالجة](postprocess.md) | ![](/icons/postprocess.webp) | ما بعد المعالجة (تأثيرات بصرية على مستوى الشاشة)      |
+| [الخلفية](background.md)    | ![](/icons/image.webp)       | تغيير الخلفية وإضافة صورة مرجعية    |
+| [كاميرا](camera.md)            | ![](/icons/camera.webp)      | التحكم في الكاميرا والتفاعل معها                     |
+| [تحويل](transform.md)      | ![](/icons/transform.webp)   | كتابة موضع الكائن ودورانه وحجمه بالأرقام  |
+| [ضربة](stroke.md)            | ![](/icons/brush.webp)       | تعديل إعدادات الأداة الحالية، والضربة، والاضمحلال التدريجي... |
+| [الضغط](stroke.md#pressure)        | ![](/icons/pressure.webp)    | إدارة ضغط القلم                 |
+| [طلاء](painting.md)	       | ![](/icons/paint.webp)       | إعدادات الطلاء لأدوات الطلاء               |
+| [تناظر](symmetry.md)        | ![](/icons/symmetry.webp)    | إدارة مستوى المرآة للشبكة الحالية       |
+| [عملية](operation.md)      | ![](/icons/operation.webp)   | تنعيم شبكة كاملة أو نفخها أو إعادة تلوينها أو طمسها      |
+| [طبقات](layers.md)            | ![](/icons/layer.webp)       | إدارة طبقات الكائن الحالي                  |
+| [إعدادات](settings.md)        | ![](/icons/cog.webp)         | تخصيص منفذ العرض ثلاثي الأبعاد                          |
+| [الواجهة](interface.md)      | ![](/icons/sliders.webp)     | تخصيص الواجهة                            |
+| [الأدوات](tools.md)              | ![](/icons/toolbox.webp)     | قائمة بكل الأدوات والفرش                        |
+| [السجل](history.md)          | ![](/icons/history.webp)     | إدارة سجل التراجع والإعادة                  |
+| [الأسئلة الشائعة](faq.md)                  | ![](/icons/faq.webp)         | الأسئلة المتكررة                         |
+| [نصائح](tips.md)                | ![](/icons/manual.webp)      | نصائح لسير العمل                                      |
 
 ## موارد المجتمع {#community-resources}
 

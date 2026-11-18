@@ -1,10 +1,12 @@
 // https://vitepress.dev/guide/custom-theme
 import './style.css'
+import 'virtual:sidebar-icons.css'
 
 import mediumZoom from 'medium-zoom';
 import { useRoute } from 'vitepress';
 import Theme from 'vitepress/theme'
 import { h, nextTick, onMounted, watch } from 'vue'
+import { setupOutlineIcons } from './outlineIcons'
 
 export default {
     extends: Theme,
@@ -21,9 +23,9 @@ export default {
     setup() {
         const route = useRoute();
         const initZoom = () => {
-            var imagesDev = document.querySelectorAll('img[src*=images]');
-            var imagesBuild = document.querySelectorAll('img[src*=assets]');
-            var images = imagesBuild.length ? imagesBuild : imagesDev;
+            // screenshots only (class set by the markdown renderer), not icons: the built src
+            // of both is a hashed /assets/ file
+            var images = document.querySelectorAll('img.image');
             new mediumZoom(images, {
                 background: 'var(--vp-c-bg)',
                 scrollOffset: 10,
@@ -31,6 +33,7 @@ export default {
         };
         onMounted(() => {
             initZoom();
+            setupOutlineIcons();
         });
         watch(
             () => route.path,

@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Strona główna",
+    "forum": "Forum"
+  },
+  "theme": {
+    "outlineLabel": "Na tej stronie",
+    "docFooter": {
+      "prev": "Poprzednia strona",
+      "next": "Następna strona"
+    },
+    "darkModeSwitchLabel": "Wygląd",
+    "lightModeSwitchTitle": "Przełącz na jasny motyw",
+    "darkModeSwitchTitle": "Przełącz na ciemny motyw",
+    "sidebarMenuLabel": "Menu",
+    "returnToTopLabel": "Wróć na górę",
+    "langMenuLabel": "Zmień język",
+    "skipToContentLabel": "Przejdź do treści",
+    "notFound": {
+      "title": "NIE ZNALEZIONO STRONY",
+      "quote": "Ale jeśli nie zmienisz kierunku i będziesz dalej szukać, możesz dotrzeć tam, dokąd zmierzasz.",
+      "linkLabel": "przejdź do strony głównej",
+      "linkText": "Zabierz mnie na stronę główną"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "Szukaj",
+      "buttonAriaLabel": "Szukaj"
+    },
+    "modal": {
+      "displayDetails": "Wyświetl szczegółową listę",
+      "resetButtonTitle": "Wyczyść wyszukiwanie",
+      "backButtonTitle": "Zamknij wyszukiwanie",
+      "noResultsText": "Brak wyników dla",
+      "footer": {
+        "selectText": "aby wybrać",
+        "selectKeyAriaLabel": "klawisz Enter",
+        "navigateText": "aby nawigować",
+        "navigateUpKeyAriaLabel": "strzałka w górę",
+        "navigateDownKeyAriaLabel": "strzałka w dół",
+        "closeText": "aby zamknąć",
+        "closeKeyAriaLabel": "klawisz Escape"
+      }
+    }
+  }
+}

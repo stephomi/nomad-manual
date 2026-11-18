@@ -1,169 +1,212 @@
-# ![](/icons/pencil.webp) Trazo {#stroke}
+# ![](/icons/brush.webp) Trazo {#stroke}
 
 ---
 ![](/images/stroke_overview.webp) 
 
 ## Descripción general {#overview}
 
-Puedes personalizar el comportamiento del trazo de la mayoría de los pinceles de herramientas.
-Los ajustes deberían ser similares a los presentes en aplicaciones de pintura 2D, aunque algunas opciones son específicas de esculpido y 3D.
+Puedes personalizar el comportamiento del trazo de la mayoría de los pinceles de las herramientas.
+Los ajustes se parecen a los de las aplicaciones de pintura 2d, aunque algunas opciones son propias del esculpido y del 3d.
 
-Las opciones se dividen en 5 submenús:
+Las opciones se reparten en 5 submenús:
 
 | Nombre   | Icono                        | Descripción                                                        |
 | :------: | :--------------------------: | :----------------------------------------------------------------: |
-| Stroke   | ![](/icons/stroke_dot.webp) | Controla cómo se aplica el trazo al modelo                         |
-| Alpha    | ![](/icons/alpha.webp)      | Cómo se usa una textura en escala de grises para la huella del pincel |
-| Falloff  | ![](/icons/falloff.webp)    | Controla cómo cambia la fuerza del pincel desde el centro al borde |
-| Filter   | ![](/icons/filter.webp)     | Cómo afecta la geometría del modelo al pincel                      |
-| Pressure | ![](/icons/pressure.webp)   | Controla la respuesta a la presión del lápiz                       |
+| Trazo    | ![](/icons/brush.webp)      | Controla cómo se aplica el trazo sobre el modelo                   |
+| Alfa     | ![](/icons/alpha.webp)      | Cómo se usa una textura en escala de grises para la estampa del pincel |
+| Disminución | ![](/icons/falloff.webp) | Controla cómo cambia la fuerza del pincel del centro al borde      |
+| Filtro   | ![](/icons/filter.webp)     | Cómo afecta la geometría del modelo al pincel                      |
+| Presión  | ![](/icons/pressure.webp)   | Controla la respuesta a la presión del lápiz                       |
 
 ::: tip
-No todas las opciones de trazo se aplican a todas las herramientas. Las opciones de trazo que no use la herramienta actual se desactivarán u ocultarán. 
+No todas las opciones de trazo se aplican a todas las herramientas. Las que la herramienta actual no usa aparecen desactivadas u ocultas. 
 :::
 
 
-## Trazo {#stroke-1}
+## ![](/icons/brush.webp) Trazo {#stroke-1}
 
-### Radio {#radius}
+### ![](/icons/radius.webp) Radio {#radius}
 
 ![](/images/stroke_radius.webp)
 
-#### Compartir radio {#share-radius}
+Las opciones de radio son ajustes globales: se aplican a todas las herramientas.
 
-Cuando está activado, todas las herramientas usarán el mismo radio; de forma predeterminada, cada herramienta tiene su propio radio.
+#### Espacio {#size}
 
-#### Tamaño {#size}
+* `Pantalla` - el radio se mide en unidades de pantalla. Si le das un radio de 100 píxeles, seguirá midiendo 100 píxeles tanto si acercas como si alejas la vista.
+* `Mundo (3D)` - el radio se mide en unidades 3d. Por ejemplo, si creas una esfera y le das al radio el mismo tamaño que la esfera, el radio seguirá teniendo el tamaño de la esfera aunque acerques o alejes la vista.
 
-* Screen: el radio se define en unidades de pantalla. Si haces el radio de 100 píxeles de ancho, se mantendrá en 100 píxeles independientemente de si haces zoom dentro o fuera.
-* Constant (3d): el radio se define en unidades 3D. Por ejemplo, si creas una esfera y haces el radio del mismo tamaño que la esfera, el radio se mantendrá del mismo tamaño que la esfera al acercar o alejar el zoom.
+#### ![](/icons/link.webp) Sincronizar atajo {#sync-shortcut}
+
+Si está activado, el radio y los ajustes de silueta se mantienen sincronizados al cambiar a los pinceles de atajo (`Suavizar`, `Máscara` u `Ocultar`). Así, una pasada rápida de suavizado o de máscara usa el mismo tamaño de pincel que la herramienta con la que estabas trabajando.
+
+#### ![](/icons/link.webp) Compartir radio {#share-radius}
+
+Si está activado, todas las herramientas usan el mismo radio. Por defecto, cada herramienta tiene su propio radio.
 
 
-### Trazo {#stroke-type}
+### Tipo de trazo {#stroke-type}
 
 ![](/images/stroke_strokemode.webp)
 
-Los trazos pueden funcionar en varios modos:
+Los trazos pueden funcionar de varios modos:
 
 ### ![](/icons/stroke_dot.webp) Punto {#dot}
-Arrastra como un trazo de pintura normal. 
+Arrastra como en un trazo de pintura normal. 
 ![](/videos/stroke_dot.mp4) 
 
 ### ![](/icons/stroke_roll.webp) Rodar {#roll}
-El alfa del pincel se rotará para seguir la dirección del trazo, útil para hacer puntadas de tela. 
+El alfa del pincel gira para seguir la dirección del trazo, algo muy útil para hacer costuras en tela. 
 ![](/videos/stroke_roll.mp4) 
 
- ### ![](/icons/radius.webp) Lock + radius
- Estampa un trazo de pincel con **_altura_** fija. Al arrastrar se define la escala y la rotación.
+### ![](/icons/radius.webp) Bloqueo + radio {#lock-radius}
+Estampa un trazo con una **_altura_** fija. Al arrastrar ajustas la escala y la rotación.
 ![](/videos/stroke_lock_radius.mp4) 
 
-### ![](/icons/falloff.webp) Bloqueo + intensidad {#lock-intensity}
-Estampa un trazo de pincel con **_radio_** fijo. Al arrastrar se define la altura y la rotación.
+### ![](/icons/normal.webp) Bloqueo + intensidad {#lock-intensity}
+Estampa un trazo con un **_radio_** fijo. Al arrastrar ajustas la altura y la rotación.
 ![](/videos/stroke_lock_intensity.mp4) 
+
+::: tip
+Los modos `Bloqueo + radio` y `Bloqueo + intensidad` ignoran los ajustes de [Presión](#pressure), ya que el propio arrastre fija el tamaño y la fuerza.
+:::
 
 ![](/images/stroke_strokemodemove.webp)
 
-Las herramientas `Move` y `Drag` tienen sus propias 3 opciones:
+Las herramientas `Mover` y `Arrastrar` tienen sus propias 3 opciones:
 
 ### ![](/icons/snake.webp) Arrastrar {#drag}
 
-Seguirá actualizando lo que está dentro del radio del pincel durante el trazo. Un trazo rápido dejará la superficie atrás, mientras que un trazo lento sujetará el material, creando formas más largas. Este es el modo predeterminado para la herramienta `Drag`. Con `Dynamic Topology` se puede usar para hacer extrusiones tipo serpiente. 
+Actualiza continuamente lo que queda dentro del radio del pincel durante el trazo. Un trazo rápido deja atrás la superficie, mientras que uno lento sujeta el material y crea formas más alargadas. Es el modo por defecto de la herramienta `Arrastrar`. Con la `Topología dinámica` sirve para hacer extrusiones en forma de serpiente. 
 ![](/videos/stroke_drag.mp4) 
 
 
-### ![](/icons/grab.webp) Agarrar {#grab}
-Seleccionará lo que esté dentro del radio del pincel cuando se inicie el pincel, y mantendrá esa selección. Esto es útil para operaciones de mover más precisas, ya que puedes ajustar cuidadosamente la distancia del movimiento y no mover accidentalmente más de lo que seleccionaste originalmente. Este es el modo predeterminado para la herramienta `Move`.
+### ![](/icons/grab.webp) Agarre {#grab}
+Selecciona lo que queda dentro del radio del pincel al empezar el trazo y conserva esa selección. Es útil para movimientos más precisos, ya que puedes ajustar con cuidado la distancia del desplazamiento sin mover por accidente más de lo que habías seleccionado. Es el modo por defecto de la herramienta `Mover`.
 ![](/videos/stroke_grab.mp4) 
 
 
-### ![](/icons/radius.webp) Bloqueo + radio (arrastrar) {#lock-radius-drag}
-Se ignora el radio definido por el usuario y se establece dinámicamente en función de lo lejos que se arrastre el trazo desde el punto de inicio. Distancia pequeña = radio pequeño, distancia mayor = radio más grande. Usa el control deslizante de intensidad para controlar la forma del falloff. Útil para bloquear formas orgánicas gomosas.
+### ![](/icons/radius.webp) Bloqueo + radio (arrastre) {#lock-radius-drag}
+Se ignora el radio que hayas elegido: se ajusta sobre la marcha según lo lejos que arrastres el trazo desde el punto de partida. Poca distancia = radio pequeño, más distancia = radio más grande. Usa el regulador de intensidad para controlar la forma de la atenuación. Muy útil para encajar formas orgánicas y gomosas.
 ![](/videos/stroke_lockradius_drag.mp4) 
 
+Otras herramientas muestran aquí sus propios tipos de trazo, por ejemplo `Relajar`, `Suavizar` y `Difuminar` para las herramientas de suavizado, o formas como `Lazo` y `Curva` para las herramientas basadas en selección. Se describen con cada [herramienta](tools.md).
 
 
-### Ajustar intensidad del espaciado {#adjust-spacing-intensity}
+### Ajustar intensidad por espaciado {#adjust-spacing-intensity}
 ![](/images/stroke_space_smooth.webp)
 
-Los trazos con un espaciado bajo (menor al 50 %) pueden acumularse rápidamente, produciendo trazos más intensos que con valores de espaciado más altos. Este interruptor compensará esto, de modo que los trazos tengan aproximadamente la misma intensidad independientemente del espaciado.
+Los trazos con un espaciado bajo (menos del 50 %) se acumulan rápido y resultan más intensos que con valores de espaciado más altos. Esta opción lo compensa, de modo que los trazos tienen más o menos la misma intensidad sea cual sea el espaciado.
 
-### Espaciado del trazo {#stroke-spacing}
-Qué tan separados se aplican cada una de las huellas del pincel durante una operación de arrastre. Los valores inferiores al 100 % se superpondrán, dando la apariencia de un trazo continuo. Los valores superiores al 100 % empezarán a dejar huecos, útil para esculpir detalles como costuras o cremalleras.
+### Espaciado de trazos {#stroke-spacing}
+La distancia entre cada estampa del pincel mientras arrastras. Los valores por debajo del 100 % se solapan y dan la apariencia de un trazo continuo. Los valores por encima del 100 % empiezan a dejar huecos, algo útil para esculpir detalles como costuras o cremalleras.
 
-### Estabilizador de cuerda perezosa {#lazy-rope-stabilizer}
-Los trazos se retrasarán respecto a la posición del puntero una cierta distancia. Esto se puede usar para dibujar líneas suaves.
+### Estabilidad del trazo {#lazy-rope-stabilizer}
+El trazo sigue al puntero con un cierto retraso de distancia. Sirve para dibujar líneas suaves.
 ![](/videos/stroke_lazy_rope.mp4) 
 
-### Suavizado del trazo {#stroke-smoothing}
-Promedia múltiples posiciones del puntero para obtener un trazo más suave.
-Con valores altos, el trazo se retrasará respecto al puntero pero eventualmente lo alcanzará.
-Esto es útil para dibujar líneas suaves.
+### Suavidad del trazo {#stroke-smoothing}
+Promedia varias posiciones del puntero para obtener un trazo más suave.
+Con valores altos, el trazo se queda por detrás del puntero, pero acaba alcanzándolo.
+Es útil para dibujar líneas suaves.
 
-### Ajuste de radio {#snap-radius}
-Ajusta el inicio del trazo al final del trazo anterior. El radio determina a qué distancia se busca el final del trazo anterior. Esto puede ser útil al dibujar líneas largas y continuas, haciendo pausas frecuentes.
+### Radio de ajuste {#snap-radius}
+Une el trazo al anterior cuando el puntero empieza cerca de donde terminó el último trazo. El radio indica a qué distancia se busca el final del trazo anterior. Resulta útil para dibujar líneas largas y continuas haciendo pausas frecuentes.
+
+### ![](/icons/trail.webp) Rastro {#trail}
+
+Si está activado, cada nueva estampa vuelve a aplicar también los puntos más recientes del trazo que quedan detrás. `Recuento de rastros` fija cuántos puntos se vuelven a aplicar, `Intensidad del rastro` su fuerza y `Radio del rastro` cuánto más grandes se hacen.
+
+El rastro solo funciona con el tipo de trazo `Punto`, y no con la [influencia de la atenuación](#influence) `Cresta`.
 
 ### ![](/icons/silhouette.webp) Silueta {#silhouette}
 ![](/images/stroke_silhouette.webp)
-De forma predeterminada, los trazos solo afectarán a la superficie del modelo dentro del radio del pincel. Cuando la silueta está activada, el trazo se proyectará a través de todo el modelo. Esto puede ser muy útil al hacer el bloqueo inicial de un modelo, o para formas que requieren que los lados permanezcan perpendiculares.
+Por defecto, los trazos solo afectan a la superficie del modelo que queda dentro del radio del pincel. Con la silueta activada, el trazo se proyecta a través de todo el modelo. Es muy útil para el encaje inicial de un modelo, o para formas cuyos lados deben quedar perpendiculares.
 
-La dirección de proyección se puede establecer explícitamente; el método predeterminado “Closest” detectará el mejor ángulo en relación con la vista. 
+Puedes elegir la dirección de proyección:
+
+* `X`, `Y`, `Z` - proyecta a lo largo de un eje fijo.
+* `Vista` - proyecta en la dirección de la cámara.
+* `Si está fijado` - proyecta en la dirección de la cámara, pero solo mientras la cámara está fijada a una vista. Si no, el trazo es un trazo normal.
+* `Más cercano` - proyecta a lo largo del eje más cercano a la dirección de la cámara. Es la opción por defecto.
 
 ![](/videos/stroke_silhouette.mp4) 
 
-### ![](/icons/dice.webp) Aleatorizar {#randomize}
+### ![](/icons/dice.webp)Aleatorizar {#randomize}
 
 ![](/images/stroke_randomize.webp)
 
-La intensidad, traslación, rotación y escala del trazo se pueden aleatorizar de forma independiente. Esto se puede usar para crear una variedad de efectos; por ejemplo, aleatorizar con la herramienta de pintura puede crear color moteado, o aleatorizar con la herramienta de pliegue puede usarse para crear detalles de piel.
+La `Intensidad`, el `Desplazamiento`, la `Rotación` y la `Escala` del trazo se pueden aleatorizar por separado. Usa la casilla de cada fila para activarla o desactivarla. Con esto se consiguen muchos efectos: por ejemplo, aleatorizar con la herramienta de pintura crea un color moteado, y aleatorizar con la herramienta de pliegue sirve para crear detalles de piel.
+
+`Período (más lento)` fija la duración del ciclo aleatorio: auméntalo para variaciones lentas y suaves, redúcelo para un ruido rápido. El botoncito junto a cada fila escala el período solo para esa fila.
 
 ![](/videos/stroke_randomize.mp4) 
 
-### Desplazamiento del trazo {#stroke-offset}
+### ![](/icons/paint.webp) Aleatorizar - HSV {#randomize-hsv}
 
-Aplica un desplazamiento constante al trazo. Esto es útil en pantallas pequeñas donde tu dedo cubriría el trazo. 
+En las herramientas que pintan, también se pueden aleatorizar el `Matiz`, la `Saturación` y el `Valor` del color de pintura, con su propio período. Ideal para añadir variaciones de color sutiles a la piel o la piedra.
+
+### Desplazamiento de trazo {#stroke-offset}
+
+Aplica un desplazamiento constante al trazo para que el dedo no lo tape. Es útil en pantallas pequeñas. Es un ajuste global: actívalo con su casilla y se aplica a todas las herramientas.
 
 
 ## ![](/icons/alpha.webp) Alfa {#alpha}
 ![](/images/stroke_alpha.webp) 
 
-El `Alpha` es una textura que modulará el comportamiento de tu pincel.
-Es una imagen en escala de grises, donde los píxeles negros significan sin deformación y los píxeles blancos deformación completa.
+El `Alfa` es una textura que modula el comportamiento del pincel.
+Es una imagen en escala de grises, en la que los píxeles negros significan ninguna deformación y los blancos, deformación completa.
 
-Haz clic en la imagen del alfa para cambiarla.
+Toca la imagen del alfa para cambiarla. Además de los alfas incluidos y los que importes tú, la lista de alfas también puede descargar mapas de desplazamiento de Poly Haven.
 
-Haz clic en la vista previa del material para cargar un alfa desde un preset de material. También puedes guardar presets de material aquí y elegir incrustar texturas con la herramienta.
-
-::: tip
-La textura nunca se redimensiona, por lo que las texturas grandes pueden ralentizar el rendimiento.
-:::
-
-### Invertir píxeles {#invert-pixels}
-Esto invertirá los valores de la imagen, de modo que los píxeles negros se volverán blancos y los blancos se volverán negros.
+Toca la vista previa del material para cargar un alfa desde un preajuste de material. Aquí también puedes guardar preajustes de material y elegir si incrustar las texturas con la herramienta.
 
 ::: tip
+La textura nunca se redimensiona, así que las texturas grandes pueden ralentizar el rendimiento.
+:::
 
-Los alfas integrados que se incluyen con Nomad no se pueden invertir.
+### ![](/icons/blend_contrast.webp) Corregir alfa {#invert-pixels}
+El botón `Corregir...` de un alfa importado abre una ventana que corrige la propia imagen: su valor medio, la inversión de los píxeles (el negro pasa a blanco y el blanco a negro), una rotación de 90° y un volteo horizontal o vertical. El archivo de imagen se reescribe, así que las demás aplicaciones también ven la imagen corregida.
+
+::: tip
+
+Los alfas incluidos con Nomad no se pueden corregir.
 
 :::
 
-### Escalado {#scaling}
+### Proyección {#projection}
 
-El tamaño del pincel en Nomad es un círculo con un radio definido por el usuario. Las texturas suelen ser cuadradas o rectangulares; los parámetros de `Scaling` te permiten decidir cómo debe encajar la textura dentro del círculo. Para una textura cuadrada, un valor de 0.7 encajará dentro del círculo. Un valor de 1 escalará la textura más grande para que el círculo quepa dentro, recortando los bordes.
+Cómo se proyecta el alfa sobre el modelo:
+
+* `Superficie` - el alfa se apoya en la superficie bajo el pincel y sigue su orientación.
+* `Pantalla` - el alfa se proyecta directamente desde la vista.
+* `Mosaico` - el alfa se proyecta desde la vista y se queda fijo mientras pintas encima, como una plantilla, de modo que un patrón repetido encaja sin costuras. La rotación queda bloqueada y la presión del lápiz no cambia el tamaño del patrón.
+* `Triplanar` - el alfa se proyecta a lo largo de los 3 ejes. Las opciones de escala, rotación y mosaico de abajo se sustituyen por los ajustes de textura triplanar.
+
+### ![](/icons/diagonal.webp) Escala {#scaling}
+
+En Nomad, el pincel es un círculo con el radio que tú elijas. Las texturas suelen ser cuadradas o rectangulares, y los parámetros de `Escala` te permiten decidir cómo encaja la textura dentro del círculo. Para una textura cuadrada, un valor de 0,7 la hace caber dentro del círculo. Un valor de 1 agranda la textura para que sea el círculo el que quepa dentro, recortando los bordes.
 
 ![](/images/alpha_scaling.webp) 
 
-Al activar `Scaling - Y` podrás estirar el alfa verticalmente.
+Al activar `Escala Y` puedes estirar el alfa en vertical. El primer regulador pasa entonces a ser `Escala X`.
 
 ![](/images/alpha_scaling_y.webp) 
 
+`Voltear horizontalmente` refleja el alfa de izquierda a derecha.
+
 ### Rotación {#rotation}
 
-La textura alfa se rotará para seguir la dirección del trazo. Puedes añadir un desplazamiento de rotación y, si el icono de candado está activado, la textura permanecerá bloqueada a esta rotación relativa a la pantalla.
+La textura del alfa gira para seguir la dirección del trazo. Puedes añadir un desfase de rotación y, si el icono del candado está activado, la textura se queda bloqueada en esa rotación respecto a la pantalla.
+
+El botón del lápiz que hay al lado gira el alfa cuando haces rodar el lápiz sobre sí mismo (barrel roll), con los trazos `Bloqueo + radio` y `Bloqueo + intensidad` mientras la rotación está desbloqueada. Solo funciona con lápices que lo admitan.
 
 ### Mosaico {#tiling}
 ![](/images/stroke_tiling.webp) 
 
-Con qué frecuencia se repite la textura dentro del perfil del pincel. Los modos de repetición te permiten limitar a una sola textura dentro del trazo, texturas repetidas o en espejo, donde cada segunda textura se invierte para crear patrones o ayudar a hacer texturas sin costuras.
+La frecuencia con que se repite la textura dentro del perfil del pincel. Los modos `Mosaico - X` y `Mosaico - Y` te permiten limitarte a una sola textura en el trazo (`Ninguno`), repetirla (`Repetir`) o reflejarla, volteando una de cada dos texturas para crear patrones o ayudar a hacer texturas sin costuras (`Espejo`). Están disponibles con el trazo `Rodar`, con la proyección `Mosaico` o con un `Mosaico` mayor que 1.
+
+`Ajuste ceñido (imágenes no cuadradas)` solo importa con alfas y texturas de pincel no cuadradas. Si está activado, cada imagen forma su mosaico por su cuenta, sin espacios. Desactívalo para mantener sincronizados el alfa y las demás imágenes cuando sus proporciones son distintas.
 
 ![](/videos/alpha_tiling.mp4) 
 
@@ -171,146 +214,163 @@ Con qué frecuencia se repite la textura dentro del perfil del pincel. Los modos
 
 ### Valor medio {#mid-value}
 
-De forma predeterminada, los píxeles negros significarán sin deformación y los píxeles blancos significarán deformación positiva completa, así que, por ejemplo, un pincel de arcilla con una textura alfa de rocas solo tirará de la superficie hacia afuera donde el alfa no sea negro.
+Por defecto, los píxeles negros significan ninguna deformación y los blancos, deformación positiva completa. Por ejemplo, un pincel de arcilla con una textura de alfa de rocas solo levantará la superficie donde el alfa no sea negro.
 
-Si quieres que el pincel empuje la superficie hacia adentro, o que tanto empuje como tire, puedes modificar el valor medio. Así, si estableces el valor en 0.5, un gris medio en el alfa no hará nada, un valor negro empujará hacia adentro y el blanco tirará hacia afuera.
+Si quieres que el pincel hunda la superficie, o que la hunda Y la levante a la vez, puedes modificar el valor medio. Si lo pones a 0,5, un gris medio en el alfa no hace nada, el negro hunde y el blanco levanta.
+
+Dos botones te ayudan a encontrar el valor adecuado: el botón cuadrado lee el valor medio en el borde de la imagen, y el cuentagotas te permite elegirlo sobre el propio alfa.
 
 
 
 
-## Degradación {#falloff}
+## ![](/icons/falloff.webp) Disminución {#falloff}
 
 ![](/images/falloff_menu.webp) 
 
-Esto es similar al [Alpha](#alpha), excepto que controlas la intensidad con una única curva. Esto se combina con el alfa para que puedas usar una textura para el detalle y el falloff para controlar el desvanecimiento del borde y la intensidad en el centro de la herramienta.
+Funciona como el [Alfa](#alpha), salvo que la intensidad se controla con una sola curva. Se combina con el alfa, de modo que puedes usar una textura para el detalle y la atenuación para controlar el desvanecimiento del borde y la intensidad en el centro de la herramienta.
 
-Cuando la curva está en la parte superior, hay deformación completa; cuando está en la parte inferior, el pincel no tiene efecto.
+Cuando la curva está arriba, la deformación es completa; cuando está abajo, el pincel no tiene efecto.
 
-Puedes pensar en la curva como una sección transversal de la punta del pincel. La sección inferior da una vista previa de cómo se vería una sola “estampación” del pincel en la superficie del modelo, y si hay una textura alfa para el pincel, también se mostrará para previsualizar cómo interactuarán el falloff y el alfa.
+Puedes ver la curva como un corte transversal de la punta del pincel. La sección inferior muestra una vista previa de cómo quedaría una sola «estampa» del pincel sobre la superficie del modelo y, si el pincel tiene una textura de alfa, también la muestra, para que veas cómo interactúan la atenuación y el alfa.
 
-### Preajuste {#preset}
-Con esto seleccionado, al hacer clic en el gráfico de la curva aparecerá un menú de presets. Las curvas redondeadas darán resultados más suaves; las curvas angulares tendrán resultados más marcados. El botón `Sub` en la barra de herramientas izquierda invertirá efectivamente el falloff, de modo que la parte superior de la curva empuje hacia la superficie en lugar de tirar hacia afuera, o viceversa.
+### ![](/icons/fx.webp) Preajuste {#preset}
+Con `Preajuste...` seleccionado, al tocar el gráfico de la curva aparece un menú de preajustes. Las curvas redondeadas dan resultados más suaves y las angulosas, más marcados. El botón `Sub` de la barra de herramientas izquierda invierte en la práctica la atenuación: la parte alta de la curva hunde la superficie en lugar de levantarla, o al revés.
 
-### Catmull-Rom {#catmull-rom}
-Cuando está seleccionado, el usuario puede dibujar sus propias curvas de falloff. El editor de curvas funciona igual que las curvas en el resto de Nomad:
+### ![](/icons/curve_catmull.webp) Catmull-Rom {#catmull-rom}
+Con esta opción puedes dibujar tus propias curvas de atenuación. El editor de curvas funciona igual que las curvas del resto de Nomad:
 
-* Haz clic en la curva para crear un nuevo punto
-* Arrastra un punto para reposicionarlo
-* Haz clic en un punto para alternar entre afilado y suave
+* Toca la curva para crear un punto nuevo
+* Arrastra un punto para moverlo
+* Toca un punto para alternar entre anguloso y suave
 * Arrastra un punto sobre un punto vecino para eliminarlo
 
-### B-spline {#b-spline}
-Cuando está seleccionado, el usuario puede dibujar sus propias curvas de falloff. El editor funciona igual que Catmull-Rom, pero los puntos de la curva influyen en la curva en lugar de estar directamente sobre ella, lo que puede ayudar a crear formas de curva más suaves.
+### ![](/icons/curve_bspline.webp) B-spline {#b-spline}
+Con esta opción puedes dibujar tus propias curvas de atenuación. El editor funciona igual que Catmull-Rom, pero los puntos influyen en la curva en lugar de estar directamente sobre ella, lo que ayuda a crear formas de curva más suaves.
+
+### ![](/icons/curve_bevel.webp) Bisel {#bevel}
+Los puntos se unen con líneas rectas, con esquinas redondeadas cuyo tamaño depende de la nitidez de cada punto. Muy práctico para pinceles de punta plana con un bisel limpio en el borde.
 
 El editor de curvas tiene 3 botones:
 
-| Elemento | Icono                        | Descripción                                  |
+| Elemento | Icono                       | Descripción                                  |
 | :------: | :-------------------------: | :------------------------------------------: |
-| Maximize | ![](/icons/maximize.webp)  | Expande el editor de curvas                  |
-| Reset    | ![](/icons/reset.webp)     | Revierte la curva al estado predeterminado   |
-| Symmetry | ![](/icons/symmetric.webp) | Muestra la curva como una “punta de pincel” simétrica |
+| Maximizar | ![](/icons/maximize.webp) | Amplía el editor de curvas                   |
+| Restablecer | ![](/icons/reset.webp)  | Devuelve la curva a su estado por defecto    |
+| Simetría | ![](/icons/symmetric.webp) | Muestra la curva como una «punta de pincel» simétrica |
 
 
 ### Influencia {#influence}
 
-* Sphere (3d): la influencia se calcula tomando la distancia desde el vértice al centro del pincel.
-* Circle (2d): el vértice se proyecta primero en el plano del área, antes de tomar su distancia al centro del pincel. Esto es similar a cómo se muestrean los alfas. 
-* Cylinder: la influencia se proyecta a través del área como un cilindro, usado por el modo Silhouette de abajo.
+* `Esfera` (3d) - La influencia se calcula a partir de la distancia entre el vértice y el centro del pincel.
+* `Círculo` (2d) - El vértice se proyecta primero sobre el plano del área y luego se mide su distancia al centro del pincel. Es parecido a como se muestrean los alfas. 
+* `Cilindro` - La influencia se proyecta a través del área como un cilindro. Equivale a activar la [Silueta](#silhouette-1) de abajo.
+* `Cresta` - La atenuación se mide a lo ancho del trazo, de modo que la curva pasa a ser el corte transversal de todo el trazo. El botón `Sim` refleja entonces el perfil a ambos lados del trazo: editas un lado y el otro le sigue. Si está desactivado, la curva va del lado izquierdo del trazo a su lado derecho. No está disponible para las herramientas basadas en aplanar.
 
-### Silueta {#silhouette-1}
-De forma predeterminada, los trazos solo afectarán a la superficie del modelo dentro del radio del pincel. Cuando la silueta está activada, el trazo se proyectará a través de todo el modelo. Esto puede ser muy útil al hacer el bloqueo inicial de un modelo, o para formas que requieren que los lados permanezcan perpendiculares.
+### ![](/icons/silhouette.webp) Silueta {#silhouette-1}
+Por defecto, los trazos solo afectan a la superficie del modelo que queda dentro del radio del pincel. Con la silueta activada, el trazo se proyecta a través de todo el modelo. Es muy útil para el encaje inicial de un modelo, o para formas cuyos lados deben quedar perpendiculares. Tiene las mismas opciones de proyección que la [Silueta](#silhouette) de la pestaña Trazo.
 
 
 
-## Filtro {#filter}
+## ![](/icons/filter.webp) Filtro {#filter}
 
 ![](/images/filter_menu.webp) 
 
-### Acumular trazo {#accumulate-stroke}
-Activa que no haya límite en cuánto material se puede añadir/eliminar por trazo. Por ejemplo, la herramienta `Clay` tiene esto activado, por lo que el material puede seguir acumulándose, mientras que la herramienta `Brush` lo tiene desactivado, de modo que los trazos dejarán de añadir material si sigues pasando el mismo trazo sobre la misma región de la malla. 
+### ![](/icons/accumulate.webp) Acumular trazo {#accumulate-stroke}
+Quita el límite a la cantidad de materia que se puede añadir o quitar en cada trazo. Por ejemplo, la herramienta `Arcilla` lo tiene activado, así que el material puede seguir acumulándose, mientras que la herramienta `Brocha` lo tiene desactivado: el trazo deja de añadir material si sigues pasando el mismo trazo por la misma zona de la malla. 
 
-### Solo vértice de frente {#front-facing-vertex-only}
-Esta opción ignorará los vértices que miran hacia atrás.
-Puede ser útil si quieres pintar parte de una geometría delgada sin afectar al otro lado.
-También funciona para esculpir, pero podrías experimentar algunos artefactos.
+### ![](/icons/culling.webp) Solo vértice frontal {#front-facing-vertex-only}
+Esta opción ignora los vértices orientados hacia atrás.
+Puede ser útil si quieres pintar una parte de una geometría fina sin afectar al otro lado.
+También funciona al esculpir, pero puede que aparezcan algunos artefactos.
 
-### Permitir topología dinámica {#allow-dynamic-topology}
-Esta opción solo está disponible si tu malla está en modo [Dynamic Topology](topology.md#dynamic-topology). Puedes desactivar o activar la topología dinámica por herramienta.
+### ![](/icons/eye_open.webp) Solo vértices visibles {#visible-vertex-only}
+Ignora los vértices ocultos detrás de otras superficies, vistos desde la cámara. Esta opción aparece en los trazos de forma (lazo, rectángulo...) de las herramientas de máscara, de pintura, `Grupo de caras` y `Ocultar`.
 
-### Topología conectada {#connected-topology}
-Activa esculpir solo los vértices que están conectados a la superficie que tocas con la herramienta. Por ejemplo, cuando se usa con la herramienta `Move`, esto te permitirá mover una parte incluso si se cruza con otra parte.
+### ![](/icons/dynamic.webp) Permitir topología dinámica {#allow-dynamic-topology}
+Esta opción solo está disponible si tu malla está en modo [Topología dinámica](topology.md#dynamic-topology). Puedes desactivar o activar la topología dinámica para cada herramienta.
+
+### ![](/icons/connect.webp) Topología conectada {#connected-topology}
+Esculpe solo los vértices unidos a la superficie que tocas con la herramienta. Por ejemplo, con la herramienta `Mover` te permite mover una parte aunque se cruce con otra.
 ![](/videos/connected_topology.mp4)
 
 ### Proteger área {#protect-area}
 ![](/images/filter_protect_area.webp) 
 
-Estas opciones impedirán que las herramientas afecten a partes de tu malla bajo diversas condiciones. 
+Estas opciones impiden que las herramientas afecten a partes de la malla en distintas situaciones. Cada una se puede poner en `Auto`, `No` o `Sí`, y la flechita muestra a qué equivale `Auto` en ese momento.
 
-La opción “Auto” significa que, si tienes ocultar, máscara o facegroup visible en el menú [Shading](shading), estarán protegidos, pero si están desactivados en ese menú, la protección se deshabilita.
+* `Ocultar` - Si hay partes de la malla ocultas con la herramienta Ocultar, indica si deben protegerse. En `Auto`, las caras ocultas se protegen, salvo que su malla alámbrica esté visible (consulta los ajustes de [Malla alámbrica](settings.md#wireframe)).
+* `Máscara` - Si hay partes de la malla con máscara, indica si deben protegerse. En `Auto`, las partes con máscara se protegen mientras la máscara está visible en el menú [Sombreado](shading).
+* `Grupo de caras` - Indica si solo puedes usar la herramienta dentro del primer grupo de caras que tocas. En `Auto`, depende de si los grupos de caras están visibles en el menú [Sombreado](shading).
 
-* `All`: alterna para definir si los filtros de protección son globales o por herramienta.
-* `Hide`: si partes de la malla están ocultas con la herramienta de ocultar, define si deben estar protegidas.
-* `Mask`: si partes de la malla están enmascaradas, define si deben estar protegidas.
-* `Facegroup`: define si solo puedes usar una herramienta dentro del primer facegroup tocado.
+El botón `(Todo)` indica si estas protecciones son globales, compartidas por todas las herramientas, o propias de cada herramienta.
 
-
-### Mantener bordes marcados {#keep-sharp-edges}
-Excluye puntos cuyos normales difieran demasiado de la normal de la superficie.
-
-Cambiará cómo se calcula el área del plano (Area sampling).
-
-Esta opción puede ser útil para herramientas basadas en aplanar, o si quieres colorear una superficie mayormente plana sin desbordamiento.
-
-![](/videos/filter_keep_sharp_edges.mp4)
 
 ### Muestreo de área {#area-sampling}
-Algunos pinceles u opciones de trazo requieren una normal de plano y una posición de plano en la superficie para funcionar.
+Algunos pinceles u opciones de trazo necesitan la normal y la posición de un plano sobre la superficie para funcionar.
 
-Puedes controlar cómo calcular este plano promedio configurando el área de muestreo como una proporción del radio de la herramienta.
+Puedes controlar cómo se calcula este plano medio fijando el área de muestreo como una proporción del radio de la herramienta.
 
 Al 100 %, se tienen en cuenta todos los puntos dentro del círculo de selección.
 
-Al 0 %, solo se tiene en cuenta el vértice o triángulo más cercano. Estos valores pueden vincularse tanto para `Normal radius` como para `Position radius`, o desbloquearse y configurarse de forma independiente.
+Al 0 %, solo se tiene en cuenta el vértice o triángulo más cercano. Estos valores pueden ir vinculados para `Radio normal` y `Radio de posición`, o desbloquearse y ajustarse por separado.
+
+### Filtro de normales por área {#keep-sharp-edges}
+Excluye los puntos cuyas normales se desvían demasiado de la normal de la superficie.
+
+Cambia la forma en que se calcula el plano del área (Muestreo de área), así que es útil sobre todo con las herramientas basadas en arcilla o en aplanar, o si quieres colorear una superficie casi plana sin desbordarte.
+
+Los ángulos `Mín.` y `Máx.` controlan la transición entre los puntos excluidos y los afectados por completo, como muestra el pequeño disco de color que hay al lado.
+
+![](/videos/filter_keep_sharp_edges.mp4)
+
+### Filtro de normales con caída {#falloff-normal-filter}
+Igual que el [Filtro de normales por área](#keep-sharp-edges), excluye los puntos cuyas normales se desvían demasiado de la normal de la superficie, pero actúa sobre la atenuación del pincel en lugar de sobre el cálculo del plano. Es útil para pintar pliegues o relieves.
 
 
-### Enmascarado de profundidad {#depth-masking}
+### Filtro de profundidad {#depth-masking}
 ![](/images/stroke_depthmask.webp)
 
-Excluye puntos que estén por encima o por debajo de cierta distancia del plano calculado (Area sampling).
+Excluye los puntos que quedan por encima o por debajo de cierta distancia del plano calculado (Muestreo de área).
 
-Esto se puede usar para pintar solo en regiones abultadas o solo en regiones de cavidad.
+Sirve para pintar solo en las zonas con relieve, o solo en las cavidades.
 
-El gráfico representa una sección transversal de la superficie; la línea horizontal es donde está la superficie, el círculo representa el radio de falloff de la pintura relativo por encima y por debajo de la superficie. `Height offset` es un porcentaje por encima o por debajo de la superficie donde comenzar el cálculo de enmascarado. `Top area` y `Bottom area` te permiten escalar el falloff por encima y por debajo del punto de desplazamiento.
+El gráfico representa un corte transversal de la superficie: la línea horizontal es donde está la superficie, y el círculo representa el radio de atenuación de la pintura por encima y por debajo de ella. `Desplazamiento de altura` es un porcentaje por encima o por debajo de la superficie a partir del cual empieza el cálculo de la máscara. Con `Atenuación de profundidad` activada, `Área superior` y `Área inferior` te permiten escalar la atenuación por encima y por debajo del punto de desplazamiento.
 
-#### Ejemplo: Pintar en cavidades {#example-paint-in-cavities}
-Para pintar solo regiones de cavidad, establece el desplazamiento de altura en -100 % y ajusta el control deslizante de top area de modo que se aleje de la línea horizontal. Esto significa que el primer clic establece la profundidad “cero” y luego solo se verán afectadas las áreas por debajo de esta profundidad.
+#### Ejemplo: pintar en las cavidades {#example-paint-in-cavities}
+Para pintar solo las cavidades, pon el desplazamiento de altura en -100 % y ajusta el regulador del área superior para que se separe de la línea horizontal. Así, el primer toque fija la profundidad «cero» y solo se ven afectadas las zonas por debajo de esa profundidad.
 
 ![](/videos/stroke_depth_cavity.mp4)
 
-#### Ejemplo: Pintar en salientes {#example-paint-on-bumps}
-Para pintar solo en zonas altas, establece el desplazamiento de altura en +90 %, de modo que la parte inferior del círculo se cruce con la línea horizontal por una pequeña cantidad. Cuando hagas clic en la parte superior de una zona “alta”, esto establecerá la profundidad, de modo que se pintará cualquier cosa a esa profundidad, más un poco por debajo, y cualquier cosa por encima de ella. Las cavidades profundas se omitirán.
+#### Ejemplo: pintar en los relieves {#example-paint-on-bumps}
+Para pintar solo las zonas altas, pon el desplazamiento de altura en +90 %, de modo que la parte inferior del círculo corte un poco la línea horizontal. Al tocar la parte superior de una zona «alta», se fija la profundidad, y se pinta todo lo que esté a esa profundidad, un poco por debajo, y todo lo que esté más alto. Las cavidades profundas se saltan.
 ![](/videos/stroke_depth_bump.mp4)
 
 
-## Presión {#pressure}
+## ![](/icons/pressure.webp) Presión {#pressure}
 ![](/images/pressure_menu.webp) 
 
-Controla cómo la presión del lápiz/estilo afecta a los pinceles.
+Controla cómo afecta la presión del lápiz a los pinceles.
 
-De forma predeterminada, `Use global settings` está activado, lo que significa que todos los pinceles compartirán los mismos valores de presión.
+### Utilizar configuración global {#use-global-settings}
 
-### Presión - Radio {#pressure-radius}
+Por defecto, `Utilizar configuración global` está activado, lo que significa que todos los pinceles comparten los mismos valores de presión. Desmárcalo para que la herramienta actual tenga sus propios ajustes de presión.
 
-Esta curva controla cómo la presión afecta al radio del pincel. El valor predeterminado es una relación lineal, por lo que, si tu lápiz tiene una respuesta suave, el cambio de radio también debería sentirse suave. Dicho esto, muchos lápices tienen una respuesta no lineal, que puedes compensar con esta curva. Por ejemplo, si el radio no parece llegar a su valor máximo con alta presión, usa un preset de curva como “out-pow3”, con una curva que se incline hacia arriba, para aumentar el radio antes.
+### ![](/icons/radius.webp) Radio {#pressure-radius}
 
-Este diálogo es similar a la visualización de la curva de falloff; puedes usar un preset tocando la ventana de la curva o dibujar tus propias curvas con los modos Catmull-Rom y B-Spline.
+Esta curva controla cómo afecta la presión al radio del pincel. Por defecto, la relación es lineal, así que si tu lápiz tiene una respuesta suave, el cambio de radio también debería sentirse suave. Dicho esto, muchos lápices tienen una respuesta no lineal, que puedes compensar con esta curva. Por ejemplo, si te parece que el radio no llega a su valor máximo con una presión alta, usa un preajuste de curva como «out-pow3», con una curvatura hacia arriba, para que el radio aumente antes.
+
+Esta ventana se parece a la de la curva de atenuación: puedes usar un preajuste tocando la ventana de la curva, o dibujar tus propias curvas con los modos `Catmull-Rom`, `B-spline` y `Bisel`.
 
 Si quieres un radio constante, desactiva esta sección.
 
-### Presión - Intensidad {#pressure-intensity}
+### ![](/icons/intensity.webp) Intensidad {#pressure-intensity}
 
-Similar al control deslizante de radio, pero para controlar la intensidad. Si quieres una intensidad constante, desactiva esta sección.
+Igual que la curva del radio, pero para controlar la intensidad. Si quieres una intensidad constante, desactiva esta sección.
 
-### Suavizado de la presión {#pressure-smoothing}
+### Limitar presión al 100% {#limit-pressure}
+
+Garantiza que la presión del lápiz nunca supere el 100 %. Es un ajuste global.
+
+### Suavizado de presión {#pressure-smoothing}
 
 Promedia los eventos de presión del lápiz para obtener resultados más suaves.

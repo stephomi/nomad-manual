@@ -1,159 +1,173 @@
 # ![](/icons/layer.webp) Calques {#layers}
 
-Ce menu contient la pile de couches, un moyen de stocker les modifications apportées à votre objet de manière non destructive, ainsi que de nombreuses façons de combiner et de réutiliser les couches.
+Ce menu contient la pile de calques, un moyen de stocker les modifications de votre objet de manière non destructive, avec de nombreuses façons de combiner et de réutiliser les calques.
 
 ![](/images/layers_overview.webp) 
 
-## Aperçu {#overview}
+## Présentation {#overview}
 
-Les couches de Nomad ont plusieurs usages.
+Les calques de Nomad servent à plusieurs choses.
 
-Les informations de peinture (Couleur, Rugosité, Métallicité, Opacité) fonctionnent avec les couches de manière similaire aux applications de peinture 2D. Une couche peut être créée et de la peinture appliquée sur un modèle. La couche peut être activée ou désactivée, son opacité ajustée, la couche peut être dupliquée, son ordre peut être modifié dans la pile de couches, son mode de fusion ajusté.
+Pour la peinture (couleur, rugosité, métallité, opacité), les calques fonctionnent comme dans les applications de peinture 2d. Vous pouvez créer un calque et peindre le modèle dessus. Le calque peut être activé ou désactivé, son opacité ajustée, il peut être dupliqué, déplacé dans la pile de calques, et son mode de fusion modifié.
 
-Nomad utilise également les couches pour la sculpture. Une couche peut stocker de fins détails comme des rides, ou de grands changements, ce qui leur permet de fonctionner comme des blendshapes/shape keys/morph targets dans d’autres applications 3D. Par exemple, vous pouvez sculpter différentes expressions faciales sur différentes couches, puis ajuster les curseurs de couches pour les combiner en de nouvelles expressions.
+Nomad utilise aussi les calques pour la sculpture. Un calque peut contenir de fins détails comme des rides, ou de grands changements de forme, ce qui lui permet de fonctionner comme les blendshapes, shape keys ou morph targets d'autres applications 3d. Vous pouvez par exemple sculpter différentes expressions du visage sur différents calques, puis ajuster les curseurs des calques pour les combiner en de nouvelles expressions.
 
-Dans ce cas, les changements stockés dans une couche sont purement additifs, l’ordre des couches n’a pas d’importance comme c’est le cas pour la peinture.
+Dans ce cas, les changements stockés dans un calque s'additionnent simplement : l'ordre des calques n'a pas d'importance, contrairement à la peinture.
 
-Les couches peuvent être partiellement effacées via l’outil [Delete Layer](tools.md#delete-layer), et les couches peuvent également être utilisées pour créer des masques basés sur les différentes informations stockées dans la couche.
+Les calques peuvent être effacés en partie avec l'outil [SupprCalque](tools.md#delete-layer), et ils peuvent aussi servir à créer des masques à partir des différentes informations qu'ils contiennent.
 
 ![](/videos/layer.mp4)
 
 ::: tip
-Contrairement à la plupart des logiciels de sculpture, modifier la topologie d’un maillage ne supprimera pas les couches. Vous pouvez utiliser le [Voxel Remesher](topology.md#voxel-remesher), le [Multiresolution](topology.md#multires) ou les outils [Trim](tools.md#trim)/[Split](tools.md#split), mais notez qu’en utilisant le [Voxel Remesher](topology.md#voxel-remesher), la qualité de la couche sera impactée.
+Contrairement à la plupart des logiciels de sculpture, modifier la topologie d'un maillage ne supprime pas les calques. Vous pouvez utiliser le [Remaillage voxel](topology.md#voxel-remesher), la [Multirésolution](topology.md#multiresolution) ou les outils [Découper](tools.md#trim)/[Scinder](tools.md#split), mais sachez qu'avec le [Remaillage voxel](topology.md#voxel-remesher), la qualité du calque en pâtit.
 :::
 
 ::: tip
-Si vous utilisez les couches pour des blendshapes/morph targets, il existe des fonctionnalités supplémentaires liées aux couches dans le [menu de scène](scene.md#object-menu). Vous pouvez séparer les couches en objets, et combiner des objets correspondants en couches.
+Si vous utilisez les calques comme blendshapes ou morph targets, le [menu Scène](scene.md#object-menu) offre des fonctions supplémentaires : vous pouvez séparer des calques en objets, et combiner des objets correspondants en calques.
 :::
 ----
 
-## Menu Calque {#layer-menu}
+## Menu Calques {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
-Appuyez sur `Add layer` pour créer une nouvelle couche.
+Le titre affiche le nom de l'objet sélectionné. Les calques ne sont pas disponibles sur les primitives : validez d'abord la primitive.
 
-Chaque couche possède un nom, un curseur pour contrôler sa force/facteur, et des boutons d’options.
+Touchez `Ajouter un calque` pour créer un nouveau calque. `Fusionner les calques` fusionne tous les calques dans le maillage de base ; le nombre à côté de son icône indique combien il y a de calques.
+
+Chaque calque a un nom, un curseur qui règle sa force (son facteur), et des boutons d'options. Touchez un calque pour en faire le calque actif : la sculpture et la peinture vont dans ce calque. Touchez `Base` pour retravailler le maillage de base.
+
+### ![](/icons/sort_right.webp) Déplier la liste {#ui-expand-list}
+
+Par défaut, la liste des calques n'affiche que la visibilité, le mode de fusion et la force de chaque calque, et seul le calque actif est déplié avec toutes ses commandes. La flèche à gauche du titre déplie toutes les commandes de chaque calque.
+
+![](/images/layers_expand.webp)
 
 ### Options {#options}
 
 | Action       | Icône                        | Description                                         |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
-| Visible      | ![](/icons/eye_open.webp)   | Afficher/masquer la couche                         |
-| Mode de fusion | ![](/icons/opacity.webp)  | Le mode de fusion de type Photoshop. Les 4 icônes affichent les modes pour Couleur, Rugosité, Métallicité, Opacité. |
-| Modifier le nom | ![](/icons/pencil.webp)  | Modifier le nom de la couche                       |
-| Supprimer    | ![](/icons/trash.webp)      | Supprimer la couche                                |
-| Dupliquer    | ![](/icons/clone.webp)      | Dupliquer la couche                                |
-| Fusionner vers le bas | ![](/icons/merge_down.webp) | Fusionner la couche avec la couche inférieure (ou le maillage de base) |
-| Plus         | ![](/icons/more.webp)       | Options [Plus...](#more)                           |
+| Visible      | ![](/icons/eye_open.webp)   | Affiche ou masque le calque                         |
+| Mode de fusion | ![](/icons/opacity.webp)  | Le mode de fusion, comme dans Photoshop. Les 4 icônes indiquent les modes pour la couleur, la rugosité, la métallité et l'opacité. |
+| Renommer     | ![](/icons/pencil.webp)     | Modifie le nom du calque                            |
+| Supprimer    | ![](/icons/trash.webp)      | Supprime le calque                                  |
+| Dupliquer    | ![](/icons/clone.webp)      | Duplique le calque                                  |
+| Fusionner vers le bas | ![](/icons/merge_down.webp) | Fusionne le calque avec le calque du dessous (ou le maillage de base) |
+| Plus         | ![](/icons/more.webp)       | Options [Plus...](#more)                            |
 
-Pour déplacer une couche vers une autre partie de la pile, appuyez et maintenez sur son nom, puis faites-la glisser.
+Quand un calque n'est pas déplié, `Renommer`, `Supprimer`, `Dupliquer` et `Fusionner vers le bas` se trouvent dans son menu [Plus...](#more).
 
-### Plus... {#more}
+Pour déplacer un calque ailleurs dans la pile, appuyez longuement sur son nom, puis faites-le glisser.
 
-Le bouton « More... » affichera des options supplémentaires pour la couche actuelle :
+### Base {#base}
+
+Le bouton à 3 points de la ligne `Base` déplace la peinture du maillage de base dans un nouveau calque, avec le bouton `Base → Calque`. La base est ensuite remise au matériau d'arrière-plan. C'est pratique si vous avez beaucoup peint avant de créer le moindre calque.
+
+* Les boutons de masque et de masquage à côté laissent intactes les zones masquées et cachées.
+* `Extraire` - les canaux à déplacer : `Couleur`, `Opacité`, `Rugosité` et `Métallité`.
+* `Matériau d'arrière-plan` - si cette option est activée, seules les valeurs qui diffèrent de ce matériau sont déplacées. Réglez-le avec les curseurs, ou prélevez-le sur le modèle avec la pipette.
+
+### ![](/icons/more.webp) Plus... {#more}
+
+Le bouton « Plus... » affiche des options supplémentaires pour le calque actuel, dans deux onglets : les réglages (icône de roue dentée) et l'extraction (icône de cube).
 
 ![](/images/layers_more.webp) 
 
-#### Facteurs de canal {#channel-factors}
+#### Facteurs des canaux {#channel-factors}
 
-Ces contrôles vous permettent de mettre à l’échelle la quantité de sculpture/couleur/rugosité/métallicité/opacité pour la couche. Ces valeurs sont multipliées par le curseur de facteur de couche, donc par exemple si la force de la couche est 1, mais que le facteur du canal couleur est 0,5, alors la couleur affichée sera à une force de 0,5.
+Ces commandes vous permettent de doser la quantité de sculpture, de couleur, de rugosité, de métallité et d'opacité du calque. Ces valeurs sont multipliées par le curseur de facteur du calque : par exemple, si la force du calque est de 1 mais que le facteur du canal couleur est de 0,5, la couleur s'affiche à une force de 0,5.
 
-`Offset` contrôle la force de sculpture de la couche. Alors que couleur/rugosité/métallicité sont limitées entre 0 et 1, l’offset peut être n’importe quelle valeur, positive ou négative. 
+`Décalage` règle la force de la sculpture du calque. Alors que la couleur, la rugosité et la métallité sont limitées entre 0 et 1, le décalage peut prendre n'importe quelle valeur, positive ou négative. 
 
 ::: tip
-Offset peut être utilisé pour transformer une couche de bosses en couche de creux, ou un sourire en grimace :
+Le décalage permet de transformer un calque de bosses en un calque de creux, ou un sourire en une moue :
 ![](/videos/layer_happysad.mp4)
 
 
-Une couche symétrique peut être clonée puis séparée en formes gauche/droite avec del layer :
+Un calque symétrique peut être cloné puis séparé en formes gauche et droite avec SupprCalque :
 ![](/videos/layer_leftright.mp4)
 
-Les couches avec des facteurs d’offset négatifs peuvent être cuites vers des couches vides pour créer de nouvelles formes positives.
+Des calques au facteur de décalage négatif peuvent être appliqués dans des calques vides pour créer de nouvelles formes positives.
 
-Les couches avec des facteurs d’offset positifs supérieurs à 1 peuvent être utilisées pour expérimenter des blendshapes plus extrêmes.
+Des calques au facteur de décalage positif supérieur à 1 permettent d'expérimenter des blendshapes plus extrêmes.
 :::
 
 ::: warning
-Pour le moment, les couches ne partagent qu’un seul canal d’opacité pour les 3 canaux (couleur/métallicité/rugosité).
-Si vous fusionnez plusieurs couches avec une intensité par canal qui n’est pas à pleine intensité, il est possible que le résultat final soit différent.
+Pour l'instant, les calques n'ont qu'un seul canal d'opacité partagé par les 3 canaux (couleur, métallité, rugosité).
+Si vous fusionnez plusieurs calques dont l'intensité par canal n'est pas au maximum, le résultat final peut avoir un aspect différent.
 
-Peut-être qu’à l’avenir, chaque canal aura son propre canal alpha pour supprimer cette limitation.
+Peut-être qu'à l'avenir, chaque canal aura son propre canal alpha pour lever cette limitation.
 :::
 
 
-#### ![](/icons/tool_mask.webp) Masque {#mask}
-Le bouton de masque à côté de chaque curseur créera un masque à partir de ce canal. De manière similaire à l’utilisation de couches pour faire des sélections dans les applications de peinture, cela vous permet de réutiliser le travail effectué dans une couche pour d’autres opérations.
+#### ![](/icons/shield.webp) Masque {#mask}
+Le bouton de masque à côté de chaque curseur crée un masque à partir de ce canal. Comme lorsqu'on utilise des calques pour faire des sélections dans les applications de peinture, cela vous permet de réutiliser le travail fait dans un calque pour d'autres opérations.
 
 #### ![](/icons/preview.webp) Aperçu {#preview}
 ![](/images/layers_preview.webp) 
 
-Lorsqu’il est activé, prévisualise les paramètres d’extraction pour cette couche (voir la section suivante).
+Les options suivantes se trouvent dans l'onglet d'extraction du menu « Plus... ».
 
-Lorsque le mode rayon X est activé, seule la forme extraite sera solide, le reste de la forme sera rendu transparent, ce qui est utile si vous utilisez des hauteurs d’extraction négatives.
+Quand cette option est activée, elle affiche un aperçu des réglages d'extraction de ce calque (voir la section suivante).
 
-#### Extraction {#extract}
+`Rayons X` choisit quels objets deviennent transparents pendant l'aperçu (`Aucun`, `Non sélectionné`, `Sélectionné` ou `Tout`), pour que la forme extraite reste opaque. C'est utile si vous utilisez des hauteurs d'extraction négatives.
+
+#### ![](/icons/mask_extract.webp) Extraire {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
 
-Le bouton `Extract` dupliquera le contenu de la couche dans un nouvel objet, généralement avec une épaisseur spécifiée par l’utilisateur définie dans la section suivante.
+Le bouton `Extraire` duplique le contenu du calque dans un nouvel objet, généralement avec une épaisseur choisie par vous dans la section suivante.
 
-`Closing action` détermine la façon dont la duplication est effectuée :
+`Fermeture` détermine comment la duplication est faite :
 
-* None - Extraire simplement la partie, sans tenter de générer des côtés ni de remplir les trous.
-* Fill - Le trou est rempli et lissé avec des triangles. N’utilisez pas cette option pour des surfaces planes.
-* Shell - Fermer la forme extraite avec les options d’épaisseur et de direction.
-* Layer - Extraire la différence de couche.
+* `Aucune` - Extrait simplement la partie, sans essayer de créer des côtés ni de boucher les trous.
+* `Remplir` - Le trou est bouché avec des triangles, puis lissé. N'utilisez pas cette option pour des surfaces planes.
+* `Coque` - Ferme la forme extraite avec la valeur d'épaisseur et les options de direction.
+* `Calque` - Extrait la différence apportée par le calque.
 
-#### ![](/icons/height.webp) Épaisseur {#thickness}
+#### ![](/icons/height.webp) Hauteur {#thickness}
 ![](/images/layers_thickness.webp) 
 
-La profondeur de l’extrusion de coque. Les valeurs positives se développent hors de la surface, les valeurs négatives vers l’intérieur de la surface.
+La profondeur de l'extrusion de la coque. Les valeurs positives sortent de la surface, les valeurs négatives rentrent dans la surface. Ce réglage est masqué quand la fermeture est `Calque`.
 
-Le plus/moins à côté de cette valeur définit la direction de l’extrusion :
-* Minus ( - ) commencera à partir de la surface actuelle et extrudera vers le bas. 
-* Plus ( + ) commencera à partir de la surface actuelle et extrudera vers le haut.
-* PlusMinus ( ± ) poussera le haut et le bas de l’extrusion dans des directions opposées de manière égale, de sorte qu’elle sera à moitié intégrée dans la surface d’origine.
+Le plus/moins à côté de cette valeur règle la direction de l'extrusion :
+* Moins ( - ) part de la surface actuelle et extrude vers l'intérieur. 
+* Plus ( + ) part de la surface actuelle et extrude vers l'extérieur.
+* Plus-moins ( ± ) écarte le dessus et le dessous de l'extrusion de façon égale, si bien qu'elle est à moitié enfoncée dans la surface d'origine.
+
+#### Côtés {#edge-loop-side}
+![](/images/layers_edgeloop.webp) 
+
+Cette section est visible quand la fermeture est `Coque`. 
+
+`Divisions de la paroi` règle le nombre de divisions le long des côtés de la coque. Avec son interrupteur `Auto` activé, Nomad calcule le nombre de boucles d'arêtes pour obtenir des polygones carrés.
 
 #### Lissage {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
-Si les bords de la région à extraire sont irréguliers, ce curseur tentera de flouter le bord pour obtenir une forme plus lisse. 
+Si les bords de la zone à extraire sont irréguliers, activez cette option pour les lisser en une forme plus propre. `Tout` lisse toute la surface extraite, `Uniquement les bords` lisse ses bords. `Itérations` règle la force du lissage.
 
-#### ![](/icons/height.webp) Boucle de bord (côté) {#edge-loop-side}
-![](/images/layers_edgeloop.webp) 
+_Fin du sous-menu « Plus... »._
 
-Cette section est visible lorsque l’action de fermeture est « Shell ». 
-
-`Auto Edge-loop (side)` calculera le nombre de boucles de bord le long des côtés de la coque pour créer des polygones carrés. 
-
-Si désactivé, le curseur `Division` définira le nombre de divisions sur les côtés.
-
-_Ceci est la fin du sous-menu « More... ». _
-
-### Avancé {#advanced}
+### ![](/icons/cog.webp) Avancé {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Conserver les détails des calques supérieurs {#keep-top-layers-details}
+Le bouton `Avancé` en bas du menu apparaît dès que l'objet a des calques.
 
-Garantit que les petits détails sur les couches supérieures restent visibles lorsque de grands changements sont effectués sur les couches inférieures.
+#### Garder les détails des calques du haut {#keep-top-layers-details}
 
-Par défaut, si vous sculptez de petites rides sur une couche, puis effectuez de grands changements sur la couche de base, les rides seront perdues. L’activation de ce bouton permettra à ces petits détails de toujours flotter au-dessus des grands changements inférieurs. Dans la vidéo suivante, voyez comment le détail de la ride est supprimé par défaut, mais reste visible lorsque « keep top layers details » est activé :
+Garantit que les petits détails des calques supérieurs restent visibles quand vous faites de grands changements sur les calques inférieurs. Pendant que vous sculptez, la déformation provenant des calques du haut est ignorée, mais leurs détails restent visibles. Cela ne fonctionne bien que si ces calques du haut contiennent des détails relativement petits.
+
+Par défaut, si vous sculptez de petites rides sur un calque, puis faites de grands changements sur le calque de base, les rides sont perdues. Activer cette option permet à ces petits détails de toujours flotter au-dessus des grands changements du dessous. Dans la vidéo suivante, voyez comment les rides disparaissent par défaut, mais restent visibles quand « Garder les détails des calques du haut » est activé :
 
 ![](/videos/layers_details.mp4)
 
 
-#### UI : Développer la liste {#ui-expand-list}
-
-Le menu de couches par défaut vous permet d’activer/désactiver la visibilité des couches et l’opacité de la couche. L’activation de cette option développe les contrôles complets pour chaque couche.
-
-![](/images/layers_expand.webp)
-
 #### Synchroniser la transformation {#sync-transform}
 
-Si activé, toutes les couches non sélectionnées seront ajustées en fonction de la rotation, de l’échelle et du cisaillement de la transformation. 
+Quand cette option est activée, tous les calques non sélectionnés sont ajustés selon la rotation, l'échelle et le cisaillement de la transformation, quand vous utilisez les outils Gizmo ou Transformation. Elle peut valoir `Auto`, `Non` ou `Oui`.
 
-Désactivez cette option si les autres couches sont destinées à être utilisées sans la nouvelle transformation que vous appliquez.
+Désactivez cette option si les autres calques doivent être utilisés sans la nouvelle transformation que vous appliquez.
 
-Lorsque réglé sur `Auto`, seules les couches visibles seront ajustées.
+Sur `Auto`, seuls les calques visibles sont ajustés.

@@ -88,7 +88,7 @@ This is because Nomad does not have it's own license server or subscription mode
 ### How to restore my purchase? {#restore}
 Google Play and AppGallery both handle the synchronization automatically.
 
-- Go in the About menu (top left nomad icon), and hit `restore purchase`
+- Go in the About menu (top left nomad icon), and hit `Restore purchase`
 - Double check that you are logged into the same account you used to purchase Nomad (on Google Play).
 - Reboot the device
 - Sometimes you need to wait a couple of hours
@@ -137,9 +137,9 @@ Short answer: Yes. Long answer: Not directly, but there are several ways to comb
 * Nomad allows very high vertex counts so that you can paint without worrying about uv's.
 * Nomad can load textures to use in brushes, allowing for stamping and painting with textures.
 * Nomad can load objects that have textures pre-assigned, for rendering purposes.
-* Nomad can [UV unwrap](topology.md#uv-unwrap) lower poly objects.
+* Nomad can [UV unwrap](topology.md#uv-unwrap-uvatlas) lower poly objects.
 * Color/roughness/metalness can be transferred from textures to vertices via [the project options](topology.md#reproject-to-vertex).
-* Color/roughness/metalness/normals can be baked from vertices to textures via [the baking options](topology.md#bake-to-texture)
+* Color/roughness/metalness/normals can be baked from vertices to textures via [the baking options](topology.md#bake-texture)
 * Baking and projecting can be handled between single objects or many objects, or between the highest and lowest subdivision levels of a single object, allowing for a variety of bake and project workflows.
 * After baking, exporting an obj will also export textures, which can be taken to an app like Procreate to paint directly on textures.
 
@@ -149,7 +149,7 @@ Not planned for now, iOS has a [video recording feature](https://support.apple.c
 Under iOS, this is done by swiping down from the top left, and tapping the record button. It will give you a 3 second countdown, swipe the menu away to reveal Nomad, and use the turntable feature. When complete, swipe down again from the top right, and tap the record button again. Edit the movie from the photo library to remove excess footage at the start and end of the video.
 
 ### Can you add [insert-favorite-feature] as a top-level button? {#interface}
-Yes, the lower toolbar can now be customised from the [interface](interface.md) menu, and floating toolbars can now be created.
+Yes, the lower toolbar can now be customised from the [interface](interface.md#shortcuts) menu, and floating toolbars can now be created.
 
 ### What are the next features? {#next-features}
 For the mid/long term roadmap I have a lot of ideas but I don't know yet.  
@@ -161,7 +161,7 @@ Bug fixes and improving existing features will always have higher priority over 
 No, but it is planned. For now you can parent shapes together and alter pivot points, allowing for simple posable sculpts.
 
 ### Can we use more than 4 lights? {#lights}
-No, this is a limitation of the realtime render engine within Nomad. It is possible to fake this using emissive objects and global illumination in post process, as shown in [this tutorial](https://www.youtube.com/watch?v=QhrUGH7CuUA)
+You can use up to 4 lights on mobile, and up to 6 on desktop. This is a limitation of the realtime render engine within Nomad. It is possible to fake this using emissive objects and global illumination in post process, as shown in [this tutorial](https://www.youtube.com/watch?v=QhrUGH7CuUA)
 
 ### Can we import Zbrush tools? {#zbrush-import}
 No, Zbrush uses a proprietary format. You should be able to extract the alpha maps and use them in Nomad. 
@@ -174,14 +174,14 @@ Modern computer graphics tries to work in a similar way, emulating the physics o
 If you need the render to match closer to the painted colors, you can fix this in both non-physically based and physically based ways:
 
 Non PBR:
-* `Use the 'Unlit' mode in the lighting menu`. Colors will be shown exactly as painted, but you also lose all shading. Handy for quick checks, and more graphic output.
-* `Use the 'Matcap' mode in the lighting menu`. Choose a brighter matcap that is mostly white, with no color tint.
+* `Use the 'Unlit' mode in the Shading menu`. Colors will be shown exactly as painted, but you also lose all shading. Handy for quick checks, and more graphic output.
+* `Use the 'MatCap' mode in the Shading menu`. Choose a brighter matcap that is mostly white, with no color tint.
 
 PBR:
 * `Use a neutral environment`. You can [change the environment](shading.md#environment) to a more neutral one. Avoid indoor environment as they tend to be more colored. Prefer a daylight outdoor or studio environment instead.
 * `Boost the lighting`. If you were taking a photo of white paper in a dark room, you’d simply add more light. On the environment light, turn up the exposure slider until the colors start to feel right to you, or add more individual lights with more intensity.
 * `Boost the camera exposure`. If the dark room didn't have any extra lights, you could have the camera hold the shutter open for longer, or use a more sensitive ISO. In Nomad you can achieve a similar result with post processing. Go to post process, enable, down to tone mapping, enable, and raise the exposure slider until the colors feel right.
-* `Use emissive color`. In the material menu, you can enable 'emissive' under textures, which will make an object appear to be a light source. If you turn on global illmination in the post process settings, it will cast light onto other objects in the scene. You can also enable 'unlit' for that material, which will achieve a similar look without a texture.
+* `Use emissive color`. In the material menu, you can enable 'emissive' under textures, which will make an object appear to be a light source. If you turn on global illmination in the post process settings, it will cast light onto other objects in the scene. You can also enable 'Always unlit' for that material, which will achieve a similar look without a texture.
 
 ## Crashes {#crashes}
 

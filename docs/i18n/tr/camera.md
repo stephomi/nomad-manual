@@ -1,149 +1,158 @@
 # ![](/icons/camera.webp) Kamera {#camera}
 
-Bu menü, kameralar oluşturmanıza ve değiştirmenize, ayrıca kameralara nasıl etkileşimde bulunduğunuzu kontrol etmenize olanak tanır.
+Bu menü kameralar oluşturmanızı ve düzenlemenizi, ayrıca kamerayla nasıl etkileşime girdiğinizi kontrol etmenizi sağlar.
 
 ![](/images/camera_overview2.webp)
 
-Nomad'daki kameraların birkaç kullanım alanı vardır:
+Nomad'da kameraların birkaç kullanımı vardır:
 
-* Belirli açılardan yontma (sculpt) görünümü ayarlamak
-* Nesnelerinizi kadrajlamak için fotoğraf makinesi gibi kullanmak
-* Sahnede gezinmek için bir birinci şahıs bakış açısı kamerası olarak kullanmak
-* İzometrik oyunlar veya endüstriyel tarz render için ortografik kamera olarak kullanmak.
+* Hassas açılardan şekillendirmek için görünümler hazırlamak
+* Nesnelerinizi kadraja almak için bir fotoğraf makinesi gibi kullanmak
+* Sahnenizde gezinmek için birinci şahıs perspektifli bir kamera olarak kullanmak
+* İzometrik oyunlar veya endüstriyel tarzda işlemeler için ortografik bir kamera olarak kullanmak
 
-## Kamerayı kontrol etme {#control}
+## Kamerayı kontrol etmek {#control}
 
 ### Döndürme {#rotation}
-Arka planda *bir* parmağınızı sürükleyerek kamerayı döndürürsünüz.
-Parmağınızı modeliniz üzerinde sürüklerseniz, bunun yerine yontma işlemi başlar.
+Kamerayı, arka plan üzerinde *tek* parmağınızı sürükleyerek döndürürsünüz.
+Parmağınızı modelinizin üzerinde sürüklerseniz, bunun yerine şekillendirme işlemi başlar.
 
 ::: tip Arka plana erişemiyorsam kamerayı döndürebilir miyim?
-Evet, ekrana *iki* parmağınızı koyabilirsiniz – sanki kaydırma/zoom hareketi yapmak istiyormuşsunuz gibi – ve ardından *bir* parmağınızı kaldırabilirsiniz.
+Evet: kaydırma/yakınlaştırma hareketi başlatacakmış gibi ekrana *iki* parmağınızı koyun, sonra *bir* parmağınızı kaldırın.
 :::
 
 ### Odaklama / Sıfırlama {#focus}
-Model üzerinde *çift dokunarak* seçilen noktaya odaklanın.
-Arka plana *çift dokunursanız*, kamera bunun yerine seçili mesh'e odaklanır.
+Dokunduğunuz noktaya odaklanmak için model üzerine *çift dokunun*.
+Arka plana *çift dokunursanız*, kamera bunun yerine seçili ağ örgüsüne veya tüm sahneye odaklanır; bkz. [Arka plana çift dokun](#dtap-tap-background).
 
 
-### Taşıma {#translation}
-*İki* parmağınızı hareket ettirerek kamerayı kaydırabilirsiniz (pan).
+### Kaydırma {#translation}
+*İki* parmağınızı hareket ettirerek kamerayı kaydırabilirsiniz.
 
 
 ### Yakınlaştırma {#zooming}
-Çimdikleme (pinch) hareketini kullanarak yakınlaştırıp/uzaklaştırabilirsiniz.
+İki parmakla sıkıştırma hareketiyle yakınlaştırıp uzaklaştırabilirsiniz.
 
 
-### Döndürme (Roll) {#rolling}
-*İki* parmağı döndürerek görünümü *yuvarlayabilirsiniz* (roll).
+### Yuvarlama {#rolling}
+*İki* parmağınızı döndürerek görünümü *yuvarlayabilirsiniz* (kendi ekseni etrafında çevirebilirsiniz).
 ::: warning
-Bu hareket yalnızca `trackball` döndürme modunda kullanılabilir.
+Bu hareket yalnızca `İztopu` döndürme modlarında kullanılabilir.
 :::
 
 ### Masaüstü kontrolleri {#desktop}
 
-Masaüstünde, alt/opt tuşu kamerayı kontrol etmek için kullanılır:
+Masaüstünde kamerayı kontrol etmek için alt/opt tuşu kullanılır:
 
-* uç boş alanda sürükleme = kamerayı döndür
-* alt+uç sürükleme = kaydır (pan)
-* alt+uç sürükleme, ardından alt'ı bırakma = zoom (zbrush ile aynı)
+* boş alanda kalem ucuyla sürükleme = kamerayı döndürür
+* alt + kalem ucuyla sürükleme = kaydırır
+* alt + kalem ucuyla sürükleme, ardından alt tuşunu bırakma = yakınlaştırır (ZBrush'taki gibi)
 
-Kalemde 2 veya daha fazla tuşu olan Wacom tabletlerde, uç ve tuşları şu şekilde yapılandırmak için Wacom ayarlarını kullanın:
+Kaleminde 2 veya daha fazla düğme bulunan Wacom tabletlerde, ucu ve düğmeleri Wacom ayarlarından şöyle yapılandırın:
 
 * uç = sol tık
-* alt sallama tuşu = orta tık
-* üst sallama tuşu = sağ tık
+* alt düğme = orta tık
+* üst düğme = sağ tık
 
-Bu ayarlarla, kamerayı yalnızca kalemle kontrol edebilirsiniz:
+Bu ayarlarla kamerayı yalnızca kalemle yönetebilirsiniz:
 
-* üst sallama tuşu ve havada hareket = kamerayı döndür
-* alt sallama tuşu ve havada hareket = kaydır (pan)
+* üst düğme ve havada gezdirme = kamerayı döndürür
+* alt düğme ve havada gezdirme = kaydırır
 
 ## Kamera kontrolleri {#camera-controls}
 
 ![](/images/camera_list.webp)
 
 ### Görünümler {#views}
-`Add View` kullanarak kamera bakış noktalarını kaydedebilirsiniz.
-Görünüm adına tıklarsanız, kamera o görünümü geri yükler.
+`Görünüm ekle` ile kamera bakış noktalarını kaydedebilirsiniz.
+Görünümün adına tıklarsanız kamera o görünüme geri döner.
 
 
 ::: tip
-Kaydedilmiş bir görünüm, [Projection Type](#projection-type) ayarlarını ve ayrıca [Reference image](background.md)'i kaydeder.  
-Farklı arka planlara sahip ön/sol/arka referans görünümleri arasında geçiş yapmak istiyorsanız kullanışlıdır.
+Kaydedilen bir görünüm, [Projeksiyon türü](#projection) ayarlarını ve [Referans görselini](background.md) de kaydeder.  
+Farklı arka planlarla ön/sol/arka referans görünümleri arasında geçiş yapmak istediğinizde işe yarayabilir.
 :::
 
-| Action      | Icon                          | Description                                                                 |
+| Eylem      | Simge                          | Açıklama                                                                 |
 | :---------: | :---------------------------: | :-------------------------------------------------------------------------: |
-| Visibility  | ![](/icons/eye_open.webp)    | Toggle the camera. Hidden cameras will be skipped from previous/next button |
-| Name        |                               | Select the camera                                                           |
-| Image       | ![](/icons/image.webp)       | A thumbnail of a reference image if it is linked to the camera              |
-| Update View | ![](/icons/update_view.webp) | Update the saved view with the current view point                           |
-| Edit Name   | ![](/icons/pencil.webp)      | Edit the camera name                                                        |
-| Delete      | ![](/icons/trash.webp)       | Delete the camera                                                           |
+| Görünürlük  | ![](/icons/eye_open.webp)    | Kamerayı açar/kapatır. Gizli kameralar önceki/sonraki düğmesiyle geçilirken atlanır |
+| İsim        |                               | Kamerayı seçer                                                           |
+| Resim       | ![](/icons/image.webp)       | Kameraya bağlıysa referans görselinin küçük resmi              |
+| Projeksiyon  | ![](/icons/perspective.webp) | Kameranın projeksiyonu; perspektifteyken görüş alanıyla birlikte    |
+| Görünümü güncelle | ![](/icons/update_view.webp) | Kaydedilen görünümü mevcut bakış noktasıyla günceller                           |
+| Yeniden Adlandır   | ![](/icons/pencil.webp)      | Kameranın adını düzenler                                                        |
+| Sil      | ![](/icons/trash.webp)       | Kamerayı siler                                                           |
 
-### ![](/icons/tool_view.webp) Görünüm Ekle {#add}
-Geçerli görünüme dayalı yeni bir kamera oluşturun.
+### ![](/icons/camera_add.webp) Görünüm ekle {#add}
+Mevcut görünüme dayanarak yeni bir kamera oluşturur.
 
 ### ![](/icons/camera.webp) Simgeler {#icons-test}
 
-Kamera simgelerinin görünüm alanında (viewport) görünüp görünmeyeceğini aç/kapat. Bir kamera seçiliyse, simgesi her zaman görünür.
+Kamera simgelerinin görüntü alanında görünüp görünmeyeceğini belirler. Düğme, bir kameranız olduğunda `Görünüm ekle` seçeneğinin yanında belirir. Bir kamera seçiliyse simgesi her zaman görünür.
 
-### Projeksiyon Türü {#projection}
-Kameranızın `Field of View` (FOV / odak uzaklığı) değerini değiştirebilirsiniz.
-Oranlara yardımcı olabileceği için yontma amaçları için düşük bir FOV kullanmanız genellikle tavsiye edilir.  
-Ayrıca, kabaca FOV'un 0'a eşit olmasına benzer olan `Orthographic` modunu da kullanabilirsiniz.
+### Projeksiyon türü {#projection}
+`Perspektif` ve `Ortografik` arasında seçim yapın.
 
-### Birinci Şahıs {#fps}
-Döndürme eksenini (pivot) heykelin üzerinde değil doğrudan kamera üzerinde olacak şekilde ayarlamayı etkinleştirir. Arka planda bir parmağı sürüklemek, kamera konumunu kilitli tutar ancak döndürmeyi değiştirir; bu, birinci şahıs oyunların çalışma şekline benzer. Tekil nesneler yerine ortam (environment) yontarken kullanışlıdır.
+Perspektifte kameranızın `Dikey Görünüm Alanı` (FoV) değerini değiştirebilirsiniz. Kaydırıcının üstünde, 35 mm'lik bir fotoğraf makinesindeki karşılık gelen odak uzaklığı gösterilir; fotoğrafçılığa alışkınsanız kullanışlıdır.
+Şekillendirme için genellikle düşük bir FoV kullanmanız önerilir, çünkü oranları doğru görmeye yardımcı olur.  
+`Ortografik` mod, aşağı yukarı 0'a eşit bir FoV'ye benzer.
+
+### Birinci Kişi {#fps}
+Yalnızca perspektifte. Pivot noktasını heykel yerine doğrudan kameranın üzerine koyar. Arka planda parmağınızı sürüklediğinizde kameranın konumu sabit kalır, ama dönüşü değişir; birinci şahıs oyunlarındaki gibi. Tek nesneler yerine ortamlar şekillendirirken kullanışlıdır.
 
 ![](/images/camera_rotation_ortho_view.webp)
 
-### Döndürme Türü {#rotation-type}
-Varsayılan olarak kamera `Turntable` döndürme modunu kullanır.
-Bu, yalnızca iki serbestlik derecesine sahip olduğunuz anlamına gelir; daha sezgiseldir ancak bazı durumlarda daha fazla esneklik isteyebilirsiniz.  
-`Trackball` moduna geçebilirsiniz; görünüm alanında *iki* parmağı döndürerek görünümü *yuvarlayabilirsiniz*. Masaüstünde, bazı kullanıcılara daha tanıdık gelebilecek alternatif bir trackball modu vardır.
+### Döndürme türü {#rotation-type}
+Varsayılan olarak kamera `Döner platform` döndürme modunu kullanır.
+Bu, yalnızca iki serbestlik derecesine sahip olduğunuz anlamına gelir; daha sezgiseldir, ama bazı durumlarda daha fazla esneklik isteyeceksiniz.  
+`İztopu` moduna geçebilirsiniz; bu durumda görüntü alanında *iki* parmağınızı döndürerek görünümü *yuvarlayabilirsiniz*. İki `İztopu` modu vardır: ilki görünümü parmağınızın altındaki bir top gibi yuvarlar, ikincisi (oklu simge) ise görünümü sürüklemenizin yatay ve dikey hareketine göre çevirir; bu da bazı kullanıcılara daha tanıdık gelebilir.
 
-### Ortografik yakalama {#orthographic}
+### Ortografik yaslama {#orthographic}
 
-Etkinleştirildiğinde, bir klavyeniz varsa görünümü döndürürken shift tuşunu basılı tutmak kamerayı en yakın ön/arka/üst/alt/sol/sağ görünüme sabitler ve kamerayı ortografik yapar. Görünüm küpüne tıklanarak ön/arka/sol/sağ/üst/alt görünüme sabitlendiğinde de kamera ortografik yapılır.
+Etkinleştirildiğinde, klavyeniz varsa görünümü döndürürken shift tuşunu basılı tutmak kamerayı en yakın ön/arka/üst/alt/sol/sağ görünüme yaslar ve kamerayı ortografik yapar. Gezgin'e tıklanarak ön/arka/sol/sağ/üst/alt görünüme yaslandığında da kamera ortografik olur.
 
 ### Görünümü sıfırla {#reset}
 
 Kamerayı öne taşır ve sahneyi görünüme sığdırır.
 
-### Görünümü yakala {#snap}
-En yakın ön/arka/sol/sağ/üst/alt görünüme sabitle. Zaten bu görünümlerden birindeyseniz, tekrar tıklamak 180 derece dönerek karşı tarafa sabitler.
+### Görünümü yasla {#snap}
+En yakın ön/arka/sol/sağ/üst/alt görünüme yaslar. Zaten bu görünümlerden birindeyseniz, tekrar tıklamak 180 derece dönerek karşı tarafa yaslar.
 
 ### Hız {#speed}
 
-Kameranın çok yavaş veya çok hızlı hareket ettiğini düşünüyorsanız, `rotation`, `translation` ve `zooming` için bir hız çarpanı ayarlayabilirsiniz. Heykeliniz çok büyük veya çok küçükse kullanışlıdır.
+Kameranın çok yavaş veya çok hızlı hareket ettiğini düşünüyorsanız `Döndürme`, `Yakınlaştırma` ve `Yatay Kayma` için bir hız çarpanı ayarlayabilirsiniz. Heykeliniz çok büyük veya çok küçükse kullanışlıdır.
 
-### Pivot genel bakış {#pivot}
+### Pivot noktasına genel bakış {#pivot}
 
-Kamerayı döndürdüğünüzde küçük pembe bir nokta görürsünüz; bu, kamera pivot noktanızdır.  
-Kameradan kaybolmamak veya sinirlenmemek için pivotunuzun nerede olduğunu anlamak çok önemlidir.
+Kamerayı döndürdüğünüzde küçük pembe bir nokta görürsünüz; bu, kameranızın pivot noktasıdır.  
+Kamerayla kaybolmamak veya sinirlenmemek için pivot noktanızın nerede olduğunu anlamanız çok önemlidir.
 
-Varsayılan olarak pivot şu işlemlerle güncellenir:
-- model üzerinde çift dokunma
-- arka planda çift dokunma (yeni pivot, mesh'inizin merkezinde olur)
-- ekrana *iki* parmak koymak (pan/zoom/roll) pivotu *iki* parmağın merkezine günceller
+Varsayılan olarak pivot noktası şu işlemlerle güncellenir:
+- model üzerine çift dokunmak
+- arka plana çift dokunmak (yeni pivot noktası ağ örgünüzün merkezinde olur)
+- ekrana *iki* parmak koymak (kaydırma/yakınlaştırma/yuvarlama), pivot noktasını *iki* parmağın ortasına günceller
 
-### Pivotu Güncelle... {#update-pivot}
+### Ekseni güncelle... {#update-pivot}
 
-Pivotun şu seçeneklerle güncellenmesini daha da özelleştirebilirsiniz:
+Pivot noktasının güncellenme şeklini şu seçeneklerle daha da özelleştirebilirsiniz:
 
-* When camera starts moving 
-* Allow air pivot
-* When double tapping
-* Sculpt (stroke)
+* `Kamera hareketinde` - Kamerayla etkileşime başladığınızda pivot noktasını günceller.
+* `Yüzey dışı eksen` - Nesne yüzeyinin dışına yakınlaştırdığınızda bile yeni bir pivot noktasına izin verir. `Kamera hareketinde` seçeneğini gerektirir.
+* `Çift dokunmayla güncelle` - Nesne yüzeyine çift dokunduğunuzda dönüş pivot noktasını günceller.
+* `Şekillendirme (Darbe)` - Şekillendirdiğinizde pivot noktasını günceller.
 
 ::: tip
-Alıştığınızda, [Settings](settings.md) menüsüne giderek (ipucu) pembe noktayı gizleyebilirsiniz.
+Alıştığınızda, pembe (ipucu) noktayı [Ayarlar](settings.md) menüsünden gizleyebilirsiniz.
 :::
 
-### Nesneye çift dokunma {#dtap-object}
-`Focus` etkinleştirildiğinde, çift dokunma pivotu dokunulan nesneye taşır.
+### Uzaklaşırken ortala {#center-view-when-zooming-out}
+Uzaklaştırırken kamera yana kaymaz: yalnızca geriye doğru hareket eder, böylece görünüm ortalanmış kalır.
 
-### Arka plana çift dokunma {#dtap-tap-background}
-Etkinleştirildiğinde, pivotu Selection, Scene seçeneklerinden birine ayarlar veya bunlar arasında geçiş yapar.
+### Nesneye çift dokun {#dtap-object}
+Etkinleştirildiğinde, bir nesneye çift dokunmak kamerayı dokunulan noktaya odaklar.
+
+### Arka plana çift dokun {#dtap-tap-background}
+Etkinleştirildiğinde, arka plana çift dokunmak kamerayı şunlara odaklar:
+* `Seçim` - Seçili nesneler.
+* `Sahne` - Tüm sahne.
+* `Değiştir` - Her çift dokunuşta ikisi arasında geçiş yapar. İki `Değiştir` seçeneği vardır; simgelerinin gösterdiği gibi, hangisinin önce geldiğine göre farklılaşırlar.

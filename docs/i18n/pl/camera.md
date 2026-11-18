@@ -1,145 +1,158 @@
 # ![](/icons/camera.webp) Kamera {#camera}
 
-To menu pozwala tworzyć i modyfikować kamery, a także kontrolować sposób interakcji z nimi.
+To menu pozwala tworzyć i modyfikować kamery, a także decydować, jak się nimi posługujesz.
 
 ![](/images/camera_overview2.webp)
 
 Kamery w Nomad mają kilka zastosowań:
 
-* Ustawianie widoków do rzeźbienia z precyzyjnych kątów
-* Używanie jak aparatu fotograficznego do kadrowania obiektów
-* Jako kamera z perspektywy pierwszej osoby do nawigacji po scenie
-* Jako kamera ortograficzna do gier izometrycznych lub renderingu w stylu przemysłowym.
+* Ustawianie widoków do rzeźbienia pod precyzyjnymi kątami
+* Kadrowanie obiektów, jak aparatem fotograficznym
+* jako kamera z perspektywy pierwszej osoby do poruszania się po scenie
+* jako kamera ortograficzna do gier izometrycznych lub renderów w stylu przemysłowym.
 
 ## Sterowanie kamerą {#control}
 
 ### Obrót {#rotation}
-Obracasz kamerę, przeciągając *jednym* palcem po tle.
-Jeśli przeciągniesz palcem po modelu, zamiast tego rozpocznie się operacja rzeźbienia.
+Kamerę obracasz, przeciągając *jednym* palcem po tle.
+Jeśli przeciągniesz palcem po modelu, zaczniesz zamiast tego rzeźbić.
 
-::: tip Czy mogę obracać kamerę, jeśli nie mam dostępu do tła?
-Tak, możesz położyć *dwa* palce na ekranie – tak jakbyś chciał rozpocząć gest przesuwania/powiększania – a następnie podnieść *jeden* palec.
+::: tip Czy mogę obrócić kamerę, jeśli nie mam dostępu do tła?
+Tak, połóż na ekranie *dwa* palce, jak gdybyś chciał zacząć gest przesuwania/powiększania, a potem podnieś *jeden* palec.
 :::
 
-### Ustaw ostrość / Resetuj {#focus}
-*Podwójne stuknięcie* w model ustawi ostrość na wskazanym punkcie.
-Jeśli *podwójnie stukniesz* w tło, kamera ustawi ostrość na zaznaczonej siatce.
+### Ostrość / reset {#focus}
+*Stuknij dwukrotnie* model, aby skupić widok na wskazanym punkcie.
+Jeśli *stukniesz dwukrotnie* tło, kamera skupi się zamiast tego na zaznaczonej siatce lub całej scenie, zobacz [Stuknij dwukrotnie tło](#dtap-tap-background).
+
 
 ### Przesuwanie {#translation}
-Przesuwając *dwa* palce, możesz przesuwać (panować) kamerę.
+Przesuwając *dwa* palce, przesuwasz kamerę.
 
-### Przybliżanie {#zooming}
-Gest szczypania pozwala przybliżać i oddalać widok.
 
-### Obracanie (rolling) {#rolling}
-Możesz *obracać* widok, obracając *dwa* palce.
+### Powiększanie {#zooming}
+Gestem szczypania przybliżasz i oddalasz widok.
+
+
+### Przechylanie {#rolling}
+Możesz *przechylić* widok, obracając *dwa* palce.
 ::: warning
-Ten gest jest dostępny tylko w trybie obrotu `trackball`.
+Ten gest jest dostępny tylko w trybach obrotu `Trackball`.
 :::
 
 ### Sterowanie na komputerze {#desktop}
 
-Na komputerze stacjonarnym klawisz alt/opt służy do sterowania kamerą:
+Na komputerze do sterowania kamerą służy klawisz alt/opt:
 
-* tip przeciąganie po pustej przestrzeni = obrót kamery
-* alt+tip przeciąganie = przesuwanie
-* alt+tip przeciąganie, następnie puszczenie alt = powiększanie (tak jak w ZBrushu)
+* przeciągnięcie końcówką w pustym miejscu = obrót kamery
+* alt + przeciągnięcie końcówką = przesuwanie
+* alt + przeciągnięcie końcówką, a potem puszczenie alt = powiększanie (tak jak w ZBrush)
 
-W tabletach Wacom z 2 lub większą liczbą przycisków na piórze użyj ustawień Wacom, aby skonfigurować końcówkę i przyciski w następujący sposób:
+W przypadku tabletów Wacom z piórem z 2 lub więcej przyciskami skonfiguruj końcówkę i przyciski w ustawieniach Wacom w ten sposób:
 
-* tip = lewy przycisk myszy
-* dolny rocker = środkowy przycisk myszy
-* górny rocker = prawy przycisk myszy
+* końcówka = lewy klik
+* dolny przycisk = środkowy klik
+* górny przycisk = prawy klik
 
-Z tymi ustawieniami możesz manipulować kamerą wyłącznie piórem:
+Przy tych ustawieniach możesz sterować kamerą wyłącznie piórem:
 
-* górny rocker i ruch w powietrzu = obrót kamery
-* dolny rocker i ruch w powietrzu = przesuwanie
+* górny przycisk i ruch w zawieszeniu = obrót kamery
+* dolny przycisk i ruch w zawieszeniu = przesuwanie
 
 ## Ustawienia kamery {#camera-controls}
 
 ![](/images/camera_list.webp)
 
 ### Widoki {#views}
-Możesz zapisywać punkty widokowe kamery za pomocą `Add View`.
-Jeśli klikniesz nazwę widoku, kamera przywróci ten widok.
+Punkty widoku kamery zapisujesz przyciskiem `Dodaj widok`.
+Gdy klikniesz nazwę widoku, kamera go przywróci.
+
 
 ::: tip
-Zapisany widok zachowa ustawienia [Projection Type](#projection-type), a także [Reference image](background.md).  
-Może to być przydatne, jeśli chcesz przełączać się między przednim/lewym/tylnym widokiem referencyjnym z różnymi tłami.
+Zapisany widok zachowuje ustawienia [typu projekcji](#projection), a także [obraz referencyjny](background.md).  
+Przydaje się to, gdy chcesz przełączać się między widokami referencyjnymi z przodu, z lewej i z tyłu, każdy z innym tłem.
 :::
 
-| Action      | Icon                          | Description                                                                 |
+| Operacja    | Ikona                         | Opis                                                                        |
 | :---------: | :---------------------------: | :-------------------------------------------------------------------------: |
-| Visibility  | ![](/icons/eye_open.webp)    | Toggle the camera. Hidden cameras will be skipped from previous/next button |
-| Name        |                               | Select the camera                                                           |
-| Image       | ![](/icons/image.webp)       | A thumbnail of a reference image if it is linked to the camera              |
-| Update View | ![](/icons/update_view.webp) | Update the saved view with the current view point                           |
-| Edit Name   | ![](/icons/pencil.webp)      | Edit the camera name                                                        |
-| Delete      | ![](/icons/trash.webp)       | Delete the camera                                                           |
+| Widoczność  | ![](/icons/eye_open.webp)    | Włącza lub wyłącza kamerę. Ukryte kamery są pomijane przez przyciski poprzedniej/następnej |
+| Nazwa       |                               | Zaznacza kamerę                                                             |
+| Obraz       | ![](/icons/image.webp)       | Miniatura obrazu referencyjnego, jeśli jest powiązany z kamerą             |
+| Projekcja   | ![](/icons/perspective.webp) | Projekcja kamery, z polem widzenia w przypadku perspektywy                  |
+| Aktualizuj widok | ![](/icons/update_view.webp) | Aktualizuje zapisany widok bieżącym punktem widoku                     |
+| Zmień nazwę | ![](/icons/pencil.webp)      | Edytuje nazwę kamery                                                        |
+| Usuń        | ![](/icons/trash.webp)       | Usuwa kamerę                                                                |
 
-### ![](/icons/tool_view.webp) Dodaj widok {#add}
-Utwórz nową kamerę na podstawie bieżącego widoku.
+### ![](/icons/camera_add.webp) Dodaj widok {#add}
+Tworzy nową kamerę na podstawie bieżącego widoku.
 
 ### ![](/icons/camera.webp) Ikony {#icons-test}
 
-Przełącz widoczność ikon kamer w widoku. Jeśli kamera jest zaznaczona, jej ikona jest zawsze widoczna.
+Określa, czy ikony kamer są widoczne w widoku. Przycisk pojawia się obok `Dodaj widok`, gdy masz już kamerę. Ikona zaznaczonej kamery jest zawsze widoczna.
 
 ### Typ projekcji {#projection}
-Możesz zmienić `Field of View` (FOV / ogniskową) swojej kamery.
-Zazwyczaj zaleca się używanie niskiego FOV do celów rzeźbienia, ponieważ pomaga to w proporcjach.  
-Możesz także użyć trybu `Orthographic`, który jest mniej więcej równoważny FOV równemu 0.
+Wybierz `Perspektywa` lub `Ortograficzne`.
+
+W perspektywie możesz zmienić `Pionowe pole widzenia` (FoV) kamery. Nad suwakiem widać odpowiadającą mu ogniskową aparatu 35 mm, co przydaje się, jeśli znasz fotografię.
+Do rzeźbienia zwykle zaleca się niskie pole widzenia, bo pomaga to w ocenie proporcji.  
+Tryb `Ortograficzne` odpowiada mniej więcej polu widzenia równemu 0.
 
 ### Pierwsza osoba {#fps}
-Włącza ustawienie punktu obrotu bezpośrednio na kamerze, zamiast na rzeźbie. Przeciąganie palcem po tle zablokuje pozycję kamery, ale zmieni jej obrót, podobnie jak w grach z perspektywy pierwszej osoby. Przydatne podczas rzeźbienia środowisk, a nie pojedynczych obiektów.
+Tylko w perspektywie. Umieszcza punkt obrotu bezpośrednio w kamerze, a nie na rzeźbie. Przeciąganie palcem po tle nie zmienia położenia kamery, tylko jej obrót, podobnie jak w grach z perspektywy pierwszej osoby. Przydaje się przy rzeźbieniu otoczenia, a nie pojedynczych obiektów.
 
 ![](/images/camera_rotation_ortho_view.webp)
 
 ### Typ obrotu {#rotation-type}
-Domyślnie kamera używa trybu obrotu `Turntable`.
-Oznacza to, że masz tylko dwa stopnie swobody; jest to bardziej intuicyjne, ale w niektórych przypadkach będziesz potrzebować większej elastyczności.  
-Możesz przełączyć się na `Trackball`, wtedy będziesz mógł *obracać* widok, obracając *dwa* palce na widoku. Na komputerze stacjonarnym dostępny jest alternatywny tryb trackball, który może być bardziej znajomy dla niektórych użytkowników.
+Domyślnie kamera używa trybu obrotu `Obrotnica`.
+Oznacza to, że masz tylko dwa stopnie swobody. Jest to bardziej intuicyjne, ale czasem potrzebujesz większej elastyczności.  
+Możesz przełączyć się na `Trackball`, który pozwala *przechylać* widok, obracając *dwa* palce w widoku. Są dwa tryby `Trackball`: pierwszy obraca widok jak kulę pod palcem, a drugi (z ikoną strzałek) obraca widok na podstawie poziomego i pionowego ruchu przeciągnięcia, co niektórym może wydawać się bardziej znajome.
 
-### Ortograficzne przyciąganie {#orthographic}
+### Wyrównanie ortograficzne {#orthographic}
 
-Po włączeniu, jeśli masz klawiaturę, przytrzymanie klawisza Shift podczas obracania widoku spowoduje przeskoczenie kamery do najbliższego widoku przód/tył/góra/dół/lewo/prawo i ustawienie kamery w tryb ortograficzny. Kamera zostanie również ustawiona na ortograficzną, gdy kliknięta zostanie kostka widoku, aby przeskoczyć do przodu/tyłu/lewo/prawo/góra/dół.
+Gdy ta opcja jest włączona i masz klawiaturę, przytrzymanie shift podczas obracania widoku przyciąga kamerę do najbliższego widoku z przodu, z tyłu, z góry, z dołu, z lewej lub z prawej i przełącza ją w tryb ortograficzny. Kamera przechodzi w tryb ortograficzny także po kliknięciu nawigatora, aby przyciągnąć ją do widoku z przodu, z tyłu, z lewej, z prawej, z góry lub z dołu.
 
 ### Resetuj widok {#reset}
 
-Przesuń kamerę na przód i dopasuj scenę do widoku.
+Ustawia kamerę z przodu i dopasowuje scenę do widoku.
 
 ### Przyciągnij widok {#snap}
-Przeskocz do najbliższego widoku przód/tył/lewo/prawo/góra/dół. Jeśli już znajdujesz się w jednym z tych widoków, ponowne kliknięcie spowoduje przeskoczenie o 180 stopni na przeciwną stronę.
+Przyciąga do najbliższego widoku z przodu, z tyłu, z lewej, z prawej, z góry lub z dołu. Jeśli jesteś już w jednym z tych widoków, ponowne kliknięcie obróci widok o 180 stopni na przeciwną stronę.
 
-### Prędkość {#speed}
+### Szybkość {#speed}
 
-Jeśli czujesz, że kamera porusza się zbyt wolno lub zbyt szybko, możesz ustawić mnożnik prędkości dla `rotation`, `translation` i `zooming`. Przydatne, jeśli twoja rzeźba jest bardzo duża lub bardzo mała.
+Jeśli kamera porusza się Twoim zdaniem zbyt wolno lub zbyt szybko, możesz ustawić mnożnik szybkości dla `Obrót`, `Powiększanie` i `Przesuwanie`. Przydaje się, gdy rzeźba jest bardzo duża lub bardzo mała.
 
-### Przegląd punktu obrotu {#pivot}
+### Punkt obrotu – przegląd {#pivot}
 
-Podczas obracania kamery możesz zobaczyć małą różową kropkę – to jest punkt obrotu (pivot) kamery.  
-Bardzo ważne jest, aby rozumieć, gdzie znajduje się pivot, aby nie zgubić się ani nie frustrować pracą z kamerą.
+Podczas obracania kamery widać małą różową kropkę: to punkt obrotu kamery.  
+Bardzo ważne jest, aby wiedzieć, gdzie znajduje się punkt obrotu, żeby nie zgubić się i nie irytować się kamerą.
 
-Domyślnie pivot jest aktualizowany przez następujące operacje:
-- podwójne stuknięcie w model
-- podwójne stuknięcie w tło (nowy pivot będzie na środku twojej siatki)
-- położenie *dwóch* palców na ekranie (pan/zoom/roll) zaktualizuje pivot na środek *dwóch* palców
+Domyślnie punkt obrotu jest aktualizowany przez te czynności:
+- dwukrotne stuknięcie modelu
+- dwukrotne stuknięcie tła (nowy punkt obrotu znajdzie się w środku siatki)
+- położenie *dwóch* palców na ekranie (przesuwanie/powiększanie/przechylanie) przenosi punkt obrotu na środek między *dwoma* palcami
 
-### Aktualizuj punkt obrotu... {#update-pivot}
+### Punkt obrotu {#update-pivot}
 
-Możesz dalej dostosować aktualizowanie pivotu za pomocą tych opcji:
+Możesz dodatkowo określić, kiedy punkt obrotu ma być aktualizowany:
 
-* When camera starts moving 
-* Allow air pivot
-* When double tapping
-* Sculpt (stroke)
+* `Przy geście uruchomienia kamery` - Aktualizuje punkt obrotu, gdy zaczynasz poruszać kamerą.
+* `Punkt obrotu poza obiektem` - Pozwala ustawić nowy punkt obrotu nawet wtedy, gdy powiększasz poza powierzchnią obiektu. Wymaga `Przy geście uruchomienia kamery`.
+* `Aktualizuj po 2× stuknięciu` - Aktualizuje punkt obrotu, gdy dwukrotnie stukniesz powierzchnię obiektu.
+* `Rzeźbienie (Pociągnięcie)` - Aktualizuje punkt obrotu podczas rzeźbienia.
 
 ::: tip
-Kiedy już się do tego przyzwyczaisz, możesz ukryć (podpowiedź) różową kropkę w menu [Settings](settings.md).
+Gdy już się przyzwyczaisz, możesz ukryć różową kropkę (podpowiedź) w menu [Ustawienia](settings.md).
 :::
 
-### Podwójne stuknięcie na obiekcie {#dtap-object}
-Gdy `Focus` jest włączony, podwójne stuknięcie przeniesie pivot na stuknięty obiekt.
+### Wyśrodkuj widok podczas oddalania {#center-view-when-zooming-out}
+Podczas oddalania kamera nie przesuwa się na boki: tylko się cofa, więc widok pozostaje wyśrodkowany.
 
-### Podwójne stuknięcie na tle {#dtap-tap-background}
-Po włączeniu ustawia pivot na jeden z: Selection, Scene lub przełącza między nimi.
+### Stuknij dwukrotnie obiekt {#dtap-object}
+Gdy ta opcja jest włączona, dwukrotne stuknięcie obiektu skupia kamerę na wskazanym punkcie.
+
+### Stuknij dwukrotnie tło {#dtap-tap-background}
+Gdy ta opcja jest włączona, dwukrotne stuknięcie tła skupia kamerę na:
+* `Zaznaczenie` - Zaznaczonych obiektach.
+* `Scena` - Całej scenie.
+* `Przełącz` - Przełącza między nimi przy każdym dwukrotnym stuknięciu. Są dwie opcje `Przełącz`, które różnią się tym, która z nich jest pierwsza, co pokazują ich ikony.

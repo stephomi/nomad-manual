@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "forum": "フォーラム"
+  },
+  "theme": {
+    "outlineLabel": "このページの内容",
+    "docFooter": {
+      "prev": "前のページ",
+      "next": "次のページ"
+    },
+    "darkModeSwitchLabel": "外観",
+    "lightModeSwitchTitle": "ライトテーマに切り替え",
+    "darkModeSwitchTitle": "ダークテーマに切り替え",
+    "sidebarMenuLabel": "メニュー",
+    "returnToTopLabel": "トップに戻る",
+    "langMenuLabel": "言語を変更",
+    "skipToContentLabel": "本文へスキップ",
+    "notFound": {
+      "title": "ページが見つかりません",
+      "quote": "でも、向きを変えずに探し続ければ、目指している場所にたどり着けるかもしれません。",
+      "linkLabel": "ホームへ移動",
+      "linkText": "ホームに戻る"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "検索",
+      "buttonAriaLabel": "検索"
+    },
+    "modal": {
+      "displayDetails": "詳細なリストを表示",
+      "resetButtonTitle": "検索をリセット",
+      "backButtonTitle": "検索を閉じる",
+      "noResultsText": "該当する結果がありません：",
+      "footer": {
+        "selectText": "で選択",
+        "selectKeyAriaLabel": "エンターキー",
+        "navigateText": "で移動",
+        "navigateUpKeyAriaLabel": "上矢印キー",
+        "navigateDownKeyAriaLabel": "下矢印キー",
+        "closeText": "で閉じる",
+        "closeKeyAriaLabel": "エスケープキー"
+      }
+    }
+  }
+}

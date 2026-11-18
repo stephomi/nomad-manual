@@ -1,4 +1,4 @@
-# Überblick {#overview}
+# ![](/icons/home.webp) Übersicht {#overview}
 
 <!-- 
 [[toc]]
@@ -9,35 +9,37 @@
 -->
 
 ::: tip Neu bei Nomad?
-Lies die Anleitung [Erste Schritte](gettingstarted.md).
+Lesen Sie die Anleitung [Erste Schritte](gettingstarted.md).
 :::
 
 
 ## Inhaltsverzeichnis {#table-of-contents}
 
-| Menü                           | Icon                          | Beschreibung                                       |
-| :----------------------------: | :---------------------------: | :------------------------------------------------: |
-| [Dateien](files.md)            | ![](/icons/open.webp)        | Verwalte deine Projekte, Export, Import usw.       |
-| [Szene](scene.md)              | ![](/icons/scene.webp)       | Füge neue Primitive hinzu und verwalte deine Szene |
-| [Topologie](topology.md)       | ![](/icons/multires.webp)    | Bearbeite die Topologie des Modells                |
-| [Material](material.md)        | ![](/icons/material.webp)    | Material (Objekt-Ebene)                            |
-| [Beleuchtung](shading.md)      | ![](/icons/sun.webp)         | Wie du deine Szene ausleuchtest                    |
-| [Post Process](postprocess.md) | ![](/icons/postprocess.webp) | Post-Processing (Screen-Space‑Effekte)             |
-| [Hintergrund](background.md)   | ![](/icons/image.webp)       | Hintergrund ändern und Referenzbild hinzufügen     |
+| Menü                           | Symbol                       | Beschreibung                                       |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
+| [Dateien](files.md)            | ![](/icons/open.webp)        | Projekte verwalten, exportieren, importieren usw.  |
+| [Szene](scene.md)              | ![](/icons/scene.webp)       | Neue Grundformen hinzufügen und die Objekte der Szene verwalten |
+| [Topologie](topology.md)       | ![](/icons/multires.webp)    | Die Topologie des Modells bearbeiten               |
+| [Material](material.md)        | ![](/icons/material.webp)    | Material (auf Objektebene)                         |
+| [Shading](shading.md)          | ![](/icons/sun.webp)         | Die Szene beleuchten                               |
+| [Nachbearbeitung](postprocess.md) | ![](/icons/postprocess.webp) | Nachbearbeitung (visuelle Effekte im Bildschirmraum) |
+| [Hintergrund](background.md)   | ![](/icons/image.webp)       | Den Hintergrund ändern und ein Referenzbild hinzufügen |
 | [Kamera](camera.md)            | ![](/icons/camera.webp)      | Kamerasteuerung und Interaktion                    |
-| [Strich](stroke.md)            | ![](/icons/pencil.webp)      | Aktuelle Werkzeugeinstellungen, Strich, Verlauf…   |
-| [Druck](pressure.md)           | ![](/icons/pressure.webp)    | Verwalte den Druck deines Stifts                   |
-| [Malen](painting.md)	         | ![](/icons/paint.webp)       | Mal-Einstellungen für Malwerkzeuge                 |
-| [Symmetrie](symmetry.md)       | ![](/icons/symmetry.webp)    | Verwalte die Spiegel­ebene deines aktuellen Meshes |
-| [Ebenen](layers.md)            | ![](/icons/layer.webp)       | Verwalte die Ebenen deines aktuellen Objekts       |
-| [Einstellungen](settings.md)   | ![](/icons/cog.webp)         | Passe den 3D‑Viewport an                           |
-| [Oberfläche](interface.md)     | ![](/icons/sliders.webp)   | Passe die Benutzeroberfläche an                    |
-| [Werkzeuge](tools.md)          | ![](/icons/toolbox.webp)     | Liste aller Werkzeuge/Pinsel                       |
-| [Verlauf](history.md)          | ![](/icons/history.webp)     | Verwalte den Undo/Redo‑Verlaufsstapel              |
+| [Transformieren](transform.md) | ![](/icons/transform.webp)   | Position, Rotation und Größe eines Objekts eintippen |
+| [Strich](stroke.md)            | ![](/icons/brush.webp)       | Einstellungen des aktuellen Werkzeugs, Strich, Falloff... |
+| [Druck](stroke.md#pressure)    | ![](/icons/pressure.webp)    | Den Druck Ihres Stifts einstellen                  |
+| [Zeichnen](painting.md)	       | ![](/icons/paint.webp)       | Maleinstellungen für die Malwerkzeuge              |
+| [Symmetrie](symmetry.md)       | ![](/icons/symmetry.webp)    | Die Spiegelebene des aktuellen Meshes verwalten    |
+| [Aktion](operation.md)         | ![](/icons/operation.webp)   | Ein ganzes Mesh glätten, aufblähen, umfärben oder weichzeichnen |
+| [Layer](layers.md)             | ![](/icons/layer.webp)       | Die Layer des aktuellen Objekts verwalten          |
+| [Einstellungen](settings.md)   | ![](/icons/cog.webp)         | Das 3d-Ansichtsfenster anpassen                    |
+| [Oberfläche](interface.md)     | ![](/icons/sliders.webp)     | Die Oberfläche anpassen                            |
+| [Werkzeuge](tools.md)          | ![](/icons/toolbox.webp)     | Liste aller Werkzeuge und Pinsel                   |
+| [Verlauf](history.md)          | ![](/icons/history.webp)     | Den Verlauf zum Rückgängigmachen/Wiederherstellen verwalten |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Häufig gestellte Fragen                            |
-| [Tipps](tips.md)               | ![](/icons/manual.webp)      | Workflow‑Tipps                                     |
+| [Tipps](tips.md)               | ![](/icons/manual.webp)      | Tipps für den Arbeitsablauf                        |
 
-## Community-Ressourcen {#community-resources}
+## Ressourcen aus der Community {#community-resources}
 
 <style>
 .video-grid {

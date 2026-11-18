@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Home",
+    "forum": "Forum"
+  },
+  "theme": {
+    "outlineLabel": "On this page",
+    "docFooter": {
+      "prev": "Previous page",
+      "next": "Next page"
+    },
+    "darkModeSwitchLabel": "Appearance",
+    "lightModeSwitchTitle": "Switch to light theme",
+    "darkModeSwitchTitle": "Switch to dark theme",
+    "sidebarMenuLabel": "Menu",
+    "returnToTopLabel": "Return to top",
+    "langMenuLabel": "Change language",
+    "skipToContentLabel": "Skip to content",
+    "notFound": {
+      "title": "PAGE NOT FOUND",
+      "quote": "But if you don't change your direction, and if you keep looking, you may end up where you are heading.",
+      "linkLabel": "go to home",
+      "linkText": "Take me home"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "Search",
+      "buttonAriaLabel": "Search"
+    },
+    "modal": {
+      "displayDetails": "Display detailed list",
+      "resetButtonTitle": "Reset search",
+      "backButtonTitle": "Close search",
+      "noResultsText": "No results for",
+      "footer": {
+        "selectText": "to select",
+        "selectKeyAriaLabel": "enter",
+        "navigateText": "to navigate",
+        "navigateUpKeyAriaLabel": "up arrow",
+        "navigateDownKeyAriaLabel": "down arrow",
+        "closeText": "to close",
+        "closeKeyAriaLabel": "escape"
+      }
+    }
+  }
+}

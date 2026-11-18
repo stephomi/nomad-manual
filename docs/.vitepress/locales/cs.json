@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Domů",
+    "forum": "Fórum"
+  },
+  "theme": {
+    "outlineLabel": "Na této stránce",
+    "docFooter": {
+      "prev": "Předchozí stránka",
+      "next": "Další stránka"
+    },
+    "darkModeSwitchLabel": "Vzhled",
+    "lightModeSwitchTitle": "Přepnout na světlý motiv",
+    "darkModeSwitchTitle": "Přepnout na tmavý motiv",
+    "sidebarMenuLabel": "Menu",
+    "returnToTopLabel": "Zpět nahoru",
+    "langMenuLabel": "Změnit jazyk",
+    "skipToContentLabel": "Přejít na obsah",
+    "notFound": {
+      "title": "STRÁNKA NENALEZENA",
+      "quote": "Pokud ale nezměníte směr a budete hledat dál, možná nakonec dojdete tam, kam máte namířeno.",
+      "linkLabel": "přejít na úvodní stránku",
+      "linkText": "Zpět domů"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "Hledat",
+      "buttonAriaLabel": "Hledat"
+    },
+    "modal": {
+      "displayDetails": "Zobrazit podrobný seznam",
+      "resetButtonTitle": "Vymazat hledání",
+      "backButtonTitle": "Zavřít hledání",
+      "noResultsText": "Žádné výsledky pro",
+      "footer": {
+        "selectText": "pro výběr",
+        "selectKeyAriaLabel": "Enter",
+        "navigateText": "pro pohyb",
+        "navigateUpKeyAriaLabel": "šipka nahoru",
+        "navigateDownKeyAriaLabel": "šipka dolů",
+        "closeText": "pro zavření",
+        "closeKeyAriaLabel": "Escape"
+      }
+    }
+  }
+}

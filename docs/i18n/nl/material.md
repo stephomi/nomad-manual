@@ -1,87 +1,97 @@
 # ![](/icons/material.webp) Materiaal {#material}
 
-Met dit menu kun je het materiaal van het huidige object wijzigen, de render‑eigenschappen van het object/materiaal aanpassen en texturen aan het materiaal toewijzen.
+In dit menu verander je het materiaal van het huidige object, stel je de renderinstellingen van het object en materiaal in, en koppel je texturen aan het materiaal.
 
 ![](/images/material_overview.webp)
 
-Materialen bepalen hoe een object eruitziet, door te regelen hoe het reageert op licht en op andere objecten. Het uiterlijk van een object wordt bepaald door deze eigenschappen:
+Een materiaal bepaalt hoe een object eruitziet: hoe het reageert op licht en op andere objecten. Het uiterlijk van een object hangt af van deze eigenschappen:
 
 * `Materiaaltype`
 * `Kleur`
 * `Ruwheid`
 * `Metaalheid`
-* `Ondoorzichtigheid`
-* `Reflectie`
-* `Emissief/unlit`
+* `Dekking`
+* `Reflectantie`
+* `Lichtgevend/onverlicht`
 
-Combinaties van deze eigenschappen kunnen een grote verscheidenheid aan resultaten opleveren, van fotorealistisch tot cartoonesk tot experimenteel.
+Door ze te combineren kom je tot heel uiteenlopende resultaten, van fotorealistisch tot cartoonachtig of experimenteel.
 
-Kleur, ruwheid, metaalheid en ondoorzichtigheid kunnen worden geschilderd, zie [Vertex Paint‑opties](painting.md) voor meer informatie.
+Kleur, ruwheid, metaalheid en dekking kun je schilderen, zie de [opties voor vertex-schilderen](painting.md) voor meer informatie.
 
-Materiaaltype, reflectie, emissief/unlit zijn materiaaleigenschappen die hieronder worden uitgelegd.
+Materiaaltype, reflectantie en lichtgevend/onverlicht zijn materiaaleigenschappen die hieronder worden uitgelegd.
 
-Met de kopieer/plak‑knoppen bovenaan dit menu kun je materialen van het ene object naar het andere kopiëren.
+Met de knoppen `Kopiëren` en `Plakken` bovenaan dit menu kopieer je een materiaal van het ene object naar het andere.
 
-Houd er rekening mee dat de renderer van Nomad een realtime‑renderer is; hoewel krachtig, geeft hij voor bepaalde effecten de voorkeur aan snelheid boven nauwkeurigheid. 
+Houd er rekening mee dat de renderer van Nomad een realtime renderer is: hij is krachtig, maar kiest bij sommige effecten voor snelheid boven nauwkeurigheid.
 
-## Materiaaltypen {#material-types}
+## Materiaaltypes {#material-types}
 
 ![](/images/material_types.webp)
 
-Nomad‑materiaaltypes zijn Opaque, Subsurface, Blending, Additive, Refraction, Dithering, Shadow Catcher.
+De materiaaltypes van Nomad zijn Ondoorzichtig, Suboppervlak, Mengmodus, Additief, Breking, Dithering en Schaduw Vanger.
 
-### ![](/icons/material_opaque.webp) Opaak {#opaque}
-De standaardmodus die oppervlakken behandelt als een eenvoudig materiaal dat geschilderde kleur, ruwheid, metaalheid en ondoorzichtigheid ondersteunt.
+### ![](/icons/material_opaque.webp) Ondoorzichtig {#opaque}
+De standaardmodus, die het oppervlak behandelt als een eenvoudig materiaal met geschilderde kleur, ruwheid, metaalheid en dekking. Geschilderde dekking, een dekkingstextuur of het alfakanaal van de kleurtextuur maken het object nog steeds doorzichtig, via dithering. Alleen de algemene dekkingsschuifregelaar wordt genegeerd.
 
-### ![](/icons/material_subsurface.webp) Ondiepe doorschijning {#subsurface}
-Deze modus kan materiaal simuleren dat licht intern laat vervagen en verstrooien, zoals huid, was, jade.
+### ![](/icons/material_subsurface.webp) Suboppervlak {#subsurface}
+Deze modus bootst materialen na waarin licht zich binnenin verspreidt en vervaagt, zoals huid, was of jade.
 
-Voor het beste resultaat schakel je over naar PBR‑schaduwmodus en gebruik je ten minste één directionele of spot‑light, bij voorkeur met een gedimde omgeving.
+Hij vereist de PBR-shadingmodus. Voor het beste resultaat gebruik je minstens één gericht licht of spotlicht, het liefst met een gedimde omgeving.
 
-`Depth` bepaalt hoe ver licht verstrooit van de voorkant, onder het oppervlak, en dan weer uit het vooroppervlak. Dit verzacht harde schaduwen en vervaagt oppervlakdetails.
+Het kleurvakje bepaalt de kleur van het verstrooide licht.
 
-`Translucency` bepaalt hoe licht verstrooit van de voorkant naar de achterkant van een vorm, zoals licht dat door de onderkant van een blad schijnt, of wanneer oren sterk van achteren worden belicht. 
+`Diepte` bepaalt hoe ver het licht vanaf de voorkant onder het oppervlak doordringt en daarna weer naar buiten komt aan de voorkant. Zo worden harde schaduwen zachter en vervagen de details van het oppervlak.
 
-### ![](/icons/material_blending.webp) Mengen {#blending}
+`Translucentie` bepaalt hoe het licht zich van de voorkant naar de achterkant van een vorm verspreidt, zoals licht dat door de onderkant van een blad schijnt, of oren met sterk tegenlicht. Je hebt een licht nodig dat schaduwen werpt om dit te zien.
 
-Vergelijkbaar met Opaque, maar ondersteunt de ondoorzichtigheids‑slider om het materiaal te laten variëren tussen solide en transparant. Dit is een eenvoudige enkele slider voor ondoorzichtigheid, in tegenstelling tot de schilderbare ondoorzichtigheid die door het opaque‑materiaal wordt ondersteund. 
+### ![](/icons/material_blending.webp) Mengmodus {#blending}
+
+Lijkt op Ondoorzichtig, maar werkt met de dekkingsschuifregelaar, zodat het materiaal kan overgaan van massief naar doorzichtig. Het is één eenvoudige schuifregelaar voor de dekking, in plaats van de schilderbare dekking van het ondoorzichtige materiaal.
 
 ::: warning
-Blending‑modus kan flikkeren en popping veroorzaken bij complexe of elkaar snijdende vormen.
+De mengmodus kan flikkeren en verspringen bij complexe of elkaar snijdende vormen.
 :::
 
 ### ![](/icons/material_additive.webp) Additief {#additive}
-Je kunt je mesh half‑transparant maken met dit materiaal. Het lijkt op het blending‑materiaal, maar terwijl blending zich met de omgeving mengt, zal additive altijd helderder zijn dan de objecten erachter, goed voor heldere effecten zoals lichtstralen, vuur, explosies.
+Met dit materiaal maak je je mesh halfdoorzichtig. Het lijkt op de mengmodus, maar waar die mengt met de omgeving, is additief altijd lichter dan de objecten erachter. Ideaal voor felle effecten zoals lichtstralen, vuur of explosies.
 
-Je kunt een ondoorzichtigheidswaarde hoger dan 1 instellen, wat betekent dat het object helderder zal zijn.  
-Dit kan handig zijn als je [bloom](postprocess.md#bloom) en de `threshold‑parameter` wilt gebruiken om alleen dit object te laten gloeien als een emissief object.
+Je kunt een dekking hoger dan 1 instellen, waardoor het object helderder wordt.  
+Dat is handig als je [bloom](postprocess.md#bloom) en de parameter `Drempel` gebruikt om alleen dit object te laten gloeien, zoals een lichtgevend object.
 
-Deze modus heeft de neiging minder artefacten te hebben dan [Blending](#blending) (order independent transparency).
+Deze modus geeft meestal minder artefacten dan de [Mengmodus](#blending) (transparantie die niet afhangt van de volgorde).
 
-### ![](/icons/material_refraction.webp) Refractie {#refraction}
-Deze modus kan worden gebruikt om glasachtig materiaal te simuleren. Vanwege realtime‑beperkingen zijn zelf‑refractie en meerlaagse refractie enigszins beperkt.
+### ![](/icons/material_refraction.webp) Breking {#refraction}
+Met deze modus boots je glas na. Hij vereist de PBR-shadingmodus. Omdat alles in realtime moet gebeuren, zijn breking binnen hetzelfde object en breking door meerdere lagen enigszins beperkt.
 
-De ruwheidsschildering van het model beïnvloedt hoe wazig de refractie is.
-Standaard heeft elk object dat in Nomad wordt gemaakt een ruwheid van iets rond de 25%, waardoor de refractie niet perfect maar een beetje wazig is.
-Je kunt de knop `paint glossy` gebruiken om je model opnieuw te schilderen met een ruwheid en metaalheid van 0 (de kleuren worden niet beïnvloed).
+De geschilderde ruwheid van het model bepaalt hoe wazig de breking is.
+Standaard heeft elk object dat je in Nomad maakt een ruwheid van ongeveer 25%, dus de breking is niet perfect maar wat wazig.
+Met de knop `Glanzend schilderen` schilder je je model opnieuw met een ruwheid en metaalheid van 0 (de kleuren blijven ongewijzigd).
 
-Er zijn 2 verschillende ruwheden in het spel: de ene stuurt hoe wazig de reflectie is op het oppervlak, en de andere stuurt het interieur (refractie).  
-Omdat er echter maar één schilderbaar ruwheidskanaal in Nomad is, delen zowel de binnen‑ als buitenruwheid dezelfde waarde.  
-Om verschillende waarden te hebben (bijvoorbeeld een lolly met een scherp oppervlak maar een wazig interieur) gebruik je de sliders `Surface glossiness` en `Interior roughness` om de geschilderde ruwheid te overschrijven.
+Er spelen twee soorten ruwheid mee: de ene bepaalt hoe wazig de reflectie op het oppervlak is, de andere hoe wazig de binnenkant is (de breking).  
+Omdat Nomad maar één geschilderd ruwheidskanaal heeft, delen de binnen- en buitenkant dezelfde waarde.  
+Wil je verschillende waarden (bijvoorbeeld een lolly met een scherp oppervlak maar een wazige binnenkant), gebruik dan de schuifregelaars `Oppervlak` en `Interieur` onder `Ruwheid overschrijven` om de geschilderde ruwheid te vervangen.
 
 ![](/videos/refraction.mp4)
 
+#### Refractie-index {#index-of-refraction}
+Hoe sterk het licht afbuigt wanneer het het object binnengaat. Hogere waarden buigen het meer af, zoals een dikke lens.
+
+#### Absorptie {#absorption}
+Bootst na dat het licht wordt geabsorbeerd terwijl het door het volume reist, gekleurd door het kleurvakje, met `Factor` voor de sterkte. Dunne delen zijn lichter omdat ze meer licht doorlaten, dikke delen zijn donkerder. Nomad gebruikt alleen een benadering van de dikte van het object, dus het effect hangt sterk af van de vorm.
+
 
 ### ![](/icons/material_dithering.webp) Dithering {#dithering}
-Maakt het object half‑transparant door sommige pixels willekeurig te verwijderen.
+Maakt het object halfdoorzichtig door willekeurig een deel van de pixels weg te laten.
 
-### ![](/icons/material_shadow_catcher.webp) Schaduwontvanger {#shadow-catcher}
+### ![](/icons/material_shadow_catcher.webp) Schaduw Vanger {#shadow-catcher}
 
-Maakt het object onzichtbaar en laat het alleen schaduwen ontvangen. Handig om Nomad‑renders met andere afbeeldingen te combineren. 
+Maakt het object onzichtbaar, zodat het alleen nog schaduwen van lichten ontvangt. Handig om renders uit Nomad te combineren met andere afbeeldingen, meestal op een vlak. Het kleurvakje bepaalt de kleur van de schaduw.
+
+Er moet een licht met schaduwen in de scène staan, anders doet de schaduwvanger niets. De knoppen `Metaalheid → 0%` en `Metaalheid → 100%` schilderen het object opnieuw: volledig metallisch kan de schaduwvanger ook de scène weerspiegelen wanneer de nabewerking [Reflectie (SSR)](postprocess.md#reflection-ssr) aanstaat.
 
 ::: tip
 
-Meer informatie over transparantie en blending‑modi is te vinden op https://support.fab.com/s/article/Transparency-Opacity
+Meer informatie over transparantie en mengmodi vind je op https://support.fab.com/s/article/Transparency-Opacity
 
 :::
 
@@ -89,142 +99,171 @@ Meer informatie over transparantie en blending‑modi is te vinden op https://su
 
 ![](/images/material_controls.webp)
 
-### Altijd onverlicht {#always-unlit}
-Indien ingeschakeld, negeert het object PBR en Matcap en wordt alleen de kleur‑schildering zonder shading weergegeven.
-Merk op dat als je [Additive](#additive) gebruikt, je transparantie direct kunt schilderen door zwarte kleur te gebruiken.
+### ![](/icons/circle_fill.webp) Altijd onverlicht {#always-unlit}
+Als dit aanstaat, negeert het object PBR en MatCap en toont het gewoon de geschilderde kleur, zonder shading.
+Gebruik je [Additief](#additive), dan kun je transparantie rechtstreeks schilderen met zwart.
 
-### Opaciteit {#opacity}
-Hoe solide of ondoorzichtig een object zal lijken; 100% is solide, 0% is transparant. Je kunt ook ondoorzichtigheid schilderen voor fijnere controle.
+### Dekking {#opacity}
+Hoe massief of ondoorzichtig een object eruitziet: 100% is massief, 0% is doorzichtig. De schuifregelaar verschijnt bij de types Mengmodus, Additief, Dithering en Schaduw Vanger. Voor meer controle kun je de dekking ook schilderen.
 
-### Reflectie {#reflectance}
-Bepaalt de hoeveelheid reflectie die het materiaal ontvangt voor niet‑metallische materialen. Meestal moet de standaardwaarde worden gebruikt (die overeenkomt met de standaard 4% gereflecteerd licht bij normale invalshoek), maar deze kan worden verhoogd om bijvoorbeeld reflecties en highlights in de ogen van een personage te versterken.
+### Pre-refractie-pass {#pre-refract-pass}
+Alleen voor Mengmodus en Additief. Tekent dit transparante object vóór de brekingspass. Handig wanneer een brekend object vóór andere transparante oppervlakken staat.
 
-### Omgekeerde culling {#inverse-culling}
-Keert de normalen van een oppervlak om. Meestal niet nodig, maar kan worden gebruikt als een model binnenstebuiten lijkt, of in combinatie met uitgeschakelde `Two sided` om interieurs te maken waarbij de wand het dichtst bij de camera altijd verborgen is.
+### Reflectantie {#reflectance}
+Bepaalt hoeveel reflectie een niet-metallisch materiaal krijgt. Meestal is de standaardwaarde goed (die komt overeen met de gebruikelijke 4% gereflecteerd licht bij loodrechte inval), maar je kunt hem verhogen om bijvoorbeeld reflecties en glanspunten in de ogen van een personage te versterken. Dit vereist de PBR-shadingmodus.
 
-### Gladde schaduw {#smooth-shading}
-Zie de [globale optie](settings.md#smooth-shading).  
-De waarde `Auto` gebruikt de globale optie.
+### ![](/icons/culling.webp) Omgekeerde culling {#inverse-culling}
+Keert de normalen van een oppervlak om. Meestal niet nodig, maar handig als een model binnenstebuiten lijkt. In combinatie met `Twee zijden` uitgeschakeld kun je er interieurs mee maken waarbij de muur die het dichtst bij de camera staat altijd verborgen is.
 
-### Dubbelzijdig {#two-sided}
-Zie de [globale optie](settings.md#two-sided).  
-De waarde `Auto` gebruikt de globale optie.
+De volgende opties kun je op `Auto`, `Nee` of `Ja` zetten. Bij `Auto` toont de pijl welke waarde echt wordt gebruikt.
 
-### Gekleurde achterkant {#coloured-backface}
-Zie de [globale optie](settings#two-sided).
-De waarde `Auto` gebruikt de globale optie.
+### ![](/icons/sphere_smooth.webp) Vloeiende shading {#smooth-shading}
+Zie de [algemene optie](settings.md#smooth-shading).  
+Met `Auto` wordt de algemene optie gebruikt.
 
-### Werpt schaduw {#casts-shadows}
-Voor nu is `Auto` hetzelfde als `On`.
-Transparante objecten werpen ook schaduwen (in een dithering‑patroon om gemengde schaduwen te emuleren).  
-Zorg dat je het werpen van schaduwen uitschakelt als je een groot object in je scène hebt dat geen schaduwen hoeft te werpen (bijvoorbeeld een grote vloer).
+### ![](/icons/culling.webp) Twee zijden {#two-sided}
+Vlakken zijn van beide kanten zichtbaar. Zie de [algemene optie](settings.md#two-sided-quick).  
+Met `Auto` wordt de algemene optie gebruikt.
 
-### Ontvangt schaduw {#recieve-shadows}
-Voor nu is `Auto` hetzelfde als `On`.
+### ![](/icons/culling.webp) Gekleurde achterzijde {#coloured-backface}
+Zie de [algemene optie](settings.md#two-sided-quick).
+Met `Auto` wordt de algemene optie gebruikt.
 
-### Draadmodel {#wireframe}
-Zie de [globale optie](settings.md#wireframe).  
-De waarde `Auto` gebruikt de globale optie.
+### ![](/icons/shadow_cast.webp) Schaduwen werpen {#casts-shadows}
+Ook transparante objecten werpen schaduwen (in een ditheringpatroon, om gemengde schaduwen na te bootsen).  
+Zet het werpen van schaduwen uit bij grote objecten in je scène die geen schaduw hoeven te werpen (bijvoorbeeld een grote vloer).
+
+### ![](/icons/shadow_receive.webp) Schaduwen ontvangen {#recieve-shadows}
+Of schaduwen van andere objecten op dit object worden getekend.
+
+### ![](/icons/wireframe.webp) Draadmodel {#wireframe}
+Zie de [algemene optie](settings.md#wireframe).  
+Met `Auto` wordt de algemene optie gebruikt.
+
+### ![](/icons/trash.webp) Normalen herstellen {#reset-normals}
+Verschijnt alleen wanneer een geïmporteerd object zijn eigen normalen meebrengt (bijvoorbeeld met `Behoud topologie`). Deze knop verwijdert ze, zodat de shading de normalen gebruikt die uit het oppervlak worden berekend.
 
 
 ## Texturen {#textures}
 
 ![](/images/material_textures.webp)
 
-Als een object UV’s heeft, kunnen texturen op het materiaal worden toegepast naast de vertex‑kleur/ruwheid/metaalheid/ondoorzichtigheid. Meestal zijn dit het resultaat van een texture bake, maar afbeeldingen die buiten Nomad zijn gemaakt, kunnen ook worden gebruikt.
+Heeft een object UV's, dan kun je naast de vertexkleur, -ruwheid, -metaalheid en -dekking ook texturen aan het materiaal koppelen. Meestal komen die uit het bakken van texturen, maar je kunt ook afbeeldingen gebruiken die buiten Nomad zijn gemaakt. `UV:✓` of `UV:✗` naast de titel laat zien of het object UV's heeft.
 
-Texturen kunnen worden toegepast op
+Texturen kun je toepassen op
 
 * Kleur
 * Normaal
 * Ruwheid
 * Metaalheid
-* Ondoorzichtigheid
-* Emissief
+* Dekking
+* Verplaatsing
+* Lichtgevend
 
-Als je op een textureslot klikt, verschijnt er een selector. Nadat een texture aan een materiaalslot is toegewezen, verschijnt bij opnieuw klikken een texture‑paneel:
+Er verschijnt ook een rij `Occlusie` wanneer een geïmporteerd object een occlusietextuur heeft, maar Nomad gebruikt die niet.
 
-### Opties tekstuurpaneel {#texture-panel-options}
+De schuifregelaar van elke rij bepaalt hoe sterk de textuur wordt toegepast, van helemaal niet tot volledig. `Kleur` en `Lichtgevend` hebben ook een kleurvakje dat de textuur inkleurt, en bij `Lichtgevend` stelt het de sterkte van de gloed in.
+
+`Verplaatsing` bepaalt hoe ver de verplaatsingsmap het oppervlak verschuift. De knop `Toepassen` verplaatst de vertices volgens de verplaatsing en verwijdert daarna de map. Het resultaat komt in de actieve laag.
+
+De paletknop naast de titel opent de materiaalpresets van het menu [Schilderen](painting.md): tik op een preset om de texturen ervan naar het object te kopiëren. Op desktop worden geïmporteerde afbeeldingen gesynchroniseerd met hun originele bestand zodra je terugschakelt naar Nomad, en een synchronisatieknop naast de titel laadt ze opnieuw.
+
+Tik je op een textuurvak, dan verschijnt een kiezer. Is er al een textuur aan het vak gekoppeld, dan opent een nieuwe tik het textuurpaneel:
+
+### Opties van het textuurpaneel {#texture-panel-options}
 
 ![](/images/material_texture_panel.webp)
 
-### Openen {#open}
-Een andere texture selecteren
+Het paneel toont de afmetingen van de afbeelding en een voorbeeld van de textuur.
 
-### Geen {#none}
-De texture verwijderen
+### ![](/icons/open.webp) Openen {#open}
+Kies een andere textuur. Op desktop toont `Verken` het afbeeldingsbestand in je bestandsbeheerder.
 
-### Opaciteit {#texture-opacity}
+### ![](/icons/circle_cross.webp) Geen {#none}
+Verwijdert de textuur.
 
-Als de afbeelding een alfakanaal heeft, kun je hiermee bepalen of je dit voor Opacity gebruikt of negeert.
+### Dekking {#texture-opacity}
 
-### ![](/icons/link.webp) Ketting/Link-icoon {#chainlink-icon}
+Alleen voor de kleurtextuur. Heeft de afbeelding een alfakanaal, dan kun je het gebruiken voor de dekking, of het negeren.
 
-Het link‑icoon in de volgende secties betekent, wanneer ingeschakeld, dat welke opties ook worden gebruikt, deze worden gedeeld met de andere texturen (kleur, normaal, ruwheid, metaalheid, ondoorzichtigheid, emissief) die hun link‑icoon ook ingeschakeld hebben. 
+### Formaat {#normal-format}
+Alleen voor de normaaltextuur. Normal maps bestaan in twee varianten, `OpenGL (+Y)` en `DirectX (-Y)`. Lijken de details omgekeerd, probeer dan de andere.
 
-Dit zorgt ervoor dat als je uitgelijnde texturen hebt, ze uitgelijnd blijven, zelfs als je parameters of projectietypes wijzigt.
+### Hoogte {#displacement-height}
+Alleen voor de verplaatsingstextuur.
+* `Lokaal` - De hoogte groeit en krimpt mee met de schaal van het object.
+* `Wereld` - De hoogte blijft gelijk, wat de schaal van het object ook is.
+
+### Vermenigvuldigen {#multiply}
+Alleen voor ruwheids-, metaalheids- en dekkingstexturen. Vermenigvuldigt de waarden van de textuur. Staat het niet op 100%, dan wordt de waarde op het textuurvak getoond.
+
+### ![](/icons/link.webp) Ketting-/koppelingsicoon {#chainlink-icon}
+
+Staat het koppelingsicoon in de volgende secties aan, dan worden de gekozen opties gedeeld met de andere texturen (kleur, normaal, ruwheid, metaalheid, dekking, lichtgevend) waarvan het koppelingsicoon ook aanstaat.
+
+Zo blijven op elkaar uitgelijnde texturen uitgelijnd, ook als je de parameters of het projectietype aanpast.
 
 
 ### Projectie {#projection}
 ![](/images/material_projection.webp)
 
-Stel in hoe de texture op het object moet worden toegepast.
+Bepaalt hoe de textuur op het object wordt aangebracht.
 
-* `Auto` - Als het object uv’s heeft, UV, anders Triplanar
-* `UV` - Gebruik de uv‑coördinaten van de mesh om de texture toe te passen. Als de mesh en texture van buiten Nomad komen, of vanuit Nomad worden geëxporteerd om elders te gebruiken, is UV de juiste optie.
-* `Triplanar` - Projecteer de texture langs de X‑, Y‑, Z‑assen en meng de naden. 
+* `Auto` - UV als het object UV's heeft, anders Triplanar
+* `UV` - Gebruikt de UV-coördinaten van de mesh om de textuur aan te brengen. Komen de mesh en de textuur van buiten Nomad, of ga je ze vanuit Nomad exporteren om elders te gebruiken, dan is UV de juiste keuze.
+* `Triplanar` - Projecteert de textuur langs de X-, Y- en Z-as en laat de naden in elkaar overlopen.
 
-### Triplanair {#triplanar}
+### Triplanar {#triplanar}
 ![](/images/material_triplanar.webp)
 
-Triplanar‑projecties zijn een krachtige maar eenvoudige manier om texturen op objecten toe te passen.
+Triplanaire projectie is een krachtige en toch eenvoudige manier om texturen op objecten aan te brengen.
 
-Triplanar is alsof je 6 videoprojectoren hebt met allemaal hetzelfde beeld, die op de voor‑, achter‑, linker‑, rechter‑, boven‑ en onderkant van je object schijnen.
+Het is alsof zes projectoren met hetzelfde beeld op de voorkant, achterkant, linkerkant, rechterkant, bovenkant en onderkant van je object schijnen.
 
-Dit kan vervolgens indien nodig in UV’s of vertex‑kleuren worden gebakken.
+Indien nodig kun je het resultaat daarna bakken naar UV's of vertexkleuren.
 
 
 ![](/images/material_triplanar_example.webp)
 
 #### Methode {#method}
 
-* `Local` - De projectie beweegt mee met de object‑transform
-* `World` - De projectie blijft vast, het object verplaatsen schuift het door de projectie heen.
+* `Lokaal` - De projectie beweegt mee met de transformatie van het object.
+* `Wereld` - De projecties blijven op hun plek: verplaats je het object, dan schuift het door de projectie.
 
 #### Hardheid {#hardness}
 
-Hoe de projecties mengen. 100% doet geen blending en de randen van de projecties zijn scherp. 0% mengt de randen over een brede hoek. De standaard is 90%, genoeg menging om de randen te verbergen en de rest van de projecties scherp te houden.
+Hoe de projecties in elkaar overlopen. Bij 100% is er geen overgang en zijn de randen van de projecties scherp. Bij 0% lopen de randen over een brede hoek in elkaar over. De standaardwaarde is 90%: genoeg menging om de randen te verbergen, terwijl de rest van de projecties scherp blijft.
 
 ### Uniform {#uniform}
 
-Indien aangevinkt wordt dezelfde hardness voor alle projecties gebruikt. Indien uitgevinkt worden extra hardness‑regelaars voor X‑, Y‑, Z‑projecties zichtbaar.
+Aangevinkt geldt dezelfde hardheid voor alle projecties. Uitgevinkt verschijnen extra hardheidsregelaars voor de X-, Y- en Z-projecties.
 
 
 ### Parameter {#parameter}
 ![](/images/material_parameter.webp)
 
-#### Filtering {#filtering}
-De texture‑filtermethode die moet worden gebruikt, `Auto` is de standaard, methoden zijn `Nearest`, `Linear`, `Mipmap`. Nearest doet geen filtering, waardoor texturen gekartelde artefacten kunnen krijgen wanneer ze van dichtbij worden bekeken. Linear en Mipmap doen betere filtering, zodat texturen van dichtbij eerder wazig dan gekarteld lijken.
+#### Filteren {#filtering}
+De filtermethode voor de textuur. `Auto` is de standaard, de methodes zijn `Dichtstbijzijnd`, `Lineair` en `Mipmap`. Dichtstbijzijnd filtert niet, dus van dichtbij kunnen texturen kartelig worden. Lineair en Mipmap filteren beter, zodat texturen van dichtbij wazig lijken in plaats van kartelig.
 
-#### Herhaling-X {#tiling-x}
-Als de Scale‑parameter groter is dan 1, waardoor de texture kleiner wordt dan de object‑UV’s, hoe wordt de texture dan langs de X‑as getiled. `None` betekent geen herhalingen. `Repeat` maakt kopieën van de texture. `Mirror` maakt kopieën van de texture, waarbij elke tweede kopie gespiegeld is, wat kan helpen om tiling‑artefacten te verbergen.
+#### Patroontegels - X {#tiling-x}
+Als de parameter Schaal groter is dan 1, wordt de textuur kleiner dan de UV's van het object. Deze optie bepaalt dan hoe de textuur zich herhaalt langs de X-as. `Geen` herhaalt niet. `Herhaal` maakt kopieën van de textuur. `Spiegeling` maakt ook kopieën, maar elke tweede kopie is gespiegeld, wat helpt om de herhaling minder op te laten vallen.
 
-#### Herhaling-Y {#tiling-y}
-Hetzelfde als Tiling‑X, maar voor de Y‑as.
+#### Patroontegels - Y {#tiling-y}
+Hetzelfde als Patroontegels - X, maar voor de Y-as.
 
-### Transformatie {#transform}
+### Transformeren {#transform}
 ![](/images/material_transform.webp)
 
-Extra 2D‑transformaties die op de texture in UV‑ruimte worden toegepast. De reset‑knop zet alles terug naar de standaardwaarden, het ketting‑icoon (wanneer andere texturen dan kleur zijn geselecteerd) koppelt of ontkoppelt de transform zodat deze gelijk is aan de kleur‑texture.
+Extra 2d-transformaties die in de UV-ruimte op de textuur worden toegepast. De resetknop zet alles terug op de standaardwaarden. Het kettingicoon (wanneer een andere textuur dan kleur is gekozen) koppelt de transformatie aan die van de kleurtextuur, of ontkoppelt hem.
 
-#### Translatie {#translation}
-De X‑ en Y‑verschuiving van de texture
+#### Verschuiving {#translation}
+De verschuiving van de textuur in X en Y.
 
 #### Rotatie {#rotation}
-De rotatie van de texture
+De rotatie van de textuur.
 
 #### Schaal {#scale}
-De schaal van de texture; grotere getallen maken de texture kleiner op het object, gebruik de sliders Tiling‑X en Tiling‑Y om te bepalen wat er gebeurt.
+De schaal van de textuur. Hoe groter het getal, hoe kleiner de textuur op het object. Met de opties Patroontegels - X en Patroontegels - Y bepaal je wat er dan gebeurt.
 
 ### Uniforme schaal {#uniform-scale}
-Wanneer uitgeschakeld toont Nomad aparte regelaars voor Scale‑X en Scale‑Y.
+Staat dit uit, dan toont Nomad aparte regelaars voor Schaal-X en Schaal-Y.

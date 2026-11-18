@@ -1,169 +1,211 @@
-# ![](/icons/pencil.webp) Gores {#stroke}
+# ![](/icons/brush.webp) Goresan {#stroke}
 
 ---
 ![](/images/stroke_overview.webp) 
 
 ## Ikhtisar {#overview}
 
-Anda dapat menyesuaikan perilaku goresan (stroke) untuk sebagian besar kuas alat.
-Pengaturannya mirip dengan yang ada di aplikasi lukis 2D, namun beberapa opsi khusus untuk pemahatan dan 3D.
+Anda bisa mengatur perilaku goresan pada sebagian besar kuas alat.
+Pengaturannya mirip dengan yang ada di aplikasi lukis 2d, tetapi beberapa opsi khusus untuk sculpting dan 3d.
 
-Opsi-opsi ini dibagi ke dalam 5 sub-menu:
+Opsi-opsinya terbagi dalam 5 submenu:
 
-| Name     | Icon                         | Description                                                        |
+| Nama     | Ikon                         | Deskripsi                                                          |
 | :------: | :--------------------------: | :----------------------------------------------------------------: |
-| Stroke   | ![](/icons/stroke_dot.webp) | Mengontrol bagaimana stroke diterapkan ke model                    |
-| Alpha    | ![](/icons/alpha.webp)      | Bagaimana tekstur skala abu-abu digunakan untuk cap kuas           |
-| Falloff  | ![](/icons/falloff.webp)    | Mengontrol bagaimana kekuatan kuas berubah dari tengah ke tepi     |
-| Filter   | ![](/icons/filter.webp)     | Bagaimana kuas dipengaruhi oleh geometri model                     |
-| Pressure | ![](/icons/pressure.webp)   | Mengontrol respons tekanan stylus                                  |
+| Goresan  | ![](/icons/brush.webp)      | Mengatur cara goresan diterapkan pada model                        |
+| Alpha    | ![](/icons/alpha.webp)      | Cara tekstur skala abu-abu dipakai sebagai cap kuas                |
+| Penurunan | ![](/icons/falloff.webp)   | Mengatur perubahan kekuatan kuas dari tengah ke tepi               |
+| Filter   | ![](/icons/filter.webp)     | Cara kuas dipengaruhi oleh geometri model                          |
+| Tekanan  | ![](/icons/pressure.webp)   | Mengatur respons tekanan stylus                                    |
 
 ::: tip
-Tidak semua opsi stroke berlaku untuk semua alat. Opsi stroke yang tidak digunakan oleh alat saat ini akan dinonaktifkan atau disembunyikan. 
+Tidak semua opsi goresan berlaku untuk semua alat. Opsi goresan yang tidak dipakai oleh alat yang sedang aktif akan dinonaktifkan atau disembunyikan. 
 :::
 
 
-## Gores {#stroke-1}
+## ![](/icons/brush.webp) Goresan {#stroke-1}
 
-### Radius {#radius}
+### ![](/icons/radius.webp) Jari-jari {#radius}
 
 ![](/images/stroke_radius.webp)
 
-#### Bagikan radius {#share-radius}
+Opsi jari-jari adalah pengaturan global: berlaku untuk semua alat.
 
-Jika diaktifkan, semua alat akan menggunakan radius yang sama, default-nya adalah setiap alat memiliki radius masing-masing.
+#### Ruang {#size}
 
-#### Ukuran {#size}
+* `Layar` - jari-jari diatur dalam satuan layar. Jika Anda membuat jari-jari selebar 100 piksel, lebarnya akan tetap 100 piksel, entah Anda memperbesar atau memperkecil tampilan.
+* `Dunia (3D)` - jari-jari diatur dalam satuan 3d. Misalnya, jika Anda membuat bola lalu menyamakan jari-jari dengan ukuran bola itu, jari-jari akan tetap seukuran bola saat Anda memperbesar atau memperkecil tampilan.
 
-* Screen - radius diatur dalam satuan layar. Jika Anda membuat radius selebar 100 piksel, radius akan tetap 100 piksel terlepas dari apakah Anda melakukan zoom in atau zoom out.
-* Constant (3d) - radius diatur dalam satuan 3D. Misalnya jika Anda membuat sebuah bola dan membuat radius sama dengan ukuran bola, radius akan tetap sama dengan ukuran bola saat Anda zoom in dan out.
+#### ![](/icons/link.webp) Sinkronkan pintasan {#sync-shortcut}
+
+Jika diaktifkan, pengaturan jari-jari dan siluet tetap disamakan saat Anda beralih ke kuas pintasan (`Haluskan`, `Topeng` atau `Sembunyi`). Dengan begitu, penghalusan atau masker cepat memakai ukuran kuas yang sama dengan alat yang tadi Anda gunakan.
+
+#### ![](/icons/link.webp) Bagikan radius {#share-radius}
+
+Jika diaktifkan, semua alat akan memakai jari-jari yang sama. Secara bawaan, setiap alat punya jari-jarinya sendiri.
 
 
-### Gores {#stroke-type}
+### Jenis goresan {#stroke-type}
 
 ![](/images/stroke_strokemode.webp)
 
-Stroke dapat berperilaku dalam beberapa mode:
+Goresan bisa bekerja dalam beberapa mode:
 
 ### ![](/icons/stroke_dot.webp) Titik {#dot}
 Seret seperti goresan cat biasa. 
 ![](/videos/stroke_dot.mp4) 
 
-### ![](/icons/stroke_roll.webp) Gulir {#roll}
-Alpha kuas akan diputar mengikuti arah stroke, berguna untuk membuat jahitan kain. 
+### ![](/icons/stroke_roll.webp) Roll alpha {#roll}
+Alpha kuas akan diputar mengikuti arah goresan, berguna untuk membuat jahitan kain. 
 ![](/videos/stroke_roll.mp4) 
 
- ### ![](/icons/radius.webp) Lock + radius
-Mencap stroke kuas dengan **_tinggi_** tetap. Seret akan mengatur skala dan rotasi.
+### ![](/icons/radius.webp) Kunci + jari-jari {#lock-radius}
+Mengecap goresan kuas dengan **_tinggi_** tetap. Seretan Anda mengatur skala dan rotasi.
 ![](/videos/stroke_lock_radius.mp4) 
 
-### ![](/icons/falloff.webp) Kunci + intensitas {#lock-intensity}
-Mencap stroke kuas dengan **_radius_** tetap. Seret akan mengatur tinggi dan rotasi.
+### ![](/icons/normal.webp) Kunci + intensitas {#lock-intensity}
+Mengecap goresan kuas dengan **_jari-jari_** tetap. Seretan Anda mengatur tinggi dan rotasi.
 ![](/videos/stroke_lock_intensity.mp4) 
+
+::: tip
+Mode `Kunci + jari-jari` dan `Kunci + intensitas` mengabaikan pengaturan [Tekanan](#pressure), karena seretan sudah menentukan ukuran dan kekuatannya.
+:::
 
 ![](/images/stroke_strokemodemove.webp)
 
-Alat `Move` dan `Drag` memiliki 3 opsi sendiri:
+Alat `Pindah` dan `Tarik` punya 3 opsi sendiri:
 
 ### ![](/icons/snake.webp) Seret {#drag}
 
-Akan terus memperbarui apa yang ada di dalam radius kuas selama stroke. Stroke cepat akan meninggalkan permukaan di belakang, sementara stroke lambat akan menahan material, membentuk bentuk yang lebih panjang. Ini adalah mode default untuk alat `Drag`. Dengan `Dynamic Topology` ini dapat digunakan untuk membuat ekstrusi seperti ular. 
+Terus memperbarui apa yang berada di dalam jari-jari kuas selama goresan. Goresan cepat akan meninggalkan permukaan di belakang, sedangkan goresan lambat akan terus menahan materialnya sehingga terbentuk bentuk yang lebih panjang. Ini adalah mode bawaan alat `Tarik`. Bersama `Topologi dinamis`, mode ini bisa dipakai untuk membuat ekstrusi seperti ular. 
 ![](/videos/stroke_drag.mp4) 
 
 
-### ![](/icons/grab.webp) Geser {#grab}
-Akan memilih apa yang ada di dalam radius kuas saat kuas dimulai, dan mempertahankan seleksi tersebut. Ini berguna untuk operasi pemindahan yang lebih presisi, karena Anda dapat dengan hati-hati menyesuaikan jarak perpindahan dan tidak secara tidak sengaja memindahkan lebih banyak dari yang awalnya dipilih. Ini adalah mode default untuk alat `Move`.
+### ![](/icons/grab.webp) Ambil {#grab}
+Memilih apa yang berada di dalam jari-jari kuas saat goresan dimulai, lalu mempertahankan pilihan itu. Ini berguna untuk pemindahan yang lebih presisi, karena Anda bisa mengatur jarak pemindahan dengan cermat tanpa tidak sengaja ikut memindahkan lebih banyak dari yang Anda pilih di awal. Ini adalah mode bawaan alat `Pindah`.
 ![](/videos/stroke_grab.mp4) 
 
 
-### ![](/icons/radius.webp) Kunci + radius (seret) {#lock-radius-drag}
-Radius yang ditentukan pengguna diabaikan, dan diatur secara dinamis berdasarkan seberapa jauh stroke diseret dari titik awal. Jarak kecil = radius kecil, jarak lebih besar = radius lebih besar. Gunakan slider intensitas untuk mengontrol bentuk falloff. Berguna untuk memblokir bentuk organik yang kenyal.
+### ![](/icons/radius.webp) Kunci + jari-jari (seret) {#lock-radius-drag}
+Jari-jari yang Anda atur diabaikan, dan diatur secara dinamis berdasarkan seberapa jauh goresan diseret dari titik awalnya. Jarak kecil = jari-jari kecil, jarak lebih jauh = jari-jari lebih besar. Gunakan penggeser intensitas untuk mengatur bentuk falloff. Berguna untuk membuat bentuk dasar organik yang kenyal.
 ![](/videos/stroke_lockradius_drag.mp4) 
 
+Beberapa alat lain menampilkan jenis goresannya sendiri di sini, misalnya `Santai`, `Haluskan` dan `Smudge` untuk alat penghalus, atau bentuk seperti `Tali` dan `Lengkung` untuk alat berbasis seleksi. Semuanya dijelaskan bersama masing-masing [alat](tools.md).
 
 
-### Sesuaikan intensitas jarak gores {#adjust-spacing-intensity}
+### Sesuaikan intensitas jarak {#adjust-spacing-intensity}
 ![](/images/stroke_space_smooth.webp)
 
-Stroke dengan jarak rendah (kurang dari 50%) dapat menumpuk dengan cepat, menghasilkan stroke yang lebih intens dibandingkan nilai jarak yang lebih tinggi. Toggle ini akan mengompensasi hal tersebut, sehingga stroke akan memiliki intensitas yang kurang lebih sama terlepas dari jaraknya.
+Goresan dengan jarak kecil (di bawah 50%) bisa menumpuk dengan cepat, sehingga hasilnya lebih kuat dibanding goresan dengan jarak lebih besar. Opsi ini mengimbanginya, sehingga intensitas goresan kurang lebih sama berapa pun jaraknya.
 
-### Jarak gores {#stroke-spacing}
-Seberapa jauh jarak antar penerapan setiap cap kuas selama operasi seret. Nilai di bawah 100% akan saling tumpang tindih, memberikan tampilan stroke yang kontinu. Nilai di atas 100% akan mulai meninggalkan celah, berguna untuk memahat detail seperti jahitan atau resleting.
+### Jarak antar stroke {#stroke-spacing}
+Seberapa jauh jarak antar cap kuas saat Anda menyeret. Nilai di bawah 100% akan saling tumpang tindih sehingga goresan tampak menyambung. Nilai di atas 100% mulai menyisakan celah, berguna untuk memahat detail seperti jahitan atau ritsleting.
 
-### Penstabil tali malas {#lazy-rope-stabilizer}
-Stroke akan tertinggal di belakang posisi pointer dengan jarak tertentu. Ini dapat digunakan untuk menggambar garis yang halus.
+### Stabilisator tali malas {#lazy-rope-stabilizer}
+Goresan akan tertinggal di belakang posisi penunjuk dengan jarak tertentu. Ini bisa dipakai untuk menggambar garis yang mulus.
 ![](/videos/stroke_lazy_rope.mp4) 
 
-### Penghalusan gores {#stroke-smoothing}
-Merata-ratakan beberapa posisi pointer untuk mendapatkan stroke yang lebih halus.
-Dengan nilai tinggi, stroke akan tertinggal di belakang pointer tetapi akhirnya akan menyusul.
-Ini berguna untuk menggambar garis yang halus.
+### Penghalusan stroke {#stroke-smoothing}
+Merata-ratakan beberapa posisi penunjuk agar goresan lebih halus.
+Dengan nilai tinggi, goresan akan tertinggal di belakang penunjuk, tetapi pada akhirnya akan menyusul.
+Ini berguna untuk menggambar garis yang mulus.
 
-### Radius snap {#snap-radius}
-Menjepret awal stroke ke ujung stroke sebelumnya. Radius menentukan seberapa jauh mencari ujung stroke sebelumnya. Ini dapat berguna saat menggambar garis panjang yang kontinu, sambil sering berhenti sejenak.
+### Jari-jari snap {#snap-radius}
+Menyambungkan goresan ke goresan sebelumnya jika penunjuk mulai di dekat ujung goresan terakhir. Jari-jari ini menentukan seberapa jauh ujung goresan sebelumnya dicari. Berguna untuk menggambar garis panjang yang menyambung sambil sering berhenti sejenak.
+
+### ![](/icons/trail.webp) Jejak {#trail}
+
+Jika diaktifkan, setiap cap baru juga menerapkan ulang titik-titik terakhir dari goresan di belakangnya. `Jumlah jejak` mengatur berapa banyak titik yang diterapkan ulang, `Intensitas jejak` seberapa kuat titik-titik itu, dan `Radius jejak` seberapa besar pertambahan ukurannya.
+
+Jejak hanya bekerja dengan jenis goresan `Titik`, dan tidak dengan [pengaruh falloff](#influence) `Punggungan`.
 
 ### ![](/icons/silhouette.webp) Siluet {#silhouette}
 ![](/images/stroke_silhouette.webp)
-Secara default stroke hanya akan memengaruhi permukaan model di dalam radius kuas. Saat silhouette diaktifkan, stroke akan diproyeksikan menembus seluruh model. Ini sangat berguna saat melakukan blocking awal model, atau untuk bentuk yang mengharuskan sisi-sisinya tetap tegak lurus.
+Secara bawaan, goresan hanya memengaruhi permukaan model di dalam jari-jari kuas. Jika siluet diaktifkan, goresan akan diproyeksikan menembus seluruh model. Ini sangat berguna saat membuat bentuk dasar model di tahap awal, atau untuk bentuk yang sisi-sisinya harus tetap tegak lurus.
 
-Arah proyeksi dapat diatur secara eksplisit, metode default 'Closest' akan mendeteksi sudut terbaik relatif terhadap tampilan. 
+Arah proyeksinya bisa diatur secara eksplisit:
+
+* `X`, `Y`, `Z` - proyeksi sepanjang sumbu tetap.
+* `Tampilan` - proyeksi searah kamera.
+* `Saat snap` - proyeksi searah kamera, tetapi hanya selama kamera di-snap ke suatu tampilan. Jika tidak, goresannya tetap goresan biasa.
+* `Terdekat` - proyeksi sepanjang sumbu yang paling dekat dengan arah kamera. Ini adalah pilihan bawaan.
 
 ![](/videos/stroke_silhouette.mp4) 
 
-### ![](/icons/dice.webp) Acak {#randomize}
+### ![](/icons/dice.webp)Acak {#randomize}
 
 ![](/images/stroke_randomize.webp)
 
-Intensitas, translasi, rotasi, dan skala stroke masing-masing dapat diacak. Ini dapat digunakan untuk membuat berbagai efek, misalnya randomize dengan alat paint dapat membuat warna belang-belang, atau randomize dengan alat crease dapat digunakan untuk membuat detail kulit.
+`Intensitas`, `Offset`, `Rotasi` dan `Skala` goresan masing-masing bisa diacak. Gunakan kotak centang di tiap baris untuk menyalakan atau mematikannya. Ini bisa menghasilkan berbagai efek, misalnya acak dengan alat cat bisa membuat warna berbintik, atau acak dengan alat crease bisa dipakai untuk membuat detail kulit.
+
+`Periode (lebih lambat)` mengatur panjang siklus acaknya: naikkan untuk variasi yang lambat dan bergelombang, turunkan untuk noise yang cepat. Tombol kecil di samping tiap baris mengatur skala periode untuk baris itu saja.
 
 ![](/videos/stroke_randomize.mp4) 
 
-### Offset gores {#stroke-offset}
+### ![](/icons/paint.webp) Acak - HSV {#randomize-hsv}
 
-Menerapkan offset konstan pada stroke. Ini berguna untuk layar kecil di mana jari Anda akan menutupi stroke. 
+Untuk alat yang mengecat, `Rona`, `Saturasi` dan `Nilai` warna cat juga bisa diacak, dengan periodenya sendiri. Sangat cocok untuk menambahkan variasi warna halus pada kulit atau batu.
 
+### Offset stroke {#stroke-offset}
 
-## ![](/icons/alpha.webp) Alfa {#alpha}
+Menerapkan offset tetap pada goresan, agar jari Anda tidak menutupinya. Ini berguna di layar kecil. Ini adalah pengaturan global: aktifkan dengan kotak centangnya, dan pengaturan ini berlaku untuk semua alat.
+
+## ![](/icons/alpha.webp) Alpha {#alpha}
 ![](/images/stroke_alpha.webp) 
 
-`Alpha` adalah tekstur yang akan memodulasi perilaku kuas Anda.
-Ini adalah gambar skala abu-abu, di mana piksel hitam berarti tidak ada deformasi dan piksel putih berarti deformasi penuh.
+`Alpha` adalah tekstur yang memodulasi perilaku kuas Anda.
+Ini adalah gambar skala abu-abu: piksel hitam berarti tidak ada deformasi, dan piksel putih berarti deformasi penuh.
 
-Klik pada gambar alpha untuk mengubahnya.
+Klik gambar alpha untuk menggantinya. Selain alpha bawaan dan alpha yang Anda impor sendiri, daftar alpha juga bisa mengunduh peta displacement dari Poly Haven.
 
-Klik pada pratinjau material untuk memuat alpha dari preset material. Anda juga dapat menyimpan preset material di sini, dan memilih untuk menyematkan tekstur dengan alat.
-
-::: tip
-Tekstur tidak pernah diubah ukurannya, jadi tekstur besar dapat memperlambat performa.
-:::
-
-### Balik piksel {#invert-pixels}
-Ini akan membalik nilai gambar, sehingga piksel hitam menjadi putih, dan piksel putih menjadi hitam.
+Klik pratinjau material untuk memuat alpha dari prasetel material. Di sini Anda juga bisa menyimpan prasetel material, dan memilih untuk menyertakan teksturnya bersama alat.
 
 ::: tip
+Tekstur tidak pernah diubah ukurannya, jadi tekstur besar bisa memperlambat kinerja.
+:::
 
-Alpha bawaan yang disertakan dengan Nomad tidak dapat dibalik.
+### ![](/icons/blend_contrast.webp) Perbaiki alfa {#invert-pixels}
+Tombol `Perbaiki...` pada alpha yang diimpor membuka popup untuk mengoreksi gambarnya langsung: nilai tengahnya, membalik piksel (hitam menjadi putih dan putih menjadi hitam), rotasi 90°, serta pembalikan horizontal atau vertikal. File gambarnya ditulis ulang, jadi aplikasi lain juga melihat gambar yang sudah dikoreksi.
+
+::: tip
+
+Alpha bawaan yang disertakan dengan Nomad tidak bisa diperbaiki.
 
 :::
 
-### Skala {#scaling}
+### Proyeksi {#projection}
 
-Ukuran kuas di Nomad adalah lingkaran dengan radius yang ditentukan pengguna. Tekstur sering kali berbentuk persegi atau persegi panjang, parameter `Scaling` memungkinkan Anda memutuskan bagaimana tekstur harus pas di dalam lingkaran. Untuk tekstur persegi, nilai 0.7 akan pas di dalam lingkaran. Nilai 1 akan memperbesar tekstur sehingga lingkaran berada di dalamnya, memotong tepi.
+Cara alpha diproyeksikan ke model:
+
+* `Permukaan` - alpha terletak di permukaan di bawah kuas, mengikuti orientasinya.
+* `Layar` - alpha diproyeksikan lurus dari tampilan.
+* `Ubin` - alpha diproyeksikan dari tampilan dan tetap di tempatnya saat Anda mengecat di atasnya, seperti stensil, sehingga pola berulang tersambung dengan mulus. Rotasinya terkunci, dan tekanan pena tidak mengubah ukuran polanya.
+* `Triplanar` - alpha diproyeksikan sepanjang 3 sumbu. Opsi skala, rotasi dan ubin di bawah digantikan oleh pengaturan tekstur triplanar.
+
+### ![](/icons/diagonal.webp) Skala {#scaling}
+
+Ukuran kuas di Nomad berupa lingkaran dengan jari-jari yang Anda tentukan. Tekstur sering kali berbentuk persegi atau persegi panjang, dan parameter `Skala` memungkinkan Anda menentukan bagaimana tekstur dimuat di dalam lingkaran itu. Untuk tekstur persegi, nilai 0,7 akan pas di dalam lingkaran. Nilai 1 akan memperbesar tekstur sehingga lingkarannya yang berada di dalam tekstur, dan tepi tekstur terpotong.
 
 ![](/images/alpha_scaling.webp) 
 
-Mengaktifkan `Scaling - Y` akan memungkinkan Anda meregangkan alpha secara vertikal.
+Mengaktifkan `Skala Y` memungkinkan Anda meregangkan alpha secara vertikal. Penggeser pertama lalu menjadi `Skala X`.
 
 ![](/images/alpha_scaling_y.webp) 
 
+`Balik horizontal` mencerminkan alpha dari kiri ke kanan.
+
 ### Rotasi {#rotation}
 
-Tekstur alpha akan diputar mengikuti arah stroke. Anda dapat menambahkan offset rotasi, dan jika ikon kunci diaktifkan, tekstur akan tetap terkunci pada rotasi ini relatif terhadap layar.
+Tekstur alpha akan diputar mengikuti arah goresan. Anda bisa menambahkan offset rotasi, dan jika ikon gembok diaktifkan, tekstur akan tetap terkunci pada rotasi ini relatif terhadap layar.
 
-### Ulang (tiling) {#tiling}
+Tombol pena di sebelahnya memutar alpha saat Anda memutar stylus (barrel roll), dengan goresan `Kunci + jari-jari` dan `Kunci + intensitas` selama rotasinya tidak dikunci. Ini hanya bekerja dengan stylus yang mendukungnya.
+
+### Ubin {#tiling}
 ![](/images/stroke_tiling.webp) 
 
-Seberapa sering tekstur diulang di dalam profil kuas. Mode tiling memungkinkan Anda membatasi ke satu tekstur di dalam stroke, atau tekstur berulang, atau cermin di mana setiap tekstur kedua dibalik untuk membuat pola atau membantu membuat tekstur tanpa sambungan.
+Seberapa sering tekstur berulang di dalam profil kuas. Mode `Ubin - X` dan `Ubin - Y` memungkinkan Anda membatasi hanya satu tekstur di dalam goresan (`Tidak ada`), tekstur berulang (`Ulangi`), atau dicerminkan, di mana setiap tekstur kedua dibalik untuk membuat pola atau membantu membuat tekstur tanpa sambungan (`Cermin`). Mode ini tersedia dengan goresan `Roll alpha`, proyeksi `Ubin`, atau `Ubin` di atas 1.
+
+`Pas ketat (gambar non-persegi)` hanya berpengaruh untuk alpha dan tekstur kuas yang tidak persegi. Jika diaktifkan, setiap gambar diulang sendiri-sendiri tanpa jarak. Nonaktifkan agar alpha dan gambar lainnya tetap selaras saat rasio aspeknya berbeda.
 
 ![](/videos/alpha_tiling.mp4) 
 
@@ -171,146 +213,163 @@ Seberapa sering tekstur diulang di dalam profil kuas. Mode tiling memungkinkan A
 
 ### Nilai tengah {#mid-value}
 
-Secara default piksel hitam berarti tidak ada deformasi, dan piksel putih berarti deformasi positif penuh, jadi misalnya, kuas clay dengan tekstur alpha batu hanya akan menarik permukaan keluar di mana alpha tidak hitam.
+Secara bawaan, piksel hitam berarti tidak ada deformasi, dan piksel putih berarti deformasi positif penuh. Jadi misalnya, kuas clay dengan tekstur alpha berupa bebatuan hanya akan menarik permukaan keluar di bagian alpha yang tidak hitam.
 
-Jika Anda ingin kuas mendorong permukaan ke dalam, atau sekaligus mendorong ke dalam DAN menarik keluar, Anda dapat mengubah nilai tengah. Jadi jika Anda mengatur nilai ke 0.5, abu-abu tengah di alpha tidak akan melakukan apa-apa, nilai hitam akan mendorong ke dalam, putih akan menarik keluar.
+Jika Anda ingin kuas mendorong permukaan ke dalam, atau mendorong ke dalam DAN menarik keluar sekaligus, Anda bisa mengubah nilai tengahnya. Jadi jika Anda mengaturnya ke 0,5, abu-abu tengah pada alpha tidak melakukan apa-apa, nilai hitam akan mendorong ke dalam, dan putih akan menarik keluar.
+
+Dua tombol membantu Anda menemukan nilai yang tepat: tombol persegi membaca nilai tengah dari tepi gambar, dan pemilih memungkinkan Anda mengambilnya langsung dari alpha.
 
 
 
 
-## Falloff {#falloff}
+## ![](/icons/falloff.webp) Penurunan {#falloff}
 
 ![](/images/falloff_menu.webp) 
 
-Ini mirip dengan [Alpha](#alpha), kecuali Anda mengendalikan intensitas dengan satu kurva. Ini digabungkan dengan alpha sehingga Anda dapat menggunakan tekstur untuk detail, dan falloff untuk mengontrol pemudaran tepi dan intensitas di tengah alat.
+Ini mirip dengan [Alpha](#alpha), hanya saja intensitasnya dikendalikan oleh satu kurva. Falloff digabungkan dengan alpha, sehingga Anda bisa memakai tekstur untuk detail, dan falloff untuk mengatur pemudaran di tepi serta intensitas di tengah alat.
 
-Saat kurva berada di atas, ini berarti deformasi penuh, saat berada di bawah kuas tidak berpengaruh.
+Saat kurva berada di atas, deformasinya penuh; saat berada di bawah, kuas tidak berpengaruh.
 
-Anda dapat menganggap kurva sebagai penampang melintang ujung kuas. Bagian bawah memberikan pratinjau seperti apa 'cap' tunggal kuas pada permukaan model, dan jika ada tekstur alpha untuk kuas, ini juga akan ditampilkan untuk mempratinjau bagaimana falloff dan alpha akan berinteraksi.
+Anda bisa membayangkan kurva ini sebagai penampang ujung kuas. Bagian bawah menampilkan pratinjau seperti apa satu 'cap' kuas di permukaan model, dan jika kuas memiliki tekstur alpha, tekstur itu juga ditampilkan untuk melihat bagaimana falloff dan alpha saling berpadu.
 
-### Preset {#preset}
-Dengan ini dipilih, mengklik grafik kurva akan menampilkan menu preset. Kurva membulat akan memberikan hasil yang lebih lembut, kurva bersudut akan memberikan hasil yang lebih tajam. Tombol `Sub` di toolbar kiri pada dasarnya akan membalik falloff, sehingga bagian atas kurva akan mendorong ke dalam permukaan alih-alih menarik keluar, atau sebaliknya.
+### ![](/icons/fx.webp) Prasetel {#preset}
+Dengan `Prasetel...` dipilih, mengklik grafik kurva akan memunculkan menu prasetel. Kurva yang membulat memberi hasil lebih lembut, kurva bersudut memberi hasil lebih tajam. Tombol `Kurang` di bilah alat kiri pada dasarnya membalik falloff, sehingga puncak kurva akan mendorong permukaan ke dalam alih-alih menariknya keluar, atau sebaliknya.
 
-### Catmull-Rom {#catmull-rom}
-Jika dipilih, pengguna dapat menggambar kurva falloff sendiri. Editor kurva bekerja sama seperti kurva di bagian lain Nomad:
+### ![](/icons/curve_catmull.webp) Catmull-Rom {#catmull-rom}
+Jika dipilih, Anda bisa menggambar kurva falloff sendiri. Editor kurvanya bekerja sama seperti kurva di bagian lain Nomad:
 
 * Klik pada kurva untuk membuat titik baru
 * Seret titik untuk memindahkannya
 * Klik pada titik untuk beralih antara tajam dan halus
-* Seret titik ke titik tetangga untuk menghapusnya
+* Seret titik ke titik tetangganya untuk menghapusnya
 
-### B-spline {#b-spline}
-Jika dipilih, pengguna dapat menggambar kurva falloff sendiri. Editor bekerja sama seperti Catmull-Rom, tetapi titik kurva memengaruhi kurva alih-alih berada langsung di atas kurva, yang dapat membantu membuat bentuk kurva yang lebih halus.
+### ![](/icons/curve_bspline.webp) B-spline {#b-spline}
+Jika dipilih, Anda bisa menggambar kurva falloff sendiri. Editornya bekerja sama seperti Catmull-Rom, tetapi titik-titiknya memengaruhi kurva alih-alih berada tepat di atas kurva, yang bisa membantu membuat bentuk kurva lebih halus.
 
-Editor kurva memiliki 3 tombol:
+### ![](/icons/curve_bevel.webp) Bevel {#bevel}
+Titik-titiknya dihubungkan dengan garis lurus, dengan sudut membulat yang ukurannya bergantung pada ketajaman tiap titik. Praktis untuk kuas berpuncak datar dengan bevel rapi di tepinya.
 
-| Item     | Icon                        | Description                                  |
+Editor kurva punya 3 tombol:
+
+| Item     | Ikon                        | Deskripsi                                    |
 | :------: | :-------------------------: | :------------------------------------------: |
-| Maximize | ![](/icons/maximize.webp)  | Memperluas editor kurva                      |
-| Reset    | ![](/icons/reset.webp)     | Mengembalikan kurva ke keadaan default       |
-| Symmetry | ![](/icons/symmetric.webp) | Menampilkan kurva sebagai 'ujung kuas' simetris |
+| Maksimalkan | ![](/icons/maximize.webp) | Memperbesar editor kurva                   |
+| Setel ulang | ![](/icons/reset.webp)  | Mengembalikan kurva ke keadaan bawaan        |
+| Simetri  | ![](/icons/symmetric.webp) | Menampilkan kurva sebagai 'ujung kuas' simetris |
 
 
 ### Pengaruh {#influence}
 
-* Sphere (3d) - Pengaruh dihitung dengan mengambil jarak dari vertex ke pusat kuas.
-* Circle (2d) - Vertex terlebih dahulu diproyeksikan ke bidang area, sebelum diambil jaraknya ke pusat kuas. Ini mirip dengan cara alpha di-sample. 
-* Cylinder - Pengaruh diproyeksikan melalui area sebagai silinder, digunakan oleh mode Silhouette di bawah.
+* `Bola` (3d) - Pengaruh dihitung dari jarak verteks ke pusat kuas.
+* `Lingkaran` (2d) - Verteks terlebih dahulu diproyeksikan ke bidang area, baru kemudian diukur jaraknya ke pusat kuas. Ini mirip dengan cara alpha diambil sampelnya. 
+* `Silinder` - Pengaruh diproyeksikan menembus area sebagai silinder. Ini sama dengan mengaktifkan [Siluet](#silhouette-1) di bawah.
+* `Punggungan` - Falloff diukur melintang goresan, sehingga kurvanya menjadi penampang seluruh goresan. Tombol `Sim` lalu mencerminkan profilnya melintang goresan: ubah satu sisi dan sisi lainnya mengikuti. Jika dimatikan, kurva berjalan dari sisi kiri goresan ke sisi kanannya. Tidak tersedia untuk alat berbasis flatten.
 
-### Siluet {#silhouette-1}
-Secara default stroke hanya akan memengaruhi permukaan model di dalam radius kuas. Saat silhouette diaktifkan, stroke akan diproyeksikan menembus seluruh model. Ini sangat berguna saat melakukan blocking awal model, atau untuk bentuk yang mengharuskan sisi-sisinya tetap tegak lurus.
+### ![](/icons/silhouette.webp) Siluet {#silhouette-1}
+Secara bawaan, goresan hanya memengaruhi permukaan model di dalam jari-jari kuas. Jika siluet diaktifkan, goresan akan diproyeksikan menembus seluruh model. Ini sangat berguna saat membuat bentuk dasar model di tahap awal, atau untuk bentuk yang sisi-sisinya harus tetap tegak lurus. Opsi proyeksinya sama dengan [Siluet](#silhouette) di tab Goresan.
 
 
 
-## Filter {#filter}
+## ![](/icons/filter.webp) Filter {#filter}
 
 ![](/images/filter_menu.webp) 
 
-### Akumulasi gores {#accumulate-stroke}
-Mengaktifkan tanpa batas seberapa banyak materi dapat ditambah/dihapus per stroke. Misalnya alat `Clay` memiliki ini diaktifkan, sehingga material dapat terus menumpuk, sementara alat `Brush` memiliki ini dinonaktifkan, sehingga stroke akan berhenti menambah material jika Anda terus menggerakkan stroke yang sama di area mesh yang sama. 
+### ![](/icons/accumulate.webp) Akumulasi stroke {#accumulate-stroke}
+Menghapus batas berapa banyak material yang bisa ditambahkan/dikurangi per goresan. Misalnya, alat `Tanah Liat` mengaktifkan opsi ini, jadi material bisa terus menumpuk, sedangkan alat `Kuas` menonaktifkannya, jadi goresan berhenti menambah material jika Anda terus menggerakkan goresan yang sama di area mesh yang sama. 
 
-### Hanya vertex menghadap depan {#front-facing-vertex-only}
-Opsi ini akan mengabaikan vertex yang menghadap ke belakang.
-Ini dapat berguna jika Anda ingin mengecat bagian dari geometri tipis tanpa memengaruhi sisi lainnya.
-Ini juga berfungsi untuk pemahatan tetapi Anda mungkin mengalami beberapa artefak.
+### ![](/icons/culling.webp) Hanya verteks menghadap depan {#front-facing-vertex-only}
+Opsi ini mengabaikan verteks yang menghadap ke belakang.
+Berguna jika Anda ingin mengecat sebagian geometri yang tipis tanpa mengenai sisi baliknya.
+Opsi ini juga bekerja untuk sculpting, tetapi mungkin muncul beberapa artefak.
 
-### Izinkan topologi dinamis {#allow-dynamic-topology}
-Opsi ini hanya tersedia jika mesh Anda berada dalam mode [Dynamic Topology](topology.md#dynamic-topology). Anda dapat menonaktifkan atau mengaktifkan dynamic topology per alat.
+### ![](/icons/eye_open.webp) Hanya vertex terlihat {#visible-vertex-only}
+Mengabaikan verteks yang tersembunyi di balik permukaan lain, dilihat dari kamera. Opsi ini muncul untuk goresan bentuk (laso, persegi panjang...) pada alat masker, alat cat, `Grup Face` dan `Sembunyi`.
 
-### Topologi terhubung {#connected-topology}
-Mengaktifkan hanya pemahatan pada vertex yang terhubung ke permukaan yang Anda sentuh dengan alat. Misalnya saat digunakan dengan alat `Move`, ini akan memungkinkan Anda memindahkan satu bagian meskipun bersilangan dengan bagian lain.
+### ![](/icons/dynamic.webp) Izinkan topologi dinamis {#allow-dynamic-topology}
+Opsi ini hanya tersedia jika mesh Anda dalam mode [Topologi dinamis](topology.md#dynamic-topology). Anda bisa menonaktifkan atau mengaktifkan topologi dinamis per alat.
+
+### ![](/icons/connect.webp) Topologi terhubung {#connected-topology}
+Hanya memahat verteks yang terhubung dengan permukaan yang Anda sentuh dengan alat. Misalnya, jika dipakai dengan alat `Pindah`, opsi ini memungkinkan Anda memindahkan satu bagian meskipun bagian itu bersinggungan dengan bagian lain.
 ![](/videos/connected_topology.mp4)
 
 ### Lindungi area {#protect-area}
 ![](/images/filter_protect_area.webp) 
 
-Opsi-opsi ini akan menghentikan alat memengaruhi bagian mesh Anda dalam berbagai kondisi. 
+Opsi-opsi ini mencegah alat memengaruhi bagian mesh Anda dalam berbagai kondisi. Masing-masing bisa diatur ke `Otomatis`, `Tidak` atau `Ya`, dan panah kecil menunjukkan nilai yang saat ini dipakai oleh `Otomatis`.
 
-Opsi 'Auto' berarti jika Anda memiliki hide, atau mask, atau facegroup yang terlihat di menu [Shading](shading), mereka akan dilindungi, tetapi jika dimatikan di menu tersebut, perlindungan dinonaktifkan.
+* `Sembunyi` - Jika ada bagian mesh yang disembunyikan dengan alat sembunyi, tentukan apakah bagian itu dilindungi. Pada `Otomatis`, face yang tersembunyi dilindungi, kecuali wireframe-nya terlihat (lihat pengaturan [Kerangka kawat](settings.md#wireframe)).
+* `Topeng` - Jika ada bagian mesh yang diberi masker, tentukan apakah bagian itu dilindungi. Pada `Otomatis`, bagian yang bermasker dilindungi selama masker terlihat di menu [Shading](shading).
+* `Grup Face` - Tentukan apakah alat hanya bisa dipakai di dalam grup face yang pertama kali disentuh. Pada `Otomatis`, ini mengikuti apakah grup face terlihat di menu [Shading](shading).
 
-* `All` - Toggle untuk mengatur apakah filter proteksi bersifat global, atau per alat.
-* `Hide` - Jika bagian mesh disembunyikan dengan alat hide, atur apakah bagian tersebut harus dilindungi.
-* `Mask` - Jika bagian mesh dimask, atur apakah bagian tersebut harus dilindungi.
-* `Facegroup` - Mengatur apakah Anda hanya dapat menggunakan alat di dalam facegroup pertama yang disentuh.
+Tombol `(All)` menentukan apakah perlindungan ini berlaku global, dipakai bersama oleh semua alat, atau diatur per alat.
 
 
-### Jaga tepi tajam {#keep-sharp-edges}
-Mengecualikan titik yang normalnya terlalu berbeda dari normal permukaan.
+### Pengambilan sampel area {#area-sampling}
+Beberapa kuas atau opsi goresan memerlukan normal bidang dan posisi bidang pada permukaan agar bisa bekerja.
 
-Ini akan mengubah bagaimana bidang area dihitung (Area sampling).
+Anda bisa mengatur cara bidang rata-rata ini dihitung dengan menetapkan area pengambilan sampel sebagai rasio dari jari-jari alat.
 
-Opsi ini dapat berguna untuk alat berbasis flatten, atau jika Anda ingin mewarnai permukaan yang sebagian besar datar tanpa meluber.
+Pada 100%, setiap titik di dalam lingkaran seleksi ikut diperhitungkan.
+
+Pada 0%, hanya verteks atau segitiga terdekat yang diperhitungkan. Nilai-nilai ini bisa ditautkan untuk `Radius normal` dan `Radius posisi`, atau dilepas tautannya dan diatur masing-masing.
+
+### Filter Normal Area {#keep-sharp-edges}
+Mengecualikan titik yang normalnya terlalu menyimpang dari normal permukaan.
+
+Ini mengubah cara area bidang dihitung (Pengambilan sampel area), jadi paling berguna untuk alat clay atau alat berbasis flatten, atau jika Anda ingin mewarnai permukaan yang sebagian besar datar tanpa warnanya meluber.
+
+Sudut `Min` dan `Maks` mengatur peralihan antara titik yang dikecualikan dan titik yang terpengaruh penuh, seperti yang ditunjukkan oleh cakram berwarna kecil di sebelahnya.
 
 ![](/videos/filter_keep_sharp_edges.mp4)
 
-### Sampling area {#area-sampling}
-Beberapa kuas atau opsi stroke memerlukan normal bidang dan posisi bidang terhadap permukaan agar dapat bekerja.
-
-Anda dapat mengontrol bagaimana menghitung bidang rata-rata ini dengan mengatur area sampling sebagai rasio dari radius alat.
-
-Pada 100%, setiap titik di dalam lingkaran seleksi diperhitungkan.
-
-Pada 0%, hanya vertex atau segitiga terdekat yang diperhitungkan. Nilai-nilai ini dapat ditautkan untuk `Normal radius` dan `Position radius`, atau dilepas dan diatur secara independen.
+### Filter Normal Falloff {#falloff-normal-filter}
+Seperti [Filter Normal Area](#keep-sharp-edges), filter ini mengecualikan titik yang normalnya terlalu menyimpang dari normal permukaan, tetapi bekerja pada falloff kuas, bukan pada perhitungan bidang. Berguna untuk mengecat lipatan atau tonjolan.
 
 
-### Masking kedalaman {#depth-masking}
+### Filter kedalaman {#depth-masking}
 ![](/images/stroke_depthmask.webp)
 
-Mengecualikan titik yang berada di atas atau di bawah jarak tertentu dari bidang yang dihitung (Area sampling).
+Mengecualikan titik yang berada di atas atau di bawah jarak tertentu dari bidang yang dihitung (Pengambilan sampel area).
 
-Ini dapat digunakan untuk mengecat hanya pada area yang berbukit, atau hanya pada area cekungan.
+Ini bisa dipakai untuk mengecat hanya di area yang menonjol, atau hanya di area cekungan.
 
-Grafik merepresentasikan penampang permukaan; garis horizontal adalah tempat permukaan berada, lingkaran merepresentasikan radius falloff cat relatif di atas dan di bawah permukaan. `Height offset` adalah persentase di atas atau di bawah permukaan untuk memulai perhitungan masking. `Top area` dan `Bottom area` memungkinkan Anda menskalakan falloff di atas dan di bawah titik offset.
+Grafiknya menggambarkan penampang permukaan; garis horizontal adalah letak permukaan, dan lingkaran menggambarkan jari-jari falloff cat di atas dan di bawah permukaan. `Penggeseran tinggi` adalah persentase di atas atau di bawah permukaan tempat perhitungan penyaringan dimulai. Dengan `Peredupan kedalaman` diaktifkan, `Area atas` dan `Area bawah` memungkinkan Anda mengatur skala falloff di atas dan di bawah titik offset.
 
-#### Contoh: Mewarnai di lekukan {#example-paint-in-cavities}
-Untuk mengecat hanya area cekungan, atur height offset ke -100%, dan sesuaikan slider top area sehingga menjauh dari garis horizontal. Ini berarti klik pertama mengatur kedalaman 'nol', dan kemudian hanya area di bawah kedalaman ini yang akan terpengaruh.
+#### Contoh: Mengecat di cekungan {#example-paint-in-cavities}
+Untuk mengecat hanya area cekungan, atur penggeseran tinggi ke -100%, lalu sesuaikan penggeser area atas agar menjauh dari garis horizontal. Artinya, klik pertama menetapkan kedalaman 'nol', lalu hanya area di bawah kedalaman ini yang akan terpengaruh.
 
 ![](/videos/stroke_depth_cavity.mp4)
 
-#### Contoh: Mewarnai di tonjolan {#example-paint-on-bumps}
-Untuk hanya mengecat di area tinggi, atur height offset ke +90%, sehingga bagian bawah lingkaran memotong garis horizontal sedikit. Saat Anda mengklik di puncak zona 'tinggi', ini akan mengatur kedalaman, sehingga apa pun pada kedalaman itu, plus sedikit di bawahnya, dan apa pun yang lebih tinggi darinya, akan dicat. Cekungan dalam akan dilewati.
+#### Contoh: Mengecat di tonjolan {#example-paint-on-bumps}
+Untuk mengecat hanya di area tinggi, atur penggeseran tinggi ke +90%, sehingga bagian bawah lingkaran sedikit memotong garis horizontal. Saat Anda mengklik puncak zona yang 'tinggi', kedalamannya ditetapkan di situ, sehingga semua yang berada di kedalaman itu, ditambah sedikit di bawahnya, dan semua yang lebih tinggi akan dicat. Cekungan yang dalam akan dilewati.
 ![](/videos/stroke_depth_bump.mp4)
 
 
-## Tekanan {#pressure}
+## ![](/icons/pressure.webp) Tekanan {#pressure}
 ![](/images/pressure_menu.webp) 
 
-Mengontrol bagaimana tekanan stylus/pena memengaruhi kuas.
+Mengatur bagaimana tekanan stylus/pena memengaruhi kuas.
 
-Secara default `Use global settings` diaktifkan, artinya semua kuas akan berbagi nilai tekanan yang sama.
+### Gunakan pengaturan global {#use-global-settings}
 
-### Tekanan - Radius {#pressure-radius}
+Secara bawaan, `Gunakan pengaturan global` diaktifkan, artinya semua kuas memakai nilai tekanan yang sama. Hapus centangnya untuk memberi alat yang sedang aktif pengaturan tekanannya sendiri.
 
-Kurva ini mengontrol bagaimana radius kuas dipengaruhi oleh tekanan. Default-nya adalah hubungan linear, jadi jika stylus Anda memiliki respons yang halus, maka perubahan radius juga akan terasa halus. Namun, banyak stylus memiliki respons non-linear, yang dapat Anda kompensasi dengan kurva ini. Misalnya, jika radius terasa tidak mencapai nilai maksimum pada tekanan tinggi, gunakan preset kurva seperti 'out-pow3', dengan lengkungan yang mengarah ke atas, untuk meningkatkan radius lebih awal.
+### ![](/icons/radius.webp) Radius {#pressure-radius}
 
-Dialog ini mirip dengan tampilan kurva falloff, Anda dapat menggunakan preset dengan mengetuk jendela kurva, atau menggambar kurva sendiri dengan mode Catmull-Rom dan B-Spline.
+Kurva ini mengatur bagaimana jari-jari kuas dipengaruhi oleh tekanan. Bawaannya adalah hubungan linear, jadi jika stylus Anda responsnya halus, perubahan jari-jarinya juga akan terasa halus. Meski begitu, banyak stylus punya respons yang tidak linear, dan Anda bisa mengimbanginya dengan kurva ini. Misalnya, jika jari-jari terasa tidak mencapai nilai maksimumnya pada tekanan tinggi, gunakan prasetel kurva seperti 'out-pow3', dengan lengkungan yang mengarah ke atas, agar jari-jari membesar lebih awal.
 
-Jika Anda menginginkan radius konstan, nonaktifkan bagian ini.
+Dialog ini mirip dengan tampilan kurva falloff: Anda bisa memakai prasetel dengan mengetuk jendela kurva, atau menggambar kurva sendiri dengan mode `Catmull-Rom`, `B-spline` dan `Bevel`.
 
-### Tekanan - Intensitas {#pressure-intensity}
+Jika Anda ingin jari-jari tetap, nonaktifkan bagian ini.
 
-Mirip dengan slider radius, tetapi untuk mengontrol intensitas. Jika Anda menginginkan intensitas konstan, nonaktifkan bagian ini.
+### ![](/icons/intensity.webp) Intensitas {#pressure-intensity}
 
-### Penghalusan tekanan {#pressure-smoothing}
+Mirip dengan kurva jari-jari, tetapi untuk mengatur intensitas. Jika Anda ingin intensitas tetap, nonaktifkan bagian ini.
 
-Merata-ratakan event tekanan stylus untuk hasil yang lebih halus.
+### Batasi tekanan pada 100% {#limit-pressure}
+
+Memastikan tekanan stylus tidak pernah melebihi 100%. Ini adalah pengaturan global.
+
+### Pelunakan tekanan {#pressure-smoothing}
+
+Merata-ratakan data tekanan stylus untuk hasil yang lebih halus.

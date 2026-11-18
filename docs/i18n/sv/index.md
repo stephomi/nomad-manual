@@ -1,4 +1,4 @@
-# Översikt {#overview}
+# ![](/icons/home.webp) Översikt {#overview}
 
 <!-- 
 [[toc]]
@@ -8,36 +8,38 @@
 ::: details
 -->
 
-::: tip Ny på Nomad?
+::: tip Ny i Nomad?
 Läs guiden [Kom igång](gettingstarted.md).
 :::
 
 
-## Innehållsförteckning {#table-of-contents}
+## Innehåll {#table-of-contents}
 
-| Meny                           | Ikon                          | Beskrivning                                       |
-| :----------------------------: | :---------------------------: | :-----------------------------------------------: |
-| [Filer](files.md)              | ![](/icons/open.webp)        | Hantera dina projekt, exportera, importera, etc   |
-| [Scen](scene.md)               | ![](/icons/scene.webp)       | Lägg till nya primitiv och hantera dina scenobjekt |
-| [Topologi](topology.md)        | ![](/icons/multires.webp)    | Redigera modellens topologi                       |
-| [Material](material.md)        | ![](/icons/material.webp)    | Material (objektnivå)                             |
-| [Skuggning](shading.md)        | ![](/icons/sun.webp)         | Hur du ljussätter din scen                        |
-| [Efterbearbetning](postprocess.md) | ![](/icons/postprocess.webp) | Efterbearbetning (skärmbaserade visuella effekter) |
-| [Bakgrund](background.md)      | ![](/icons/image.webp)       | Ändra bakgrunden och lägg till en referensbild    |
-| [Kamera](camera.md)            | ![](/icons/camera.webp)      | Kamerakontroll och interaktion                    |
-| [Streck](stroke.md)            | ![](/icons/pencil.webp)      | Redigera inställningar för aktuellt verktyg, streck, avtoning... |
-| [Tryck](pressure.md)           | ![](/icons/pressure.webp)    | Hantera trycket på din penna                      |
-| [Målning](painting.md)	     | ![](/icons/paint.webp)       | Målningsinställningar för målningsverktyg         |
-| [Symmetri](symmetry.md)        | ![](/icons/symmetry.webp)    | Hantera spegelplanet för ditt aktuella mesh       |
-| [Lager](layers.md)             | ![](/icons/layer.webp)       | Hantera lagren för ditt aktuella objekt           |
-| [Inställningar](settings.md)   | ![](/icons/cog.webp)         | Anpassa 3D-vyn                                    |
-| [Gränssnitt](interface.md)     | ![](/icons/sliders.webp)   | Anpassa gränssnittet                              |
-| [Verktyg](tools.md)            | ![](/icons/toolbox.webp)     | Lista över alla verktyg/penslar                   |
-| [Historik](history.md)         | ![](/icons/history.webp)     | Hantera ångra/gör om-historiken                   |
-| [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Vanliga frågor                                    |
-| [Tips](tips.md)                | ![](/icons/manual.webp)      | Arbetsflödestips                                  |
+| Meny                           | Ikon                         | Beskrivning                                        |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
+| [Filer](files.md)              | ![](/icons/open.webp)        | Hantera dina projekt, exportera, importera med mera |
+| [Scen](scene.md)              | ![](/icons/scene.webp)       | Lägg till nya grundformer och hantera objekten i scenen |
+| [Topologi](topology.md)        | ![](/icons/multires.webp)    | Redigera modellens topologi                        |
+| [Material](material.md)        | ![](/icons/material.webp)    | Material (på objektnivå)                           |
+| [Skuggning](shading.md)          | ![](/icons/sun.webp)         | Hur du belyser din scen                            |
+| [Efterbehandling](postprocess.md) | ![](/icons/postprocess.webp) | Efterbehandling (visuella effekter i skärmrymden)  |
+| [Bakgrund](background.md)    | ![](/icons/image.webp)       | Ändra bakgrunden och lägg till en referensbild     |
+| [Kamera](camera.md)            | ![](/icons/camera.webp)      | Kamerastyrning och interaktion                     |
+| [Transformera](transform.md)      | ![](/icons/transform.webp)   | Skriv in ett objekts position, rotation och storlek |
+| [Penseldrag](stroke.md)            | ![](/icons/brush.webp)       | Ändra inställningarna för det aktuella verktyget, penseldrag, avtoning... |
+| [Tryck](stroke.md#pressure)        | ![](/icons/pressure.webp)    | Hantera trycket från din penna                     |
+| [Målning](painting.md)	       | ![](/icons/paint.webp)       | Målningsinställningar för målarverktygen           |
+| [Symmetri](symmetry.md)        | ![](/icons/symmetry.webp)    | Hantera spegelplanet för det aktuella meshobjektet |
+| [Operation](operation.md)      | ![](/icons/operation.webp)   | Jämna ut, blås upp, färga om eller gör en hel mesh suddig |
+| [Lager](layers.md)            | ![](/icons/layer.webp)       | Hantera lagren i det aktuella objektet             |
+| [Inställningar](settings.md)        | ![](/icons/cog.webp)         | Anpassa 3d-vyn                                     |
+| [Gränssnitt](interface.md)      | ![](/icons/sliders.webp)     | Anpassa gränssnittet                               |
+| [Verktyg](tools.md)              | ![](/icons/toolbox.webp)     | Lista över alla verktyg och penslar                |
+| [Historik](history.md)          | ![](/icons/history.webp)     | Hantera historiken för ångra/gör om                |
+| [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Vanliga frågor                                     |
+| [Tips](tips.md)                | ![](/icons/manual.webp)      | Tips för arbetsflödet                              |
 
-## Community‑resurser {#community-resources}
+## Resurser från communityn {#community-resources}
 
 <style>
 .video-grid {

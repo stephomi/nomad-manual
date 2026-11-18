@@ -1,143 +1,167 @@
 # ![](/icons/paint.webp) Pittura {#painting}
 
-Controlla il colore, la ruvidità, la metallicità dei tratti di pittura, consenti il riempimento globale degli attributi di pittura e definisci come gli strumenti di pittura interagiscono con livelli, maschere e selezioni nascoste.
+Controlla il colore, la rugosità e la metallicità dei tratti di pittura, permette di riempire interamente gli attributi di pittura, e stabilisce come gli strumenti di pittura interagiscono con livelli, maschere e zone nascoste.
 
 ![](/images/paint_overview.webp)  
 
 ## Panoramica {#overview}
 
-Nomad utilizza la pittura PBR sui vertici. Cosa significa?
+Nomad usa la pittura PBR sui vertici. Cosa significa?
 
 ### PBR {#pbr}
-PBR, o Physically Based Rendering, è una tecnica di grafica computerizzata molto diffusa per cinema, televisione, videogiochi e mobile. Basando le luci su proprietà fisiche e definendo le superfici tramite colore, ruvidità, metallicità, è possibile ottenere un’ampia varietà di risultati fotorealistici.
+Il PBR, o Physically Based Rendering (rendering basato sulla fisica), è una tecnica di computer grafica molto diffusa nel cinema, in televisione, nei videogiochi e sui dispositivi mobili. Basando le luci su proprietà fisiche e definendo le superfici tramite colore, rugosità e metallicità, si ottiene un'ampia varietà di aspetti fotorealistici.
 
-### Pittura per vertici {#vertex-painting}
+### Pittura dei vertici {#vertex-painting}
 
-Pittura sui vertici significa che le informazioni di pittura sono memorizzate nei vertici del modello, invece che nelle texture. Poiché Nomad può gestire modelli con centinaia di migliaia, spesso milioni di vertici, i tuoi modelli possono avere una pittura superficiale altamente dettagliata; se puoi scolpire il dettaglio, puoi anche dipingerlo.
+Pittura dei vertici significa che le informazioni di pittura vengono salvate nei vertici del modello, invece che nelle texture. Dato che Nomad gestisce modelli con centinaia di migliaia, spesso milioni di vertici, i tuoi modelli possono avere una pittura della superficie molto dettagliata: se riesci a scolpire un dettaglio, puoi anche dipingerlo.
 
-Questo significa anche che dipingere in Nomad non richiede il mapping UV, spesso un processo lento e tecnico in altre applicazioni 3D. Molte altre applicazioni 3D non supportano i conteggi di vertici elevati che supporta Nomad, tuttavia Nomad dispone anche di buoni strumenti di baking delle texture e di decimazione per aiutare.
+Significa anche che per dipingere in Nomad non serve la mappatura UV, spesso un processo lento e tecnico in altre app 3d. Molte altre app 3d non reggono l'alto numero di vertici che gestisce Nomad, ma Nomad ha anche buoni strumenti di trasferimento delle texture e di decimazione per aiutarti.
 
-### Texturing {#texturing}
+### Texture {#texturing}
 
-Nomad supporta le texture, ma devono essere presenti in un modello importato, oppure tramite il baking della pittura sui vertici in texture. 
+Nomad supporta le texture, ma devono essere presenti in un modello importato, oppure ottenute trasferendo la pittura dei vertici su texture. 
 
-Una texture è semplicemente un’immagine, ma nel contesto 3D di solito si riferisce a un’immagine assegnata a un oggetto.
-Per avvolgere un’immagine attorno a un modello, il modello ha bisogno di coordinate di texture (UV).
+Una texture è semplicemente un'immagine, ma nel contesto 3d indica di solito un'immagine assegnata a un oggetto.
+Per avvolgere un'immagine attorno a un modello, il modello ha bisogno di coordinate di texture (UV).
 
-Nomad può [calcolarle automaticamente](topology.md#uv-unwrap) ma non hai molto controllo sulla qualità complessiva.
+Nomad può calcolarle [automaticamente](topology.md#uv-unwrap), ma non hai molto controllo sulla qualità complessiva.
 
 ::: tip
-Un esempio di workflow:
-- Scolpisci in Nomad, poi esegui l’[UV unwrap](topology.md#uv-unwrap)
-- Se hai già iniziato a dipingere in Nomad puoi [trasferire la pittura sui vertici alle texture](topology.md#bake-vertex-colors-to-texture)
+Un esempio di flusso di lavoro:
+- Scolpisci in Nomad, poi esegui lo [sviluppo UV](topology.md#uv-unwrap)
+- Se hai già iniziato a dipingere in Nomad, puoi [trasferire la pittura dei vertici sulle texture](topology.md#bake-texture)
 - Esporta in Procreate
-- Fai il texturing in Procreate
-- Esporta di nuovo in Nomad per il rendering
+- Dipingi le texture in Procreate
+- Riesporta in Nomad per il rendering
 :::
 
-Questa è la panoramica, ora esploriamo le sezioni del menu di pittura:
+Questa era la panoramica, ora esploriamo le sezioni del menu Pittura:
 
 
-## Pennellata di pittura {#stroke-painting}
+## Pittura del tratto {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
-Abilita la pittura per questo strumento, utile se hai bisogno di scolpire e dipingere allo stesso tempo.
+Abilita la pittura per questo strumento, utile se devi scolpire e dipingere contemporaneamente. Quando uno strumento può dipingere ma questa casella è disattivata, un'icona di avviso accanto al titolo te lo ricorda.
 
-Per gli strumenti in cui la pittura è la funzione principale (ad es. Paint, Smudge, Mask), questa casella non esiste.
+Per gli strumenti la cui funzione principale è dipingere (per esempio Dipingi, Sfumino, Maschera), questa casella non c'è.
 
-### Intensità della pittura {#paint-intensity}
+### ![](/icons/opacity.webp) Intensità pittura {#paint-intensity}
 
-Uno slider che ti permette di usare un’intensità diversa rispetto all’intensità principale dello strumento.
+Un cursore che ti permette di usare per la pittura un'intensità diversa da quella principale dello strumento.
 
-Le caselle `Alpha`, `Falloff` e `Randomize` determinano se queste funzioni influenzeranno la pittura. Ad esempio potresti avere la randomizzazione abilitata per lo strumento Clay, ma il colore non verrà randomizzato.
+Il pulsante con i cursori accanto aggiunge alla barra laterale un cursore rapido per l'intensità della pittura, per gli strumenti che scolpiscono e dipingono allo stesso tempo.
+
+I pulsanti `Alfa`, `Decadimento` e `Randomizza intensità` stabiliscono se queste funzioni influiscono sulla pittura. Per esempio, puoi avere la randomizzazione attiva per lo strumento Argilla, senza che il colore venga randomizzato.
+
+* `Alfa` - quando è disattivato, la pittura ignora l'alfa e copre tutta l'area del pennello. Con lo strumento VDM, questo pulsante è sostituito da `Materiale timbro`, che attiva o disattiva il materiale salvato nel timbro.
+* `Decadimento` - quando è disattivato, la pittura resta a piena intensità fino al bordo del pennello.
+* `Randomizza intensità` - se la parte di intensità della randomizzazione del tratto influisce sulla pittura. La randomizzazione di posizione, rotazione e scala sposta sempre l'intero timbro.
+
+Queste opzioni vengono ignorate da [Dipingi tutto](#paint-all), ma la sua variante triplanare usa l'alfa.
+
+### ![](/icons/link.webp) Materiale globale {#global-material}
+Se questa opzione è attiva, il materiale selezionato è lo stesso degli altri strumenti. Nota che tiene conto solo delle impostazioni di rugosità, metallicità e colore. Disattivala per dare a questo strumento un materiale tutto suo.
 
 
 ## Materiale {#material}
 ![](/images/paint_material.webp) 
 
-La prima icona è una forma di anteprima del materiale. Trascinando sull’anteprima 3D del materiale lo ruoterai. 
+La prima icona è una forma di anteprima del materiale. Trascinando sull'anteprima 3d del materiale la fai ruotare. 
 
-La seconda icona è un’anteprima del tratto di pittura con l’alpha e il falloff selezionati.
+La seconda icona è un'anteprima del tratto di pittura con l'alfa e le opzioni di decadimento selezionate.
 
-Il pulsante di anteprima accanto al titolo Material ti permette di passare tra None, Material o Triplanar. Questo determina cosa accadrà quando cambi interattivamente le proprietà di pittura:
+### ![](/icons/falloff.webp) Curve {#curves}
 
-* `None` - Nessuna anteprima verrà mostrata sul modello quando regoli le proprietà
-* `Material` - I valori del materiale verranno mostrati in anteprima sull’oggetto quando regoli le proprietà. Se usi texture e il modello ha UV, verranno usati gli UV.
-* `Triplanar` - Il materiale verrà mostrato in anteprima come proiezione Triplanar. 
+Apre un editor di curve per gli slot texture dei [cursori PBR](#pbr-sliders). Rimappa i valori della texture prima che vengano dipinti, senza toccare il file immagine. Una piccola icona a curva su uno slot texture ti indica che la sua curva è stata modificata.
 
-Il contagocce può essere usato per campionare tutte le proprietà da un oggetto nella tua scena.
+### ![](/icons/cog.webp) Opzioni del materiale {#material-options}
 
-## Preset materiali {#material-presets}
-Toccando la forma di anteprima 3D verrà visualizzato un menu di preset di materiali, che possono essere clonati per definire i tuoi preset.
+Il pulsante `Materiale` accanto al titolo contiene due impostazioni.
+
+`Anteprima materiale nel viewport` stabilisce cosa succede sull'oggetto selezionato mentre cambi i cursori di colore, rugosità, metallicità, opacità e intensità:
+
+* `Nessuno` - Nessuna anteprima viene mostrata sul modello quando regoli le proprietà
+* `Materiale` - I valori del materiale vengono mostrati in anteprima sull'oggetto quando regoli le proprietà.
+* `Triplanare` - Il materiale viene mostrato in anteprima come proiezione triplanare. 
+
+Le caselle di colore, rugosità, metallicità e opacità qui sotto scelgono quali canali vengono sostituiti dal [Contagocce materiale](#material-picker).
+
+### ![](/icons/dropper.webp) Contagocce materiale {#material-picker}
+
+Il contagocce preleva il materiale sotto il cursore, da qualsiasi oggetto della scena. Vengono sostituiti solo i canali spuntati nelle [Opzioni del materiale](#material-options).
+
+## Preset di materiali {#material-presets}
+Toccando la forma di anteprima 3d si apre un menu di preset di materiali, che puoi clonare per definire i tuoi preset.
 
 ![](/images/paint_presets.webp) 
 
-Le opzioni `Embed Textures` e `Alpha`, se abilitate, memorizzeranno all’interno del preset qualsiasi texture usata da questo materiale. Questo è spiegato meglio più avanti.
+L'interruttore `Incorpora texture` salva dentro il preset una copia delle texture usate da questo materiale. Senza di esso, il preset fa solo riferimento alle texture nella cartella textures/ di Nomad. Attivalo quando vuoi condividere un preset con texture senza inviarle a parte.
 
-## Slider PBR {#pbr-sliders}
+`Includi Alpha` salva anche l'alfa del pennello nel preset del materiale.
+
+## Cursori PBR {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
-La pittura [PBR](shading.md#pbr) utilizza 4 canali:
-- `Color` Il colore che verrà dipinto. Il contagocce può essere usato per selezionare il colore da altre parti del modello o da immagini di riferimento.
-- `Roughness` Indica quanto è “ruvida” o “liscia” una superficie. Un valore basso di ruvidità significa che i riflessi saranno nitidi.
-- `Metalness` Indica semplicemente se la superficie è metallica o no. Il valore dovrebbe essere per lo più 0% o 100%, i valori intermedi dovrebbero essere eccezioni.
-- `Opacity` Quanto il materiale può essere visto attraverso. Rigorosamente parlando non fa parte della specifica PBR, ma è utile in molte situazioni. 1 è completamente opaco, 0 è trasparente. Nota che opacità e rifrazione sono cose diverse, la rifrazione in Nomad è gestita tramite il materiale di rifrazione. 
+La pittura [PBR](shading.md#pbr) usa 4 canali:
+- `Colore` Il colore che verrà dipinto. Il contagocce può prelevare il colore da altre parti del modello o dalle immagini di riferimento.
+- `Rugosità` Indica quanto una superficie è "ruvida" o "liscia". Un valore basso di rugosità dà riflessi nitidi.
+- `Metallicità` Indica semplicemente se la superficie è metallica o no. Il valore dovrebbe essere quasi sempre 0% o 100%; i valori intermedi dovrebbero essere un'eccezione.
+- `Opacità` Quanto si vede attraverso il materiale. A rigore non fa parte delle specifiche PBR, ma è utile in molte situazioni. 1 è completamente opaco, 0 è trasparente. Nota che opacità e rifrazione sono cose diverse: in Nomad la rifrazione si gestisce con il materiale di rifrazione. 
 
-Se selezioni un preset di materiale, 3 canali vengono dipinti simultaneamente (l’opacità è spesso intenzionalmente esclusa). Questo significa che invece di dipingere solo “rosso”, puoi dipingere “un metallo rosso ruvido” o “una plastica bianca liscia”.
+Se selezioni un preset di materiale, vengono dipinti 3 canali contemporaneamente (l'opacità spesso è esclusa di proposito). Così, invece di dipingere solo 'rosso', puoi dipingere 'un metallo rosso ruvido' o 'una plastica bianca liscia'.
 
-Il quadrato è uno slot di texture, toccalo per usare una texture per quella proprietà invece di un valore uniforme.
+Il quadrato è uno slot texture: toccalo per usare una texture per quella proprietà invece di un valore fisso. Una texture di colore tinge il colore, mentre una texture di rugosità, metallicità o opacità sostituisce il valore del cursore (la sua etichetta viene barrata per mostrarlo). Per la texture di opacità, `Usa Alpha come Valore` legge il canale alfa della texture invece del suo valore in scala di grigi.
 
-L’icona del pennello accanto agli slider eseguirà un riempimento globale di quella proprietà sull’oggetto.
+Con lo strumento VDM, quando il timbro ha un proprio materiale, uno slot in più lo mostra accanto allo slot texture. Toccalo per usare o ignorare quel canale del timbro.
 
-La casella abilita o disabilita quella particolare proprietà, quindi potresti dipingere solo il colore, oppure solo la ruvidità e l’opacità, per esempio. 
+L'icona del pennello accanto ai cursori riempie con quella proprietà tutto l'oggetto.
 
-Ecco alcuni esempi di diverse proprietà di ruvidità e metallicità:
+La casella di spunta attiva o disattiva quella proprietà, così puoi per esempio dipingere solo il colore, oppure solo rugosità e opacità. 
 
-|                | Metalness 0%                      | Metalness 100%               |
+Ecco alcuni esempi di diverse combinazioni di rugosità e metallicità:
+
+|                | Metallicità 0%                    | Metallicità 100%             |
 | :------------: | :-------------------------------: | :--------------------------: |
-| Roughness 0%   | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
-| Roughness 50%  | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
-| Roughness 100% | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
+| Rugosità 0%    | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
+| Rugosità 50%   | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
+| Rugosità 100%  | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
 
 ::: warning
-Solo il colore è supportato nella modalità di [rendering Matcap](shading.md#matcap), metallicità e ruvidità vengono ignorate.
+Rugosità e metallicità richiedono la modalità di shading [Illuminato (PBR)](shading.md#pbr). In modalità [MatCap](shading.md#matcap) o [Non illuminato](shading.md#unlit) vengono ignorate, e il menu mostra un avviso.
 :::
 
 ::: tip
-Quando usi texture per la pittura PBR, è spesso utile passare a uno strumento come `Stamp`, oppure usare il menu Stroke per usare una modalità diversa da Dot, che può sbavare la texture.
+Quando usi le texture per la pittura PBR, spesso conviene passare a uno strumento come `Timbro`, oppure usare il menu Tratto per scegliere una modalità diversa da quella a punti, che può sbavare la texture.
 
 ![](/videos/paint_color_texture.mp4)  
 :::
 
 ::: tip
-Potresti considerare di attivare lo `Smooth Shading` [globalmente](settings.md#smooth-shading) o [per oggetto](material.md#smooth-shading) se stai dipingendo una superficie metallica su un oggetto con un numero di poligoni basso.
+Valuta di attivare `Ombreggiatura uniforme` [globalmente](settings.md#smooth-shading) o [per oggetto](material.md#smooth-shading) se dipingi una superficie metallica su un oggetto con pochi poligoni.
 :::
 
-## Dipingi tutto {#paint-all}
+## ![](/icons/paint.webp) Dipingi tutto {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
-Applica il materiale corrente all’oggetto, in modalità standard con “Paint All”, oppure come proiezione Triplanar.
+Applica il materiale attuale agli oggetti selezionati, in modalità standard con `Dipingi tutto`, oppure come proiezione triplanare con `Dipingi tutto + Triplanare`. La variante triplanare non è disponibile sulle primitive non ancora convalidate.
 
-Le caselle accanto agli slider di color/metalness/roughness/opacity vengono rispettate, qualsiasi proprietà disabilitata non verrà riempita.
+Le caselle accanto ai cursori di colore/metallicità/rugosità/opacità vengono rispettate: le proprietà disattivate non vengono riempite.
 
-I pulsanti aggiuntivi controllano come il Paint All può essere ulteriormente influenzato:
+I pulsanti aggiuntivi controllano come Dipingi tutto può essere ulteriormente condizionato. La maggior parte mostra una percentuale, e sono in grigio quando non avrebbero alcun effetto:
 
-| Icon                        | Description                                      |
-| :-------------------------: | :----------------------------------------------: |
-| ![](/icons/tool_mask.webp) | Le aree mascherate non verranno influenzate.     |
-| ![](/icons/tool_hide.webp) | Le aree nascoste non verranno influenzate.       |
-| ![](/icons/opacity.webp)   | Usa il fattore di pittura dello strumento sopra. |
-| ![](/icons/layer.webp)     | Le aree non dipinte di un livello non verranno influenzate. |
-| ![](/icons/triplanar.webp) | Indicatore delle impostazioni Triplanar          |
-| ![](/icons/cog.webp)       | Apre le impostazioni Triplanar                   |
+| Icona                       | Descrizione                                   |
+| :-------------------------: | :-------------------------------------------: |
+| ![](/icons/shield.webp)    | Le zone mascherate non vengono toccate.       |
+| ![](/icons/tool_hide.webp) | Le zone nascoste non vengono toccate.         |
+| ![](/icons/opacity.webp)   | Usa il fattore di pittura dello strumento qui sopra. |
+| ![](/icons/layer.webp)     | Le zone non dipinte di un livello non vengono toccate. |
+| ![](/icons/triplanar.webp) | `Vertice`: la variante triplanare sposta anche la superficie con l'alfa, secondo l'intensità dello strumento indicata. |
+| ![](/icons/cog.webp)       | Apre le impostazioni triplanari               |
 
-### Impostazioni triplanari {#triplanar-settings}
+### ![](/icons/cog.webp) Impostazioni triplanari {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
-Simili alle [impostazioni Triplanar nel menu Material](material.md#triplanar), puoi controllare la fusione delle proiezioni, il tiling e gli offset. 
+Come per le [impostazioni triplanari nel menu Materiale](material.md#triplanar), puoi controllare la fusione delle proiezioni, la ripetizione e gli spostamenti. 
 
-Usa la casella di anteprima in cima a questo menu per abilitare un’anteprima persistente mentre regoli i valori.
-
-## Materiale globale {#global-material}
-Se questa opzione è abilitata, il materiale selezionato sarà lo stesso per gli altri strumenti. Nota che tiene conto solo delle impostazioni di ruvidità, metallicità e colore.
+Usa la casella di anteprima in cima a questo menu per avere un'anteprima continua mentre regoli i valori.

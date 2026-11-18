@@ -1,78 +1,94 @@
 # ![](/icons/symmetry.webp) Symetrie {#symmetry}
 
-Tato nabídka ovládá, jak budou tahy opakovány přes zrcadlovou rovinu nebo radiálně, a způsoby, jak obnovit symetrii na nesymetrických objektech.
+Tato nabídka určuje, jak se tahy opakují přes zrcadlovou rovinu, radiálně nebo jako dlaždice, a nabízí způsoby, jak obnovit symetrii u nesymetrických objektů.
 
 ![](/images/symmetry_overview.webp) 
 
 ## Přehled {#overview}
-Symetrii můžete používat několika způsoby:
+Symetrii můžete využít několika způsoby:
 
-* Jako zrcadlo, které převrací práci přes osy X (vlevo/vpravo), Y (nahoře/dole), Z (vzadu/vpředu), nebo jejich kombinaci. 
-* Radiální symetrii lze nastavit na osách X Y Z s počtem opakování, např. při modelování hvězdice. 
-* Zrcadla mohou fungovat kolem počátku souřadného systému (tzv. režim svět) nebo kolem středu objektu (tzv. lokální režim).
-* Sochy, které začaly jako nesymetrické, lze vynutit jako symetrické.
+* Jako zrcadlo, které převrací práci přes osu X (vlevo/vpravo), Y (nahoře/dole), Z (vzadu/vpředu) nebo jejich kombinaci. 
+* Radiální symetrii lze nastavit na X, Y, Z s počtem opakování, například při modelování hvězdice. 
+* Dlaždice opakují vaše tahy po objektu, takže se model plynule opakuje bez švů.
+* Zrcadla mohou pracovat kolem počátku (tzv. režim svět) nebo kolem středu objektu (tzv. lokální režim).
+* Model, který jste začali nesymetricky, lze dodatečně přinutit k symetrii.
 
-Zkratku pro zapnutí/vypnutí symetrie lze také najít v levém rychlém panelu (*„Sym“*). Malé „L/W“ označuje, zda je Nomad v lokálním nebo světovém režimu symetrie. Dlouhým stiskem nebo přejetím do středu obrazovky můžete také vyvolat nabídku.
+Zkratku pro zapnutí a vypnutí symetrie najdete také v levém rychlém panelu (*„Sym“*). Malé „L/W“ ukazuje, jestli je Nomad v lokálním, nebo světovém režimu symetrie. Dlouhým stiskem nebo potáhnutím směrem ke středu obrazovky také vyvoláte nabídku.
 
 ![](/images/symmetry_button.webp) 
 
-Jde o globální volbu, takže stav se přenáší mezi různými nástroji.
-Jedinými výjimkami jsou transformační nástroje ([Přesunout](#translate), [Otočit](#rotate), [Měřítko](#scale) a [Gizmo](#gizmo)), které mají vlastní stav symetrie.
+Nastavení symetrie se ukládá s každým objektem a v nadpisu nabídky je název objektu, který upravujete.
+Modelovací nástroje sdílejí stejný stav zapnuto/vypnuto, zatímco transformační nástroje ([Přeměnit](tools.md#transform) a [Gizmo](tools.md#gizmo)) mají vlastní.
 
 ::: tip
-Nabídka symetrie slouží hlavně k ovládání symetrie tahů. Objekty můžete také zrcadlit a opakovat pomocí [repeaterů v nabídce scény](scene#repeaters). 
+Nabídka symetrie slouží hlavně k ovládání symetrie tahů. Objekty můžete zrcadlit a opakovat také pomocí [opakovačů v nabídce scény](scene#repeaters). 
 :::
 
-## Povolené {#enabled}
-Přepíná režim zrcadlení, je to totéž jako tlačítko `Sym` v levém rychlém panelu. 
+## ![](/icons/symmetry.webp) Povoleno {#enabled}
+Zapne nebo vypne zrcadlový režim, stejně jako tlačítko `Sym` v levém rychlém panelu. Když je vypnutý, připomene vám to ikona upozornění, a nabídka vám také řekne, když aktuální nástroj symetrii ignoruje.
 
 ## Roviny {#planes}
 
-Zapnutí roviny/rovin symetrie a nastavení počtu opakování pro radiální symetrii. Nemusíte volit jen jednu rovinu, pro složitou symetrii můžete mít zapnuté 1, 2 nebo 3 roviny.
+Zapněte rovinu (nebo roviny) symetrie a počet opakování pro radiální symetrii. Nemusíte se omezovat na jedinou rovinu: pro složitou symetrii můžete mít zapnuté 1, 2 nebo všechny 3 roviny.
 
-Osa a počet opakování pro radiální symetrii. Ani tyto volby nejsou omezeny jen na jednu osu a mohou fungovat i v kombinaci s rovinnou symetrií, takže lze velmi rychle generovat detailní výsledky. (Celkový počet opakování je omezen na 150.)
+Řádek `Radiálně` nastavuje počet opakování radiální symetrie kolem každé osy. Ani tady nejste omezeni na jedinou osu a radiální symetrie může dokonce fungovat v kombinaci se zrcadlovou, takže velmi rychle získáte detailní výsledky. (Celkový počet opakování je omezen na 200.)
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Metoda {#method}
-Zrcadlo může být buď „Local“ (lokální) a pohybovat se s objektem, nebo „World“ (světové) a zůstávat nehybné. Pokud si nejste jisti, který režim potřebujete, sledujte rovinu zrcadlení a radiální indikátory překryté přes objekt. V lokálním režimu se při použití transformačního gizma a posunu modelu budou indikátory zrcadla pohybovat spolu s ním. Ve světovém režimu zůstanou indikátory zrcadla na místě a objekt se bude skrz ně posouvat.
+## Dlaždice {#tile}
 
-## Zrcadlení {#mirroring}
+Opakuje vaše tahy podél osy v pravidelných vzdálenostech, takže se model plynule opakuje bez švů. Hodí se na vzory, cihly nebo texturu, kterou chcete opakovat.
+
+Dlaždice zapnete pro každou osu tlačítky `Dlaždice` a pak nastavte buď `Počet` (kolik opakování pokryje objekt), nebo `Vzdálenost` (mezera mezi dvěma opakováními). Mezi těmito dvěma možnostmi přepnete přepínačem vlevo.
+
+## Metoda {#method}
+Zrcadlo může být `Lokální` a pohybovat se s objektem, nebo `Svět` a zůstávat na místě. Pokud si nejste jistí, který režim potřebujete, sledujte indikátory zrcadlové roviny a radiální symetrie zobrazené přes objekt. V lokálním režimu se při posunu modelu transformačními nástroji (`Gizmo` nebo `Přeměnit`) posunou i indikátory zrcadla. V režimu svět zůstanou indikátory pevně na místě a objekt se skrz ně posouvá.
+
+## Zrcadlo {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
-Při modelování v blízkosti rovin symetrie mohou mít některé štětce nedokonalé symetrické chování. Tato sekce umožňuje obnovit symetrii zkopírováním jedné strany sochy na druhou. 
+Při modelování blízko rovin symetrie se některé štětce nechovají úplně symetricky. Tato část vám umožní symetrii obnovit tím, že zkopíruje jednu stranu modelu na druhou. 
 
-`Direction` – Tlačítka `<<` a `>>` určují, která strana bude zkopírována na druhou. Nomad to počítá z aktuálního pohledu, takže nastavení na `<<` například vždy zkopíruje z pravé strany obrazovky na levou.
+`Směr` - Dvě tlačítka se šipkami vedle nadpisu `Zrcadlo` určují, která strana se zkopíruje na druhou. Nomad to počítá z aktuálního pohledu, takže strana zůstává na obrazovce stejná, ať se na model díváte odkudkoli.
 
-![](/icons/shield.webp) `Mask` – Tlačítko masky vám umožní vymezit, co bude zrcadleno; maskování cílové strany tuto oblast ochrání, maskování zdrojové strany zabrání tomu, aby se tato oblast zrcadlila do cíle. 
+![](/icons/shield.webp) `Maska` - Tlačítkem masky můžete omezit, co se zrcadlí; maskování cílové strany tuto oblast ochrání, maskování zdrojové strany zabrání tomu, aby se oblast zrcadlila na cílovou stranu. 
 
-![](/icons/tool_hide.webp) `Hide` – Pokud je aktivní, oblasti, které jsou na zdrojové straně skryté, nebudou zrcadleny do cíle. 
+![](/icons/tool_hide.webp) `Skrýt` - Když je aktivní, skryté oblasti na zdrojové straně se na cílovou stranu nezrcadlí. 
 
-`Mirror` se pokusí zjistit, zda je topologie na obou stranách zrcadla stejná, a pokud ano, pouze přesune vrcholy. To je běžnější scénář.
+`Zrcadlo` (udržet topologii) se pokusí zjistit, jestli je topologie na obou stranách zrcadla stejná, a pokud ano, jen posune vrcholy. To je nejběžnější případ. Radiální symetrie se ignoruje. Pokud topologie symetrická není, Nomad nabídne vynutit zrcadlení pomocí `Řez • Zrcadlo`.
 
-`Split & Mirror` v podstatě objekt podél zrcadla rozřízne, jednu stranu zkopíruje, zrcadlí ji na druhou a svaří vrcholy podél zrcadla. Je to destruktivnější volba a smaže multirezoluci, ale někdy je tato metoda nutná, pokud je model přes zrcadlo velmi odlišný.
+Tlačítka `Řez` rozříznou objekt podél rovin symetrie. Mění topologii, takže jsou destruktivnější než `Zrcadlo`. Číslo na každém tlačítku udává, kolik objektů získáte:
 
-### Překlopit objekt {#flip-object}
+* `Řez` - odstraní jednu stranu objektu.
+* `Řez • Zrcadlo` - rozřízne objekt, zkopíruje jednu stranu, zrcadlí ji na druhou a svaří vrcholy podél zrcadla. Tato metoda je někdy nutná, když se model na obou stranách zrcadla hodně liší.
+* `Řez • Rozdělit` - rozřízne objekt a každou stranu ponechá jako samostatný objekt.
+* `Řez • Zrcadlo • Rozdělit` - jako `Řez • Zrcadlo`, ale každá strana se stane samostatným objektem.
+
+Pokud je vybraných víc objektů, `Zrcadlo` i [Převrátit objekt](#flip-object) se použijí na všechny.
+
+### Převrátit objekt {#flip-object}
 ![](/images/symmetry_flip.webp)
-Přehoďte levou stranu na pravou a naopak. Vzhledově podobné tomu, jako kdybyste v nabídce nástroje gizmo nastavili měřítko na -1 na ose X.
+Prohodí levou a pravou stranu podél osy `X`, `Y` nebo `Z`. Vzhledově podobné, jako kdybyste v nabídce nástroje gizmo nastavili měřítko na X na -1.
 
-## Obnovit a upravit {#reset-and-edit}
+## Resetovat a upravit {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
-Je možné upravit polohu a orientaci symetrie (ale nedoporučuje se to!). V případě potřeby `World center` a `Orientation` obnoví polohu a orientaci symetrie na výchozí hodnoty.
+Polohu a orientaci symetrie lze upravit (ale nedoporučuje se to!). V případě potřeby vrátí `Centrum světa` (`Centrum objektu` v lokálním režimu) a `Orientace` polohu a orientaci symetrie na výchozí hodnoty.
 
-Nomad obvykle ví, kam umístit rovinu symetrie. Nedoporučuje se to nastavovat ručně, ale tlačítko `Gizmo (Edit)` to umožňuje pokročilým uživatelům. Po kliknutí na toto tlačítko se zobrazí gizmo, které umožňuje rovinu symetrie posouvat a otáčet. Pokud chcete obnovit výchozí střed a orientaci, slouží k tomu tlačítka `object center` a `orientation`.
+Nomad obvykle ví, kam rovinu symetrie umístit. Ruční úprava se nedoporučuje, ale pro pokročilé uživatele to umožňuje tlačítko `Gizmo (Upravit)`. Po jeho stisknutí se zobrazí gizmo, kterým můžete rovinu symetrie posouvat a otáčet. Chcete-li vrátit výchozí střed a orientaci, použijte tlačítka pro reset výše.
 
-Chování těchto voleb se mění podle toho, v jakém prostoru (*Local/World*) se nacházíte.
-Pokud tedy nefungují podle očekávání, zkontrolujte, zda jste ve správném prostoru.
+`Z pivotu` umístí rovinu symetrie na pivot nástroje [Gizmo](tools.md#gizmo). Je dostupné jen tehdy, když je nástroj `Gizmo` aktivní.
+
+Chování těchto možností se mění podle toho, v jakém prostoru (*Lokální/Svět*) se nacházíte.
+Pokud tedy nefungují tak, jak čekáte, zkontrolujte, jestli jste ve správném prostoru.
 
 ::: tip
-Tlačítko `Gizmo (Edit)` je záměrně zašedlé jako připomínka, že byste ho pravděpodobně neměli používat!
+Úprava roviny symetrie gizmem je trochu experimentální, pravděpodobně ji nebudete potřebovat!
 :::
 
-## Zobrazit možnosti {#show-options}
+## Možnosti zobrazení {#show-options}
 ![](/images/symmetry_show.webp)
 
 
-`Show line` a `Show plane` přepínají překryvné zobrazení polohy symetrie ve výřezu. Všimněte si, že vypnutí těchto voleb se projeví až po zavření nabídky symetrie.
+`Zobrazit čáru` a `Zobrazit rovinu` zapínají a vypínají překryv s polohou symetrie ve výřezu. Vypnutí těchto možností se projeví až po zavření nabídky symetrie.

@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Laman Utama",
+    "forum": "Forum"
+  },
+  "theme": {
+    "outlineLabel": "Di halaman ini",
+    "docFooter": {
+      "prev": "Halaman sebelumnya",
+      "next": "Halaman seterusnya"
+    },
+    "darkModeSwitchLabel": "Penampilan",
+    "lightModeSwitchTitle": "Tukar ke tema cerah",
+    "darkModeSwitchTitle": "Tukar ke tema gelap",
+    "sidebarMenuLabel": "Menu",
+    "returnToTopLabel": "Kembali ke atas",
+    "langMenuLabel": "Tukar bahasa",
+    "skipToContentLabel": "Langkau ke kandungan",
+    "notFound": {
+      "title": "HALAMAN TIDAK DITEMUI",
+      "quote": "Tetapi jika anda tidak mengubah arah, dan jika anda terus mencari, anda mungkin akan tiba di tempat yang anda tuju.",
+      "linkLabel": "pergi ke laman utama",
+      "linkText": "Bawa saya ke laman utama"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "Cari",
+      "buttonAriaLabel": "Cari"
+    },
+    "modal": {
+      "displayDetails": "Paparkan senarai terperinci",
+      "resetButtonTitle": "Tetapkan semula carian",
+      "backButtonTitle": "Tutup carian",
+      "noResultsText": "Tiada hasil untuk",
+      "footer": {
+        "selectText": "untuk memilih",
+        "selectKeyAriaLabel": "kekunci enter",
+        "navigateText": "untuk menavigasi",
+        "navigateUpKeyAriaLabel": "anak panah atas",
+        "navigateDownKeyAriaLabel": "anak panah bawah",
+        "closeText": "untuk menutup",
+        "closeKeyAriaLabel": "kekunci escape"
+      }
+    }
+  }
+}

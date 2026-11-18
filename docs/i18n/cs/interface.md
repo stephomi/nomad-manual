@@ -1,332 +1,421 @@
-# ![](/icons/sliders.webp) Nabídka rozhraní {#interface-menu}
+# ![](/icons/sliders.webp) Nabídka Rozhraní {#interface-menu}
 
-Tato nabídka ovládá mnoho možností pro přizpůsobení rozhraní Nomadu. 
+Tato nabídka obsahuje spoustu možností, jak si přizpůsobit rozhraní Nomadu.
 
 ![](/images/interface_overview2.webp)
 
-Nomad lze přizpůsobit do poměrně velké hloubky, tato nabídka je rozdělena do 4 sekcí: Interface, Gesture, Bindings, Debug.
+Nomad si můžete přizpůsobit opravdu do hloubky, tato nabídka je rozdělená do 5 karet: Rozhraní, Zkratky, Gesto, Vazby, Ladění.
 
 ![](/images/interface_menu.webp)
 
 
 ::: tip
-Tato stránka je o nabídce rozhraní, ne o samotném rozhraní! Celkové rozhraní je popsáno v [Začínáme](gettingstarted.md).
+Tato stránka popisuje nabídku Rozhraní, ne samotné rozhraní! Rozhraní jako celek je popsané v části [Začínáme](gettingstarted.md).
 :::
 
-## Rozhraní {#interface}
+## ![](/icons/sliders.webp) Rozhraní {#interface}
 
-Sekce Interface vám umožní přidávat zkratky, vytvářet plovoucí panely nástrojů a ovládat barvu, velikost a vzhled uživatelského rozhraní Nomadu.
+Karta Rozhraní řídí barvy, velikost a rozložení uživatelského rozhraní Nomadu. Má dvě podkarty, `Vzhled` a `Rozložení`.
 
 ![](/images/interface_overview3.webp)
 
-### Přidat zkratky (dole)… {#add-shortcuts-bottom}
-![](/images/interface_shortcuts.webp)
-
-Spodní panel nástrojů má ve výchozím nastavení povoleny tyto zkratky:
-* `Undo` - vrátí zpět předchozí operaci
-* `Redo` - obnoví dříve vrácenou operaci
-* `Solo` - Dočasně skryje všechny ostatní objekty a ponechá viditelný pouze vybraný. Opětovným stiskem obnovíte všechny objekty.
-* `X-ray` - Dočasně učiní všechny ostatní objekty poloprůhlednými a ponechá pouze vybraný objekt plný. Opětovným stiskem obnovíte výchozí materiály.
-* `Voxel remesh` - Přeremeshuje aktuální objekt pomocí naposledy použitého voxelového rozlišení. Dlouhé podržení nebo přejetí nahoru zobrazí posuvník rozlišení a přepínač ostrých hran.
-* `Grid` - Přepne zobrazení mřížky. Dlouhé podržení nebo přejetí nahoru umožní změnit barvu a neprůhlednost mřížky.
-* `Wireframe` - Přepne překryv drátového modelu. Dlouhé podržení nebo přejetí nahoru umožní změnit barvu a neprůhlednost drátového modelu.
-* `Inspector` - umožní zobrazit vlastnosti vaší sítě, jako jsou UV, vypálené textury a další vlastnosti, překryté na pozadí Nomadu.
-* `Face Group` - Přepne překryv facegroup, více informací v [Tools->FaceGroup](tools.md#facegroup) 
-
-Další běžně používané zkratky jsou dostupné z této nabídky, mnohem více jich lze najít v tlačítku bindings.
-
-#### ![](/icons/more.webp) Přiřazení {#bindings-list}
-
-Téměř každou funkci Nomadu lze přidat na panel zkratek pomocí tlačítka bindings. Po kliknutí na tlačítko se zobrazí nabídka bindings:
-
-![](/images/interface_bindings_search.webp)
-
-Můžete vyhledávat podle kategorií pomocí ikon nahoře nebo použít vyhledávací pole k nalezení funkcí podle názvu. Kliknutím na funkci ji přidáte na panel nástrojů. Opětovným kliknutím ji odstraníte.
-
-#### ![](/icons/list.webp) Pořadí {#order}
-
-Zobrazí seznam zkratek. Dlouhým stiskem a tažením můžete zkratky přeuspořádat.
-
-#### ![](/icons/reset.webp) Obnovit {#reset}
-
-Reset obnoví spodní panel nástrojů do výchozího nastavení.
-
-### Přidat zkratky (okno)… + {#add-shortcuts-window}
-![](/images/interface_add_shortcuts_window.webp)
-
-Kliknutím na + přidáte plovoucí panel nástrojů. Nebude viditelný, dokud nekliknete na tlačítko bindings a nepřidáte do něj nějaké zkratky, poté jej můžete zviditelnit. 
-
-Můžete vytvořit mnoho panelů nástrojů, každý panel má v této nabídce následující možnosti:
-
-* ![](/icons/checked.webp) `Visible` - Přepne viditelnost panelu nástrojů
-* ![](/icons/more.webp)`Bindings` - Zobrazí okno bindings pro výběr funkcí k přidání nebo odebrání z panelu nástrojů.
-* ![](/icons/list.webp)`Order` - Zobrazí nabídku pro změnu pořadí panelu nástrojů.
-* ![](/icons/reset.webp) `Reset` - Obnoví panel nástrojů do výchozího stavu.
-* ![](/icons/resize_bottom_right.webp) `Resize corner` - Přepne úchyt pro změnu velikosti v pravém dolním rohu panelu nástrojů.
-* ![](/icons/sort_down.webp) `Collapsable` - Přepne úchyt pro sbalení v pravém horním rohu.
-* ![](/icons/trash.webp) `Delete` - Smaže panel nástrojů.
-
-### Panel nástrojů {#toolbox}
-
-Možnosti pro nabídku nástrojů na pravé straně rozhraní Nomadu.
-
-![](/images/interface_toolbox.webp)
-
-#### ![](/icons/resize_bottom_right.webp) Roh změny velikosti UI {#ui-resize-corner}
-
-Přepne úchyt pro změnu velikosti v dolním rohu panelu nástrojů.
-
-#### Skryté {#hidden}
-Normálně ikona toolboxu v horní liště přepíná mezi dlouhým jednoduchým sloupcem nebo vícesloupcovým seznamem nástrojů. Tato možnost přepíná mezi vícesloupcovým seznamem nebo skrytím.
-
-#### Barevné {#colored}
-Barevně odliší ikony podle kategorie, např. všechny maskovací nástroje jsou hnědé, nástroje pro dělení červené, nástroje pro zarovnání zelené atd.
-
-#### Řádky: Auto (>1) {#rows-auto-1}
-
-#### Obnovit pořadí {#reset-order}
-Obnoví výchozí nástroje v toolboxu do výchozího pořadí. Vlastní ikony zůstanou v toolboxu na konci seznamu.
-
-
-### Předvolby {#presets}
+### ![](/icons/palette.webp) Barvy {#presets}
 
 ![](/images/interface_presets.webp)
 
-Sbírka barevných předvoleb pro rozhraní.
+Podkarta `Vzhled` začíná sadou barevných přednastavení rozhraní. Klepnutím jedno použijete a pak ho doladíte níže uvedenými možnostmi.
 
-#### Tlačítko s vysokým kontrastem {#high-contrast-button}
-Alternativní styl tlačítek, který je činí viditelnějšími, když jsou aktivní. Pokud je nastaveno na Auto, Nomad použije tento režim, když je barevný kontrast UI mezi zapnuto/vypnuto nízký.
+#### Akcent a Základ {#color-widgetcolor-base}
+Hlavní barvy rozhraní: `Akcent` pro vybraná tlačítka a výplň posuvníků, `Základ` pro panely.
 
-#### Barevný widget/Základ barvy {#color-widgetcolor-base}
-Základní barvy použité v rozhraní.
+#### Krytí textu {#text-opacity}
+Zjemní text a ikony vůči panelům.
 
-#### Průhledný panel, Barevný panel, Síla rozostření {#transparent-panel-color-panel-blur-strength}
+#### Přepínače, Zaškrtávací pole, Karty {#high-contrast-button}
+Styl přepínacích tlačítek (`Jemné` nebo `Plné`), zaškrtávacích polí (`Obrys`, `Akcent` nebo `Výplň`) a karet (`Podtržení`, `Jemné` nebo `Plné`).
+
+#### Barevné nástroje {#colored}
+Obarví ikony podle kategorie, např. všechny nástroje masky jsou hnědé, nástroje řezu červené, nástroje zploštění zelené atd.
+
+#### Stín panelů {#material-color-preview}
+Panely vrhají stín, aby vystoupily ze scény.
+
+#### Průhledný panel {#transparent-panel-color-panel-blur-strength}
 ![](/images/interface_transparent.webp)
-Po zapnutí se objeví další možnosti pro ovládání vzhledu nabídek a panelů v Nomadu. Lze upravit jejich barvu, průhlednost a míru rozostření.
+Když je zapnutý, objeví se další možnosti, kterými řídíte vzhled nabídek a panelů v Nomadu: `Odstín panelů` nastaví jejich barvu, `Intenzita rozostření` jak moc se rozostří scéna za nimi a `Sklo` přidá lom a odlesky na okrajích, nejvíc viditelné při slabém rozostření.
 
 ::: tip
-Na malých zařízeních může být užitečné nastavit panel barev téměř na bílou, průhlednou a s nízkou mírou rozostření, aby nabídky nezakrývaly scénu.
+Na malých zařízeních se vyplatí nastavit odstín panelů skoro na bílou, průhlednou, se slabým rozostřením, aby nabídky nezakrývaly scénu.
 :::
 
-----
+#### ![](/icons/reset.webp) Obnovit vzhled {#reset-style}
+Vrátí všechny možnosti vzhledu na výchozí hodnoty.
 
-### Zrcadlit horní lištu {#mirror-top-bar}
+### ![](/icons/panel_detach.webp) Rozložení {#layout}
+
+Podkarta `Rozložení` určuje, kde co je a jak je to velké.
+
+#### Nástroje {#toolbox}
+
+Možnosti panelu nástrojů vpravo v rozhraní Nomadu.
+
+![](/images/interface_toolbox.webp)
+
+##### ![](/icons/resize_bottom_right.webp) Změnit velikost {#ui-resize-corner}
+
+Přepne úchyt pro změnu velikosti v dolním rohu panelu nástrojů.
+
+##### Skryto {#hidden}
+Ikona panelu nástrojů v horní liště normálně přepíná mezi jedním dlouhým sloupcem a vícesloupcovým seznamem nástrojů. S touto možností přepíná mezi vícesloupcovým seznamem a skrytím.
+
+##### Resetovat pořadí {#reset-order}
+Vrátí výchozí nástroje v panelu nástrojů do výchozího pořadí. Vlastní ikony zůstanou v panelu nástrojů na konci seznamu.
+
+#### Horní lišta {#rows-auto-1}
+`Responzivní` určuje, co horní lišta udělá, když se nevejde na obrazovku, což se týká hlavně malých obrazovek: `Víceřádkový` zalomí nabídky do více řádků, `Posun` ponechá jeden řádek, který můžete posouvat.
+
+#### Zrcadlit horní panel {#mirror-top-bar}
 Obrátí pořadí nabídek v horní liště.
 
-### Zrcadlit boční lišty {#mirror-side-bars}
-Prohodí postranní lišty tak, aby byl toolbox vlevo a možnosti nástroje vpravo.
+#### Zrcadlit boční panely {#mirror-side-bars}
+Prohodí boční panely, takže panel nástrojů je vlevo a možnosti nástroje vpravo.
 
-### Zrcadlit spodní lištu {#mirror-bottom-bar}
+#### Zrcadlit dolní panel {#mirror-bottom-bar}
 Přesune spodní lištu do pravého dolního rohu a obrátí pořadí tlačítek.
 
-### Náhled barvy materiálu {#material-color-preview}
-Když vyberete barvu pro materiál, náhled tohoto materiálu se zobrazí na aktuálně vybraném objektu.
+#### ![](/icons/move.webp) Přetahovat panel {#drag-panel}
+Plovoucí panel se vždy přesouvá tažením za jeho lištu, tato možnost umožňuje táhnout i za jeho tělo. V režimu `Auto` prst nebo stylus panel přesune jen tehdy, když je tah spíš vodorovný než svislý, takže svislým tahem obsah dál posouváte. Nastavte `Ano`, chcete-li táhnout i myší, v libovolném směru.
 
-----
-### Nápověda při podržení kurzoru {#help-popup-on-hover}
+#### ![](/icons/pencil.webp) Použít Nomad dialog {#use-nomad-dialog}
+Při zadávání názvu nebo hodnoty zobrazí vlastní textový dialog Nomadu místo nativního.
 
-Pro zařízení, která podporují hover, určuje, zda se kontextová nápověda v Nomadu reprezentovaná ikonou ![](/icons/help.webp) zobrazí při najetí, nebo pouze při kliknutí.
+#### ![](/icons/stylus.webp) Tečka při najetí kurzorem {#hover-dot}
+Zobrazí v UI malou tečku, když je detekován stylus ve vznosu.
 
-----
+#### ![](/icons/help.webp) Nápověda při najetí {#help-popup-on-hover}
 
-### Celkové měřítko {#overall-scale}
+Na zařízeních, která podporují najetí kurzorem, určuje, zda se kontextová nápověda Nomadu označená ikonou ![](/icons/help.webp) zobrazí při najetí, nebo jen po klepnutí.
+
+#### Celková škála {#overall-scale}
 Násobitel velikosti všech prvků UI.
-### Šířka panelu {#panel-width}
+#### Šířka panelu {#panel-width}
 Šířka nabídek a panelů.
-### Měřítko písma {#font-scale}
-Měřítko písem.
-### Vertikální rozteč {#vertical-spacing}
+#### Škála písma {#font-scale}
+Změní velikost písma.
+#### Vertikální rozestupy {#vertical-spacing}
 Rozestupy mezi prvky v nabídkách a panelech.
-### Vertikální rozteč (vlevo) {#vertical-spacing-left}
+#### Vertikální rozestupy (vlevo) {#vertical-spacing-left}
 Rozestupy mezi prvky v levém panelu nástrojů.
 
-----
-
-### Okrajový odsazení {#edge-offset}
-Tyto hodnoty byste měli měnit pouze v případě, že máte problémy s interakcí s tlačítky na okrajích obrazovky. Pokud jsou tyto posuvníky vypnuté, Nomad použije hodnoty bezpečné oblasti vrácené samotným zařízením.
+#### Posuny okrajů {#edge-offset}
+Tyto hodnoty měňte jen tehdy, když máte potíže s tlačítky na okrajích obrazovky. Pokud jsou posuvníky vypnuté, Nomad použije hodnoty bezpečných oblastí, které vrací samotné zařízení.
 
 ::: tip
-Při migraci Nomadu na nové zařízení (např. výměna iPhone 12 za iPhone 15) nezapomeňte resetovat možnosti okrajů na výchozí hodnoty!
+Když přecházíte s Nomadem na nové zařízení (např. z iPhonu 12 na iPhone 15), nezapomeňte vrátit možnosti okrajů na výchozí hodnoty!
 :::
 
-### Obnovit styl {#reset-style}
-Obnoví všechny prvky UI do výchozích hodnot.
+#### ![](/icons/reset.webp) Obnovit rozložení {#reset-layout}
+Vrátí všechny možnosti rozložení na výchozí hodnoty.
+
+## ![](/icons/window.webp) Zkratky {#shortcuts}
+
+Karta Zkratky určuje, která rychlá tlačítka se zobrazí kolem viewportu, a umožňuje vytvořit si vlastní plovoucí panely nástrojů.
+
+### Boční panel {#side-bar}
+Rychlá tlačítka nástrojů v dolní části levého bočního panelu: `Hladit`, `Maska`, `Skrýt`, `SkupinaPovrch` a `Gizmo`. Přetažením změníte jejich pořadí.
+
+### Spodní lišta {#add-shortcuts-bottom}
+![](/images/interface_shortcuts.webp)
+
+Klepnutím na zkratku ji přidáte do spodní lišty, nebo ji z ní odeberete. Tyto jsou zapnuté ve výchozím stavu:
+* `Zpět` - vrátí předchozí operaci
+* `Vpřed` - obnoví naposledy vrácenou operaci
+* `Sólo` - Dočasně skryje všechny ostatní objekty, viditelný zůstane jen vybraný. Dalším stiskem obnovíte všechny objekty.
+* `Rentgen` - Dočasně zprůhlední všechny ostatní objekty, plný zůstane jen vybraný. Dalším stiskem obnovíte výchozí materiály.
+* `Voxel` - Přesíťuje aktuální objekt s naposledy použitým voxelovým rozlišením. Dlouhým stiskem nebo tahem nahoru zobrazíte posuvník rozlišení a přepínač ostrých hran.
+* `Mřížka` - Přepne mřížku zobrazení. Dlouhým stiskem nebo tahem nahoru můžete změnit barvu a krytí mřížky.
+* `Drát` - Přepne překryv drátového modelu. Dlouhým stiskem nebo tahem nahoru můžete změnit barvu a krytí drátového modelu.
+* `Kontrola` - zobrazí vlastnosti sítě, jako jsou UV, zapečené textury a další, na pozadí Nomadu.
+* `SkupinaPovrch` - Přepne překryv skupin ploch, více v části [Nástroje->Skupina ploch](tools.md#facegroup)
+
+K dispozici jsou i další často používané zkratky: `Obrys`, `Projekce` (perspektivní nebo ortografická), `MatCap`, `DynTopo` a tlačítka [multirezoluce](topology.md#multiresolution) `Poddělení`, `Opačný` a úrovně.
+
+#### ![](/icons/more.webp) Vazby {#bindings-list}
+
+Do spodní lišty můžete přes tlačítko vazeb přidat téměř jakoukoli funkci Nomadu; tlačítko ukazuje, kolik zkratek lišta obsahuje. Po klepnutí na tlačítko se zobrazí nabídka vazeb:
+
+![](/images/interface_bindings_search.webp)
+
+Hledat můžete podle kategorie pomocí ikon nahoře, nebo funkce najít podle názvu ve vyhledávacím poli. Klepnutím na funkci ji přidáte do panelu nástrojů. Dalším klepnutím ji odeberete.
+
+#### ![](/icons/eye_open.webp) Viditelný {#order}
+
+Zobrazí nebo skryje celou spodní lištu.
+
+#### ![](/icons/reset.webp) Resetovat {#reset}
+
+Resetovat vrátí spodní lištu do výchozího nastavení.
+
+### Plovoucí okna {#add-shortcuts-window}
+![](/images/interface_add_shortcuts_window.webp)
+
+Klepnutím na + přidáte plovoucí panel nástrojů. Nebude viditelný, dokud neklepnete na tlačítko vazeb a nepřidáte do něj nějaké zkratky; pak ho můžete zviditelnit.
+
+Panelů nástrojů můžete vytvořit mnoho, každý má řádek s těmito možnostmi:
+
+* Tažením za úchyt vlevo na řádku změníte pořadí panelů nástrojů.
+* `Název` - Název panelu nástrojů.
+* `Viditelný` - Přepne viditelnost panelu nástrojů.
+* `Lišta` - Zobrazí na panelu nástrojů záhlaví.
+* `Minimalizované` - Ponechá panel nástrojů na obrazovce, i když je rozhraní minimalizované.
+* `Vazby` - Zobrazí okno vazeb, ve kterém vyberete funkce, které chcete do panelu přidat nebo z něj odebrat.
+* `Smazat` - Smaže panel nástrojů.
 
 
-## Gesta {#gesture}
-Nabídka Gesture ovládá, jak stylus a dotyky prstů ovládají Nomad.
+## ![](/icons/gesture.webp) Gesto {#gesture}
+Nabídka Gesto určuje, jak Nomad ovládáte prstem, stylusem, myší a trackpadem.
 
 ![](/images/interface_gesture.webp)
 
 ### Možnosti gest {#gesture-options}
 ![](/images/interface_gesture_matrix.webp)
 
-Nomad může omezit operace na základě vstupního zařízení. Například tažení prstem může pouze pohybovat kamerou, zatímco tažení stylusem může pouze modelovat. Pokud máte myš nebo trackpad, lze je také přiřadit ke konkrétním operacím.
+Nomad může omezit operace podle vstupního zařízení. Například tažení prstem může jen pohybovat kamerou, zatímco tažením stylusem jen sochat. Pokud máte myš nebo trackpad, můžete jim také přiřadit konkrétní operace.
 
-Nomad vám aktuálně umožňuje nastavit tyto režimy tak, aby byly ovládány libovolnou kombinací gest prstu, stylusu nebo myši:
+Každý řádek je jedna operace: přepínači `Prst`, `Stylus` a `Myš` zvolíte, které vstupy ji mohou provádět.
 
-* Camera
-* Sculpt
-* Gizmo
-* Material picking (dlouhým stiskem)
-* Select object
+* `Kamera` - Pohyb kamerou.
+* `Úprava uzlu` - Tažení úchytů vykreslených na plátně, například při úpravě primitiva, křivky, opakovače nebo světla.
+* `Sochařit` - Sochání štětci. Nástroje, které mají vlastní řádek níže, se řídí tím řádkem.
+* `Vybrat objekt` - Klepnutím na objekt ho vyberete.
+* `Výběr materiálu` - Dlouhým stiskem na plátně převezmete barvu nebo materiál pod kurzorem. Funguje jen tehdy, když má aktuální štětec zapnuté malování.
+* `Na dotek` - Zkratky klepnutím u nástrojů jako Maska, Skrýt a SkupinaPovrch (viz níže).
+* `Barva` - Nástroje Malovat a Rozmazat.
+* `Maska` - Nástroj Maska.
+* `Plocha` - Nástroje Skrýt a SkupinaPovrch.
+* `Vytvořit` - Nástroje Trubka, Soustruh a Vložit.
+* `Řez` - Nástroje Oříznout, Rozdělit a Projekt.
+* `Vybrat` - Nástroje Vybrat a Měřit.
+* `Gizmo` - Nástroje Gizmo a Mřížka.
+* `Transformace` - Nástroje Přeměnit a Uspořádat.
 
+::: tip
+Na tabletu je běžné nastavení, že sochat a malovat smí jen stylus a prsty zůstanou pro kameru. Dlaň ani zatoulaný prst pak na modelu nikdy nezanechají tah.
+:::
 
-`Finger always smooths` - Smooth lze nastavit tak, aby fungoval pouze při tažení prstem.
+### ![](/icons/tool_smooth.webp) Prst vždy vyhlazuje {#finger-always-smooths}
+Když je zapnuto, prst při aktivním sochařském nástroji vždy vyhlazuje, ať je zvolený jakýkoli štětec. Zapnutím se z řádku `Sochařit` odebere `Prst`, takže stylus sochá a prst vyhlazuje.
+
+### Povolit tah mimo objekt {#allow-air-stroke}
+Tah může začít, i když kurzor nejdřív dopadne mimo síť. Zvolte nástroje, pro které to platí: `Nástroj` (všechny ostatní štětce), `Hladit`, `Maska` a `Skrýt`. Funguje to jen u vstupů, které mohou sochat, ale nehýbou kamerou, takže tato tlačítka jsou vypnutá, dokud některý ze vstupů takto nenastavíte.
+
+### ![](/icons/stroke.webp) Přichycení tahu {#stroke-snap}
+Podržte ukazatel na konci tahu v klidu a tah se přichytí na rovnou čáru nebo hladkou křivku. Dalším tažením přichycený tah otáčíte a měníte jeho měřítko kolem počátečního bodu.
+
+`Doba podržení` nastaví, jak dlouho musíte vydržet v klidu, než se tah přichytí nebo než se tvar přepne do úprav.
+
+### ![](/icons/stylus.webp) Použijte extra vstupní vzorky {#use-extra-input-samples}
+Použije dodatečné vstupní vzorky, které hlásí zařízení. Vypněte to, pokud jsou vaše tahy zubaté nebo se tlak chová nesprávně. Na iOS se tato možnost nezobrazuje.
 
 ### ![](/icons/tool_mask.webp) Maska {#mask}
 
 ![](/images/interface_gesture_mask.webp)
 
-`One tap shortcuts` - Povolit následující zkratky jedním klepnutím bez nutnosti držet tlačítko mask. Umožní následující gesta:
-* klepnutí na pozadí invertuje masku
-* klepnutí na maskovanou oblast rozmaže masku
-* klepnutí na nemaskovanou oblast zostří masku
+`Zkratky jedním dotykem` - Zapne následující zkratky jedním klepnutím, aniž byste museli držet tlačítko masky. Umožní tato gesta:
+* klepnutím na pozadí masku invertujete
+* klepnutím na maskovanou oblast masku rozostříte
+* klepnutím na nemaskovanou oblast masku zaostříte
 
-### Přepnout Maska <-> SelMask {#toggle-mask-selmask}
+#### Dlouhý stisk {#toggle-mask-selmask}
 ![](/images/interface_gesture_togglemask.webp)
-* `Stroke` - Dlouhý stisk přepne mezi Mask a SelMask a začne nový tah. Na konci tahu se znovu vybere předchozí nástroj. 
-* `Tool` - Dlouhý stisk a uvolnění bez pohybu přepne mezi Mask a SelMask. 
+
+Dlouhý stisk s nástrojem Maska přepíná mezi štětcem masky a lasem (SelMask):
+* `Dlouhý stisk - Sochařit` - Dlouze stiskněte a pokračujte v tažení: tah se nakreslí druhým režimem a na konci tahu se vrátí ten předchozí.
+* `Dlouhý stisk - Přepnout` - Dlouze stiskněte a pusťte bez pohybu, čímž přepnete mezi oběma režimy.
+
+### ![](/icons/tool_smooth.webp) Hladit {#smooth}
+`Dlouhý stisk - Laso` - Dlouhý stisk s nástrojem Hladit přepne na dobu výběrového tahu na nástroj Vybrat.
 
 ### ![](/icons/tool_hide.webp) Skrýt {#hide}
 ![](/images/interface_gesture_hide.webp)
 
-`One tap shortcuts` povolí následující zkratky s nástrojem hide:
-* Klepnutí na face group ji skryje
-* Klepnutí do prázdného prostoru invertuje skryté polygony
+`Zkratky jedním dotykem` zapne u nástroje Skrýt tyto zkratky:
+* Klepnutím na skupinu ploch ji skryjete
+* Klepnutím do prázdného prostoru invertujete skryté polygony
 
 ### ![](/icons/finger3.webp) Tři prsty {#three-fingers}
 ![](/images/interface_gesture_threefingers.webp)
 
-Pokud vaše zařízení podporuje gesta třemi prsty, nakonfigurujte pro toto gesto zkratky. 
+Pokud vaše zařízení podporuje gesta třemi prsty, nastavte pro toto gesto zkratky.
 
-Mřížka možností vám umožní definovat vertikální a horizontální tažení jako samostatné zkratky. Všimněte si, že pokud je stejné gesto zvoleno pro 2 možnosti, jedna bude deaktivována.
+Matice možností umožňuje přiřadit svislému a vodorovnému tažení samostatné zkratky, nebo zvolit `Ne` a gesto nepoužít. Pokud je stejné gesto zvolené pro 2 možnosti, jedna se vypne a její název se přeškrtne.
 
-* `Rotate lighting` - Otočí prostředí, světla a Matcap.
-* `Tool Radius` - Upraví poloměr nástroje.
-* `Tool Intensity` - Upraví intenzitu nástroje. 
+* `Otočte osvětlení` - Otáčí prostředím, světly a matcapem.
+* `Poloměr nástroje` - Mění poloměr nástroje.
+* `Intenzita nástroje` - Mění intenzitu nástroje.
 
 ### ![](/icons/fingerprint.webp) Historie 2/3 {#history-23}
-`History shortcuts` - pokud je povoleno, jsou aktivní následující gesta:
-* Undo - klepnutí 2 prsty
-* Redo - klepnutí 3 prsty
+`Historie zkratek` - když je zapnuto, jsou aktivní tato gesta:
+* Zpět - klepnutí 2 prsty
+* Vpřed - klepnutí 3 prsty
 
-`Long press` - pokud je povoleno, podržení 2/3 prstů rychle opakovaně vrací/obnovuje.
+`Dlouhý stisk` - když je zapnuto, podržením 2/3 prstů rychle vracíte/obnovujete kroky.
 
-### Zpřístupnění {#accessibility}
+### ![](/icons/mouse.webp) Kolečko myši {#mouse-wheel}
+`Rychlost (3D přiblížení)` nastaví, jak rychle kolečko přibližuje pohled, a `Rychlost (2D rozhraní)`, jak rychle posouvá nabídky a panely. Tlačítko mínus vedle každého posuvníku obrátí směr.
+
+### ![](/icons/fingerprint.webp) Trackpad {#trackpad}
+Na Macu `Dva prsty` určuje, co dělají dva prsty na trackpadu. Sevření prstů vždy přibližuje a otočení prstů vždy naklání pohled.
+* `Vypnuto` - Posouvání dvěma prsty přibližuje, jako kolečko myši. Prsty se nečtou jednotlivě.
+* `Posun` - Dva prsty posouvají pohled a zvednutím jednoho z nich pohled otáčíte. Stejně jako na tabletu.
+* `Otáčení` - Dva prsty otáčejí pohled a zvednutím jednoho z nich pohled posouváte.
+
+### Přístupnost {#accessibility}
 
 ![](/images/interface_gesture_accessibility.webp)
 
-`Assistive window` zobrazí plovoucí panel nástrojů pro ovládání tažení, štípnutí, rolování a operací kamery.
+`Asistenční okno` zobrazí plovoucí panel nástrojů pro tažení, sevření, naklánění a ovládání kamery.
 
 ### Kamera {#camera}
-Zkratka pro přechod do nabídky `Camera` (možnosti kamery zde dříve byly, ale byly přesunuty do nabídky kamery).
+Zkratka do nabídky `Kamera` (možnosti kamery bývaly tady, ale přesunuly se do nabídky Kamera).
 
-### Dvojité klepnutí tužkou -> Přiřazení {#pencil-tap}
+### Dvojité poklepání tužky -> Vazby {#pencil-tap}
 
-Zkratka pro přechod do nabídky `Bindings` (možnosti pro klepnutí a dvojité klepnutí Pencil zde dříve byly, ale byly přesunuty do nabídky bindings).
+Zkratka do nabídky `Vazby`, kde nastavíte, co dělá dvojité poklepání tužkou. Mimo iOS se jmenuje `Tlačítko tužky → Vazby` a týká se tlačítka stylusu.
+
+### Vyloučení dlaně {#palm-rejection}
+Na telefonech a tabletech ignoruje doteky, jejichž plocha je větší než `Maximální práh velikosti`, například dlaň opřenou o obrazovku. Nemusí fungovat na každém zařízení, takže pokud máte s plátnem potíže, vypněte to.
 
 
-## Přiřazení {#bindings}
-Klávesové a tlačítkové zkratky lze definovat v nabídce bindings:
+## ![](/icons/keyboard.webp) Vazby {#bindings}
+Klávesové zkratky a zkratky tlačítek nastavíte v nabídce Vazby:
 
 ![](/images/interface_bindings.webp)
-Téměř všechny funkce v Nomadu lze přiřadit ke klávesovým zkratkám, pokud má vaše zařízení klávesnici, nebo k dalším tlačítkům na stylusu či dokonce ovladačům gamepadu.
+Téměř všechny funkce Nomadu lze přiřadit klávesovým zkratkám, pokud má zařízení klávesnici, nebo dalším tlačítkům na stylusu, či dokonce herním ovladačům.
 
-Chcete-li vytvořit binding, klikněte na obdélník vedle funkce a stiskněte klávesu/tlačítko. 
+Vazbu vytvoříte tak, že klepnete na obdélník vedle funkce a stisknete klávesu/tlačítko.
 
-Funkce najdete pomocí ikon kategorií nahoře nebo pomocí vyhledávacího pole pro hledání podle názvu. 
+Funkce najdete pomocí ikon kategorií nahoře, nebo podle názvu ve vyhledávacím poli.
 
-Jednotlivé bindingy lze deaktivovat pomocí zaškrtávacího políčka vedle názvu bindingu.
+Jednotlivé vazby můžete vypnout zaškrtávacím polem vedle názvu vazby. Dlouhým stiskem zaškrtávacího pole a tažením změníte pořadí seznamu.
+
+Když dvě zapnuté vazby používají stejnou zkratku, objeví se vedle nich ikona ![](/icons/help.webp), která vypíše kolidující funkce.
 
 ### ![](/icons/more.webp) Kontextová nabídka {#context-menu}
-Ikona ![](/icons/more.webp) za každým bindingem zobrazí kontextovou nabídku:
+Ikona ![](/icons/more.webp) za každou vazbou otevře kontextovou nabídku:
 
 ![](/images/interface_bindings_context.webp)
 
-* `Clone` - Klonuje binding
-* `Reset` - Resetuje binding
-* `Delete` - Smaže binding
-* `Toggle shortcut on key tap` - Nastaví, zda se klepnutí vs dlouhý stisk chovají odlišně. Pokud je povoleno, klepnutí aktivuje nástroj. Dlouhý stisk aktivuje nástroj pouze po dobu držení klávesy, po uvolnění se vrátí předchozí nástroj. V jiných 3D aplikacích se tomu někdy říká „sticky keys“.
+* `Klonovat` - Naklonuje vazbu, například abyste funkci dali druhou zkratku.
+* `Resetovat` - Resetuje vazbu
+* `Smazat` - Smaže vazbu. Jde to jen tehdy, když má funkce víc než jednu vazbu.
 
-### Pokročilé {#advanced}
-Ve spodní části nabídky bindings je nabídka ozubeného kola pro pokročilé možnosti:
+Pod nimi mají některé vazby další možnosti:
+
+* `Režim kláves` - U zkratek nástrojů a rychlých zkratek (Maska, Hladit, Gizmo, Skrýt, SkupinaPovrch, Přidat/Odebrat) určuje, jak stisk klávesy přepíná nástroje. `Auto` použije výchozí nastavení z možností [Rozšířené](#advanced).
+  * `Držet` - Držte klávesu, chcete-li nástroj použít, a pusťte ji, chcete-li se vrátit k předchozímu nástroji.
+  * `Přepnout` - Jedním stiskem nástroj přepnete.
+  * `Rychlý stisk` - Podržením nástroj použijete dočasně, rychlým stiskem se na něj přepnete.
+* `Návrat po uvolnění` - U rychlých zkratek určuje, zda se po puštění držené klávesy vždy vrátíte k předchozímu nástroji, i když už byl tento nástroj aktivní.
+* `Přepnout předchozí nástroj` - U zkratek nástrojů: stisk zkratky aktuálního nástroje přepne zpět na poslední nástroj. Vyžaduje `Režim kláves` na `Přepnout` nebo `Rychlý stisk`.
+* `Pozice` - U zkratek plovoucích oken určuje, zda se okno otevře tam, kde bylo (`Zachovat předchozí`), nebo pod kurzorem (`Na kurzoru`).
+* `Posun (při uvolnění)` / `Přiblížení (při uvolnění)` - U vazeb přiblížení a posunu kamery: po puštění klávesy přepne na tu druhou.
+* Směr tažení - U `Otočit osvětlení`, `Poloměr nástroje` a `Intenzita nástroje` zvolte vodorovné nebo svislé tažení.
+* `Synchronizovat` - U funkcí, které přidávají, klonují nebo instancují objekty, určuje, zda se výsledek synchronizuje. Ve výchozím stavu se použije hodnota synchronizace nastavená v nabídce Scéna.
+* `Na pozadí` - U rychlých zkratek Hladit a Maska: tažením po pozadí se drženou klávesou nakreslíte laso, výběrové laso u Hladit a laso masky u Maska.
+* `Vynutit kameru` - U vazeb kamery pohne kamerou, i když stejnou zkratku používá jiná vazba, typicky zkratka nástroje nebo Přidat/Odebrat.
+* `Lineární náklon` - U vazby naklánění naklání vodorovným, svislým nebo úhlopříčným tažením místo pohybu kolem otočného bodu.
+
+::: tip
+S `Rychlý stisk` zvládne jedna klávesa obojí: podržte ji pro rychlé vyhlazení nebo maskování a po puštění jste zpět u svého štětce, nebo na ni klepněte a na tom nástroji zůstanete.
+:::
+
+### ![](/icons/cog.webp) Rozšířené {#advanced}
+Ve spodní části nabídky Vazby je nabídka ozubeného kolečka s pokročilými možnostmi:
 
 ![](/images/interface_bindings_advanced.webp)
 
-* `Toggle shortcut on key tap` - Klepnutí na standardní zkratky pro mask, smooth, gizmo, hide, sub přepne do tohoto režimu, ale podržení klávesy přepne do tohoto režimu pouze po dobu držení, po uvolnění se režim vrátí na předchozí. V jiných 3D aplikacích se tomu někdy říká „sticky keys“.
-* `Toggle tool shortcuts` - Při použití jedné ze zkratek nástrojů, pokud je stejná zkratka stisknuta dvakrát, přepne se zpět na předchozí nástroj. Tímto způsobem můžete stále přepínat mezi dvěma nástroji stejnou klávesou.
-* `Invert Y (Zooming)` - Inverzuje zoom
-* `Reset bindings` - resetuje všechny bindingy na výchozí hodnoty.
+* `Rychlé zkratky` - Výchozí `Režim kláves` a `Návrat po uvolnění` pro zkratky Maska, Hladit, Gizmo, Skrýt, SkupinaPovrch a Přidat/Odebrat.
+* `Nástrojové zkratky` - Výchozí `Režim kláves` a `Přepnout předchozí nástroj` pro zkratky nástrojů. S `Přepnout předchozí nástroj` můžete jednou klávesou neustále přepínat mezi dvěma nástroji.
+* `Okno zkratek` - `Režim kláves` zkratek, které zobrazují plovoucí okna.
+* `Překlopit zoom Y` - Obrátí svislý směr tažení při přibližování pomocí vazby.
+* `Lineární náklon` - Naklání pohled vodorovným, svislým nebo úhlopříčným tažením místo pohybu kolem otočného bodu.
+* `SpaceMouse` - Zapne podporu 3Dconnexion SpaceMouse. Na některých systémech se objeví další možnosti: čím pohybuje (`Objekt`, `Kamera`, `První osoba`, `Dron`), `Automaticky aktualizovat pivot`, který při zahájení pohybu přesune otočný bod na povrch pod kurzorem, a rychlosti `Přesun`, `Zvětšování` a `Rotace`.
+* `Mrtvé zóny (drift)` - Pro ovladače `Gamepad`, `Joystick` a `Tlačítko`. Zvyšte tyto hodnoty, pokud se kamera hýbe, i když na ovladač nesaháte.
+* `Poloměr nástroje` - Jak tažení s vazbou poloměru mění velikost štětce (`Kruh`, `Střed` nebo `dx`) a o kolik vazby poloměru při každém stisku přičtou (v pixelech) nebo vynásobí.
+* `Intenzita nástroje` - O kolik vazby intenzity při každém stisku přičtou nebo vynásobí.
+* `Kamera - Rychlost` - Rychlost `Přesun` a `Rotace` u vazeb, které posouvají a otáčejí pohled.
+* `Resetovat přiřazení kláves` - vrátí všechny vazby na výchozí hodnoty.
+* `Resetovat pořadí` - obnoví výchozí pořadí seznamu vazeb.
 
 
-## iOS ⌘ Zobrazení klávesových zkratek {#ios-keyboard-shortcuts-display}
+## Zobrazení klávesových zkratek ⌘ na iOS {#ios-keyboard-shortcuts-display}
 
-Na zařízeních iOS s klávesnicí podržte klávesu ⌘ (cmd) pro zobrazení seznamu zkratek.
+Na zařízeních iOS s klávesnicí podržte klávesu ⌘ (cmd) a zobrazí se seznam zkratek.
 
-Podpora klávesnice na Androidu je trochu experimentální.
+Podpora klávesnice na Androidu je zatím trochu experimentální.
 
 ![](/images/shortcuts.webp)
 
 
-## Ladění {#debug}
-V této nabídce jsou uloženy některé experimentální a ladicí možnosti. Mnoho z těchto možností by mělo zůstat ve výchozím nastavení a měnit se pouze po kontaktování podpory Nomadu.
+## ![](/icons/bug.webp) Ladění {#debug}
+V této nabídce jsou uložené některé experimentální a ladicí možnosti. Mnoho z nich byste měli nechat ve výchozím nastavení a měnit je až po konzultaci s podporou Nomadu. Ikony nahoře přeskočí na jednotlivé sekce.
 
 ![](/images/interface_debug.webp)
-### UV {#uv}
-* `Normalize Uvs` - Nomad normalizuje UV do dlaždice [0-1].
+### ![](/icons/uv.webp) UV {#uv}
+* `Normalizace UV` - Nomad normalizuje UV vybrané sítě do dlaždice [0-1].
 
-### Quad Remesh {#quad-remesh}
-* `Instant Mesh` - Povolit algoritmus instant remesh
-* `Quadriflow` - Alternativní metoda quad remeshe.
+### ![](/icons/sun.webp) Stínování {#render}
+* `Zapisovat hloubku lomu (vzadu)` - Zadní strana sítí s lomem se zapíše do hloubkového bufferu.
+* `Hladké normály vážené úhlem` - Úprava fungování hladkého stínování, která v některých případech zabrání záhybům.
 
-### Render {#render}
-* `Heightmap` - Změní viewport tak, aby vykresloval hloubku scény. To lze použít k vytvoření alfa map pro použití ve štětcích.
-* `Refraction write depth (back)` - Zadní strana refrakčních meshů bude zapsána do depth bufferu.
-* `Flip Y (normal map)` - Inverzuje kanál y při bakeování normálových map, vyžadováno pro některé herní a renderovací enginy.
-* `Angle weighted smooth normals` - Úprava způsobu fungování hladkého stínování, která může v určitých případech zabránit záhybům.
+### ![](/icons/speed.webp) Cílové FPS {#target-fps}
+Když je vypnuto, Nomad synchronizuje počet snímků za sekundu s obnovovací frekvencí displeje.
 
-### Cílové FPS {#target-fps}
-Pokud je vypnuto, Nomad synchronizuje počet snímků za sekundu s obnovovací frekvencí vašeho displeje.
+Když je zapnuto, můžete nastavit, kolik snímků za sekundu bude Nomad vykreslovat.
 
-Pokud je zapnuto, můžete nastavit počet snímků za sekundu, které bude Nomad vykreslovat.
+### ![](/icons/window.webp) Rozhraní {#debug-interface}
+* `Nástroje: zobrazit vše` - Nomad skrývá nástroje, které nejsou pro aktuální výběr relevantní, např. na nedokončených primitivech jsou skryté všechny sochařské štětce. Tato možnost vypnuté nástroje místo skrytí jen ztlumí.
 
-### Rozhraní {#debug-interface}
-* `Top: layout` 
-  * Collapse: Na malých zařízeních se horní lišta sbalí do více podnabídek. 
-  * Scroll: Pokud jste zvyklí na Nomad na velkých displejích a preferujete normální rozložení, povolením této volby se použije standardní široká horní lišta, kterou lze posouvat.
-  * Multiline: Zobrazí celou horní nabídku na několika řádcích.
-* `Bottom: draggable popup` - Spodní panel nástrojů má několik tlačítek, která otevírají dialog. Pokud je tato možnost povolena, lze tyto dialogy přesunout jinam na obrazovce.  
-* `Toolbox: show all` - Nomad skryje nástroje, které nejsou relevantní pro aktuální výběr, např. všechny sculpt štětce jsou skryty na primitivech, které nejsou validované. Tato možnost ztlumí neaktivní nástroje místo jejich skrytí.
-* `Toolbox: colored` - Barevně odliší ikony toolboxu podle jejich typu.
-* `Panel: Drop shadows` - Kreslí stíny kolem nabídek a panelů. Na některých starších zařízeních to může ovlivnit výkon.
-* `Panel: Blending` - Ladicí možnost
-* `Pointer: hovering dot` - Pro zařízení, která podporují hover stylusu, zobrazí tečku, když stylus přejíždí nad nabídkami a panely.
+Ostatní možnosti rozhraní, které tu dřív byly, jsou teď na kartě [Rozhraní](#interface).
 
-### Gif turntable {#gif-turntable}
-Nomad může exportovat animovaný gif turntable. Všimněte si, že kvůli omezením formátu gif je kvalita nízká. Záznam obrazovky je obvykle lepší metoda.
+### ![](/icons/turntable.webp) Otočný stůl {#gif-turntable}
+Nomad umí exportovat animovaný gif s otočným stolem. Kvůli omezením formátu gif je kvalita nízká. Lepší bývá nahrávání obrazovky.
 
-* `Duration` - jak dlouhý v sekundách bude turntable
-* `Rotation center` - kde je pivot kamery, tedy kolem které části scény se bude kamera otáčet
-* `Transparent background` - Použije průhledné pozadí pro gify. Všimněte si, že gify podporují pouze 1bitovou průhlednost, takže okraje mohou být silně zubaté.
-* `Max frame sampling` - Mnoho vysoce kvalitních renderovacích efektů Nomadu vzniká kombinací několika snímků dohromady. Tento posuvník nastavuje, kolik snímků se má kombinovat.
-* `Export (GIF)` - spustí proces exportu gifu.
+* `Doba trvání` - jak dlouho v sekundách bude otočný stůl trvat
+* `Maximální vzorkování rámců` - Mnoho vysoce kvalitních efektů vykreslování Nomadu vzniká skládáním několika snímků dohromady. Tento posuvník nastaví, kolik snímků se složí, a jeho zaškrtávací pole ho zapíná nebo vypíná.
+* `Střed otáčení` - kolem čeho se kamera otáčí: `Zachovat aktuální` ponechá aktuální otočný bod, `(0, 0, 0)` použije střed světa, `Scéna` střed scény.
+* `Průhledné pozadí` - Použije pro gif průhlednost. Gif podporuje jen 1bitovou průhlednost, takže okraje mohou být ošklivě zubaté.
+* `Exportovat (GIF)` - spustí export gifu.
 
-### Post Process {#post-process}
-* `Filtering` - Ladicí možnost
-* `Format` - Ladicí možnost
-* `Buffer reuse` - Ladicí možnost
+### ![](/icons/postprocess.webp) Postproces {#post-process}
+* `Filtr` - Ladicí možnost
+* `Formát` - Ladicí možnost
+* `Znovu použít buffery` - Ladicí možnost
 
-### Výkon {#performance}
-* `Multicore general` - Ladicí možnost
-* `Multicore sculpting` - Ladicí možnost
-* `Partial Drawing` - Experimentální funkce! Použijte, pokud modelujete relativně malou část vysoce polygonální sítě. Mělo by to učinit modelování plynulejším, ale neměli byste zapínat wireframe! Také to může během tahů štětcem přidat vizuální artefakty.
+### ![](/icons/ram.webp) Výkon {#performance}
+* `Více vláken: obecné` - Ladicí možnost
+* `Více vláken: sochání` - Ladicí možnost
+* `Kreslit opakování instancemi` - Vykreslí všechny kopie opakovače jediným voláním vykreslení. Ladicí možnost.
 
-### Funkce {#feature}
-* `Flip quad split (on tap)` -  Ladicí možnost
-* `Join: merge radius` - Vrcholy budou automaticky svařeny, pokud jsou při spojování meshů dostatečně blízko. Poloměr můžete upravit tímto posuvníkem.
+### ![](/icons/star.webp) Funkce {#feature}
+* `nom: komprimovat multirezoluci` - Zmenší projekty a exporty Nomadu, které používají multirezoluci. Takové soubory nelze otevřít ve starších verzích Nomadu. Tato možnost může být v budoucnu odstraněna a zapnuta natrvalo.
+* `Obrátit diagonálu čtyřúhelníku (klepnutím)` - Ladicí možnost
 
-### Ladění {#dev}
-* `Logs` - Zobrazí okno s logy
-* `App review popup` - Ladicí možnost
-* `FPS` - přidá počítadlo snímků za sekundu do statistik viewportu.
+### ![](/icons/bug.webp) Ladění {#dev}
+* `Záznamy` - Otevře okno se záznamy
+* `Zaznamenávat události` - Zapisuje události ukazatele (prst, stylus, myš) do okna záznamů, abyste mohli prozkoumat problémy se vstupem.
+* `FPS` - přidá do statistik viewportu počítadlo snímků za sekundu.
+* `Okno hodnocení aplikace` - Ladicí možnost, na iOS a Androidu.
+
+### ![](/icons/image.webp) Vlastní ikony {#custom-icons}
+Nahradí ikony Nomadu vašimi vlastními soubory png.
+* `Importovat ikony` - Importuje soubory png do `tmp_session/icons`. Každý nahradí základní ikonu se stejným názvem. Po restartu Nomadu se zahodí.
+* `Exportovat ikony nástrojů` - Zkopíruje základní ikony `tool_<tool>.png` do `tmp_session/icons`, aniž by cokoli přepsal. Tam je můžete upravit a použít pomocí `Znovu načíst ikony`.
+* `Znovu načíst ikony` - Použije ikony z `tmp_session/icons`.
+
+### Quad přesíťování {#quad-remesh}
+Možnosti quad přesíťování už v této nabídce nejsou: viz [Quad přesíťování](topology.md#quad-remesh-instant) v nabídce Topologie a nástroj [Quad Remesher](tools.md#quad-remesher).
+
+### Vytvořit náhledy obchodu {#make-store-thumbnails}
+Vyrenderuje snímky obrazovky ve velikostech vhodných pro iOS App Store.

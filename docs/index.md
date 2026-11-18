@@ -1,4 +1,4 @@
-# Overview {#overview}
+# ![](/icons/home.webp) Overview {#overview}
 
 <!-- 
 [[toc]]
@@ -25,10 +25,12 @@ Read the [Getting Started](gettingstarted.md) guide.
 | [Post Process](postprocess.md) | ![](/icons/postprocess.webp) | Post Processing (screen-space visual effects)      |
 | [Background](background.md)    | ![](/icons/image.webp)       | Change the background and add a reference image    |
 | [Camera](camera.md)            | ![](/icons/camera.webp)      | Camera control and interaction                     |
-| [Stroke](stroke.md)            | ![](/icons/pencil.webp)      | Edit the current tool settings, stroke, falloff... |
-| [Pressure](pressure.md)        | ![](/icons/pressure.webp)    | Manage the pressure of your pencil                 |
+| [Transform](transform.md)      | ![](/icons/transform.webp)   | Type the position, rotation and size of an object  |
+| [Stroke](stroke.md)            | ![](/icons/brush.webp)       | Edit the current tool settings, stroke, falloff... |
+| [Pressure](stroke.md#pressure)        | ![](/icons/pressure.webp)    | Manage the pressure of your pencil                 |
 | [Painting](painting.md)	       | ![](/icons/paint.webp)       | Painting settings for painting tools               |
 | [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Manage the mirror plane of your current mesh       |
+| [Operation](operation.md)      | ![](/icons/operation.webp)   | Smooth, inflate, recolor or blur a whole mesh      |
 | [Layers](layers.md)            | ![](/icons/layer.webp)       | Manage your current object layers                  |
 | [Settings](settings.md)        | ![](/icons/cog.webp)         | Customize the 3d viewport                          |
 | [Interface](interface.md)      | ![](/icons/sliders.webp)     | Customize the interface                            |

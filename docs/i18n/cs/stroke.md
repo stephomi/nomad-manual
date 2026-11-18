@@ -1,169 +1,212 @@
-# ![](/icons/pencil.webp) Tah {#stroke}
+# ![](/icons/brush.webp) Tah {#stroke}
 
 ---
 ![](/images/stroke_overview.webp) 
 
 ## Přehled {#overview}
 
-Chování tahu můžete přizpůsobit u většiny nástrojových štětců.
-Nastavení je podobné těm v 2D malovacích aplikacích, některé volby jsou ale specifické pro sochání a 3D.
+Chování tahu si můžete přizpůsobit u většiny štětců nástrojů.
+Nastavení se podobají těm, která znáte z 2d malířských aplikací, některé volby jsou ale specifické pro sochání a 3d.
 
-Možnosti jsou rozdělené do 5 podnabídek:
+Volby jsou rozdělené do 5 podnabídek:
 
 | Název    | Ikona                        | Popis                                                              |
 | :------: | :--------------------------: | :----------------------------------------------------------------: |
-| Stroke   | ![](/icons/stroke_dot.webp) | Řídí, jak je tah aplikován na model                                |
-| Alpha    | ![](/icons/alpha.webp)      | Jak je šedotónová textura použita pro otisk štětce                |
-| Falloff  | ![](/icons/falloff.webp)    | Řídí, jak se síla štětce mění od středu k okraji                   |
-| Filter   | ![](/icons/filter.webp)     | Jak je štětec ovlivněn geometrií modelu                            |
-| Pressure | ![](/icons/pressure.webp)   | Řídí odezvu na tlak stylusu                                        |
+| Tah      | ![](/icons/brush.webp)      | Určuje, jak se tah na model nanáší                                 |
+| Alfa     | ![](/icons/alpha.webp)      | Jak se pro otisk štětce použije textura ve stupních šedi           |
+| Útlum    | ![](/icons/falloff.webp)    | Určuje, jak se síla štětce mění od středu k okraji                 |
+| Filtr    | ![](/icons/filter.webp)     | Jak geometrie modelu ovlivňuje štětec                              |
+| Tlak     | ![](/icons/pressure.webp)   | Určuje odezvu na tlak stylusu                                      |
 
 ::: tip
-Ne všechny volby tahu platí pro všechny nástroje. Volby tahu, které aktuální nástroj nepoužívá, budou zakázané nebo skryté. 
+Ne všechny volby tahu platí pro všechny nástroje. Volby, které aktuální nástroj nepoužívá, jsou neaktivní nebo skryté. 
 :::
 
 
-## Tah {#stroke-1}
+## ![](/icons/brush.webp) Tah {#stroke-1}
 
-### Poloměr {#radius}
+### ![](/icons/radius.webp) Poloměr {#radius}
 
 ![](/images/stroke_radius.webp)
 
-#### Sdílet poloměr {#share-radius}
+Volby poloměru jsou globální nastavení: platí pro všechny nástroje.
 
-Je-li zapnuto, všechny nástroje budou používat stejný poloměr; výchozí chování je, že každý nástroj má svůj vlastní poloměr.
+#### Prostor {#size}
 
-#### Velikost {#size}
+* `Obrazovka` - poloměr se zadává v jednotkách obrazovky. Když nastavíte poloměr na 100 pixelů, zůstane 100 pixelů široký, ať model přiblížíte, nebo oddálíte.
+* `Svět (3D)` - poloměr se zadává v 3d jednotkách. Když například vytvoříte kouli a nastavíte poloměr na stejnou velikost, jako má koule, zůstane poloměr stejně velký jako koule i při přibližování a oddalování.
 
-* Screen – poloměr je nastaven v jednotkách obrazovky. Pokud nastavíte poloměr na šířku 100 pixelů, zůstane 100 pixelů široký bez ohledu na přiblížení nebo oddálení.
-* Constant (3d) – poloměr je nastaven v 3D jednotkách. Například pokud vytvoříte kouli a nastavíte poloměr na stejnou velikost jako koule, poloměr zůstane stejně velký jako koule při přibližování i oddalování.
+#### ![](/icons/link.webp) Synchronizace zkratky {#sync-shortcut}
+
+Když je volba zapnutá, poloměr a nastavení siluety zůstávají synchronizované i po přepnutí na zkratkové štětce (`Hladit`, `Maska` nebo `Skrýt`). Rychlé vyhlazení nebo maskování tak použije stejnou velikost štětce jako nástroj, se kterým jste pracovali.
+
+#### ![](/icons/link.webp) Sdílený poloměr {#share-radius}
+
+Když je volba zapnutá, všechny nástroje používají stejný poloměr. Ve výchozím stavu má každý nástroj svůj vlastní.
 
 
-### Tah {#stroke-type}
+### Typ tahu {#stroke-type}
 
 ![](/images/stroke_strokemode.webp)
 
 Tahy mohou fungovat v několika režimech:
 
-### ![](/icons/stroke_dot.webp) Tečka {#dot}
-Táhněte jako běžný malířský tah. 
+### ![](/icons/stroke_dot.webp) Bod {#dot}
+Táhnete jako při běžném malování. 
 ![](/videos/stroke_dot.mp4) 
 
-### ![](/icons/stroke_roll.webp) Rolování {#roll}
-Alfa štětce se bude otáčet podle směru tahu, užitečné pro vytváření stehů na látce. 
+### ![](/icons/stroke_roll.webp) Otáčet {#roll}
+Alfa štětce se otáčí podle směru tahu. Hodí se například na stehy na látce. 
 ![](/videos/stroke_roll.mp4) 
 
- ### ![](/icons/radius.webp) Lock + radius
- Otiskne tah štětce s pevnou **_výškou_**. Tažením nastavíte měřítko a rotaci.
+### ![](/icons/radius.webp) Zámek + poloměr {#lock-radius}
+Otiskne tah štětce s pevnou **_výškou_**. Tažením nastavíte velikost a otočení.
 ![](/videos/stroke_lock_radius.mp4) 
 
-### ![](/icons/falloff.webp) Zámek + intenzita {#lock-intensity}
-Otiskne tah štětce s pevným **_poloměrem_**. Tažením nastavíte výšku a rotaci.
+### ![](/icons/normal.webp) Zámek + intenzita {#lock-intensity}
+Otiskne tah štětce s pevným **_poloměrem_**. Tažením nastavíte výšku a otočení.
 ![](/videos/stroke_lock_intensity.mp4) 
+
+::: tip
+Režimy `Zámek + poloměr` a `Zámek + intenzita` ignorují nastavení [Tlaku](#pressure), protože velikost a sílu už určuje samotné tažení.
+:::
 
 ![](/images/stroke_strokemodemove.webp)
 
-Nástroje `Move` a `Drag` mají své vlastní 3 volby:
+Nástroje `Přesunout` a `Táhnout` mají vlastní 3 volby:
 
-### ![](/icons/snake.webp) Tažení {#drag}
+### ![](/icons/snake.webp) Tah {#drag}
 
-Během tahu bude neustále aktualizovat to, co je uvnitř poloměru štětce. Rychlý tah nechá povrch za sebou, zatímco pomalý tah bude „držet“ materiál a vytvářet delší tvary. Toto je výchozí režim pro nástroj `Drag`. S `Dynamic Topology` lze použít k vytváření hadovitých extruzí. 
+Během tahu průběžně aktualizuje, co je uvnitř poloměru štětce. Rychlý tah povrch nechá za sebou, pomalý tah materiál drží a vytahuje delší tvary. Je to výchozí režim nástroje `Táhnout`. Se zapnutou volbou `Dynamická topologie` tak můžete vytvářet hadovité výtažky. 
 ![](/videos/stroke_drag.mp4) 
 
 
-### ![](/icons/grab.webp) Chytnout {#grab}
-Při spuštění štětce vybere to, co je uvnitř poloměru štětce, a toto výběrové území si ponechá. To je užitečné pro přesnější přesuny, protože můžete pečlivě upravit vzdálenost posunu a omylem neposunout víc, než jste původně vybrali. Toto je výchozí režim pro nástroj `Move`.
+### ![](/icons/grab.webp) Chytit {#grab}
+Na začátku tahu vybere, co je uvnitř poloměru štětce, a tento výběr si drží. Hodí se pro přesnější přesuny: vzdálenost posunu můžete pečlivě doladit, aniž byste omylem pohnuli větší částí, než jste původně vybrali. Je to výchozí režim nástroje `Přesunout`.
 ![](/videos/stroke_grab.mp4) 
 
 
-### ![](/icons/radius.webp) Zámek + poloměr (tažení) {#lock-radius-drag}
-Uživatelský poloměr je ignorován a dynamicky se nastavuje podle toho, jak daleko je tah tažen od počátečního bodu. Malá vzdálenost = malý poloměr, větší vzdálenost = větší poloměr. Pomocí posuvníku intenzity ovládáte tvar falloffu. Užitečné pro blokování organických gumových tvarů.
+### ![](/icons/radius.webp) Zámek + poloměr (tah) {#lock-radius-drag}
+Nastavený poloměr se ignoruje a mění se dynamicky podle toho, jak daleko od počátečního bodu tah odtáhnete. Malá vzdálenost = malý poloměr, větší vzdálenost = větší poloměr. Posuvníkem intenzity řídíte tvar útlumu. Hodí se pro hrubé modelování organických, gumových tvarů.
 ![](/videos/stroke_lockradius_drag.mp4) 
 
+Některé další nástroje zde nabízejí své vlastní typy tahu, například `Uvolnit`, `Hladit` a `Rozmazat` u vyhlazovacích nástrojů nebo tvary jako `Laso` a `Křivka` u nástrojů založených na výběru. Popisuje je stránka každého [nástroje](tools.md).
 
 
-### Upravit intenzitu mezer {#adjust-spacing-intensity}
+### Upravit intenzitu mezery {#adjust-spacing-intensity}
 ![](/images/stroke_space_smooth.webp)
 
-Tahy s malým rozestupem (nižším než 50 %) se mohou rychle kumulovat a vytvářet intenzivnější tahy než vyšší hodnoty rozestupu. Toto přepínání to kompenzuje, takže tahy budou přibližně stejně intenzivní bez ohledu na rozestup.
+Tahy s malou mezerou (pod 50 %) se rychle sčítají a jsou tak silnější než tahy s větší mezerou. Tento přepínač to vyrovnává, takže tahy mají zhruba stejnou intenzitu bez ohledu na mezeru.
 
-### Rozestup tahu {#stroke-spacing}
-Jak daleko od sebe se má aplikovat každý otisk štětce během tažení. Hodnoty nižší než 100 % se budou překrývat a vytvářet dojem souvislého tahu. Hodnoty vyšší než 100 % začnou zanechávat mezery, což je užitečné pro sochání detailů jako švy nebo zipy.
+### Mezera mezi tahy {#stroke-spacing}
+Jak daleko od sebe se jednotlivé otisky štětce při tažení nanášejí. Hodnoty pod 100 % se překrývají a tah působí souvisle. Hodnoty nad 100 % začnou vytvářet mezery, což se hodí na detaily jako stehy nebo zipy.
 
-### Stabilizátor Lazy rope {#lazy-rope-stabilizer}
-Tahy budou zaostávat za pozicí ukazatele o určitou vzdálenost. To lze použít k kreslení hladkých čar.
+### Stabilizátor lano {#lazy-rope-stabilizer}
+Tah se táhne za ukazatelem s určitým odstupem. Díky tomu můžete kreslit plynulé čáry.
 ![](/videos/stroke_lazy_rope.mp4) 
 
-### Vyhlazení tahu {#stroke-smoothing}
-Průměruje více pozic ukazatele pro hladší tah.
-Při vysokých hodnotách bude tah zaostávat za ukazatelem, ale nakonec ho dožene.
-To je užitečné pro kreslení hladkých čar.
+### Vyhlazování tahu {#stroke-smoothing}
+Zprůměruje několik poloh ukazatele, takže je tah plynulejší.
+Při vysokých hodnotách se tah opožďuje za ukazatelem, ale nakonec ho dožene.
+Hodí se pro kreslení plynulých čar.
 
-### Přichytit poloměr {#snap-radius}
-Přichytí začátek tahu ke konci předchozího tahu. Poloměr určuje, jak daleko se má hledat konec předchozího tahu. To může být užitečné při kreslení dlouhých souvislých čar s častými pauzami.
+### Poloměr přichycení {#snap-radius}
+Přichytí tah k předchozímu, když ukazatel začne blízko místa, kde poslední tah skončil. Poloměr určuje, jak daleko se konec předchozího tahu hledá. Hodí se při kreslení dlouhých souvislých čar, když často děláte přestávky.
+
+### ![](/icons/trail.webp) Stopa za tahem {#trail}
+
+Když je volba zapnutá, každý nový otisk znovu nanese i několik posledních bodů tahu za sebou. `Počet stop` určuje, kolik bodů se znovu nanese, `Intenzita stopy` jak silné jsou a `Poloměr stopy` o kolik se zvětšují.
+
+Stopa funguje jen s typem tahu `Bod` a nefunguje s [vlivem útlumu](#influence) `Hřbet`.
 
 ### ![](/icons/silhouette.webp) Silueta {#silhouette}
 ![](/images/stroke_silhouette.webp)
-Ve výchozím nastavení tahy ovlivňují pouze povrch modelu v rámci poloměru štětce. Když je silueta zapnutá, tah bude promítán skrz celý model. To může být velmi užitečné při počátečním blokování modelu nebo pro tvary, které vyžadují, aby boky zůstaly kolmé.
+Ve výchozím stavu tahy ovlivňují jen povrch modelu uvnitř poloměru štětce. Se zapnutou siluetou se tah promítne skrz celý model. To se velmi hodí při prvotním hrubém modelování nebo u tvarů, jejichž boky mají zůstat kolmé.
 
-Směr projekce lze nastavit explicitně, výchozí metoda „Closest“ detekuje nejlepší úhel vzhledem k pohledu. 
+Směr promítání můžete nastavit přímo:
+
+* `X`, `Y`, `Z` - promítání podél pevné osy.
+* `Zobrazení` - promítání ve směru kamery.
+* `Pokud přichycen` - promítání ve směru kamery, ale jen když je kamera přichycená k pohledu. Jinak zůstává tah běžným tahem.
+* `Nejbližší` - promítání podél osy nejbližší směru kamery. Toto je výchozí volba.
 
 ![](/videos/stroke_silhouette.mp4) 
 
-### ![](/icons/dice.webp) Náhodně {#randomize}
+### ![](/icons/dice.webp)Náhodně {#randomize}
 
 ![](/images/stroke_randomize.webp)
 
-Intenzita, posun, rotace a měřítko tahu mohou být náhodně měněny. To lze použít k vytvoření různých efektů, např. náhodnění s nástrojem paint může vytvořit skvrnitou barvu, nebo náhodnění s nástrojem crease lze použít k tvorbě detailů kůže.
+`Intenzita`, `Posun`, `Rotace` a `Měřítko` tahu lze každou zvlášť náhodně měnit. Zaškrtávacím políčkem řádku ji zapnete nebo vypnete. Dá se tak dosáhnout řady efektů, například náhodnost s nástrojem malování vytvoří skvrnitou barvu a s nástrojem rýha zase detaily kůže.
+
+`Perioda (pomalejší)` určuje délku náhodného cyklu: zvyšte ji pro pomalé, plynulé změny, snižte ji pro rychlý šum. Malé tlačítko vedle každého řádku mění periodu jen pro daný řádek.
 
 ![](/videos/stroke_randomize.mp4) 
 
+### ![](/icons/paint.webp) Náhodně - HSV {#randomize-hsv}
+
+U nástrojů, které malují, lze náhodně měnit také `Odstín`, `Saturace` a `Hodnota` barvy, s vlastní periodou. Skvělé pro jemné barevné variace kůže nebo kamene.
+
 ### Posun tahu {#stroke-offset}
 
-Aplikuje na tah konstantní posun. To je užitečné pro malé obrazovky, kde by váš prst zakrýval tah. 
+Posune tah o stálou vzdálenost, aby ho nezakrýval váš prst. Hodí se na malých obrazovkách. Jde o globální nastavení: zapnete ho zaškrtávacím políčkem a platí pro všechny nástroje.
 
 
 ## ![](/icons/alpha.webp) Alfa {#alpha}
 ![](/images/stroke_alpha.webp) 
 
-`Alpha` je textura, která moduluje chování štětce.
-Je to šedotónový obrázek, kde černé pixely znamenají žádnou deformaci a bílé pixely plnou deformaci.
+`Alfa` je textura, která upravuje chování štětce.
+Je to obrázek ve stupních šedi: černé pixely znamenají žádnou deformaci, bílé plnou deformaci.
 
-Kliknutím na obrázek alfy ji změníte.
+Klepnutím na obrázek alfy ji změníte. Kromě vestavěných alf a vašich vlastních importů umí seznam alf stahovat i displacement mapy z Poly Haven.
 
-Kliknutím na náhled materiálu načtete alfu z přednastavení materiálu. Zde můžete také ukládat přednastavení materiálů a zvolit, zda se mají textury s nástrojem vkládat.
-
-::: tip
-Textura se nikdy nemění velikostí, takže velké textury mohou zpomalit výkon.
-:::
-
-### Inverze pixelů {#invert-pixels}
-Obrátí hodnoty obrázku, takže černé pixely se stanou bílými a bílé pixely černými.
+Klepnutím na náhled materiálu načtete alfu z přednastavení materiálu. Přednastavení materiálu zde také můžete ukládat a zvolit, zda se mají textury vložit do nástroje.
 
 ::: tip
+Textura se nikdy nezmenšuje, takže velké textury mohou zpomalit výkon.
+:::
 
-Vestavěné alfy dodávané s Nomad nelze invertovat.
+### ![](/icons/blend_contrast.webp) Opravit alfu {#invert-pixels}
+Tlačítko `Opravit...` u importované alfy otevře okno, které opraví samotný obrázek: jeho střední hodnotu, invertování pixelů (černá se změní na bílou a bílá na černou), otočení o 90° a vodorovné nebo svislé převrácení. Soubor obrázku se přepíše, takže opravený obrázek uvidí i ostatní aplikace.
+
+::: tip
+
+Vestavěné alfy, které jsou součástí Nomadu, opravit nelze.
 
 :::
 
-### Měřítko {#scaling}
+### Projekce {#projection}
 
-Velikost štětce v Nomad je kruh s uživatelem definovaným poloměrem. Textury jsou často čtvercové nebo obdélníkové, parametry `Scaling` vám umožní rozhodnout, jak má textura do kruhu zapadnout. Pro čtvercovou texturu hodnota 0,7 zapadne do kruhu. Hodnota 1 zvětší texturu tak, aby se kruh vešel dovnitř, přičemž okraje budou oříznuty.
+Jak se alfa promítá na model:
+
+* `Povrch` - alfa leží na povrchu pod štětcem a sleduje jeho orientaci.
+* `Obrazovka` - alfa se promítá přímo z pohledu.
+* `Dlaždice` - alfa se promítá z pohledu a zůstává na místě, zatímco přes ni malujete, jako šablona, takže opakující se vzor plynule navazuje. Rotace je zamčená a tlak pera nemění velikost vzoru.
+* `Triplanar` - alfa se promítá podél 3 os. Volby měřítka, rotace a dláždění níže nahradí nastavení triplanární textury.
+
+### ![](/icons/diagonal.webp) Stupnice {#scaling}
+
+Štětec v Nomadu je kruh s poloměrem, který si nastavíte. Textury bývají čtvercové nebo obdélníkové a parametry `Stupnice` určují, jak se textura do kruhu vejde. U čtvercové textury se při hodnotě 0,7 vejde do kruhu celá. Hodnota 1 texturu zvětší tak, aby se kruh vešel do ní, a její okraje se ořežou.
 
 ![](/images/alpha_scaling.webp) 
 
-Zapnutím `Scaling - Y` můžete alfu vertikálně roztahovat.
+Zapnutím `Stupnice Y` můžete alfu roztáhnout svisle. První posuvník se pak změní na `Stupnice X`.
 
 ![](/images/alpha_scaling_y.webp) 
 
+`Převrátit vodorovně` zrcadlí alfu zleva doprava.
+
 ### Rotace {#rotation}
 
-Textura alfy se bude otáčet podle směru tahu. Můžete přidat rotační offset a pokud je ikona zámku zapnutá, textura zůstane uzamčená v této rotaci vzhledem k obrazovce.
+Textura alfy se otáčí podle směru tahu. Můžete přidat posun rotace, a když je zapnutá ikona zámku, zůstane textura vůči obrazovce zamčená v této rotaci.
 
-### Dlaždicování {#tiling}
+Tlačítko s perem vedle ní otáčí alfou, když stylus otáčíte v prstech (barrel roll), u tahů `Zámek + poloměr` a `Zámek + intenzita`, pokud rotace není zamčená. Funguje jen se stylusy, které to podporují.
+
+### Dláždění {#tiling}
 ![](/images/stroke_tiling.webp) 
 
-Jak často se textura opakuje v profilu štětce. Režimy dlaždicování umožňují omezit se na jednu texturu v rámci tahu, opakované textury nebo zrcadlené, kde je každá druhá textura převrácená, aby se vytvořily vzory nebo pomohlo vytvářet bezešvé textury.
+Jak často se textura v profilu štětce opakuje. Režimy `Dláždění - X` a `Dláždění - Y` umožňují omezit tah na jedinou texturu (`Nic`), opakovat textury (`Opakovat`) nebo je zrcadlit, kdy je každá druhá textura převrácená, což vytváří vzory nebo pomáhá s navazujícími texturami (`Zrcadlit`). Jsou dostupné s tahem `Otáčet`, s projekcí `Dlaždice` nebo s `Dláždění` větším než 1.
+
+`Pevné uložení (nečtvercové obrázky)` má význam jen u nečtvercových alf a textur štětce. Když je zapnuté, každý obrázek se dláždí samostatně bez mezer. Vypněte ho, pokud chcete, aby alfa a ostatní obrázky zůstaly sladěné i při různém poměru stran.
 
 ![](/videos/alpha_tiling.mp4) 
 
@@ -171,146 +214,163 @@ Jak často se textura opakuje v profilu štětce. Režimy dlaždicování umož�
 
 ### Střední hodnota {#mid-value}
 
-Ve výchozím nastavení černé pixely znamenají žádnou deformaci a bílé pixely plnou kladnou deformaci, takže například clay štětec s alfa texturou kamenů bude povrch vytahovat ven pouze tam, kde alfa není černá.
+Ve výchozím stavu znamenají černé pixely žádnou deformaci a bílé plnou kladnou deformaci. Například štětec hlína s alfou kamenů tak povrch vytáhne ven jen tam, kde alfa není černá.
 
-Pokud chcete, aby štětec povrch vtlačoval dovnitř nebo zároveň vtlačoval i vytahoval, můžete upravit střední hodnotu. Pokud ji nastavíte na 0,5, střední šedá v alfě nebude dělat nic, černá bude vtlačovat dovnitř, bílá vytahovat ven.
+Pokud chcete, aby štětec povrch zatlačoval dovnitř, nebo zároveň zatlačoval dovnitř I vytahoval ven, upravte střední hodnotu. Když ji nastavíte na 0,5, střední šedá v alfě nedělá nic, černá zatlačuje dovnitř a bílá vytahuje ven.
+
+Se správnou hodnotou pomohou dvě tlačítka: čtvercové tlačítko načte střední hodnotu z okraje obrázku a kapátkem ji můžete vybrat přímo na alfě.
 
 
 
 
-## Pád {#falloff}
+## ![](/icons/falloff.webp) Útlum {#falloff}
 
 ![](/images/falloff_menu.webp) 
 
-Je podobný [Alfa](#alpha), ale intenzitu řídíte jednou křivkou. Ta se kombinuje s alfou, takže můžete použít texturu pro detail a falloff pro řízení vytrácení okrajů a intenzity ve středu nástroje.
+Podobá se [Alfě](#alpha), jen intenzitu řídíte jedinou křivkou. Kombinuje se s alfou, takže texturu můžete použít na detaily a útlum na řízení slábnutí k okrajům a intenzity uprostřed nástroje.
 
-Když je křivka nahoře, jde o plnou deformaci, když je dole, štětec nemá žádný efekt.
+Když je křivka nahoře, jde o plnou deformaci, když je dole, štětec nemá žádný účinek.
 
-Křivku si můžete představit jako průřez špičkou štětce. Spodní část zobrazuje náhled toho, jak by vypadal jeden „otisk“ štětce na povrchu modelu, a pokud má štětec alfa texturu, zobrazí se také, aby bylo vidět, jak se falloff a alfa ovlivní.
+Křivku si můžete představit jako průřez špičkou štětce. Spodní část ukazuje náhled jediného „otisku“ štětce na povrchu modelu, a pokud má štětec texturu alfy, zobrazí se i ta, abyste viděli, jak se útlum a alfa navzájem ovlivňují.
 
-### Předvolba {#preset}
-Je-li vybráno, kliknutím na graf křivky se zobrazí nabídka presetů. Zaoblené křivky dávají měkčí výsledky, hranaté křivky ostřejší. Tlačítko `Sub` v levém panelu v podstatě obrátí falloff, takže vršek křivky bude povrch vtlačovat místo vytahování ven, nebo naopak.
+### ![](/icons/fx.webp) Přednastavení {#preset}
+Když je vybrané `Přednastavení...`, klepnutím na graf křivky otevřete nabídku přednastavení. Zaoblené křivky dávají měkčí výsledky, hranaté ostřejší. Tlačítko `Méně` v levém panelu nástrojů útlum v podstatě obrátí, takže vrchol křivky povrch zatlačí dovnitř místo vytažení ven, nebo naopak.
 
-### Catmull-Rom {#catmull-rom}
-Při výběru může uživatel kreslit vlastní křivky falloffu. Editor křivek funguje stejně jako křivky ve zbytku Nomad:
+### ![](/icons/curve_catmull.webp) Catmull-Rom {#catmull-rom}
+Když je tato volba vybraná, můžete si nakreslit vlastní křivky útlumu. Editor křivky funguje stejně jako křivky ve zbytku Nomadu:
 
-* Kliknutím na křivku vytvoříte nový bod
-* Tažením bod přesunete
-* Kliknutím na bod přepínáte mezi ostrým a hladkým
-* Přetažením bodu do sousedního bodu ho odstraníte
+* Klepnutím na křivku vytvoříte nový bod
+* Tažením bodu změníte jeho polohu
+* Klepnutím na bod přepnete mezi ostrým a hladkým
+* Přetažením bodu na sousední bod ho odstraníte
 
-### B-spline {#b-spline}
-Při výběru může uživatel kreslit vlastní křivky falloffu. Editor funguje stejně jako Catmull-Rom, ale body křivku ovlivňují, místo aby na ní ležely přímo, což může pomoci vytvářet hladší tvary křivek.
+### ![](/icons/curve_bspline.webp) B-splajn {#b-spline}
+Když je tato volba vybraná, můžete si nakreslit vlastní křivky útlumu. Editor funguje stejně jako Catmull-Rom, ale body křivku jen ovlivňují místo toho, aby ležely přímo na ní, což pomáhá vytvářet hladší tvary křivek.
 
-Editor křivek má 3 tlačítka:
+### ![](/icons/curve_bevel.webp) Zkosení {#bevel}
+Body jsou spojené rovnými čarami se zaoblenými rohy, jejichž velikost závisí na ostrosti každého bodu. Hodí se pro štětce s plochým vrcholem a čistým zkosením na okraji.
 
-| Položka  | Ikona                       | Popis                                       |
-| :------: | :-------------------------: | :-----------------------------------------: |
-| Maximize | ![](/icons/maximize.webp)  | Rozbalí editor křivky                      |
-| Reset    | ![](/icons/reset.webp)     | Vrátí křivku do výchozího stavu            |
-| Symmetry | ![](/icons/symmetric.webp) | Zobrazí křivku jako symetrickou „špičku“   |
+Editor křivky má 3 tlačítka:
+
+| Položka        | Ikona                       | Popis                                        |
+| :------------: | :-------------------------: | :------------------------------------------: |
+| Maximalizovat  | ![](/icons/maximize.webp)  | Zvětší editor křivky                         |
+| Resetovat      | ![](/icons/reset.webp)     | Vrátí křivku do výchozího stavu              |
+| Symetrie       | ![](/icons/symmetric.webp) | Zobrazí křivku jako symetrickou „špičku štětce“ |
 
 
 ### Vliv {#influence}
 
-* Sphere (3d) – Vliv se počítá podle vzdálenosti vrcholu od středu štětce.
-* Circle (2d) – Vrchol se nejprve promítne do roviny oblasti a pak se bere jeho vzdálenost od středu štětce. Je to podobné tomu, jak se samplují alfy. 
-* Cylinder – Vliv je promítán skrz oblast jako válec, používá se v režimu Silhouette níže.
+* `Koule` (3d) - vliv se počítá ze vzdálenosti vrcholu od středu štětce.
+* `Kruh` (2d) - vrchol se nejprve promítne na rovinu oblasti a teprve pak se měří jeho vzdálenost od středu štětce. Podobně se vzorkují alfy. 
+* `Válec` - vliv se promítá skrz oblast jako válec. Je to totéž jako zapnout [Siluetu](#silhouette-1) níže.
+* `Hřbet` - útlum se měří napříč tahem, takže křivka se stane průřezem celého tahu. Tlačítko `Sym` pak profil zrcadlí napříč tahem: upravíte jednu stranu a druhá ji následuje. Když je vypnuté, křivka vede od levé strany tahu k pravé. Není k dispozici u nástrojů založených na zploštění.
 
-### Silueta {#silhouette-1}
-Ve výchozím nastavení tahy ovlivňují pouze povrch modelu v rámci poloměru štětce. Když je silueta zapnutá, tah bude promítán skrz celý model. To může být velmi užitečné při počátečním blokování modelu nebo pro tvary, které vyžadují, aby boky zůstaly kolmé.
+### ![](/icons/silhouette.webp) Silueta {#silhouette-1}
+Ve výchozím stavu tahy ovlivňují jen povrch modelu uvnitř poloměru štětce. Se zapnutou siluetou se tah promítne skrz celý model. To se velmi hodí při prvotním hrubém modelování nebo u tvarů, jejichž boky mají zůstat kolmé. Nabízí stejné volby promítání jako [Silueta](#silhouette) na kartě Tah.
 
 
 
-## Filtr {#filter}
+## ![](/icons/filter.webp) Filtr {#filter}
 
 ![](/images/filter_menu.webp) 
 
-### Akumulovat tah {#accumulate-stroke}
-Povolí neomezené množství materiálu, které lze přidat/odebrat jedním tahem. Např. nástroj `Clay` to má zapnuté, takže materiál se může stále nabalovat, zatímco nástroj `Brush` to má vypnuté, takže tahy přestanou přidávat materiál, pokud budete stejným tahem jezdit po stejné oblasti sítě. 
+### ![](/icons/accumulate.webp) Akumulovat tah {#accumulate-stroke}
+Zruší omezení, kolik hmoty lze jedním tahem přidat nebo ubrat. Například nástroj `Hlína` má tuto volbu zapnutou, takže materiál se může stále vrstvit, zatímco nástroj `Štětec` ji má vypnutou, takže tah přestane přidávat materiál, když jím opakovaně přejíždíte přes stejnou oblast sítě. 
 
-### Pouze vrcholy čelící kameře {#front-facing-vertex-only}
-Tato volba ignoruje zadní vrcholy.
-Může být užitečná, pokud chcete malovat část tenké geometrie bez ovlivnění druhé strany.
-Funguje i pro sochání, ale můžete zaznamenat některé artefakty.
+### ![](/icons/culling.webp) Pouze přivrácené vrcholy {#front-facing-vertex-only}
+Tato volba ignoruje odvrácené vrcholy.
+Hodí se, když chcete malovat na část tenké geometrie a nezasáhnout přitom druhou stranu.
+Funguje i při sochání, ale mohou se objevit artefakty.
 
-### Povolit dynamickou topologii {#allow-dynamic-topology}
-Tato volba je dostupná pouze pokud je vaše síť v režimu [Dynamic Topology](topology.md#dynamic-topology). Dynamickou topologii můžete povolit nebo zakázat pro každý nástroj zvlášť.
+### ![](/icons/eye_open.webp) Jen viditelné vrcholy {#visible-vertex-only}
+Ignoruje vrcholy skryté z pohledu kamery za jinými povrchy. Tato volba se zobrazuje u tvarových tahů (laso, obdélník...) nástrojů pro maskování a malování a nástrojů `SkupinaPovrch` a `Skrýt`.
 
-### Propojená topologie {#connected-topology}
-Povolí sochat pouze vrcholy, které jsou propojené s povrchem, kterého se nástrojem dotknete. Například při použití s nástrojem `Move` vám to umožní posunout část, i když se protíná s jinou částí.
+### ![](/icons/dynamic.webp) Povolit dynamickou topologii {#allow-dynamic-topology}
+Tato volba je dostupná, jen pokud je vaše síť v režimu [Dynamická topologie](topology.md#dynamic-topology). Dynamickou topologii tak můžete vypnout nebo zapnout pro každý nástroj zvlášť.
+
+### ![](/icons/connect.webp) Propojená topologie {#connected-topology}
+Sochá jen vrcholy propojené s povrchem, kterého se nástrojem dotknete. Například s nástrojem `Přesunout` tak můžete posunout část modelu, i když se protíná s jinou částí.
 ![](/videos/connected_topology.mp4)
 
 ### Chránit oblast {#protect-area}
 ![](/images/filter_protect_area.webp) 
 
-Tyto volby zastaví nástroje v ovlivňování částí sítě za různých podmínek. 
+Tyto volby zabrání nástrojům ovlivňovat části sítě za různých podmínek. Každou můžete nastavit na `Auto`, `Ne` nebo `Ano` a malá šipka ukazuje, čemu `Auto` právě odpovídá.
 
-Volba „Auto“ znamená, že pokud máte v nabídce [Shading](shading) zapnuté hide, mask nebo facegroup, budou chráněny, ale pokud jsou v této nabídce vypnuté, ochrana je deaktivována.
+* `Skrýt` - pokud jsou části sítě skryté nástrojem skrýt, určuje, zda mají být chráněné. Při `Auto` jsou skryté plochy chráněné, pokud není viditelný jejich drátový model (viz nastavení [Drátový model](settings.md#wireframe)).
+* `Maska` - pokud jsou části sítě zamaskované, určuje, zda mají být chráněné. Při `Auto` jsou zamaskované části chráněné, dokud je maska viditelná v nabídce [Stínování](shading).
+* `SkupinaPovrch` - určuje, zda lze nástroj použít jen uvnitř první skupiny ploch, které se dotknete. Při `Auto` se řídí tím, zda jsou skupiny ploch viditelné v nabídce [Stínování](shading).
 
-* `All` – Přepínač, zda jsou ochranné filtry globální, nebo pro každý nástroj zvlášť.
-* `Hide` – Pokud jsou části sítě skryté nástrojem hide, nastaví, zda mají být chráněny.
-* `Mask` – Pokud jsou části sítě maskované, nastaví, zda mají být chráněny.
-* `Facegroup` – Nastaví, zda můžete nástroj použít pouze v rámci první dotčené facegroup.
+Tlačítko `(Vše)` určuje, zda jsou tyto ochrany globální, sdílené všemi nástroji, nebo nastavené pro každý nástroj zvlášť.
 
 
-### Zachovat ostré hrany {#keep-sharp-edges}
-Vynechá body, jejichž normály se příliš liší od normály povrchu.
+### Vzorkování oblasti {#area-sampling}
+Některé štětce nebo volby tahu potřebují ke své práci normálu a polohu roviny vůči povrchu.
 
-Změní způsob výpočtu roviny oblasti (Area sampling).
+Způsob výpočtu této průměrné roviny můžete řídit nastavením oblasti vzorkování jako poměru k poloměru nástroje.
 
-Tato volba může být užitečná pro nástroje založené na zarovnání do roviny nebo pokud chcete barvit převážně plochý povrch bez přetékání přes hrany.
+Při 100 % se bere v úvahu každý bod uvnitř kruhu výběru.
+
+Při 0 % se bere v úvahu jen nejbližší vrchol nebo trojúhelník. Hodnoty `Poloměr normálnosti` a `Poloměr pozice` můžete propojit, nebo je odemknout a nastavit každou zvlášť.
+
+### Filtr normál podle oblasti {#keep-sharp-edges}
+Vyloučí body, jejichž normály se příliš odchylují od normály povrchu.
+
+Mění to výpočet roviny oblasti (Vzorkování oblasti), takže se to hodí hlavně u nástrojů typu hlína nebo zploštění, případně když chcete obarvit převážně rovný povrch, aniž by barva přetekla.
+
+Úhly `Min` a `Max` řídí přechod mezi vyloučenými a plně ovlivněnými body, jak ukazuje malý barevný kotouč vedle nich.
 
 ![](/videos/filter_keep_sharp_edges.mp4)
 
-### Vzorkování oblasti {#area-sampling}
-Některé štětce nebo volby tahu vyžadují pro svou funkci normálu roviny a pozici roviny vůči povrchu.
-
-Můžete řídit, jak se tato průměrná rovina počítá, nastavením vzorkovací oblasti jako poměru k poloměru nástroje.
-
-Při 100 % se berou v úvahu všechny body uvnitř výběrového kruhu.
-
-Při 0 % se bere v úvahu pouze nejbližší vrchol nebo trojúhelník. Tyto hodnoty mohou být propojené pro `Normal radius` i `Position radius`, nebo odemčené a nastavené nezávisle.
+### Filtr normál v doznívání {#falloff-normal-filter}
+Podobně jako [Filtr normál podle oblasti](#keep-sharp-edges) vylučuje body, jejichž normály se příliš odchylují od normály povrchu, ale působí na útlum štětce místo výpočtu roviny. Hodí se pro malování rýh nebo hrbolků.
 
 
 ### Maskování hloubky {#depth-masking}
 ![](/images/stroke_depthmask.webp)
 
-Vynechá body, které jsou nad nebo pod určitou vzdáleností od vypočtené roviny (Area sampling).
+Vyloučí body, které jsou nad nebo pod určitou vzdáleností od vypočtené roviny (Vzorkování oblasti).
 
-To lze použít k malování pouze na hrbolatých oblastech nebo pouze v dutinách.
+Můžete tak malovat jen na hrbolaté oblasti, nebo jen do prohlubní.
 
-Graf představuje průřez povrchem; vodorovná čára je místo, kde je povrch, kruh představuje poloměr falloffu malby relativně nad a pod povrchem. `Height offset` je procento nad nebo pod povrchem, kde se začne výpočet maskování. `Top area` a `Bottom area` umožňují škálovat falloff nad a pod bodem offsetu.
+Graf znázorňuje průřez povrchem: vodorovná čára je povrch, kruh znázorňuje poloměr útlumu malby nad a pod povrchem. `Převýšení výšky` je procento nad nebo pod povrchem, od kterého začíná výpočet maskování. Se zapnutým `Spád hloubky` můžete posuvníky `Horní oblast` a `Dolní oblast` měnit velikost útlumu nad a pod bodem posunu.
 
-#### Příklad: Malování v prohlubních {#example-paint-in-cavities}
-Chcete-li malovat pouze dutiny, nastavte height offset na -100 % a upravte posuvník top area tak, aby byl dál od vodorovné čáry. To znamená, že první kliknutí nastaví „nulovou“ hloubku a pak budou ovlivněny pouze oblasti pod touto hloubkou.
+#### Příklad: malování do prohlubní {#example-paint-in-cavities}
+Chcete-li malovat jen do prohlubní, nastavte převýšení výšky na -100 % a posuvník horní oblasti upravte tak, aby byl od vodorovné čáry vzdálený. První klepnutí tak nastaví „nulovou“ hloubku a ovlivněny budou jen oblasti pod ní.
 
 ![](/videos/stroke_depth_cavity.mp4)
 
-#### Příklad: Malování na výstupcích {#example-paint-on-bumps}
-Chcete-li malovat pouze ve vysokých oblastech, nastavte height offset na +90 %, aby se spodní část kruhu malým kouskem protínala s vodorovnou čarou. Když kliknete na vrchol „vysoké“ zóny, nastaví se tím hloubka tak, že vše v této hloubce, plus trochu pod ní a vše nad ní, bude malováno. Hluboké dutiny budou přeskočeny.
+#### Příklad: malování na hrbolky {#example-paint-on-bumps}
+Chcete-li malovat jen na vyvýšená místa, nastavte převýšení výšky na +90 %, aby spodek kruhu jen o kousek protínal vodorovnou čáru. Když klepnete na vrchol „vyvýšené“ oblasti, nastaví se hloubka tak, že se namaluje vše v této hloubce, kousek pod ní a vše výš. Hluboké prohlubně se přeskočí.
 ![](/videos/stroke_depth_bump.mp4)
 
 
-## Tlak {#pressure}
+## ![](/icons/pressure.webp) Tlak {#pressure}
 ![](/images/pressure_menu.webp) 
 
-Řídí, jak tlak stylusu/pera ovlivňuje štětce.
+Určuje, jak tlak stylusu či pera ovlivňuje štětce.
 
-Ve výchozím nastavení je zapnuto `Use global settings`, což znamená, že všechny štětce sdílejí stejné hodnoty tlaku.
+### Použít globální nastavení {#use-global-settings}
 
-### Tlak – poloměr {#pressure-radius}
+Ve výchozím stavu je `Použít globální nastavení` zapnuté, takže všechny štětce sdílejí stejné hodnoty tlaku. Zrušte zaškrtnutí, pokud chcete aktuálnímu nástroji dát vlastní nastavení tlaku.
 
-Tato křivka řídí, jak je poloměr štětce ovlivněn tlakem. Výchozí je lineární vztah, takže pokud má váš stylus plynulou odezvu, změna poloměru by měla také působit plynule. Mnoho stylusů má ale nelineární odezvu, kterou můžete touto křivkou kompenzovat. Například pokud máte pocit, že se poloměr při vysokém tlaku nedostane na maximální hodnotu, použijte preset křivky jako „out-pow3“ s ohybem směřujícím nahoru, aby se poloměr zvyšoval dříve.
+### ![](/icons/radius.webp) Poloměr {#pressure-radius}
 
-Tento dialog je podobný zobrazení křivky falloffu, můžete použít preset klepnutím do okna křivky nebo kreslit vlastní křivky v režimech Catmull-Rom a B-Spline.
+Tato křivka určuje, jak tlak ovlivňuje poloměr štětce. Výchozí vztah je lineární, takže pokud má váš stylus plynulou odezvu, měla by i změna poloměru působit plynule. Mnoho stylusů má ale nelineární odezvu, kterou touto křivkou můžete vyrovnat. Pokud například máte pocit, že poloměr při silném tlaku nedosáhne maxima, použijte přednastavení křivky jako „out-pow3“, které se ohýbá nahoru, aby poloměr rostl dříve.
 
-Pokud chcete konstantní poloměr, tuto sekci vypněte.
+Toto okno se podobá zobrazení křivky útlumu: klepnutím do okna křivky použijete přednastavení, nebo si vlastní křivky nakreslíte v režimech `Catmull-Rom`, `B-splajn` a `Zkosení`.
 
-### Tlak – intenzita {#pressure-intensity}
+Pokud chcete stálý poloměr, tuto sekci vypněte.
 
-Podobné jako u poloměru, ale pro řízení intenzity. Pokud chcete konstantní intenzitu, tuto sekci vypněte.
+### ![](/icons/intensity.webp) Intenzita {#pressure-intensity}
 
-### Vyhlazení tlaku {#pressure-smoothing}
+Podobá se křivce poloměru, ale řídí intenzitu. Pokud chcete stálou intenzitu, tuto sekci vypněte.
 
-Průměruje události tlaku stylusu pro hladší výsledky.
+### Omezit tlak na 100% {#limit-pressure}
+
+Zajistí, že tlak stylusu nikdy nepřekročí 100 %. Jde o globální nastavení.
+
+### Vyhlazování tlaku {#pressure-smoothing}
+
+Zprůměruje události tlaku stylusu, takže výsledky jsou plynulejší.

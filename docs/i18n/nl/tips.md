@@ -2,188 +2,190 @@
 
 [[toc]]
 
-## Hoe een model te beginnen {#how-to-start-a-model}
+## Hoe begin je een model? {#how-to-start-a-model}
 
-Beginners in 3D‑sculpting vragen vaak wat de beste manier is om een model te beginnen. Er is geen beste manier; verschillende mensen hebben verschillende voorkeuren. Hier zijn enkele van de meer gangbare benaderingen.
+Beginners in 3d-sculpting vragen vaak wat de beste manier is om een model te beginnen. Er is geen beste manier: iedereen heeft zijn eigen voorkeur. Hier zijn een paar van de meest gebruikte aanpakken.
 
-### Beelden op bol, multires {#sculpt-on-sphere-multires}
+### Sculpten op een bol, multires {#sculpt-on-sphere-multires}
 
-Het standaardmodel wanneer Nomad start is de meest gebruikelijke manier. Gebruik de Move-, Clay- en Crease‑tools om de bol in vorm te duwen en te trekken; gebruik de lagere subdivisieniveaus wanneer je snel grote veranderingen wilt maken, gebruik hogere subdivisieniveaus voor detailwerk.
+Het standaardmodel waarmee Nomad opstart, is de meest gebruikte manier. Duw en trek de bol in vorm met tools als verplaatsen, klei en plooi. Gebruik de lagere onderverdelingsniveaus als je snel grote veranderingen wilt maken, en de hogere voor detailwerk.
 
-Een veelvoorkomend probleem is dat je vaak polygonen tekortkomt waar je ze nodig hebt, terwijl je elders te veel polygonen hebt. Als je bijvoorbeeld de standaardbol tot een volledig lichaam uitrekt, is de kans groot dat je niet genoeg detail hebt om de vingers te maken, terwijl je veel verspilde polygonen op de achterkant van het hoofd hebt. Voor overwegend bolvormige vormen zoals een hoofd kan dit echter prima zijn.
+Een veelvoorkomend probleem is dat je polygonen tekortkomt waar je ze nodig hebt, terwijl je er elders te veel hebt. Duw je de standaardbol bijvoorbeeld uit tot een heel lichaam, dan heb je waarschijnlijk niet genoeg detail voor de vingers, terwijl er veel polygonen verspild worden aan de achterkant van het hoofd. Voor vooral ronde vormen zoals een hoofd kan dit echter prima werken.
 
 ### Dyntopo {#dyntopo}
 
-Door Dyntopo in te schakelen worden er adaptief polygonen toegevoegd en verwijderd terwijl je sculpt. Deze polygonen zijn driehoeken, en beginners houden vaak niet van de rommelige lay‑out vergeleken met de nette look van multires. Het is de moeite waard om vol te houden! Als je smooth shading inschakelt, wireframe uitschakelt en ophoudt je zorgen te maken over de lay‑out, kan deze modus een zeer klei‑achtig gevoel geven. Vergeet niet dat als je een grote brush of een smooth‑brush gebruikt, deze modus ook polygonen kan verwijderen, zodat de tool altijd snel en responsief aanvoelt. Zodra je een eerste pass van de sculpt af hebt, kun je deze klonen en door quad remesher halen om een nette lay‑out te krijgen, en de oorspronkelijke details opnieuw projecteren op een hoog subdivisieniveau.
+Met Dyntopo aan worden er tijdens het sculpten automatisch polygonen toegevoegd en verwijderd waar dat nodig is. Dat zijn driehoeken, en beginners vinden die rommelige indeling vaak minder mooi dan de nette look van multires. Zet toch door! Zet vloeiende shading aan, het draadmodel uit, en maak je geen zorgen meer over de indeling: deze modus kan heel erg als klei aanvoelen. Vergeet niet dat deze modus met een groot penseel of een gladstrijkpenseel ook polygonen weghaalt, zodat de tool altijd snel en vlot blijft reageren. Als de eerste versie van je sculpt klaar is, kun je hem klonen, door de quad remesher halen voor een nette indeling, en de oorspronkelijke details op een hoog onderverdelingsniveau herprojecteren.
 
 ### Voxel-remesh {#voxel-remesh}
 
-Voxel remesh zal een grotendeels quad‑gebaseerde topologie op je sculpt toepassen. Deze bewerking is snel op lagere resoluties en kan worden gebruikt om snel uitgerekte of te dichte polygonen te vervangen door een gelijkmatig verdeelde lay‑out. Dit kan een geweldige manier zijn om een volledig lichaam vanuit een bol te starten; stel dat je met een hoofd begint, dan kun je een nek uittrekken, voxel remesh. Romp uittrekken, voxel remesh, armen, voxel remesh, enzovoort, totdat je de basisvormen hebt.
+Een voxel-remesh geeft je sculpt een topologie die vooral uit quads bestaat. Bij lagere resoluties gaat dit snel, en zo vervang je snel uitgerekte of te dichte polygonen door een gelijkmatig verdeelde indeling. Dit is een prima manier om vanuit een bol een heel lichaam te maken: begin bijvoorbeeld met een hoofd, trek er een nek uit, voxel-remesh. Trek een romp uit, voxel-remesh, armen, voxel-remesh, enzovoort, tot je de basisvormen hebt.
 
 ### Meerdere objecten gebruiken {#use-multiple-objects}
 
-Veel anatomiegidsen stellen een lichaam voor met eenvoudige bollen, cilinders en kubussen. Je kunt in Nomad ook op deze manier sculpten. Dit heeft als voordeel dat je objecten in de scene‑hiërarchie aan elkaar kunt koppelen, zodat je bijvoorbeeld de nek kunt roteren en het hoofd volgt. Het kunnen gebruiken van de gizmo‑tool voor precieze translate/rotate/scale is ook erg nuttig, en je kunt per vorm pivots instellen zodat ze precies bewegen zoals je verwacht. Wanneer de basisblokken op de juiste plaats staan, kun je ze allemaal selecteren en voxel remesh of booleans gebruiken om ze samen te voegen tot één oppervlak voor meer gedetailleerd sculpten.
+Veel anatomieboeken bouwen een lichaam op uit eenvoudige bollen, cilinders en kubussen. Zo kun je in Nomad ook sculpten. Het voordeel is dat je objecten in de scènehiërarchie aan elkaar kunt koppelen, zodat bijvoorbeeld het hoofd meedraait als je de nek draait. Met de gizmotool kun je ook precies verplaatsen, draaien en schalen, en je kunt per vorm een draaipunt instellen zodat alles precies beweegt zoals je verwacht. Staan de basisblokken op hun plek, selecteer ze dan allemaal en voeg ze met een voxel-remesh of een booleaanse bewerking samen tot één oppervlak om verder in detail te sculpten.
 
-Een handige tip voor deze manier van werken is om met een bol te beginnen, deze te schalen tot een uitgerekte worst, op Pivot te drukken, op ‘Bottom’ te klikken, en nogmaals op Pivot te drukken. Je hebt nu een lichaamsdeel dat je kunt klonen, langs de lengte van de eerste bol kunt verplaatsen, klonen, roteren, klonen, schuiven, klonen, enzovoort, om snel een lichaam uit te zetten.
+Een handige tip bij deze werkwijze: begin met een bol, schaal hem tot een uitgerekte worst, tik op draaipunt, kies 'onderkant' en tik weer op draaipunt. Je hebt nu een lichaamsdeel dat je kunt klonen, langs de lengte van de eerste bol kunt verplaatsen, klonen, draaien, klonen, verschuiven, klonen enz., om snel een lichaam op te zetten.
 
 ### Buizen {#tubes}
 
-De Tube‑tool is een geweldige manier om een sculpt te beginnen. Reptielenstaarten, armen, benen, vingers, wenkbrauwen: ze kunnen allemaal snel worden geschetst met de Tube‑tool en daarna eenvoudig worden bewerkt. Je kunt ook het profiel van de dwarsdoorsnede aanpassen, wat snelle vormveranderingen mogelijk maakt. Je kunt de vorm valideren om erop te gaan sculpten, en hem samen met andere objecten voxel remeshen om een volledig lichaamsmesh te krijgen.
+De buistool is een prima manier om een sculpt te beginnen. Reptielenstaarten, armen, benen, vingers, wenkbrauwen: je schetst ze allemaal snel met de buistool en past ze daarna makkelijk aan. Je kunt ook het profiel van de doorsnede aanpassen, zodat je de vorm snel verandert. Valideer de vorm om erop te gaan sculpten, en voxel-remesh hem samen met andere objecten tot een mesh voor het hele lichaam.
 
 ### Andere apps gebruiken {#use-other-apps}
 
-Sommige mensen beginnen liever een model in andere apps, dat is ook prima. Tools zoals Blender of Valence maken het mogelijk om modellen met low‑poly‑technieken te starten; deze kunnen vervolgens in Nomad worden geïmporteerd voor sculpting.
+Sommige mensen beginnen een model liever in een andere app, en dat is ook prima. Met tools als Blender of Valence kun je een model beginnen met low-polytechnieken en het daarna in Nomad importeren om te sculpten.
 
 ### De ingebouwde presets gebruiken {#use-the-built-in-presets}
 
-Klik in het Project‑menu rechtsboven op `Preset...`. Hier vind je verschillende hoofd‑ en lichaamsvorm‑presets van de Blender Foundation. Selecteer er een die je bevalt, tik er nogmaals op en voeg hem toe aan je scene. 
+Tik in het menu [Bestanden](files.md) op `Preset…` links in het projectgedeelte. Daar vind je verschillende presets voor hoofden en lichaamsvormen van de Blender Foundation. Selecteer er een die je bevalt, tik er nog eens op en voeg hem toe aan je scène.
 
 ### Online modellen gebruiken {#use-online-models}
 
-Er zijn veel gratis modellen online beschikbaar, bijvoorbeeld Polyhaven, Sketchfab, Turbosquid. Meestal kunnen deze modellen in Nomad worden geïmporteerd en ofwel direct worden gesculpt, of als referentie worden gebruikt.
+Online zijn veel gratis modellen te vinden, bijvoorbeeld op polyhaven, sketchfab en turbosquid. Meestal kun je die in Nomad importeren en er direct op sculpten, of ze als referentie gebruiken.
 
 ### Geen regels! {#no-rules}
 
-Uiteindelijk kun je elke combinatie van deze technieken gebruiken, of geen enkele! Nomad is hierin erg flexibel; gevorderde gebruikers beginnen misschien met tubes, gaan dan naar dyntopo, combineren het vervolgens met een gedownload voetmodel, doen daarna een quad remesh over alles, en gebruiken tenslotte multires voor het einddetail. Wat voor jou werkt, is goed.
+Uiteindelijk kun je elke combinatie van deze technieken gebruiken, of geen enkele! Nomad is daarin heel flexibel. Gevorderde gebruikers beginnen misschien met buizen, gaan dan verder met dyntopo, combineren dat met een gedownloade voet, doen alles door de quad remesher en gebruiken tot slot multires voor het laatste detail. Wat voor jou werkt.
 
-## Facegroups {#facegroups}
+## Vlakkengroepen {#facegroups}
 
-De Facegroup‑tool kan voor veel dingen worden gebruikt, zoals uitgelegd in deze YouTube‑video: https://youtu.be/qtjYcxS8f9s?si=HGWTG-NqXGstWehx
+De vlakkengroeptool kun je voor veel dingen gebruiken, zoals uitgelegd in deze YouTube-video: https://youtu.be/qtjYcxS8f9s?si=HGWTG-NqXGstWehx
 
-Dit is een tekstsamenvatting van de functies die in die video worden behandeld.
+Dit is een samenvatting in tekst van wat er in die video aan bod komt.
 
-### Waarom facegroups? {#why-facegroups}
+### Waarom vlakkengroepen? {#why-facegroups}
 
-Facegroups laten je vlakken organiseren en selecteren (‘faces’ en ‘polygons’ worden in deze handleiding door elkaar gebruikt). Dit is makkelijker uit te leggen vergeleken met Nomads andere selectie‑ en organisatietools. Nomad laat je objecten maken, ze een naam geven, ze aan elkaar koppelen; het is eenvoudig om een structuur van objecten te maken om een kamer te definiëren die bestaat uit vloer, muren, stoel, tafel enzovoort.
+Met vlakkengroepen kun je vlakken ordenen en selecteren ('vlakken' en 'polygonen' betekenen in deze handleiding hetzelfde). Dat is het makkelijkst uit te leggen door ze te vergelijken met de andere selectie- en ordeningstools van Nomad. In Nomad kun je objecten maken, ze een naam geven en ze aan elkaar koppelen; zo bouw je makkelijk een structuur van objecten op voor bijvoorbeeld een kamer met een vloer, muren, een stoel, een tafel enzovoort.
 
-Voor een personage kun je een eerste block‑out doen met aparte objecten voor hoofd, arm, been, maar zodra je alle stukken samenvoegt tot één mesh, gaat deze structuur verloren. Je kunt met maskers aan subsecties van een personage werken, maar het kan vermoeiend worden om steeds weer een masker voor de handen, dan de neus, dan weer de handen te schilderen.
+Voor een personage zet je misschien eerst de grote vormen neer met losse objecten voor hoofd, arm en been, maar zodra je alle stukken samenvoegt tot één mesh, is die structuur weg. Je kunt met maskers aan delen van een personage werken, maar het wordt vermoeiend om steeds opnieuw een masker te schilderen voor de handen, dan de neus, dan weer de handen.
 
-Hier zijn facegroups nuttig. Ze laten je polygon‑vlakken taggen met een kleur, en vervolgens polygonen selecteren en manipuleren die dezelfde kleur hebben. Merk op dat facegroup‑kleur en vertex‑kleur verschillende dingen zijn.
+Daar komen vlakkengroepen van pas. Je geeft vlakken een kleur als label, en kunt daarna polygonen met dezelfde kleur selecteren en bewerken. Let op: de kleur van een vlakkengroep en vertexkleur zijn twee verschillende dingen.
 
-De meest vergelijkbare analogie is kleuren op een kaart schilderen, en later landen of regio’s kunnen selecteren op basis van kleur.
+Je kunt het het best vergelijken met kleuren op een landkaart schilderen, en later landen of regio's op kleur kunnen selecteren.
 
-Voor personagehoofden kun je zones schilderen om de oogkassen, neus, lippen, kin, oren te markeren, en die zones later eenvoudig selecteren. Voor hard‑surface‑ en mechanisch sculpten kan het handig zijn om panelen en secties te definiëren.
+Bij het hoofd van een personage kun je zones schilderen voor de oogkassen, neus, lippen, kin en oren, en die later makkelijk selecteren. Bij hard-surface- en mechanisch sculpten kun je er panelen en onderdelen mee afbakenen.
 
-### Facegroups maken en bewerken {#creating-and-editing-facegroups}
+### Vlakkengroepen maken en bewerken {#creating-and-editing-facegroups}
 
-Facegroups kunnen met een brush worden toegepast, waarbij elke nieuwe streek een nieuwe facegroup maakt, of ze kunnen de facegroup onder de cursor selecteren en uitbreiden. Ze kunnen ook met vormen worden gemaakt.
+Je kunt vlakkengroepen aanbrengen met een penseel, waarbij elke nieuwe streek een nieuwe vlakkengroep maakt, of je kunt de vlakkengroep onder de cursor oppakken en uitbreiden. Je kunt ze ook met vormen maken.
 
-* Dot, auto‑pick ingeschakeld – een enkele sleepbeweging definieert een nieuwe facegroup‑kleur en wijst die toe aan de vlakken waarover je sleept. Elke nieuwe sleepbeweging definieert een nieuwe facegroup. Een tik zal een nieuwe facegroup floodfillen.
-* Dot, auto‑pick uitgeschakeld – wanneer de auto‑pick‑knop in zijn ‘sub’-modus staat, zal Nomad de facegroup onder de cursor selecteren en deze toepassen tijdens de rest van de sleepbeweging. Dit is handig om facegroups te verfijnen zonder ze handmatig te hoeven selecteren.
+* Punt, standaardmodus - één sleepbeweging maakt een nieuwe vlakkengroepkleur aan en wijst die toe aan de vlakken waar je overheen sleept. Elke nieuwe sleepbeweging maakt een nieuwe vlakkengroep. Een tik vult een aaneengesloten gebied met een nieuwe vlakkengroep.
+* Punt, modus `Kiezen` - als de knop `Kiezen` in de linker werkbalk actief is, pakt Nomad de vlakkengroep onder de cursor op en past die toe tijdens de rest van de sleepbeweging. Handig om vlakkengroepen bij te werken zonder ze eerst handmatig te selecteren.
 
 ### Maskeren {#masking}
 
-Wanneer de Mask‑tool actief is en de Facegroup‑knop actief is op de toolbar, zal het tikken op een facegroup deze maskeren.
+Als de maskertool actief is en de vlakkengroepknop in de werkbalk ervan aan staat, maskeer je een vlakkengroep door erop te tikken.
+
 
 ### Verbergen {#hiding}
 
-Wanneer de Hide‑tool actief is en de Facegroup‑knop actief is op de toolbar, zal het tikken op een facegroup deze verbergen.
+Als de verbergtool actief is en de vlakkengroepknop in de werkbalk ervan aan staat, verberg je een vlakkengroep door erop te tikken.
 
-### Organiseren {#organizing}
+### Ordenen {#organizing}
 
-Zoals eerder vermeld kunnen facegroups worden gebruikt om je mesh te organiseren zonder dat je aparte objecten hoeft te maken. Je wilt een hoofd misschien niet opsplitsen in aparte objecten voor neus, kin, oren, maar het is erg handig om ze via facegroups gedefinieerd te hebben.
+Zoals eerder gezegd kun je met vlakkengroepen je mesh ordenen zonder losse objecten te hoeven maken. Je wilt een hoofd misschien niet opsplitsen in losse objecten voor neus, kin en oren, maar het is wel heel handig om ze als vlakkengroepen vast te leggen.
 
-### UV-regio's {#uv-regions}
+### UV-gebieden {#uv-regions}
 
-De UV Atlas‑tool zal proberen naden automatisch te definiëren, maar zal soms naden plaatsen waar je ze niet wilt. Als er facegroups op een object bestaan en de Facegroup‑optie actief is in de UV Atlas‑opties, zal hij in plaats daarvan de facegroup‑randen als UV‑naden gebruiken.
+De tool UV Atlas probeert zelf naden te bepalen, maar legt ze soms waar je ze niet wilt hebben. Heeft een object vlakkengroepen en staat de vlakkengroepoptie aan in de opties van UV Atlas, dan gebruikt hij de randen van de vlakkengroepen als UV-naden.
 
-### Quad-remesher {#quad-remesher}
+### Quad remesher {#quad-remesher}
 
-De Quad Remesher‑plugin zal de randen meestal netjes over je model laten lopen, maar je kunt facegroups gebruiken om hem te sturen wanneer de Facegroup‑optie is ingeschakeld. Dit kan het eenvoudig maken om een nette edge‑flow rond ogen, wenkbrauwrand, lippen, wangplooi bijvoorbeeld te definiëren.
+De plugin quad remesher laat de randen meestal mooi over je model lopen, maar met de vlakkengroepoptie aan kun je hem met vlakkengroepen een handje helpen. Zo leg je makkelijk een nette edge flow vast rond de ogen, een wenkbrauwboog, de lippen of een wangplooi, bijvoorbeeld.
 
-### Filteren met andere gereedschappen {#filter-with-other-tools}
+### Filteren met andere tools {#filter-with-other-tools}
 
-Veel tools hebben opties om facegroup‑bewust te zijn, hetzij vanuit hun primaire toolmenu, hetzij via het menu Stroke -> Filtering. De Smooth‑tool kan bijvoorbeeld bij sterktes boven 100% agressief detail binnen een facegroup weg‑smoothen, maar de facegroup‑rand relatief intact houden.
+Veel tools hebben opties om rekening te houden met vlakkengroepen, in hun eigen toolmenu of via het menu Streek -> Filter. De gladstrijktool kan bijvoorbeeld bij een sterkte boven 100% het detail binnen een vlakkengroep flink wegpoetsen, terwijl de rand van de vlakkengroep grotendeels intact blijft.
 
-### Facegroup-randen ontspannen en gladmaken {#relax-and-smooth-facegroup-borders}
+### Randen van vlakkengroepen ontspannen en gladstrijken {#relax-and-smooth-facegroup-borders}
 
-De Relax‑optie binnen de Facegroup‑tool doet uitstekend werk in het smoothen van facegroup‑randen terwijl andere features intact blijven. Dit kan een geweldige manier zijn om gladde facegroup‑randregio’s te definiëren vóór het quad remeshen.
+De optie `Ontspannen` in de vlakkengroeptool strijkt de randen van vlakkengroepen uitstekend glad en laat de rest intact. Zo maak je mooi vloeiende randen tussen vlakkengroepen voordat je een quad remesh doet.
 
 ## Beperkingen op tablet/mobiel {#limitations-on-tabletmobile}
 
-Huidige tablets en mobieltjes zijn zeer krachtig, maar hebben belangrijke verschillen met desktopcomputers en laptops:
+Tablets en telefoons zijn tegenwoordig erg krachtig, maar verschillen op belangrijke punten van desktops en laptops:
 
 ### Geen actieve koeling {#no-active-cooling}
 
-Computers hebben ventilatoren en/of grote heatsinks om ze koel te houden en zijn ontworpen om op hoge temperaturen te draaien. Mobiele hardware is meestal in de eerste plaats ontworpen voor dunheid, niet om de interne onderdelen koel te houden. Als Nomad op de hoogste kwaliteitsinstellingen wordt gedraaid (PBR‑lichtmodus, complexe materialen, veel objecten, veel post‑processingopties ingeschakeld), kan dit zowel het apparaat oververhitten als de batterij zeer snel leegtrekken. 
+Computers hebben ventilatoren en/of grote koellichamen om koel te blijven, en zijn gemaakt om op hoge temperaturen te draaien. Mobiele hardware is meestal in de eerste plaats ontworpen om dun te zijn, niet om de binnenkant koel te houden. Zet je Nomad op de hoogste kwaliteitsinstellingen (verlichtingsmodus PBR, complexe materialen, veel objecten, veel nabewerkingsopties aan), dan kan het apparaat oververhit raken en loopt de batterij heel snel leeg.
 
-Een betere aanpak is om een matcap‑lichtmodus te gebruiken en een lagere render multiplier (bovenaan het Post Process‑menu). Deze keuzes houden het apparaat koel en laten je langer sculpten.
+Beter is het om de matcap-verlichtingsmodus te gebruiken en een lagere `Renderresolutie` te kiezen (bovenaan het menu Nabewerking). Zo blijft het apparaat koel en kun je langer sculpten.
 
 ### Beperkt geheugen {#limited-memory}
 
-Nomad kan resultaten behalen die gelijk zijn aan de meeste desktop‑sculptingapps, maar kan de natuurwetten niet buigen! De meeste desktopcomputers hebben het dubbele geheugen van mobiele apparaten; workstations die voor 3D‑animatie zijn gebouwd, hebben vaak 4x of 8x zoveel geheugen. Daarom is het goed om je bewust te zijn van hoeveel polygonen je gebruikt; doe wat tests op je apparaat om te zien wanneer het traag begint te worden. Vrijwel alle apparaten die Nomad kunnen draaien, kunnen 1 miljoen polygonen vrij gemakkelijk aan. Een M2 iPad Pro kan comfortabel 8 miljoen aan; mensen hebben op de nieuwste iPads tests gedaan die daar ruim boven gaan.
+Nomad kan resultaten halen die gelijk zijn aan die van de meeste sculptingapps op desktop, maar de wetten van de natuurkunde kan het niet buigen! De meeste desktops hebben twee keer zoveel geheugen als mobiele apparaten, en werkstations voor 3d-animatie vaak 4 of 8 keer zoveel. Het is daarom goed om in de gaten te houden hoeveel polygonen je gebruikt; test op je eigen apparaat wanneer het traag begint te worden. Bijna alle apparaten waarop Nomad draait, kunnen vrij makkelijk 1 miljoen polygonen aan. Een iPad Pro met M2 kan er zonder moeite 8 miljoen aan, en mensen hebben op de nieuwste iPads ruim boven dat aantal getest.
 
-Dat gezegd hebbende, alleen de meest gedetailleerde sculpts hebben meer dan 4 miljoen polys nodig; als je relatief eenvoudige objecten maakt en merkt dat je vaak boven 500.000, 1 miljoen, 4 miljoen uitkomt, gebruik je te veel polygonen! Zorg dat smooth shaded‑modus is ingeschakeld in de opties.
+Toch hebben alleen de meest gedetailleerde sculpts meer dan 4 miljoen polygonen nodig. Maak je vrij eenvoudige objecten en kom je vaak boven 500.000, 1 miljoen of 4 miljoen uit, dan gebruik je te veel polygonen! Zorg dat `Vloeiende shading` aan staat in de [Instellingen](settings.md).
 
-### OS is minder vergevingsgezind met intensieve apps {#os-is-less-forgiving-with-intensive-apps}
+### Het besturingssysteem is minder vergevingsgezind voor zware apps {#os-is-less-forgiving-with-intensive-apps}
 
-Apple en Android verwachten dat apps kleine bestanden zeer snel opslaan en laden. Ze gaan er ook van uit dat apps zeer snel kunnen wisselen tussen taken. Nomad doet opnieuw slimme trucs om bestandsgroottes relatief klein te houden en ze zeer snel op te slaan, maar als het mobiele OS besluit dat Nomad te lang bezig is, zal het de app simpelweg afsluiten voordat hij zijn taak heeft voltooid. Dit is nog een reden om bestanden aan de kleine kant te houden; het is mogelijk om met sculpts van 37 miljoen polys te werken, zoals een gebruiker op Discord meldde, maar het wordt niet aanbevolen!
+Apple en Android verwachten dat apps kleine bestanden heel snel opslaan en laden. Ze gaan er ook van uit dat apps heel snel kunnen wisselen tussen taken. Nomad gebruikt wat slimme trucs om bestanden vrij klein te houden en snel op te slaan, maar vindt het mobiele besturingssysteem dat Nomad er te lang over doet, dan sluit het de app gewoon af voordat de taak klaar is. Nog een reden om bestanden aan de kleine kant te houden: je kunt met sculpts van 37 miljoen polygonen werken, zoals een gebruiker op Discord meldde, maar aan te raden is het niet!
 
 ## Werken op kleine schermen {#working-on-small-screens}
 
-Nomad is ontworpen om op tablets te werken, maar werkt ook goed op telefoons. Sculpten op een klein scherm zoals een telefoon kan makkelijker worden gemaakt met een paar UI‑ en workflow‑aanpassingen:
+Nomad is gemaakt voor tablets, maar werkt ook goed op telefoons. Met een paar aanpassingen aan de interface en je werkwijze wordt sculpten op een klein scherm zoals een telefoon een stuk makkelijker:
 
-* Een tik met 4 vingers schakelt de volledige UI aan/uit, zodat je meer ruimte hebt om te sculpten.
-* Een sleepbeweging met 3 vingers omhoog en omlaag verandert de brush‑radius.
-* De UI‑schaal kan kleiner worden gemaakt om meer knoppen te laten passen als je goed zicht hebt, of groter als je slecht zicht hebt.
-* De bredere menu’s kunnen soms in de weg zitten van de sculpt; je kunt ze transparant en onscherp maken zodat je de sculpt onder het menu kunt zien.
-* Als je met een vinger sculpt, gebruik dan de Offset‑optie om het brush‑centrum een beetje van je vinger af te zetten.
-* Deze en veel meer opties zijn te vinden in het [Interface‑menu](./interface.md). 
+* Tik met 4 vingers om de hele interface te verbergen of te tonen, zodat je meer ruimte hebt om te sculpten.
+* Sleep met 3 vingers omhoog en omlaag om de penseelstraal te veranderen.
+* Je kunt de interface kleiner schalen zodat er meer knoppen passen als je goede ogen hebt, of groter als je slechte ogen hebt!
+* De bredere menu's zitten soms in de weg bij het sculpten. Je kunt ze doorzichtig en onvervaagd maken, zodat je de sculpt onder het menu nog ziet.
+* Sculpt je met een vinger, gebruik dan de optie [`Streekverschuiving`](stroke.md#stroke-offset) om het midden van het penseel een stukje van je vinger af te zetten.
+* Deze en nog veel meer opties vind je in het [menu Interface](./interface.md).
 
-## Inflate- of peak-deformer {#inflate-or-peak-deformer}
 
-Veel 3D‑apps hebben een Inflate‑deformer die alle vertices langs hun normaal met een instelbare hoeveelheid naar buiten duwt. Hoewel Nomad momenteel geen deformers heeft, is het mogelijk dit gedrag te emuleren met de Inflate‑brush:
+## Opblaas- of piekdeformer {#inflate-or-peak-deformer}
 
-* Selecteer de Inflate‑brush
-* Verander in het [Stroke‑menu](./stroke.md#stroke) de stroke‑methode naar `Lock + Radius'
-* Maak de brush‑radius groter dan je sculpt; zoom de camera indien nodig weg van de sculpt.
-* Klik en sleep een stroke op het oppervlak van je object; wanneer de radius groter is dan het object, wordt de volledige vorm gelijkmatig met een vaste hoeveelheid opgeblazen.
-* Pas de brush‑intensiteit aan om de hoeveelheid inflatie te regelen.
-* Gebruik masking indien nodig om bepaalde gebieden te beschermen of het effect van Inflate daar te verminderen.
+Veel 3d-apps hebben een opblaasdeformer, die alle vertices over een instelbare afstand langs hun normaal naar buiten duwt. Nomad heeft op dit moment geen deformers, maar je kunt dit gedrag nabootsen met het opblaaspenseel:
 
-## Bulten of 'puistjes' verwijderen na een voxel-remesh-bewerking {#remove-lumps-or-pimples-from-a-voxel-remesh-operation}
+* Kies het opblaaspenseel
+* Zet in het [menu Streek](./stroke.md#stroke) de streekmethode op `Vergrendelen + straal`
+* Maak de penseelstraal groter dan je sculpt; zoom zo nodig met de camera uit.
+* Tik en sleep een streek over het oppervlak van je object; als de straal groter is dan het object, wordt de hele vorm gelijkmatig een vaste afstand opgeblazen.
+* Stel de intensiteit van het penseel bij om te bepalen hoeveel er wordt opgeblazen
+* Gebruik zo nodig een masker om bepaalde gebieden te beschermen of het effect daar te verminderen.
 
-Voxel remesh is geweldig om gelijkmatig verdeelde polygonen te maken, maar creëert soms topologie die kleine bultjes of puistjes veroorzaakt bij het smoothen. Bijvoorbeeld:
+## Bultjes of 'puistjes' na een voxel-remesh weghalen {#remove-lumps-or-pimples-from-a-voxel-remesh-operation}
 
-* Gebruik de Crease‑brush op de standaardbol en maak een swirl
-* Voxel remesh met ‘build multiresolution at 3’
-* Smooth met hoge intensiteit
-* Artefacten verschijnen (makkelijker te zien met een hoog‑contrast matcap‑materiaal):
+Een voxel-remesh is ideaal voor gelijkmatig verdeelde polygonen, maar maakt soms een topologie die bij gladstrijken kleine bultjes of puistjes geeft. Bijvoorbeeld:
+
+* Maak met het plooipenseel een krul op de standaardbol
+* Doe een voxel-remesh met `Multiresolutie opbouwen` op 3
+* Strijk glad met een hoge intensiteit
+* Er verschijnen artefacten (makkelijker te zien met een matcapmateriaal met veel contrast):
 
 ![](/videos/tip_pimples_before.mp4)
 
-Om dit via sculpting te verhelpen, probeer de optie `Stable smoothing` in de Smooth‑instellingen. Deze kan de ongelijke topologielay‑out van de voxel remesh aan en levert schone resultaten op.
+Om het met sculpten op te lossen, probeer je de optie `Stabiel gladstrijken` in de instellingen van de gladstrijktool. Die kan overweg met de ongelijke topologie van de voxel-remesh en geeft een strak resultaat.
 
 ![](/videos/tip_pimples_stable_smooth.mp4)
 
-Om de topologie zelf te repareren, gebruik een nieuwe primitive, of de Quad Remesh‑tools, of een externe 3D‑modeler, en projecteer detail van de oorspronkelijke mesh naar de nieuwe via `Topology -> Misc -> Reproject`. 
+Om de topologie zelf te herstellen, gebruik je een nieuwe primitieve, de quad-remeshtools of een extern 3d-modelleerprogramma, en projecteer je het detail van de oorspronkelijke mesh op de nieuwe via `Topologie -> Bakken -> Herprojecteer → Vertex`.
 
 ![](/videos/tip_pimples_reproject.mp4)
 
-## Daglichtbelichting {#daylight-lighting}
+## Daglichtverlichting {#daylight-lighting}
 
-De standaard PBR‑render is, zoals de naam al aangeeft, fysiek gebaseerd, wat – net als een onbewerkte digitale foto – er wat flets en vlak uit kan zien. Nomads lichten en post‑processing kunnen worden gebruikt om renders er levendiger uit te laten zien.
+De standaard PBR-render is, zoals de naam al zegt, fysiek gebaseerd. Net als een onbewerkte digitale foto kan hij er daardoor wat flets en vlak uitzien. Met de lichten en de nabewerking van Nomad kun je renders levendiger maken.
 
-Hier is een standaardrender; laten we kijken of we hem beter kunnen laten ogen:
+Hier is een standaardrender; eens kijken of we die mooier kunnen maken:
 ![](/images/tips_lighting_default.webp)
 
-Door Post Processing en Tonemapping in te schakelen kun je helderheid en contrast toevoegen:
+Nabewerking en toonmapping aanzetten geeft meer helderheid en contrast:
 
 ![](/images/tips_lighting_tonemap.webp)
 
-Om je op de lichten te concentreren: het standaard omgevingslicht is goed om mee te sculpten, maar kan worden verbeterd voor een eindrender. Een manier om hierover na te denken is om direct licht (bijv. de zon) te scheiden van omgevingslicht (bijv. licht van de blauwe lucht, de grond). Door het omgevingslicht te verminderen en te roteren, begin je vast te leggen hoe de belichting eruit zou moeten zien als het onderwerp zich in een schaduwrijke omgeving bevindt:
+Dan de lichten: het standaard omgevingslicht is prima om te sculpten, maar voor een eindrender kan het beter. Je kunt het zo bekijken: er is direct licht (bijvoorbeeld de zon) en omgevingslicht (bijvoorbeeld licht van de blauwe lucht en de grond). Door het omgevingslicht zwakker te maken en te draaien, krijg je al iets van de verlichting die je zou zien als het onderwerp in de schaduw stond:
 
 ![](/images/tips_lighting_env.webp)
 
-Er kan een direct licht worden toegevoegd en de intensiteit kan worden verhoogd om harde zon te simuleren. Door dit in balans te brengen met het omgevingslicht bereik je een aangenaam resultaat:
+Voeg een direct licht toe en zet de intensiteit hoog om fel zonlicht na te bootsen. Breng dat in balans met het omgevingslicht voor een mooi resultaat:
 
 ![](/images/tips_lighting_sunlight.webp)
 
-Personages kunnen profiteren van het wisselen van hun materiaal naar Subsurface en het plaatsen van een spotlight achter het personage, gericht op de oren om ze te laten gloeien:
+Bij personages helpt het vaak om het materiaal op suboppervlak te zetten en een spotlicht achter het personage op de oren te richten, zodat ze gaan gloeien:
 
 ![](/images/tips_lighting_sss.webp)
 
-Experimenteer daarna met de rest van de Post Process‑instellingen! Global Illumination en Ambient Occlusion helpen bij realistischer licht. Curvature en Sharpen kunnen helpen om meer detail in de sculpt naar voren te brengen. Chromatic Aberration, Depth of Field, Grain, Bloom, Vignette helpen camera‑effecten te simuleren. Merk op dat naarmate er meer features worden ingeschakeld, de belichting en andere post‑processingwaarden moeten worden aangepast om dit te compenseren.
+Experimenteer daarna met de rest van de nabewerkingsinstellingen! Globale verlichting en ambient occlusion zorgen voor realistischere verlichting. Kromming en verscherpen halen meer detail uit de sculpt. Chromatische aberratie, scherptediepte, korrel, bloom en vignet bootsen camera-effecten na. Let op: hoe meer functies je aanzet, hoe meer je de verlichting en de andere nabewerkingswaarden moet bijstellen om dat te compenseren.
 
-Hier is de render met een volledige set post‑processingaanpassingen:
+Hier is de render met een volledige set aanpassingen in de nabewerking:
 ![](/images/tips_lighting_final.webp)

@@ -1,4 +1,4 @@
-# Gambaran keseluruhan {#overview}
+# ![](/icons/home.webp) Gambaran Keseluruhan {#overview}
 
 <!-- 
 [[toc]]
@@ -9,33 +9,35 @@
 -->
 
 ::: tip Baru dengan Nomad?
-Baca panduan [Memulakan](gettingstarted.md).
+Baca panduan [Bermula](gettingstarted.md).
 :::
 
 
-## Senarai kandungan {#table-of-contents}
+## Kandungan {#table-of-contents}
 
-| Menu                           | Ikon                          | Penerangan                                           |
-| :----------------------------: | :---------------------------: | :--------------------------------------------------: |
-| [Files](files.md)              | ![](/icons/open.webp)        | Urus projek anda, eksport, import, dan lain-lain    |
-| [Scene](scene.md)              | ![](/icons/scene.webp)       | Tambah primitif baharu dan urus objek adegan anda   |
-| [Topology](topology.md)        | ![](/icons/multires.webp)    | Edit topologi model                                  |
-| [Material](material.md)        | ![](/icons/material.webp)    | Bahan (peringkat objek)                              |
-| [Shading](shading.md)          | ![](/icons/sun.webp)         | Cara menerangi adegan anda                           |
-| [Post Process](postprocess.md) | ![](/icons/postprocess.webp) | Pascapemprosesan (kesan visual ruang skrin)         |
-| [Background](background.md)    | ![](/icons/image.webp)       | Tukar latar belakang dan tambah imej rujukan        |
-| [Camera](camera.md)            | ![](/icons/camera.webp)      | Kawalan kamera dan interaksi                        |
-| [Stroke](stroke.md)            | ![](/icons/pencil.webp)      | Edit tetapan alat semasa, strok, kejatuhan...       |
-| [Pressure](pressure.md)        | ![](/icons/pressure.webp)    | Urus tekanan pensel anda                            |
-| [Painting](painting.md)	     | ![](/icons/paint.webp)       | Tetapan pengecatan untuk alat mengecat              |
-| [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Urus satah cermin bagi jejaring semasa anda         |
-| [Layers](layers.md)            | ![](/icons/layer.webp)       | Urus lapisan objek semasa anda                      |
-| [Settings](settings.md)        | ![](/icons/cog.webp)         | Suaikan paparan 3D                                  |
-| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Suaikan antara muka                                  |
-| [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Senarai semua alat/berus                            |
-| [History](history.md)          | ![](/icons/history.webp)     | Urus timbunan sejarah nyahbuat/buat semula          |
-| [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Soalan Lazim                                        |
-| [Tips](tips.md)                | ![](/icons/manual.webp)      | Petua aliran kerja                                   |
+| Menu                           | Ikon                         | Penerangan                                        |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
+| [Fail](files.md)              | ![](/icons/open.webp)        | Urus projek anda, eksport, import, dan lain-lain          |
+| [Adegan](scene.md)              | ![](/icons/scene.webp)       | Tambah primitif baharu dan urus objek dalam adegan anda    |
+| [Topologi](topology.md)        | ![](/icons/multires.webp)    | Ubah topologi model                     |
+| [Bahan](material.md)        | ![](/icons/material.webp)    | Bahan (pada peringkat objek)                            |
+| [Shading](shading.md)          | ![](/icons/sun.webp)         | Cara menerangi adegan anda                            |
+| [Pemprosesan Pasca](postprocess.md) | ![](/icons/postprocess.webp) | Pemprosesan pasca (kesan visual ruang skrin)      |
+| [Latar Belakang](background.md)    | ![](/icons/image.webp)       | Tukar latar belakang dan tambah imej rujukan    |
+| [Kamera](camera.md)            | ![](/icons/camera.webp)      | Kawalan dan interaksi kamera                     |
+| [Transformasi](transform.md)      | ![](/icons/transform.webp)   | Taip kedudukan, putaran dan saiz sesuatu objek  |
+| [Sapuan](stroke.md)            | ![](/icons/brush.webp)       | Ubah tetapan alat semasa, sapuan, pengurangan... |
+| [Tekanan](stroke.md#pressure)        | ![](/icons/pressure.webp)    | Urus tekanan pensel anda                 |
+| [Cat](painting.md)	       | ![](/icons/paint.webp)       | Tetapan pewarnaan untuk alat lukisan               |
+| [Simetri](symmetry.md)        | ![](/icons/symmetry.webp)    | Urus satah cermin bagi mesh semasa anda       |
+| [Operasi](operation.md)      | ![](/icons/operation.webp)   | Licinkan, kembangkan, warnakan semula atau kaburkan keseluruhan mesh      |
+| [Lapisan](layers.md)            | ![](/icons/layer.webp)       | Urus lapisan objek semasa anda                  |
+| [Tetapan](settings.md)        | ![](/icons/cog.webp)         | Sesuaikan port pandangan 3d                          |
+| [Antara Muka](interface.md)      | ![](/icons/sliders.webp)     | Sesuaikan antara muka                            |
+| [Alat](tools.md)              | ![](/icons/toolbox.webp)     | Senarai semua alat/berus                        |
+| [Sejarah](history.md)          | ![](/icons/history.webp)     | Urus timbunan sejarah buat asal/ulang semula                 |
+| [Soalan Lazim](faq.md)                  | ![](/icons/faq.webp)         | Soalan yang Kerap Ditanya                         |
+| [Petua](tips.md)                | ![](/icons/manual.webp)      | Petua aliran kerja                                      |
 
 ## Sumber komuniti {#community-resources}
 
@@ -80,7 +82,7 @@ Baca panduan [Memulakan](gettingstarted.md).
 </div>
 
 <div>
-<h3>Kelas Seni DM</h3>
+<h3>DM Art classes</h3>
 <iframe src="https://www.youtube.com/embed/5VO0ZqyopGo?si=rtOLMvjwjCfPsdb4" allowfullscreen></iframe>
 </div>
 

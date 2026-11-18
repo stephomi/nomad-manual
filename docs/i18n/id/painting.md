@@ -1,142 +1,167 @@
-# ![](/icons/paint.webp) Melukis {#painting}
+# ![](/icons/paint.webp) Lukis {#painting}
 
-Mengontrol warna, kekasaran, metalness dari sapuan cat, memungkinkan pengisian menyeluruh (flood fill) atribut cat, dan bagaimana alat cat berinteraksi dengan layer, mask, serta seleksi tersembunyi.
+Mengatur warna, kekasaran, dan kemetalan goresan cat, mengisi seluruh objek dengan atribut cat, serta bagaimana alat cat berinteraksi dengan lapisan, topeng, dan area yang disembunyikan.
 
 ![](/images/paint_overview.webp)  
 
 ## Ikhtisar {#overview}
 
-Nomad menggunakan pengecatan verteks PBR. Apa artinya ini?
+Nomad memakai pengecatan verteks PBR. Apa artinya?
 
 ### PBR {#pbr}
-PBR, atau Physically Based Rendering adalah teknik grafis komputer populer untuk film, televisi, gim, dan mobile. Dengan mendasarkan cahaya pada properti fisik, dan mendefinisikan permukaan melalui warna, kekasaran, metalness, berbagai tampilan fotorealistik dapat dicapai.
+PBR, atau Physically Based Rendering, adalah teknik grafis komputer yang populer untuk film, televisi, game, dan perangkat seluler. Dengan mendasarkan pencahayaan pada sifat-sifat fisik, dan mendefinisikan permukaan melalui warna, kekasaran, dan kemetalan, beragam tampilan fotorealistis bisa dicapai.
 
-### Melukis verteks {#vertex-painting}
+### Pengecatan verteks {#vertex-painting}
 
-Pengecatan verteks berarti informasi cat disimpan di verteks model, bukan di tekstur. Karena Nomad dapat menangani model dengan ratusan ribu, sering kali jutaan verteks, model Anda seharusnya dapat memiliki pengecatan permukaan yang sangat detail; jika Anda bisa memahat detailnya, Anda juga bisa mengecat detail tersebut.
+Pengecatan verteks berarti informasi cat disimpan di verteks model, bukan di tekstur. Karena Nomad mampu menangani model dengan ratusan ribu, bahkan sering jutaan verteks, model Anda bisa memiliki cat permukaan yang sangat detail; jika Anda bisa memahat detailnya, Anda juga bisa mengecat detail itu.
 
-Ini juga berarti bahwa pengecatan di Nomad tidak memerlukan pemetaan UV, yang sering kali merupakan proses lambat dan teknis di aplikasi 3D lain. Banyak aplikasi 3D lain tidak mendukung jumlah verteks tinggi seperti yang dapat dilakukan Nomad, namun Nomad juga memiliki alat baking tekstur dan decimation yang baik untuk membantu.
+Ini juga berarti mengecat di Nomad tidak memerlukan pemetaan UV, yang di aplikasi 3d lain sering kali merupakan proses yang lambat dan teknis. Banyak aplikasi 3d lain tidak mendukung jumlah verteks setinggi yang bisa ditangani Nomad, tetapi Nomad juga punya alat bake tekstur dan desimasi yang bagus untuk membantu.
 
-### Pemberian tekstur {#texturing}
+### Tekstur {#texturing}
 
-Nomad mendukung tekstur, tetapi tekstur harus sudah ada di model yang diimpor, atau melalui baking pengecatan verteks ke tekstur. 
+Nomad mendukung tekstur, tetapi tekstur itu harus sudah ada di model yang diimpor, atau didapat dengan mem-bake pengecatan verteks ke tekstur. 
 
-Tekstur hanyalah sebuah gambar, tetapi dalam konteks 3D biasanya mengacu pada gambar yang ditetapkan ke sebuah objek.
-Untuk membungkus gambar di sekitar model, model memerlukan koordinat tekstur (UV).
+Tekstur hanyalah sebuah gambar, tetapi dalam konteks 3d biasanya yang dimaksud adalah gambar yang ditetapkan ke sebuah objek.
+Agar gambar bisa membungkus model, model memerlukan koordinat tekstur (UV).
 
-Nomad dapat menghitung [koordinat tersebut secara otomatis](topology.md#uv-unwrap) tetapi Anda tidak memiliki banyak kendali atas kualitas keseluruhan.
+Nomad bisa menghitung [koordinat itu secara otomatis](topology.md#uv-unwrap), tetapi Anda tidak punya banyak kendali atas kualitas keseluruhannya.
 
 ::: tip
 Salah satu contoh alur kerja:
-- Memahat di Nomad, lalu [UV unwrap](topology.md#uv-unwrap)
-- Jika Anda sudah mulai mengecat di Nomad Anda dapat [mentransfer pengecatan verteks ke tekstur](topology.md#bake-vertex-colors-to-texture)
+- Pahat di Nomad, lalu lakukan [UV unwrap](topology.md#uv-unwrap)
+- Jika Anda sudah mulai mengecat di Nomad, Anda bisa [memindahkan pengecatan verteks ke tekstur](topology.md#bake-texture)
 - Ekspor ke Procreate
-- Melakukan teksturing di Procreate
-- Ekspor kembali ke Nomad untuk keperluan rendering
+- Buat tekstur di Procreate
+- Ekspor kembali ke Nomad untuk keperluan render
 :::
 
-Itu ikhtisarnya, sekarang mari jelajahi bagian-bagian dari menu pengecatan:
+Itulah gambaran umumnya, sekarang mari kita jelajahi bagian-bagian menu lukis:
 
 
-## Melukis goresan {#stroke-painting}
+## Lukisan garis {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
-Mengaktifkan pengecatan untuk alat ini, berguna jika Anda perlu memahat dan mengecat pada saat yang sama.
+Mengaktifkan pengecatan untuk alat ini, berguna jika Anda perlu memahat dan mengecat sekaligus. Jika sebuah alat bisa mengecat tetapi kotak centang ini mati, ikon peringatan di sebelah judul akan mengingatkan Anda.
 
-Untuk alat di mana pengecatan adalah fungsi utama (misalnya Paint, Smudge, Mask), kotak centang ini tidak ada.
+Untuk alat yang fungsi utamanya mengecat (misalnya Melukis, Smudge, Topeng), kotak centang ini tidak ada.
 
-### Intensitas cat {#paint-intensity}
+### ![](/icons/opacity.webp) Intensitas lukisan {#paint-intensity}
 
-Slider untuk memungkinkan Anda menggunakan intensitas yang berbeda dari intensitas alat utama.
+Penggeser yang memungkinkan Anda memakai intensitas yang berbeda dari intensitas utama alat.
 
-Kotak centang `Alpha`, `Falloff` dan `Randomize` menentukan apakah fitur-fitur tersebut akan memengaruhi pengecatan. Misalnya Anda dapat mengaktifkan randomize untuk alat clay, tetapi warna tidak akan diacak.
+Tombol penggeser di sebelahnya menambahkan penggeser intensitas cat cepat ke bilah samping, untuk alat yang memahat dan mengecat sekaligus.
+
+Tombol `Alpha`, `Penurunan` dan `Acak intensitas` menentukan apakah fitur-fitur tersebut memengaruhi pengecatan. Misalnya, Anda bisa mengaktifkan pengacakan untuk alat tanah liat, tetapi warnanya tidak ikut diacak.
+
+* `Alpha` - jika dinonaktifkan, pengecatan mengabaikan alpha dan menutupi seluruh area kuas. Pada alat VDM, tombol ini diganti dengan `Material stempel`, yang mengaktifkan atau menonaktifkan material yang tersimpan di stempel.
+* `Penurunan` - jika dinonaktifkan, pengecatan tetap berintensitas penuh hingga ke tepi kuas.
+* `Acak intensitas` - apakah bagian intensitas dari pengacak goresan memengaruhi pengecatan. Pengacakan posisi, rotasi, dan skala selalu memindahkan seluruh stempel.
+
+Opsi-opsi ini diabaikan oleh [Lukis semua](#paint-all), tetapi alpha tetap dipakai oleh varian triplanarnya.
+
+### ![](/icons/link.webp) Material global {#global-material}
+Jika opsi ini diaktifkan, material yang dipilih akan sama dengan alat lainnya. Perhatikan bahwa ini hanya memperhitungkan pengaturan kekasaran, kemetalan, dan warna. Nonaktifkan untuk memberi alat ini materialnya sendiri.
+
 
 ## Material {#material}
 ![](/images/paint_material.webp) 
 
-Ikon pertama adalah bentuk pratinjau material. Menyeret pada pratinjau material 3D akan memutarnya. 
+Ikon pertama adalah bentuk pratinjau material. Menyeret pada pratinjau material 3d akan memutarnya. 
 
-Ikon kedua adalah pratinjau sapuan cat dengan alpha dan falloff yang dipilih.
+Ikon kedua adalah pratinjau goresan cat dengan opsi alpha dan penurunan yang dipilih.
 
-Tombol pratinjau di sebelah judul Material memungkinkan Anda beralih antara none, Material atau Triplanar. Ini menentukan apa yang akan terjadi ketika Anda mengubah properti cat secara interaktif:
+### ![](/icons/falloff.webp) Kurva {#curves}
 
-* `None` - Tidak ada pratinjau yang akan ditampilkan pada model ketika Anda menyesuaikan properti
-* `Material` - Nilai material akan dipratinjau pada objek ketika Anda menyesuaikan properti. Jika Anda menggunakan tekstur dan model memiliki UV, UV tersebut akan digunakan.
-* `Triplanar` - Material akan dipratinjau sebagai proyeksi Triplanar. 
+Membuka editor kurva untuk slot tekstur pada [penggeser PBR](#pbr-sliders). Editor ini memetakan ulang nilai tekstur sebelum dicatkan, tanpa menyentuh file gambarnya. Ikon kurva kecil pada slot tekstur memberi tahu Anda bahwa kurvanya telah diubah.
 
-Eyedropper dapat digunakan untuk mengambil semua properti dari sebuah objek di dalam scene Anda.
+### ![](/icons/cog.webp) Opsi material {#material-options}
+
+Tombol `Material` di sebelah judul menyimpan dua pengaturan.
+
+`Pratinjau tampilan material` menentukan apa yang terjadi pada objek yang dipilih saat Anda mengubah penggeser warna, kekasaran, kemetalan, opasitas, dan intensitas:
+
+* `Tidak ada` - Tidak ada pratinjau yang ditampilkan pada model saat Anda mengatur properti
+* `Material` - Nilai material ditampilkan sebagai pratinjau pada objek saat Anda mengatur properti.
+* `Triplanar` - Material ditampilkan sebagai pratinjau dengan proyeksi Triplanar. 
+
+Kotak centang warna, kekasaran, kemetalan, dan opasitas di bawahnya menentukan kanal mana yang diganti oleh [Pemilih material](#material-picker).
+
+### ![](/icons/dropper.webp) Pemilih material {#material-picker}
+
+Pipet mengambil material di bawah kursor, dari objek mana pun di adegan Anda. Hanya kanal yang dicentang di [Opsi material](#material-options) yang diganti.
 
 ## Preset material {#material-presets}
-Mengetuk bentuk pratinjau 3D akan menampilkan menu preset material, preset ini dapat diklon untuk mendefinisikan preset Anda sendiri.
+Mengetuk bentuk pratinjau 3d akan memunculkan menu preset material; preset ini bisa dikloning untuk membuat preset Anda sendiri.
 
 ![](/images/paint_presets.webp) 
 
-Toggel `Embed Textures` dan `Alpha` ketika diaktifkan akan menyimpan tekstur apa pun yang digunakan oleh material ini di dalam preset. Hal ini dijelaskan lebih lanjut di bawah.
+Sakelar `Sematkan tekstur` menyimpan salinan tekstur yang dipakai material ini di dalam preset. Tanpa opsi ini, preset hanya merujuk ke tekstur di folder textures/ Nomad. Aktifkan jika Anda ingin membagikan preset bertekstur tanpa harus mengirim teksturnya secara terpisah.
+
+`Sertakan Alpha` juga menyimpan alpha kuas di dalam preset material.
 
 ## Penggeser PBR {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
-Pengecatan [PBR](shading.md#pbr) menggunakan 4 kanal:
-- `Color` Warna yang akan dicat. Eyedropper dapat digunakan untuk memilih warna dari bagian lain model, atau dari gambar referensi.
-- `Roughness` Menentukan seberapa "kasar" atau "halus" suatu permukaan. Nilai rendah untuk roughness berarti pantulan akan tajam.
-- `Metalness` Menentukan apakah permukaan bersifat metalik atau tidak. Nilainya sebaiknya 0% atau 100% sebagian besar waktu, nilai di antaranya sebaiknya hanya dalam kasus khusus.
-- `Opacity` Seberapa banyak material dapat dilihat tembus pandang. Secara ketat bukan bagian dari spesifikasi PBR, tetapi berguna dalam banyak situasi. 1 sepenuhnya buram, 0 transparan. Perhatikan bahwa opacity dan refraksi adalah hal yang berbeda, refraksi di Nomad ditangani melalui material refraction. 
+Pengecatan [PBR](shading.md#pbr) memakai 4 kanal:
+- `Warna` Warna yang akan dicatkan. Pipet bisa dipakai untuk mengambil warna dari bagian lain model, atau dari gambar referensi.
+- `Kekasaran` Menunjukkan seberapa "kasar" atau "halus" sebuah permukaan. Nilai kekasaran yang rendah berarti pantulannya tajam.
+- `Kemetalan` Sekadar menunjukkan apakah permukaan itu logam atau bukan. Nilainya sebaiknya 0% atau 100% hampir di setiap kasus; nilai di antaranya seharusnya merupakan pengecualian.
+- `Opasitas` Seberapa tembus pandang material tersebut. Secara ketat, ini bukan bagian dari spesifikasi PBR, tetapi berguna dalam banyak situasi. 1 berarti sepenuhnya buram, 0 berarti transparan. Perhatikan bahwa opasitas dan refraksi adalah dua hal yang berbeda; refraksi di Nomad ditangani oleh material refraksi. 
 
-Jika Anda memilih preset material, 3 kanal akan dicat secara bersamaan (opacity sering kali sengaja dikecualikan). Ini berarti bahwa alih-alih hanya mengecat 'merah', Anda dapat mengecat 'logam merah kasar' atau 'plastik putih halus'.
+Jika Anda memilih preset material, 3 kanal dicatkan sekaligus (opasitas sering kali sengaja dikecualikan). Artinya, alih-alih hanya mengecat 'merah', Anda bisa mengecat 'logam merah yang kasar' atau 'plastik putih yang halus'.
 
-Kotak persegi adalah slot tekstur, klik untuk menggunakan tekstur untuk properti tersebut alih-alih nilai solid.
+Kotak persegi adalah slot tekstur; klik untuk memakai tekstur bagi properti itu, bukan nilai tunggal. Tekstur warna akan mewarnai warnanya, sedangkan tekstur kekasaran, kemetalan, atau opasitas menggantikan nilai penggeser (labelnya dicoret untuk menunjukkan hal ini). Untuk tekstur opasitas, `Gunakan Alpha sebagai Nilai` membaca kanal alpha tekstur, bukan nilai skala abu-abunya.
 
-Ikon kuas di sebelah slider akan melakukan flood fill properti tersebut ke seluruh objek Anda.
+Pada alat VDM, jika stempel membawa materialnya sendiri, sebuah slot tambahan menampilkannya di sebelah slot tekstur. Ketuk untuk memakai atau mengabaikan kanal stempel tersebut.
 
-Kotak centang akan mengaktifkan atau menonaktifkan properti tertentu, sehingga Anda bisa hanya mengecat warna, atau hanya mengecat roughness dan opacity, misalnya. 
+Ikon kuas di sebelah penggeser akan mengisi seluruh objek Anda dengan properti tersebut.
 
-Berikut beberapa contoh properti roughness dan metalness yang berbeda:
+Kotak centang akan mengaktifkan atau menonaktifkan properti tertentu, jadi Anda bisa, misalnya, hanya mengecat warna, atau hanya mengecat kekasaran dan opasitas. 
 
-|                | Metalness 0%                      | Metalness 100%               |
+Berikut beberapa contoh properti kekasaran dan kemetalan yang berbeda:
+
+|                | Kemetalan 0%                      | Kemetalan 100%               |
 | :------------: | :-------------------------------: | :--------------------------: |
-| Roughness 0%   | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
-| Roughness 50%  | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
-| Roughness 100% | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
+| Kekasaran 0%   | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
+| Kekasaran 50%  | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
+| Kekasaran 100% | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
 
 ::: warning
-Hanya warna yang didukung dalam mode [Matcap rendering](shading.md#matcap), metalness dan roughness diabaikan.
+Kekasaran dan kemetalan memerlukan mode shading [Terang (PBR)](shading.md#pbr). Dalam mode [MatCap](shading.md#matcap) atau [Tanpa pencahayaan](shading.md#unlit), keduanya diabaikan, dan menu menampilkan peringatan.
 :::
 
 ::: tip
-Saat menggunakan tekstur untuk pengecatan PBR, sering kali berguna untuk beralih ke alat seperti `Stamp`, atau menggunakan menu stroke untuk memakai mode selain dot, yang dapat mengoles (smear) tekstur.
+Saat memakai tekstur untuk pengecatan PBR, sering kali berguna untuk beralih ke alat seperti `Cap`, atau memakai menu goresan dengan mode selain titik, yang bisa membuat tekstur tercoreng.
 
 ![](/videos/paint_color_texture.mp4)  
 :::
 
 ::: tip
-Anda mungkin ingin menyalakan `Smooth Shading` [secara global](settings.md#smooth-shading) atau [per-objek](material.md#smooth-shading) jika Anda mengecat permukaan metalik pada objek dengan jumlah poligon rendah.
+Anda mungkin perlu mengaktifkan `Shading halus` [secara global](settings.md#smooth-shading) atau [per objek](material.md#smooth-shading) jika Anda mengecat permukaan logam pada objek dengan jumlah poligon yang rendah.
 :::
 
-## Cat semua {#paint-all}
+## ![](/icons/paint.webp) Lukis semua {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
-Menerapkan material saat ini ke objek, baik dalam mode standar dengan 'Paint All', atau sebagai proyeksi Triplanar.
+Menerapkan material saat ini ke objek yang dipilih, baik dalam mode standar dengan `Lukis semua`, maupun sebagai proyeksi Triplanar dengan `Lukis semua + Triplanar`. Varian triplanar tidak tersedia untuk primitif yang belum divalidasi.
 
-Kotak centang di sebelah slider color/metalness/roughness/opacity akan dihormati, properti yang dinonaktifkan tidak akan diisi.
+Kotak centang di sebelah penggeser warna/kemetalan/kekasaran/opasitas tetap dipatuhi: properti yang dinonaktifkan tidak akan diisi.
 
-Tombol tambahan mengontrol bagaimana paint all dapat dipengaruhi lebih lanjut:
+Tombol-tombol tambahan mengatur bagaimana lukis semua bisa dipengaruhi lebih lanjut. Sebagian besar menampilkan persentase, dan menjadi abu-abu jika tidak akan berpengaruh:
 
-| Icon                        | Description                                   |
+| Ikon                        | Deskripsi                                     |
 | :-------------------------: | :-------------------------------------------: |
-| ![](/icons/tool_mask.webp) | Area yang termask tidak akan terpengaruh.     |
-| ![](/icons/tool_hide.webp) | Area tersembunyi tidak akan terpengaruh.      |
-| ![](/icons/opacity.webp)   | gunakan faktor pengecatan alat di atas.       |
-| ![](/icons/layer.webp)     | Area yang belum dicat pada layer tidak akan terpengaruh. |
-| ![](/icons/triplanar.webp) | Indikator pengaturan triplanar                |
+| ![](/icons/shield.webp)    | Area yang ditopeng tidak akan terpengaruh.    |
+| ![](/icons/tool_hide.webp) | Area yang disembunyikan tidak akan terpengaruh. |
+| ![](/icons/opacity.webp)   | Memakai faktor pengecatan alat di atas.       |
+| ![](/icons/layer.webp)     | Area lapisan yang belum dicat tidak akan terpengaruh. |
+| ![](/icons/triplanar.webp) | `Verteks`: varian triplanar juga menggeser permukaan dengan alpha, sebesar intensitas alat yang ditampilkan. |
 | ![](/icons/cog.webp)       | Membuka pengaturan Triplanar                  |
 
-### Pengaturan triplanar {#triplanar-settings}
+### ![](/icons/cog.webp) Pengaturan triplanar {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
-Serupa dengan [pengaturan triplanar di menu material](material.md#triplanar), Anda dapat mengontrol blending proyeksi, tiling dan offset. 
+Serupa dengan [pengaturan triplanar di menu material](material.md#triplanar), Anda bisa mengatur pembauran proyeksi, pengubinan, dan ofset. 
 
-Gunakan kotak centang pratinjau di bagian atas menu ini untuk mengaktifkan pratinjau persisten saat menyesuaikan nilai.
-
-## Material global {#global-material}
-Jika opsi ini diaktifkan, material yang dipilih akan sama dengan alat lainnya. Perhatikan bahwa ini hanya mempertimbangkan pengaturan roughness, metalness dan color.
+Gunakan kotak centang pratinjau di bagian atas menu ini untuk mengaktifkan pratinjau yang terus tampil selama Anda mengatur nilai.

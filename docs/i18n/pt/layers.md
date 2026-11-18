@@ -1,159 +1,173 @@
 # ![](/icons/layer.webp) Camadas {#layers}
 
-Este menu contém a pilha de camadas, uma forma de armazenar edições no seu objeto de maneira não destrutiva, e muitas maneiras de combinar e reaproveitar camadas.
+Este menu contém a pilha de camadas, uma forma de guardar as edições do seu objeto de maneira não destrutiva, e muitas maneiras de combinar e reaproveitar camadas.
 
 ![](/images/layers_overview.webp) 
 
 ## Visão geral {#overview}
 
-As camadas do Nomad têm múltiplos propósitos.
+As camadas do Nomad servem para várias coisas.
 
-As informações de pintura (Cor, Rugosidade, Metalicidade, Opacidade) funcionam com camadas de forma semelhante a aplicativos de pintura 2D. Uma camada pode ser criada e a pintura aplicada a um modelo. A camada pode ser ligada ou desligada, ter sua opacidade ajustada, pode ser duplicada, sua ordem pode ser alterada na pilha de camadas, e seu modo de mesclagem ajustado.
+As informações de pintura (Cor, Aspereza, Metalidade, Opacidade) funcionam com camadas de forma parecida com os aplicativos de pintura 2d. Você pode criar uma camada e pintar um modelo nela. A camada pode ser ligada ou desligada, ter a opacidade ajustada, ser duplicada, mudar de posição na pilha de camadas e ter o modo de mistura alterado.
 
-O Nomad também usa camadas para escultura. Uma camada pode armazenar detalhes finos como rugas, ou pode armazenar grandes alterações, permitindo que funcionem como blendshapes/shape keys/morph targets em outros aplicativos 3D. Por exemplo, você pode esculpir diferentes expressões faciais em camadas diferentes e ajustar os controles deslizantes das camadas para combiná‑las em novas expressões.
+O Nomad também usa camadas para esculpir. Uma camada pode guardar detalhes finos como rugas, ou mudanças grandes, funcionando como blendshapes/shape keys/morph targets em outros aplicativos 3d. Por exemplo, você pode esculpir expressões faciais diferentes em camadas diferentes e ajustar os controles das camadas para combiná-las em novas expressões.
 
-Nesse caso, as alterações armazenadas em uma camada são puramente aditivas, a ordem das camadas não importa como acontece com pintura.
+Nesse caso, as mudanças guardadas em uma camada são puramente aditivas: a ordem das camadas não importa como importa para a pintura.
 
-As camadas podem ser parcialmente apagadas por meio da ferramenta [Delete Layer](tools.md#delete-layer), e as camadas também podem ser usadas para criar máscaras com base nas diferentes informações armazenadas na camada.
+As camadas podem ser apagadas parcialmente com a ferramenta [ApagCamada](tools.md#delete-layer), e também podem ser usadas para criar máscaras a partir das diferentes informações que guardam.
 
 ![](/videos/layer.mp4)
 
 ::: tip
-Ao contrário da maioria dos softwares de escultura, mudar a topologia de uma malha não descartará as camadas. Você pode usar o [Voxel Remesher](topology.md#voxel-remesher), o [Multiresolution](topology.md#multires) ou as ferramentas [Trim](tools.md#trim)/[Split](tools.md#split), mas note que ao usar o [Voxel Remesher](topology.md#voxel-remesher), a qualidade da camada será impactada.
+Ao contrário da maioria dos programas de escultura, mudar a topologia de uma malha não descarta as camadas. Você pode usar o [Remalhamento por voxels](topology.md#voxel-remesher), a [Multirresolução](topology.md#multiresolution) ou as ferramentas [Aparar](tools.md#trim)/[Dividir](tools.md#split), mas ao usar o [Remalhamento por voxels](topology.md#voxel-remesher) a qualidade da camada é afetada.
 :::
 
 ::: tip
-Se estiver usando camadas para blendshapes/morph targets, há funcionalidades extras de camada no [menu de cena](scene.md#object-menu). Você pode separar camadas em objetos e combinar objetos correspondentes em camadas.
+Se você usa camadas como blendshapes/morph targets, há recursos extras de camadas no [menu Cena](scene.md#object-menu): você pode separar camadas em objetos e combinar objetos correspondentes em camadas.
 :::
 ----
 
-## Menu de camada {#layer-menu}
+## Menu de camadas {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
-Pressione `Add layer` para criar uma nova camada.
+O título mostra o nome do objeto selecionado. As camadas não estão disponíveis em primitivas, então valide a primitiva antes.
 
-Cada camada tem um nome, um controle deslizante para controlar sua intensidade/fator e botões de opções.
+Toque em `Adicionar camada` para criar uma nova camada. `Combinar Camadas` mescla todas as camadas na malha base; o número ao lado do ícone indica quantas camadas existem.
+
+Cada camada tem um nome, um controle deslizante para a força/fator dela e botões de opções. Toque em uma camada para torná-la ativa: a escultura e a pintura vão para essa camada. Toque em `Base` para voltar a trabalhar na malha base.
+
+### ![](/icons/sort_right.webp) Expandir lista {#ui-expand-list}
+
+Por padrão, a lista de camadas mostra apenas a visibilidade, o modo de mistura e a força de cada camada, e a camada ativa aparece expandida com todos os controles. A seta à esquerda do título expande todos os controles de todas as camadas.
+
+![](/images/layers_expand.webp)
 
 ### Opções {#options}
 
-| Ação         | Ícone                        | Descrição                                           |
-| :----------: | :--------------------------: | :-------------------------------------------------  |
-| Visível      | ![](/icons/eye_open.webp)   | Mostrar/ocultar a camada                            |
-| Modo de mesclagem | ![](/icons/opacity.webp)    | O modo de mesclagem ao estilo Photoshop. Os 4 ícones exibem os modos para Cor, Rugosidade, Metalicidade, Opacidade. |
-| Editar nome  | ![](/icons/pencil.webp)     | Editar o nome da camada                             |
-| Excluir      | ![](/icons/trash.webp)      | Excluir a camada                                    |
-| Duplicar     | ![](/icons/clone.webp)      | Duplicar a camada                                   |
-| Mesclar para baixo | ![](/icons/merge_down.webp) | Mesclar a camada com a camada inferior (ou malha base) |
-| Mais         | ![](/icons/more.webp)       | Opções [More...](#more)                             |
+| Ação            | Ícone                        | Descrição                                           |
+| :-------------: | :--------------------------: | :-------------------------------------------------  |
+| Visível         | ![](/icons/eye_open.webp)   | Mostra/oculta a camada                              |
+| Mistura         | ![](/icons/opacity.webp)    | O modo de mistura no estilo do Photoshop. Os 4 ícones mostram os modos de Cor, Aspereza, Metalidade e Opacidade. |
+| Editar nome     | ![](/icons/pencil.webp)     | Edita o nome da camada                              |
+| Apagar          | ![](/icons/trash.webp)      | Apaga a camada                                      |
+| Duplicar        | ![](/icons/clone.webp)      | Duplica a camada                                    |
+| Combinar abaixo | ![](/icons/merge_down.webp) | Combina a camada com a camada de baixo (ou com a malha base) |
+| Mais            | ![](/icons/more.webp)       | Opções em [Mais...](#more)                          |
 
-Para mover uma camada para outra parte da pilha de camadas, pressione e segure no nome dela e então arraste.
+Quando uma camada não está expandida, `Editar nome`, `Apagar`, `Duplicar` e `Combinar abaixo` ficam no menu [Mais...](#more) dela.
 
-### Mais... {#more}
+Para mover uma camada para outra posição na pilha, toque e segure no nome dela e depois arraste.
 
-O botão 'More...' mostrará opções extras para a camada atual:
+### Base {#base}
+
+O botão de 3 pontos da linha `Base` move a pintura da malha base para uma nova camada, com o botão `Base → Camada`. A base então volta ao material de fundo. Isso é prático quando você pintou bastante antes de criar qualquer camada.
+
+* Os botões de máscara e de ocultar ao lado deixam as áreas mascaradas e ocultas intactas.
+* `Extrair` - os canais a mover: `Cor`, `Opacidade`, `Aspereza` e `Metalidade`.
+* `Material de fundo` - se ativado, só os valores diferentes desse material são movidos. Defina-o com os controles deslizantes, ou pegue-o do modelo com o conta-gotas.
+
+### ![](/icons/more.webp) Mais... {#more}
+
+O botão 'Mais...' mostra opções extras para a camada atual, em duas abas: os ajustes (ícone de engrenagem) e a extração (ícone de cubo).
 
 ![](/images/layers_more.webp) 
 
-#### Fatores de canal {#channel-factors}
+#### Fatores do canal {#channel-factors}
 
-Esses controles permitem escalar a quantidade de escultura/cor/rugosidade/metalicidade/opacidade da camada. Esses valores são multiplicados pelo controle deslizante de fator da camada, então, por exemplo, se a intensidade da camada for 1, mas o fator do canal de cor for 0,5, a cor exibida terá intensidade 0,5.
+Estes controles permitem escalar a quantidade de escultura/cor/aspereza/metalidade/opacidade da camada. Esses valores são multiplicados pelo controle de fator da camada; por exemplo, se a força da camada for 1 mas o fator do canal de cor for 0.5, a cor aparece com força 0.5.
 
-`Offset` controla a intensidade de escultura da camada. Enquanto cor/rugosidade/metalicidade são limitadas entre 0 e 1, o offset pode ter qualquer valor, tanto positivo quanto negativo. 
+`Deslocamento` controla a força da escultura da camada. Enquanto cor/aspereza/metalidade ficam limitadas entre 0 e 1, o deslocamento pode ter qualquer valor, positivo ou negativo.
 
 ::: tip
-Offset pode ser usado para transformar uma camada de relevos em uma camada de cavidades, ou um sorriso em um franzir de testa:
+O deslocamento pode transformar uma camada de saliências em uma camada de cavidades, ou um sorriso em uma cara fechada:
 ![](/videos/layer_happysad.mp4)
 
 
-Uma camada simétrica pode ser clonada e então dividida em formas esquerda/direita com del layer:
+Uma camada simétrica pode ser clonada e depois separada em formas esquerda/direita com a ferramenta ApagCamada:
 ![](/videos/layer_leftright.mp4)
 
-Camadas com fatores de offset negativos podem ser assadas (baked) em camadas vazias para criar novas formas positivas.
+Camadas com fatores de deslocamento negativos podem ser seladas em camadas vazias para criar novas formas positivas.
 
-Camadas com fatores de offset positivos acima de 1 podem ser usadas para experimentar blendshapes mais extremos.
+Camadas com fatores de deslocamento positivos acima de 1 podem ser usadas para experimentar blendshapes mais extremos.
 :::
 
 ::: warning
-No momento, as camadas compartilham apenas um único canal de opacidade para todos os 3 canais (cor/metalicidade/rugosidade).
-Se você mesclar múltiplas camadas com intensidade por canal que não estejam em intensidade máxima, é possível que o resultado final pareça diferente.
+No momento, as camadas compartilham um único canal de opacidade para os 3 canais (cor/metalidade/aspereza).
+Se você combinar várias camadas com intensidades por canal que não estejam no máximo, o resultado final pode ficar diferente.
 
-Talvez no futuro, cada canal tenha seu próprio canal alfa para remover essa limitação.
+Talvez no futuro cada canal tenha o seu próprio canal alfa para remover essa limitação.
 :::
 
 
-#### ![](/icons/tool_mask.webp) Máscara {#mask}
-O botão de máscara ao lado de cada controle deslizante criará uma máscara a partir daquele canal. Similar ao uso de camadas para fazer seleções em aplicativos de pintura, isso permite reutilizar o trabalho que você fez em uma camada para outras operações.
+#### ![](/icons/shield.webp) Máscara {#mask}
+O botão de máscara ao lado de cada controle deslizante cria uma máscara a partir desse canal. Assim como usar camadas para fazer seleções em aplicativos de pintura, isso permite reaproveitar o trabalho feito em uma camada para outras operações.
 
 #### ![](/icons/preview.webp) Pré-visualização {#preview}
 ![](/images/layers_preview.webp) 
 
-Quando ativado, irá pré-visualizar as configurações de extração para esta camada (veja a próxima seção).
+As opções a seguir ficam na aba de extração do menu 'Mais...'.
 
-Quando o raio‑X (xray) está ativado, apenas a forma extraída ficará sólida, o restante da forma ficará transparente, útil se você estiver usando alturas de extração negativas.
+Quando ativada, mostra uma pré-visualização dos ajustes de extração desta camada (veja a próxima seção).
 
-#### Extrair {#extract}
+`Raio-X` escolhe quais objetos ficam transparentes durante a pré-visualização (`Nenhum`, `Não selecionados`, `Selecionados` ou `Todos`), para que a forma extraída continue sólida. É útil se você estiver usando alturas de extração negativas.
+
+#### ![](/icons/mask_extract.webp) Extrair {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
 
-O botão `Extract` irá duplicar o conteúdo da camada em um novo objeto, geralmente com uma espessura especificada pelo usuário definida na próxima seção.
+O botão `Extrair` duplica o conteúdo da camada em um novo objeto, normalmente com uma espessura definida por você na próxima seção.
 
-`Closing action` determina como a duplicação é feita:
+`Ação de fechamento` determina como a duplicação é feita:
 
-* None - Simplesmente extrai a parte, sem tentar gerar laterais ou preencher buracos.
-* Fill - O buraco é preenchido e suavizado com triângulos. Não use esta opção para superfícies planas.
-* Shell - Fecha a forma extraída com o valor de espessura e opções de direção.
-* Layer - Extrai a diferença da camada.
+* `Nenhuma` - Apenas extrai a parte, sem tentar gerar laterais nem preencher buracos.
+* `Preencher` - O buraco é preenchido e suavizado com triângulos. Não use esta opção em superfícies planas.
+* `Casca` - Fecha a forma extraída usando o valor de espessura e as opções de direção.
+* `Camada` - Extrai a diferença da camada.
 
-#### ![](/icons/height.webp) Espessura {#thickness}
+#### ![](/icons/height.webp) Altura {#thickness}
 ![](/images/layers_thickness.webp) 
 
-A profundidade da extrusão do shell. Valores positivos crescem para fora da superfície, valores negativos crescem para dentro da superfície.
+A profundidade da extrusão da casca. Valores positivos crescem para fora da superfície, valores negativos crescem para dentro. Fica oculta quando a ação de fechamento é `Camada`.
 
-O sinal de mais/menos ao lado desse valor define a direção da extrusão:
-* Menos ( - ) começará da superfície atual e extrudirá para baixo. 
-* Mais ( + ) começará da superfície atual e extrudirá para cima.
-* MaisMenos ( ± ) empurrará o topo e a base da extrusão para longe em quantidades iguais, de modo que ficará metade embutida na superfície original.
+O mais/menos ao lado deste valor define a direção da extrusão:
+* Menos ( - ) começa na superfície atual e extruda para baixo.
+* Mais ( + ) começa na superfície atual e extruda para cima.
+* Mais-menos ( ± ) empurra o topo e o fundo da extrusão na mesma medida, de modo que ela fica com metade embutida na superfície original.
+
+#### Lados {#edge-loop-side}
+![](/images/layers_edgeloop.webp) 
+
+Esta seção aparece quando a ação de fechamento é `Casca`.
+
+`Divisões da parede` define o número de divisões ao longo das laterais da casca. Com a opção `Auto` ligada, o Nomad calcula o número de loops de arestas para criar polígonos quadrados.
 
 #### Suavidade {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
-Se as bordas da região a ser extraída estiverem irregulares, este controle deslizante tentará desfocar a borda em uma forma mais suave. 
+Se as bordas da região a extrair estiverem serrilhadas, ative esta opção para suavizá-las em uma forma mais bonita. `Todos` suaviza toda a superfície extraída, `Apenas bordas` suaviza só as bordas. `Iterações` define a força da suavização.
 
-#### ![](/icons/height.webp) Loop de aresta (lado) {#edge-loop-side}
-![](/images/layers_edgeloop.webp) 
+_Aqui termina o submenu 'Mais...'._
 
-Esta seção fica visível quando a ação de fechamento é 'Shell'. 
-
-`Auto Edge-loop (side)` calculará o número de edge loops ao longo das laterais do shell para criar polígonos quadrados. 
-
-Se desativado, o controle deslizante `Division` definirá o número de divisões nas laterais.
-
-_Este é o fim do submenu 'More...'._
-
-### Avançado {#advanced}
+### ![](/icons/cog.webp) Avançado {#advanced}
 ![](/images/layers_advanced.webp)
+
+O botão `Avançado` na parte de baixo do menu aparece quando o objeto tem camadas.
 
 #### Manter detalhes das camadas superiores {#keep-top-layers-details}
 
-Garante que pequenos detalhes em camadas superiores permaneçam visíveis quando grandes alterações são feitas em camadas inferiores.
+Garante que os pequenos detalhes das camadas superiores continuem visíveis quando você faz grandes mudanças nas camadas inferiores. Enquanto você esculpe, a deformação vinda das camadas superiores é ignorada, mas os detalhes delas continuam visíveis. Só funciona bem se essas camadas superiores tiverem detalhes relativamente pequenos.
 
-Por padrão, se você esculpir pequenas rugas em uma camada e depois fizer grandes alterações na camada base, as rugas serão perdidas. Ativar esta opção permitirá que esses pequenos detalhes sempre flutuem acima das grandes alterações inferiores. No vídeo a seguir, veja como o detalhe da ruga é removido por padrão, mas permanece visível quando 'keep top layers details' está ativado:
+Por padrão, se você esculpir pequenas rugas em uma camada e depois fizer grandes mudanças na camada base, as rugas se perdem. Ativar esta opção faz esses pequenos detalhes ficarem sempre por cima das grandes mudanças de baixo. No vídeo a seguir, veja como o detalhe da ruga é removido por padrão, mas continua visível quando 'Manter detalhes das camadas superiores' está ativado:
 
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expandir lista {#ui-expand-list}
-
-O menu de camadas padrão permite alternar a visibilidade da camada e a opacidade da camada. Ativar esta opção expande os controles completos para cada camada.
-
-![](/images/layers_expand.webp)
-
 #### Sincronizar transformação {#sync-transform}
 
-Se ativado, todas as camadas não selecionadas serão ajustadas dependendo da rotação, escala e inclinação (skew) da transformação. 
+Quando ativada, todas as camadas não selecionadas são ajustadas de acordo com a rotação, a escala e o cisalhamento da transformação, quando você usa as ferramentas Gizmo ou Transformar. Pode ser `Auto`, `Não` ou `Sim`.
 
-Desative esta opção se as outras camadas forem usadas sem a nova transformação que você está aplicando.
+Desative esta opção se as outras camadas devem ser usadas sem a nova transformação que você está aplicando.
 
-Quando definido como `Auto`, apenas as camadas visíveis serão ajustadas.
+Quando definida como `Auto`, só as camadas visíveis são ajustadas.

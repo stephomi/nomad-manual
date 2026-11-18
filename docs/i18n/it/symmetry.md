@@ -1,78 +1,94 @@
 # ![](/icons/symmetry.webp) Simmetria {#symmetry}
 
-Questo menu controlla come i tratti verranno ripetuti attraverso un piano a specchio o radialmente, e i modi per ripristinare la simmetria su oggetti non simmetrici.
+Questo menu controlla come i tratti vengono ripetuti oltre un piano di specchio, in modo radiale o a tasselli, e offre dei modi per ripristinare la simmetria sugli oggetti non simmetrici.
 
 ![](/images/symmetry_overview.webp) 
 
 ## Panoramica {#overview}
 Puoi usare la simmetria in diversi modi:
 
-* Come uno specchio, ribaltando il lavoro sugli assi X (sinistra/destra), Y (alto/basso), Z (dietro/davanti), o una combinazione di essi. 
-* La simmetria radiale può essere impostata su X Y Z con un numero di ripetizioni, ad esempio per scolpire una stella marina. 
-* Gli specchi possono operare attorno all’origine (chiamata modalità mondo) o attorno al centro di un oggetto (chiamata modalità locale).
-* Scolpiture iniziate senza simmetria possono essere forzate a diventare simmetriche.
+* Come uno specchio, ribaltando il lavoro lungo X (sinistra/destra), Y (alto/basso), Z (dietro/davanti) o una loro combinazione. 
+* La simmetria radiale si imposta su X Y Z con un numero di ripetizioni, per esempio per scolpire una stella marina. 
+* La tassellatura ripete i tratti lungo l'oggetto, così la scultura si ripete senza giunture visibili.
+* Gli specchi possono lavorare attorno all'origine (modalità mondo) o attorno al centro di un oggetto (modalità locale).
+* Una scultura nata non simmetrica può essere resa simmetrica a forza.
 
-Una scorciatoia per abilitare/disabilitare la simmetria si trova anche nel pannello rapido a sinistra (*"Sym"*). La piccola “L/W” indica se Nomad è in modalità di simmetria Locale o Mondo. Puoi anche tenere premuto a lungo o scorrere verso il centro dello schermo per far apparire un menu.
+Trovi anche una scorciatoia per attivare/disattivare la simmetria nel pannello rapido a sinistra (*"Simm"*). La piccola 'L/W' indica se Nomad è in modalità di simmetria Locale o Mondo. Puoi anche tenere premuto o trascinare verso il centro dello schermo per far apparire un menu.
 
 ![](/images/symmetry_button.webp) 
 
-Questa è un’opzione globale, quindi lo stato verrà mantenuto tra i diversi strumenti.
-Le uniche eccezioni sono gli strumenti di trasformazione ([Sposta](#translate), [Ruota](#rotate), [Scala](#scale) e [Gizmo](#gizmo)) che hanno il proprio stato di simmetria.
+Le impostazioni di simmetria vengono salvate con ogni oggetto, e il titolo del menu mostra il nome dell'oggetto che stai modificando.
+Gli strumenti di scultura condividono lo stesso stato attivo/disattivo, mentre gli strumenti di trasformazione ([Trasforma](tools.md#transform) e [Gizmo](tools.md#gizmo)) hanno il loro.
 
 ::: tip
-Il menu di simmetria serve principalmente a controllare la simmetria dei tratti. Puoi anche specchiare e ripetere oggetti tramite i [ripetitori presenti nel menu scena](scene#repeaters). 
+Il menu Simmetria serve soprattutto a controllare la simmetria dei tratti. Puoi anche specchiare e ripetere gli oggetti con i [ripetitori del menu Scena](scene#repeaters). 
 :::
 
-## Abilitato {#enabled}
-Attiva/disattiva la modalità specchio, è la stessa del pulsante `Sym` nel pannello rapido a sinistra. 
+## ![](/icons/symmetry.webp) Abilitato {#enabled}
+Attiva o disattiva la modalità specchio: è lo stesso pulsante `Simm` del pannello rapido a sinistra. Un'icona di avviso ti ricorda quando è spenta, e il menu ti segnala anche quando lo strumento attuale ignora la simmetria.
 
 ## Piani {#planes}
 
-Abilita uno o più piani di simmetria e il numero di ripetizioni per la simmetria radiale. Nota che non devi scegliere un solo piano: puoi avere 1, 2 o 3 piani abilitati per una simmetria complessa.
+Abilita uno o più piani di simmetria e il numero di ripetizioni per la simmetria radiale. Non sei obbligato a scegliere un solo piano: puoi abilitarne 1, 2 o tutti e 3 per una simmetria complessa.
 
-L’asse e il conteggio delle ripetizioni per la simmetria radiale. Nota che anche questi non sono limitati a un singolo asse e possono persino funzionare in combinazione con la simmetria per piani per generare risultati dettagliati molto rapidamente. (Il numero totale di ripetizioni è limitato a 150)
+La riga `Radiale` imposta il numero di ripetizioni della simmetria radiale attorno a ciascun asse. Anche qui non sei limitato a un solo asse, e puoi perfino combinarla con la simmetria a piani per ottenere risultati ricchi di dettagli molto in fretta. (Il numero totale di ripetizioni è limitato a 200)
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Metodo {#method}
-Lo specchio può essere “Locale”, e muoversi con l’oggetto, oppure “Mondo”, e rimanere fermo. Se non sei sicuro di quale modalità ti serva, osserva il piano a specchio e gli indicatori radiali sovrapposti all’oggetto. In modalità locale, se usi il gizmo di trasformazione e sposti il modello, anche gli indicatori dello specchio si muoveranno. In modalità mondo, gli indicatori dello specchio resteranno fissi e l’oggetto scivolerà attraverso di essi.
+## Tassello {#tile}
 
-## Mirroring {#mirroring}
+Ripete i tratti lungo un asse, a distanza regolare, così la scultura si ripete senza giunture. Comodo per motivi decorativi, mattoni o una texture che vuoi ripetere.
+
+Attiva la tassellatura per ogni asse con i pulsanti `Tassello`, poi imposta un `Conteggio` (quante ripetizioni coprono l'oggetto) oppure una `Distanza` (lo spazio tra due ripetizioni). Tocca l'interruttore a sinistra per passare dall'uno all'altra.
+
+## Metodo {#method}
+Lo specchio può essere `Locale`, e si sposta con l'oggetto, oppure `Mondo`, e resta fermo. Se non sai quale modalità ti serve, osserva gli indicatori del piano di specchio e della simmetria radiale sovrapposti all'oggetto. In modalità locale, se usi gli strumenti di trasformazione (`Gizmo` o `Trasforma`) e sposti il modello, anche gli indicatori dello specchio si spostano. In modalità mondo, gli indicatori restano fissi e l'oggetto ci scorre attraverso.
+
+## Specchio {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
-Quando scolpisci vicino ai piani di simmetria, alcuni pennelli possono avere un comportamento di simmetria imperfetto. Questa sezione ti permette di ripristinare la simmetria copiando un lato della tua scultura sull’altro. 
+Scolpendo vicino ai piani di simmetria, alcuni pennelli hanno un comportamento simmetrico imperfetto. Questa sezione ti permette di ripristinare la simmetria copiando un lato della scultura sull'altro. 
 
-`Direction` - I pulsanti `<<` e `>>` determinano quale lato verrà copiato sull’altro. Nomad lo calcola dalla tua vista corrente, quindi impostandolo su `<<` ad esempio copierà sempre da destra schermo a sinistra schermo.
+`Direzione` - I due pulsanti a freccia accanto al titolo `Specchio` stabiliscono quale lato viene copiato sull'altro. Nomad lo calcola dalla vista attuale, così il lato resta lo stesso sullo schermo da qualunque parte guardi il modello.
 
-![](/icons/shield.webp) `Mask` - Il pulsante maschera ti permette di isolare ciò che verrà specchiato; mascherare il lato di destinazione proteggerà quella regione, mascherare il lato sorgente impedirà a quell’area di essere specchiata sulla destinazione. 
+![](/icons/shield.webp) `Maschera` - Il pulsante maschera ti permette di isolare ciò che verrà specchiato: mascherare il lato di destinazione protegge quella zona, mascherare il lato di origine impedisce che quella zona venga specchiata sulla destinazione. 
 
-![](/icons/tool_hide.webp) `Hide` - Quando attivo, le aree nascoste sul lato sorgente non verranno specchiate sulla destinazione. 
+![](/icons/tool_hide.webp) `Nascondi` - Quando è attivo, le zone nascoste sul lato di origine non vengono specchiate sulla destinazione. 
 
-`Mirror` cercherà di identificare se la topologia è la stessa su entrambi i lati dello specchio e, in tal caso, sposterà solo i vertici. Questo è lo scenario più comune.
+`Specchio` (Mantieni topologia) cerca di capire se la topologia è uguale sui due lati dello specchio e, in quel caso, si limita a spostare i vertici. È il caso più comune. La simmetria radiale viene ignorata. Se la topologia non è simmetrica, Nomad ti propone di forzare la specchiatura con `Taglia • Specchio`.
 
-`Split & Mirror` essenzialmente taglierà l’oggetto lungo lo specchio, copierà un lato, lo specchierà sull’altro e salderà i vertici lungo lo specchio. È un’opzione più distruttiva e cancellerà la multirisoluzione, ma a volte questo metodo è necessario se il modello è molto diverso attraverso lo specchio.
+I pulsanti `Taglia` tagliano l'oggetto lungo il piano (o i piani) di simmetria. Modificano la topologia, quindi sono più distruttivi di `Specchio`. Il numero su ciascun pulsante indica quanti oggetti ottieni:
 
-### Capovolgi oggetto {#flip-object}
+* `Taglia` - rimuove un lato dell'oggetto.
+* `Taglia • Specchio` - taglia l'oggetto, copia un lato, lo specchia sull'altro e salda i vertici lungo lo specchio. A volte questo metodo è necessario, se il modello è molto diverso tra i due lati.
+* `Taglia • Dividi` - taglia l'oggetto e tiene ogni lato come oggetto separato.
+* `Taglia • Specchio • Dividi` - come `Taglia • Specchio`, ma ogni lato diventa un oggetto separato.
+
+Se sono selezionati più oggetti, `Specchio` e [Rifletti oggetto](#flip-object) si applicano a tutti.
+
+### Rifletti oggetto {#flip-object}
 ![](/images/symmetry_flip.webp)
-Rende il lato sinistro il lato destro e viceversa. Simile, come risultato, a usare il menu dello strumento gizmo e impostare la scala a -1 sull’asse X.
+Porta il lato sinistro a destra e viceversa, lungo `X`, `Y` o `Z`. Il risultato è simile a quello che otterresti impostando la scala a -1 su X dal menu dello strumento Gizmo.
 
-## Reimposta e modifica {#reset-and-edit}
+## Ripristina e modifica {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
-È possibile modificare la posizione e l’orientamento della simmetria (ma non è consigliato!). Se necessario, `World center` e `Orientation` ripristineranno la posizione e l’orientamento della simmetria ai valori predefiniti.
+È possibile modificare la posizione e l'orientamento della simmetria (ma non è consigliato!). Se serve, `Centro del mondo` (`Centro dell'oggetto` in modalità locale) e `Orientamento` riportano la posizione e l'orientamento della simmetria ai valori predefiniti.
 
-Nomad di solito sa dove posizionare il piano di simmetria. Non è consigliato regolarlo manualmente, ma il pulsante `Gizmo (Edit)` lo permette agli utenti avanzati. Quando questo pulsante viene cliccato, viene mostrato un gizmo che ti permette di traslare e ruotare il piano di simmetria. Se vuoi ripristinare il centro e l’orientamento predefiniti, i pulsanti `object center` e `orientation` lo faranno.
+Di solito Nomad sa dove mettere il piano di simmetria. Non è consigliato regolarlo a mano, ma il pulsante `Gizmo` (`Modifica`) lo permette agli utenti esperti. Quando lo premi, compare un gizmo che ti permette di traslare e ruotare il piano di simmetria. Per tornare al centro e all'orientamento predefiniti, usa i pulsanti di ripristino qui sopra.
 
-Il comportamento di queste opzioni cambierà a seconda dello spazio (*Locale/Mondo*) in cui ti trovi.
-Quindi, se non funziona come ti aspetti, assicurati di controllare di essere nello spazio corretto.
+`Da perno` mette il piano di simmetria sul pivot dello strumento [Gizmo](tools.md#gizmo). È disponibile solo mentre lo strumento `Gizmo` è attivo.
+
+Il comportamento di queste opzioni cambia a seconda dello spazio (*Locale/Mondo*) in cui ti trovi.
+Quindi, se qualcosa non funziona come ti aspetti, controlla di essere nello spazio giusto.
 
 ::: tip
-Il pulsante `Gizmo (Edit)` è intenzionalmente disattivato come promemoria del fatto che probabilmente non dovresti usarlo!
+Modificare il piano di simmetria con il gizmo è un po' sperimentale: probabilmente non ti servirà mai!
 :::
 
-## Mostra opzioni {#show-options}
+## Opzioni di visualizzazione {#show-options}
 ![](/images/symmetry_show.webp)
 
 
-`Show line` e `Show plane` attivano/disattivano una sovrapposizione in viewport delle posizioni di simmetria. Nota che disattivare queste opzioni avrà effetto solo quando il menu di simmetria è chiuso.
+`Mostra linea` e `Mostra piano` attivano o disattivano la sovrapposizione nella vista che indica dove si trova la simmetria. Nota che disattivare queste opzioni ha effetto solo quando il menu Simmetria è chiuso.

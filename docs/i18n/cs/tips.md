@@ -4,186 +4,188 @@
 
 ## Jak začít model {#how-to-start-a-model}
 
-Začátečníci v 3D sochaření se často ptají, jaký je nejlepší způsob, jak začít model. Žádný „nejlepší“ způsob neexistuje, různí lidé mají různé preference. Zde jsou některé z běžnějších přístupů.
+Začátečníci v 3d sochání se často ptají, jak nejlépe začít model. Žádný nejlepší způsob neexistuje, každému vyhovuje něco jiného. Tady jsou některé z nejběžnějších postupů.
 
-### Sochání na kouli, multires {#sculpt-on-sphere-multires}
+### Sochání na kouli, multirezoluce {#sculpt-on-sphere-multires}
 
-Výchozí model po spuštění Nomadu je nejběžnější způsob. Pomocí nástrojů Move, Clay, Crease tvarujte kouli, používejte nižší úrovně subdivize, když chcete rychle dělat velké změny, a vyšší úrovně subdivize pro detailní práci.
+Nejběžnějším způsobem je výchozí model, se kterým se Nomad spustí. Nástroji přesunout, hlína a rýha kouli tlačíte a táhnete do požadovaného tvaru. Nižší úrovně subdivize použijte, když chcete rychle udělat velké změny, vyšší úrovně subdivize na práci s detaily.
 
-Častým problémem je, že vám často dojdou polygony tam, kde je potřebujete, zatímco jinde jich máte příliš mnoho. Například pokud výchozí kouli vytáhnete do celého těla, je pravděpodobné, že nebudete mít dostatek detailu na prsty, zatímco na zadní části hlavy budete mít spoustu zbytečných polygonů. Pro převážně kulovité tvary, jako je hlava, to ale může být v pořádku.
+Častým problémem je, že vám polygony dojdou tam, kde je potřebujete, zatímco jinde jich máte příliš. Když například z výchozí koule vytvarujete celé tělo, nejspíš nebudete mít dost detailů na prsty, zatímco na zadní straně hlavy bude spousta zbytečných polygonů. U převážně kulovitých tvarů, jako je hlava, to ale může být v pořádku.
 
 ### Dyntopo {#dyntopo}
 
-Zapnutí Dyntopo bude adaptivně přidávat a odebírat polygony během sochaření. Tyto polygony budou trojúhelníky a začátečníkům se často nelíbí „nepořádné“ rozložení ve srovnání s čistým vzhledem multires. Vyplatí se vytrvat! Pokud zapnete smooth shading, vypnete wireframe a přestanete se starat o rozložení, tento režim může působit velmi „jako hlína“. Nezapomeňte, že pokud použijete velký štětec nebo smooth štětec, tento režim může také polygony odebírat, takže nástroj je vždy rychlý a responzivní. Jakmile máte hotový první průchod sochy, můžete ji naklonovat, spustit přes quad remesher pro pěkné rozložení a reprojektovat původní detaily na vysokou úroveň subdivize.
+Se zapnutou dynamickou topologií (Dyntopo) se polygony při sochání adaptivně přidávají a odebírají. Tyto polygony jsou trojúhelníky a začátečníkům se jejich neuspořádané rozložení často nelíbí ve srovnání s čistým vzhledem multirezoluce. Vytrvejte, vyplatí se to! Když zapnete hladké stínování, vypnete drátový model a přestanete se rozložením trápit, může tento režim působit velmi podobně jako práce s hlínou. Nezapomeňte, že s velkým štětcem nebo s vyhlazovacím štětcem tento režim polygony také odebírá, takže nástroj zůstává vždy rychlý a pohotový. Až budete mít hotovou první verzi sochy, můžete ji naklonovat, projet ji Quad Remesherem pro pěkné rozložení a původní detaily přeprojektovat na vysokou úroveň subdivize.
 
-### Voxel remesh {#voxel-remesh}
+### Voxelové přesíťování {#voxel-remesh}
 
-Voxel remesh aplikuje na vaši sochu převážně quadovou topologii. Tato operace je rychlá při nižším rozlišení a lze ji použít k rychlé náhradě natažených nebo příliš hustých polygonů rovnoměrně rozloženým meshem. Může to být skvělý způsob, jak začít celé tělo z koule; například začnete hlavou, vytáhnete krk, voxel remesh. Vytáhnete tělo, voxel remesh, ruce, voxel remesh atd., dokud nemáte základní tvary.
+Voxelové přesíťování vytvoří na vaší soše topologii založenou převážně na čtyřúhelnících. Při nižších rozlišeních je tato operace rychlá a můžete s ní rychle nahradit roztažené nebo příliš husté polygony rovnoměrně rozloženými. Je to skvělý způsob, jak z koule začít celé tělo: začnete například hlavou, vytáhnete krk a přesíťujete. Vytáhnete tělo, přesíťujete, paže, přesíťujete a tak dál, dokud nemáte základní tvary.
 
-### Používejte více objektů {#use-multiple-objects}
+### Použijte více objektů {#use-multiple-objects}
 
-Mnoho anatomických příruček znázorňuje tělo pomocí jednoduchých koulí, válců, krychlí. Stejným způsobem můžete sochat i v Nomadu. Má to výhodu v tom, že můžete objekty v hierarchii scény parentovat, takže například otočíte krk a hlava ho bude následovat. Možnost používat nástroj Gizmo pro přesné posuny/rotace/škálování je také velmi užitečná a můžete také nastavit pivoty pro jednotlivé tvary tak, aby se pohybovaly přesně tak, jak očekáváte. Když jsou základní bloky na správném místě, můžete je všechny vybrat a pomocí voxel remesh nebo boolean sloučit do jednoho povrchu pro detailnější sochaření.
+Mnoho příruček anatomie zobrazuje tělo pomocí jednoduchých koulí, válců a krychlí. Stejně tak můžete sochat i v Nomadu. Výhodou je, že objekty můžete v hierarchii scény vnořit do sebe, takže když například otočíte krkem, hlava ho bude následovat. Velmi užitečné je také přesné posouvání, otáčení a změna měřítka nástrojem gizmo a pro každý tvar můžete nastavit otočný bod, aby se pohyboval přesně podle vašich představ. Až budou základní bloky na správném místě, můžete je všechny vybrat a voxelovým přesíťováním nebo booleovskou operací je spojit do jediného povrchu pro podrobnější sochání.
 
-Užitečný tip pro tento způsob práce: začněte koulí, roztáhněte ji do „párku“, stiskněte Pivot, klikněte na „Bottom“, znovu stiskněte Pivot. Nyní máte část těla, kterou můžete klonovat, posouvat podél délky první koule, klonovat, otáčet, klonovat, posouvat atd., abyste rychle rozložili celé tělo.
+Šikovný tip pro tento způsob práce: začněte koulí, změňte její měřítko na protáhlou klobásu, stiskněte otočný bod, klepněte na „dole“ a znovu stiskněte otočný bod. Teď máte část těla, kterou můžete naklonovat, posunout po délce první koule, naklonovat, otočit, naklonovat, posunout, naklonovat atd., a rychle tak rozvrhnout tělo.
 
 ### Trubky {#tubes}
 
-Nástroj Tube je skvělý způsob, jak začít sochu. Ocasy plazů, ruce, nohy, prsty, obočí – to vše lze rychle načrtnout pomocí nástroje Tube a pak snadno upravovat. Umožňuje také měnit profil průřezu, což dovoluje rychlé změny tvaru. Tvar můžete „validate“, abyste na něm mohli začít sochat, a společně s ostatními objekty jej voxel remeshnout do jednoho těla.
+Nástroj trubka je skvělý způsob, jak začít sochu. Plazí ocasy, paže, nohy, prsty, obočí, to vše můžete nástrojem trubka rychle načrtnout a pak snadno upravit. Umožňuje také měnit profil průřezu, takže tvar změníte rychle. Tvar můžete potvrdit a začít na něm sochat, a spolu s dalšími objekty ho voxelově přesíťovat, abyste získali síť celého těla.
 
-### Používejte jiné aplikace {#use-other-apps}
+### Použijte jiné aplikace {#use-other-apps}
 
-Někteří lidé raději začínají model v jiných aplikacích, to je také v pořádku. Nástroje jako Blender nebo Valence umožňují začít model pomocí low-poly technik, poté je lze importovat do Nomadu pro sochaření.
+Někdo raději začíná model v jiných aplikacích, i to je v pořádku. Nástroje jako Blender nebo Valence umožňují začít model technikami low poly a pak ho importovat do Nomadu k sochání.
 
-### Používejte vestavěné presety {#use-the-built-in-presets}
+### Použijte vestavěná přednastavení {#use-the-built-in-presets}
 
-V Project menu klikněte vpravo nahoře na `Preset...`. Najdete zde několik presetů tvarů hlavy a těla od Blender Foundation. Vyberte ten, který se vám líbí, klepněte na něj znovu a přidejte ho do scény. 
+V nabídce [Soubory](files.md) klepněte na `Přednastavení…` vlevo v části projektu. Najdete tu několik přednastavených tvarů hlav a těl od Blender Foundation. Vyberte si jeden, klepněte na něj znovu a přidejte ho do scény. 
 
-### Používejte online modely {#use-online-models}
+### Použijte modely z internetu {#use-online-models}
 
-Online je k dispozici mnoho volných modelů, např. Polyhaven, Sketchfab, Turbosquid. Tyto modely lze obvykle importovat do Nomadu a buď na nich přímo sochat, nebo je použít jako referenci.
+Na internetu je k dispozici spousta bezplatných modelů, například na polyhaven, sketchfab nebo turbosquid. Tyto modely obvykle můžete importovat do Nomadu a buď na nich přímo sochat, nebo je použít jako referenci.
 
 ### Žádná pravidla! {#no-rules}
 
-Nakonec můžete použít libovolnou kombinaci těchto technik, nebo žádnou! Nomad je v tomto ohledu velmi flexibilní, pokročilí uživatelé mohou začít tubami, pak dyntopo, pak zkombinovat se staženou nohou, pak vše quad remeshnout a nakonec použít multires pro finální detaily. Cokoli vám funguje.
+Nakonec můžete tyto techniky libovolně kombinovat, nebo nepoužít žádnou! Nomad je v tomto ohledu velmi flexibilní. Pokročilí uživatelé mohou začít trubkami, pak přejít na dyntopo, pak přidat stažené chodidlo, pak vše přesíťovat Quad Remesherem a nakonec použít multirezoluci na finální detaily. Cokoli, co vám vyhovuje.
 
-## Facegroups {#facegroups}
+## Skupiny ploch {#facegroups}
 
-Nástroj Facegroup lze použít pro mnoho věcí, jak je vysvětleno v tomto videu na YouTube: https://youtu.be/qtjYcxS8f9s?si=HGWTG-NqXGstWehx
+Nástroj skupina ploch se dá použít k mnoha věcem, jak vysvětluje toto video na youtube: https://youtu.be/qtjYcxS8f9s?si=HGWTG-NqXGstWehx
 
-Toto je textové shrnutí funkcí pokrytých v tomto videu.
+Toto je textové shrnutí funkcí, o kterých video mluví.
 
-### Proč facegroups? {#why-facegroups}
+### Proč skupiny ploch? {#why-facegroups}
 
-Facegroups vám umožňují organizovat a vybírat faces („faces“ a „polygony“ jsou v tomto manuálu používány zaměnitelně). To se snáze vysvětluje ve srovnání s ostatními výběrovými a organizačními nástroji Nomadu. Nomad vám umožňuje vytvářet objekty, pojmenovávat je, parentovat je, je snadné vytvořit strukturu objektů pro definici místnosti složené z podlahy, stěn, židle, stolu atd.
+Skupiny ploch vám umožňují uspořádat a vybírat plochy (v této příručce se „plochy“ a „polygony“ používají jako synonyma). Nejlépe se to vysvětlí ve srovnání s ostatními nástroji Nomadu pro výběr a uspořádání. V Nomadu můžete vytvářet objekty, pojmenovávat je a vnořovat, takže snadno vytvoříte strukturu objektů, která popisuje třeba místnost s podlahou, stěnami, židlí, stolem a tak dál.
 
-U postavy můžete udělat počáteční block-out pomocí samostatných objektů pro hlavu, ruku, nohu, ale jakmile všechny části sloučíte do jednoho meshe, tato struktura se ztratí. Na podsekcích postavy můžete pracovat pomocí masek, ale může být únavné neustále malovat masku na ruce, pak na nos, pak zase na ruce.
+U postavy můžete začít hrubým modelem ze samostatných objektů pro hlavu, paži a nohu, ale jakmile všechny části sloučíte do jedné sítě, tato struktura se ztratí. Na dílčích částech postavy můžete pracovat s maskami, ale znovu a znovu malovat masku na ruce, pak na nos, pak zase na ruce může být únavné.
 
-Zde jsou užitečné facegroups. Umožňují vám označit polygonové faces barvou a pak vybírat a manipulovat s polygony, které mají stejnou barvu. Všimněte si, že barva facegroup a vertex color jsou odlišné věci.
+Právě tady se skupiny ploch hodí. Umožňují označit polygony barvou a pak vybírat a upravovat polygony se stejnou barvou. Barva skupiny ploch a barva vrcholů jsou dvě různé věci.
 
-Nejbližší analogií by bylo malování barev na mapu a následná možnost vybírat země nebo regiony podle barvy.
+Nejbližším přirovnáním je vybarvování mapy, kde pak můžete podle barvy vybírat státy nebo oblasti.
 
-U hlav postav můžete namalovat zóny pro oční důlky, nos, rty, bradu, uši a pak tyto zóny snadno vybírat. U hard-surface a mechanického sochaření může být užitečné definovat panely a sekce.
+Na hlavách postav můžete vybarvit zóny, které označí oční důlky, nos, rty, bradu a uši, a později je snadno vybrat. Při hard surface a mechanickém sochání se zase hodí k vymezení panelů a sekcí.
 
-### Vytváření a úprava facegroups {#creating-and-editing-facegroups}
+### Vytváření a úprava skupin ploch {#creating-and-editing-facegroups}
 
-Facegroups lze aplikovat štětcem, kde každý nový tah vytvoří novou facegroup, nebo mohou vybrat facegroup pod kurzorem a rozšířit ji. Lze je také vytvářet pomocí tvarů.
+Skupiny ploch můžete nanášet štětcem, kdy každý nový tah vytvoří novou skupinu ploch, nebo můžete vybrat skupinu ploch pod kurzorem a rozšířit ji. Vytvářet je lze také pomocí tvarů.
 
-* Dot, auto-pick zapnutý – jedno tažení definuje novou barvu facegroup a přiřadí ji faces, přes které táhnete. Každé nové tažení definuje novou facegroup. Klepnutí zaplaví novou facegroup.
-* Dot, auto-pick vypnutý – když je tlačítko auto-pick v režimu „sub“, Nomad vybere facegroup pod kurzorem a aplikuje ji po zbytek tažení. To je užitečné pro zpřesňování facegroups bez nutnosti je ručně vybírat.
+* Bod, výchozí režim - jedno tažení určí novou barvu skupiny ploch a přiřadí ji plochám, přes které táhnete. Každé nové tažení vytvoří novou skupinu ploch. Klepnutí vyplní celou souvislou oblast novou skupinou ploch.
+* Bod, režim `Vybrat` - když je aktivní tlačítko `Vybrat` na levém panelu nástrojů, Nomad vybere skupinu ploch pod kurzorem a po zbytek tažení ji nanáší. Hodí se pro doladění skupin ploch, aniž byste je museli ručně vybírat.
 
 ### Maskování {#masking}
 
-Když je aktivní nástroj Mask a tlačítko facegroup je aktivní na jeho toolbaru, klepnutí na facegroup ji zamaskuje.
+Když je aktivní nástroj maska a na jeho panelu nástrojů je aktivní tlačítko skupiny ploch, klepnutím na skupinu ploch ji zamaskujete.
+
 
 ### Skrývání {#hiding}
 
-Když je aktivní nástroj Hide a tlačítko facegroup je aktivní na jeho toolbaru, klepnutí na facegroup ji skryje.
+Když je aktivní nástroj skrýt a na jeho panelu nástrojů je aktivní tlačítko skupiny ploch, klepnutím na skupinu ploch ji skryjete.
 
-### Organizace {#organizing}
+### Uspořádání {#organizing}
 
-Jak bylo zmíněno dříve, facegroups lze použít k organizaci vašeho meshe bez nutnosti vytvářet samostatné objekty. Možná nechcete rozdělit hlavu na samostatné objekty pro nos, bradu, uši, ale je velmi užitečné mít je definované pomocí facegroups.
+Jak už bylo zmíněno, skupiny ploch můžete použít k uspořádání sítě, aniž byste museli vytvářet samostatné objekty. Hlavu asi nebudete chtít rozdělit na samostatné objekty pro nos, bradu a uši, ale mít je vymezené skupinami ploch je velmi užitečné.
 
-### UV oblasti {#uv-regions}
+### Oblasti UV {#uv-regions}
 
-Nástroj UV Atlas se pokusí definovat švy automaticky, ale někdy je umístí tam, kde je nechcete. Pokud na objektu existují facegroups a v možnostech UV Atlas je aktivní volba facegroup, použije místo toho hranice facegroups jako UV švy.
+Nástroj UV Atlas se pokusí určit švy automaticky, ale někdy je umístí tam, kde je nechcete. Pokud má objekt skupiny ploch a ve volbách UV Atlas je zapnutá volba skupin ploch, použije místo toho jako UV švy hranice skupin ploch.
 
-### Quad remesher {#quad-remesher}
+### Quad Remesher {#quad-remesher}
 
-Plugin Quad Remesher obvykle pěkně vede hrany na vašem modelu, ale můžete mu pomoci je řídit pomocí facegroups, pokud je volba facegroup zapnutá. To může usnadnit definici čistého edge flow kolem očí, obočí, rtů, záhybu tváře apod.
+Plugin Quad Remesher obvykle vede hrany na modelu pěkně, ale když zapnete volbu skupin ploch, můžete ho skupinami ploch usměrnit. Snadno tak například vymezíte čistý tok hran kolem očí, nadočnicového oblouku, rtů nebo lícní rýhy.
 
-### Filtrování s jinými nástroji {#filter-with-other-tools}
+### Filtrování s dalšími nástroji {#filter-with-other-tools}
 
-Mnoho nástrojů má možnosti, aby si byly vědomy facegroups, buď v hlavním menu nástroje, nebo přes Stroke -> Filtering. Například nástroj Smooth při síle nad 100 % může agresivně vyhlazovat detaily uvnitř facegroup, ale zachovat hranici facegroup relativně neporušenou.
+Mnoho nástrojů má volby, se kterými berou ohled na skupiny ploch, buď přímo v nabídce nástroje, nebo v nabídce Tah -> Filtr. Například nástroj hladit při síle nad 100 % dokáže uvnitř skupiny ploch razantně vyhladit detaily, ale hranici skupiny ploch zachová víceméně neporušenou.
 
-### Uvolnit a vyhladit hranice facegroup {#relax-and-smooth-facegroup-borders}
+### Uvolnění a vyhlazení hranic skupin ploch {#relax-and-smooth-facegroup-borders}
 
-Volba Relax v nástroji Facegroup výborně vyhlazuje hranice facegroups a přitom zachovává ostatní rysy. Může to být skvělý způsob, jak definovat hladké hraniční oblasti facegroups před quad remeshem.
+Volba `Uvolnit` v nástroji skupina ploch výborně vyhlazuje hranice skupin ploch a ostatní prvky přitom zachovává. Je to skvělý způsob, jak před přesíťováním Quad Remesherem vymezit hladké hranice skupin ploch.
 
-## Omezení na tabletu/mobilu {#limitations-on-tabletmobile}
+## Omezení na tabletu a mobilu {#limitations-on-tabletmobile}
 
-Současné tablety a mobily jsou velmi výkonné, ale mají důležité rozdíly oproti stolním počítačům a notebookům:
+Dnešní tablety a mobily jsou velmi výkonné, ale oproti stolním počítačům a notebookům mají důležité rozdíly:
 
-### Bez aktivního chlazení {#no-active-cooling}
+### Žádné aktivní chlazení {#no-active-cooling}
 
-Počítače mají ventilátory a/nebo velké heatsinky pro chlazení a jsou navrženy tak, aby běžely při vysokých teplotách. Mobilní hardware je obvykle navržen primárně pro tenkost, ne pro chlazení vnitřních komponent. Pokud je Nomad tlačen na nejvyšší kvalitu (PBR lighting mode, komplexní materiály, mnoho objektů, mnoho zapnutých post-processing voleb), může to zařízení přehřívat a velmi rychle vybíjet baterii. 
+Počítače mají ventilátory nebo velké chladiče, které je udržují v chladu, a jsou navržené pro provoz při vysokých teplotách. Mobilní hardware je obvykle navržený především tak, aby byl tenký, ne aby pomáhal chladit vnitřní součástky. Když Nomad poženete na nejvyšší nastavení kvality (režim osvětlení PBR, složité materiály, mnoho objektů, mnoho zapnutých efektů postprocesu), může se zařízení přehřát a baterie se velmi rychle vybije. 
 
-Lepší přístup je použít matcap lighting mode a nižší render multiplier (nahoře v post-process menu). Tyto volby udrží zařízení chladnější a umožní vám sochat déle.
+Lepší je použít režim osvětlení matcap a nižší `Rozlišení vykreslování` (nahoře v nabídce postprocesu). Díky tomu zařízení zůstane chladné a můžete sochat déle.
 
 ### Omezená paměť {#limited-memory}
 
-Nomad může dosáhnout výsledků srovnatelných s většinou desktopových sochařských aplikací, ale nemůže ohýbat fyzikální zákony! Většina stolních počítačů má dvojnásobek paměti oproti mobilním zařízením, pracovní stanice pro 3D animaci mívají často 4× nebo 8× více paměti. Proto je dobré mít přehled o tom, kolik polygonů používáte, a udělat si na svém zařízení testy, kdy začne být laggové. Téměř všechna zařízení, která zvládnou spustit Nomad, si docela snadno poradí s 1 milionem polygonů. M2 iPad Pro zvládne pohodlně 8 milionů, lidé testovali na nejnovějších iPadech i mnohem víc.
+Nomad dosáhne výsledků srovnatelných s většinou desktopových aplikací pro sochání, ale fyzikální zákony neobejde! Většina stolních počítačů má dvakrát víc paměti než mobilní zařízení a pracovní stanice pro 3d animaci mají často 4x nebo 8x víc. Proto je dobré mít přehled, kolik polygonů používáte, a vyzkoušet na svém zařízení, kdy se začne zasekávat. Téměř všechna zařízení, na kterých Nomad běží, celkem snadno zvládnou 1 milion polygonů. M2 iPad Pro pohodlně zvládne 8 milionů a lidé na nejnovějších iPadech testovali i výrazně víc.
 
-To ale neznamená, že každý model tolik potřebuje – jen ty nejdetailnější sochy potřebují více než 4 miliony polygonů; pokud děláte relativně jednoduché objekty a často se dostáváte nad 500 000, 1 milion, 4 miliony, používáte příliš mnoho polygonů! Ujistěte se, že máte v možnostech zapnutý smooth shaded mode.
+Jen ty nejdetailnější sochy ale potřebují víc než 4 miliony polygonů. Pokud vytváříte poměrně jednoduché objekty a často se dostáváte přes 500 000, 1 milion nebo 4 miliony, používáte příliš mnoho polygonů! Zkontrolujte, že máte v [Nastavení](settings.md) zapnuté `Hladké odstíny`.
 
-### OS je méně shovívavý k náročným aplikacím {#os-is-less-forgiving-with-intensive-apps}
+### Systém je k náročným aplikacím méně shovívavý {#os-is-less-forgiving-with-intensive-apps}
 
-Apple a Android očekávají, že aplikace budou ukládat a načítat malé soubory velmi rychle. Také předpokládají, že aplikace mohou velmi rychle přepínat úlohy. Nomad sice používá chytré triky, aby udržel velikost souborů relativně malou a ukládal je velmi rychle, ale pokud si mobilní OS myslí, že Nomad trvá příliš dlouho, jednoduše ho zabije dřív, než dokončí úlohu. To je další důvod, proč udržovat soubory menší; je možné pracovat se sochami o 37 milionech polygonů, jak jeden uživatel hlásil na Discordu, ale není to doporučeno!
+Apple i Android očekávají, že aplikace budou malé soubory ukládat a načítat velmi rychle. Předpokládají také, že aplikace dokážou velmi rychle přepínat úlohy. Nomad sice používá chytré triky, aby soubory zůstaly poměrně malé a ukládaly se velmi rychle, ale pokud mobilní systém usoudí, že to Nomadu trvá příliš dlouho, prostě ho ukončí dřív, než úlohu dokončí. I to je důvod, proč držet soubory spíš menší. Pracovat se sochou o 37 milionech polygonů jde, jak hlásil jeden uživatel na discordu, ale nedoporučujeme to!
 
 ## Práce na malých obrazovkách {#working-on-small-screens}
 
-Nomad je navržen pro práci na tabletech, ale dobře funguje i na telefonech. Sochaření na malé obrazovce, jako je telefon, lze usnadnit několika úpravami UI a workflow:
+Nomad je navržený pro tablety, ale dobře funguje i na telefonech. Sochání na malé obrazovce, jako je telefon, si můžete usnadnit několika úpravami rozhraní a pracovního postupu:
 
-* Čtyřprsté klepnutí přepíná celé UI, čímž získáte více prostoru pro sochaření.
-* Tříprsté tažení nahoru a dolů mění poloměr štětce.
-* Měřítko UI lze zmenšit, aby se vešlo více tlačítek, pokud máte dobrý zrak, nebo zvětšit, pokud máte špatný zrak.
-* Širší menu mohou někdy překážet soše, můžete je udělat průhledná a bez rozmazání, abyste viděli sochu pod nimi.
-* Pokud socháte prstem, použijte volbu Offset pro posunutí středu štětce trochu od prstu.
-* Tyto a mnoho dalších voleb najdete v [Interface menu](./interface.md). 
+* Klepnutím 4 prsty skryjete nebo zobrazíte celé rozhraní, takže máte víc místa na sochání.
+* Tažením 3 prsty nahoru a dolů změníte poloměr štětce
+* Měřítko rozhraní můžete zmenšit, aby se vešlo víc tlačítek, pokud dobře vidíte, nebo zvětšit, pokud vidíte hůř!
+* Širší nabídky mohou sochu někdy zakrývat. Můžete je nastavit jako průhledné a bez rozostření, abyste sochu pod nabídkou viděli.
+* Pokud socháte prstem, použijte volbu [`Posun tahu`](stroke.md#stroke-offset), která posune střed štětce kousek od prstu.
+* Tyto a mnoho dalších voleb najdete v [nabídce Rozhraní](./interface.md). 
 
-## Deformátor Nafouknout nebo Špička {#inflate-or-peak-deformer}
 
-Mnoho 3D aplikací má inflate deformer, který posune všechny vertexy podél jejich normály o nastavitelnou hodnotu. Nomad sice v současnosti deformery nemá, ale toto chování lze napodobit pomocí štětce Inflate:
+## Deformátor nafouknutí nebo zašpičatění {#inflate-or-peak-deformer}
 
-* Vyberte štětec Inflate
-* V [Stroke menu](./stroke.md#stroke) změňte metodu tahu na `Lock + Radius'
-* Nastavte poloměr štětce větší než vaše socha, v případě potřeby oddalte kameru.
-* Klikněte a táhněte tah po povrchu objektu; když je poloměr větší než objekt, celý tvar se rovnoměrně nafoukne o pevnou hodnotu.
-* Upravte intenzitu štětce pro kontrolu množství „nafouknutí“.
-* Použijte maskování, pokud potřebujete chránit nebo omezit efekt Inflate v určitých oblastech.
+Mnoho 3d aplikací nabízí deformátor nafouknutí, který posune všechny vrcholy podél jejich normály o nastavitelnou vzdálenost. Nomad zatím deformátory nemá, ale toto chování můžete napodobit štětcem zvětšit:
 
-## Odstranění hrudek nebo „pupínků“ po operaci voxel remesh {#remove-lumps-or-pimples-from-a-voxel-remesh-operation}
+* Vyberte štětec zvětšit
+* V [nabídce Tah](./stroke.md#stroke) změňte způsob tahu na `Zámek + poloměr`
+* Nastavte poloměr štětce větší, než je vaše socha, a v případě potřeby kameru od sochy oddalte.
+* Klepněte na povrch objektu a táhněte tah. Když je poloměr větší než objekt, celý tvar se rovnoměrně nafoukne o pevnou hodnotu.
+* Intenzitou štětce řídíte míru nafouknutí
+* V případě potřeby použijte maskování, abyste v určitých oblastech účinku nafouknutí zabránili nebo ho zmírnili.
 
-Voxel remesh je skvělý pro vytváření rovnoměrně rozložených polygonů, ale někdy vytvoří topologii, která při vyhlazování způsobí malé hrbolky nebo pupínky. Například:
+## Odstranění hrbolků a „pupínků“ po voxelovém přesíťování {#remove-lumps-or-pimples-from-a-voxel-remesh-operation}
 
-* Použijte štětec Crease na výchozí kouli a udělejte spirálu
-* Voxel remesh s „build multiresolution at 3“
-* Smooth s vysokou intenzitou
-* objeví se artefakty (snáze viditelné s materiálem s vysokým kontrastem matcap):
+Voxelové přesíťování skvěle vytváří rovnoměrně rozložené polygony, ale někdy vytvoří topologii, na které se při vyhlazování objeví malé hrbolky nebo pupínky. Například:
+
+* Na výchozí kouli udělejte štětcem rýha spirálu
+* Proveďte voxelové přesíťování s `Vytvořit multirezoluci` na 3
+* Vyhlaďte s vysokou intenzitou
+* objeví se artefakty (lépe viditelné s kontrastním matcap materiálem):
 
 ![](/videos/tip_pimples_before.mp4)
 
-Pro opravu pomocí sochaření zkuste volbu `Stable smoothing` v nastavení Smooth. Ta si poradí s nerovnoměrným rozložením topologie z voxel remeshe a dá čisté výsledky.
+Pokud to chcete opravit sochařsky, vyzkoušejte v nastavení hlazení volbu `Stabilní vyhlazení`. Ta si poradí s nerovnoměrným rozložením topologie po voxelovém přesíťování a dá čisté výsledky.
 
 ![](/videos/tip_pimples_stable_smooth.mp4)
 
-Pro opravu samotné topologie použijte nový primitiv, nebo nástroje Quad Remesh, nebo externí 3D modeler a přeneste detaily z původního meshe na nový přes `Topology -> Misc -> Reproject`. 
+Pokud chcete opravit samotnou topologii, použijte nové primitivum, nástroje quad remesh nebo externí 3d modelář a detaily z původní sítě přeneste na novou pomocí `Topologie -> Péct -> Přeprojektovat → Vrchol`. 
 
 ![](/videos/tip_pimples_reproject.mp4)
 
 ## Denní osvětlení {#daylight-lighting}
 
-Výchozí PBR render je, jak název napovídá, fyzikálně založený, což může podobně jako neupravená digitální fotografie vypadat trochu vybledle a ploše. Světla a post-processing v Nomadu lze použít k tomu, aby rendery vypadaly živěji.
+Výchozí PBR render je, jak název napovídá, fyzikálně založený, takže stejně jako neupravená digitální fotka může působit trochu vybledle a plochě. Světly a postprocesem v Nomadu můžete rendery oživit.
 
-Zde je výchozí render, podívejme se, zda ho můžeme vylepšit:
+Tady je výchozí render, zkusme ho vylepšit:
 ![](/images/tips_lighting_default.webp)
 
-Zapnutí post-processingu a tonemappingu může přidat jas a kontrast:
+Zapnutí postprocesu a mapování tónů přidá jas a kontrast:
 
 ![](/images/tips_lighting_tonemap.webp)
 
-Abychom se zaměřili na světla: výchozí environment light je dobré pro sochaření, ale pro finální render lze vylepšit. Jedním ze způsobů, jak o tom přemýšlet, je oddělit přímé světlo (např. slunce) od environment light (např. světlo z modré oblohy, země). Snížením environment light a jeho otočením začneme zachycovat, jak by osvětlení vypadalo, kdyby byl objekt ve stínu:
+Co se týče světel, výchozí osvětlení prostředím je dobré na sochání, ale pro finální render se dá vylepšit. Můžete o tom uvažovat tak, že oddělíte přímé světlo (třeba slunce) od světla prostředí (třeba světla z modré oblohy nebo od země). Když světlo prostředí zeslabíte a natočíte, začne vypadat jako osvětlení objektu, který stojí ve stínu:
 
 ![](/images/tips_lighting_env.webp)
 
-Lze přidat přímé světlo a zvýšit jeho intenzitu pro simulaci ostrého slunečního světla. Vyvážením tohoto světla s environment light dosáhnete příjemného výsledku:
+Můžete přidat přímé světlo a zvýšit jeho intenzitu, aby napodobilo ostré sluneční světlo. Vyvážením se světlem prostředí dosáhnete příjemného výsledku:
 
 ![](/images/tips_lighting_sunlight.webp)
 
-Postavám může prospět přepnutí materiálu na subsurface a umístění spotlightu za postavu mířícího na uši, aby zářily:
+Postavám může prospět změna materiálu na podpovrchový a umístění bodového světla s kuželem za postavu, namířeného na uši, aby prosvítaly:
 
 ![](/images/tips_lighting_sss.webp)
 
-Pak experimentujte se zbytkem post-process nastavení! Global Illumination a Ambient Occlusion pomáhají s realističtějším osvětlením. Curvature a Sharpen mohou pomoci zvýraznit detaily sochy. Chromatic Aberration, Depth of Field, Grain, Bloom, Vignette pomáhají simulovat kamerové efekty. Všimněte si, že jak zapínáte další funkce, je potřeba upravit osvětlení a ostatní post-process hodnoty, aby to kompenzovaly.
+Pak experimentujte se zbytkem nastavení postprocesu! Globální osvětlení a ambientní okluze pomáhají s realističtějším osvětlením. Zakřivení a zaostření mohou na soše vynést víc detailů. Chromatická aberace, hloubka ostrosti, zrno, bloom a vinětace pomáhají napodobit efekty fotoaparátu. Se zapínáním dalších funkcí je potřeba upravit osvětlení a ostatní hodnoty postprocesu, aby se to vyrovnalo.
 
-Zde je render s plnou sadou post-process úprav:
+Tady je render s kompletní sadou úprav postprocesu:
 ![](/images/tips_lighting_final.webp)

@@ -1,156 +1,160 @@
-# Erste Schritte {#getting-started}
+# ![](/icons/play.webp) Erste Schritte {#getting-started}
 
 ## Willkommen bei Nomad! {#welcome-to-nomad}
 
-Nomad ist eine 3D‑Sculpting‑App, die auf vielen Geräten läuft und am besten auf Tablets mit druckempfindlichem Stift funktioniert, z. B. einem Apple iPad mit Pencil oder einem Samsung Galaxy Tab mit Stylus.
+Nomad ist eine 3d-Sculpting-App, die auf vielen Geräten läuft. Am besten funktioniert sie auf Tablets mit drucksensitivem Stift, zum Beispiel einem Apple iPad mit Pencil oder einem Samsung Galaxy Tab mit Stift.
 
-Sie ist von Desktop‑Sculpting‑Apps wie ZBrush und Blender inspiriert, mit dem Fokus auf einer leicht verständlichen Benutzeroberfläche, ohne auf Funktionen zu verzichten. Wenn du bereits 3D‑Sculpting‑Apps verwendet hast, wird sich Nomad sehr vertraut anfühlen.
+Sie ist von Sculpting-Programmen für den Desktop wie ZBrush und Blender inspiriert, legt aber Wert auf eine leicht verständliche Oberfläche, ohne beim Funktionsumfang zu sparen. Wenn Sie schon einmal mit 3d-Sculpting-Apps gearbeitet haben, werden Sie sich in Nomad schnell zu Hause fühlen.
 
-Wenn du zum ersten Mal 3D‑Sculpting machst, ist es gut, ein paar Grundlagen zu kennen.
+Wenn Sie zum ersten Mal in 3d sculpten, lohnt es sich, ein paar Grundlagen zu kennen.
 
-::: tip Lieber Video?
-Auf YouTube gibt es inzwischen SEHR VIELE Einsteiger‑Video‑Tutorials, hier sind ein paar gute Links:
+::: tip Lieber ein Video?
+Auf YouTube gibt es inzwischen JEDE MENGE Video-Tutorials für Einsteiger, hier ein paar gute Links:
 
 * [Nomad Sculpt Crash Course von Dave Reed](https://www.youtube.com/watch?v=69m86ICy2Q4)
-* [Nomad Sculpt Beginner Tutorial von Small Robot Studio](https://www.youtube.com/watch?v=J644wXoTiww)
-* [NOMAD FOR BEGINNERS‑Reihe von SouthernGFX](https://www.youtube.com/watch?v=bEh0WxRoOmg)
+* [Nomad Sculpt Beginner tutorial von Small Robot Studio](https://www.youtube.com/watch?v=J644wXoTiww)
+* [Die Reihe NOMAD FOR BEGINNERS von SouthernGFX](https://www.youtube.com/watch?v=bEh0WxRoOmg)
 
-Es lohnt sich, den Hauptkanal dieser Creator zu prüfen, sie veröffentlichen häufig neue Tutorials.
+Es lohnt sich, die Hauptkanäle dieser Creator anzusehen, denn sie veröffentlichen regelmäßig neue Tutorials.
 :::
 
-## Deine erste Skulptur {#your-first-sculpt}
+## Ihr erstes Modell {#your-first-sculpt}
 
-Wenn du Nomad zum ersten Mal startest, siehst du eine Kugel auf dem Bildschirm. Ziehe einfach mit deinem Stift über die Kugel, um mit dem Sculpting zu beginnen. Symmetrie ist standardmäßig aktiviert, um das Sculpting zu erleichtern.
+Wenn Sie Nomad zum ersten Mal starten, sehen Sie eine Kugel auf dem Bildschirm. Ziehen Sie einfach Ihren Stift über die Kugel, um mit dem Sculpten zu beginnen. Die Symmetrie ist standardmäßig aktiviert, um Ihnen das Sculpten zu erleichtern.
 
 ![](/videos/gettingstarted_01.mp4)
 
-Um den Pinsel größer oder kleiner zu machen, verwende den Radius‑Schieberegler auf der linken Seite.
+Um den Pinsel größer oder kleiner zu machen, verwenden Sie den Radius-Regler links.
 
 ![](/videos/gettingstarted_02.mp4)
 
-Um den Pinsel stärker oder schwächer zu machen, verwende den Intensitäts‑Schieberegler auf der linken Seite.
+Um den Pinsel stärker oder schwächer zu machen, verwenden Sie den Stärke-Regler links.
 
 ![](/videos/gettingstarted_03.mp4)
 
-Das Standardwerkzeug ist das `Clay tool`, und es fügt Material zur Oberfläche hinzu. Um Material von der Oberfläche zu entfernen, tippe auf die `Sub`‑Schaltfläche auf der linken Seite. Um wieder Material hinzuzufügen, tippe erneut auf die Sub‑Schaltfläche.
+Das Standardwerkzeug ist `Ton`, und es trägt Material auf die Oberfläche auf. Um Material abzutragen, tippen Sie links auf die Schaltfläche `Sub`. Um wieder aufzutragen, tippen Sie erneut auf Sub.
 
 ![](/videos/gettingstarted_04.mp4)
 
-Um die Oberfläche zu glätten, tippe auf die `Smooth`‑Schaltfläche. Um zum normalen Sculpting zurückzukehren, tippe erneut auf die Smooth‑Schaltfläche.
+Um die Oberfläche zu glätten, tippen Sie auf die Schaltfläche `Glätten`. Um zum normalen Sculpten zurückzukehren, tippen Sie erneut auf Glätten.
 
 ![](/videos/gettingstarted_05.mp4)
 
-Um das Modell zu drehen, ziehe im leeren Bereich außerhalb des Modells.
+Um sich um das Modell herum zu drehen, ziehen Sie in einem leeren Bereich außerhalb des Modells.
 
 ![](/videos/gettingstarted_06.mp4)
 
-Zum Zoomen verwende die Zwei‑Finger‑Zoom/Pinch‑Geste.
+Zum Zoomen verwenden Sie die Zwei-Finger-Geste (Zusammen- und Auseinanderziehen).
 
 ![](/videos/gettingstarted_07.mp4)
 
-Um die Kamera zu verschieben (pannen), lege zwei Finger auf den Bildschirm und ziehe.
+Um die Kamera zu schwenken, legen Sie 2 Finger auf den Bildschirm und ziehen Sie.
 
 ![](/videos/gettingstarted_08.mp4)
 
-Wenn dir ein Fehler unterläuft, kannst du mit einem Zwei‑Finger‑Tippen rückgängig machen oder die Undo‑Schaltfläche unten links verwenden. 
+Wenn Ihnen ein Fehler unterläuft, macht ein Tippen mit 2 Fingern ihn rückgängig, oder Sie verwenden die Rückgängig-Schaltfläche unten links.
 
 ![](/videos/gettingstarted_09.mp4)
 
-::: tip Desktop‑Version
-Auf dem Desktop wird die Alt/Opt‑Taste verwendet, um die Kamera zu steuern:
+::: tip Desktop-Version
+Am Desktop steuern Sie die Kamera mit der Alt-/Wahltaste:
 
-* Tippen und Ziehen im leeren Raum = Kamera drehen
-* Alt + Tippen und Ziehen = verschieben (pan)
-* Alt + Tippen und Ziehen, dann Alt loslassen = zoomen (wie in ZBrush)
+* mit der Stiftspitze in einen leeren Bereich ziehen = Kamera drehen
+* Alt + mit der Stiftspitze ziehen = schwenken
+* Alt + mit der Stiftspitze ziehen, dann Alt loslassen = zoomen (wie in ZBrush)
 
-Bei Wacom‑Tablets mit zwei oder mehr Tasten am Stift kannst du in den Wacom‑Einstellungen Spitze und Tasten wie folgt konfigurieren:
+Bei Wacom-Tablets mit 2 oder mehr Tasten am Stift richten Sie Spitze und Tasten in den Wacom-Einstellungen so ein:
 
 * Spitze = Linksklick
 * untere Wipptaste = Mittelklick
 * obere Wipptaste = Rechtsklick
 
-Mit diesen Einstellungen kannst du die Kamera ausschließlich mit dem Stift steuern:
+Mit diesen Einstellungen können Sie die Kamera allein mit dem Stift bedienen:
 
-* obere Wipptaste und Hover‑Bewegung = Kamera drehen
-* untere Wipptaste und Hover‑Bewegung = verschieben (pan)
+* obere Wipptaste und Stift schwebend bewegen = Kamera drehen
+* untere Wipptaste und Stift schwebend bewegen = schwenken
 :::
 
 ## Farbe hinzufügen {#add-color}
 
-Nomad ermöglicht es dir, die Oberfläche deiner Skulptur zu bemalen. Wähle im Werkzeugmenü auf der rechten Seite das `Paint`‑Werkzeug und klicke darauf. In der linken Werkzeugleiste erscheint eine farbige Kugel. Klicke darauf, um einen Farbwähler zu öffnen. Wähle eine Farbe und male auf deinem Modell.
+In Nomad können Sie die Oberfläche Ihres Modells bemalen. Suchen Sie im Werkzeugmenü rechts das Werkzeug `Zeichnen` und tippen Sie darauf. In der linken Werkzeugleiste erscheint eine farbige Kugel. Tippen Sie darauf, um eine Farbauswahl zu öffnen. Wählen Sie eine Farbe und malen Sie auf Ihr Modell.
 
 ![](/videos/gettingstarted_10.mp4)
 
-Zum Radieren tippe auf die `Erase`‑Schaltfläche in der linken Werkzeugleiste und radiere dann auf der Oberfläche. Tippe erneut auf die Erase‑Schaltfläche, um wieder in den Malmodus zu wechseln.
+Zum Radieren tippen Sie in der linken Werkzeugleiste auf die Schaltfläche `Löschen` und radieren dann auf der Oberfläche. Tippen Sie erneut auf die Schaltfläche, um wieder in den Malmodus zu wechseln.
 
 ![](/videos/gettingstarted_11.mp4)
 
-Verwende den Clay‑Pinsel in Add/Sub‑Modi, Smooth und Paint und versuche, einen einfachen Cartoon‑Kopf zu erstellen:
+Versuchen Sie, mit dem Ton-Pinsel im Auftrags- und Abtragsmodus, mit Glätten und mit Zeichnen einen einfachen Cartoon-Kopf zu gestalten:
 
 ![](/images/gettingstarted_head1.webp)
 
 ## Weitere Werkzeuge {#other-tools}
 
-Die Werkzeugpalette enthält viele Werkzeuge, die beim Sculpting helfen. Bisher hast du den Clay‑Pinsel (das Standard‑Startwerkzeug), Smooth und Paint verwendet. Da Smooth sehr häufig benutzt wird, hat es ein zusätzliches Shortcut in der linken Werkzeugleiste.
+Die Werkzeugpalette bietet viele Werkzeuge, die Ihnen beim Sculpten helfen. Bisher haben Sie den Ton-Pinsel (das Standardwerkzeug beim Start), Glätten und Zeichnen verwendet. Da Glätten sehr häufig gebraucht wird, gibt es dafür eine zusätzliche Verknüpfung in der linken Werkzeugleiste.
 
-Die Werkzeuge in Nomad können eine Vielzahl von Dingen tun – von Sculpting‑bezogenen Werkzeugen wie Move, Crease, Inflate bis hin zu Werkzeugen wie Split und Trim, die eher wie Werkzeuge aus der Holz‑ oder Metallbearbeitung sind. Die Seite [Tools](tools.md) enthält weitere Informationen.
+Die Werkzeuge in Nomad können sehr unterschiedliche Dinge tun: von Sculpting-Werkzeugen wie Bewegen, Falte und Aufblähen bis zu Werkzeugen wie Teilen und Trimmen, die eher an Schreiner- oder Metallwerkzeuge erinnern. Mehr dazu erfahren Sie auf der Seite [Werkzeuge](tools.md).
 
-Versuche, mit den Werkzeugen Move, Crease, Inflate und Smooth mehr Details zu deinem Kopf hinzuzufügen und seine Form zu verändern:
+Versuchen Sie, mit den Werkzeugen Bewegen, Falte, Aufblähen und Glätten Ihrem Kopf mehr Details zu verleihen und seine Form zu verändern:
 
 ![](/images/gettingstarted_head2.webp)
 
-Jetzt, da du die Grundlagen von Nomad kennst, schauen wir uns den Rest der Benutzeroberfläche an.
+Jetzt, wo Sie die Grundlagen von Nomad kennen, sehen wir uns den Rest der Oberfläche an.
 
-## Benutzeroberfläche {#interface}
+## Oberfläche {#interface}
 
 ![](/images/interface_overview1.webp)
 
-* `Top menus` – Die Menüs, über die du auf die meisten Funktionen von Nomad zugreifen kannst. Die Menüs oben links betreffen hauptsächlich Szenen‑ und Objektfunktionen, die Menüs oben rechts sind werkzeugbezogen. Auf kleineren Bildschirmen werden diese Menüs zur Platzersparnis zusammengeklappt.
-* `Stats` – Informationen über die Szene, das aktuelle Objekt, den Maskenstatus und die Speichernutzung.
-* `Nav Cube` – Eine Hilfe, die anzeigt, von welcher Seite du auf die Skulptur schaust, sowie ein Shortcut, um zu verschiedenen Ansichten zu springen. Durch Tippen auf den Würfel springt die Ansicht auf die angetippte Seite. Durch Ziehen des Würfels wird rotiert. Tippe auf die kleinen Symbole neben dem Würfel, um das aktuelle Objekt zu zentrieren oder zur Standard‑Startansicht zurückzukehren.
-* `Toolbox` – Die Werkzeuge von Nomad sind in diesem scrollbaren Bereich verfügbar.
-* `Left toolbar` – Schieberegler für Radius und Intensität für die meisten Werkzeuge, kontextspezifische Schaltflächen für andere Werkzeuge sowie Shortcuts für Symmetrie, den Alt/Sub‑Modus des Werkzeugs, Maskierung, Glätten, das Gizmo und Maloptionen.
-* `Bottom toolbar` – Shortcuts für häufig verwendete Funktionen, unten erklärt.
+* `Obere Menüs` - Über diese Menüs erreichen Sie die meisten Funktionen von Nomad. Die Menüs oben links betreffen vor allem Szene und Objekte, die Menüs oben rechts die Werkzeuge. Auf kleineren Bildschirmen werden diese Menüs zusammengefasst, um Platz zu sparen.
+* `Statistik` - Informationen über die Szene, das aktuelle Objekt, den Maskenstatus und die Speichernutzung.
+* `Navigator` - Eine Hilfe, die zeigt, auf welche Seite des Modells Sie gerade blicken, und zugleich eine Abkürzung, um zu verschiedenen Ansichten zu springen. Tippen Sie auf eine Seite, springt die Ansicht dorthin. Ziehen Sie am Navigator, um die Ansicht zu drehen. Mit den kleinen Icons daneben können Sie das aktuelle Objekt einpassen, zur Standardansicht zurückkehren, die Kamera sperren oder das Raster ein- und ausblenden. Sein Aussehen (ein Würfel, eine Kugel oder ein Achsenkreuz) und seine Position können Sie in den [Einstellungen](settings.md#snap-cube) ändern.
+* `Toolbox` - In diesem scrollbaren Bereich finden Sie die Werkzeuge von Nomad.
+* `Linke Werkzeugleiste` - Regler für Radius und Stärke bei den meisten Werkzeugen, kontextabhängige Schaltflächen für andere Werkzeuge sowie Verknüpfungen für Symmetrie, den Alt-/Sub-Modus des Werkzeugs, Glätten, Maskieren, Ausblenden, Face-Gruppen, das Gizmo und die Maloptionen. Die Reihenfolge der Verknüpfungen können Sie im Menü [Oberfläche](interface.md#side-bar) ändern.
+* `Untere Werkzeugleiste` - Verknüpfungen zu häufig genutzten Funktionen, siehe unten.
 
 ::: tip Linkshänder?
-Du kannst die Platzierung und Reihenfolge aller Werkzeugleisten spiegeln, siehe [Mirror top bar](interface.md#mirror-top-bar) und andere verwandte Optionen.
+Sie können die Anordnung und Reihenfolge aller Werkzeugleisten spiegeln, siehe [Oben spiegeln](interface.md#mirror-top-bar) und verwandte Optionen.
 :::
 
 ## Untere Werkzeugleiste {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
-* `Undo` – macht den letzten Vorgang rückgängig
-* `Redo` – stellt den letzten rückgängig gemachten Vorgang wieder her
-* `History` – Zugriff auf Verlaufsoptionen, erklärt im Menü [History](history.md).
-* `Solo` – Umschalten zwischen Anzeige nur des aktuellen Objekts oder aller Objekte
-* `X-Ray` – Lässt alle anderen Objekte im X‑Ray‑Modus darstellen und das aktuelle Objekt solide. Ein langes Drücken oder Wischen nach oben ermöglicht es dir, Farbe und Deckkraft des X‑Ray‑Modus festzulegen.
-* `Voxel` – Ein Shortcut für die [Voxel Remesher](topology.md#voxel-remesher)‑Schaltfläche zum Voxel‑Remeshen. Ein langes Drücken oder Wischen nach oben zeigt Shortcuts zur Einstellung der Voxel‑Remesh‑Qualität.
-* `Grid` – Schaltet die Anzeige des Rasters ein oder aus. Ein langes Drücken oder Wischen nach oben zeigt Optionen für das Raster.
-* `Wire` – Schaltet ein Wireframe‑Overlay ein oder aus. Ein langes Drücken oder Wischen nach oben zeigt Optionen für das Wireframe.
-* `Inspect` – Schaltet die Anzeige zusätzlicher Daten über das aktuelle Mesh ein oder aus. Standardmäßig werden UVs angezeigt, aber ein langes Drücken oder Wischen nach oben ermöglicht es dir, andere Eigenschaften zu inspizieren, falls sie vorhanden sind, und festzulegen, ob dies im Hintergrund oder auf dem Mesh angezeigt wird.
+* `Rückgängig` - macht die letzte Aktion rückgängig
+* `Wiederholen` - stellt die zuletzt rückgängig gemachte Aktion wieder her
+* `Verlauf` - öffnet die Verlaufsoptionen, erklärt im Menü [Verlauf](history.md).
+* `Solo` - Wechselt zwischen der Anzeige nur des aktuellen Objekts und aller Objekte
+* `Röntgen` - Stellt alle anderen Objekte im Röntgenmodus dar und das aktuelle Objekt massiv. Durch langes Drücken oder Wischen nach oben können Sie Matcap und Farbe für den Röntgenmodus wählen und festlegen, für welche Objekte er gilt.
+* `Voxel` - Eine Verknüpfung zur Remesh-Schaltfläche des [Voxel-Remeshings](topology.md#voxel-remesher). Durch langes Drücken oder Wischen nach oben erscheinen die Optionen für das Voxel-Remeshing, etwa die Auflösung.
+* `Raster` - Blendet das Raster ein und aus. Durch langes Drücken oder Wischen nach oben erscheinen die Optionen für das Raster, etwa seine Farbe und das Einrasten.
+* `Drahtgitter` - Blendet eine Drahtgitter-Überlagerung ein und aus. Durch langes Drücken oder Wischen nach oben erscheinen die Optionen für das Drahtgitter.
+* `Inspektor` - Zeigt zusätzliche Daten über das aktuelle Mesh an oder blendet sie aus. Standardmäßig werden die UVs angezeigt; durch langes Drücken oder Wischen nach oben können Sie andere Eigenschaften untersuchen, sofern vorhanden, und wählen, ob sie im Hintergrund oder auf dem Mesh angezeigt werden.
+* `Logs` - Zeigt ein Fenster mit den Debug-Logs von Nomad an oder blendet es aus.
+* `Face-Gruppe` - Blendet die Face-Gruppen-Überlagerung ein und aus, siehe das Werkzeug [Face-Gruppe](tools.md#facegroup).
 
-## Nächste Schritte {#next-steps}
+Sie können diese Verknüpfungen im Menü [Oberfläche](interface.md#add-shortcuts-bottom) hinzufügen, entfernen und neu anordnen.
 
-Was du als Nächstes lernen solltest, hängt von dir und deinen Interessen ab! Hier ein paar Vorschläge:
+## Wie geht es weiter? {#next-steps}
 
-Möchtest du mehr über die Sculpting‑Werkzeuge erfahren? Gehe zum Abschnitt [Tools](tools.md).
+Was Sie als Nächstes lernen, hängt ganz von Ihnen ab und davon, was Sie interessiert! Hier ein paar Vorschläge:
 
-Möchtest du deine Modelle exportieren? Oder Modelle zum Sculpten importieren? Oder Bilder deiner Skulpturen erstellen? Gehe zum Abschnitt [Files](files.md).
+Möchten Sie mehr über die Sculpting-Werkzeuge erfahren? Dann geht es weiter im Abschnitt [Werkzeuge](tools.md).
 
-Möchtest du mehr darüber lernen, wie du die Detailstufe deiner Skulptur kontrollierst? Gehe zum Abschnitt [Topology](topology.md) und lerne mehr über Multires und Decimation.
+Möchten Sie Ihre Modelle exportieren? Oder Modelle zum Bearbeiten importieren? Oder Bilder Ihrer Modelle erstellen? Dann geht es weiter im Abschnitt [Dateien](files.md).
 
-Möchtest du mit mehr Objekten arbeiten? Einfache Objekte und Primitives zu einer größeren Szene kombinieren? Gehe zum Abschnitt [Scene](scene.md).
+Möchten Sie mehr darüber erfahren, wie Sie die Detailstufe Ihres Modells steuern? Im Abschnitt [Topologie](topology.md) lernen Sie Multiauflösung und Dezimieren kennen.
 
-Möchtest du *alles* über Nomad lernen? Gute Wahl! Dieses Handbuch deckt alle Bereiche von Nomad ab, enthält viele Tipps und Tricks und hat eine sehr gute Suchfunktion oben. Verwende die Navigation auf der linken Seite, um mehr zu erfahren.
+Möchten Sie mit mehreren Objekten arbeiten? Einfache Objekte und Grundformen zu einer größeren Szene kombinieren? Dann geht es weiter im Abschnitt [Szene](scene.md).
 
-Wenn du Videos bevorzugst: Holger Schönischka hat auf YouTube eine riesige Sammlung von Tipps und Tricks zu Nomad erstellt: https://www.youtube.com/@ProcreateFX/videos
+Möchten Sie *alles* über Nomad lernen? Gute Wahl! Dieses Handbuch deckt ganz Nomad ab, enthält viele Tipps und Tricks und bietet oben eine praktische Suchfunktion. Nutzen Sie die Navigation links, um mehr zu erfahren.
+
+Wenn Sie Videos bevorzugen: Holger Schönischka hat auf YouTube eine riesige Sammlung von Tipps und Tricks zu Nomad zusammengestellt: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Hilfe erhalten {#getting-help}
+## Hilfe bekommen {#getting-help}
 
-Wenn du nach dem Lesen des Handbuchs und dem Anschauen der Tutorial‑Videos noch Fragen hast, gibt es drei Hauptwege, um mit anderen Nomad‑Nutzern oder dem Entwickler von Nomad zu sprechen:
+Wenn Sie nach dem Lesen des Handbuchs und dem Anschauen der Tutorial-Videos noch Fragen haben, gibt es drei Hauptwege, mit anderen Nomad-Nutzern oder dem Entwickler von Nomad in Kontakt zu treten:
 
-* Besuche das Forum: [forum.nomadsculpt.com](http://forum.nomadsculpt.com)
-* Tritt dem Nomad‑Discord‑Chat bei: [https://discord.com/invite/8h7BwpRz29](https://discord.com/invite/8h7BwpRz29)
-* Kontaktiere den Entwickler direkt unter support@nomadsculpt.com
+* Besuchen Sie das Forum: [forum.nomadsculpt.com](http://forum.nomadsculpt.com)
+* Treten Sie dem Nomad-Chat auf Discord bei: [https://discord.com/invite/8h7BwpRz29](https://discord.com/invite/8h7BwpRz29)
+* Kontaktieren Sie den Entwickler direkt unter support@nomadsculpt.com

@@ -1,201 +1,232 @@
 # ![](/icons/postprocess.webp) Nabewerking {#post-process}
 
-Dit menu bepaalt veel aspecten van Nomad die het uiterlijk van de render beïnvloeden.
+Dit menu regelt allerlei aspecten van Nomad die het uiterlijk van de render beïnvloeden.
 
 ![](/images/postprocess_overview_drac.webp)
 
-Het gebruik van nabewerking kan het uiteindelijke uiterlijk van je scène aanzienlijk veranderen.
+Met nabewerking kun je de uiteindelijke look van je scène flink veranderen.
 
 ![](/images/postprocess_overview.webp)
-*Dezelfde scène vóór en na nabewerking, zonder extra lichten of materiaalwijzigingen.*
+*Dezelfde scène voor en na de nabewerking, zonder extra lichten of aangepaste materialen.*
 
-Nabewerking kan de prestaties sterk beïnvloeden, afhankelijk van je apparaat.
-Er is een globale checkbox om alle nabewerking uit te schakelen, zodat je snel kunt terugkeren naar sculpten/modelleren zonder je presets te verliezen.
-Voor PBR-rendering moeten [Ambient Occlusion](#ambient-occlusion-ssao), [Reflection](#reflection-ssr) en [Tone Mapping](#tone-mapping) ingeschakeld zijn.
+Afhankelijk van je apparaat kan de nabewerking de prestaties sterk beïnvloeden.
+Met het algemene vinkje `Nabewerking` zet je alle nabewerking in één keer uit, zodat je snel verder kunt met sculpten of modelleren zonder je presets kwijt te raken.
+Voor PBR-rendering kun je het beste [Omgevingsocclusie](#ambient-occlusion-ssao), [Reflectie](#reflection-ssr) en [Toonmapping](#tone-mapping) aanzetten.
 
-Meestal wil je nabewerking echter uitgeschakeld hebben tijdens het sculpten, om je te concentreren op de vorm zelf van de render.
+Toch wil je de nabewerking meestal uitzetten tijdens het sculpten, zodat je je op de vorm zelf concentreert in plaats van op de rendering.
+
 
 ## Kwaliteit {#quality}
 
 ![](/images/postprocess_quality.webp)
-### Maximale frame-sampling {#max-frame-sampling}
-Nomad zal een bepaalde hoeveelheid nabewerking voor een enkel frame berekenen, wat er korrelig/ruisachtig uit kan zien. Deze instelling bepaalt hoeveel frames er gerenderd en vervolgens samengevoegd worden om de meeste ruisartefacten te verwijderen. Sommige effecten hebben geen extra samples nodig (bijv. color grading), terwijl andere, zoals global illumination, honderden samples kunnen vereisen om ruisvrij te zijn. 
 
-In de viewport is dit te zien wanneer Nomad met rust wordt gelaten: de beeldkwaliteit verfijnt geleidelijk tot aan het maximum aantal samples en stopt dan. Dit aantal berekeningen wordt ook gebruikt in het rendergedeelte van het [Bestanden-menu](files) wanneer op 'export png' wordt geklikt.
+Deze opties verbeteren de kwaliteit van de render, ten koste van de prestaties.
 
-### Resolutiemultiplier {#resolution-multiplier}
-Deze schuifregelaar bepaalt de resolutie van de nabewerking. Een waarde van x1.0 betekent dat de renders worden gedaan op de pixelresolutie van het apparaat. Een waarde van x0.5 rendert op halve resolutie, wat snel maar van lage kwaliteit is. Een waarde groter dan 1 rendert op een grotere resolutie en schaalt dan terug. Dit resulteert in hogere kwaliteit, minder ruis, maar langere rendertijden.
+### Max. frame-sampling {#max-frame-sampling}
+Voor een render van één frame berekent Nomad een bepaalde hoeveelheid nabewerking, en dat kan er korrelig uitzien. Deze regelaar bepaalt hoeveel frames er worden gerenderd en daarna samengevoegd om de meeste ruis weg te werken. Sommige effecten hebben geen extra samples nodig (bijvoorbeeld kleurbewerking), terwijl andere, zoals zachte schaduwen en globale verlichting, honderden samples nodig kunnen hebben om ruisvrij te zijn.
 
-### Maximaal aantal samples {#max-samples}
+In de viewport zie je dit zodra je Nomad met rust laat: de beeldkwaliteit wordt geleidelijk beter tot het maximale aantal samples, en dan stopt het. Daarna doet Nomad niets meer, wat de batterij spaart. Hetzelfde aantal berekeningen wordt gebruikt in het rendergedeelte van het [menu Bestanden](files) wanneer je op 'export png' klikt.
 
-Dit verhoogt de kwaliteit van de nabewerking, maar over het algemeen heeft `Full resolution` meer impact. 
+Met het vinkje naast de schuifregelaar zet je frame-sampling aan of uit.
 
-### Ruisonderdrukker (oidn) {#oidn}
+### Renderresolutie {#resolution-multiplier}
+Deze schuifregelaar bepaalt de resolutie van de render. Bij x1.0 wordt gerenderd op de pixelresolutie van het apparaat. Bij x0.5 wordt op halve resolutie gerenderd: snel, maar van lage kwaliteit. Een waarde groter dan 1 rendert op een groter formaat en schaalt daarna terug. Dat geeft een hogere kwaliteit en minder ruis, maar het renderen duurt langer.
 
-Past een denoiser toe op het beeld. Hierdoor kun je veel lagere aantallen samples gebruiken. Dit werkt alleen als `Full Resolution` is ingeschakeld. Merk op dat de denoising gebeurt nadat alle samples zijn berekend, en dat dit processorintensief kan zijn.
+Dit heeft grote invloed op de prestaties, dus houd het bij voorkeur op x1.25 of lager. Deze waarde wordt niet opgeslagen in de instellingen, en het effect [Pixelart](#pixel-art) overschrijft hem.
 
-## Voorinstellingenbrowser {#preset-browser}
+### ![](/icons/intensity.webp) Max. samples {#max-samples}
+
+Verbetert de kwaliteit van de nabewerkingseffecten, ten koste van de prestaties.
+
+### ![](/icons/material_dithering.webp) Dithering {#dithering}
+
+Verspreidt pixels om kleurbanden te verminderen (bijvoorbeeld in verlopen of in het vignet). Meestal laat je dit aanstaan, maar je kunt het uitzetten voor specifieke handelingen (bijvoorbeeld bij het exporteren van dieptemaps of andere gegevensspecifieke bewerkingen).
+
+### ![](/icons/denoise.webp) Ruisonderdrukking (oidn) {#oidn}
+
+Past ruisonderdrukking toe op het beeld zodra alle frames zijn verzameld. Zo kun je met veel minder samples werken. Ruisonderdrukking vraagt veel van de processor, dus zet het alleen aan als je beeld korrelig is. Het is niet op elk apparaat beschikbaar.
+
+## Presetbrowser {#preset-browser}
 ![](/images/postprocess_presets.webp)
-Door op de afbeelding te klikken wordt een verzameling nabewerkingspresets weergegeven. Om je eigen presets te definiëren, selecteer er één, klik op 'clone', breng wijzigingen aan. Om op te slaan, klik op de presetafbeelding, klik opnieuw in de presetbrowser en kies 'save'.
+Klik op de afbeelding onder de titel `Nabewerking` om een verzameling nabewerkingspresets te tonen. Met `Nieuw` maak je een preset van je huidige instellingen. De ingebouwde presets kun je alleen klonen: wil je je eigen preset, kies er dan een, klik op `Klonen` en pas hem aan. Heeft een preset wijzigingen die nog niet zijn opgeslagen, dan staat er `Niet-opgeslagen wijzigingen!`; om op te slaan klik je op de presetafbeelding, klik je nogmaals in de presetbrowser en kies je `Opslaan`.
 
-## Reflectie (SSR) {#reflection-ssr}
-Met deze optie kunnen objecten andere objecten in de scène reflecteren, zolang de objecten zichtbaar zijn op het scherm.
-Als je metalen en glanzende objecten in je scène hebt, dan zou je deze optie waarschijnlijk moeten gebruiken.
-Deze optie is alleen effectief in PBR-modus.
+## Snelkoppelingsbalk {#shortcut-bar}
+Staat de nabewerking aan, dan toont een balk onderaan het menu alle effecten (`SSR`, `SSGI`, `SSAO`, `DoF`, `Bloom`...). Tik op een effect om naar zijn sectie te springen. Uitgeschakelde effecten zijn grijs, dus de balk geeft ook in één oogopslag weer wat de huidige preset doet.
 
-| SSR uit                     | SSR aan                    |
+## ![](/icons/postprocess_ssr.webp) Reflectie (SSR) {#reflection-ssr}
+Met deze optie kunnen objecten andere objecten in de scène weerspiegelen, zolang die objecten op het scherm zichtbaar zijn.
+Heb je metalen en glanzende objecten in je scène, dan is deze optie waarschijnlijk een goed idee.
+Deze optie vereist de shadingmodus [Verlicht (PBR)](shading.md#pbr).
+
+
+| SSR uit                    | SSR aan                   |
 | :------------------------: | :-----------------------: |
 | ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
-## Globale verlichting (SSGI) {#global-illumination-ssgi}
+## ![](/icons/postprocess_ssgi.webp) Globale verlichting (SSGI) {#global-illumination-ssgi}
 
-Global illumination simuleert hoe licht tussen oppervlakken weerkaatst, bijv. een rode muur zal rood licht werpen op een nabijgelegen wit object. Dit kan de realiteit van een render enorm vergroten wanneer het wordt gebruikt met ambient occlusion en reflecties. 
+Globale verlichting bootst na hoe licht tussen oppervlakken weerkaatst: een rode muur kleurt bijvoorbeeld een wit object ernaast rood. In combinatie met omgevingsocclusie en reflecties kan dit een render veel realistischer maken. Net als reflecties vereist het de shadingmodus [Verlicht (PBR)](shading.md#pbr).
 
-`Strength` - De intensiteit van de global illumination. 
+`Sterkte` - De intensiteit van de globale verlichting.
 
-| SSGI uit                    | SSGI aan                   |
+
+
+| SSGI uit                   | SSGI aan                  |
 | :------------------------: | :-----------------------: |
 | ![](/images/ssgi_off.webp) | ![](/images/ssgi_on.webp) |
 
-_Een spotlight staat achter de bol, gericht op het plafond. Met SSGI uit is alleen het plafond verlicht. Met SSGI aan weerkaatst licht van het plafond naar de muren naar de bol._
+_Een spotlicht staat achter de bol, gericht op het plafond. Met SSGI uit is alleen het plafond verlicht. Met SSGI aan weerkaatst het licht van het plafond naar de muren en naar de bol._
 
-## Omgevingsocclusie (SSAO) {#ambient-occlusion-ssao}
-Ambient occlusion zal gebieden donkerder maken waar licht minder kans heeft om te komen (hoeken, enz.).
-Het effect hangt alleen af van de modelgeometrie.
+## ![](/icons/postprocess_ssao.webp) Omgevingsocclusie (SSAO) {#ambient-occlusion-ssao}
+Omgevingsocclusie maakt plekken donkerder waar het licht minder makkelijk komt (hoeken enzovoort).
+Het effect hangt alleen af van de geometrie van het model.
 
-* `Strength`- Intensiteit van het effect.
-* `Size`- Hoe wijdverspreid het effect is.
-* `Curvature bias` - Hoe gevoelig het effect is ten opzichte van variaties in het oppervlak.
-* `Color` - Een tint die met de occlusion wordt vermenigvuldigd, gebruikt voor creatieve effecten.
+* `Sterkte` - Intensiteit van het effect.
+* `Grootte` - Hoe ver het effect zich uitstrekt.
+* `Dikte` - Welke dikte wordt aangenomen voor de afdekkende delen, als percentage van de `Grootte`.
+* `Tint` - Een kleur die met de occlusie wordt vermenigvuldigd, voor creatieve effecten.
 
-| SSAO uit                     | SSAO aan                    |
+
+| SSAO uit                    | SSAO aan                   |
 | :-------------------------: | :------------------------: |
 | ![](/images/ssao_off.webp) | ![](/images/ssao_on.webp) |
 
 ::: tip
-AO zal het meest zichtbaar zijn in gebieden die voornamelijk door omgevingslicht worden verlicht. Gebieden die onder sterk direct licht staan, krijgen een veel zwakker AO-effect.
+AO is het best zichtbaar op plekken die vooral door omgevingslicht worden verlicht. Plekken onder sterk direct licht krijgen een veel zwakker AO-effect.
 
 :::
 
-## Scherpte-diepte (DOF) {#depth-of-field-dof}
-Voegt een vervagingseffect toe aan het gebied dat zich buiten het focuspunt bevindt.
+## ![](/icons/postprocess_dof.webp) Scherptediepte {#depth-of-field-dof}
+Voegt vervaging toe aan het gebied buiten de focus.
 
-Tik eenvoudig op je model om het focuspunt te wijzigen.
+Tik gewoon op je model om het focuspunt te verplaatsen.
 
-* `Far blur` - De hoeveelheid vervaging die wordt toegepast aan de verre zijde van het focuspunt.
-* `Near blur` - De hoeveelheid vervaging die wordt toegepast tussen het focuspunt en de camera.
+* `Diafragmamodus` - Stuurt de vervaging aan met één camera-diafragma, in plaats van met de twee vervagingsregelaars hieronder.
+* `Diafragma` (_alleen in diafragmamodus_) - Het f-getal van de lens, zoals op een echte camera. Een lagere waarde opent de lens en geeft meer vervaging.
+* `Verre vervaging` - Hoeveel vervaging er wordt toegepast achter het focuspunt.
+* `Nabije vervaging` - Hoeveel vervaging er wordt toegepast tussen het focuspunt en de camera.
 
-| DOF uit                    | DOF focus op verre ring     | DOF focus op dichte ring    |
+
+| DOF uit                   | DOF focus op verre ring     | DOF focus op nabije ring   |
 | :-----------------------: | :-------------------------: | :------------------------: |
 | ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp) |
 
-## Gloed {#bloom}
-Bloom laat de heldere gebieden van je scène gloeien.
 
-* `Intensity` - sterkte van het effect.
-* `Radius` - De spreiding van het effect.
-* `Threshold` - Hoe helder pixels in de scène moeten zijn voordat ze beginnen te bloomen. Een lage waarde zorgt ervoor dat alles bloomt, een hoge waarde zorgt ervoor dat alleen de helderste pixels bloomen.
-* `Color` - een tint die aan bloom kan worden toegevoegd voor creatieve effecten.
+## ![](/icons/sun.webp) Bloom {#bloom}
+Bloom laat de heldere delen van je scène gloeien.
 
-| Bloom uit                     | Bloom met radius 0          | Bloom met radius 1          |
+* `Intensiteit` - sterkte van het effect.
+* `Radius` - hoe ver het effect zich verspreidt.
+* `Drempel` - Hoe helder pixels in de scène moeten zijn voordat ze gaan gloeien. Bij 0 gloeit alles; bij een hoge waarde gloeien alleen de helderste pixels.
+* `Tint` - een kleur die je aan de bloom kunt toevoegen voor creatieve effecten.
+
+| Bloom uit                    | Bloom met radius 0          | Bloom met radius 1          |
 | :--------------------------: | :-------------------------: | :-------------------------: |
 | ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
-## Toonmapping {#tone-mapping}
-Tone Mapping is een bewerking die HDR-waarden opnieuw toewijst naar het `[0, 1]`-bereik.
-Als je het niet gebruikt (of `none` selecteert), wordt elke kleurcomponent hoger dan 1 afgeknipt.
-Alle kleurvariaties boven dit bereik gaan dan verloren.
 
-* `None/Neutral/Agx/ACES` - welke tonemapper te gebruiken. `None` doet geen remapping (maar de andere instellingen werken nog steeds). De andere opties zijn vergelijkbaar met het kiezen van verschillende filmtypes; ze gaan op verschillende manieren om met overbelichte waarden en kleuren. Dit is een zeer diepgaand onderwerp, zoek naar tone mapping, Agx, ACES voor meer info!
-* `Exposure` - algemene helderheid van de beelden, vergelijkbaar met het aanpassen van het diafragma van een camera. Dit kan een snelle manier zijn om een beeld globaal lichter of donkerder te maken.
-* `Saturation` - kleursterkte. 1 is neutraal, 0 is monochroom, waarden boven 1 zijn steeds meer verzadigd.
-* `Contrast` - Maakt donkere delen donkerder en lichte delen lichter. Gebruik voorzichtig, bij hoge waarden kunnen artefacten ontstaan.
+## ![](/icons/postprocess_tone.webp) Toonmapping {#tone-mapping}
+Toonmapping zet HDR-waarden om naar het bereik `[0, 1]`.
+Gebruik je het niet (of kies je `Geen`), dan wordt elke kleurcomponent boven 1 afgekapt.
+Alle kleurvariaties boven dat bereik gaan dan verloren.
 
-Merk op dat met `Tone Mapping` uit sommige details verdwijnen omdat de pixels te helder zijn.
+* `Geen/Neutraal/Agx/ACES` - welke tonemapper je gebruikt. `Geen` past niets aan (maar de andere regelaars werken nog wel). De andere opties zijn te vergelijken met verschillende soorten film: ze gaan elk op hun eigen manier om met overbelichte waarden en kleuren. Dit is een heel diep onderwerp: zoek op toonmapping, Agx en ACES voor meer informatie!
+* `Belichting` - de algemene helderheid van het beeld, te vergelijken met het diafragma van een camera. Een snelle manier om een beeld in zijn geheel lichter of donkerder te maken.
+* `Verzadiging` - kleursterkte. 1 is neutraal, 0 is zwart-wit, waarden boven 1 worden steeds verzadigder.
+* `Contrast` - Maakt donkere delen donkerder en lichte delen lichter. Gebruik het voorzichtig: bij hoge waarden kan het artefacten geven.
 
-| Tone Mapping uit             | Tone Mapping aan            |
+Merk op dat met `Toonmapping` uit sommige details verdwijnen omdat de pixels te helder zijn.
+
+| Toonmapping uit             | Toonmapping aan            |
 | :-------------------------: | :------------------------: |
 | ![](/images/tone_off.webp) | ![](/images/tone_on.webp) |
 
 ::: tip
-Tone mapping kan het effect van global illumination versterken. Als je de intensiteit van de environment map omlaag zet, de primaire lichtbron omhoog, kun je de `exposure` van tone mapping verhogen om meer van de bounce lighting-effecten te zien.
+Toonmapping kan het effect van globale verlichting versterken. Zet je de intensiteit van de omgevingsmap lager en de belangrijkste lichtbron hoger, dan kun je de `Belichting` van de toonmapping verhogen om meer van het weerkaatste licht te zien.
 :::
 
-## Kleurcorrectie {#color-grading}
-Vergelijkbaar met het curves-gereedschap in Photoshop, hiermee kun je de balans en verdeling van kleur in het beeld regelen. De `main`-regeling beïnvloedt de volledige kleurbalans, de `red`/`green`/`blue`-regelingen bieden fijne controle. 
+## ![](/icons/postprocess_tone_curve.webp) Kleurbewerking {#color-grading}
+Net als het curvengereedschap in Photoshop regel je hiermee de balans en verdeling van de kleuren in het beeld. De regelaar `Hoofd` beïnvloedt de totale kleurbalans, met `Rood`/`Groen`/`Blauw` stel je het nauwkeuriger af.
 
-| Color Grading uit              | Color Grading aan             |
+| Kleurbewerking uit            | Kleurbewerking aan           |
 | :---------------------------: | :--------------------------: |
 | ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
-## Kromming {#curvature}
-Detecteert waar er snelle veranderingen in kromming zijn en past een kleur toe op die gebieden.
+## ![](/icons/postprocess_cavity.webp) Kromming {#curvature}
+Spoort plekken op waar de kromming snel verandert en geeft die een kleur.
 
 * `Factor` - algemene intensiteit van het effect
-* `Bump` - in welke mate scherpe convexe veranderingen worden gevonden en de geselecteerde kleur daar wordt geplaatst (standaard wit)
-* `Cavity` - in welke mate concave veranderingen worden gedetecteerd en de geselecteerde kleur daar wordt geplaatst (standaard zwart)
+* `Uitstulping` - hoe sterk scherpe bolle overgangen worden opgespoord en in de gekozen kleur worden gezet (standaard wit)
+* `Holte` - hoe sterk holle overgangen worden opgespoord en in de gekozen kleur worden gezet (standaard zwart)
+* `Dikte` - hoe breed de opgespoorde randen zijn.
 
-| Curvature uit                   | Curvature aan                  |
+Naast `Uitstulping` en `Holte` kies je met een kleurvakje de kleur, en met een klein knopje hoe die kleur met het beeld mengt.
+
+
+| Kromming uit                     | Kromming aan                   |
 | :------------------------------: | :----------------------------: |
 | ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
-## Chromatische aberratie {#chromatic-aberration}
-Simuleert lensartefacten waarbij licht rond de schermranden wordt opgesplitst.
 
-* `Strength` - in welke mate de rode/groene/blauwe delen van het beeld naar de schermranden toe uit elkaar worden getrokken
+## ![](/icons/postprocess_chromatic.webp) Chromatische Aberratie {#chromatic-aberration}
+Bootst lensfouten na waarbij het licht aan de randen van het scherm uiteenvalt.
 
-| Chromatic uit                | Chromatic aan                |
+* `Sterkte` - hoe ver de rode, groene en blauwe delen van het beeld naar de schermranden toe uit elkaar gaan
+
+| Chromatisch uit               | Chromatisch aan              |
 | :---------------------------: | :--------------------------: |
 | ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
-## Vignettering {#vignette}
-Simuleert lensartefacten door de schermranden te verdonkeren.
 
-* `Size` - De grootte van een omgekeerde ellips die over het beeld wordt geplaatst
-* `Hardness` - Hoe wazig of scherp de ellips boven op het beeld wordt gemengd.
+## ![](/icons/postprocess_vignette.webp) Vignet {#vignette}
+Bootst lensfouten na door de randen van het scherm donkerder te maken.
 
-| Vignet uit                     | Vignet aan                     |
+* `Grootte` - De grootte van een omgekeerde ellips over het beeld
+* `Hardheid` - Hoe wazig of scherp de ellips over het beeld wordt gemengd.
+* `Tint` - De kleur van het vignet, standaard zwart.
+
+
+| Vignet uit                      | Vignet aan                     |
 | :-----------------------------: | :----------------------------: |
 | ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
-## Filmkorrel {#grain}
-Voegt een korrel-/ruiseffect toe; dit kan helpen om het beeld wat minder kunstmatig te laten lijken.
+## ![](/icons/postprocess_grain.webp) Korrel {#grain}
+Voegt een korreleffect toe, waardoor het beeld wat minder kunstmatig kan ogen.
 
-* `Strength` - de hoeveelheid korrel/ruis die aan het beeld wordt toegevoegd.
+* `Sterkte` - hoeveel korrel of ruis aan het beeld wordt toegevoegd.
 
-| Grain uit                     | Grain aan                    |
+
+| Korrel uit                   | Korrel aan                 |
 | :--------------------------: | :------------------------: |
 | ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
-## Scherpte {#sharpness}
-Een verscherpingseffect vergelijkbaar met dat in Photoshop of fotobewerkingsapps.
 
-* `Strength` - de hoeveelheid verscherping die op het beeld wordt toegepast.
+## ![](/icons/sharpen.webp) Scherpte {#sharpness}
+Een verscherpingseffect zoals in Photoshop of in fotobewerkingsapps.
 
-| Sharpness uit                   | Sharpness aan                  |
+* `Sterkte` - hoeveel het beeld wordt verscherpt.
+
+
+| Scherpte uit                   | Scherpte aan                 |
 | :----------------------------: | :--------------------------: |
 | ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
-## Pixelkunst {#pixel-art}
-Simuleert retro game pixel art.
+## ![](/icons/postprocess_pixel_art.webp) Pixelart {#pixel-art}
+Bootst de pixelart van retrogames na. Dit effect overschrijft de [Renderresolutie](#resolution-multiplier).
 
-* `Slider` - grootte van de pixels
-* `Allow frame sampling` - als je veel zwarte pixels krijgt, probeer dit dan in te schakelen; dit overschrijft de standaard sampling.
+* `Schuifregelaar` - grootte van de pixels
+* `Frame-sampling toestaan` - krijg je veel zwarte pixels, zet dit dan aan. Zonder deze optie schakelt het pixelart-effect de [frame-sampling](#max-frame-sampling) uit.
 
-| Pixel uit                    | Pixel aan                    |
+| Pixels uit                  | Pixels aan                 |
 | :-------------------------: | :------------------------: |
 | ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
-## Scanlijn {#scanline}
-Simuleert het uiterlijk van oude CRT-monitoren.
+## ![](/icons/postprocess_scanline.webp) Scanlijn {#scanline}
+Bootst het uiterlijk van oude CRT-monitoren na.
 
 * `Factor` - sterkte van de lijnen
-* `Spacing` - grootte van de lijnen
+* `Tussenruimte` - grootte van de lijnen
 
-| Scanline uit                    | Scanline aan                   |
+| Scanlijn uit                   | Scanlijn aan                  |
 | :----------------------------: | :---------------------------: |
 | ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
-
-## Dithering {#dithering}
-
-Past dithering toe op pixels om banding-artefacten te verminderen. Meestal zou dit ingeschakeld moeten zijn, maar het kan worden uitgeschakeld voor specifieke bewerkingen (bijv. het exporteren van depth maps of andere dataspecifieke bewerkingen).

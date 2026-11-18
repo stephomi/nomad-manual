@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Ana sayfa",
+    "forum": "Forum"
+  },
+  "theme": {
+    "outlineLabel": "Bu sayfada",
+    "docFooter": {
+      "prev": "Önceki sayfa",
+      "next": "Sonraki sayfa"
+    },
+    "darkModeSwitchLabel": "Görünüm",
+    "lightModeSwitchTitle": "Açık temaya geç",
+    "darkModeSwitchTitle": "Koyu temaya geç",
+    "sidebarMenuLabel": "Menü",
+    "returnToTopLabel": "Başa dön",
+    "langMenuLabel": "Dili değiştir",
+    "skipToContentLabel": "İçeriğe geç",
+    "notFound": {
+      "title": "SAYFA BULUNAMADI",
+      "quote": "Ama yönünü değiştirmez ve aramaya devam edersen, sonunda gittiğin yere varabilirsin.",
+      "linkLabel": "ana sayfaya git",
+      "linkText": "Beni ana sayfaya götür"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "Ara",
+      "buttonAriaLabel": "Ara"
+    },
+    "modal": {
+      "displayDetails": "Ayrıntılı listeyi göster",
+      "resetButtonTitle": "Aramayı sıfırla",
+      "backButtonTitle": "Aramayı kapat",
+      "noResultsText": "Sonuç bulunamadı:",
+      "footer": {
+        "selectText": "seçmek için",
+        "selectKeyAriaLabel": "enter tuşu",
+        "navigateText": "gezinmek için",
+        "navigateUpKeyAriaLabel": "yukarı ok",
+        "navigateDownKeyAriaLabel": "aşağı ok",
+        "closeText": "kapatmak için",
+        "closeKeyAriaLabel": "escape tuşu"
+      }
+    }
+  }
+}

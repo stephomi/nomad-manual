@@ -1,43 +1,58 @@
 # ![](/icons/image.webp) Arrière-plan {#background}
 
-Ce menu contrôle la couleur d’arrière-plan de Nomad, ainsi que les images de référence à utiliser.
+Ce menu règle la couleur d'arrière-plan de Nomad, ainsi que les éventuelles images de référence.
 
 ![](/images/background_overview.webp)
 
-## Arrière-plan {#type}
+## Type {#type}
 ![](/images/background_selector.webp)
 
-Il existe trois options pour l’arrière-plan de la vue.
+Trois options sont proposées pour l'arrière-plan de la vue 3d.
 
-* `Environment` - Affiche la carte d’environnement sélectionnée dans [Shading](shading). Celle-ci peut être contrôlée plus finement avec les réglages de flou (Blur) et d’exposition (brightness). 
-* `Color` - Une couleur unie que vous pouvez choisir.
-* `Gradient` - Un dégradé de couleur du haut vers le bas. Le curseur Factor vous permet de déterminer le point médian du dégradé.  
+* `Environnement` - Affiche la carte d'environnement choisie dans [Ombrage](shading.md). Vous pouvez l'ajuster avec les curseurs `Flou` et `Exposition` (luminosité).
+* `Couleur` - Une couleur unie, au choix.
+* `Gradient` - Une transition entre deux couleurs. Le curseur `Facteur` déplace le point médian du dégradé.
+
+### Type de gradient {#gradient-type}
+Avec `Gradient`, choisissez sa forme :
+* `Linéaire` - Un dégradé rectiligne, dont la direction se règle avec le curseur `Angle`.
+* `Radial` - Un dégradé circulaire qui part du centre de l'écran.
+* `Ciel` - Un dégradé ancré sur l'horizon du monde : il suit la caméra quand vous regardez vers le haut ou vers le bas.
+
+Chaque couleur a un bouton de réinitialisation et une pipette, pour prélever une couleur à l'écran.
+
+## ![](/icons/lock.webp) Suivre la caméra {#sync-on-camera-lock}
+Quand la caméra est verrouillée avec le [Navigateur](settings.md#snap-cube), l'image de référence suit les mouvements de la caméra, et reste donc alignée sur votre sculpture.
+
+* `Autoriser le roulis (Trackball)` - Permet à la caméra de rouler quand vous quittez le verrouillage de la caméra.
+* `Réinitialiser au déverrouillage` - Réinitialise la vue quand vous quittez le verrouillage de la caméra.
 
 ## Image de référence {#reference}
 
 ![](/images/background_reference.webp)
 
-Vous pouvez ajouter une image de votre choix en arrière-plan pour l’utiliser comme référence.
-Vous pouvez en modifier la position et l’échelle, par exemple si vous souhaitez la déplacer dans un coin de l’écran.
+Vous pouvez placer l'image de votre choix en arrière-plan pour vous en servir comme référence. Touchez `Importer…` pour en ajouter une, puis cochez `Image de référence` pour l'afficher.
+Vous pouvez modifier sa position et son échelle, par exemple pour la déplacer dans un coin de l'écran.
 
-### ![](/icons/tool_transform.webp) Transformer {#transform}
+### ![](/icons/tool_transform.webp) Transformation {#transform}
 
-Ce bouton vous permet de placer l’image de référence de manière interactive. Utilisez 2 doigts pour déplacer (pan), mettre à l’échelle (scale) et faire pivoter (rotate) l’image de référence. Le placement final sera reflété dans les curseurs ci-dessous :
+Ce bouton vous permet de placer l'image de référence directement à l'écran. Avec deux doigts, déplacez, mettez à l'échelle et faites pivoter l'image pour la mettre en place. `Réinitialiser les réglages` remet l'image à sa position par défaut. Le placement final se reflète dans les curseurs ci-dessous :
 
-* `Overlay` - à 0 % l’image de référence sera toujours derrière vos objets, à 100 % elle sera devant. 
-* `Opacity` - Le degré de transparence de l’image.
-* `Position` - La position X et Y de l’image.
-* `Rotation` - La rotation de l’image.
-* `Scale` - L’échelle de l’image.
+* `Incrustation` - À 0 %, l'image de référence est toujours derrière vos objets ; à 100 %, elle est devant.
+* `Opacité` - Le degré de transparence de l'image.
+* `Post-traitement` - Applique les effets de post-traitement à l'image de référence. Désactivez-le pour garder les couleurs d'origine.
+* `Position X` / `Position Y` - La position X et Y de l'image.
+* `Échelle` - L'échelle de l'image.
+* `Rotation` - La rotation de l'image.
 
 
 ::: tip
 
-Les caméras et les images de référence sont liées. 
+Les caméras et les images de référence sont liées.
 
-Cela signifie que si vous configurez votre image de référence pour qu’elle s’aligne avec votre sculpture, lorsque vous créez une caméra depuis le [menu Camera](camera), la position, la rotation et l’échelle de l’image de référence sont également enregistrées avec la caméra. Vous pouvez désactiver l’image de référence, pivoter vers une autre vue. Si vous regardez à nouveau à travers la caméra, l’image de référence sera réactivée avec les réglages que vous aviez utilisés.
+Concrètement, si vous avez aligné votre image de référence sur votre sculpture et que vous créez une caméra depuis le [menu Caméra](camera.md), la position, la rotation et l'échelle de l'image de référence sont enregistrées avec la caméra. Vous pouvez ensuite masquer l'image de référence et tourner autour du modèle. Dès que vous repassez par cette caméra, l'image de référence se réactive avec les réglages que vous aviez utilisés.
 
-Cela inclut même le choix d’images différentes pour des caméras différentes !
+Vous pouvez même choisir une image différente pour chaque caméra !
 
  ![](/videos/reference_camera.mp4)
 

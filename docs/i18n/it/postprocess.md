@@ -1,201 +1,232 @@
-# ![](/icons/postprocess.webp) Postprocesso {#post-process}
+# ![](/icons/postprocess.webp) Post processing {#post-process}
 
-Questo menu controlla molti aspetti di Nomad che influenzano l'aspetto del render.
+Questo menu controlla molti aspetti di Nomad che influiscono sull'aspetto del render.
 
 ![](/images/postprocess_overview_drac.webp)
 
-L'uso del post processing può cambiare in modo sostanziale l'aspetto finale della scena.
+Il post processing può cambiare in modo notevole l'aspetto finale della scena.
 
 ![](/images/postprocess_overview.webp)
-*La stessa scena prima e dopo il post processing, senza luci aggiuntive o modifiche ai materiali.*
+*La stessa scena prima e dopo il post processing, senza luci aggiuntive né modifiche ai materiali.*
 
-Il post process può avere un forte impatto sulle prestazioni a seconda del dispositivo.
-C'è una casella di controllo globale per disabilitare tutto il postprocess, così puoi tornare rapidamente a scolpire/modellare senza perdere i tuoi preset.
-Per il rendering PBR, [Ambient Occlusion](#ambient-occlusion-ssao), [Reflection](#reflection-ssr) e [Tone Mapping](#tone-mapping) dovrebbero essere abilitati.
+A seconda del dispositivo, il post processing può pesare molto sulle prestazioni.
+C'è una casella globale `Post processing` per disattivare tutto il post processing, così puoi tornare rapidamente a scolpire/modellare senza perdere i tuoi preset.
+Per il rendering PBR, conviene attivare [Occlusione ambientale](#ambient-occlusion-ssao), [Riflessione](#reflection-ssr) e [Mappatura dei toni](#tone-mapping).
 
-Tuttavia, la maggior parte delle volte è preferibile che il post process sia disabilitato mentre stai scolpendo, per concentrarti sulla forma stessa del modello.
+Però, il più delle volte, mentre scolpisci è meglio tenere il post processing disattivato, per concentrarti sulla forma invece che sul rendering.
 
-## Qualidade {#quality}
+
+## Qualità {#quality}
 
 ![](/images/postprocess_quality.webp)
-### Amostragem máxima por frame {#max-frame-sampling}
-Nomad calcolerà una certa quantità di post processing per il render di un singolo frame, che può risultare rumoroso. Questo controllo determina quanti frame verranno renderizzati e poi fusi insieme per rimuovere la maggior parte degli artefatti di rumore. Alcuni effetti non richiedono campioni extra (ad es. color grading), mentre altri come la global illumination possono richiedere centinaia di campioni per essere privi di rumore. 
 
-Nel viewport questo si nota quando Nomad viene lasciato inattivo: la qualità dell'immagine si affina gradualmente fino al numero massimo di campioni, quindi si ferma. Questo numero di calcoli viene usato anche nella sezione di render del [menu Files](files) quando si clicca su “export png”.
+Queste opzioni migliorano la qualità del render, a scapito delle prestazioni.
 
-### Multiplicador de resolução {#resolution-multiplier}
-Questo cursore controlla la risoluzione del post processing. Un valore di x1.0 significa che i render vengono eseguiti alla risoluzione in pixel del dispositivo. Un valore di x0.5 eseguirà il render a metà risoluzione, più veloce ma di qualità inferiore. Un valore superiore a 1 eseguirà il render a una dimensione maggiore, per poi ridimensionare verso il basso. Questo produce una qualità più alta, meno rumore, ma tempi di render più lunghi.
+### Campionamento fotogrammi max {#max-frame-sampling}
+Per il render di un singolo fotogramma Nomad calcola una certa quantità di post processing, che può risultare rumorosa. Questo controllo stabilisce quanti fotogrammi vengono renderizzati e poi fusi insieme per eliminare la maggior parte del rumore. Alcuni effetti non richiedono campioni aggiuntivi (per esempio la gradazione colore), mentre altri, come le ombre morbide e l'illuminazione globale, possono richiedere centinaia di campioni per essere privi di rumore. 
 
-### Amostras máximas {#max-samples}
+Nella vista lo noti ogni volta che lasci Nomad inattivo: la qualità dell'immagine si affina gradualmente fino al numero massimo di campioni, poi si ferma. Una volta fermo, Nomad non fa nulla, risparmiando batteria. Questo numero di calcoli viene usato anche nella sezione di render del [menu File](files) quando premi 'export png'.
 
-Aumenta la qualità del post process, ma in generale `Full resolution` avrà un impatto maggiore. 
+La casella accanto al cursore attiva o disattiva il campionamento dei fotogrammi.
 
-### Denoiser (oidn) {#oidn}
+### Risoluzione rendering {#resolution-multiplier}
+Questo cursore controlla la risoluzione del render. Un valore di x1.0 significa che il render viene fatto alla risoluzione in pixel del dispositivo. Un valore di x0.5 renderizza a metà risoluzione: veloce, ma di bassa qualità. Un valore maggiore di 1 renderizza a una dimensione più grande, poi riduce. Il risultato è di qualità più alta, con meno rumore, ma con tempi di render più lunghi.
 
-Applica un denoiser all'immagine. Questo ti permette di usare un numero di campioni molto più basso. Funziona solo se `Full Resolution` è abilitato. Nota che il denoising avviene dopo che tutti i campioni sono stati calcolati e può essere intensivo per il processore.
+Ha un impatto enorme sulle prestazioni, quindi cerca di tenerlo a x1.25 o meno. Questo valore non viene salvato nelle impostazioni, e l'effetto [Pixel Art](#pixel-art) lo sostituisce.
 
-## Navegador de predefinições {#preset-browser}
+### ![](/icons/intensity.webp) Max campioni {#max-samples}
+
+Migliora la qualità degli effetti di post processing, a scapito delle prestazioni.
+
+### ![](/icons/material_dithering.webp) Dithering {#dithering}
+
+Applica il dithering ai pixel per ridurre gli artefatti a bande (nei gradienti o nella vignettatura, per esempio). Di solito va lasciato attivo, ma puoi disattivarlo per operazioni particolari (per esempio esportare mappe di profondità o altri dati specifici).
+
+### ![](/icons/denoise.webp) Denoiser (oidn) {#oidn}
+
+Applica un filtro di riduzione del rumore all'immagine una volta accumulati tutti i fotogrammi. Ti permette di usare molti meno campioni. La riduzione del rumore pesa molto sul processore, quindi attivala solo se l'immagine è rumorosa. Non è disponibile su tutti i dispositivi.
+
+## Raccolta di preset {#preset-browser}
 ![](/images/postprocess_presets.webp)
-Cliccando sull'immagine verrà mostrata una raccolta di preset di post processing. Per definire i tuoi preset, selezionane uno, clicca “clone”, apporta le modifiche. Per salvare, clicca sull'immagine del preset, clicca di nuovo all'interno del preset browser e scegli “save”.
+Toccando l'immagine sotto il titolo `Post processing` compare una raccolta di preset di post processing. Usa `Nuovo` per creare un preset dalle impostazioni attuali. I preset integrati si possono solo clonare: per definirne uno tuo, selezionane uno, tocca `Clona` e fai le tue modifiche. Quando un preset ha modifiche non ancora salvate, mostra `Vi sono modifiche non salvate!`; per salvare, tocca l'immagine del preset, tocca di nuovo dentro la raccolta di preset e scegli `Salva`.
 
-## Reflexão (SSR) {#reflection-ssr}
-Con questa opzione, gli oggetti possono riflettere altri oggetti nella scena, purché gli oggetti siano visibili sullo schermo.
-Se hai oggetti metallici e lucidi nella scena, probabilmente dovresti usare questa opzione.
-Questa opzione è efficace solo con la modalità PBR.
+## Barra delle scorciatoie {#shortcut-bar}
+Quando il post processing è attivo, una barra in fondo al menu elenca tutti gli effetti (`SSR`, `SSGI`, `SSAO`, `DoF`, `Bagliore diffuso`...). Toccane uno per saltare alla sua sezione. Gli effetti disattivati sono in grigio, così la barra è anche un rapido riassunto di ciò che fa il preset attuale.
 
-| SSR off                    | SSR on                    |
+## ![](/icons/postprocess_ssr.webp) Riflessione (SSR) {#reflection-ssr}
+Con questa opzione, gli oggetti possono riflettere altri oggetti della scena, purché siano visibili sullo schermo.
+Se nella scena hai oggetti metallici e lucidi, probabilmente conviene usarla.
+Questa opzione richiede la modalità di shading [Illuminato (PBR)](shading.md#pbr).
+
+
+| SSR disattivato            | SSR attivato              |
 | :------------------------: | :-----------------------: |
 | ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
-## Iluminação Global (SSGI) {#global-illumination-ssgi}
+## ![](/icons/postprocess_ssgi.webp) Illuminazione globale (SSGI) {#global-illumination-ssgi}
 
-La global illumination simula come la luce rimbalza tra le superfici, ad esempio un muro rosso proietterà rosso su un oggetto bianco vicino. Questo può aumentare enormemente il realismo di un render se usato insieme ad ambient occlusion e riflessioni. 
+L'illuminazione globale simula come la luce rimbalza tra le superfici: per esempio, una parete rossa proietta del rosso su un oggetto bianco vicino. Insieme all'occlusione ambientale e ai riflessi, può aumentare moltissimo il realismo di un render. Come i riflessi, richiede la modalità di shading [Illuminato (PBR)](shading.md#pbr).
 
-`Strength` - L'intensità della global illumination. 
+`Intensità` - L'intensità dell'illuminazione globale. 
 
-| SSGI off                   | SSGI on                   |
+
+
+| SSGI disattivato           | SSGI attivato             |
 | :------------------------: | :-----------------------: |
 | ![](/images/ssgi_off.webp) | ![](/images/ssgi_on.webp) |
 
 _Un faretto è dietro la sfera, puntato verso il soffitto. Con SSGI disattivato, è illuminato solo il soffitto. Con SSGI attivato, la luce rimbalza dal soffitto alle pareti fino alla sfera._
 
-## Oclusão de Ambiente (SSAO) {#ambient-occlusion-ssao}
-L'ambient occlusion scurisce le aree dove la luce ha meno possibilità di arrivare (angoli, ecc.).
+## ![](/icons/postprocess_ssao.webp) Occlusione ambientale (SSAO) {#ambient-occlusion-ssao}
+L'occlusione ambientale scurisce le zone che la luce ha meno probabilità di raggiungere (angoli, ecc.).
 L'effetto dipende solo dalla geometria del modello.
 
-* `Strength` - Intensità dell'effetto.
-* `Size` - Quanto è esteso l'effetto.
-* `Curvature bias` - Quanto l'effetto è sensibile rispetto alle variazioni della superficie.
-* `Color` - Una tinta moltiplicata nell'occlusione, usata per effetti creativi.
+* `Intensità` - Intensità dell'effetto.
+* `Dimensioni` - Quanto è esteso l'effetto.
+* `Spessore` - Lo spessore in profondità attribuito agli oggetti che fanno occlusione, in percentuale di `Dimensioni`.
+* `Tinta` - Un colore moltiplicato nell'occlusione, per effetti creativi.
 
-| SSAO off                    | SSAO on                    |
+
+| SSAO disattivato            | SSAO attivato              |
 | :-------------------------: | :------------------------: |
 | ![](/images/ssao_off.webp) | ![](/images/ssao_on.webp) |
 
 ::: tip
-L'AO sarà più visibile nelle aree illuminate principalmente dalla luce di ambiente. Le aree sotto una forte luce diretta riceveranno un effetto AO molto più debole.
+L'occlusione ambientale si vede di più nelle zone illuminate soprattutto dalla luce dell'ambiente. Le zone sotto una forte luce diretta ricevono un effetto molto più debole.
 
 :::
 
-## Profundidade de Campo (DOF) {#depth-of-field-dof}
-Aggiunge un effetto di sfocatura alle regioni fuori fuoco.
+## ![](/icons/postprocess_dof.webp) Profondità di campo {#depth-of-field-dof}
+Aggiunge una sfocatura alle zone fuori fuoco.
 
 Tocca semplicemente il modello per cambiare il punto di messa a fuoco.
 
-* `Far blur` - Quantità di sfocatura applicata oltre il punto di messa a fuoco.
-* `Near blur` - Quantità di sfocatura applicata tra il punto di messa a fuoco e la camera.
+* `Modalità apertura` - Gestisce la sfocatura con un'unica apertura della fotocamera, invece dei due cursori di sfocatura qui sotto.
+* `Apertura` (_solo in modalità apertura_) - Il numero f dell'obiettivo, come su una vera fotocamera. Un valore più basso apre l'obiettivo e sfoca di più.
+* `Sfocatura lontana` - La quantità di sfocatura applicata oltre il punto di messa a fuoco.
+* `Sfocatura vicina` - La quantità di sfocatura applicata tra il punto di messa a fuoco e la fotocamera.
 
-| DOF off                   | DOF focus on far ring       | DOF focus on close ring    |
+
+| DOF disattivato           | DOF a fuoco sull'anello lontano | DOF a fuoco sull'anello vicino |
 | :-----------------------: | :-------------------------: | :------------------------: |
 | ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp) |
 
-## Bloom {#bloom}
-Il bloom farà brillare le aree luminose della scena.
 
-* `Intensity` - Intensità dell'effetto.
-* `Radius` - L'ampiezza dell'effetto.
-* `Threshold` - Quanto devono essere luminosi i pixel nella scena prima che inizino a generare bloom. Impostando questo valore basso tutto produrrà bloom, impostandolo alto solo i pixel più luminosi produrranno bloom.
-* `Color` - una tinta che può essere aggiunta al bloom per effetti creativi.
+## ![](/icons/sun.webp) Bagliore diffuso {#bloom}
+Il bagliore diffuso fa brillare le zone luminose della scena.
 
-| Bloom off                    | Bloom with radius 0         | Bloom with radius 1         |
+* `Intensità` - intensità dell'effetto.
+* `Raggio` - L'estensione dell'effetto.
+* `Soglia` - Quanto devono essere luminosi i pixel della scena prima di iniziare a brillare. A 0 brilla tutto; con un valore alto brillano solo i pixel più luminosi.
+* `Tinta` - un colore da aggiungere al bagliore per effetti creativi.
+
+| Bagliore disattivato         | Bagliore con raggio 0       | Bagliore con raggio 1       |
 | :--------------------------: | :-------------------------: | :-------------------------: |
 | ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
-## Mapeamento de tom {#tone-mapping}
-Il Tone Mapping è un'operazione che rimappa i valori HDR nell'intervallo `[0, 1]`.
-Se non lo usi (o selezioni `none`), qualsiasi componente di colore superiore a 1 verrà tagliata.
-Qualsiasi variazione di colore al di sopra di questo intervallo andrà quindi persa.
 
-* `None/Neutral/Agx/ACES` - quale tonemapper usare. `None` non esegue alcun remapping (ma gli altri controlli funzionano comunque). Le altre opzioni sono simili alla scelta di pellicole diverse: gestiranno i valori e i colori sovraesposti in modi differenti. È un argomento molto vasto, cerca informazioni su tone mapping, Agx, ACES per maggiori dettagli!
-* `Exposure` - luminosità complessiva dell'immagine, simile alla regolazione del diaframma di una fotocamera. Può essere un modo rapido per schiarire o scurire globalmente un'immagine.
-* `Saturation` - intensità del colore. 1 è neutro, 0 è monocromatico, valori superiori a 1 sono via via più saturi.
-* `Contrast` - Rende i neri più neri e i bianchi più bianchi. Usalo con cautela, a valori alti può introdurre artefatti.
+## ![](/icons/postprocess_tone.webp) Mappatura dei toni {#tone-mapping}
+La mappatura dei toni è un'operazione che rimappa i valori HDR nell'intervallo `[0, 1]`.
+Se non la usi (o scegli `Nessuno`), ogni componente di colore superiore a 1 viene tagliata.
+Tutte le variazioni di colore oltre questo intervallo vanno quindi perse.
 
-Nota che con il `Tone Mapping` disabilitato, alcuni dettagli scompaiono perché i pixel sono troppo luminosi.
+* `Nessuno`/`Neutrale`/`Agx`/`ACES` - quale tonemapper usare. `Nessuno` non rimappa nulla (ma gli altri controlli funzionano comunque). Le altre opzioni sono come scegliere pellicole diverse: gestiscono in modi diversi i valori e i colori sovraesposti. È un argomento molto vasto: cerca tone mapping, Agx e ACES per saperne di più!
+* `Esposizione` - la luminosità generale dell'immagine, come regolare l'apertura su una fotocamera. È un modo rapido per schiarire o scurire tutta l'immagine.
+* `Saturazione` - l'intensità dei colori. 1 è neutro, 0 è monocromatico, i valori sopra 1 sono via via più saturi.
+* `Contrasto` - Rende le zone scure più scure e quelle chiare più chiare. Usalo con attenzione: a valori alti può introdurre artefatti.
 
-| Tone Mapping off            | Tone Mapping on            |
+Nota che con la `Mappatura dei toni` disattivata alcuni dettagli spariscono, perché i pixel sono troppo luminosi.
+
+| Mappatura dei toni disattivata | Mappatura dei toni attivata |
 | :-------------------------: | :------------------------: |
 | ![](/images/tone_off.webp) | ![](/images/tone_on.webp) |
 
 ::: tip
-Il tone mapping può amplificare l'effetto della global illumination. Se abbassi l'intensità della environment map e alzi la sorgente di luce primaria, puoi aumentare l'`exposure` del tone mapping per vedere meglio gli effetti della luce di rimbalzo.
+La mappatura dei toni può accentuare l'effetto dell'illuminazione globale. Se abbassi l'intensità della mappa d'ambiente e alzi la sorgente di luce principale, puoi aumentare l'`Esposizione` della mappatura dei toni per vedere meglio gli effetti della luce che rimbalza.
 :::
 
-## Graduação de cor {#color-grading}
-Simile allo strumento curve di Photoshop, ti permette di controllare il bilanciamento e la distribuzione del colore nell'immagine. Il controllo `main` influenza l'intero bilanciamento dei colori, mentre i controlli `red`/`green`/`blue` permettono una regolazione fine. 
+## ![](/icons/postprocess_tone_curve.webp) Gradazione colore {#color-grading}
+Simile allo strumento Curve di Photoshop, ti permette di controllare l'equilibrio e la distribuzione dei colori nell'immagine. Il controllo `Principale` agisce sull'intero equilibrio dei colori, i controlli `Rosso`/`Verde`/`Blu` permettono regolazioni fini. 
 
-| Color Grading off             | Color Grading on             |
+| Gradazione colore disattivata | Gradazione colore attivata |
 | :---------------------------: | :--------------------------: |
 | ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
-## Curvatura {#curvature}
-Rileva dove ci sono cambiamenti rapidi di curvatura e applica un colore a quelle regioni.
+## ![](/icons/postprocess_cavity.webp) Curvatura {#curvature}
+Rileva dove la curvatura cambia bruscamente, e applica un colore a quelle zone.
 
-* `Factor` - intensità complessiva dell'effetto
-* `Bump` - quanto rileverà i cambiamenti convessi netti, applicando lì il colore selezionato (bianco per impostazione predefinita)
-* `Cavity` - quanto rileverà i cambiamenti concavi, applicando lì il colore selezionato (nero per impostazione predefinita)
+* `Fattore` - intensità generale dell'effetto
+* `Rilievo` - quanto rileva i cambiamenti convessi netti, applicandovi il colore scelto (bianco di default)
+* `Cavità` - quanto rileva i cambiamenti concavi, applicandovi il colore scelto (nero di default)
+* `Spessore` - quanto sono larghi i bordi rilevati.
 
-| Curvature off                    | Curvature on                   |
+Accanto a `Rilievo` e `Cavità`, un campione di colore sceglie il colore, e un piccolo pulsante sceglie come quel colore si fonde con l'immagine.
+
+
+| Curvatura disattivata            | Curvatura attivata             |
 | :------------------------------: | :----------------------------: |
 | ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
-## Aberração cromática {#chromatic-aberration}
-Simula gli artefatti dell'obiettivo con la luce che viene scomposta attorno ai bordi dello schermo.
 
-* `Strength` - quanto le componenti rosso/verde/blu dell'immagine vengono separate verso i bordi dello schermo
+## ![](/icons/postprocess_chromatic.webp) Aberrazione cromatica {#chromatic-aberration}
+Simula il difetto delle lenti in cui la luce si scompone verso i bordi dello schermo.
 
-| Chromatic off                 | Chromatic on                 |
+* `Intensità` - quanto le componenti rossa/verde/blu dell'immagine si separano verso i bordi dello schermo
+
+| Aberrazione disattivata       | Aberrazione attivata         |
 | :---------------------------: | :--------------------------: |
 | ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
-## Vinheta {#vignette}
-Simula gli artefatti dell'obiettivo scurendo i bordi dello schermo.
 
-* `Size` - La dimensione di un'ellisse invertita posizionata sopra l'immagine
-* `Hardness` - Quanto è sfocata o netta l'ellisse quando viene miscelata sopra l'immagine.
+## ![](/icons/postprocess_vignette.webp) Vignettatura {#vignette}
+Simula il difetto delle lenti che scurisce i bordi dello schermo.
 
-| Vignette off                    | Vignette on                    |
+* `Dimensioni` - La dimensione di un'ellisse invertita posta sopra l'immagine
+* `Durezza` - Quanto l'ellisse si fonde in modo sfumato o netto sopra l'immagine.
+* `Tinta` - Il colore della vignettatura, nero di default.
+
+
+| Vignettatura disattivata        | Vignettatura attivata          |
 | :-----------------------------: | :----------------------------: |
 | ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
-## Grão {#grain}
-Aggiunge un effetto grana, può aiutare a rendere l'immagine un po' meno artificiale.
+## ![](/icons/postprocess_grain.webp) Grana {#grain}
+Aggiunge un effetto grana, che può rendere l'immagine un po' meno artificiale.
 
-* `Strength` - la quantità di grana/rumore aggiunta all'immagine.
+* `Intensità` - la quantità di grana/rumore aggiunta all'immagine.
 
-| Grain off                    | Grain on                   |
+
+| Grana disattivata            | Grana attivata             |
 | :--------------------------: | :------------------------: |
 | ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
-## Nitidez {#sharpness}
+
+## ![](/icons/sharpen.webp) Nitidezza {#sharpness}
 Un effetto di nitidezza simile a quello di Photoshop o delle app di fotoritocco.
 
-* `Strength` - la quantità di nitidezza applicata all'immagine.
+* `Intensità` - la quantità di nitidezza applicata all'immagine.
 
-| Sharpness off                  | Sharpness on                 |
+
+| Nitidezza disattivata          | Nitidezza attivata           |
 | :----------------------------: | :--------------------------: |
 | ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
-## Pixel art {#pixel-art}
-Simula la pixel art dei giochi retrò.
+## ![](/icons/postprocess_pixel_art.webp) Pixel Art {#pixel-art}
+Simula la pixel art dei videogiochi retrò. Questo effetto sostituisce la [Risoluzione rendering](#resolution-multiplier).
 
-* `Slider` - dimensione dei pixel
-* `Allow frame sampling` - se ottieni molti pixel neri, prova ad attivarlo: sovrascriverà il sampling predefinito.
+* `Cursore` - dimensione dei pixel
+* `Consenti campionamento fotogrammi` - se compaiono molti pixel neri, prova ad attivarlo. Senza di esso, l'effetto pixel art disattiva il [campionamento dei fotogrammi](#max-frame-sampling).
 
-| Pixel off                   | Pixel on                   |
+| Pixel disattivato           | Pixel attivato             |
 | :-------------------------: | :------------------------: |
 | ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
-## Linha de varredura {#scanline}
-Simula l'aspetto dei vecchi monitor CRT.
+## ![](/icons/postprocess_scanline.webp) Linea di scansione {#scanline}
+Simula l'aspetto dei vecchi monitor a tubo catodico.
 
-* `Factor` - intensità delle linee
-* `Spacing` - dimensione delle linee
+* `Fattore` - intensità delle linee
+* `Spaziatura` - dimensione delle linee
 
-| Scanline off                   | Scanline on                   |
+| Linee di scansione disattivate | Linee di scansione attivate |
 | :----------------------------: | :---------------------------: |
 | ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
-
-## Dithering {#dithering}
-
-Applica dithering ai pixel per ridurre gli artefatti di banding. Di solito dovrebbe essere abilitato, ma può essere disattivato per operazioni specifiche (ad es. esportazione di depth map o altre operazioni specifiche sui dati).

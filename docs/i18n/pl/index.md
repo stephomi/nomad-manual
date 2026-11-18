@@ -1,4 +1,4 @@
-# Przegląd {#overview}
+# ![](/icons/home.webp) Przegląd {#overview}
 
 <!-- 
 [[toc]]
@@ -8,36 +8,38 @@
 ::: details
 -->
 
-::: tip Nowy w Nomad?
+::: tip Pierwszy raz w Nomadzie?
 Przeczytaj przewodnik [Pierwsze kroki](gettingstarted.md).
 :::
 
 
 ## Spis treści {#table-of-contents}
 
-| Menu                           | Ikona                         | Opis                                                |
-| :----------------------------: | :---------------------------: | :------------------------------------------------: |
-| [Files](files.md)              | ![](/icons/open.webp)        | Zarządzaj projektami, eksportuj, importuj itd.     |
-| [Scene](scene.md)              | ![](/icons/scene.webp)       | Dodawaj prymitywy i zarządzaj obiektami sceny      |
-| [Topology](topology.md)        | ![](/icons/multires.webp)    | Edytuj topologię modelu                            |
-| [Material](material.md)        | ![](/icons/material.webp)    | Materiał (na poziomie obiektu)                     |
-| [Shading](shading.md)          | ![](/icons/sun.webp)         | Jak oświetlić scenę                                |
-| [Post Process](postprocess.md) | ![](/icons/postprocess.webp) | Postprocessing (efekty wizualne w przestrzeni ekranu) |
-| [Background](background.md)    | ![](/icons/image.webp)       | Zmień tło i dodaj obraz referencyjny               |
-| [Camera](camera.md)            | ![](/icons/camera.webp)      | Sterowanie kamerą i interakcja                     |
-| [Stroke](stroke.md)            | ![](/icons/pencil.webp)      | Edytuj ustawienia bieżącego narzędzia, pociągnięcia, krzywą nacisku... |
-| [Pressure](pressure.md)        | ![](/icons/pressure.webp)    | Zarządzaj czułością nacisku rysika                 |
-| [Painting](painting.md)	     | ![](/icons/paint.webp)       | Ustawienia malowania dla narzędzi malarskich       |
-| [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Zarządzaj płaszczyzną lustrzaną bieżącej siatki    |
-| [Layers](layers.md)            | ![](/icons/layer.webp)       | Zarządzaj warstwami bieżącego obiektu              |
-| [Settings](settings.md)        | ![](/icons/cog.webp)         | Dostosuj widok 3D                                   |
-| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Dostosuj interfejs                                 |
-| [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Lista wszystkich narzędzi/pędzli                   |
-| [History](history.md)          | ![](/icons/history.webp)     | Zarządzaj stosem historii cofania/przywracania     |
+| Menu                           | Ikona                        | Opis                                               |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
+| [Pliki](files.md)              | ![](/icons/open.webp)        | Zarządzanie projektami, eksport, import itp.       |
+| [Scena](scene.md)              | ![](/icons/scene.webp)       | Dodawanie nowych prymitywów i zarządzanie obiektami sceny |
+| [Topologia](topology.md)       | ![](/icons/multires.webp)    | Edycja topologii modelu                            |
+| [Materiał](material.md)        | ![](/icons/material.webp)    | Materiał (na poziomie obiektu)                     |
+| [Cieniowanie](shading.md)      | ![](/icons/sun.webp)         | Oświetlenie sceny                                  |
+| [Postprocessing](postprocess.md) | ![](/icons/postprocess.webp) | Postprocessing (efekty wizualne w przestrzeni ekranu) |
+| [Tło](background.md)           | ![](/icons/image.webp)       | Zmiana tła i dodawanie obrazu referencyjnego       |
+| [Kamera](camera.md)            | ![](/icons/camera.webp)      | Sterowanie kamerą i interakcja z nią               |
+| [Przekształcenie](transform.md) | ![](/icons/transform.webp)  | Wpisywanie pozycji, obrotu i rozmiaru obiektu      |
+| [Pociągnięcie](stroke.md)      | ![](/icons/brush.webp)       | Ustawienia bieżącego narzędzia, pociągnięcie, zanikanie... |
+| [Nacisk](stroke.md#pressure)   | ![](/icons/pressure.webp)    | Zarządzanie naciskiem rysika                       |
+| [Malowanie](painting.md)	       | ![](/icons/paint.webp)       | Ustawienia malowania dla narzędzi malarskich       |
+| [Symetria](symmetry.md)        | ![](/icons/symmetry.webp)    | Zarządzanie płaszczyzną lustra bieżącej siatki     |
+| [Operacja](operation.md)       | ![](/icons/operation.webp)   | Wygładzanie, napełnianie, zmiana koloru lub rozmycie całej siatki |
+| [Warstwy](layers.md)           | ![](/icons/layer.webp)       | Zarządzanie warstwami bieżącego obiektu            |
+| [Ustawienia](settings.md)      | ![](/icons/cog.webp)         | Dostosowanie widoku 3d                             |
+| [Interfejs](interface.md)      | ![](/icons/sliders.webp)     | Dostosowanie interfejsu                            |
+| [Narzędzia](tools.md)          | ![](/icons/toolbox.webp)     | Lista wszystkich narzędzi i pędzli                 |
+| [Historia](history.md)         | ![](/icons/history.webp)     | Zarządzanie historią cofania i ponawiania          |
 | [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Najczęściej zadawane pytania                       |
-| [Tips](tips.md)                | ![](/icons/manual.webp)      | Wskazówki dotyczące workflowu                      |
+| [Wskazówki](tips.md)           | ![](/icons/manual.webp)      | Wskazówki dotyczące pracy                          |
 
-## Zasoby społeczności {#community-resources}
+## Materiały od społeczności {#community-resources}
 
 <style>
 .video-grid {
@@ -80,7 +82,7 @@ Przeczytaj przewodnik [Pierwsze kroki](gettingstarted.md).
 </div>
 
 <div>
-<h3>Zajęcia DM Art</h3>
+<h3>DM Art classes</h3>
 <iframe src="https://www.youtube.com/embed/5VO0ZqyopGo?si=rtOLMvjwjCfPsdb4" allowfullscreen></iframe>
 </div>
 

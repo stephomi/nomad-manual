@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "forum": "Forum"
+  },
+  "theme": {
+    "outlineLabel": "Auf dieser Seite",
+    "docFooter": {
+      "prev": "Vorherige Seite",
+      "next": "Nächste Seite"
+    },
+    "darkModeSwitchLabel": "Erscheinungsbild",
+    "lightModeSwitchTitle": "Zum hellen Design wechseln",
+    "darkModeSwitchTitle": "Zum dunklen Design wechseln",
+    "sidebarMenuLabel": "Menü",
+    "returnToTopLabel": "Zurück nach oben",
+    "langMenuLabel": "Sprache ändern",
+    "skipToContentLabel": "Zum Inhalt springen",
+    "notFound": {
+      "title": "SEITE NICHT GEFUNDEN",
+      "quote": "Wenn Sie Ihre Richtung nicht ändern und weitersuchen, kommen Sie vielleicht genau dort an, wohin Sie unterwegs sind.",
+      "linkLabel": "zur Startseite",
+      "linkText": "Zur Startseite"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "Suchen",
+      "buttonAriaLabel": "Suchen"
+    },
+    "modal": {
+      "displayDetails": "Detaillierte Liste anzeigen",
+      "resetButtonTitle": "Suche zurücksetzen",
+      "backButtonTitle": "Suche schließen",
+      "noResultsText": "Keine Ergebnisse für",
+      "footer": {
+        "selectText": "zum Auswählen",
+        "selectKeyAriaLabel": "Eingabetaste",
+        "navigateText": "zum Navigieren",
+        "navigateUpKeyAriaLabel": "Pfeil nach oben",
+        "navigateDownKeyAriaLabel": "Pfeil nach unten",
+        "closeText": "zum Schließen",
+        "closeKeyAriaLabel": "Escape"
+      }
+    }
+  }
+}

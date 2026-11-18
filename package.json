@@ -12,6 +12,7 @@
     },
     "scripts": {
         "dev": "vitepress dev docs",
+        "host": "vitepress dev docs --host",
         "build": "vitepress build docs",
         "preview": "vitepress preview docs",
         "pdf": "press-export-pdf export docs"

@@ -1,156 +1,160 @@
-# Aan de slag {#getting-started}
+# ![](/icons/play.webp) Aan de slag {#getting-started}
 
 ## Welkom bij Nomad! {#welcome-to-nomad}
 
-Nomad is een 3D-sculptingapp die op veel apparaten werkt, en het beste werkt op tablets met een drukgevoelige stylus, bijvoorbeeld een Apple iPad met Pencil, of een Samsung Galaxy Tab met stylus.
+Nomad is een app voor 3d-sculpting die op veel apparaten werkt, en het best op tablets met een drukgevoelige stylus, zoals een Apple iPad met Pencil of een Samsung Galaxy Tab met stylus.
 
-De app is geïnspireerd op desktop-sculptingapps zoals ZBrush en Blender, met de nadruk op een eenvoudig te begrijpen interface, zonder in te leveren op functies. Als je eerder 3D-sculptingapps hebt gebruikt, zal Nomad heel vertrouwd aanvoelen.
+De app is geïnspireerd op sculptprogramma's voor desktop zoals ZBrush en Blender, met de nadruk op een begrijpelijke interface, zonder in te leveren op functies. Heb je al eerder met 3d-sculptapps gewerkt, dan voelt Nomad meteen vertrouwd.
 
-Als dit je eerste keer 3D-sculpting is, is het goed om een paar basisprincipes te kennen.
+Is dit de eerste keer dat je in 3d sculpt, dan is het goed om wat basiskennis te hebben.
 
 ::: tip Liever video?
-YouTube heeft inmiddels HEEL VEEL video-tutorials voor beginners, hier zijn een paar goede links:
+Op YouTube staan inmiddels HEEL veel videotutorials voor beginners. Hier een paar goede links:
 
-* [Nomad Sculpt Crash Course by Dave Reed](https://www.youtube.com/watch?v=69m86ICy2Q4)
-* [Nomad Sculpt Beginner tutorial by Small Robot Studio](https://www.youtube.com/watch?v=J644wXoTiww)
-* [NOMAD FOR BEGINNERS series by SouthernGFX](https://www.youtube.com/watch?v=bEh0WxRoOmg)
+* [Nomad Sculpt Crash Course door Dave Reed](https://www.youtube.com/watch?v=69m86ICy2Q4)
+* [Nomad Sculpt Beginner tutorial door Small Robot Studio](https://www.youtube.com/watch?v=J644wXoTiww)
+* [De serie NOMAD FOR BEGINNERS door SouthernGFX](https://www.youtube.com/watch?v=bEh0WxRoOmg)
 
-Het is de moeite waard om het hoofd­kanaal van deze makers te bekijken, ze plaatsen regelmatig nieuwe tutorials.
+Het loont om ook de hoofdkanalen van deze makers te bekijken: ze plaatsen regelmatig nieuwe tutorials.
 :::
 
 ## Je eerste sculpt {#your-first-sculpt}
 
-Wanneer je Nomad voor het eerst start, zie je een bol op het scherm. Sleep simpelweg met je stylus over de bol om te beginnen met sculpten. Symmetrie is standaard ingeschakeld om sculpten makkelijker te maken.
+Als je Nomad voor het eerst start, zie je een bol op het scherm. Sleep gewoon met je stylus over de bol om te beginnen met sculpten. Symmetrie staat standaard aan, wat het sculpten makkelijker maakt.
 
 ![](/videos/gettingstarted_01.mp4)
 
-Om de brush groter of kleiner te maken, gebruik je de radius-schuifregelaar links.
+Om het penseel groter of kleiner te maken, gebruik je de radiusschuifregelaar links.
 
 ![](/videos/gettingstarted_02.mp4)
 
-Om de brush sterker of zwakker te maken, gebruik je de intensiteits-schuifregelaar links.
+Om het penseel sterker of zwakker te maken, gebruik je de intensiteitsschuifregelaar links.
 
 ![](/videos/gettingstarted_03.mp4)
 
-De standaardtool is de `Clay tool`, en die voegt materiaal toe aan het oppervlak. Om materiaal van het oppervlak af te halen, tik je op de `Sub`-knop links. Om weer materiaal toe te voegen, tik je nogmaals op de Sub-knop.
+Het standaardgereedschap is `Klei`, en dat voegt materiaal toe aan het oppervlak. Om materiaal weg te halen, tik je links op de knop `Aftrekken`. Om weer toe te voegen, tik je nogmaals op de knop Aftrekken.
 
 ![](/videos/gettingstarted_04.mp4)
 
-Om het oppervlak te verzachten, tik je op de `Smooth`-knop. Om terug te gaan naar normaal sculpten, tik je nogmaals op de Smooth-knop.
+Om het oppervlak glad te maken, tik je op de knop `Gladstrijken`. Om terug te gaan naar gewoon sculpten, tik je nogmaals op de knop Gladstrijken.
 
 ![](/videos/gettingstarted_05.mp4)
 
-Om rond het model te roteren, sleep je in de lege ruimte buiten het model.
+Om rond het model te draaien, sleep je in de lege ruimte naast het model.
 
 ![](/videos/gettingstarted_06.mp4)
 
-Om te zoomen, gebruik je het tweevinger-zoom/knijpgebaar.
+Om te zoomen, gebruik je het knijpgebaar met twee vingers.
 
 ![](/videos/gettingstarted_07.mp4)
 
-Om de camera te pannen, plaats je 2 vingers op het scherm en sleep je.
+Om de camera te verschuiven, zet je 2 vingers op het scherm en sleep je.
 
 ![](/videos/gettingstarted_08.mp4)
 
-Als je een fout maakt, kun je met een tik met 2 vingers ongedaan maken, of gebruik de undo-knop linksonder. 
+Maak je een fout, dan maak je die ongedaan met een tik met 2 vingers, of met de knop voor ongedaan maken linksonder.
 
 ![](/videos/gettingstarted_09.mp4)
 
 ::: tip Desktopversie
-Op desktop wordt de alt/opt-toets gebruikt om de camera te bedienen:
+Op desktop gebruik je de toets alt/opt om de camera te bedienen:
 
-* tip slepen in lege ruimte = camera roteren
-* alt+tip slepen = pannen
-* alt+tip slepen, dan alt loslaten = zoomen (net als in ZBrush)
+* met de punt slepen in een lege ruimte = camera draaien
+* alt+slepen met de punt = verschuiven
+* alt+slepen met de punt, dan alt loslaten = zoomen (zoals in ZBrush)
 
-Bij Wacom-tablets met 2 of meer knoppen op de pen, gebruik je de Wacom-instellingen om de tip en knoppen zo te configureren:
+Heb je een Wacom-tablet met 2 of meer knoppen op de pen, stel de punt en de knoppen dan zo in via de Wacom-instellingen:
 
-* tip = linker muisklik
-* onderste rocker = middelste muisklik
-* bovenste rocker = rechter muisklik
+* punt = linkerklik
+* onderste knop = middelste klik
+* bovenste knop = rechterklik
 
-Met die instellingen kun je de camera volledig met de pen bedienen:
+Met die instellingen bedien je de camera volledig met de pen:
 
-* bovenste rocker en hover-beweging = camera roteren
-* onderste rocker en hover-beweging = pannen
+* bovenste knop en zwevend bewegen = camera draaien
+* onderste knop en zwevend bewegen = verschuiven
 :::
 
 ## Kleur toevoegen {#add-color}
 
-Nomad laat je het oppervlak van je sculpt beschilderen. Zoek in het toolmenu rechts de `Paint`-tool en klik erop. In de toolbar links verschijnt een gekleurde bol. Klik daarop om een kleurkiezer te openen. Kies een kleur en schilder op je model.
+In Nomad kun je het oppervlak van je sculpt beschilderen. Zoek in het gereedschapsmenu rechts het gereedschap `Verf` en klik erop. In de linker werkbalk verschijnt een gekleurde bol. Klik erop om een kleurkiezer te openen. Kies een kleur en schilder op je model.
 
 ![](/videos/gettingstarted_10.mp4)
 
-Om te gummen, tik je op de `Erase`-knop in de linker toolbar, en gum je over het oppervlak. Tik nogmaals op de erase-knop om terug te gaan naar de schildermodus.
+Om te wissen, tik je op de knop `Wissen` in de linker werkbalk en wis je op het oppervlak. Tik nogmaals op de knop Wissen om terug te gaan naar de schildermodus.
 
 ![](/videos/gettingstarted_11.mp4)
 
-Gebruik de clay-brush in add/sub-modi, smooth en paint, en kijk of je een eenvoudig cartoonhoofd kunt maken:
+Kijk of je met het kleipenseel in de modi toevoegen en aftrekken, plus gladstrijken en verf, een eenvoudig cartoonhoofd kunt maken:
 
 ![](/images/gettingstarted_head1.webp)
 
-## Andere tools {#other-tools}
+## Andere gereedschappen {#other-tools}
 
-Het toolpalet heeft veel tools die helpen bij het sculpten. Tot nu toe heb je de clay-brush (de standaard starttool), smooth en paint gebruikt. Omdat smooth vaak wordt gebruikt, heeft deze een extra snelkoppeling in de linker toolbar.
+Het gereedschapspalet heeft veel gereedschappen die helpen bij het sculpten. Tot nu toe heb je het kleipenseel (het standaardgereedschap bij het starten), gladstrijken en verf gebruikt. Omdat gladstrijken zo vaak wordt gebruikt, heeft het een extra snelkoppeling in de linker werkbalk.
 
-De tools in Nomad kunnen een grote verscheidenheid aan dingen doen, van sculpting-gerelateerde tools zoals move, crease, inflate, tot tools zoals split en trim die meer lijken op gereedschap voor hout- of metaalbewerking. De pagina [Tools](tools.md) bevat meer informatie.
+De gereedschappen in Nomad kunnen heel veel verschillende dingen, van sculptgereedschappen zoals verplaatsen, plooien en opblazen tot gereedschappen zoals splitsen en trimmen, die meer weg hebben van timmer- of metaalbewerkingsgereedschap. Op de pagina [Gereedschappen](tools.md) vind je meer informatie.
 
-Kijk of je de move-, crease-, inflate- en smooth-tools kunt gebruiken om meer detail aan je hoofd toe te voegen en de vorm te veranderen:
+Kijk of je met de gereedschappen Verplaats, Plooi, Opblazen en Gladstrijken meer details aan je hoofd kunt toevoegen en de vorm kunt veranderen:
 
 ![](/images/gettingstarted_head2.webp)
 
-Nu je de basis van Nomad kent, kijken we naar de rest van de interface.
+Nu je de basis van Nomad kent, bekijken we de rest van de interface.
 
 ## Interface {#interface}
 
 ![](/images/interface_overview1.webp)
 
-* `Top menus` - De menu’s om toegang te krijgen tot de meeste functies van Nomad. De menu’s linksboven gaan vooral over scène- en objectfuncties, de menu’s rechtsboven hebben betrekking op tools. Op kleinere schermen worden deze menu’s samengevouwen om ruimte te besparen.
-* `Stats` - Informatie over de scène, het huidige object, maskstatus, geheugengebruik.
-* `Nav Cube` - Een hulpmiddel om te tonen naar welke kant van de sculpt je kijkt, en een snelkoppeling om naar verschillende aanzichten te springen. Tikken op de kubus verplaatst het aanzicht naar de aangetikte zijde. Slepen van de kubus roteert het aanzicht. Tik op de kleine pictogrammen naast de kubus om het huidige object in beeld te brengen, of om te resetten naar het standaard startaanzicht.
-* `Toolbox` - De tools van Nomad zijn beschikbaar in dit scrollbare gebied.
-* `Left toolbar` - Schuifregelaars voor radius en intensiteit voor de meeste tools, contextspecifieke knoppen voor andere tools, en snelkoppelingen voor symmetrie, de alt/sub-modus van de tool, masking, smoothing, de gizmo en paint-opties.
-* `Bottom toolbar` - Snelkoppelingen voor veelgebruikte functies, hieronder uitgelegd.
+* `Bovenste menu's` - De menu's voor de meeste functies van Nomad. De menu's linksboven gaan vooral over de scène en objecten, de menu's rechtsboven over gereedschappen. Op kleinere schermen worden deze menu's samengevoegd om ruimte te besparen.
+* `Statistieken` - Informatie over de scène, het huidige object, de maskerstatus en het geheugengebruik.
+* `Navigator` - Een hulpmiddel dat laat zien naar welke kant van de sculpt je kijkt, en een snelkoppeling om naar andere aanzichten te springen. Tik op een zijde om ernaartoe te springen. Sleep aan de navigator om te draaien. Met de kleine iconen ernaast kadreer je het huidige object, ga je terug naar het standaardaanzicht, vergrendel je de camera of zet je het raster aan en uit. Het uiterlijk (een kubus, een bol of een gnomon) en de plaats ervan pas je aan in de [Instellingen](settings.md#snap-cube).
+* `Gereedschapskist` - In dit scrollbare gebied vind je de gereedschappen van Nomad.
+* `Linker werkbalk` - Schuifregelaars voor radius en intensiteit voor de meeste gereedschappen, knoppen die bij het gekozen gereedschap horen, en snelkoppelingen voor symmetrie, de alt-/aftrekmodus van het gereedschap, gladstrijken, maskeren, verbergen, vlakkengroepen, de gizmo en de schilderopties. Je kunt de snelkoppelingen herschikken in het menu [Interface](interface.md#side-bar).
+* `Onderste werkbalk` - Snelkoppelingen voor veelgebruikte functies, hieronder uitgelegd.
 
 ::: tip Linkshandig?
-Je kunt de plaatsing en volgorde van alle toolbars spiegelen, zie [Mirror top bar](interface.md#mirror-top-bar) en andere gerelateerde opties.
+Je kunt de plaats en volgorde van alle werkbalken spiegelen, zie [Spiegel bovenste balk](interface.md#mirror-top-bar) en de bijbehorende opties.
 :::
 
-## Werkbalk onderaan {#bottom-toolbar}
+## Onderste werkbalk {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
-* `Undo` - maak de laatste bewerking ongedaan
-* `Redo` - herstel de laatste undo-bewerking
-* `History` - toegang tot geschiedenisopties, uitgelegd in het [History](history.md)-menu.
-* `Solo` - Schakel tussen alleen het huidige object tonen, of alle objecten
-* `X-Ray` - Laat alle andere objecten in röntgenmodus (x-ray) weergeven, en het huidige object als massief. Een lange tik of omhoog vegen laat je de kleur en dekking van de x-raymodus instellen.
-* `Voxel` - Een snelkoppeling naar de [Voxel Remesher](topology.md#voxel-remesher)-knop voor voxel-remesh. Een lange tik of omhoog vegen toont snelkoppelingen om de voxel-remeshkwaliteit in te stellen.
-* `Grid` - Schakel het raster in of uit. Een lange tik of omhoog vegen toont opties voor het raster.
-* `Wire` - Schakel een wireframe-overlay in of uit. Een lange tik of omhoog vegen toont opties voor het wireframe.
-* `Inspect` - Schakel het bekijken van extra data over de huidige mesh in of uit. Standaard worden UV’s weergegeven, maar een lange tik of omhoog vegen laat je andere eigenschappen inspecteren als die bestaan, en of dit op de achtergrond of op de mesh wordt weergegeven.
+* `Ongedaan maken` - draait de laatste bewerking terug
+* `Opnieuw doen` - herstelt de laatste ongedaan gemaakte bewerking
+* `Geschiedenis` - opent de opties voor de geschiedenis, uitgelegd in het menu [Geschiedenis](history.md).
+* `Solo` - Wisselt tussen alleen het huidige object tonen of alle objecten
+* `X-Ray` - Toont alle andere objecten in röntgenmodus en het huidige object massief. Lang indrukken of omhoog vegen laat je de röntgen-matcap en -kleur kiezen, en op welke objecten het van toepassing is.
+* `Voxel` - Een snelkoppeling naar de knop voxel-remesh van de [voxel-remesh](topology.md#voxel-remesher). Lang indrukken of omhoog vegen toont de opties voor voxel-remesh, zoals de resolutie.
+* `Raster` - Zet het raster aan of uit. Lang indrukken of omhoog vegen toont de opties voor het raster, zoals de kleur en het snappen.
+* `Draadmodel` - Zet een draadmodel over het model aan of uit. Lang indrukken of omhoog vegen toont de opties voor het draadmodel.
+* `Inspecteur` - Toont extra gegevens over de huidige mesh. Standaard worden de UV's getoond, maar met lang indrukken of omhoog vegen kun je andere eigenschappen inspecteren als die er zijn, en kiezen of dit op de achtergrond of op de mesh wordt getoond.
+* `Logboeken` - Toont of verbergt een venster met de foutopsporingslogboeken van Nomad.
+* `Vlakkengroep` - Zet de weergave van vlakkengroepen aan of uit, zie het gereedschap [Vlakkengroep](tools.md#facegroup).
+
+Je kunt deze snelkoppelingen toevoegen, verwijderen en herschikken in het menu [Interface](interface.md#add-shortcuts-bottom).
 
 ## Volgende stappen {#next-steps}
 
-Wat je hierna zou moeten leren, hangt af van jou en wat je interessant vindt! Hier zijn wat suggesties:
+Wat je hierna leert, bepaal je zelf, afhankelijk van wat je interessant vindt! Een paar suggesties:
 
-Wil je meer leren over de sculptingtools? Ga naar de sectie [Tools](tools.md).
+Wil je meer weten over de sculptgereedschappen? Ga naar de sectie [Gereedschappen](tools.md).
 
-Wil je je modellen exporteren? Of modellen importeren om op te sculpten? Of afbeeldingen van je sculpts maken? Ga naar de sectie [Files](files.md).
+Wil je je modellen exporteren? Of modellen importeren om op te sculpten? Of afbeeldingen van je sculpts maken? Ga naar de sectie [Bestanden](files.md).
 
-Wil je meer leren over het beheersen van detail in je sculpt? Ga naar de sectie [Topology](topology.md) en leer over multires en decimation.
+Wil je meer leren over het beheersen van detail in je sculpt? Ga naar de sectie [Topologie](topology.md) en leer meer over multires en decimeren.
 
-Wil je met meer objecten werken? Eenvoudige objecten en primitieven combineren tot een grotere scène? Ga naar de sectie [Scene](scene.md).
+Wil je met meer objecten werken? Eenvoudige objecten en primitieven combineren tot een grotere scène? Ga naar de sectie [Scène](scene.md).
 
-Wil je *alles* over Nomad leren? Goede keuze! Deze handleiding behandelt heel Nomad, bevat veel tips en trucs, en heeft bovenaan een uitstekende zoekfunctie. Gebruik de navigatie links om meer te leren.
+Wil je *alles* over Nomad weten? Goede keuze! Deze handleiding behandelt heel Nomad, bevat veel tips en trucs, en heeft bovenaan een prima zoekfunctie. Gebruik de navigatie links om verder te lezen.
 
-Als je liever video hebt: Holger Schönischka heeft een enorme verzameling tips en trucs voor Nomad op YouTube gemaakt: https://www.youtube.com/@ProcreateFX/videos
+Kijk je liever video's? Holger Schönischka heeft op YouTube een enorme verzameling tips en trucs voor Nomad gemaakt: https://www.youtube.com/@ProcreateFX/videos
 
 
 ## Hulp krijgen {#getting-help}
 
-Als je na het lezen van de handleiding en het bekijken van de tutorialvideo’s nog vragen hebt, zijn er drie belangrijke manieren om met andere Nomad-gebruikers of de ontwikkelaar van Nomad te praten:
+Heb je na het lezen van de handleiding en het bekijken van de videotutorials nog vragen, dan zijn er drie manieren om met andere Nomad-gebruikers of met de ontwikkelaar van Nomad te praten:
 
-* Bezoek de forums: [forum.nomadsculpt.com](http://forum.nomadsculpt.com)
-* Word lid van de Nomad Discord-chat: [https://discord.com/invite/8h7BwpRz29](https://discord.com/invite/8h7BwpRz29)
-* Neem direct contact op met de ontwikkelaar via support@nomadsculpt.com
+* Bezoek het forum: [forum.nomadsculpt.com](http://forum.nomadsculpt.com)
+* Doe mee aan de Discord-chat van Nomad: [https://discord.com/invite/8h7BwpRz29](https://discord.com/invite/8h7BwpRz29)
+* Neem rechtstreeks contact op met de ontwikkelaar via support@nomadsculpt.com
