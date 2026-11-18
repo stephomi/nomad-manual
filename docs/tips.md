@@ -36,7 +36,7 @@ Some people prefer to start a model in other apps, thats also fine. Tools like B
 
 ### Use the built in presets {#use-the-built-in-presets}
 
-From the project menu click `Preset...` in the top right. Here you will find several head and body shape presets from the Blender foundation. Select one you like, tap it again, add to your scene. 
+From the [Files](files.md) menu click `Preset…` on the left of the project section. Here you will find several head and body shape presets from the Blender foundation. Select one you like, tap it again, add to your scene. 
 
 ### Use online models {#use-online-models}
 
@@ -68,8 +68,8 @@ For character heads you could paint zones to mark the eye sockets, nose, lips, c
 
 Facegroups can be applied with a brush, where each new stroke creates a new facegroup, or they can select the facegroup under the cursor and extend it. They can also be created using shapes.
 
-* Dot, auto-pick enabled - a single drag will define a new facegroup colour and assign it to the faces you drag over. Every new drag will define a new facegroup. A tap will flood fill a new facegroup.
-* Dot, auto-pick disabled - when the auto-pick button is in its 'sub' mode, nomad will select the facegroup under the cursor, and apply it during the rest of the drag. This is useful to refine facegroups without having to manually select them.
+* Dot, default mode - a single drag will define a new facegroup colour and assign it to the faces you drag over. Every new drag will define a new facegroup. A tap will flood fill a new facegroup.
+* Dot, `Pick` mode - when the `Pick` button on the left toolbar is active, nomad will select the facegroup under the cursor, and apply it during the rest of the drag. This is useful to refine facegroups without having to manually select them.
 
 ### Masking {#masking}
 
@@ -94,11 +94,11 @@ The quad remesher plugin will usually flow edges nicely on your model, but you c
 
 ### Filter with other tools {#filter-with-other-tools}
 
-Many tools will have options to be facegroup aware, either from their primary tool menu, or via the stroke -> filtering menu. For example the smooth tool at strengths above 100% can aggresively smooth away detail within a facegroup, but keep the facegroup border relatively intact.
+Many tools will have options to be facegroup aware, either from their primary tool menu, or via the Stroke -> Filter menu. For example the smooth tool at strengths above 100% can aggresively smooth away detail within a facegroup, but keep the facegroup border relatively intact.
 
 ### Relax and smooth facegroup borders {#relax-and-smooth-facegroup-borders}
 
-The relax option within the facegroup tool does an excellent job of smoothing facegroup borders while keeping other features intact. This can be a great way to define smooth facegroup border regions before quad remeshing.
+The `Relax` option within the facegroup tool does an excellent job of smoothing facegroup borders while keeping other features intact. This can be a great way to define smooth facegroup border regions before quad remeshing.
 
 ## Limitations on tablet/mobile {#limitations-on-tabletmobile}
 
@@ -108,13 +108,13 @@ Current tablets and mobiles are very powerful, but have important differences to
 
 Computers have fans and/or large heatsinks to keep them cool, and are designed to run at high temperatures. Mobile hardware is usually designed for thinness first, not for helping to keep the internals cool. If Nomad is pushed to its highest quality settings (PBR lighting mode, complex materials, many objects, many post processing options enabled), this can both overheat the device and drain the battery very quickly. 
 
-A better approach is to use a matcap lighting mode, and use a lower render multiplier (top of the post process menu). These choices will keep the device cool and allow you to sculpt for longer.
+A better approach is to use a matcap lighting mode, and use a lower `Render resolution` (top of the post process menu). These choices will keep the device cool and allow you to sculpt for longer.
 
 ### Limited memory {#limited-memory}
 
 Nomad can achieve results equal to most desktop sculpting apps, but it can't bend the laws of physics! Most desktop computers have double the memory of mobile devices, workstations built for 3d animation often have 4x or 8x the memory. Because of this, it is good to be aware of how many polygons you're using, run some tests on your device to see when it starts to get laggy. Nearly all devices that can run Nomad can handle 1 million polygons pretty easily. An M2 Ipad Pro can handle 8 million comfortably, people have tested on the latest Ipads going well above that.
 
-That said, only the most detailed of sculpts need more than 4 million polys; if you're making relatively simple objects and find yourself often going above 500,000, 1 million, 4 million, you're using too many polygons! Make sure you have smooth shaded mode enabled in the options.
+That said, only the most detailed of sculpts need more than 4 million polys; if you're making relatively simple objects and find yourself often going above 500,000, 1 million, 4 million, you're using too many polygons! Make sure you have `Smooth shading` enabled in the [Settings](settings.md).
 
 ### OS is less forgiving with intensive apps {#os-is-less-forgiving-with-intensive-apps}
 
@@ -128,7 +128,7 @@ Nomad is designed to work on tablets, but works well on phones as well. Sculptin
 * A 3 finger drag up and down will change the brush radius
 * The UI scale can be made smaller to fit more buttons if you have good eyesight, or bigger if you have bad eyesight!
 * The wider menus can get in the way of the sculpt sometimes, you can make them transparent and non-blurred to allow you to see the sculpt beneath the menu.
-* If sculpting with a finger, use the offset option to move the brush center a little away from your finger.
+* If sculpting with a finger, use the [`Stroke offset`](stroke.md#stroke-offset) option to move the brush center a little away from your finger.
 * These and many more options can be found in the [Interface menu](./interface.md). 
 
 
@@ -137,7 +137,7 @@ Nomad is designed to work on tablets, but works well on phones as well. Sculptin
 Many 3d apps feature an inflate deformer, that will push all vertices along their normal by a controllable amount. While Nomad currently lacks deformers, it is possibe to emulate this behavior wtih the inflate brush:
 
 * Select the inflate brush
-* From the [Stroke menu](./stroke.md#stroke) change the stroke method to `Lock + Radius'
+* From the [Stroke menu](./stroke.md#stroke) change the stroke method to `Lock + radius`
 * Make the brush radius larger than your sculpt, zoom the camera back away from the sculpt if needed.
 * Click then drag a stroke on the surface of your object; when the radius is bigger than the object, the entire shape will be inflated evenly by a fixed amount.
 * Adjust the brush intensity to control the amount of inflation
@@ -148,7 +148,7 @@ Many 3d apps feature an inflate deformer, that will push all vertices along thei
 Voxel remesh is great for making evenly spaced polygons, but sometimes creates topology that will cause small lumps or pimples when smoothed. For example:
 
 * Use the crease brush on the default sphere and make a swirl
-* Voxel remesh with 'build multiresolution at 3'
+* Voxel remesh with `Build multiresolution` at 3
 * Smooth with high intensity
 * artifacts appear (easier to see with a high contrast matcap material):
 
@@ -158,7 +158,7 @@ To fix via sculpting, try the `Stable smoothing` option in the smooth settings. 
 
 ![](/videos/tip_pimples_stable_smooth.mp4)
 
-To fix the topolgy itself, use a new primitive, or the quad remesh tools, or an external 3d modeller, and project detail from the original mesh to the new one via `Topology -> Misc -> Reproject`. 
+To fix the topolgy itself, use a new primitive, or the quad remesh tools, or an external 3d modeller, and project detail from the original mesh to the new one via `Topology -> Bake -> Reproject → Vertex`. 
 
 ![](/videos/tip_pimples_reproject.mp4)
 

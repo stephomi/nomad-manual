@@ -1,218 +1,232 @@
-# ![](/icons/postprocess.webp) Son işleme {#post-process}
+# ![](/icons/postprocess.webp) Süreç sonrası işlemler {#post-process}
 
-Bu menü, render görünümünü etkilemek için Nomad’in birçok yönünü kontrol eder.
+Bu menü, işlemenin görünümünü etkilemek için Nomad'ın birçok yönünü kontrol eder.
 
 ![](/images/postprocess_overview_drac.webp)
 
-Post process kullanmak, sahnenizin nihai görünümünü önemli ölçüde değiştirebilir.
+Süreç sonrası işlemleri kullanmak sahnenizin nihai görünümünü önemli ölçüde değiştirebilir.
 
 ![](/images/postprocess_overview.webp)
-*Aynı sahne, post process öncesi ve sonrası, ek ışık veya malzeme değişikliği olmadan.*
+*Süreç sonrası işlemlerden önce ve sonra aynı sahne; ek ışık veya malzeme değişikliği yok.*
 
-Post process, cihazınıza bağlı olarak performansı ciddi şekilde etkileyebilir.
-Ayarlarınızı kaybetmeden hızlıca heykel/modelleme moduna dönebilmeniz için tüm post process’i devre dışı bırakan genel bir onay kutusu vardır.
-PBR render için, [Ambient Occlusion](#ambient-occlusion-ssao), [Reflection](#reflection-ssr) ve [Tone Mapping](#tone-mapping) etkin olmalıdır.
+Süreç sonrası işlemler, cihazınıza bağlı olarak performansı çok etkileyebilir.
+Tüm süreç sonrası işlemleri devre dışı bırakan genel bir `Süreç sonrası işlemler` onay kutusu vardır; böylece önayarlarınızı kaybetmeden hızlıca şekillendirmeye/modellemeye dönebilirsiniz.
+PBR işleme için [Ortam Oklüzyonu](#ambient-occlusion-ssao), [Yansıma](#reflection-ssr) ve [Ton Eşleştirme](#tone-mapping) etkin olmalıdır.
 
-Bununla birlikte, çoğu zaman heykel yaparken post process’in kapalı olmasını istersiniz; böylece render’ın şekline odaklanabilirsiniz.
+Yine de şekillendirirken, işlemenin kendisine değil şekle odaklanmak için çoğu zaman süreç sonrası işlemleri kapalı tutmak istersiniz.
 
 
 ## Kalite {#quality}
 
 ![](/images/postprocess_quality.webp)
-### Maksimum kare örnekleme {#max-frame-sampling}
-Nomad, tek bir kare render için belirli miktarda post process hesaplar; bu da gürültülü görünebilir. Bu kontrol, kaç kare render edileceğini ve ardından gürültülü artefaktların çoğunu gidermek için birbirine karıştırılacağını belirler. Bazı efektler ek örnek gerektirmez (ör. color grading), buna karşın global illumination gibi diğerleri gürültüsüz olmak için yüzlerce örnek gerektirebilir. 
 
-Viewport’ta bu, Nomad kendi haline bırakıldığında görülebilir; görüntü kalitesi maksimum örneğe kadar kademeli olarak iyileşir, sonra durur. Bu hesaplama sayısı, [Files menüsü](files) altındaki render bölümünde ‘export png’ tıklandığında da kullanılır.
+Bu seçenekler, performans pahasına işlemenin kalitesini artırır.
 
-### Çözünürlük çarpanı {#resolution-multiplier}
-Bu kaydırıcı, post process çözünürlüğünü kontrol eder. x1.0 değeri, render’ların cihazın piksel çözünürlüğünde yapıldığı anlamına gelir. x0.5 değeri, yarı çözünürlükte render eder; bu hızlıdır ama düşük kalitelidir. 1’den büyük bir değer, daha büyük boyutta render edip sonra küçültür. Bu, daha yüksek kalite, daha az gürültü ama daha uzun render süreleriyle sonuçlanır.
+### Maks. kare örnekleme {#max-frame-sampling}
+Nomad tek bir kare işlemesi için belirli miktarda süreç sonrası işlem hesaplar ve bu gürültülü görünebilir. Bu kontrol, gürültü kaynaklı kusurların çoğunu gidermek için kaç karenin işlenip birbiriyle harmanlanacağını belirler. Bazı efektler ek örnek gerektirmez (örneğin renk düzenleme), yumuşak gölgeler ve küresel aydınlanma gibi diğerleri ise gürültüsüz olmak için yüzlerce örnek gerektirebilir.
 
-### Maksimum örnek {#max-samples}
+Görüntü alanında bunu Nomad'ı kendi haline bıraktığınızda görebilirsiniz: görüntü kalitesi maksimum örnek sayısına kadar yavaş yavaş iyileşir, sonra durur. Durduktan sonra Nomad hiçbir şey yapmaz, bu da pil tasarrufu sağlar. Bu hesaplama sayısı, [Dosyalar menüsündeki](files) işleme bölümünde 'export png' tıklandığında da kullanılır.
 
-Bu, post process kalitesini artırır, ancak genellikle `Full resolution` daha fazla etkiye sahiptir. 
+Kaydırıcının yanındaki onay kutusu kare örneklemeyi açıp kapatır.
 
-### Gürültü giderici (oidn) {#oidn}
+### İşleme Çözünürlüğü {#resolution-multiplier}
+Bu kaydırıcı işlemenin çözünürlüğünü kontrol eder. x1.0 değeri, işlemelerin cihazın piksel çözünürlüğünde yapılacağı anlamına gelir. x0.5 değeri yarı çözünürlükte işler; hızlıdır ama kalitesi düşüktür. 1'den büyük bir değer daha büyük bir boyutta işler, sonra küçültür. Bu daha yüksek kalite ve daha az gürültü sağlar, ama işleme süresi uzar.
 
-Görüntüye bir denoiser uygular. Bu, çok daha düşük örnek sayıları kullanmanıza izin verebilir. Yalnızca `Full Resolution` etkinse çalışır. Denoise işleminin tüm örnekler hesaplandıktan sonra gerçekleştiğini ve işlemci açısından yoğun olabileceğini unutmayın.
+Performans üzerinde büyük etkisi vardır, bu yüzden x1.25 veya altında tutmaya çalışın. Bu değer ayarlara kaydedilmez ve [Pixel Art](#pixel-art) efekti onu geçersiz kılar.
 
-## Hazır ayar tarayıcı {#preset-browser}
+### ![](/icons/intensity.webp) Maks. örnek {#max-samples}
+
+Performans pahasına süreç sonrası efektlerin kalitesini artırır.
+
+### ![](/icons/material_dithering.webp) Renk Taklidi {#dithering}
+
+Bantlaşma kusurlarını azaltmak için piksellere renk taklidi (dithering) uygular (örneğin gradyanlarda veya vinyette). Genellikle etkin olmalıdır, ama belirli işlemler için kapatılabilir (örneğin derinlik haritaları dışa aktarmak veya veriye özel diğer işlemler).
+
+### ![](/icons/denoise.webp) Gürültü Giderici (oidn) {#oidn}
+
+Tüm kareler biriktirildikten sonra görüntüye bir gürültü giderici uygular. Bu, çok daha düşük örnek sayıları kullanmanıza olanak tanıyabilir. Gürültü giderme işlemciyi yoğun kullanır, bu yüzden yalnızca görüntünüz gürültülüyse etkinleştirin. Her cihazda kullanılamaz.
+
+## Önayar tarayıcısı {#preset-browser}
 ![](/images/postprocess_presets.webp)
-Görsele tıklamak, bir post process preset koleksiyonu gösterir. Kendi preset’lerinizi tanımlamak için birini seçin, ‘clone’a tıklayın, değişiklik yapın. Kaydetmek için preset görseline tıklayın, preset tarayıcısının içinde tekrar tıklayın ve ‘save’i seçin.
+`Süreç sonrası işlemler` başlığının altındaki görsele tıklamak bir süreç sonrası işlem önayarları koleksiyonu gösterir. Mevcut ayarlarınızdan bir önayar oluşturmak için `Yeni` seçeneğini kullanın. Yerleşik önayarlar yalnızca klonlanabilir: kendi önayarınızı tanımlamak için birini seçin, `Klonlama` düğmesine tıklayın ve değişikliklerinizi yapın. Bir önayarda henüz kaydedilmemiş değişiklikler varsa `Kaydedilmemiş değişiklikler!` gösterilir; kaydetmek için önayar görseline tıklayın, önayar tarayıcısının içine tekrar tıklayın ve `Kaydet` seçeneğini seçin.
+
+## Kısayol çubuğu {#shortcut-bar}
+Süreç sonrası işlemler etkinken, menünün altındaki bir çubuk tüm efektleri listeler (`SSR`, `SSGI`, `SSAO`, `DoF`, `Parlama`...). Bölümüne atlamak için birine dokunun. Kapalı efektler gri görünür; böylece çubuk, geçerli önayarın ne yaptığının hızlı bir özeti işlevini de görür.
+
+## ![](/icons/postprocess_ssr.webp) Yansıma (SSR) {#reflection-ssr}
+Bu seçenekle nesneler, ekranda göründükleri sürece sahnedeki diğer nesneleri yansıtabilir.
+Sahnenizde metalik ve parlak nesneler varsa muhtemelen bu seçeneği kullanmalısınız.
+Bu seçenek [Aydınlatılmış (PBR)](shading.md#pbr) gölgelendirme modunu gerektirir.
 
 
-## Yansıma (SSR) {#reflection-ssr}
-Bu seçenekle, nesneler sahnedeki diğer nesneleri, bu nesneler ekranda görünür olduğu sürece, yansıtabilir.
-Sahnenizde metalik ve parlak nesneler varsa, bu seçeneği muhtemelen kullanmalısınız.
-Bu seçenek yalnızca PBR modunda etkilidir.
-
-
-| SSR off                    | SSR on                    |
+| SSR kapalı                    | SSR açık                    |
 | :------------------------: | :-----------------------: |
 | ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
-## Küresel Aydınlatma (SSGI) {#global-illumination-ssgi}
+## ![](/icons/postprocess_ssgi.webp) Küresel Aydınlanma (SSGI) {#global-illumination-ssgi}
 
-Global illumination, ışığın yüzeyler arasında nasıl sektiğini simüle eder; örneğin kırmızı bir duvar, yakındaki beyaz bir nesneye kırmızı ışık yansıtacaktır. Ambient occlusion ve yansımalarla birlikte kullanıldığında, bir render’ın gerçekçiliğini büyük ölçüde artırabilir. 
+Küresel aydınlanma, ışığın yüzeyler arasında nasıl sektiğini simüle eder; örneğin kırmızı bir duvar yakındaki beyaz bir nesneye kırmızı yansıtır. Ortam oklüzyonu ve yansımalarla birlikte kullanıldığında bir işlemenin gerçekçiliğini büyük ölçüde artırabilir. Yansımalar gibi, [Aydınlatılmış (PBR)](shading.md#pbr) gölgelendirme modunu gerektirir.
 
-`Strength` - Global illumination yoğunluğu. 
+`Şiddet` - Küresel aydınlanmanın yoğunluğu.
 
 
 
-| SSGI off                     | SSGI on                    |
-| :--------------------------: | :------------------------: |
+| SSGI kapalı                   | SSGI açık                   |
+| :------------------------: | :-----------------------: |
 | ![](/images/ssgi_off.webp) | ![](/images/ssgi_on.webp) |
 
-_Bir spot ışık kürenin arkasında, tavana doğru yöneltilmiş. SSGI kapalıyken yalnızca tavan aydınlanıyor. SSGI açıkken ışık tavandan duvarlara, oradan da küreye sekerek yayılıyor._
+_Kürenin arkasında, tavana yönelmiş bir spot ışık var. SSGI kapalıyken yalnızca tavan aydınlanır. SSGI açıkken ışık tavandan duvarlara, oradan da küreye seker._
 
-## Ortam Örtme (SSAO) {#ambient-occlusion-ssao}
-Ambient occlusion, ışığın ulaşma şansının daha az olduğu bölgeleri (köşeler vb.) karartır.
-Etki yalnızca model geometrisine bağlıdır.
+## ![](/icons/postprocess_ssao.webp) Ortam Oklüzyonu (SSAO) {#ambient-occlusion-ssao}
+Ortam oklüzyonu, ışığın ulaşma ihtimalinin daha düşük olduğu alanları (köşeler vb.) karartır.
+Efekt yalnızca modelin geometrisine bağlıdır.
 
-* `Strength`- Etkinin yoğunluğu.
-* `Size`- Etkinin ne kadar yaygın olduğu.
-* `Curvature bias` - Etkinin, yüzeydeki değişimlere göre ne kadar hassas olduğu.
-* `Color` - Creative efektler için, occlusion’a çarpılan bir renk tonu.
+* `Şiddet`- Efektin yoğunluğu.
+* `Büyüklük`- Efektin ne kadar geniş bir alana yayıldığı.
+* `Kalınlık` - Engelleyen nesneler için varsayılan derinlik kalınlığı, `Büyüklük` değerinin yüzdesi olarak.
+* `Ton` - Oklüzyonla çarpılan bir renk; yaratıcı efektler için kullanılır.
 
 
-| SSAO off                     | SSAO on                     |
-| :--------------------------: | :-------------------------: |
+| SSAO kapalı                    | SSAO açık                    |
+| :-------------------------: | :------------------------: |
 | ![](/images/ssao_off.webp) | ![](/images/ssao_on.webp) |
 
 ::: tip
-AO, çoğunlukla ortam ışığıyla aydınlatılan alanlarda en görünür olacaktır. Güçlü doğrudan ışık altındaki alanlar çok daha zayıf AO etkisi alır.
+AO en çok, ağırlıklı olarak ortam ışığıyla aydınlanan alanlarda görünür. Güçlü doğrudan ışık alan alanlarda AO efekti çok daha zayıf olur.
 
 :::
 
-## Alan Derinliği (DOF) {#depth-of-field-dof}
-Odak dışındaki bölgelerde bulanıklık efekti ekler.
+## ![](/icons/postprocess_dof.webp) Alan Derinliği {#depth-of-field-dof}
+Odak dışındaki bölgeye bir bulanıklık efekti ekler.
 
-Odak noktasını değiştirmek için modelinize dokunmanız yeterlidir.
+Odak noktasını değiştirmek için modelinize dokunmanız yeterli.
 
-* `Far blur` - Odak noktasının arka tarafına uygulanacak bulanıklık miktarı.
-* `Near blur` - Odak noktası ile kamera arasına uygulanacak bulanıklık miktarı.
-
-
-| DOF off                    | DOF focus on far ring       | DOF focus on close ring     |
-| :------------------------: | :-------------------------: | :-------------------------: |
-| ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp)  |
+* `Diyafram modu` - Bulanıklığı, aşağıdaki iki bulanıklık kaydırıcısı yerine tek bir kamera diyaframıyla yönetir.
+* `Diyafram` (_yalnızca diyafram modunda_) - Gerçek bir fotoğraf makinesindeki gibi objektifin f-sayısı. Daha düşük bir değer diyaframı açar ve daha fazla bulanıklaştırır.
+* `Uzaklık bulanıklığı` - Odak noktasının uzak tarafına uygulanacak bulanıklık miktarı.
+* `Yakınlık bulanıklığı` - Odak noktası ile kamera arasına uygulanacak bulanıklık miktarı.
 
 
-## Parlama {#bloom}
-Bloom, sahnenizdeki parlak alanların parlamasını sağlar.
+| DOF kapalı                   | DOF uzaktaki halkaya odaklı       | DOF yakındaki halkaya odaklı    |
+| :-----------------------: | :-------------------------: | :------------------------: |
+| ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp) |
 
-* `Intensity` - etkinin gücü.
-* `Radius` - Etkinin yayılımı.
-* `Threshold` - Pikselin bloom yapmaya başlaması için sahnede ne kadar parlak olması gerektiği. Bu değeri düşük ayarlamak her şeyi bloom’latır; yüksek ayarlamak yalnızca en parlak piksellerin bloom yapmasına izin verir.
-* `Color` - creative efektler için bloom’a eklenebilecek bir renk tonu.
 
-| Bloom off                     | Bloom with radius 0          | Bloom with radius 1          |
-| :---------------------------: | :--------------------------: | :--------------------------: |
+## ![](/icons/sun.webp) Parlama {#bloom}
+Parlama, sahnenizin parlak bölgelerinin ışıldamasını sağlar.
+
+* `Yoğunluk` - efektin gücü.
+* `Yarıçap` - Efektin yayılımı.
+* `Eşik` - Piksellerin parlamaya başlaması için sahnede ne kadar parlak olmaları gerektiği. 0'da her şey parlar; yüksek bir değer yalnızca en parlak piksellerin parlamasına izin verir.
+* `Ton` - yaratıcı efektler için parlamaya eklenebilecek bir renk.
+
+| Parlama kapalı                    | Yarıçap 0 ile parlama         | Yarıçap 1 ile parlama         |
+| :--------------------------: | :-------------------------: | :-------------------------: |
 | ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
 
-## Ton Eşleme {#tone-mapping}
-Tone Mapping, HDR değerleri `[0, 1]` aralığına yeniden eşleyen bir işlemdir.
-Bunu kullanmazsanız (veya `none` seçerseniz), 1’den büyük herhangi bir renk bileşeni kırpılır.
-Bu aralığın üzerindeki tüm renk varyasyonları kaybolur.
+## ![](/icons/postprocess_tone.webp) Ton Eşleştirme {#tone-mapping}
+Ton eşleştirme, HDR değerlerini `[0, 1]` aralığına yeniden eşleyen bir işlemdir.
+Bunu kullanmazsanız (veya `Yok` seçerseniz), 1'den büyük her renk bileşeni kırpılır.
+Bu aralığın üzerindeki tüm renk farklılıkları da kaybolur.
 
-* `None/Neutral/Agx/ACES` - hangi tonemapper’ın kullanılacağı. `None` yeniden eşleme yapmaz (ancak diğer kontroller yine de çalışır). Diğer seçenekler, farklı film stokları seçmeye benzer; aşırı pozlanmış değerler ve renklerle farklı şekillerde başa çıkarlar. Bu çok derin bir konu; daha fazla bilgi için tone mapping, Agx, ACES üzerine araştırma yapın!
-* `Exposure` - Görüntünün genel parlaklığı; bir kamerada diyafram ayarlamaya benzer. Bir görüntüyü küresel olarak hızlıca aydınlatmak veya karartmak için kullanılabilir.
-* `Saturation` - Renk yoğunluğu. 1 nötrdür, 0 monokromdur, 1’in üzerindeki değerler giderek daha doygundur.
-* `Contrast` - Karanlıkları daha karanlık, aydınlıkları daha aydınlık yapar. Dikkatli kullanın; yüksek değerlerde artefaktlara neden olabilir.
+* `Yok/Nötr/Agx/ACES` - hangi ton eşleyicinin kullanılacağı. `Yok` hiçbir yeniden eşleme yapmaz (ama diğer kontroller yine çalışır). Diğer seçenekler farklı film türleri seçmeye benzer; aşırı pozlanmış değerleri ve renkleri farklı şekillerde ele alırlar. Bu çok derin bir konu; daha fazla bilgi için ton eşleştirme, Agx ve ACES hakkında araştırma yapın!
+* `Pozlandırma` - görüntülerin genel parlaklığı; bir fotoğraf makinesinde diyaframı ayarlamaya benzer. Bir görüntüyü topluca aydınlatmanın veya karartmanın hızlı bir yolu olabilir.
+* `Doygunluk` - renk gücü. 1 nötrdür, 0 tek renklidir (monokrom), 1'in üzerindeki değerler giderek daha doygun olur.
+* `Kontrast` - Koyuları daha koyu, açıkları daha açık yapar. Dikkatli kullanın, yüksek değerlerde kusurlara yol açabilir.
 
-`Tone Mapping` devre dışıyken, pikseller çok parlak olduğu için bazı detayların kaybolduğuna dikkat edin.
+`Ton Eşleştirme` devre dışıyken bazı ayrıntıların, pikseller fazla parlak olduğu için kaybolduğuna dikkat edin.
 
-| Tone Mapping off             | Tone Mapping on             |
-| :--------------------------: | :-------------------------: |
+| Ton Eşleştirme kapalı            | Ton Eşleştirme açık            |
+| :-------------------------: | :------------------------: |
 | ![](/images/tone_off.webp) | ![](/images/tone_on.webp) |
 
 ::: tip
-Tone mapping, global illumination etkisini güçlendirebilir. Ortam haritasının yoğunluğunu azaltıp birincil ışık kaynağını artırırsanız, tone mapping `exposure` değerini yükselterek daha fazla sekme ışığı etkisi görebilirsiniz.
+Ton eşleştirme, küresel aydınlanmanın etkisini güçlendirebilir. Ortam haritasının yoğunluğunu düşürüp ana ışık kaynağını artırırsanız, sekme ışığı efektlerini daha çok görmek için ton eşleştirmenin `Pozlandırma` değerini yükseltebilirsiniz.
 :::
 
-## Renk Derecelendirme {#color-grading}
-Photoshop’taki curves aracına benzer şekilde, görüntüdeki renk dengesini ve dağılımını kontrol etmenizi sağlar. `main` kontrolü tüm renk dengesini etkiler; `red`/`green`/`blue` kontrolleri ince ayar yapmanıza izin verir. 
+## ![](/icons/postprocess_tone_curve.webp) Renk Düzenleme {#color-grading}
+Photoshop'taki eğriler aracına benzer şekilde, görüntüdeki rengin dengesini ve dağılımını kontrol etmenizi sağlar. `Ana` kontrolü tüm renk dengesini etkiler, `Kırmızı`/`Yeşil`/`Mavi` kontrolleri ise ince ayar yapmanızı sağlar.
 
-| Color Grading off              | Color Grading on              |
-| :----------------------------: | :---------------------------: |
+| Renk Düzenleme kapalı             | Renk Düzenleme açık             |
+| :---------------------------: | :--------------------------: |
 | ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
-## Eğrilik {#curvature}
-Eğrilikte hızlı değişimlerin olduğu yerleri tespit eder ve bu bölgelere bir renk uygular.
+## ![](/icons/postprocess_cavity.webp) Eğrilik {#curvature}
+Eğriliğin hızlı değiştiği yerleri algılar ve bu bölgelere bir renk uygular.
 
-* `Factor` - etkinin genel yoğunluğu
-* `Bump` - keskin dışbükey değişimleri ne kadar bulacağı ve seçilen rengi (varsayılan olarak beyaz) oraya yerleştireceği
-* `Cavity` - içbükey değişimleri ne kadar tespit edeceği ve seçilen rengi (varsayılan olarak siyah) oraya yerleştireceği
+* `Faktör` - efektin genel yoğunluğu
+* `Yumru` - keskin dışbükey değişiklikleri ne kadar bulacağı ve seçilen rengi oraya ne kadar uygulayacağı (varsayılan olarak beyaz)
+* `Boşluk` - içbükey değişiklikleri ne kadar algılayacağı ve seçilen rengi oraya ne kadar uygulayacağı (varsayılan olarak siyah)
+* `Kalınlık` - algılanan kenarların ne kadar geniş olduğu.
+
+`Yumru` ve `Boşluk` seçeneklerinin yanında, bir renk örneği rengi seçer, küçük bir düğme de bu rengin görüntüyle nasıl karışacağını seçer.
 
 
-| Curvature off                     | Curvature on                    |
-| :-------------------------------: | :-----------------------------: |
+| Eğrilik kapalı                    | Eğrilik açık                   |
+| :------------------------------: | :----------------------------: |
 | ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
 
-## Kromatik Sapma {#chromatic-aberration}
-Ekran kenarlarında ışığın ayrışmasını simüle ederek lens artefaktlarını taklit eder.
+## ![](/icons/postprocess_chromatic.webp) Kromatik aberasyon {#chromatic-aberration}
+Işığın ekran kenarlarında renklerine ayrışmasıyla oluşan objektif kusurlarını simüle eder.
 
-* `Strength` - Görüntünün kırmızı/yeşil/mavi kısımlarının ekran kenarlarına doğru ne kadar ayrılacağı
+* `Şiddet` - görüntünün kırmızı/yeşil/mavi bileşenlerinin ekran kenarlarına doğru ne kadar ayrışacağı
 
-| Chromatic off                  | Chromatic on                  |
-| :----------------------------: | :---------------------------: |
+| Kromatik kapalı                 | Kromatik açık                 |
+| :---------------------------: | :--------------------------: |
 | ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
 
-## Vinyet {#vignette}
-Ekran kenarlarını karartarak lens artefaktlarını simüle eder.
+## ![](/icons/postprocess_vignette.webp) Vinyet {#vignette}
+Ekran kenarlarını karartarak objektif kusurlarını simüle eder.
 
-* `Size` - Görüntünün üzerine yerleştirilen ters elipsin boyutu
-* `Hardness` - Elipsin görüntünün üzerine ne kadar bulanık veya keskin karıştırıldığı.
+* `Büyüklük` - Görüntünün üzerine yerleştirilen ters bir elipsin büyüklüğü
+* `Sertlik` - Elipsin görüntünün üzerine ne kadar yumuşak veya keskin karıştığı.
+* `Ton` - Vinyetin rengi, varsayılan olarak siyah.
 
 
-| Vignette off                     | Vignette on                     |
-| :------------------------------: | :-----------------------------: |
+| Vinyet kapalı                    | Vinyet açık                    |
+| :-----------------------------: | :----------------------------: |
 | ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
-## Gren {#grain}
-Bir grain efekti ekler; görüntünün biraz daha az yapay görünmesine yardımcı olabilir.
+## ![](/icons/postprocess_grain.webp) Tanecik {#grain}
+Bir tanecik (gren) efekti ekler; görüntünün biraz daha az yapay görünmesine yardımcı olabilir.
 
-* `Strength` - Görüntüye eklenen grain/gürültü miktarı.
+* `Şiddet` - görüntüye eklenen tanecik/gürültü miktarı.
 
 
-| Grain off                     | Grain on                    |
-| :---------------------------: | :-------------------------: |
+| Tanecik kapalı                    | Tanecik açık                   |
+| :--------------------------: | :------------------------: |
 | ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
 
-## Keskinlik {#sharpness}
-Photoshop veya fotoğraf işleme uygulamalarındakine benzer bir keskinleştirme efekti.
+## ![](/icons/sharpen.webp) Keskinlik {#sharpness}
+Photoshop'takine veya fotoğraf düzenleme uygulamalarındakine benzer bir keskinleştirme efekti.
 
-* `Strength` - Görüntüye uygulanan keskinleştirme miktarı.
+* `Şiddet` - görüntüye uygulanan keskinleştirme miktarı.
 
 
-| Sharpness off                   | Sharpness on                  |
-| :-----------------------------: | :---------------------------: |
+| Keskinlik kapalı                  | Keskinlik açık                 |
+| :----------------------------: | :--------------------------: |
 | ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
-## Piksel Sanatı {#pixel-art}
-Retro oyun piksel sanatını simüle eder.
+## ![](/icons/postprocess_pixel_art.webp) Pixel Art {#pixel-art}
+Retro oyunların piksel sanatını simüle eder. Bu efekt [İşleme Çözünürlüğü](#resolution-multiplier) ayarını geçersiz kılar.
 
-* `Slider` - Piksel boyutu
-* `Allow frame sampling` - Çok fazla siyah piksel görürseniz, varsayılan örneklemeyi geçersiz kılacak bu seçeneği açmayı deneyin.
+* `Kaydırıcı` - piksellerin büyüklüğü
+* `Kare örneklemeye izin ver` - çok sayıda siyah piksel görüyorsanız bunu açmayı deneyin. Bu seçenek kapalıyken pixel art efekti [kare örneklemeyi](#max-frame-sampling) kapatır.
 
-| Pixel off                    | Pixel on                    |
-| :--------------------------: | :-------------------------: |
+| Piksel kapalı                   | Piksel açık                   |
+| :-------------------------: | :------------------------: |
 | ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
-## Tarama çizgisi {#scanline}
+## ![](/icons/postprocess_scanline.webp) Tarama çizgisi {#scanline}
 Eski CRT monitörlerin görünümünü simüle eder.
 
-* `Factor` - Çizgilerin gücü
-* `Spacing` - Çizgilerin boyutu
+* `Faktör` - çizgilerin gücü
+* `Aralık` - çizgilerin büyüklüğü
 
-| Scanline off                    | Scanline on                    |
-| :-----------------------------: | :----------------------------: |
+| Tarama çizgisi kapalı                   | Tarama çizgisi açık                   |
+| :----------------------------: | :---------------------------: |
 | ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
-
-
-## Noktasal örnekleme {#dithering}
-
-Pikselleri dither ederek banding artefaktlarını azaltır. Genellikle etkin olmalıdır, ancak belirli işlemler için (ör. depth map dışa aktarma veya veri odaklı diğer işlemler) kapatılabilir.

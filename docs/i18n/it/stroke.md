@@ -1,169 +1,211 @@
-# ![](/icons/pencil.webp) Tratto {#stroke}
+# ![](/icons/brush.webp) Tratto {#stroke}
 
 ---
 ![](/images/stroke_overview.webp) 
 
 ## Panoramica {#overview}
 
-Puoi personalizzare il comportamento del tratto per la maggior parte dei pennelli degli strumenti.
-Le impostazioni sono simili a quelle presenti nelle applicazioni di pittura 2D, tuttavia alcune opzioni sono specifiche per lo sculpting e il 3D.
+Puoi personalizzare il comportamento del tratto della maggior parte dei pennelli degli strumenti.
+Le impostazioni sono simili a quelle delle app di pittura 2d, ma alcune opzioni sono specifiche della scultura e del 3d.
 
-Le opzioni sono suddivise in 5 sottomenu:
+Le opzioni sono divise in 5 sottomenu:
 
 | Nome     | Icona                        | Descrizione                                                        |
 | :------: | :--------------------------: | :----------------------------------------------------------------: |
-| Stroke   | ![](/icons/stroke_dot.webp) | Controlla come il tratto viene applicato al modello                |
-| Alpha    | ![](/icons/alpha.webp)      | Come viene usata una texture in scala di grigi per l’impronta del pennello |
-| Falloff  | ![](/icons/falloff.webp)    | Controlla come la forza del pennello cambia dal centro al bordo    |
-| Filter   | ![](/icons/filter.webp)     | Come il pennello è influenzato dalla geometria del modello         |
-| Pressure | ![](/icons/pressure.webp)   | Controlla la risposta alla pressione della penna                   |
+| Tratto   | ![](/icons/brush.webp)      | Controlla come il tratto viene applicato al modello                |
+| Alfa     | ![](/icons/alpha.webp)      | Come una texture in scala di grigi viene usata per l'impronta del pennello |
+| Decadimento | ![](/icons/falloff.webp) | Controlla come la forza del pennello varia dal centro al bordo     |
+| Filtro   | ![](/icons/filter.webp)     | Come il pennello è influenzato dalla geometria del modello         |
+| Pressione | ![](/icons/pressure.webp)  | Controlla la risposta alla pressione dello stilo                   |
 
 ::: tip
-Non tutte le opzioni di tratto si applicano a tutti gli strumenti. Le opzioni di tratto che non sono usate dallo strumento corrente saranno disabilitate o nascoste. 
+Non tutte le opzioni del tratto valgono per tutti gli strumenti. Quelle che lo strumento corrente non usa sono disattivate o nascoste.
 :::
 
 
-## Tratto {#stroke-1}
+## ![](/icons/brush.webp) Tratto {#stroke-1}
 
-### Raggio {#radius}
+### ![](/icons/radius.webp) Raggio {#radius}
 
 ![](/images/stroke_radius.webp)
 
-#### Condividi raggio {#share-radius}
+Le opzioni del raggio sono impostazioni globali: valgono per tutti gli strumenti.
 
-Quando è abilitato, tutti gli strumenti useranno lo stesso raggio; l’impostazione predefinita è che ogni strumento abbia il proprio raggio.
+#### Spazio {#size}
 
-#### Dimensione {#size}
+* `Schermo` - il raggio è espresso in unità dello schermo. Se imposti un raggio di 100 pixel, resterà di 100 pixel sia che tu ingrandisca sia che tu rimpicciolisca la vista.
+* `Mondo (3D)` - il raggio è espresso in unità 3d. Per esempio, se crei una sfera e dai al raggio la stessa dimensione della sfera, il raggio resterà grande quanto la sfera mentre ingrandisci o rimpicciolisci la vista.
 
-* Schermo - il raggio è impostato in unità schermo. Se imposti il raggio a 100 pixel di larghezza, rimarrà di 100 pixel indipendentemente dallo zoom.
-* Costante (3D) - il raggio è impostato in unità 3D. Per esempio, se crei una sfera e imposti il raggio alla stessa dimensione della sfera, il raggio rimarrà della stessa dimensione della sfera mentre fai zoom in e out.
+#### ![](/icons/link.webp) Sincronizza scorciatoia {#sync-shortcut}
+
+Se attivata, le impostazioni di raggio e silhouette restano sincronizzate quando passi ai pennelli di scorciatoia (`Leviga`, `Maschera` o `Nascondi`). Così una rapida passata di levigatura o di maschera usa la stessa dimensione del pennello dello strumento che stavi usando.
+
+#### ![](/icons/link.webp) Condividi raggio {#share-radius}
+
+Se attivata, tutti gli strumenti usano lo stesso raggio. Di base, ogni strumento ha il proprio raggio.
 
 
-### Tratto {#stroke-type}
+### Tipo di tratto {#stroke-type}
 
 ![](/images/stroke_strokemode.webp)
 
-I tratti possono funzionare in più modalità:
+I tratti possono funzionare in diverse modalità:
 
 ### ![](/icons/stroke_dot.webp) Punto {#dot}
-Trascina come un normale tratto di pittura. 
+Trascina come in un normale tratto di pittura.
 ![](/videos/stroke_dot.mp4) 
 
 ### ![](/icons/stroke_roll.webp) Rotolamento {#roll}
-L’alpha del pennello verrà ruotata per seguire la direzione del tratto, utile per creare cuciture di tessuto. 
+L'alfa del pennello ruota per seguire la direzione del tratto, utile per creare le cuciture di un tessuto.
 ![](/videos/stroke_roll.mp4) 
 
- ### ![](/icons/radius.webp) Blocca + raggio
- Applica un’impronta di pennello con **_altezza_** fissa. Il trascinamento imposta scala e rotazione.
+### ![](/icons/radius.webp) Blocco + raggio {#lock-radius}
+Applica un'impronta del pennello con **_altezza_** fissa. Trascinando imposti la scala e la rotazione.
 ![](/videos/stroke_lock_radius.mp4) 
 
-### ![](/icons/falloff.webp) Blocco + intensità {#lock-intensity}
-Applica un’impronta di pennello con **_raggio_** fisso. Il trascinamento imposta altezza e rotazione.
+### ![](/icons/normal.webp) Blocco + intensità {#lock-intensity}
+Applica un'impronta del pennello con **_raggio_** fisso. Trascinando imposti l'altezza e la rotazione.
 ![](/videos/stroke_lock_intensity.mp4) 
+
+::: tip
+Le modalità `Blocco + raggio` e `Blocco + intensità` ignorano le impostazioni di [Pressione](#pressure), perché è già il trascinamento a impostare la dimensione e la forza.
+:::
 
 ![](/images/stroke_strokemodemove.webp)
 
-Gli strumenti `Move` e `Drag` hanno 3 opzioni proprie:
+Gli strumenti `Sposta` e `Trascina` hanno 3 opzioni proprie:
 
 ### ![](/icons/snake.webp) Trascina {#drag}
 
-Continuerà ad aggiornare ciò che è all’interno del raggio del pennello durante il tratto. Un tratto veloce lascerà indietro la superficie, mentre un tratto lento tratterrà il materiale, creando forme più lunghe. Questa è la modalità predefinita per lo strumento `Drag`. Con la `Dynamic Topology` può essere usato per creare estrusioni simili a serpenti. 
+Aggiorna di continuo ciò che si trova nel raggio del pennello durante il tratto. Un tratto veloce lascia indietro la superficie, mentre un tratto lento trattiene il materiale, creando forme più lunghe. È la modalità predefinita dello strumento `Trascina`. Con la `Topologia dinamica` puoi usarla per creare estrusioni a forma di serpente.
 ![](/videos/stroke_drag.mp4) 
 
 
-### ![](/icons/grab.webp) Afferra {#grab}
-Selezionerà ciò che è all’interno del raggio del pennello quando il pennello viene avviato, e manterrà quella selezione. È utile per operazioni di spostamento più precise, poiché puoi regolare con cura la distanza dello spostamento senza muovere accidentalmente più di quanto selezionato inizialmente. Questa è la modalità predefinita per lo strumento `Move`.
+### ![](/icons/grab.webp) Cattura {#grab}
+Seleziona ciò che si trova nel raggio del pennello all'inizio del tratto e mantiene quella selezione. È utile per spostamenti più precisi: puoi regolare con cura la distanza dello spostamento senza rischiare di muovere più di quanto avevi selezionato. È la modalità predefinita dello strumento `Sposta`.
 ![](/videos/stroke_grab.mp4) 
 
 
-### ![](/icons/radius.webp) Blocco + raggio (trascina) {#lock-radius-drag}
-Il raggio impostato dall’utente viene ignorato e viene impostato dinamicamente in base a quanto il tratto viene trascinato lontano dal punto di partenza. Distanza piccola = raggio piccolo, distanza maggiore = raggio più grande. Usa il cursore di intensità per controllare la forma del falloff. Utile per abbozzare forme organiche e gommose.
+### ![](/icons/radius.webp) Blocco + raggio (trascinamento) {#lock-radius-drag}
+Il raggio scelto viene ignorato e si imposta dinamicamente in base a quanto trascini il tratto lontano dal punto di partenza: piccola distanza = raggio piccolo, distanza maggiore = raggio più grande. Usa il cursore dell'intensità per controllare la forma del decadimento. Utile per abbozzare forme organiche e gommose.
 ![](/videos/stroke_lockradius_drag.mp4) 
 
+Alcuni altri strumenti elencano qui i propri tipi di tratto, per esempio `Rilassa`, `Leviga` e `Sfumino` per gli strumenti di levigatura, o forme come `Lazo` e `Curva` per gli strumenti basati su una selezione. Sono descritti con ciascuno [strumento](tools.md).
 
 
-### Regola intensità spaziatura {#adjust-spacing-intensity}
+### Regola l'intensità della spaziatura {#adjust-spacing-intensity}
 ![](/images/stroke_space_smooth.webp)
 
-I tratti con una spaziatura bassa (inferiore al 50%) possono accumularsi rapidamente, rendendo i tratti più intensi rispetto a valori di spaziatura più alti. Questa opzione compenserà questo effetto, così i tratti avranno approssimativamente la stessa intensità indipendentemente dalla spaziatura.
+I tratti con una spaziatura bassa (sotto il 50%) si accumulano in fretta e risultano più intensi di quelli con una spaziatura più alta. Questa opzione compensa l'effetto, così i tratti hanno più o meno la stessa intensità qualunque sia la spaziatura.
 
 ### Spaziatura tratto {#stroke-spacing}
-Quanto distanziare l’applicazione di ogni impronta di pennello durante un’operazione di trascinamento. Valori inferiori al 100% si sovrapporranno, dando l’impressione di un tratto continuo. Valori superiori al 100% inizieranno a lasciare spazi, utili per scolpire dettagli come cuciture o cerniere.
+La distanza tra un'impronta e l'altra durante un trascinamento. Sotto il 100% le impronte si sovrappongono e danno l'aspetto di un tratto continuo. Sopra il 100% iniziano a lasciare degli spazi, utili per scolpire dettagli come cuciture o cerniere.
 
-### Stabilizzatore «lazy rope» {#lazy-rope-stabilizer}
-I tratti rimarranno indietro rispetto alla posizione del puntatore di una certa distanza. Può essere usato per disegnare linee fluide.
+### Stabilizzatore di corda ritardato {#lazy-rope-stabilizer}
+Il tratto segue il puntatore a una certa distanza, come se fosse tirato da una corda. Serve a disegnare linee morbide.
 ![](/videos/stroke_lazy_rope.mp4) 
 
 ### Levigatura tratto {#stroke-smoothing}
-Media più posizioni del puntatore per ottenere un tratto più fluido.
-Con valori alti, il tratto rimarrà indietro rispetto al puntatore ma alla fine lo raggiungerà.
+Fa la media di più posizioni del puntatore per ottenere un tratto più morbido.
+Con valori alti il tratto resta indietro rispetto al puntatore, ma finisce per raggiungerlo.
 È utile per disegnare linee morbide.
 
 ### Raggio di aggancio {#snap-radius}
-Aggancia l’inizio del tratto alla fine del tratto precedente. Il raggio determina quanto lontano cercare la fine del tratto precedente. Può essere utile quando si disegnano linee lunghe e continue, facendo pause frequenti.
+Aggancia il tratto al precedente quando il puntatore parte vicino al punto in cui è finito l'ultimo tratto. Il raggio indica fino a che distanza cercare la fine del tratto precedente. Può servire per disegnare lunghe linee continue facendo spesso delle pause.
+
+### ![](/icons/trail.webp) Scia {#trail}
+
+Se attivata, ogni nuova impronta riapplica anche gli ultimi punti del tratto alle sue spalle. `Conteggio scia` imposta quanti punti vengono riapplicati, `Intensità scia` quanto sono forti e `Raggio scia` di quanto si ingrandiscono.
+
+La scia funziona solo con il tipo di tratto `Punto`, e non con l'[influenza del decadimento](#influence) `Cresta`.
 
 ### ![](/icons/silhouette.webp) Silhouette {#silhouette}
 ![](/images/stroke_silhouette.webp)
-Per impostazione predefinita i tratti influenzeranno solo la superficie del modello all’interno del raggio del pennello. Quando la silhouette è abilitata, il tratto verrà proiettato attraverso l’intero modello. Può essere molto utile durante il blocco iniziale di un modello, o per forme che richiedono lati che rimangano perpendicolari.
+Di base i tratti agiscono solo sulla superficie del modello compresa nel raggio del pennello. Con la silhouette attiva, il tratto viene proiettato attraverso tutto il modello. È molto utile per abbozzare le forme iniziali di un modello, o per forme i cui lati devono restare perpendicolari.
 
-La direzione di proiezione può essere impostata esplicitamente; il metodo predefinito “Closest” rileverà il miglior angolo rispetto alla vista. 
+Puoi scegliere la direzione di proiezione:
+
+* `X`, `Y`, `Z` - proietta lungo un asse fisso.
+* `Vista` - proietta lungo la direzione della fotocamera.
+* `Se agganciato` - proietta lungo la direzione della fotocamera, ma solo quando la fotocamera è agganciata a una vista. Altrimenti il tratto resta normale.
+* `Più vicino` - proietta lungo l'asse più vicino alla direzione della fotocamera. È l'opzione predefinita.
 
 ![](/videos/stroke_silhouette.mp4) 
 
-### ![](/icons/dice.webp) Randomizza {#randomize}
+### ![](/icons/dice.webp)Randomizza {#randomize}
 
 ![](/images/stroke_randomize.webp)
 
-L’intensità, la traslazione, la rotazione e la scala del tratto possono essere ognuna randomizzate. Questo può essere usato per creare una serie di effetti, ad esempio la randomizzazione con lo strumento paint può creare colore maculato, oppure la randomizzazione con lo strumento crease può essere usata per creare dettagli della pelle.
+`Intensità`, `Spostamento`, `Rotazione` e `Scala` del tratto possono essere resi casuali ciascuno per conto proprio. Usa la casella di ogni riga per attivarla o disattivarla. Puoi ottenere tanti effetti diversi: per esempio, la casualità con lo strumento di pittura crea un colore screziato, mentre con lo strumento solco permette di creare i dettagli della pelle.
+
+`Periodo (più lento)` imposta la durata del ciclo casuale: aumentalo per variazioni lente e ondulate, diminuiscilo per un rumore rapido. Il piccolo pulsante accanto a ogni riga modifica il periodo solo per quella riga.
 
 ![](/videos/stroke_randomize.mp4) 
 
-### Offset tratto {#stroke-offset}
+### ![](/icons/paint.webp) Randomizza - HSV {#randomize-hsv}
 
-Applica un offset costante al tratto. È utile per schermi piccoli dove il dito coprirebbe il tratto. 
+Per gli strumenti che dipingono, anche `Tonalità`, `Saturazione` e `Valore` del colore possono essere resi casuali, con un periodo proprio. Perfetto per aggiungere sottili variazioni di colore alla pelle o alla pietra.
 
+### Spostamento tratto {#stroke-offset}
 
-## ![](/icons/alpha.webp) Alpha {#alpha}
+Applica uno spostamento costante al tratto, così il dito non lo copre. È utile sugli schermi piccoli. È un'impostazione globale: attivala con la sua casella e varrà per tutti gli strumenti.
+
+## ![](/icons/alpha.webp) Alfa {#alpha}
 ![](/images/stroke_alpha.webp) 
 
-L’`Alpha` è una texture che modula il comportamento del pennello.
-È un’immagine in scala di grigi, dove i pixel neri significano nessuna deformazione e i pixel bianchi deformazione completa.
+L'`Alfa` è una texture che modula il comportamento del pennello.
+È un'immagine in scala di grigi, in cui i pixel neri indicano nessuna deformazione e quelli bianchi la deformazione massima.
 
-Tocca l’immagine dell’alpha per cambiarla.
+Tocca l'immagine dell'alfa per cambiarla. Oltre agli alfa integrati e a quelli che importi tu, l'elenco degli alfa può anche scaricare mappe di displacement da Poly Haven.
 
-Tocca l’anteprima del materiale per caricare un’alpha da un preset di materiale. Puoi anche salvare preset di materiale qui e scegliere di incorporare le texture con lo strumento.
-
-::: tip
-La texture non viene mai ridimensionata, quindi texture grandi possono rallentare le prestazioni.
-:::
-
-### Inverti pixel {#invert-pixels}
-Questo invertirà i valori dell’immagine, quindi i pixel neri diventeranno bianchi e quelli bianchi diventeranno neri.
+Tocca l'anteprima del materiale per caricare un alfa da un preset di materiale. Qui puoi anche salvare i preset di materiale e scegliere di incorporare le texture nello strumento.
 
 ::: tip
+La texture non viene mai ridimensionata, quindi le texture grandi possono rallentare le prestazioni.
+:::
 
-Le alpha integrate fornite con Nomad non possono essere invertite.
+### ![](/icons/blend_contrast.webp) Correggi alfa {#invert-pixels}
+Il pulsante `Correggi...` di un alfa importato apre un popup che corregge l'immagine stessa: il valore medio, l'inversione dei pixel (il nero diventa bianco e il bianco diventa nero), una rotazione di 90° e un ribaltamento orizzontale o verticale. Il file dell'immagine viene riscritto, quindi anche le altre app vedono l'immagine corretta.
+
+::: tip
+
+Gli alfa integrati forniti con Nomad non si possono correggere.
 
 :::
 
-### Scalatura {#scaling}
+### Proiezione {#projection}
 
-La dimensione del pennello in Nomad è un cerchio con un raggio definito dall’utente. Le texture sono spesso quadrate o rettangolari; i parametri di `Scaling` ti permettono di decidere come la texture deve adattarsi all’interno del cerchio. Per una texture quadrata, un valore di 0.7 la farà rientrare nel cerchio. Un valore di 1 scalerà la texture più grande in modo che il cerchio rientri al suo interno, tagliando i bordi.
+Come l'alfa viene proiettato sul modello:
+
+* `Superficie` - l'alfa si appoggia alla superficie sotto il pennello, seguendone l'orientamento.
+* `Schermo` - l'alfa è proiettato direttamente dalla vista.
+* `Tassello` - l'alfa è proiettato dalla vista e resta fermo mentre ci dipingi sopra, come uno stencil, così un motivo ripetuto si raccorda senza giunture. La rotazione è bloccata e la pressione della penna non cambia la dimensione del motivo.
+* `Triplanare` - l'alfa è proiettato lungo i 3 assi. Le opzioni di ridimensionamento, rotazione e tiling qui sotto sono sostituite dalle impostazioni della texture triplanare.
+
+### ![](/icons/diagonal.webp) Ridimensionamento {#scaling}
+
+In Nomad il pennello è un cerchio con un raggio a tua scelta. Le texture invece sono spesso quadrate o rettangolari: i parametri di `Ridimensionamento` ti permettono di decidere come la texture deve stare nel cerchio. Per una texture quadrata, un valore di 0.7 la fa stare dentro il cerchio. Un valore di 1 la ingrandisce in modo che sia il cerchio a starci dentro, tagliandone i bordi.
 
 ![](/images/alpha_scaling.webp) 
 
-Abilitando `Scaling - Y` potrai stirare l’alpha verticalmente.
+Attivando `Ridimensionamento Y` puoi allungare l'alfa in verticale. Il primo cursore diventa allora `Ridimensionamento X`.
 
 ![](/images/alpha_scaling_y.webp) 
 
+`Rifletti orizzontalmente` specchia l'alfa da sinistra a destra.
+
 ### Rotazione {#rotation}
 
-La texture alpha verrà ruotata per seguire la direzione del tratto. Puoi aggiungere un offset di rotazione e, se l’icona del lucchetto è abilitata, la texture rimarrà bloccata a questa rotazione rispetto allo schermo.
+La texture alfa ruota per seguire la direzione del tratto. Puoi aggiungere uno scostamento di rotazione e, se l'icona del lucchetto è attiva, la texture resta bloccata su questa rotazione rispetto allo schermo.
 
-### Piastrellatura {#tiling}
+Il pulsante a forma di penna accanto fa ruotare l'alfa quando ruoti lo stilo su se stesso (barrel roll), con i tratti `Blocco + raggio` e `Blocco + intensità` e la rotazione sbloccata. Funziona solo con gli stili che lo supportano.
+
+### Tiling {#tiling}
 ![](/images/stroke_tiling.webp) 
 
-Con quale frequenza la texture si ripete all’interno del profilo del pennello. Le modalità di tiling ti permettono di limitarti a una singola texture all’interno del tratto, a texture ripetute, oppure a texture specchiate dove ogni seconda texture è ribaltata per creare pattern o aiutare a rendere le texture senza giunzioni.
+Quante volte la texture si ripete nel profilo del pennello. Le modalità `Tiling - X` e `Tiling - Y` permettono di limitarsi a una sola texture nel tratto (`Nessuno`), di ripeterla (`Ripeti`), oppure di specchiarla ribaltando una texture su due per creare motivi o aiutare a rendere le texture senza giunture (`Specchia`). Sono disponibili con il tratto `Rotolamento`, la proiezione `Tassello` o un `Tiling` superiore a 1.
+
+`Aderente (immagini non quadrate)` conta solo per gli alfa e le texture del pennello non quadrati. Se attivata, ogni immagine si ripete per conto proprio, senza spazi. Disattivala per mantenere l'alfa e le altre immagini sincronizzati quando le loro proporzioni sono diverse.
 
 ![](/videos/alpha_tiling.mp4) 
 
@@ -171,146 +213,163 @@ Con quale frequenza la texture si ripete all’interno del profilo del pennello.
 
 ### Valore medio {#mid-value}
 
-Per impostazione predefinita i pixel neri significano nessuna deformazione e i pixel bianchi significano deformazione positiva completa, quindi per esempio, un pennello clay con una texture alpha di rocce tirerà fuori la superficie solo dove l’alpha non è nera.
+Di base i pixel neri indicano nessuna deformazione e quelli bianchi la deformazione positiva massima: per esempio, un pennello argilla con una texture alfa di rocce tirerà fuori la superficie solo dove l'alfa non è nero.
 
-Se vuoi che il pennello spinga la superficie verso l’interno, o che spinga verso l’interno E tiri verso l’esterno, puoi modificare il valore medio. Se imposti il valore a 0.5, un grigio medio nell’alpha non farà nulla, un valore nero spingerà verso l’interno, il bianco tirerà verso l’esterno.
+Se vuoi che il pennello spinga la superficie verso l'interno, o che la spinga dentro E la tiri fuori, puoi modificare il valore medio. Se lo imposti a 0.5, un grigio medio nell'alfa non fa nulla, il nero spinge verso l'interno e il bianco tira verso l'esterno.
+
+Due pulsanti ti aiutano a trovare il valore giusto: il pulsante quadrato legge il valore medio dal bordo dell'immagine, e il contagocce ti permette di prelevarlo direttamente sull'alfa.
 
 
 
 
-## Decadimento {#falloff}
+## ![](/icons/falloff.webp) Decadimento {#falloff}
 
 ![](/images/falloff_menu.webp) 
 
-È simile all’[Alpha](#alpha), tranne per il fatto che controlli l’intensità con una singola curva. Questa viene combinata con l’alpha in modo che tu possa usare una texture per i dettagli e il falloff per controllare la sfumatura del bordo e l’intensità al centro dello strumento.
+È simile all'[Alfa](#alpha), ma qui l'intensità è guidata da una sola curva. Si combina con l'alfa, così puoi usare una texture per il dettaglio e il decadimento per controllare la sfumatura del bordo e l'intensità al centro dello strumento.
 
-Quando la curva è in alto, c’è deformazione completa; quando è in basso il pennello non ha effetto.
+Quando la curva è in alto la deformazione è massima, quando è in basso il pennello non ha effetto.
 
-Puoi pensare alla curva come a una sezione trasversale attraverso la punta del pennello. La sezione inferiore mostra un’anteprima di come apparirebbe una singola “impronta” del pennello sulla superficie del modello e, se c’è una texture alpha per il pennello, verrà mostrata anche questa per vedere in anteprima come interagiranno falloff e alpha.
+Puoi immaginare la curva come una sezione della punta del pennello. La parte inferiore mostra un'anteprima di come apparirebbe una singola "impronta" del pennello sulla superficie del modello e, se il pennello ha una texture alfa, mostra anche quella, per farti vedere come decadimento e alfa interagiscono.
 
-### Preset {#preset}
-Con questa opzione selezionata, toccando il grafico della curva verrà visualizzato un menu di preset. Le curve arrotondate daranno risultati più morbidi, le curve angolari avranno risultati più netti. Il pulsante `Sub` nella barra degli strumenti a sinistra invertirà di fatto il falloff, così la parte alta della curva spingerà nella superficie invece di tirare fuori, o viceversa.
+### ![](/icons/fx.webp) Preset {#preset}
+Con `Preset...` selezionato, toccando il grafico della curva si apre un menu di preset. Le curve arrotondate danno risultati più morbidi, quelle spigolose risultati più netti. Il pulsante `Sub` nella barra degli strumenti a sinistra inverte di fatto il decadimento, quindi la parte alta della curva spinge dentro la superficie invece di tirarla fuori, o viceversa.
 
-### Catmull-Rom {#catmull-rom}
-Quando è selezionato, l’utente può disegnare le proprie curve di falloff. L’editor di curve funziona come le curve nel resto di Nomad:
+### ![](/icons/curve_catmull.webp) Catmull-Rom {#catmull-rom}
+Con questa opzione puoi disegnare le tue curve di decadimento. L'editor funziona come le curve nel resto di Nomad:
 
 * Tocca la curva per creare un nuovo punto
-* Trascina un punto per riposizionarlo
-* Tocca un punto per alternare tra spigolo vivo e morbido
-* Trascina un punto sopra un punto vicino per rimuoverlo
+* Trascina un punto per spostarlo
+* Tocca un punto per passare da spigoloso a morbido e viceversa
+* Trascina un punto su un punto vicino per eliminarlo
 
-### B-spline {#b-spline}
-Quando è selezionato, l’utente può disegnare le proprie curve di falloff. L’editor funziona come per Catmull-Rom, ma i punti di curva influenzano la curva invece di trovarsi direttamente su di essa, il che può aiutare a creare forme di curva più morbide.
+### ![](/icons/curve_bspline.webp) B-spline {#b-spline}
+Con questa opzione puoi disegnare le tue curve di decadimento. L'editor funziona come Catmull-Rom, ma i punti influenzano la curva invece di trovarsi direttamente su di essa, il che aiuta a ottenere forme più morbide.
 
-L’editor di curve ha 3 pulsanti:
+### ![](/icons/curve_bevel.webp) Smusso {#bevel}
+I punti sono uniti da linee rette, con angoli arrotondati la cui dimensione dipende dalla nitidezza di ciascun punto. Comodo per pennelli con la cima piatta e un bordo smussato pulito.
 
-| Voce     | Icona                       | Descrizione                                  |
+L'editor della curva ha 3 pulsanti:
+
+| Elemento | Icona                       | Descrizione                                  |
 | :------: | :-------------------------: | :------------------------------------------: |
-| Maximize | ![](/icons/maximize.webp)  | Espande l’editor di curve                    |
-| Reset    | ![](/icons/reset.webp)     | Riporta la curva allo stato predefinito      |
-| Symmetry | ![](/icons/symmetric.webp) | Mostra la curva come una “punta di pennello” simmetrica |
+| Ingrandisci | ![](/icons/maximize.webp) | Espande l'editor della curva                |
+| Ripristina | ![](/icons/reset.webp)   | Riporta la curva allo stato predefinito      |
+| Simmetria | ![](/icons/symmetric.webp) | Mostra la curva come una "punta di pennello" simmetrica |
 
 
 ### Influenza {#influence}
 
-* Sfera (3D) - L’influenza è calcolata prendendo la distanza dal vertice al centro del pennello.
-* Cerchio (2D) - Il vertice viene prima proiettato sul piano dell’area, prima di calcolare la sua distanza dal centro del pennello. È simile a come vengono campionate le alpha. 
-* Cilindro - L’influenza è proiettata attraverso l’area come un cilindro, usato dalla modalità Silhouette qui sotto.
+* `Sfera` (3d) - l'influenza si calcola dalla distanza tra il vertice e il centro del pennello.
+* `Cerchio` (2d) - il vertice viene prima proiettato sul piano dell'area, poi si calcola la sua distanza dal centro del pennello. È simile al modo in cui vengono campionati gli alfa.
+* `Cilindro` - l'influenza è proiettata attraverso l'area come un cilindro. Equivale ad attivare la [Silhouette](#silhouette-1) qui sotto.
+* `Cresta` - il decadimento si misura di traverso rispetto al tratto, quindi la curva diventa la sezione dell'intero tratto. Il pulsante `Simm` specchia allora il profilo da un lato all'altro del tratto: modifichi un lato e l'altro lo segue. Quando è spento, la curva va dal lato sinistro del tratto al lato destro. Non disponibile per gli strumenti basati sull'appiattimento.
 
-### Silhouette {#silhouette-1}
-Per impostazione predefinita i tratti influenzeranno solo la superficie del modello all’interno del raggio del pennello. Quando la silhouette è abilitata, il tratto verrà proiettato attraverso l’intero modello. Può essere molto utile durante il blocco iniziale di un modello, o per forme che richiedono lati che rimangano perpendicolari.
+### ![](/icons/silhouette.webp) Silhouette {#silhouette-1}
+Di base i tratti agiscono solo sulla superficie del modello compresa nel raggio del pennello. Con la silhouette attiva, il tratto viene proiettato attraverso tutto il modello. È molto utile per abbozzare le forme iniziali di un modello, o per forme i cui lati devono restare perpendicolari. Ha le stesse opzioni di proiezione della [Silhouette](#silhouette) della scheda Tratto.
 
 
 
-## Filtro {#filter}
+## ![](/icons/filter.webp) Filtro {#filter}
 
 ![](/images/filter_menu.webp) 
 
-### Accumula tratto {#accumulate-stroke}
-Abilita l’assenza di limite a quanto materiale può essere aggiunto/rimosso per tratto. Ad esempio lo strumento `Clay` ha questa opzione abilitata, quindi il materiale può continuare ad accumularsi, mentre lo strumento `Brush` ce l’ha disabilitata, quindi i tratti smetteranno di aggiungere materiale se continui a passare lo stesso tratto sulla stessa regione della mesh. 
+### ![](/icons/accumulate.webp) Accumulazione tratto {#accumulate-stroke}
+Toglie ogni limite alla quantità di materia che un tratto può aggiungere o togliere. Per esempio, lo strumento `Argilla` ha questa opzione attiva, quindi il materiale continua ad accumularsi, mentre lo strumento `Pennello` ce l'ha disattivata, quindi il tratto smette di aggiungere materiale se continui a ripassare sulla stessa zona della mesh.
 
-### Solo vertici frontali {#front-facing-vertex-only}
-Questa opzione ignorerà i vertici rivolti all’indietro.
-Può essere utile se vuoi dipingere una parte di una geometria sottile senza influenzare l’altro lato.
-Funziona anche per lo sculpting ma potresti riscontrare alcuni artefatti.
+### ![](/icons/culling.webp) Solo vertice frontale {#front-facing-vertex-only}
+Questa opzione ignora i vertici rivolti all'indietro.
+Può servire se vuoi dipingere una parte di una geometria sottile senza toccare l'altro lato.
+Funziona anche per scolpire, ma potresti notare qualche artefatto.
 
-### Consenti topologia dinamica {#allow-dynamic-topology}
-Questa opzione è disponibile solo se la tua mesh è in modalità [Dynamic Topology](topology.md#dynamic-topology). Puoi disabilitare o abilitare la topologia dinamica per singolo strumento.
+### ![](/icons/eye_open.webp) Solo vertici visibili {#visible-vertex-only}
+Ignora i vertici nascosti dietro altre superfici, visti dalla fotocamera. Questa opzione compare per i tratti a forma (lazo, rettangolo...) degli strumenti di maschera, di pittura, `Gruppo di facce` e `Nascondi`.
 
-### Topologia connessa {#connected-topology}
-Abilita lo sculpting solo sui vertici che sono collegati alla superficie che tocchi con lo strumento. Per esempio, quando usato con lo strumento `Move`, ti permetterà di spostare una parte anche se interseca con un’altra parte.
+### ![](/icons/dynamic.webp) Permetti topologia dinamica {#allow-dynamic-topology}
+Questa opzione è disponibile solo se la mesh è in modalità [Topologia dinamica](topology.md#dynamic-topology). Puoi attivare o disattivare la topologia dinamica per ogni strumento.
+
+### ![](/icons/connect.webp) Topologia collegata {#connected-topology}
+Scolpisce solo i vertici collegati alla superficie che tocchi con lo strumento. Per esempio, con lo strumento `Sposta` puoi spostare una parte anche se si interseca con un'altra.
 ![](/videos/connected_topology.mp4)
 
-### Proteggi area {#protect-area}
+### Proteggi l'area {#protect-area}
 ![](/images/filter_protect_area.webp) 
 
-Queste opzioni impediranno agli strumenti di influenzare parti della mesh in varie condizioni. 
+Queste opzioni impediscono agli strumenti di agire su alcune parti della mesh in diverse situazioni. Ognuna può essere impostata su `Auto`, `No` o `Sì`, e la piccola freccia mostra a cosa corrisponde `Auto` in quel momento.
 
-L’opzione “Auto” significa che se hai hide, mask o facegroup visibili nel menu [Shading](shading), saranno protetti, ma se sono disattivati in quel menu, la protezione è disabilitata.
+* `Nascondi` - se alcune parti della mesh sono nascoste con lo strumento nascondi, imposta se devono essere protette. Su `Auto` le facce nascoste sono protette, a meno che il loro wireframe sia visibile (vedi le impostazioni [Wireframe](settings.md#wireframe)).
+* `Maschera` - se alcune parti della mesh sono mascherate, imposta se devono essere protette. Su `Auto` le parti mascherate sono protette finché la maschera è visibile nel menu [Shading](shading).
+* `Gruppo di facce` - imposta se puoi usare uno strumento solo all'interno del primo gruppo di facce toccato. Su `Auto` dipende dalla visibilità dei gruppi di facce nel menu [Shading](shading).
 
-* `All` - Imposta se i filtri di protezione sono globali o per singolo strumento.
-* `Hide` - Se parti della mesh sono nascoste con lo strumento hide, imposta se devono essere protette.
-* `Mask` - Se parti della mesh sono mascherate, imposta se devono essere protette.
-* `Facegroup` - Imposta se puoi usare uno strumento solo all’interno del primo facegroup toccato.
+Il pulsante `(All)` imposta se queste protezioni sono globali, condivise da tutti gli strumenti, o impostate per ogni strumento.
 
 
-### Mantieni spigoli vivi {#keep-sharp-edges}
-Esclude i punti i cui normali differiscono troppo dalla normale della superficie.
+### Campionamento area {#area-sampling}
+Alcuni pennelli o opzioni del tratto hanno bisogno della normale e della posizione di un piano sulla superficie per funzionare.
 
-Cambierà il modo in cui viene calcolata l’area del piano (Area sampling).
+Puoi controllare come viene calcolato questo piano medio impostando l'area di campionamento come percentuale del raggio dello strumento.
 
-Questa opzione può essere utile per strumenti basati su flatten, o se vuoi colorare una superficie per lo più piatta senza sbavature.
+Al 100%, viene considerato ogni punto all'interno del cerchio di selezione.
+
+Allo 0%, viene considerato solo il vertice o il triangolo più vicino. Questi valori possono essere collegati per `Raggio normale` e `Raggio posizione`, oppure sbloccati e impostati separatamente.
+
+### Filtro normale area {#keep-sharp-edges}
+Esclude i punti le cui normali si discostano troppo dalla normale della superficie.
+
+Cambia il modo in cui viene calcolato il piano dell'area (Campionamento area), quindi è utile soprattutto per gli strumenti argilla o basati sull'appiattimento, o se vuoi colorare una superficie quasi piatta senza sbordare.
+
+Gli angoli `Min` e `Max` controllano la sfumatura tra i punti esclusi e quelli pienamente interessati, come mostra il piccolo disco colorato accanto.
 
 ![](/videos/filter_keep_sharp_edges.mp4)
 
-### Campionamento area {#area-sampling}
-Alcuni pennelli o opzioni di tratto richiedono una normale di piano e una posizione di piano sulla superficie per funzionare.
-
-Puoi controllare come calcolare questo piano medio impostando l’area di campionamento come rapporto del raggio dello strumento.
-
-Al 100%, ogni punto all’interno del cerchio di selezione viene preso in considerazione.
-
-A 0%, viene preso in considerazione solo il vertice o il triangolo più vicino. Questi valori possono essere collegati sia per `Normal radius` che per `Position radius`, oppure sbloccati e impostati in modo indipendente.
+### Filtro normale falloff {#falloff-normal-filter}
+Come il [Filtro normale area](#keep-sharp-edges), esclude i punti le cui normali si discostano troppo dalla normale della superficie, ma agisce sul decadimento del pennello invece che sul calcolo del piano. È utile per dipingere solchi o rilievi.
 
 
-### Mascheratura profondità {#depth-masking}
+### Filtro profondità {#depth-masking}
 ![](/images/stroke_depthmask.webp)
 
-Esclude i punti che sono al di sopra o al di sotto di una certa distanza dal piano calcolato (Area sampling).
+Esclude i punti che si trovano sopra o sotto una certa distanza dal piano calcolato (Campionamento area).
 
-Può essere usato per dipingere solo sulle zone in rilievo o solo sulle cavità.
+Puoi usarlo per dipingere solo sulle zone in rilievo, o solo nelle cavità.
 
-Il grafico rappresenta una sezione trasversale della superficie; la linea orizzontale è dove si trova la superficie, il cerchio rappresenta il raggio di falloff della pittura relativo sopra e sotto la superficie. `Height offset` è una percentuale sopra o sotto la superficie da cui iniziare il calcolo del masking. `Top area` e `Bottom area` ti permettono di scalare il falloff sopra e sotto il punto di offset.
+Il grafico rappresenta una sezione della superficie: la linea orizzontale è la superficie, e il cerchio rappresenta il raggio di decadimento della pittura sopra e sotto la superficie. `Compensazione altezza` è una percentuale sopra o sotto la superficie da cui parte il calcolo della maschera. Con `Attenuazione della profondità` attiva, `Area superiore` e `Area inferiore` ti permettono di ridimensionare il decadimento sopra e sotto il punto di partenza.
 
-#### Esempio: Dipingi nelle cavità {#example-paint-in-cavities}
-Per dipingere solo le regioni in cavità, imposta l’height offset a -100% e regola il cursore top area in modo che sia distante dalla linea orizzontale. Questo significa che il primo clic imposta la profondità “zero” e poi solo le aree al di sotto di questa profondità verranno influenzate.
+#### Esempio: dipingere nelle cavità {#example-paint-in-cavities}
+Per dipingere solo nelle cavità, imposta la compensazione dell'altezza a -100% e regola il cursore dell'area superiore in modo che si stacchi dalla linea orizzontale. Così il primo tocco imposta la profondità "zero", e solo le zone più profonde vengono interessate.
 
 ![](/videos/stroke_depth_cavity.mp4)
 
-#### Esempio: Dipingi sui rigonfiamenti {#example-paint-on-bumps}
-Per dipingere solo nelle zone alte, imposta l’height offset a +90%, in modo che il fondo del cerchio intersechi la linea orizzontale di una piccola quantità. Quando clicchi sulla cima di una zona “alta”, questo imposterà la profondità, così che tutto ciò che si trova a quella profondità, più un po’ al di sotto, e tutto ciò che è più in alto, verrà dipinto. Le cavità profonde verranno saltate.
+#### Esempio: dipingere sui rilievi {#example-paint-on-bumps}
+Per dipingere solo nelle zone alte, imposta la compensazione dell'altezza a +90%, così la parte bassa del cerchio interseca di poco la linea orizzontale. Quando tocchi la cima di una zona "alta", ne imposti la profondità: tutto ciò che è a quella profondità, un po' più in basso o più in alto viene dipinto. Le cavità profonde vengono saltate.
 ![](/videos/stroke_depth_bump.mp4)
 
 
-## Pressione {#pressure}
+## ![](/icons/pressure.webp) Pressione {#pressure}
 ![](/images/pressure_menu.webp) 
 
-Controlla come la pressione della penna/stylus influenza i pennelli.
+Controlla come la pressione dello stilo o della penna agisce sui pennelli.
 
-Per impostazione predefinita `Use global settings` è abilitato, il che significa che tutti i pennelli condivideranno gli stessi valori di pressione.
+### Usa le impostazioni globali {#use-global-settings}
 
-### Pressione - Raggio {#pressure-radius}
+Di base `Usa le impostazioni globali` è attivo, quindi tutti i pennelli condividono gli stessi valori di pressione. Toglilo per dare allo strumento corrente le sue impostazioni di pressione.
 
-Questa curva controlla come il raggio del pennello è influenzato dalla pressione. Il valore predefinito è una relazione lineare, quindi se il tuo stylus ha una risposta fluida, anche il cambiamento di raggio dovrebbe risultare fluido. Detto ciò, molte penne hanno una risposta non lineare, che puoi compensare con questa curva. Per esempio, se il raggio non sembra raggiungere il suo valore massimo ad alta pressione, usa un preset di curva come “out-pow3”, con una piega verso l’alto, per aumentare il raggio prima.
+### ![](/icons/radius.webp) Raggio {#pressure-radius}
 
-Questa finestra di dialogo è simile alla visualizzazione della curva di falloff; puoi usare un preset toccando la finestra della curva, oppure disegnare le tue curve con le modalità Catmull-Rom e B-Spline.
+Questa curva controlla come la pressione agisce sul raggio del pennello. Di base la relazione è lineare, quindi se il tuo stilo ha una risposta regolare, anche la variazione del raggio sarà regolare. Detto questo, molti stili hanno una risposta non lineare, che puoi compensare con questa curva. Per esempio, se il raggio non sembra raggiungere il suo massimo alle pressioni alte, usa un preset come 'out-pow3', con una curvatura rivolta verso l'alto, per aumentare il raggio prima.
 
-Se vuoi un raggio costante, disabilita questa sezione.
+Questa finestra è simile alla curva di decadimento: puoi usare un preset toccando la finestra della curva, oppure disegnare le tue curve con le modalità `Catmull-Rom`, `B-spline` e `Smusso`.
 
-### Pressione - Intensità {#pressure-intensity}
+Se vuoi un raggio costante, disattiva questa sezione.
 
-Simile al cursore del raggio, ma per controllare l’intensità. Se vuoi un’intensità costante, disabilita questa sezione.
+### ![](/icons/intensity.webp) Intensità {#pressure-intensity}
 
-### Levigatura pressione {#pressure-smoothing}
+Simile alla curva del raggio, ma controlla l'intensità. Se vuoi un'intensità costante, disattiva questa sezione.
 
-Media gli eventi di pressione della penna per risultati più uniformi.
+### Limita la pressione al 100% {#limit-pressure}
+
+Fa in modo che la pressione dello stilo non superi mai il 100%. È un'impostazione globale.
+
+### Livellamento della pressione {#pressure-smoothing}
+
+Fa la media degli eventi di pressione dello stilo per ottenere risultati più morbidi.

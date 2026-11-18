@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "דף הבית",
+    "forum": "פורום"
+  },
+  "theme": {
+    "outlineLabel": "בעמוד זה",
+    "docFooter": {
+      "prev": "העמוד הקודם",
+      "next": "העמוד הבא"
+    },
+    "darkModeSwitchLabel": "מראה",
+    "lightModeSwitchTitle": "מעבר לערכת נושא בהירה",
+    "darkModeSwitchTitle": "מעבר לערכת נושא כהה",
+    "sidebarMenuLabel": "תפריט",
+    "returnToTopLabel": "חזרה למעלה",
+    "langMenuLabel": "שינוי שפה",
+    "skipToContentLabel": "דילוג לתוכן",
+    "notFound": {
+      "title": "העמוד לא נמצא",
+      "quote": "אבל אם לא תשנה את הכיוון שלך, ואם תמשיך לחפש, אולי תגיע בסוף לאן שאתה הולך.",
+      "linkLabel": "מעבר לדף הבית",
+      "linkText": "קח אותי הביתה"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "חיפוש",
+      "buttonAriaLabel": "חיפוש"
+    },
+    "modal": {
+      "displayDetails": "הצגת רשימה מפורטת",
+      "resetButtonTitle": "איפוס החיפוש",
+      "backButtonTitle": "סגירת החיפוש",
+      "noResultsText": "אין תוצאות עבור",
+      "footer": {
+        "selectText": "לבחירה",
+        "selectKeyAriaLabel": "אנטר",
+        "navigateText": "לניווט",
+        "navigateUpKeyAriaLabel": "חץ למעלה",
+        "navigateDownKeyAriaLabel": "חץ למטה",
+        "closeText": "לסגירה",
+        "closeKeyAriaLabel": "אסקייפ"
+      }
+    }
+  }
+}

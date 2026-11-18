@@ -1,218 +1,232 @@
-# ![](/icons/postprocess.webp) Efterbearbetning {#post-process}
+# ![](/icons/postprocess.webp) Efterbehandling {#post-process}
 
-Den här menyn styr många aspekter av Nomad som påverkar hur renderingen ser ut.
+Den här menyn styr många delar av Nomad som påverkar hur renderingen ser ut.
 
 ![](/images/postprocess_overview_drac.webp)
 
-Att använda efterbearbetning kan förändra den slutliga looken på din scen avsevärt.
+Efterbehandling kan förändra scenens slutliga utseende rejält.
 
 ![](/images/postprocess_overview.webp)
-*Samma scen före och efter efterbearbetning, utan extra ljus eller materialändringar.*
+*Samma scen före och efter efterbehandling, utan extra ljus eller ändrade material.*
 
-Efterbearbetning kan påverka prestandan mycket beroende på din enhet.
-Det finns en global kryssruta för att inaktivera all efterbearbetning, så att du snabbt kan gå tillbaka till skulptering/modellering utan att förlora dina förinställningar.
-För PBR-rendering bör [Ambient Occlusion](#ambient-occlusion-ssao), [Reflection](#reflection-ssr) och [Tone Mapping](#tone-mapping) vara aktiverade.
+Efterbehandling kan påverka prestandan mycket beroende på din enhet.
+Det finns en global kryssruta `Efterbehandling` som stänger av all efterbehandling, så att du snabbt kan gå tillbaka till att skulptera/modellera utan att förlora dina förinställningar.
+För PBR-rendering bör [Omgivande Occlusion](#ambient-occlusion-ssao), [Reflektion](#reflection-ssr) och [Tonkartläggning](#tone-mapping) vara aktiverade.
 
-Oftast vill du dock ha efterbearbetningen avstängd när du skulpterar, för att fokusera på själva formen i renderingen.
+Men för det mesta vill du ha efterbehandlingen avstängd när du skulpterar, för att kunna fokusera på själva formen.
 
 
 ## Kvalitet {#quality}
 
 ![](/images/postprocess_quality.webp)
-### Max bildruteprovtagning {#max-frame-sampling}
-Nomad beräknar en viss mängd efterbearbetning för en enskild bildruta, vilket kan se brusigt ut. Den här kontrollen avgör hur många bildrutor som ska renderas och sedan blandas ihop för att ta bort de flesta brusartefakter. Vissa effekter kräver inga extra sampel (t.ex. färgkorrigering), medan andra som global illumination kan kräva hundratals sampel för att bli brusfria. 
 
-I vyn kan detta ses när Nomad lämnas ifred; bildkvaliteten förfinas gradvis upp till max antal sampel och stannar sedan. Detta antal beräkningar används också i renderingssektionen i [Files-menyn](files) när ”export png” klickas.
+De här alternativen förbättrar renderingens kvalitet, på bekostnad av prestandan.
 
-### Upplösningsmultiplikator {#resolution-multiplier}
-Den här skjutreglaget styr upplösningen på efterbearbetningen. Ett värde på x1.0 innebär att renderingarna görs i enhetens pixelupplösning. Ett värde på x0.5 renderar i halv upplösning, vilket går snabbt men ger låg kvalitet. Ett värde större än 1 renderar i större storlek och skalas sedan ned. Detta ger högre kvalitet, mindre brus men längre renderingstider.
+### Maximal bildprovering {#max-frame-sampling}
+Nomad beräknar en viss mängd efterbehandling för en enskild bildruta, vilket kan se brusigt ut. Den här kontrollen bestämmer hur många bildrutor som renderas och sedan blandas ihop för att ta bort det mesta av bruset. Vissa effekter kräver inga extra samplingar (t.ex. färgkorrigering), medan andra som mjuka skuggor och global belysning kan kräva hundratals samplingar för att bli brusfria.
 
-### Max antal sampel {#max-samples}
+I vyn syns det när du låter nomad vara ifred: bildkvaliteten förfinas gradvis upp till det maximala antalet samplingar och stannar sedan. När den har stannat gör Nomad ingenting, vilket sparar batteri. Samma antal beräkningar används också i renderingsdelen av [menyn Filer](files) när du klickar på 'export png'.
 
-Detta ökar kvaliteten på efterbearbetningen, men generellt har `Full resolution` större inverkan. 
+Kryssrutan bredvid reglaget slår på eller av bildprovningen.
 
-### Brusreducering (oidn) {#oidn}
+### Renderupplösning {#resolution-multiplier}
+Det här reglaget styr renderingens upplösning. Värdet x1.0 betyder att renderingen görs i enhetens pixelupplösning. Värdet x0.5 renderar i halv upplösning, vilket går snabbt men ger låg kvalitet. Ett värde större än 1 renderar i en större storlek och skalar sedan ned. Det ger högre kvalitet och mindre brus, men längre renderingstider.
 
-Applicera en brusreducerare på bilden. Detta kan göra att du kan använda mycket färre sampel. Detta fungerar bara om `Full Resolution` är aktiverat. Observera att brusreduceringen sker efter att alla sampel har beräknats och kan vara processorintensiv.
+Det påverkar prestandan kraftigt, så försök hålla det på x1.25 eller lägre. Värdet sparas inte i inställningarna, och effekten [Pixelkonst](#pixel-art) åsidosätter det.
 
-## Förinställningsbläddrare {#preset-browser}
+### ![](/icons/intensity.webp) Max. samplingar {#max-samples}
+
+Förbättrar kvaliteten på efterbehandlingseffekterna, på bekostnad av prestandan.
+
+### ![](/icons/material_dithering.webp) Dithering {#dithering}
+
+Använder dithering på pixlarna för att minska bandningsartefakter (till exempel i övertoningar eller vinjetter). Det bör oftast vara aktiverat, men kan stängas av för särskilda ändamål (t.ex. export av djupkartor eller andra dataspecifika ändamål).
+
+### ![](/icons/denoise.webp) Dämpa ljud (oidn) {#oidn}
+
+Tillämpar en brusreducering på bilden när alla bildrutor har samlats ihop. Det gör att du kan använda betydligt färre samplingar. Brusreducering kräver mycket av processorn, så aktivera den bara om bilden är brusig. Den finns inte på alla enheter.
+
+## Förinställningar {#preset-browser}
 ![](/images/postprocess_presets.webp)
-Genom att klicka på bilden visas en samling förinställningar för efterbearbetning. För att definiera egna förinställningar, välj en, klicka på ”clone”, gör ändringar. För att spara, klicka på förinställningsbilden, klicka igen inne i preset browser och välj ”save”.
+Om du klickar på bilden under rubriken `Efterbehandling` visas en samling förinställningar för efterbehandling. Använd `Ny` för att skapa en förinställning från dina nuvarande inställningar. De inbyggda förinställningarna kan bara klonas: för att skapa en egen väljer du en, klickar på `Klona` och gör dina ändringar. När en förinställning har ändringar som inte har sparats visas `Osparade ändringar!`; för att spara klickar du på förinställningens bild, klickar igen inne bland förinställningarna och väljer `Spara`.
+
+## Genvägsfält {#shortcut-bar}
+När efterbehandlingen är aktiverad listar ett fält längst ned i menyn alla effekter (`SSR`, `SSGI`, `SSAO`, `DoF`, `Blomma`...). Tryck på en för att hoppa till dess avsnitt. Effekter som är avstängda är gråade, så fältet är också en snabb sammanfattning av vad den aktuella förinställningen gör.
+
+## ![](/icons/postprocess_ssr.webp) Reflektion (SSR) {#reflection-ssr}
+Med det här alternativet kan objekt spegla andra objekt i scenen, så länge objekten syns på skärmen.
+Om du har metalliska och blanka objekt i scenen bör du nog använda det här alternativet.
+Alternativet kräver skuggningsläget [Upplyst (PBR)](shading.md#pbr).
 
 
-## Reflektion (SSR) {#reflection-ssr}
-Med det här alternativet kan objekt reflektera andra objekt i scenen, så länge objekten är synliga på skärmen.
-Om du har metalliska och blanka objekt i din scen bör det här alternativet troligen användas.
-Detta alternativ är endast effektivt i PBR-läge.
-
-
-| SSR off                    | SSR on                    |
+| SSR av                     | SSR på                    |
 | :------------------------: | :-----------------------: |
 | ![](/images/ssr_off.webp) | ![](/images/ssr_on.webp) |
 
-## Global ljussättning (SSGI) {#global-illumination-ssgi}
+## ![](/icons/postprocess_ssgi.webp) Global illumination (SSGI) {#global-illumination-ssgi}
 
-Global illumination simulerar hur ljus studsar mellan ytor, t.ex. att en röd vägg kastar rött ljus på ett närliggande vitt objekt. Detta kan avsevärt förbättra realismen i en rendering när det används tillsammans med ambient occlusion och reflektioner. 
+Global belysning simulerar hur ljuset studsar mellan ytor, t.ex. kastar en röd vägg rött ljus på ett vitt objekt i närheten. Det kan öka realismen i en rendering enormt när det används tillsammans med ambient occlusion och reflektioner. Precis som reflektioner kräver det skuggningsläget [Upplyst (PBR)](shading.md#pbr).
 
-`Strength` - Intensiteten på global illumination. 
+`Styrka` - Den globala belysningens intensitet.
 
 
 
-| SSGI off                   | SSGI on                   |
+| SSGI av                    | SSGI på                   |
 | :------------------------: | :-----------------------: |
 | ![](/images/ssgi_off.webp) | ![](/images/ssgi_on.webp) |
 
-_En spotlight är placerad bakom sfären och riktad mot taket. Med SSGI av är det bara taket som är upplyst. Med SSGI på studsar ljuset från taket till väggarna till sfären._
+_En spotlight står bakom sfären, riktad mot taket. Med SSGI av är bara taket upplyst. Med SSGI på studsar ljuset från taket till väggarna och vidare till sfären._
 
-## Ambient Occlusion (SSAO) {#ambient-occlusion-ssao}
-Ambient occlusion mörkar områden där ljuset har mindre chans att nå (hörn osv).
-Effekten beror endast på modellens geometri.
+## ![](/icons/postprocess_ssao.webp) Omgivande Occlusion (SSAO) {#ambient-occlusion-ssao}
+Ambient occlusion mörkar ned områden där ljuset har mindre chans att nå fram (hörn osv.).
+Effekten beror bara på modellens geometri.
 
-* `Strength`- Intensiteten på effekten.
-* `Size`- Hur utbredd effekten är.
-* `Curvature bias` - Hur känslig effekten är i förhållande till variationer i ytan.
-* `Color` - En toning som multipliceras in i occlusionen, används för kreativa effekter.
+* `Styrka` - Effektens intensitet.
+* `Storlek` - Hur utbredd effekten är.
+* `Tjocklek` - Hur stor djuptjocklek som antas för skymmande objekt, i procent av `Storlek`.
+* `Nyans` - En färg som multipliceras in i ocklusionen, för kreativa effekter.
 
 
-| SSAO off                    | SSAO on                    |
+| SSAO av                     | SSAO på                    |
 | :-------------------------: | :------------------------: |
 | ![](/images/ssao_off.webp) | ![](/images/ssao_on.webp) |
 
 ::: tip
-AO kommer att vara mest synlig i områden som huvudsakligen är upplysta av omgivningsljus. Områden som är under starkt direkt ljus får en mycket svagare AO-effekt.
+AO syns mest i områden som främst lyses upp av miljöljuset. Områden som ligger i starkt direkt ljus får en mycket svagare AO-effekt.
 
 :::
 
-## Skärpedjup (DOF) {#depth-of-field-dof}
-Lägg till en oskärpeffekt på området som ligger utanför fokus.
+## ![](/icons/postprocess_dof.webp) Skärpedjup {#depth-of-field-dof}
+Lägger till en oskärpeeffekt på området som ligger utanför fokus.
 
-Tryck helt enkelt på din modell för att ändra fokuspunkt.
+Tryck bara på din modell för att ändra fokuspunkten.
 
-* `Far blur` - Mängden oskärpa som appliceras på den del som ligger bortom fokuspunkten.
-* `Near blur` - Mängden oskärpa som appliceras mellan fokuspunkten och kameran.
+* `Bländarläge` - Styr oskärpan med en enda kamerabländare, i stället för de två oskärpereglagen nedan.
+* `Bländare` (_bara i bländarläge_) - Objektivets f-tal, som på en riktig kamera. Ett lägre värde öppnar objektivet och ger mer oskärpa.
+* `Fjärroskärpa` - Mängden oskärpa på bortre sidan av fokuspunkten.
+* `Nära oskärpa` - Mängden oskärpa mellan fokuspunkten och kameran.
 
 
-| DOF off                   | DOF focus on far ring       | DOF focus on close ring    |
+| DOF av                    | DOF med fokus på bortre ringen | DOF med fokus på närmre ringen |
 | :-----------------------: | :-------------------------: | :------------------------: |
 | ![](/images/dof_off.webp) | ![](/images/dof_near.webp) | ![](/images/dof_far.webp) |
 
 
-## Bloom {#bloom}
-Bloom får de ljusa områdena i din scen att glöda.
+## ![](/icons/sun.webp) Blomma {#bloom}
+Bloom får de ljusa delarna av scenen att glöda.
 
-* `Intensity` - styrkan på effekten.
-* `Radius` - Spridningen av effekten.
-* `Threshold` - Hur ljusa pixlar måste vara i scenen innan de börjar blomma. Ett lågt värde gör att allt blommar, ett högt värde gör att endast de ljusaste pixlarna blommar.
-* `Color` - en toning som kan läggas till i bloom för kreativa effekter.
+* `Intensitet` - effektens styrka.
+* `Radie` - Effektens spridning.
+* `Tröskel` - Hur ljusa pixlarna i scenen måste vara innan de börjar glöda. Vid 0 glöder allt; ett högt värde låter bara de allra ljusaste pixlarna glöda.
+* `Nyans` - en färg som kan läggas till glöden för kreativa effekter.
 
-| Bloom off                    | Bloom with radius 0         | Bloom with radius 1         |
+| Bloom av                     | Bloom med radie 0           | Bloom med radie 1           |
 | :--------------------------: | :-------------------------: | :-------------------------: |
 | ![](/images/bloom_off.webp) | ![](/images/bloom_r0.webp) | ![](/images/bloom_r1.webp) |
 
 
-## Tonmappning {#tone-mapping}
-Tone Mapping är en operation som mappar HDR-värden till intervallet `[0, 1]`.
-Om du inte använder det (eller väljer `none`) kommer alla färgkomponenter högre än 1 att klippas.
-Alla färgvariationer över detta intervall går då förlorade.
+## ![](/icons/postprocess_tone.webp) Tonkartläggning {#tone-mapping}
+Tonkartläggning är en operation som mappar om HDR-värden till intervallet `[0, 1]`.
+Om du inte använder den (eller väljer `Ingen`) klipps varje färgkomponent som är högre än 1.
+Alla färgvariationer över det intervallet går då förlorade.
 
-* `None/Neutral/Agx/ACES` - vilken tonemapper som ska användas. `None` gör ingen ommappning (men de andra kontrollerna fungerar fortfarande). De andra alternativen liknar att välja olika filmtyper; de hanterar överexponerade värden och färger på olika sätt. Detta är ett mycket djupt ämne, sök på tone mapping, Agx, ACES för mer information!
-* `Exposure` - bildens övergripande ljusstyrka, liknande att justera bländaren på en kamera. Detta kan vara ett snabbt sätt att globalt ljusa upp eller mörka ned en bild.
-* `Saturation` - färgstyrka. 1 är neutralt, 0 är monokromt, värden över 1 är alltmer mättade.
-* `Contrast` - Gör mörka områden mörkare och ljusa områden ljusare. Använd varsamt, det kan introducera artefakter vid höga värden.
+* `Ingen/Neutral/Agx/ACES` - vilken tonkartläggare som används. `Ingen` mappar inte om något (men de andra kontrollerna fungerar ändå). De andra alternativen påminner om att välja olika filmtyper: de hanterar överexponerade värden och färger på olika sätt. Det här är ett väldigt djupt ämne, sök på tone mapping, Agx och ACES för mer information!
+* `Exponering` - bildens övergripande ljusstyrka, ungefär som att justera bländaren på en kamera. Det kan vara ett snabbt sätt att göra en bild ljusare eller mörkare överlag.
+* `Mättnad` - färgstyrka. 1 är neutralt, 0 är svartvitt, värden över 1 blir allt mer mättade.
+* `Kontrast` - Gör mörka partier mörkare och ljusa ljusare. Använd det försiktigt, höga värden kan ge artefakter.
 
-Observera att med `Tone Mapping` inaktiverat försvinner vissa detaljer eftersom pixlarna är för ljusa.
+Lägg märke till att vissa detaljer försvinner med `Tonkartläggning` avstängd, eftersom pixlarna är för ljusa.
 
-| Tone Mapping off            | Tone Mapping on            |
+| Tonkartläggning av          | Tonkartläggning på         |
 | :-------------------------: | :------------------------: |
 | ![](/images/tone_off.webp) | ![](/images/tone_on.webp) |
 
 ::: tip
-Tone mapping kan förstärka effekten av global illumination. Om du sänker intensiteten på miljökartan, höjer den primära ljuskällan, kan du öka `exposure` i tone mapping för att se mer av ljusstudseffekterna.
+Tonkartläggning kan förstärka effekten av global belysning. Om du sänker miljökartans intensitet och höjer den primära ljuskällan kan du öka tonkartläggningens `Exponering` för att se mer av det studsande ljuset.
 :::
 
-## Färgkorrigering {#color-grading}
-Liknande kurvverktyget i Photoshop låter detta dig kontrollera balansen och fördelningen av färg i bilden. `main`-kontrollen påverkar hela färgbalansen, `red`/`green`/`blue`-kontrollerna ger finjustering. 
+## ![](/icons/postprocess_tone_curve.webp) Färgteckning {#color-grading}
+Precis som kurvverktyget i Photoshop låter det här dig styra balansen och fördelningen av färgerna i bilden. Kontrollen `Huvudsak` påverkar hela färgbalansen, kontrollerna `Röd`/`Grön`/`Blå` ger finare kontroll.
 
-| Color Grading off             | Color Grading on             |
+| Färgkorrigering av            | Färgkorrigering på           |
 | :---------------------------: | :--------------------------: |
 | ![](/images/grading_off.webp) | ![](/images/grading_on.webp) |
 
-## Krökning {#curvature}
-Upptäck var det finns snabba förändringar i krökning och applicera en färg på dessa områden.
+## ![](/icons/postprocess_cavity.webp) Krökning {#curvature}
+Hittar ställen där krökningen ändras snabbt och färgar de områdena.
 
-* `Factor` - den övergripande intensiteten på effekten
-* `Bump` - hur mycket den hittar skarpa konvexa förändringar och placerar den valda färgen där (vitt som standard)
-* `Cavity` - hur mycket den upptäcker konkava förändringar och placerar den valda färgen där (svart som standard)
+* `Faktor` - effektens övergripande intensitet
+* `Bula` - hur mycket den hittar skarpa konvexa förändringar och lägger den valda färgen där (vit som standard)
+* `Hålighet` - hur mycket den hittar konkava förändringar och lägger den valda färgen där (svart som standard)
+* `Tjocklek` - hur breda de hittade kanterna är.
+
+Bredvid `Bula` och `Hålighet` väljer en färgruta färgen, och en liten knapp väljer hur färgen blandas med bilden.
 
 
-| Curvature off                    | Curvature on                   |
+| Krökning av                      | Krökning på                    |
 | :------------------------------: | :----------------------------: |
 | ![](/images/curvature_off.webp) | ![](/images/curvature_on.webp) |
 
 
-## Kromatisk aberration {#chromatic-aberration}
-Simulera linsartefakter där ljuset bryts upp runt skärmens kanter.
+## ![](/icons/postprocess_chromatic.webp) Kromatisk Aberration {#chromatic-aberration}
+Simulerar objektivartefakter där ljuset delas upp i sina färger runt skärmens kanter.
 
-* `Strength` - hur mycket de röda/gröna/blå delarna av bilden separeras mot skärmens kanter
+* `Styrka` - hur mycket bildens röda, gröna och blå delar glider isär mot skärmens kanter
 
-| Chromatic off                 | Chromatic on                 |
+| Kromatisk av                  | Kromatisk på                 |
 | :---------------------------: | :--------------------------: |
 | ![](/images/chroma_off.webp) | ![](/images/chroma_on.webp) |
 
 
-## Vinjettering {#vignette}
-Simulera linsartefakter genom att mörka ned skärmens kanter.
+## ![](/icons/postprocess_vignette.webp) Vinjett {#vignette}
+Simulerar objektivartefakter genom att mörka ned skärmens kanter.
 
-* `Size` - Storleken på en inverterad ellips som placeras över bilden
-* `Hardness` - Hur suddig eller skarp ellipsen blandas ovanpå bilden.
+* `Storlek` - Storleken på en omvänd ellips som läggs över bilden
+* `Hårdhet` - Hur suddigt eller skarpt ellipsen blandas ovanpå bilden.
+* `Nyans` - Vinjettens färg, svart som standard.
 
 
-| Vignette off                    | Vignette on                    |
+| Vinjett av                      | Vinjett på                     |
 | :-----------------------------: | :----------------------------: |
 | ![](/images/vignette_off.webp) | ![](/images/vignette_on.webp) |
 
-## Brus {#grain}
-Lägg till en korn-effekt; det kan hjälpa till att göra bilden lite mindre artificiell.
+## ![](/icons/postprocess_grain.webp) Korn {#grain}
+Lägger till en korneffekt, som kan få bilden att se lite mindre konstgjord ut.
 
-* `Strength` - mängden korn/brus som läggs till i bilden.
+* `Styrka` - mängden korn/brus som läggs till i bilden.
 
 
-| Grain off                    | Grain on                   |
+| Korn av                      | Korn på                    |
 | :--------------------------: | :------------------------: |
 | ![](/images/grain_off.webp) | ![](/images/grain_on.webp) |
 
 
-## Skärpa {#sharpness}
-En skärpeeffekt liknande den i Photoshop eller fotoappar.
+## ![](/icons/sharpen.webp) Skarphet {#sharpness}
+En skärpningseffekt som liknar den i Photoshop eller fotoappar.
 
-* `Strength` - mängden skärpa som appliceras på bilden.
+* `Styrka` - hur mycket bilden skärps.
 
 
-| Sharpness off                  | Sharpness on                 |
+| Skarphet av                    | Skarphet på                  |
 | :----------------------------: | :--------------------------: |
 | ![](/images/sharpen_off.webp) | ![](/images/sharpen_on.webp) |
 
-## Pixelkonst {#pixel-art}
-Simulera retro-spelens pixelgrafik.
+## ![](/icons/postprocess_pixel_art.webp) Pixelkonst {#pixel-art}
+Simulerar pixelgrafik från gamla spel. Den här effekten åsidosätter [Renderupplösning](#resolution-multiplier).
 
-* `Slider` - storleken på pixlarna
-* `Allow frame sampling` - om du får många svarta pixlar, prova att slå på detta, vilket åsidosätter standardsamplingen.
+* `Reglage` - pixlarnas storlek
+* `Tillåt bildrutesampling` - om du får många svarta pixlar, prova att slå på det här. Utan det stänger pixelkonsteffekten av [bildprovningen](#max-frame-sampling).
 
-| Pixel off                   | Pixel on                   |
+| Pixel av                    | Pixel på                   |
 | :-------------------------: | :------------------------: |
 | ![](/images/pixel_off.webp) | ![](/images/pixel_on.webp) |
 
-## Scanline {#scanline}
-Simulera utseendet hos gamla CRT-skärmar.
+## ![](/icons/postprocess_scanline.webp) Linjeskanning {#scanline}
+Simulerar utseendet hos gamla CRT-skärmar.
 
-* `Factor` - styrkan på linjerna
-* `Spacing` - storleken på linjerna
+* `Faktor` - linjernas styrka
+* `Mellanrum` - linjernas storlek
 
-| Scanline off                   | Scanline on                   |
+| Linjeskanning av               | Linjeskanning på              |
 | :----------------------------: | :---------------------------: |
 | ![](/images/scanline_off.webp) | ![](/images/scanline_on.webp) |
-
-
-## Dithering {#dithering}
-
-Dithra pixlar för att minska bandningsartefakter. Vanligtvis bör detta vara aktiverat, men kan stängas av för specifika operationer (t.ex. export av djupkartor eller andra dataspecifika operationer).

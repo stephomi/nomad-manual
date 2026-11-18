@@ -1,214 +1,251 @@
 # ![](/icons/multires.webp) Topologia {#topology}
 
-To menu kontroluje topologię obiektów w Nomadzie, a także narzędzia do wypiekania (bake) i przenoszenia detali między obiektami oraz między teksturami.
+To menu zarządza topologią obiektów w Nomadzie i zawiera narzędzia do wypalania oraz przenoszenia detali między obiektami, a także między teksturami.
 
 ![](/images/topology_overview.webp)
 
-Nomad opiera się na wielokątach, używa trójkątów i czworokątów do obsługi geometrii.
-Przez topologię rozumiemy zarówno liczbę ścian, jak i sposób, w jaki punkty (wierzchołki) są połączone.
+Nomad opiera się na wielokątach: geometrię tworzą trójkąty i czworokąty.
+Mówiąc o topologii, mamy na myśli zarówno liczbę ścian, jak i sposób, w jaki połączone są punkty (wierzchołki).
 
-Ważne jest, aby śledzić topologię, zwłaszcza jeśli chcesz rzeźbić lub malować drobne detale.
+Warto pilnować topologii, zwłaszcza gdy chcesz rzeźbić lub malować drobne detale.
 
-::: tip Jak śledzić swoją topologię?
-Możesz wyświetlić [Wireframe](settings.md#wireframe) lub po prostu wyłączyć [Smooth Shading](settings.md#smooth-shading).
+::: tip Jak pilnować topologii?
+Możesz włączyć [Szkielet](settings.md#wireframe) albo po prostu wyłączyć [Płynne cieniowanie](settings.md#smooth-shading).
 :::
 
 ![](/images/topology_top.webp)
 
-Menu topologii w Nomadzie ma kilka sekcji:
+Menu Topologia ma kilka kart, ułożonych w dwóch rzędach:
 
-| Method                                | Icon                         | Description                                                      |
+| Metoda                                | Ikona                        | Opis                                                             |
 | :-----------------------------------: | :--------------------------: | :--------------------------------------------------------------: |
-| [Multiresolution](#multiresolution)   | ![](/icons/multires.webp)   | Edycja wielu poziomów detalu przy użyciu podziału (subdivision)  |
-| [Voxel Remesher](#voxel-remesher)     | ![](/icons/voxel.webp)      | Przeliczenie nowej topologii o jednolitej gęstości               |
-| [Dynamic Topology](#dynamic-topology) | ![](/icons/dynamic.webp)    | Lokalnie dodaje/usuwa ściany w czasie rzeczywistym podczas rzeźbienia lub malowania |
-| [Misc](#misc)                         | ![](/icons/topo_extra.webp) | Dekompozycja (decimation), UV, baking, remeshing, reprojekcja    |
-| [Primitive](#msc)                     | ![](/icons/dot.webp)        | Opcje prymitywów                                                 |
+| [Wielokrotna rozdzielczość](#multiresolution) | ![](/icons/multires.webp)   | Edycja kilku poziomów szczegółowości dzięki podziałowi |
+| [Remesh wokselowy](#voxel-remesher)   | ![](/icons/voxel.webp)      | Tworzy nową topologię o jednolitej gęstości                      |
+| [Topologia dynamiczna](#dynamic-topology) | ![](/icons/dynamic.webp)    | Dodaje i usuwa ściany lokalnie, na bieżąco, podczas rzeźbienia lub malowania |
+| [Różne](#misc)                        | ![](/icons/topo_extra.webp) | Zamykanie otworów, wymuszanie manifold i konwersja na obiekt trzypłaszczyznowy |
+| [Prymityw](#primitive)                | ![](/icons/dot.webp)        | Opcje prymitywu                                                  |
+| [Uprość](#decimation)                 | ![](/icons/decimate.webp)      | Zmniejsza liczbę ścian, zachowując kształt                    |
+| [Przebudowa na czworokąty](#quad-remesh) | ![](/icons/quad.webp)       | Odbudowuje obiekt z czystym układem czworokątów                 |
+| [Rozwijanie UV](#uv-unwrap)           | ![](/icons/uv.webp)         | Tworzy UV do teksturowania                                       |
+| [Zastosuj](#bake)                     | ![](/icons/bake.webp)       | Wypala detale i malowanie do tekstur, wierzchołków lub stempli VDM |
 
 
-## Statystyki poligonów {#polygon-stats}
+## Statystyki wielokątów {#polygon-stats}
 
 ![](/images/topology_stats.webp)
 
-Górna sekcja menu topologii wyświetla informacje o wielokątach dla wybranego obiektu i całej sceny. Liczby pokazują całkowitą liczbę wierzchołków, całkowitą liczbę trójkątów oraz całkowitą liczbę quadów (czterokątnych wielokątów).
+U góry każdej karty widać liczbę wielokątów zaznaczonego obiektu, a gdy w scenie jest więcej niż jeden obiekt, także całej sceny. Kolumny to kolejno liczba wierzchołków, trójkątów, czworokątów (wielokątów o 4 bokach) i współrzędnych UV (0, gdy obiekt nie ma UV).
 
-Stuknięcie w tę sekcję wyświetli listę statystyk wielokątów dla wszystkich obiektów wielokątnych w scenie.
+Stuknij tę sekcję, aby zobaczyć listę wszystkich obiektów sceny z ich dokładnymi liczbami, w tym liczbą grup powierzchni.
 
-## ![](/icons/multires.webp) Multiresolution {#multiresolution}
+## ![](/icons/cog.webp) Menu z kołem zębatym {#gear-menu}
+Niektóre sekcje, na przykład te w kartach [Przebudowa na czworokąty](#quad-remesh) i [Zastosuj](#bake), mają dodatkowe opcje. Otwierasz je ikoną koła zębatego obok tytułu sekcji.
+
+## ![](/icons/multires.webp) Wielokrotna rozdzielczość {#multiresolution}
 
 ![](/images/topology_multires_menu.webp)
 
-### Czym jest multiresolution? {#what-is-multiresolution}
-Funkcja multiresolution jest przydatna w dwóch głównych scenariuszach:
-- Algorytm gładkiego podziału (smooth subdivision), aby zwiększyć liczbę wielokątów obiektu
-- Obsługa wielu poziomów rozdzielczości, aby można było przełączać się między edycją w małej i dużej skali
+### Czym jest wielokrotna rozdzielczość? {#what-is-multiresolution}
+Wielokrotna rozdzielczość przydaje się głównie w dwóch sytuacjach:
+- gładki podział, który zwiększa liczbę wielokątów obiektu,
+- obsługa kilku poziomów rozdzielczości, dzięki czemu możesz przechodzić między drobnymi a dużymi zmianami.
 
 ![](/videos/multiresolution.mp4)
 
-#### Przepływ pracy z multiresolution {#multiresolution-workflow}
-Ważnym aspektem multiresolution jest to, że możesz wrócić do niższej rozdzielczości, wprowadzić zmiany w obiekcie, a następnie wrócić do najwyższej rozdzielczości bez utraty detali wysokiej rozdzielczości. Wszystkie detale wysokiej rozdzielczości zostaną automatycznie zreprojekowane.
+#### Praca z wielokrotną rozdzielczością {#multiresolution-workflow}
+Ważne jest to, że możesz wrócić do niższej rozdzielczości, zmienić obiekt, a potem wrócić do najwyższej rozdzielczości bez utraty drobnych detali. Wszystkie detale wysokiej rozdzielczości zostaną automatycznie rzutowane na nowy kształt.
+
+[Warstwy](layers.md#layers) działają na każdym poziomie rozdzielczości.
 
 ::: warning
-Jeśli używasz narzędzia, które zmienia topologię obiektu, utracisz wszystkie pozostałe poziomy rozdzielczości tego obiektu!
-Zawsze powinieneś otrzymać ostrzeżenie, gdy może do tego dojść, na przykład gdy używasz:
-- [Voxel Remesher](#voxel-remesher)
-- [Dynamic Topology](#dynamic-topology)
-- [Trim tool](tools.md#trim)
-- [Split tool](tools.md#split)
+Jeśli użyjesz narzędzia, które zmienia topologię obiektu, stracisz wszystkie pozostałe poziomy rozdzielczości!
+Nomad zawsze powinien cię wtedy ostrzec, na przykład gdy używasz:
+- [Remeshu wokselowego](#voxel-remesher)
+- [Topologii dynamicznej](#dynamic-topology)
+- [narzędzia Przytnij](tools.md#trim)
+- [narzędzia Podziel](tools.md#split)
 :::
 
 
-### Suwak multiresolution {#multiresolution-slider}
-Ten suwak wskazuje liczbę poziomów podziału w bieżącym obiekcie. Jeśli są 6 pionowych kresek, oznacza to 6 poziomów podziału. Kółko wskazuje aktualnie wyświetlany poziom podziału. 
+### Suwak wielokrotnej rozdzielczości {#multiresolution-slider}
+Ten suwak pokazuje, ile poziomów podziału ma bieżący obiekt. Jeśli widzisz 6 pionowych kresek, obiekt ma 6 poziomów podziału. Kółko wskazuje aktualnie wyświetlany poziom.
+
+Małe ikony nad suwakiem pokazują, które opcje (`Zablokuj poziom 0`, `Liniowy`, `Ostra granica`, `Zachowaj trójkąty`) zostały użyte na danym poziomie.
 
 ### Odwróć {#reverse}
-Na najniższym poziomie podziału przycisk Reverse spróbuje utworzyć poziom poniżej bieżącego. Zazwyczaj jest to możliwe tylko wtedy, gdy obiekt został pierwotnie utworzony z podziałem, np. w Nomadzie lub innych aplikacjach 3D obsługujących powierzchnie subdivision z multiresolution.
+Na najniższym poziomie podziału przycisk Odwróć spróbuje utworzyć poziom poniżej bieżącego. Zwykle udaje się to tylko wtedy, gdy obiekt od początku powstał przez podział, na przykład w Nomadzie lub w innej aplikacji 3d obsługującej powierzchnie podziałowe z wielokrotną rozdzielczością.
 
-### Subdividuj {#subdivide}
-Przycisk *Subdivide* zwiększy liczbę wielokątów 4‑krotnie, więc pamiętaj, aby obserwować liczbę wielokątów, ponieważ może bardzo szybko rosnąć!
-Ważnym aspektem *Subdivision Surface* jest to, że zbiega ona do *Smooth Surface*.
-Aby zrozumieć, jak to działa, możesz wypróbować przycisk *Subdivide* na obiekcie z niewielką liczbą wielokątów.
+### Podziel {#subdivide}
+Przycisk *Podziel* zwiększa liczbę wielokątów czterokrotnie, więc pilnuj ich liczby, bo rośnie bardzo szybko! Gdy wynik byłby bardzo ciężki, Nomad poprosi o potwierdzenie.
+Ważną cechą *powierzchni podziałowych* jest to, że dążą do *gładkiej powierzchni*.
+Aby zobaczyć, jak to działa, wypróbuj przycisk *Podziel* na obiekcie z niewielką liczbą wielokątów.
 
-Możesz wyłączyć to zachowanie *Smooth*, zaznaczając opcję `Linear subdivision`.
+To *wygładzanie* możesz wyłączyć opcją `Liniowy`.
 
 ### Usuń niższe {#delete-lower}
-Jeśli istnieją poziomy podziału poniżej aktualnie wyświetlanego poziomu, usuń je. Jeśli zrobisz to przypadkowo, możesz je odtworzyć przyciskiem Reverse.
+Usuwa poziomy podziału poniżej aktualnie wyświetlanego. Jeśli zrobisz to przez przypadek, możesz je odtworzyć przyciskiem Odwróć.
 
 ### Usuń wyższe {#delete-higher}
-Jeśli istnieją poziomy podziału powyżej aktualnie wyświetlanego poziomu, usuń je.
+Usuwa poziomy podziału powyżej aktualnie wyświetlanego.
 
-### Liniowa subdivizja {#linear-subdivision}
-Dzieli siatkę bez zastosowania wygładzania.
+### ![](/icons/lock.webp) Zablokuj poziom 0 {#lock-lv0}
+Zachowuje kształt najniższego poziomu podziału, gdy rzeźbisz na wyższych poziomach. Malowanie nadal trafia na poziom 0. Ma to znaczenie, gdy obiekt powstał w innej aplikacji, a siatka bazowa musi pozostać bez zmian.
 
-### Ostry brzeg {#sharp-border}
-Jeśli obiekt ma facegroupy, włączenie tej opcji zachowa ostre krawędzie na granicach facegroup. Można to ustawić na każdym poziomie podziału (suwak podziału będzie miał małą ikonę nad poziomem, aby to wskazać).
+Opcja jest dostępna tylko przed pierwszym podziałem. Gdy jest wyłączona, duże zmiany na wyższych poziomach podziału przesuwają też poziom 0.
 
-### Zachowaj trójkąty {#keep-triangles}
-Większość standardowych systemów subdivision surface próbuje konwertować wszystkie wielokąty na quady podczas operacji podziału. Ten przełącznik wymusi użycie trójkątów podczas podziału.
+### ![](/icons/linear.webp) Liniowy {#linear-subdivision}
+Dzieli siatkę bez żadnego wygładzania.
 
-### Zablokuj (LV0) {#lock-lv0}
+### ![](/icons/group.webp) Ostra granica {#sharp-border}
+Jeśli obiekt ma grupy powierzchni, ta opcja zachowuje ostre granice między nimi. Można ją ustawić osobno dla każdego poziomu podziału (suwak pokaże wtedy małą ikonę nad danym poziomem).
 
-Zapobiega modyfikowaniu najniższego poziomu podziału. Może to być ważne, jeśli obiekt został wygenerowany w innej aplikacji i obiekt bazowy musi pozostać niezmieniony. Gdy ta opcja jest wyłączona, duże zmiany wprowadzane na wyższych poziomach podziału będą przesuwać poziom 0.
+### ![](/icons/triangle.webp) Zachowaj trójkąty {#keep-triangles}
+Większość typowych systemów powierzchni podziałowych podczas podziału zamienia wszystkie wielokąty na czworokąty. Ta opcja wymusza podział z użyciem trójkątów.
 
-::: tip 
+::: tip
 
-Subdivision domyślnie wygładza wszystkie ostre krawędzie. Aby zachować krawędzie lekko ostre, poeksperymentuj z użyciem linear subdivision lub Sharp border na pierwszych 2 poziomach podziału, a następnie wyłącz je na wyższych poziomach. Utworzy to pół‑ostro podzieloną siatkę.
+Podział domyślnie wygładza wszystkie ostre krawędzie. Aby zachować lekko ostre krawędzie, spróbuj użyć `Liniowy` lub `Ostra granica` na pierwszych 2 poziomach podziału, a na wyższych je wyłącz. Uzyskasz w ten sposób półostrą podzieloną siatkę.
 
 :::
 
+### Pokaż najwyższy poziom {#show-highest-level}
+Wyświetla najwyższy poziom ze wszystkimi detalami, gdy rzeźbisz na niższym. Przydaje się, by widzieć efekt końcowy podczas dużych zmian.
 
-## ![](/icons/voxel.webp) Voxel Remesher {#voxel-remesher}
+### Szkielet: Tylko poziom 0 {#wireframe-level-0-only}
+Gdy [Szkielet](settings.md#wireframe) jest włączony, pokazuje tylko szkielet najniższego poziomu. Gęsty szkielet wysokich poziomów potrafi zasłonić kształt.
+
+
+## ![](/icons/voxel.webp) Remesh wokselowy {#voxel-remesher}
 ![](/images/topology_voxel_menu.webp)
-Podczas używania `Voxel Remesher` cała siatka zostanie wymuszona na topologię o jednolitej rozdzielczości, co oznacza, że wszystkie wielokąty mają mniej więcej ten sam rozmiar. Jest to bardzo przydatne, gdy nie chcesz myśleć o topologii i po prostu swobodnie rzeźbić.
+Remesh wokselowy nadaje całej siatce jednolitą rozdzielczość, czyli wszystkie wielokąty mają mniej więcej ten sam rozmiar. To bardzo wygodne, gdy nie chcesz myśleć o topologii, tylko swobodnie rzeźbić.
 
-Typowy workflow rzeźbienia może zaczynać się od użycia `Voxel Remesher` do zablokowania ogólnego kształtu w niskiej rozdzielczości.
-Po prostu naciskaj przycisk *Remesh* od czasu do czasu, gdy zbyt mocno rozciągasz siatkę, aby uniknąć nadmiernych zniekształceń.
+Typowa praca może zacząć się od remeshu wokselowego, by w niskiej rozdzielczości nakreślić przybliżony kształt.
+Gdy za bardzo rozciągasz siatkę, co jakiś czas naciśnij przycisk *Ponownie utwórz siatkę*, aby uniknąć zniekształceń.
 
 ![](/videos/voxel_remesher.mp4)
 
 
-::: tip Voxel?
-Jak wspomniano powyżej, Nomad jest oprogramowaniem poligonalnym, ale `Voxel Remesher` jest jednym wyjątkiem, w którym do remeshingu (tymczasowo) używane jest inne podejście.
+::: tip Woksele?
+Jak wspomnieliśmy, Nomad pracuje na wielokątach, ale remesh wokselowy jest wyjątkiem: do przebudowy siatki (tymczasowo) używa innego podejścia.
 
-Jedną z dużych różnic jest to, że podejście voxelowe nie akceptuje samoprzecięć, więc zostaną one usunięte.
-Nie obsługuje też siatek z dziurami.
+Duża różnica polega na tym, że podejście wokselowe nie dopuszcza samoprzecięć, więc zostaną one usunięte.
+Nie obsługuje też siatek z otworami.
 
-Przez dziury nie rozumiemy `genus hole` (`dziura` w torusie), ale siatki, które nie są `wodoszczelne`/`zamknięte`.
-Zazwyczaj oznacza to, że przed zastosowaniem remeshingu wszystkie dziury zostaną wypełnione, podobnie jak w [Trim tool](tools.md#trim) lub [Hole filling feature](scene.md#hole-filling).
+Przez otwory nie rozumiemy `otworu genus` (`dziury` w pączku), tylko siatki, które nie są `szczelne`/`zamknięte`.
+W praktyce oznacza to, że przed przebudową wszystkie otwory zostaną wypełnione, podobnie jak przy [narzędziu Przytnij](tools.md#trim) czy [wypełnianiu otworów](#holes). Sposób wypełniania wybierasz opcją [Otwory](#voxel-holes) poniżej.
 :::
 
-### Remesh {#voxel-remesh}
-Wykonaj voxel remesh.
+### ![](/icons/voxel.webp) Ponownie utwórz siatkę {#voxel-remesh}
+Wykonuje remesh wokselowy. Małe ikony na przycisku przypominają, które z poniższych opcji są włączone.
 
 ### Rozdzielczość {#voxel-resolution}
-Rozmiar voxelów używanych podczas obliczeń. Podczas zmiany tego parametru na siatkę zostanie nałożony wzór szachownicy, aby dać podgląd rezultatu.
+Rozmiar wokseli użytych w obliczeniach: wyższe wartości dają więcej detali. Podczas zmiany tego parametru na siatce pojawia się szachownica, która pokazuje podgląd wyniku.
 
-### Zbuduj multiresolution {#build-multiresolution}
-Tworzy niższe poziomy multiresolution dla voxel remesh. Jeśli użyjesz wzoru szachownicy do ustawienia rozdzielczości i ustawisz build multiresolution na 2, końcowy rezultat będzie miał detal odpowiadający suwakowi rozdzielczości, a w zakładce multires będzie na poziomie 2, co oznacza, że masz siatki multires o niższej rozdzielczości na poziomie 1 i 0. Może to być dobry sposób na jednoczesne wygenerowanie czystej siatki z równymi wielokątami i posiadanie niskorozdzielczościowej siatki kontrolnej.
+Zakraplacz pobiera rozdzielczość z gęstości siatki w miejscu, które stukniesz. Przycisk z sześcianem obok przełącza wartość na `Długość krawędzi` w jednostkach świata: ta sama wartość daje wtedy te same detale na każdym obiekcie.
 
-::: tip Tip: Build multiresolution i stable smoothing
+### Utwórz wielokrotną rozdzielczość {#build-multiresolution}
+Tworzy niższe poziomy wielokrotnej rozdzielczości dla remeshu wokselowego. Jeśli ustawisz rozdzielczość za pomocą szachownicy, a tę opcję na 2, końcowy wynik będzie miał detale zgodne z suwakiem rozdzielczości, a w karcie wielokrotnej rozdzielczości znajdzie się na poziomie 2, czyli poniżej będą siatki o niższej rozdzielczości na poziomach 1 i 0. To dobry sposób, by jednocześnie uzyskać czystą siatkę z równymi wielokątami i siatkę kontrolną o niższej rozdzielczości.
 
-Ta opcja może czasami powodować „pętle” w geometrii, które trudno wygładzić, powodując małe „pryszcze”. Jeśli tak się stanie, włącz „Stable smoothing” w opcjach narzędzia smooth. 
+Przy wysokich rozdzielczościach działa też szybciej i zużywa mniej pamięci. Ale przy niskiej rozdzielczości i wielu poziomach stracisz detale.
+
+::: tip Wskazówka: wielokrotna rozdzielczość i stabilne wygładzanie
+
+Ta opcja czasem tworzy w geometrii „pętle”, które trudno wygładzić i które dają małe pryszcze. Jeśli tak się stanie, włącz „Stabilne wygładzanie” w opcjach narzędzia Gładkie. 
 
 :::
 
-### Zachowaj ostre krawędzie {#keep-sharp-edges}
-Włącza przyciąganie nowych punktów do ostrych krawędzi oryginalnej siatki. Może to wprowadzać zniekształcenia.
+### Pogrub cienkie części {#thicken-thin-parts}
+Części cieńsze niż woksele mogą się podczas remeshu rozpaść lub zniknąć. Ta opcja je pogrubia, żeby przetrwały: wyższe wartości pogrubiają mocniej. Nie jest dostępna razem z `Ostre krawędzie` ani `Ostra granica`.
 
-## ![](/icons/dynamic.webp) Dynamic Topology {#dynamic-topology}
+### Otwory {#voxel-holes}
+Sposób zamykania otworów przed remeshem:
+
+* `Wypełnij` - Każdy otwór jest zamykany osobno, od jego krawędzi.
+* `Kształt` - Otwory są zamykane zgodnie z otaczającą powierzchnią, a nakładające się otwarte fragmenty zostają połączone.
+
+### ![](/icons/angle.webp) Ostre krawędzie {#keep-sharp-edges}
+Przyciąga nowe punkty do ostrych krawędzi oryginalnej siatki. Przydaje się głównie przy prostych operacjach boolean na prymitywach i może wprowadzić zniekształcenia.
+
+### ![](/icons/group.webp) Ostra granica {#voxel-sharp-border}
+Nowe ściany podążają za granicami grup powierzchni, a granica pozostaje ostra tam, gdzie powierzchnia się wzdłuż niej załamuje.
+
+### ![](/icons/group_separate.webp) Zachowaj osobne grupy {#keep-groups-separate}
+Każda grupa powierzchni jest przebudowywana osobno: grupy nigdy się nie łączą, a każda pozostaje zamkniętym kawałkiem we własnej grupie. W tym trybie wielokrotna rozdzielczość nie jest tworzona. Opcja jest dostępna, gdy obiekt ma kilka grup powierzchni.
+
+## ![](/icons/dynamic.webp) Topologia dynamiczna {#dynamic-topology}
 
 ![](/images/topology_dyntopo_menu.webp)
-Multiresolution i voxel remeshing to powszechne w branży metody kontrolowania topologii, ale obie wymagają pilnowania, aby nie rozciągać wielokątów zbyt mocno ani nie ściskać ich zbyt ciasno. 
+Wielokrotna rozdzielczość i remesh wokselowy to powszechne w branży metody kontroli topologii, ale obie wymagają pilnowania, by nie rozciągać wielokątów za bardzo ani nie ściskać ich za mocno. 
 
-Dynamic Topology jest alternatywną metodą. Podczas rzeźbienia Nomad adaptacyjnie dodaje i usuwa wielokąty w trakcie pociągnięcia pędzla, więc rzeźbienie drobnych detali doda wiele małych wielokątów tam, gdzie ich potrzebujesz, a wygładzanie w innych miejscach usunie wielokąty.
+Topologia dynamiczna to inne podejście. Podczas rzeźbienia Nomad na bieżąco dodaje i usuwa wielokąty w trakcie pociągnięcia pędzla: rzeźbienie drobnych detali dodaje wiele małych wielokątów tam, gdzie są potrzebne, a wygładzanie w innych miejscach je usuwa.
 
-Zwróć uwagę, że dynamic topology używa trójkątów zamiast quadów. Może to wyglądać trochę „bałaganiarsko”, ale często lepiej jest nie patrzeć na siatkę (wireframe), tylko skupić się na stworzeniu ładnej rzeźby bez martwienia się o topologię, a później użyć jednego z innych narzędzi remeshingu Nomada, aby wygenerować czystą siatkę quadów.
+Pamiętaj, że topologia dynamiczna używa trójkątów, a nie czworokątów. Może to wyglądać nieco chaotycznie, ale najlepiej w ogóle nie patrzeć na szkielet: skup się na ładnej rzeźbie bez martwienia się o topologię, a później użyj jednego z innych narzędzi Nomada do przebudowy siatki, by uzyskać czystą siatkę z czworokątów.
 
-Zobacz wideo poniżej w akcji.
+Zobacz, jak to działa, na filmie poniżej.
 
 ![](/videos/dynamic.mp4)
 
-### Włączone {#enabled}
-Włącza dynamic topology. Ikona DynTopo zostanie umieszczona pod suwakami promienia i intensywności pędzla, aby umożliwić przełączanie Dyntopo dla każdego narzędzia.
+### Włączona {#enabled}
+Włącza topologię dynamiczną. Pod suwakami promienia i intensywności pędzla pojawi się ikona DynTopo, którą możesz włączać i wyłączać DynTopo osobno dla każdego narzędzia. Może to zauważalnie wpłynąć na wydajność, a warstwy są poprawnie aktualizowane.
 
-### Detal {#dyn-detail}
-Kontroluje ilość detalu, a jego zachowanie zmienia się w zależności od wyboru „Detail based on...”, patrz poniżej.
+### Szczegół {#dyn-detail}
+Ustala poziom szczegółów; jego działanie zależy od wyboru w „Szczegóły oparte na...” (patrz niżej). W trybie `Ekran` etykieta pokazuje docelowy rozmiar trójkąta w pikselach. W trybie `Stała` zakraplacz pozwala pobrać szczegółowość z gęstości siatki w miejscu, które stukniesz.
 
-### Detal bazujący na... {#detail-based-on}
-| Method   | Description                                                     |
+### Szczegóły oparte na... {#detail-based-on}
+| Metoda   | Opis                                                            |
 | :------: | :-------------------------------------------------------------: |
-| Screen   | Poziom detalu zależy od tego, jak duży obiekt jest na ekranie. Suwak detail to 100% lub więcej dla drobnych detali (małe trójkąty) lub 1% dla niskiego detalu (duże trójkąty).  |
-| Radius   | Promień narzędzia definiuje ilość detalu. Użyj małego promienia narzędzia dla drobnych detali, dużego promienia dla niskiego detalu. Suwak detail jest mnożnikiem tego stosunku.                     |
-| Constant | Suwak detail definiuje ilość detalu i nie jest zależny od rozmiaru ekranu ani rozmiaru narzędzia.             |
+| Ekran    | Poziom szczegółów zależy od tego, jak duży jest obiekt na ekranie. Suwak szczegółów na 100% lub więcej daje drobne detale i małe trójkąty, a na 1% mało detali i duże trójkąty.  |
+| Promień  | Poziom szczegółów wyznacza promień narzędzia. Mały promień daje drobne detale, duży promień mniej detali. Suwak szczegółów jest mnożnikiem tej proporcji.                     |
+| Stała    | Poziom szczegółów wyznacza suwak szczegółów i nie zależy od rozmiaru na ekranie ani od rozmiaru narzędzia. To ta sama wartość co suwak [Szczegół](#all-detail) w `Ponownie utwórz siatkę`.             |
 
-::: tip TIP: Tryb Radius
+::: tip WSKAZÓWKA: tryb Promień
 
-Aby lepiej zrozumieć, jak działa tryb radius, zacznij przesuwać suwak detail jednym palcem, a jednocześnie zmieniaj promień narzędzia drugim palcem. Zobaczysz, jak są ze sobą powiązane.
+Aby lepiej poczuć, jak działa tryb Promień, zacznij przesuwać suwak szczegółów jednym palcem, a jednocześnie zmieniaj promień narzędzia drugim. Zobaczysz, jak są ze sobą powiązane.
 
 :::
 
 ### Preferuj... {#prefer}
-| Method  | Description       |
-| :-----: | :---------------: |
-| Speed   | Preferuj wydajność |
-| Quality | Preferuj jakość    |
+| Metoda   | Opis                    |
+| :------: | :---------------------: |
+| Szybkość | Stawia na wydajność     |
+| Jakość   | Stawia na jakość        |
 
-Gdy preferujesz `Quality`, dwie główne różnice to:
-- rafinacja jest stosowana przed rzeźbieniem, więc otrzymasz mniej artefaktów interpolacji podczas malowania lub rzeźbienia bardzo drobnych detali
-- rafinacja działa, dopóki nie zbiegnie do właściwego poziomu detalu, w przeciwieństwie do zachowania przyrostowego.
+Gdy wybierzesz `Jakość`, są 2 główne różnice:
+- zagęszczanie siatki odbywa się przed rzeźbieniem, więc przy malowaniu lub rzeźbieniu bardzo drobnych detali pojawia się mniej artefaktów interpolacji,
+- zagęszczanie trwa, aż siatka osiągnie właściwy poziom szczegółów, zamiast działać stopniowo.
  
-Dzięki temu, jeśli rzeźbisz bardzo drobne detale lub wykonujesz szybkie pociągnięcia, topologia zawsze zostanie dopracowana zgodnie z oczekiwaniami
+Dzięki temu nawet przy bardzo drobnych detalach czy szybkich pociągnięciach topologia zawsze zostanie zagęszczona zgodnie z oczekiwaniami.
 
 
-### Użyj nacisku dla promienia {#use-pressure-on-radius}
-Istotne tylko, jeśli `Radius` jest aktywny. Po włączeniu poziom detalu zawsze będzie odzwierciedlał rozmiar pędzla, nawet gdy rozmiar pędzla jest modyfikowany przez nacisk rysika.
+### ![](/icons/pressure.webp) Użyj nacisku dla promienia {#use-pressure-on-radius}
+Ma znaczenie tylko w trybie `Promień`. Gdy jest włączona, poziom szczegółów zawsze odpowiada rozmiarowi pędzla, nawet gdy ten zmienia się pod wpływem nacisku rysika.
 
-### Użyj wygaszenia pociągnięcia {#use-stroke-falloff}
+### Użyj zanikania pociągnięcia {#use-stroke-falloff}
 
-Uwzględnia również krzywą wygaszania (falloff) pędzla i alfę w obliczeniach dyntopo.
+Uwzględnia w obliczeniach DynTopo także krzywą zanikania i alfę pędzla.
 
 ### Metoda {#method}
-Niezależnie od tego, czy używasz `Dynamic Topology` na swoim [Brush](#brush), czy [Globalnie](#global), możesz wybrać tryb jego działania:
+Wybierz, jak topologia dynamiczna zmienia siatkę, zarówno podczas rzeźbienia, jak i przy użyciu [Ponownie utwórz siatkę](#dyn-remesh):
 
-| Method         | Description                                                           |
+| Metoda         | Opis                                                                  |
 | :------------: | :-------------------------------------------------------------------: |
-| Uniformisation | Może dodawać i usuwać ściany, jest to tryb używany w powyższym filmie |
-| Subdivision    | Dodaje tylko nowe ściany, nie może usuwać ścian                      |
-| Decimation     | Usuwa ściany, nie może dodawać nowych                                 |
+| Uniformizacja  | Może dodawać i usuwać ściany; to tryb użyty na filmie powyżej          |
+| Podział        | Tylko dodaje nowe ściany, nie może ich usuwać                         |
+| Upraszczanie   | Tylko usuwa ściany, nie może dodawać nowych                           |
 
-### Chroń zamaskowany obszar {#protect-masked-area}
-Włącza ochronę zamaskowanych obszarów przed zmianami topologii.
+### ![](/icons/shield.webp) Chroń zamaskowany obszar {#protect-masked-area}
+Zamaskowane obszary chronią topologię przed zmianami.
 
-### Ekstrapolacja wierzchołków {#vertex-extrapolation}
+### ![](/icons/normal.webp) Ekstrapolacja wierzchołków {#vertex-extrapolation}
+Umieszcza punkty na gładkiej powierzchni, która podąża za krzywizną wokół nich, zamiast płasko na istniejących ścianach.
 
+### Szczegół {#all-detail}
+Rozdzielczość używana przy przebudowie siatki. Jeśli DynTopo działa w trybie „Stała”, będzie to ta sama wartość co suwak Szczegół na górze tego menu. Zakraplacz pobiera szczegółowość z gęstości siatki w miejscu, które stukniesz.
 
-### Detal {#all-detail}
-Rozdzielczość używana do operacji remesh. Jeśli Dyntopo jest w trybie „Constant”, będzie to ta sama wartość co suwak Detail na górze tego menu.
+### Ponownie utwórz siatkę {#dyn-remesh}
+Przebudowuje całą siatkę algorytmem DynTopo. Zwykle do pełnej przebudowy lepiej użyć [remeshu wokselowego](#voxel-remesher).
 
-### Remesh {#dyn-remesh}
-Wykonuje globalny remesh przy użyciu algorytmu dyntopo. Zazwyczaj do pełnego remeshingu powinieneś używać [Voxel Remesher](#voxel-remesher).
-
-Jednak jedną z zalet w porównaniu z voxelami jest to, że zamaskowany obszar będzie chroniony, więc masz lepszą kontrolę nad tym, gdzie umieścić większą lub mniejszą gęstość.
+Ta metoda ma jednak nad wokselami przewagę: siatka nie musi być zamknięta, a zamaskowany obszar jest chroniony, więc lepiej kontrolujesz, gdzie ma być większa, a gdzie mniejsza gęstość.
 
 
 
@@ -216,313 +253,416 @@ Jednak jedną z zalet w porównaniu z voxelami jest to, że zamaskowany obszar b
 
 ![](/images/topology_misc_menu.webp)
 
-##### ![](/icons/cog.webp) Menu koła zębatego {#gear-menu}
-Wiele narzędzi w tym menu ma dodatkowe opcje. Można je otworzyć za pomocą ikony koła zębatego obok tytułu sekcji.
+Ta karta zbiera narzędzia do porządkowania lub konwersji siatki: zamykania otworów, wymuszania manifold i zamiany obiektu na trzypłaszczyznowy.
 
-### Decymacja {#decimation}
+### ![](/icons/hole.webp) Otwory {#holes}
+![](/images/topology_holes_menu.webp)
+Najczęściej obiekt będzie szczelny, czyli siatka będzie „zamknięta”.
+
+Jeśli obiekt ma otwory, możesz je wypełnić.
+
+![](/videos/hole_filling.mp4)
+
+::: tip
+Remesh wokselowy automatycznie zamyka wszystkie otwory, niezależnie od tego, czy używasz go na 1, czy na wielu siatkach.
+:::
+
+#### Zamknij otwory {#close-holes}
+Zamyka otwory.
+
+#### Opcje {#holes-gear-menu}
+Te opcje zmieniają sposób wypełniania otworów:
+
+##### Grupa powierzchni {#fill-face-group}
+Wybierz grupę powierzchni dla nowych ścian:
+
+* `Mieszany` - Otwór otoczony jedną grupą powierzchni dostaje tę samą grupę, a otwór stykający się z kilkoma grupami dostaje nową.
+* `Nowy` - Wypełnione otwory dostają nową grupę powierzchni.
+* `Użyj ponownie` - Każdy otwór dostaje grupę powierzchni, która otacza go w największym stopniu.
+
+##### Szczegół {#fill-detail}
+Gęstość wielokątów użyta do wypełnienia otworu. Podczas przesuwania suwaka na modelu pojawia się szachownica, która pokazuje rozmiar trójkątów. Pole wyboru wyłącza tę opcję i używa tylko istniejących punktów, co zwykle tworzy nad otworem długie, cienkie trójkąty, trudne do rzeźbienia.
+
+##### Mostek {#fill-non-manifold}
+Wypełnia otwór razem z wyspami w jego środku jako jedną powierzchnię, zamiast wypełniać każdą krawędź osobno. Większy kąt pozwala połączyć mostkiem bardziej zakrzywione otwory. Pole wyboru wyłącza tę opcję.
+
+### ![](/icons/cog.webp) Wymuś manifold {#force-manifold}
+![](/images/topology_forcemanifold_menu.webp)
+Próbuje naprawić krawędzie non-manifold. Przydaje się przy programach zewnętrznych, które nie obsługują krawędzi wspólnych dla więcej niż 2 ścian.
+
+#### Oczyść {#clean}
+Wykonuje oczyszczanie.
+
+#### Opcje {#force-manifold-gear-menu}
+Ta opcja zmienia sposób oczyszczania siatki:
+
+##### Usuń małe ściany {#delete-small-faces}
+Próg, poniżej którego małe wielokąty są usuwane i scalane. Włączasz go polem wyboru.
+
+
+### ![](/icons/triplanar.webp) Trzypłaszczyznowy {#triplanar}
+![](/images/topology_triplanar_menu.webp)
+Zamienia siatkę na prymityw [trzypłaszczyznowy](scene.md#triplanar).
+Prawdopodobnie stracisz przy tym sporo detali: warstwy, malowanie i wielokrotna rozdzielczość również zostaną utracone.
+
+#### Wymuś formę sześcienną {#force-cubic}
+Sprawia, że obiekt trzypłaszczyznowy jest sześcianem. W przeciwnym razie dopasowuje się do najbliższego prostopadłościanu otaczającego obiekt.
+
+#### Konwertuj {#convert}
+Wykonuje konwersję na obiekt trzypłaszczyznowy.
+
+#### Rozdzielczość {#triplanar-resolution}
+Rozdzielczość siatki trzypłaszczyznowej: wyższe wartości zachowują więcej detali.
+
+## ![](/icons/decimate.webp) Uprość {#decimation}
 
 ![](/images/topology_decimation.webp)
 
-Zmniejsza liczbę wielokątów, starając się zachować jak najwięcej detali, używając trójkątów.
+Zmniejsza liczbę wielokątów, starając się zachować jak najwięcej detali, i używa przy tym trójkątów.
 
-Ta funkcja może być przydatna, jeśli chcesz eksportować model do druku 3D.
-Nie powinieneś jednak z niej korzystać, jeśli chcesz dalej na nim rzeźbić, ponieważ może generować nierówne trójkąty.
+Przydaje się na przykład przy eksporcie do druku 3d.
+Raczej nie używaj tej funkcji, jeśli chcesz dalej rzeźbić, bo może tworzyć nierówne trójkąty.
 
-Zauważ, że zamaskowane obszary nie będą dekomponowane.
+Zamaskowane obszary nie zostaną uproszczone.
 
 ![](/videos/decimate.mp4)
 
 ::: tip
 
-Używanie [Quadremesh tool](tools.md#quad-remesher) na obiektach o wysokiej liczbie wielokątów może zająć dużo czasu i dawać wyniki trudne do kontrolowania. Wstępne przetworzenie siatki za pomocą [facegroups](tools.md#facegroup-1) i decimate sprawi, że Quadremesh będzie działał znacznie szybciej i pozwoli na znacznie większą kontrolę nad topologią.
+Narzędzie [Quad Remesher](tools.md#quad-remesher) na obiektach z dużą liczbą wielokątów może liczyć bardzo długo i dawać trudne do kontrolowania wyniki. Przygotowanie siatki za pomocą [grup powierzchni](tools.md#facegroup) i upraszczania sprawi, że Quad Remesher zadziała znacznie szybciej, a ty zyskasz dużo większą kontrolę nad topologią.
 
-* Oznacz siatkę facegroupami, aby zdefiniować idealny przepływ quadów.
-* Użyj Facegroup relax, aby wygładzić granice facegroup.
-* Użyj Decimate. Zapewni to brak cienkich lub zniekształconych ścian na krawędziach facegroup. W ustawieniach decimate upewnij się, że facegroup jest włączone. Sprawi to, że krawędzie trójkątów będą dokładnie podążać za krawędziami facegroup.
-* W opcjach Quadremesh upewnij się, że relax jest wyłączony (ponieważ już wygładziłeś siatkę), i powinieneś uzyskać dobre rezultaty.
+* Podziel siatkę na grupy powierzchni, wyznaczając idealny przebieg czworokątów.
+* Złagodź grupy powierzchni, by uzyskać gładkie granice grup.
+* Uprość siatkę. Dzięki temu na granicach grup nie będzie cienkich ani zniekształconych ścian. W sekcji `Zachowaj granicę` upewnij się, że `Grupa powierzchni` jest włączona. Krawędzie trójkątów będą wtedy dokładnie podążać za granicami grup powierzchni.
+* W opcjach Quad Remesher upewnij się, że łagodzenie jest wyłączone (bo siatka jest już złagodzona), a wyniki powinny być dobre.
 
 :::
 
-#### Decymuj {#decimate}
-Rozpocznij operację decimate.
+### Uprość {#decimate}
+Rozpoczyna upraszczanie.
 
-Ikony obok przycisku decimate pozwalają przełączać opcje wpływające na dekompozycję. Procent wskazuje siłę danej opcji i można go ustawić w zaawansowanym menu koła zębatego.
+Ikony obok przycisku upraszczania pokazują poniższe opcje i pozwalają je włączać i wyłączać. Procent oznacza siłę danej opcji.
 
-* ![](/icons/palette.webp)  `Preserve Painting` - Umieszcza więcej trójkątów tam, gdzie występują detale malowania.
-* ![](/icons/triforce.webp) `Uniform Faces` - Preferuje tworzenie równomiernie rozmiarowo trójkątów.
-* ![](/icons/hole.webp)  `Preserve Geometry Borders` - Decimate spróbuje zachować granice w pobliżu otwartej geometrii i dziur bez zmian.
-* ![](/icons/group.webp) `Preserve Facegroup Borders` - Decimate spróbuje zachować granice facegroup bez zmian.
-* ![](/icons/uv.webp) `Preserve UV Borders` - Decimate spróbuje zachować granice UV bez zmian.
+* ![](/icons/palette.webp)  `Zachowaj malowanie` - Umieszcza więcej trójkątów tam, gdzie są detale malowania.
+* ![](/icons/triforce.webp) `Jednolite powierzchnie` - Preferuje trójkąty o równym rozmiarze.
+* ![](/icons/hole.webp)  `Otwór` - Upraszczanie stara się nie zmieniać krawędzi przy otwartej geometrii i otworach.
+* ![](/icons/group.webp) `Grupa powierzchni` - Upraszczanie stara się nie zmieniać granic grup powierzchni.
+* ![](/icons/uv.webp) `UV` - Upraszczanie stara się nie zmieniać granic UV.
 
-#### ![](/icons/cog.webp) Menu koła zębatego decymacji {#decimate-gear-menu}
-Menu koła zębatego ma następujące zaawansowane opcje:
-##### Zachowaj malowanie {#preserve-painting}
-Pole wyboru przełącza ten tryb, a wartość określa, jak dokładnie zostaną zachowane detale malowania. Wyższe wartości zachowają więcej malowania. Ustaw na 0, jeśli nie zależy ci na malowaniu.
+### Docelowe trójkąty {#target-triangles}
+Ustala docelową liczbę trójkątów. Domyślnie to 50%; przycisk procent/cel przełącza między wartością procentową a dokładną docelową liczbą wielokątów.
 
+### Opcje {#decimate-gear-menu}
+Każda opcja ma pole wyboru do jej włączania i wartość określającą jej siłę:
 
-##### Jednorodne ściany {#uniform-faces}
-Pole wyboru przełącza ten tryb. Wyższe wartości dadzą trójkąty o podobnym rozmiarze.
+#### ![](/icons/palette.webp) Zachowaj malowanie {#preserve-painting}
+Wartość określa, jak dokładnie zostaną zachowane detale malowania. Wyższe wartości zachowują więcej malowania. Ustaw 0, jeśli malowanie nie ma dla ciebie znaczenia.
 
-##### Zachowaj krawędzie {#preserve-borders}
-Włącz, aby zapobiec dekompozycji granic. Wagi granic można wybrać dla granic `Geometry`, `Face Group` lub `UV`.
+#### ![](/icons/triforce.webp) Jednolite powierzchnie {#uniform-faces}
+Wyższe wartości dają trójkąty o podobnym rozmiarze.
 
-#### Docelowe trójkąty {#target-triangles}
-Ustaw docelową liczbę trójkątów. Domyślna wartość to 50%, przycisk percent/target przełącza między procentem a dokładną docelową liczbą wielokątów.
+#### Zachowaj granicę {#preserve-borders}
+Chroni krawędzie przed upraszczaniem. Wagi krawędzi można ustawić dla granic `Otwór`, `Grupa powierzchni` lub `UV` (`UV` wymaga obiektu z UV).
 
+## ![](/icons/quad.webp) Przebudowa na czworokąty {#quad-remesh}
+![](/images/topology_quadremesh_menu.webp)
+Odbudowuje obiekt z czystym układem czworokątów. Ta karta ma kilka algorytmów przebudowy, każdy z własnym przyciskiem `Ponownie utwórz siatkę`, suwakiem `Docelowe czworokąty` i menu z kołem zębatym. Wypróbuj je na swoim obiekcie, bo dają dość różne wyniki!
 
+### Quad Remesher {#quad-remesher}
+Ten sam algorytm co narzędzie [Quad Remesher](tools.md#quad-remesher), opracowany przez [Exoside](https://exoside.com/). Jest dostępny tylko na niektórych platformach i wymaga zakupu: do tego czasu przycisk `Ponownie utwórz siatkę` pokazuje koszyk.
 
-### UV Unwrap - UVAtlas {#uv-unwrap-uvatlas}
+`Wybierz narzędzie` przełącza na narzędzie Quad Remesher, w którym rysujesz prowadnice i malujesz gęstość. W menu z kołem zębatym są `Adaptacyjna liczba czworoboków`, `Adaptacyjny rozmiar` (przy 100% rozmiar czworokątów podąża za krzywizną, przy 0% czworokąty są jednolite), `Wykryj twarde krawędzie` i `Reprojekcja wierzchołka`.
 
-![](/images/topology_uvatlas_menu.webp)
-Oblicza współrzędne tekstury (UV) dla bieżącej siatki, zazwyczaj preferując tworzenie większej liczby wysp z cięciami, aby zminimalizować zniekształcenia.
+::: tip
+Tam, gdzie jest dostępny, Quad Remesher zwykle daje najlepsze wyniki i największą kontrolę.
+:::
 
-Mała ikona oka między tytułem menu a kołem zębatym przełącza podgląd UV na obiekcie.
+### AutoRemesher {#autoremesher}
+Alternatywny algorytm przebudowy na czworokąty, z opcjami dopasowania rozmiaru i kształtu czworokątów do powierzchni.
+
+#### ![](/icons/cog.webp) Menu z kołem zębatym AutoRemesher {#autoremesher-gear-menu}
+Menu z kołem zębatym zawiera te zaawansowane opcje:
+
+##### Skalowanie krawędzi {#edge-scaling}
+Skaluje rozmiar czworokątów: wyższe wartości dają większe czworokąty.
+
+##### Adaptacyjność {#adaptivity}
+Dopasowuje gęstość czworokątów do krzywizny. 0 daje jednolite czworokąty, 1 daje mniejsze czworokąty w zakrzywionych miejscach.
+
+##### Anizotropia {#anisotropy}
+Rozciąga czworokąty wzdłuż najbardziej płaskiego kierunku powierzchni. 0 daje kwadratowe czworokąty, 1 daje wydłużone czworokąty na rurach i grzbietach.
+
+##### Ostra krawędź {#sharp-edge}
+Krawędzie zgięte bardziej niż ten kąt są zachowywane jako ostre.
+
+##### Wygładzanie normalnych {#smooth-normal}
+0 zachowuje fasetowaną powierzchnię podczas przebudowy. Wyższe wartości wygładzają powierzchnię, uwzględniając normalne wierzchołków.
+
+##### Maksymalne wypełnienie otworu {#autoremesher-max-fill-hole}
+Algorytm czasem tworzy niechciane otwory. Jeśli otwór ma mniej wierzchołków niż ta wartość, zostanie wypełniony.
+
+### Instant Mesh {#quad-remesh-instant}
+Przebudowuje siatkę [algorytmem Instant Meshes autorstwa Wenzela Jakoba, Marca Tariniego, Daniele Panozzo i Olgi Sorkine-Hornung](https://igl.ethz.ch/projects/instant-meshes/). Analizuje przebieg siatki i tworzy czystą topologię z czworokątów.
+
+#### Ponownie utwórz siatkę {#instant-remesh}
+Rozpoczyna przebudowę siatki.
+
+#### Docelowe czworokąty {#target-quads}
+Liczba czworokątów, którą algorytm spróbuje utworzyć.
+
+#### ![](/icons/cog.webp) Menu z kołem zębatym Instant Mesh {#quad-remesh-instant-gear-menu}
+Menu z kołem zębatym zawiera te zaawansowane opcje:
+
+##### Kąt zagięcia {#crease-angle}
+Próg ostrych narożników, które pomagają pokierować przebudową. Włączasz go polem wyboru.
+
+##### Maksymalne wypełnienie otworu {#max-fill-hole}
+Algorytm czasem tworzy niechciane otwory. Jeśli otwór ma mniej wierzchołków niż ta wartość, zostanie wypełniony.
+
+### QuadriFlow {#quadriflow}
+Przebudowuje siatkę algorytmem QuadriFlow, kolejnym sposobem na czysty układ czworokątów.
+
+#### ![](/icons/cog.webp) Menu z kołem zębatym QuadriFlow {#quadriflow-gear-menu}
+Menu z kołem zębatym zawiera te zaawansowane opcje:
+
+##### Zachowaj granicę {#quadriflow-preserve-boundary}
+Chroni krawędzie otworów.
+
+##### Zachowaj ostre krawędzie {#keep-sharp}
+Wyrównuje czworokąty z ostrymi krawędziami powierzchni.
+
+##### Przepływ minimalnego kosztu {#min-cost-flow}
+Używa solwera przepływu o minimalnym koszcie do ułożenia czworokątów. Działa wolniej, ale może dać bardziej regularną topologię.
+
+## ![](/icons/uv.webp) Rozwijanie UV {#uv-unwrap}
+Oblicza współrzędne tekstury (UV) dla zaznaczonego obiektu. Nomad ma dwie metody, `UVAtlas` i `BFF`, każdą z własnym przyciskiem `Rozwiń`.
 
 ![](/videos/unwrap.mp4)
 
-#### Rozwiń {#unwrap}
-Oblicz UV dla wybranego obiektu, które zostaną wyświetlone w tle.
+::: tip UV?
+UV często porównuje się do pakowania prezentu: jak najlepiej pociąć papier, by całkowicie okrył przedmiot, bez zakładek? 
 
-#### Usuń UV {#delete-uvs}
-Usuń UV z obiektu.
+UV działają podobnie, tylko zamiast papieru tniesz obiekt. Wyobraź sobie, że model jest z cienkiego plastiku: jak go pociąć, by rozłożyć go płasko, pomalować w tym płaskim stanie, a potem złożyć z powrotem?
 
-#### ![](/icons/cog.webp) Menu koła zębatego UVAtlas {#uvatlas-gear-menu}
-Menu koła zębatego ma następujące zaawansowane opcje:
+Teraz wyobraź sobie, że powierzchnia modelu jest z rozciągliwej lycry. Możesz ją rozciągnąć na płasko, pociąć albo połączyć oba sposoby. Ale jeśli na rozłożonym obiekcie namalujesz szachownicę, po złożeniu będzie zniekształcona. Co lepsze: więcej cięć i mniej zniekształceń, czy mniej cięć i więcej zniekształceń?
 
-#### Grupa ścian {#atlas-face-group}
-
-Użyj facegroup do zdefiniowania cięć dla UV.
-
-##### Maksymalne rozciągnięcie {#max-stretch}
-Niskie wartości tworzą mniejsze zniekształcenia i więcej wysp, wysokie wartości tworzą większe zniekształcenia i mniej wysp. 
-
-##### Odstęp między wyspami {#island-spacing}
-Ilość odstępu między wyspami. Niskie wartości marnują mniej miejsca, ale zwiększają ryzyko „przeciekania” tekstur między wyspami. 
-
-::: warning
-Obliczanie UV może zająć trochę czasu, najlepiej mieć siatkę z mniej niż 100k wierzchołków.
-:::
-
-::: tip UVs?
-Popularną analogią dla UV jest pakowanie prezentu; jaki jest najlepszy sposób na wycięcie papieru do pakowania, aby całkowicie pokryć obiekt, bez nakładania się fragmentów? 
-
-UV są podobne, ale zamiast cięcia papieru, tniesz obiekt. Wyobraź sobie, że twój model jest wykonany z cienkiego plastiku – jak byś go pociął, aby rozłożyć go na płasko, pomalować w tym płaskim stanie, a następnie złożyć z powrotem?
-
-Teraz wyobraź sobie, że powierzchnia twojego modelu jest wykonana z rozciągliwej lycry. Możesz rozciągnąć model na płasko, albo go pociąć, albo połączyć oba podejścia. Ale jeśli namalujesz szachownicę na obiekcie po spłaszczeniu, szachownica będzie zniekształcona po ponownym złożeniu. Która metoda jest lepsza: więcej cięć i mniej zniekształceń, czy mniej cięć i więcej zniekształceń?
-
-UV to instrukcje mówiące oprogramowaniu 3D, jak „ciąć i rozciągać” obiekt podczas nakładania tekstur. Narzędzie UV Atlas generalnie stosuje podejście „więcej cięć, mniej zniekształceń”.
+UV to instrukcje, które mówią programowi 3d, jak „pociąć i rozciągnąć” obiekt przy nakładaniu tekstur. UV Atlas zwykle stawia na „więcej cięć, mniej zniekształceń”.
 
 
 :::
 
 ::: tip UV w Nomadzie i innych aplikacjach
 
-Większość teksturowanych modeli, które znajdziesz online, będzie teksturowana przy użyciu UV. Nomad może je importować i wyświetlać poprzez panel [material](material#textures).
+Większość teksturowanych modeli, które znajdziesz w sieci, ma tekstury nałożone przez UV. Nomad potrafi je zaimportować i wyświetlić w panelu [materiału](material.md#textures).
 
-Gdy modele są tworzone w Nomadzie, możesz malować bezpośrednio na obiektach bez UV. Jeśli musisz je wyeksportować do innych aplikacji, np. [Procreate](https://procreate.art/), możesz „wypiec” informacje o kolorze Nomada w tekstury za pomocą UV. 
+Modele tworzone w Nomadzie możesz malować bezpośrednio, bez UV. Jeśli chcesz je wyeksportować do innych aplikacji, np. [Procreate](https://procreate.art/), możesz „wypalić” informacje o kolorze z Nomada do tekstur przez UV. 
 
 :::
 
-### UV Unwrap - BFF {#uv-unwrap-bff}
+### UVAtlas {#uv-unwrap-uvatlas}
+
+![](/images/topology_uvatlas_menu.webp)
+UVAtlas zwykle woli tworzyć więcej wysp przez cięcia, by zminimalizować zniekształcenia.
+
+#### Rozwiń {#unwrap}
+Oblicza UV dla zaznaczonego obiektu.
+
+#### Opcje {#uvatlas-gear-menu}
+Przyciski obok `Rozwiń`:
+
+##### Grupa powierzchni {#atlas-face-group}
+Gdy pokazuje `Tak`, cięcia UV wyznaczają grupy powierzchni. To ustawienie jest wspólne z BFF.
+
+##### Usuń UV {#delete-uvs}
+Przycisk kosza usuwa UV obiektu.
+
+##### Inspekcja {#uv-inspect}
+Pokazuje UV obiektu w tle.
+
+#### Maks. rozciągnięcie {#max-stretch}
+Niskie wartości dają mniej zniekształceń i więcej wysp, wysokie wartości więcej zniekształceń i mniej wysp. 
+
+#### Odstęp między wyspami {#island-spacing}
+Margines między wyspami. Niskie wartości marnują mniej miejsca, ale grożą przenikaniem tekstur między wyspami. 
+
+::: warning
+Obliczanie UV może chwilę potrwać: najlepiej, by siatka miała mniej niż 100 tys. wierzchołków.
+:::
+
+### BFF {#uv-unwrap-bff}
 ![](/images/topology_uvbff_menu.webp)
 
-UV BFF preferują podejście „mniej cięć, więcej zniekształceń”. 
+UV z BFF stawiają na „mniej cięć, więcej zniekształceń”. 
 
-#### ![](/icons/cog.webp) Menu koła zębatego UV BFF {#uv-bff-gear-menu}
+#### Opcje {#uv-bff-gear-menu}
+Obok `Rozwiń` znajdują się te same przyciski `Grupa powierzchni`, usuwania i `Inspekcja` co w [UVAtlas](#uvatlas-gear-menu).
 
-#### Grupa ścian {#bff-face-group}
+##### Grupa powierzchni {#bff-face-group}
 
-Użyj facegroup do zdefiniowania cięć dla UV.
+Używa grup powierzchni do wyznaczenia cięć UV.
 
-##### Liczba stożków {#cone-count}
-Definiuje liczbę głównych projekcji użytych w procesie. Niższe wartości dadzą mniej wysp, ale więcej zniekształceń.
+#### Liczba stożków {#cone-count}
+Określa liczbę głównych rzutowań. Niższe wartości dają mniej wysp, ale więcej zniekształceń. Wyższe wartości dłużej się liczą.
 
-##### Bezszwowe płaty {#seamless-patches}
-Wpływa na układ łatek UV, najlepiej działa z starannie utworzonymi facegroupami.
+#### Szwy niewidoczne {#seamless-patches}
+Wpływa na układ fragmentów UV i może wprowadzić duże zniekształcenia. Działa najlepiej ze starannie przygotowanymi grupami powierzchni.
 
-### Bake -> tekstura {#bake-texture}
+::: warning
+BFF może tworzyć nakładające się UV, jeśli siatka ma uchwyty (jak otwór w pączku).
+:::
+
+### ![](/icons/preview.webp) Pokaż UV po rozpakowaniu {#show-uv-after-unwrap}
+Po rozwinięciu otwiera widok inspekcji UV, żebyś od razu mógł sprawdzić wynik.
+
+### ![](/icons/bake.webp) Zastosuj: Tekstura → Tekstura {#unwrap-bake-texture}
+Dostępne tylko wtedy, gdy materiał obiektu ma tekstury. Gdy ponownie rozwiniesz UV, tekstury zostaną przeniesione na nowe UV, więc nadal będą pasować. Rozdzielczość domyślnie ma wartość `Auto`, czyli odpowiada największej teksturze, ale możesz ją ustawić samodzielnie.
+
+## ![](/icons/bake.webp) Zastosuj {#bake}
+Ta karta przenosi (wypala) detale i malowanie między obiektami oraz między wierzchołkami a teksturami.
+
+`Od wysokiej rozdzielczości` używa innych obiektów jako źródła; liczba w nawiasie mówi, ilu. Nomad wybiera je tak:
+
+- używane są wszystkie zaznaczone obiekty, a celem jest główny zaznaczony obiekt (najmocniej podświetlony w menu [Scena](scene.md))
+- jeśli zaznaczony jest tylko jeden obiekt, Nomad używa zamiast tego wszystkich widocznych obiektów
+- jeśli wszystkie inne obiekty są ukryte (na przykład przez Solo), używana jest cała scena
+
+### ![](/icons/bake.webp) Zastosuj → Tekstura {#bake-texture}
 ![](/images/topology_bake_menu.webp)
 
-Baking tekstur tworzy tekstury poprzez rzutowanie innych widocznych obiektów w scenie na UV wybranego obiektu.
+Wypalanie tekstur tworzy tekstury, rzutując inne widoczne obiekty sceny na UV zaznaczonego obiektu. Obiekt musi mieć UV.
 
-Oto typowy workflow dla bakingu:
+Typowy przebieg wypalania:
 - Masz siatkę z drobnymi detalami i malowaniem
 - Sklonuj ją
-- Użyj Decimate (ustaw `Preserve painting` na 0)
-- Zrób UV unwrap
-- Bake!
+- Uprość ją (ustaw `Zachowaj malowanie` na 0)
+- Rozwiń UV
+- Wypal!
 
-Domyślnie Nomad uwzględni wszystkie widoczne siatki w scenie.
-Możesz także użyć trybu Solo, aby szybko ukryć większość innych siatek.
-Jeśli nie ma innych widocznych obiektów, wtedy pod uwagę zostanie wzięta cała scena.
+Otrzymasz siatkę o niskiej rozdzielczości, która zachowuje większość malowania i detali poprzedniego obiektu.
 
-Powinieneś teraz mieć siatkę o niskiej rozdzielczości, która zachowuje większość malowania i detali poprzedniego obiektu.
+Po operacji kolory wierzchołków zostaną przeniesione na nową, wyłączoną warstwę, by nie kolidowały z teksturami.
 
-Po operacji kolory wierzchołków zostaną przeniesione do nowej wyłączonej warstwy, aby nie kolidowały z teksturami.
+#### Od samego siebie {#tex-from-itself}
+Wypala obiekt na jego własne UV: malowanie staje się teksturami, a jeśli obiekt ma poziomy wielokrotnej rozdzielczości, detale najwyższego poziomu są wypalane na bieżący (na przycisku pojawia się wtedy ikona multires). Łatwo to przygotować, ale często potrzebujesz większej kontroli i wtedy bardziej przyda się następna opcja.
 
-#### Z siebie {#tex-from-itself}
-Wypieka najwyższy poziom multiresolution do najniższego poziomu na bieżącym obiekcie. Jest to proste do skonfigurowania, ale często będziesz potrzebować większej kontroli, w takim przypadku bardziej przydatna jest następna opcja.
-
-#### Z wysokiej rozdzielczości () {#tex-from-high-res}
-Wypieka z innych widocznych obiektów w scenie do wybranego obiektu. Liczba w nawiasach wskazuje liczbę innych widocznych obiektów, które zostaną użyte jako cele high‑res i wypieczone do bieżącego obiektu low‑res z UV. Inne obiekty nie muszą być podobne pod względem układu lub topologii do obiektu, na który wypiekasz, co pozwala na elastyczne workflow bakingu.
+#### Od wysokiej rozdzielczości {#tex-from-high-res}
+Wypala inne obiekty na zaznaczony obiekt. Liczba w nawiasie mówi, ile innych obiektów posłuży jako źródła o wysokiej rozdzielczości, wypalane na bieżący obiekt o niskiej rozdzielczości z UV. Inne obiekty nie muszą mieć podobnego układu ani topologii co wypalany obiekt, co daje dużą swobodę.
 
 #### Rozdzielczość {#tex-bake-resolution}
-Rozdzielczość wypiekanej tekstury. Tekstury bake są zawsze kwadratowe, więc 1024 utworzy obraz 1024x1024. 
+Rozdzielczość wypalonej tekstury. Wypalane tekstury są zawsze kwadratowe, więc 1024 daje obraz 1024x1024. 
 
-Przyciski poniżej to skróty do często używanych rozdzielczości. Dla odniesienia: 512x512 jest stosunkowo małe, np. do grafiki webowej i prostej geometrii. 4096x4096 (w skrócie 4k) jest przeznaczone do renderów wysokiej jakości.
+Przyciski poniżej to skróty do często używanych rozdzielczości. Dla porównania: 512x512 to stosunkowo mało, np. do grafiki na stronę i prostej geometrii, a 4096x4096 (w skrócie 4k) nadaje się do renderów wysokiej jakości.
 
-#### ![](/icons/cog.webp) Menu koła zębatego Bake {#tex-bake-gear-menu}
+#### Kolor, Chropowatość, Metaliczność, Normalna, Przemieszczenie, Emisyjne, Krycie {#tex-normal-roughness-metalness-color-emissive-opacity}
+Te przyciski określają, które właściwości zostaną wypalone, każda do osobnej mapy. Po wypaleniu zostaną dodane jako tekstury do materiału bieżącego obiektu. `Przemieszczenie` wypala wysokość detali jako mapę przemieszczenia.
+
+#### ![](/icons/cog.webp) Menu z kołem zębatym wypalania {#tex-bake-gear-menu}
 ![](/images/topology_bake_gear_menu.webp)
-Menu koła zębatego ma następujące zaawansowane opcje:
-
-##### Normal, Roughness, Metalness, Color, Emissive, Opacity {#tex-normal-roughness-metalness-color-emissive-opacity}
-Te pola wyboru określają, które właściwości zostaną wypieczone, każda do osobnej mapy. Po zakończeniu bakingu zostaną one dodane jako tekstury do materiału bieżącego obiektu.
+Menu z kołem zębatym zawiera te zaawansowane opcje:
 
 ##### Kopia zapasowa {#tex-backup}
-Aby podglądać wypieczone tekstury, informacje o malowaniu obiektu powinny być wyłączone. Ta opcja przeniesie wszelkie informacje o malowaniu do nowej warstwy jako kopii zapasowej, aby można je było łatwo włączać/wyłączać.
+Aby zobaczyć podgląd wypalonych tekstur, malowanie obiektu musi być wyłączone. `Kopia zapasowa (Malarskie → Warstwa)` przenosi malowanie na nową warstwę jako kopię zapasową, którą łatwo włączyć lub wyłączyć.
 
-#### Promień klatki (cage) {#tex-cage-radius}
-Reguluje, jak daleko od obiektu bake wysyłane są promienie w poszukiwaniu obiektów docelowych. Domyślnie ta odległość jest utrzymywana na niskim poziomie, aby uniknąć artefaktów, ale można ją zwiększyć, jeśli obiekty docelowe są daleko od obiektu bake.
+##### Użyj multires {#tex-use-multires}
+Dla `Od samego siebie` na obiekcie z poziomami wielokrotnej rozdzielczości. Nomad odczytuje wysoką rozdzielczość przez poziomy podziału zamiast rzucać promienie: to szybsze i wolne od błędów rzutowania. Wyłącz tę opcję, aby wypalać z użyciem poniższych opcji.
+
+##### Gładka baza {#tex-smooth-base}
+Dla `Przemieszczenie` na obiekcie z poziomami wielokrotnej rozdzielczości. Mierzy przemieszczenie od podzielonej bazy zamiast od jej płaskich ścian. Zostaw ją włączoną, gdy mapa przemieszczenia trafi na dzieloną siatkę, jak przy adaptacyjnym podziale w Blenderze.
+
+##### Szukaj na odległość {#tex-cage-radius}
+Maksymalna odległość, w jakiej szukana jest powierzchnia źródłowa. Domyślnie jest mała, by uniknąć artefaktów, ale można ją zwiększyć, jeśli obiekty źródłowe są daleko od wypalanego obiektu.
+
+##### Projekcja {#tex-projection}
+Sposób znajdowania powierzchni źródłowej:
+
+* `Promień` - Rzutuje wzdłuż normalnej powierzchni.
+* `Promień + najbliższy` - Używa promienia wzdłuż normalnej, a gdy nie trafi, najbliższej powierzchni.
+* `Najbliższy` - Rzutuje na najbliższy punkt powierzchni źródłowej.
 
 ##### Przesunięcie promienia {#tex-ray-offset}
-Reguluje, skąd rozpoczynają się obliczenia bake na obiekcie bake. Domyślnie zaczynają się 5% od powierzchni, co unika większości typowych artefaktów. Jeśli obiekty docelowe są bardzo daleko od obiektu bake, ten offset może wymagać zwiększenia.
+Określa, skąd na wypalanym obiekcie zaczynają się obliczenia. Niewielkie odsunięcie od powierzchni eliminuje najczęstsze artefakty. Jeśli obiekty źródłowe są bardzo daleko od wypalanego obiektu, może trzeba będzie je zwiększyć. Nie jest używane przez `Najbliższy`.
 
 
-### Rzutuj ponownie na wierzchołki {#reproject-to-vertex}
+### ![](/icons/bake.webp) Rzutowanie → Wierzchołek {#reproject-to-vertex}
 
 ![](/images/topology_reproject_menu.webp)
 
-Rzutuje wyrzeźbione detale, malowanie, warstwy, tekstury na wartości wierzchołków.
+Rzutuje wyrzeźbione detale, malowanie, warstwy i tekstury na wartości wierzchołków.
 
-Można o tym myśleć jako o odwrotności bakingu; jeśli baking przenosi właściwości wierzchołków do tekstur, reprojekcja przenosi tekstury (i inne właściwości)
+Można to traktować jako odwrotność wypalania: wypalanie przenosi właściwości wierzchołków do tekstur, a rzutowanie przenosi tekstury (i inne właściwości)
  z powrotem do wierzchołków.
 
 ::: tip
-Podczas używania `Bake to texture` lub `Reproject to vertex` zarówno kolory wierzchołków, jak i tekstury materiału będą brane pod uwagę.
+Przy `Zastosuj → Tekstura` i `Rzutowanie → Wierzchołek` brane są pod uwagę zarówno kolory wierzchołków, jak i tekstury materiału.
 :::
 
-#### Z siebie {#vertex-from-itself}
-Konwertuje tekstury z materiału na wartości wierzchołków. Ten przycisk będzie aktywny tylko wtedy, gdy obiekt ma UV i w materiale są aktywne tekstury.
+#### Od samego siebie {#vertex-from-itself}
+Zamienia tekstury materiału na wartości wierzchołków. Ten przycisk jest aktywny tylko wtedy, gdy obiekt ma UV, a tekstury w materiale są włączone.
 
-::: tip TIP: Malowanie tekstur
-Nomad nie obsługuje bezpośrednio malowania i edycji tekstur, ale bardzo podobne rezultaty można osiągnąć, rzutując tekstury -> wartości wierzchołków, malując na wierzchołkach, a następnie wypiekając wierzchołki -> tekstury:
+::: tip WSKAZÓWKA: malowanie tekstur
+Nomad nie pozwala bezpośrednio malować i edytować tekstur, ale bardzo podobny efekt uzyskasz, rzutując tekstury na wartości wierzchołków, malując po wierzchołkach, a potem wypalając wierzchołki z powrotem do tekstur:
 
-1. Skonfiguruj obiekt low poly z UV
-1. Załaduj tekstury do jego materiału
-1. Podziel go (subdivide) wystarczająco, aby można było na nim malować
-1. Użyj `Reproject to vertex` w trybie `From itself`, teraz tekstura została przekonwertowana na wartości wierzchołków
-1. Maluj, wygładzaj, rozmazuj, stempluj – wykonaj wszystkie potrzebne edycje
-1. Użyj `Bake to texture` w trybie `From itself`. Te edycje zostaną z powrotem przekonwertowane na tekstury.
+1. Przygotuj obiekt o małej liczbie wielokątów z UV
+1. Wczytaj tekstury do jego materiału
+1. Podziel go na tyle, by dało się po nim malować
+1. Użyj `Rzutowanie → Wierzchołek` w trybie `Od samego siebie`: tekstura zamienia się w wartości wierzchołków
+1. Maluj, wygładzaj, rozmazuj, stempluj, rób wszystkie potrzebne zmiany
+1. Użyj `Zastosuj → Tekstura` w trybie `Od samego siebie`. Zmiany wracają do tekstur.
 :::
 
-#### Z wysokiej rozdzielczości () {#vertex-from-high-res}
-Konwertuje wszystkie widoczne obiekty na wartości wierzchołków na wybranym obiekcie. Liczba na tym przycisku wskazuje liczbę widocznych obiektów.
+#### Od wysokiej rozdzielczości {#vertex-from-high-res}
+Zamienia inne obiekty na wartości wierzchołków zaznaczonego obiektu. Liczba na przycisku mówi, ile jest obiektów źródłowych. Przeznaczone głównie do użycia także na siatce o wysokiej rozdzielczości, zwykle z czystą topologią.
 
 ::: tip
-Reprojekcja innych obiektów może być używana nie tylko do przenoszenia informacji o kolorze z innych obiektów, ale także do rzutowania wierzchołków na inne obiekty, np. bandaże mogą zostać zreprojekowane na postać.
+Rzutowanie innych obiektów służy nie tylko do przenoszenia koloru, ale też do rzutowania wierzchołków na inne obiekty, np. bandaże można rzutować na postać.
 :::
 
-#### ![](/icons/cog.webp) Menu koła zębatego Reproject {#vertex-reproject-gear-menu}
-Menu koła zębatego ma następujące zaawansowane opcje:
+#### Wierzchołki, Kolor, Chropowatość, Metaliczność, Krycie, Maska, Warstwy, Grupa powierzchni {#vertex-vertices-roughness-metalness-color-opacity-opacity-mask-mask-layers-face-group}
+Te przyciski określają, które właściwości zostaną rzutowane na zaznaczony obiekt. `Warstwy` przenosi pozostałe warstwy na zaznaczoną siatkę.
 
-#### Vertices, Roughness, Metalness, Color, Opacity, Opacity->Mask, Mask, Layers, Face Group {#vertex-vertices-roughness-metalness-color-opacity-opacity-mask-mask-layers-face-group}
-Te pola wyboru określają, które właściwości zostaną zreprojekowane na wybrany obiekt. 
+#### ![](/icons/cog.webp) Menu z kołem zębatym rzutowania {#vertex-reproject-gear-menu}
+Menu z kołem zębatym zawiera te zaawansowane opcje:
 
-#### Wygładź {#vertex-relax}
-Wybrana siatka może mieć swój układ wygładzony lub rozluźniony w pewnym stopniu, aby lepiej dopasować się do celów reprojekcji. Smooth jest lepsze dla siatek o wysokiej liczbie wielokątów. Relax jest lepsze dla siatek low poly. Auto pozwoli Nomadowi określić najlepszą metodę.
+##### Krycie → Maska {#vertex-opacity-to-mask}
+Zamienia krycie źródła na maskę na zaznaczonym obiekcie.
 
-#### Iteracje {#vertex-iterations}
-Ile razy operacja relax powinna zostać zastosowana podczas reprojekcji.
+##### Iteracje {#vertex-iterations}
+Ile razy podczas rzutowania ma zostać zastosowane łagodzenie. Używane tylko wtedy, gdy `Wierzchołki` są włączone.
 
-#### Promień klatki (cage) {#vertex-cage-radius}
-Reguluje, jak daleko od wybranego obiektu wysyłane są promienie w poszukiwaniu obiektów docelowych. Domyślnie ta odległość jest utrzymywana na niskim poziomie, aby uniknąć artefaktów, ale można ją zwiększyć, jeśli obiekty docelowe są daleko od obiektu bake.
+##### Złagodź {#vertex-relax}
+Układ zaznaczonej siatki może zostać w pewnym stopniu wygładzony lub złagodzony, by lepiej dopasować się do obiektów źródłowych. `Gładkie` sprawdza się lepiej na siatkach z dużą liczbą wielokątów, `Złagodź` na siatkach z małą liczbą wielokątów. `Auto` pozwala Nomadowi wybrać najlepszą metodę.
 
-#### Bias promienia {#vertex-ray-bias}
-Niższe wartości preferują rzutowanie na najbliższy punkt na powierzchni docelowej. Wyższe wartości preferują punkt przecięcia z użyciem normalnej powierzchni. 
+##### Szukaj na odległość {#vertex-cage-radius}
+Maksymalna odległość, w jakiej szukana jest powierzchnia źródłowa. Domyślnie jest mała, by uniknąć artefaktów, ale można ją zwiększyć, jeśli obiekty źródłowe są daleko od zaznaczonego obiektu.
 
-#### Przesunięcie promienia {#ray-vertex-offset}
-Reguluje, skąd rozpoczynają się obliczenia bake na wybranym obiekcie. Domyślnie zaczynają się 5% od powierzchni, co unika pewnych artefaktów. Jeśli obiekty docelowe są bardzo daleko od obiektu bake, ten offset może wymagać zwiększenia.
+##### Projekcja {#vertex-projection}
+Sposób znajdowania powierzchni źródłowej:
 
+* `Promień` - Rzutuje wzdłuż normalnej powierzchni.
+* `Mieszanka adaptacyjna` - Miesza wynik promienia wzdłuż normalnej i najbliższej powierzchni w zależności od odległości i `Preferencja promienia`. Gdy jeden nie trafi, używa drugiego.
+* `Najbliższy` - Rzutuje na najbliższy punkt powierzchni źródłowej.
 
-### Quad Remesh - Instant {#quad-remesh-instant}
-![](/images/topology_quadremesh_menu.webp)
-Remesh przy użyciu [algorytmu Instant Meshes autorstwa Wenzel Jakob, Marco Tarini, Daniele Panozzo, Olga Sorkine-Hornung](https://igl.ethz.ch/projects/instant-meshes/). Analizuje przepływ siatki i tworzy czystą topologię quadów.
+##### Preferencja promienia {#vertex-ray-bias}
+Tylko dla `Mieszanka adaptacyjna`. Wyższe wartości przesuwają mieszankę w stronę wyniku promienia wzdłuż normalnej, niższe w stronę najbliższego punktu.
+
+##### Przesunięcie promienia {#ray-vertex-offset}
+Określa, skąd na zaznaczonym obiekcie zaczynają się obliczenia. Niewielkie odsunięcie od powierzchni eliminuje niektóre artefakty. Jeśli obiekty źródłowe są bardzo daleko od wypalanego obiektu, może trzeba będzie je zwiększyć. Nie jest używane przez `Najbliższy`.
+
+### ![](/icons/bake.webp) Zastosuj → VDM {#bake-vdm}
+Tworzy stempel VDM (wektorowej mapy przemieszczeń) z zaznaczonego obiektu i dodaje go do biblioteki VDM. Nomad zapyta o nazwę.
+
+Typowy przebieg pracy:
+- Dodaj płaszczyznę albo wybierz `Nowy VDM` w selektorze VDM, aby dodać gotowo skonfigurowaną (prymityw [VDM](scene.md#add-menu))
+- Wyrzeźb na niej kształt, zostawiając płaską krawędź
+- Wypal!
+
+UV płaszczyzny wyznaczają kwadrat, który zostanie wypalony, więc obiekt musi mieć UV. Rozmiar stempla wybierasz w `Rozdzielczość`, a przyciskami `Kolor`, `Chropowatość`, `Metaliczność` i `Krycie` decydujesz, co oprócz przemieszczenia zawiera stempel.
 
 ::: tip
-Na iOS i desktopie narzędzie [Quad remesher](tools#quad-remesher) daje lepsze rezultaty i większą kontrolę.
+Nie używaj DynTopo na płaszczyźnie: psuje jej UV i stempel wychodzi zniekształcony. Najdokładniejszy wynik daje rzeźbienie na warstwie, bo płaska płaszczyzna wciąż jest pod spodem. Malowanie też wymaga warstwy, inaczej materiał zostanie odciśnięty na całym kwadracie, a nie tylko tam, gdzie malowałeś.
 :::
-
-#### Remesh {#instant-remesh}
-Rozpocznij operację instant meshes.
-
-#### Docelowe quady {#target-quads}
-Liczba wielokątów quad, które quad remesh spróbuje utworzyć.
-
-#### ![](/icons/cog.webp) Menu koła zębatego Quad Remesh Instant {#quad-remesh-instant-gear-menu}
-Menu koła zębatego ma następujące zaawansowane opcje:
-
-##### Kąt załamania {#crease-angle}
-Próg ostrych krawędzi, który spróbuje pomóc w prowadzeniu operacji remesh.
-
-#### Maksymalne wypełnienie dziury {#max-fill-hole}
-Algorytm może czasami tworzyć niepożądane dziury. Jeśli dziura ma mniej wierzchołków niż ta wartość, zostanie wypełniona.
-
-### Dziury {#holes}
-![](/images/topology_holes_menu.webp)
-Większość czasu twój obiekt prawdopodobnie będzie wodoszczelny, co oznacza, że siatka jest „zamknięta”.
-
-Jeśli obiekt ma dziury, możesz je wypełnić. Zauważ, że działa to tylko na „naiwne” dziury, a więc nie może „zespawać” dwóch oddzielnych granic.
-
-![](/videos/hole_filling.mp4)
-
-::: tip
-Gdy uruchamiasz Voxel remesher, wszystkie dziury są automatycznie zamykane, niezależnie od tego, czy używasz go na jednej, czy na wielu siatkach.
-:::
-
-#### Zamknij dziury {#close-holes}
-Wykonaj akcję zamykania dziur.
-
-#### ![](/icons/cog.webp) Menu koła zębatego Dziur {#holes-gear-menu}
-Menu koła zębatego ma następujące zaawansowane opcje:
-
-##### Detal {#fill-detail}
-Gęstość wielokątów używana do wypełnienia dziury. Podczas przeciągania tego suwaka na modelu zostanie pokazany wzór szachownicy, który da wskazanie rozmiaru trójkątów do użycia. Pole wyboru wyłączy to i użyje tylko istniejących punktów, co zazwyczaj stworzy długie, cienkie trójkąty nad dziurą, które mogą być trudne do rzeźbienia.
-
-##### Wypełnij niemani-fold {#fill-non-manifold}
-Spróbuj wypełnić dziurę non‑manifold.
-
-##### Grupa ścian {#fill-face-group}
-
-Podczas wypełniania dziur: czy każda dziura powinna otrzymać własną facegroup (Auto), czy wszystkie powinny współdzielić jedną facegroup (Off), czy nie tworzyć facegroup (On).
-
-### Wymuś manifold {#force-manifold}
-![](/images/topology_forcemanifold_menu.webp)
-Próbuje wyczyścić krawędzie non‑manifold. Może być przydatne dla zewnętrznego oprogramowania, które nie obsługuje krawędzi mających więcej niż 2 ściany wspólne.
-
-#### Wyczyść {#clean}
-Wykonaj akcję clean.
-#### ![](/icons/cog.webp) Menu koła zębatego Force manifold {#force-manifold-gear-menu}
-Menu koła zębatego ma następujące zaawansowane opcje:
-
-#### Usuń małe ściany {#delete-small-faces}
-Próg używany do usuwania i łączenia małych wielokątów.
-
-
-### Triplanar {#triplanar}
-![](/images/topology_triplanar_menu.webp)
-Konwertuje siatkę na prymityw [triplanar](scene.md#triplanar).
-Prawdopodobnie utracisz dużo detali w tym procesie.
-
-#### Wymuś sześcienność {#force-cubic}
-Wymusza, aby triplanar był sześcianem. W przeciwnym razie triplanar dopasuje się do najbliższego pudełka ograniczającego (bounding box) wokół obiektu.
-
-#### Konwertuj {#convert}
-Wykonaj akcję triplanar.
-
-#### Rozdzielczość {#triplanar-resolution}
-Rozmiar voxela używany w operacji triplanar.
 
 ## ![](/icons/dot.webp) Prymityw {#primitive}
-Parametry wybranego prymitywu. Są one również dostępne na pasku narzędzi prymitywów w widoku.
+Parametry zaznaczonego prymitywu. Większość z nich jest też dostępna pod przyciskiem `…` na pasku narzędzi prymitywu w widoku.
 
 ![](/images/topology_primitive_screenshot.webp)

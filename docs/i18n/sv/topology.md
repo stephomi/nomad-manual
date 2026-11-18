@@ -1,528 +1,668 @@
 # ![](/icons/multires.webp) Topologi {#topology}
 
-Den här menyn styr topologin för objekt i Nomad, samt verktyg för att baka och överföra detaljer mellan objekt och mellan texturer.
+Den här menyn styr objektens topologi i Nomad, och har verktyg för att baka och överföra detaljer mellan objekt, och mellan texturer.
 
 ![](/images/topology_overview.webp)
 
-Nomad är baserat på polygoner, den använder trianglar och fyrkanter (quads) för att hantera geometrin.
-Med topologi menar vi både antalet ytor men också hur punkter (vertices) är sammanlänkade.
+Nomad bygger på polygoner: geometrin hanteras med trianglar och fyrhörningar (quads).
+Med topologi menar vi både antalet ytor och hur punkterna (vertexerna) är förbundna med varandra.
 
-Det är viktigt att hålla koll på topologin, särskilt om du vill skulptera eller måla in fina detaljer.
+Det är viktigt att hålla koll på topologin, särskilt om du vill skulptera eller måla fina detaljer.
 
-::: tip Hur håller man koll på sin topologi?
-Du kan visa [Wireframe](settings.md#wireframe) eller helt enkelt inaktivera [Smooth Shading](settings.md#smooth-shading).
+::: tip Hur håller du koll på topologin?
+Du kan visa [Wireframe](settings.md#wireframe) eller helt enkelt stänga av [Jämn skuggning](settings.md#smooth-shading).
 :::
 
 ![](/images/topology_top.webp)
 
-Topologimenyn i Nomad har flera sektioner:
+Nomads topologimeny har flera flikar, på två rader:
 
-| Method                                | Icon                         | Description                                                      |
+| Metod                                 | Ikon                         | Beskrivning                                                      |
 | :-----------------------------------: | :--------------------------: | :--------------------------------------------------------------: |
-| [Multiresolution](#multiresolution)   | ![](/icons/multires.webp)   | Redigera flera detaljnivåer med hjälp av subdivision            |
-| [Voxel Remesher](#voxel-remesher)     | ![](/icons/voxel.webp)      | Beräkna om en ny topologi med enhetlig densitet                 |
-| [Dynamic Topology](#dynamic-topology) | ![](/icons/dynamic.webp)    | Lägg till/ta bort ytor lokalt i realtid vid skulptering eller målning |
-| [Misc](#misc)                         | ![](/icons/topo_extra.webp) | Decimering, UV, baking, remeshing, reprojektion                 |
-| [Primitive](#msc)                     | ![](/icons/dot.webp)        | Primitive-alternativ                                             |
+| [Multiresolution](#multiresolution)   | ![](/icons/multires.webp)   | Redigera flera detaljnivåer med hjälp av indelning               |
+| [Voxel-omnätning](#voxel-remesher)    | ![](/icons/voxel.webp)      | Beräkna en ny topologi med jämn täthet                           |
+| [Dynamisk topologi](#dynamic-topology) | ![](/icons/dynamic.webp)   | Lägg till och ta bort ytor lokalt i realtid medan du skulpterar eller målar |
+| [Blandat](#misc)                      | ![](/icons/topo_extra.webp) | Stäng hål, tvinga manifold och konvertera till triplanar         |
+| [Grundform](#primitive)               | ![](/icons/dot.webp)        | Alternativ för primitiver                                        |
+| [Decimera](#decimation)               | ![](/icons/decimate.webp)      | Minska antalet ytor och behåll formen                         |
+| [Quad-omnätning](#quad-remesh)        | ![](/icons/quad.webp)       | Bygg om objektet med en ren layout av fyrhörningar               |
+| [UV-uppackning](#uv-unwrap)           | ![](/icons/uv.webp)         | Skapa UV:er för texturering                                      |
+| [Baka](#bake)                         | ![](/icons/bake.webp)       | Baka detaljer och målning till texturer, vertexer eller VDM-stämplar |
 
 
 ## Polygonstatistik {#polygon-stats}
 
 ![](/images/topology_stats.webp)
 
-Den översta delen av topologimenyn visar polygoninformation för det valda objektet och hela scenen. Siffrorna visar totalt antal vertices, totalt antal trianglar och totalt antal quads (fyrsidiga polygoner).
+Överst i varje flik visas polygonantalet för det markerade objektet, och för hela scenen när den har mer än ett objekt. Kolumnerna visar antalet vertexer, trianglar, fyrhörningar (polygoner med 4 sidor) och UV-koordinater (0 när objektet saknar UV:er).
 
-Om du trycker på den här sektionen visas en lista med polygonstatistik för alla polygonobjekt i scenen.
+Tryck på det här avsnittet för att lista alla objekt i scenen med exakta siffror, inklusive antalet ytgrupper.
+
+## ![](/icons/cog.webp) Kugghjulsmeny {#gear-menu}
+Vissa avsnitt, som de i flikarna [Quad-omnätning](#quad-remesh) och [Baka](#bake), har extra alternativ. Öppna dem med kugghjulsikonen bredvid avsnittets rubrik.
 
 ## ![](/icons/multires.webp) Multiresolution {#multiresolution}
 
 ![](/images/topology_multires_menu.webp)
 
 ### Vad är multiresolution? {#what-is-multiresolution}
-Multiresolution-funktionen är användbar i två huvudsakliga scenarier:
-- Den släta subdivision-algoritmen för att öka polyantalet på ditt objekt
-- Hantera flera upplösningsnivåer så att du kan växla mellan små och stora ändringar
+Multiresolution är användbart i två huvudsakliga fall:
+- Den mjuka indelningsalgoritmen, för att öka antalet polygoner i ditt objekt
+- Att hantera flera upplösningsnivåer, så att du kan växla mellan ändringar i liten och stor skala
 
 ![](/videos/multiresolution.mp4)
 
-#### Arbetsflöde för multiresolution {#multiresolution-workflow}
-En viktig aspekt av multiresolution är att du kan gå tillbaka till en lägre upplösning, göra ändringar på ditt objekt och sedan gå tillbaka till den högsta upplösningen utan att förlora högupplösta detaljer. Alla högupplösta detaljer projiceras automatiskt.
+#### Arbetsflöde med multiresolution {#multiresolution-workflow}
+En viktig egenskap hos multiresolution är att du kan gå tillbaka till en lägre upplösning, göra ändringar i objektet och sedan gå tillbaka till den högsta upplösningen utan att förlora de högupplösta detaljerna. Alla högupplösta detaljer projiceras automatiskt.
+
+[Lager](layers.md#layers) finns på alla upplösningar.
 
 ::: warning
-Om du använder ett verktyg som ändrar topologin på ditt objekt kommer du att förlora alla andra upplösningsnivåer på objektet!
-Du bör alltid få en varning om detta kan hända, till exempel när du använder:
-- [Voxel Remesher](#voxel-remesher)
-- [Dynamic Topology](#dynamic-topology)
-- [Trim-verktyget](tools.md#trim)
-- [Split-verktyget](tools.md#split)
+Om du använder ett verktyg som ändrar objektets topologi förlorar du alla andra upplösningar av objektet!
+Du bör alltid få en varning när det kan hända, till exempel när du använder:
+- [Voxel-omnätning](#voxel-remesher)
+- [Dynamisk topologi](#dynamic-topology)
+- [verktyget Beskär](tools.md#trim)
+- [verktyget Dela](tools.md#split)
 :::
 
 
-### Multiresolution‑reglage {#multiresolution-slider}
-Detta reglage visar antalet subdivisionsnivåer i det aktuella objektet. Om det finns 6 vertikala staplar finns det 6 subdivisionsnivåer. Cirkeln visar vilken subdivisionsnivå som visas.
+### Multiresolution-reglaget {#multiresolution-slider}
+Reglaget visar antalet indelningsnivåer i det aktuella objektet. Finns det 6 lodräta streck finns det 6 indelningsnivåer. Cirkeln visar vilken indelningsnivå som visas just nu.
 
-### Ångra {#reverse}
-När du är på den lägsta subdivisionsnivån försöker Reverse-knappen skapa en nivå under den aktuella. Observera att detta i allmänhet bara är möjligt om objektet skapades med subdivision från början, till exempel i Nomad eller i andra 3D-applikationer med multiresolution subdivision surfaces.
+Små ikoner ovanför reglaget visar vilka alternativ (`Lås nivå 0`, `Linjär`, `Skarp gräns`, `Behåll trianglar`) som användes för varje nivå.
 
-### Subdividiera {#subdivide}
-Knappen *Subdivide* ökar antalet polygoner med 4, så se till att hålla ett öga på polyantalet eftersom det kan öka väldigt snabbt!
-En viktig aspekt av *Subdivision Surface* är att de konvergerar mot en *Smooth Surface*.
-För att förstå hur det fungerar kan du prova *Subdivide*-knappen på ett objekt med bara några få polygoner.
+### Omvänd {#reverse}
+När du är på den lägsta indelningsnivån försöker knappen Omvänd skapa en nivå under den aktuella. Observera att det i regel bara går om objektet från början skapades med indelning, till exempel i Nomad eller i andra 3d-program som har multiresolution med indelningsytor.
 
-Du kan inaktivera detta *Smooth*-beteende genom att kryssa i alternativet `Linear subdivision`.
+### Dela upp {#subdivide}
+Knappen *Dela upp* fyrdubblar antalet polygoner, så håll ett öga på polygonantalet eftersom det kan växa väldigt snabbt! Nomad ber om bekräftelse när resultatet skulle bli väldigt tungt.
+En viktig egenskap hos *indelningsytor* (subdivision surfaces) är att de närmar sig en *mjuk yta*.
+För att förstå hur det fungerar kan du prova knappen *Dela upp* på ett objekt med bara några få polygoner.
+
+Du kan stänga av det här *mjuka* beteendet med alternativet `Linjär`.
 
 ### Ta bort lägre {#delete-lower}
-Om det finns subdivisionsnivåer under den aktuella nivån tas de bort. Om du gör detta av misstag kan du återskapa dem med Reverse-knappen.
+Raderar indelningarna under den nivå som visas, om det finns några. Gör du det av misstag kan du återskapa dem med knappen Omvänd.
 
 ### Ta bort högre {#delete-higher}
-Om det finns subdivisionsnivåer över den aktuella nivån tas de bort.
+Raderar indelningarna ovanför den nivå som visas, om det finns några.
 
-### Linjär subdivision {#linear-subdivision}
-Subdividera meshen utan att applicera smoothing.
+### ![](/icons/lock.webp) Lås nivå 0 {#lock-lv0}
+Behåller formen på den lägsta indelningsnivån när du skulpterar på högre nivåer. Målning förs ändå ner till nivå 0. Det kan vara viktigt om objektet skapades i ett annat program och grundobjektet måste förbli oförändrat.
 
-### Skarp kant {#sharp-border}
-Om ditt objekt har facegroups kommer aktivering av detta alternativ att hålla facegroup-gränser skarpa. Detta kan ställas in på varje subdivisionsnivå (subdivision-reglaget får en liten ikon ovanför nivån för att indikera detta).
+Alternativet finns bara före den första indelningen. När det är av flyttar stora ändringar på högre indelningsnivåer även nivå 0.
 
-### Behåll trianglar {#keep-triangles}
-De flesta standardiserade subdivision surface-system försöker konvertera alla polygoner till quads under en subdivision-operation. Denna växel tvingar subdivision att använda trianglar i stället.
+### ![](/icons/linear.webp) Linjär {#linear-subdivision}
+Delar upp meshen utan någon utjämning.
 
-### Lås (LV0) {#lock-lv0}
+### ![](/icons/group.webp) Skarp gräns {#sharp-border}
+Om objektet har ytgrupper håller det här alternativet ytgruppernas gränser skarpa. Det kan ställas in för varje indelningsnivå (indelningsreglaget får då en liten ikon ovanför nivån som visar det).
 
-Förhindra att den lägsta subdivisionsnivån ändras. Detta kan vara viktigt om ditt objekt genererades i en annan applikation och basobjektet måste förbli oförändrat. När detta alternativ är inaktiverat kommer stora ändringar på högre subdivisionsnivåer att flytta nivå 0.
+### ![](/icons/triangle.webp) Behåll trianglar {#keep-triangles}
+De flesta vanliga system för indelningsytor försöker göra om alla polygoner till fyrhörningar vid en indelning. Det här alternativet tvingar indelningen att använda trianglar i stället.
 
-::: tip 
+::: tip
 
-Subdivision kommer som standard att jämna ut alla skarpa kanter. För att behålla kanter något skarpa kan du experimentera med att använda Linear subdivision eller Sharp border på de första 2 subdivisionsnivåerna och sedan stänga av det för de högre nivåerna. Detta skapar en halvskarp subdividerad mesh.
+Indelning jämnar som standard ut alla skarpa kanter. För att behålla kanterna lite skarpa kan du experimentera med `Linjär` eller `Skarp gräns` på de 2 första indelningsnivåerna och sedan stänga av det för de högre nivåerna. Då får du en halvskarp indelad mesh.
 
 :::
 
+### Visa högsta nivån {#show-highest-level}
+Visar den högsta nivån med alla dess detaljer medan du skulpterar på en lägre nivå. Praktiskt för att se slutresultatet medan du gör stora ändringar.
 
-## ![](/icons/voxel.webp) Voxel‑ommeshing {#voxel-remesher}
+### Wireframe: Endast nivå 0 {#wireframe-level-0-only}
+När [Wireframe](settings.md#wireframe) är på visas bara wireframen för den lägsta nivån. Den täta wireframen på de höga nivåerna kan dölja formen.
+
+
+## ![](/icons/voxel.webp) Voxel-omnätning {#voxel-remesher}
 ![](/images/topology_voxel_menu.webp)
-När du använder `Voxel Remesher` kommer hela meshen att tvinga topologin att ha en enhetlig upplösning, vilket innebär att alla polygoner har mer eller mindre samma storlek. Detta är mycket användbart när du inte vill tänka på topologi utan bara vill skulptera fritt.
+Med `Voxel-omnätning` tvingas hela meshen få en topologi med jämn upplösning, vilket betyder att alla polygoner blir ungefär lika stora. Det är mycket användbart när du inte vill tänka på topologin utan bara skulptera fritt.
 
-Ett typiskt skulpteringsarbetsflöde kan börja med att använda `Voxel Remesher` för att blocka ut en grov form med låg upplösning.
-Tryck helt enkelt på *Remesh*-knappen då och då när du sträcker meshen för mycket för att undvika för mycket distorsion.
+Ett typiskt arbetsflöde kan börja med att du använder `Voxel-omnätning` för att bygga upp en grov form med låg upplösning.
+Tryck helt enkelt på knappen *Remesha* då och då när du sträcker ut meshen för mycket, så undviker du för stora förvrängningar.
 
 ![](/videos/voxel_remesher.mp4)
 
 
 ::: tip Voxel?
-Som nämnts ovan är Nomad ett polygonbaserat program, men `Voxel Remesher` är ett undantag där en annan metod används (tillfälligt) för att utföra remeshing.
+Som sagt ovan är Nomad ett polygonbaserat program, men `Voxel-omnätning` är ett undantag där ett annat angreppssätt används (tillfälligt) för att göra omnätningen.
 
-En stor skillnad är att voxel-metoden inte accepterar självskärningar, så dessa kommer att lösas.
-Den stöder inte heller mesher med hål i.
+En stor skillnad är att voxelmetoden inte tillåter att ytan skär sig själv, så sådana ställen löses upp.
+Den stödjer inte heller meshar med hål.
 
-Med hål menar vi inte `genus hole` (`hålet` i en donut), utan i stället mesher som inte är `watertight`/`closed`.
-Typiskt innebär det att innan remeshing appliceras kommer alla hål att fyllas, på liknande sätt som [Trim-verktyget](tools.md#trim) eller [Hole filling-funktionen](scene.md#hole-filling).
+Med hål menar vi inte `genus-hål` (hålet i en munk), utan meshar som inte är `vattentäta`/`slutna`.
+I praktiken betyder det att alla hål fylls innan omnätningen görs, ungefär som med [verktyget Beskär](tools.md#trim) eller [hålfyllningen](#holes). Alternativet [Hål](#voxel-holes) nedan väljer hur.
 :::
 
-### Remesh {#voxel-remesh}
-Utför voxel-remesh.
+### ![](/icons/voxel.webp) Remesha {#voxel-remesh}
+Utför voxel-omnätningen. Små ikoner på knappen påminner dig om vilka av alternativen nedan som är på.
 
 ### Upplösning {#voxel-resolution}
-Storleken på voxlarna som används under beräkningen. När du ändrar denna parameter visas ett schackrutemönster över meshen för att ge en förhandsvisning av resultatet.
+Storleken på voxlarna som används i beräkningen, högre värden ger fler detaljer. Medan du ändrar värdet läggs ett schackrutigt mönster över meshen som förhandsvisar resultatet.
+
+Pipetten hämtar upplösningen från meshens täthet där du trycker. Kubknappen bredvid den växlar värdet till en `Kantlängd` i världsenheter: samma värde ger då samma detaljnivå på alla objekt.
 
 ### Bygg multiresolution {#build-multiresolution}
-Skapa lägre multiresolution-nivåer för voxel-remeshen. Om du använder schackrutemönstret för att ställa in en upplösning och sätter Build multiresolution till 2, kommer slutresultatet att ha detaljer som matchar resolution-reglaget, och om du går till multires-fliken kommer det att vara på nivå 2, vilket betyder att du har lägre upplösnings-multimesher på nivå 1 och nivå 0. Detta kan vara ett bra sätt att både generera en ren mesh med jämna polygoner och ha en lågupplöst kontrollmesh.
+Skapar lägre multiresolution-nivåer för voxel-omnätningen. Om du använder det schackrutiga mönstret för att välja en upplösning och sätter Bygg multiresolution till 2, får slutresultatet detaljer som motsvarar upplösningsreglaget, och går du till fliken Multiresolution står den på nivå 2, vilket betyder att du har meshar med lägre upplösning på nivå 1 och nivå 0. Det kan vara ett bra sätt att både få en ren mesh med jämna polygoner och en styrmesh med lägre upplösning.
 
-::: tip Tip: Build multiresolution och stable smoothing
+Det går också snabbare och använder mindre minne vid höga upplösningar. Men med låg upplösning och många nivåer förlorar du detaljer.
 
-Detta alternativ kan ibland orsaka ”loopar” i geometrin som kan vara svåra att jämna ut, vilket orsakar små ”finnar”. Om detta händer, aktivera 'Stable smoothing' i smooth-verktygets alternativ. 
+::: tip Tips: Bygg multiresolution och stabil utjämning
+
+Det här alternativet kan ibland ge "slingor" i geometrin som är svåra att jämna ut och som orsakar små knottror. Om det händer, aktivera `Stabil utjämning` bland alternativen för verktyget Jämna ut.
 
 :::
 
-### Behåll skarpa kanter {#keep-sharp-edges}
-Aktivera snappning av de nya punkterna till skarpa kanter på den ursprungliga meshen. Det kan introducera distorsion.
+### Förtjocka tunna delar {#thicken-thin-parts}
+Delar som är tunnare än voxlarna kan gå sönder eller försvinna vid omnätningen. Det här alternativet gör dem tjockare så att de klarar sig, högre värden gör dem tjockare. Det går inte att använda tillsammans med `Skarpa kanter` eller `Skarp gräns`.
+
+### Hål {#voxel-holes}
+Hur hål stängs före omnätningen:
+
+* `Fyll` - Varje hål stängs för sig, utifrån sin kant.
+* `Form` - Hålen stängs genom att följa den omgivande ytan, och öppna delar som överlappar fogas ihop.
+
+### ![](/icons/angle.webp) Skarpa kanter {#keep-sharp-edges}
+Fäster de nya punkterna mot skarpa kanter i den ursprungliga meshen. Det är mest användbart för enkla booleska operationer med primitiver, och det kan ge förvrängningar.
+
+### ![](/icons/group.webp) Skarp gräns {#voxel-sharp-border}
+De nya ytorna följer ytgruppernas gränser, och en gräns förblir skarp där ytan viks längs den.
+
+### ![](/icons/group_separate.webp) Håll grupper åtskilda {#keep-groups-separate}
+Varje ytgrupp får ny topologi för sig: grupperna slås aldrig ihop, och var och en förblir en sluten del i sin egen grupp. Multiresolution byggs inte i det här läget. Alternativet finns när objektet har flera ytgrupper.
 
 ## ![](/icons/dynamic.webp) Dynamisk topologi {#dynamic-topology}
 
 ![](/images/topology_dyntopo_menu.webp)
-Multiresolution och voxel-remeshing är vanliga metoder i branschen för att kontrollera topologi, men båda kräver att du ser till att du inte sträcker polygoner för mycket eller pressar ihop dem för hårt. 
+Multiresolution och voxel-omnätning är vanliga metoder i branschen för att styra topologin, men båda kräver att du ser upp så att du inte drar ut polygonerna för mycket eller trycker ihop dem för tätt.
 
-Dynamic Topology är en alternativ metod. När du skulpterar kommer Nomad adaptivt att lägga till och ta bort polygoner under penseldraget, så att inristning av små detaljer lägger till många små polygoner där du behöver dem, och smoothing på andra ställen tar bort polygoner.
+Dynamisk topologi är en annan metod. Medan du skulpterar lägger Nomad till och tar bort polygoner under penseldraget efter behov, så när du ristar in små detaljer läggs många små polygoner till just där du behöver dem, och när du jämnar ut någon annanstans tas polygoner bort.
 
-Observera att Dynamic Topology använder triangulära polygoner i stället för quads. Detta kan se lite rörigt ut, men det är nästan bättre att inte titta på wireframen, utan bara fokusera på att göra en snygg skulpt utan att oroa dig för topologi, och senare kan du använda något av Nomads andra remeshing-verktyg för att generera en ren quad-mesh.
+Observera att dynamisk topologi använder trianglar i stället för fyrhörningar. Det kan se lite rörigt ut, men det är nästan bättre att inte titta på wireframen alls: koncentrera dig på att göra en snygg skulptur utan att oroa dig för topologin, och använd sedan något av Nomads andra omnätningsverktyg för att få en ren mesh med fyrhörningar.
 
-Se videon nedan i aktion.
+Se videon nedan för att se det i praktiken.
 
 ![](/videos/dynamic.mp4)
 
 ### Aktiverad {#enabled}
-Slå på Dynamic Topology. En DynTopo-ikon placeras under reglagen för penselradie och intensitet så att du kan slå av/på Dyntopo per verktyg.
+Slår på dynamisk topologi. En DynTopo-ikon placeras under reglagen för penselns radie och intensitet, så att du kan slå på eller av DynTopo per verktyg. Det kan märkbart påverka prestandan, och lagren uppdateras korrekt.
 
 ### Detalj {#dyn-detail}
-Styr detaljnivån, dess beteende ändras baserat på valet 'Detail based on...', se nedan.
+Styr detaljnivån. Hur den beter sig beror på vad du valt under "Detaljer baserade på...", se nedan. I läget `Skärm` visar etiketten målstorleken för trianglarna i pixlar. I läget `Konstant` kan du med en pipett hämta detaljnivån från meshens täthet där du trycker.
 
-### Detalj baserad på... {#detail-based-on}
-| Method   | Description                                                     |
+### Detaljer baserade på... {#detail-based-on}
+| Metod    | Beskrivning                                                     |
 | :------: | :-------------------------------------------------------------: |
-| Screen   | Detaljnivån beror på hur stor objektet är på skärmen. Detail-reglaget är 100 % eller högre för fin detalj (små trianglar) eller 1 % för låg detalj (stora trianglar).  |
-| Radius   | Penselradien definierar detaljnivån. Använd en liten penselradie för fin detalj, en stor penselradie för låg detalj. Detail-reglaget är en multiplikator på detta förhållande.                     |
-| Constant | Detail-reglaget definierar detaljnivån och påverkas inte av skärmstorlek eller penselstorlek.             |
+| Skärm    | Detaljnivån beror på hur stort objektet är på skärmen. Detaljreglaget på 100 % eller mer ger fina detaljer med små trianglar, och 1 % ger låg detaljnivå med stora trianglar.  |
+| Radie    | Verktygets radie bestämmer detaljnivån. Använd en liten verktygsradie för fina detaljer och en stor för låg detaljnivå. Detaljreglaget är en faktor på det här förhållandet.        |
+| Konstant | Detaljreglaget bestämmer detaljnivån, och påverkas inte av skärmstorleken eller verktygets storlek. Det är samma värde som reglaget [Detalj](#all-detail) för `Omnäta`.             |
 
-::: tip TIP: Radius-läge
+::: tip TIPS: Läget Radie
 
-För att få en bättre känsla för hur Radius-läget fungerar, börja flytta Detail-reglaget med ett finger och ändra samtidigt penselradien med ett annat finger. Du kommer att se hur de hänger ihop.
+För att få en bättre känsla för hur läget Radie fungerar kan du börja dra i detaljreglaget med ett finger och samtidigt ändra verktygets radie med ett annat finger. Då ser du hur de hänger ihop.
 
 :::
 
 ### Föredra... {#prefer}
-| Method  | Description       |
-| :-----: | :---------------: |
-| Speed   | Prioritera prestanda |
-| Quality | Prioritera kvalitet |
+| Metod     | Beskrivning          |
+| :-------: | :------------------: |
+| Hastighet | Prioritera prestanda |
+| Kvalitet  | Prioritera kvalitet  |
 
-När du prioriterar `Quality` är de två huvudsakliga skillnaderna:
-- förfining appliceras innan skulptering, så du får färre interpoleringsartefakter när du målar eller skulpterar mycket små detaljer
-- förfining körs tills den konvergerar till rätt detaljnivå, i kontrast till ett inkrementellt beteende.
+När du prioriterar `Kvalitet` är de 2 största skillnaderna:
+- förfiningen görs före skulpteringen, så du får färre interpoleringsartefakter när du målar eller skulpterar mycket små detaljer
+- förfiningen körs tills den når rätt detaljnivå, i stället för att ske stegvis.
  
-På så sätt kommer topologin alltid att förfinas som förväntat om du skulpterar mycket små detaljer eller gör snabba drag.
+På så sätt förfinas topologin alltid som väntat, även om du skulpterar mycket små detaljer eller gör snabba penseldrag
 
 
-### Använd tryck på radie {#use-pressure-on-radius}
-Endast relevant om `Radius` är aktiverat. När det är aktiverat kommer detaljnivån alltid att spegla penselstorleken, även när penselstorleken påverkas av pennttryck.
+### ![](/icons/pressure.webp) Använd tryck på radien {#use-pressure-on-radius}
+Gäller bara om `Radie` är aktiverat. När det här är på följer detaljnivån alltid penselns storlek, även när penselns storlek påverkas av pennans tryck.
 
-### Använd penselövergång {#use-stroke-falloff}
+### Använd penseldragets avtoning {#use-stroke-falloff}
 
-Inkludera även penselns falloff-kurva och alfa i dyntopo-beräkningarna.
+Tar även med penselns avtoningskurva och alpha i DynTopo-beräkningarna.
 
 ### Metod {#method}
-Oavsett om du använder `Dynamic Topology` på din [Brush](#brush) eller [Globalt](#global), kan du välja i vilket läge den ska fungera:
+Väljer hur dynamisk topologi ändrar meshen, både medan du skulpterar och när du använder [Omnäta](#dyn-remesh):
 
-| Method         | Description                                                           |
+| Metod          | Beskrivning                                                           |
 | :------------: | :-------------------------------------------------------------------: |
-| Uniformisation | Den kan lägga till och ta bort ytor, detta är läget som används i videon ovan |
-| Subdivision    | Lägger bara till nya ytor, kan inte ta bort ytor                     |
-| Decimation     | Tar bara bort ytor, kan inte lägga till ytor                         |
+| Uniformisering | Kan både lägga till och ta bort ytor, det är läget som används i videon ovan |
+| Indelning      | Lägger bara till nya ytor, kan inte ta bort ytor                      |
+| Decimering     | Tar bara bort ytor, kan inte lägga till nya ytor                      |
 
-### Skydda maskerat område {#protect-masked-area}
-Aktivera så att maskerade områden skyddar topologin från att ändras.
+### ![](/icons/shield.webp) Skydda maskerat område {#protect-masked-area}
+Skyddar maskerade områden så att topologin där inte ändras.
 
-### Vertex‑extrapolering {#vertex-extrapolation}
-
+### ![](/icons/normal.webp) Vertexextrapolering {#vertex-extrapolation}
+Placerar punkterna på en mjuk yta som följer krökningen runt dem, i stället för platt på de befintliga ytorna.
 
 ### Detalj {#all-detail}
-Upplösningen som används för remesh-operationen. Om Dyntopo är i 'Constant'-läge kommer det att vara samma värde som Detail-reglaget högst upp i denna meny.
+Upplösningen som används för omnätningen. Om DynTopo står i läget `Konstant` är det samma värde som reglaget Detalj högst upp i menyn. Pipetten hämtar detaljnivån från meshens täthet där du trycker.
 
-### Remesh {#dyn-remesh}
-Utför en global remesh med dyntopo-algoritmen. Vanligtvis bör du använda [Voxel Remesher](#voxel-remesher) för full remeshing.
+### Omnäta {#dyn-remesh}
+Gör en omnätning av hela meshen med DynTopo-algoritmen. Oftast bör du använda [Voxel-omnätning](#voxel-remesher) när du vill göra om hela meshen.
 
-En fördel jämfört med voxlar är dock att det maskerade området skyddas, så du kan ha bättre kontroll över var du vill ha mer eller mindre densitet.
+En fördel jämfört med voxlarna är dock att meshen inte behöver vara sluten, och att maskerade områden skyddas, så du får bättre kontroll över var du vill ha mer eller mindre täthet.
 
 
 
-## ![](/icons/topo_extra.webp) Diverse {#misc}
+## ![](/icons/topo_extra.webp) Blandat {#misc}
 
 ![](/images/topology_misc_menu.webp)
 
-##### ![](/icons/cog.webp) Kugghjulsmeny {#gear-menu}
-Många av verktygen i denna meny har extra alternativ. De kan nås via kugghjulsikonen bredvid sektionsrubriken.
+Den här fliken samlar verktyg för att rensa eller konvertera meshen: stänga dess hål, tvinga den att vara manifold eller göra om den till en triplanar.
 
-### Decimering {#decimation}
+### ![](/icons/hole.webp) Hål {#holes}
+![](/images/topology_holes_menu.webp)
+För det mesta är ditt objekt antagligen vattentätt, vilket betyder att meshen är "sluten".
+
+Om objektet har hål kan du fylla dem.
+
+![](/videos/hole_filling.mp4)
+
+::: tip
+När du kör voxel-omnätningen stängs alla hål automatiskt, oavsett om du använder den på en eller flera meshar.
+:::
+
+#### Stäng hål {#close-holes}
+Utför stängningen av hålen.
+
+#### Alternativ {#holes-gear-menu}
+De här alternativen ändrar hur hålen fylls:
+
+##### Ytgrupp {#fill-face-group}
+Väljer ytgrupp för de nya ytorna:
+
+* `Blandad` - Ett hål som omges av en enda ytgrupp återanvänder den, ett hål som gränsar till flera grupper får en ny.
+* `Ny` - De fyllda hålen får en ny ytgrupp.
+* `Återanvänd` - Varje hål får den ytgrupp som omger det mest.
+
+##### Detalj {#fill-detail}
+Polygontätheten som används för att fylla hålet. Medan du drar i reglaget visas ett schackrutigt mönster på modellen, som ger en uppfattning om vilken triangelstorlek som används. Kryssrutan stänger av det, och då används bara de befintliga punkterna, vilket oftast ger långa smala trianglar över hålet som kan vara svåra att skulptera.
+
+##### Överbrygga {#fill-non-manifold}
+Fyller ett hål och öarna inuti det som en enda yta, i stället för att fylla varje kant för sig. En större vinkel överbryggar mer böjda hål. Kryssrutan stänger av det.
+
+### ![](/icons/cog.webp) Tvinga manifold {#force-manifold}
+![](/images/topology_forcemanifold_menu.webp)
+Försöker rensa bort kanter som inte är manifold. Det kan vara användbart för externa program som inte stödjer kanter som delas av fler än 2 ytor.
+
+#### Rensa {#clean}
+Utför rensningen.
+
+#### Alternativ {#force-manifold-gear-menu}
+Det här alternativet ändrar hur meshen rensas:
+
+##### Ta bort små ytor {#delete-small-faces}
+En tröskel som används för att ta bort och slå ihop små polygoner. Aktivera det med kryssrutan.
+
+
+### ![](/icons/triplanar.webp) Triplanar {#triplanar}
+![](/images/topology_triplanar_menu.webp)
+Gör om meshen till en [triplanar](scene.md#triplanar)-primitiv.
+Du förlorar troligen mycket detaljer på vägen: lager, målning och multiresolution går också förlorade.
+
+#### Tvinga kubform {#force-cubic}
+Gör triplanaren till en kub. Annars anpassas triplanaren till den närmaste omslutande lådan runt objektet.
+
+#### Konvertera {#convert}
+Utför konverteringen till triplanar.
+
+#### Upplösning {#triplanar-resolution}
+Upplösningen på triplanarens rutnät, högre värden behåller fler detaljer.
+
+## ![](/icons/decimate.webp) Decimera {#decimation}
 
 ![](/images/topology_decimation.webp)
 
-Minska antalet polygoner genom att försöka behålla så mycket detaljer som möjligt, med triangulära polygoner.
+Minskar antalet polygoner och försöker behålla så många detaljer som möjligt, med hjälp av trianglar.
 
-Denna funktion kan vara användbar om du vill exportera för 3D-utskrift.
-Du bör dock troligen inte använda den om du vill fortsätta skulptera på objektet, eftersom den kan producera ojämna trianglar.
+Det kan vara användbart om du vill exportera för 3d-utskrift.
+Men du bör nog inte använda det om du vill fortsätta skulptera på objektet, eftersom det kan ge ojämna trianglar.
 
-Observera att maskerade områden inte kommer att decimeras.
+Observera att maskerade områden inte decimeras.
 
 ![](/videos/decimate.mp4)
 
 ::: tip
 
-Att använda [Quadremesh-verktyget](tools.md#quad-remesher) på högupplösta objekt kan ta lång tid att beräkna och ge resultat som är svåra att kontrollera. Förbehandling av meshen med [facegroups](tools.md#facegroup-1) och decimate gör att Quadremesh kör mycket snabbare och ger mycket mer kontroll över topologin.
+Att använda [Quad Remesher-verktyget](tools.md#quad-remesher) på objekt med många polygoner kan ta lång tid och ge resultat som är svåra att styra. Förbereder du meshen med [ytgrupper](tools.md#facegroup) och decimering går Quad Remesher mycket snabbare, och du får mycket bättre kontroll över topologin.
 
-* Facegroupa meshen för att definiera ditt ideala quad-flöde.
-* Facegroup relax för att få släta facegroup-gränser.
-* Decimate. Detta säkerställer att du inte har tunna eller förvrängda ytor på facegroup-kanten. I decimate-inställningarna, se till att facegroup är aktiverat. Detta gör att triangelkanter följer dina facegroup-kanter exakt.
-* I Quadremesh-alternativen, se till att relax är inaktiverat (eftersom du redan har relaxat meshen) och du bör få bra resultat.
+* Dela in meshen i ytgrupper för att ange hur du vill att fyrhörningarna ska flöda.
+* Slappna av ytgrupperna för att få mjuka gränser mellan dem.
+* Decimera. Det ser till att du inte har några smala eller förvrängda ytor längs ytgruppernas kanter. Under `Bevara kanter`, se till att `Ytgrupp` är aktiverat. Då följer trianglarnas kanter exakt ytgruppernas kanter.
+* I alternativen för Quad Remesher, se till att avslappning är avstängd (eftersom du redan har slappnat av meshen), så bör du få bra resultat.
 
 :::
 
-#### Decimera {#decimate}
-Starta decimate-operationen.
+### Decimera {#decimate}
+Startar decimeringen.
 
-Ikonerna bredvid Decimate-knappen låter dig slå av/på alternativ som påverkar decimeringen. Procenttalet anger hur starkt alternativet är och kan ställas in i den avancerade gear-menyn.
+Ikonerna bredvid decimeringsknappen visar alternativen nedan och låter dig slå på eller av dem. Procentsatsen visar hur starkt alternativet är.
 
-* ![](/icons/palette.webp)  `Preserve Painting` - Placera fler trianglar där det finns målningsdetaljer.
-* ![](/icons/triforce.webp) `Uniform Faces` - Föredra att skapa jämnstora trianglar.
-* ![](/icons/hole.webp)  `Preserve Geometry Borders` - Decimate försöker hålla kanter nära öppen geometri och hål oförändrade.
-* ![](/icons/group.webp) `Preserve Facegroup Borders` - Decimate försöker hålla facegroup-gränser oförändrade.
-* ![](/icons/uv.webp) `Preserve UV Borders` - Decimate försöker hålla UV-gränser oförändrade.
+* ![](/icons/palette.webp)  `Bevara målning` - Placerar fler trianglar där det finns detaljer i målningen.
+* ![](/icons/triforce.webp) `Enhetliga ytor` - Föredrar trianglar av jämn storlek.
+* ![](/icons/hole.webp)  `Hål` - Decimeringen försöker lämna kanter nära öppen geometri och hål oförändrade.
+* ![](/icons/group.webp) `Ytgrupp` - Decimeringen försöker lämna ytgruppernas gränser oförändrade.
+* ![](/icons/uv.webp) `UV` - Decimeringen försöker lämna UV-gränserna oförändrade.
 
-#### ![](/icons/cog.webp) Kugghjulsmeny för decimering {#decimate-gear-menu}
-Gear-menyn har dessa avancerade alternativ:
-##### Bevara målning {#preserve-painting}
-Kryssrutan slår av/på detta läge, värdet avgör hur noggrant målningsdetaljer bevaras. Högre värden bevarar mer målning. Sätt till 0 om du inte bryr dig om målningen.
+### Måltrianglar {#target-triangles}
+Anger det önskade antalet trianglar. Standardvärdet är 50 %, och knappen procent/mål växlar mellan en procentsats och ett exakt antal polygoner.
 
+### Alternativ {#decimate-gear-menu}
+Varje alternativ har en kryssruta för att slå på eller av det, och ett värde för dess styrka:
 
-##### Enhetliga ytor {#uniform-faces}
-Kryssrutan slår av/på detta läge. Högre värden ger trianglar med liknande storlek.
+#### ![](/icons/palette.webp) Bevara målning {#preserve-painting}
+Värdet bestämmer hur noggrant detaljerna i målningen bevaras. Högre värden bevarar mer av målningen. Sätt det till 0 om du inte bryr dig om målningen.
 
-##### Bevara kanter {#preserve-borders}
-Aktivera för att förhindra att kanter decimeras. Border-vikter kan väljas för `Geometry`-, `Face Group`- eller `UV`-kanter.
+#### ![](/icons/triforce.webp) Enhetliga ytor {#uniform-faces}
+Högre värden ger trianglar av liknande storlek.
 
-#### Måltal trianglar {#target-triangles}
-Ställ in målantalet trianglar. Standardvärdet är 50 %, knappen percent/target växlar mellan en procentandel eller ett exakt målantal polygoner.
+#### Bevara kanter {#preserve-borders}
+Förhindrar att kanter decimeras. Vikter kan anges för kanterna `Hål`, `Ytgrupp` eller `UV` (`UV` kräver ett objekt med UV:er).
 
+## ![](/icons/quad.webp) Quad-omnätning {#quad-remesh}
+![](/images/topology_quadremesh_menu.webp)
+Bygger om objektet med en ren layout av fyrhörningar. Fliken har flera omnätningsverktyg, vart och ett med sin egen knapp `Remesha`, sitt reglage `Målquads` och sin kugghjulsmeny. Prova dem på ditt objekt, de ger ganska olika resultat!
 
+### Quad Remesher {#quad-remesher}
+Samma omnätning som verktyget [Quad Remesher](tools.md#quad-remesher), utvecklat av [Exoside](https://exoside.com/). Det finns bara på vissa plattformar och kräver ett köp: tills dess visar knappen `Remesha` en kundvagn.
 
-### UV‑Unwrap – UVAtlas {#uv-unwrap-uvatlas}
+`Välj verktyg` byter till verktyget Quad Remesher, där du ritar guider och målar tätheten. Kugghjulsmenyn innehåller `Adaptiv Kvadrattal`, `Adaptiv storlek` (på 100 % följer fyrhörningarnas storlek krökningen, på 0 % blir de enhetliga), `Automatisk upptäckt av hårda kanter` och `Reprojektera vertex`.
 
-![](/images/topology_uvatlas_menu.webp)
-Beräkna texturkoordinater (UV) för den aktuella meshen, generellt med preferens för att skapa fler öar med snitt för att minimera distorsion.
+::: tip
+Där Quad Remesher finns ger det i regel de bästa resultaten och mest kontroll.
+:::
 
-Det lilla öga-ikonen mellan menyrubriken och gear-menyn växlar förhandsvisning av UV:er på objektet.
+### AutoRemesher {#autoremesher}
+En alternativ omnätning med fyrhörningar, med alternativ för att anpassa fyrhörningarnas storlek och form efter ytan.
+
+#### ![](/icons/cog.webp) Kugghjulsmenyn för AutoRemesher {#autoremesher-gear-menu}
+Kugghjulsmenyn har de här avancerade alternativen:
+
+##### Kantskalning {#edge-scaling}
+Skalar fyrhörningarnas storlek, högre värden ger större fyrhörningar.
+
+##### Anpassning {#adaptivity}
+Anpassar fyrhörningarnas täthet efter krökningen. 0 ger enhetliga fyrhörningar, 1 ger mindre fyrhörningar på böjda områden.
+
+##### Anisotropi {#anisotropy}
+Sträcker ut fyrhörningarna längs ytans plattaste riktning. 0 ger kvadratiska fyrhörningar, 1 ger avlånga fyrhörningar på rör och åsar.
+
+##### Skarp kant {#sharp-edge}
+Kanter som är böjda mer än den här vinkeln bevaras som skarpa detaljer.
+
+##### Jämna ut normaler {#smooth-normal}
+0 behåller ytan facetterad under omnätningen. Högre värden jämnar ut ytan genom att ta hänsyn till vertexnormalerna.
+
+##### Max fyllhål {#autoremesher-max-fill-hole}
+Algoritmen kan ibland skapa oönskade hål. Om ett hål har färre vertexer än det här värdet fylls det.
+
+### Instant Mesh {#quad-remesh-instant}
+Gör omnätningen med [algoritmen Instant Meshes av Wenzel Jakob, Marco Tarini, Daniele Panozzo, Olga Sorkine-Hornung](https://igl.ethz.ch/projects/instant-meshes/). Den analyserar meshens flöde och skapar en ren topologi med fyrhörningar.
+
+#### Remesha {#instant-remesh}
+Startar omnätningen.
+
+#### Målquads {#target-quads}
+Antalet fyrhörningar som omnätningen försöker skapa.
+
+#### ![](/icons/cog.webp) Kugghjulsmenyn för Instant Mesh {#quad-remesh-instant-gear-menu}
+Kugghjulsmenyn har de här avancerade alternativen:
+
+##### Veckvinkel {#crease-angle}
+En tröskel för skarpa hörn som hjälper till att styra omnätningen. Aktivera den med kryssrutan.
+
+##### Max fyllhål {#max-fill-hole}
+Algoritmen kan ibland skapa oönskade hål. Om ett hål har färre vertexer än det här värdet fylls det.
+
+### QuadriFlow {#quadriflow}
+Gör omnätningen med algoritmen QuadriFlow, ett annat sätt att få en ren layout av fyrhörningar.
+
+#### ![](/icons/cog.webp) Kugghjulsmenyn för QuadriFlow {#quadriflow-gear-menu}
+Kugghjulsmenyn har de här avancerade alternativen:
+
+##### Bevara kanter {#quadriflow-preserve-boundary}
+Skyddar hålens kanter.
+
+##### Behåll skarpa kanter {#keep-sharp}
+Riktar in fyrhörningarna efter ytans skarpa kanter.
+
+##### Minsta kostnadsflöde {#min-cost-flow}
+Använder en lösare för minsta kostnadsflöde för layouten av fyrhörningar. Långsammare, men kan ge en mer regelbunden topologi.
+
+## ![](/icons/uv.webp) UV-uppackning {#uv-unwrap}
+Beräknar texturkoordinater (UV:er) för det markerade objektet. Nomad har två metoder, `UVAtlas` och `BFF`, var och en med sin egen knapp `Packa upp`.
 
 ![](/videos/unwrap.mp4)
 
-#### Unwrap {#unwrap}
-Beräkna UV för det valda objektet, som visas i bakgrunden.
+::: tip UV:er?
+En vanlig liknelse för UV:er är att slå in en present: hur klipper du bäst till omslagspapperet för att täcka ett föremål helt, utan att det överlappar?
 
-#### Ta bort UV {#delete-uvs}
-Ta bort UV på objektet.
+UV:er fungerar på liknande sätt, men i stället för att klippa papperet klipper du i objektet. Föreställ dig att modellen var gjord av tunn plast: hur skulle du klippa isär den för att vika ut den platt, måla på den i det platta läget och sedan sätta ihop den igen?
 
-#### ![](/icons/cog.webp) UVAtlas kugghjulsmeny {#uvatlas-gear-menu}
-Gear-menyn har dessa avancerade alternativ:
+Föreställ dig nu att modellens yta är gjord av töjbar lycra. Du kan sträcka ut modellen platt, klippa i den, eller både och. Men om du målade ett schackmönster på objektet när det låg platt skulle mönstret bli förvrängt när du satte ihop det igen. Vilket är bäst: fler snitt med mindre förvrängning, eller färre snitt med mer förvrängning?
 
-#### Ytgrupp {#atlas-face-group}
+UV:er är instruktioner som talar om för 3d-program hur objektet ska "klippas och sträckas" när texturer läggs på. Verktyget UVAtlas använder i regel principen "fler snitt, mindre förvrängning".
 
-Använd facegroups för att definiera snitten för UV:erna.
 
-##### Maximal tänjning {#max-stretch}
-Låga värden skapar mindre distorsion och fler öar, höga värden skapar mer distorsion och färre öar. 
+:::
 
-##### Öavstånd {#island-spacing}
-Mängden padding mellan öarna. Låga värden slösar mindre utrymme men riskerar att texturer blöder mellan öarna. 
+::: tip UV:er i Nomad och andra appar
+
+De flesta texturerade modeller du hittar på nätet är texturerade med UV:er. Nomad kan importera och visa dem via panelen [Material](material.md#textures).
+
+När du gör modeller i Nomad kan du måla direkt på objekten utan UV:er. Om du behöver exportera dem till andra appar, till exempel [Procreate](https://procreate.art/), kan du "baka" Nomads färginformation till texturer via UV:er.
+
+:::
+
+### UVAtlas {#uv-unwrap-uvatlas}
+
+![](/images/topology_uvatlas_menu.webp)
+UVAtlas föredrar i regel att göra fler öar med snitt, för att minimera förvrängningen.
+
+#### Packa upp {#unwrap}
+Beräknar UV:er för det markerade objektet.
+
+#### Alternativ {#uvatlas-gear-menu}
+Knapparna bredvid `Packa upp`:
+
+##### Ytgrupp {#atlas-face-group}
+När den visar `Ja` bestämmer ytgrupperna var UV:erna ska skäras. Inställningen delas med BFF.
+
+##### Radera UVs {#delete-uvs}
+Papperskorgsknappen raderar objektets UV:er.
+
+##### Inspektera {#uv-inspect}
+Visar objektets UV:er i bakgrunden.
+
+#### Maximal töjning {#max-stretch}
+Låga värden ger mindre förvrängning och fler öar, höga värden ger mer förvrängning och färre öar.
+
+#### Öavstånd {#island-spacing}
+Hur mycket utrymme det ska vara mellan öarna. Låga värden slösar mindre plats, men riskerar att texturer blöder över mellan öarna.
 
 ::: warning
-Beräkning av UV kan ta lite tid, det är bäst att ha en mesh med färre än 100k vertices.
+Att beräkna UV:er kan ta en stund, det är bäst att ha en mesh med färre än 100k vertexer.
 :::
 
-::: tip UVs?
-En vanlig analogi för UV är att slå in ett paket; vad är det bästa sättet att klippa presentpapper för att helt täcka ett objekt utan överlappningar? 
-
-UV är liknande, men i stället för att klippa pappret klipper du objektet. Föreställ dig att din modell är gjord av tunn plast, hur skulle du klippa isär modellen för att veckla ut den platt, måla på den i det platta tillståndet och sedan sätta ihop den igen?
-
-Föreställ dig nu att ytan på din modell är gjord av stretchigt lycra. Du skulle kunna sträcka modellen platt, eller klippa den, eller en kombination av båda. Men om du målade ett schackrutemönster på objektet när det var utplattat skulle schackrutorna vara förvrängda när du satte ihop det igen. Vilken metod är bättre, fler snitt med mindre distorsion eller färre snitt med mer distorsion?
-
-UV är instruktioner som talar om för 3D-programvara hur man ska ”klippa och sträcka” objektet när texturer appliceras. UV Atlas-verktyget använder generellt ett tillvägagångssätt med ”fler snitt, mindre distorsion”.
-
-
-:::
-
-::: tip UV och Nomad och andra appar
-
-De flesta texturerade modeller du hittar online är texturerade med UV. Nomad kan importera och visa detta via [materialpanelen](material#textures).
-
-När modeller skapas i Nomad kan du måla direkt på objekt utan UV. Om du behöver exportera dem till andra appar, t.ex. [Procreate](https://procreate.art/), kan du ”baka” Nomad-färginformation till texturer via UV. 
-
-:::
-
-### UV‑Unwrap – BFF {#uv-unwrap-bff}
+### BFF {#uv-unwrap-bff}
 ![](/images/topology_uvbff_menu.webp)
 
-BFF-UV föredrar ett tillvägagångssätt med ”färre snitt, mer distorsion”. 
+UV:er från BFF följer principen "färre snitt, mer förvrängning".
 
-#### ![](/icons/cog.webp) UV BFF‑kugghjulsmeny {#uv-bff-gear-menu}
+#### Alternativ {#uv-bff-gear-menu}
+Samma knappar `Ytgrupp`, radera och `Inspektera` som för [UVAtlas](#uvatlas-gear-menu) finns bredvid `Packa upp`.
 
-#### Ytgrupp {#bff-face-group}
+##### Ytgrupp {#bff-face-group}
 
-Använd facegroups för att definiera snitten för UV:erna.
+Använder ytgrupperna för att bestämma var UV:erna ska skäras.
 
-##### Konantal {#cone-count}
-Definiera antalet huvudsakliga projektioner som används. Lägre värden ger färre öar men mer distorsion.
+#### Kon-räkning {#cone-count}
+Anger antalet huvudprojektioner som används. Lägre värden ger färre öar men mer förvrängning. Högre värden tar längre tid att beräkna.
 
-##### Sömlösa patchar {#seamless-patches}
-Påverkar layouten av UV-patcharna, fungerar bäst med noggrant skapade facegroups.
+#### Sömlösa patchar {#seamless-patches}
+Påverkar layouten av UV-patcharna, och kan ge kraftig förvrängning. Fungerar bäst med noggrant skapade ytgrupper.
 
-### Baka -> textur {#bake-texture}
+::: warning
+BFF kan skapa överlappande UV:er om meshen har handtag (som hålet i en munk).
+:::
+
+### ![](/icons/preview.webp) Visa UV efter uppackning {#show-uv-after-unwrap}
+Öppnar UV-granskningsvyn efter uppackningen, så att du kan kontrollera resultatet direkt.
+
+### ![](/icons/bake.webp) Baka: Textur → Textur {#unwrap-bake-texture}
+Finns bara när objektets material har texturer. När du packar upp det igen överförs texturerna till de nya UV:erna, så att de fortfarande passar. Upplösningen är `Auto` som standard, vilket motsvarar den största texturen, men du kan också ställa in den själv.
+
+## ![](/icons/bake.webp) Baka {#bake}
+Den här fliken överför detaljer och målning mellan objekt, och mellan vertexer och texturer.
+
+`Från högupplöst` använder andra objekt som källa, och siffran inom parentes visar hur många. Nomad väljer dem så här:
+
+- alla markerade objekt används, och det huvudsakligt markerade objektet är målet (det som är tydligast framhävt i menyn [Scen](scene.md))
+- om bara ett objekt är markerat använder Nomad i stället alla synliga objekt
+- om alla andra objekt är dolda (till exempel med Solo) används hela scenen
+
+### ![](/icons/bake.webp) Baka → Textur {#bake-texture}
 ![](/images/topology_bake_menu.webp)
 
-Texture baking skapar texturer genom att projicera andra synliga objekt i scenen in i UV:erna på det valda objektet.
+Texturbakning skapar texturer genom att projicera andra synliga objekt i scenen på det markerade objektets UV:er. Objektet behöver UV:er.
 
-Här är ett typiskt arbetsflöde för baking:
+Så här ser ett typiskt arbetsflöde för bakning ut:
 - Du har en mesh med fina detaljer och målning
 - Klona den
-- Decimate den (sätt `Preserve painting` till 0)
-- UV-unwrappa den
-- Baka!
+- Decimera den (sätt `Bevara målning` till 0)
+- Packa upp dess UV:er
+- Baka den!
 
-Nomad tar som standard hänsyn till alla synliga mesher i scenen.
-Du kan också använda Solo-läget för att snabbt dölja de flesta andra mesher.
-Om det inte finns några andra synliga objekt kommer hela scenen att tas med i beräkningen.
+Nu bör du ha en mesh med låg upplösning som behåller det mesta av målningen och detaljerna från ditt tidigare objekt.
 
-Du bör nu ha en lågupplöst mesh som behåller det mesta av färgen och detaljerna från ditt tidigare objekt.
+Efter operationen flyttas vertexfärgerna till ett nytt, inaktiverat lager, så att de inte stör texturerna.
 
-Efter operationen flyttas vertex-färger till ett nytt inaktiverat lager så att de inte stör texturerna.
+#### Från objektet självt {#tex-from-itself}
+Bakar objektet på dess egna UV:er: målningen blir texturer, och om det har multiresolution-nivåer bakas detaljerna från den högsta nivån in på den aktuella (en multires-ikon visas då på knappen). Det är enkelt att ställa in, men ofta behöver du mer kontroll, och då är nästa alternativ mer användbart.
 
-#### Från sig själv {#tex-from-itself}
-Baka den högsta multiresolution-nivån till den lägsta nivån på det aktuella objektet. Detta är enkelt att ställa in, men ofta behöver du mer kontroll, i vilket fall nästa alternativ är mer användbart.
-
-#### Från högupplöst () {#tex-from-high-res}
-Baka från de andra synliga objekten i scenen till det valda objektet. Siffran inom parentes anger antalet andra synliga objekt som kommer att användas som högupplösta mål och bakas in i det aktuella lågupplösta objektet med UV. De andra objekten behöver inte vara liknande i layout eller topologi som objektet som bakas, vilket möjliggör flexibla bake-arbetsflöden.
+#### Från högupplöst {#tex-from-high-res}
+Bakar från de andra objekten till det markerade objektet. Siffran inom parentes visar hur många andra objekt som används som högupplösta källor och bakas in i det aktuella lågupplösta objektet med UV:er. De andra objekten behöver inte ha liknande layout eller topologi som objektet som bakas, vilket ger stor frihet i arbetsflödet.
 
 #### Upplösning {#tex-bake-resolution}
-Upplösningen på den bakade texturen. Bake-texturer är alltid kvadratiska, så 1024 skapar en 1024x1024-bild. 
+Upplösningen på den bakade texturen. Bakade texturer är alltid kvadratiska, så 1024 ger en bild på 1024x1024.
 
-Knapparna nedan är genvägar för vanliga upplösningar. Som referens är 512x512 relativt litet, t.ex. för webb-grafik och enkel geometri. 4096x4096 (4k) är för högkvalitativa renderingar.
+Knapparna nedanför är genvägar till vanliga upplösningar. Som jämförelse är 512x512 ganska litet, till exempel för webbgrafik och enkel geometri. 4096x4096 (4k i korthet) är för renderingar av hög kvalitet.
 
-#### ![](/icons/cog.webp) Baka‑kugghjulsmeny {#tex-bake-gear-menu}
+#### Färg, Grovhet, Metallitet, Normal, Förskjutning, Emissiv, Opacitet {#tex-normal-roughness-metalness-color-emissive-opacity}
+De här knapparna bestämmer vilka egenskaper som bakas, var och en till en egen karta. När bakningen är klar läggs de till som texturer i det aktuella objektets material. `Förskjutning` bakar detaljernas höjd som en förskjutningskarta (displacement map).
+
+#### ![](/icons/cog.webp) Kugghjulsmenyn för bakning {#tex-bake-gear-menu}
 ![](/images/topology_bake_gear_menu.webp)
-Gear-menyn har dessa avancerade alternativ:
+Kugghjulsmenyn har de här avancerade alternativen:
 
-##### Normal, Roughness, Metalness, Färg, Emissiv, Opacitet {#tex-normal-roughness-metalness-color-emissive-opacity}
-Dessa kryssrutor avgör vilka egenskaper som bakas, var och en till separata kartor. När bakningen är klar läggs dessa till som texturer i materialet på det aktuella objektet.
+##### Backup {#tex-backup}
+För att förhandsvisa de bakade texturerna bör objektets målningsinformation vara inaktiverad. `Backup (Målning → Lager)` flyttar all målningsinformation till ett nytt lager som backup, så att den enkelt kan slås på och av.
 
-##### Säkerhetskopia {#tex-backup}
-För att förhandsvisa de bakade texturerna bör objektets målningsinformation inaktiveras. Detta alternativ överför all målningsinformation till ett nytt lager som backup så att det enkelt kan aktiveras/inaktiveras.
+##### Använd multires {#tex-use-multires}
+För `Från objektet självt` på ett objekt med multiresolution-nivåer. Nomad läser den höga upplösningen genom indelningsnivåerna i stället för att skicka ut strålar: det går snabbare och ger inga projiceringsfel. Stäng av det för att baka med alternativen nedan.
 
-#### Bur‑radie {#tex-cage-radius}
-Justera hur långt bort från bake-objektet strålar skickas för att leta efter målobjekt. Som standard hålls detta avstånd lågt för att undvika artefakter, men kan ökas om målobjekten är långt från bake-objektet.
+##### Mjuk bas {#tex-smooth-base}
+För `Förskjutning` på ett objekt med multiresolution-nivåer. Mäter förskjutningen från den indelade basen i stället för från dess platta ytor. Låt det vara på när förskjutningskartan ska användas på en indelad mesh, som med adaptiv indelning i Blender.
 
-##### Strål‑offset {#tex-ray-offset}
-Justera var bake-beräkningarna startar på bake-objektet. Som standard startar de 5 % bort från ytan, vilket undviker de vanligaste artefakterna. Om målobjekten är mycket långt från bake-objektet kan denna offset behöva ökas.
+##### Sökavstånd {#tex-cage-radius}
+Det största avstånd som används för att hitta källytan. Som standard hålls avståndet kort för att undvika artefakter, men det kan ökas om källobjekten ligger långt från objektet som bakas.
+
+##### Projektion {#tex-projection}
+Hur källytan hittas:
+
+* `Stråle` - Projicerar längs ytans normal.
+* `Stråle + närmaste` - Använder strålen längs normalen, och sedan den närmaste ytan om strålen missar.
+* `Närmaste` - Projicerar till den närmaste punkten på källytan.
+
+##### Strål offset {#tex-ray-offset}
+Justerar varifrån bakningsberäkningarna startar på objektet som bakas. En liten förskjutning från ytan undviker de vanligaste artefakterna. Om källobjekten ligger mycket långt från objektet som bakas kan förskjutningen behöva ökas. Den används inte av `Närmaste`.
 
 
-### Projektera om till vertex {#reproject-to-vertex}
+### ![](/icons/bake.webp) Projektera om → Vertex {#reproject-to-vertex}
 
 ![](/images/topology_reproject_menu.webp)
 
-Projicera skulpterade detaljer, målning, lager, texturer till vertex-värden.
+Projicerar skulpterade detaljer, målning, lager och texturer till värden i vertexerna.
 
-Det kan ses som motsatsen till baking; om baking överför vertex-egenskaper till texturer, överför reproject texturer (och andra egenskaper)
- tillbaka till vertices.
-
-::: tip
-När du använder `Bake to texture` eller `Reproject to vertex` tas både vertex-färger och materialtexturer med i beräkningen.
-:::
-
-#### Från sig själv {#vertex-from-itself}
-Konvertera texturer från materialet till vertex-värden. Denna knapp är bara aktiv om objektet har UV och texturer är aktiva i materialet.
-
-::: tip TIP: Texture painting
-Nomad stöder inte direkt målning och redigering av texturer, men mycket liknande resultat kan uppnås genom att projicera texturer -> vertex-värden, måla på vertices och sedan baka vertex -> texturer:
-
-1. Ställ in ett lågpoly-objekt med UV
-1. Ladda texturer i dess material
-1. Subdividera det tillräckligt för att kunna måla på det
-1. `Reproject to vertex` i läget `From itself`, nu har texturen konverterats till vertex-värden
-1. Måla, jämna, smeta, stämpla, gör vilka ändringar du behöver
-1. `Bake to texture` i läget `From itself`. Dessa ändringar konverteras tillbaka till texturer.
-:::
-
-#### Från högupplöst () {#vertex-from-high-res}
-Konvertera alla synliga objekt till vertex-värden på det valda objektet. Siffran på denna knapp anger antalet synliga objekt.
+Du kan se det som motsatsen till bakning: om bakning överför vertexernas egenskaper till texturer, så överför omprojicering texturer (och andra egenskaper)
+ tillbaka till vertexerna.
 
 ::: tip
-Reprojektion av andra objekt kan användas inte bara för att överföra färginformation från andra objekt, utan också för att projicera vertices på andra objekt, t.ex. kan bandage projiceras på en karaktär.
+När du använder `Baka → Textur` eller `Projektera om → Vertex` tas både vertexfärgerna och materialets texturer med i beräkningen.
 :::
 
-#### ![](/icons/cog.webp) Omsprojekterings‑kugghjulsmeny {#vertex-reproject-gear-menu}
-Gear-menyn har dessa avancerade alternativ:
+#### Från objektet självt {#vertex-from-itself}
+Gör om texturerna från materialet till värden i vertexerna. Knappen är bara aktiv om objektet har UV:er och texturerna är aktiva i materialet.
 
-#### Vertices, Roughness, Metalness, Färg, Opacitet, Opacitet->Mask, Mask, Lager, Ytgrupp {#vertex-vertices-roughness-metalness-color-opacity-opacity-mask-mask-layers-face-group}
-Dessa kryssrutor avgör vilka egenskaper som projiceras till det valda objektet. 
+::: tip TIPS: Texturmålning
+Nomad har inget direkt stöd för att måla och redigera texturer, men du kan få mycket liknande resultat genom att projicera texturer -> vertexvärden, måla på vertexerna och sedan baka vertex -> texturer:
 
-#### Relax {#vertex-relax}
-Den valda meshen kan få sin layout jämnad eller relaxad en viss mängd för att bättre passa reprojektionsmålen. Smooth är bättre för högupplösta mesher. Relax är bättre för lågupplösta mesher. Auto låter Nomad avgöra bästa metod.
+1. Förbered ett objekt med få polygoner och UV:er
+1. Ladda in texturer i dess material
+1. Dela upp det tillräckligt för att kunna måla på det
+1. `Projektera om → Vertex` i läget `Från objektet självt`, nu har texturen gjorts om till vertexvärden
+1. Måla, jämna ut, smeta ut, stämpla, gör de ändringar du behöver
+1. `Baka → Textur`, i läget `Från objektet självt`. Ändringarna görs om till texturer igen.
+:::
 
-#### Iterationer {#vertex-iterations}
-Hur många gånger relax-operationen ska appliceras under reprojektionen.
-
-#### Bur‑radie {#vertex-cage-radius}
-Justera hur långt bort från det valda objektet strålar skickas för att leta efter målobjekt. Som standard hålls detta avstånd lågt för att undvika artefakter, men kan ökas om målobjekten är långt från bake-objektet.
-
-#### Strål‑bias {#vertex-ray-bias}
-Lägre värden prioriterar projektion till närmaste punkt på målobjektets yta. Högre värden prioriterar en skärningspunkt med hjälp av ytans normal. 
-
-#### Strål‑offset {#ray-vertex-offset}
-Justera var bake-beräkningarna startar på det valda objektet. Som standard startar de 5 % bort från ytan, vilket undviker vissa artefakter. Om målobjekten är mycket långt från bake-objektet kan denna offset behöva ökas.
-
-
-### Quad Remesh – Instant {#quad-remesh-instant}
-![](/images/topology_quadremesh_menu.webp)
-Remesha med [Instant Meshes-algoritmen av Wenzel Jakob, Marco Tarini, Daniele Panozzo, Olga Sorkine-Hornung](https://igl.ethz.ch/projects/instant-meshes/). Den analyserar flödet i en mesh och skapar ren quad-topologi.
+#### Från högupplöst {#vertex-from-high-res}
+Gör om de andra objekten till vertexvärden på det markerade objektet. Siffran på knappen visar antalet källobjekt. Det är främst tänkt att användas på en högupplöst mesh även här, oftast med en ren topologi.
 
 ::: tip
-På iOS och desktop ger [Quad remesher](tools#quad-remesher)-verktyget bättre resultat och mer kontroll.
+Att projicera om andra objekt kan användas inte bara för att överföra färginformation från andra objekt, utan också för att projicera vertexer på andra objekt, till exempel kan bandage projiceras på en karaktär.
 :::
 
-#### Remesh {#instant-remesh}
-Starta Instant Meshes-operationen.
+#### Vertexer, Färg, Grovhet, Metallitet, Opacitet, Mask, Lager, Ytgrupp {#vertex-vertices-roughness-metalness-color-opacity-opacity-mask-mask-layers-face-group}
+De här knapparna bestämmer vilka egenskaper som projiceras på det markerade objektet. `Lager` överför de andra lagren till den markerade meshen.
 
-#### Måltal fyrkanter {#target-quads}
-Antalet quad-polygoner som Quad Remesh försöker skapa.
+#### ![](/icons/cog.webp) Kugghjulsmenyn för omprojicering {#vertex-reproject-gear-menu}
+Kugghjulsmenyn har de här avancerade alternativen:
 
-#### ![](/icons/cog.webp) Quad Remesh Instant‑kugghjulsmeny {#quad-remesh-instant-gear-menu}
-Gear-menyn har dessa avancerade alternativ:
+##### Opacitet → Mask {#vertex-opacity-to-mask}
+Gör om källans opacitet till mask på det markerade objektet.
 
-##### Vinkel för kantbrytning {#crease-angle}
-En tröskel för skarpa hörn som försöker hjälpa till att styra remesh-operationen.
+##### Iterationer {#vertex-iterations}
+Hur många gånger avslappningen ska tillämpas under omprojiceringen. Används bara när `Vertexer` är på.
 
-#### Max fyllnadshål {#max-fill-hole}
-Algoritmen kan ibland skapa oönskade hål. Om ett hål har färre vertices än detta värde fylls det.
+##### Avslappna {#vertex-relax}
+Den markerade meshens layout kan jämnas ut eller slappnas av en viss mängd för att bättre passa källorna för omprojiceringen. `Jämna ut` är bättre för meshar med många polygoner, `Avslappna` är bättre för meshar med få polygoner. `Auto` låter Nomad välja den bästa metoden.
 
-### Hål {#holes}
-![](/images/topology_holes_menu.webp)
-För det mesta kommer ditt objekt troligen att vara watertight, vilket betyder att meshen är ”sluten”.
+##### Sökavstånd {#vertex-cage-radius}
+Det största avstånd som används för att hitta källytan. Som standard hålls avståndet kort för att undvika artefakter, men det kan ökas om källobjekten ligger långt från det markerade objektet.
 
-Om ditt objekt har hål kan du fylla dem. Observera att det bara fungerar på ”naiva” hål, så det kan inte ”svetsa” två separata kanter.
+##### Projektion {#vertex-projection}
+Hur källytan hittas:
 
-![](/videos/hole_filling.mp4)
+* `Stråle` - Projicerar längs ytans normal.
+* `Adaptiv blandning` - Blandar strålen längs normalen och den närmaste ytan efter avståndet och `Strålprioritet`. Om den ena missar används den andra.
+* `Närmaste` - Projicerar till den närmaste punkten på källytan.
+
+##### Strålprioritet {#vertex-ray-bias}
+Bara för `Adaptiv blandning`. Högre värden väger blandningen mot strålens resultat, lägre värden mot den närmaste punkten.
+
+##### Strål offset {#ray-vertex-offset}
+Justerar varifrån bakningsberäkningarna startar på det markerade objektet. En liten förskjutning från ytan undviker vissa artefakter. Om källobjekten ligger mycket långt från objektet som bakas kan förskjutningen behöva ökas. Den används inte av `Närmaste`.
+
+### ![](/icons/bake.webp) Baka → VDM {#bake-vdm}
+Skapar en VDM-stämpel (vektorförskjutning) från det markerade objektet och lägger till den i VDM-biblioteket. Du blir ombedd att ange ett namn.
+
+Så här ser ett typiskt arbetsflöde ut:
+- Lägg till ett plan, eller välj `Ny VDM` i VDM-väljaren för att lägga till ett färdigt förberett (primitiven [VDM](scene.md#add-menu))
+- Skulptera din form på det, och håll kanten platt
+- Baka det!
+
+Planets UV:er bestämmer vilken kvadrat som bakas, så objektet behöver UV:er. Välj stämpelns storlek med `Upplösning`, och välj med `Färg`, `Grovhet`, `Metallitet` och `Opacitet` vad stämpeln ska innehålla utöver förskjutningen.
 
 ::: tip
-När du kör Voxel Remesher stängs alla hål automatiskt, oavsett om du använder den på ett eller flera mesher.
+Undvik DynTopo på planet, det förstör dess UV:er och stämpeln blir förvrängd. Att skulptera i ett lager ger det mest exakta resultatet, eftersom det platta planet fortfarande finns kvar under. Målning kräver också ett lager, annars stämplas materialet över hela kvadraten i stället för bara där du målade.
 :::
 
-#### Stäng hål {#close-holes}
-Utför åtgärden för att stänga hål.
-
-#### ![](/icons/cog.webp) Hål‑kugghjulsmeny {#holes-gear-menu}
-Gear-menyn har dessa avancerade alternativ:
-
-##### Detalj {#fill-detail}
-Polygondensiteten som används för att fylla hålet. När du drar i detta reglage visas ett schackrutemönster på modellen, vilket ger en indikation på triangelstorleken som ska användas. Kryssrutan inaktiverar detta och använder bara befintliga punkter, vilket vanligtvis skapar långa tunna trianglar över hålet, som kan vara svåra att skulptera.
-
-##### Fyll icke‑manifold {#fill-non-manifold}
-Försök fylla non-manifold-hål.
-
-##### Ytgrupp {#fill-face-group}
-
-När hål fylls, ska varje hål få sin egen facegroup (Auto), eller ska de alla dela en facegroup (Off), eller ska inga facegroups skapas (On).
-
-### Tvinga manifold {#force-manifold}
-![](/images/topology_forcemanifold_menu.webp)
-Försök att rensa non-manifold-kanter. Det kan vara användbart för extern programvara som inte stöder kanter som har mer än 2 ytor gemensamt.
-
-#### Rensa {#clean}
-Utför Clean-åtgärden.
-#### ![](/icons/cog.webp) Tvinga manifold‑kugghjulsmeny {#force-manifold-gear-menu}
-Gear-menyn har dessa avancerade alternativ:
-
-#### Ta bort små ytor {#delete-small-faces}
-En tröskel som används för att ta bort och slå ihop små polygoner.
-
-
-### Triplanar {#triplanar}
-![](/images/topology_triplanar_menu.webp)
-Konverterar meshen till en [triplanar](scene.md#triplanar)-primitiv.
-Du kommer sannolikt att förlora mycket detaljer i processen.
-
-#### Tvinga kubisk {#force-cubic}
-Tvinga triplanaren att vara en kub. Annars anpassas triplanaren till den närmaste bounding box runt ditt objekt.
-
-#### Konvertera {#convert}
-Utför triplanar-åtgärden.
-
-#### Upplösning {#triplanar-resolution}
-Voxelstorleken som används i triplanar-operationen.
-
-## ![](/icons/dot.webp) Primitiv {#primitive}
-Parametrar för den valda primitivformen. Dessa finns också i primitivens verktygsrad i vyn.
+## ![](/icons/dot.webp) Grundform {#primitive}
+Parametrar för den markerade primitiven. De flesta finns också via knappen `…` i primitivens verktygsfält i vyn.
 
 ![](/images/topology_primitive_screenshot.webp)

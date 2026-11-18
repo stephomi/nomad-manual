@@ -1,4 +1,4 @@
-# 개요 {#overview}
+# ![](/icons/home.webp) 개요 {#overview}
 
 <!-- 
 [[toc]]
@@ -9,35 +9,37 @@
 -->
 
 ::: tip Nomad가 처음이신가요?
-[시작하기](gettingstarted.md) 가이드를 읽어보세요.
+[시작하기](gettingstarted.md) 가이드를 읽어 보세요.
 :::
 
 
 ## 목차 {#table-of-contents}
 
-| Menu                           | Icon                          | Description                                        |
-| :----------------------------: | :---------------------------: | :------------------------------------------------: |
-| [Files](files.md)              | ![](/icons/open.webp)        | 프로젝트 관리, 내보내기, 가져오기 등               |
-| [Scene](scene.md)              | ![](/icons/scene.webp)       | 새로운 기본 도형 추가 및 씬 오브젝트 관리          |
-| [Topology](topology.md)        | ![](/icons/multires.webp)    | 모델의 토폴로지 편집                               |
-| [Material](material.md)        | ![](/icons/material.webp)    | 머티리얼 (오브젝트 레벨)                           |
-| [Shading](shading.md)          | ![](/icons/sun.webp)         | 씬을 어떻게 조명할지 설정                          |
-| [Post Process](postprocess.md) | ![](/icons/postprocess.webp) | 포스트 프로세싱 (스크린 공간 기반 시각 효과)       |
-| [Background](background.md)    | ![](/icons/image.webp)       | 배경 변경 및 레퍼런스 이미지 추가                  |
-| [Camera](camera.md)            | ![](/icons/camera.webp)      | 카메라 제어 및 상호작용                            |
-| [Stroke](stroke.md)            | ![](/icons/pencil.webp)      | 현재 도구 설정, 스트로크, 폴오프 등 편집           |
-| [Pressure](pressure.md)        | ![](/icons/pressure.webp)    | 펜슬 압력 설정 관리                                |
-| [Painting](painting.md)	     | ![](/icons/paint.webp)       | 페인팅 도구를 위한 페인팅 설정                     |
-| [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | 현재 메쉬의 미러 평면 관리                         |
-| [Layers](layers.md)            | ![](/icons/layer.webp)       | 현재 오브젝트 레이어 관리                          |
-| [Settings](settings.md)        | ![](/icons/cog.webp)         | 3D 뷰포트 사용자 정의                              |
-| [Interface](interface.md)      | ![](/icons/sliders.webp)   | 인터페이스 사용자 정의                             |
-| [Tools](tools.md)              | ![](/icons/toolbox.webp)     | 모든 도구/브러시 목록                              |
-| [History](history.md)          | ![](/icons/history.webp)     | 실행 취소/다시 실행 히스토리 스택 관리             |
-| [FAQ](faq.md)                  | ![](/icons/faq.webp)         | 자주 묻는 질문                                     |
-| [Tips](tips.md)                | ![](/icons/manual.webp)      | 워크플로 팁                                        |
+| 메뉴                           | 아이콘                         | 설명                                        |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
+| [파일](files.md)              | ![](/icons/open.webp)        | 프로젝트 관리, 내보내기, 가져오기 등          |
+| [씬](scene.md)              | ![](/icons/scene.webp)       | 새 프리미티브를 추가하고 씬의 오브젝트를 관리합니다    |
+| [토폴로지](topology.md)        | ![](/icons/multires.webp)    | 모델의 토폴로지를 편집합니다                     |
+| [머티리얼](material.md)        | ![](/icons/material.webp)    | 머티리얼 (오브젝트 단위)                            |
+| [셰이딩](shading.md)          | ![](/icons/sun.webp)         | 씬의 조명을 설정합니다                            |
+| [포스트 프로세싱](postprocess.md) | ![](/icons/postprocess.webp) | 포스트 프로세싱 (화면 공간 시각 효과)      |
+| [배경](background.md)    | ![](/icons/image.webp)       | 배경을 바꾸고 참조 이미지를 추가합니다    |
+| [카메라](camera.md)            | ![](/icons/camera.webp)      | 카메라 제어와 조작                    |
+| [트랜스폼](transform.md)      | ![](/icons/transform.webp)   | 오브젝트의 위치, 회전, 크기를 직접 입력합니다  |
+| [스트로크](stroke.md)            | ![](/icons/brush.webp)       | 현재 도구의 설정, 스트로크, 폴오프 등을 편집합니다 |
+| [압력](stroke.md#pressure)        | ![](/icons/pressure.webp)    | 펜슬의 압력을 관리합니다                 |
+| [페인팅](painting.md)	       | ![](/icons/paint.webp)       | 페인팅 도구의 페인팅 설정               |
+| [대칭](symmetry.md)        | ![](/icons/symmetry.webp)    | 현재 메시의 미러 평면을 관리합니다       |
+| [작업](operation.md)      | ![](/icons/operation.webp)   | 메시 전체를 스무딩, 부풀리기, 다시 칠하기, 흐리게 합니다      |
+| [레이어](layers.md)            | ![](/icons/layer.webp)       | 현재 오브젝트의 레이어를 관리합니다                  |
+| [설정](settings.md)        | ![](/icons/cog.webp)         | 3d 뷰포트를 원하는 대로 설정합니다                          |
+| [인터페이스](interface.md)      | ![](/icons/sliders.webp)     | 인터페이스를 원하는 대로 설정합니다                            |
+| [도구](tools.md)              | ![](/icons/toolbox.webp)     | 모든 도구와 브러시 목록                        |
+| [작업 내역](history.md)          | ![](/icons/history.webp)     | 실행 취소/다시 실행 기록을 관리합니다                  |
+| [자주 묻는 질문](faq.md)                  | ![](/icons/faq.webp)         | 자주 묻는 질문                         |
+| [팁](tips.md)                | ![](/icons/manual.webp)      | 작업흐름 팁                                      |
 
-## 커뮤니티 리소스 {#community-resources}
+## 커뮤니티 자료 {#community-resources}
 
 <style>
 .video-grid {

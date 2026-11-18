@@ -1,239 +1,281 @@
 # ![](/icons/sun.webp) Shading {#shading}
 
-Menu ini mengontrol mode shading yang digunakan oleh Nomad, properti pencahayaan, dan properti cahaya lingkungan/matcap.
+Menu ini mengatur mode shading yang dipakai Nomad, properti pencahayaan, lingkungan dan matcap, serta kabut.
 
 ![](/images/shading_overview.webp)
 
 
 
-Anda dapat memilih antara beberapa mode rendering:
+Anda bisa memilih di antara beberapa mode rendering:
 
-| Mode                        | Arti                        | Deskripsi                                                      |
-| :-------------------------: | :-------------------------: | :------------------------------------------------------------: |
-| [Lit(PBR)](#pbr)            | Physically Based Rendering  | Melukis dengan metalness/roughness                            |
-| [Matcap](#matcap)           | Material Capture            | Digunakan saat memahat dengan penggunaan gpu/cpu lebih rendah dibanding PBR |
-| [Unlit](#unlit)             | Surface Color               | Hanya warna permukaan tanpa shading atau pencahayaan          |
-| [Object Id](#object-id)      | Object ID                   | Warna acak per objek, berguna untuk aplikasi pengecatan       |
-| [Instance Id](#instance-id)  | Instance ID                 | Warna acak per instance, berguna untuk mengidentifikasi mesh yang dibagi |
+| Mode                        | Arti                       | Deskripsi                                                       |
+| :-------------------------: | :------------------------: | :-------------------------------------------------------------: |
+| [Terang (PBR)](#pbr)        | Physically Based Rendering | Cahaya, bayangan, lingkungan, serta metalness/roughness yang dicat |
+| [MatCap](#matcap)           | Material Capture           | Mode cepat untuk memahat, dengan penggunaan gpu/cpu lebih rendah dari PBR |
+| [Tanpa pencahayaan](#unlit) | Warna permukaan            | Hanya warna permukaan, tanpa shading atau pencahayaan           |
+| [ID Objek](#object-id)      | ID Objek                   | Warna acak per objek, berguna untuk aplikasi lukis.             |
+| [ID Instansi](#instance-id) | ID Instansi                | Warna acak per instans, berguna untuk mengenali mesh yang dipakai bersama |
 
-Jika Anda ingin mempelajari lebih lanjut tentang metalness dan roughness, lihat bagian [Vertex Paint](painting.md).
+Jika Anda ingin mempelajari lebih lanjut tentang metalness dan roughness, lihat bagian [Lukis](painting.md).
 
 ---
 
 ![](/images/shading_second.webp)
 
-### Grup Muka {#face-group}
-Overlay warna facegroup. Facegroup adalah seleksi poligon berwarna yang dapat dibuat dengan tool [Face group](tools#facegroup), dan dibuat secara otomatis pada sebagian besar primitif.
+### ![](/icons/group_gray.webp) Grup Face {#face-group}
+Menampilkan warna grup face di atas model. Grup face adalah kumpulan poligon berwarna yang bisa dibuat dengan alat [Grup Face](tools#facegroup), dan dibuat secara otomatis pada sebagian besar primitif.
 
-Beberapa tool akan otomatis memfilter berdasarkan facegroup ketika facegroup terlihat.
+Beberapa alat akan otomatis menyaring berdasarkan grup face saat grup face terlihat.
 
-### Tampilkan cat {#show-paint}
-Nomad dapat menyimpan color, roughness, metalness di vertex sculpt Anda. Anda dapat mengaktif/nonaktifkan tampilan properti ini secara global dengan checkbox ini.
+### ![](/icons/palette.webp) Tampilkan lukisan {#show-paint}
+Nomad bisa menyimpan warna, roughness, dan metalness di verteks pahatan Anda. Anda bisa menyalakan atau mematikan tampilan properti ini secara global dengan kotak centang ini.
 
-Perhatikan bahwa jika Anda memiliki properti vertex dan tekstur sekaligus, dan keduanya diaktifkan, nilainya akan dikalikan satu sama lain.
+Perlu diingat, jika Anda punya properti verteks sekaligus tekstur, dan keduanya diaktifkan, nilainya akan dikalikan.
 
-### Tampilkan mask {#show-mask}
-Mengaktif/nonaktifkan overlay mask grayscale dari [mask tools](tools#mask). Saat ini dinonaktifkan, mask juga dinonaktifkan, berguna untuk membuat perubahan cepat tanpa mask, lalu Anda dapat mengaktifkannya lagi tanpa kehilangan mask.
+### ![](/icons/shield.webp) Tampilkan topeng {#show-mask}
+Menyalakan atau mematikan lapisan masker skala abu-abu dari [alat masker](tools#mask). Jika dinonaktifkan, masker juga ikut nonaktif. Ini berguna untuk membuat perubahan cepat tanpa masker, lalu Anda bisa mengaktifkannya lagi tanpa kehilangan masker Anda.
 
-### Gunakan Sembunyi {#use-hide}
+### ![](/icons/tool_hide.webp) Gunakan Sembunyikan {#use-hide}
 
-Mengaktif/nonaktifkan wajah yang disembunyikan. Perhatikan ini hanya berfungsi jika Anda TIDAK berada di tool hide!
+Menyalakan atau mematikan face yang disembunyikan. Perlu diingat, ini hanya bekerja jika Anda TIDAK sedang memakai alat sembunyi!
 
-### Gunakan tekstur {#use-textures}
+### ![](/icons/image.webp) Gunakan tekstur {#use-textures}
 
-Nomad memungkinkan tekstur ditetapkan ke objek dari menu [material](material). Jika tekstur ditetapkan, tekstur dapat diaktif/nonaktifkan secara global dengan checkbox ini.
+Nomad memungkinkan tekstur dipasang ke objek dari menu [Material](material). Jika tekstur sudah dipasang, Anda bisa menyalakan atau mematikannya secara global dengan kotak centang ini.
 
+Anda tidak bisa membuat atau menyunting tekstur di dalam Nomad, tetapi tekstur dari file yang diimpor bisa dipakai. Tekstur opasitas bekerja di Terang, MatCap dan Tanpa pencahayaan, normal map di Terang dan MatCap, warna di Terang dan Tanpa pencahayaan, sedangkan emisif, roughness dan metalness hanya di Terang. Tombolnya berwarna abu-abu jika adegan tidak punya tekstur.
 
+### Ikhtisar PBR dan cahaya {#pbr}
+Manual ini tidak akan membahas detail Physically Based Rendering.
 
+Satu hal penting yang perlu diingat: pencahayaan dan material sepenuhnya terpisah.
+Artinya, Anda bisa mengecat warna, roughness dan metalness objek sementara pencahayaannya diatur secara terpisah.
+Dengan begitu, Anda bisa mengecat objek lalu menyesuaikan pencahayaan belakangan, tanpa merusak tampilan keseluruhan model Anda.
 
-
-
-
-### Ikhtisar PBR dan lampu {#pbr}
-Manual ini tidak akan membahas detail tentang Physically Based Rendering.
-
-Satu hal penting yang perlu diingat adalah bahwa pencahayaan dan material sepenuhnya terpisah.
-Artinya Anda dapat melukis color, roughness, dan metalness objek Anda sementara pencahayaan ditangani secara independen.
-Ini memungkinkan Anda melukis objek lalu menyetel pencahayaan nanti tanpa merusak tampilan keseluruhan model Anda.
-
-Lampu hanya tersedia dengan [mode PBR](#pbr).
-Untuk alasan performa, Anda dibatasi hanya 4 lampu.
+Cahaya, lingkungan dan kabut hanya tersedia dalam [mode PBR](#pbr).
+Demi kinerja, Anda dibatasi 4 cahaya di perangkat seluler dan 6 di desktop.
 
 ::: tip
-Anda dapat memuat file glTF dengan lebih dari 4 lampu di dalamnya dan Nomad akan mempertahankan semuanya.
-Namun performanya belum tentu baik.
+Anda bisa memuat file glTF yang berisi lebih banyak cahaya, dan Nomad akan mempertahankan semuanya.
+Namun kinerjanya belum tentu bagus.
 :::
 
 ::: tip
-Anda dapat memalsukan banyak lampu dengan membuat objek unlit/emissive, lalu mengaktifkan global illumination di menu [post process](postprocess).
+Anda bisa meniru banyak cahaya dengan membuat objek tanpa pencahayaan/emisif, lalu mengaktifkan pencahayaan global di menu [PascaProses](postprocess).
 :::
 
-### Ikhtisar jenis lampu {#light-types-overview}
+### Ikhtisar jenis cahaya {#light-types-overview}
 
-Berikut jenis lampu yang saat ini didukung:
+Berikut jenis cahaya yang saat ini didukung:
 
-| Mode                        | Deskripsi                                              | Dapat membuat bayangan                                   |
-| :-------------------------: | :----------------------------------------------------: | :------------------------------------------------------: |
-| [Directional](#directional) | Cahaya matahari yang sangat jauh                      | ya                                                       |
-| [Environment](#environment) | Cahaya jauh yang disesuaikan dengan environment HDR   | ya                                                       |
-| [Spot](#spot)               | Cahaya berbentuk kerucut                              | Ya                                                       |
-| [Point](#point)             | Titik cahaya omni-directional                         | Ya, tetapi hanya melalui screen-space shadow yang kurang andal |
+| Mode                        | Deskripsi                                               | Bisa membuat bayangan |
+| :-------------------------: | :-----------------------------------------------------: | :--------------: |
+| [Arah](#directional)        | Cahaya matahari yang sangat jauh tak terhingga          | Ya               |
+| [Lingkungan](#env-light)    | Cahaya jauh yang diselaraskan dengan HDR lingkungan     | Ya               |
+| [Lampu sorot](#spot)        | Cahaya berbentuk kerucut                                | Ya               |
+| [Lampu titik](#point)       | Titik cahaya ke segala arah                             | Ya               |
 
-#### Directional {#directional}
-Memancarkan cahaya dari jarak tak terhingga, dengan intensitas seragam.
-Posisi 3D-nya di dalam scene tidak penting, hanya orientasinya yang berpengaruh.
+#### ![](/icons/sun.webp) Arah {#directional}
+Memancarkan cahaya dari jarak yang sangat jauh tak terhingga, dengan intensitas yang merata.
+Posisi 3d-nya di adegan tidak berpengaruh, hanya orientasinya yang penting.
 
-Anda dapat melampirkan lampu ini ke kamera, sehingga pencahayaan menjadi konsisten.  
-Sebagai contoh Anda dapat menggunakannya untuk membuat rim light (cahaya kuat yang memancar dari belakang model Anda, mengarah ke kamera) yang selalu menerangi bagian belakang model Anda.
+Anda bisa menautkan cahaya ini ke kamera, sehingga pencahayaannya selalu konsisten.  
+Misalnya, Anda bisa memakainya untuk membuat rim light (cahaya kuat yang datang dari belakang model, mengarah ke kamera) yang selalu menerangi bagian belakang model Anda.
 
-#### Cahaya lingkungan {#env-light}
-Menggunakan [environment hdr](#environment) bekerja dengan baik untuk pencahayaan lembut secara keseluruhan, tetapi jika ada cahaya tajam yang kuat terlihat di HDR, bayangan yang dibuat akan sangat lembut, sering kali tidak terlihat sama sekali. Menggunakan directional light bersamaan dengan environment HDR dapat membantu, tetapi bisa sulit untuk menyelaraskannya.
+#### ![](/icons/panorama.webp) Cahaya lingkungan {#env-light}
+Memakai [HDR lingkungan](#environment) cocok untuk pencahayaan lembut secara keseluruhan, tetapi jika ada cahaya kuat dan tajam di HDR, bayangan yang dihasilkannya akan sangat lembut, bahkan sering tidak terlihat sama sekali. Menggabungkan cahaya arah dengan HDR lingkungan bisa membantu, tetapi menyelaraskan keduanya bisa cukup sulit.
 
-Lampu ini melakukan pekerjaan itu untuk Anda. Lampu akan otomatis diputar agar sejajar dengan bagian paling terang dari HDR, lalu Anda dapat mengontrol intensitas dan sudutnya (kelembutan bayangan) secara terpisah. 
+Cahaya ini melakukannya untuk Anda. Cahaya akan otomatis diputar agar sejajar dengan bagian paling terang dari HDR, lalu Anda bisa mengatur intensitas dan sudutnya (kelembutan bayangan) secara terpisah. 
 
-#### Spot {#spot}
-Spot light memancarkan cahaya ke satu arah, dibatasi oleh bentuk kerucut.
+#### ![](/icons/spotlight.webp) Lampu sorot {#spot}
+Lampu sorot memancarkan cahaya ke satu arah, dibatasi oleh bentuk kerucut.
 
-#### Titik {#point}
-Point light akan memancarkan cahaya ke segala arah.  
-Saat ini, point light tidak mendukung bayangan.
+#### ![](/icons/light.webp) Lampu titik {#point}
+Lampu titik memancarkan cahaya ke segala arah, dan juga bisa membuat bayangan.
 
 #### Bayangan {#shadows}
-Opsi `normal bias` dapat digunakan untuk mengurangi artefak bayangan umum (acne/peter-panning).
+Setiap cahaya bisa membuat bayangan, dan Anda bisa memilih cara bayangannya dihitung di [pengaturannya](#light-extra-controls). Jika Anda melihat artefak bayangan, penggeser `Toleransi` di sana bisa membantu.
 
-Kualitas bayangan bergantung pada ukuran objek relatif terhadap keseluruhan scene.  
-Jika Anda memiliki objek besar di scene yang tidak perlu membuat bayangan (misalnya bidang datar besar), pastikan untuk menonaktifkan pembuatan bayangan di [pengaturan material](material.md#cast-shadows)-nya.
+Kualitas bayangan bergantung pada ukuran objek dibandingkan dengan seluruh adegan.  
+Jika ada objek besar di adegan Anda yang tidak perlu membuat bayangan (misalnya bidang datar yang besar), pastikan untuk menonaktifkan pembuatan bayangan di [pengaturan materialnya](material.md#casts-shadows).
 
-## Lampu {#lights}
+## ![](/icons/sun.webp) Cahaya {#lights}
 
 ![](/images/shading_lights.webp)
 
-### ![](/icons/checked.webp) Kotak centang Lampu {#lights-checkbox}
+### ![](/icons/checked.webp) Kotak centang Cahaya {#lights-checkbox}
 
-Mengaktif/nonaktifkan semua direct light di scene.
+Menyalakan atau mematikan semua cahaya langsung di adegan.
 
 
 
-### Tambah lampu {#add-light}
+### Tambah cahaya {#add-light}
 
-Menambahkan lampu ke scene, hingga maksimum 4. Saat lampu ditambahkan, daftar lampu akan ditampilkan dengan tombol, dan toolbar lampu ditambahkan ke bagian atas viewport.
+Menambahkan cahaya ke adegan, hingga 4 cahaya di perangkat seluler dan 6 di desktop. Saat cahaya ditambahkan, daftar cahaya ditampilkan beserta tombol-tombolnya, dan bilah alat cahaya muncul di bagian atas viewport.
 
 ![](/images/shading_lights_icons.webp)
 
-* Teks menampilkan nama lampu dan kecerahan.
-* Ikon mata mengaktif/nonaktifkan visibilitas.
-* Ikon pensil memungkinkan Anda mengganti nama lampu.
-* Ikon tempat sampah akan menghapus lampu.
-* Ikon salin akan menduplikasi lampu. 
-* Ikon 3 titik akan menampilkan editor lampu lengkap. Sebagian besar fungsinya juga tersedia dari toolbar yang muncul di viewport. 
+* Teksnya menampilkan nama cahaya dan tingkat kecerahannya. Ketuk untuk memilih cahaya.
+* Ikon mata menyalakan atau mematikan visibilitas.
+* Ikon pensil memungkinkan Anda mengganti nama cahaya.
+* Ikon tempat sampah menghapus cahaya.
+* Ikon salin menduplikasi cahaya. 
+* Ikon 3 titik membuka editor cahaya lengkap. Sebagian besar fungsinya juga tersedia di bilah alat yang muncul di viewport. 
+
+Anda juga bisa menyeret cahaya di daftar untuk mengubah urutannya.
 
 ### ![](/icons/spotlight.webp)  Ikon {#icons}
 
-Mengaktif/nonaktifkan tampilan ikon lampu di viewport
+Menyalakan atau mematikan tampilan ikon cahaya di viewport
 
-### Toolbar lampu {#light-toolbar}
+### Bilah alat cahaya {#light-toolbar}
 ![](/images/shading_lights_toolbar.webp) 
 
-Toolbar ini akan muncul di bagian atas viewport saat sebuah lampu dipilih.
+Bilah alat ini muncul di bagian atas viewport saat sebuah cahaya dipilih.
 
-* Show akan mengaktif/nonaktifkan visibilitas lampu.
-* Directional/Environment/Spot/Point akan mengubah jenis lampu. Ketuk untuk berputar, atau tekan lama untuk melihat menu.
-* Intensity mengontrol kekuatan lampu, nilainya dapat lebih dari 1.0 untuk lampu yang sangat kuat, berguna saat digunakan dengan Global Illumination di Post Process.
-* Swatch warna ketika diklik akan menampilkan pemilih warna. Nomad menawarkan beberapa cara untuk memilih warna. Kontrol Kelvin menawarkan cara alami untuk memilih pencahayaan hangat/dingin.
-* Shadow akan mengaktif/nonaktifkan bayangan.
-* Size mengatur lebar lampu. Lampu yang lebih lebar akan menghasilkan bayangan lembut, pencahayaan lembut, dan highlight yang lebih lembut pada objek.
-* ... akan menampilkan kontrol tambahan.
+* `Tampak` menyalakan atau mematikan visibilitas cahaya.
+* Arah/Lingkungan/Sorot/Titik mengubah jenis cahaya. Ketuk untuk berganti secara bergiliran, atau tekan lama untuk melihat menunya.
+* Intensitas mengatur kekuatan cahaya; nilainya bisa melebihi 1,0 untuk cahaya yang sangat kuat, berguna saat dipakai bersama Pencahayaan Global di PascaProses
+* Kotak warna, jika diklik, membuka pemilih warna. Nomad menyediakan beberapa cara untuk memilih warna. Kontrol Kelvin memberi cara alami untuk memilih pencahayaan hangat/dingin.
+* Bayangan menyalakan atau mematikan bayangan.
+* Sudut (_arah dan lingkungan_) atau Ukuran (_sorot dan titik_) mengatur lebar cahaya. Cahaya yang lebih lebar menghasilkan bayangan lembut, pencahayaan lembut, dan pantulan cahaya yang lebih lembut pada objek.
+* Lampiran (_khusus arah_), Sudut kerucut dan Kelembutan (_khusus sorot_) dijelaskan di [editor cahaya](#light-extra-controls) di bawah.
+* ... memunculkan `Kloning`, `Pusatkan ulang` dan `Hapus`, beserta pengaturan bayangan.
 
-### Kontrol ekstra lampu {#light-extra-controls}
+### Kontrol tambahan cahaya {#light-extra-controls}
 
 ![](/images/shading_extra_controls.webp) 
 
-Perhatikan bahwa beberapa opsi spesifik untuk jenis lampu tertentu.
+Ikon 3 titik pada cahaya di daftar membuka editor lengkapnya. Perlu diingat bahwa beberapa opsi khusus untuk jenis cahaya tertentu.
 
-* `Clone` akan menduplikasi lampu.
-* `Recenter` akan memindahkan lampu kembali ke origin.
-* `Delete` akan menghapus lampu.
-* `Directional/Environment/Spot/Point` memungkinkan Anda mengubah jenis lampu.
-* `colour swatch` ketika diklik akan menampilkan pemilih warna. 
-* `Intensity` mengontrol kekuatan lampu.
-* `Attachment` (_hanya directional_) akan mengatur lampu agar diparent ke world, atau diparent ke kamera. Misalnya jika Anda menggunakan directional light di belakang karakter sebagai rim light, ketika attachment sebagai camera dipilih, memutar kamera akan selalu membuat lampu berada di belakang karakter.
-* `Angle` (_hanya directional dan environment_) adalah ukuran tampak lampu, anggap saja seberapa besar matahari tampak di langit. Sudut yang lebih besar akan menghasilkan bayangan lebih lembut dan highlight lebih lebar.
-* `Softness` (_hanya spotlight_) mengontrol ketajaman tepi kerucut spotlight. 0 adalah tepi yang sangat tajam. 1 sangat lembut, dengan gradasi ke tengah kerucut cahaya. Di viewport, titik biru kecil pada kerucut spotlight dapat digunakan untuk mengatur softness secara interaktif.
-* `Cone angle` (_hanya spotlight_) mengontrol sudut sebaran spotlight. Sudut kecil adalah berkas cahaya yang sangat tipis, 170 adalah sebaran cahaya yang sangat lebar. Di viewport, titik oranye dapat digunakan untuk mengatur cone angle secara interaktif.
-* `Shadow` akan mengaktif/nonaktifkan bayangan untuk lampu saat ini.
-* `Shadow map` dan `screenspace` adalah cara berbeda untuk menghitung bayangan, umumnya shadow map lebih andal.
-* `Contact` menyesuaikan bagaimana bayangan dihitung. Bayangan adalah masalah sulit dalam grafik komputer, dan dapat menyebabkan artefak dalam rendering. Bayangan yang lebih akurat dapat dipilih untuk lampu terpenting di scene, kontrol ini menentukan apakah lampu terpenting dipilih secara otomatis oleh Nomad, atau oleh pengguna.
-* `Tolerance` jika artefak bayangan terlihat (baik bayangan tampak tidak menyentuh permukaan, atau ada noise dan pola di dalam bayangan), menyetel tolerance dapat membantu memperbaiki masalah tersebut.
+* `Arah/Lingkungan/Titik` memungkinkan Anda mengubah jenis cahaya (lampu sorot dan lampu titik sama-sama bernama `Titik`).
+* `Kotak warna`, jika diklik, membuka pemilih warna. 
+* `Intensitas` mengatur kekuatan cahaya.
+* `Lampiran` (_khusus arah_) menautkan cahaya ke dunia (`Tetap`), atau ke kamera (`Kamera`). Misalnya, jika Anda memakai cahaya arah di belakang karakter sebagai rim light, dengan lampiran kamera dipilih, cahaya akan selalu berada di belakang karakter saat kamera diputar.
+* `Kelembutan` (_khusus lampu sorot_) mengatur ketajaman tepi kerucut lampu sorot. 0 berarti tepi yang sangat tajam. 1 sangat lembut, dengan gradasi ke arah tengah kerucut cahaya. Di viewport, titik biru kecil pada kerucut lampu sorot bisa dipakai untuk mengatur kelembutan secara interaktif.
+* `Sudut kerucut` (_khusus lampu sorot_) mengatur sudut sebaran lampu sorot. Sudut kecil berarti berkas cahaya yang sangat tipis, 170 berarti sebaran cahaya yang sangat lebar. Di viewport, titik oranye bisa dipakai untuk mengatur sudut kerucut secara interaktif.
+* `Sudut` (_khusus arah dan lingkungan_) adalah ukuran semu cahaya; bayangkan seberapa besar matahari tampak di langit. Sudut yang lebih besar menghasilkan bayangan lebih lembut dan pantulan cahaya lebih lebar.
+* `Ukuran` (_khusus sorot dan titik_) adalah lebar cahaya. Cahaya yang lebih besar menghasilkan bayangan lebih lembut.
+* `Bayangan` menyalakan atau mematikan bayangan untuk cahaya ini.
+* Jenis bayangan menentukan cara bayangan dihitung. `Peta bayangan` merender adegan dari sudut pandang cahaya, sehingga juga membayangi geometri yang tidak terlihat oleh kamera. `Ruang layar` hanya memakai apa yang sudah terlihat di layar: lebih ringan, tetapi masih eksperimental. Umumnya peta bayangan lebih andal.
+* `Toleransi` (_khusus ruang layar_): jika terlihat artefak bayangan (bayangan tampak tidak menyentuh permukaan, atau ada noise dan pola di dalam bayangan), menyesuaikan toleransi bisa membantu mengatasinya.
+* `Kontak` menambahkan bayangan yang lebih presisi pada jarak pendek, di tempat objek saling bersentuhan. Dengan `Otomatis`, hanya cahaya yang paling dominan di adegan yang mendapat bayangan kontak; `Tidak` dan `Ya` memaksa fitur ini mati atau menyala untuk cahaya ini. Penggeser `Toleransi`-nya bekerja seperti yang di atas.
+
+Tombol `...` pada bilah alat viewport berisi pengaturan bayangan yang sama, ditambah:
+
+* `Kloning` menduplikasi cahaya.
+* `Pusatkan ulang` memindahkan cahaya ke depan kamera, dengan tetap mempertahankan orientasinya.
+* `Hapus` menghapus cahaya.
 
 
-## Lingkungan {#environment}
+## ![](/icons/panorama.webp) Lingkungan {#environment}
 
 ![](/images/shading_environment.webp)
 
-Cahaya di dunia nyata datang dari segala arah; birunya langit, hijaunya rumput, merahnya bangunan, semua cahaya dari 'environment' ini dapat disimulasikan dengan environment map. 
+Di dunia nyata, cahaya datang dari segala arah: birunya langit, hijaunya rumput, merahnya sebuah gedung. Semua cahaya dari 'lingkungan' ini bisa disimulasikan dengan peta lingkungan. 
 
-Nomad menyertakan beberapa contoh environment map untuk area indoor dan outdoor, dengan tint dan tingkat kecerahan berbeda. Cobalah berbagai map untuk melihat mana yang paling menonjolkan detail sculpt Anda.
+Gunakan kotak centang di sebelah judul untuk menyalakan atau mematikan pencahayaan lingkungan.
 
-Ketuk gambar untuk melihat environment map yang tersedia. Dari dialog tersebut pilih 'Import...' untuk memuat milik Anda sendiri. Sebaiknya gunakan gambar High Dynamic Range (HDR), dalam format latlong atau equirectangular, sebagai file .hdr atau .exr. [www.polyhaven.com](https://polyhaven.com/hdris) memiliki koleksi environment map gratis yang bagus untuk digunakan, umumnya map hdr 1k adalah ukuran dan kualitas yang baik.
+Nomad menyertakan beberapa contoh peta lingkungan untuk ruang dalam dan luar, dengan warna dan tingkat kecerahan yang berbeda-beda. Cobalah berbagai peta untuk melihat mana yang paling menonjolkan detail pahatan Anda.
+
+Ketuk gambarnya untuk melihat peta lingkungan yang tersedia. Dari dialog itu, pilih `Impor...` untuk memuat peta Anda sendiri. Sebaiknya gunakan gambar High Dynamic Range (HDR), dalam format latlong atau equirectangular, berupa file .hdr atau .exr. Penjelajahnya juga bisa mengunduh lingkungan langsung dari [Poly Haven](https://polyhaven.com/hdris), yang punya koleksi peta lingkungan gratis yang bagus.
 
 ### Eksposur {#env-exposure}
-Mengatur kecerahan environment map. Sering kali map bisa terlalu terang saat digunakan dengan lampu biasa, menurunkan exposure dapat membantu menyeimbangkan, terutama saat digunakan dengan Global Illumination di pengaturan [Post Process](postprocess).
+Mengatur kecerahan peta lingkungan. Peta sering kali terlalu terang jika dipakai bersama cahaya biasa; menurunkan eksposur bisa membantu menyeimbangkannya, terutama saat dipakai bersama Pencahayaan Global di pengaturan [PascaProses](postprocess).
 
 ### Rotasi {#env-rotation}
 
-Karena environment map menangkap cahaya dari segala arah, Anda dapat memutarnya untuk mendapatkan pantulan dan pencahayaan keseluruhan yang berpadu baik dengan sculpt Anda.
+Karena peta lingkungan menangkap cahaya dari segala arah, Anda bisa memutarnya agar pantulan dan pencahayaan keseluruhan berpadu dengan baik dengan pahatan Anda. Anda juga bisa memutar lingkungan dengan menyeret 3 jari secara horizontal di viewport.
 
-### Terpasang ke kamera {#env-attached}
-Melampirkan environment ke kamera.
+### Tautkan ke kamera {#env-attached}
+Menautkan lingkungan ke kamera.
 
-Ini akan memaksa pencahayaan menjadi konsisten, yang bisa berguna saat memahat.
+Ini membuat pencahayaan selalu konsisten, yang bisa berguna selama memahat.
+
+### Blur (latar belakang) {#env-background-blur}
+Penggeser ini hanya muncul jika [latar belakang](background.md) diatur ke lingkungan. Penggeser ini memburamkan gambar lingkungan di belakang model Anda, tanpa mengubah pencahayaannya.
 
 
-## ![](/icons/sphere_smooth.webp) Matcap {#matcap}
+## ![](/icons/fog.webp) Kabut {#fog}
+
+Kabut menambahkan kedalaman atmosfer pada adegan Anda dan membuat berkas cahaya terlihat. Aktifkan dengan kotak centang di sebelah judul. Seperti cahaya dan lingkungan, kabut hanya tersedia dalam mode [Terang (PBR)](#pbr).
+
+::: tip Berkas cahaya yang lebih kuat
+Turunkan `Lingkungan` kabut, lalu gunakan lampu sorot atau lampu titik yang terang. Naikkan `Kepadatan` sampai kabut terlihat jelas. Untuk berkas cahaya yang terlihat di kabut yang lebih tipis, atur `Arah Hamburan` ke nilai positif yang tinggi dan arahkan kamera ke cahaya.
+:::
+
+### Warna {#fog-color}
+Warna kabut dan warna cahaya yang dihamburkannya.
+
+### Kepadatan {#fog-density}
+Seberapa cepat kabut menebal seiring jarak.
+
+### Opasitas Maksimum {#fog-opacity}
+Membatasi seberapa banyak kabut bisa menutupi adegan, bahkan pada kepadatan tinggi.
+
+### Arah Hamburan {#fog-scattering}
+Arah kabut menghamburkan cahaya (disebut juga anisotropi). Nilai positif membuat kabut lebih terang saat Anda melihat ke arah cahaya, nilai negatif saat Anda melihat menjauhinya, dan nol menghamburkan cahaya secara merata ke segala arah.
+
+### ![](/icons/panorama.webp) Lingkungan {#fog-environment}
+Seberapa banyak [lingkungan](#environment) menerangi kabut. Opsi ini berwarna abu-abu jika lingkungan dimatikan.
+
+### Derau {#fog-noise}
+Mencampurkan derau ke dalam kabut untuk memecahnya menjadi gumpalan-gumpalan, tanpa mengubah kepadatan keseluruhannya. Jika derau di atas 0, penggeser `Ukuran` mengatur ukuran polanya.
+
+### Bentuk {#fog-shape}
+Bagian adegan yang diisi kabut:
+
+* `Seragam` - mengisi seluruh adegan.
+* `Vertikal` - menjaga kabut di dalam pita vertikal dengan tepi yang lembut. Penggeser `Bawah` dan `Atas` mengatur ketinggian tepi bawah dan atasnya, dan tombol mata di sebelahnya menampilkan pita itu di viewport selama Anda menyesuaikannya.
+
+
+## ![](/icons/sphere_smooth.webp) MatCap {#matcap}
 
 ![](/images/shading_matcap.webp)
 
-Seperti namanya (MATerial CAPture), matcap menangani informasi pencahayaan dan material dalam satu gambar.
-Karena material itu sendiri sudah ada di matcap, channel pengecatan roughness dan metalness akan diabaikan.
-Warna pengecatan akan dikalikan dengan matcap, artinya jika Anda memiliki matcap hitam/abu-abu, menggunakan cat putih tidak akan membuatnya lebih terang.
+Sesuai namanya (MATerial CAPture), matcap menangani informasi pencahayaan sekaligus material dalam satu gambar.
+Karena materialnya sudah ada di dalam matcap, kanal cat roughness dan metalness akan diabaikan.
+Warna cat akan dikalikan dengan matcap, artinya jika Anda memakai matcap hitam/abu-abu, cat putih tidak akan membuatnya lebih terang.
 
-Seniman cenderung menyukai mode ini untuk keperluan sculpting karena memungkinkan mereka fokus pada bentuk dan geometri itu sendiri.
+Para seniman cenderung memilih mode ini untuk memahat, karena mereka bisa fokus pada bentuk dan geometrinya saja.
 
-Mengetuk sphere akan menampilkan image browser. Anda juga dapat menambahkan matcap Anda sendiri, umumnya foto apa pun, render, bahkan lukisan sebuah sphere yang dipotong rapat menjadi persegi dapat digunakan. Banyak pustaka matcap tersedia online, salah satu sumber yang berguna adalah [nidorx matcap library](https://github.com/nidorx/matcaps).
+Mengetuk bola akan membuka penjelajah gambar. Anda juga bisa menambahkan matcap sendiri; umumnya foto, render, bahkan lukisan sebuah bola apa pun yang dipotong rapat menjadi persegi bisa dipakai. Banyak pustaka matcap tersedia secara online, salah satu sumber yang berguna adalah [pustaka matcap nidorx](https://github.com/nidorx/matcaps).
 
-### Gunakan Matcap global {#matcap-global}
+### Gunakan MatCap global {#matcap-global}
 
-Biasanya seniman akan menggunakan satu matcap untuk seluruh sculpt, tetapi jika toggle ini dinonaktifkan, setiap objek dapat memiliki matcap sendiri. Ini dapat digunakan secara artistik untuk mendapatkan hasil yang mencolok.
+Biasanya seniman memakai satu matcap untuk seluruh pahatan, tetapi jika opsi ini dinonaktifkan, objek yang dipilih bisa punya matcap sendiri. Ini bisa dimanfaatkan secara artistik untuk mendapatkan hasil yang mencolok.
 
 ::: tip
-Nonaktifkan opsi ini, dan gunakan gambar bola mata untuk mata karakter Anda!
+Nonaktifkan opsi ini, lalu gunakan gambar bola mata untuk mata karakter Anda!
 :::
 
 ### Rotasi {#matcap-rotation}
-Matcap adalah bentuk khusus dari environment map, jadi seperti environment map, matcap dapat diputar. Anda juga dapat melakukannya kapan saja di viewport dengan menyeret menggunakan 3 jari ke kiri dan kanan.
+Matcap adalah bentuk khusus dari peta lingkungan, jadi seperti peta lingkungan, matcap bisa diputar. Anda juga bisa melakukannya kapan saja di viewport dengan menyeret 3 jari ke kiri dan ke kanan.
+
+Tombol gembok di sebelah penggeser mengunci rotasinya, sehingga seretan 3 jari tidak memutar matcap secara tidak sengaja.
 
 
 
-## ![](/icons/circle_fill.webp) Tanpa cahaya {#unlit}
+## ![](/icons/circle_fill.webp) Tanpa pencahayaan {#unlit}
 
-Mode ini hanya akan menampilkan warna permukaan. Ini dapat berguna untuk memeriksa apakah warna permukaan objek Anda sesuai harapan, tanpa terganggu oleh lampu, bayangan, refleksi, transparansi. 
+Mode ini hanya menampilkan warna permukaan. Berguna untuk memeriksa apakah warna permukaan objek Anda sudah sesuai harapan, tanpa terganggu oleh cahaya, bayangan, pantulan, atau transparansi. 
 
-Mode ini juga dapat digunakan untuk render non-fotorealistik, menghasilkan tampilan datar dan kartun.
+Mode ini juga bisa dipakai untuk render non-fotorealistis, untuk mendapatkan tampilan datar ala kartun.
 
 ## ![](/icons/cube.webp) ID Objek {#object-id}
 
-Semua informasi pencahayaan dan permukaan diabaikan, dan setiap objek diarsir dengan warna flat unik. Jika ini dirender bersamaan dengan render PBR, ini dapat digunakan di program pengecatan untuk memilih berdasarkan warna, dan dengan demikian dapat melakukan koreksi warna pada objek tertentu.
+Semua informasi pencahayaan dan permukaan diabaikan, dan setiap objek diberi satu warna datar yang unik. Jika ini dirender bersama render PBR, hasilnya bisa dipakai di program lukis untuk memilih berdasarkan warna, sehingga Anda bisa melakukan koreksi warna pada objek tertentu.
 
-Perhatikan bahwa warna-warna ini juga akan muncul di [tree view menu Scene](scene#tree-view).
+Perlu diingat bahwa warna-warna ini juga muncul di [tampilan pohon menu Adegan](scene#tree-view).
 
 ### Acak id {#object-random}
 
-Menghasilkan set warna acak baru. 
+Membuat sekumpulan warna acak yang baru. 
 
-## ![](/icons/link.webp) ID Instance {#instance-id}
+## ![](/icons/link.webp) ID Instansi {#instance-id}
 
-Sama seperti Object ID, tetapi instance akan memiliki warna yang sama. 
+Sama seperti ID Objek, tetapi instans akan memiliki warna yang sama. 
 
 ### Acak id {#instance-random}
 
-Menghasilkan set warna acak baru.
+Membuat sekumpulan warna acak yang baru.

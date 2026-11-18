@@ -1,230 +1,269 @@
 # ![](/icons/material.webp) Material {#material}
 
-Dieses Menü ermöglicht es, das Material des aktuellen Objekts zu ändern, Rendereigenschaften des Objekts/Materials zu steuern und Texturen dem Material zuzuweisen.
+In diesem Menü ändern Sie das Material des aktuellen Objekts und die Render-Eigenschaften von Objekt und Material und weisen dem Material Texturen zu.
 
 ![](/images/material_overview.webp)
 
-Materialien definieren, wie ein Objekt aussieht, indem sie steuern, wie es auf Licht und andere Objekte reagiert. Das Aussehen eines Objekts wird durch diese Eigenschaften bestimmt:
+Materialien bestimmen, wie ein Objekt aussieht, indem sie steuern, wie es auf Licht und auf andere Objekte reagiert. Das Aussehen eines Objekts wird durch diese Eigenschaften gesteuert:
 
-* `Material type`
-* `Color`
-* `Roughness`
-* `Metalness`
-* `Opacity`
-* `Reflectance`
-* `Emissive/unlit`
+* `Typ`
+* `Farbe`
+* `Matt`
+* `Metallisch`
+* `Deckkraft`
+* `Reflexionsgrad`
+* `Leuchten/Unbeleuchtet`
 
-Kombinationen dieser Eigenschaften können eine große Bandbreite an Ergebnissen erzielen – von fotorealistisch über cartoonhaft bis hin zu experimentell.
+Durch Kombination dieser Eigenschaften erreichen Sie eine große Bandbreite an Ergebnissen, von fotorealistisch über cartoonhaft bis experimentell.
 
-Farbe, Rauheit, Metallizität und Deckkraft können bemalt werden, siehe [Vertex Paint options](painting.md) für weitere Informationen.
+Farbe, Rauheit, Metallizität und Deckkraft lassen sich malen; mehr dazu unter [Optionen für Vertex-Painting](painting.md).
 
-Materialtyp, Reflektanz, Emissiv/Unlit sind Materialeigenschaften, die unten erklärt werden.
+Materialtyp, Reflexionsgrad und Leuchten/Unbeleuchtet sind Materialeigenschaften, die unten erklärt werden.
 
-Die Kopieren/Einfügen-Schaltflächen oben in diesem Menü ermöglichen es, Materialien von einem Objekt auf ein anderes zu kopieren.
+Mit den Schaltflächen `Kopieren` und `Einfügen` oben in diesem Menü können Sie Materialien von einem Objekt auf ein anderes übertragen.
 
-Beachte, dass der Renderer von Nomad ein Echtzeit-Renderer ist; er ist leistungsfähig, bevorzugt aber für bestimmte Effekte Geschwindigkeit gegenüber Genauigkeit. 
+Beachten Sie, dass Nomad einen Echtzeit-Renderer verwendet: Er ist leistungsstark, setzt bei manchen Effekten aber eher auf Geschwindigkeit als auf Genauigkeit.
 
 ## Materialtypen {#material-types}
 
 ![](/images/material_types.webp)
 
-Nomad-Materialtypen sind Opaque, Subsurface, Blending, Additive, Refraction, Dithering, Shadow Catcher.
+Die Materialtypen von Nomad sind Opak, Unter Oberfläche, Überblenden, Additiv, Refraktion, Dithering und Schattenfänger.
 
-### ![](/icons/material_opaque.webp) Deckend {#opaque}
-Der Standardmodus, der Oberflächen als einfaches Material behandelt, das bemalte Farbe, Rauheit, Metallizität und Deckkraft unterstützt.
+### ![](/icons/material_opaque.webp) Opak {#opaque}
+Der Standardmodus, der Oberflächen als einfaches Material behandelt und gemalte Farbe, Rauheit, Metallizität und Deckkraft unterstützt. Gemalte Deckkraft, eine Deckkraft-Textur oder der Alphakanal der Farbtextur machen das Objekt trotzdem durchsichtig, und zwar per Dithering. Nur der Hauptregler für die Deckkraft wird ignoriert.
 
-### ![](/icons/material_subsurface.webp) Subsurface {#subsurface}
-Dieser Modus kann Materialien simulieren, die Licht intern verwischen und streuen, wie Haut, Wachs oder Jade.
+### ![](/icons/material_subsurface.webp) Unter Oberfläche {#subsurface}
+Dieser Modus simuliert Materialien, in denen das Licht im Inneren gestreut und weichgezeichnet wird, wie Haut, Wachs oder Jade.
 
-Für das beste Ergebnis wechsle in den PBR-Shading-Modus und verwende mindestens ein Richtungs- oder Spot-Licht, idealerweise mit einer gedimmten Umgebung.
+Er erfordert den Shading-Modus PBR. Die besten Ergebnisse erzielen Sie mit mindestens einem Richtungs- oder Spotlicht, idealerweise in einer eher dunklen Umgebung.
 
-`Depth` steuert, wie weit Licht von vorne unter die Oberfläche und dann wieder aus der Vorderseite heraus gestreut wird. Dies hat den Effekt, harte Schatten zu weichzeichnen und Oberflächendetails zu verwischen.
+Das Farbfeld legt die Farbe des gestreuten Lichts fest.
 
-`Translucency` steuert, wie Licht von der Vorder- zur Rückseite einer Form gestreut wird, etwa wie Licht durch die Unterseite eines Blattes oder stark von hinten beleuchtete Ohren scheint. 
+`Tiefe` steuert, wie weit das Licht von der Vorderseite unter die Oberfläche und dann wieder aus der Vorderseite heraus gestreut wird. Das macht harte Schatten weicher und lässt Oberflächendetails verschwimmen.
 
-### ![](/icons/material_blending.webp) Blending {#blending}
+`Durchscheinend` steuert, wie das Licht von der Vorderseite zur Rückseite einer Form gestreut wird, etwa wenn Licht durch die Unterseite eines Blatts scheint oder Ohren stark von hinten beleuchtet werden. Um diesen Effekt zu sehen, brauchen Sie ein Licht, das Schatten wirft.
 
-Ähnlich wie Opaque, unterstützt aber den Opacity-Schieberegler, um das Material zwischen fest und transparent zu mischen. Dies ist ein einfacher einzelner Schieberegler für Deckkraft, im Gegensatz zur bemalbaren Deckkraft, die vom Opaque-Material unterstützt wird. 
+### ![](/icons/material_blending.webp) Überblenden {#blending}
+
+Ähnlich wie Opak, unterstützt aber den Deckkraft-Regler, sodass das Material zwischen massiv und transparent überblenden kann. Hier gibt es einen einfachen Regler für die Deckkraft, während das opake Material malbare Deckkraft unterstützt.
 
 ::: warning
-Der Blending-Modus kann bei komplexen oder sich überschneidenden Formen Flackern und Poppen verursachen.
+Der Modus Überblenden kann bei komplexen oder sich überschneidenden Formen zu Flackern und Springen führen.
 :::
 
 ### ![](/icons/material_additive.webp) Additiv {#additive}
-Mit diesem Material kannst du dein Mesh halbtransparent machen. Es ist dem Blending-Material ähnlich, aber während Blending sich mit seiner Umgebung mischt, ist Additive immer heller als die Objekte dahinter – gut für helle Effekte wie Lichtstrahlen, Feuer oder Explosionen.
+Mit diesem Material machen Sie Ihr Mesh halbtransparent. Es ähnelt dem Material Überblenden, doch während Überblenden sich mit seiner Umgebung mischt, ist Additiv immer heller als die Objekte dahinter. Gut geeignet für helle Effekte wie Lichtstrahlen, Feuer oder Explosionen.
 
-Du kannst einen Opacity-Wert größer als 1 setzen, was bedeutet, dass das Objekt heller wird.  
-Das kann nützlich sein, wenn du [bloom](postprocess.md#bloom) und den `threshold parameter` verwenden möchtest, um nur dieses Objekt wie ein emissives Objekt leuchten zu lassen.
+Sie können einen Deckkraftwert über 1 einstellen, wodurch das Objekt heller wird.  
+Das ist nützlich, wenn Sie mit [Leuchten (Bloom)](postprocess.md#bloom) und dem Parameter `Schwellenwert` nur dieses Objekt wie ein leuchtendes Objekt strahlen lassen möchten.
 
-Dieser Modus neigt zu weniger Artefakten als [Blending](#blending) (reihenfolgeunabhängige Transparenz).
+Dieser Modus erzeugt meist weniger Artefakte als [Überblenden](#blending) (reihenfolgeunabhängige Transparenz).
 
-### ![](/icons/material_refraction.webp) Brechung {#refraction}
-Dieser Modus kann verwendet werden, um Glasmaterial zu simulieren. Aufgrund von Echtzeit-Beschränkungen sind Selbstbrechung und mehrschichtige Brechung etwas eingeschränkt.
+### ![](/icons/material_refraction.webp) Refraktion {#refraction}
+Mit diesem Modus simulieren Sie Glas. Er erfordert den Shading-Modus PBR. Wegen der Echtzeit-Beschränkungen sind Selbstbrechung und mehrschichtige Brechung nur eingeschränkt möglich.
 
-Die Rauheitsbemalung des Modells beeinflusst, wie unscharf die Brechung ist.
+Die gemalte Rauheit des Modells beeinflusst, wie unscharf die Brechung ist.
 Standardmäßig hat jedes in Nomad erstellte Objekt eine Rauheit von etwa 25 %, daher ist die Brechung nicht perfekt, sondern etwas unscharf.
-Du kannst die Schaltfläche `paint glossy` verwenden, um dein Modell mit einer Rauheit und Metallizität von 0 zu übermalen (die Farben werden nicht beeinflusst).
+Mit der Schaltfläche `Glänzend bemalen` übermalen Sie Ihr Modell mit einer Rauheit und Metallizität von 0 (die Farben bleiben unverändert).
 
-Es gibt zwei verschiedene Rauheiten im Spiel: die eine steuert, wie unscharf die Reflexion auf der Oberfläche ist, und die andere steuert das Innere (Brechung).  
-Da es in Nomad jedoch nur einen bemalbaren Rauheitskanal gibt, teilen sich Innen- und Außenrauheit denselben Wert.  
-Um unterschiedliche Werte zu erhalten (zum Beispiel einen Lutscher mit scharfer Oberfläche, aber unscharfem Inneren), kannst du die Schieberegler `Surface glossiness` und `Interior roughness` verwenden, um die bemalte Rauheit zu überschreiben.
+Es spielen 2 verschiedene Rauheiten eine Rolle: Die eine bestimmt, wie unscharf die Spiegelung an der Oberfläche ist, die andere das Innere (die Brechung).  
+Da es in Nomad aber nur einen gemalten Rauheitskanal gibt, teilen sich innere und äußere Rauheit denselben Wert.  
+Um unterschiedliche Werte zu erhalten (zum Beispiel einen Lutscher mit scharfer Oberfläche, aber unscharfem Inneren), überschreiben Sie die gemalte Rauheit mit den Reglern `Oberfläche` und `Innen` unter `Rauheit überschreiben`.
 
 ![](/videos/refraction.mp4)
 
+#### Lichtbrechungsindex {#index-of-refraction}
+Wie stark das Licht gebrochen wird, wenn es in das Objekt eintritt. Höhere Werte brechen es stärker, wie eine dicke Linse.
+
+#### Absorption {#absorption}
+Simuliert, wie das Licht auf seinem Weg durch das Volumen absorbiert wird, eingefärbt durch das Farbfeld; `Faktor` legt die Stärke fest. Dünne Stellen sind heller, weil sie mehr Licht durchlassen, dicke Bereiche dunkler. Es wird nur eine Annäherung an die Dicke des Objekts verwendet, daher hängt der Effekt stark von der Form ab.
+
 
 ### ![](/icons/material_dithering.webp) Dithering {#dithering}
-Macht das Objekt halbtransparent, indem einige Pixel zufällig verworfen werden.
+Macht das Objekt halbtransparent, indem zufällig einige Pixel verworfen werden.
 
 ### ![](/icons/material_shadow_catcher.webp) Schattenfänger {#shadow-catcher}
 
-Macht das Objekt unsichtbar und empfängt nur Schatten. Nützlich, um Nomad-Renderings mit anderen Bildern zu kombinieren. 
+Macht das Objekt unsichtbar, sodass es nur noch die Schatten von Lichtern empfängt. Nützlich, um Nomad-Renderings mit anderen Bildern zu kombinieren, meist auf einer Ebene. Das Farbfeld legt die Farbe des Schattens fest.
+
+In der Szene muss ein Licht Schatten werfen, sonst bewirkt der Schattenfänger nichts. Die Schaltflächen `Metallisch → 0%` und `Metallisch → 100%` übermalen das Objekt: Vollständig metallisch kann der Schattenfänger auch die Szene spiegeln, wenn die Nachbearbeitung [Reflexion (SSR)](postprocess.md#reflection-ssr) aktiviert ist.
 
 ::: tip
 
-Weitere Informationen zu Transparenz und Blending-Modi findest du unter https://support.fab.com/s/article/Transparency-Opacity
+Weitere Informationen zu Transparenz und Überblendungsmodi finden Sie unter https://support.fab.com/s/article/Transparency-Opacity
 
 :::
 
-## Steuerungen {#controls}
+## Steuerelemente {#controls}
 
 ![](/images/material_controls.webp)
 
-### Immer unbeleuchtet {#always-unlit}
-Wenn aktiviert, ignoriert das Objekt PBR und Matcap und zeigt einfach seine Farbbemalung ohne Schattierung an.
-Beachte, dass du bei Verwendung von [Additive](#additive) Transparenz direkt durch Malen mit schwarzer Farbe erzeugen kannst.
+### ![](/icons/circle_fill.webp) Immer unbeleuchtet {#always-unlit}
+Ist diese Option aktiviert, ignoriert das Objekt PBR und Matcap und zeigt einfach seine gemalte Farbe ohne Schattierung an.
+Wenn Sie [Additiv](#additive) verwenden, können Sie Transparenz direkt mit schwarzer Farbe malen.
 
 ### Deckkraft {#opacity}
-Wie fest oder undurchsichtig ein Objekt erscheint; 100 % ist fest, 0 % ist transparent. Du kannst die Deckkraft auch bemalen, um feinere Kontrolle zu haben.
+Wie massiv oder deckend ein Objekt erscheint: 100 % ist massiv, 0 % ist transparent. Der Regler wird bei den Typen Überblenden, Additiv, Dithering und Schattenfänger angezeigt. Für eine feinere Kontrolle können Sie die Deckkraft auch malen.
 
-### Reflektanz {#reflectance}
-Steuert die Menge an Reflexion, die das Material für nichtmetallische Materialien erhält. Meistens sollte der Standardwert verwendet werden (dies entspricht den üblichen 4 % reflektiertem Licht im Normalwinkel), kann aber erhöht werden, um Reflexionen und Glanzlichter z. B. in den Augen einer Figur zu verstärken.
+### Pre-Refraction-Pass {#pre-refract-pass}
+Nur Überblenden und Additiv. Zeichnet dieses transparente Objekt vor dem Refraktions-Pass. Nützlich, wenn sich ein lichtbrechendes Objekt vor anderen transparenten Oberflächen befindet.
 
-### Invertiertes Culling {#inverse-culling}
-Kehrt die Normalen einer Oberfläche um. Normalerweise nicht erforderlich, kann aber verwendet werden, wenn ein Modell von innen nach außen erscheint oder – in Kombination mit deaktiviertem `Two sided` – um Innenräume zu erstellen, bei denen die der Kamera nächstgelegene Wand immer ausgeblendet ist.
+### Reflexionsgrad {#reflectance}
+Steuert, wie viel Spiegelung ein nicht-metallisches Material erhält. Meist sollten Sie den Standardwert verwenden (er entspricht den üblichen 4 % reflektierten Lichts bei senkrechtem Einfall), Sie können ihn aber erhöhen, um zum Beispiel Spiegelungen und Glanzlichter in den Augen einer Figur zu verstärken. Erfordert den Shading-Modus PBR.
 
-### Glatte Schattierung {#smooth-shading}
-Siehe die [global option](settings.md#smooth-shading).  
+### ![](/icons/culling.webp) Umgekehrtes Culling {#inverse-culling}
+Kehrt die Normalen einer Oberfläche um. Normalerweise nicht nötig, aber hilfreich, wenn ein Modell von innen nach außen gestülpt erscheint. Zusammen mit deaktiviertem `Backface` können Sie damit auch Innenräume darstellen, bei denen die Wand, die der Kamera am nächsten ist, immer ausgeblendet ist.
+
+Die folgenden Optionen lassen sich auf `Auto`, `Nein` oder `Ja` stellen. Bei `Auto` zeigt der Pfeil den Wert, der tatsächlich verwendet wird.
+
+### ![](/icons/sphere_smooth.webp) Smooth Shading {#smooth-shading}
+Siehe die [globale Option](settings.md#smooth-shading).  
 Der Wert `Auto` verwendet die globale Option.
 
-### Beidseitig {#two-sided}
-Siehe die [global option](settings.md#two-sided).  
+### ![](/icons/culling.webp) Backface {#two-sided}
+Flächen sind von beiden Seiten sichtbar. Siehe die [globale Option](settings.md#two-sided-quick).  
 Der Wert `Auto` verwendet die globale Option.
 
-### Farbige Rückseite {#coloured-backface}
-Siehe die [global option](settings#two-sided).
+### ![](/icons/culling.webp) Backfaces einfärben {#coloured-backface}
+Siehe die [globale Option](settings.md#two-sided-quick).
 Der Wert `Auto` verwendet die globale Option.
 
-### Wirft Schatten {#casts-shadows}
-Derzeit ist `Auto` dasselbe wie `On`.
-Transparente Objekte werfen ebenfalls Schatten (in einem Dithering-Muster, um gemischte Schatten zu emulieren).  
-Stelle sicher, dass du das Werfen von Schatten deaktivierst, wenn du ein großes Objekt in deiner Szene hast, das keine Schatten werfen muss (zum Beispiel einen großen Boden).
+### ![](/icons/shadow_cast.webp) Wirft Schatten {#casts-shadows}
+Auch transparente Objekte werfen Schatten (in einem Dithering-Muster, um überblendete Schatten nachzuahmen).  
+Deaktivieren Sie den Schattenwurf unbedingt, wenn sich in Ihrer Szene ein großes Objekt befindet, das keine Schatten werfen muss (zum Beispiel ein großer Boden).
 
-### Empfängt Schatten {#recieve-shadows}
-Derzeit ist `Auto` dasselbe wie `On`.
+### ![](/icons/shadow_receive.webp) Empfängt Schatten {#recieve-shadows}
+Legt fest, ob Schatten anderer Objekte auf diesem Objekt dargestellt werden.
 
-### Drahtgitter {#wireframe}
-Siehe die [global option](settings.md#wireframe).  
+### ![](/icons/wireframe.webp) Drahtgitter {#wireframe}
+Siehe die [globale Option](settings.md#wireframe).  
 Der Wert `Auto` verwendet die globale Option.
+
+### ![](/icons/trash.webp) Normalen zurücksetzen {#reset-normals}
+Wird nur angezeigt, wenn ein importiertes Objekt eigene Normalen mitbringt (zum Beispiel mit `Topologie beibehalten`). Entfernt sie, sodass das Shading die aus der Oberfläche berechneten Normalen verwendet.
 
 
 ## Texturen {#textures}
 
 ![](/images/material_textures.webp)
 
-Wenn ein Objekt UVs hat, können dem Material zusätzlich zur Vertex-Farbe/Rauheit/Metallizität/Deckkraft Texturen zugewiesen werden. Üblicherweise sind dies die Ergebnisse eines Texture-Bakes, aber auch außerhalb von Nomad erstellte Bilder können verwendet werden.
+Hat ein Objekt UVs, können Sie dem Material zusätzlich zu Vertex-Farbe/-Rauheit/-Metallizität/-Deckkraft Texturen zuweisen. Meist stammen diese aus einem Textur-Bake, Sie können aber auch außerhalb von Nomad erstellte Bilder verwenden. `UV:✓` oder `UV:✗` neben dem Titel zeigt Ihnen, ob das Objekt UVs hat.
 
-Texturen können angewendet werden auf
+Texturen lassen sich zuweisen für
 
-* Color
+* Farbe
 * Normal
-* Roughness
-* Metalness
-* Opacity
-* Emissive
+* Rauheit
+* Metallizität
+* Deckkraft
+* Verschiebung
+* Leuchten
 
-Ein Klick auf einen Textur-Slot öffnet einen Auswahldialog. Nachdem eine Textur einem Material-Slot zugewiesen wurde, öffnet ein weiterer Klick ein Textur-Panel:
+Eine Zeile `Verdeckung` erscheint außerdem, wenn ein importiertes Objekt eine Occlusion-Textur hat; Nomad verwendet sie aber nicht.
 
-### Optionen des Texturfensters {#texture-panel-options}
+Der Regler jeder Zeile legt fest, wie stark ihre Textur angewendet wird, von gar nicht bis vollständig. `Farbe` und `Leuchten` haben zusätzlich ein Farbfeld, das die Textur einfärbt, und bei `Leuchten` legt es die Leuchtstärke fest.
+
+`Verschiebung` legt fest, wie weit die Displacement-Map die Oberfläche verschiebt. Die Schaltfläche `Anwenden` verschiebt die Vertices um das Displacement und entfernt anschließend die Map. Das Ergebnis landet in der aktiven Ebene.
+
+Die Paletten-Schaltfläche neben dem Titel öffnet die Material-Presets des Menüs [Zeichnen](painting.md): Tippen Sie auf eines, um seine Texturen auf das Objekt zu übertragen. Am Desktop werden importierte Bilder mit ihrer Originaldatei synchronisiert, wenn Sie zu Nomad zurückwechseln, und eine Synchronisierungs-Schaltfläche neben dem Titel lädt sie neu.
+
+Tippen Sie auf einen Textur-Slot, um eine Auswahl zu öffnen. Ist einem Material-Slot bereits eine Textur zugewiesen, öffnet ein erneutes Tippen ein Texturfeld:
+
+### Optionen im Texturfeld {#texture-panel-options}
 
 ![](/images/material_texture_panel.webp)
 
-### Öffnen {#open}
-Eine andere Textur auswählen
+Das Feld zeigt die Bildgröße und eine Vorschau der Textur.
 
-### Keine {#none}
-Die Textur entfernen
+### ![](/icons/open.webp) Öffnen {#open}
+Wählt eine andere Textur. Am Desktop zeigt `Durchsuchen` die Bilddatei in Ihrem Dateibrowser an.
+
+### ![](/icons/circle_cross.webp) Keine {#none}
+Entfernt die Textur
 
 ### Deckkraft {#texture-opacity}
 
-Wenn das Bild einen Alphakanal hat, kannst du damit steuern, ob dieser für die Deckkraft verwendet oder ignoriert wird.
+Nur bei der Farbtextur. Hat das Bild einen Alphakanal, können Sie ihn hiermit für die Deckkraft verwenden oder ignorieren.
 
-### ![](/icons/link.webp) Ketten/Verknüpfungssymbol {#chainlink-icon}
+### Format {#normal-format}
+Nur bei der Normal-Textur. Normal-Maps gibt es in zwei Varianten, `OpenGL (+Y)` und `DirectX (-Y)`. Wenn die Details umgekehrt aussehen, probieren Sie die andere.
 
-Das Link-Symbol in den folgenden Abschnitten bedeutet, dass – wenn es aktiviert ist – die verwendeten Optionen mit den anderen Texturen (Color, Normal, Roughness, Metalness, Opacity, Emissive) geteilt werden, deren Link-Symbol ebenfalls aktiviert ist. 
+### Höhe {#displacement-height}
+Nur bei der Displacement-Textur.
+* `Lokal` - Die Höhe wächst und schrumpft mit der Skalierung des Objekts.
+* `Welt` - Die Höhe bleibt gleich, unabhängig von der Skalierung des Objekts.
 
-So kannst du sicherstellen, dass ausgerichtete Texturen auch dann ausgerichtet bleiben, wenn du Parameter oder Projektionstypen änderst.
+### Multiplizieren {#multiply}
+Nur bei Texturen für Rauheit, Metallizität und Deckkraft. Multipliziert die Werte der Textur. Ist der Wert nicht 100 %, wird er auf dem Textur-Slot angezeigt.
+
+### ![](/icons/link.webp) Ketten-/Verknüpfungs-Icon {#chainlink-icon}
+
+Ist das Verknüpfungs-Icon in den folgenden Abschnitten aktiviert, werden die gewählten Optionen mit den anderen Texturen (Farbe, Normal, Rauheit, Metallizität, Deckkraft, Leuchten) geteilt, deren Verknüpfungs-Icon ebenfalls aktiviert ist.
+
+So stellen Sie sicher, dass aufeinander ausgerichtete Texturen ausgerichtet bleiben, auch wenn Sie Parameter oder Projektionsarten ändern.
 
 
 ### Projektion {#projection}
 ![](/images/material_projection.webp)
 
-Legt fest, wie die Textur auf das Objekt angewendet werden soll.
+Legt fest, wie die Textur auf das Objekt aufgebracht wird.
 
-* `Auto` - Wenn das Objekt UVs hat, UV, andernfalls Triplanar
-* `UV` - Verwendet die UV-Koordinaten des Meshes, um die Textur anzuwenden. Wenn Mesh und Textur von außerhalb von Nomad stammen oder aus Nomad exportiert werden sollen, um anderswo verwendet zu werden, ist UV die richtige Option.
-* `Triplanar` - Projiziert die Textur entlang der X-, Y- und Z-Achse und mischt die Nähte. 
+* `Auto` - UV, wenn das Objekt UVs hat, sonst Triplanar
+* `UV` - Verwendet die UV-Koordinaten des Meshes, um die Textur aufzubringen. Wenn Mesh und Textur von außerhalb von Nomad stammen oder aus Nomad exportiert und anderswo verwendet werden sollen, ist UV die richtige Wahl.
+* `Triplanar` - Projiziert die Textur entlang der Achsen X, Y und Z und blendet die Nähte ineinander.
 
 ### Triplanar {#triplanar}
 ![](/images/material_triplanar.webp)
 
-Triplanare Projektionen sind eine leistungsstarke und dennoch einfache Methode, Texturen auf Objekte anzuwenden.
+Triplanare Projektionen sind eine leistungsstarke und zugleich einfache Methode, Objekte zu texturieren.
 
-Triplanar ist, als hättest du 6 Videoprojektoren mit demselben Bild, die auf die Vorder-, Rück-, Links-, Rechts-, Ober- und Unterseite deines Objekts scheinen.
+Triplanar ist, als hätten Sie 6 Videoprojektoren mit demselben Bild, die von vorne, hinten, links, rechts, oben und unten auf Ihr Objekt strahlen.
 
-Dies kann bei Bedarf in UVs oder Vertex-Farben gebacken werden.
+Das Ergebnis lässt sich bei Bedarf anschließend in UVs oder Vertex-Farben einbacken.
 
 
 ![](/images/material_triplanar_example.webp)
 
 #### Methode {#method}
 
-* `Local` - Die Projektion bewegt sich mit der Objekttransformation
-* `World` - Die Projektion bleibt fixiert, das Bewegen des Objekts schiebt es durch die Projektion.
+* `Lokal` - Die Projektion bewegt sich mit der Transformation des Objekts
+* `Welt` - Die Projektionen bleiben fest; bewegen Sie das Objekt, gleitet es durch die Projektion.
 
-#### Härte {#hardness}
+#### Ausprägung {#hardness}
 
-Wie die Projektionen sich mischen. 100 % bedeutet kein Blending, und die Kanten der Projektionen sind scharf. 0 % mischt die Kanten über einen weiten Winkel. Der Standardwert ist 90 %, genug Mischung, um die Kanten zu verbergen und den Rest der Projektionen scharf zu lassen.
+Wie sich die Projektionen mischen. Bei 100 % wird nicht überblendet, und die Ränder der Projektionen sind scharf. Bei 0 % werden die Ränder über einen weiten Winkel überblendet. Der Standardwert ist 90 %: genug Überblendung, um die Ränder zu verbergen, während der Rest der Projektionen scharf bleibt.
 
-### Gleichmäßig {#uniform}
+### Einheitlich {#uniform}
 
-Wenn aktiviert, wird dieselbe Hardness für alle Projektionen verwendet. Wenn deaktiviert, werden zusätzliche Hardness-Regler für die X-, Y- und Z-Projektionen angezeigt.
+Ist diese Option angehakt, gilt dieselbe Ausprägung für alle Projektionen. Ist sie nicht angehakt, erscheinen zusätzliche Regler für die Ausprägung der Projektionen X, Y und Z.
 
 
 ### Parameter {#parameter}
 ![](/images/material_parameter.webp)
 
 #### Filterung {#filtering}
-Die zu verwendende Texturfilter-Methode, `Auto` ist der Standard. Methoden sind `Nearest`, `Linear`, `Mipmap`. Nearest führt kein Filtering durch, sodass Texturen aus der Nähe gezackte Artefakte bekommen können. Linear und Mipmap bieten besseres Filtering, sodass Texturen aus der Nähe eher weichgezeichnet als gezackt erscheinen.
+Die Filtermethode für die Textur. Standard ist `Auto`, die Methoden sind `Nächster`, `Linear` und `Mipmap`. Nächster filtert nicht, daher können Texturen aus der Nähe betrachtet gezackte Artefakte zeigen. Linear und Mipmap filtern besser, sodass Texturen aus der Nähe eher unscharf als gezackt wirken.
 
-#### Kachelung-X {#tiling-x}
-Wenn der Scale-Parameter größer als 1 ist und die Textur dadurch kleiner als die Objekt-UVs wird, legt dies fest, wie die Textur entlang der X-Achse gekachelt wird. `None` bedeutet keine Wiederholungen. `Repeat` erstellt Kopien der Textur. `Mirror` erstellt Kopien der Textur, wobei jede zweite Kopie gespiegelt wird, was helfen kann, Kachel-Artefakte zu verbergen.
+#### Kacheln - X {#tiling-x}
+Wenn der Skalierungsparameter größer als 1 ist und die Textur damit kleiner als die UVs des Objekts wird: wie die Textur entlang der X-Achse gekachelt wird. `Kein` bedeutet keine Wiederholung. `Wiederholen` erzeugt Kopien der Textur. `Spiegeln` erzeugt Kopien der Textur, wobei jede zweite Kopie gespiegelt ist; das kann helfen, Kachel-Artefakte zu verbergen.
 
-#### Kachelung-Y {#tiling-y}
-Dasselbe wie Tiling-X, aber für die Y-Achse.
+#### Kacheln - Y {#tiling-y}
+Wie Kacheln - X, aber für die Y-Achse.
 
 ### Transformieren {#transform}
 ![](/images/material_transform.webp)
 
-Zusätzliche 2D-Transformationen, die in UV-Raum auf die Textur angewendet werden. Die Reset-Schaltfläche setzt auf Standardwerte zurück, das Kettensymbol (wenn andere Texturen als Color ausgewählt sind) verknüpft oder entkoppelt die Transformation, sodass sie mit der Color-Textur übereinstimmt.
+Zusätzliche 2d-Transformationen, die im UV-Raum auf die Textur angewendet werden. Die Schaltfläche zum Zurücksetzen stellt die Standardwerte wieder her. Das Ketten-Icon (wenn andere Texturen als die Farbtextur ausgewählt sind) verknüpft die Transformation mit der der Farbtextur oder hebt die Verknüpfung auf.
 
 #### Verschiebung {#translation}
-Der X- und Y-Versatz der Textur
+Der Versatz der Textur auf X und Y
 
-#### Drehung {#rotation}
-Die Rotation der Textur
+#### Rotation {#rotation}
+Die Drehung der Textur
 
 #### Skalierung {#scale}
-Die Skalierung der Textur; größere Zahlen machen die Textur auf dem Objekt kleiner. Verwende die Schieberegler Tiling-X und Tiling-Y, um zu steuern, was passiert.
+Die Skalierung der Textur. Größere Werte machen die Textur auf dem Objekt kleiner; mit den Optionen Kacheln - X und Kacheln - Y steuern Sie, was dann passiert.
 
 ### Gleichmäßige Skalierung {#uniform-scale}
-Wenn deaktiviert, zeigt Nomad separate Regler für Scale-X und Scale-Y an.
+Ist diese Option ausgeschaltet, zeigt Nomad getrennte Regler für Skalierung X und Skalierung Y.

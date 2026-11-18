@@ -1,78 +1,94 @@
 # ![](/icons/symmetry.webp) Symétrie {#symmetry}
 
-Ce menu contrôle la façon dont les traits sont répétés à travers un plan miroir ou radialement, ainsi que les moyens de restaurer la symétrie sur des objets non symétriques.
+Ce menu détermine comment les traits sont répétés de l'autre côté d'un plan miroir, en radial ou en pavage, et propose des moyens de rétablir la symétrie sur des objets qui ne sont pas symétriques.
 
 ![](/images/symmetry_overview.webp) 
 
-## Aperçu {#overview}
+## Présentation {#overview}
 Vous pouvez utiliser la symétrie de plusieurs façons :
 
-* Comme un miroir, en reflétant le travail selon X (gauche/droite), Y (haut/bas), Z (arrière/avant), ou une combinaison. 
-* La symétrie radiale peut être définie sur X Y Z avec un nombre de répétitions, par exemple pour sculpter une étoile de mer. 
-* Les miroirs peuvent fonctionner autour de l’origine (appelé mode monde) ou autour du centre d’un objet (appelé mode local).
-* Les sculptures qui ont commencé de manière non symétrique peuvent être forcées à devenir symétriques.
+* En miroir, en reproduisant votre travail selon X (gauche/droite), Y (haut/bas), Z (arrière/avant), ou une combinaison des trois. 
+* La symétrie radiale peut être réglée sur X, Y et Z avec un nombre de répétitions, par exemple pour sculpter une étoile de mer. 
+* Le pavage répète vos traits sur l'objet, pour que la sculpture se raccorde sans couture.
+* Les miroirs peuvent fonctionner autour de l'origine (mode global) ou autour du centre d'un objet (mode local).
+* Une sculpture commencée sans symétrie peut être rendue symétrique de force.
 
-Un raccourci pour activer/désactiver la symétrie se trouve également dans le panneau rapide de gauche (*"Sym"*). Le petit « L/W » indique si Nomad est en mode de symétrie Local ou Monde. Vous pouvez aussi effectuer un appui long ou glisser vers le centre de l’écran pour faire apparaître un menu.
+Un raccourci pour activer ou désactiver la symétrie se trouve aussi dans le panneau rapide de gauche (*« Sym »*). Le petit « L/W » indique si Nomad est en mode de symétrie Local ou Global. Vous pouvez aussi appuyer longuement ou glisser vers le centre de l'écran pour faire apparaître un menu.
 
 ![](/images/symmetry_button.webp) 
 
-Il s’agit d’une option globale, donc l’état sera conservé entre les différents outils.
-Les seules exceptions sont les outils de transformation ([Move](#translate), [Rotate](#rotate), [Scale](#scale) et [Gizmo](#gizmo)) qui ont leur propre état de symétrie.
+Les réglages de symétrie sont enregistrés avec chaque objet, et le titre du menu affiche le nom de l'objet que vous modifiez.
+Les outils de sculpture partagent le même état activé/désactivé, tandis que les outils de transformation ([Transformation](tools.md#transform) et [Gizmo](tools.md#gizmo)) ont le leur.
 
 ::: tip
-Le menu de symétrie sert principalement à contrôler la symétrie des traits. Vous pouvez également refléter et répéter des objets via les [répéteurs situés dans le menu de scène](scene#repeaters). 
+Le menu Symétrie sert surtout à contrôler la symétrie des traits. Vous pouvez aussi mettre en miroir et répéter des objets grâce aux [répéteurs du menu Scène](scene#repeaters). 
 :::
 
-## Activé {#enabled}
-Active ou désactive le mode miroir, c’est la même chose que le bouton `Sym` dans le panneau rapide de gauche. 
+## ![](/icons/symmetry.webp) Activée {#enabled}
+Active ou désactive le mode miroir ; c'est la même chose que le bouton `Sym` du panneau rapide de gauche. Une icône d'avertissement vous rappelle quand il est désactivé, et le menu vous indique aussi quand l'outil actuel ignore la symétrie.
 
 ## Plans {#planes}
 
-Activez un ou plusieurs plans de symétrie, et le nombre de répétitions pour la symétrie radiale. Notez que vous n’êtes pas obligé de choisir un seul plan, vous pouvez activer 1, 2 ou 3 plans pour une symétrie complexe.
+Activez un ou plusieurs plans de symétrie, et le nombre de répétitions pour la symétrie radiale. Vous n'êtes pas obligé de choisir un seul plan : vous pouvez en activer 1, 2 ou 3 pour une symétrie complexe.
 
-L’axe et le nombre de répétitions pour la symétrie radiale. Notez que ceux-ci ne sont pas non plus limités à un seul axe, et peuvent même fonctionner en combinaison avec la symétrie par plan pour générer des résultats détaillés très rapidement. (Le nombre total de répétitions est limité à 150)
+La ligne `Radial` règle le nombre de répétitions de la symétrie radiale autour de chaque axe. Là non plus, vous n'êtes pas limité à un seul axe, et vous pouvez même les combiner avec la symétrie plane pour obtenir très vite des résultats détaillés. (Le nombre total de répétitions est limité à 200.)
 
 ![](/videos/symmetry_demo.mp4) 
 
+## Pavage {#tile}
+
+Répète vos traits le long d'un axe, à intervalle régulier, pour que la sculpture se raccorde sans couture. Pratique pour des motifs, des briques, ou une texture que vous comptez répéter.
+
+Activez le pavage sur chaque axe avec les boutons `Pavage`, puis réglez soit un `Nombre` (combien de répétitions couvrent l'objet), soit une `Distance` (l'espace entre deux répétitions). Touchez l'interrupteur à gauche pour passer de l'un à l'autre.
+
 ## Méthode {#method}
-Le miroir peut être soit « Local » et se déplacer avec l’objet, soit « World » et rester fixe. Si vous n’êtes pas sûr du mode dont vous avez besoin, observez le plan miroir et les indicateurs radiaux superposés à l’objet. En mode local, si vous utilisez le gizmo de transformation et déplacez le modèle, les indicateurs de miroir se déplaceront également. En mode monde, les indicateurs de miroir resteront fixes et l’objet glissera à travers eux.
+Le miroir peut être `Local`, et suivre l'objet, ou `Global`, et rester immobile. Si vous ne savez pas quel mode choisir, observez les indicateurs de plan miroir et de symétrie radiale affichés sur l'objet. En mode local, si vous utilisez les outils de transformation (`Gizmo` ou `Transformation`) pour déplacer le modèle, les indicateurs du miroir se déplacent avec lui. En mode global, les indicateurs restent fixes et l'objet glisse à travers eux.
 
 ## Miroir {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
-Lors de la sculpture près des plans de symétrie, certains pinceaux peuvent avoir un comportement de symétrie imparfait. Cette section vous permet de restaurer la symétrie en copiant un côté de votre sculpture vers l’autre. 
+Quand vous sculptez près des plans de symétrie, certains pinceaux n'ont pas une symétrie parfaite. Cette section vous permet de rétablir la symétrie en copiant un côté de votre sculpture sur l'autre. 
 
-`Direction` - Les boutons `<<` et `>>` déterminent quel côté sera copié vers l’autre. Nomad calcule cela à partir de votre vue actuelle, donc le réglage sur `<<` par exemple copiera toujours de la droite de l’écran vers la gauche de l’écran.
+`Direction` - Les deux boutons fléchés à côté du titre `Miroir` déterminent quel côté sera copié sur l'autre. Nomad le calcule à partir de la vue actuelle : le côté reste donc le même à l'écran, quel que soit l'angle sous lequel vous regardez le modèle.
 
-![](/icons/shield.webp) `Mask` - Le bouton de masque vous permet d’isoler ce qui sera mis en miroir ; masquer le côté de destination protégera cette région, masquer le côté source empêchera cette zone d’être reflétée vers la destination. 
+![](/icons/shield.webp) `Masque` - Le bouton de masque vous permet d'isoler ce qui sera mis en miroir : masquer le côté de destination protège cette zone, masquer le côté source empêche cette zone d'être copiée vers la destination. 
 
-![](/icons/tool_hide.webp) `Hide` - Lorsqu’il est actif, les zones masquées sur le côté source ne seront pas reflétées vers la destination. 
+![](/icons/tool_hide.webp) `Masquer` - Quand il est actif, les zones cachées du côté source ne sont pas copiées vers la destination. 
 
-`Mirror` essaiera d’identifier si la topologie est la même des deux côtés du miroir et, si c’est le cas, déplacera simplement les sommets. C’est le scénario le plus courant.
+`Miroir` (Conserver la topologie) essaie de déterminer si la topologie est la même des deux côtés du miroir et, si c'est le cas, se contente de déplacer les sommets. C'est le cas le plus courant. La symétrie radiale est ignorée. Si la topologie n'est pas symétrique, Nomad propose de forcer la mise en miroir avec `Couper • Miroir` à la place.
 
-`Split & Mirror` va essentiellement couper l’objet le long du miroir, copier un côté, le refléter de l’autre côté, et souder les sommets le long du miroir. C’est une option plus destructive, et elle supprimera la multirésolution, mais parfois cette méthode est nécessaire si le modèle est très différent de part et d’autre du miroir.
+Les boutons `Couper` coupent l'objet le long du ou des plans de symétrie. Ils modifient la topologie, ils sont donc plus destructifs que `Miroir`. Le nombre sur chaque bouton indique combien d'objets vous obtenez :
 
-### Retourner l'objet {#flip-object}
+* `Couper` - supprime un côté de l'objet.
+* `Couper • Miroir` - coupe l'objet, copie un côté, le reproduit en miroir de l'autre côté et soude les sommets le long du miroir. Cette méthode est parfois nécessaire si le modèle est très différent d'un côté à l'autre.
+* `Couper • Scinder` - coupe l'objet et garde chaque côté comme un objet séparé.
+* `Couper • Miroir • Scinder` - comme `Couper • Miroir`, mais chaque côté devient un objet séparé.
+
+Si plusieurs objets sont sélectionnés, `Miroir` et [Inverser l'objet](#flip-object) s'appliquent à tous.
+
+### Inverser l'objet {#flip-object}
 ![](/images/symmetry_flip.webp)
-Fait passer le côté gauche à droite, et inversement. Semblable en apparence au fait d’utiliser le menu de l’outil gizmo et de définir l’échelle à -1 sur X.
+Fait passer le côté gauche à droite, et inversement, selon `X`, `Y` ou `Z`. Le résultat ressemble à ce que vous obtiendriez en réglant l'échelle à -1 sur X dans le menu de l'outil Gizmo.
 
-## Réinitialiser et éditer {#reset-and-edit}
+## Réinitialiser et modifier {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
-Il est possible de modifier la position et l’orientation de la symétrie (mais ce n’est pas recommandé !). Si nécessaire, `World center` et `Orientation` réinitialiseront la position et l’orientation de la symétrie à leurs valeurs par défaut.
+Il est possible de modifier la position et l'orientation de la symétrie (mais ce n'est pas recommandé !). Si besoin, `Centre de la scène` (`Centre de l'objet` en mode local) et `Orientation` remettent la position et l'orientation de la symétrie à leurs valeurs par défaut.
 
-Nomad sait généralement où placer le plan de symétrie. Il n’est pas recommandé de l’ajuster manuellement, mais le bouton `Gizmo (Edit)` le permet pour les utilisateurs avancés. Lorsque ce bouton est cliqué, un gizmo apparaît pour vous permettre de translater et de faire pivoter le plan de symétrie. Si vous souhaitez restaurer le centre et l’orientation par défaut, les boutons `object center` et `orientation` le feront.
+Nomad sait généralement où placer le plan de symétrie. Il n'est pas recommandé de l'ajuster à la main, mais le bouton `Éditer au Gizmo` le permet aux utilisateurs avancés. Quand vous touchez ce bouton, un gizmo apparaît pour déplacer et tourner le plan de symétrie. Pour revenir au centre et à l'orientation par défaut, utilisez les boutons de réinitialisation ci-dessus.
 
-Le comportement de ces options changera en fonction de l’espace (*Local/World*) dans lequel vous vous trouvez.
-Donc si cela ne fonctionne pas comme vous vous y attendez, assurez-vous de vérifier que vous êtes dans le bon espace.
+`Depuis le pivot` place le plan de symétrie sur le pivot de l'outil [Gizmo](tools.md#gizmo). Il n'est disponible que lorsque l'outil `Gizmo` est actif.
+
+Le comportement de ces options change selon l'espace (*Local/Global*) dans lequel vous êtes.
+Donc si le résultat n'est pas celui attendu, vérifiez que vous êtes dans le bon espace.
 
 ::: tip
-Le bouton `Gizmo (Edit)` est intentionnellement grisé pour vous rappeler que vous ne devriez probablement pas l’utiliser !
+La modification du plan de symétrie au gizmo est un peu expérimentale, vous ne devriez normalement pas en avoir besoin !
 :::
 
-## Afficher les options {#show-options}
+## Options d'affichage {#show-options}
 ![](/images/symmetry_show.webp)
 
 
-`Show line` et `Show plane` activent ou désactivent une superposition dans la vue des emplacements de symétrie. Notez que la désactivation de ces options ne prendra effet que lorsque le menu de symétrie sera fermé.
+`Afficher la ligne` et `Afficher le plan` affichent ou masquent dans la vue un repère des emplacements de symétrie. Notez que la désactivation de ces options ne prend effet qu'une fois le menu Symétrie fermé.

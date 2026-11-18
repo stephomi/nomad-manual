@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "forum": "Diễn đàn"
+  },
+  "theme": {
+    "outlineLabel": "Trên trang này",
+    "docFooter": {
+      "prev": "Trang trước",
+      "next": "Trang sau"
+    },
+    "darkModeSwitchLabel": "Giao diện",
+    "lightModeSwitchTitle": "Chuyển sang giao diện sáng",
+    "darkModeSwitchTitle": "Chuyển sang giao diện tối",
+    "sidebarMenuLabel": "Menu",
+    "returnToTopLabel": "Về đầu trang",
+    "langMenuLabel": "Đổi ngôn ngữ",
+    "skipToContentLabel": "Chuyển đến nội dung",
+    "notFound": {
+      "title": "KHÔNG TÌM THẤY TRANG",
+      "quote": "Nhưng nếu bạn không đổi hướng, và cứ tiếp tục tìm kiếm, có thể bạn sẽ đến được nơi mình đang hướng tới.",
+      "linkLabel": "về trang chủ",
+      "linkText": "Đưa tôi về trang chủ"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "Tìm kiếm",
+      "buttonAriaLabel": "Tìm kiếm"
+    },
+    "modal": {
+      "displayDetails": "Hiển thị danh sách chi tiết",
+      "resetButtonTitle": "Xóa tìm kiếm",
+      "backButtonTitle": "Đóng tìm kiếm",
+      "noResultsText": "Không có kết quả cho",
+      "footer": {
+        "selectText": "để chọn",
+        "selectKeyAriaLabel": "phím enter",
+        "navigateText": "để di chuyển",
+        "navigateUpKeyAriaLabel": "phím mũi tên lên",
+        "navigateDownKeyAriaLabel": "phím mũi tên xuống",
+        "closeText": "để đóng",
+        "closeKeyAriaLabel": "phím escape"
+      }
+    }
+  }
+}

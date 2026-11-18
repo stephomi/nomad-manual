@@ -3,84 +3,91 @@
 ![](/images/tools_menu.webp)
 
 ::: tip
-Hoppa ner till [Verktyg](#verktyg-1) för beskrivningar av de enskilda verktygen.
+Hoppa ned till [Verktyg](#tools-1) för beskrivningar av de enskilda verktygen.
 :::
 
 ## Översikt {#overview}
 
-Verktyg väljs från `Toolbox` till höger och styrs med `Tool Controls` till vänster. Extra inställningar finns i menyn `Settings`, den första ikonen i menyn uppe till höger.
+Du väljer verktyg i `Verktygslåda` till höger och styr dem med `Verktygskontroller` till vänster. Fler inställningar finns i menyn `Verktyg`, bland menyerna uppe till höger.
 
-Penselverktyg har kontroller för storlek och intensitet. Markeringsverktyg har kontroller för flera markeringsstilar. Längst ner i verktygskontrollerna finns genvägar för ofta använda operationer (Smooth, Mask, Hide, Gizmo, Color, Alpha).
+Penselverktygen har reglage för storlek och intensitet. Markeringsverktygen har kontroller för flera olika sätt att markera. Längst ned bland verktygskontrollerna finns genvägar till ofta använda funktioner (Jämna ut, Mask, Dölj, Ytgrupp, Gizmo, Färg, Alpha).
 
-Nomads verktyg är färgkodade i verktygslådan:
+Nomads verktyg är färgkodade i verktygslådan (stäng av `Färgade verktyg` i menyn [Gränssnitt](interface.md) för enfärgade etiketter):
 
-* <span class=brush>**Penselverktyg**</span> (Clay, Brush, Smooth, Layer, Inflate, Nudge, Stamp, DelLayer)
-* <span class=move>**Flyttverktyg**</span> (Move, Drag)
-* <span class=mask>**Maskverktyg**</span> (Mask, SelMask)
-* <span class=paint>**Målarverktyg**</span> (Paint, Smudge)
-* <span class=flatten>**Plattningsverktyg**</span> (Flatten, Planar)
-* <span class=pinch>**Nypverktyg**</span> (Crease, Pinch)
-* <span class=selection>**Markeringsbaserade verktyg**</span> där en 2d-mask ritas först, sedan utförs en operation (Trim, Split, Project)
-* <span class=creation>**Skaparverktyg**</span> (Tube, Lathe, Insert)
-* <span class=transform>**Transformationsverktyg**</span> (Transform, Gizmo)
-* <span class=misc>**Övriga verktyg**</span> (Facegroup, Hide, Measure, Select)
-* <span class=view>**Visningsverktyg**</span>
+* <span class=brush>**Penselverktyg**</span> (Lera, Pensel, Jämna ut, Lager, Blås upp, Radera lager, Quad Remesher)
+* <span class=move>**Flyttverktyg**</span> (Flytta, Dra, Elastisk, Knuffa)
+* <span class=mask>**Maskverktyg**</span> (Mask)
+* <span class=paint>**Målarverktyg**</span> (Måla, Smeta ut)
+* <span class=flatten>**Utplattningsverktyg**</span> (Platta ut, Plan, Polera)
+* <span class=pinch>**Klämverktyg**</span> (Veck, Klämma)
+* <span class=stamp>**Stämpelverktyg**</span> (Stämpel, VDM)
+* <span class=selection>**Markeringsbaserade verktyg**</span>, där du först ritar en 2d-mask och sedan utförs en åtgärd (Beskär, Dela, Projekt)
+* <span class=creation>**Skapandeverktyg**</span> (Rör, Svarv, Infoga)
+* <span class=transform>**Transformeringsverktyg**</span> (Transformera, Gizmo, Ordna, Galler)
+* <span class=misc>**Övriga verktyg**</span> (Ytgrupp, Dölj)
+* <span class=view>**Visningsverktyg**</span> (Vy, Mät, Välj)
 
 
 
-Många av dessa verktyg kan anpassas med olika penselbeteenden, tryck, texturer osv via menyn [Stroke](stroke.md). 
+Många av verktygen kan anpassas med olika penselbeteenden, tryckkänslighet, texturer med mera via menyn [Penseldrag](stroke.md).
 
 
 ### Penselkontroller {#brush-controls}
 
-Verktygsfältet till vänster har reglage för radie och intensitet, och sedan verktygskategori-specifika kontroller, förklarade nedan.
+Det vänstra verktygsfältet har reglage för radie och intensitet, och därefter kontroller som är specifika för verktygets kategori. De förklaras nedan.
 
 ![](/images/tool_left_panel.webp)
 
 ::: tip
-Intensitetsreglaget för många verktyg kan gå över 100 %, värt att experimentera med!
+För många verktyg kan intensitetsreglaget gå över 100 %, det är värt att experimentera med!
 :::
 
-### Undermenyläge {#sub-mode}
-Knappen direkt under intensitetsreglaget är `Sub`-knappen. Dess etikett och funktion ändras med varje verktyg, och när den trycks ned aktiveras ett alternativt, oftast motsatt beteende. T.ex. för [Paint](#paint) aktiveras ett raderingsläge, för [Crease](#crease) skapas upphöjda kanter istället för skåror osv.
+### Sub-läge {#sub-mode}
+Knappen direkt under intensitetsreglaget är knappen `Sub`. Dess etikett och funktion ändras med varje verktyg, och när du trycker på den aktiveras ett alternativt, oftast motsatt, beteende. För [Måla](#paint) ger den till exempel ett suddläge, och för [Veck](#crease) skapar den upphöjda kanter i stället för veck.
 
-Som standard fungerar den som en ”klistrig” knapp; dvs du kan hålla den nedtryckt för att tillfälligt aktivera den, när du släpper den stängs den av. Om du trycker snabbt på den aktiveras sub-läget permanent.
+Som standard fungerar den som en tillfällig knapp: håll den nedtryckt för att använda den tillfälligt, och när du släpper stängs den av. Om du i stället trycker på den en gång förblir sub-läget aktiverat.
 
 ### Genvägar {#shortcuts}
-Längst ner i verktygsfältet till vänster finns genvägar för [Smooth](#smooth), [Mask](#mask), [Hide](#hide), [Gizmo](#gizmo), [Color](painting.md#pbr-sliders), [Alpha](stroke.md#alpha). 
+Längst ned i det vänstra verktygsfältet finns genvägar till [Jämna ut](#smooth), [Mask](#mask), [Dölj](#hide), [Ytgrupp](#facegroup), [Gizmo](#gizmo), [Färg](painting.md#pbr-sliders) och [Alpha](stroke.md#alpha).
 
-Som standard fungerar alla dessa som ”klistriga” knappar; dvs du kan hålla dem nedtryckta för att tillfälligt aktivera dem, när du släpper dem stängs de av. Om du trycker snabbt på dem aktiveras genvägsläget permanent.
+Som standard fungerar alla som tillfälliga knappar: håll en nedtryckt för att använda den tillfälligt, och när du släpper stängs den av. Om du i stället trycker på den en gång förblir genvägens läge aktiverat.
 
-### Urvalskontroller {#selection-controls}
+### Markeringskontroller {#selection-controls}
 
-Verktygen [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Project](#project), [Facegroup](#facegroup) och [Hide](#hide) använder liknande kontroller för att välja områden av meshen.
+Verktygen [Mask](#mask), [Måla](#paint), [Beskär](#trim), [Dela](#split), [Projekt](#project), [Ytgrupp](#facegroup), [Dölj](#hide) och [Välj](#select) använder alla liknande kontroller för att markera områden på meshen.
 
 ![](/images/tools_shape_selector_panel.webp)
 
+Tryck på formknappen i det vänstra verktygsfältet (den visar den aktuella formen, `Lasso` som standard) för att öppna ett popup-fönster med formerna. För verktyg som även fungerar med pensel (Mask, Måla, Ytgrupp, Dölj) innehåller samma popup-fönster också typerna av penseldrag.
 
+* `Visa` - Ingen form, verktyget gör inget särskilt, precis som kameraläget.
 * `Lasso` - En frihandsritad form
-* `Polygon` - En sluten form definierad av en kombination av kurvor och/eller raka linjer. Se [Shape editing](#shape-editing) nedan för mer info.
-* `Curve` - (endast Project) - En frihandskurva för projektionen
-* `Path` - (endast Project) - En kurva definierad av punkter. Se [Shape editing](#shape-editing) nedan för mer info.
-* `Line` - Dra en linje för att definiera ett plant segment. Som standard verkar den på meshen direkt, stäng av auto validate om du inte vill detta (långtryck eller svep på linikonen)
-* `Rect` - Dra en diagonal linje, detta definierar hörnen på en rektangelform. Långtryck eller svep för att visa alternativ för auto validate, tvinga till kvadratisk form, och för att första klicket ska vara rektangelns centrum.
-* `Ellipse` - Dra en diagonal linje, detta definierar storleken på en ellips. Långtryck eller svep för att visa alternativ för auto validate, tvinga till cirkelform, och för att första klicket ska vara ellipsens centrum.
-* `Flip` - invertera formmasken, eller riktningen på project-verktyget.
+* `Polygon` - En sluten form som byggs upp av kurvor och/eller raka linjer. Se [Formredigering](#shape-editing) nedan för mer information.
+* `Kurva` - (endast Projekt) - En frihandskurva för projektionen
+* `Bana` - (endast Projekt) - En kurva som definieras av punkter. Se [Formredigering](#shape-editing) nedan för mer information.
+* `Linje` - Dra en linje för att definiera ett plant snitt. Som standard påverkas meshen direkt; ändra alternativet `Redigera` om du inte vill det (håll fingret på eller svep över linjeikonen)
+* `Band` - En remsa mellan två parallella hjälplinjer, med en gradient tvärs över. `Förläng` behåller fullt värde förbi den bortre hjälplinjen i stället för att stanna vid bandet, och `Vänd` byter vilken hjälplinje gradienten börjar från.
+* `Rekt` - Dra en diagonal linje som anger hörnen på en rektangel. Håll fingret på eller svep för att visa alternativet `Redigera`, `Kvadrat` för att tvinga fram en kvadrat och `Centrerad` för att låta första klicket bli rektangelns mittpunkt.
+* `Ellips` - Dra en diagonal linje som anger storleken på en ellips. Håll fingret på eller svep för att visa alternativet `Redigera`, `Cirkel` för att tvinga fram en cirkel och `Centrerad` för att låta första klicket bli ellipsens mittpunkt.
+* `Vänd` - Inverterar formmasken, eller riktningen för verktyget Projekt.
 
-De flesta verktyg har ett alternativ för auto validate, vilket betyder att operationen sker så snart du har ritat klart formen. När auto validate är avstängt ritas en grön knapp bredvid formen som utför operationen. Detta låter dig redigera formen, justera vyn, och när du är redo att använda formen trycker du på den gröna knappen.
+De flesta verktyg har alternativet `Redigera`, som avgör vad som händer när du har ritat färdigt formen:
+* `Redigera: av` - Åtgärden utförs så fort du släpper.
+* `Redigera: på` - Formen förblir redigerbar. En grön knapp visas bredvid formen, och den utför åtgärden. Då kan du justera formen och vyn, och när du är redo att använda formen trycker du på den gröna knappen.
+* `Redigera: håll` - Åtgärden utförs när du släpper, om du inte stannar kvar i slutet av penseldraget för att fortsätta redigera formen.
 
 ### Formredigering {#shape-editing}
-Polygonredigering och kurvredigering beter sig på liknande sätt:
+Polygon- och kurvredigering fungerar på liknande sätt:
 
-* För att börja, dra en linje för att definiera 2 punkter, dra sedan ut från mitten av linjen för att definiera en polygon eller kurva.
-* Klicka på punkterna för att växla mellan mjuk och skarp.
-* Klicka och dra på kurv- eller linjesektioner för att skapa nya punkter.
-* För att ta bort en punkt, dra en punkt in i dess granne tills den blir röd.
-* Papperskorgsikonen i hörnet på polygon- eller path-ikonen tar bort formen.
+* Börja med att dra en linje som definierar 2 punkter, och dra sedan ut från mitten av linjen för att skapa en polygon eller kurva.
+* Klicka på punkterna för att växla mellan mjuka och skarpa.
+* Klicka och dra på kurv- eller linjesegmenten för att skapa nya punkter.
+* För att ta bort en punkt drar du den mot sin granne tills den blir röd.
+* Papperskorgsikonen i hörnet av polygon- eller banikonen tar bort formen.
 
 ### Inställningsmeny {#settings-menu}
 
-Många verktyg har extra inställningar som finns i menyn Settings, den första ikonen i menyn uppe till höger:
+Många verktyg har extra inställningar i menyn `Verktyg`, bland menyerna uppe till höger. Menyn är nedtonad för verktyg som saknar extra inställningar.
 
 ![](/images/tools_settings_menu.webp)
 
@@ -88,17 +95,17 @@ Många verktyg har extra inställningar som finns i menyn Settings, den första 
 
 |                                                                     |                                                   |                                                                   |                                                         |                                                         |                                                                     |
 | :-----------------------------------------------------------------: | :-----------------------------------------------: | :---------------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------------------: |
-| ![](/icons/tool_clay.webp)         <br> [Clay](#clay)              | ![](/icons/tool_brush.webp) <br> [Brush](#brush) | ![](/icons/tool_move.webp)       <br> [Move](#move)              | ![](/icons/tool_drag.webp)    <br> [Drag](#drag)       | ![](/icons/tool_smooth.webp)  <br> [Smooth](#smooth)   | ![](/icons/tool_mask.webp)    <br> [Mask](#mask)                   |
-| ![](/icons/tool_maskSelector.webp) <br> [Sel Mask](#selector-mask) | ![](/icons/tool_paint.webp) <br> [Paint](#paint) | ![](/icons/tool_smudge.webp)     <br> [Smudge](#smudge)          | ![](/icons/tool_flatten.webp) <br> [Flatten](#flatten) | ![](/icons/tool_planar.webp)  <br> [Planar](#planar)   | ![](/icons/tool_crease.webp)  <br> [Crease](#crease)               |
-| ![](/icons/tool_pinch.webp)        <br> [Pinch](#pinch)            | ![](/icons/tool_trim.webp)  <br> [Trim](#trim)   | ![](/icons/tool_split.webp)      <br> [Split](#split)            | ![](/icons/tool_project.webp) <br> [Project](#project) | ![](/icons/tool_layer.webp)   <br> [Layer](#layer)     | ![](/icons/tool_inflate.webp) <br> [Inflate](#inflate)             |
-| ![](/icons/tool_nudge.webp)        <br> [Nudge](#nudge)            | ![](/icons/tool_stamp.webp) <br> [Stamp](#stamp) | ![](/icons/tool_clearLayer.webp) <br> [Del Layer](#delete-layer) | ![](/icons/tool_tube.webp)    <br> [Tube](#tube)       | ![](/icons/tool_lathe.webp)   <br> [Lathe](#lathe)     | ![](/icons/tool_insert.webp)  <br> [Insert](#insert)               |
-| ![](/icons/tool_transform.webp)    <br> [Transform](#transform)    | ![](/icons/tool_gizmo.webp) <br> [Gizmo](#gizmo) | ![](/icons/tool_faceGroup.webp)  <br> [FaceGroup](#facegroup)    | ![](/icons/tool_hide.webp)    <br> [Hide](#hide)       | ![](/icons/tool_measure.webp) <br> [Measure](#measure) | ![](/icons/tool_remesh.webp)  <br> [Quad Remesher](#quad-remesher) |
-| ![](/icons/tool_select.webp)       <br> [Select](#select)          | ![](/icons/tool_view.webp)  <br> [View](#view)   |                                                                   |                                                         |                                                         |                                                                     |
+| ![](/icons/tool_clay.webp)    <br> [Lera](#clay)       | ![](/icons/tool_brush.webp)   <br> [Pensel](#brush)     | ![](/icons/tool_move.webp)       <br> [Flytta](#move)              | ![](/icons/tool_drag.webp)      <br> [Dra](#drag)           | ![](/icons/tool_elastic.webp)   <br> [Elastisk](#elastic)     | ![](/icons/tool_smooth.webp)  <br> [Jämna ut](#smooth)   |
+| ![](/icons/tool_mask.webp)    <br> [Mask](#mask)       | ![](/icons/tool_paint.webp)   <br> [Måla](#paint)     | ![](/icons/tool_smudge.webp)     <br> [Smeta ut](#smudge)          | ![](/icons/tool_flatten.webp)   <br> [Platta ut](#flatten)     | ![](/icons/tool_planar.webp)    <br> [Plan](#planar)       | ![](/icons/tool_polish.webp)  <br> [Polera](#polish)   |
+| ![](/icons/tool_crease.webp)  <br> [Veck](#crease)   | ![](/icons/tool_pinch.webp)   <br> [Klämma](#pinch)     | ![](/icons/tool_trim.webp)       <br> [Beskär](#trim)              | ![](/icons/tool_split.webp)     <br> [Dela](#split)         | ![](/icons/tool_project.webp)   <br> [Projekt](#project)     | ![](/icons/tool_layer.webp)   <br> [Lager](#layer)     |
+| ![](/icons/tool_inflate.webp) <br> [Blås upp](#inflate) | ![](/icons/tool_nudge.webp)   <br> [Knuffa](#nudge)     | ![](/icons/tool_stamp.webp)      <br> [Stämpel](#stamp)            | [VDM](#vdm)                                                  | ![](/icons/tool_clearLayer.webp) <br> [Radera lager](#delete-layer) | ![](/icons/tool_tube.webp)    <br> [Rör](#tube)       |
+| ![](/icons/tool_lathe.webp)   <br> [Svarv](#lathe)     | ![](/icons/tool_insert.webp)  <br> [Infoga](#insert)   | ![](/icons/tool_transform.webp)  <br> [Transformera](#transform)    | ![](/icons/tool_gizmo.webp)     <br> [Gizmo](#gizmo)         | ![](/icons/tool_faceGroup.webp) <br> [Ytgrupp](#facegroup) | ![](/icons/tool_hide.webp)    <br> [Dölj](#hide)       |
+| ![](/icons/tool_measure.webp) <br> [Mät](#measure) | [Ordna](#arrange)                                      | ![](/icons/tool_remesh.webp)     <br> [Quad Remesher](#quad-remesher) | ![](/icons/tool_select.webp)    <br> [Välj](#select)       | ![](/icons/tool_lattice.webp)   <br> [Galler](#lattice)     | ![](/icons/tool_view.webp)    <br> [Vy](#view)       |
 
 ------
 
 ### ![](/icons/tool_clay.webp) Lera {#clay}
-Clay-verktyget är användbart för att bygga upp din skulptur. `Sub` tar bort material från din skulptur.
+Verktyget Lera är praktiskt när du bygger upp din skulptur. `Sub` tar i stället bort material från skulpturen.
 
 ![](/videos/tool_clay.mp4)
 
@@ -108,39 +115,55 @@ Standardpenseln. `Sub` tar bort material.
 ![](/videos/tool_brush.mp4)
 
 ### ![](/icons/tool_move.webp) Flytta {#move}
-Området under penseln kommer att ”fastna” vid penseln, vilket möjliggör elastisk deformation. Markeringen bibehålls under förflyttningen, så om du flyttar penseln bort och sedan tillbaka dit du började ser du ingen deformation.
+Området under penseln fastnar på penseln, vilket ger en elastisk deformation. Markeringen behålls under hela förflyttningen, så om du flyttar bort penseln och sedan tillbaka dit du började blir det ingen deformation alls.
 
-Sub-läget är `Normal` och flyttar området under penseln längs ytnormalen.
+Sub-läget är `Normal`, som flyttar området under penseln längs ytans normal.
 
-Den här penseln är bra både för deformation i stor skala och för noggrann smådeformation.
+Den här penseln passar både för stora deformationer och för försiktiga småjusteringar.
 
 #### Inställningar för Flytta {#move-settings}
 
-* `Radius (Background)` - Hur långt från kanten av en modell du kan vara och ändå skulptera, användbart när du arbetar med siluetten av ett objekt. 
-* `Same-side vertex only` - Ignorera verticer som pekar i motsatt riktning mot deformationen.
+* `Radie (Bakgrund)` - Hur långt utanför modellens kant du kan börja och ändå skulptera, praktiskt när du arbetar med ett objekts siluett. Kryssa ur det för att bara greppa när du börjar på modellen.
+* `Endast vertex på samma sida` - Ignorerar vertexer som pekar i motsatt riktning mot deformationen.
+* `Riktning` - Används av sub-läget `Normal` och avgör om ett drag trycker in eller drar ut ytan:
+    * `Auto` - Väljer en av de två metoderna nedan åt dig, utifrån vinkeln på ytans normal.
+    * `Normal 3D` - Jämför pekarens position på skärmen med ytans normal sedd från kameran.
+    * `XY` - Använder pekarens position på skärmen (upp/ned, vänster/höger) för att avgöra om ytan trycks in eller dras ut.
+    * `Tröskel` - Med `Auto`: den vinkelgräns som avgör vilken metod som används.
+* `Rullhastighet` - Du kan vrida det greppade området medan du flyttar det: rulla med två fingrar, rulla pennan mellan fingrarna, eller håll ned en modifieringstangent (Alt, Ctrl, Shift eller Cmd) medan du drar med musen. Det finns ett reglage var för finger, penna och mus; kryssa ur ett för att stänga av den inmatningen.
 
 
 ![](/videos/tool_move.mp4)
 
 ### ![](/icons/tool_drag.webp) Dra {#drag}
-Området under penseln kommer att ”fastna” vid penseln, vilket möjliggör elastisk deformation. Till skillnad från Move-penseln uppdateras markeringen kontinuerligt under draget, så det är möjligt att skapa längre, ormliknande objekt, särskilt när Dynamic Topology är aktiverat.
+Området under penseln fastnar på penseln, vilket ger en elastisk deformation. Till skillnad från Flytta uppdateras markeringen hela tiden under penseldraget, så du kan dra ut längre, ormlika former, särskilt när DynTopo är aktiverat.
 
-Sub-läget är `Normal` och flyttar området under penseln längs ytnormalen.
+Sub-läget är `Normal`, som flyttar området under penseln längs ytans normal.
 
-Den här penseln är bra för mer lösa, gestuella formförändringar.
+Den här penseln passar för lösare, mer gestaltande formändringar.
 
 #### Inställningar för Dra {#drag-settings}
 
-* `Radius (Background)` - Hur långt från kanten av en modell du kan vara och ändå skulptera, användbart när du arbetar med siluetten av ett objekt. 
-* `Same-side vertex only` - Ignorera verticer som pekar i motsatt riktning mot deformationen.
+Dra har samma inställningar som [Flytta](#move-settings): `Radie (Bakgrund)`, `Endast vertex på samma sida`, `Riktning` och `Rullhastighet`.
 
 ![](/videos/tool_drag.mp4)
 
-### ![](/icons/tool_smooth.webp) Jämna ut {#smooth}
-Jämnar ut området genom att medelvärdesbilda punktpositionerna. Detta verktyg är starkt beroende av polygontätheten.
-Om du har många polygoner blir utjämningen mindre effektiv.
+### ![](/icons/tool_elastic.webp) Elastisk {#elastic}
+Greppa och dra i ytan som med [Flytta](#move), men med en elastisk deformation: i stället för att sluta vid penselns kant avtar dragningen mjukt med avståndet över objektet, ungefär som när du sträcker ut gummi. Penselns radie avgör hur brett dragningen verkar.
 
-Sub-läget är `Relax`, vilket bara jämnar ut wireframen men försöker behålla de geometriska detaljerna.
+Sub-läget är `Normal`, som flyttar området under penseln längs ytans normal.
+
+Den här penseln passar för stora, mjuka proportionsändringar som förblir jämna.
+
+#### Inställningar för Elastisk {#elastic-settings}
+
+Elastisk har samma inställningar som [Flytta](#move-settings), utom `Endast vertex på samma sida`. `Radie (Bakgrund)` är avstängt som standard.
+
+### ![](/icons/tool_smooth.webp) Jämna ut {#smooth}
+Jämnar ut området genom att medelvärdesbilda punkternas positioner. Verktyget är starkt beroende av polygontätheten.
+Har du många polygoner blir utjämningen alltså mindre effektiv.
+
+Sub-läget är `Slappna av`, som bara jämnar ut trådnätet men försöker behålla de geometriska detaljerna.
 
 #### Inställningar för Jämna ut {#smooth-settings}
 
@@ -148,700 +171,851 @@ Sub-läget är `Relax`, vilket bara jämnar ut wireframen men försöker behåll
 
 ##### Ytgrupp {#smooth-facegroup}
 
-* `Relax` - Jämnar ut kanterna på facegrupper. Använd intensitet större än 100 % för att snabbt jämna ut kanter. `Auto` jämnar bara ut om förhandsvisning av facegrupper är aktiverad, `Off` inaktiverar, `On` aktiverar. 
+* `Slappna av` - Jämnar ut ytgruppernas gränser. Använd en intensitet över 100 % för att snabbt jämna ut gränserna. `Auto` jämnar bara ut om förhandsvisningen av ytgrupper är aktiverad, `Nej` stänger av det och `Ja` slår på det.
 
 ##### Vertex {#vertex}
-* `Sticky vertex on border` - För mesher med öppna kanter, t.ex. ett plan, är det möjligt att jämna ut hörnen. Om detta alternativ aktiveras låses de öppna kanterna.
-* `Relax` - samma som relax-alternativläget i verktygsfältet till vänster.
-* `Stable smoothing` - Försöker göra utjämningen oberoende av topologi. Detta fungerar bäst med varierande topologitäthet och med ett högt värde på utjämningsintensiteten.
+* `Bevara volymen` - Jämnar ut utan att ytan krymper, så att upprepad utjämning inte får dina former att tappa luft. Kugghjulsknappen bredvid innehåller mängderna `Krymp` och `Blås upp` som används för detta.
+* `Bevara kanter` - På mesher med öppna kanter, till exempel ett plan, kan hörnen jämnas ut. Med det här alternativet ligger vertexerna längs meshens kant kvar på plats.
+* `Stabil utjämning` - Försöker göra utjämningen oberoende av topologin. Det fungerar bäst när topologin har varierande täthet och med ett högt intensitetsvärde.
+* `Slappna av` - Samma som det alternativa läget Slappna av i det vänstra verktygsfältet.
 
 ##### Målning {#painting}
-* `Screen Smoothing` - Använd detta alternativ för att få topologioberoende utjämning, även vid höga polytal.
-* `Screen samples` - Kvaliteten på utjämningen, högre värden blir jämnare men långsammare.
+* `Skärmutjämning` - Använd det här alternativet för att få en utjämning som är oberoende av topologin, även med höga polygonantal. `Auto`, `Nej` eller `Ja`.
+* `Skärmexempel` - Utjämningens kvalitet: högre värden ger jämnare resultat men är långsammare.
 
 ::: tip
-Högre polygontäthet kan kräva att intensiteten höjs över 100 %. Mycket höga värden (300 %, 500 %) kan också fungera bra som skulpteringsverktyg, som tvingar områden att snabbt bli plana och släta under penseln, som att slå lera med en klubba!
+Högre polygontäthet kan kräva att du höjer intensiteten över 100 %. Mycket höga värden (300 %, 500 %) kan också fungera bra som skulpteringsverktyg: områden under penseln blir snabbt plana och släta, som när du slår på lera med en klubba!
 :::
 
 ![](/videos/tool_smooth.mp4)
 
 ### ![](/icons/tool_mask.webp) Mask {#mask}
-Detta verktyg låter dig maskera verticer. Maskerade verticer är skyddade från skulptering eller målning. 
+Med det här verktyget maskerar du vertexer. Maskerade vertexer skyddas mot skulptering och målning.
 
-Sub-läget är `Unmask` och raderar där masken har målats.
+Sub-läget är `Avmaskera`, som suddar bort masken där den har målats.
 
-Liknande markeringar i 2D-målningsprogram kan masker målas med en pensel, eller skapas med formmarkeringar, suddas eller skärpas. 
+Precis som markeringar i 2d-målarprogram kan masker målas med pensel eller skapas med formmarkeringar (`Lasso`, `Rekt`, `Band`...), göras suddigare eller skarpare. Välj pensel eller form i popup-fönstret för penseldrag i det vänstra verktygsfältet, se [Markeringskontroller](#selection-controls).
 
-Till skillnad från 2D-målningsprogram kan de också skapas via facegrupper, och masker kan användas för att skapa ny geometri via extruderings-/extraktionsliknande operationer. 
+Till skillnad från i 2d-målarprogram kan masker också skapas utifrån ytgrupper, och de kan användas för att skapa ny geometri genom åtgärder som extrudering och extrahering.
 
 ![](/videos/tool_mask1.mp4)
 
- En verktygsrad visas längst upp i vyn med extra kontroller. 
+ Ett verktygsfält med extra kontroller visas högst upp i vyn.
 
 ![](/images/tool_mask_toolbar.webp)
 
-Titeln på raden kan tryckas på för att fälla ut/fälla ihop, eller så kan pilen uppe till höger tryckas på för att flytta den till över- eller underkanten av gränssnittet.
+Tryck på fältets rubrik för att fälla ut eller fälla ihop det, eller tryck på pilen uppe till höger för att flytta det till gränssnittets över- eller underkant.
 
-| Åtgärd                                            | Beskrivning                                                                               |
-| :------------------------------------------------ | :---------------------------------------------------------------------------------------- |
-| ![](/icons/circle_cross2.webp) Clear             | Rensa masken                                                                              |
-| ![](/icons/invert.webp)        Invert            | Invertera masken                                                                          |
-| ![](/icons/sharpen.webp)       Sharpen           | Skärp maskkanten                                                                          |
-| ![](/icons/blur.webp)          Blur              | Suddar maskkanten                                                                         |
-|                                 Blur ->           | Dra vänster/höger för att interaktivt sudda masken                                       |
-| ![](/icons/culling.webp)       Front             | Växla till att bara maskera framåtvända verticer                                         |
-|                                 Convert           | Konvertera masken till en facegroup                                                      |
-| ![](/icons/group_to_mask.webp) On tap (facegroup) | När aktiverad visas facegrupper, och att trycka på en facegroup maskerar den             |
-|                                 On tap (mask)     | När aktiverad kommer ett tryck på en ”ö” av mask eller omaskerade polygoner att fylla den ön. |
-| ![](/icons/vertex.webp)        Connected         | När aktiverad tillåts endast maskdrag att påverka sammanhängande topologi.               |
+| Åtgärd                                             | Beskrivning                                                                                |
+| :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
+| ![](/icons/circle_cross2.webp) Rensa allt          | Rensar masken på alla objekt. När även andra objekt är maskerade rensar en extra knapp `Rensa` bara de markerade objekten |
+| ![](/icons/invert.webp)        Invertera             | Inverterar masken                                                                            |
+| ![](/icons/sharpen.webp)       Skärpa            | Gör maskens kant skarpare                                                                      |
+| ![](/icons/blur.webp)          Sudda               | Gör maskens kant suddigare                                                                         |
+| ![](/icons/outline.webp)       Kant             | Maskerar meshens öppna kant, till exempel kanten på ett plan eller randen runt ett hål          |
+| ![](/icons/blur.webp)          Sudda ->            | Dra åt höger för att göra masken suddigare, åt vänster för att göra den skarpare                                            |
+| ![](/icons/circle_plus.webp)   Utöka ->            | Dra åt höger för att utöka det maskerade området, åt vänster för att krympa det                                      |
+| ![](/icons/intensity.webp)     Förstärk ->           | Dra åt höger för att förstärka masken, åt vänster för att försvaga den, utan att ändra dess form           |
+| ![](/icons/dig.webp)           Hålighet ->          | Bygger om masken utifrån ytans krökning: dra åt höger så att bara fördjupningarna går att måla, åt vänster så att bara upphöjningarna gör det |
+| ![](/icons/culling.webp)       Fram              | Växlar till att bara maskera vertexer som är vända framåt                                                  |
+| ![](/icons/eye_open.webp)      Synlig            | Med former: växlar till att ignorera vertexer som döljs bakom andra ytor                        |
+|                                 Konvertera            | Konverterar masken till en ytgrupp                                                            |
+| ![](/icons/group_to_mask.webp) På tryck (ytgrupp) | När det är aktiverat visas ytgrupperna, och ett tryck på en ytgrupp maskerar den                    |
+|                                 På tryck (mask)      | När det är aktiverat fylls en hel 'ö' av maskerade eller omaskerade polygoner när du trycker på den. |
+| ![](/icons/connect.webp)       Anslutna          | När det är aktiverat påverkar maskdragen bara sammanhängande topologi.                         |
 
-##### Snabbrörelse för mask {#mask-quick-gesture}
-Du kan utföra ZBrush-liknande gester medan du håller ned snabbmaskningsknappen i verktygsfältet till vänster:
-| Åtgärd | Gest (håll ned nedre vänstra genvägen) |
-| :----: | :-------------------------------------: |
-| Invert | Tryck på bakgrunden                    |
-| Clear  | Dra på bakgrunden                      |
-| Blur   | Tryck på maskerat område               |
-| Sharpen| Tryck på omaskerat område              |
+##### Snabbgester för mask {#mask-quick-gesture}
+Du kan använda gester i ZBrush-stil medan du håller ned snabbmaskknappen i det vänstra verktygsfältet:
+| Åtgärd  | Gest (håll genvägen nere till vänster) |
+| :-----: | :--------------------------------: |
+| Invertera  | Tryck på bakgrunden              |
+| Rensa   | Dra på bakgrunden             |
+| Sudda    | Tryck på ett maskerat område                 |
+| Skärpa | Tryck på ett omaskerat område               |
 
 
-#### Maskinställningar {#mask-settings}
+#### Inställningar för Mask {#mask-settings}
 ![](/images/tool_mask_settings.webp)
 
 ![](/videos/tool_mask2.mp4)
 
-* `Preview` - Maskinställningsmenyn används främst för att skapa geometri från masken. Därför är standardbeteendet att förhandsvisa hur den nya geometrin kommer att se ut. Du kan välja att inte ha någon förhandsvisning, en extract-förhandsvisning, en split-förhandsvisning, och om denna geometri ska visas i röntgenläge.
+Maskinställningarna används främst för att skapa geometri utifrån masken. Flikarna högst upp väljer åtgärd: [Extrahera](#extract), [Dela](#split-mask) eller [Skulptera](#carve). Alternativen nedanför ändras efter åtgärden.
 
-##### Tjocklek {#thickness}
-* `Height` - Höjden på den extraherade formen. Plus/Minus-ikonen låter dig växla mellan en utåtgående extrudering, inåtgående, eller centrerad. 
-* `Height/Height+Mask` - Växla mellan att höjden är konstant, eller om suddade delar av masken ska påverka höjden, vilket möjliggör mjuka och varierande höjdformer. 
-
-##### Jämnhet {#smoothness}
-När aktivt jämnar det ut kanten på den extraherade formen, fungerar bättre med högre polygontal. 
-* `Iterations` - Mängden utjämning som appliceras. Höga värden ger mycket släta böjda kanter, men börjar avvika från maskformen.
-* `All/Sharp border/Borders only` - Utjämning kan fungera i alla riktningar, jämna både sidor och topp på den extraherade formen, eller jämna topp och sidor men behålla en skarp kant, eller bara jämna kanten och lämna toppytan opåverkad.
-
-##### Kantloop (sida) {#edge-loop-side}
-* `Auto Edge-loop (side)` - Beräknar antalet indelningar på sidorna av den extraherade formen för att skapa fyrkanter som matchar polygonerna i det maskerade området. När inaktiverat kan du själv ställa in antalet edge loops med edge loop-reglaget.
-
-----
+* `Förhandsgranska` - Visar hur den nya geometrin kommer att se ut medan du justerar inställningarna.
+* `Röntgen` - Vilka objekt som ritas i röntgenläge under förhandsvisningen: `Ingen`, `Inte vald`, `Vald` eller `Alla`.
 
 ##### Extrahera {#extract}
-* `Extract` - Skapa den extraherade geometrin.
-* `Closing action` - Hur extract ska bete sig. ”None” duplicerar de maskerade polygonerna till en ny form. ”Fill” gör samma sak och försöker lappa baksidan. ”Shell” extruderar till värdet som ställts in i ”thickness” och är standardläget.
+* `Extrahera` - Skapar den extraherade geometrin som ett nytt objekt.
+* `Avsluta åtgärd` - Hur den extraherade formen sluts. `Ingen` kopierar de maskerade polygonerna till en ny form och lämnar den öppen. `Fyll` gör samma sak, men fyller och jämnar ut hålet på baksidan (använd det inte på plana ytor). `Skal` sluter formen med hjälp av värdet `Höjd` och är standard.
 
 ::: tip
 
-Om förhandsvisningen är i ”Extract”-läge med ”X-ray” aktiverat kan det vara förvirrande första gången du klickar på Extract-knappen. Eftersom menyn är aktiv försöker den förhandsvisa en extraktion på din nya form och röntga den ursprungliga ytan. Men eftersom du inte har någon mask på den nya ytan kan den inte förhandsvisa extraktionen, och Nomad varnar dig med ”Nothing to Extract!”. 
+Om förhandsvisningen är aktiverad med röntgen kan knappen Extrahera vara förvirrande i början. Eftersom menyn är aktiv försöker den förhandsvisa en extrahering på din nya form och visa originalytan i röntgen. Men eftersom den nya ytan inte har någon mask kan extraheringen inte förhandsvisas, och Nomad varnar 'Inget att extrahera!'.
 
-Detta är normalt, stäng maskinställningsmenyn för att se den nya formen och originalet, och välj originalytan igen om du behöver rensa masken eller rita nya masker.
+Det är helt normalt. Stäng menyn med maskinställningar för att se den nya formen och originalet, och markera originalytan igen om du behöver rensa masken eller rita nya masker.
 :::
 
-##### Dela upp {#split-mask}
-* `Split` - Extraherar både de maskerade OCH omaskerade regionerna till nya former. 
-* `Closing action (masked)` - Hur mask-extraktionen ska bete sig. ”None” duplicerar de maskerade polygonerna till en ny form. ”Fill” gör samma sak och försöker lappa baksidan. ”Shell” extruderar till värdet som ställts in i ”thickness” och är standardläget.
-* `Closing action (unmasked)` - Hur den omaskerade extraktionen ska bete sig. ”None” duplicerar de maskerade polygonerna till en ny form. ”Fill” gör samma sak och försöker lappa baksidan. ”Shell” extruderar till värdet som ställts in i ”thickness” och är standardläget.
-* `Sync border` - Säkerställ att kanten mellan de maskerade och omaskerade extraherade formerna håller sig nära varandra. När inaktiverat kan ett glapp uppstå mellan formerna eftersom shell-operationen extruderar varje yta längs sin normal.
+##### Dela {#split-mask}
+* `Dela` - Extraherar både de maskerade OCH de omaskerade områdena till nya former.
+* `Avsluta åtgärd` (maskerad) - Hur den maskerade delen sluts, med samma val `Ingen`, `Fyll` och `Skal` som för Extrahera.
+* `Avsluta åtgärd` (omaskerad) - Hur den omaskerade delen sluts, med samma val.
 
-##### Karva {#carve}
-* `Carve` - I standardläge beter det sig som om du hade trimmat in i ytan med ”thickness”-värdet, som att skära ut en bit apelsinskal. 
+##### Skulptera {#carve}
+* `Skulptera` - Fungerar som om du hade skurit in i ytan med mängden `Höjd`, som när du skär loss en bit apelsinskal. `Höjd` kan inte vara 0.
+
+##### Höjd {#thickness}
+* `Höjd` - Den extraherade formens höjd. Plus/minus-knappen låter dig växla mellan extrudering utåt, inåt eller åt båda hållen.
+
+##### Utjämning {#smoothness}
+När det är aktivt jämnas den extraherade formen ut. Det fungerar bättre med högre polygonantal.
+* `Alla` / `Endast kanter` - Jämnar ut hela formen, eller bara dess kanter så att ovansidans form lämnas orörd.
+* `Iterationer` - Med `Alla`: hur mycket utjämning som tillämpas. Höga värden ger mycket mjukt rundade kanter, men formen börjar avvika från maskens form.
+* `Vägg` - Med `Endast kanter`: hur mycket väggarna jämnas ut. Knappen bredvid växlar mellan Slappna av, som behåller de skarpa hörnen, och Jämna ut, som också rundar av dem.
+* `Insida` - Med `Endast kanter`: hur mycket ovansidan jämnas till. Knappen bredvid växlar mellan Slappna av, som behåller de skulpterade detaljerna och bara jämnar till extruderingsriktningen (så att detaljerna inte ger upphov till spikar), och Jämna ut, som jämnar ut själva ytan.
+
+##### Sidor {#edge-loop-side}
+* `Rak` - Enkla väggar på den extraherade formens sidor.
+* `Fasning` - (endast Extrahera med `Skal`) En sluttande kant på framsidan. `Fasning` anger dess bredd, i % av `Höjd` eller i världsenheter (knappen bredvid växlar), `Fasningsdelningar` delar upp den (`Auto` som standard), och med en kurva formar du dess profil.
+* `Profil` - Formar väggarna med en profilkurva, med en `Bredd` i % av `Höjd` eller i världsenheter.
+* `Mask` - Höjden följer masken: suddiga delar av masken får lägre höjd, vilket ger mjuka former med varierande höjd.
+* `Väggdelningar` - Antalet kantslingor på sidorna. Med `Auto` väljer Nomad det antal delningar som ger kvadratiska polygoner som matchar polygonerna i det maskerade området.
 
 
 
-### ![](/icons/tool_maskSelector.webp) Urvalsmask {#selection-mask}
-Detta verktyg liknar mest [Masking-verktyget](#mask), den största skillnaden är att du inte använder stroke för att måla mask, utan istället använder [Markeringskontrollerna](#selection-controls).
+### ![](/icons/tool_maskSelector.webp) Markeringsmask {#selection-mask}
+Verktyget Markeringsmask (SelMask) är nu en del av [Mask-verktyget](#mask). För att maskera med former i stället för med penseldrag väljer du en form (`Lasso`, `Polygon`, `Rekt`...) i popup-fönstret för penseldrag i Mask-verktyget, se [Markeringskontroller](#selection-controls).
 
-Sub-läget är `Unmask` och raderar masken med hjälp av markeringskontrollerna.
-
-Selection Mask delar samma verktygsinställningar som verktyget `Mask`.
+Sub-läget `Avmaskera` fungerar också med former och suddar då bort masken inuti formen.
 
 ![](/videos/tool_selector_mask.mp4)
 
 ### ![](/icons/tool_paint.webp) Måla {#paint}
-Applicera färg och materialegenskaper. För att lära dig mer om material kan du besöka avsnittet [Painting](painting.md).
+Lägger på färg och materialegenskaper. Du kan läsa mer om material i avsnittet [Målning](painting.md).
 
-Sub-läget är `Erase` och tar bort färg.
+Sub-läget är `Radera`, som tar bort färg.
 
-#### Målningsinställningar {#paint-settings}
-* `Layer fitering` - Detta fungerar som lagerets alpha lock i Photoshop eller Procreate. Om du målar på ett lager kan du, när detta är aktiverat, bara ändra där färg redan finns; omålade områden skyddas.
+Förutom med penseldrag kan Måla också fylla former (`Lasso`, `Rekt`, `Band`...), se [Markeringskontroller](#selection-controls).
+
+#### Inställningar för Måla {#paint-settings}
+* `Lagerren filtrering` - Fungerar som lagrets alfalås i Photoshop eller Procreate. Om du målar på ett lager och det här är aktiverat kan du bara ändra där det redan finns färg; omålade områden skyddas. Det är bara tillgängligt när ett lager är valt.
 
 ![](/videos/tool_paint.mp4)
 
-### ![](/icons/tool_smudge.webp) Smeta {#smudge}
-Smeta ut färg och materialegenskaper. Menyn för Smudge innehåller ett reglage `Quality`, lägre värden ger snabbare drag.
+### ![](/icons/tool_smudge.webp) Smeta ut {#smudge}
+Smetar ut färg och materialegenskaper. Inställningsmenyn för Smeta ut har ett reglage för `Kvalitet`: lägre värden ger snabbare penseldrag.
 
 ![](/videos/tool_smudge.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Platta till {#flatten}
-Plattar till området genom att projicera punkterna på det genomsnittliga planet.
+### ![](/icons/tool_flatten.webp) Platta ut {#flatten}
+Plattar ut området genom att projicera punkterna på medelplanet.
 
-Sub-läget är `Fill` och definierar ett plan satt av den högsta punkten, och tenderar att dra upp punkter.
+Sub-läget är `Fyll`, som definierar ett plan utifrån den högsta punkten och tenderar att dra punkterna uppåt.
 
-#### Inställningar för Platta till {#flatten-settings}
+#### Inställningar för Platta ut {#flatten-settings}
 
-* `Lock plane direction` - Använd plandriktningen som beräknas vid första klicket. Som standard är detta inaktiverat.
-* `Lock plane origin`- Använd första klicket som planets centrum. Som standard är detta inaktiverat.
+* `Lås planriktning` - Använder planets riktning som beräknades vid första klicket. Som standard är det avstängt.
+* `Lås planorsprung` - Använder första klicket som planets mittpunkt. Som standard är det avstängt, och det kan bara aktiveras tillsammans med `Lås planriktning`.
 
-När en eller båda av dessa är inaktiverade kan Flatten gradvis fördjupas eller planvinkeln ändras genom att använda långa drag som rör sig över olika djup och krökningar. Detta i kombination med områdessamplingsalternativen i penselmenyn kan ge mycket exakt kontroll.
+När ett eller båda av dessa är avstängda kan du gradvis fördjupa utplattningen eller ändra planets vinkel genom långa penseldrag som rör sig över olika djup och krökningar. Tillsammans med alternativen för områdessampling i penselmenyn ger det mycket exakt kontroll.
 
 ::: tip
-När du arbetar i områden med hög krökning, t.ex. när du försöker platta till kinderna men verktyget hela tiden påverkar sidorna av näsan, försök skapa en mask för att skydda områden som Flatten-penseln inte ska påverka.
+När du arbetar i områden med stark krökning, till exempel när du försöker platta ut kinderna men verktyget hela tiden påverkar näsans sidor, kan du skapa en mask som skyddar de områden som utplattningen inte ska påverka.
 :::
 
 ![](/videos/tool_flatten.mp4)
 
 
 ### ![](/icons/tool_planar.webp) Plan {#planar}
-Gör punkter plana genom att projicera dem på det genomsnittliga planet, men med mindre uppbyggnad än Flatten-penseln. Detta skapar renare hårda ytor. Snabba drag trycker och drar mer på ytan, långsammare drag som börjar från redan plana områden och arbetar utåt bibehåller planet bättre.
+Gör punkterna plana genom att projicera dem på medelplanet, men med mindre uppbyggnad än Platta ut. Det ger renare ytor med skarpa kanter. Snabba penseldrag trycker och drar mer i ytan, medan långsammare drag som börjar i redan plana områden och arbetar sig utåt bättre bevarar planet.
 
-Sub-läget är `Fill` och definierar ett plan satt av den högsta punkten, och tenderar att dra upp punkter.
+Sub-läget är `Fyll`, som definierar ett plan utifrån den högsta punkten och tenderar att dra punkterna uppåt.
 
-Planar är egentligen samma verktyg som `Flatten`, men med `Lock plane direction` aktiverat, vilket gör att det tenderar att skapa mer stabila, hårdkantade ytor, medan Flatten kan vara mer skulpturalt och användas för att skapa halvplana områden.
+Plan är egentligen samma verktyg som `Platta ut`, men med `Lås planriktning` aktiverat. Det ger stabilare ytor med skarpa kanter, medan Platta ut kan vara mer skulpturalt och användas för att skapa halvplana områden.
 
 ![](/videos/tool_planar.mp4)
 
-### ![](/icons/tool_crease.webp) Veck {#crease}
-Crease-verktyg kan vara användbara för att skulptera små skåror eller bucklor.
+### ![](/icons/tool_polish.webp) Polera {#polish}
+Ytterligare en medlem i Platta ut-familjen, inställd för att polera ytor till rena plan. Det är samma verktyg som `Platta ut`, med andra standardvärden i [Penseldrag](stroke.md): `Spårning bakom penseldraget`, `Områdes-normalfilter` och `Djupmaskering` är aktiverade.
 
-Sub-läget är `Invert` och skapar en upphöjd skåra.
+Sub-läget är `Fyll`, precis som för Platta ut.
+
+Polera har samma inställningar som [Platta ut](#flatten-settings): `Lås planriktning` och `Lås planorsprung`.
+
+### ![](/icons/tool_crease.webp) Veck {#crease}
+Veck är användbart för att skulptera små skåror eller fördjupningar.
+
+Sub-läget är `Invertera`, som skapar ett upphöjt veck.
 
 #### Inställningar för Veck {#crease-settings}
 
-* `Pinch factor` - Hur mycket verticer dras sidledes mot penseln. Om pinch är 1 och offset 0 får ytan inga djupförändringar, bara topologiförändringar, där kanter dras mot draget.
-* `Offset factor` - Hur mycket verticer trycks/dras i djup. Om pinch är 0 och offset 1 skapas djupa skåror eller upphöjda bucklor, men de ser kantiga ut eftersom inte tillräckligt med geometri dras mot skåran för att definiera sidorna eller botten exakt.
+* `Klämfaktor` - Hur mycket vertexerna dras i sidled mot penseln. Om klämningen är 1 och förskjutningen 0 ändras inte ytans djup alls, bara topologin, och kanterna dras mot penseldraget.
+* `Offsetfaktor` - Hur mycket vertexerna trycks in eller dras ut på djupet. Om klämningen är 0 och förskjutningen 1 blir vecken djupa eller kraftigt upphöjda, men de ser hackiga ut eftersom för lite geometri dras mot vecket för att forma dess sidor och botten ordentligt.
 
 ![](/videos/tool_crease.mp4)
 
-### ![](/icons/tool_pinch.webp) Nyp {#pinch}
-Detta verktyg kan användas för att skärpa kanter.
+### ![](/icons/tool_pinch.webp) Klämma {#pinch}
+Det här verktyget kan användas för att göra kanter skarpare.
 
-Sub-läget är `Invert` och sprider verticer isär.
+Sub-läget är `Invertera`, som för isär vertexerna.
 
 ![](/videos/tool_pinch.mp4)
 
 
-### ![](/icons/tool_trim.webp) Trimma {#trim}
-Trim-verktyget fungerar genom att ta bort en bit av din mesh och ger alternativ för hur hålet som lämnas efter ska bearbetas. Det använder [Markeringskontrollerna](#selection-controls) för att definiera trimmet.
+### ![](/icons/tool_trim.webp) Beskär {#trim}
+Beskär tar bort en bit av din mesh och ger dig val för hur hålet som blir kvar ska hanteras. Det använder [Markeringskontroller](#selection-controls) för att definiera beskärningen.
+
+Sub-läget är `Vänd`, som inverterar formen så att den andra sidan tas bort.
 
 ::: tip
-Eftersom detta verktyg projicerar från kameran får du en varning om kameran är i perspektivläge.
+Eftersom verktyget projicerar från kameran får du en varning om kameran är i perspektivläge.
 
-I ortografiskt läge är snittet genom meshen parallellt med vyn, vilket vanligtvis är vad man förväntar sig. När det görs med en perspektivkamera ser snittet annorlunda ut på objektets bortre sida jämfört med den närmare sidan.
+I ortografiskt läge går snittet genom meshen parallellt med vyn, vilket oftast är vad man förväntar sig. Med en perspektivkamera ser snittet olika ut på objektets bortre och närmre sida.
 :::
 
-#### Inställningar för Trimma {#trim-settings}
+#### Inställningar för Beskär {#trim-settings}
 
-* `Stroke painting` - Om målning är aktiverad i målningsmenyn fylls det lappade området med den aktuellt valda färgen.
-* `Boolean` - fyll hålet från trimmet med ett fyrkants-polyområde. Det fyllda området blir platt.
-* `Legacy` - fyll hålet från trimmet med ett triangulerat område. Det fyllda området blir platt.
-* `Fill` - fyll hålet med ett triangulerat område. Det fyllda området blir en böjd yta, som hinnan på en såpbubbla.
-* `None` - fyll inte hålet.
-* `Boolean Detail Shape` - Ungefärlig storlek på fyrkanter och trianglar som används på formens sida av trimmet.
-* `Boolean Detail Hole` - Ungefärlig storlek på trianglar eller polygoner som används på det fyllda hålet från trimmet. 
-* `Legacy Detail` - Ungefärlig storlek på trianglarna som används på trimmet.
-* `Legacy Hole smoothing` - Hur mycket trianglarna relaxas på det fyllda området.
-* `Legacy Threshold espilon` - Ett värde som kan justeras för att förbättra den äldre hålfyllningsalgoritmen.
-* `Fill Detail` - Ungefärlig storlek på trianglarna som används på trimmet.
+Inställningarna är samlade under `Hål utfyllnad`:
+
+* `Streckmålning` - Om målning är aktiverad i målningsmenyn fylls det lagade området med den färg som är vald.
+* `Boolean` - Fyller hålet efter beskärningen med ett område av fyrhörningar. Det fyllda området blir plant.
+* `Legacy` - Fyller hålet med ett triangulerat område. Det fyllda området blir plant.
+* `Fyll` - Fyller hålet med ett triangulerat område. Det fyllda området blir en välvd yta, som hinnan på en såpbubbla.
+* `Ingen` - Fyller inte hålet.
+
+Med `Boolean` innehåller avsnittet `Detalj`:
+
+* `Form` - Ungefärlig storlek på de fyrhörningar och trianglar som används på formens sida av snittet.
+* `Hål` - Ungefärlig storlek på de trianglar eller polygoner som används i det fyllda hålet. Länkknappen bredvid `Detalj` håller värdet i synk med `Form`; bryt länken för att ställa in det separat.
+* `Bevara topologi` - Jämnar inte ut och förenklar inte snittets kant, så att meshens ursprungliga topologi behålls nära maskerade och dolda ytor.
+
+Med `Legacy`:
+
+* `Detalj` - Ungefärlig storlek på de trianglar som används vid beskärningen.
+* `Hålslätning` - Hur mycket trianglarna i det fyllda området slappnas av.
+* `Tröskel epsilon` - Ett värde som kan justeras för att förbättra den äldre algoritmen för hålutfyllnad.
+
+Med `Fyll`:
+
+* `Detalj` - Ungefärlig storlek på de trianglar som används vid beskärningen.
 
 ![](/videos/tool_trim.mp4)
 
 ### ![](/icons/tool_split.webp) Dela {#split}
-Liknar verktyget [Trim](#trim), förutom att medan Trim kastar bort markeringen behåller Split markeringen som ett nytt objekt.
+Liknar verktyget [Beskär](#trim), men medan Beskär kastar markeringen behåller Dela den som ett nytt objekt.
+
+Sub-läget är `Dela`: varje bit behålls som ett eget objekt, så överlappande former (till exempel med symmetri) delas upp i separata delar i stället för att slås ihop till en.
 
 #### Inställningar för Dela {#split-settings}
 
-* `Stroke painting` - Om målning är aktiverad i målningsmenyn fylls det lappade området med den aktuellt valda färgen.
-* `Boolean` - fyll hålet från splitten med ett fyrkants-polyområde. De fyllda områdena blir platta.
-* `Legacy` - fyll hålet från splitten med ett triangulerat område. De fyllda områdena blir platta.
-* `Fill` - fyll hålen med ett triangulerat område. De fyllda områdena blir böjda ytor, som hinnan på en såpbubbla.
-* `None` - fyll inte hålen.
-* `Boolean Detail Shape` - Ungefärlig storlek på fyrkanter och trianglar som används på formens sida av splitten.
-* `Boolean Detail Hole` - Ungefärlig storlek på trianglar eller polygoner som används på det fyllda hålet från splitten. 
-* `Legacy Detail` - Ungefärlig storlek på trianglarna som används på splitten.
-* `Legacy Hole smoothing` - Hur mycket trianglarna relaxas på det fyllda området.
-* `Legacy Threshold espilon` - Ett värde som kan justeras för att förbättra den äldre hålfyllningsalgoritmen.
-* `Fill Detail` - Ungefärlig storlek på trianglarna som används på splitten.
+Dela har samma inställningar under `Hål utfyllnad` som [Beskär](#trim-settings): `Streckmålning`, metoderna `Boolean`, `Legacy`, `Fyll` och `Ingen`, samt deras alternativ för `Detalj`.
 
 ![](/videos/tool_split.mp4)
 
 
-### ![](/icons/tool_project.webp) Projektera {#project}
-Project-verktyget liknar verktyget [Trim](#trim), men det tar inte bort eller skapar någon geometri, det flyttar bara verticer för att anpassa dem till markeringen.
+### ![](/icons/tool_project.webp) Projekt {#project}
+Verktyget Projekt påminner om [Beskär](#trim), men det varken tar bort eller skapar någon geometri, det flyttar bara vertexerna så att de följer markeringen.
 
 ![](/videos/tool_project.mp4)
 
 ::: tip
-Om du använder Project medan du är i ett lager kan du blanda mellan den ursprungliga och den projicerade formen med lagrets reglage.
+Om du använder Projekt i ett lager kan du blanda mellan den ursprungliga och den projicerade formen med lagrets reglage.
 :::
 
 ### ![](/icons/tool_layer.webp) Lager {#layer}
-Höj ytan, men begränsa höjden.
+Höjer ytan, men med en begränsad höjd.
 
-Om du håller pennan nere och fortsätter att måla över ett område höjer Layer till en viss höjd och går inte längre, till skillnad från andra verktyg som fortsätter att bygga höjd.
+Om du håller pennan mot skärmen och fortsätter måla över ett område höjs Lager till en viss höjd och sedan inte längre, till skillnad från andra verktyg som fortsätter att bygga på höjden.
 
-Observera att begränsningen som standard bara sätts per drag! Om du börjar ett nytt drag byggs det från den nya ythöjden.
+Observera att gränsen som standard bara gäller per penseldrag! Börjar du ett nytt penseldrag bygger det vidare från den nya ythöjden.
 
-För att sätta en konstant maxhöjd över många drag, använd Layer-verktyget tillsammans med Nomads [Layers](layers.md)-system.
+För att få en konstant maxhöjd över många penseldrag använder du verktyget Lager tillsammans med Nomads system för [Lager](layers.md).
 
-Skapa ett lager och använd detta verktyg. Maxhöjden sätts nu från lagret, så du kan applicera många penseldrag och höjden blir alltid densamma.
+Skapa ett lager och använd det här verktyget. Maxhöjden utgår nu från lagret, så du kan göra hur många penseldrag som helst och höjden blir alltid densamma.
 
 `Sub` använder ett minsta djup och skapar skåror.
 
-#### Lagerinställningar {#layer-settings}
+#### Inställningar för Lager {#layer-settings}
 
-* `Use layer data` - När aktivt, och när ett lager är valt, använd lagerdatan för att sätta maxhöjden.
-* `Inflate`- När aktivt justeras riktningen som Layer arbetar i för att få mjukare resultat.
-* `Relax (Normal)` - Mängden utjämning som appliceras på normalerna.
+* `Använd lagerdata` - När det är aktivt och ett lager är valt används lagrets data för att sätta maxhöjden. En varning påminner dig när inget lager är valt.
+* `Blås upp` - När det är aktivt justeras riktningen som verktyget verkar i, för jämnare resultat.
+* `Slappna av (Normal)` - Med `Blås upp` aktiverat: hur mycket normalerna jämnas ut.
 
 ![](/videos/tool_layer.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Blås upp {#inflate}
-Flytta verticer längs deras egna normaler. `Sub` flyttar verticer längs deras inverterade normal.
+### ![](/icons/tool_inflate.webp) Blås upp {#inflate}
+Flyttar vertexerna längs deras egna normaler. `Sub` flyttar vertexerna längs den inverterade normalen.
 
 #### Inställningar för Blås upp {#inflate-setings}
-* `Relax (Normal)` - Mängden utjämning som appliceras på normalerna.
+* `Slappna av (Normal)` - Hur mycket normalerna jämnas ut.
 
 ![](/videos/tool_inflate.mp4)
 
 
 
 
-### ![](/icons/tool_nudge.webp) Putta {#nudge}
-Flytta eller ”smeta” punkter i dragets riktning.
+### ![](/icons/tool_nudge.webp) Knuffa {#nudge}
+Flyttar eller 'smetar' punkter i penseldragets riktning.
+
+Sub-läget är `Vikning`, som skjuter en veckning av material längs penseldraget: en utbuktning framför penseln och en svacka bakom den.
+
+#### Inställningar för Knuffa {#nudge-settings}
+* `Jämna ut` - Hur mycket området under penseln jämnas ut medan du knuffar det, vilket håller den utsmetade ytan ren.
 
 ![](/videos/tool_nudge.mp4)
 
 
 ### ![](/icons/tool_stamp.webp) Stämpel {#stamp}
 
-Klicka och dra för att höja ett område av skulpturen i formen av den valda alphan.
+Klicka och dra för att höja ett område av skulpturen i formen av den valda alfan.
 
-Detta är helt enkelt [Brush-verktyget](#brush) med slagtypen satt till `Lock + radius`. 
+Det är helt enkelt [Pensel-verktyget](#brush) med typen av penseldrag inställd på `Lås + radie`.
 
-`Sub` trycker in stämpeln istället för att dra ut den från ytan.
+`Sub` trycker in stämpeln i stället för att dra ut den ur ytan.
 
 ::: tip
-Stamp fungerar oftast bäst med högupplöst geometri. Om du söker online efter ”wrinkles alpha”, ”pores alpha”, ”scales alpha” osv kan dessa alpha-texturer och Stamp vara ett utmärkt sätt att lägga till organisk detalj på en karaktärsskulptur.
+Stämpel fungerar oftast bäst med högupplöst geometri. Söker du på nätet efter 'wrinkles alpha', 'pores alpha', 'scales alpha' och liknande kan sådana alfatexturer tillsammans med Stämpel vara ett utmärkt sätt att lägga till organiska detaljer på en karaktärsskulptur.
 
-De två slaglägena är användbara för olika saker. 
+De två typerna av penseldrag passar för olika saker.
 
-* `Lock + radius` har en fast *höjd*, draget justerar bredd och rotation på stämpeln. Bra för hudtexturer där de behöver ha samma djup/höjd, men olika rotationer och skalor för att dölja upprepningsmönster.
-* `Lock + intensity` har en fast *bredd*, draget justerar rotation och höjd på stämpeln. Bra för nitar, där alla måste ha samma storlek, men olika rotationer och höjder. 
+* `Lås + radie` har en fast *höjd*, och genom att dra justerar du stämpelns bredd och rotation. Bra för hudtexturer som ska ha samma djup eller höjd, men olika rotation och skala för att dölja upprepade mönster.
+* `Lås + intensitet` har en fast *bredd*, och genom att dra justerar du stämpelns rotation och höjd. Bra för nitar, som ska ha samma storlek men olika rotation och höjd.
 
 :::
 
 ![](/videos/tool_stamp.mp4)
 
+### ![](/icons/tool_vdm.webp) VDM {#vdm}
 
-### ![](/icons/tool_clearLayer.webp) Ta bort lager {#delete-layer}
-Detta verktyg kan återställa lager lokalt, du behöver ett aktivt lager annars händer inget.
+Stämplar en vektorförskjutningskarta (VDM). Till skillnad från en alfa, som bara kan trycka ytan uppåt eller nedåt, lagrar en VDM en fullständig 3d-form, så den kan stämpla överhäng som öron, horn eller ihoprullade blad. Den fungerar som [Stämpel](#stamp), med samma typer av penseldrag `Lås + radie` och `Lås + intensitet`.
+
+`Sub` (`Invertera`) vänder stämpelns djup, så att den trycks in i ytan som en gjutform.
+
+Själva VDM:en väljs i menyn [Alpha](stroke.md#alpha), som också har ett reglage för `Höjd` som bara skalar stämpelns höjd och lämnar dess förskjutning i sidled oförändrad.
+
+Med knappen `Skapa` i det vänstra verktygsfältet gör du egna stämplar:
+
+* `Ny VDM...` - Lägger till ett plan förberett för VDM-skulptering. Skulptera din form på det och baka den sedan med `Topologi -> Baka -> VDM`: Nomad lägger till den nya stämpeln i VDM-biblioteket och väljer den.
+* `Fånga VDM` - (Experimentellt) Dra över ytan på en modell för att greppa det området och göra det till en VDM-stämpel. `Tolerans` plattar mjukt ut kanten på det fångade området.
+
+::: tip
+Undvik DynTopo när du skulpterar på ett VDM-plan, det förstör planets UV:er och förvränger stämpeln. Håll också skulpteringen borta från planets kant, annars får stämpeln en hård kant.
+:::
+
+
+### ![](/icons/tool_clearLayer.webp) Radera lager {#delete-layer}
+Med det här verktyget kan du nollställa lager lokalt. Du behöver ett aktivt lager, annars händer ingenting. Det suddar bort lagrets skulpterade data, och även dess färg när målning är aktiverad.
+
+Sub-läget är `Invertera`, som förstärker lagret något i stället för att sudda bort det.
 
 ![](/videos/tool_delete_layer.mp4)
 
 
 ### ![](/icons/tool_tube.webp) Rör {#tube}
-Skapa ett rör genom att rita en kurva. 
+Skapar ett rör genom att du ritar en kurva.
 ![](/images/tool_tube_new.webp)
 
-När röret har skapats kan banan redigeras i 3D-rymden med liknande kontroller som de vanliga verktygen för [Shape editing](#shape-editing) och kurvredigering. 
+När röret har skapats kan banan redigeras i 3d-rymden med kontroller som liknar den vanliga [Formredigering](#shape-editing) och kurvredigeringen.
 
 ![](/videos/tool_tube.mp4)
 
-#### Rör – vänster verktygsrad {#tube-left-toolbar}
+#### Rörets vänstra verktygsfält {#tube-left-toolbar}
 
 ![](/images/tool_tube_left_toolbar.webp)
 
-Verktygsfältet till vänster har följande alternativ:
+Det vänstra verktygsfältet har följande alternativ:
 
-* `Sync` - Om det aktuella röret är instansierat och det finns barnnoder till röret som skiljer sig mellan instanserna, synkar detta dem igen.
-* `Snap` - När aktivt kommer kurv- och path-lägena att snäppa mot andra objekt medan du ritar. När inaktivt snäpper första punkten, sedan ritas resten av röret på det djupet. Det har en liten undermeny:
-    * `Offset` - Ställ in snäppets djup; 0 % gör att mitten av rörets tvärsnitt snäpper till ytan, positiva värden lyfter det från ytan, negativa värden sänker det.
-* `Curve` - Skissa ett rör fritt. Det har en liten undermeny:
-    * `Auto-validate` - Skapar röret så snart draget är klart. När inaktiverat visas en grön valideringscirkel bredvid kurvbanan, tryck på den för att validera, eller använd länken `Reset` som visas i denna meny för att ta bort banan.
-    * `Closed` - gör röret till en slinga.
-    * `Screen` - Endast tillgängligt när Auto-validate är inaktiverat. När aktivt är banan ”fastnålad” på skärmen, vilket gör att du kan flytta vyn och objektet medan banan ligger kvar. När inaktivt är banan en del av 3D-scenen och rör sig med kamera och objekt.
-    * `Accuracy` - Hur många kurvpunkter som används för att konvertera den ritade banan till ett rör. 0 % använder minsta antal punkter men missar små krökningsförändringar. 100 % är mycket exakt och använder många punkter.
-* `Path` - Skapa ett rör genom att klicka för att definiera kurvpunkter. Tryck på den gröna cirkeln för att validera banan. Det har en liten undermeny:
-    * `B-spline` - En alternativ kurvritningsmetod där kurvpunkter vanligtvis inte ligger direkt på kurvan, men kan ge mjukare resultat än standardmetoden.
-    * `Closed` - gör röret till en slinga
-    * `Screen` - När aktivt är banan ”fastnålad” på skärmen, vilket gör att du kan flytta vyn och objektet medan banan ligger kvar. När inaktivt är banan en del av 3D-scenen och rör sig med kamera och objekt.
+* `Synka` - Om det aktuella röret är instansierat och rörets barnnoder skiljer sig mellan instanserna synkroniseras de igen.
+* `Snap` - När det är aktivt fäster kurv- och banlägena mot andra objekt medan du ritar. När det är inaktivt fäster bara första punkten, och resten av röret ritas på det djupet.
+* `Förskjutning` - Anger djupet för fästningen: vid 0 % fäster mitten av rörets tvärsnitt mot ytan, positiva värden lyfter det från ytan och negativa sänker det. 100 % motsvarar rörets radie.
+* `Visa` - Inget ritläge, så att du kan flytta kameran fritt.
+* `Kurva` - Skissa ett rör på fri hand. Det har en liten utfällbar meny:
+    * `Redigera` - Vad som händer när du avslutar penseldraget, se [Markeringskontroller](#selection-controls): skapa röret direkt, behåll kurvan redigerbar med en grön bekräftelsecirkel bredvid, eller `Håll` i slutet av penseldraget för att fortsätta redigera.
+    * `Stängd` - Gör röret till en slinga.
+    * `Fortsätt rita` - Stanna kvar i verktyget efter att ett rör har bekräftats, för att rita nästa.
+    * `Noggrannhet` - Hur många kurvpunkter som används för att omvandla den ritade banan till ett rör. 0 % använder minsta möjliga antal punkter, men missar små krökningar i banan. 100 % är mycket noggrant och använder många punkter.
+* `Bana` - Skapa ett rör genom att klicka ut kurvpunkter. Tryck på den gröna cirkeln för att bekräfta banan. Det har en liten utfällbar meny:
+    * `B-spline` - Ett alternativt sätt att rita kurvor, där kurvpunkterna oftast inte ligger direkt på kurvan, men resultatet kan bli mjukare än med standardmetoden.
+    * `Stängd` - Gör röret till en slinga
+    * `Skärm` - När det är aktivt är banan 'fastnålad' på skärmen, så att du kan flytta vyn och objektet medan banan ligger kvar på sin plats. När det är inaktivt är banan en del av 3d-scenen och rör sig med kameran och objekten.
+* `Snitt` - Kurvan blir en ring runt formen, skuren genom dess två punkter i den riktning du tittade från.
 
-##### Rör – övre verktygsrad {#tube-top-toolbar}
+##### Rörets övre verktygsfält {#tube-top-toolbar}
 ![](/images/tool_tube_toolbar.webp)
-När ett rör är valt visas en verktygsrad längst upp i vyn med extra kontroller. Klicka på verktygsradens titel för att fälla ihop/fälla ut den, och klicka på pilen uppe till höger för att flytta verktygsraden till över- eller underkanten av vyn.
+När ett rör är markerat visas ett verktygsfält med extra kontroller högst upp i vyn. Klicka på fältets rubrik för att fälla ihop eller fälla ut det, och klicka på pilen uppe till höger för att flytta fältet till vyns över- eller underkant.
 
-* `Validate` - baka röret till vanliga polygoner så att det kan skulpteras.
-* `Edit` - visa kurvpunkterna så att de kan manipuleras
-* `Mirror` - lägg till en spegel-repeater som förälder till denna kurva
-* `Snap` - snäpp kurvpunkter till närliggande ytor
-* `Closed` - Koppla ihop början och slutet av kurvan till en slinga
-* `B-spline` - Växla mellan Catmull-rom och B-spline-interpolering.
-* `Cap` - Växla mellan lock i båda ändar av röret, eller bara början eller slutet, eller inga lock.
-* `Hole` - Lägg till tjocklek på röret och gör det till ett rör med hål. Växla mellan hål i båda ändar, bara i slutet, eller inga hål. 
-* `Radius` - Växla mellan en enhetlig radie, radie i början och slutet, eller radie per kurvpunkt. Dessa redigeras med orange handtag på kurvan.
-* `Twist` - Växla mellan ingen twist, en enhetlig twist, twist i början och slutet, eller twist per kurvpunkt. Dessa redigeras med rosa handtag på kurvan.
-* `Profile` - Växla mellan ingen profil (alltså cirkelprofil), en enhetlig profil, profil i början och slutet, eller profil per punkt.
-* `Profile edit` - Visa en profileditor. Den fungerar liknande verktygen för [Shape editing](#shape-editing), kan spara och ladda profilpresets, och har en växel för att låta dig redigera profilen i 3D-rymden.
-* `Spiral` - Växla en meny för att lägga till en spiralvridning på röret. Denna meny har alternativ för `Twist Angle`, `Offset`, `Scale` och `Angle offset`.
-* `X Divisions` - antalet indelningar runt röret, 4 indelningar ger t.ex. ett fyrkantigt rör. 
-* `Constant density` - när aktivt hålls polygonerna fyrkantiga. När inaktivt kan du ställa in `Y divisions` längs rörets längd.
-* `...` - Tube-inställningsmeny.
+* `Slutför` - Bakar röret till vanliga polygoner så att det kan skulpteras.
+* `Redigera` - Visar kurvpunkterna så att de kan flyttas
+* `Spegel` - Lägger till en spegel-repeater som förälder till kurvan
+* `Snap` - Fäster kurvpunkterna mot närliggande ytor
+* `Stängd` - Sammanfogar kurvans början och slut till en slinga
+* `B-spline` - Växlar mellan Catmull-Rom- och B-spline-interpolering.
+* `Hätta` - Växlar mellan hättor i båda ändarna av röret, bara i början eller slutet, eller inga hättor.
+* `Hål` - Ger röret tjocklek och gör det till en ledning. Växlar mellan hål i båda ändarna, bara i slutet, eller inga hål.
+* `Radie` - Växlar mellan en enhetlig radie, en radie i början och slutet, eller en radie per kurvpunkt. De redigeras med orange handtag på kurvan.
+* `Twist` - Växlar mellan ingen vridning, en enhetlig vridning, en vridning i början och slutet, eller en vridning per kurvpunkt. De redigeras med rosa handtag på kurvan.
+* `Profil` - Växlar mellan ingen profil (alltså en cirkulär profil), en enhetlig profil, en profil i början och slutet, eller en profil per punkt.
+* `Profilredigering` - Visar en profilredigerare. Den fungerar som verktygen för [Formredigering](#shape-editing), kan spara och läsa in profilförinställningar och har en knapp för att redigera profilen i 3d-rymden.
+* `Spiral` - Visar en meny för att ge röret en spiralvridning. Menyn har alternativen `Vridningsvinkel`, `Förskjutning`, `Skala` och `Vinkelförskjutning`.
+* `X-indelningar` - Antalet indelningar runt röret; med 4 indelningar blir röret till exempel fyrkantigt.
+* `Konstant densitet` - När det är aktivt hålls polygonerna kvadratiska. När det är avstängt kan du ställa in `Y-indelningar` längs rörets längd.
+* `...` - Menyn med rörinställningar.
 
-#### Växel för borttagning av kurvpunkt {#curve-point-delete-toggle}
+#### Växlingsknapp för att ta bort kurvpunkter {#curve-point-delete-toggle}
 
 ![](/images/tool_tube_delete_toggle.webp)
 
-Under verktygsraden finns en växlingsknapp för borttagning av kurvpunkter. När du drar en kurvpunkt nära en annan blir den röd, vilket indikerar att om du släpper tas punkten bort. Om du gör små ändringar och inte vill ta bort punkter inaktiverar denna knapp beteendet för borttagning av punkter.
+Under verktygsfältet finns en knapp för att ta bort kurvpunkter. När du drar en kurvpunkt nära en annan blir den röd, vilket betyder att punkten tas bort om du släpper. Gör du små justeringar och inte vill ta bort punkter kan du stänga av borttagningen med den här knappen.
 
 
 
 #### Rörinställningar {#tube-settings}
-* `Primitive` - knappar för att aktivera/inaktivera UV:n eller validera röret.
-* `Post subdivision` - en genväg för att ställa in multiresolution-nivån innan validering.
-* `Linear subdivision` - genväg för att ställa in linjär subdiv-nivå innan validering. 
-* `Division X` - samma som X Divisions i verktygsraden.
-* `Division Y` - samma som Y Divisions i verktygsraden.
-* `Curve (Repeater)` - konvertera röret till en [Curve Repeater](scene.md#curve)
+* `Primitiv` - Knappar för att aktivera eller inaktivera UV:er, eller för att slutföra röret.
+* `Postdelning` - En genväg för att ställa in multiresolution-nivån innan du slutför.
+* `Linjär indelning` - En genväg för att ställa in nivån för linjär indelning innan du slutför.
+* `Division X` - Samma som X-indelningar i verktygsfältet.
+* `Division Y` - Samma som Y-indelningar i verktygsfältet.
+* `Kurva (Repeater)` - Omvandlar röret till en [kurv-repeater](scene.md#curve)
 
 ::: tip
-Divisioner på 4 och Post subdivision på 3 ger släta, rundade rör, bra för maskar, ormar, kroppsdelar.
+Indelningar på 4 och Postdelning på 3 ger mjuka rör med rundade ändar, bra för maskar, ormar och kroppsdelar.
 :::
 
 
 ### ![](/icons/tool_lathe.webp) Svarv {#lathe}
-Skapa en rotationsyta genom att rita en kurva.
+Skapar en rotationsyta genom att du ritar en kurva.
 
-Detta verktyg är utmärkt för former som vaser, vinglas.
+Det här verktyget är perfekt för former som vaser och vinglas.
 
 ![](/videos/tool_lathe.mp4)
 
-#### Svarv – vänster verktygsrad {#lathe-left-toolbar}
+#### Svarvens vänstra verktygsfält {#lathe-left-toolbar}
 
 ![](/images/tool_lathe_left_toolbar.webp)
 
-Verktygsfältet till vänster har följande alternativ:
+Det vänstra verktygsfältet har följande alternativ:
 
-* `Sync` - Om den aktuella Lathe-formen är instansierad och det finns barnnoder till den som skiljer sig mellan instanserna, synkar detta dem igen.
-* `Fixed` - När aktiverat är lathe-centrumet fixerat och visas på skärmen. Denna mittlinje har redigeringspunkter som kan justeras. När inaktiverat uppdateras lathe-centrumet dynamiskt för att matcha början och slutet på den ritade kurvan.
-* `Curve` - Rita lathe-profilen i ett drag. Det har en liten undermeny:
-    * `Auto-validate` - När aktiverat skapas lathe-formen när pennan lyfts från skärmen. När inaktiverat kan en grön cirkel bredvid kurvan tryckas på för att skapa lathe-formen. Kurvan kan tas bort med knappen `Reset`.
-    * `Closed` - Koppla ihop början och slutet av kurvan till en slinga
-    * `Screen` - Endast tillgängligt när Auto-validate är inaktiverat. När aktivt är banan ”fastnålad” på skärmen, vilket gör att du kan flytta vyn och objektet medan banan ligger kvar. När inaktivt är banan en del av 3D-scenen och rör sig med kamera och objekt.
-    * `Accuracy` - Hur många kurvpunkter som används för att konvertera den ritade banan till ett rör. 0 % använder minsta antal punkter men missar små krökningsförändringar. 100 % är mycket exakt och använder många punkter.
-* `Path` - Skapa en lathe-form genom att klicka för att definiera kurvpunkter. Tryck på den gröna cirkeln för att validera banan. Det har en liten undermeny:
-    * `B-spline` - En alternativ kurvritningsmetod där kurvpunkter vanligtvis inte ligger direkt på kurvan, men kan ge mjukare resultat än standardmetoden.
-    * `Closed` - gör röret till en slinga
-    * `Screen` - När aktivt är banan ”fastnålad” på skärmen, vilket gör att du kan flytta vyn och objektet medan banan ligger kvar. När inaktivt är banan en del av 3D-scenen och rör sig med kamera och objekt.
+* `Synka` - Om den aktuella svarvformen är instansierad och dess barnnoder skiljer sig mellan instanserna synkroniseras de igen.
+* `Fast` - När det är aktiverat är svarvens centrum fast och visas på skärmen. Mittlinjen har redigeringspunkter som kan justeras. När det är avstängt uppdateras svarvens centrum dynamiskt efter början och slutet av den ritade kurvan.
+* `Visa` - Inget ritläge, så att du kan flytta kameran fritt.
+* `Kurva` - Rita svarvens profil i ett enda drag. Det har en liten utfällbar meny:
+    * `Redigera` - Vad som händer när du lyfter pennan, se [Markeringskontroller](#selection-controls): skapa svarvformen direkt, behåll kurvan redigerbar med en grön cirkel bredvid för att skapa den, eller `Håll` i slutet av penseldraget för att fortsätta redigera.
+    * `Stängd` - Sammanfogar kurvans början och slut till en slinga
+    * `Fortsätt rita` - Stanna kvar i verktyget efter att en svarvform har bekräftats, för att rita nästa.
+    * `Noggrannhet` - Hur många kurvpunkter som används för att omvandla den ritade banan till ett rör. 0 % använder minsta möjliga antal punkter, men missar små krökningar i banan. 100 % är mycket noggrant och använder många punkter.
+* `Bana` - Skapa en svarvform genom att klicka ut kurvpunkter. Tryck på den gröna cirkeln för att bekräfta banan. Det har en liten utfällbar meny:
+    * `B-spline` - Ett alternativt sätt att rita kurvor, där kurvpunkterna oftast inte ligger direkt på kurvan, men resultatet kan bli mjukare än med standardmetoden.
+    * `Stängd` - Gör röret till en slinga
+    * `Skärm` - När det är aktivt är banan 'fastnålad' på skärmen, så att du kan flytta vyn och objektet medan banan ligger kvar på sin plats. När det är inaktivt är banan en del av 3d-scenen och rör sig med kameran och objekten.
 
-#### Svarv – övre verktygsrad {#lathe-top-toolbar}
+#### Svarvens övre verktygsfält {#lathe-top-toolbar}
 ![](/images/tool_lathe_top_toolbar.webp)
 
-När en lathe-form är vald visas en verktygsrad längst upp i vyn med extra kontroller. Klicka på verktygsradens titel för att fälla ihop/fälla ut den, och klicka på pilen uppe till höger för att flytta verktygsraden till över- eller underkanten av vyn.
+När en svarvform är markerad visas ett verktygsfält med extra kontroller högst upp i vyn. Klicka på fältets rubrik för att fälla ihop eller fälla ut det, och klicka på pilen uppe till höger för att flytta fältet till vyns över- eller underkant.
 
-* `Validate` - baka lathe-formen till vanliga polygoner så att den kan skulpteras.
-* `Edit` - visa kurvpunkterna så att de kan manipuleras
-* `Mirror` - lägg till en spegel-repeater som förälder till denna lathe
-* `Snap` - snäpp kurvpunkter till närliggande ytor
-* `Stable` - När aktiverat föräldras kurvprofilen till lathe-centrumlinjen. När inaktiverat kan centrumlinjen redigeras utan att flytta kurvan, vilket möjliggör mer komplexa former.
-* `Focus` - Roterar vyn så att kurvprofilen ses helt platt mot kameran.
-* `Closed` - Koppla ihop början och slutet av kurvan till en slinga
-* `Cap` - Om Closed är inaktiverat, växla mellan lock i båda ändar av röret, eller bara början eller slutet, eller inga lock.
-* `Hole` - Lägg till tjocklek på lathe-formen och gör den till ett rör med hål. Växla mellan hål i båda ändar, bara i slutet, eller inga hål. 
-* `B-spline` - Växla mellan Catmull-rom och B-spline-interpolering.
-* `X Divisions` - antalet indelningar runt lathe-formen, 4 indelningar ger t.ex. en fyrkantig profil. 
-* `Constant density` - när aktivt hålls polygonerna fyrkantiga. När inaktivt kan du ställa in `Y divisions` längs lathe-formens längd.
-* `...` - Lathe-inställningsmeny.
+* `Slutför` - Bakar svarvformen till vanliga polygoner så att den kan skulpteras.
+* `Redigera` - Visar kurvpunkterna så att de kan flyttas
+* `Spegel` - Lägger till en spegel-repeater som förälder till svarvformen
+* `Snap` - Fäster kurvpunkterna mot närliggande ytor
+* `Stabil` - När det är aktiverat är kurvprofilen barn till svarvens mittlinje. När det är avstängt kan mittlinjen redigeras utan att kurvan flyttas, vilket ger möjlighet till mer komplexa former.
+* `Fokus` - Roterar vyn så att kurvprofilen ligger helt plant mot kameran.
+* `Stängd` - Sammanfogar kurvans början och slut till en slinga
+* `Hätta` - Om Stängd är avstängt: växlar mellan hättor i båda ändarna, bara i början eller slutet, eller inga hättor.
+* `Hål` - Ger svarvformen tjocklek och gör den till en ledning. Växlar mellan hål i båda ändarna, bara i slutet, eller inga hål.
+* `B-spline` - Växlar mellan Catmull-Rom- och B-spline-interpolering.
+* `X-indelningar` - Antalet indelningar runt svarvformen; med 4 indelningar får svarvformen till exempel en fyrkantig profil.
+* `Konstant densitet` - När det är aktivt hålls polygonerna kvadratiska. När det är avstängt kan du ställa in `Y-indelningar` längs formens längd.
+* `...` - Menyn med svarvinställningar.
 
-#### Svarvsinställningar {#lathe-settings}
-* `Primitive` - knappar för att aktivera/inaktivera UV:n eller validera röret.
-* `Post subdivision` - en genväg för att ställa in multiresolution-nivån innan validering.
-* `Linear subdivision` - genväg för att ställa in linjär subdiv-nivå innan validering. 
-* `Division X` - samma som X Divisions i verktygsraden.
-* `Division Y` - samma som Y Divisions i verktygsraden.
-* `Curve (Repeater)` - konvertera kurvprofilen till en [Curve Repeater](scene.md#curve)
+#### Svarvinställningar {#lathe-settings}
+* `Primitiv` - Knappar för att aktivera eller inaktivera UV:er, eller för att slutföra formen.
+* `Postdelning` - En genväg för att ställa in multiresolution-nivån innan du slutför.
+* `Linjär indelning` - En genväg för att ställa in nivån för linjär indelning innan du slutför.
+* `Division X` - Samma som X-indelningar i verktygsfältet.
+* `Division Y` - Samma som Y-indelningar i verktygsfältet.
+* `Kurva (Repeater)` - Omvandlar kurvprofilen till en [kurv-repeater](scene.md#curve)
 
 ### ![](/icons/tool_insert.webp) Infoga {#insert}
-Placera ett objekt på ytan av ett annat. I användning liknar det Stamp-verktyget, men för fulla 3D-former.
+Placerar ett objekt på ytan av ett annat. Det används ungefär som stämpelverktyget, men för hela 3d-former.
 
-Om du väljer en primitiv från verktygsfältet till vänster kommer ett klick-drag på en yta att placera en primitiv där du klickar, draget sätter storleken. När du slutar dra växlar Insert till läget [Transform](#transform).
+Om du väljer en grundform i det vänstra verktygsfältet placerar ett klick-och-drag på valfri yta grundformen där du klickar, och draget bestämmer storleken. När du har dragit klart byter Infoga till läget [Transformera](#transform).
 
-I Instance-läge skapar och glider dragandet en ny instans över ytan. Storleken dupliceras från den första formen, på så sätt kan du placera många instanser av samma storlek av ett objekt över andra ytor.
+I instansläget skapar ett drag en ny instans och låter den glida över ytan. Storleken kopieras från den första formen, så på det här sättet kan du placera många lika stora instanser av ett objekt på andra ytor.
 
-Du behöver inte bara infoga primitiver! Välj *vilken som helst* form i outlinern, om Insert är i Instance- eller Clone-läge kan du dra kopior av det valda objektet över andra ytor.
+Du är inte begränsad till grundformer! Markera *vilken* form som helst i scenträdet, och om Infoga är i läget Instans eller Klona kan du dra ut kopior av det markerade objektet över vilken annan yta som helst.
 
-Om ett objekt har en anpassad pivot används den som ankarpunkt. Se videon nedan.
+Om ett objekt har en egen pivot används den som förankringspunkt. Se videon nedan.
+
+Det vänstra verktygsfältet har också `Visa`, för att flytta kameran utan att infoga något, och `Synka`: när målobjektet är instansierat läggs det nya objektet till på alla andra instanser också.
 
 ![](/videos/tool_insert.mp4)
 
 ### ![](/icons/tool_transform.webp) Transformera {#transform}
-Flytta/rotera/skala en modell direkt med 1 och 2 fingrar, vanligtvis över ytan av ett annat objekt.
+Flytta, rotera och skala en modell direkt med 1 och 2 fingrar, oftast över ytan på ett annat objekt.
 
-Verktyget styrs med verktygsfältet till vänster och har 5 knappar:
+Det vänstra verktygsfältet har följande knappar:
 
-* `Snap` - snäpp modellen mot andra ytor
-* `Group` - Om det valda objektet har en kombination av objekt och instanser låter detta dig bestämma verktygets beteende.
-* `Move` - Drag med ett finger flyttar objektet. När Snap är aktivt glider objektet längs ytan under ditt finger.
-* `Rotate` - Drag med ett finger roterar objektet. När Snap är aktivt roterar det runt normalen på ytan under ditt finger.
-* `Scale` - Drag med ett finger skalar objektet.
+* `Klona` / `Instans` - Gör en kopia eller en instans av objektet, se verktygsfältet för [Gizmo](#left-menu-toolbar).
+* `Flytta` - Ett drag med ett finger flyttar objektet. När snap är aktivt glider objektet längs ytan under ditt finger.
+* `Rotera` - Ett drag med ett finger roterar objektet. När snap är aktivt roteras det runt normalen på ytan under ditt finger.
+* `Skala` - Ett drag med ett finger skalar objektet.
 
-Transform kan användas för att snabbt använda 2 av dessa lägen med två fingrar:
+Ett verktygsfält högst upp i vyn har:
 
-* Dra ett objekt för att placera det. Sluta röra ditt första finger, men lyft det inte från skärmen.
-* Rör vid skärmen med ditt andra finger medan du håller det första fingret nere. När det andra fingret dras skalar objektet.
-* Lyft det andra fingret och fortsätt dra det första fingret, objektet är i Move-läge igen.
+* `Mål` - Om verktyget flyttar objektet, dess grupp eller dess vertexer, precis som för [Gizmo](#left-menu-toolbar).
+* `Snap` - Fäster modellen mot andra ytor.
+* `Yta` / `Vertex` - Med `Snap`: fäster mot ytan, eller mot närmaste vertex.
 
-Du kan också byta det andra läget med en andra-finger-tryckgest:
+Med Transformera kan du snabbt använda 2 av lägena genom att använda 2 fingrar:
 
-* Dra objektet för att placera det, sluta röra men lyft inte fingret från skärmen.
-* Tryck med ditt andra finger medan du håller det första fingret nere
-* Verktyget växlar till rotationsläge. Dra ditt första finger för att ställa in rotationen.
-* Tryck med det andra fingret som tidigare, verktyget växlar tillbaka till Move-läge.
+* Dra ett objekt för att placera det. Sluta röra det första fingret, men lyft det inte från skärmen.
+* Sätt ned det andra fingret på skärmen medan det första är kvar. När du drar med det andra fingret skalas objektet.
+* Lyft det andra fingret och fortsätt dra med det första, så är objektet i flyttläge igen.
 
-Detta ger ett snabbt arbetsflöde för att klona objekt över ett annat, t.ex. stenar över ett landskap. Observera att Clone-knappen också finns i verktygsfältet till vänster för enkel åtkomst:
+Du kan också byta det andra läget med ett tryck med andra fingret:
 
-* Använd Transform-verktyget för att flytta en sten på plats.
-* Släpp, tryck på Clone-knappen
-* Flytta denna sten, rotera/skala efter behov
-* Släpp, tryck på Clone-knappen
-* Flytta denna sten, upprepa.
+* Dra objektet för att placera det, sluta röra fingret, men lyft det inte från skärmen.
+* Tryck med det andra fingret medan du håller kvar det första
+* Verktyget byter till rotationsläge. Dra med det första fingret för att ställa in rotationen.
+* Tryck med det andra fingret som förut, så byter verktyget tillbaka till flyttläge.
+
+Det ger ett snabbt arbetsflöde för att klona objekt över ett annat, till exempel stenar över ett landskap. Lägg märke till att klonknappen också finns i det vänstra verktygsfältet så att den är lätt att nå:
+
+* Använd Transformera för att flytta en sten på plats.
+* Släpp, tryck på klonknappen
+* Flytta den här stenen, rotera och skala efter behov
+* Släpp, tryck på klonknappen
+* Flytta den här stenen, och upprepa.
 
 ![](/videos/tool_transform.mp4)
 
 ### ![](/icons/tool_gizmo.webp) Gizmo {#gizmo}
-Detta verktyg låter dig flytta, rotera och skala objekt, samt ändra objektens pivoter.
+Med det här verktyget kan du flytta, rotera och skala objekt, och ändra deras pivot.
 
 Handtaget i vyn har följande funktioner:
 
-* `Move` - Dra på linjen+pil för att flytta i X/Y/Z. Dra på den persikofärgade pricken i mitten av gizmon för att översätta fritt i skärmrymden. Klicka på de röda, gröna, blå fyrkanterna för att översätta i X/Y/Z-planen.
-* `Rotate` - Dra på de röda/gröna/blå cirklarna för att rotera i X/Y/Z. Dra på sfären inom cirklarna för att rotera fritt.
-* `Scale`- Dra på de yttre röda/gröna/blå prickarna för att skala i X/Y/Z. Dra på de yttre röda/gröna/blå konerna för att skala i X/Y/Z-planen. Dra på den yttre persikofärgade cirkeln för att skala enhetligt.
+* `Flytta` - Dra i linjen med pilen för att flytta längs X/Y/Z. Dra i den persikofärgade punkten i mitten av gizmon för att flytta fritt i skärmplanet. Klicka på de röda, gröna och blå rutorna för att flytta i planen X/Y/Z.
+* `Rotera` - Dra i de röda, gröna och blå cirklarna för att rotera runt X/Y/Z. Dra i sfären innanför cirklarna för att rotera fritt.
+* `Skala` - Dra i de yttre röda, gröna och blå punkterna för att skala längs X/Y/Z. Dra i de yttre röda, gröna och blå konerna för att skala i planen X/Y/Z. Dra i den yttre persikofärgade cirkeln för att skala enhetligt.
 
 ![](/images/tool_gizmo.webp)
 
-#### Noder och hörnpunkter {#nodes-and-vertices}
+#### Noder och vertexer {#nodes-and-vertices}
 
-Varje objekt i Nomad består av en nod och verticer:
+Varje objekt i Nomad består av en nod och vertexer:
 
-* `Node` - Objektets ”handtag”, som lagrar dess förflyttning, rotation, skalning, kallat dess transformationsmatris.
-* `Vertices` - Punkterna som definierar objektets yta, de lagrar position och målningsinformation.
+* `Nod` - Objektets 'handtag', som lagrar dess förflyttning, rotation och skala, den så kallade transformationsmatrisen.
+* `Vertexer` - Punkterna som definierar objektets yta. De lagrar position och färginformation.
 
-Om du har en enkel låda gjord av 8 verticer kan du översätta den genom att ändra dess transformationsmatris eller genom att ändra vertexpositionerna. När du skulpterar vill du vanligtvis ändra verticerna, när du flyttar objekt med gizmon vill du vanligtvis ändra noden. Nomad låter dig göra båda. 
+Om du har en enkel låda med 8 vertexer kan du flytta den antingen genom att ändra dess transformationsmatris eller genom att ändra vertexernas positioner. När du skulpterar vill du oftast ändra vertexerna, och när du flyttar objekt med gizmon vill du oftast ändra noden. Nomad låter dig göra båda.
 
-#### Vänster menyverktygsrad {#left-menu-toolbar}
+#### Gizmons verktygsfält {#left-menu-toolbar}
 
-Verktygsfältet till vänster styr om gizmon ska arbeta på noden eller verticerna, samt andra funktioner:
+Det vänstra verktygsfältet har:
 
-* `Clone` - Gör en fristående kopia av det aktuella objektet, som kan dras bort med gizmon.
-* `Instance` - Gör en instanskopia av det aktuella objektet. Objekten är länkade, så skulpteringsändringar på ett objekt visas på alla instanser.
-* `Group/Object/Vertex/Auto` - Ställer in om gizmon ska påverka noden eller verticerna på ett objekt. Standardläget ”Auto” försöker göra en kvalificerad gissning. Om flera objekt är föräldrade tillsammans i en hierarki flyttar ”Object” bara det aktuella objektet, barnobjekt förblir stilla. Gizmon kan också ta hänsyn till maskning och symmetri.
-* `Pin` - Som standard flyttas gizmon till pivoten på det valda objektet. När Pin är aktiverat stannar gizmon där den är.
-* `Align` - Växla mellan att pivoten är anpassad till det aktuella objektet eller till världen.
-* `Snap rotation` - Aktivera att rotationsvärden snäpps till steg, snäppvärdet visas och kan redigeras när snäpp är aktivt.
-* `Snap translation` - Aktivera att förflyttningsvärden snäpps till steg, snäppvärdet visas och kan redigeras när snäpp är aktivt.
-* `Pivot` - När aktiverat kan gizmon flyttas och roteras utan att flytta objektet. Den har en extra meny som förklaras nedan.
+* `Klona` - Gör en fristående kopia av det aktuella objektet, som du kan dra iväg med gizmon.
+* `Instans` - Gör en instanskopia av det aktuella objektet. Objekten är länkade, så skulpteringsändringar på ett av dem syns på alla instanserna.
+* `Pivot` - (Låsikonen, i stället för knappen `Sub`) När det är aktiverat kan gizmon flyttas och roteras utan att objektet flyttas. Precis som `Sub` kan du hålla den för en snabb ändring, eller trycka på den för att låta den vara på.
 
-#### Pivot {#pivot}
-När pivot-läget är aktivt visas en meny för snabba pivotändringar:
+Ett verktygsfält högst upp i vyn har de övriga kontrollerna:
 
-**Reset** 
-* `Center` - Flytta pivoten till objektets centrum
-* `Bottom` - Flytta pivoten till objektets botten
-* `Align` - Återställ rotationerna så att de är anpassade till världen.
-* `Mask` - Flytta pivoten till centrum av den omaskerade regionen.
+* `Mål` - Avgör om gizmon påverkar objektets nod eller dess vertexer:
+    * `Auto` - Standard. Fungerar som `Grupp`, men om meshen har en mask eller symmetri är aktiverad fungerar det som `Vertice`.
+    * `Vertice` - Tillämpar transformationen på vertexerna, med hänsyn till mask och symmetri. Det fungerar inte på grundformer som inte är slutförda, och instanser påverkas också.
+    * `Objekt` - Flyttar bara det aktuella objektet och ignorerar symmetri och mask. Barnobjekt står kvar.
+    * `Grupp` - Flyttar objektet och resten av dess hierarki och ignorerar symmetri och mask.
+    * `Instans` - (Objekt och Grupp) Samma sak, men alla instanser av objektet flyttas med.
+* `Pivot` - Ett popup-fönster för att snabbt placera pivoten, förklaras [nedan](#pivot).
+* `Alla` / `Flytta` / `Rotera` / `Skala` - Visar alla gizmons handtag, eller bara de för att flytta, rotera eller skala.
+* `Fäst` - Som standard flyttas gizmon till det markerade objektets pivot. När Fäst är aktiverat stannar gizmon där den är.
+* `Rikta` - Växlar mellan att pivoten är riktad efter det aktuella objektet eller efter världen.
+* `Snap` (rotation) - Gör att rotationsvärdena fäster i steg. Stegvärdet visas och kan ändras när snap är aktivt. Alternativet `Magnet` får rotationen att fastna vid ett steg när den passerar det och sedan röra sig fritt igen; stäng av det för att hoppa från steg till steg.
+* `Snap` (förflyttning) - Gör att förflyttningsvärdena fäster i steg. Stegvärdet visas och kan ändras när snap är aktivt.
 
-**On Tap**
-* `None` - gör ingenting när objektet trycks på
-* `Normal` - Flytta och rotera pivoten för att anpassa den till där ytan trycks på
-* `First` - Flytta (men rotera inte) pivoten till där ytan trycks på
-* `Medial` - Flytta pivoten till mitten av objektet, under där ytan trycks på.
+#### ![](/icons/reset.webp) Pivot {#pivot}
+Med popup-fönstret `Pivot` i det övre verktygsfältet ändrar du snabbt pivoten. Pivotens position och orientering styr gizmon.
 
-#### Gizmo-inställningar {#gizmo-settings}
+**Återställ**
+* `Auto` - Objektets mitt, riktad efter dess transformation.
+* `Mitten` - Flyttar pivoten till objektets mitt och behåller orienteringen.
+* `Botten` - Flyttar pivoten till mitten av objektets undersida. Tryck igen för att använda världens omslutande låda i stället.
+* `Topp` - Flyttar pivoten till mitten av objektets ovansida. Tryck igen för att använda världens omslutande låda i stället.
+* `Objekt` - Flyttar pivoten till objektets origo, riktad efter dess transformation.
+* `Mask` - Flyttar pivoten till mitten av det omaskerade området. Tryck igen för att byta till det maskerade området.
+* `Rikta in` - Återställer rotationerna så att de är riktade efter världen och behåller positionen.
+* `Vy` - Riktar pivoten efter den aktuella vyn och behåller positionen. Den följer inte kameran efteråt.
+
+**Vid tryck (Pivot-läge)**
+
+Bara aktivt när `Pivot` är på. Det avgör vad som händer när du trycker en gång på meshens yta:
+* `Ingen` - Ingenting händer när du trycker på objektet
+* `Normal` - Flyttar och roterar pivoten så att den riktas efter ytan där du trycker
+* `Första` - Flyttar (men roterar inte) pivoten dit du trycker på ytan
+* `Medial` - Flyttar pivoten till mitten av objektet, under den punkt där du trycker på ytan.
+
+#### Inställningar för Gizmo {#gizmo-settings}
 
 ![](/images/tool_gizmo_settings.webp)
 
-##### Matris {#matrix}
-* ![](/icons/target.webp) `Move origin` - Flytta objektet så att dess pivot är i scenens centrum, kallat origo.
-* ![](/icons/bake.webp)  `Bake` - Frys objektet där det är och sätt translate/rotate-värden till 0, scale till 1.
-* ![](/icons/bake.webp) -> ![](/icons/tool_gizmo.webp) `Bake Pivot` - Gör så att matrisvärdena motsvarar var gizmo-handtaget är i världen.
-* ![](/icons/reset.webp) `Reset` - En genväg som sätter translate-värden till 0, rotate-värden till 0, scale till 1, vilket flyttar och roterar objektet.
-
-::: tip Bake vs bake to pivot
-Skapa en låda, välj Gizmo-verktyget, öppna och fäst inställningsmenyn. Som standard är translate och rotate 0, scale är 1.
-
-Aktivera pivot-läge, flytta handtaget till ena sidan, inaktivera pivot-läge. Pivoten har ändrats, men observera att translate-värdena fortfarande är 0. 
-
-Om du vill se var pivoten *egentligen* är, klicka på `Bake Pivot`. Nu uppdateras translate-värdena. Observera att lådan inte flyttas under denna operation, inte heller i pivot-läge.
-
-Flytta och rotera lådan någonstans, tryck sedan på `Move Origin`. Den flyttar objektet så att dess pivot är i världens centrum, men lämnar rotationen oförändrad.
-
-Klicka på `Reset`, så sätts rotationen också till 0.
-
-Flytta och rotera lådan igen, klicka denna gång på `Bake`. Pivoten stannar där den är, lådan stannar där den är, men translate- och rotate-värdena sätts till 0.
-
-Öva detta några gånger! Få en förståelse för att pivotvärdena är dolda, Nomad tar hand om det åt dig, men om du behöver sätta pivoten till verkliga positioner i rymden gör Bake Pivot det åt dig.
-
-:::
-
-* `Translation` - translate X-, Y-, Z-värden
-* `Rotation` - rotate X-, Y-, Z-värden
-* `Scale` - Den enhetliga skalningen om den är aktiverad, eller scale X, Y, Z om den är inaktiverad.
-* `Uniform scale` - Växla möjligheten att skala enhetligt eller oberoende på varje axel
+* `Kompakt` - Växlar gizmons layout så att de extra handtagen ligger utanför eller innanför rotationssfären
+* `Gizmostorlek` - Gizmons storlek
+* `Tjocklek` - Tjockleken på gizmons linjer
+* `Opacitet` - Gizmons opacitet
+* `Dölj vid interaktion` - Om gizmon ska döljas tillfälligt medan du drar i den
 
 -----
 
-* `Compact` - växla gizmo-layouten för att placera extra handtag utanför eller innanför rotationssfären
-* `Widget size` - storleken på gizmon
-* `Thickness` - storleken på linjerna på gizmon
-* `Opacity` - opaciteten på gizmon
-* `Hide on interaction` - växla om gizmon tillfälligt ska döljas när den dras
-
------
-
-* `Tangent roll threshold` - Styr hur rotationsgränssnittet beter sig när du drar på cirkelhandtagen för att rotera i X/Y/Z. Om detta värde är 0 fungerar rotation som en ratt, dra gizmon i cirklar. Om detta värde är 90 fungerar rotation som att dra i ett jojo-snöre; dra i en rak linje mot eller bort från där du först klickade. Värden mellan 0 och 90 gör en kombination av båda; under värdet blir det linjär rörelse, över värdet blir det cirkulär rörelse.
-* `Numerical input` - när aktiverat öppnas ett fönster för att ange ett exakt värde för den axel du trycker på med ett enkelt tryck på gizmon.
+* `Tröskel för tangentrullning` - Styr hur rotationen beter sig när du drar i cirkelhandtagen för att rotera runt X/Y/Z. Om värdet är 0 fungerar rotationen som en ratt: du drar runt i cirklar. Om värdet är 90 fungerar den som att dra i snöret på en jojo: du drar i en rak linje mot eller bort från där du först klickade. Värden mellan 0 och 90 kombinerar båda: under värdet blir det linjär rörelse, över värdet cirkelrörelse.
+* `Numerisk inmatning` - När det är aktiverat öppnar ett enkelt tryck på gizmon ett fönster där du kan skriva in ett exakt värde för den axel du tryckte på.
 
 ::: warning
-[Gizmo](#gizmo), [Translate](#translate), [Rotate](#rotate) och [Scale](#scale) använder sina egna symmetrikryssrutor!
+Verktygen [Gizmo](#gizmo) och [Transformera](#transform) har en egen kryssruta för symmetri, skild från symmetrin för skulptering!
 
-Som standard är denna symmetri avstängd.
+Som standard är den här symmetrin avstängd.
 :::
 
-Till vänster kan du flytta gizmo-pivoten, du kan se videon nedan i aktion.
-Detta är särskilt användbart för rotation, eftersom det inte ändrar något för förflyttning.
+##### Matris {#matrix}
+De exakta transformationsvärdena för objektet finns inte längre i Gizmons inställningar: de har flyttat till menyn `Transformera`, bland menyerna uppe till höger. Dess avsnitt `Matris` innehåller:
+
+* ![](/icons/target.webp) `Flytta ursprung` - Flyttar objektet så att dess pivot hamnar i scenens mitt, origo.
+* ![](/icons/bake.webp)  `Baka` - Fryser objektet där det är och sätter värdena för förflyttning och rotation till 0 och skalan till 1.
+* ![](/icons/bake.webp) -> ![](/icons/tool_gizmo.webp) `Pivot` - Bakar pivoten: matrisvärdena motsvarar då var gizmons handtag befinner sig i världen.
+* ![](/icons/reset.webp) `Återställ` - En genväg som sätter förflyttnings- och rotationsvärdena till 0 och skalan till 1, vilket flyttar och roterar objektet.
+
+::: tip Baka eller baka till pivot
+Skapa en låda, välj verktyget Gizmo och öppna och fäst menyn `Transformera`. Som standard är förflyttning och rotation 0 och skalan 1.
+
+Aktivera pivotläget, flytta handtaget åt ena sidan och stäng av pivotläget. Pivoten har ändrats, men lägg märke till att förflyttningsvärdena fortfarande är 0.
+
+Vill du se var pivoten *verkligen* är klickar du på knappen `Pivot` för att baka. Nu uppdateras förflyttningsvärdena. Lägg märke till att lådan inte rör sig under den här åtgärden, och inte heller i pivotläget.
+
+Flytta och rotera lådan någonstans och tryck sedan på `Flytta ursprung`. Objektet flyttas så att pivoten hamnar i världens mitt, men rotationen lämnas oförändrad.
+
+Klicka på `Återställ`, så sätts även rotationen till 0.
+
+Flytta och rotera lådan igen, och klicka den här gången på `Baka`. Pivoten stannar där den är, lådan stannar där den är, men förflyttnings- och rotationsvärdena sätts till 0.
+
+Öva på det här några gånger! Lär dig förstå att pivotvärdena är dolda och att Nomad sköter dem åt dig, men om du behöver placera pivoten på verkliga positioner i rymden gör baka pivot det åt dig.
+
+:::
+
+* `Förflyttning` - Förflyttningsvärdena för X, Y och Z
+* `Rotation` - Rotationsvärdena för X, Y och Z
+* `Skala` - Den enhetliga skalan om det är aktiverat, annars skalan för X, Y och Z.
+* `Skevhet` - Skevhetsvärdena (skjuvning) för X, Y och Z, visas bara när objektet redan är skevt
+* `Jamförd skala` - Växlar mellan att skala enhetligt eller oberoende längs varje axel
+
+Till vänster kan du flytta gizmons pivot, se videon nedan i praktiken.
+Det är särskilt användbart för rotation, eftersom det inte ändrar något för förflyttning.
 
 ![](/videos/tool_gizmo.mp4)
 
 ### ![](/icons/tool_faceGroup.webp) Ytgrupp {#facegroup}
 
-Facegrupper låter dig organisera ditt objekt i olika färgade ytor. Du kan använda dessa grupper på många sätt i Nomad:
+Med ytgrupper delar du upp ditt objekt i ytor med olika färger. Du kan använda grupperna på många sätt i Nomad:
 
-* En snabb markeringsmetod för masker
-* Dölj/visa delar av ditt objekt
+* Ett snabbt sätt att markera för masker
+* Dölja eller visa delar av ditt objekt
 * Organisera ditt objekt utan att behöva dela upp det i separata delar
-* Definiera UV-regioner
-* Styra quad remesher
-* Extra kontroll för verktyg som Smooth.
+* Definiera UV-områden
+* Styra quad remeshern
+* Extra kontroll för verktyg som Jämna ut.
 
-#### Ytgrupp – vänster verktygsrad {#facegroup-left-toolbar}
+#### Ytgruppens vänstra verktygsfält {#facegroup-left-toolbar}
 
-* `Patch ` - Visa tillgängliga facegrupper som patchar. Oanvända patchar kan tas bort. Tryck på en patch för att byta namn eller ändra dess färg. Plusikonen låter dig skapa nya patchar.
-* `Dot` - Måla på objektet för att definiera facegrupper. När ”+ Face Group” är aktiverat skapar varje nytt drag automatiskt en ny facegroup, användbart för att snabbt definiera regioner. Ett tryck fyller den valda regionen. Reglaget ställer in prickens radie.
-* `Relax` - Jämnar ut kanterna på facegrupper. Mycket användbart för att definiera rena kanter för quad remeshing eller för att definiera paneler för hård yta-modellering. Reglarna styr radie och intensitet för relax-operationen.
-* `Shape selector` - Skapa facegrupper med former istället för en pensel, via `Lock+Radius`, `Lasso`, `Polygon`, `Rect` och `Ellipse`. Se [Shape Selector](#shape-selector) för mer info.
-* `Auto-pick` - När aktiverat väljs patchen där draget börjar och applicerar den patchen för resten av draget. Mycket användbart för att städa upp facegroup-regioner; om en facegroup har sträckt sig för långt, aktivera Auto-pick, börja ett drag där facegroup-patchen är korrekt och dra upp till kanten för att tilldela rätt patch igen.
+* `Grupp` - Knappen visar den aktuella ytgruppen. Tryck på den för att visa de tillgängliga ytgrupperna som färgrutor och välja en. Tryck på en ruta för att byta namn på den, ändra dess färg eller ta bort den. `Ta bort oanvänd` tar bort rutor som inte används, och `Återställ` tar bort alla. Plusikonen skapar nya rutor.
+* `Punkt` - Måla på objektet för att definiera ytgrupper. När '+ Ytgrupp' är aktiverat skapar varje nytt penseldrag automatiskt en ny ytgrupp, praktiskt för att snabbt definiera områden. Ett tryck fyller det valda området. Reglaget anger punktens radie.
+* `Slappna av` - Jämnar ut ytgruppernas gränser. Mycket användbart för att få rena kanter inför quad-omnätning, eller för att definiera paneler vid hårdytemodellering. Reglagen styr radie och intensitet för avslappningen.
+* Former - Skapa ytgrupper med former i stället för pensel, via `Lås + radie`, `Lasso`, `Polygon`, `Linje`, `Rekt` och `Ellips`. Se [Markeringskontroller](#selection-controls) för mer information.
+* `Välj` - Sub-läget. När det är aktiverat väljs rutan där penseldraget börjar, och den används sedan under resten av draget. Mycket användbart för att städa upp ytgrupper: om en ytgrupp har spridit sig för långt aktiverar du `Välj`, börjar ett penseldrag där ytgruppen är rätt och drar fram till gränsen för att tilldela rätt ruta igen.
+
+#### Ytgruppens övre verktygsfält {#facegroup-top-toolbar}
+
+Ett verktygsfält högst upp i vyn har extra kontroller:
+
+* `Slappna av (Alla)` - Dra för att slappna av gränserna för alla ytgrupper på en gång.
+* `Fram` / `Synlig` / `Anslutna` - Samma filter för penseldrag som i verktygsfältet för [Mask](#mask).
+* `Från normaler` - Skapar ytgrupper utifrån vinkeln mellan ytor. Popup-fönstret har `Vinkel` och låter dig hoppa över små grupper utifrån deras `Antal ansikten` eller `Ytområde`, med `Förhandsgranska` innan du bekräftar.
+* `Från delar` - Skapar en ytgrupp för varje separat del.
+* `Från UV` - Skapar en ytgrupp för varje UV-ö.
+* `Från mask` - Skapar en ytgrupp av det maskerade området.
+* `På tryck` - Välj vad ett tryck på en ytgrupp gör: fyll den med den aktuella ytgruppen, dölj den, maskera den eller `Pose` (den tryckta gruppen och det som ligger bortom den avmaskeras, och gizmon hamnar i leden, med ett reglage för `Sudda` för masken). En andra knapp `På tryck`, tillgänglig när meshen har en mask, begränsar trycket till ytorna på samma sida av masken.
+* Knappar för `Rensa` till verktygen [Dölj](#hide) och [Mask](#mask), för att visa allt igen eller rensa masken utan att lämna verktyget.
+
+#### Inställningar för Ytgrupp {#facegroup-settings}
+
+Menyn `Verktyg` extraherar ytgrupper till nya objekt, med samma alternativ som `Extrahera` i [inställningarna för Mask](#mask-settings). Knappen `Ytgrupp` högst upp väljer vilka grupper som extraheras, och det finns ett extra reglage för `Mellanrum`: det flyttar varje gräns inåt längs ytan, och ett negativt värde flyttar den utåt så att delarna överlappar. För angränsande paneler använder du halva det önskade mellanrummet.
 
 ### ![](/icons/tool_hide.webp) Dölj {#hide}
-Dölj eller isolera delar av objektet. 
+Döljer eller isolerar delar av objektet.
 
-De primära lägena styrs från menyn till vänster:
+Huvudlägena styrs från det vänstra verktygsfältet:
 
-* `Dot` - Måla på objektet för att dölja delar av objektet.
-* `Shape selector` - Dölj med former istället för en pensel, via `Lasso`, `Polygon`, `Line`, `Rect` och `Ellipse`. Se [Shape Selector](#shape-selector) för mer info.
-* `Show` - invertera operationen, så att det valda läget visar istället för döljer delar av objektet.
+* `Punkt` - Måla på objektet för att dölja delar av det.
+* Former - Dölj med former i stället för pensel, via `Lasso`, `Polygon`, `Linje`, `Rekt` och `Ellips`. Se [Markeringskontroller](#selection-controls) för mer information.
+* `Visa` - Sub-läget. Inverterar åtgärden, så att det valda läget visar delar av objektet i stället för att dölja dem.
 
-En verktygsrad visas längst upp i vyn med extra kontroller:
+Ett verktygsfält med extra kontroller visas högst upp i vyn:
 
-* `Clear` - Återställ objektet, alla dolda delar visas igen.
-* `Invert` - Växla de dolda och synliga delarna.
-* `Facegroup` - Använd facegrupper för att snabbt dölja sektioner, att trycka på en facegroup döljer hela facegruppen.
-* `Mask` - Om en mask är aktiv döljer ett tryck på denna knapp den maskerade sektionen.
-* `Delete` - Ta bort den dolda delen av objektet
-* `Split` - Dela den dolda delen av objektet till en ny form.
+* `Rensa allt` - Återställer objekten så att alla dolda delar visas igen. När även andra objekt har dolda delar återställer en extra knapp `Rensa` bara de markerade objekten.
+* `Invertera` - Byter plats på dolda och synliga delar.
+* `Radera` - Tar bort den dolda delen av objektet
+* `Dela` - Delar av den dolda delen av objektet till en ny form.
+* `Fram` / `Synlig` / `Anslutna` - Samma filter för penseldrag som i verktygsfältet för [Mask](#mask).
+* `På tryck` (ytgrupp) - Använd ytgrupper för att snabbt dölja delar: ett tryck på en ytgrupp döljer hela ytgruppen.
+* `På tryck` (mask) - Om en mask är aktiv döljer ett tryck den maskerade delen.
 
 ### ![](/icons/tool_measure.webp) Mät {#measure}
-Dra för att mäta avståndet mellan 2 punkter.
+Dra för att mäta avståndet mellan 2 punkter. När mätningen är placerad kan du dra i ändpunkterna för att justera den.
+
+Det vänstra verktygsfältet väljer hur avståndet mäts:
+
+* `Linje` - En rak linje mellan de två punkterna.
+* `Yta` - Avståndet längs ytan, efter snittet genom de två punkterna sett från kameran.
+* `Tvärsnitt` - Omkretsen av tvärsnittet genom de två punkterna, som ett måttband runt en arm.
+* `Vertex` - Fäster ändpunkterna mot närmaste vertex.
+* `Gyllene snitt` - Visar en gul punkt vid mätningens gyllene snitt.
+* Knappen `?` visar volym, ytarea och storlek för de markerade objekten.
+
+### ![](/icons/tool_arrange.webp) Ordna {#arrange}
+Rada upp och placera ut flera objekt på en gång, som justeringsverktygen i ett 2d-designprogram. Markera objekten först; med ett enda objekt verkar Ordna i stället på dess separata delar. En låda ritas runt markeringen, och du drar i dess handtag för att skala den.
+
+Ett verktygsfält högst upp i vyn har kontrollerna:
+
+* `Värld` / `Skärm` - Ordna längs världens axlar, eller längs skärmen (vänster, höger, upp, ned).
+* `Rikta` - Riktar in objekten efter deras minimum, mitt eller maximum, på varje axel.
+* `Fördela` - Fördelar objekten jämnt mellan de två yttersta, efter deras minimum, mitt eller maximum. Det kräver minst 3 objekt.
+* `Linje` - Ställer objekten i en rad längs en axel.
+* `Rutnät` - Ställer objekten i ett rutnät, med ett antal objekt längs `X`, `Y` och `Z`.
+* `Cirkel` - (endast Värld) Ställer objekten i en cirkel runt axeln `X`, `Y` eller `Z`.
+* `Sfär` - (endast Värld) Fördelar objekten över en sfär.
+
+`Linje`, `Rutnät`, `Cirkel` och `Sfär` har alla ett reglage för `Mellanrum` som anger avståndet mellan objekten.
 
 ### ![](/icons/tool_remesh.webp) Quad Remesher {#quad-remesher}
 
 ![](/images/tool_quadremesher.webp)
 
-Detta verktyg konverterar det valda objektet till en ren quad-topologilayout, med kontroller för täthet, kantflöde, symmetri. 
+Det här verktyget omvandlar det markerade objektet till en ren topologi av fyrhörningar, med kontroller för täthet, kantflöde och symmetri.
 
 ::: tip
-Quad Remesher utvecklas av [Exoside](https://exoside.com/) för iOS och desktop. 
+Quad Remesher utvecklas av [Exoside](https://exoside.com/) för iOS och dator.
 
-För iOS är det ett köp i appen i Nomad, en engångsbetalning på 16 USD.
+På iOS är det ett köp inuti Nomad, en engångsbetalning på 16 USD.
 
-För desktop, köp en licens från [Exoside](https://exoside.com/quadremesher/quadremesher-buy/). Du kan köpa det bara för Nomad desktop eller en korslicens för alla stödda desktopappar.
+För dator köper du en licens från [Exoside](https://exoside.com/quadremesher/quadremesher-buy/). Du kan köpa den enbart för Nomad på dator, eller en korslicens för alla datorprogram som stöds.
 
-Om du redan äger Quad Remesher för en annan desktopapp kan du [köpa en uppgradering till alla plattformar till lägre kostnad.](https://exoside.com/quadremesher/quadremesher-upgrade/)
+Om du redan äger Quad Remesher för ett annat datorprogram kan du [köpa en uppgradering till alla plattformar till ett lägre pris.](https://exoside.com/quadremesher/quadremesher-upgrade/)
 
-Quad Remesher är inte tillgängligt för Android. Android kan använda den fria open source-lösningen ”Quad Remesh - Instant” som finns under Topology -> Misc-menyn, men förstå att dess funktionsuppsättning är mycket begränsad.
+Quad Remesher finns inte för Android. På Android kan du använda de fria omnätarna med öppen källkod under fliken [Quad-omnätning](topology.md#quad-remesh) i Topologi (AutoRemesher, Instant Mesh, QuadriFlow), men räkna med att deras funktioner är mer begränsade.
 :::
 
-When detta verktyg aktiveras för första gången kommer det att fråga om du vill aktivera det som ett köp i appen. När det är aktivt kommer de vänstra och övre verktygsraderna att aktiveras.
+Så länge Quad Remesher inte är upplåst börjar det övre verktygsfältet med en kundvagnsknapp i stället för omnätningsknapparna. På iOS öppnar den köpet i appen. På dator visar den `Lås upp (köp, återställ, testning)`, som kontrollerar din Exoside-licens (eller startar provperioden). När det är aktivt aktiveras det vänstra och det övre verktygsfältet.
 
-* `Dot` - Denna pensel ställer in måltätheten. Intensitet på 100 % målar rött, vilket använder dubbla målkvadtätheten i dessa områden. Intensitet på 0 % målar cyan, vilket använder halva målkvadtätheten i dessa områden. Intensitet på 50 % målar grått, vilket använder den förvalda målkvadtätheten.
-* `Smooth` - Jämna ut övergångarna mellan röd/grå/cyan-täthet.
-* `Curve` - Skissa kurvor på skulptens yta, quad remesher kommer att använda dessa som guider för kantflödet. Tryck på en kurva för att ta bort den.
-* `Path` - Rita banor på skulptens yta, quad remesher kommer att använda dessa som guider för kantflödet. Tryck på en bana för att ta bort den. 
-* `Rect` - Rita rektanglar på skulptens yta, quad remesher kommer att använda dessa som guider för kantflödet. Tryck på en bana för att ta bort den.
-* `Ellipse` - Rita ellipser på skulptens yta, quad remesher kommer att använda dessa som guider för kantflödet. Tryck på en bana för att ta bort den.
+* `Punkt` - Den här penseln anger måltätheten. Intensitet 100 % målar i rött, vilket ger dubbla måltätheten av fyrhörningar i de områdena. Intensitet 0 % målar i cyan, vilket ger halva måltätheten i de områdena. Intensitet 50 % målar i grått, vilket ger standardtätheten.
+* `Jämna ut` - Jämnar ut övergångarna mellan rött, grått och cyan.
+* `Smeta ut` - Smetar ut tätheten som du har målat.
+* `Kurva` - Skissa kurvor på skulpturens yta; quad remeshern använder dem som guider för kantflödet. Tryck på en kurva för att ta bort den.
+* `Bana` - Rita banor på skulpturens yta; quad remeshern använder dem som guider för kantflödet. Tryck på en bana för att ta bort den.
+* `Rekt` - Rita rektanglar på skulpturens yta; quad remeshern använder dem som guider för kantflödet. Tryck på en rektangel för att ta bort den.
+* `Ellips` - Rita ellipser på skulpturens yta; quad remeshern använder dem som guider för kantflödet. Tryck på en ellips för att ta bort den.
 
-#### Quad Remesher – övre verktygsrad {#quad-remesher-top-toolbar}
+#### Quad Remeshers övre verktygsfält {#quad-remesher-top-toolbar}
 ![](/images/tool_quadremesher_toolbar.webp)
 
-En verktygsrad visas högst upp i vyn med extra kontroller:
+Ett verktygsfält med extra kontroller visas högst upp i vyn:
 
 
-* `<Count>` - Klicka här för att starta quad remesher-processen, detta tal anger vad den målade quad-remesh-räkningen kommer att vara.
-* `Quads` - Ställ in målantalet quads genom att dra åt vänster och höger, eller tryck för att ange ett exakt tal. Observera att detta är mer en riktlinje än ett fast tal, de olika kontrollerna i quad remesher innebär ofta att resultatet inte exakt matchar detta mål.
-* `Half` - En genväg för att ställa in målantalet till hälften av nuvarande polygonantal.
-* `Same` - En genväg för att ställa in målantalet till nuvarande polygonantal.
-* `Guides` - anger det totala antalet guider, eller tryck för att ta bort alla guider.
-* `Density X` - tryck för att ta bort all täthetsmålning.
-* `Density (painting)` - växla för att använda eller ignorera täthetsmålning.
-* `Face Group` - växla för att använda eller ignorera facegroups för att styra quad remesher.
-* `Relax` - växla för att automatiskt relaxa facegroup-gränser under quad-remeshing. Om du redan har relaxat/jämnat ut dina facegroup-gränser, inaktivera detta alternativ.
-* `Relax Slider` - En genvägsreglage för att relaxa facegroup-gränserna.
-* `Hard Edges` - växla för att försöka bibehålla hårda kanter.
-* `Reproject Vertex` - växla för att reprojicera den nya layouten till indata-meshen.
-* `Symmetry` - Växla för att aktivera ett symmetriskt resultat. Observera att symmetri alltid beräknas runt världens x-axel, så se till att din modell är vid origo om du förväntar dig ett symmetriskt resultat.
-* `...` - Quadremesher-inställningsmeny. 
+* `<Antal>` - Klicka här för att starta omnätningen. Talet visar hur många fyrhörningar omnätningen siktar på.
+* `Quads` - Ställ in målantalet fyrhörningar genom att dra åt vänster och höger, eller tryck för att skriva in ett exakt tal. Observera att det är en riktlinje snarare än ett fast tal: de olika kontrollerna i quad remeshern gör ofta att resultatet inte exakt motsvarar målet.
+* `Halv` - En genväg som sätter målantalet till hälften av det nuvarande antalet polygoner.
+* `Samma` - En genväg som sätter målantalet till det nuvarande antalet polygoner.
+* `Guider` - Växlar mellan att använda eller ignorera guiderna. När det finns guider visar en andra knapp `Guider` hur många de är; tryck på den för att ta bort alla.
+* `Täthet` - Växlar mellan att använda eller ignorera den målade tätheten. När det finns målad täthet tar en andra knapp `Täthet` bort den.
+* `Ytgrupp` - Växlar mellan att använda eller ignorera ytgrupper för att styra quad remeshern.
+* `Slappna av` - Växlar automatisk avslappning av ytgruppernas gränser under omnätningen. Om du redan har slappnat av eller jämnat ut gränserna kan du stänga av det här alternativet.
+* `Slappna av-reglage` - Ett genvägsreglage för att slappna av ytgruppernas gränser.
+* `Hårda kanter` - Försöker behålla hårda kanter.
+* `Reprojektera vertex` - Reprojicerar den nya layouten på den ursprungliga meshen.
+* `Sym` - Ger ett symmetriskt resultat. Observera att symmetrin alltid beräknas kring världens x-axel, så se till att modellen ligger i origo om du förväntar dig ett symmetriskt resultat.
+* `...` - Popup-fönster med inställningar för Quad Remesher.
 
-#### Quad Remesher – inställningsmeny {#quad-remesher-settings-menu}
+#### Inställningsmeny för Quad Remesher {#quad-remesher-settings-menu}
 
-De flesta av dessa inställningar finns i den övre verktygsraden.
+Knappen `...` i slutet av det övre verktygsfältet öppnar ett popup-fönster med resten av inställningarna:
 
-* `<Count>, Half, Same` - Samma som knapparna Remesh, Half, Same i den övre verktygsraden.
-* `Target Quads` - Samma som knappen `Quads` i den övre verktygsraden
-* `Adaptive quad count` - växla för att använda mindre quads i områden med hög krökning och större quads i områden med lägre krökning.
-* `Adaptive size` - Ställ in mängden adaptivitet. 100 % tillåter maximal adaptiv storlek, vid 0 % blir quads enhetliga.
-* `Auto-Detect Hard Edges` - växla för att anpassa quad-remesh-layouten för att bättre följa skarpa ytor.
-* `Density (painting)` - Samma som knappen `Density (painting)` i den övre verktygsraden
-* `Reproject Vertex` - växla för att reprojicera den nya layouten till indata-meshen.
-* `Face Group` - Samma som knappen `Face Group` i den övre verktygsraden
-* `Relax Slider` - En genvägsreglage för att relaxa facegroup-gränserna.
+* `Adaptiv Kvadrattal` - Använder mindre fyrhörningar i områden med stark krökning och större i områden med svag krökning.
+* `Adaptiv storlek` - Anger hur mycket anpassning som görs. 100 % tillåter maximal anpassning av storleken, vid 0 % blir fyrhörningarna enhetliga.
 
 ::: tip
 
-Ett recept för att få en bra quad-remesh med minimala artefakter:
+Ett recept för en bra quad-omnätning med minimalt med artefakter:
 
-* Facegruppa meshen för att definiera ditt ideala quad-flöde.
-* Facegroup relax för att få släta facegroup-gränser.
-* Decimate. Detta säkerställer att du inte har tunna eller förvrängda ytor på facegroup-kanten. I decimate-inställningarna, se till att facegroup är aktiverat. Detta gör att triangelkanter följer dina facegroup-kanter exakt. 
+* Dela in meshen i ytgrupper som visar ditt ideala flöde av fyrhörningar.
+* Slappna av ytgrupperna för att få mjuka gränser.
+* Decimera. Då slipper du tunna eller förvrängda ytor längs ytgruppernas kanter. Se till att ytgrupp är aktiverat i inställningarna för decimering, så följer triangelkanterna exakt dina ytgruppskanter.
 
-I quad-remesh-alternativen, se till att relax är inaktiverat (eftersom du redan har relaxat meshen) och du bör få bra resultat.
+Se till att Slappna av är avstängt i alternativen för quad-omnätning (du har ju redan slappnat av meshen), så bör du få bra resultat.
 
 :::
 
-### ![](/icons/tool_select.webp) Markera {#select}
-Använd form-lägena för att välja objekt i scenen. `Unselect` tar bort objekt från markeringen.
+### ![](/icons/tool_select.webp) Välj {#select}
+Använd formlägena (`Lasso`, `Rekt`, `Ellips`) för att markera objekt i scenen. `Avmarkera` tar bort objekt från markeringen.
 
-### ![](/icons/tool_view.webp) Visa {#view}
-Detta "verktyg" gör inget särskilt, det är helt enkelt ett sätt att visa modellen utan att ändra din scen.
+### ![](/icons/tool_lattice.webp) Galler {#lattice}
+Deformerar ett objekt med en bur av kontrollpunkter runt det, i stället för att skulptera dess yta. Genom att flytta några få punkter i buren böjer, vrider eller sträcker du hela objektet mjukt, perfekt för att justera proportioner eller posera utan att röra topologin. Deformationen förblir aktiv tills du slutför den.
+
+Det vänstra verktygsfältet väljer hur du redigerar buren:
+
+* `Punkter` - Dra direkt i burens punkter och kanter. Tryck på en punkt för att markera den.
+* `Visa` - Flytta kameran utan att redigera buren.
+* `Slappna av` - En pensel som slappnar av burpunkterna under den.
+* `Elastisk` - En pensel som drar i burpunkterna med en elastisk avtoning, som verktyget [Elastisk](#elastic).
+* `Gizmo` - Flytta, rotera och skala de markerade punkterna med gizmon. Dess sub-läge är `Pivot`.
+* `Lasso` - Markera burpunkter med en lasso; `Avmarkera` tar bort dem från markeringen.
+
+Formens popup-fönster har också `Mjuk radie`, som gör att drag i en punkt även flyttar grannpunkterna (i rutnätsceller, 0 flyttar bara markeringen), och `Invertera urval`.
+
+Ett verktygsfält högst upp i vyn har:
+
+* `Slutför` - Tillämpar deformationen på objektet och tar bort buren.
+* `Återställ` - Tar bort buren och dess deformation.
+* `Opacitet` - Burens opacitet på skärmen.
+* `Spegelsidan` - Med symmetri: växlar vilken spegelsida av buren som visas och kan väljas, med en egen `Opacitet` för den dolda sidan.
+* `Rutnätspunkter` - Vilka punkter i buren som kan flyttas: hela rutnätet, ytan och mittpunkten, eller bara ytan.
+* `Styvhet` - Hur stel deformationen är, från mjuk (0 %) till stel och linjär (100 %).
+* `Avtoning` - Hur långt utanför buren deformationen avtar.
+* `Rikta` - Riktar buren efter objektet eller efter världen.
+* `X`, `Y`, `Z` `Indelning` - Antalet celler i buren längs varje axel. Lägesknappen bredvid anger hur de hänger ihop: `x = y = z` använder samma antal på alla 3 axlar, `Enhetlig` behåller samma avstånd mellan punkterna på alla axlar, och med `Anpassad` ställer du in varje axel fritt.
+
+#### Inställningar för Galler {#lattice-settings}
+* `Rullhastighet` - Samma rullningsalternativ som för verktyget [Flytta](#move-settings), används när du drar i burpunkter.
+
+### ![](/icons/tool_view.webp) Vy {#view}
+Det här "verktyget" gör inget särskilt, det är helt enkelt ett sätt att titta på modellen utan att ändra något i scenen.
+
+#### Inställningar för Vy {#view-settings}
+Medan verktyget Vy är aktivt åsidosätter de här inställningarna vissa visningsalternativ, så att du får en ren vy när du presenterar eller granskar din modell:
+
+* `Primitiv (Redigera)`, `Repeater (Redigera)`, `Ljus (Redigera)`, `Kamera (Redigera)` - Tillåter att grundformer, repeaters, ljus och kameror redigeras i vyn medan du är i verktyget Vy. Stäng av dem för att inte flytta deras handtag av misstag.
+* `Kameragenväg (alltid)` - Visar alltid kamerans genvägsknappar i vyn.
+* `Visa mask`, `Kontur`, `Mörka ej valda objekt` - Visar masken, konturen runt de markerade objekten, eller gör de omarkerade objekten mörkare. `Auto` följer din vanliga inställning, `Nej` och `Ja` tvingar fram den.
+* `Visa linje (Symmetri)`, `Visa plan (Symmetri)` - Visar symmetrilinjen eller symmetriplanet, med samma val `Auto`, `Nej` och `Ja`.
+* `Ikon` - Visar ikonerna för grupper, repeaters, ljus, kameror och hierarkin i vyn, med samma val.
 
 
-## Snabbmeny för verktygslåda {#toolbox-context-menu}
+## Verktygslådans snabbmeny {#toolbox-context-menu}
 
 ![](/images/tools_context_menu.webp)
 
-Ett högerklick eller ett långt tryck på ett verktyg i verktygslådan visar en snabbmeny. Denna meny har följande alternativ:
+Högerklicka eller håll fingret på ett verktyg i verktygslådan för att öppna en snabbmeny. Menyn har följande alternativ:
 
-* `Save` - spara alla ändringar du gjort i verktyget
-* `Clone` - duplicera verktyget till en ny verktygsgenväg
-* `Last save` - återgå till den senast sparade versionen av verktyget
-* `Icon` - ändra ikonen för verktyget
-* `Reset` - återställ verktyget till dess standardinställningar
+* `Spara` - Sparar ändringarna du har gjort i verktyget
+* `Klona` - Duplicerar verktyget till en ny verktygsgenväg
+* `Senaste sparning` - Återgår till verktygets senast sparade version
+* `Ikon` - Byter verktygets ikon. När verktyget har en egen ikon tar den här knappen bort den.
+* `→ ...` - Flyttar verktyget till en annan mapp i verktygslådan, eller till en ny
+* `Återställ` - Återställer verktyget till standardinställningarna
+
+Klonade verktyg har också `Byt namn` och `Radera`.

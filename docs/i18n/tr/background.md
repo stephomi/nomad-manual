@@ -1,43 +1,58 @@
 # ![](/icons/image.webp) Arka Plan {#background}
 
-Bu menü, Nomad'ın arka plan rengini ve kullanılacak referans görsellerini kontrol eder.
+Bu menü, Nomad'ın arka plan rengini ve kullanmak istediğiniz referans görüntülerini yönetir.
 
 ![](/images/background_overview.webp)
 
-## Arka Plan {#type}
+## Tür {#type}
 ![](/images/background_selector.webp)
 
-Görünüm penceresi arka planı için üç seçenek vardır.
+Görünümün arka planı için üç seçenek vardır.
 
-* `Environment` - [Shading](shading) bölümünde seçilen ortam haritasını gösterir. Bu, Blur ve Exposure (parlaklık) kontrolleriyle daha da ayarlanabilir.
-* `Color` - Seçebileceğiniz düz bir renk
-* `Gradient` - Yukarıdan aşağıya bir renk geçişi. Factor kaydırıcısı, gradyanın orta noktasını belirlemenizi sağlar.  
+* `Ortam` - [Gölgelendirme](shading.md) menüsünde seçilen ortam haritasını gösterir. `Bulanıklık` ve `Pozlandırma` (parlaklık) kaydırıcılarıyla daha da ayarlanabilir. 
+* `Renk` - İstediğiniz düz bir renk
+* `Gradyanı` - İki renk arasında bir geçiş. `Faktör` kaydırıcısı, gradyanın orta noktasını kaydırmanızı sağlar.  
 
-## Referans Görsel {#reference}
+### Gradyan türü {#gradient-type}
+`Gradyanı` seçiliyken şeklini belirleyin:
+* `Doğrusal` - Düz bir gradyan, yönünü `Açı` kaydırıcısı belirler.
+* `Radyal` - Ekranın ortasından başlayan dairesel bir gradyan.
+* `Gökyüzü` - Dünya ufkuna sabitlenmiş bir gradyan; yukarı ve aşağı baktıkça kamerayı takip eder.
+
+Her rengin bir sıfırlama düğmesi ve ekrandan renk almak için bir renk seçicisi vardır.
+
+## ![](/icons/lock.webp) Kamera kilidi ile senkronize et {#sync-on-camera-lock}
+Kamera [Yaslama küpü](settings.md#snap-cube) ile kilitlendiğinde, referans görüntüsü kameranın hareketini takip eder ve böylece heykelinizle hizalı kalır.
+
+* `Yatışa izin ver (İztopu)` - Kamera kilidinden çıktığınızda kameranın yatmasına izin verir.
+* `Kilidi açınca görünümü sıfırla` - Kamera kilidinden çıktığınızda görünümü sıfırlar.
+
+## Referans Görüntüsü {#reference}
 
 ![](/images/background_reference.webp)
 
-Arka plana referans olarak kullanılmak üzere seçtiğiniz bir görsel ekleyebilirsiniz.
-Örneğin ekranın köşesine taşımak isterseniz, konumunu ve ölçeğini değiştirebilirsiniz.
+Arka plana, referans olarak kullanmak üzere istediğiniz bir görüntüyü ekleyebilirsiniz. Eklemek için `İçe aktar...` düğmesine dokunun, ardından göstermek için `Referans görüntüsü` kutusunu işaretleyin.
+Konumunu ve ölçeğini değiştirebilirsiniz, örneğin görüntüyü ekranın bir köşesine taşımak isterseniz.
 
 ### ![](/icons/tool_transform.webp) Dönüştür {#transform}
 
-Bu düğme, referans görselini etkileşimli olarak yerleştirmenizi sağlar. Referans görselini yerine oturtmak için 2 parmağınızı kullanarak kaydırın, ölçekleyin, döndürün. Son yerleşim aşağıdaki kaydırıcılara yansıtılır:
+Bu düğme, referans görüntüsünü etkileşimli olarak yerleştirmenizi sağlar. Görüntüyü kaydırmak, ölçeklemek ve döndürmek için 2 parmağınızı kullanın. `Ayarları sıfırla`, görüntüyü varsayılan yerine geri koyar. Son yerleşim aşağıdaki kaydırıcılara yansır:
 
-* `Overlay` - %0'da referans görseli her zaman nesnelerinizin arkasında, %100'de ise önündedir.
-* `Opacity` - Görselin ne kadar saydam olduğu.
-* `Position` - Görselin X ve Y konumu.
-* `Rotation` - Görselin dönüşü.
-* `Scale` - Görselin ölçeği.
+* `Kaplama` - %0'da referans görüntüsü her zaman nesnelerinizin arkasında kalır, %100'de önlerindedir. 
+* `Opaklık` - Görüntünün ne kadar saydam olduğu.
+* `Süreç sonrası işlemler` - Süreç sonrası efektlerini referans görüntüsüne de uygular. Orijinal renkleri korumak için kapatın.
+* `X Konumu` / `Y Konumu` - Görüntünün X ve Y konumu.
+* `Ölçek` - Görüntünün ölçeği.
+* `Döndürme` - Görüntünün dönüşü.
 
 
 ::: tip
 
-Kameralar ve referans görselleri bağlantılıdır. 
+Kameralar ve referans görüntüleri birbirine bağlıdır. 
 
-Bu, referans görselinizi yontunuzla hizalayacak şekilde ayarlarsanız, [Camera menüsü](camera) üzerinden bir kamera oluşturduğunuzda, referans görselinin konum, dönüş ve ölçek bilgilerinin de kamera ile birlikte saklanacağı anlamına gelir. Referans görselini kapatabilir, başka bir görünüme dönebilirsiniz. Kameradan tekrar baktığınızda, referans görseli kullandığınız ayarlarla birlikte yeniden etkinleştirilir.
+Yani referans görüntünüzü heykelinizle hizalayıp ardından [Kamera menüsünden](camera.md) bir kamera oluşturursanız, referans görüntüsünün konumu, dönüşü ve ölçeği de kamerayla birlikte saklanır. Referans görüntüsünü kapatıp görünümü başka bir açıya çevirebilirsiniz. Kameradan tekrar baktığınızda, referans görüntüsü kullandığınız ayarlarla yeniden etkinleşir.
 
-Bu, farklı kameralar için farklı görseller seçmeyi bile kapsar!
+Hatta farklı kameralar için farklı görüntüler bile seçebilirsiniz!
 
  ![](/videos/reference_camera.mp4)
 

@@ -1,87 +1,97 @@
 # ![](/icons/material.webp) Material {#material}
 
-Den här menyn låter dig ändra materialet på det aktuella objektet, renderings­egenskaperna för objektet/materialet och tilldela texturer till materialet.
+I den här menyn kan du ändra det aktuella objektets material, objektets och materialets renderingsegenskaper, och koppla texturer till materialet.
 
 ![](/images/material_overview.webp)
 
-Material definierar hur ett objekt ser ut genom att styra hur det reagerar på ljus och på andra objekt. Utseendet på ett objekt styrs av dessa egenskaper:
+Material bestämmer hur ett objekt ser ut, genom att styra hur det reagerar på ljus och på andra objekt. Ett objekts utseende styrs av de här egenskaperna:
 
-* `Material type`
-* `Color`
-* `Roughness`
-* `Metalness`
-* `Opacity`
-* `Reflectance`
-* `Emissive/unlit`
+* `Materialtyp`
+* `Färg`
+* `Grovhet`
+* `Metallitet`
+* `Opacitet`
+* `Reflekterande förmåga`
+* `Emissiv/obelyst`
 
-Kombinationer av dessa egenskaper kan uppnå ett brett spektrum av resultat, från fotorealistiskt till tecknat till experimentellt.
+Med kombinationer av de här egenskaperna kan du få fram en stor variation av resultat, från fotorealistiskt till tecknat till experimentellt.
 
-Färg, roughness, metalness och opacity kan målas, se [Vertex Paint options](painting.md) för mer information.
+Färg, grovhet, metallitet och opacitet kan målas, se [alternativen för vertexmålning](painting.md) för mer information.
 
-Material type, reflectance, emssive/unlit är materialegenskaper som förklaras nedan.
+Materialtyp, reflekterande förmåga och emissiv/obelyst är materialegenskaper som förklaras nedan.
 
-Kopiera/klistra in-knapparna högst upp i den här menyn låter dig kopiera material från ett objekt till ett annat.
+Med knapparna `Kopiera` och `Klistra in` högst upp i menyn kan du kopiera material från ett objekt till ett annat.
 
-Observera att Nomads renderer är en realtidsrenderer; även om den är kraftfull prioriterar den hastighet framför exakthet för vissa effekter. 
+Observera att Nomads renderare är en realtidsrenderare: den är kraftfull, men prioriterar hastighet framför precision för vissa effekter.
 
 ## Materialtyper {#material-types}
 
 ![](/images/material_types.webp)
 
-Nomads materialtyper är Opaque, Subsurface, Blending, Additive, Refraction, Dithering, Shadow Catcher.
+Nomads materialtyper är Oopakt, Subyta, Blandning, Additiv, Brytning, Dithering och Skuggfångare.
 
-### ![](/icons/material_opaque.webp) Ogenomskinlig {#opaque}
-Standardläget som behandlar ytor som ett enkelt material som stöder målad färg, roughness, metalness, opacity.
+### ![](/icons/material_opaque.webp) Oopakt {#opaque}
+Standardläget, som behandlar ytor som ett enkelt material med stöd för målad färg, grovhet, metallitet och opacitet. Målad opacitet, en opacitetstextur eller färgtexturens alfakanal gör fortfarande objektet genomskinligt, med hjälp av dithering. Bara huvudreglaget för opacitet ignoreras.
 
-### ![](/icons/material_subsurface.webp) Under-yta {#subsurface}
-Detta läge kan simulera material som låter ljus suddas ut och spridas internt, som hud, vax, jade.
+### ![](/icons/material_subsurface.webp) Subyta {#subsurface}
+Det här läget kan simulera material där ljuset sprids och suddas ut inuti materialet, som hud, vax och jade.
 
-För bästa resultat, växla till PBR-shading-läge och använd minst en riktad ljuskälla eller spot­ljus, helst med en svag omgivningsbelysning.
+Det kräver skuggningsläget PBR. För bästa resultat, använd minst ett riktat ljus eller en spotlight, helst med en dämpad miljö.
 
-`Depth` styr hur långt ljuset sprids från framsidan, in under ytan och sedan ut genom framsidan igen. Detta har effekten att mjuka upp hårda skuggor och sudda ut ytdetaljer.
+Färgrutan ställer in färgen på det spridda ljuset.
 
-`Translucency` styr hur ljus sprids från framsidan till baksidan av en form, som ljusspridning genom undersidan av ett löv eller när öron är starkt bakbelysta. 
+`Djup` styr hur långt ljuset sprids från framsidan, in under ytan och sedan ut genom framsidan igen. Det mjukar upp hårda skuggor och suddar ut detaljer på ytan.
+
+`Translucens` styr hur ljuset sprids från framsidan till baksidan av en form, som när ljus tränger igenom undersidan av ett löv, eller när öron har starkt motljus. Du behöver ett ljus som kastar skuggor för att se det.
 
 ### ![](/icons/material_blending.webp) Blandning {#blending}
 
-Liknar Opaque, men stöder opacitetsreglaget för att låta materialet blandas mellan solitt och transparent. Detta är ett enkelt enskilt reglage för opacitet, jämfört med den målningsbara opaciteten som stöds av det opaka materialet. 
+Liknar Oopakt, men stöder opacitetsreglaget så att materialet kan blandas mellan solitt och genomskinligt. Det är ett enkelt enda reglage för opaciteten, till skillnad från den målningsbara opacitet som det opaka materialet stöder.
 
 ::: warning
-Blending-läget kan orsaka flimrande och hopp i komplexa eller skärande former.
+Läget Blandning kan orsaka flimmer och objekt som hoppar fram i komplexa eller korsande former.
 :::
 
 ### ![](/icons/material_additive.webp) Additiv {#additive}
-Du kan göra ditt mesh halvtransparent med detta material. Det liknar blending-materialet, men medan blending blandas med sin omgivning kommer additive alltid att vara ljusare än objekten bakom, bra för ljusa effekter som ljusstrålar, eld, explosioner.
+Med det här materialet kan du göra ditt nät halvgenomskinligt. Det liknar materialet Blandning, men medan Blandning blandas med omgivningen blir Additiv alltid ljusare än objekten bakom, bra för ljusa effekter som ljusstrålar, eld och explosioner.
 
-Du kan ställa in ett opacitetsvärde högre än 1, vilket innebär att objektet blir ljusare.  
-Det kan vara användbart om du vill använda [bloom](postprocess.md#bloom) och `threshold parameter` för att bara få detta objekt att glöda som ett emissivt objekt.
+Du kan ställa in ett opacitetsvärde högre än 1, vilket gör objektet ljusare.  
+Det kan vara användbart om du vill använda [bloom](postprocess.md#bloom) och `tröskelparametern` för att bara få det här objektet att lysa, som ett emissivt objekt.
 
-Detta läge tenderar att ha färre artefakter än [Blending](#blending) (ordningsoberoende transparens).
+Det här läget brukar ge färre artefakter än [Blandning](#blending) (ordningsoberoende transparens).
 
 ### ![](/icons/material_refraction.webp) Brytning {#refraction}
-Detta läge kan användas för att simulera glasmaterial. På grund av realtidsbegränsningar är själv­brytning och flerskiktsbrytning något begränsad.
+Det här läget kan användas för att simulera glas. Det kräver skuggningsläget PBR. På grund av begränsningarna i realtid är självbrytning och brytning i flera lager något begränsade.
 
-Roughness-målningen på modellen påverkar hur suddig brytningen är.
-Som standard har varje objekt som skapas i Nomad en roughness på ungefär 25 %, därför kommer brytningen inte att vara perfekt utan lite suddig.
-Du kan använda knappen `paint glossy` för att måla om din modell med roughness och metalness 0 (färgerna påverkas inte).
+Modellens målade grovhet påverkar hur suddig brytningen blir.
+Som standard har varje objekt som skapas i Nomad en grovhet runt 25%, så brytningen blir inte perfekt utan lite suddig.
+Du kan använda knappen `Glansmåla` för att måla om modellen med en grovhet och metallitet på 0 (färgerna påverkas inte).
 
-Det finns två olika roughness i spel, den som styr hur suddig reflektionen är på ytan, och den andra som styr insidan (brytningen).  
-Eftersom det bara finns en målningsbar roughness-kanal i Nomad kommer dock både inre och yttre roughness att dela samma värde.  
-För att få olika värden (till exempel en klubba med skarp yta men suddig insida) använder du reglagen `Surface glossiness` och `Interior roughness` för att åsidosätta den målade roughnessen.
+Det finns 2 olika grovheter inblandade: den ena styr hur suddig reflektionen på ytan är, och den andra styr insidan (brytningen).  
+Men eftersom det bara finns en målad grovhetskanal i Nomad delar både insidans och utsidans grovhet samma värde.  
+För att få olika värden (till exempel en klubba med skarp yta men suddig insida) använder du reglagen `Yta` och `Inre` under `Åsidosätt grovhetsvärde` för att åsidosätta den målade grovheten.
 
 ![](/videos/refraction.mp4)
 
+#### Brytningsindex {#index-of-refraction}
+Hur mycket ljuset böjs av när det går in i objektet. Högre värden böjer det mer, som en tjock lins.
+
+#### Absorption {#absorption}
+Simulerar att ljuset absorberas när det färdas genom volymen, tonat av färgrutan, där `Faktor` ställer in styrkan. Tunna delar blir ljusare eftersom de släpper igenom mer ljus, medan tjocka områden blir mörkare. Bara en uppskattning av objektets tjocklek används, så effekten beror mycket på formen.
+
 
 ### ![](/icons/material_dithering.webp) Dithering {#dithering}
-Gör objektet halvtransparent genom att kasta bort vissa pixlar på ett slumpmässigt sätt.
+Gör objektet halvgenomskinligt genom att slumpmässigt hoppa över vissa pixlar.
 
 ### ![](/icons/material_shadow_catcher.webp) Skuggfångare {#shadow-catcher}
 
-Gör objektet osynligt och ta bara emot skuggor. Användbart för att kombinera Nomad-renderingar med andra bilder. 
+Gör objektet osynligt så att det bara tar emot skuggor från ljusen. Användbart för att kombinera renderingar från nomad med andra bilder, oftast på ett plan. Färgrutan ställer in skuggans färg.
+
+Det måste finnas ett ljus som kastar skuggor i scenen, annars gör skuggfångaren ingenting. Knapparna `Metallitet → 0%` och `Metallitet → 100%` målar om objektet: helt metalliskt kan skuggfångaren även spegla scenen när efterbehandlingen [Reflektion (SSR)](postprocess.md#reflection-ssr) är aktiverad.
 
 ::: tip
 
-Mer information om transparens och blending-lägen finns på https://support.fab.com/s/article/Transparency-Opacity
+Mer information om transparens och blandningslägen finns på https://support.fab.com/s/article/Transparency-Opacity
 
 :::
 
@@ -89,142 +99,171 @@ Mer information om transparens och blending-lägen finns på https://support.fab
 
 ![](/images/material_controls.webp)
 
-### Alltid ej belyst {#always-unlit}
-Om aktiverat kommer objektet att ignorera PBR och Matcap och helt enkelt visa sin färgmålning utan skuggning.
-Observera att om du använder [Additive](#additive) kan du måla transparens direkt genom att använda svart färg.
+### ![](/icons/circle_fill.webp) Alltid utan belysning {#always-unlit}
+Om det är aktiverat ignorerar objektet PBR och Matcap och visar bara sin målade färg utan skuggning.
+Observera att om du använder [Additiv](#additive) kan du måla transparens direkt med svart färg.
 
 ### Opacitet {#opacity}
-Hur solid eller opak ett objekt kommer att se ut; 100 % är solitt, 0 % är transparent. Du kan också måla opacitet för finare kontroll.
+Hur solitt eller ogenomskinligt ett objekt ser ut; 100% är solitt, 0% är genomskinligt. Reglaget visas för typerna Blandning, Additiv, Dithering och Skuggfångare. Du kan också måla opacitet för finare kontroll.
 
-### Reflektans {#reflectance}
-Styr mängden reflektion som materialet får för icke-metalliska material. För det mesta bör standardvärdet användas (vilket motsvarar standard 4 % reflekterat ljus vid normal vinkel), men kan ökas för att förstärka reflektioner och högdagrar i till exempel en karaktärs ögon.
+### Förbrytningspass {#pre-refract-pass}
+Bara Blandning och Additiv. Ritar det här genomskinliga objektet före brytningspasset. Användbart när ett brytande objekt står framför andra genomskinliga ytor.
 
-### Inverterad culling {#inverse-culling}
-Vänd normalerna på en yta. Vanligtvis inte nödvändigt, men kan användas om en modell verkar vara ut och in, eller i kombination med `Two sided` avstängt, kan användas för att göra interiörer där väggen närmast kameran alltid är dold.
+### Reflekterande förmåga {#reflectance}
+Styr hur mycket reflektion materialet får för icke-metalliska material. För det mesta bör standardvärdet användas (som motsvarar standardvärdet 4% reflekterat ljus vid vinkelrät infallsvinkel), men det kan ökas för att förstärka reflektioner och högdagrar i en figurs ögon, till exempel. Det kräver skuggningsläget PBR.
 
-### Mjuk skuggning {#smooth-shading}
-Se [global option](settings.md#smooth-shading).  
+### ![](/icons/culling.webp) Omvänd rensning {#inverse-culling}
+Vänder normalerna på en yta. Behövs oftast inte, men kan användas om en modell ser ut att vara ut-och-in, eller tillsammans med avaktiverat `Två sidor` för att göra interiörer där väggen närmast kameran alltid är dold.
+
+Följande alternativ kan ställas in på `Auto`, `Nej` eller `Ja`. Med `Auto` visar pilen vilket värde som faktiskt används.
+
+### ![](/icons/sphere_smooth.webp) Jämn skuggning {#smooth-shading}
+Se det [globala alternativet](settings.md#smooth-shading).  
 Värdet `Auto` använder det globala alternativet.
 
-### Tvåsidig {#two-sided}
-Se [global option](settings.md#two-sided).  
+### ![](/icons/culling.webp) Två sidor {#two-sided}
+Ytorna syns från båda sidor. Se det [globala alternativet](settings.md#two-sided-quick).  
 Värdet `Auto` använder det globala alternativet.
 
-### Färgad baksida {#coloured-backface}
-Se [global option](settings#two-sided).
+### ![](/icons/culling.webp) Färgad baksida {#coloured-backface}
+Se det [globala alternativet](settings.md#two-sided-quick).
 Värdet `Auto` använder det globala alternativet.
 
-### Kastar skuggor {#casts-shadows}
-För närvarande är `Auto` samma som `On`.
-Transparenta objekt kastar också skuggor (i ett dithering-mönster för att efterlikna blandade skuggor).  
-Se till att inaktivera skuggkastning om du har ett stort objekt i din scen som inte behöver kasta skuggor (till exempel ett stort golv).
+### ![](/icons/shadow_cast.webp) Kasta skuggor {#casts-shadows}
+Genomskinliga objekt kastar också skuggor (i ett ditheringmönster som efterliknar blandade skuggor).  
+Se till att stänga av skuggkastning om du har ett stort objekt i scenen som inte behöver kasta skuggor (till exempel ett stort golv).
 
-### Tar emot skuggor {#recieve-shadows}
-För närvarande är `Auto` samma som `On`.
+### ![](/icons/shadow_receive.webp) Ta emot skuggor {#recieve-shadows}
+Om skuggor från andra objekt ritas på det här objektet.
 
-### Trådram {#wireframe}
-Se [global option](settings.md#wireframe).  
+### ![](/icons/wireframe.webp) Wireframe {#wireframe}
+Se det [globala alternativet](settings.md#wireframe).  
 Värdet `Auto` använder det globala alternativet.
+
+### ![](/icons/trash.webp) Återställ normaler {#reset-normals}
+Visas bara när ett importerat objekt har egna normaler (till exempel med `Behåll topologi`). Det tar bort dem, så att skuggningen använder normalerna som räknas ut från ytan.
 
 
 ## Texturer {#textures}
 
 ![](/images/material_textures.webp)
 
-Om ett objekt har UV:n kan texturer appliceras på materialet utöver vertex color/roughness/metalness/opacity. Vanligtvis är dessa resultatet av en texture bake, men bilder skapade utanför Nomad kan också användas.
+Om ett objekt har UV kan texturer kopplas till materialet utöver vertexfärg/grovhet/metallitet/opacitet. Oftast är de resultatet av en texturbakning, men bilder som skapats utanför Nomad kan också användas. `UV:✓` eller `UV:✗` bredvid rubriken visar om objektet har UV.
 
-Texturer kan appliceras på
+Texturer kan kopplas till
 
-* Color
+* Färg
 * Normal
-* Roughness
-* Metalness
-* Opacity
-* Emissive
+* Grovhet
+* Metallitet
+* Opacitet
+* Förskjutning
+* Emissiv
 
-Att klicka på en texturplats öppnar en väljare. När en textur har tilldelats en materialplats kommer ett nytt klick att öppna en texturpanel:
+En rad `Ocklusion` visas också när ett importerat objekt har en ocklusionstextur, men Nomad använder den inte.
 
-### Texturpanelalternativ {#texture-panel-options}
+Reglaget på varje rad ställer in hur starkt dess textur tillämpas, från inte alls till fullt. `Färg` och `Emissiv` har också en färgruta som tonar texturen, och `Emissiv` ställer in hur starkt den lyser.
+
+`Förskjutning` ställer in hur långt förskjutningskartan trycker ut ytan. Dess knapp `Tillämpa` flyttar vertexarna med förskjutningen och tar sedan bort kartan. Resultatet hamnar i det aktiva lagret.
+
+Palettknappen bredvid rubriken öppnar materialförinställningarna i menyn [målning](painting.md): tryck på en för att kopiera dess texturer till objektet. På datorn synkroniseras importerade bilder med originalfilen när du växlar tillbaka till Nomad, och en synkroniseringsknapp bredvid rubriken laddar om dem.
+
+Om du klickar på en texturplats öppnas en väljare. När en textur har kopplats till en materialplats öppnar ett nytt klick en texturpanel:
+
+### Alternativ i texturpanelen {#texture-panel-options}
 
 ![](/images/material_texture_panel.webp)
 
-### Öppna {#open}
-Välj en annan textur
+Panelen visar bildens storlek och en förhandsvisning av texturen.
 
-### Ingen {#none}
+### ![](/icons/open.webp) Öppna {#open}
+Välj en annan textur. På datorn visar `Utforska` bildfilen i din filhanterare.
+
+### ![](/icons/circle_cross.webp) Ingen {#none}
 Ta bort texturen
 
 ### Opacitet {#texture-opacity}
 
-Om bilden har en alfakanal låter detta dig använda den för Opacity eller ignorera den.
+Bara färgtextur. Om bilden har en alfakanal kan du här använda den för opaciteten, eller ignorera den.
 
-### ![](/icons/link.webp) Kedja/Länk-ikon {#chainlink-icon}
+### Normalformat {#normal-format}
+Bara normaltextur. Normalkartor finns i två varianter, `OpenGL (+Y)` och `DirectX (-Y)`. Om detaljerna ser inverterade ut, prova den andra.
 
-Länksymbolen i följande avsnitt, när den är aktiverad, innebär att vilka alternativ som än används kommer att delas med de andra texturerna (color, normal, roughness, metalness, opacity, emissive) som också har sin länksymbol aktiverad. 
+### Höjd {#displacement-height}
+Bara förskjutningstextur.
+* `Lokal` - Höjden växer och krymper med objektets skala.
+* `Värld` - Höjden förblir densamma oavsett objektets skala.
 
-Detta låter dig säkerställa att om du har linjerade texturer kommer de att förbli linjerade även när du ändrar parametrar eller projektionstyper.
+### Multiplicera {#multiply}
+Bara texturer för grovhet, metallitet och opacitet. Multiplicerar texturens värden. När den inte är 100% visas värdet på texturplatsen.
+
+### ![](/icons/link.webp) Kedje-/länkikon {#chainlink-icon}
+
+När länkikonen i följande avsnitt är aktiverad delas de alternativ du använder med de andra texturerna (färg, normal, grovhet, metallitet, opacitet, emissiv) som också har sin länkikon aktiverad.
+
+På så sätt kan du se till att texturer som är i linje med varandra förblir det, även när du ändrar parametrar eller projektionstyper.
 
 
 ### Projektion {#projection}
 ![](/images/material_projection.webp)
 
-Ställ in hur texturen ska appliceras på objektet.
+Ställ in hur texturen ska läggas på objektet.
 
-* `Auto` - Om objektet har uv:n, UV, annars Triplanar
-* `UV` - Använd meshens uv-koordinater för att applicera texturen. Om mesh och textur kommer från utanför Nomad, eller ska exporteras från Nomad för att användas någon annanstans, är UV det korrekta alternativet.
-* `Triplanar` - Projektera texturen längs X-, Y-, Z-axlarna och blanda sömmarna. 
+* `Auto` - UV om objektet har UV, annars Triplanar
+* `UV` - Använd nätets UV-koordinater för att lägga på texturen. Om nätet och texturen kommer från andra program än Nomad, eller ska exporteras från Nomad för att användas någon annanstans, är UV rätt alternativ.
+* `Triplanar` - Projicera texturen längs X-, Y- och Z-axlarna och blanda skarvarna.
 
 ### Triplanar {#triplanar}
 ![](/images/material_triplanar.webp)
 
-Triplanära projektioner är ett kraftfullt men enkelt sätt att applicera texturer på objekt.
+Triplanara projektioner är ett kraftfullt men enkelt sätt att lägga texturer på objekt.
 
-Triplanar är som att ha 6 videoprojektorer alla med samma bild, som lyser på fram-, bak-, vänster-, höger-, topp- och botten­sidan av ditt objekt.
+Triplanar är som att ha 6 projektorer med samma bild, som lyser på objektets framsida, baksida, vänster och höger sida, ovansida och undersida.
 
-Detta kan sedan bakas in i UV:n eller vertexfärger vid behov.
+Det kan sedan bakas in i UV eller vertexfärger vid behov.
 
 
 ![](/images/material_triplanar_example.webp)
 
 #### Metod {#method}
 
-* `Local` - Projektionen kommer att röra sig med objektets transform
-* `World` - Projektionen förblir fast, att flytta objektet kommer att skjuta det genom projektionen.
+* `Lokal` - Projektionen följer med objektets transformation
+* `Värld` - Projektionerna står still: om du flyttar objektet glider det genom projektionen.
 
 #### Hårdhet {#hardness}
 
-Hur projektionerna blandas. 100 % gör ingen blandning och kanterna på projektionerna blir skarpa. 0 % blandar kanterna över en bred vinkel. Standard är 90 %, tillräckligt med blandning för att dölja kanterna och låta resten av projektionerna förbli skarpa.
+Hur projektionerna blandas. 100% blandar inte alls, och projektionernas kanter blir skarpa. 0% blandar kanterna över en bred vinkel. Standardvärdet är 90%, tillräckligt mycket blandning för att dölja kanterna medan resten av projektionerna förblir skarpa.
 
 ### Enhetlig {#uniform}
 
-När ikryssad används samma hardness för alla projektioner. När den inte är ikryssad visas extra hardness-kontroller för X-, Y-, Z-projektioner.
+När den är ikryssad används samma hårdhet för alla projektioner. När den inte är ikryssad visas extra hårdhetskontroller för projektionerna X, Y och Z.
 
 
 ### Parameter {#parameter}
 ![](/images/material_parameter.webp)
 
 #### Filtrering {#filtering}
-Texturfiltreringsmetoden som ska användas, `Auto` är standard, metoderna är `Nearest`, `Linear`, `Mipmap`. Nearest gör ingen filtrering, så texturer kan få kantiga artefakter när de visas på nära håll. Linear och Mipmap gör bättre filtrering, så texturer verkar suddiga snarare än kantiga på nära håll.
+Vilken metod för texturfiltrering som ska användas. `Auto` är standard, metoderna är `Närmaste`, `Linjär` och `Mipmap`. Närmaste filtrerar inte alls, så texturer kan få taggiga artefakter när man ser dem på nära håll. Linjär och Mipmap filtrerar bättre, så texturer ser suddiga i stället för taggiga ut på nära håll.
 
-#### Tile-X {#tiling-x}
-Om parametern Scale är större än 1, vilket gör texturen mindre än objektets UV:n, hur texturen ska upprepas längs X-axeln. `None` betyder inga upprepningar. `Repeat` gör kopior av texturen. `Mirror` gör kopior av texturen där varannan kopia är spegelvänd, vilket kan hjälpa till att dölja upprepningsartefakter.
+#### Tile - X {#tiling-x}
+Om parametern Skala är större än 1, så att texturen blir mindre än objektets UV, bestämmer det här hur texturen upprepas längs X-axeln. `Ingen` betyder inga upprepningar. `Upprepa` gör kopior av texturen. `Spegel` gör kopior av texturen där varannan kopia är spegelvänd, vilket kan hjälpa till att dölja upprepningsartefakter.
 
-#### Tile-Y {#tiling-y}
-Samma som Tiling-X, men för Y-axeln.
+#### Tile - Y {#tiling-y}
+Samma som Tile - X, men för Y-axeln.
 
 ### Transformera {#transform}
 ![](/images/material_transform.webp)
 
-Extra 2D-transformationer som appliceras på texturen i UV-utrymme. Återställningsknappen återställer till standardvärden, länksymbolen (när andra texturer än color är valda) länkar eller avlänkar transformen så att den blir densamma som color-texturens.
+Extra 2d-transformationer som tillämpas på texturen i UV-rummet. Återställningsknappen återställer standardvärdena, och kedjeikonen (när andra texturer än färg är valda) länkar eller avlänkar transformationen så att den är densamma som färgtexturens.
 
-#### Translatering {#translation}
-X- och Y-förskjutningen för texturen
+#### Förflyttning {#translation}
+Texturens förskjutning i X och Y
 
 #### Rotation {#rotation}
-Rotationen på texturen
+Texturens rotation
 
-#### Skalning {#scale}
-Skalan på texturen, större tal gör texturen mindre på objektet, använd reglagen Tiling-X och Tiling-Y för att styra vad som händer.
+#### Skala {#scale}
+Texturens skala: större tal gör texturen mindre på objektet. Använd alternativen Tile - X och Tile - Y för att styra vad som händer.
 
-### Enhetlig skalning {#uniform-scale}
-När den är avstängd visar Nomad separata kontroller för Scale-X och Scale-Y.
+### Jamförd skala {#uniform-scale}
+När den är avstängd visar Nomad separata kontroller för Skala-X och Skala-Y.

@@ -4,28 +4,30 @@ The settings menu contains many options to control the appearance and behavior o
 
 ![](/images/settings_overview.webp)
 
+The row of buttons at the top of the menu jumps straight to a section: `Cursor`, `Indicator`, `Wire`, `Grid`, `Two-sided`, `Outline`, `Highlight`, `Snap cube`, `Stats`, `Handles`, `Shape`, `Repeaters` and `Multires`.
+
 ## Display settings {#display-settings}
 This section contains quick launch shortcuts for most of the settings further down this menu.
 
 ![](/images/settings_display_settings.webp)
 
-### Smooth Shading {#smooth-shading}
+### ![](/icons/sphere_smooth.webp) Smooth shading {#smooth-shading}
 Toggle smooth and faceted shading. When faceted the polygons are shaded independently, so you can see the underlying topology.
 It can be useful to see faceted shading during the sculpting stage, then change to smooth shading for rendering.
 
 Disabling Smooth Shading improves performance a little bit.
 
-### Outline {#outline-quick}
+### ![](/icons/outline.webp) Outline {#outline-quick}
 Toggle an outline on your current selection.
 
 This is useful to get visual feedback on your current selected mesh(es) in case [Darken Unselected](#darken-unselected-objects) is disabled.
 
 From a performance point of view, using [Darken Unselected](#darken-unselected-objects) is much better than using the outline solution.
 
-### Grid {#grid-quick}
+### ![](/icons/grid.webp) Grid {#grid-quick}
 Toggle a background grid, useful for understanding object placement and scale.
 
-### Two sided {#two-sided-quick}
+### ![](/icons/culling.webp) Two-sided {#two-sided-quick}
 Toggle two sided polygon display. All faces point in a certain direction.
 Faces that are considered *backface* are the ones that point "away" from the camera viewpoint.
 
@@ -34,62 +36,75 @@ If you move the camera inside the sphere you'll then see the backface of these f
 
 Most of the time you shouldn't see the backface part of faces, so coloring them can help you detect potential issues or incorrect topology.
 
-Disabling `two sided` rendering can improve rendering performance a bit.
+Disabling `Two-sided` rendering can improve rendering performance a bit.
 
 
-### Wireframe {#wireframe-quick}
+### ![](/icons/wireframe.webp) Wireframe {#wireframe-quick}
 Toggle a wireframe overlay. 
 
 Note that enabling wireframe will lower performance.
 
-### Snap cube {#snap-cube-quick}
+### ![](/icons/snap_cube.webp) Snap cube {#snap-cube-quick}
 Toggle a helper icon in the corner of the scene, useful to orient yourself in space and quickly switch between front/back/left/right/top/bottom views.
 
-### Show Painting {#show-painting}
-Toggle paint display. The default paint used is a white non-metallic material, at 25% roughness.
+### ![](/icons/palette.webp) Show paint {#show-painting}
+Toggle paint display. When it's off, objects are shown with a white non-metallic material, at 25% roughness, instead of their painting.
 
-### Use Hide {#use-hide}
+### ![](/icons/tool_hide.webp) Use Hide {#use-hide}
 Toggle the hide mode. When turned off it is still there, just deactivated. This button is disabled if you are currently using the hide tool.
 
-### Show Mask {#show-mask}
+### ![](/icons/shield.webp) Show mask {#show-mask}
 Toggle the mask mode. When turned off it is still there, just deactivated. Press this button again to re-enable it.
 
 If you need to hide the mask AND still have it be active, use the mask color below and set it to white. Remember to change it back to a gray when you're done!
 
 Note that this button is disabled if you are currently using a mask tool. 
 
-### Mask -> Opaque {#mask-opaque}
-Mask -> opaque will ignore transparent vertices for masked mask. This is only relevant for vertex and texture opacity, face hidden by “hide” will still be hidden.
+### ![](/icons/shield.webp) Mask → Opaque {#mask-opaque}
+`Mask → Opaque` will ignore transparent vertices for masked mask. This is only relevant for vertex and texture opacity, face hidden by “hide” will still be hidden. It is only available while `Show mask` is on.
 
-### Highlight {#highlight-quick}
-Toggle the selection highlight flash. When selecting objects, temporarily flash the selected object hot pink for 500 miliseconds. The color and length of the flash can be customised below.
+### ![](/icons/bang.webp) Highlight {#highlight-quick}
+Toggle the selection highlight flash. When selecting objects, temporarily flash the selected object for 500 milliseconds. The color and length of the flash can be customised below.
 
-### Stats {#stats-quick}
+### ![](/icons/list.webp) Stats {#stats-quick}
 Toggle the status display text in the 3d viewport. This displays information about your system memory, total scene vertex count, and the current selection vertex count.
 
 ----- 
 
-### Darken Unselected objects {#darken-unselected-objects}
+### ![](/icons/cube.webp) Darken unselected objects {#darken-unselected-objects}
 The objects that are not selected will be darkened so that the current selection can stand out.
 
-### Mask {#mask}
+### ![](/icons/shield.webp) Mask {#mask}
 The colour used for masking, by default a mid gray, multiplied against your object color. Set this to white to make the mask invisible, but remember to change it back to to a gray when done!
 
 ## ![](/icons/cursor.webp) Cursor {#cursor}
 
-### Show circle while sculpting {#show-circle-while-sculpting}
-Continue to show the brush radius when sculpting.
+### Circle {#show-circle-while-sculpting}
+When to show the brush radius circle:
+
+* `Auto` - show the circle, but hide it while you sculpt.
+* `No` - never show the circle.
+* `Yes` - always show the circle, even while sculpting.
 
 ### Show small dot {#show-small-dot}
 Display a dot at the center of the brush stroke while sculpting, or when the camera pivot is changed.
 
 ### Show rope stabilizer {#show-rope-stabilizer}
-Draw a line to indicate the rope length when lazy rope stablizer is active in stroke settings.
+Draw a line to indicate the rope length when [Lazy rope stabilizer](stroke.md#lazy-rope-stabilizer) is active in stroke settings.
+
+### Show roll hint {#show-roll-hint}
+Show the roll direction guide while you use a roll key binding.
+
+### ![](/icons/radius.webp) Size {#dot-size}
+The size of the small dot.
+
+### Colors {#cursor-colors}
+The cursor changes color depending on what you are doing: `Sculpt`, `Background` (hovering the background), `Mask`, `Smooth`, `Camera` and `Radius`. Each color can be customized here.
 
 ## ![](/icons/cursor.webp) Indicator {#indicator}
 ![](/images/settings_indicator.webp)
 
-Display visual indicator(s) for tutorials and screen captures.
+Display visual indicator(s) for tutorials and screen captures. Set it to `Yes` to turn it on (on iOS there is also an `Auto` option).
 
 The `Finger`, `Stylus` and `Mouse` buttons will enable displaying an icon when that type of input is detected.
 
@@ -97,7 +112,7 @@ The `Finger`, `Stylus` and `Mouse` buttons will enable displaying an icon when t
 The color of the indicator.
 
 ### Size/Icon/Circle {#indicator-shape}
-Controls to adjust the size of the indicator and shapes within the indicator.
+Controls to adjust the size of the indicator, and the opacity of the icon and circle within the indicator.
 
 ## ![](/icons/wireframe.webp) Wireframe {#wireframe}
 ![](/images/settings_wireframe.webp)
@@ -119,27 +134,33 @@ Set the color and opacity for wireframe.
 ![](/images/settings_grid.webp)
 Activate the grid.
 
-### Color {#grid-color}
-Set the grid color and opacity.
-
 ### Snap {#snap}
-Enable snapping for curve based tools to the grid.
+These options make the points of curve and shape based tools (`Lathe`, `Tube`, polygon and path shapes...) snap while you draw them:
 
-## ![](/icons/culling.webp)Two sided {#two-sided}
+* `Snap to grid` - snap to the grid.
+* `Snap to points (aligned view)` - snap to nearby existing points when the camera is aligned to an axis.
+* `Snap to points (free view)` - snap to nearby existing points when the camera is not aligned.
+
+### Color {#grid-color}
+Set the grid color and opacity. These options show up when the grid is visible.
+
+`Vignette` fades the grid out toward its edges. `Snap division threshold` sets, in pixels, how dense the grid lines can get on screen before the grid switches to another subdivision level.
+
+## ![](/icons/culling.webp)Two-sided {#two-sided}
 Enable seeing polygon faces from both sides.
 
-### Backface Color {#backface-color}
-Enable tinting of the backfaces, and the tint color.
+### Backface color {#backface-color}
+`Colored backface` enables tinting of the backfaces, and `Backface color` sets the tint color.
 
 ## ![](/icons/outline.webp)Outline {#outline}
-Enable an outline around the active object.
+Enable an outline around the selected objects.
 
 ### Outline color, Thickness {#outline-color-thickness}
-Set the color and thickness of the outline.
+Set the color and `Thickness` of the outline.
 
 
 ## ![](/icons/bang.webp) Highlight {#highlight}
-Enable a short flash when the active object is changed.
+Enable a short flash when the selection changes.
 ### Color, Duration {#color-duration}
 Set the color and length of time of the flash in milliseconds.
 
@@ -149,22 +170,28 @@ Set the color and length of time of the flash in milliseconds.
 Display a helper icon in the corner of the scene, useful to quickly switch between front/back/left/right/top/bottom views. Tap on the sides of the cube to swap between orthographic views.
 
 ### Shape {#shape}
-Choose between a cube, a sphere, or a gnomon shape for the snap cube.
+Choose between a sphere, a cube, or a gnomon shape for the snap cube.
 
 ### Restrict alignment {#restrict-alignment}
-Enable camera rotation locking when dragging on the snap cube. When active, a drag motion on the snap cube will only go left/right or up/down.
+Align the snapping views to the world axes. When enabled, only the 6 main views are possible. On `Auto`, this restriction only applies when the camera is in `Turntable` mode.
 
 ### Size {#size}
 Set the size of the snap cube.
 
-### Flip 180 {#flip-180}
+### Flip 180° {#flip-180}
 Enable a tap behavior so that if the view is snapped, tapping on the center of the cube will rotate the view 180 degrees. For example if the view is snapped to the front, tapping the view cube will rotate to the back view.
+
+### Edges & corners {#edges-corners}
+Add snapping views on the edges and corners of the cube (the amber zones). Not available with the gnomon shape.
+
+### Turntable drag {#turntable-drag}
+Dragging the cube rotates without rolling the camera, and holds on each snapping view. Disable it to drag the cube with the `Trackball` rotation instead. Either way, the drag stays horizontal or vertical. With a `Turntable` camera, the cube always drags this way.
 
 ### Position {#snap-position}
 Set which corner the snap cube will be in.
 
 
-## ![](/icons/edit_radius_n.webp) Stats {#stats}
+## ![](/icons/list.webp) Stats {#stats}
 ![](/images/settings_stats.webp)
 
 Display information about your system memory, total scene vertex count, and the current selection vertex count.
@@ -172,16 +199,47 @@ Display information about your system memory, total scene vertex count, and the 
 ### Position {#stats-position}
 Set which corner the stats will be in.
 
-## Primitive/Repeaters {#primitive-repeaters}
-## Numerical input {#gizmo-input}
-Allow numerical input when tapping the gizmo widgets.
+## ![](/icons/edit_radius.webp) Handle {#handle}
+Settings for the handles you drag in the viewport, such as the gizmo.
 
-## Multiresolution {#multires}
-### Max vertices count {#multires-lowres-count}
-Set a threshold to now allow a multires subdivide operation higher than this poly count, which would likely crash Nomad. The default is 10 million.
+### Numerical input {#gizmo-input}
+Allow numerical input when tapping one of the gizmo controls.
+
+### Hide on interaction {#hide-on-interaction}
+Fade the gizmo while you interact with it, so it doesn't get in the way.
+
+### ![](/icons/opacity.webp) Opacity {#handle-opacity}
+The opacity of the handles.
+
+## ![](/icons/shape_lasso.webp) Shape {#shape-settings}
+How the shapes you draw with shape strokes (lasso, rectangle, curve...) look on screen.
+
+### ![](/icons/opacity.webp) Fill, Outline {#shape-fill-outline}
+The opacity of the inside of the shape and of the line around it.
+
+### Colors {#shape-colors}
+The shape color for each kind of tool: `Mask`, `Hide`, `Face Group` and `Trim`.
+
+## ![](/icons/array.webp) Repeaters {#primitive-repeaters}
+Limits for the copies made by [repeaters](scene#repeaters) (array, radial, curve, surface). They keep Nomad responsive when a repeater gets out of hand.
+
+### ![](/icons/cube.webp) Max copies {#repeater-max-copies}
+The most copies a single repeater makes. Nomad struggles with many objects, whatever their size.
+
+### ![](/icons/cube.webp) Scene copies {#repeater-scene-copies}
+The copy budget for the whole scene. A low poly copy costs little geometry but stays a full object, so this is the limit small copies reach first.
+
+### ![](/icons/triangle.webp) Max faces {#repeater-max-faces}
+The face budget for all the copies in the scene. Past it, the heaviest objects lose copies first.
+
+## ![](/icons/multires.webp) Multiresolution {#multires}
+### Max vertex count {#multires-lowres-count}
+Set a threshold to not allow a multires subdivide operation higher than this vertex count, which would likely crash Nomad: Nomad doesn't check the available memory before subdividing. The default is 10 million.
 ### Low resolution threshold {#multires-lowres-threshold}
 A lower resolution of the mesh can be displayed when you move the camera. You can increase this value if you want to display a higher resolution of the mesh.
 
 ## Settings {#advanced}
-### Reset to default {#reset}
-Reset all the settings to their default values.
+### ![](/icons/reset.webp) Reset to default {#reset}
+Reset all the app preference settings to their default values.
+
+Some resources are saved separately and are NOT reset: projects, key bindings, tool presets, HDR environments, MatCaps, alphas, brush textures and reference images. Everything saved with the project, such as lighting, post process or camera views, is kept intact too.

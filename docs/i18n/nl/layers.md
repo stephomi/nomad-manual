@@ -1,159 +1,173 @@
 # ![](/icons/layer.webp) Lagen {#layers}
 
-Dit menu bevat de lagenstapel: een manier om bewerkingen op je object niet-destructief op te slaan, en veel manieren om lagen te combineren en opnieuw te gebruiken.
+Dit menu bevat de lagenstapel: een manier om aanpassingen aan je object niet-destructief op te slaan, met veel mogelijkheden om lagen te combineren en opnieuw te gebruiken.
 
 ![](/images/layers_overview.webp) 
 
 ## Overzicht {#overview}
 
-Nomad-lagen hebben meerdere functies.
+Lagen in Nomad hebben meerdere functies.
 
-Verfinformatie (Kleur, Ruwheid, Metalness, Opaciteit) werkt met lagen op een vergelijkbare manier als in 2D-schilderapplicaties. Je kunt een laag aanmaken en verf op een model aanbrengen. De laag kan aan- of uitgezet worden, de dekking kan worden aangepast, de laag kan worden gedupliceerd, de volgorde in de lagenstapel kan worden gewijzigd en de overvloeimodus kan worden aangepast.
+Schilderinformatie (kleur, ruwheid, metaalheid, dekking) werkt met lagen zoals in 2d-tekenapps. Je maakt een laag aan en schildert op het model. Je kunt de laag aan- en uitzetten, de dekking aanpassen, de laag dupliceren, de volgorde in de lagenstapel veranderen en de mengmodus aanpassen.
 
-Nomad gebruikt lagen ook voor sculpting. Een laag kan fijne details zoals rimpels opslaan, of grote veranderingen, waardoor ze kunnen functioneren als blendshapes/shape keys/morph targets in andere 3D-applicaties. Je zou bijvoorbeeld verschillende gezichtsuitdrukkingen op verschillende lagen kunnen sculpteren en vervolgens de schuifregelaars van de lagen aanpassen om ze te combineren tot nieuwe uitdrukkingen.
+Nomad gebruikt lagen ook voor sculpten. Een laag kan fijne details zoals rimpels bevatten, maar ook grote veranderingen, zodat ze werken zoals blendshapes/shape keys/morph targets in andere 3d-programma's. Je kunt bijvoorbeeld verschillende gezichtsuitdrukkingen op verschillende lagen sculpten en met de schuifregelaars van de lagen nieuwe uitdrukkingen samenstellen.
 
-In dit geval zijn de veranderingen die in een laag worden opgeslagen puur additief; de laagvolgorde is niet van belang zoals bij verf.
+In dat geval zijn de veranderingen in een laag puur optellend: de volgorde van de lagen maakt niet uit, anders dan bij schilderen.
 
-Lagen kunnen gedeeltelijk worden gewist via het gereedschap [Delete Layer](tools.md#delete-layer), en lagen kunnen ook worden gebruikt om maskers te maken op basis van de verschillende informatie die in de laag is opgeslagen.
+Met het gereedschap [LaagVerwijderen](tools.md#delete-layer) wis je een laag gedeeltelijk, en je kunt lagen ook gebruiken om maskers te maken op basis van de verschillende informatie die erin zit.
 
 ![](/videos/layer.mp4)
 
 ::: tip
-In tegenstelling tot de meeste sculptsoftware worden lagen niet verwijderd als je de topologie van een mesh wijzigt. Je kunt de [Voxel Remesher](topology.md#voxel-remesher), de [Multiresolution](topology.md#multires) of de gereedschappen [Trim](tools.md#trim)/[Split](tools.md#split) gebruiken, maar houd er rekening mee dat bij gebruik van de [Voxel Remesher](topology.md#voxel-remesher) de kwaliteit van de laag wordt beïnvloed.
+Anders dan in de meeste sculptprogramma's gaan de lagen niet verloren als je de topologie van een mesh verandert. Je kunt de [voxel-remesh](topology.md#voxel-remesher), de [multiresolutie](topology.md#multiresolution) of de gereedschappen [Trimmen](tools.md#trim)/[Splitsen](tools.md#split) gebruiken, maar let op: met de [voxel-remesh](topology.md#voxel-remesher) gaat de kwaliteit van de laag erop achteruit.
 :::
 
 ::: tip
-Als je lagen gebruikt voor blendshapes/morph targets, is er extra laagfunctionaliteit in het [scenemenu](scene.md#object-menu). Je kunt lagen opsplitsen in objecten en overeenkomende objecten combineren tot lagen.
+Gebruik je lagen voor blendshapes/morph targets, dan vind je extra laagfuncties in het [menu Scène](scene.md#object-menu): je kunt lagen naar aparte objecten splitsen, en overeenkomende objecten samenvoegen tot lagen.
 :::
 ----
 
-## Laagmenu {#layer-menu}
+## Lagenmenu {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
-Druk op `Add layer` om een nieuwe laag te maken.
+De titel toont de naam van het geselecteerde object. Lagen zijn niet beschikbaar voor primitieven, dus valideer de primitief eerst.
 
-Elke laag heeft een naam, een schuifregelaar om de sterkte/factor te regelen, en knopopties.
+Druk op `Laag toevoegen` om een nieuwe laag te maken. `Lagen Samenvoegen` voegt alle lagen samen in de basismesh; het getal naast het icoon geeft aan hoeveel lagen er zijn.
+
+Elke laag heeft een naam, een schuifregelaar voor de sterkte/factor, en optieknoppen. Tik op een laag om hem actief te maken: sculpten en schilderen gaan dan naar die laag. Tik op `Basis` om weer aan de basismesh te werken.
+
+### ![](/icons/sort_right.webp) Lijst uitvouwen {#ui-expand-list}
+
+Standaard toont de lagenlijst alleen de zichtbaarheid, de mengmodus en de sterkte van elke laag, en is alleen de actieve laag uitgevouwen met al zijn bedieningselementen. Met de pijl links van de titel vouw je alle bedieningselementen van elke laag uit.
+
+![](/images/layers_expand.webp)
 
 ### Opties {#options}
 
 | Actie        | Icoon                        | Beschrijving                                        |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
-| Zichtbaar    | ![](/icons/eye_open.webp)   | Laag tonen/verbergen                                |
-| Blend Mode   | ![](/icons/opacity.webp)    | De Photoshop-achtige overvloeimodus. De 4 iconen tonen de modi voor Kleur, Ruwheid, Metalness, Opaciteit. |
-| Naam bewerken| ![](/icons/pencil.webp)     | De naam van de laag bewerken                       |
-| Verwijderen  | ![](/icons/trash.webp)      | De laag verwijderen                                 |
-| Dupliceren   | ![](/icons/clone.webp)      | De laag dupliceren                                  |
-| Samenvoegen omlaag | ![](/icons/merge_down.webp) | De laag samenvoegen met de onderliggende laag (of basismesh) |
+| Zichtbaar    | ![](/icons/eye_open.webp)   | Toont of verbergt de laag                           |
+| Mengmodus    | ![](/icons/opacity.webp)    | Mengmodus zoals in Photoshop. De 4 iconen tonen de modi voor kleur, ruwheid, metaalheid en dekking. |
+| Hernoem      | ![](/icons/pencil.webp)     | Wijzigt de naam van de laag                         |
+| Verwijderen  | ![](/icons/trash.webp)      | Verwijdert de laag                                  |
+| Klonen       | ![](/icons/clone.webp)      | Dupliceert de laag                                  |
+| Samenvoegen naar beneden | ![](/icons/merge_down.webp) | Voegt de laag samen met de laag eronder (of met de basismesh) |
 | Meer         | ![](/icons/more.webp)       | [Meer...](#more) opties                             |
 
-Om een laag naar een andere positie in de lagenstapel te verplaatsen, houd je de naam ingedrukt en sleep je deze.
+Is een laag niet uitgevouwen, dan vind je `Hernoem`, `Verwijderen`, `Klonen` en `Samenvoegen naar beneden` in het menu [Meer...](#more).
 
-### Meer... {#more}
+Om een laag naar een andere plek in de lagenstapel te verplaatsen, houd je de naam ingedrukt en sleep je hem.
 
-De knop ‘More...’ toont extra opties voor de huidige laag:
+### Basis {#base}
+
+De knop met de 3 puntjes in de rij `Basis` verplaatst het schilderwerk van de basismesh naar een nieuwe laag, met de knop `Basis → Laag`. De basis wordt daarna teruggezet op het achtergrondmateriaal. Handig als je al veel hebt geschilderd voordat je een laag aanmaakte.
+
+* Met de masker- en verbergknoppen ernaast blijven gemaskerde en verborgen gebieden onaangeroerd.
+* `Extraheer` - de kanalen die worden verplaatst: `Kleur`, `Dekking`, `Ruwheid` en `Metaalheid`.
+* `Achtergrondmateriaal` - als dit aanstaat, worden alleen de waarden verplaatst die van dit materiaal afwijken. Stel het in met de schuifregelaars, of neem het met de pipet over van het model.
+
+### ![](/icons/more.webp) Meer... {#more}
+
+De knop 'Meer...' toont extra opties voor de huidige laag, verdeeld over twee tabbladen: de instellingen (tandwielicoon) en het extraheren (kubusicoon).
 
 ![](/images/layers_more.webp) 
 
-#### Kanalenfactoren {#channel-factors}
+#### Kanaalfactoren {#channel-factors}
 
-Met deze bedieningselementen kun je de hoeveelheid sculpt/kleur/ruwheid/metalness/opaciteit voor de laag schalen. Deze waarden worden vermenigvuldigd met de factor-schuifregelaar van de laag. Dus als bijvoorbeeld de laagsterkte 1 is, maar de channelfactor voor kleur 0,5, dan wordt de kleur weergegeven met een sterkte van 0,5.
+Met deze regelaars schaal je de hoeveelheid sculpt, kleur, ruwheid, metaalheid en dekking van de laag. De waarden worden vermenigvuldigd met de factorschuifregelaar van de laag: is de sterkte van de laag bijvoorbeeld 1 maar de factor van het kleurkanaal 0.5, dan wordt de kleur op sterkte 0.5 getoond.
 
-`Offset` regelt de sculptsterkte van de laag. Terwijl kleur/ruwheid/metalness worden begrensd tussen 0 en 1, kan offset elke waarde aannemen, zowel positief als negatief. 
+`Offset` regelt de sterkte van het sculptwerk in de laag. Kleur, ruwheid en metaalheid blijven tussen 0 en 1, maar de offset kan elke waarde hebben, zowel positief als negatief.
 
 ::: tip
-Offset kan worden gebruikt om een laag met bulten te veranderen in een laag met holtes, of een glimlach in een frons:
+Met de offset maak je van een laag met bobbels een laag met holtes, of van een glimlach een frons:
 ![](/videos/layer_happysad.mp4)
 
 
-Een symmetrische laag kan worden gekloond en vervolgens met del layer worden opgesplitst in linker-/rechtervormen:
+Een symmetrische laag kun je klonen en daarna met LaagVerwijderen opsplitsen in een linker- en rechtervorm:
 ![](/videos/layer_leftright.mp4)
 
-Lagen met negatieve offsetfactoren kunnen worden gebakken naar lege lagen om nieuwe positieve vormen te maken.
+Lagen met een negatieve offset kun je bakken naar lege lagen om nieuwe positieve vormen te maken.
 
-Lagen met positieve offsetfactoren boven 1 kunnen worden gebruikt om te experimenteren met extremere blendshapes.
+Lagen met een positieve offset boven 1 kun je gebruiken om te experimenteren met extremere blendshapes.
 :::
 
 ::: warning
-Op dit moment delen lagen slechts één opaciteitskanaal voor alle 3 kanalen (kleur/metalness/ruwheid).
-Als je meerdere lagen samenvoegt met kanaalspecifieke intensiteit die niet op volledige intensiteit staat, is het mogelijk dat het eindresultaat er anders uitziet.
+Op dit moment delen lagen één enkel dekkingskanaal voor alle 3 de kanalen (kleur/metaalheid/ruwheid).
+Voeg je meerdere lagen samen met een intensiteit per kanaal die niet op vol staat, dan kan het eindresultaat er anders uitzien.
 
-Misschien zal in de toekomst elk kanaal zijn eigen alfakanaal hebben om deze beperking te verwijderen.
+Misschien krijgt in de toekomst elk kanaal een eigen alfakanaal, zodat deze beperking verdwijnt.
 :::
 
 
-#### ![](/icons/tool_mask.webp) Masker {#mask}
-De maskknop naast elke schuifregelaar maakt een masker van dat kanaal. Vergelijkbaar met het gebruik van lagen om selecties te maken in schilderapplicaties, kun je hiermee werk dat je in een laag hebt gedaan hergebruiken voor andere bewerkingen.
+#### ![](/icons/shield.webp) Masker {#mask}
+De maskerknop naast elke schuifregelaar maakt een masker van dat kanaal. Net zoals je in tekenapps lagen gebruikt om selecties te maken, kun je zo werk dat je in een laag hebt gedaan hergebruiken voor andere bewerkingen.
 
 #### ![](/icons/preview.webp) Voorbeeld {#preview}
 ![](/images/layers_preview.webp) 
 
-Indien ingeschakeld, wordt een voorbeeld getoond van de extract-instellingen voor deze laag (zie de volgende sectie).
+De volgende opties staan in het tabblad voor extraheren van het menu 'Meer...'.
 
-Wanneer röntgen (xray) is ingeschakeld, zal alleen de geëxtraheerde vorm solide zijn; de rest van de vorm wordt transparant gemaakt, wat handig is als je negatieve extractiehoogtes gebruikt.
+Als dit aanstaat, zie je een voorbeeld van de extractie-instellingen voor deze laag (zie de volgende sectie).
 
-#### Extractie {#extract}
+`X-Ray` kiest welke objecten tijdens het voorbeeld doorzichtig worden (`Geen`, `Ongekozen`, `Geselecteerd` of `Alles`), zodat de geëxtraheerde vorm massief blijft. Handig als je negatieve extractiehoogtes gebruikt.
+
+#### ![](/icons/mask_extract.webp) Extraheer {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
 
-De knop `Extract` dupliceert de inhoud van de laag naar een nieuw object, meestal met een door de gebruiker gespecificeerde dikte die wordt ingesteld in de volgende sectie.
+De knop `Extraheer` dupliceert de inhoud van de laag naar een nieuw object, meestal met een dikte die je zelf instelt in de volgende sectie.
 
-`Closing action` bepaalt hoe de duplicatie wordt uitgevoerd:
+`Sluitingsactie` bepaalt hoe het dupliceren gebeurt:
 
-* None - Extraheer het deel simpelweg, probeer geen zijkanten te genereren of gaten te vullen.
-* Fill - Het gat wordt gevuld en gladgemaakt met driehoeken. Gebruik deze optie niet voor vlakke oppervlakken.
-* Shell - Sluit de geëxtraheerde vorm met de diktewaarde en richtingsopties.
-* Layer - Extraheer het laagverschil.
+* `Geen` - Extraheert alleen het deel, zonder zijkanten te maken of gaten te vullen.
+* `Vullen` - Het gat wordt gevuld met driehoeken en gladgemaakt. Gebruik deze optie niet voor vlakke oppervlakken.
+* `Schil` - Sluit de geëxtraheerde vorm af met de opties voor dikte en richting.
+* `Laag` - Extraheert het verschil van de laag.
 
-#### ![](/icons/height.webp) Dikte {#thickness}
+#### ![](/icons/height.webp) Hoogte {#thickness}
 ![](/images/layers_thickness.webp) 
 
-De diepte van de shell-extrusie. Positieve waarden groeien uit het oppervlak, negatieve waarden groeien in het oppervlak.
+De diepte van de extrusie van de schil. Positieve waarden groeien uit het oppervlak, negatieve waarden groeien het oppervlak in. Verborgen wanneer de sluitingsactie `Laag` is.
 
-De plus/min-knop naast deze waarde bepaalt de richting van de extrusie:
-* Min ( - ) begint vanaf het huidige oppervlak en extrudeert naar beneden. 
-* Plus ( + ) begint vanaf het huidige oppervlak en extrudeert naar boven.
-* PlusMinus ( ± ) duwt de boven- en onderkant van de extrusie met gelijke hoeveelheden uit elkaar, zodat deze half in het oorspronkelijke oppervlak wordt ingebed.
+Met de plus/min naast deze waarde stel je de richting van de extrusie in:
+* Min ( - ) begint bij het huidige oppervlak en extrudeert naar beneden.
+* Plus ( + ) begint bij het huidige oppervlak en extrudeert naar boven.
+* PlusMin ( ± ) duwt de boven- en onderkant van de extrusie evenveel uit elkaar, zodat ze half in het oorspronkelijke oppervlak zit.
+
+#### Zijden {#edge-loop-side}
+![](/images/layers_edgeloop.webp) 
+
+Deze sectie is zichtbaar wanneer de sluitingsactie `Schil` is.
+
+`Wandverdelingen` bepaalt het aantal verdelingen langs de zijkanten van de schil. Staat de schakelaar `Auto` aan, dan berekent Nomad het aantal randlussen zodat de polygonen vierkant worden.
 
 #### Gladheid {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
-Als de randen van het gebied dat moet worden geëxtraheerd gekarteld zijn, zal deze schuifregelaar proberen de rand te vervagen tot een gladdere vorm. 
+Zijn de randen van het te extraheren gebied kartelig, zet deze optie dan aan om ze tot een mooiere vorm glad te maken. `Alle` maakt het hele geëxtraheerde oppervlak glad, `Alleen grenzen` alleen de randen. `Iteraties` bepaalt hoe sterk het gladmaken is.
 
-#### ![](/icons/height.webp) Randlus (zijkant) {#edge-loop-side}
-![](/images/layers_edgeloop.webp) 
+_Hier eindigt het submenu 'Meer...'._
 
-Deze sectie is zichtbaar wanneer de closing action ‘Shell’ is. 
-
-`Auto Edge-loop (side)` berekent het aantal edge loops langs de shellzijkanten om vierkante polygonen te creëren. 
-
-Indien uitgeschakeld, bepaalt de schuifregelaar `Division` het aantal verdelingen aan de zijkanten.
-
-_Einde van het submenu ‘More...’._
-
-### Geavanceerd {#advanced}
+### ![](/icons/cog.webp) Geavanceerd {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Bovenste laagdetails behouden {#keep-top-layers-details}
+De knop `Geavanceerd` onderaan het menu verschijnt zodra het object lagen heeft.
 
-Zorgt ervoor dat kleine details op hogere lagen zichtbaar blijven wanneer grote veranderingen op lagere lagen worden aangebracht.
+#### Details bovenste lagen behouden {#keep-top-layers-details}
 
-Standaard geldt: als je kleine rimpels op een laag sculpteert en vervolgens grote veranderingen aan de basislaag aanbrengt, gaan de rimpels verloren. Door deze schakelaar in te schakelen, blijven die kleine details altijd boven de grote veranderingen op de lagere lagen zweven. In de volgende video zie je hoe de rimpeldetails standaard worden verwijderd, maar zichtbaar blijven wanneer ‘keep top layers details’ is ingeschakeld:
+Zorgt dat kleine details op hogere lagen zichtbaar blijven wanneer je grote veranderingen aanbrengt op lagere lagen. Tijdens het sculpten wordt de vervorming uit de bovenste lagen genegeerd, maar hun details blijven zichtbaar. Dit werkt alleen goed als die bovenste lagen vrij kleine details bevatten.
+
+Sculpt je standaard kleine rimpels op een laag en breng je daarna grote veranderingen aan op de basislaag, dan gaan de rimpels verloren. Met deze schakelaar blijven die kleine details altijd boven de grote veranderingen eronder zweven. In de volgende video zie je hoe het rimpeldetail standaard verdwijnt, maar zichtbaar blijft als 'Details bovenste lagen behouden' aanstaat:
 
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Lijst uitklappen {#ui-expand-list}
-
-In het standaard lagenmenu kun je de zichtbaarheid van lagen en de dekking van de laag aanpassen. Als je deze optie inschakelt, worden de volledige bedieningselementen voor elke laag uitgevouwen.
-
-![](/images/layers_expand.webp)
-
 #### Transformatie synchroniseren {#sync-transform}
 
-Indien ingeschakeld, worden alle niet-geselecteerde lagen aangepast op basis van de transformatierotatie, schaal en skew. 
+Staat dit aan, dan worden alle niet-geselecteerde lagen aangepast aan de rotatie, schaal en scheefstand van de transformatie wanneer je de gereedschappen Gizmo of Transformeren gebruikt. Het kan op `Auto`, `Nee` of `Ja` staan.
 
-Schakel deze optie uit als de andere lagen bedoeld zijn om te worden gebruikt zonder de nieuwe transformatie die je toepast.
+Zet deze optie uit als de andere lagen bedoeld zijn om zonder de nieuwe transformatie te worden gebruikt.
 
-Wanneer ingesteld op `Auto`, worden alleen de zichtbare lagen aangepast.
+Op `Auto` worden alleen de zichtbare lagen aangepast.

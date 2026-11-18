@@ -1,10 +1,12 @@
 // https://vitepress.dev/guide/custom-theme
 import './style.css'
+import 'virtual:sidebar-icons.css'
 
 import mediumZoom from 'medium-zoom';
 import { useRoute } from 'vitepress';
 import Theme from 'vitepress/theme'
 import { h, nextTick, onMounted, watch } from 'vue'
+import { setupOutlineIcons } from './outlineIcons'
 
 export default {
     extends: Theme,
@@ -31,6 +33,7 @@ export default {
         };
         onMounted(() => {
             initZoom();
+            setupOutlineIcons();
         });
         watch(
             () => route.path,

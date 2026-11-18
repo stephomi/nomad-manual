@@ -1,156 +1,160 @@
-# Pierwsze kroki {#getting-started}
+# ![](/icons/play.webp) Pierwsze kroki {#getting-started}
 
-## Witamy w Nomad! {#welcome-to-nomad}
+## Witaj w Nomad! {#welcome-to-nomad}
 
-Nomad to aplikacja do rzeźbienia 3D, która działa na wielu urządzeniach, a najlepiej sprawdza się na tabletach z rysikiem czułym na nacisk, np. Apple iPad z Apple Pencil lub Samsung Galaxy Tab z rysikiem.
+Nomad to aplikacja do rzeźbienia 3d, która działa na wielu urządzeniach, a najlepiej sprawdza się na tabletach z rysikiem czułym na nacisk, np. na iPadzie z Apple Pencil albo na Samsungu Galaxy Tab z rysikiem.
 
-Aplikacja jest inspirowana desktopowymi programami do rzeźbienia, takimi jak ZBrush i Blender, z naciskiem na łatwy do zrozumienia interfejs, bez rezygnowania z funkcji. Jeśli używałeś wcześniej aplikacji do rzeźbienia 3D, Nomad wyda się bardzo znajomy.
+Inspiruje się programami do rzeźbienia na komputery, takimi jak ZBrush i Blender, ale stawia na prosty, zrozumiały interfejs, nie rezygnując przy tym z funkcji. Jeśli używałeś już aplikacji do rzeźbienia 3d, w Nomad szybko poczujesz się jak w domu.
 
-Jeśli to Twój pierwszy raz z rzeźbieniem 3D, warto poznać kilka podstaw.
+Jeśli rzeźbisz w 3d po raz pierwszy, warto poznać kilka podstaw.
 
 ::: tip Wolisz wideo?
-Na YouTube jest teraz BARDZO dużo filmów dla początkujących, oto kilka świetnych linków:
+Na YouTube jest teraz NAPRAWDĘ dużo poradników wideo dla początkujących, oto kilka świetnych:
 
-* [Nomad Sculpt Crash Course by Dave Reed](https://www.youtube.com/watch?v=69m86ICy2Q4)
-* [Nomad Sculpt Beginner tutorial by Small Robot Studio](https://www.youtube.com/watch?v=J644wXoTiww)
-* [NOMAD FOR BEGINNERS series by SouthernGFX](https://www.youtube.com/watch?v=bEh0WxRoOmg)
+* [Szybki kurs Nomad Sculpt (Nomad Sculpt Crash Course), Dave Reed](https://www.youtube.com/watch?v=69m86ICy2Q4)
+* [Poradnik Nomad Sculpt dla początkujących, Small Robot Studio](https://www.youtube.com/watch?v=J644wXoTiww)
+* [Seria NOMAD FOR BEGINNERS, SouthernGFX](https://www.youtube.com/watch?v=bEh0WxRoOmg)
 
-Warto zajrzeć na główne kanały tych twórców, często publikują nowe poradniki.
+Warto zajrzeć na główne kanały tych twórców, bo często publikują nowe poradniki.
 :::
 
-## Twój pierwszy rzeźbiarski projekt {#your-first-sculpt}
+## Twoja pierwsza rzeźba {#your-first-sculpt}
 
-Po pierwszym uruchomieniu Nomada zobaczysz na ekranie kulę. Po prostu przeciągnij rysikiem po kuli, aby zacząć rzeźbić. Symetria jest domyślnie włączona, aby ułatwić rzeźbienie.
+Po pierwszym uruchomieniu Nomad zobaczysz na ekranie kulę. Wystarczy przeciągnąć po niej rysikiem, aby zacząć rzeźbić. Symetria jest domyślnie włączona, żeby rzeźbienie było łatwiejsze.
 
 ![](/videos/gettingstarted_01.mp4)
 
-Aby powiększyć lub zmniejszyć pędzel, użyj suwaka promienia po lewej stronie.
+Aby powiększyć lub zmniejszyć pędzel, użyj suwaka promienia po lewej.
 
 ![](/videos/gettingstarted_02.mp4)
 
-Aby wzmocnić lub osłabić pędzel, użyj suwaka intensywności po lewej stronie.
+Aby pędzel działał mocniej lub słabiej, użyj suwaka intensywności po lewej.
 
 ![](/videos/gettingstarted_03.mp4)
 
-Domyślnym narzędziem jest `Clay tool` i dodaje ono materiał do powierzchni. Aby odejmować materiał z powierzchni, stuknij przycisk `Sub` po lewej. Aby znów dodawać materiał, stuknij ponownie przycisk Sub.
+Domyślnym narzędziem jest `Glina`, która dodaje materiał do powierzchni. Aby go odejmować, stuknij przycisk `Odejmij` po lewej. Aby znów dodawać, stuknij ponownie przycisk Odejmij.
 
 ![](/videos/gettingstarted_04.mp4)
 
-Aby wygładzić powierzchnię, stuknij przycisk `Smooth`. Aby wrócić do zwykłego rzeźbienia, stuknij ponownie przycisk Smooth.
+Aby wygładzić powierzchnię, stuknij przycisk `Gładkie`. Aby wrócić do zwykłego rzeźbienia, stuknij go ponownie.
 
 ![](/videos/gettingstarted_05.mp4)
 
-Aby obrócić widok wokół modelu, przeciągnij w pustej przestrzeni poza modelem.
+Aby obracać widok wokół modelu, przeciągnij w pustym miejscu poza modelem.
 
 ![](/videos/gettingstarted_06.mp4)
 
-Aby przybliżać i oddalać, użyj gestu szczypania/rozsuwania dwoma palcami.
+Aby przybliżyć lub oddalić widok, użyj gestu szczypania dwoma palcami.
 
 ![](/videos/gettingstarted_07.mp4)
 
-Aby przesunąć kamerę (pan), przyłóż 2 palce do ekranu i przeciągnij.
+Aby przesunąć kamerę, połóż 2 palce na ekranie i przeciągnij.
 
 ![](/videos/gettingstarted_08.mp4)
 
-Jeśli popełnisz błąd, dwukrotne stuknięcie dwoma palcami cofnie akcję, możesz też użyć przycisku cofania w lewym dolnym rogu. 
+Jeśli popełnisz błąd, stuknij 2 palcami, aby cofnąć, albo użyj przycisku cofania w lewym dolnym rogu.
 
 ![](/videos/gettingstarted_09.mp4)
 
-::: tip Wersja desktopowa
-Na komputerze klawisz alt/opt służy do sterowania kamerą:
+::: tip Wersja na komputery
+Na komputerze do sterowania kamerą służy klawisz alt/opt:
 
-* tip przeciągnięcie w pustej przestrzeni = obrót kamery
-* alt+tip przeciągnięcie = przesunięcie (pan)
-* alt+tip przeciągnięcie, potem puszczenie alt = zoom (tak jak w ZBrushu)
+* przeciągnięcie końcówką w pustym miejscu = obrót kamery
+* alt + przeciągnięcie końcówką = przesuwanie
+* alt + przeciągnięcie końcówką, a potem puszczenie alt = powiększanie (tak jak w ZBrush)
 
-W tabletach Wacom z dwoma lub więcej przyciskami na piórku użyj ustawień Wacoma, aby skonfigurować końcówkę i przyciski w ten sposób:
+W przypadku tabletów Wacom z piórem z 2 lub więcej przyciskami skonfiguruj końcówkę i przyciski w ustawieniach Wacom w ten sposób:
 
-* tip = lewy przycisk myszy
-* dolny rocker = środkowy przycisk myszy
-* górny rocker = prawy przycisk myszy
+* końcówka = lewy klik
+* dolny przycisk = środkowy klik
+* górny przycisk = prawy klik
 
-Z tymi ustawieniami możesz sterować kamerą wyłącznie piórkiem:
+Przy tych ustawieniach możesz sterować kamerą wyłącznie piórem:
 
-* górny rocker i ruch w powietrzu = obrót kamery
-* dolny rocker i ruch w powietrzu = przesunięcie (pan)
+* górny przycisk i ruch w zawieszeniu = obrót kamery
+* dolny przycisk i ruch w zawieszeniu = przesuwanie
 :::
 
 ## Dodaj kolor {#add-color}
 
-Nomad pozwala malować powierzchnię Twojej rzeźby. W menu narzędzi po prawej znajdź narzędzie `Paint` i kliknij je. Na lewym pasku narzędzi pojawi się kolorowa kula. Kliknij ją, aby otworzyć selektor koloru. Wybierz kolor i maluj po swoim modelu.
+Nomad pozwala malować powierzchnię rzeźby. W menu narzędzi po prawej znajdź narzędzie `Farba` i kliknij je. Na lewym pasku narzędzi pojawi się kolorowa kula. Kliknij ją, aby otworzyć selektor kolorów. Wybierz kolor i maluj po modelu.
 
 ![](/videos/gettingstarted_10.mp4)
 
-Aby wymazywać, stuknij przycisk `Erase` na lewym pasku narzędzi, a następnie wymazuj po powierzchni. Stuknij ponownie przycisk erase, aby wrócić do trybu malowania.
+Aby wymazywać, stuknij przycisk `Wymaż` na lewym pasku narzędzi, a potem wymazuj na powierzchni. Stuknij go ponownie, aby wrócić do malowania.
 
 ![](/videos/gettingstarted_11.mp4)
 
-Używając pędzla clay w trybach add/sub, smooth i paint, spróbuj stworzyć prostą kreskówkową głowę:
+Używając pędzla gliny w trybach dodawania i odejmowania, wygładzania i malowania, spróbuj zrobić prostą kreskówkową głowę:
 
 ![](/images/gettingstarted_head1.webp)
 
 ## Inne narzędzia {#other-tools}
 
-Paleta narzędzi zawiera wiele narzędzi pomagających w rzeźbieniu. Do tej pory używałeś pędzla clay (domyślne narzędzie startowe), smooth i paint. Ponieważ smooth jest używane bardzo często, ma dodatkowy skrót na lewym pasku narzędzi.
+Paleta narzędzi zawiera wiele narzędzi pomocnych przy rzeźbieniu. Do tej pory używałeś pędzla gliny (domyślnego narzędzia na start), wygładzania i malowania. Wygładzanie jest używane bardzo często, dlatego ma dodatkowy skrót na lewym pasku narzędzi.
 
-Narzędzia w Nomadzie potrafią bardzo wiele, od narzędzi stricte rzeźbiarskich, takich jak move, crease, inflate, po narzędzia takie jak split i trim, które bardziej przypominają narzędzia stolarskie lub ślusarskie. Strona [Tools](tools.md) zawiera więcej informacji.
+Narzędzia w Nomad potrafią bardzo wiele: od typowo rzeźbiarskich, takich jak przenoszenie, bruzda czy napełnianie, po narzędzia takie jak podział i przycinanie, które przypominają raczej narzędzia stolarskie lub ślusarskie. Więcej informacji znajdziesz na stronie [Narzędzia](tools.md).
 
-Spróbuj użyć narzędzi move, crease, inflate i smooth, aby dodać więcej detali do swojej głowy, zmienić jej kształt:
+Spróbuj użyć narzędzi Przenieś, Bruzda, Napełnij i Gładkie, aby dodać głowie więcej szczegółów i zmienić jej kształt:
 
 ![](/images/gettingstarted_head2.webp)
 
-Skoro znasz już podstawy Nomada, przyjrzyjmy się reszcie interfejsu.
+Skoro znasz już podstawy Nomad, przyjrzyjmy się reszcie interfejsu.
 
 ## Interfejs {#interface}
 
 ![](/images/interface_overview1.webp)
 
-* `Top menus` - Menu dające dostęp do większości funkcji Nomada. Menu w lewym górnym rogu dotyczą głównie sceny i obiektów, menu w prawym górnym rogu są związane z narzędziami. Na mniejszych ekranach te menu zostaną złożone, aby zaoszczędzić miejsce.
-* `Stats` - Informacje o scenie, aktualnym obiekcie, statusie maski, użyciu pamięci.
-* `Nav Cube` - Pomocnik pokazujący, z której strony patrzysz na rzeźbę, a także skrót do przeskakiwania między widokami. Stuknięcie kostki ustawi widok na stukniętą stronę. Przeciąganie kostki będzie ją obracać. Stuknij małe ikony obok kostki, aby wycentrować aktualny obiekt lub zresetować widok do domyślnego.
-* `Toolbox` - Narzędzia Nomada są dostępne w tym przewijanym obszarze.
-* `Left toolbar` - Suwaki promienia i intensywności dla większości narzędzi, kontekstowe przyciski dla innych narzędzi oraz skróty do symetrii, trybu alt/sub narzędzia, maskowania, wygładzania, gizma i opcji malowania.
-* `Bottom toolbar` - Skróty do często używanych funkcji, opisane poniżej.
+* `Górne menu` - Menu, z których korzystasz z większości funkcji Nomad. Menu w lewym górnym rogu dotyczą głównie sceny i obiektów, a menu w prawym górnym rogu są związane z narzędziami. Na mniejszych ekranach te menu łączą się ze sobą, aby oszczędzać miejsce.
+* `Statystyki` - Informacje o scenie, bieżącym obiekcie, stanie maski i zużyciu pamięci.
+* `Kostka nawigacji` - Pomocnik, który pokazuje, z której strony patrzysz na rzeźbę, a także skrót do przechodzenia między widokami. Stuknięcie kostki przełącza widok na stukniętą stronę. Przeciąganie kostki obraca widok. Małe ikony obok kostki kadrują bieżący obiekt, przywracają domyślny widok początkowy, blokują kamerę lub włączają siatkę. W aplikacji nazywa się `Kostka orientacji`, a jej wygląd i położenie możesz zmienić w [Ustawieniach](settings.md#snap-cube).
+* `Przybornik` - Narzędzia Nomad są dostępne w tym przewijanym obszarze.
+* `Lewy pasek narzędzi` - Suwaki promienia i intensywności dla większości narzędzi, przyciski zależne od kontekstu dla pozostałych oraz skróty do symetrii, trybu alt/odejmowania narzędzia, wygładzania, maskowania, ukrywania, grup powierzchni, gizmo i opcji malowania. Kolejność skrótów możesz zmienić w menu [Interfejs](interface.md#side-bar).
+* `Dolny pasek narzędzi` - Skróty do często używanych funkcji, opisane poniżej.
 
-::: tip Leworęczny?
-Możesz odbić lustrzanie położenie i kolejność wszystkich pasków narzędzi, zobacz [Mirror top bar](interface.md#mirror-top-bar) i inne powiązane opcje.
+::: tip Jesteś leworęczny?
+Możesz odbić położenie i kolejność wszystkich pasków narzędzi, zobacz [Odbij górny pasek](interface.md#mirror-top-bar) i inne powiązane opcje.
 :::
 
 ## Dolny pasek narzędzi {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
-* `Undo` - cofa ostatnią operację
-* `Redo` - przywraca ostatnio cofniętą operację
-* `History` - dostęp do opcji historii, opisanych w menu [History](history.md).
-* `Solo` - Przełącza wyświetlanie tylko aktualnego obiektu lub wszystkich obiektów
-* `X-Ray` - Sprawia, że wszystkie inne obiekty są renderowane w trybie prześwietlenia (x-ray), a aktualny obiekt jest pełny. Długie przytrzymanie lub przesunięcie w górę pozwoli ustawić kolor i przezroczystość trybu x-ray.
-* `Voxel` - Skrót do przycisku [Voxel Remesher](topology.md#voxel-remesher) (voxel remesh). Długie przytrzymanie lub przesunięcie w górę ujawni skróty do ustawienia jakości voxel remesh.
-* `Grid` - Przełącza wyświetlanie siatki. Długie przytrzymanie lub przesunięcie w górę ujawni opcje siatki.
-* `Wire` - Przełącza nakładkę siatki krawędzi (wireframe). Długie przytrzymanie lub przesunięcie w górę ujawni opcje dla wireframe.
-* `Inspect` - Przełącza wyświetlanie dodatkowych danych o aktualnej siatce. Domyślnie wyświetlane są UV, ale długie przytrzymanie lub przesunięcie w górę pozwoli sprawdzić inne właściwości, jeśli istnieją, oraz czy są wyświetlane w tle czy na siatce.
+* `Cofnij` - cofa ostatnią operację
+* `Przywróć` - przywraca ostatnio cofniętą operację
+* `Historia` - otwiera opcje historii, opisane w menu [Historia](history.md).
+* `Solo` - Przełącza między wyświetlaniem tylko bieżącego obiektu a wszystkich obiektów
+* `Prześwietlenie` - Wyświetla wszystkie pozostałe obiekty w trybie prześwietlenia, a bieżący obiekt jako pełny. Długie przytrzymanie lub przesunięcie w górę pozwala wybrać matcap i kolor prześwietlenia oraz obiekty, których dotyczy.
+* `Woksel` - Skrót do przycisku przebudowy w sekcji [Remesh wokselowy](topology.md#voxel-remesher). Długie przytrzymanie lub przesunięcie w górę pokazuje opcje remeshu wokselowego, takie jak rozdzielczość.
+* `Siatka` - Włącza lub wyłącza wyświetlanie siatki. Długie przytrzymanie lub przesunięcie w górę pokazuje opcje siatki, takie jak jej kolor i przyciąganie.
+* `Szkielet` - Włącza lub wyłącza nakładkę szkieletu. Długie przytrzymanie lub przesunięcie w górę pokazuje opcje szkieletu.
+* `Inspektor` - Włącza wyświetlanie dodatkowych danych o bieżącej siatce. Domyślnie pokazuje UV, ale długie przytrzymanie lub przesunięcie w górę pozwala sprawdzić inne właściwości, jeśli istnieją, oraz wybrać, czy mają być wyświetlane w tle, czy na siatce.
+* `Dzienniki` - Pokazuje lub ukrywa okno z dziennikami debugowania Nomad.
+* `Grupa powierzchni` - Włącza lub wyłącza nakładkę grup powierzchni, zobacz narzędzie [Grupa powierzchni](tools.md#facegroup).
 
-## Kolejne kroki {#next-steps}
+Skróty te możesz dodawać, usuwać i zmieniać ich kolejność w menu [Interfejs](interface.md#add-shortcuts-bottom).
 
-To, czego powinieneś się nauczyć dalej, zależy od Ciebie i od tego, co Cię interesuje! Oto kilka propozycji:
+## Następne kroki {#next-steps}
 
-Chcesz dowiedzieć się więcej o narzędziach do rzeźbienia? Przejdź do sekcji [Tools](tools.md).
+Czego nauczysz się dalej, zależy od Ciebie i od tego, co Cię interesuje! Oto kilka propozycji:
 
-Chcesz eksportować swoje modele? Albo importować modele do rzeźbienia? Albo tworzyć obrazy swoich rzeźb? Przejdź do sekcji [Files](files.md).
+Chcesz dowiedzieć się więcej o narzędziach do rzeźbienia? Przejdź do sekcji [Narzędzia](tools.md).
 
-Chcesz dowiedzieć się więcej o kontrolowaniu poziomu detalu w swojej rzeźbie? Przejdź do sekcji [Topology](topology.md) i poznaj multires oraz decimation.
+Chcesz eksportować swoje modele? Albo importować modele, aby na nich rzeźbić? Albo tworzyć obrazy swoich rzeźb? Przejdź do sekcji [Pliki](files.md).
 
-Chcesz pracować z większą liczbą obiektów? Łączyć proste obiekty i prymitywy w większą scenę? Przejdź do sekcji [Scene](scene.md).
+Chcesz dowiedzieć się więcej o kontrolowaniu szczegółowości rzeźby? Przejdź do sekcji [Topologia](topology.md) i poznaj multirezolucję oraz upraszczanie.
 
-Chcesz nauczyć się *wszystkiego* o Nomadzie? Dobry wybór! Ten podręcznik obejmuje całego Nomada, zawiera mnóstwo porad i trików oraz ma świetną wyszukiwarkę na górze. Użyj nawigacji po lewej, aby dowiedzieć się więcej.
+Chcesz pracować z większą liczbą obiektów? Łączyć proste obiekty i prymitywy w większą scenę? Przejdź do sekcji [Scena](scene.md).
 
-Jeśli wolisz wideo, Holger Schönischka przygotował ogromną kolekcję porad i trików do Nomada na YouTube: https://www.youtube.com/@ProcreateFX/videos
+Chcesz poznać *wszystko* o Nomad? Dobry wybór! Ten podręcznik opisuje cały program Nomad, zawiera mnóstwo wskazówek i trików, a u góry ma świetną wyszukiwarkę. Korzystaj z nawigacji po lewej, aby dowiedzieć się więcej.
+
+Jeśli wolisz wideo, Holger Schönischka przygotował na YouTube ogromną kolekcję wskazówek i trików do Nomad: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Uzyskiwanie pomocy {#getting-help}
+## Gdzie szukać pomocy {#getting-help}
 
-Jeśli nadal masz pytania po przeczytaniu podręcznika i obejrzeniu filmów instruktażowych, są trzy główne sposoby, aby porozmawiać z innymi użytkownikami Nomada lub z deweloperem Nomada:
+Jeśli po przeczytaniu podręcznika i obejrzeniu poradników wideo nadal masz pytania, możesz porozmawiać z innymi użytkownikami Nomad lub z jego twórcą na trzy główne sposoby:
 
 * Odwiedź forum: [forum.nomadsculpt.com](http://forum.nomadsculpt.com)
 * Dołącz do czatu Nomad na Discordzie: [https://discord.com/invite/8h7BwpRz29](https://discord.com/invite/8h7BwpRz29)
-* Skontaktuj się bezpośrednio z deweloperem pod adresem support@nomadsculpt.com
+* Napisz bezpośrednio do twórcy na adres support@nomadsculpt.com

@@ -1,68 +1,87 @@
 # ![](/icons/open.webp) Pliki {#files}
 
-Menu plików pozwala zapisywać i wczytywać projekty Nomad, importować i eksportować modele 3D oraz eksportować wyrenderowane obrazy.
+Menu Pliki pozwala zapisywać i wczytywać projekty Nomad, importować i eksportować modele 3d, eksportować wyrenderowane obrazy oraz łączyć Nomad z innymi aplikacjami. Ma trzy zakładki: `Pliki`, `Renderuj` i `Połączenie`.
 
 ![](/images/file_menu.webp)
 
 ## Projekt {#project}
 ![](/images/file_project.webp)
 
-Na górze tego menu wyświetlany jest miniaturowy podgląd ostatniego zapisu. Kliknięcie tej miniatury otwiera mini-przeglądarkę; stuknij dwukrotnie inny projekt, aby wyświetlić mini-menu z opcjami otwarcia, dodania, zapisania, sklonowania, zmiany nazwy lub usunięcia tego projektu.
+Miniatura na górze pokazuje bieżący projekt, a obok niej rozmiar pliku, automatyczny zapis i zapisaną historię. Stuknij miniaturę, aby otworzyć małą przeglądarkę projektów, a potem stuknij projekt, aby wyświetlić menu pozwalające go otworzyć, dodać, nadpisać, sklonować, zmienić jego nazwę lub go usunąć.
 
-### ![](/icons/nomad.webp) Preset {#preset}
-Uzyskaj dostęp do kolekcji demonstracji i komponentów postaci. Wybierz jeden element, a następnie wybierz ponownie, aby zdecydować, czy chcesz Otworzyć, Dodać do sceny, czy Sklonować wpis do folderu projektów.
+Gdy projekt ma jeszcze niezapisane zmiany, pod miniaturą pojawia się komunikat `Niezapisane zmiany!`.
+
+### Zakres {#scope}
+Na komputerze wybierz, gdzie mają być zapisywane projekty:
+* `Wewnętrzny` - ustawienie domyślne, tak jak na urządzeniach mobilnych. Projekty są zapisywane tylko w głównym folderze Nomad.
+* `Oryginalny plik` - gdy otworzysz projekt spoza folderu Nomad, zapis nadpisuje oryginalny plik. Automatyczny zapis nie działa dla takich zewnętrznych projektów.
+
+### ![](/icons/nomad.webp) Ustawienie wstępne {#preset}
+Daje dostęp do kolekcji wersji demonstracyjnych i elementów postaci. Wybierz jeden z nich, a następnie stuknij go ponownie i wybierz `Otwórz` lub `Dodaj do sceny`. W tej przeglądarce możesz też pobrać darmowe modele z Poly Haven.
 
 ![](/images/file_preset_preview.webp)
 
+### ![](/icons/history.webp) Historia... {#history}
+Szybki dostęp do opcji historii projektu, takich jak `Zapisz historię`, która zachowuje historię cofania przy zapisie projektu. Zielona plakietka na przycisku oznacza, że historia jest zapisywana razem z projektem. Szczegóły znajdziesz w sekcji [Historia](history.md#save-history).
+
 ### ![](/icons/save.webp) Zapisz {#save}
-Zapisz projekt Nomad.
+Zapisuje projekt Nomad. Jeśli projekt nie był jeszcze zapisany, zostaniesz poproszony o podanie nazwy.
 
 ### ![](/icons/save_as.webp) Zapisz jako... {#save-as}
-Wyświetl przeglądarkę projektów, aby zapisać projekt Nomad pod nową nazwą.
+Zapisuje projekt pod nową nazwą, jako nowy projekt.
+
+### ![](/icons/save_as.webp) Nadpisać... {#overwrite}
+Wyświetla przeglądarkę projektów, aby zapisać bieżącą scenę w miejsce innego projektu. Włącz `Dołącz tylko zaznaczone obiekty`, aby zapisać tylko zaznaczone obiekty zamiast całej sceny. Przeglądarka ma też przycisk `Zapisz jako...`, który zamiast tego zapisuje scenę jako nowy projekt.
 
 ### ![](/icons/pencil.webp) Zmień nazwę {#rename}
-Wyświetl pole tekstowe do zmiany nazwy bieżącego projektu.
+Wyświetla pole tekstowe, w którym możesz zmienić nazwę bieżącego projektu.
 
 ### ![](/icons/open.webp) Otwórz... {#open}
-Wyświetl przeglądarkę projektów, aby otworzyć projekt.
+Wyświetla przeglądarkę projektów, aby otworzyć projekt.
 
 ### ![](/icons/add_file.webp) Dodaj do sceny... {#add}
-Wyświetl przeglądarkę projektów; po wybraniu projektu jego zawartość zostanie scalona z bieżącą sceną.
+Wyświetla przeglądarkę projektów. Gdy wybierzesz projekt, jego zawartość zostanie scalona z bieżącą sceną.
 
 ### ![](/icons/trash.webp) Usuń... {#delete}
-Wyświetl przeglądarkę projektów; wszystkie wybrane projekty zostaną usunięte z systemu plików.
+Wyświetla przeglądarkę projektów. Wybrane projekty zostaną usunięte z systemu plików.
 
 ### ![](/icons/new_file.webp) Nowy {#new}
-Rozpocznij nowy projekt; jeśli istnieją niezapisane zmiany, zostaniesz zapytany, czy chcesz je zapisać.
+Rozpoczyna nowy projekt. Jeśli masz niezapisane zmiany, zostaniesz poproszony o potwierdzenie. W oknie potwierdzenia możesz wybrać `Zachowaj` lub `Wyzeruj` dla ustawień `Tło`, `Środowisko`, `MatCap` i `Prześwietlenie`, a także zdecydować, czy nowy projekt ma używać opcji `Zapisz historię`.
 
-### ![](/icons/autosave.webp) Autozapis... {#auto-save}
-Menu do kontrolowania opcji autozapisu.
+### ![](/icons/autosave.webp) Automatyczny zapis... {#auto-save}
+Menu z opcjami automatycznego zapisu. Włącz `Automatyczny zapis`, aby projekt był regularnie zapisywany w osobnym pliku. Plakietka na przycisku pokazuje, czy ta opcja jest włączona.
 
-Jeśli włączysz autozapis, możesz ustawić timer tak, aby wyskakujące okienko pojawiało się w regularnych odstępach czasu.  
-Nomad nie zapisuje w tle, ponieważ pliki 3D mogą być dość duże, co mogłoby powodować zauważalne przycięcia podczas rzeźbienia.
+Nomad nie zapisuje w tle, ponieważ pliki 3d mogą być dość duże, co mogłoby powodować wyraźne przycięcia podczas rzeźbienia.
 
-Dodatkowo, aby uniknąć problemów z brakiem pamięci, scena jest zazwyczaj kompresowana przed operacją zapisu.  
-Ta kompresja/dekompresja również spowalnia operację zapisu.
+Dodatkowo, aby uniknąć problemów z brakiem pamięci, scena jest zwykle kompresowana przed zapisem.
+Ta kompresja i dekompresja także spowalnia zapis.
 
-### Timer pop up {#timer-pop-up}
-Jak często będzie pojawiać się wyskakujące okienko timera.
+### Interwał zapisu {#timer-pop-up}
+Ile minut Nomad odczekuje między kolejnymi automatycznymi zapisami.
 
-### Limit czasu wyskakującego okna {#popup-timeout}
-Włącz limit czasu dla wyskakującego okna.
+### Pokaż odliczanie {#popup-timeout}
+Wyświetla odliczanie przed każdym automatycznym zapisem, więc możesz go anulować, jeśli jesteś w trakcie pracy. Gdy ta opcja jest wyłączona, Nomad zapisuje, gdy tylko przestaniesz rzeźbić.
 
-### Odrzuć autozapis {#discard-autosave}
-Jeśli dla projektu istnieje plik autozapisu, zostanie on automatycznie wczytany zamiast oryginalnego projektu. Jeśli nie jest to wymagane, ten przycisk usunie autozapis. Wczytanie pliku spowoduje wtedy załadowanie ostatniego ręcznego zapisu projektu.
+### ![](/icons/trash.webp) Odrzuć automatyczny zapis {#discard-autosave}
+Jeśli dla projektu istnieje plik automatycznego zapisu, zostanie on wczytany automatycznie zamiast oryginalnego projektu. Jeśli tego nie chcesz, ten przycisk usunie automatyczny zapis. Przy wczytywaniu pliku zostanie wtedy wczytany ostatni ręczny zapis projektu.
 
+### ![](/icons/open.webp) Otwórz przestarzały zapis {#open-outdated-save}
+Gdy projekt ma zarówno automatyczny, jak i ręczny zapis, ten przycisk otwiera starszy z nich (`Otwórz przestarzały autozapis` lub `Otwórz przestarzały zapis ręczny`), wraz z jego datą. Przydaje się, gdy najnowszy zapis nie jest tym, o który Ci chodziło.
 
-## Import {#import}
+### ![](/icons/storage.webp) Ostatnio usunięte... {#recently-deleted}
+Nomad przechowuje dane projektów, które zniknęły z folderu projektów, oraz pliki zastąpione przez import, przez określoną liczbę dni, zanim usunie je na dobre. Pliki, których nie udało się zaimportować, pozostają, dopóki sam ich nie usuniesz. Ta lista pokazuje je wraz z rozmiarem i datą, więc możesz usuwać je pojedynczo lub przyciskiem `Usuń wszystko`.
+
+## Importuj {#import}
 
 ### ![](/icons/add_file.webp) Importuj {#import-button}
-Do importowania plików 3D, które nie są projektami Nomad.
+Służy do importowania plików 3d, które nie są projektami Nomad.
 
-Gdy importujesz zewnętrzny plik sceny do Nomad, możesz go *zaimportować* lub *dodać*.
+Gdy importujesz do Nomad zewnętrzny plik sceny, możesz go *dodać* albo rozpocząć z nim *nowy* projekt.
 
-Dodanie pliku po prostu doda obiekty do bieżącej sceny.  
-Importowanie pliku utworzy nowy projekt Nomad z nowymi obiektami.
+Dodanie pliku po prostu dodaje obiekty do bieżącej sceny.
+Wybranie `Nowy` utworzy nowy projekt Nomad zawierający nowe obiekty.
+
+Okno importu wyświetla każdy wybrany plik z jego własnymi opcjami importu. W ten sposób możesz też importować obrazy: dla każdego z nich wybierz, czy ma się stać `HDRI`, `MatCap`, `Obraz referencyjny`, `Alfa`, `Tekstury` czy `VDM`.
 
 Nomad może importować następujące formaty:
 - Nomad (.nom)
@@ -70,141 +89,251 @@ Nomad może importować następujące formaty:
 - OBJ (.obj)
 - STL (.stl)
 - PLY (.ply)
-- FBX (.fbx, eksperymentalnie)
+- FBX (.fbx)
+- ZBrush (.ztl, .zpr)
+- USD (.usd, .usdz, .usda, .usdc), na platformach, które go obsługują
 
-### ![](/icons/cog.webp) Zaawansowane {#advanced}
-Wyświetl zaawansowane opcje importu:
+### ![](/icons/cog.webp) Ustawienia {#advanced}
+Przycisk `Ustawienia...` obok miniatury projektu wyświetla główne opcje importu. Te ustawienia nie są zapisywane, a okno importu pokazuje opcje, które dotyczą importowanych plików.
 
-### Projekt/ glTF / OBJ / STL / FBX {#project-gltf-obj-stl-fbx}
-#### Zachowaj topologię {#keep-topology}
-Domyślnie Nomad próbuje naprawić problematyczną geometrię podczas wczytywania. Włączenie tej opcji uniemożliwi Nomadowi zmianę kolejności wierzchołków/płaszczyzn, usuwanie zduplikowanych wierzchołków/płaszczyzn oraz usuwanie nieużywanych wierzchołków.
+### Wszystkie formaty {#project-gltf-obj-stl-fbx}
+#### ![](/icons/nomad.webp) Zachowaj topologię {#keep-topology}
+Domyślnie Nomad przy wczytywaniu próbuje naprawić problematyczną geometrię. Włączenie tej opcji sprawia, że Nomad nie zmienia kolejności wierzchołków i ścian, nie scala duplikatów i nie usuwa nieużywanych wierzchołków.
 
-#### Pomiń tekstury {#skip-textures}
-Pomiń wczytywanie tekstur dla formatów, które je obsługują, takich jak glTF.
+::: warning
+Z opcją `Zachowaj topologię` operacje takie jak Boolean, Połącz, Uprość czy Manifold mogą nie scalić zduplikowanych wierzchołków.
+:::
 
-### Projekt / glTF {#project-gltf}
-#### Zachowaj ustawienia GUI {#keep-gui-settings}
-Włącz zapisywanie ustawień GUI i projektu w pliku Nomad .nom lub glTF.
+#### ![](/icons/image.webp) Pomiń tekstury {#skip-textures}
+Nie wczytuje tekstur osadzonych w pliku, w formatach, które na to pozwalają, takich jak glTF.
+
+### Nomad / glTF {#project-gltf}
+#### ![](/icons/sliders.webp) Wczytaj ustawienia interfejsu {#keep-gui-settings}
+Przy otwieraniu lub importowaniu pliku projektu wczytuje wszystkie zapisane w nim ustawienia interfejsu.
 
 ### OBJ {#obj}
-#### Rozdziel OBJ według grup {#split-obj-by-groups}
-Włącz podział grup OBJ na osobne obiekty.
+#### ![](/icons/group_gray.webp) Podziel OBJ według grup {#split-obj-by-groups}
+Rozdziela grupy OBJ na osobne obiekty.
 
-#### Przestrzeń barw {#color-space}
-Ustaw tryb kolorów interpretowany z pliku OBJ jako Linear, sRGB lub Auto.
+#### ![](/icons/vertex.webp) Połącz zduplikowane pozycje {#merge-duplicate-positions}
+Scala wierzchołki, które mają tę samą pozycję.
 
-### PLY {#ply}
-#### Przestrzeń barw {#color-space-ply}
-Ustaw tryb kolorów interpretowany z pliku PLY jako Linear, sRGB lub Auto.
+#### ![](/icons/uv.webp) Połącz zduplikowane UV {#merge-duplicate-uvs}
+Scala współrzędne tekstury, które mają te same UV.
+
+#### ![](/icons/paint.webp) Przestrzeń kolorów {#color-space}
+Określa, jak interpretować kolory z pliku: `Auto`, `Liniowy` lub `sRGB`. Jeśli kolory wyglądają niepoprawnie, spróbuj przełączyć tę opcję.
+
+#### ![](/icons/image.webp) Format {#normal-format}
+Format map normalnych w teksturach: `Auto`, `OpenGL (+Y)` lub `DirectX (-Y)`. Jeśli detale mapy normalnych wyglądają na odwrócone, wypróbuj drugi.
+
+### PLY / STL {#ply}
+#### ![](/icons/paint.webp) Przestrzeń kolorów {#color-space-ply}
+Określa, jak interpretować kolory z pliku: `Auto`, `Liniowy` lub `sRGB`.
 
 
 ### FBX {#fbx}
-#### Przestrzeń barw {#color-space-fbx}
-Ustaw tryb kolorów interpretowany z pliku FBX jako Linear, sRGB lub Auto.
+#### ![](/icons/uv.webp) Połącz zduplikowane UV {#merge-duplicate-uvs-fbx}
+Scala współrzędne tekstury, które mają te same UV.
+
+#### ![](/icons/paint.webp) Przestrzeń kolorów {#color-space-fbx}
+Określa, jak interpretować kolory z pliku: `Auto`, `Liniowy` lub `sRGB`.
+
+#### ![](/icons/image.webp) Format {#normal-format-fbx}
+Format map normalnych w teksturach: `Auto`, `OpenGL (+Y)` lub `DirectX (-Y)`.
+
+### USD {#usd}
+#### ![](/icons/paint.webp) Przestrzeń kolorów {#color-space-usd}
+Określa, jak interpretować kolory z pliku: `Auto`, `Liniowy` lub `sRGB`.
+
+#### ![](/icons/image.webp) Format {#normal-format-usd}
+Format map normalnych w teksturach: `Auto`, `OpenGL (+Y)` lub `DirectX (-Y)`.
 
 
 
-## Eksport {#export}
-Zapis do formatu geometrii 3D, który może być użyty w innym oprogramowaniu. 
+## Eksportuj {#export}
+Zapisuje geometrię w formacie 3d, którego można używać w innych programach. 
 
 ![](/images/file_export.webp)
 
-Różne formaty plików obsługują różne funkcje; dostępne opcje będą się zmieniać w zależności od wybranego typu pliku.
+Różne formaty plików obsługują różne funkcje, więc dostępne opcje zmieniają się w zależności od wybranego typu pliku.
 
 <!-- https://www.tablesgenerator.com/markdown_tables# -->
 <!-- http://markdowntable.com/ -->
 |                                 | NOM    | GLTF/GLB             | OBJ  | USD | PLY  | STL   | FBX                    |
 | :-----------------------------: | :----: | :------------------: | :--: | :--: | :--: | :---: | :--------------------: |
-| [Vertex Colors](#vertex-colors) | ✅     | ✅                   | ✅   | ✅ | ✅    | ✅    | ✅                     |
-| [Vertex PBR](#vertex-pbr)       | ✅     | Nomad ✅<br>Other ⚠️ | ❌   | ✅ | ✅    | ❌    | ❌                     |
-| Quad                            | ✅     | Nomad ✅<br>Other ⚠️ | ✅   | ✅ | ✅    | ❌    | ✅                     |
-| [Layers](#layers)               | ✅     | ✅                   | ❌   | ✅ | ❌    | ❌    | ✅                     |
-| Objects                         | ✅     | ✅                   | ✅   | ✅ | ❌    | ❌    | ✅                     |
-| Face Group                      | ✅     | ✅                   | ✅   | ✅ | ❌    | ❌    | ✅                     |
-| Hierarchy                       | ✅     | ✅                   | ❌   | ✅ | ❌    | ❌    | ✅                     |
-| Lights                          | ✅     | ✅                   | ❌   | ✅ | ❌    | ❌    | ✅                     |
-| Textures                        | ✅     | ✅                   | ✅   | ✅ | ❌    | ❌    | Import ✅<br>Export ❌ |
-| Primitives, Postprocess, etc    | ✅     | Nomad ✅<br>Other ❌ | ❌   | ❌ | ❌    | ❌    | ❌                     |
+| [Kolory wierzchołków](#vertex-colors) | ✅     | ✅                   | ✅   | ✅ | ✅    | ✅    | ✅                     |
+| [PBR wierzchołków](#pbr-paint)  | ✅     | Nomad ✅<br>Inne ⚠️ | ❌   | ✅ | ✅    | ❌    | ❌                     |
+| Czworokąty                      | ✅     | Nomad ✅<br>Inne ⚠️ | ✅   | ✅ | ✅    | ❌    | ✅                     |
+| [Warstwy](#layers)              | ✅     | ✅                   | ❌   | ✅ | ❌    | ❌    | ✅                     |
+| Obiekty                         | ✅     | ✅                   | ✅   | ✅ | ❌    | ❌    | ✅                     |
+| Grupa powierzchni               | ✅     | ✅                   | ✅   | ✅ | ❌    | ❌    | ✅                     |
+| Hierarchia                      | ✅     | ✅                   | ❌   | ✅ | ❌    | ❌    | ✅                     |
+| Światła                         | ✅     | ✅                   | ❌   | ✅ | ❌    | ❌    | ✅                     |
+| Tekstury                        | ✅     | ✅                   | ✅   | ✅ | ❌    | ❌    | ✅                     |
+| Prymitywy, postprocessing itp.  | ✅     | Nomad ✅<br>Inne ❌ | ❌   | ❌ | ❌    | ❌    | ❌                     |
 
 
-### Wszystko/Widoczne/Zaznaczone {#allvisibleselected}
-Aktywny stan przycisku określa, które obiekty zostaną wyeksportowane. Liczba obok ikon wskazuje, ile obiektów zostanie wyeksportowanych dla danej opcji.
+### ![](/icons/export.webp) Przycisk eksportu {#export-button}
+Kliknij go, aby wyeksportować geometrię z wybranymi ustawieniami. Przycisk pokazuje wybrany format i szacowany rozmiar pliku. Na Androidzie obok znajduje się przycisk `Udostępnij`, który wysyła plik prosto do innej aplikacji.
+
+### Format pliku {#file-format}
+Wybierz format eksportu: `NOMAD`, `glTF`, `OBJ`, `FBX`, `PLY`, `STL` lub `USD`. NOMAD to własny format Nomad, którego inne programy nie wczytają, więc służy głównie do ponownego importu do Nomad.
+
+### Dołącz {#allvisibleselected}
+Wybierz, które obiekty mają zostać wyeksportowane: `Wszystkie`, `Widoczne` lub `Wybrane`. Liczba obok każdej opcji pokazuje, ile obiektów zostanie wyeksportowanych.
+
+### Jeden plik na obiekt {#one-file-per-object}
+Eksportuje każdy obiekt do osobnego pliku. Liczba pokazuje, ile plików zostanie zapisanych.
+
+### Typ {#type}
+Gdy eksport tworzy kilka plików (jeden plik na obiekt albo OBJ z teksturami), zapisz je w postaci `Folder` lub `Zip`. Niektóre aplikacje (Google Drive, One Drive itp.) nie obsługują importu folderów, więc możesz wtedy użyć Zip.
+
+### Osadź historię {#embed-history}
+Tylko NOMAD. Zapisuje historię cofania w pliku; zostanie ona przywrócona po otwarciu pliku w Nomad. Zwiększa to rozmiar pliku i wymaga eksportu całej sceny do jednego pliku.
+
+### Osadź zasoby {#embed-assets}
+Tylko NOMAD. Zapisuje w pliku Twoje własne matcapy, środowiska i czcionki. Wbudowane zasoby nie są osadzane.
 
 ### Kolory wierzchołków {#vertex-colors}
-Eksportuj kolory wierzchołków, jeśli są obsługiwane przez format pliku.
+Eksportuje kolory wierzchołków, jeśli format pliku je obsługuje. Niektóre programy 3d potrafią je odczytać, ale nie wszystkie.
 
-### PBR Paint {#pbr-paint}
-Kolory wierzchołków PBR są eksportowane jako dodatkowe atrybuty kolorów wierzchołków.  
-Kanały są pakowane w następujący sposób:
+W przypadku OBJ możesz wybrać:
+* `Brak` - bez kolorów.
+* `RGB` - kolory są dopisywane po wierzchołkach.
+* `MRGB (ZBrush)` - alternatywny sposób kodowania koloru, który obsługuje też dane maski.
 
-|           | Channel  |
-| :-------: | :------: |
-| Roughness | R        |
-| Metalness | G        |
-| Masking   | B        |
+### Przestrzeń kolorów {#color-space-export}
+Tylko OBJ, z kolorami wierzchołków `RGB`. Zapisuje kolory jako `Liniowy` lub `sRGB`.
+
+### Malowanie PBR {#pbr-paint}
+Eksportuje malowanie chropowatości, metaliczności i maski. Inne programy mogą ignorować te dane.
+Kolory wierzchołków PBR są eksportowane jako dodatkowe atrybuty kolorów wierzchołków.
+Kanały są upakowane w następujący sposób:
+
+|                | Kanał    |
+| :------------: | :------: |
+| Chropowatość   | R        |
+| Metaliczność   | G        |
+| Maskowanie     | B        |
 
 
 ### Warstwy {#layers}
-Warstwy są obsługiwane poprzez cele morfingu (morph targets) w glTF.  
-Nomad eksportuje również kolory, szorstkość (roughness) i metaliczność (metalness) per warstwa, ale będzie to ignorowane przez inne oprogramowanie.
+Warstwy są obsługiwane za pomocą morph targetów glTF. glTF oficjalnie je obsługuje, więc powinny działać także w innych programach.
+Nomad eksportuje też kolory, chropowatość i metaliczność każdej warstwy, ale inne programy je zignorują.
 
-### Malowanie warstwowe {#layer-painting}
-Eksportuj malowanie warstw; zazwyczaj ignorowane przez inne oprogramowanie.
+### Malowanie warstwy {#layer-painting}
+Eksportuje malowanie warstw, zwykle ignorowane przez inne programy.
 
-### Grupa ścian {#face-group}
-Eksportuj grupy ścian (facegroups); eksport może czasem powodować problemy w innym oprogramowaniu.
+### Grupa powierzchni {#face-group}
+Eksportuje grupy powierzchni. Czasami może to powodować problemy w innych programach.
 
-### Normale {#normals}
-Eksportuj informacje o normalnych. Zauważ, że Nomad zawsze oblicza własne normale podczas importu innych formatów plików.
+### Zapisz obiekty {#write-objects}
+Tylko OBJ. Zachowuje podział na osobne obiekty. Wyłącz tę opcję, aby wyeksportować wszystko jako jeden obiekt, na przykład żeby użyć funkcji „Mesh ID / Polygroup” w Substance Painter.
 
-### Tangenty {#tangents}
-Eksportuj informacje o tangentach, używane, jeśli model ma mapy normalnych. 
+### Normalne {#normals}
+Eksportuje informacje o normalnych. Pamiętaj, że przy imporcie innych formatów Nomad zawsze oblicza własne normalne.
+
+### Styczne {#tangents}
+Eksportuje informacje o stycznych, używane, gdy model ma mapy normalnych. 
 
 ### Tekstury {#textures}
-Jeśli do materiału zostały dodane tekstury, zostaną one wyeksportowane. Zauważ, że nie spowoduje to wypalenia (bake) tekstur; odbywa się to poprzez opcje bake w topologii.
+Jeśli do materiału dodano tekstury, zostaną one wyeksportowane. Pamiętaj, że nie oznacza to wypalania tekstur: służą do tego opcje wypalania w menu Topologia.
 
-### Przycisk eksportu {#export-button}
-Kliknij, aby wyeksportować geometrię z użyciem wybranych ustawień.
+### Format {#fbx-format}
+Tylko FBX. `Binarny` jest mniejszy, ale może nie działać w każdej aplikacji, `ASCII` to plik tekstowy.
 
-::: tip Wskazówka: Import roughness i metalness do Blendera
+### Skompresowany {#compressed}
+Tylko FBX. Zmniejsza rozmiar pliku kosztem wolniejszego eksportu i importu.
 
-Blender potrafi importować glTF/glb, ale nie interpretuje automatycznie atrybutów wierzchołków dla metalness i roughness. Aby ich użyć, w edytorze materiałów utwórz węzeł Vertex Color i ustaw jego właściwość na kolejny atrybut koloru (zwykle Col.001). Podłącz węzeł „Separate XYZ”, wyślij X do Roughness, a Y do Metallic.
+### Ustawienie wstępne {#usd-preset}
+Tylko USD. Wybierz aplikację, dla której eksportujesz: `OpenUSD`, `Apple`, `Procreate` lub `Zbrush`. Niektóre opcje są dostępne tylko w niektórych ustawieniach wstępnych.
 
-Ten film pokazuje proces:
+### Instancja {#instance}
+Tylko USD. Eksportuje obiekty instancjonowane jako instancje, zamiast powielać ich geometrię.
+
+### Zezwalaj na warpowanie {#allow-skew}
+Tylko USD. Pozwala na pochylenie (skew) w przekształceniach macierzowych. Gdy ta opcja jest wyłączona, Nomad rozbija pochylone przekształcenia na osobne przekształcenia skalowania i obrotu.
+
+### Powtarzacz {#repeater}
+Tylko USD. Eksportuje kopie utworzone przez powtarzacze jako instancje.
+
+### Połącz kopie {#join-copies}
+Każdy obiekt razem z kopiami z jego powtarzacza staje się jednym obiektem.
+
+::: tip Wskazówka: import chropowatości i metaliczności do Blendera
+
+Blender potrafi importować glTF/glb, ale nie rozpoznaje automatycznie atrybutów wierzchołków dla metaliczności i chropowatości. Aby ich użyć, w edytorze materiałów utwórz węzeł Vertex Color i ustaw jego właściwość na kolejny atrybut koloru (zwykle Col.001). Podłącz węzeł „Separate XYZ”, a następnie wyślij X do roughness, a Y do Metallic.
+
+Ten film pokazuje cały proces:
 
 ![](/videos/blender_pbr.mp4)
 
 ::: 
 
-::: tip Wskazówka: Obsługa funkcji USD
+::: tip Wskazówka: obsługa funkcji USD
 
-USD to złożony format; jego specyfikacja obsługuje wiele funkcji, ale nie każde oprogramowanie 3D je wspiera. Na przykład OSX/iOS nie obsługują kolorów wierzchołków.  
-Tryby preset w eksporterze USD próbują jak najlepiej dopasować się do kompatybilności z OpenUSD, Apple, Procreate, ZBrush.
+USD to złożony format: jego specyfikacja obejmuje wiele funkcji, ale nie każdy program 3d je wszystkie obsługuje. Na przykład OSX/iOS nie obsługują kolorów wierzchołków. Ustawienia wstępne w eksporterze USD starają się możliwie najlepiej zapewnić zgodność z OpenUSD, Apple, Procreate i Zbrush.
 
 ::: 
 
-## Render {#render}
+## ![](/icons/screen.webp) Renderuj {#render}
 
-Eksport obrazu, który jest kombinacją wszystkich ustawień w projekcie (światła, materiały, postprocessing itd.). 
+Eksportuje obraz łączący wszystkie ustawienia projektu (światła, materiały, postprocessing itd.). 
 
 ![](/images/file_render.webp)
-### Podgląd {#preview}
+### ![](/icons/preview.webp) Podgląd {#preview}
 
-Mały przycisk podglądu obok tytułu menu przyciemni paski narzędzi, aby ułatwić podgląd końcowego rezultatu.
+Przycisk `Podgląd` obok tytułu menu sprawia, że interfejs staje się przezroczysty, co ułatwia ocenę kadru końcowego obrazu.
 
-### Przezroczyste tło {#transparent-background}
-Włącz kanał alfa dla renderu; przydatne do łączenia renderu z innymi obrazami w programach 2D. Zauważ, że częściowa przezroczystość nie jest obsługiwana.
+### ![](/icons/home.webp) Ostrość {#focus}
+Kadruje scenę lub zaznaczenie tak, by mieściły się w rozmiarze renderu. Stuknij ponownie, aby przełączać się między nimi.
 
-### Pokaż interfejs {#show-interface}
-Włącz dołączanie interfejsu Nomad do renderu.
+### ![](/icons/map.webp) Mapa wysokości {#heightmap}
+Renderuje scenę jako mapę wysokości w skali szarości widzianą z kamery, na której najbliższe części są najjaśniejsze. Włączenie tej opcji przełącza rozmiar na `Kwadrat` i kadruje zaznaczenie. Mały pasek w widoku pozwala dostosować `Ostrość` gradientu.
 
-### Proporcje renderu {#render-ratio}
-Mnożnik rozdzielczości obrazu.
+Gdy `Mapa wysokości` jest włączona, obok przycisku eksportu pojawia się przycisk `Zapisz jako alfę`, który zapisuje render jako nową alfę pędzla zamiast eksportować plik.
 
-### Ostateczny rozmiar {#final-size}
-Rozdzielczość używana do renderu. Gdy wybrana jest opcja `Custom`, suwaki szerokości i wysokości zostaną włączone. 
+### ![](/icons/opacity.webp) Przezroczyste tło {#transparent-background}
+Dodaje do renderu kanał alfa, co przydaje się przy łączeniu renderu z innymi obrazami w programach 2d. Pamiętaj, że częściowa przezroczystość nie jest obsługiwana.
 
-Gdy menu Plik jest aktywne, w widoku zostanie narysowany przerywany obrys wskazujący obszar renderu, jeśli nie odpowiada on rozdzielczości ekranu (zauważ, że aby był poprawny, musisz być w trybie poziomym).
+### ![](/icons/sliders.webp) Pokaż interfejs {#show-interface}
+Dołącza interfejs Nomad do renderu.
 
-### Eksportuj PNG {#export-png}
-Kliknij ten przycisk, aby rozpocząć proces renderowania. Po zakończeniu możesz wybrać sposób zapisania lub udostępnienia obrazu.
+### Końcowy rozmiar {#final-size}
+Rozdzielczość renderu: `Ekran`, `720`, `1080`, `4096`, `Kwadrat` lub `Niestandardowy`.
+
+Gdy menu Pliki jest aktywne, w widoku rysowana jest przerywana ramka wskazująca obszar renderu, jeśli nie odpowiada on rozdzielczości ekranu.
+
+### Szerokość / Wysokość {#render-ratio}
+Przy opcji `Niestandardowy` ustawiasz szerokość i wysokość obrazu. Przycisk łącza między dwoma suwakami zachowuje proporcje, gdy zmieniasz jeden z nich. Przy opcji `Kwadrat` można ustawić tylko szerokość.
+
+### ![](/icons/export.webp) Eksportuj → PNG {#export-png}
+Kliknij ten przycisk, aby rozpocząć renderowanie. Po zakończeniu możesz wybrać, jak zapisać lub udostępnić obraz. Przy bardzo dużych rozmiarach Nomad najpierw prosi o potwierdzenie: zapisz wcześniej projekt na wypadek, gdyby na urządzeniu zabrakło pamięci.
+
+## ![](/icons/network.webp) Połączenie {#link}
+
+Łączy Nomad z innym urządzeniem lub aplikacją, aby wysyłać i odbierać obiekty albo synchronizować zmiany na żywo. Jedno urządzenie jest hostem sesji, a pozostałe do niej dołączają.
+
+### Włącz GoZ {#enable-goz}
+Tylko na komputerze. Wymienia siatki z ZBrush na tym samym komputerze. `Wyślij` importuje je do ZBrush, `Pobierz` importuje z uruchomionego ZBrush: `Zaznaczenie` pobiera aktywny subtool, a `Scena` wszystkie subtoole. W każdej chwili możesz też nacisnąć GoZ w ZBrush.
+
+### Tryb {#link-mode}
+* `Wyłączone` - brak połączenia.
+* `Host` - to urządzenie jest hostem sesji i czeka, aż inne do niej dołączą.
+* `Dołącz` - wyszukuje urządzenia w pobliżu; stuknij nazwę hosta, aby do niego dołączyć.
+
+Aby połączyć dwa egzemplarze Nomad, wybierz `Host` na jednym urządzeniu i `Dołącz` na pozostałych. Przy połączeniu z Blenderem hostem powinien być Nomad: przycisk pomocy obok tytułu `Połączenie` pokazuje, jak zainstalować rozszerzenie Nomad Blender Link.
+
+### ![](/icons/network.webp) Port sieciowy {#network-port}
+Port sieciowy używany przez połączenie. Zmień go tylko wtedy, gdy korzysta z niego już inna aplikacja.
+
+### Wyślij / Pobierz {#send-get}
+Po połączeniu przycisk `Wyślij` przesyła na drugie urządzenie Twoje `Zaznaczenie` lub całą scenę (`Scena`), a `Pobierz` pobiera je z niego. `Zastąp` usuwa bieżącą scenę, a następnie pobiera scenę z drugiego urządzenia.
+
+### ![](/icons/link.webp) Synchronizacja na żywo {#live-sync}
+Przesyła Twoje zmiany na drugie urządzenie na bieżąco, w trakcie pracy. `Widok roboczy` synchronizuje także kamerę. `Zmiany sceny` określa, które urządzenie wysyła zmiany: `Auto` przekazuje kierunek temu, na którym ostatnio coś się działo. Następnie wybierz, co ma być synchronizowane: `Obiekty i geometria`, `Materiały`, `Światła`, `Kamery`, a jeśli druga strona to obsługuje, także `Cieniowanie` i `Postprocessing`.
+
+::: tip
+Istniejące obiekty trzeba najpierw raz przesłać przyciskiem `Wyślij` lub `Pobierz`, aby je połączyć, zanim synchronizacja na żywo będzie mogła je aktualizować.
+:::

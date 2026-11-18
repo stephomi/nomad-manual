@@ -1,145 +1,158 @@
 # ![](/icons/camera.webp) Caméra {#camera}
 
-Ce menu vous permet de créer et de modifier des caméras, ainsi que de contrôler la façon dont vous interagissez avec elles.
+Ce menu vous permet de créer et de modifier des caméras, et de régler la façon dont vous interagissez avec elles.
 
 ![](/images/camera_overview2.webp)
 
-Les caméras dans Nomad ont plusieurs usages :
+Dans Nomad, les caméras ont plusieurs usages :
 
-* Configurer des vues pour sculpter sous des angles précis
-* Les utiliser comme un appareil photo pour cadrer vos objets
-* Les utiliser comme caméra à la première personne pour naviguer dans votre scène
-* Les utiliser comme caméra orthographique pour des jeux isométriques ou un rendu de type industriel.
+* Préparer des vues pour sculpter sous des angles précis
+* Cadrer vos objets, comme avec un appareil photo
+* Naviguer dans votre scène avec une caméra à la première personne
+* Servir de caméra orthographique pour des jeux isométriques ou des rendus de style industriel.
 
 ## Contrôler la caméra {#control}
 
 ### Rotation {#rotation}
-Vous faites pivoter la caméra en faisant glisser *un* doigt sur l’arrière-plan.  
-Si vous faites glisser le doigt sur votre modèle, cela lancera à la place l’opération de sculpture.
+Pour faire tourner la caméra, faites glisser *un* doigt sur l'arrière-plan.
+Si vous faites glisser le doigt sur votre modèle, c'est la sculpture qui commence à la place.
 
-::: tip Puis-je faire pivoter la caméra si je ne peux pas accéder à l’arrière-plan ?
-Oui, vous pouvez poser *deux* doigts sur l’écran – comme si vous vouliez commencer un geste de panoramique/zoom – puis relâcher *un* doigt.
+::: tip Puis-je faire tourner la caméra si je n'ai pas accès à l'arrière-plan ?
+Oui : posez *deux* doigts sur l'écran, comme pour commencer un geste de translation ou de zoom, puis relâchez *un* doigt.
 :::
 
-### Mise au point / Réinitialiser {#focus}
-*Tapez deux fois* sur le modèle pour faire la mise au point sur le point sélectionné.  
-Si vous *tapez deux fois* sur l’arrière-plan, la caméra fera la mise au point sur le maillage sélectionné à la place.
+### Mise au point / Réinitialisation {#focus}
+*Touchez deux fois* le modèle pour centrer la vue sur le point touché.
+Si vous *touchez deux fois* l'arrière-plan, la caméra se centre plutôt sur le maillage sélectionné ou sur toute la scène, voir [Double appui sur l'arrière-plan](#dtap-tap-background).
+
 
 ### Translation {#translation}
-En déplaçant *deux* doigts, vous pouvez effectuer un panoramique de la caméra.
+Déplacez *deux* doigts pour faire glisser la caméra.
+
 
 ### Zoom {#zooming}
-En utilisant le geste de pincement, vous pouvez zoomer/dézoomer.
+Pincez pour zoomer ou dézoomer.
 
-### Rotation de l’horizon {#rolling}
-Vous pouvez *faire rouler* la vue en faisant pivoter *deux* doigts.  
+
+### Roulis {#rolling}
+Vous pouvez faire *rouler* la vue en tournant *deux* doigts.
 ::: warning
-Ce geste n’est disponible que pour le mode de rotation `trackball`.
+Ce geste n'est disponible qu'avec les modes de rotation `Trackball`.
 :::
 
-### Commandes de bureau {#desktop}
+### Contrôles sur ordinateur {#desktop}
 
-Sur ordinateur, la touche alt/opt est utilisée pour contrôler la caméra :
+Sur ordinateur, la touche Alt/Option sert à contrôler la caméra :
 
-* clic du stylet et glisser dans l’espace vide = rotation de la caméra
-* alt+clic du stylet et glisser = panoramique
-* alt+clic du stylet et glisser, puis relâcher alt = zoom (comme dans ZBrush)
+* glisser avec la pointe dans le vide = rotation de la caméra
+* Alt + glisser avec la pointe = translation
+* Alt + glisser avec la pointe, puis relâcher Alt = zoom (comme dans ZBrush)
 
-Avec les tablettes Wacom qui ont 2 boutons ou plus sur le stylet, utilisez les paramètres Wacom pour configurer la pointe et les boutons comme ceci :
+Avec les tablettes Wacom dont le stylet a 2 boutons ou plus, configurez la pointe et les boutons dans les réglages Wacom comme ceci :
 
 * pointe = clic gauche
-* bas du basculeur = clic du milieu
-* haut du basculeur = clic droit
+* bouton inférieur = clic du milieu
+* bouton supérieur = clic droit
 
-Avec ces paramètres, vous pouvez manipuler la caméra uniquement avec le stylet :
+Avec ces réglages, vous pouvez manipuler la caméra uniquement avec le stylet :
 
-* haut du basculeur et déplacement en survol = rotation de la caméra
-* bas du basculeur et déplacement en survol = panoramique
+* bouton supérieur et déplacement en survol = rotation de la caméra
+* bouton inférieur et déplacement en survol = translation
 
-## Commandes de la caméra {#camera-controls}
+## Contrôles des caméras {#camera-controls}
 
 ![](/images/camera_list.webp)
 
 ### Vues {#views}
-Vous pouvez enregistrer des points de vue de caméra en utilisant `Add View`.  
-Si vous cliquez sur le nom de la vue, la caméra restaurera ce point de vue.
+Vous pouvez enregistrer des points de vue de caméra avec `Ajouter une vue`.
+Touchez le nom d'une vue pour que la caméra revienne à cette vue.
+
 
 ::: tip
-Une vue enregistrée sauvegardera les paramètres de [Type de projection](#projection-type) ainsi que l’[image de référence](background.md).  
-Cela peut être utile si vous voulez alterner entre des vues de référence avant/gauche/arrière avec des arrière-plans différents.
+Une vue enregistrée garde aussi le réglage [Projection](#projection) et l'[image de référence](background.md).  
+C'est pratique pour passer d'une vue de référence de face, de gauche ou de dos à l'autre, chacune avec son arrière-plan.
 :::
 
-| Action      | Icon                          | Description                                                                 |
+| Action      | Icône                         | Description                                                                 |
 | :---------: | :---------------------------: | :-------------------------------------------------------------------------: |
-| Visibility  | ![](/icons/eye_open.webp)    | Activer/désactiver la caméra. Les caméras masquées seront ignorées par les boutons précédent/suivant |
-| Name        |                               | Sélectionner la caméra                                                      |
-| Image       | ![](/icons/image.webp)       | Une vignette d’une image de référence si elle est liée à la caméra         |
-| Update View | ![](/icons/update_view.webp) | Mettre à jour la vue enregistrée avec le point de vue actuel               |
-| Edit Name   | ![](/icons/pencil.webp)      | Modifier le nom de la caméra                                                |
-| Delete      | ![](/icons/trash.webp)       | Supprimer la caméra                                                         |
+| Visibilité  | ![](/icons/eye_open.webp)    | Active ou désactive la caméra. Les caméras cachées sont ignorées par les boutons précédent/suivant |
+| Nom         |                               | Sélectionne la caméra                                                       |
+| Image       | ![](/icons/image.webp)       | Une miniature de l'image de référence, si elle est liée à la caméra         |
+| Projection  | ![](/icons/perspective.webp) | La projection de la caméra, avec son champ de vision en perspective         |
+| Mettre à jour la vue | ![](/icons/update_view.webp) | Met à jour la vue enregistrée avec le point de vue actuel         |
+| Renommer    | ![](/icons/pencil.webp)      | Modifie le nom de la caméra                                                 |
+| Supprimer   | ![](/icons/trash.webp)       | Supprime la caméra                                                          |
 
-### ![](/icons/tool_view.webp) Ajouter une vue {#add}
-Créer une nouvelle caméra basée sur la vue actuelle.
+### ![](/icons/camera_add.webp) Ajouter une vue {#add}
+Crée une nouvelle caméra à partir de la vue actuelle.
 
 ### ![](/icons/camera.webp) Icônes {#icons-test}
 
-Activer/désactiver l’affichage des icônes de caméra dans la vue. Si une caméra est sélectionnée, son icône est toujours visible.
+Affiche ou masque les icônes des caméras dans la vue. Le bouton apparaît à côté de `Ajouter une vue` dès que vous avez une caméra. L'icône de la caméra sélectionnée est toujours visible.
 
-### Type de projection {#projection}
-Vous pouvez modifier le `Field of View` (FOV / longueur focale) de votre caméra.  
-Il est généralement conseillé d’utiliser un FOV faible pour la sculpture, car cela peut aider pour les proportions.  
-Vous pouvez également utiliser le mode `Orthographic`, qui est plus ou moins similaire à un FOV égal à 0.
+### Projection {#projection}
+Choisissez entre `Perspective` et `Orthographique`.
+
+En perspective, vous pouvez régler le `Champ de vision vertical` de votre caméra. La focale équivalente pour un appareil 35 mm s'affiche au-dessus du curseur, pratique si vous avez l'habitude de la photo.
+Pour sculpter, on conseille généralement un champ de vision faible, qui aide à juger les proportions.  
+Le mode `Orthographique` revient plus ou moins à un champ de vision égal à 0.
 
 ### Première personne {#fps}
-Active le réglage du pivot directement sur la caméra, plutôt que sur la sculpture. Faire glisser un doigt sur l’arrière-plan gardera la position de la caméra verrouillée, mais changera la rotation, de manière similaire au fonctionnement des jeux à la première personne. Utile pour sculpter des environnements plutôt que des objets uniques.
+En perspective uniquement. Place le pivot directement sur la caméra plutôt que sur la sculpture. Faire glisser un doigt sur l'arrière-plan garde la position de la caméra fixe et change seulement sa rotation, comme dans les jeux à la première personne. Utile pour sculpter des décors plutôt que des objets isolés.
 
 ![](/images/camera_rotation_ortho_view.webp)
 
 ### Type de rotation {#rotation-type}
-Par défaut, la caméra utilise le mode de rotation `Turntable`.  
-Cela signifie que vous n’avez que deux degrés de liberté ; c’est plus intuitif mais dans certains cas vous voudrez plus de flexibilité.  
-Vous pouvez passer à `Trackball`, vous pourrez alors *faire rouler* la vue en faisant pivoter *deux* doigts sur la vue. Sur ordinateur, il existe un mode trackball alternatif qui pourra être plus familier pour certains utilisateurs.
+Par défaut, la caméra utilise le mode de rotation `Plateau tournant`.
+Vous n'avez alors que deux degrés de liberté : c'est plus intuitif, mais dans certains cas vous voudrez plus de souplesse.  
+Vous pouvez passer en `Trackball` : vous pourrez alors faire *rouler* la vue en tournant *deux* doigts dans la vue. Il existe deux modes `Trackball` : le premier fait rouler la vue comme une boule sous votre doigt, tandis que le second (avec l'icône de flèches) tourne la vue d'après les mouvements horizontaux et verticaux de votre glissement, ce qui peut sembler plus familier à certains utilisateurs.
 
 ### Alignement orthographique {#orthographic}
 
-Lorsqu’il est activé, si vous avez un clavier, maintenir la touche majuscule enfoncée pendant la rotation de la vue alignera la caméra sur la vue avant/arrière/haut/bas/gauche/droite la plus proche et rendra la caméra orthographique. La caméra sera également rendue orthographique lorsque le cube de vue est cliqué pour s’aligner sur avant/arrière/gauche/droite/haut/bas.
+Si vous avez un clavier et que cette option est activée, maintenir Shift pendant que vous tournez la vue aligne la caméra sur la vue de face, de dos, de dessus, de dessous, de gauche ou de droite la plus proche, et rend la caméra orthographique. La caméra devient aussi orthographique quand vous touchez le cube de vue pour vous aligner sur l'une de ces vues.
 
 ### Réinitialiser la vue {#reset}
 
-Déplace la caméra vers l’avant et ajuste la scène pour qu’elle tienne dans la vue.
+Place la caméra de face et cadre toute la scène dans la vue.
 
-### Aligner la vue {#snap}
-S’aligne sur la vue avant/arrière/gauche/droite/haut/bas la plus proche. Si vous êtes déjà dans l’une de ces vues, cliquer à nouveau effectuera une rotation de 180 degrés vers le côté opposé.
+### Vue alignée {#snap}
+Aligne la caméra sur la vue de face, de dos, de gauche, de droite, de dessus ou de dessous la plus proche. Si vous êtes déjà dans l'une de ces vues, toucher à nouveau le bouton fait pivoter la vue de 180 degrés vers le côté opposé.
 
 ### Vitesse {#speed}
 
-Si vous trouvez que la caméra se déplace trop lentement ou trop rapidement, vous pouvez définir un multiplicateur de vitesse pour la `rotation`, la `translation` et le `zoom`. Utile si votre sculpture est très grande ou très petite.
+Si la caméra vous semble trop lente ou trop rapide, vous pouvez régler un multiplicateur de vitesse pour `Rotation`, `Zoom` et `Translation`. Utile si votre sculpture est très grande ou très petite.
 
-### Aperçu du pivot {#pivot}
+### Le pivot {#pivot}
 
-Lorsque vous faites pivoter la caméra, vous pouvez voir un petit point rose : c’est votre point de pivot de caméra.  
-Il est très important de comprendre où se trouve votre pivot afin de ne pas être perdu ou frustré par la caméra.
+Quand vous tournez la caméra, vous voyez un petit point rose : c'est le point de pivot de la caméra.  
+Il est très important de comprendre où se trouve votre pivot, pour ne pas vous perdre ni vous agacer avec la caméra.
 
-Par défaut, le pivot est mis à jour via ces opérations :
-- double tape sur le modèle
-- double tape sur l’arrière-plan (le nouveau pivot sera au centre de votre maillage)
-- poser *deux* doigts sur l’écran (panoramique/zoom/roulis) mettra à jour le pivot au centre des *deux* doigts
+Par défaut, le pivot est mis à jour par ces actions :
+- un double appui sur le modèle
+- un double appui sur l'arrière-plan (le nouveau pivot sera au centre de votre maillage)
+- poser *deux* doigts sur l'écran (translation, zoom, roulis) place le pivot au centre des *deux* doigts
 
-### Mettre à jour le pivot… {#update-pivot}
+### Mettre à jour le pivot... {#update-pivot}
 
-Vous pouvez personnaliser davantage la mise à jour du pivot avec ces options :
+Vous pouvez affiner la mise à jour du pivot avec ces options :
 
-* When camera starts moving 
-* Allow air pivot
-* When double tapping
-* Sculpt (stroke)
+* `Au mouvement de caméra` - Met à jour le pivot quand vous commencez à manipuler la caméra.
+* `Pivot hors surface` - Autorise un nouveau pivot même quand vous zoomez en dehors de la surface de l'objet. Nécessite `Au mouvement de caméra`.
+* `Mettre à jour lors du double appui` - Met à jour le pivot de rotation quand vous touchez deux fois la surface de l'objet.
+* `Sculpter (Trait)` - Met à jour le pivot quand vous sculptez.
 
 ::: tip
-Quand vous y êtes habitué, vous pouvez masquer le point rose (indice) en allant dans les menus [Settings](settings.md).
+Une fois que vous êtes habitué, vous pouvez masquer le point rose (indicateur) dans le menu [Réglages](settings.md).
 :::
 
-### Double‑taper sur l’objet {#dtap-object}
-Lorsque `Focus` est activé, un double tape déplacera le pivot vers l’objet tapé.
+### Centrer la vue lors du zoom arrière {#center-view-when-zooming-out}
+Quand vous dézoomez, la caméra ne glisse pas sur le côté : elle ne fait que reculer, et la vue reste centrée.
 
-### Double‑taper sur l’arrière‑plan {#dtap-tap-background}
-Lorsqu’il est activé, définit le pivot sur l’un des éléments suivants : Sélection, Scène, ou bascule entre les deux.
+### Double appui sur l'objet {#dtap-object}
+Si cette option est activée, toucher deux fois un objet centre la caméra sur le point touché.
+
+### Double appui sur l'arrière-plan {#dtap-tap-background}
+Si cette option est activée, toucher deux fois l'arrière-plan centre la caméra sur :
+* `Sélection` - Les objets sélectionnés.
+* `Scène` - Toute la scène.
+* `Basculer` - Alterne entre les deux à chaque double appui. Il existe deux options `Basculer`, qui diffèrent par celle qui vient en premier, comme le montrent leurs icônes.

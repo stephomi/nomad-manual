@@ -1,372 +1,462 @@
 # ![](/icons/scene.webp) Cảnh {#scene}
 
-Menu này cho phép bạn quản lý đối tượng, đèn, camera và repeater trong Nomad. Nó hiển thị cây phân cấp của cảnh dưới dạng tree-view, cho phép bạn chỉnh sửa nhiều khía cạnh của các đối tượng. Nó cũng cho phép bạn tạo đối tượng mới, cũng như gộp và tách đối tượng theo nhiều cách khác nhau.
+Menu này giúp bạn quản lý các đối tượng, đèn, máy ảnh và trình lặp lại trong Nomad. Nó hiển thị cấu trúc phân cấp của cảnh dưới dạng cây, cho phép bạn thay đổi nhiều khía cạnh của đối tượng. Bạn cũng có thể tạo đối tượng mới, cũng như gộp và tách đối tượng theo nhiều cách khác nhau.
 
 
 ![](/images/scene_menu_summary.webp)
 
 
 ## Thanh phím tắt {#shortcut-bar}
-| Action                 | Icon                              | Description                                                                                                         |
+| Thao tác               | Biểu tượng                        | Mô tả                                                                                                               |
 | :--------------------: | :-------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
-| [Add...](#add-menu)    | ![](/icons/plus.webp)            | Hiển thị [Add Menu](#add-menu) để thêm một đối tượng vào cảnh                                                     |
-| Delete                 | ![](/icons/trash.webp)           | Xoá đối tượng                                                                                                      |
-| Lock                   | ![](/icons/lock.webp)            | Làm cho đối tượng không thể được chọn trong viewport. Vẫn có thể chọn từ tree view.                               |
-| Join                   | ![](/icons/merge.webp)           | Gộp các đối tượng đã chọn thành một đối tượng duy nhất mà không thay đổi hình học                                 |
-| Separate               | ![](/icons/diagonal.webp)        | Nếu một đối tượng được tạo từ nhiều “vỏ” polygon tách biệt, tách nó thành nhiều đối tượng riêng. Ngược lại với Join |
-| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Hiển thị menu [Boolean](#boolean)                                                                                 |
-| Clone                  | ![](/icons/clone.webp)           | Nhân bản đối tượng thành một đối tượng mới                                                                         |
-| Instance               | ![](/icons/link.webp)            | Nhân bản đối tượng dưới dạng instance, để thay đổi modelling trên một đối tượng sẽ áp dụng cho tất cả instance    |
-| Un-instance            | ![](/icons/unlink.webp)          | Chuyển một instance thành hình dạng độc lập, để thay đổi modelling không còn được sao chép sang các instance khác |
-| Sync                   | ![](/icons/link.webp)            | Nếu các instance có con, đảm bảo tất cả instance chia sẻ cùng một cây con                                         |
+| [Thêm...](#add-menu)   | ![](/icons/plus.webp)            | Mở [Menu Thêm](#add-menu) để thêm một đối tượng vào cảnh                                                            |
+| Xóa                    | ![](/icons/trash.webp)           | Xóa các đối tượng đang chọn. Các mục con của chúng vẫn được giữ lại.                                                |
+| Khóa                   | ![](/icons/lock.webp)            | Khiến các đối tượng đang chọn không thể chọn được trong khung nhìn. Bạn vẫn có thể chọn chúng từ cây phân cấp. Khóa một nhóm sẽ khóa mọi thứ bên trong nó. Chạm lần nữa để mở khóa. |
+| [Gộp lại](#join)       | ![](/icons/merge.webp)           | Gộp các đối tượng đang chọn thành một đối tượng duy nhất mà không thay đổi hình khối                                |
+| [Tách...](#separate)   | ![](/icons/separate.webp)        | Mở cửa sổ [Tách](#separate), để chia một đối tượng thành nhiều đối tượng. Ngược lại với thao tác gộp                |
+| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Mở cửa sổ [Boolean](#boolean)                                                                                  |
+| Nhân bản               | ![](/icons/clone.webp)           | Nhân bản các đối tượng đang chọn thành đối tượng mới                                                                |
+| Thực thể               | ![](/icons/link.webp)            | Nhân bản các đối tượng đang chọn dưới dạng thực thể, để thay đổi hình dạng trên một bản sẽ áp dụng cho mọi thực thể. |
+| Bỏ thực thể            | ![](/icons/unlink.webp)          | Biến một thực thể thành hình dạng độc lập, để thay đổi hình dạng không còn được sao chép sang các thực thể khác     |
+| Đồng bộ                | ![](/icons/checked.webp)         | Khi được đánh dấu, các thao tác áp dụng cho mọi thực thể của các đối tượng đang chọn, chứ không chỉ cho các đối tượng được chọn. Tùy chọn này chỉ có khi vùng chọn chứa thực thể. [Thẻ Đồng bộ](#sync) trong cửa sổ `Nâng cao` quyết định những thao tác nào làm theo ô chọn này. |
+
+::: tip
+Khi một thao tác cũng sẽ ảnh hưởng đến các thực thể khác, một biểu tượng liên kết nhỏ sẽ hiện trên nút của nó.
+:::
 
 
-## Dạng cây {#tree-view}
+## Cây phân cấp {#tree-view}
 ![](/images/scene_treeview.webp) 
 
-| Action       | Icon                       | Description              |
+Cây phân cấp liệt kê các đối tượng, nhóm, trình lặp lại, đèn và máy ảnh của cảnh. Bên cạnh tên một lưới, bạn sẽ thấy số đỉnh của nó, kèm một biểu tượng lớp có màu nếu lưới có lớp. Mỗi hàng có các nút sau:
+
+| Thao tác     | Biểu tượng                 | Mô tả                    |
 | :----------: | :------------------------: | :----------------------: |
-| Select       | ![](/icons/checked.webp)  | Bật/tắt chọn             |
-| Visible      | ![](/icons/eye_open.webp) | Bật/tắt hiển thị         |
-| Menu         | ![](/icons/more.webp)     | Hiển thị menu đối tượng  |
+| Tên          | ![](/icons/pencil.webp)   | Đổi tên đối tượng. Nếu đối tượng đang được chọn, mọi đối tượng đang chọn sẽ được đổi tên cùng lúc, kèm theo một con số. Nhấn lâu để đổi tên cả đối tượng lẫn các mục con của nó. |
+| Chọn         | ![](/icons/checked.webp)  | Chọn/bỏ chọn             |
+| Có thể thấy  | ![](/icons/eye_open.webp) | Bật/tắt hiển thị         |
+| Menu         | ![](/icons/more.webp)     | Mở [menu đối tượng](#object-menu) |
 
-::: tip TIP: Nhanh chóng chọn hoặc ẩn nhiều đối tượng
+::: tip MẸO: Chọn hoặc ẩn nhanh nhiều đối tượng
 
-Chạm vào biểu tượng chọn để bật/tắt một đối tượng, hoặc kéo dọc trên cột chọn để chọn nhiều đối tượng. Có thể làm tương tự với cột hiển thị.
+Chạm vào biểu tượng chọn để chọn/bỏ chọn một đối tượng, hoặc kéo dọc theo cột chọn để chọn nhiều đối tượng. Bạn cũng có thể làm tương tự với cột hiển thị.
+
+Nhấn lâu vào biểu tượng chọn hoặc hiển thị để tác động cả lên các mục con.
 
 :::
 
-### Thao tác dạng cây {#tree-view-manipulation}
+### Thanh đầu cây phân cấp {#tree-view-header}
 
-Nhấn giữ lâu trên một mục trong tree view cho đến khi nó chuyển sang màu vàng. Sau đó bạn có thể di chuyển nó lên hoặc xuống trong tree view, cũng như kéo nó lên trên một mục khác để biến nó thành con của mục đó.
+Hàng phía trên danh sách có vài công cụ hỗ trợ:
 
-Khi nhiều mục được chọn, hầu hết sẽ có màu vàng đậm, một mục sẽ có màu vàng nhạt hơn. Nhấn giữ và kéo mục màu vàng nhạt để di chuyển tất cả đối tượng cùng lúc.
+* ![](/icons/sort_down.webp) - thu gọn hoặc mở rộng tất cả các nhóm cùng lúc.
+* ![](/icons/preview.webp) - bật/tắt `Xem trước đối tượng`, một hình thu nhỏ được render cho mỗi đối tượng trong danh sách.
+* ![](/icons/search.webp) - lọc danh sách theo tên.
 
-Khi bạn chọn một mục cha, mặc định tất cả mục con cũng sẽ được chọn. Chạm vào biểu tượng của mục cha sẽ chuyển đổi giữa việc chỉ chọn cha, hoặc chọn cả cha và con.
+### Sắp xếp cây phân cấp {#tree-view-manipulation}
+
+Nhấn lâu vào một mục trong cây phân cấp cho đến khi nó được tô sáng. Sau đó bạn có thể di chuyển nó lên hoặc xuống, hoặc kéo nó thả lên một mục khác để biến nó thành mục con của mục đó.
+
+Khi nhiều mục được chọn, một trong số đó là mục chọn chính và được hiển thị sáng hơn. Nhấn lâu và kéo một trong số chúng để di chuyển tất cả các đối tượng đang chọn cùng lúc.
+
+Khi bạn chọn một mục cha, theo mặc định tất cả các mục con cũng sẽ được chọn. Chạm vào mục cha lần nữa để chuyển giữa chỉ chọn mục cha, hoặc chọn cả mục cha lẫn mục con.
+
+Chạm đúp vào một mục để máy ảnh tập trung vào nó (xem [Nâng cao](#focus-on-item)).
 
 ### Menu đối tượng {#object-menu}
 
-Nhấn vào nút dấu ba chấm (...) cho một đối tượng trong tree view sẽ hiển thị menu đối tượng. 
-Nhiều tuỳ chọn ở đây tương tự với thanh lối tắt phía trên, được lặp lại cho tiện.
+Bấm vào nút ba chấm (...) của một đối tượng trong cây phân cấp sẽ mở menu đối tượng.
+Nhiều tùy chọn trong đó giống với thanh phím tắt ở trên cùng, được lặp lại cho tiện.
 
-|       Action        |                        Icon                        | Description                                                                                                                                                             |
+|       Thao tác      |                     Biểu tượng                     | Mô tả                                                                                                                                                                   |
 | :-----------------: | :------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|      Instance       |               ![](/icons/link.webp)            | Nhân bản đối tượng dưới dạng instance, để thay đổi modelling trên một đối tượng sẽ áp dụng cho tất cả instance.                                                        |
-|        Clone        |              ![](/icons/clone.webp)            | Nhân bản đối tượng thành một đối tượng mới                                                                                                                              |
-|        Name         |              ![](/icons/pencil.webp)           | Đổi tên đối tượng                                                                                                                                                       |
-|       Delete        |              ![](/icons/trash.webp)            | Xoá đối tượng                                                                                                                                                           |
-|       Delete+       |            ![](/icons/removeNode.webp)         | Xoá đối tượng và toàn bộ con của nó                                                                                                                                     |
-|     Un-instance     |              ![](/icons/unlink.webp)           | Chuyển một instance thành hình dạng độc lập, để thay đổi modelling không còn được sao chép sang các instance khác.                                                     |
-|  Separate Topology  |             ![](/icons/separate.webp)          | Nếu một đối tượng được tạo từ nhiều “vỏ” polygon tách biệt, tách nó thành nhiều đối tượng riêng. Ngược lại với thao tác Join.                                          |
-| Separate Face Group |            ![](/icons/group.webp)          | Nếu một đối tượng có nhiều face group, tách mesh thành nhiều đối tượng riêng.                                                                                          |
-|   Separate Layers   |              ![](/icons/layer.webp)            | Nếu một đối tượng có layer, tách mỗi layer thành một đối tượng riêng. Hữu ích khi gửi blendshape sang ứng dụng khác.                                                   |
-|   Join -> Layers    | ![](/icons/merge.webp) -> ![](/icons/layer.webp) <span style="visibility:hidden">_________</span> | Nếu nhiều đối tượng được chọn và có topology khớp nhau, gộp các đối tượng đó thành layer cho đối tượng chính (các đối tượng còn lại sẽ bị xoá). Cũng hữu ích cho blendshape đến TỪ ứng dụng khác.<br><br> Lưu ý là các layer sẽ bị tắt theo mặc định. Bật chúng nếu bạn cần chỉnh slider của chúng. |
+|        Tên          |              ![](/icons/pencil.webp)           | Đổi tên đối tượng                                                                                                                                                       |
+|     Bỏ thực thể     |              ![](/icons/unlink.webp)           | Biến một thực thể thành hình dạng độc lập, để thay đổi hình dạng không còn được sao chép sang các thực thể khác.                                                        |
+|      Thực thể       |               ![](/icons/link.webp)            | Nhân bản đối tượng dưới dạng thực thể, để thay đổi hình dạng trên một bản sẽ áp dụng cho mọi thực thể.                                                                  |
+|      Nhân bản       |              ![](/icons/clone.webp)            | Nhân bản đối tượng thành một đối tượng mới                                                                                                                              |
+|        Xóa          |              ![](/icons/trash.webp)            | Xóa đối tượng. Các mục con của nó vẫn được giữ lại, trừ khi `Mục con` được đánh dấu.                                                                                    |
+|      Mục con        |            ![](/icons/hierarchy.webp)          | Khi được đánh dấu, `Thực thể`, `Nhân bản` và `Xóa` cũng tác động lên các mục con của đối tượng.                                                                         |
+|   Tách theo Phần    |             ![](/icons/separate.webp)          | Nếu một đối tượng gồm nhiều phần rời nhau, tạo một đối tượng riêng cho mỗi phần. Ngược lại với thao tác gộp.                                                            |
+|   Tách theo Nhóm    |            ![](/icons/group.webp)          | Nếu một đối tượng có nhiều nhóm mặt, tạo một đối tượng riêng cho mỗi nhóm mặt.                                                                                              |
+|   Tách theo Lớp     |              ![](/icons/layer.webp)            | Nếu một đối tượng có lớp, tạo các đối tượng riêng cho lưới gốc và cho từng lớp. Hữu ích để gửi blendshape sang ứng dụng khác.                                          |
+|   Gộp lại → Lớp     | ![](/icons/merge.webp) -> ![](/icons/layer.webp) <span style="visibility:hidden">_________</span> | Nếu nhiều đối tượng được chọn và có tô pô giống nhau, gộp các đối tượng đó thành các lớp của đối tượng chính (các đối tượng còn lại sẽ bị xóa). Một lần nữa, hữu ích cho blendshape đến TỪ các ứng dụng khác.<br><br> Lưu ý rằng các lớp sẽ bị tắt theo mặc định. Hãy bật chúng nếu bạn cần chỉnh thanh trượt của chúng. |
+|  Đường cong (Lặp lại) |            ![](/icons/curve.webp)            | Chỉ dành cho ống hoặc khối tiện: thêm một trình lặp lại [Đường cong](#curve) đi theo cùng đường cong đó, làm mục con của đối tượng.                                    |
+|        Ống          |             ![](/icons/tube.webp)              | Với khối tiện, thêm một [ống](tools.md#tube) đi theo biên dạng của nó, làm mục con. Với hình trụ, hình nón hoặc vòng xuyến, biến nó thành một ống có cùng hình dạng, để bạn có thể uốn nó theo một đường cong. |
 
 
 
 
 ### Chọn nhiều {#multiselection}
-Bạn có thể chọn nhiều đối tượng để phục vụ hai mục đích:
+Bạn có thể chọn nhiều đối tượng để làm hai việc:
 - dùng công cụ gizmo để di chuyển nhiều đối tượng cùng lúc
-- gộp đối tượng bằng Join và các phép Boolean.
+- gộp các đối tượng bằng thao tác gộp và boolean.
 
-Bạn có thể làm điều này bằng cách bật checkbox `Multiselection`, rồi nhấp vào đối tượng trong danh sách.
+Trong cây phân cấp, chạm vào biểu tượng chọn của từng đối tượng, hoặc kéo dọc theo cột chọn. Khi chạm vào tên, hãy giữ phím tắt `Mặt nạ` (hoặc `Ctrl` trên bàn phím) để thêm hoặc bỏ một đối tượng, hoặc giữ phím tắt `Làm mịn` (hoặc `Shift`) để chọn mọi đối tượng nằm giữa đối tượng hiện tại và đối tượng bạn chạm vào.
 
-::: tip Quick multiselection
-Bạn cũng có thể multiselect trong viewport bằng cách giữ phím tắt `Smooth` và chạm vào một mesh khác.
+::: tip Chọn nhiều nhanh
+Bạn cũng có thể chọn nhiều đối tượng ngay trong khung nhìn bằng cách giữ phím tắt `Làm mịn` (hoặc `Shift`) và chạm vào một lưới khác.
 
-Bạn có thể bỏ chọn một đối tượng bằng cách chạm lại vào nó (chỉ khi lựa chọn hiện tại có nhiều hơn một đối tượng).
+Bạn có thể bỏ chọn một đối tượng bằng cách chạm vào nó lần nữa (chỉ khi vùng chọn có nhiều hơn một đối tượng).
 :::
 
-::: warning Tính năng gizmo bị giới hạn
-Khi dùng multiselection, công cụ gizmo sẽ luôn bỏ qua masking.
-Ngoài ra, scale theo X/Y/Z bị loại bỏ.
-
-Lý do là multiselection chỉ cho phép biến đổi toàn mesh, không phải biến đổi theo từng vertex.
-Điều này có thể được cải thiện trong tương lai.
-:::
+Gizmo di chuyển tất cả các đối tượng đang chọn cùng nhau, xem [Gizmo](tools.md#gizmo).
 
 
-## Nối {#join}
-Tuỳ chọn này sẽ đơn giản tạo một mục đối tượng duy nhất từ nhiều đối tượng được chọn.
+## ![](/icons/merge.webp) Gộp lại {#join}
+Tùy chọn này đơn giản là tạo một mục đối tượng duy nhất từ nhiều đối tượng đang chọn.
+Các điểm và UV nằm gần nhau hơn [bán kính hàn](#weld-radius) sẽ được hợp nhất.
 
-Bạn có thể xem ví dụ video trong phần [Separate](#separate).
+Bạn có thể xem video ví dụ trong phần [Tách](#separate).
 
-## Boolean {#boolean}
+## ![](/icons/bool_subtract_circle.webp) Boolean {#boolean}
 ![](/images/scene_boolean_menu.webp) 
 Kết hợp các đối tượng thành một bề mặt duy nhất.
 
-`Voxel merge` sẽ giữ lại thể tích của các đối tượng, và tính toán lại polygon mới phân bố đều trên bề mặt. Do có bước tính toán nên voxel merge có thể xử lý hình học phức tạp, nhưng có thể mất chi tiết nhỏ nếu độ phân giải mục tiêu không đủ cao.
+`Kết hợp voxel` giữ lại thể tích của các đối tượng và tính toán các đa giác mới phân bố đều trên bề mặt. Nhờ bước tính toán này, kết hợp voxel xử lý được hình khối phức tạp, nhưng có thể mất chi tiết nhỏ nếu độ phân giải mục tiêu không đủ cao.
 
-`Boolean` sẽ cố gắng giữ nguyên bố cục polygon ban đầu, và khâu polygon tại vùng các đối tượng chồng lấp. Điều này có thể cho kết quả sạch và sắc nét hơn voxel merge, tuy nhiên nó yêu cầu mesh phải “kín nước” (watertight); không được có lỗ hoặc hình dạng lỗi. Nếu thao tác này thất bại, thường voxel merge sẽ hoạt động được.
+`Boolean` sẽ cố giữ nguyên bố cục đa giác ban đầu và khâu các đa giác lại ở chỗ các đối tượng chồng lên nhau. Cách này có thể cho kết quả gọn và sắc nét hơn nhiều so với kết hợp voxel, nhưng nó đòi hỏi lưới 'kín nước': các đối tượng không được có lỗ hay hình dạng lỗi. Nếu nó thất bại, kết hợp voxel thường sẽ làm được.
 
-### Thao tác Boolean {#boolean-operations}
-Cả Voxel Merge và Boolean đều dùng trạng thái hiển thị của đối tượng để điều khiển phép toán:
+### Các phép boolean {#boolean-operations}
+Cả Kết hợp voxel lẫn Boolean đều dùng trạng thái hiển thị của đối tượng để điều khiển phép toán, như lời nhắc ở cuối cửa sổ:
 
-#### Hợp (Union) {#union}
-Cả hai đối tượng đều hiển thị sẽ tạo boolean **union**, lớp vỏ ngoài của các đối tượng được kết hợp, không có bề mặt bên trong. ![](/images/boolean_union.webp)
+#### Hợp {#union}
+Cả hai đối tượng đều hiển thị sẽ tạo phép **hợp** boolean: lớp vỏ ngoài của các đối tượng được kết hợp, không còn bề mặt bên trong. ![](/images/boolean_union.webp)
 
-#### Trừ (Subtract) {#subtract}
-Một đối tượng ẩn = boolean **subtract**, đối tượng ẩn sẽ bị trừ khỏi đối tượng hiển thị. ![](/images/boolean_subtract.webp)
+#### Trừ {#subtract}
+Một đối tượng bị ẩn = phép **trừ** boolean: đối tượng bị ẩn sẽ bị trừ khỏi đối tượng hiển thị. ![](/images/boolean_subtract.webp)
 
-#### Giao (Intersect) {#intersect}
-Cả hai đối tượng đều ẩn = boolean **intersection**, tạo một hình mới chỉ tại vùng hai đối tượng giao nhau. ![](/images/boolean_intersect.webp)
+#### Giao {#intersect}
+Cả hai đối tượng đều bị ẩn = phép **giao** boolean: tạo một hình mới chỉ ở phần hai đối tượng chồng lên nhau. ![](/images/boolean_intersect.webp)
 
 
-### Nút Voxel Merge {#voxel-merge-button}
-Nhấn nút này sẽ thực hiện thao tác voxel merge trên các đối tượng được chọn. Khi thực hiện trên một đối tượng đơn lẻ, nó sẽ retopo thành polygon phân bố đều, hữu ích khi đối tượng có polygon bị kéo giãn.
+### ![](/icons/voxel.webp) Kết hợp voxel {#voxel-merge-button}
+Nhấn nút này sẽ thực hiện kết hợp voxel trên các đối tượng đang chọn. Khi dùng trên một đối tượng duy nhất, nó sẽ dựng lại tô pô với các đa giác phân bố đều, hữu ích khi đối tượng có đa giác bị kéo giãn. Các tùy chọn bên dưới hoạt động giống các tùy chọn của [Remesh voxel](topology.md#voxel-remesher).
 
 ### Độ phân giải {#resolution}
-Độ phân giải của lưới voxel 3D dùng để tính toán. Khi giá trị này thay đổi, một mẫu caro sẽ phủ lên đối tượng để xem trước kích thước polygon.
+Độ phân giải của lưới voxel 3d dùng để tính toán. Khi giá trị này thay đổi, một họa tiết bàn cờ sẽ được phủ lên đối tượng để xem trước kích thước đa giác.
 
-### Tạo đa phân giải {#build-multiresolution}
-Tạo các mức multiresolution thấp hơn độ phân giải mục tiêu. Ví dụ nếu resolution là 400 và build multiresolution là 3, bạn sẽ có một mesh mới với khoảng 296.000 polygon, nhưng có 3 mức subdiv thấp hơn là 74.000, 18.000, 4.000.
+Ống nhỏ giọt bên cạnh thanh trượt lấy mức chi tiết theo mật độ lưới dưới ngón tay bạn. Nút bên cạnh nó chuyển thanh trượt sang `Độ dài cạnh`, một kích thước trong thế giới: cùng một giá trị sẽ cho cùng mức chi tiết trên mọi đối tượng.
 
-### Giữ cạnh sắc {#keep-sharp-edges}
-Bật việc “snap” lưới voxel vào các cạnh. Hoạt động tốt nhất trên hình dạng đơn giản.
+### Tạo dựng đa độ phân giải {#build-multiresolution}
+Tạo các cấp đa phân giải bên dưới độ phân giải mục tiêu. Ví dụ, nếu độ phân giải là 400 và tạo dựng đa độ phân giải là 3, bạn sẽ có một lưới mới với khoảng 296.000 đa giác, cùng 3 cấp phân chia thấp hơn với khoảng 74.000, 18.500 và 4.600 đa giác.
 
-### Nút Boolean {#boolean-button}
-Nhấn nút này sẽ thực hiện phép Boolean polygon dùng thư viện Manifold của Emmett Lalish. 
+### Làm dày phần mỏng {#thicken-thin-parts}
+Làm dày những phần quá mỏng so với lưới voxel, để chúng không bị đứt rời. Tùy chọn này không dùng được cùng `Cạnh sắc` hoặc `Biên sắc nét`.
+
+### Lỗ {#holes}
+Cách đóng các lỗ của đối tượng hở trước khi kết hợp:
+* `Lấp đầy` - mỗi lỗ được đóng riêng, bắt đầu từ đường biên của nó.
+* `Hình dạng` - các lỗ được đóng theo bề mặt xung quanh, và các mảnh hở chồng lên nhau sẽ được nối lại.
+
+### ![](/icons/angle.webp) Giữ lại các cạnh sắc nét {#keep-sharp-edges}
+Nút `Cạnh sắc` làm lưới voxel bám vào các cạnh sắc của đối tượng. Nó hoạt động tốt nhất với hình dạng đơn giản, và có thể gây méo ở một số vùng.
+
+### ![](/icons/group.webp) Biên sắc nét {#sharp-border}
+Các mặt mới đi theo đường biên giữa các nhóm mặt, và đường biên giữ sắc nét ở những chỗ bề mặt gấp khúc dọc theo nó.
+
+### ![](/icons/group_separate.webp) Giữ các nhóm riêng {#keep-groups-separate}
+Mỗi nhóm mặt được tái tạo lưới riêng: các nhóm không bao giờ hợp nhất, và mỗi nhóm là một mảnh khép kín thuộc nhóm của riêng nó. Ở chế độ này không tạo đa phân giải.
+
+### ![](/icons/bool_subtract_circle.webp) Nút Boolean {#boolean-button}
+Nhấn nút này sẽ thực hiện phép boolean trên đa giác, dùng thư viện Manifold của Emmett Lalish.
+
+### ![](/icons/bool_unite_circle.webp) Làm sạch chồng lấn {#clean-overlaps}
+Khi chỉ có một đối tượng được chọn, nút `Boolean` trở thành `Làm sạch chồng lấn`: nó hợp nhất các phần của đối tượng cắt xuyên qua nhau thành một bề mặt gọn gàng.
 
 
-## Tách {#separate}
-Nếu bạn có một đối tượng đơn lẻ được tạo từ nhiều phần rời nhau, bạn có thể tách đối tượng này thành nhiều đối tượng. 
-Có thể xem thao tác này như ngược lại với [Simple Merging](#simple-merge).
+## ![](/icons/separate.webp) Tách {#separate}
+Nếu bạn có một đối tượng gồm nhiều phần rời nhau, bạn có thể tách nó thành nhiều đối tượng.
+Có thể xem đây là thao tác ngược với [Gộp lại](#join).
+
+Cửa sổ `Tách...` có ba cách để tách các đối tượng đang chọn:
+* `Tách theo Phần` - tạo một đối tượng riêng cho mỗi phần rời nhau.
+* `Tách theo Nhóm` - tạo một đối tượng riêng cho mỗi nhóm mặt.
+* `Tách theo Lớp` - tạo các đối tượng riêng cho lưới gốc và cho từng lớp.
 
 ![](/videos/merge_separate.mp4)
 
 
-## Menu Thêm {#add-menu}
+## ![](/icons/plus.webp) Menu Thêm {#add-menu}
 
 ![](/images/scene_addmenu_overview.webp)
 
-Menu này sẽ tạo primitive, group, camera, repeater và đèn.
+Menu này tạo hình cơ bản, nhóm, máy ảnh, trình lặp lại và đèn.
 
-Primitive là các dạng hình cơ bản có thể điều chỉnh bằng tham số. Khi đã chỉnh primitive theo ý muốn, bạn “validate” nó, thao tác này sẽ chuyển các tham số thành mesh polygon có thể điêu khắc và tô màu. Primitive không thể chỉnh tham số sau khi đã validate.
+Hình cơ bản là các loại hình dạng cơ bản có thể điều chỉnh bằng thông số. Khi đã chỉnh hình cơ bản theo ý muốn, bạn 'hoàn tất' nó, tức là bake các thông số đó thành một lưới đa giác có thể điêu khắc và vẽ. Sau khi đã hoàn tất, bạn không thể chỉnh thông số của hình cơ bản nữa.
 
 
 ![](/images/scene_addmenu_top.webp)
 
-### Trên gizmo {#on-gizmo}
-Bật việc đặt primitive mới tại vị trí shape hoặc gizmo đang được chọn. Khi tắt, primitive sẽ được đặt ở tâm cảnh.
+### ![](/icons/gizmo.webp) Trên Gizmo {#on-gizmo}
+Đặt hình cơ bản mới tại vị trí của hình đang chọn hoặc của gizmo. Khi tắt, hình cơ bản sẽ được đặt ở tâm cảnh.
 
-### Chọn gizmo {#select-gizmo}
-Bật việc tự động chuyển sang công cụ gizmo khi một primitive mới được tạo. 
+### ![](/icons/gizmo.webp) Chọn Gizmo {#select-gizmo}
+Tự động chuyển sang công cụ gizmo khi một hình cơ bản mới được tạo.
 
-### Nâng cao {#add-advanced}
+### ![](/icons/cog.webp) Nâng cao {#add-advanced}
 
-Menu này cho phép bạn đặt tuỳ chọn về vị trí tạo primitive, group, repeater mới. Chúng có thể được tạo trên đối tượng đang chọn, tại gốc toạ độ thế giới, hoặc tại vị trí gizmo.
+Menu này cho phép bạn chọn nơi tạo hình cơ bản, nhóm và trình lặp lại mới. Chúng có thể nằm trên đối tượng đang chọn, tại gốc tọa độ thế giới, hoặc tại vị trí của gizmo.
 
 
 ### UV {#uvs}
-Bật UV cho primitive. UV (thường gọi là texture coordinates) là dữ liệu bổ sung trong 3D để cho phép áp texture lên bề mặt. Chúng tốn thêm bộ nhớ, nhưng với hầu hết thiết bị thì không đáng lo trừ khi bạn dùng số polygon rất lớn (ví dụ 10 triệu polygon trở lên). 
+Nút bật/tắt `UVs` bên cạnh tiêu đề Hình cơ bản sẽ bật UV cho hình cơ bản. UV (thường gọi là tọa độ kết cấu) là dữ liệu bổ sung dùng trong 3d để dán kết cấu lên bề mặt. Chúng tốn thêm bộ nhớ, nhưng với hầu hết thiết bị thì không đáng lo, trừ khi số đa giác của bạn rất cao (ví dụ từ 10 triệu đa giác trở lên).
 
-### Nguyên khối {#primitives}
+### Hình cơ bản {#primitives}
 
-| Primitive      | Icon                                      | Description                                                                                                     |
+| Hình cơ bản    | Biểu tượng                                | Mô tả                                                                                                           |
 | :------------: | :---------------------------------------: | :-------------------------------------------------------------------------------------------------------------: |
-| Box            | ![](/icons/cube.webp)                    | Hộp đơn giản, bạn có thể điều khiển số chia theo X, Y và Z                                                      |
-| Sphere         | ![](/icons/circle.webp)                  | Để tiện thì gọi là Sphere nhưng thực ra là một box đã subdiv, với `Project on sphere` được bật bắt buộc        |
-| Cylinder       | ![](/icons/cylinder.webp)                | Bạn có thể thêm lỗ ở giữa cho cylinder, ví dụ để tạo ống rỗng                                                   |
-| Torus          | ![](/icons/torus.webp)                   | Torus là điểm khởi đầu tốt cho nhẫn                                                                            |
-| Cone           | ![](/icons/cone.webp)                    | -                                                                                                               |
-| Icosahedron    | ![](/icons/icosahedron.webp)             | -                                                                                                               |
-| UV-sphere      | ![](/icons/circle.webp)                  | Sphere với bố cục polygon không đều, xem [cảnh báo bên dưới](#uv-sphere)                                       |
-| Plane          | ![](/icons/rectangle.webp)               | Plane đơn giản, lưu ý đây là primitive duy nhất không kín                                                       |
-| Tube           | ![](/icons/tool_tube.webp)               | xem [Tube](tools#tube)                                                                                          |
-| Lathe          | ![](/icons/tool_lathe.webp)              | xem [Lathe](tools#lathe)                                                                                        |
+| Hộp            | ![](/icons/cube.webp)                    | Một khối lập phương đơn giản, bạn có thể điều chỉnh số phân chia theo X, Y và Z                                 |
+| Quả cầu Hình lập phương | ![](/icons/circle.webp)         | Một hộp đã được phân chia, luôn bật `Chiếu lên mặt cầu`, nên có bố cục tứ giác đều, rất hợp để điêu khắc         |
+| Hình trụ       | ![](/icons/cylinder.webp)                | Bạn có thể thêm lỗ ở tâm cho hình trụ, ví dụ để làm một ống rỗng                                                 |
+| Vòng xuyến     | ![](/icons/torus.webp)                   | Vòng xuyến có thể là điểm khởi đầu tốt cho những chiếc nhẫn                                                     |
+| Hình nón       | ![](/icons/cone.webp)                    | -                                                                                                               |
+| Khối hai mươi mặt | ![](/icons/icosahedron.webp)          | -                                                                                                               |
+| Quả cầu UV     | ![](/icons/circle.webp)                  | Một quả cầu có bố cục đa giác không đều, xem [Cảnh báo bên dưới](#uv-sphere)                                    |
+| Mặt phẳng      | ![](/icons/rectangle.webp)               | Một mặt phẳng đơn giản, lưu ý đây là hình cơ bản duy nhất không khép kín                                        |
+| Văn bản        | ![](/icons/text.webp)                    | Chữ 3d, với phông chữ, kiểu chữ, căn lề, độ sâu và độ uốn cong. `Gộp chữ cái` hợp nhất các chữ cái chạm nhau    |
+| Ống            | ![](/icons/tube.webp)                    | xem [Ống](tools#tube)                                                                                           |
+| Tiện           | ![](/icons/lathe.webp)                   | xem [Tiện](tools#lathe)                                                                                         |
 | Triplanar      | ![](/icons/triplanar.webp)               | xem [Triplanar](#triplanar)                                                                                     |
-| Shadow Catcher | ![](/icons/material_shadow_catcher.webp) | xem [Shadow Catcher](#shadow-catcher)                                                                           |
-| Head           | ![](/icons/face.webp)                    | Đầu đơn giản với một layer để blend giữa nam/nữ                                                                 |
+| VDM            | ![](/icons/vdm.webp)                     | Một mặt phẳng được thiết lập sẵn để điêu khắc dấu vector displacement: nó có UV và hướng về phía máy ảnh        |
+| Bộ bắt bóng    | ![](/icons/material_shadow_catcher.webp) | xem [Bộ bắt bóng](#shadow-catcher)                                                                              |
+| Đầu            | ![](/icons/face.webp)                    | Một chiếc đầu đơn giản, với một lớp để chuyển đổi giữa nam/nữ                                                   |
 
 ::: tip
-Nếu bạn thắc mắc mesh gốc khi mở Nomad là gì: đó cũng là một box đã subdiv.
-Tuy nhiên mesh gốc trong Nomad không dùng `Project on sphere`, nghĩa là nó không tròn hoàn hảo.
+Nếu bạn thắc mắc lưới gốc khi mở Nomad là gì: đó cũng là một hộp đã được phân chia.
+Tuy nhiên lưới gốc của Nomad không dùng `Chiếu lên mặt cầu`, nghĩa là nó không tròn hoàn hảo.
 :::
 
-### Thanh công cụ Nguyên khối {#primitive-toolbar}
+### Thanh công cụ hình cơ bản {#primitive-toolbar}
 
-![](/images/scene_primitive_toolbar.gif)
+![](/images/scene_primitive_toolbar.webp)
 
-Khi một primitive được tạo, một thanh công cụ sẽ xuất hiện để điều khiển tham số của nó.
+Khi một hình cơ bản được tạo, một thanh công cụ sẽ xuất hiện để điều chỉnh thông số của nó.
 
-* `Validate` Bake primitive thành đối tượng chuẩn để có thể điêu khắc và tô màu.
-* `Edit` Bật/tắt hiển thị gizmo của primitive. Gizmo này hiển thị trực tiếp trên primitive để điều khiển tham số, ví dụ chiều rộng cube, hoặc bán kính lỗ của cylinder.
-* `Mirror` Bật/tắt đặt một mirror repeater phía trên primitive.
-* `...` Hiển thị menu primitive.
+* `Hoàn tất` Bake hình cơ bản thành một đối tượng thông thường để có thể điêu khắc và vẽ.
+* `Phản chiếu` Bật/tắt việc đặt một trình lặp lại phản chiếu phía trên hình cơ bản.
+* `Tất cả` (biểu tượng con mắt) Chọn những tay nắm nào được hiển thị trực tiếp trên hình cơ bản để điều chỉnh thông số, ví dụ chiều rộng của khối lập phương hay bán kính lỗ của hình trụ: `Không có`, `Tất cả`, hoặc chỉ một loại (bán kính, lỗ, biên dạng...) tùy theo hình cơ bản.
+* `Phân chia` Số phân chia của hình cơ bản, ở đây là theo trục X của một hộp.
+* `Mật độ không đổi` Khi bạn kéo giãn hình cơ bản theo một trục bằng gizmo, kích thước và số phân chia sẽ tăng lên thay vì đa giác bị kéo giãn, nên các mặt vẫn vuông. Có trên hộp, mặt phẳng và hình trụ.
+* `...` Mở menu hình cơ bản.
 
-Các primitive khác nhau sẽ có thêm tuỳ chọn trên thanh công cụ:
+Mỗi loại hình cơ bản sẽ có thêm tùy chọn riêng trên thanh công cụ:
 
-* `Project` Sphere được tạo từ cube đã subdiv (tốt hơn cho sculpt), nhưng vì vậy nó không tròn hoàn hảo. Tuỳ chọn này sẽ ép hình dạng gần với sphere hoàn hảo hơn. Icosahedron cũng có tuỳ chọn này.
-* `Cap` Bật/tắt nắp ở đầu hình, ví dụ cylinder có thể có nắp trên, nắp dưới, cả hai, hoặc không có.
-* `Hole` Bật/tắt lỗ xuyên qua tâm hình. Sẽ chuyển qua các trạng thái: không lỗ, lỗ với một bán kính, hoặc lỗ với bán kính khác nhau ở trên và dưới.
-* `Radius` Bật/tắt việc cylinder dùng một bán kính duy nhất, hoặc bán kính khác nhau ở trên và dưới.
-* `Disk` Bật/tắt việc plane là hình 4 cạnh hay hình tròn.
+* `Quả cầu` Quả cầu được dựng từ một khối lập phương đã phân chia, vì cách này tốt hơn cho điêu khắc, nhưng cũng có nghĩa là nó không tròn hoàn hảo. Tùy chọn này ép hình dạng gần với một quả cầu hoàn hảo hơn. Khối hai mươi mặt cũng có tùy chọn này.
+* `Nắp` Bật/tắt nắp ở hai đầu của hình, ví dụ hình trụ có thể có nắp ở trên, ở dưới, cả hai, hoặc không có.
+* `Lỗ` Bật/tắt việc tạo một lỗ xuyên qua tâm của hình. Tùy chọn này lần lượt chuyển giữa không có lỗ, lỗ với một bán kính duy nhất, hoặc lỗ với bán kính khác nhau ở trên và dưới.
+* `Bán kính` Chọn hình trụ có một bán kính duy nhất, hay bán kính khác nhau ở trên và dưới.
+* `Đĩa` Chọn mặt phẳng là hình 4 cạnh hay hình tròn.
 
-Thanh công cụ nhỏ bên dưới thanh chính cho phép bạn chuyển giữa gizmo primitive và gizmo transform.
+Thanh công cụ nhỏ bên dưới thanh công cụ chính cho phép bạn chuyển giữa gizmo của hình cơ bản và gizmo biến đổi.
 
 ::: tip
 
-Nhấp vào tiêu đề của thanh công cụ sẽ chuyển nó lên trên hoặc xuống dưới màn hình. Nhấp vào mũi tên ở góc sẽ thu gọn nó.
+Bấm vào tiêu đề của thanh công cụ sẽ chuyển nó lên trên cùng hoặc xuống dưới cùng màn hình. Bấm vào mũi tên ở góc sẽ thu gọn nó.
 
 :::
 
 
-### Menu Nguyên khối {#primitive-menu}
+### Menu hình cơ bản {#primitive-menu}
 
 ![](/images/scene_primitive_menu.webp)
 
-Menu này chứa tất cả tham số cho primitive đang chọn. Tham số là mô tả cơ bản cho một hình. Ví dụ để mô tả một chiếc nhẫn, bạn sẽ mô tả bán kính ngoài, bán kính trong và số polygon.
+Menu này chứa mọi thông số của hình cơ bản đang chọn. Thông số là những mô tả cơ bản của một hình dạng. Ví dụ, để mô tả một chiếc nhẫn, bạn sẽ mô tả bán kính ngoài, bán kính trong và số đa giác của nó.
 
-Hầu hết tham số primitive khá dễ hiểu, và có một số tham số chung cho tất cả primitive:
+Phần lớn thông số của hình cơ bản đều dễ hiểu, và có một số thông số chung cho mọi hình cơ bản:
 
-* `UVs` Nút UV nhỏ ở đầu menu bật/tắt việc tạo toạ độ UV
-* `Validate` Nút validate nhỏ sẽ bake primitive thành đối tượng chuẩn để có thể điêu khắc và tô màu.
-* `Max faces` Đặt giới hạn trên cho số polygon trong đối tượng để tránh làm treo thiết bị.
-* `Post subdivision` Bật số mức subdiv đã chọn từ phần multiresolution trong menu topology. Có thể dùng để tạo primitive bo tròn, mềm bằng cách kết hợp với số chia topology thấp. Ví dụ đặt box topology divisions là 2, và post subdivisions là 4, sẽ tạo box có góc bo tròn.
-* `Linear subdivision` Đặt số mức linear subdivision trước khi dùng smooth subdivision thông thường. Có thể dùng để điều khiển độ sắc/mềm của góc trên bề mặt đã subdiv. Ví dụ đặt box topology divisions là 2, post subdivisions là 4, rồi thử đổi linear subdivisions từ 0 đến 4. Góc của box sẽ chuyển từ mềm sang sắc.
+* `UVs` Nút UVs nhỏ ở đầu menu bật/tắt việc tạo tọa độ UV
+* `Hoàn tất` Nút hoàn tất nhỏ sẽ bake hình cơ bản thành một đối tượng thông thường để có thể điêu khắc và vẽ.
+* `Mặt tối đa` Đặt giới hạn trên cho số đa giác của đối tượng để tránh làm thiết bị bị treo.
+* `Hậu phân chia` Áp dụng số lần phân chia đã chọn từ phần đa phân giải của menu Tô pô. Có thể dùng để tạo hình cơ bản mượt, bo góc mềm khi kết hợp với số phân chia tô pô thấp. Ví dụ, đặt số phân chia tô pô của hộp là 2 và hậu phân chia là 4 sẽ tạo ra một hộp có góc bo mượt.
+* `Phân khu tuyến tính` Đặt số cấp phân chia tuyến tính dùng trước khi áp dụng phân chia mượt thông thường. Có thể dùng để điều chỉnh độ sắc hay mềm của các góc trên bề mặt phân chia. Ví dụ, đặt số phân chia tô pô của hộp là 2, hậu phân chia là 4, rồi thử thay đổi phân chia tuyến tính từ 0 đến 4. Các góc của hộp sẽ chuyển từ mềm sang sắc.
 
-### Topology {#topology}
+### Cấu trúc {#topology}
 
-Điều khiển số polygon trong primitive. Thường các điều khiển được liên kết, nên thay đổi một slider đang hoạt động sẽ điều chỉnh polygon đồng đều. Bạn có thể chạm nút unlink để điều khiển riêng số chia X/Y/Z trên hình.
+Phần này điều chỉnh số đa giác của một hình cơ bản. Thông thường các điều khiển được liên kết với nhau, nên thay đổi một thanh trượt sẽ điều chỉnh đều mọi đa giác. Bạn có thể chạm vào nút bỏ liên kết để điều chỉnh riêng số phân chia X/Y/Z của hình.
 
 ### Hình học {#geometry}
 
-Điều khiển kích thước tổng thể của primitive, theo đơn vị X/Y/Z cho hình vuông, và theo bán kính cho hình tròn.
+Phần này điều chỉnh kích thước tổng thể của hình cơ bản, theo đơn vị X/Y/Z cho hình vuông vức, và theo bán kính cho hình tròn.
 
 
-### Cầu UV {#uv-sphere}
+### ![](/icons/circle.webp) Quả cầu UV {#uv-sphere}
 ::: warning
-UV Sphere không phù hợp để sculpt, đặc biệt ở vùng cực (poles).
+Quả cầu UV không phù hợp lắm để điêu khắc, nhất là ở hai cực.
 
-Hãy ưu tiên primitive [Sphere](#sphere), [Box](#box) hoặc [Icosahedron](#icosahedron) cùng với tuỳ chọn `Project on sphere`.
+Bạn nên dùng [hình cơ bản](#primitives) Quả cầu Hình lập phương, Hộp hoặc Khối hai mươi mặt, cùng với tùy chọn `Chiếu lên mặt cầu`.
 
-Lưu ý topology có thể chấp nhận được cho sculpt nếu bạn dùng giá trị rất thấp cho slider `Division`.
-Sau đó bạn có thể dùng slider `Overall Subdivision` để tăng số polygon.
+Lưu ý rằng tô pô có thể chấp nhận được để điêu khắc nếu bạn dùng giá trị rất thấp cho các thanh trượt `Phân chia`.
+Sau đó bạn có thể dùng thanh trượt `Phân chia tổng thể` để tăng số đa giác.
 
-Dù không phù hợp cho sculpt tổng quát, nó hữu ích cho mắt; nếu bạn xoay sphere sao cho cực nằm tại vị trí đồng tử, bố cục polygon sẽ tự nhiên phù hợp để tô và sculpt mống mắt và đồng tử.
+Dù không hợp để điêu khắc nói chung, nó lại rất hữu ích cho mắt: nếu bạn xoay quả cầu sao cho hai cực nằm ở con ngươi, bố cục đa giác sẽ tự nhiên phù hợp để vẽ và điêu khắc mống mắt và con ngươi.
 :::
 
 
-### Triplanar {#triplanar}
-Primitive này đặc biệt ở chỗ bạn nên dùng [Masking tool](tools.md#mask) trên nó để tạo hình hình học.
+### ![](/icons/triplanar.webp) Triplanar {#triplanar}
+Hình cơ bản này đặc biệt ở chỗ bạn nên dùng [công cụ Mặt nạ](tools.md#mask) trên nó để tạo hình.
 
 ![](/videos/triplanar.mp4)
 
 
 ::: tip
-Nhấp đúp vào một plane và camera sẽ focus vào plane đó.
-Tuy nhiên điều này sẽ không hoạt động nếu bạn xoay primitive bằng gizmo.
+Chạm đúp vào một mặt phẳng và máy ảnh sẽ tập trung vào mặt phẳng đó.
+Tuy nhiên cách này sẽ không hoạt động nếu bạn xoay hình cơ bản bằng gizmo.
 :::
 
-Triplanar dùng thông tin mask từ 3 plane để lấp đầy một lưới voxel, sau đó được polygon hoá (nhờ [Voxel Remesher](topology.md#voxel-remeshere)).
+Triplanar dùng thông tin mặt nạ từ 3 mặt phẳng để lấp đầy một lưới voxel, rồi lưới voxel đó được chuyển thành đa giác (nhờ [Remesh voxel](topology.md#voxel-remesher)).
 
-Mỗi plane có mặt phẳng đối xứng riêng.
+Mỗi mặt phẳng có mặt phẳng đối xứng riêng.
 
 ::: warning
-Mỗi lần bạn cập nhật kích thước primitive Triplanar, chất lượng nét vẽ mask sẽ giảm.
+Mỗi lần bạn thay đổi kích thước của hình cơ bản Triplanar, chất lượng của mặt nạ đã vẽ sẽ giảm đi.
 
-Hiện chưa có tuỳ chọn “khoá” việc vẽ trên một plane duy nhất, nhưng có thể sẽ có trong tương lai.
-Bạn có thể dùng [Connected Topology](stroke.md#connected-topology) để hỗ trợ phần nào, theo đó nếu con trỏ nằm chính xác trên một plane thì sẽ không ảnh hưởng đến các plane khác.
+Hiện chưa có tùy chọn để 'khóa' việc vẽ trên một mặt phẳng duy nhất, nhưng có thể sẽ có trong tương lai.
+Bạn có thể dùng [Kết nối hình học](stroke.md#connected-topology) để đỡ phần nào: nếu con trỏ nằm chính xác trên một mặt phẳng, nó sẽ không ảnh hưởng đến các mặt phẳng khác.
 :::
 
-### Bắt bóng (Shadow Catcher) {#shadow-catcher}
-Thêm một plane với vật liệu shadow catcher. Xem [Shadow Catcher material](material.md#shadow-catcher) để biết thêm chi tiết. 
+### ![](/icons/material_shadow_catcher.webp) Bộ bắt bóng {#shadow-catcher}
+Thêm một mặt phẳng dùng vật liệu bộ bắt bóng. Xem [Vật liệu Bộ bắt bóng](material.md#shadow-catcher) để biết thêm chi tiết.
 
 
-## Nhóm/Camera {#groupcamera}
-### Nhóm {#group}
-Tạo một đối tượng “rỗng” (empty), bạn có thể cho các đối tượng khác làm con bên dưới. Có thể dùng để đơn giản hoá cây phân cấp bằng cách đặt nhiều đối tượng vào một group rồi thu gọn nó. Group cũng có thể dùng làm helper để di chuyển đối tượng; nhiều đối tượng có thể đặt dưới một group, rồi di chuyển, xoay, scale group bằng công cụ gizmo.
+## Nhóm/Máy ảnh {#groupcamera}
+### ![](/icons/share.webp) Nhóm lại {#group}
+Tạo một đối tượng 'rỗng' mà bạn có thể đặt các đối tượng khác làm con của nó. Có thể dùng để sắp xếp cấu trúc phân cấp cho gọn, bằng cách đặt nhiều đối tượng vào một nhóm rồi thu gọn nhóm lại. Nhóm cũng có thể dùng để hỗ trợ di chuyển đối tượng: đặt nhiều đối tượng vào một nhóm, rồi di chuyển, xoay, thu phóng nhóm đó bằng công cụ gizmo.
 
-### Thêm góc nhìn {#add-view}
-Tạo một camera.
+### ![](/icons/camera.webp) Máy ảnh {#add-view}
+Tạo một máy ảnh.
 
-## Bộ lặp (Repeaters) {#repeaters}
+## Trình lặp lại {#repeaters}
 ![](/images/scene_primitive_repeaters.webp)
 
-Repeater là các node tạo instance cho các đối tượng bên dưới nó. 
+Trình lặp lại là các nút tạo thực thể cho những đối tượng nằm bên dưới chúng.
 
-### Mảng (Array) {#array}
+### ![](/icons/array.webp) Mảng {#array}
 ![](/images/scene_primitive_array.webp)
 
-Khi các đối tượng là con của node này, chúng có thể được instance thành bố cục dạng lưới. Khi được chọn, nó có các điều khiển:
-* Fit inside - chuyển giữa việc điều khiển kích thước lưới/hộp của array, hoặc điều khiển khoảng cách giữa các instance
-* CountX/Y/Z - số instance trên mỗi trục
-* OffsetX/Y/Z - khoảng cách giữa các instance khi fit inside được bật
-* SizeX/Y/Z - chiều rộng/cao/sâu của toàn bộ lưới array khi fit inside được bật.
+Khi các đối tượng được đặt làm con của nút này, chúng có thể được nhân thành thực thể theo dạng lưới. Khi được chọn, nút này có các điều khiển:
+* `Thích hợp bên trong` - khi bật, mọi bản sao được đặt bên trong giới hạn của mảng; khi tắt, các thanh trượt đặt khoảng cách giữa các bản sao
+* `Số lượng X/Y/Z` - số thực thể trên mỗi trục
+* `Kích thước X/Y/Z` - kích thước của lưới theo mỗi trục, hoặc khoảng cách giữa các bản sao khi `Thích hợp bên trong` tắt
+* `Ngẫu nhiên...` - thêm biến thể ngẫu nhiên cho các bản sao, xem [Ngẫu nhiên](#curve) bên dưới.
 
-### Đường cong (Curve) {#curve}
+### ![](/icons/curve.webp) Đường cong {#curve}
 ![](/images/scene_primitive_curve.webp)
-Node này tạo một đường cong, các con của node sẽ được lặp dọc theo đường cong. Khi được chọn, nó có các điều khiển:
-* Edit - cho phép thêm điểm vào đường cong, và di chuyển các điểm trên đường cong.
-* Snap - sẽ “snap” các điểm đường cong vào hình học khác
-* Align - xoay các shape con để căn theo hướng của đường cong
-* Count - số instance
-* Closed - Bật/tắt việc nối điểm đầu và cuối của đường cong, hoặc để đường cong mở
-* Radius - Bật điều khiển trên từng điểm đường cong để điều khiển scale của instance
-* Twist - Bật điều khiển trên từng điểm đường cong để điều khiển xoay (twist) của instance 
-* B-spline - Bật/tắt việc instance bám chính xác theo đường cong, hoặc dùng nội suy b-spline cho kết quả mượt hơn. 
+Tạo một đường cong, các mục con của nút này sẽ được lặp lại dọc theo đường cong. Khi được chọn, nút này có các điều khiển:
+* `Đường cong` - chỉnh sửa đường cong: thêm điểm vào đường cong và di chuyển các điểm trên đó.
+* `Hiển thị` - hiện hoặc ẩn đường cong và các điểm của nó.
+* `Snap` - bám các điểm của đường cong vào hình khối khác.
+* `Đối Xứng` - chỉnh sửa đường cong theo đối xứng.
+* `Đóng` - chuyển đường cong giữa dạng nối điểm đầu với điểm cuối, hoặc dạng hở.
+* `B-spline` - chọn để các thực thể đi đúng theo đường cong, hoặc dùng nội suy b-spline cho kết quả mượt hơn.
+* `Uốn theo mặt` - uốn từng bản sao theo đường cong, để các bản sao khớp với bản bên cạnh (`Mượt` uốn hai bên của chúng để chúng gặp nhau mà không tạo góc).
+* `Căn chỉnh` - xoay các bản sao theo hướng của đường cong.
+* `Trục xoay` - trục xoay của các bản sao: chính đường cong (`Đường cong`) hoặc các mục con của nó.
+* `Số lượng` - số thực thể. Nút chế độ bên cạnh chuyển sang `Khoảng cách`: khoảng cách cố định giữa các bản sao, khi đó số lượng thay đổi theo chiều dài đường cong.
+* `Bán kính` - điều khiển trên mỗi điểm của đường cong để đặt tỷ lệ của các thực thể.
+* `Xoắn` - điều khiển trên mỗi điểm của đường cong để đặt góc xoắn của các thực thể.
+* `Xen kẽ` - xoay cứ mỗi bản sao thứ hai quanh đường cong: 90° cho mắt xích, 180° cho lá cây hay răng khóa kéo, quanh `Trục` mà bạn chọn.
+* `Xoắn ốc...` - quấn các bản sao quanh đường cong thành nhiều sợi (dây thừng, bím tóc, dải băng...).
+* `Ngẫu nhiên...` - thêm biến thể ngẫu nhiên cho các bản sao; mỗi hàng cũng có thể thay vào đó cộng thêm cùng một lượng ở mỗi bản sao.
 
-### Xoay tròn (Radial) {#radial}
+Bên dưới thanh công cụ, nút `(Gộp)` sẽ hợp nhất một điểm vào điểm khác khi bạn kéo nó lên điểm đó. `IK` (động học ngược) cho phép bạn tạo dáng cho đường cong: kéo một điểm và các điểm nối với nó sẽ đi theo. Chạm vào một điểm để khóa hoặc mở khóa nó, nhấn lâu để khóa hoặc mở khóa tất cả; các điểm bị khóa sẽ giữ nguyên vị trí.
+
+### ![](/icons/radial.webp) Đối xứng tâm {#radial}
 ![](/images/scene_primitive_radial.webp)
 
-Các con của node này sẽ được instance thành vòng tròn. Di chuyển đối tượng con để thay đổi bán kính repeater. Khi được chọn, nó có các điều khiển:
-* RadialX/Y/Z - chọn các nút này để đặt trục quay tròn, và đặt số instance.
+Các mục con của nút này sẽ được nhân thành thực thể theo vòng tròn. Di chuyển đối tượng con để thay đổi bán kính của trình lặp lại này. Khi được chọn, nút này có các điều khiển:
+* RadialX/Y/Z - chọn các nút này để đặt trục xoay vòng và số thực thể.
 
 
 
-### Gương (Mirror) {#mirror}
+### ![](/icons/mirror.webp) Phản chiếu {#mirror}
 ![](/images/scene_primitive_mirror.webp)
 
-Các con của node này sẽ được phản chiếu qua một trục. Khi được chọn, nó có các điều khiển:
-* Gizmo - bật gizmo transform để đặt tâm của mặt phẳng gương. Gizmo này cũng có thể xoay và scale. Khi xong, chạm lại gizmo để hiện các điều khiển chuẩn.
-* X/Y/Z - đặt mặt phẳng gương
+Các mục con của nút này sẽ được phản chiếu qua một trục. Khi được chọn, nút này có các điều khiển:
+* Gizmo - bật gizmo biến đổi để đặt tâm phản chiếu. Bạn cũng có thể xoay và thu phóng nó. Khi xong, chạm vào gizmo lần nữa để hiện lại các điều khiển thông thường.
+* X/Y/Z - đặt mặt phẳng phản chiếu
 
-Tất cả repeater đều có điều khiển `Validate`, thao tác này sẽ bake kết quả của repeater, và hỏi cách thực hiện bake:
-* Join children - các instance được gộp thành một đối tượng
-* Keep instances - các instance vẫn là instance, nhưng không còn repeater làm “cha”
-* Un-instances - các instance được chuyển thành đối tượng độc lập
+### ![](/icons/surface.webp) Bề mặt {#surface}
 
-::: tip Tip: Kết hợp repeater
-Repeater có thể được cho làm con của repeater khác, và nhiều đối tượng có thể làm con của repeater, tạo ra hiệu ứng phức tạp.
+Các mục con của nút này được sao chép lên bề mặt của một đối tượng: mỗi mặt, mỗi cạnh hoặc mỗi đỉnh một bản sao, hoặc rải ngẫu nhiên. Khi được chọn, nút này có các điều khiển:
+* Chế độ - đặt các bản sao trên `Mặt`, `Cạnh` hoặc đỉnh, hoặc `Rải` chúng.
+* Mỗi - một bản sao cứ mỗi N mặt, cạnh hoặc đỉnh. `Ngẫu nhiên` chọn chúng một cách ngẫu nhiên, và `Xáo trộn` tạo một bộ ngẫu nhiên khác.
+* Khoảng cách - khi rải, khoảng cách tối thiểu giữa hai bản sao.
+* Căn chỉnh - các bản sao đứng trên bề mặt, theo pháp tuyến của nó, thay vì giữ hướng của bản gốc.
+* Bám - chiếu bản gốc lên điểm gần nhất trên bề mặt, các bản sao sẽ đi theo.
+* Khớp kích thước, Xiên - thu phóng và kéo giãn các bản sao theo hình dạng của từng mặt.
+* Uốn theo mặt - uốn từng bản sao theo mặt của nó, hoặc dọc theo cạnh của nó, để các bản sao kề nhau khớp liền không có khe hở.
+
+Mọi trình lặp lại đều có điều khiển `Hoàn tất`, dùng để bake kết quả của trình lặp lại, và sẽ hỏi bạn muốn bake theo cách nào:
+* Kết hợp các mục con - các thực thể được gộp thành một đối tượng duy nhất
+* Giữ thực thể - các thực thể vẫn là thực thể, nhưng không còn trình lặp lại làm 'cha'
+* Bỏ thực thể - các thực thể được chuyển thành các đối tượng độc lập
+
+`Làm phẳng tất cả` cũng bake cả các trình lặp lại lồng bên trong trình này, nên mọi bản sao đều trở thành đối tượng thông thường.
+
+::: tip Mẹo: Kết hợp các trình lặp lại
+Các trình lặp lại có thể lồng vào nhau, và nhiều đối tượng có thể làm con của trình lặp lại, tạo ra những hiệu ứng phức tạp.
 
 ![](/images/scene_repeater_combine.webp)
 :::
 
-::: tip Tip: Pivot của repeater
+::: tip Mẹo: Trục xoay của trình lặp lại
 
-Một số repeater sẽ cố gắng tự động đặt pivot cho đối tượng con, nên ngay cả khi bạn di chuyển hoặc xoay chúng bằng gizmo, chúng sẽ không di chuyển. Nếu bạn cần ghi đè hành vi này, hãy chèn một group giữa repeater và đối tượng con. Khi đó bạn có thể di chuyển shape con độc lập với repeater.
+Một số trình lặp lại sẽ tự đặt trục xoay cho các đối tượng con, nên dù bạn di chuyển hay xoay chúng bằng công cụ gizmo, chúng cũng không nhúc nhích. Nếu cần thay đổi hành vi này, hãy chèn một nhóm vào giữa trình lặp lại và đối tượng con. Khi đó bạn có thể di chuyển hình con độc lập với trình lặp lại.
 :::
 
-## Đèn {#light}
+## Ánh sáng {#light}
 
 ![](/images/scene_primitive_light.webp)
 
-### Định hướng (Directional) {#directional}
-Tạo directional light, nguồn sáng ở vô cực giống như mặt trời.
+### ![](/icons/sun.webp) Có hướng {#directional}
+Tạo một đèn có hướng, nguồn sáng ở xa vô tận giống như mặt trời.
 
-### Đèn rọi (Spot) {#spot}
-Tạo spot light, với điều khiển độ rộng và độ mềm của hình nón sáng
+### ![](/icons/panorama.webp) Môi trường {#environment}
+Tạo một đèn môi trường, chiếu sáng cảnh từ một hình ảnh bao quanh (chiếu sáng dựa trên hình ảnh, như HDRI).
 
-### Điểm (Point) {#point}
-Tạo point light
+### ![](/icons/spotlight.webp) Đèn rọi {#spot}
+Tạo một đèn rọi, có thể điều chỉnh độ rộng hình nón và độ mềm
 
-## Nâng cao {#advanced}
-### Focus vào mục {#focus-on-item}
-Nhấp đúp vào một mục trong danh sách Scene sẽ đưa camera về tâm của mục đó trong khung nhìn 3D.
+### ![](/icons/light.webp) Điểm {#point}
+Tạo một đèn điểm
 
-### Đồng bộ hiển thị {#sync-visibility}
-Dùng biểu tượng con mắt sẽ ảnh hưởng đến tất cả mục đang được chọn. 
+## ![](/icons/cog.webp) Nâng cao {#advanced}
+Nút `Nâng cao` ở góc dưới bên trái bảng mở một cửa sổ có hai thẻ: `Chung` và `Đồng bộ`.
 
-### Thể hiện: Hiển thị {#instance-show}
-Hiển thị một capsule màu ở bên trái danh sách scene để cho biết instance.
+### ![](/icons/focus.webp) Giao diện: Tập trung vào mục khi nhấp đúp {#focus-on-item}
+Chạm đúp vào một mục trong danh sách Cảnh sẽ đưa máy ảnh về giữa mục đó trong khung nhìn 3d.
 
+### ![](/icons/eye_open.webp) Đồng bộ hóa khả năng hiển thị {#sync-visibility}
+Khi bật, dùng biểu tượng con mắt của một mục đang chọn sẽ tác động lên mọi mục đang chọn.
+
+### ![](/icons/bang.webp) Nổi bật {#highlight}
+Tô sáng các đối tượng đang chọn trong khung nhìn khi vùng chọn thay đổi.
+
+### ![](/icons/link.webp) Hiển thị (Thực thể) {#instance-show}
+Hiển thị một dải màu ở bên trái danh sách cảnh để đánh dấu các thực thể.
+
+### ![](/icons/preview.webp) Xem trước đối tượng {#object-previews}
+Hiển thị một hình thu nhỏ được render cho mỗi đối tượng trong danh sách cảnh. Giống như nút xem trước phía trên danh sách.
+
+### Bán kính hàn {#weld-radius}
+Dưới tiêu đề `Gộp lại` có `Bán kính hàn vị trí` và `Bán kính hàn UV`: các điểm và UV nằm gần nhau hơn các bán kính này sẽ được hợp nhất. Mỗi bán kính có thể tắt bằng ô chọn của nó. Thiết lập này áp dụng cho Gộp lại, Boolean, Cắt, Tinh giảm, tái tạo lưới và nhập tệp.
 
 ### Biểu tượng {#icons}
-Đặt kích thước và độ mờ của icon group, light, camera, mirror trong viewport
+Đặt `Kích thước` tối thiểu và tối đa cùng `Độ mờ đục` của các biểu tượng nhóm, đèn, máy ảnh và trình lặp lại trong khung nhìn.
 
-### Đường phân cấp {#hierarchy-lines}
-Hiển thị đường nối giữa cha và con trong viewport
+### ![](/icons/hierarchy.webp) Đường phân cấp {#hierarchy-lines}
+Hiển thị một đường nối giữa mục cha và các mục con của nó trong khung nhìn. Khi bật, bạn có thể đặt thêm:
+* `Sử dụng trục Nomad` - các đường bắt đầu từ trục xoay mà công cụ Biến Đổi và Gizmo sử dụng. Khi tắt, chúng dùng trục xoay gốc tự nhiên, có thể nằm xa tâm đối tượng.
+* `Độ dày` - độ rộng của các đường. Nút bên cạnh thanh trượt thêm viền cho chúng.
+* Màu của các đường.
 
-## Thanh công cụ dưới {#bottom-toolbar}
-Các icon này sẽ bật/tắt hiển thị Group, Light, Camera, Repeater và Hierarchy lines trong viewport.
+### ![](/icons/link.webp) Đồng bộ {#sync}
+Thẻ `Đồng bộ` quyết định, với từng thao tác (`Thêm`, `Xóa`, `Khóa`, `Nhân bản`, `Thực thể`, `Bỏ thực thể`, `Gộp lại`, `Tách` và `Boolean`), liệu nó có áp dụng cho mọi thực thể của vùng chọn hay không:
+* `Tự động` - làm theo ô chọn `Đồng bộ` ở đầu menu Cảnh.
+* `Không` - chỉ các đối tượng đang chọn.
+* `Có` - luôn luôn mọi thực thể.
+
+Theo mặc định, `Gộp lại`, `Tách` và `Boolean` được đặt là `Có`, còn lại là `Tự động`. `Đặt lại` khôi phục các giá trị mặc định này.
+
+## Thanh công cụ dưới cùng {#bottom-toolbar}
+Các biểu tượng này bật/tắt hiển thị của Nhóm, Đèn, Máy ảnh, Trình lặp lại và Đường phân cấp trong khung nhìn. Bạn có thể chạm vào các biểu tượng hiển thị trên khung vẽ để chọn và chỉnh sửa chúng trực tiếp.

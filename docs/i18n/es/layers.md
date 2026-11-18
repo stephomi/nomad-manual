@@ -1,29 +1,29 @@
 # ![](/icons/layer.webp) Capas {#layers}
 
-Este menú contiene la pila de capas, una forma de almacenar ediciones en tu objeto de manera no destructiva, y muchas formas de combinar y reutilizar capas.
+Este menú contiene la pila de capas, una forma de guardar los cambios de tu objeto de manera no destructiva, y muchas formas de combinar y reutilizar las capas.
 
 ![](/images/layers_overview.webp) 
 
-## Descripción general {#overview}
+## Visión general {#overview}
 
-Las capas de Nomad cumplen múltiples propósitos.
+Las capas de Nomad sirven para varias cosas.
 
-La información de pintura (Color, Rugosidad, Metalicidad, Opacidad) funciona con capas de forma similar a las aplicaciones de pintura 2D. Se puede crear una capa y aplicar pintura a un modelo. La capa se puede activar o desactivar, ajustar su opacidad, duplicar, cambiar su orden en la pila de capas y ajustar su modo de fusión.
+La información de pintura (color, rugosidad, metalicidad, opacidad) funciona con capas de forma parecida a las aplicaciones de pintura 2d. Puedes crear una capa y pintar sobre el modelo. La capa se puede activar o desactivar, se puede ajustar su opacidad, duplicar, cambiar de orden en la pila de capas y cambiar su modo de mezcla.
 
-Nomad también usa capas para esculpido. Una capa puede almacenar detalles finos como arrugas, o puede almacenar cambios grandes, permitiendo que funcionen como blendshapes/shape keys/morph targets en otras aplicaciones 3D. Por ejemplo, podrías esculpir diferentes expresiones faciales en distintas capas y ajustar los deslizadores de capa para combinarlas en nuevas expresiones.
+Nomad también usa las capas para esculpir. Una capa puede guardar detalles finos como arrugas, o cambios grandes, de modo que funcione como los blendshapes/shape keys/morph targets de otras aplicaciones 3d. Por ejemplo, puedes esculpir distintas expresiones faciales en distintas capas y ajustar los reguladores de las capas para combinarlas en expresiones nuevas.
 
-En este caso, los cambios almacenados en una capa son puramente aditivos; el orden de las capas no importa como sí lo hace para la pintura.
+En este caso, los cambios guardados en una capa son puramente aditivos: el orden de las capas no importa, a diferencia de lo que ocurre con la pintura.
 
-Las capas se pueden borrar parcialmente mediante la herramienta [Delete Layer](tools.md#delete-layer), y las capas también se pueden usar para crear máscaras basadas en la distinta información almacenada en la capa.
+Las capas se pueden borrar parcialmente con la herramienta [Eli. capa](tools.md#delete-layer), y también se pueden usar para crear máscaras a partir de la distinta información que guarda la capa.
 
 ![](/videos/layer.mp4)
 
 ::: tip
-A diferencia de la mayoría del software de esculpido, cambiar la topología de una malla no descartará las capas. Puedes usar el [Voxel Remesher](topology.md#voxel-remesher), el [Multiresolution](topology.md#multires) o las herramientas [Trim](tools.md#trim)/[Split](tools.md#split), pero ten en cuenta que al usar el [Voxel Remesher](topology.md#voxel-remesher), la calidad de la capa se verá afectada.
+A diferencia de la mayoría de los programas de escultura, cambiar la topología de una malla no elimina las capas. Puedes usar el [Remallado por vóxeles](topology.md#voxel-remesher), la [Multiresolución](topology.md#multiresolution) o las herramientas [Recortar](tools.md#trim)/[Dividir](tools.md#split), pero ten en cuenta que con el [Remallado por vóxeles](topology.md#voxel-remesher) la calidad de la capa se verá afectada.
 :::
 
 ::: tip
-Si usas capas para blendshapes/morph targets, hay funcionalidad extra de capas en el [menú de escena](scene.md#object-menu). Puedes separar capas en objetos y combinar objetos coincidentes en capas.
+Si usas las capas como blendshapes/morph targets, el [menú de escena](scene.md#object-menu) tiene funciones adicionales para capas: puedes separar capas en objetos y combinar objetos equivalentes en capas.
 :::
 ----
 
@@ -31,129 +31,143 @@ Si usas capas para blendshapes/morph targets, hay funcionalidad extra de capas e
 
 ![](/images/layers_menu.webp)
 
-Pulsa `Add layer` para crear una nueva capa.
+El título muestra el nombre del objeto seleccionado. Las capas no están disponibles en los primitivos, así que primero valida el primitivo.
 
-Cada capa tiene un nombre, un deslizador para controlar su intensidad/factor y botones de opciones.
+Pulsa `Añadir capa` para crear una capa nueva. `Combinar capas` fusiona todas las capas en la malla base; el número junto a su icono indica cuántas capas hay.
+
+Cada capa tiene un nombre, un regulador para controlar su fuerza (factor) y botones de opciones. Toca una capa para que sea la activa: lo que esculpas y pintes irá a esa capa. Toca `Base` para volver a trabajar en la malla base.
+
+### ![](/icons/sort_right.webp) Desplegar la lista {#ui-expand-list}
+
+Por defecto, la lista de capas solo muestra la visibilidad, el modo de mezcla y la fuerza de cada capa, y la capa activa se despliega con todos sus controles. La flecha a la izquierda del título despliega todos los controles de todas las capas.
+
+![](/images/layers_expand.webp)
 
 ### Opciones {#options}
 
 | Acción       | Icono                        | Descripción                                         |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
-| Visible      | ![](/icons/eye_open.webp)   | Mostrar/ocultar la capa                             |
-| Modo de fusión | ![](/icons/opacity.webp)  | El modo de fusión al estilo Photoshop. Los 4 iconos muestran los modos para Color, Rugosidad, Metalicidad, Opacidad. |
-| Editar nombre | ![](/icons/pencil.webp)    | Editar el nombre de la capa                         |
-| Eliminar     | ![](/icons/trash.webp)      | Eliminar la capa                                    |
-| Duplicar     | ![](/icons/clone.webp)      | Duplicar la capa                                    |
-| Combinar hacia abajo | ![](/icons/merge_down.webp) | Combinar la capa con la capa inferior (o la malla base) |
-| Más          | ![](/icons/more.webp)       | Opciones [More...](#more)                           |
+| Visible      | ![](/icons/eye_open.webp)   | Muestra u oculta la capa                            |
+| Mezcla       | ![](/icons/opacity.webp)    | El modo de fusión al estilo de Photoshop. Los 4 iconos muestran los modos de color, rugosidad, metalicidad y opacidad. |
+| Editar nombre | ![](/icons/pencil.webp)    | Edita el nombre de la capa                          |
+| Eliminar     | ![](/icons/trash.webp)      | Elimina la capa                                     |
+| Duplicar     | ![](/icons/clone.webp)      | Duplica la capa                                     |
+| Fusionar hacia abajo | ![](/icons/merge_down.webp) | Fusiona la capa con la capa inferior (o con la malla base) |
+| Más          | ![](/icons/more.webp)       | Opciones de [Más...](#more)                         |
 
-Para mover una capa a otra parte de la pila de capas, mantén pulsado su nombre y arrástrala.
+Cuando una capa no está desplegada, `Editar nombre`, `Eliminar`, `Duplicar` y `Fusionar hacia abajo` están en su menú [Más...](#more).
 
-### Más... {#more}
+Para mover una capa a otro lugar de la pila, mantén pulsado su nombre y arrástrala.
 
-El botón 'More...' mostrará opciones adicionales para la capa actual:
+### Base {#base}
+
+El botón de 3 puntos de la fila `Base` lleva la pintura de la malla base a una capa nueva, con el botón `Base → Capa`. La base vuelve entonces al material de fondo. Es útil cuando has pintado mucho antes de crear ninguna capa.
+
+* Los botones de máscara y ocultar de al lado dejan intactas las zonas enmascaradas y ocultas.
+* `Extraer` - los canales que se mueven: `Color`, `Opacidad`, `Rugosidad` y `Metalicidad`.
+* `Material de fondo` - si está activado, solo se mueven los valores que difieren de este material. Ajústalo con los reguladores o tómalo del modelo con el cuentagotas.
+
+### ![](/icons/more.webp) Más... {#more}
+
+El botón 'Más...' muestra opciones adicionales para la capa actual, en dos pestañas: los ajustes (icono del engranaje) y la extracción (icono del cubo).
 
 ![](/images/layers_more.webp) 
 
 #### Factores de canal {#channel-factors}
 
-Estos controles te permiten escalar la cantidad de esculpido/color/rugosidad/metalicidad/opacidad de la capa. Estos valores se multiplican por el deslizador de factor de capa, así que, por ejemplo, si la intensidad de la capa es 1, pero el factor del canal de color es 0.5, entonces el color mostrado tendrá una intensidad de 0.5.
+Estos controles te permiten escalar la cantidad de escultura, color, rugosidad, metalicidad y opacidad de la capa. Estos valores se multiplican por el regulador de factor de la capa; por ejemplo, si la fuerza de la capa es 1 pero el factor del canal de color es 0,5, el color se mostrará con una fuerza de 0,5.
 
-`Offset` controla la intensidad de esculpido de la capa. Mientras que color/rugosidad/metalicidad están limitados entre 0 y 1, offset puede tener cualquier valor, tanto positivo como negativo. 
+`Desplazamiento` controla la fuerza de la escultura de la capa. Mientras que el color, la rugosidad y la metalicidad están limitados entre 0 y 1, el desplazamiento puede tener cualquier valor, positivo o negativo.
 
 ::: tip
-Offset se puede usar para convertir una capa de bultos en una capa de cavidades, o una sonrisa en un ceño fruncido:
+El desplazamiento sirve para convertir una capa de bultos en una capa de huecos, o una sonrisa en un ceño fruncido:
 ![](/videos/layer_happysad.mp4)
 
 
-Una capa simétrica se puede clonar y luego dividir en formas izquierda/derecha con del layer:
+Una capa simétrica se puede clonar y luego dividir en formas izquierda/derecha con Eli. capa:
 ![](/videos/layer_leftright.mp4)
 
-Las capas con factores de offset negativos se pueden hornear en capas vacías para crear nuevas formas positivas.
+Las capas con factores de desplazamiento negativos se pueden hornear en capas vacías para crear nuevas formas positivas.
 
-Las capas con factores de offset positivos por encima de 1 se pueden usar para experimentar con blendshapes más extremos.
+Las capas con factores de desplazamiento positivos mayores que 1 sirven para experimentar con blendshapes más extremos.
 :::
 
 ::: warning
-Por el momento las capas solo comparten un único canal de opacidad para los 3 canales (color/metalicidad/rugosidad).
-Si combinas varias capas con intensidad por canal que no estén a intensidad completa, es posible que el resultado final se vea diferente.
+Por ahora, las capas comparten un único canal de opacidad para los 3 canales (color/metalicidad/rugosidad).
+Si fusionas varias capas con intensidades por canal que no están al máximo, puede que el resultado final se vea distinto.
 
 Quizá en el futuro cada canal tenga su propio canal alfa para eliminar esta limitación.
 :::
 
 
-#### ![](/icons/tool_mask.webp) Máscara {#mask}
-El botón de máscara junto a cada deslizador creará una máscara a partir de ese canal. Similar al uso de capas para hacer selecciones en aplicaciones de pintura, esto te permite reutilizar el trabajo que has hecho en una capa para otras operaciones.
+#### ![](/icons/shield.webp) Máscara {#mask}
+El botón de máscara junto a cada regulador crea una máscara a partir de ese canal. Igual que cuando usas capas para hacer selecciones en las aplicaciones de pintura, esto te permite reutilizar en otras operaciones el trabajo que has hecho en una capa.
 
 #### ![](/icons/preview.webp) Vista previa {#preview}
 ![](/images/layers_preview.webp) 
 
-Cuando está activado, previsualizará los ajustes de extracción para esta capa (ver la siguiente sección).
+Las siguientes opciones están en la pestaña de extracción del menú 'Más...'.
 
-Cuando el modo rayos X está activado, solo la forma extraída será sólida; el resto de la forma se volverá transparente, lo cual es útil si estás usando alturas de extracción negativas.
+Si está activada, muestra una vista previa de los ajustes de extracción de esta capa (consulta la siguiente sección).
 
-#### Extraer {#extract}
+`Rayos X` elige qué objetos se vuelven transparentes durante la vista previa (`Ninguno`, `No seleccionados`, `Seleccionados` o `Todo`), para que la forma extraída se vea sólida. Es útil si usas alturas de extracción negativas.
+
+#### ![](/icons/mask_extract.webp) Extraer {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
 
-El botón `Extract` duplicará el contenido de la capa en un nuevo objeto, normalmente con un grosor especificado por el usuario establecido en la siguiente sección.
+El botón `Extraer` duplica el contenido de la capa en un objeto nuevo, normalmente con el espesor que indiques en la siguiente sección.
 
-`Closing action` determina cómo se realiza la duplicación:
+`Acción de cierre` determina cómo se hace la duplicación:
 
-* None - Simplemente extrae la parte, sin intentar generar lados ni rellenar agujeros.
-* Fill - El agujero se rellena y se suaviza con triángulos. No uses esta opción para superficies planas.
-* Shell - Cierra la forma extraída con las opciones de valor de grosor y dirección.
-* Layer - Extrae la diferencia de la capa.
+* `Ninguno` - Simplemente extrae la parte, sin intentar generar lados ni rellenar agujeros.
+* `Rellenar` - El agujero se rellena con triángulos y se suaviza. No uses esta opción en superficies planas.
+* `Carcasa` - Cierra la forma extraída usando el espesor y las opciones de dirección.
+* `Capa` - Extrae la diferencia de la capa.
 
-#### ![](/icons/height.webp) Grosor {#thickness}
+#### ![](/icons/height.webp) Altura {#thickness}
 ![](/images/layers_thickness.webp) 
 
-La profundidad de la extrusión del shell. Los valores positivos crecen hacia fuera de la superficie, los valores negativos crecen hacia dentro de la superficie.
+La profundidad de la extrusión de la carcasa. Los valores positivos crecen hacia fuera de la superficie y los negativos hacia dentro. Se oculta cuando la acción de cierre es `Capa`.
 
-El signo más/menos junto a este valor establecerá la dirección de la extrusión:
-* Menos ( - ) comenzará desde la superficie actual y extruirá hacia abajo. 
-* Más ( + ) comenzará desde la superficie actual y extruirá hacia arriba.
-* MásMenos ( ± ) empujará la parte superior e inferior de la extrusión hacia afuera en cantidades iguales, de modo que quedará a medio incrustar en la superficie original.
+El más/menos junto a este valor define la dirección de la extrusión:
+* Menos ( - ) parte de la superficie actual y extruye hacia abajo.
+* Más ( + ) parte de la superficie actual y extruye hacia arriba.
+* MásMenos ( ± ) separa la parte superior y la inferior de la extrusión a partes iguales, de modo que queda medio incrustada en la superficie original.
+
+#### Lados {#edge-loop-side}
+![](/images/layers_edgeloop.webp) 
+
+Esta sección se ve cuando la acción de cierre es `Carcasa`.
+
+`Divisiones de pared` define el número de divisiones a lo largo de los lados de la carcasa. Con su interruptor `Auto` activado, Nomad calcula el número de bucles de aristas para crear polígonos cuadrados.
 
 #### Suavidad {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
-Si los bordes de la región a extraer son irregulares, este deslizador intentará difuminar el borde para obtener una forma más suave. 
+Si los bordes de la zona que se va a extraer son irregulares, activa esta opción para suavizarlos y darles una forma más limpia. `Todo` suaviza toda la superficie extraída y `Solo bordes` suaviza sus bordes. `Iteraciones` define la fuerza del suavizado.
 
-#### ![](/icons/height.webp) Bucle de borde (lado) {#edge-loop-side}
-![](/images/layers_edgeloop.webp) 
+_Aquí termina el submenú 'Más...'._
 
-Esta sección es visible cuando la acción de cierre es 'Shell'. 
-
-`Auto Edge-loop (side)` calculará el número de edge loops a lo largo de los lados del shell para crear polígonos cuadrados. 
-
-Si se desactiva, el deslizador `Division` establecerá el número de divisiones en los lados.
-
-_Este es el final del submenú 'More...'._
-
-### Avanzado {#advanced}
+### ![](/icons/cog.webp) Avanzado {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Conservar detalles de las capas superiores {#keep-top-layers-details}
+El botón `Avanzado` de la parte inferior del menú aparece en cuanto el objeto tiene capas.
 
-Garantiza que los pequeños detalles en las capas superiores sigan siendo visibles cuando se realizan cambios grandes en las capas inferiores.
+#### Conservar detalles de capas superiores {#keep-top-layers-details}
 
-De forma predeterminada, si esculpes pequeñas arrugas en una capa y luego haces cambios grandes en la capa base, las arrugas se perderán. Activar este interruptor permitirá que esos pequeños detalles siempre floten por encima de los grandes cambios inferiores. En el siguiente vídeo, observa cómo el detalle de la arruga se elimina de forma predeterminada, pero permanece visible cuando 'keep top layers details' está activado:
+Hace que los detalles pequeños de las capas superiores sigan visibles cuando haces cambios grandes en las capas inferiores. Mientras esculpes, la deformación que viene de las capas superiores se ignora, pero sus detalles siguen visibles. Solo funciona bien si esas capas superiores contienen detalles relativamente pequeños.
+
+Por defecto, si esculpes arrugas pequeñas en una capa y luego haces cambios grandes en la capa base, las arrugas se pierden. Al activar esta opción, esos pequeños detalles flotan siempre por encima de los cambios grandes de debajo. En el siguiente vídeo, fíjate en cómo el detalle de las arrugas desaparece por defecto, pero sigue visible cuando 'Conservar detalles de capas superiores' está activado:
 
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expandir lista {#ui-expand-list}
-
-El menú de capas predeterminado te permite alternar la visibilidad de la capa y la opacidad de la capa. Activar esta opción expande los controles completos para cada capa.
-
-![](/images/layers_expand.webp)
-
 #### Sincronizar transformación {#sync-transform}
 
-Si está activado, todas las capas no seleccionadas se ajustarán en función de la rotación, escala y deformación de la transformación. 
+Si está activado, todas las capas no seleccionadas se ajustan según la rotación, la escala y el cizallamiento de la transformación cuando usas las herramientas Gizmo o Transformar. Puede ser `Auto`, `No` o `Sí`.
 
-Desactiva esta opción si las otras capas están pensadas para usarse sin la nueva transformación que estás aplicando.
+Desactiva esta opción si las demás capas deben usarse sin la nueva transformación que estás aplicando.
 
-Cuando está en `Auto`, solo se ajustarán las capas visibles.
+En `Auto`, solo se ajustan las capas visibles.

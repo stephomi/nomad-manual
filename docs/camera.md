@@ -23,7 +23,7 @@ Yes, you can put *two* fingers on the screen - as if you wanted to start a pan/z
 
 ### Focus / Reset {#focus}
 *Double tap* on the model to focus the picked point.
-If you *double tap* in the background, the camera will focus on the selected mesh instead.
+If you *double tap* in the background, the camera will focus on the selected mesh or the whole scene instead, see [Double tap on background](#dtap-tap-background).
 
 
 ### Translation {#translation}
@@ -37,7 +37,7 @@ By using the pinch gesture you can zoom in/out.
 ### Rolling {#rolling}
 You can *roll* the view by rotating *two* fingers.
 ::: warning
-This gesture is only available for `trackball` rotation mode.
+This gesture is only available for the `Trackball` rotation modes.
 :::
 
 ### Desktop controls {#desktop}
@@ -69,7 +69,7 @@ If you click on the view name, then the camera will restore the view.
 
 
 ::: tip
-A saved view will save the [Projection Type](#projection-type) settings and also the [Reference image](background.md).  
+A saved view will save the [Projection Type](#projection) settings and also the [Reference image](background.md).  
 It can be useful if you want to cycle between front/left/back reference views with different backgrounds.
 :::
 
@@ -78,31 +78,34 @@ It can be useful if you want to cycle between front/left/back reference views wi
 | Visibility  | ![](/icons/eye_open.webp)    | Toggle the camera. Hidden cameras will be skipped from previous/next button |
 | Name        |                               | Select the camera                                                           |
 | Image       | ![](/icons/image.webp)       | A thumbnail of a reference image if it is linked to the camera              |
+| Projection  | ![](/icons/perspective.webp) | The projection of the camera, with its field of view when in perspective    |
 | Update View | ![](/icons/update_view.webp) | Update the saved view with the current view point                           |
 | Edit Name   | ![](/icons/pencil.webp)      | Edit the camera name                                                        |
 | Delete      | ![](/icons/trash.webp)       | Delete the camera                                                           |
 
-### ![](/icons/tool_view.webp) Add View {#add}
+### ![](/icons/camera_add.webp) Add View {#add}
 Create a new camera based on the current view.
 
 ### ![](/icons/camera.webp) Icons {#icons-test}
 
-Toggle if camera icons are visible in the viewport. If a camera is selected, its icon is always visible.
+Toggle if camera icons are visible in the viewport. The button appears next to `Add View` once you have a camera. If a camera is selected, its icon is always visible.
 
 ### Projection Type {#projection}
-You can change the `Field of View` (FOV / focal length) of your camera.
+Choose between `Perspective` and `Orthographic`.
+
+In perspective, you can change the `Vertical FoV` (field of view) of your camera. The matching focal length of a 35mm camera is shown above the slider, handy if you're used to photography.
 It is usually advised to use a low FOV for sculpting purposes, as it can help for proportion.  
-You can also use the `Orthographic` mode, which is more or less similar to a FOV equal to 0
+The `Orthographic` mode is more or less similar to a FOV equal to 0.
 
 ### First Person {#fps}
-Enable setting the pivot to be directly on the camera, rather than on the sculpture. Dragging a finger on the background will keep the camera position locked, but change the rotation, similar to how first person games work. Useful when sculpting environments rather than single objects.
+Perspective only. Enable setting the pivot to be directly on the camera, rather than on the sculpture. Dragging a finger on the background will keep the camera position locked, but change the rotation, similar to how first person games work. Useful when sculpting environments rather than single objects.
 
 ![](/images/camera_rotation_ortho_view.webp)
 
 ### Rotation Type {#rotation-type}
 By default the camera is using the `Turntable` rotation mode.
 It means you have only two degrees of freedom, it is more intuitive but in some cases you'll want more flexibility.  
-You can switch to `Trackball`, you'll be able to *roll* the view by rotating *two* fingers on the viewport. On desktop there is an alternate trackball mode that might be more familar to some users.
+You can switch to `Trackball`, you'll be able to *roll* the view by rotating *two* fingers on the viewport. There are two `Trackball` modes: the first one rolls the view like a ball under your finger, while the second one (with the arrows icon) turns the view from the horizontal and vertical movement of your drag, which might be more familiar to some users.
 
 ### Orthographic snap {#orthographic}
 
@@ -117,7 +120,7 @@ Snap to the closest front/back/left/right/top/bottom view. If you are already in
 
 ### Speed {#speed}
 
-If you feel the camera moves too slow or too quickly, you can set a speed multiplier for `rotation`, `translation` and `zooming`. Useful if your sculpt is very big or very small.
+If you feel the camera moves too slow or too quickly, you can set a speed multiplier for `Rotation`, `Zooming` and `Translation`. Useful if your sculpt is very big or very small.
 
 ### Pivot overview {#pivot}
 
@@ -133,17 +136,23 @@ By default the pivot is update through these operations:
 
 You can further customise the pivot to be updated with these options:
 
-* When camera starts moving 
-* Allow air pivot
-* When double tapping
-* Sculpt (stroke)
+* `When camera starts moving` - Update the pivot when you start interacting with the camera.
+* `Allow air pivot` - Allow a new pivot even when you zoom outside the object surface. Needs `When camera starts moving`.
+* `When double tapping` - Update the rotation pivot when you double tap on the object surface.
+* `Sculpt (Stroke)` - Update the pivot when you sculpt.
 
 ::: tip
 When you are used to it, you can hide the (hint) pink dot if you go in the [Settings](settings.md) menus.
 :::
 
+### Center view when zooming out {#center-view-when-zooming-out}
+When zooming out, the camera doesn't pan sideways: it only moves back, so the view stays centered.
+
 ### Double tap on object {#dtap-object}
-When `Focus` is enabled, double tapping will move the pivot to the tapped object.
+When enabled, double tapping on an object focuses the camera on the tapped point.
 
 ### Double tap on background {#dtap-tap-background}
-When enabled, set the pivot to be one of Selection, Scene, or toggle between them.
+When enabled, double tapping on the background focuses the camera on:
+* `Selection` - The selected objects.
+* `Scene` - The whole scene.
+* `Toggle` - Switch between the two at each double tap. There are two `Toggle` options, they differ by which one comes first, as their icons show.

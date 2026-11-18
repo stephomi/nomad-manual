@@ -1,528 +1,668 @@
 # ![](/icons/multires.webp) Topologie {#topology}
 
-Dit menu beheert de topologie van objecten in Nomad, evenals tools om details te bakken en over te dragen tussen objecten en tussen textures.
+Dit menu regelt de topologie van objecten in Nomad, en bevat ook gereedschappen om details te bakken en over te zetten tussen objecten en tussen texturen.
 
 ![](/images/topology_overview.webp)
 
-Nomad is gebaseerd op polygonen, het gebruikt driehoeken en quads om de geometrie te verwerken.
-Met topologie bedoelen we zowel het aantal vlakken als de manier waarop punten (vertices) met elkaar verbonden zijn.
+Nomad werkt met polygonen: de geometrie bestaat uit driehoeken en quads.
+Met topologie bedoelen we zowel het aantal vlakken als de manier waarop de punten (vertices) met elkaar verbonden zijn.
 
-Het is belangrijk om de topologie in de gaten te houden, vooral als je fijne details wilt beeldhouwen of schilderen.
+Het is belangrijk om je topologie in de gaten te houden, zeker als je fijne details wilt boetseren of schilderen.
 
 ::: tip Hoe houd je je topologie in de gaten?
-Je kunt de [Wireframe](settings.md#wireframe) weergeven of eenvoudigweg [Smooth Shading](settings.md#smooth-shading) uitschakelen.
+Zet het [Draadmodel](settings.md#wireframe) aan, of schakel gewoon [Vloeiende shading](settings.md#smooth-shading) uit.
 :::
 
 ![](/images/topology_top.webp)
 
-Het topologiemenu van Nomad heeft verschillende secties:
+Het topologiemenu van Nomad heeft meerdere tabbladen, verdeeld over twee rijen:
 
-| Methode                                | Icoon                         | Beschrijving                                                      |
+| Methode                               | Pictogram                    | Beschrijving                                                     |
 | :-----------------------------------: | :--------------------------: | :--------------------------------------------------------------: |
-| [Multiresolution](#multiresolution)   | ![](/icons/multires.webp)   | Bewerk meerdere detailniveaus met behulp van subdivisie          |
-| [Voxel Remesher](#voxel-remesher)     | ![](/icons/voxel.webp)      | Bereken een nieuwe topologie met uniforme dichtheid              |
-| [Dynamic Topology](#dynamic-topology) | ![](/icons/dynamic.webp)    | Voeg lokaal vlakken toe of verwijder ze in real-time tijdens sculpten of schilderen |
-| [Misc](#misc)                         | ![](/icons/topo_extra.webp) | Decimatie, UV’s, baking, remeshen, reprojection                  |
-| [Primitive](#msc)                     | ![](/icons/dot.webp)        | Primitive-opties                                                 |
+| [Multiresolutie](#multiresolution)    | ![](/icons/multires.webp)   | Werk op meerdere detailniveaus met behulp van subdivisie         |
+| [Voxel-remesh](#voxel-remesher)       | ![](/icons/voxel.webp)      | Bereken een nieuwe topologie met een gelijkmatige dichtheid      |
+| [Dynamische topologie](#dynamic-topology) | ![](/icons/dynamic.webp) | Voeg tijdens het boetseren of schilderen ter plekke vlakken toe of haal ze weg |
+| [Overige](#misc)                      | ![](/icons/topo_extra.webp) | Gaten sluiten, manifold afdwingen en omzetten naar triplanar     |
+| [Primitieven](#primitive)             | ![](/icons/dot.webp)        | Opties van het primitief                                         |
+| [Decimeren](#decimation)              | ![](/icons/decimate.webp)   | Verminder het aantal vlakken en behoud daarbij de vorm           |
+| [Quad-remesh](#quad-remesh)           | ![](/icons/quad.webp)       | Bouw het object opnieuw op met een nette indeling van quads      |
+| [UV-ontvouwen](#uv-unwrap)            | ![](/icons/uv.webp)         | Maak UV's aan om te kunnen textureren                            |
+| [Bakken](#bake)                       | ![](/icons/bake.webp)       | Bak details en schilderwerk naar texturen, vertices of VDM-stempels |
 
 
-## Polygonenstatistieken {#polygon-stats}
+## Polygoonstatistieken {#polygon-stats}
 
 ![](/images/topology_stats.webp)
 
-Het bovenste gedeelte van het topologiemenu toont polygoninformatie voor het geselecteerde object en de volledige scène. De getallen tonen het totale aantal vertices, het totale aantal driehoeken en het totale aantal quads (4-zijdige polygonen).
+Bovenaan elk tabblad zie je het aantal polygonen van het geselecteerde object, en van de hele scène als die meer dan één object bevat. De kolommen tonen het aantal vertices, driehoeken, quads (vierzijdige polygonen) en UV-coördinaten (0 als het object geen UV's heeft).
 
-Tik op dit gedeelte om een lijst met polygonstatistieken voor alle polygonobjecten in de scène weer te geven.
+Tik op dit gedeelte om alle objecten van de scène te zien met hun exacte aantallen, inclusief hun aantal vlakkengroepen.
+
+## ![](/icons/cog.webp) Tandwielmenu {#gear-menu}
+Sommige onderdelen, zoals die in de tabbladen [Quad-remesh](#quad-remesh) en [Bakken](#bake), hebben extra opties. Je opent ze met het tandwielpictogram naast de titel van het onderdeel.
 
 ## ![](/icons/multires.webp) Multiresolutie {#multiresolution}
 
 ![](/images/topology_multires_menu.webp)
 
 ### Wat is multiresolutie? {#what-is-multiresolution}
-De multiresolutionfunctie is nuttig voor twee hoofdscenario’s:
-- Het smooth-subdivisie-algoritme om het polycount van je object te verhogen
-- Meerdere resolutieniveaus beheren zodat je kunt afwisselen tussen kleine en grootschalige bewerkingen
+Multiresolutie is vooral handig in twee situaties:
+- Het vloeiende subdivisie-algoritme, om het aantal polygonen van je object te verhogen
+- Meerdere resolutieniveaus beheren, zodat je kunt wisselen tussen kleine en grote aanpassingen
 
 ![](/videos/multiresolution.mp4)
 
-#### Multiresolutie-workflow {#multiresolution-workflow}
-Een belangrijk aspect van multiresolution is dat je kunt teruggaan naar een lagere resolutie, wijzigingen aanbrengen aan je object en vervolgens teruggaan naar de hoogste resolutie zonder de hoge-resolutiedetails te verliezen. Alle hoge-resolutiedetails worden automatisch geprojecteerd.
+#### Werken met multiresolutie {#multiresolution-workflow}
+Een belangrijk voordeel van multiresolutie is dat je terug kunt gaan naar een lagere resolutie, daar je object kunt aanpassen en dan weer naar de hoogste resolutie kunt gaan zonder de fijne details te verliezen. Alle details van de hoge resolutie worden automatisch teruggeprojecteerd.
+
+[Lagen](layers.md#layers) zijn op elke resolutie beschikbaar.
 
 ::: warning
-Als je een tool gebruikt die de topologie van je object wijzigt, verlies je alle andere resolutieniveaus van je object!
-Je zou altijd een waarschuwing moeten krijgen als dit zou gebeuren, bijvoorbeeld wanneer je:
-- de [Voxel Remesher](#voxel-remesher) gebruikt
-- de [Dynamic Topology](#dynamic-topology) gebruikt
-- de [Trim-tool](tools.md#trim) gebruikt
-- de [Split-tool](tools.md#split) gebruikt
+Gebruik je een gereedschap dat de topologie van je object verandert, dan verlies je alle andere resolutieniveaus van je object!
+Je krijgt in dat geval altijd een waarschuwing, bijvoorbeeld als je het volgende gebruikt:
+- de [Voxel-remesh](#voxel-remesher)
+- de [Dynamische topologie](#dynamic-topology)
+- het [Trim-gereedschap](tools.md#trim)
+- het [Split-gereedschap](tools.md#split)
 :::
 
 
 ### Multiresolutie-schuifregelaar {#multiresolution-slider}
-Deze slider geeft het aantal subdivisieniveaus in het huidige object aan. Als er 6 verticale balken zijn, zijn er 6 subdivisieniveaus. De cirkel geeft het momenteel weergegeven subdivisieniveau aan. 
+Deze schuifregelaar toont het aantal subdivisieniveaus van het huidige object. Zie je 6 verticale streepjes, dan zijn er 6 subdivisieniveaus. Het rondje geeft aan welk subdivisieniveau op dit moment wordt weergegeven.
 
-### Omkeren {#reverse}
-Wanneer je op het laagste subdivisieniveau zit, zal de reverse-knop proberen een niveau onder het huidige te creëren. Merk op dat dit over het algemeen alleen kan als het object oorspronkelijk met subdivisie is gemaakt, bijvoorbeeld in Nomad of in andere 3D-applicaties die multiresolution-subdivision surfaces gebruiken.
+Kleine pictogrammen boven de schuifregelaar laten zien welke opties (`Niveau 0 vergrendelen`, `Lineair`, `Scherpe rand`, `Behoud driehoeken`) bij elk niveau zijn gebruikt.
 
-### Subdivideren {#subdivide}
-De *Subdivide*-knop zal het aantal polygonen met 4 vermenigvuldigen, houd dus het polycount in de gaten, want dit kan heel snel toenemen!
-Een belangrijk aspect van *Subdivision Surface* is dat deze zullen convergeren naar een *Smooth Surface*.
-Om te begrijpen hoe dit werkt, kun je de *Subdivide*-knop proberen op een object met slechts een paar polygonen.
+### Omgekeerd {#reverse}
+Sta je op het laagste subdivisieniveau, dan probeert de knop Omgekeerd een niveau onder het huidige aan te maken. Dit lukt meestal alleen als het object oorspronkelijk met subdivisie is gemaakt, bijvoorbeeld in Nomad of in een andere 3d-app die multiresolutie-subdivisieoppervlakken ondersteunt.
 
-Je kunt dit *Smooth*-gedrag uitschakelen door de optie `Linear subdivision` aan te vinken.
+### Subdivisie {#subdivide}
+De knop *Subdivisie* verviervoudigt het aantal polygonen, dus houd het aantal goed in de gaten: het loopt heel snel op! Nomad vraagt om bevestiging als het resultaat erg zwaar zou worden.
+Een belangrijke eigenschap van *subdivisieoppervlakken* is dat ze naar een *glad oppervlak* toe groeien.
+Wil je zien hoe dat werkt, probeer dan de knop *Subdivisie* op een object met maar een paar polygonen.
 
-### Lagere verwijderen {#delete-lower}
-Als er subdivisies onder het momenteel weergegeven niveau zijn, verwijder deze dan. Als je dit per ongeluk doet, kun je ze opnieuw aanmaken met de Reverse-knop.
+Met de optie `Lineair` schakel je dit *gladde* gedrag uit.
 
-### Hogere verwijderen {#delete-higher}
-Als er subdivisies boven het momenteel weergegeven niveau zijn, verwijder deze dan.
+### Lager verwijderen {#delete-lower}
+Verwijdert de subdivisieniveaus onder het niveau dat nu wordt weergegeven. Heb je dit per ongeluk gedaan, dan kun je ze opnieuw aanmaken met de knop Omgekeerd.
 
-### Lineaire subdivisie {#linear-subdivision}
-Subdivide de mesh zonder smoothing toe te passen.
+### Hoger verwijderen {#delete-higher}
+Verwijdert de subdivisieniveaus boven het niveau dat nu wordt weergegeven.
 
-### Scherpe rand {#sharp-border}
-Als je object facegroups heeft, zal het inschakelen van deze optie de facegroup-randen scherp houden. Dit kan op elk subdivisieniveau worden ingesteld (de subdivisieslider zal een klein icoon boven het niveau hebben om dit aan te geven).
+### ![](/icons/lock.webp) Niveau 0 vergrendelen {#lock-lv0}
+Behoud de vorm van het laagste subdivisieniveau terwijl je op hogere niveaus boetseert. Schilderwerk wordt nog wel doorgegeven aan niveau 0. Dit kan belangrijk zijn als je object in een andere app is gemaakt en het basisobject ongewijzigd moet blijven.
 
-### Driehoeken behouden {#keep-triangles}
-De meeste standaard subdivision-surface-systemen zullen proberen alle polygonen naar quads om te zetten tijdens een subdivisieoperatie. Deze schakelaar zal afdwingen dat de subdivisie driehoeken gebruikt in plaats daarvan.
+Deze optie is alleen beschikbaar vóór de eerste subdivisie. Staat ze uit, dan verplaatsen grote aanpassingen op hogere subdivisieniveaus ook niveau 0.
 
-### Vergrendelen (LV0) {#lock-lv0}
+### ![](/icons/linear.webp) Lineair {#linear-subdivision}
+Onderverdeel de mesh zonder hem glad te maken.
 
-Voorkom dat het laagste subdivisieniveau wordt gewijzigd. Dit kan belangrijk zijn als je object in een andere applicatie is gegenereerd en het basisobject ongewijzigd moet blijven. Wanneer deze optie is uitgeschakeld, zullen grote wijzigingen op hogere subdivisieniveaus niveau 0 verplaatsen.
+### ![](/icons/group.webp) Scherpe rand {#sharp-border}
+Heeft je object vlakkengroepen, dan houdt deze optie de grenzen tussen de vlakkengroepen scherp. Je kunt dit per subdivisieniveau instellen (de subdivisie-schuifregelaar toont dan een klein pictogram boven dat niveau).
 
-::: tip 
+### ![](/icons/triangle.webp) Behoud driehoeken {#keep-triangles}
+De meeste gangbare subdivisiesystemen proberen bij het onderverdelen alle polygonen om te zetten naar quads. Met deze schakelaar gebruikt de subdivisie in plaats daarvan driehoeken.
 
-Subdivision zal standaard alle scherpe randen verzachten. Om randen enigszins scherp te houden, kun je experimenteren met het gebruik van linear subdivision of Sharp border op de eerste 2 subdivideniveaus, en het vervolgens uitschakelen voor de hogere niveaus. Dit creëert een half-scherpe gesubdivideerde mesh.
+::: tip
+
+Subdivisie maakt standaard alle scherpe randen glad. Wil je randen een beetje scherp houden, experimenteer dan met `Lineair` of `Scherpe rand` op de eerste 2 subdivisieniveaus, en zet ze uit voor de hogere niveaus. Zo krijg je een half-scherpe onderverdeelde mesh.
 
 :::
 
+### Hoogste niveau tonen {#show-highest-level}
+Toon het hoogste niveau met al zijn details terwijl je op een lager niveau boetseert. Handig om het eindresultaat te zien terwijl je grote aanpassingen maakt.
 
-## ![](/icons/voxel.webp) Voxel-remesher {#voxel-remesher}
+### Draadmodel: Alleen niveau 0 {#wireframe-level-0-only}
+Als het [Draadmodel](settings.md#wireframe) aan staat, toon dan alleen het draadmodel van het laagste niveau. Het dichte draadmodel van de hoge niveaus kan de vorm anders verbergen.
+
+
+## ![](/icons/voxel.webp) Voxel-remesh {#voxel-remesher}
 ![](/images/topology_voxel_menu.webp)
-Bij gebruik van de `Voxel Remesher` zal de volledige mesh worden gedwongen een uniforme resolutie te hebben, wat betekent dat alle polygonen min of meer dezelfde grootte hebben. Dit is erg handig wanneer je niet over topologie wilt nadenken en gewoon vrij wilt sculpten.
+De `Voxel-remesh` dwingt de hele mesh tot een gelijkmatige resolutie: alle polygonen worden ongeveer even groot. Dat is heel handig als je niet over topologie wilt nadenken en gewoon vrij wilt boetseren.
 
-Een typische sculptworkflow kan beginnen met het gebruik van de `Voxel Remesher` om met een lage resolutie een ruwe vorm te blokkeren.
-Druk af en toe op de *Remesh*-knop wanneer je de mesh te veel uitrekt om te veel vervorming te voorkomen.
+Een typische werkwijze begint met de `Voxel-remesh` om een ruwe vorm op lage resolutie neer te zetten.
+Druk af en toe op de knop *Remesh* als je de mesh te ver uitrekt, zodat er niet te veel vervorming ontstaat.
 
 ![](/videos/voxel_remesher.mp4)
 
 
 ::: tip Voxel?
-Zoals hierboven vermeld, is Nomad polygonale software, maar de `Voxel Remesher` is een uitzondering waarbij tijdelijk een andere benadering wordt gebruikt om het remeshen uit te voeren.
+Zoals hierboven gezegd werkt Nomad met polygonen, maar de `Voxel-remesh` is een uitzondering: daar wordt (tijdelijk) een andere aanpak gebruikt om de mesh opnieuw op te bouwen.
 
-Een groot verschil is dat de voxelbenadering geen zelf-intersecties accepteert, dus deze zullen worden opgelost.
-Ook ondersteunt het geen meshes met gaten.
+Een groot verschil is dat de voxelaanpak geen zelfdoorsnijdingen toestaat; die worden dus opgelost.
+Ook kan hij niet overweg met meshes met gaten.
 
-Met gaten bedoelen we niet de `genus hole` (`gat` van een donut), maar meshes die niet `waterdicht`/`gesloten` zijn.
-Typisch betekent dit dat vóór het toepassen van het remeshen alle gaten worden gevuld, vergelijkbaar met de [Trim-tool](tools.md#trim) of de [Hole filling-functie](scene.md#hole-filling).
+Met gaten bedoelen we niet het `genus-gat` (het `gat` van een donut), maar meshes die niet `waterdicht`/`gesloten` zijn.
+In de praktijk betekent dit dat vóór het remeshen alle gaten worden gevuld, net als bij het [Trim-gereedschap](tools.md#trim) of de functie [Gaten vullen](#holes). Met de optie [Gaten](#voxel-holes) hieronder kies je hoe.
 :::
 
-### Remesh {#voxel-remesh}
-Voer de voxel-remesh uit.
+### ![](/icons/voxel.webp) Remesh {#voxel-remesh}
+Voer de voxel-remesh uit. Kleine pictogrammen op de knop herinneren je eraan welke van de opties hieronder aan staan.
 
 ### Resolutie {#voxel-resolution}
-De grootte van de voxels die tijdens de berekening worden gebruikt. Tijdens het wijzigen van deze parameter wordt een schaakbordpatroon over de mesh gelegd om een voorbeeld van het resultaat te geven.
+De grootte van de voxels die voor de berekening worden gebruikt; hogere waarden geven meer detail. Terwijl je deze waarde aanpast, verschijnt er een dambordpatroon op de mesh als voorbeeld van het resultaat.
+
+De pipet neemt de resolutie over van de dichtheid van de mesh op de plek waar je tikt. Met de kubusknop ernaast wordt de waarde een `Randlengte` in wereldeenheden: dezelfde waarde geeft dan hetzelfde detail op elk object.
 
 ### Multiresolutie opbouwen {#build-multiresolution}
-Maak lagere multiresolutionniveaus voor de voxel-remesh. Als je het schaakbordpatroon gebruikt om een resolutie in te stellen en build multiresolution op 2 zet, zal het eindresultaat details hebben die overeenkomen met de resolutieslider, en als je naar het multires-tabblad gaat, zal het op niveau 2 staan, wat betekent dat je lagere resolutie-multimeshes hebt op niveau 1 en niveau 0. Dit kan een goede manier zijn om zowel een schone mesh met gelijkmatige polygonen te genereren als een low-res control mesh te hebben.
+Maak lagere multiresolutieniveaus aan bij de voxel-remesh. Stel je met het dambordpatroon een resolutie in en zet je Multiresolutie opbouwen op 2, dan heeft het eindresultaat het detail van de resolutie-schuifregelaar. In het tabblad Multiresolutie sta je dan op niveau 2, met daaronder lagere resoluties op niveau 1 en niveau 0. Zo krijg je in één keer een nette mesh met gelijkmatige polygonen én een controlemesh met een lagere resolutie.
 
-::: tip Tip: Build multiresolution en stable smoothing
+Het gaat bovendien sneller en gebruikt minder geheugen bij hoge resoluties. Maar met een lage resolutie en veel niveaus verlies je details.
 
-Deze optie kan soms ‘loops’ in de geometrie veroorzaken die moeilijk glad te strijken zijn, wat kleine puistjes veroorzaakt. Als dit gebeurt, schakel dan ‘Stable smoothing’ in de smooth-toolopties in. 
+::: tip Tip: Multiresolutie opbouwen en stabiel gladstrijken
+
+Deze optie kan soms 'lussen' in de geometrie veroorzaken die lastig glad te strijken zijn en kleine puistjes geven. Gebeurt dat, zet dan 'Stabiel gladstrijken' aan in de opties van het Gladstrijken-gereedschap. 
 
 :::
 
-### Scherpe randen behouden {#keep-sharp-edges}
-Schakel het snappen van de nieuwe punten naar scherpe randen op de originele mesh in. Dit kan vervorming introduceren.
+### Dunne delen verdikken {#thicken-thin-parts}
+Delen die dunner zijn dan de voxels kunnen bij het remeshen breken of verdwijnen. Deze optie maakt ze dikker zodat ze heel blijven; hogere waarden maken ze dikker. Niet beschikbaar in combinatie met `Scherpe randen` of `Scherpe grens`.
+
+### Gaten {#voxel-holes}
+Hoe gaten vóór het remeshen worden gesloten:
+
+* `Vullen` - Elk gat wordt apart gesloten, vanaf de rand.
+* `Vorm` - Gaten worden gesloten door het omliggende oppervlak te volgen, en open stukken die elkaar overlappen worden samengevoegd.
+
+### ![](/icons/angle.webp) Scherpe randen {#keep-sharp-edges}
+Leg de nieuwe punten op de scherpe randen van de oorspronkelijke mesh. Vooral nuttig bij eenvoudige booleaanse bewerkingen met primitieven, en het kan vervorming veroorzaken.
+
+### ![](/icons/group.webp) Scherpe grens {#voxel-sharp-border}
+De nieuwe vlakken volgen de grenzen van de vlakkengroepen, en een grens blijft scherp waar het oppervlak erlangs een knik maakt.
+
+### ![](/icons/group_separate.webp) Groepen gescheiden houden {#keep-groups-separate}
+Elke vlakkengroep wordt apart geremesht: groepen smelten nooit samen, en elke groep blijft een gesloten stuk in zijn eigen groep. In deze modus wordt geen multiresolutie opgebouwd. De optie is beschikbaar als het object meerdere vlakkengroepen heeft.
 
 ## ![](/icons/dynamic.webp) Dynamische topologie {#dynamic-topology}
 
 ![](/images/topology_dyntopo_menu.webp)
-Multiresolution en voxel-remeshen zijn gangbare industriemethoden om topologie te beheren, maar beide vereisen dat je oplet dat je polygonen niet te ver uitrekt of te strak samenperst. 
+Multiresolutie en voxel-remeshing zijn in de industrie gangbare methoden om de topologie te beheersen, maar bij allebei moet je opletten dat je polygonen niet te ver uitrekt of te dicht in elkaar drukt. 
 
-Dynamic Topology is een alternatieve methode. Terwijl je sculpt, zal Nomad adaptief polygonen toevoegen en verwijderen tijdens de penseelstreek, zodat het uitsnijden van kleine details veel kleine polygonen toevoegt waar je ze nodig hebt, en smoothing elders polygonen verwijdert.
+Dynamische topologie is een alternatief. Terwijl je boetseert, voegt Nomad tijdens de penseelstreek polygonen toe en haalt ze weg waar nodig: kerf je kleine details in, dan komen er veel kleine polygonen precies waar je ze nodig hebt, en strijk je elders glad, dan verdwijnen er polygonen.
 
-Merk op dat dynamic topology driehoekspolygonen zal gebruiken in plaats van quads. Dit kan er wat rommelig uitzien, maar het is bijna beter om niet naar de wireframe te kijken en je gewoon te concentreren op het maken van een mooi ogende sculpt zonder je zorgen te maken over topologie; later kun je een van Nomads andere remeshingtools gebruiken om een schone quadmesh te genereren.
+Let op: dynamische topologie gebruikt driehoeken in plaats van quads. Dat kan er wat rommelig uitzien, maar je kijkt eigenlijk beter niet naar het draadmodel. Concentreer je op een mooi beeld zonder je zorgen te maken over de topologie; later kun je met een van de andere remesh-gereedschappen van Nomad een nette quad-mesh maken.
 
-Zie de onderstaande video in actie.
+Bekijk het in actie in de video hieronder.
 
 ![](/videos/dynamic.mp4)
 
 ### Ingeschakeld {#enabled}
-Schakel dynamic topology in. Er wordt een DynTopo-icoon onder de sliders voor penseelradius en intensiteit geplaatst om Dyntopo per tool te kunnen in- of uitschakelen.
+Zet dynamische topologie aan. Onder de schuifregelaars voor straal en intensiteit van het penseel verschijnt dan een DynTopo-pictogram, waarmee je DynTopo per gereedschap aan of uit zet. Het kan merkbaar ten koste gaan van de prestaties, en lagen worden correct bijgewerkt.
 
-### Detail {#dyn-detail}
-Bepaalt de hoeveelheid detail; het gedrag verandert op basis van de selectie ‘Detail based on...’, zie hieronder.
+### Details {#dyn-detail}
+Bepaalt de hoeveelheid detail; hoe het werkt hangt af van de keuze bij 'Detail gebaseerd op...', zie hieronder. In de modus `Scherm` toont het label de gewenste grootte van de driehoeken in pixels. In de modus `Constant` kun je met een pipet het detail overnemen van de dichtheid van de mesh op de plek waar je tikt.
 
 ### Detail gebaseerd op... {#detail-based-on}
-| Methode   | Beschrijving                                                     |
-| :-------: | :--------------------------------------------------------------: |
-| Screen    | Het detailniveau hangt af van hoe groot het object op het scherm is. De detailslider is 100% of hoger voor fijn detail (kleine driehoeken) of 1% voor laag detail (grote driehoeken).  |
-| Radius    | De toolradius bepaalt de hoeveelheid detail. Gebruik een kleine toolradius voor fijn detail, een grote toolradius voor laag detail. De detailslider is een vermenigvuldigingsfactor op deze verhouding.                     |
-| Constant  | De detailslider bepaalt de hoeveelheid detail en wordt niet beïnvloed door schermgrootte of toolgrootte.             |
+| Methode  | Beschrijving                                                    |
+| :------: | :-------------------------------------------------------------: |
+| Scherm   | Het detailniveau hangt af van hoe groot het object op het scherm is. Met de detail-schuifregelaar op 100% of hoger krijg je fijn detail met kleine driehoeken, op 1% weinig detail met grote driehoeken.  |
+| Radius   | De straal van het gereedschap bepaalt de hoeveelheid detail: een kleine straal voor fijn detail, een grote straal voor weinig detail. De detail-schuifregelaar is een vermenigvuldiger op deze verhouding.                     |
+| Constant | De detail-schuifregelaar bepaalt de hoeveelheid detail, los van de schermgrootte of de grootte van het gereedschap. Het is dezelfde waarde als de schuifregelaar [Detail](#all-detail) van `Remesh`.             |
 
-::: tip TIP: Radius-modus
+::: tip TIP: de modus Radius
 
-Om beter te begrijpen hoe de radius-modus werkt, begin je de detailslider met één vinger te bewegen en verander je tegelijkertijd de toolradius met een andere vinger. Je zult zien hoe ze gekoppeld zijn.
+Om goed te voelen hoe de modus Radius werkt, verschuif je de detail-schuifregelaar met één vinger en verander je tegelijk de straal van het gereedschap met een andere vinger. Je ziet dan hoe ze met elkaar samenhangen.
 
 :::
 
-### Voorkeur voor... {#prefer}
-| Methode | Beschrijving        |
-| :-----: | :-----------------: |
-| Speed   | Geef performance voorrang |
-| Quality | Geef kwaliteit voorrang   |
+### Voorkeur... {#prefer}
+| Methode    | Beschrijving        |
+| :--------: | :-----------------: |
+| Snelheid   | Voorrang aan prestaties |
+| Kwaliteit  | Voorrang aan kwaliteit  |
 
-Wanneer je `Quality` verkiest, zijn de 2 belangrijkste verschillen:
-- verfijning wordt toegepast vóór het sculpten, zodat je minder interpolatie-artefacten krijgt bij het schilderen of sculpten van zeer kleine details
-- verfijning wordt uitgevoerd totdat deze convergeert naar het juiste detailniveau, in tegenstelling tot een incrementeel gedrag.
+Geef je voorrang aan `Kwaliteit`, dan zijn er 2 belangrijke verschillen:
+- de verfijning gebeurt vóór het boetseren, dus je krijgt minder interpolatiefouten als je heel kleine details schildert of boetseert
+- de verfijning gaat door tot het juiste detailniveau bereikt is, in plaats van stap voor stap.
  
-Op die manier zal, als je zeer kleine details sculpt of snelle streken maakt, de topologie altijd worden verfijnd zoals verwacht.
+Zo wordt de topologie altijd verfijnd zoals verwacht, ook als je heel kleine details boetseert of snelle streken zet
 
 
-### Druk gebruiken op straal {#use-pressure-on-radius}
-Alleen relevant als `Radius` is geactiveerd. Indien ingeschakeld, zal het detailniveau altijd de penseelgrootte weerspiegelen, zelfs wanneer de penseelgrootte wordt beïnvloed door pen-druk.
+### ![](/icons/pressure.webp) Druk op straal gebruiken {#use-pressure-on-radius}
+Alleen van toepassing als `Radius` actief is. Staat deze optie aan, dan volgt het detailniveau altijd de grootte van het penseel, ook als die door de druk van de stylus verandert.
 
-### Gebruik streekverval {#use-stroke-falloff}
+### Streekfalloff gebruiken {#use-stroke-falloff}
 
-Neem ook de penseel-falloffcurve en alpha op in de dyntopo-berekeningen.
+Neem ook de afnamecurve en de alpha van het penseel mee in de DynTopo-berekeningen.
 
 ### Methode {#method}
-Of je nu `Dynamic Topology` gebruikt op je [Brush](#brush) of [Globally](#global), je kunt kiezen in welke modus deze werkt:
+Kies hoe dynamische topologie de mesh aanpast, zowel tijdens het boetseren als bij [Remesh](#dyn-remesh):
 
-| Methode        | Beschrijving                                                           |
-| :------------: | :--------------------------------------------------------------------: |
-| Uniformisation | Kan vlakken toevoegen en verwijderen, dit is de modus die in de video hierboven wordt gebruikt |
-| Subdivision    | Voegt alleen nieuwe vlakken toe, kan geen vlakken verwijderen         |
-| Decimation     | Verwijdert alleen vlakken, kan geen vlakken toevoegen                 |
+| Methode        | Beschrijving                                                          |
+| :------------: | :-------------------------------------------------------------------: |
+| Uniformisatie  | Kan vlakken toevoegen en weghalen; dit is de modus uit de video hierboven |
+| Onderverdeling | Voegt alleen nieuwe vlakken toe, kan geen vlakken weghalen            |
+| Decimering     | Haalt alleen vlakken weg, kan geen nieuwe vlakken toevoegen           |
 
-### Bescherm gemaskeerd gebied {#protect-masked-area}
-Schakel in dat gemaskeerde gebieden worden beschermd tegen wijzigingen in de topologie.
+### ![](/icons/shield.webp) Gemaskeerd gebied beschermen {#protect-masked-area}
+Gemaskeerde gebieden beschermen de topologie tegen wijzigingen.
 
-### Vertex-extrapolatie {#vertex-extrapolation}
-
+### ![](/icons/normal.webp) Vertex extrapolatie {#vertex-extrapolation}
+Plaats de punten op een glad oppervlak dat de kromming eromheen volgt, in plaats van plat op de bestaande vlakken.
 
 ### Detail {#all-detail}
-De resolutie die wordt gebruikt voor de remesh-operatie. Als Dyntopo in ‘Constant’-modus staat, zal dit dezelfde waarde zijn als de detailslider bovenaan dit menu.
+De resolutie die bij het remeshen wordt gebruikt. Staat DynTopo in de modus 'Constant', dan is dit dezelfde waarde als de schuifregelaar Details bovenaan dit menu. De pipet neemt het detail over van de dichtheid van de mesh op de plek waar je tikt.
 
 ### Remesh {#dyn-remesh}
-Voer een globale remesh uit met behulp van het dyntopo-algoritme. Meestal zou je de [Voxel Remesher](#voxel-remesher) moeten gebruiken voor volledig remeshen.
+Voer een volledige remesh uit met het DynTopo-algoritme. Meestal gebruik je voor een volledige remesh beter de [Voxel-remesh](#voxel-remesher).
 
-Een voordeel ten opzichte van voxels is echter dat het gemaskeerde gebied wordt beschermd, zodat je beter kunt bepalen waar je meer of minder dichtheid wilt.
+Een voordeel ten opzichte van voxels is wel dat de mesh niet gesloten hoeft te zijn en dat het gemaskeerde gebied beschermd wordt, zodat je beter kunt bepalen waar je meer of minder dichtheid wilt.
 
 
 
-## ![](/icons/topo_extra.webp) Diversen {#misc}
+## ![](/icons/topo_extra.webp) Overige {#misc}
 
 ![](/images/topology_misc_menu.webp)
 
-##### ![](/icons/cog.webp) Tandwielmenu {#gear-menu}
-Veel van de tools in dit menu hebben extra opties. Ze zijn toegankelijk via het tandwielicoon naast de sectietitel.
+Dit tabblad bundelt gereedschappen om de mesh op te schonen of om te zetten: de gaten sluiten, hem manifold maken of er een triplanar van maken.
 
-### Decimatie {#decimation}
+### ![](/icons/hole.webp) Gaten {#holes}
+![](/images/topology_holes_menu.webp)
+Meestal is je object waterdicht, wat betekent dat de mesh 'gesloten' is.
+
+Heeft je object toch gaten, dan kun je ze vullen.
+
+![](/videos/hole_filling.mp4)
+
+::: tip
+Als je de Voxel-remesh gebruikt, worden alle gaten automatisch gesloten, of je hem nu op 1 of op meerdere meshes toepast.
+:::
+
+#### Sluit gaten {#close-holes}
+Sluit de gaten.
+
+#### Opties {#holes-gear-menu}
+Deze opties bepalen hoe de gaten worden gevuld:
+
+##### Vlakkengroep {#fill-face-group}
+Kies de vlakkengroep van de nieuwe vlakken:
+
+* `Gemengd` - Een gat dat door één vlakkengroep wordt omringd, krijgt die groep; een gat dat meerdere groepen raakt, krijgt een nieuwe.
+* `Nieuw` - De gevulde gaten krijgen een nieuwe vlakkengroep.
+* `Hergebruiken` - Elk gat krijgt de vlakkengroep die het het meest omringt.
+
+##### Detail {#fill-detail}
+De polygoondichtheid waarmee het gat wordt gevuld. Terwijl je deze schuifregelaar versleept, verschijnt er een dambordpatroon op het model dat aangeeft hoe groot de driehoeken worden. Met het selectievakje schakel je dit uit en worden alleen de bestaande punten gebruikt. Dat geeft meestal lange, dunne driehoeken over het gat, die lastig te boetseren zijn.
+
+##### Overbruggen {#fill-non-manifold}
+Vul een gat en de eilanden erin als één oppervlak, in plaats van elke rand apart te vullen. Met een grotere hoek worden ook sterker gekromde gaten overbrugd. Het selectievakje zet het uit.
+
+### ![](/icons/cog.webp) Manifold afdwingen {#force-manifold}
+![](/images/topology_forcemanifold_menu.webp)
+Probeer non-manifold randen op te schonen. Handig voor externe software die geen randen ondersteunt die door meer dan 2 vlakken gedeeld worden.
+
+#### Schoonmaken {#clean}
+Voer het opschonen uit.
+
+#### Opties {#force-manifold-gear-menu}
+Deze optie bepaalt hoe de mesh wordt opgeschoond:
+
+##### Verwijder kleine vlakken {#delete-small-faces}
+Een drempelwaarde om kleine polygonen te verwijderen en samen te voegen. Zet het aan met het selectievakje.
+
+
+### ![](/icons/triplanar.webp) Triplanar {#triplanar}
+![](/images/topology_triplanar_menu.webp)
+Zet de mesh om naar een [triplanar](scene.md#triplanar)-primitief.
+Je verliest daarbij waarschijnlijk veel detail: ook lagen, schilderwerk en multiresolutie gaan verloren.
+
+#### Forceer kubus {#force-cubic}
+Maak van de triplanar een kubus. Anders past de triplanar zich aan de dichtstbijzijnde omhullende doos rond je object aan.
+
+#### Converteer {#convert}
+Voer de omzetting naar triplanar uit.
+
+#### Resolutie {#triplanar-resolution}
+De resolutie van het triplanar-raster; hogere waarden behouden meer detail.
+
+## ![](/icons/decimate.webp) Decimeren {#decimation}
 
 ![](/images/topology_decimation.webp)
 
-Verminder het aantal polygonen door te proberen zoveel mogelijk details te behouden, met gebruik van driehoekspolygonen.
+Verminder het aantal polygonen en probeer daarbij zoveel mogelijk details te behouden, met driehoeken.
 
-Deze functie kan nuttig zijn als je wilt exporteren voor 3D-printen.
-Je zou het echter waarschijnlijk niet moeten gebruiken als je verder wilt sculpten, omdat het oneffen driehoeken kan produceren.
+Dit is handig als je wilt exporteren voor 3d-printen.
+Wil je daarna verder boetseren, dan kun je het beter niet gebruiken, omdat het ongelijke driehoeken kan opleveren.
 
-Merk op dat de gemaskeerde gebieden niet worden gedecimeerd.
+Let op: gemaskeerde gebieden worden niet gedecimeerd.
 
 ![](/videos/decimate.mp4)
 
 ::: tip
 
-Het gebruik van de [Quadremesh-tool](tools.md#quad-remesher) op high-poly-objecten kan lang duren om te berekenen en resultaten opleveren die moeilijk te controleren zijn. Voorbewerking van de mesh met [facegroups](tools.md#facegroup-1) en decimate zal Quadremesh veel sneller laten draaien en veel meer controle over de topologie geven.
+Het [Quad Remesher-gereedschap](tools.md#quad-remesher) kan op objecten met veel polygonen lang rekenen en resultaten geven die moeilijk te sturen zijn. Bereid je de mesh voor met [vlakkengroepen](tools.md#facegroup) en decimeren, dan werkt Quad Remesher veel sneller en heb je veel meer controle over de topologie.
 
-* Maak facegroups op de mesh om je ideale quad-flow te definiëren.
-* Facegroup relax om gladde facegroup-randen te krijgen.
-* Decimate. Dit zorgt ervoor dat je geen dunne of vervormde vlakken op de facegroup-rand hebt. Zorg er in de decimate-instellingen voor dat facegroup is ingeschakeld. Dit zorgt ervoor dat driehoeksranden je facegroup-randen precies volgen.
-* Zorg er in de Quadremesh-opties voor dat relax is uitgeschakeld (omdat je de mesh al hebt relaxed) en je zou goede resultaten moeten krijgen.
+* Verdeel de mesh in vlakkengroepen die de gewenste quad-flow aangeven.
+* Ontspan de vlakkengroepen voor gladde grenzen.
+* Decimeer. Zo heb je geen dunne of vervormde vlakken langs de grenzen van de vlakkengroepen. Zorg dat onder `Randen behouden` de optie `Vlakkengroep` aan staat. Dan volgen de randen van de driehoeken precies de grenzen van je vlakkengroepen.
+* Zet in de opties van Quad Remesher het ontspannen uit (je hebt de mesh immers al ontspannen), dan krijg je goede resultaten.
 
 :::
 
-#### Decimeren {#decimate}
-Start de decimate-operatie.
+### Decimeren {#decimate}
+Start het decimeren.
 
-De iconen naast de decimate-knop laten je opties in- of uitschakelen die de decimatie beïnvloeden. Het percentage geeft aan hoe sterk die optie is en kan worden ingesteld in het geavanceerde tandwielmenu.
+De pictogrammen naast de knop Decimeren tonen de opties hieronder, en je kunt ze er aan- en uitzetten. Het percentage geeft aan hoe sterk die optie is.
 
-* ![](/icons/palette.webp)  `Preserve Painting` - Plaats meer driehoeken waar er schilderdetails zijn.
-* ![](/icons/triforce.webp) `Uniform Faces` - Geef de voorkeur aan gelijkmatig grote driehoeken.
-* ![](/icons/hole.webp)  `Preserve Geometry Borders` - Decimate zal proberen randen nabij open geometrie en gaten ongewijzigd te laten.
-* ![](/icons/group.webp) `Preserve Facegroup Borders` - Decimate zal proberen facegroup-randen ongewijzigd te laten.
-* ![](/icons/uv.webp) `Preserve UV Borders` - Decimate zal proberen UV-randen ongewijzigd te laten.
+* ![](/icons/palette.webp)  `Schildering behouden` - Plaats meer driehoeken waar er geschilderd detail is.
+* ![](/icons/triforce.webp) `Uniforme vlakken` - Maak bij voorkeur driehoeken van gelijke grootte.
+* ![](/icons/hole.webp)  `Gat` - Decimeren probeert randen bij open geometrie en gaten ongewijzigd te laten.
+* ![](/icons/group.webp) `Vlakkengroep` - Decimeren probeert de grenzen van vlakkengroepen ongewijzigd te laten.
+* ![](/icons/uv.webp) `UV` - Decimeren probeert de UV-grenzen ongewijzigd te laten.
 
-#### ![](/icons/cog.webp) Decimate-tandwielmenu {#decimate-gear-menu}
-Het tandwielmenu heeft deze geavanceerde opties:
-##### Painting behouden {#preserve-painting}
-Het selectievakje schakelt deze modus in of uit; de waarde bepaalt hoe nauwkeurig schilderdetails behouden blijven. Hogere waarden behouden meer schilderwerk. Stel in op 0 als je niet om schilderwerk geeft.
+### Doeldriehoeken {#target-triangles}
+Stel het gewenste aantal driehoeken in. De standaardwaarde is 50%; met de knop procent/doel wissel je tussen een percentage en een exact aantal polygonen.
 
+### Opties {#decimate-gear-menu}
+Elke optie heeft een selectievakje om haar aan of uit te zetten, en een waarde voor de sterkte:
 
-##### Uniforme vlakken {#uniform-faces}
-Het selectievakje schakelt deze modus in of uit. Hogere waarden leveren driehoeken op met vergelijkbare grootte.
+#### ![](/icons/palette.webp) Schildering behouden {#preserve-painting}
+Deze waarde bepaalt hoe nauwkeurig geschilderd detail behouden blijft. Hogere waarden behouden meer schilderwerk. Zet hem op 0 als het schilderwerk je niet uitmaakt.
 
-##### Randen behouden {#preserve-borders}
-Schakel in om te voorkomen dat randen worden gedecimeerd. Randgewichten kunnen worden geselecteerd voor `Geometry`-, `Face Group`- of `UV`-randen.
+#### ![](/icons/triforce.webp) Uniforme vlakken {#uniform-faces}
+Hogere waarden geven driehoeken van vergelijkbare grootte.
 
-#### Doeltrigonen {#target-triangles}
-Stel het gewenste aantal driehoeken in. De standaardwaarde is 50%; de procent/target-knop schakelt tussen een percentage of een exact doelpolycount.
+#### Randen behouden {#preserve-borders}
+Voorkom dat randen worden gedecimeerd. Je kunt een gewicht instellen voor de randen bij `Gat`, `Vlakkengroep` of `UV` (`UV` vereist een object met UV's).
 
+## ![](/icons/quad.webp) Quad-remesh {#quad-remesh}
+![](/images/topology_quadremesh_menu.webp)
+Bouw het object opnieuw op met een nette indeling van quads. Dit tabblad heeft meerdere remeshers, elk met een eigen knop `Remesh`, schuifregelaar `Doelquads` en tandwielmenu. Probeer ze uit op je object: de resultaten verschillen flink!
 
+### Quad Remesher {#quad-remesher}
+Dezelfde remesher als het gereedschap [Quad Remesher](tools.md#quad-remesher), ontwikkeld door [Exoside](https://exoside.com/). Hij is alleen op sommige platformen beschikbaar en moet apart gekocht worden: tot die tijd toont de knop `Remesh` een winkelwagentje.
 
-### UV Unwrap - UVAtlas {#uv-unwrap-uvatlas}
+`Gereedschap selecteren` schakelt over naar het Quad Remesher-gereedschap, om geleiders te tekenen en de dichtheid te schilderen. Het tandwielmenu bevat `Adaptief aantal quads`, `Adaptieve grootte` (op 100% volgt de grootte van de quads de kromming, op 0% zijn de quads overal even groot), `Harde randen automatisch detecteren` en `Vertex herprojecteren`.
 
-![](/images/topology_uvatlas_menu.webp)
-Bereken texturecoördinaten (UV’s) voor de huidige mesh, waarbij over het algemeen de voorkeur wordt gegeven aan meer eilanden met sneden om vervorming te minimaliseren.
+::: tip
+Waar hij beschikbaar is, geeft Quad Remesher meestal de beste resultaten en de meeste controle.
+:::
 
-Het kleine oogicoon tussen de menutitel en het tandwielmenu schakelt het voorvertonen van UV’s op het object in of uit.
+### AutoRemesher {#autoremesher}
+Een alternatieve quad-remesher, met opties om de grootte en vorm van de quads aan het oppervlak aan te passen.
+
+#### ![](/icons/cog.webp) Tandwielmenu van AutoRemesher {#autoremesher-gear-menu}
+Het tandwielmenu bevat deze geavanceerde opties:
+
+##### Randschaling {#edge-scaling}
+Schaal de grootte van de quads; hogere waarden geven grotere quads.
+
+##### Aanpassingsvermogen {#adaptivity}
+Pas de dichtheid van de quads aan de kromming aan. 0 geeft quads van gelijke grootte, 1 geeft kleinere quads in gekromde gebieden.
+
+##### Anisotropie {#anisotropy}
+Rek de quads uit in de vlakste richting van het oppervlak. 0 geeft vierkante quads, 1 geeft langgerekte quads op buizen en ruggen.
+
+##### Scherpe rand {#sharp-edge}
+Randen die verder geknikt zijn dan deze hoek, blijven behouden als scherpe kenmerken.
+
+##### Normalen vloeiend maken {#smooth-normal}
+Op 0 blijft het oppervlak tijdens het remeshen facetachtig. Hogere waarden maken het oppervlak gladder door rekening te houden met de vertexnormalen.
+
+##### Maximale vulling van gaten {#autoremesher-max-fill-hole}
+Het algoritme kan soms ongewenste gaten maken. Heeft een gat minder vertices dan deze waarde, dan wordt het gevuld.
+
+### Instant Mesh {#quad-remesh-instant}
+Remesh met het [Instant Meshes-algoritme van Wenzel Jakob, Marco Tarini, Daniele Panozzo en Olga Sorkine-Hornung](https://igl.ethz.ch/projects/instant-meshes/). Het analyseert de flow van een mesh en maakt een nette quad-topologie.
+
+#### Remesh {#instant-remesh}
+Start het remeshen.
+
+#### Doelquads {#target-quads}
+Het aantal quads dat de remesher probeert te maken.
+
+#### ![](/icons/cog.webp) Tandwielmenu van Instant Mesh {#quad-remesh-instant-gear-menu}
+Het tandwielmenu bevat deze geavanceerde opties:
+
+##### Vouwhoek {#crease-angle}
+Een drempelwaarde voor scherpe hoeken die het remeshen helpt te sturen. Zet het aan met het selectievakje.
+
+##### Maximale vulling van gaten {#max-fill-hole}
+Het algoritme kan soms ongewenste gaten maken. Heeft een gat minder vertices dan deze waarde, dan wordt het gevuld.
+
+### QuadriFlow {#quadriflow}
+Remesh met het QuadriFlow-algoritme, nog een manier om een nette indeling van quads te krijgen.
+
+#### ![](/icons/cog.webp) Tandwielmenu van QuadriFlow {#quadriflow-gear-menu}
+Het tandwielmenu bevat deze geavanceerde opties:
+
+##### Randen behouden {#quadriflow-preserve-boundary}
+Bescherm de randen van gaten.
+
+##### Scherpe randen behouden {#keep-sharp}
+Lijn de quads uit met de scherpe randen van het oppervlak.
+
+##### Minimale-kostenstroom {#min-cost-flow}
+Gebruik een minimale-kostenstroom-solver voor de indeling van de quads. Langzamer, maar kan een regelmatigere topologie opleveren.
+
+## ![](/icons/uv.webp) UV-ontvouwen {#uv-unwrap}
+Bereken textuurcoördinaten (UV's) voor het geselecteerde object. Nomad heeft twee methoden, `UVAtlas` en `BFF`, elk met een eigen knop `Ontvouwen`.
 
 ![](/videos/unwrap.mp4)
 
-#### Uitvouwen {#unwrap}
-Bereken UV’s voor het geselecteerde object, die op de achtergrond worden weergegeven.
+::: tip UV's?
+Een bekende vergelijking voor UV's is het inpakken van een cadeau: hoe knip je het inpakpapier zo dat het een voorwerp helemaal bedekt, zonder overlappingen? 
 
-#### UV's verwijderen {#delete-uvs}
-Verwijder UV’s op het object.
+UV's werken net zo, maar in plaats van het papier knip je het object. Stel je voor dat je model van dun plastic is: hoe zou je het opensnijden zodat je het plat kunt neerleggen, het in die platte toestand kunt beschilderen en het daarna weer in elkaar kunt zetten?
 
-#### ![](/icons/cog.webp) UVAtlas-tandwielmenu {#uvatlas-gear-menu}
-Het tandwielmenu heeft deze geavanceerde opties:
+Stel je nu voor dat het oppervlak van je model van rekbare lycra is. Je kunt het model plat uitrekken, het opensnijden, of allebei. Maar als je op het platte model een dambordpatroon schildert, is dat dambord vervormd zodra je het weer in elkaar zet. Wat is beter: meer sneden met minder vervorming, of minder sneden met meer vervorming?
 
-#### Vlakgroep {#atlas-face-group}
+UV's zijn instructies die 3d-software vertellen hoe het object 'geknipt en uitgerekt' moet worden bij het aanbrengen van texturen. UVAtlas kiest meestal voor 'meer sneden, minder vervorming'.
 
-Gebruik facegroups om de sneden voor de UV’s te definiëren.
 
-##### Maximale rek {#max-stretch}
-Lage waarden creëren minder vervorming en meer eilanden, hoge waarden creëren meer vervorming en minder eilanden. 
+:::
 
-##### Eilandafstand {#island-spacing}
-De hoeveelheid ruimte tussen de eilanden. Lage waarden verspillen minder ruimte, maar vergroten het risico dat textures tussen eilanden doorbloeden. 
+::: tip UV's, Nomad en andere apps
+
+De meeste getextureerde modellen die je online vindt, gebruiken UV's voor hun texturen. Nomad kan die importeren en weergeven via het paneel [materiaal](material.md#textures).
+
+Modellen die je in Nomad maakt, kun je rechtstreeks beschilderen, zonder UV's. Moet je ze naar andere apps exporteren, bijvoorbeeld [Procreate](https://procreate.art/), dan kun je de kleurinformatie van Nomad via UV's in texturen 'bakken'. 
+
+:::
+
+### UVAtlas {#uv-unwrap-uvatlas}
+
+![](/images/topology_uvatlas_menu.webp)
+UVAtlas maakt meestal liever meer eilanden met sneden, om de vervorming zo klein mogelijk te houden.
+
+#### Ontvouwen {#unwrap}
+Bereken UV's voor het geselecteerde object.
+
+#### Opties {#uvatlas-gear-menu}
+De knoppen naast `Ontvouwen`:
+
+##### Vlakkengroep {#atlas-face-group}
+Toont de knop `Ja`, dan bepalen de vlakkengroepen waar de UV's worden opengesneden. Deze instelling wordt gedeeld met BFF.
+
+##### Verwijder UVs {#delete-uvs}
+De prullenbakknop verwijdert de UV's van het object.
+
+##### Inspecteren {#uv-inspect}
+Toon de UV's van het object op de achtergrond.
+
+#### Maximale rek {#max-stretch}
+Lage waarden geven minder vervorming en meer eilanden, hoge waarden meer vervorming en minder eilanden. 
+
+#### Eilandafstand {#island-spacing}
+De ruimte tussen de eilanden. Lage waarden verspillen minder ruimte, maar dan kunnen texturen van het ene eiland in het andere doorlopen. 
 
 ::: warning
-Het berekenen van UV’s kan enige tijd duren; het is het beste om een mesh met minder dan 100k vertices te hebben.
+Het berekenen van UV's kan even duren; gebruik het liefst een mesh met minder dan 100k vertices.
 :::
 
-::: tip UVs?
-Een veelgebruikte analogie voor UV’s is het inpakken van een cadeau; wat is de beste manier om inpakpapier te snijden om een object volledig te bedekken, zonder overlappingen? 
-
-UV’s zijn vergelijkbaar, maar in plaats van het papier te snijden, snij je het object. Stel je voor dat je model van dun plastic is gemaakt: hoe zou je je model in stukken snijden om het plat te vouwen, het in die platte toestand te beschilderen en het vervolgens weer in elkaar te zetten?
-
-Stel je nu voor dat het oppervlak van je model van rekbare lycra is gemaakt. Je zou het model plat kunnen trekken, of snijden, of een combinatie van beide. Maar als je een schaakbord op het object zou schilderen wanneer het plat is, zou het schaakbord vervormd zijn wanneer je het weer in elkaar zet. Welke methode is beter: meer sneden met minder vervorming, of minder sneden met meer vervorming?
-
-UV’s zijn instructies om 3D-software te vertellen hoe het object moet worden ‘gesneden en uitgerekt’ bij het toepassen van textures. De UV Atlas-tool gebruikt over het algemeen een benadering van ‘meer sneden, minder vervorming’.
-
-
-:::
-
-::: tip UV’s en Nomad en andere apps
-
-De meeste getextureerde modellen die je online vindt, zijn getextureerd met UV’s. Nomad kan dit importeren en weergeven via het [material](material#textures)-paneel.
-
-Wanneer modellen in Nomad worden gemaakt, kun je direct op objecten schilderen zonder UV’s. Als je ze moet exporteren naar andere apps, bijvoorbeeld [Procreate](https://procreate.art/), kun je Nomad-kleureninformatie in textures ‘bakken’ via UV’s. 
-
-:::
-
-### UV Unwrap - BFF {#uv-unwrap-bff}
+### BFF {#uv-unwrap-bff}
 ![](/images/topology_uvbff_menu.webp)
 
-BFF-UV’s geven de voorkeur aan een benadering van ‘minder sneden, meer vervorming’. 
+BFF-UV's kiezen voor 'minder sneden, meer vervorming'. 
 
-#### ![](/icons/cog.webp) UV BFF-tandwielmenu {#uv-bff-gear-menu}
+#### Opties {#uv-bff-gear-menu}
+Naast `Ontvouwen` staan dezelfde knoppen `Vlakkengroep`, verwijderen en `Inspecteren` als bij [UVAtlas](#uvatlas-gear-menu).
 
-#### Vlakgroep {#bff-face-group}
+##### Vlakkengroep {#bff-face-group}
 
-Gebruik facegroups om de sneden voor de UV’s te definiëren.
+Gebruik vlakkengroepen om te bepalen waar de UV's worden opengesneden.
 
-##### Kegel aantal {#cone-count}
-Bepaal het aantal hoofdprojecties dat wordt gebruikt. Lagere waarden produceren minder eilanden, maar meer vervorming.
+#### Aantal kegels {#cone-count}
+Het aantal hoofdprojecties dat wordt gebruikt. Lagere waarden geven minder eilanden, maar meer vervorming. Hogere waarden kosten meer rekentijd.
 
-##### Naadloze patches {#seamless-patches}
-Beïnvloedt de lay-out van de UV-patches, werkt het best met zorgvuldig gemaakte facegroups.
+#### Naadloze patches {#seamless-patches}
+Beïnvloedt de indeling van de UV-patches en kan flinke vervorming geven. Werkt het best met zorgvuldig gemaakte vlakkengroepen.
 
-### Baken -> textuur {#bake-texture}
+::: warning
+BFF kan overlappende UV's maken als de mesh handvatten heeft (zoals het gat van een donut).
+:::
+
+### ![](/icons/preview.webp) UV weergeven na unwrappen {#show-uv-after-unwrap}
+Open na het ontvouwen de UV-inspector, zodat je het resultaat meteen kunt controleren.
+
+### ![](/icons/bake.webp) Bakken: Textuur → Textuur {#unwrap-bake-texture}
+Alleen beschikbaar als het materiaal van het object texturen heeft. Ontvouw je het object opnieuw, dan worden de texturen overgezet naar de nieuwe UV's, zodat ze nog steeds passen. De resolutie staat standaard op `Auto`, gelijk aan de grootste textuur, maar je kunt hem ook zelf instellen.
+
+## ![](/icons/bake.webp) Bakken {#bake}
+Dit tabblad zet details en schilderwerk over tussen objecten, en tussen vertices en texturen.
+
+`Van hoge-resolutie` gebruikt andere objecten als bron; het getal tussen haakjes geeft aan hoeveel. Nomad kiest ze zo:
+
+- alle geselecteerde objecten worden gebruikt, en het hoofdobject van de selectie is het doel (het sterkst gemarkeerde in het menu [Scène](scene.md))
+- is er maar één object geselecteerd, dan gebruikt Nomad in plaats daarvan alle zichtbare objecten
+- zijn alle andere objecten verborgen (bijvoorbeeld met Solo), dan wordt de hele scène gebruikt
+
+### ![](/icons/bake.webp) Bakken → Textuur {#bake-texture}
 ![](/images/topology_bake_menu.webp)
 
-Texture baking zal textures creëren door andere zichtbare objecten in de scène te projecteren in de UV’s van het geselecteerde object.
+Bij het bakken naar texturen worden andere zichtbare objecten in de scène op de UV's van het geselecteerde object geprojecteerd, zodat er texturen ontstaan. Het object moet UV's hebben.
 
-Hier is de typische workflow voor baking:
+Zo ziet een typische werkwijze voor het bakken eruit:
 - Je hebt een mesh met fijne details en schilderwerk
-- Clone deze
-- Decimate deze (zet `Preserve painting` op 0)
-- UV unwrap deze
-- Bake!
+- Kloon hem
+- Decimeer hem (zet `Schildering behouden` op 0)
+- Ontvouw de UV's
+- Bak hem!
 
-Nomad zal standaard elk zichtbaar mesh in de scène in aanmerking nemen.
-Je kunt ook de Solo-modus gebruiken om snel de meeste andere meshes te verbergen.
-Als er geen andere zichtbare objecten zijn, dan wordt de volledige scène in aanmerking genomen.
+Je hebt nu een mesh met een lage resolutie die het meeste schilderwerk en de meeste details van je vorige object behoudt.
 
-Je zou nu een low-res mesh moeten hebben die het grootste deel van de verf en details van je vorige object behoudt.
+Na afloop worden de vertexkleuren naar een nieuwe, uitgeschakelde laag verplaatst, zodat ze de texturen niet in de weg zitten.
 
-Na de operatie worden vertexkleuren verplaatst naar een nieuwe uitgeschakelde laag, zodat ze niet interfereren met de textures.
+#### Van het object zelf {#tex-from-itself}
+Bak het object op zijn eigen UV's: zijn schilderwerk wordt textuur, en heeft het multiresolutieniveaus, dan worden de details van het hoogste niveau op het huidige niveau gebakken (er staat dan een multires-pictogram op de knop). Dit is eenvoudig in te stellen, maar vaak wil je meer controle; dan is de volgende optie handiger.
 
-#### Van zichzelf {#tex-from-itself}
-Bake het hoogste multiresolutionniveau naar het laagste niveau op het huidige object. Dit is eenvoudig in te stellen, maar vaak heb je meer controle nodig; in dat geval is de volgende optie nuttiger.
-
-#### Van hoge resolutie () {#tex-from-high-res}
-Bake van de andere zichtbare objecten in de scène naar het geselecteerde object. Het getal tussen haakjes geeft het aantal andere zichtbare objecten aan dat als high-res-doel wordt gebruikt en in het huidige low-res-object met UV’s wordt gebakken. De andere objecten hoeven niet vergelijkbaar te zijn in lay-out of topologie met het object dat wordt gebakken, wat veelzijdige bake-workflows mogelijk maakt.
+#### Van hoge-resolutie {#tex-from-high-res}
+Bak de andere objecten op het geselecteerde object. Het getal tussen haakjes geeft aan hoeveel andere objecten als bron met hoge resolutie worden gebruikt en op het huidige object met lage resolutie en UV's worden gebakken. De andere objecten hoeven qua indeling of topologie niet op het te bakken object te lijken, wat veel verschillende werkwijzen mogelijk maakt.
 
 #### Resolutie {#tex-bake-resolution}
-De resolutie van de gebakken texture. Bake-textures zijn altijd vierkant, dus 1024 zal een afbeelding van 1024x1024 maken. 
+De resolutie van de gebakken textuur. Gebakken texturen zijn altijd vierkant, dus 1024 geeft een afbeelding van 1024x1024. 
 
-De knoppen hieronder zijn snelkoppelingen voor veelgebruikte resoluties. Ter referentie: 512x512 is relatief klein, bijvoorbeeld voor webgraphics en eenvoudige geometrie. 4096x4096 (afgekort 4k) is voor hoogwaardige renders.
+De knoppen eronder zijn snelkoppelingen voor veelgebruikte resoluties. Ter vergelijking: 512x512 is vrij klein, bijvoorbeeld voor webafbeeldingen en eenvoudige geometrie. 4096x4096 (kortweg 4k) is voor renders van hoge kwaliteit.
 
-#### ![](/icons/cog.webp) Bake-tandwielmenu {#tex-bake-gear-menu}
+#### Kleur, Ruwheid, Metaalheid, Normaal, Verplaatsing, Lichtgevend, Dekking {#tex-normal-roughness-metalness-color-emissive-opacity}
+Met deze knoppen kies je welke eigenschappen worden gebakken, elk in een aparte map. Na het bakken worden ze als texturen aan het materiaal van het huidige object toegevoegd. `Verplaatsing` bakt de hoogte van de details als displacementmap.
+
+#### ![](/icons/cog.webp) Tandwielmenu van Bakken {#tex-bake-gear-menu}
 ![](/images/topology_bake_gear_menu.webp)
-Het tandwielmenu heeft deze geavanceerde opties:
-
-##### Normaal, Roughness, Metalness, Kleur, Emissive, Opacity {#tex-normal-roughness-metalness-color-emissive-opacity}
-Deze selectievakjes bepalen welke eigenschappen worden gebakken, elk in aparte maps. Nadat de bake is voltooid, worden deze als textures toegevoegd aan het materiaal van het huidige object.
+Het tandwielmenu bevat deze geavanceerde opties:
 
 ##### Back-up {#tex-backup}
-Om de gebakken textures te kunnen voorvertonen, moet de verfinformatie van het object worden uitgeschakeld. Deze optie verplaatst alle verfinformatie naar een nieuwe laag als back-up, zodat deze eenvoudig kan worden in- of uitgeschakeld.
+Om de gebakken texturen goed te kunnen bekijken, moet het schilderwerk van het object uitgeschakeld zijn. `Back-up (Schilderen → Laag)` zet al het schilderwerk als back-up over naar een nieuwe laag, zodat je het makkelijk aan en uit kunt zetten.
 
-#### Cage-radius {#tex-cage-radius}
-Pas aan hoe ver van het bake-object stralen worden verzonden om doelobjecten te zoeken. Standaard wordt deze afstand laag gehouden om artefacten te vermijden, maar kan worden vergroot als de doelobjecten ver van het bake-object verwijderd zijn.
+##### Multires gebruiken {#tex-use-multires}
+Voor `Van het object zelf` op een object met multiresolutieniveaus. Nomad leest de hoge resolutie via de subdivisieniveaus in plaats van stralen te werpen: dat is sneller en vrij van projectiefouten. Zet het uit om te bakken met de opties hieronder.
 
-##### Ray-offset {#tex-ray-offset}
-Pas aan waar de bake-berekeningen op het bake-object beginnen. Standaard beginnen ze 5% van het oppervlak af, wat de meeste veelvoorkomende artefacten voorkomt. Als de doelobjecten erg ver van het bake-object verwijderd zijn, moet deze offset mogelijk worden vergroot.
+##### Gladde basis {#tex-smooth-base}
+Voor `Verplaatsing` op een object met multiresolutieniveaus. Meet de verplaatsing vanaf de onderverdeelde basis in plaats van vanaf de platte vlakken. Laat het aan staan als de displacementmap op een onderverdeelde mesh komt, zoals bij adaptieve subdivisie in Blender.
+
+##### Zoek afstand {#tex-cage-radius}
+De maximale afstand waarbinnen naar het bronoppervlak wordt gezocht. Standaard is deze afstand klein om artefacten te voorkomen, maar je kunt hem vergroten als de bronobjecten ver van het te bakken object af liggen.
+
+##### Projectie {#tex-projection}
+Hoe het bronoppervlak wordt gevonden:
+
+* `Straal` - Projecteer langs de normaal van het oppervlak.
+* `Straal + dichtstbijzijnd` - Gebruik de normaalstraal, en het dichtstbijzijnde oppervlak als de straal niets raakt.
+* `Dichtstbijzijnd` - Projecteer op het dichtstbijzijnde punt van het bronoppervlak.
+
+##### Straal offset {#tex-ray-offset}
+Bepaalt waar de bakberekeningen op het te bakken object beginnen. Een kleine afstand tot het oppervlak voorkomt de meest voorkomende artefacten. Liggen de bronobjecten heel ver van het te bakken object af, dan moet je deze offset misschien vergroten. Wordt niet gebruikt door `Dichtstbijzijnd`.
 
 
-### Reprojecteren naar vertex {#reproject-to-vertex}
+### ![](/icons/bake.webp) Herprojecteer → Vertex {#reproject-to-vertex}
 
 ![](/images/topology_reproject_menu.webp)
 
-Project gesculpteerde details, schilderwerk, lagen en textures naar vertexwaarden.
+Projecteer geboetseerde details, schilderwerk, lagen en texturen naar vertexwaarden.
 
-Je kunt het zien als het omgekeerde van baking; als baking vertexeigenschappen naar textures overdraagt, draagt reproject textures (en andere eigenschappen)
- terug naar vertices over.
-
-::: tip
-Bij gebruik van `Bake to texture` of `Reproject to vertex` worden zowel de vertexkleuren als de materiaaltextures in aanmerking genomen.
-:::
-
-#### Van zichzelf {#vertex-from-itself}
-Zet textures van het materiaal om in vertexwaarden. Deze knop is alleen actief als het object UV’s heeft en textures actief zijn in het materiaal.
-
-::: tip TIP: Texture painting
-Nomad ondersteunt niet direct het schilderen en bewerken van textures, maar zeer vergelijkbare resultaten kunnen worden bereikt door textures -> vertexwaarden te projecteren, op vertices te schilderen en vervolgens vertex -> textures te bakken:
-
-1. Stel een low-poly-object met UV’s in
-1. Laad textures in het materiaal
-1. Subdivideer het genoeg om op te kunnen schilderen
-1. `Reproject to vertex` in de modus `From itself`; nu is de texture omgezet in vertexwaarden
-1. Schilder, smooth, smudge, stempel, doe alle bewerkingen die je nodig hebt
-1. `Bake to texture`, in de modus `From itself`. Die bewerkingen worden terug omgezet in textures.
-:::
-
-#### Van hoge resolutie () {#vertex-from-high-res}
-Zet alle zichtbare objecten om in vertexwaarden op het geselecteerde object. Het getal op deze knop geeft het aantal zichtbare objecten aan.
+Je kunt het zien als het omgekeerde van bakken: waar bakken vertexeigenschappen naar texturen overzet, zet herprojecteren texturen (en andere eigenschappen)
+ terug naar vertices.
 
 ::: tip
-Het reprojection van andere objecten kan niet alleen worden gebruikt om kleurinformatie van andere objecten over te dragen, maar ook om vertices op andere objecten te projecteren, bijvoorbeeld verbanden die op een personage worden geprojecteerd.
+Bij `Bakken → Textuur` en `Herprojecteer → Vertex` wordt rekening gehouden met zowel de vertexkleuren als de texturen van het materiaal.
 :::
 
-#### ![](/icons/cog.webp) Reproject-tandwielmenu {#vertex-reproject-gear-menu}
-Het tandwielmenu heeft deze geavanceerde opties:
+#### Van het object zelf {#vertex-from-itself}
+Zet de texturen van het materiaal om naar vertexwaarden. Deze knop is alleen actief als het object UV's heeft en er texturen actief zijn in het materiaal.
 
-#### Vertices, Roughness, Metalness, Kleur, Opacity, Opacity->Mask, Mask, Lagen, Vlakgroep {#vertex-vertices-roughness-metalness-color-opacity-opacity-mask-mask-layers-face-group}
-Deze selectievakjes bepalen welke eigenschappen naar het geselecteerde object worden geprojecteerd. 
+::: tip TIP: Texturen schilderen
+Nomad ondersteunt niet rechtstreeks het schilderen en bewerken van texturen, maar je kunt een vergelijkbaar resultaat bereiken door texturen naar vertexwaarden te projecteren, op de vertices te schilderen en daarna de vertices weer naar texturen te bakken:
 
-#### Relaxeren {#vertex-relax}
-De geselecteerde mesh kan in zekere mate worden gladgestreken of ‘relaxed’ om beter bij de reprojection-doelen te passen. Smooth is beter voor high-poly-meshes. Relax is beter voor low-poly-meshes. Auto laat Nomad de beste methode bepalen.
+1. Maak een object met weinig polygonen en UV's
+1. Laad texturen in het materiaal
+1. Onderverdeel het genoeg om erop te kunnen schilderen
+1. Gebruik `Herprojecteer → Vertex` in de modus `Van het object zelf`: de textuur is nu omgezet naar vertexwaarden
+1. Schilder, strijk glad, smeer uit, stempel: doe alle bewerkingen die je nodig hebt
+1. Gebruik `Bakken → Textuur` in de modus `Van het object zelf`. Je bewerkingen worden weer omgezet naar texturen.
+:::
 
-#### Iteraties {#vertex-iterations}
-Hoe vaak de relax-operatie moet worden toegepast tijdens de reprojection.
-
-#### Cage-radius {#vertex-cage-radius}
-Pas aan hoe ver van het geselecteerde object stralen worden verzonden om doelobjecten te zoeken. Standaard wordt deze afstand laag gehouden om artefacten te vermijden, maar kan worden vergroot als de doelobjecten ver van het bake-object verwijderd zijn.
-
-#### Ray-bias {#vertex-ray-bias}
-Lagere waarden geven de voorkeur aan projectie naar het dichtstbijzijnde punt op het doeloppervlak. Hogere waarden geven de voorkeur aan een snijpunt met gebruik van de oppervlaknormaal. 
-
-#### Ray-offset {#ray-vertex-offset}
-Pas aan waar de bake-berekeningen op het geselecteerde object beginnen. Standaard beginnen ze 5% van het oppervlak af, wat bepaalde artefacten voorkomt. Als de doelobjecten erg ver van het geselecteerde object verwijderd zijn, moet deze offset mogelijk worden vergroot.
-
-
-### Quad Remesh - Instant {#quad-remesh-instant}
-![](/images/topology_quadremesh_menu.webp)
-Remesh met behulp van het [Instant Meshes-algoritme van Wenzel Jakob, Marco Tarini, Daniele Panozzo, Olga Sorkine-Hornung](https://igl.ethz.ch/projects/instant-meshes/). Het zal de flow van een mesh analyseren en een schone quadtopologie creëren.
+#### Van hoge-resolutie {#vertex-from-high-res}
+Zet de andere objecten om naar vertexwaarden op het geselecteerde object. Het getal op deze knop geeft het aantal bronobjecten aan. Dit is vooral bedoeld voor een mesh die ook een hoge resolutie heeft, meestal met een nette topologie.
 
 ::: tip
-Op iOS en desktop geeft de [Quad remesher](tools#quad-remesher)-tool betere resultaten en meer controle.
+Met het herprojecteren van andere objecten kun je niet alleen kleurinformatie overzetten, maar ook vertices op andere objecten projecteren: zo kun je bijvoorbeeld verband op een personage projecteren.
 :::
 
-#### Remeshen {#instant-remesh}
-Start de instant-meshes-operatie.
+#### Hoekpunten, Kleur, Ruwheid, Metaalheid, Dekking, Masker, Lagen, Vlakkengroep {#vertex-vertices-roughness-metalness-color-opacity-opacity-mask-mask-layers-face-group}
+Met deze knoppen kies je welke eigenschappen op het geselecteerde object worden geprojecteerd. `Lagen` zet de andere lagen over naar de geselecteerde mesh.
 
-#### Doel-quads {#target-quads}
-Het aantal quadpolygonen dat quad remesh zal proberen te creëren.
+#### ![](/icons/cog.webp) Tandwielmenu van Herprojecteer {#vertex-reproject-gear-menu}
+Het tandwielmenu bevat deze geavanceerde opties:
 
-#### ![](/icons/cog.webp) Quad Remesh Instant-tandwielmenu {#quad-remesh-instant-gear-menu}
-Het tandwielmenu heeft deze geavanceerde opties:
+##### Dekking → Masker {#vertex-opacity-to-mask}
+Zet de dekking van de bron om naar een masker op het geselecteerde object.
 
-##### Vouwhoek {#crease-angle}
-Een drempel voor scherpe hoeken die zal proberen de remesh-operatie te sturen.
+##### Iteraties {#vertex-iterations}
+Hoe vaak het ontspannen tijdens het herprojecteren wordt toegepast. Wordt alleen gebruikt als `Hoekpunten` aan staat.
 
-#### Maximale vulopening {#max-fill-hole}
-Het algoritme kan soms ongewenste gaten produceren. Als een gat minder vertices heeft dan deze waarde, dan wordt het gevuld.
+##### Ontspan {#vertex-relax}
+De indeling van de geselecteerde mesh kan een beetje gladgestreken of ontspannen worden, zodat hij beter aansluit op de bronobjecten. `Vloeiend` werkt beter voor meshes met veel polygonen, `Ontspan` voor meshes met weinig polygonen. Met `Automatisch` kiest Nomad zelf de beste methode.
 
-### Gaten {#holes}
-![](/images/topology_holes_menu.webp)
-Meestal zal je object waarschijnlijk waterdicht zijn, wat betekent dat de mesh ‘gesloten’ is.
+##### Zoek afstand {#vertex-cage-radius}
+De maximale afstand waarbinnen naar het bronoppervlak wordt gezocht. Standaard is deze afstand klein om artefacten te voorkomen, maar je kunt hem vergroten als de bronobjecten ver van het geselecteerde object af liggen.
 
-Als je object gaten heeft, kun je deze vullen. Merk op dat dit alleen werkt op ‘naïeve’ gaten; het kan dus geen twee afzonderlijke randen ‘lassen’.
+##### Projectie {#vertex-projection}
+Hoe het bronoppervlak wordt gevonden:
 
-![](/videos/hole_filling.mp4)
+* `Straal` - Projecteer langs de normaal van het oppervlak.
+* `Adaptieve mix` - Meng de normaalstraal en het dichtstbijzijnde oppervlak op basis van de afstand en de `Straalvoorkeur`. Mist de een, dan wordt de ander gebruikt.
+* `Dichtstbijzijnd` - Projecteer op het dichtstbijzijnde punt van het bronoppervlak.
+
+##### Straalvoorkeur {#vertex-ray-bias}
+Alleen voor `Adaptieve mix`. Hogere waarden laten de mix meer naar het resultaat van de normaalstraal neigen, lagere waarden meer naar het dichtstbijzijnde punt.
+
+##### Straal offset {#ray-vertex-offset}
+Bepaalt waar de berekeningen op het geselecteerde object beginnen. Een kleine afstand tot het oppervlak voorkomt bepaalde artefacten. Liggen de bronobjecten heel ver van het te bakken object af, dan moet je deze offset misschien vergroten. Wordt niet gebruikt door `Dichtstbijzijnd`.
+
+### ![](/icons/bake.webp) Bakken → VDM {#bake-vdm}
+Maak een VDM-stempel (vector displacement) van het geselecteerde object en voeg hem toe aan de VDM-bibliotheek. Je wordt om een naam gevraagd.
+
+Zo ziet een typische werkwijze eruit:
+- Voeg een vlak toe, of kies `Nieuwe VDM` in de VDM-kiezer om een kant-en-klaar vlak toe te voegen (het primitief [VDM](scene.md#add-menu))
+- Boetseer je vorm erop en houd de rand plat
+- Bak het!
+
+De UV's van het vlak bepalen welk vierkant wordt gebakken, dus het object moet UV's hebben. Kies de grootte van de stempel met `Resolutie`, en kies met `Kleur`, `Ruwheid`, `Metaalheid` en `Dekking` wat de stempel naast de verplaatsing meeneemt.
 
 ::: tip
-Wanneer je de Voxel Remesher uitvoert, worden alle gaten automatisch gesloten, of je deze nu op 1 of meerdere meshes gebruikt.
+Gebruik geen DynTopo op het vlak: dat beschadigt de UV's en de stempel wordt vervormd. Boetseren in een laag geeft het nauwkeurigste resultaat, omdat het platte vlak er dan nog onder ligt. Ook schilderen moet in een laag, anders wordt het materiaal over het hele vierkant gestempeld in plaats van alleen waar je geschilderd hebt.
 :::
 
-#### Gaten sluiten {#close-holes}
-Voer de hole-close-actie uit.
-
-#### ![](/icons/cog.webp) Holes-tandwielmenu {#holes-gear-menu}
-Het tandwielmenu heeft deze geavanceerde opties:
-
-##### Detail {#fill-detail}
-De polygondichtheid die wordt gebruikt om het gat te vullen. Tijdens het slepen van deze slider wordt een schaakbordpatroon op het model weergegeven; dit geeft een indicatie van de driehoeksgrootte die moet worden gebruikt. Het selectievakje schakelt dit uit en gebruikt alleen de bestaande punten, wat meestal lange dunne driehoeken over het gat creëert, die moeilijk te sculpten zijn.
-
-##### Niet-manifold vullen {#fill-non-manifold}
-Probeer non-manifold-gaten te vullen.
-
-##### Vlakgroep {#fill-face-group}
-
-Bij het vullen van gaten: moet elk gat zijn eigen facegroup krijgen (Auto), moeten ze allemaal een facegroup delen (Off), of moeten er geen facegroups worden gemaakt (On).
-
-### Force Manifold {#force-manifold}
-![](/images/topology_forcemanifold_menu.webp)
-Probeer non-manifold-randen op te schonen. Dit kan nuttig zijn voor externe software die geen randen ondersteunt die meer dan 2 vlakken gemeen hebben.
-
-#### Opschonen {#clean}
-Voer de clean-actie uit.
-#### ![](/icons/cog.webp) Force manifold-tandwielmenu {#force-manifold-gear-menu}
-Het tandwielmenu heeft deze geavanceerde opties:
-
-#### Kleine vlakken verwijderen {#delete-small-faces}
-Een drempel die wordt gebruikt om kleine polygonen te verwijderen en samen te voegen.
-
-
-### Triplanar {#triplanar}
-![](/images/topology_triplanar_menu.webp)
-Zet de mesh om in een [triplanar](scene.md#triplanar)-primitive.
-Je zult waarschijnlijk veel detail verliezen in het proces.
-
-#### Cubisch forceren {#force-cubic}
-Zorg ervoor dat de triplanar een kubus is. Anders zal de triplanar worden aangepast aan de dichtstbijzijnde bounding box rond je object.
-
-#### Converteren {#convert}
-Voer de triplanar-actie uit.
-
-#### Resolutie {#triplanar-resolution}
-De voxelgrootte die wordt gebruikt in de triplanar-operatie.
-
-## ![](/icons/dot.webp) Primitief {#primitive}
-Parameters voor de geselecteerde primitive. Deze zijn ook beschikbaar in de primitive-viewporttoolbar.
+## ![](/icons/dot.webp) Primitieven {#primitive}
+Parameters van het geselecteerde primitief. De meeste zijn ook bereikbaar via de knop `…` van de werkbalk van het primitief in de viewport.
 
 ![](/images/topology_primitive_screenshot.webp)

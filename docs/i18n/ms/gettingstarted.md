@@ -1,156 +1,160 @@
-# Bermula {#getting-started}
+# ![](/icons/play.webp) Bermula {#getting-started}
 
 ## Selamat datang ke Nomad! {#welcome-to-nomad}
 
-Nomad ialah aplikasi pengukiran 3D yang berfungsi pada banyak peranti, dan berfungsi paling baik pada tablet dengan stylus sensitif tekanan, contohnya Apple iPad dan Pencil, atau Samsung Galaxy Tab dengan stylus.
+Nomad ialah aplikasi pemahatan 3d yang berfungsi pada banyak peranti, dan paling sesuai pada tablet dengan stylus yang peka tekanan, contohnya Apple iPad dengan pensel, atau Samsung Galaxy Tab dengan stylus.
 
-Ia diilhamkan oleh aplikasi pengukiran desktop seperti ZBrush dan Blender, dengan fokus pada antara muka pengguna yang mudah difahami tanpa mengorbankan ciri. Jika anda pernah menggunakan aplikasi pengukiran 3D sebelum ini, Nomad akan terasa sangat biasa.
+Ia diilhamkan oleh aplikasi pemahatan desktop seperti ZBrush dan Blender, dengan tumpuan pada antara muka yang mudah difahami, tanpa mengorbankan ciri. Jika anda pernah menggunakan aplikasi pemahatan 3d sebelum ini, Nomad akan terasa sangat biasa.
 
-Jika ini kali pertama anda melakukan pengukiran 3D, ada beberapa asas yang baik untuk diketahui.
+Jika ini kali pertama anda memahat 3d, ada baiknya anda mengetahui beberapa asas.
 
 ::: tip Lebih suka video?
-YouTube kini mempunyai BANYAK tutorial video untuk pemula, berikut beberapa pautan yang bagus:
+YouTube kini mempunyai SANGAT banyak tutorial video untuk pemula; berikut ialah beberapa pautan yang bagus:
 
 * [Nomad Sculpt Crash Course oleh Dave Reed](https://www.youtube.com/watch?v=69m86ICy2Q4)
 * [Tutorial pemula Nomad Sculpt oleh Small Robot Studio](https://www.youtube.com/watch?v=J644wXoTiww)
 * [Siri NOMAD FOR BEGINNERS oleh SouthernGFX](https://www.youtube.com/watch?v=bEh0WxRoOmg)
 
-Berbaloi untuk menyemak saluran utama pencipta tersebut, mereka kerap menyiarkan tutorial baharu.
+Saluran utama pencipta-pencipta ini berbaloi untuk dilawati, kerana mereka kerap menerbitkan tutorial baharu.
 :::
 
-## Arca pertama anda {#your-first-sculpt}
+## Pahatan pertama anda {#your-first-sculpt}
 
-Apabila anda mula-mula memulakan Nomad anda akan melihat sebuah sfera pada skrin. Hanya seret stylus anda pada sfera untuk mula mengukir. Simetri diaktifkan secara lalai untuk memudahkan pengukiran.
+Apabila anda mula-mula membuka Nomad, anda akan melihat sebiji sfera pada skrin. Seret sahaja stylus anda pada sfera untuk mula memahat. Simetri didayakan secara lalai untuk memudahkan pemahatan.
 
 ![](/videos/gettingstarted_01.mp4)
 
-Untuk membesarkan atau mengecilkan berus, gunakan peluncur radius di sebelah kiri.
+Untuk membesarkan atau mengecilkan berus, gunakan peluncur jejari di sebelah kiri.
 
 ![](/videos/gettingstarted_02.mp4)
 
-Untuk menguatkan atau melemahkan berus, gunakan peluncur intensiti di sebelah kiri.
+Untuk menjadikan berus lebih kuat atau lebih lemah, gunakan peluncur keamatan di sebelah kiri.
 
 ![](/videos/gettingstarted_03.mp4)
 
-Alat lalai ialah `Clay tool`, dan ia menambah pada permukaan. Untuk menolak daripada permukaan, ketik butang `Sub` di sebelah kiri. Untuk menambah pada permukaan, ketik butang Sub sekali lagi.
+Alat lalai ialah alat `Tanah liat`, dan ia menambah pada permukaan. Untuk menolak daripada permukaan, ketuk butang `Tolak` di sebelah kiri. Untuk menambah pada permukaan semula, ketuk butang Tolak sekali lagi.
 
 ![](/videos/gettingstarted_04.mp4)
 
-Untuk melicinkan permukaan, ketik butang `Smooth`. Untuk kembali ke pengukiran biasa, ketik butang Smooth sekali lagi.
+Untuk melicinkan permukaan, ketuk butang `Lancar`. Untuk kembali memahat seperti biasa, ketuk butang Lancar sekali lagi.
 
 ![](/videos/gettingstarted_05.mp4)
 
-Untuk memutar di sekeliling model, seret di ruang kosong di luar model.
+Untuk berputar di sekeliling model, seret di ruang kosong di luar model.
 
 ![](/videos/gettingstarted_06.mp4)
 
-Untuk zum, gunakan gerak isyarat zum/cubit dua jari.
+Untuk mengezum, gunakan gerak isyarat zum/cubit dengan dua jari.
 
 ![](/videos/gettingstarted_07.mp4)
 
-Untuk mengalih (pan) kamera, tekan 2 jari pada skrin dan seret.
+Untuk menganjak kamera, tekan 2 jari pada skrin dan seret.
 
 ![](/videos/gettingstarted_08.mp4)
 
-Jika anda membuat kesilapan, ketikan dua jari akan buat nyahbuat (undo), atau gunakan butang undo di bahagian kiri bawah. 
+Jika anda tersilap, ketukan 2 jari akan membuat asal, atau gunakan butang buat asal di bahagian kiri bawah. 
 
 ![](/videos/gettingstarted_09.mp4)
 
-::: tip Keluaran desktop
+::: tip Versi desktop
 Pada desktop, kekunci alt/opt digunakan untuk mengawal kamera:
 
-* tip seret di ruang kosong = putar kamera
-* alt+tip seret = pan
-* alt+tip seret, kemudian lepaskan alt = zum (sama seperti ZBrush)
+* seret hujung pen di ruang kosong = putar kamera
+* alt+seret hujung pen = anjak
+* alt+seret hujung pen, kemudian lepaskan alt = zum (sama seperti ZBrush)
 
-Dengan tablet Wacom yang mempunyai 2 atau lebih butang pada pen, gunakan tetapan Wacom untuk mengkonfigurasi tip dan butang seperti berikut:
+Bagi tablet Wacom yang mempunyai 2 atau lebih butang pada pen, gunakan tetapan Wacom untuk mengkonfigurasi hujung dan butang seperti berikut:
 
-* tip = klik kiri
-* rocker bawah = klik tengah
-* rocker atas = klik kanan
+* hujung = klik kiri
+* butang rocker bawah = klik tengah
+* butang rocker atas = klik kanan
 
-Dengan tetapan tersebut, anda boleh memanipulasi kamera hanya dengan pen:
+Dengan tetapan ini, anda boleh mengawal kamera menggunakan pen sahaja:
 
-* rocker atas dan gerakan hover = putar kamera
-* rocker bawah dan gerakan hover = pan
+* butang rocker atas sambil menggerakkan pen tanpa menyentuh = putar kamera
+* butang rocker bawah sambil menggerakkan pen tanpa menyentuh = anjak
 :::
 
 ## Tambah warna {#add-color}
 
-Nomad membolehkan anda mewarnakan permukaan ukiran anda. Dari menu alat di sebelah kanan, cari alat `Paint`, dan klik. Pada bar alat kiri satu sfera berwarna akan muncul. Klik, ini akan memaparkan pemilih warna. Pilih warna, dan warnakan pada model anda.
+Nomad membolehkan anda mengecat permukaan pahatan anda. Daripada menu alat di sebelah kanan, cari alat `Lukis`, dan klik padanya. Sebiji sfera berwarna akan muncul pada bar alat kiri. Klik padanya untuk memaparkan pemilih warna. Pilih warna, dan cat pada model anda.
 
 ![](/videos/gettingstarted_10.mp4)
 
-Untuk memadam, ketik butang `Erase` pada bar alat kiri, kemudian padam pada permukaan. Ketik butang erase sekali lagi untuk kembali ke mod paint.
+Untuk memadam, ketuk butang `Padam` pada bar alat kiri, kemudian padam pada permukaan. Ketuk butang padam sekali lagi untuk kembali ke mod cat.
 
 ![](/videos/gettingstarted_11.mp4)
 
-Dengan menggunakan berus clay dalam mod add/sub, smooth, paint, cuba lihat jika anda boleh membuat kepala kartun ringkas:
+Dengan menggunakan berus tanah liat dalam mod tambah/tolak, lancar dan lukis, cuba lihat sama ada anda boleh membuat kepala kartun yang ringkas:
 
 ![](/images/gettingstarted_head1.webp)
 
 ## Alat lain {#other-tools}
 
-Palet alat mempunyai banyak alat untuk membantu pengukiran. Setakat ini anda telah menggunakan berus clay (alat permulaan lalai), smooth, dan paint. Oleh kerana smooth kerap digunakan, ia mempunyai pintasan tambahan di bar alat sebelah kiri.
+Palet alat mempunyai banyak alat untuk membantu pemahatan. Setakat ini anda telah menggunakan berus tanah liat (alat permulaan lalai), lancar dan lukis. Oleh sebab lancar kerap digunakan, ia mempunyai pintasan tambahan pada bar alat sebelah kiri.
 
-Alat dalam Nomad boleh melakukan pelbagai perkara, daripada alat berkaitan pengukiran seperti move, crease, inflate, kepada alat seperti split dan trim yang lebih menyerupai alat pertukangan kayu atau kerja logam. Halaman [Tools](tools.md) mempunyai maklumat lanjut.
+Alat dalam Nomad boleh melakukan pelbagai perkara, daripada alat yang berkaitan dengan pemahatan seperti alih, alur tajam dan kembang, hingga alat seperti pisahkan dan potong yang lebih menyerupai alat pertukangan kayu atau kerja logam. Halaman [Alat](tools.md) mempunyai maklumat lanjut.
 
-Cuba lihat jika anda boleh menggunakan alat move, crease, inflate, dan smooth untuk menambah lebih perincian pada kepala anda, mengubah bentuknya:
+Cuba gunakan alat alih, alur tajam, kembang dan lancar untuk menambah lebih banyak butiran pada kepala anda dan mengubah bentuknya:
 
 ![](/images/gettingstarted_head2.webp)
 
-Sekarang setelah anda tahu asas Nomad, mari lihat selebihnya antara muka.
+Sekarang anda sudah mengetahui asas Nomad, mari kita lihat bahagian lain antara muka.
 
-## Antara muka {#interface}
+## Antara Muka {#interface}
 
 ![](/images/interface_overview1.webp)
 
-* `Top menus` - Menu untuk mengakses kebanyakan ciri Nomad. Menu kiri atas terutamanya merangkumi ciri adegan dan objek, menu kanan atas berkaitan dengan alat. Pada skrin yang lebih kecil menu ini akan digabungkan untuk menjimatkan ruang.
-* `Stats` - Maklumat tentang adegan, objek semasa, status mask, penggunaan memori.
-* `Nav Cube` - Pembantu untuk menunjukkan bahagian mana ukiran yang anda lihat, serta pintasan untuk melompat ke pandangan berbeza. Mengetik kubus akan melompatkan pandangan ke sisi yang diketuk. Menyeret kubus akan memutarkannya. Ketik ikon kecil di sisi kubus untuk memfokuskan objek semasa, atau tetapkan semula ke pandangan asal (home) lalai.
-* `Toolbox` - Alat Nomad tersedia dari kawasan boleh skrol ini.
-* `Left toolbar` - Peluncur untuk radius dan intensiti bagi kebanyakan alat, butang khusus konteks untuk alat lain, dan pintasan untuk simetri, mod alt/sub alat, masking, smoothing, gizmo, dan pilihan paint.
-* `Bottom toolbar` - Pintasan untuk ciri yang kerap digunakan, diterangkan di bawah.
+* `Menu atas` - Menu untuk mengakses kebanyakan ciri Nomad. Menu di kiri atas kebanyakannya meliputi ciri adegan dan objek, manakala menu di kanan atas berkaitan dengan alat. Pada skrin yang lebih kecil, menu ini akan bergabung untuk menjimatkan ruang.
+* `Statistik` - Maklumat tentang adegan, objek semasa, status topeng dan penggunaan memori.
+* `Kiub Navigasi` - Pembantu yang menunjukkan sisi pahatan yang sedang anda lihat, serta pintasan untuk melompat ke pandangan yang berbeza. Mengetuk kiub akan melompatkan pandangan ke sisi yang diketuk. Menyeret kiub akan memutarnya. Ketuk ikon kecil di tepi kiub untuk membingkai objek semasa, kembali ke pandangan utama lalai, mengunci kamera, atau menogol grid. Dalam aplikasi, ia dipanggil `Snap kiub`, dan rupa serta kedudukannya boleh diubah dalam [Tetapan](settings.md#snap-cube).
+* `Kotak alat` - Alat Nomad tersedia dari kawasan yang boleh ditatal ini.
+* `Bar alat kiri` - Peluncur jejari dan keamatan untuk kebanyakan alat, butang khusus konteks untuk alat lain, dan pintasan untuk simetri, mod alt/tolak alat, pelicinan, topeng, sembunyi, kumpulan muka, gizmo dan pilihan cat. Anda boleh menyusun semula pintasan dalam menu [Antara Muka](interface.md#side-bar).
+* `Bar alat bawah` - Pintasan untuk ciri yang kerap digunakan, diterangkan di bawah.
 
 ::: tip Kidal?
-Anda boleh mencerminkan penempatan dan susunan semua bar alat, lihat [Mirror top bar](interface.md#mirror-top-bar) dan pilihan berkaitan lain.
+Anda boleh mencerminkan kedudukan dan susunan semua bar alat; lihat [Cermin bar atas](interface.md#mirror-top-bar) dan pilihan lain yang berkaitan.
 :::
 
 ## Bar alat bawah {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
-* `Undo` - kembalikan operasi terakhir
-* `Redo` - pulihkan operasi undo terakhir
-* `History` - akses pilihan sejarah, diterangkan dalam menu [History](history.md).
-* `Solo` - Togol untuk memaparkan hanya objek semasa, atau semua objek
-* `X-Ray` - Jadikan semua objek lain dipaparkan dalam mod x-ray, dan objek semasa pejal. Tekan lama atau leret ke atas akan membolehkan anda menetapkan warna dan kelegapan mod x-ray.
-* `Voxel` - Pintasan untuk butang remesh [Voxel Remesher](topology.md#voxel-remesher). Tekan lama atau leret ke atas akan memaparkan pintasan untuk menetapkan kualiti voxel remesh.
-* `Grid` - Togol paparan grid. Tekan lama atau leret ke atas akan memaparkan pilihan untuk grid.
-* `Wire` - Togol hamparan wireframe. Tekan lama atau leret ke atas akan memaparkan pilihan untuk wireframe.
-* `Inspect` - Togol paparan data tambahan tentang mesh semasa. Secara lalai ia akan memaparkan UV, tetapi tekan lama atau leret ke atas akan membolehkan anda memeriksa sifat lain jika wujud, dan sama ada ini dipaparkan di latar belakang atau pada mesh.
+* `Batalkan` - membatalkan operasi terakhir
+* `Ulang Semula` - memulihkan operasi yang terakhir dibatalkan
+* `Sejarah` - mengakses pilihan sejarah, diterangkan dalam menu [Sejarah](history.md).
+* `Solo` - Togol antara memaparkan objek semasa sahaja, atau semua objek
+* `X-Ray` - Paparkan semua objek lain dalam mod x-ray, dan objek semasa secara padu. Tekan lama atau leret ke atas untuk memilih matcap dan warna x-ray, serta objek yang terlibat.
+* `Voxel` - Pintasan untuk butang remesh voxel dalam [Remesh voxel](topology.md#voxel-remesher). Tekan lama atau leret ke atas untuk memaparkan pilihan remesh voxel, seperti resolusi.
+* `Grid` - Togol paparan grid. Tekan lama atau leret ke atas untuk memaparkan pilihan grid, seperti warna dan lekatannya.
+* `Wayar` - Togol tindihan kerangka dawai. Tekan lama atau leret ke atas untuk memaparkan pilihan kerangka dawai.
+* `Pemeriksa` - Togol paparan data tambahan tentang mesh semasa. Secara lalai ia memaparkan UV, tetapi tekan lama atau leret ke atas membolehkan anda memeriksa sifat lain jika ada, dan sama ada ia dipaparkan di latar belakang atau pada mesh.
+* `Log` - Tunjuk atau sembunyikan tetingkap yang mengandungi log nyahpepijat Nomad.
+* `Kumpulan muka` - Togol tindihan kumpulan muka; lihat alat [Kumpulan muka](tools.md#facegroup).
+
+Anda boleh menambah, membuang dan menyusun semula pintasan ini dalam menu [Antara Muka](interface.md#add-shortcuts-bottom).
 
 ## Langkah seterusnya {#next-steps}
 
-Apa yang patut anda pelajari seterusnya terpulang kepada anda, dan apa yang anda minati! Berikut beberapa cadangan:
+Apa yang perlu anda pelajari seterusnya terpulang kepada anda dan apa yang anda rasa menarik! Berikut ialah beberapa cadangan:
 
-Mahukan lebih banyak pengetahuan tentang alat pengukiran? Pergi ke bahagian [Tools](tools.md).
+Mahu mengetahui lebih lanjut tentang alat pemahatan? Pergi ke bahagian [Alat](tools.md).
 
-Mahukan eksport model anda? Atau import model untuk diukir? Atau cipta imej ukiran anda? Pergi ke bahagian [Files](files.md).
+Mahu mengeksport model anda? Atau mengimport model untuk dipahat? Atau menghasilkan imej pahatan anda? Pergi ke bahagian [Fail](files.md).
 
-Mahukan lebih pengetahuan tentang mengawal perincian pada ukiran anda? Pergi ke bahagian [Topology](topology.md) dan pelajari tentang multires dan decimation.
+Mahu mengetahui lebih lanjut tentang mengawal butiran pada pahatan anda? Pergi ke bahagian [Topologi](topology.md) dan pelajari tentang multiresolusi dan Kurangkan (decimate).
 
-Mahukan kerja dengan lebih banyak objek? Gabungkan objek ringkas dan primitif ke dalam adegan yang lebih besar? Pergi ke bahagian [Scene](scene.md).
+Mahu bekerja dengan lebih banyak objek? Menggabungkan objek ringkas dan primitif menjadi adegan yang lebih besar? Pergi ke bahagian [Adegan](scene.md).
 
-Mahukan belajar *semua* tentang Nomad? Pilihan yang bagus! Manual ini merangkumi semua tentang Nomad, termasuk banyak petua dan helah, dan mempunyai fungsi carian yang hebat di bahagian atas. Gunakan navigasi di sebelah kiri untuk belajar lebih lanjut.
+Mahu mempelajari *segala-galanya* tentang Nomad? Pilihan yang bagus! Manual ini meliputi keseluruhan Nomad, mengandungi banyak tip dan helah, dan mempunyai fungsi carian yang hebat di bahagian atas. Gunakan navigasi di sebelah kiri untuk mengetahui lebih lanjut.
 
-Jika anda lebih suka video, Holger Schönischka telah membuat koleksi besar petua dan helah untuk Nomad di YouTube: https://www.youtube.com/@ProcreateFX/videos
+Jika anda lebih suka video, Holger Schönischka telah menghasilkan koleksi besar tip dan helah untuk Nomad di YouTube: https://www.youtube.com/@ProcreateFX/videos
 
 
 ## Mendapatkan bantuan {#getting-help}
 
-Jika anda masih mempunyai soalan selepas membaca manual dan menonton video tutorial, terdapat tiga cara utama untuk bercakap dengan pengguna Nomad lain atau pembangun Nomad:
+Jika anda masih mempunyai soalan selepas membaca manual dan menonton video tutorial, terdapat tiga cara utama untuk berbual dengan pengguna Nomad lain atau pembangun Nomad:
 
 * Lawati forum: [forum.nomadsculpt.com](http://forum.nomadsculpt.com)
-* Sertai sembang Discord Nomad: [https://discord.com/invite/8h7BwpRz29](https://discord.com/invite/8h7BwpRz29)
-* Hubungi pembangun secara terus di support@nomadsculpt.com
+* Sertai sembang discord Nomad: [https://discord.com/invite/8h7BwpRz29](https://discord.com/invite/8h7BwpRz29)
+* Hubungi pembangun terus di support@nomadsculpt.com

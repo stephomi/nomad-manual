@@ -1,239 +1,281 @@
 # ![](/icons/sun.webp) Shading {#shading}
 
-Dit menu bepaalt de schaduw-/weergavemodi die door Nomad worden gebruikt, de licht­eigenschappen en de eigenschappen van omgevingslicht/matcap.
+In dit menu regel je de shadingmodi van Nomad, de eigenschappen van de verlichting, de omgeving en de matcap, en de mist.
 
 ![](/images/shading_overview.webp)
 
 
 
-Je kunt kiezen uit verschillende render­modi:
+Je kunt kiezen uit verschillende rendermodi:
 
-| Mode                        | Betekenis                  | Beschrijving                                                   |
-| :-------------------------: | :------------------------: | :------------------------------------------------------------: |
-| [Lit(PBR)](#pbr)            | Physically Based Rendering | Schilderen met metalness/roughness                            |
-| [Matcap](#matcap)           | Material Capture           | Te gebruiken tijdens het beeldhouwen met minder gpu/cpu‑gebruik dan PBR |
-| [Unlit](#unlit)             | Oppervlakkleur             | Alleen oppervlakkleur, zonder shading of belichting           |
-| [Object Id](#object-id)      | Object‑ID                  | Een willekeurige kleur per object, handig voor paint‑apps     |
-| [Instance Id](#instance-id)  | Instance‑ID                | Een willekeurige kleur per instantie, handig om gedeelde meshes te herkennen |
+| Modus                       | Betekenis                  | Beschrijving                                                    |
+| :-------------------------: | :------------------------: | :-------------------------------------------------------------: |
+| [Verlicht (PBR)](#pbr)      | Physically Based Rendering | Lichten, schaduwen, omgeving, en geschilderde metaalheid/ruwheid |
+| [MatCap](#matcap)           | Material Capture           | Snelle modus om te sculpten, met minder gpu-/cpu-gebruik dan PBR |
+| [Onbelicht](#unlit)         | Oppervlaktekleur           | Alleen de oppervlaktekleur, zonder shading of verlichting       |
+| [Object-ID](#object-id)     | Object-ID                  | Een willekeurige kleur per object, handig voor schilderprogramma's. |
+| [Instantie-ID](#instance-id) | Instantie-ID              | Een willekeurige kleur per instantie, handig om gedeelde meshes te herkennen |
 
-Als je meer wilt leren over metalness en roughness, zie de sectie [Vertex Paint](painting.md).
+Wil je meer weten over metaalheid en ruwheid, kijk dan bij het onderdeel [Vertex schilderen](painting.md).
 
 ---
 
 ![](/images/shading_second.webp)
 
-### Vlakkengroep {#face-group}
-Overlay van facegroup‑kleuren. Facegroups zijn gekleurde selecties van polygonen die kunnen worden gemaakt met de tool [Face group](tools#facegroup), en automatisch worden aangemaakt bij de meeste primitieve vormen.
+### ![](/icons/group_gray.webp) Vlakkengroep {#face-group}
+Toont de kleuren van de vlakkengroepen over het model. Vlakkengroepen zijn gekleurde selecties van polygonen die je kunt maken met de tool [Vlakkengroep](tools#facegroup), en die bij de meeste primitieven automatisch worden aangemaakt.
 
-Sommige tools filteren automatisch op facegroups wanneer facegroups zichtbaar zijn.
+Sommige tools filteren automatisch op vlakkengroep als vlakkengroepen zichtbaar zijn.
 
-### Verf tonen {#show-paint}
-Nomad kan kleur, roughness en metalness opslaan in de vertices van je sculpt. Je kunt de weergave van deze eigenschappen globaal aan‑ of uitzetten met dit selectievakje.
+### ![](/icons/palette.webp) Toon schilderen {#show-paint}
+Nomad kan kleur, ruwheid en metaalheid opslaan in de vertices van je sculpt. Met dit vinkje zet je de weergave van deze eigenschappen overal tegelijk aan of uit.
 
-Let op: als je zowel vertex‑eigenschappen als textures hebt, en beide zijn ingeschakeld, dan worden de waarden met elkaar vermenigvuldigd.
+Let op: heb je zowel vertex-eigenschappen als texturen, en staan ze allebei aan, dan worden de waarden met elkaar vermenigvuldigd.
 
-### Masker tonen {#show-mask}
-Schakel de grijswaardenmasker‑overlay van de [mask tools](tools#mask) in of uit. Wanneer dit is uitgeschakeld, is het masker ook uitgeschakeld; dit is handig om snel wijzigingen te maken zonder masker, waarna je het masker weer kunt inschakelen zonder het kwijt te raken.
+### ![](/icons/shield.webp) Toon masker {#show-mask}
+Zet de grijze maskerlaag van de [maskertools](tools#mask) aan of uit. Staat dit uit, dan is het masker ook uitgeschakeld. Handig om snel iets aan te passen zonder masker: zet het daarna weer aan en je masker is er nog.
 
-### Verbergen gebruiken {#use-hide}
+### ![](/icons/tool_hide.webp) Gebruik Verberg {#use-hide}
 
-Schakel verborgen vlakken in of uit. Let op: dit werkt alleen als je NIET in de hide‑tool zit!
+Zet verborgen vlakken aan of uit. Let op: dit werkt alleen als je NIET in de verbergtool zit!
 
-### Texturen gebruiken {#use-textures}
+### ![](/icons/image.webp) Gebruik texturen {#use-textures}
 
-Nomad maakt het mogelijk om textures toe te wijzen aan objecten via het [material](material)‑menu. Als er textures zijn toegewezen, kunnen ze globaal worden in‑ of uitgeschakeld met dit selectievakje.
+In Nomad kun je via het menu [Materiaal](material) texturen aan objecten toewijzen. Zijn er texturen toegewezen, dan zet je ze met dit vinkje overal tegelijk aan of uit.
 
+Je kunt in Nomad zelf geen texturen maken of bewerken, maar texturen uit geïmporteerde bestanden werken wel. Dekkingstexturen werken in Verlicht, MatCap en Onbelicht, normal maps in Verlicht en MatCap, kleur in Verlicht en Onbelicht, en lichtgevend, ruwheid en metaalheid alleen in Verlicht. De knop is grijs als de scène geen textuur heeft.
 
+### PBR en lichten: overzicht {#pbr}
+Deze handleiding gaat niet diep in op Physically Based Rendering.
 
+Belangrijk om te onthouden is dat verlichting en materiaal volledig gescheiden zijn.
+Je kunt dus de kleur, ruwheid en metaalheid van je object schilderen terwijl de verlichting los daarvan wordt geregeld.
+Zo kun je je object eerst beschilderen en later de verlichting bijstellen, zonder dat het totaalbeeld van je model verloren gaat.
 
-
-
-
-### PBR- en lichtoverzicht {#pbr}
-Deze handleiding gaat niet in op de details van Physically Based Rendering.
-
-Belangrijk om te onthouden is dat belichting en materiaal volledig gescheiden zijn.
-Dat betekent dat je de kleur, roughness en metalness van je object kunt schilderen terwijl de belichting onafhankelijk wordt geregeld.
-Zo kun je je object schilderen en later de belichting aanpassen zonder de algehele look van je model te verstoren.
-
-Lichten zijn alleen beschikbaar in de [PBR‑modus](#pbr).
-Om prestatie­redenen ben je beperkt tot slechts 4 lichten.
+Lichten, de omgeving en de mist zijn alleen beschikbaar in de [PBR-modus](#pbr).
+Om prestatieredenen kun je maximaal 4 lichten gebruiken op mobiel en 6 op desktop.
 
 ::: tip
-Je kunt een glTF‑bestand laden met meer dan 4 lichten en Nomad zal ze allemaal behouden.
-Het zal echter niet per se goed presteren.
+Je kunt een glTF-bestand met meer lichten laden, en Nomad houdt ze dan allemaal.
+Dat presteert alleen niet per se goed.
 :::
 
 ::: tip
-Je kunt veel lichten faken door objecten unlit/emissive te maken en vervolgens global illumination in te schakelen in het [post process](postprocess)‑menu.
+Je kunt veel lichten nabootsen door objecten onbelicht/lichtgevend te maken en daarna globale verlichting aan te zetten in het menu [Nabewerking](postprocess).
 :::
 
-### Overzicht van lichttypen {#light-types-overview}
+### Soorten lichten {#light-types-overview}
 
-Dit zijn de lichttypes die momenteel worden ondersteund:
+Dit zijn de soorten lichten die op dit moment worden ondersteund:
 
-| Mode                        | Beschrijving                                           | Kan schaduwen werpen                                  |
-| :-------------------------: | :----------------------------------------------------: | :----------------------------------------------------: |
-| [Directional](#directional) | Zonlicht op oneindige afstand                         | ja                                                     |
-| [Environment](#environment) | Een ver licht dat overeenkomt met de omgeving‑HDR     | ja                                                     |
-| [Spot](#spot)               | Kegelvormige lichten                                  | Ja                                                     |
-| [Point](#point)             | Omni‑directioneel puntlicht                           | Ja, maar alleen via minder robuuste screen‑space‑schaduwen |
+| Modus                       | Beschrijving                                            | Kan schaduw werpen |
+| :-------------------------: | :-----------------------------------------------------: | :--------------: |
+| [Directioneel](#directional) | Zonlicht van oneindig ver weg                          | Ja               |
+| [Omgeving](#env-light)      | Een ver licht dat wordt afgestemd op de HDR van de omgeving | Ja           |
+| [Spot](#spot)               | Kegelvormige lichten                                    | Ja               |
+| [Punt](#point)              | Puntlicht dat in alle richtingen straalt                | Ja               |
 
-#### Richtinggevend {#directional}
-Dit licht straalt vanaf oneindige afstand met een uniforme intensiteit.
-De 3D‑positie in de scène maakt niet uit, alleen de oriëntatie.
+#### ![](/icons/sun.webp) Directioneel {#directional}
+Straalt licht uit van oneindig ver weg, met een gelijkmatige intensiteit.
+Zijn 3d-positie in de scène doet er niet toe, alleen zijn oriëntatie.
 
-Je kunt dit licht aan de camera koppelen, zodat de belichting consistent blijft.  
-Je kunt het bijvoorbeeld gebruiken als rim light (een sterk licht dat van achter je model komt en naar de camera wijst) dat altijd de achterkant van je model belicht.
+Je kunt dit licht aan de camera vastmaken, zodat de verlichting altijd hetzelfde blijft.
+Zo kun je er bijvoorbeeld een strijklicht (rim light) mee maken: een sterk licht dat van achter je model richting de camera schijnt en de achterkant van je model altijd belicht.
 
-#### Omgevingslicht {#env-light}
-Een [environment‑HDR](#environment) werkt goed voor algemene zachte belichting, maar als er een sterke, scherpe lichtbron in de HDR zichtbaar is, zal de schaduw daarvan erg zacht zijn en vaak nauwelijks zichtbaar. Een directioneel licht in combinatie met de environment‑HDR kan helpen, maar het kan lastig zijn om ze goed uit te lijnen.
+#### ![](/icons/panorama.webp) Omgevingslicht {#env-light}
+Een [HDR-omgeving](#environment) werkt goed voor zachte algemene verlichting, maar zit er een sterk, scherp licht in de HDR, dan is de schaduw die het geeft erg zacht en vaak helemaal niet zichtbaar. Een directioneel licht samen met de HDR-omgeving kan helpen, maar het is lastig om ze goed op elkaar uit te lijnen.
 
-Dit licht doet dat werk voor je. Het licht wordt automatisch geroteerd zodat het uitgelijnd is met het helderste deel van de HDR; vervolgens kun je de intensiteit en hoek (schaduw­zachtheid) afzonderlijk regelen. 
+Dit licht doet dat werk voor je. Het draait automatisch mee naar het helderste deel van de HDR, en daarna regel je de intensiteit en de hoek (de zachtheid van de schaduw) los van elkaar.
 
-#### Spot {#spot}
-Een spot‑light straalt licht in één richting uit, begrensd door een kegelvorm.
+#### ![](/icons/spotlight.webp) Spot {#spot}
+Een spotlicht straalt in één richting, begrensd door een kegelvorm.
 
-#### Punt {#point}
-Een point‑light straalt licht in alle richtingen uit.  
-Op dit moment ondersteunt point‑light geen schaduwen.
+#### ![](/icons/light.webp) Punt {#point}
+Een puntlicht straalt in alle richtingen en kan ook schaduw werpen.
 
 #### Schaduwen {#shadows}
-De optie `normal bias` kan worden gebruikt om veelvoorkomende schaduw­artefacten (acne/peter‑panning) te verminderen.
+Elk licht kan schaduw werpen, en in zijn [instellingen](#light-extra-controls) kies je hoe die wordt berekend. Zie je artefacten in de schaduw, dan kunnen de schuiven voor `Tolerantie` daar helpen.
 
-De kwaliteit van de schaduwen hangt af van de grootte van de objecten ten opzichte van de hele scène.  
-Als je een groot object in je scène hebt dat geen schaduwen hoeft te werpen (bijvoorbeeld een groot vlak), zorg er dan voor dat je het werpen van schaduwen uitschakelt in de [materiaalinstellingen](material.md#cast-shadows).
+De kwaliteit van de schaduwen hangt af van de grootte van de objecten ten opzichte van de hele scène.
+Heb je een groot object in je scène dat geen schaduw hoeft te werpen (bijvoorbeeld een groot vlak), zet het werpen van schaduw dan uit in de [materiaalinstellingen](material.md#casts-shadows) ervan.
 
-## Lichten {#lights}
+## ![](/icons/sun.webp) Lichten {#lights}
 
 ![](/images/shading_lights.webp)
 
-### ![](/icons/checked.webp) Lichten-checkbox {#lights-checkbox}
+### ![](/icons/checked.webp) Vinkje Lichten {#lights-checkbox}
 
-Schakel alle directe lichten in de scène in of uit.
+Zet alle directe lichten in de scène aan of uit.
 
 
 
 ### Licht toevoegen {#add-light}
 
-Voeg een licht toe aan de scène, tot een maximum van 4. Wanneer een licht wordt toegevoegd, verschijnt de lichtlijst met knoppen en wordt er een licht‑toolbar bovenaan de viewport toegevoegd.
+Voegt een licht toe aan de scène, tot 4 lichten op mobiel en 6 op desktop. Zodra je een licht toevoegt, verschijnt de lichtenlijst met knoppen, en komt er bovenaan de viewport een lichtwerkbalk bij.
 
 ![](/images/shading_lights_icons.webp)
 
-* De tekst toont de naam van het licht en de helderheid.
-* Het oog‑icoon schakelt de zichtbaarheid.
-* Het potlood‑icoon laat je het licht hernoemen.
-* Het prullenbak‑icoon verwijdert een licht.
-* Het kopie‑icoon dupliceert een licht. 
-* Het icoon met 3 puntjes opent een volledige lichteditor. Het meeste van deze functionaliteit is ook beschikbaar via de toolbar die in de viewport verschijnt. 
+* De tekst toont de naam van het licht en de helderheid. Tik erop om het licht te selecteren.
+* Het oogje zet de zichtbaarheid aan of uit.
+* Met het potloodje geef je het licht een andere naam.
+* Het prullenbakje verwijdert een licht.
+* Het kopieericoon dupliceert een licht.
+* Het icoon met de 3 puntjes opent een volledige lichteditor. De meeste functies daarvan vind je ook in de werkbalk die in de viewport verschijnt.
 
-### ![](/icons/spotlight.webp)  Pictogrammen {#icons}
+Je kunt een licht in de lijst ook verslepen om de volgorde te veranderen.
 
-Schakel de weergave van lichticonen in de viewport in of uit.
+### ![](/icons/spotlight.webp)  Iconen {#icons}
+
+Zet de weergave van de lichticonen in de viewport aan of uit.
 
 ### Lichtwerkbalk {#light-toolbar}
 ![](/images/shading_lights_toolbar.webp) 
 
-Deze toolbar verschijnt bovenaan de viewport wanneer een licht is geselecteerd.
+Deze werkbalk verschijnt bovenaan de viewport als er een licht is geselecteerd.
 
-* Show schakelt de zichtbaarheid van het licht.
-* Directional/Environment/Spot/Point verandert het lichttype. Tik om te cyclen, of houd ingedrukt voor een menu.
-* Intensity regelt de lichtsterkte; de waarde kan boven 1,0 gaan voor zeer intense lichten, handig in combinatie met Global Illumination in Post Process.
-* De kleurstaal opent bij aanklikken een kleurkiezer. Nomad biedt verschillende manieren om kleur te kiezen. Kelvin‑regeling biedt een natuurlijke manier om warm/koud licht te selecteren.
-* Shadow schakelt schaduwen.
-* Size bepaalt de breedte van een licht. Brede lichten werpen zachte schaduwen, zachte belichting en een zachtere highlight op objecten.
-* ... opent extra instellingen.
+* `Zichtbaar` zet het licht aan of uit.
+* Directioneel/Omgeving/Spot/Punt verandert het soort licht. Tik om erdoor te bladeren, of houd lang ingedrukt voor een menu.
+* Intensiteit bepaalt de sterkte van het licht. De waarde kan boven 1,0 gaan voor heel felle lichten, handig samen met globale verlichting in Nabewerking.
+* Tik op het kleurvlak om een kleurkiezer te openen. Nomad biedt verschillende manieren om een kleur te kiezen. Met de Kelvin-regeling kies je op een natuurlijke manier tussen warm en koel licht.
+* Schaduw zet schaduwen aan of uit.
+* Hoek (_directioneel en omgeving_) of Grootte (_spot en punt_) bepaalt de breedte van een licht. Bredere lichten geven zachtere schaduwen, zachter licht en een zachtere glans op objecten.
+* Koppeling (_alleen directioneel_), Conushoek en Zachtheid (_alleen spot_) worden hieronder bij de [lichteditor](#light-extra-controls) beschreven.
+* ... toont `Klonen`, `Centreren` en `Verwijderen`, samen met de schaduwinstellingen.
 
-### Extra lichtbediening {#light-extra-controls}
+### Extra lichtinstellingen {#light-extra-controls}
 
 ![](/images/shading_extra_controls.webp) 
 
-Let op: sommige opties zijn specifiek voor bepaalde lichttypes.
+Het icoon met de 3 puntjes bij een licht in de lijst opent de volledige editor ervan. Sommige opties gelden alleen voor bepaalde soorten lichten.
 
-* `Clone` dupliceert het licht.
-* `Recenter` verplaatst het licht terug naar de oorsprong.
-* `Delete` verwijdert het licht.
-* `Directional/Environment/Spot/Point` laten je het lichttype wijzigen.
-* De `colour swatch` opent bij aanklikken een kleurkiezer. 
-* `Intensity` regelt de lichtsterkte.
-* `Attachment` (_alleen directional_) bepaalt of het licht aan de wereld of aan de camera wordt gekoppeld. Als je bijvoorbeeld een directioneel licht achter je personage gebruikt als rim light, dan zal bij attachment op camera het licht altijd achter het personage blijven wanneer je de camera draait.
-* `Angle` (_alleen directional en environment_) is de schijnbare grootte van het licht; denk aan hoe groot de zon aan de hemel lijkt. Grotere hoeken geven zachtere schaduwen en bredere highlights.
-* `Softness` (_alleen spotlight_) regelt de scherpte van de rand van de spotlichtkegel. 0 is een zeer scherpe rand. 1 is zeer zacht, met een verloop naar het midden van de lichtkegel. In de viewport kan het kleine blauwe punt op de spotlichtkegel worden gebruikt om softness interactief in te stellen.
-* `Cone angle` (_alleen spotlight_) regelt de spreidingshoek van het spotlicht. Een kleine hoek is een zeer smalle lichtbundel, 170 is een zeer brede lichtspreiding. In de viewport kan het oranje punt worden gebruikt om de cone angle interactief in te stellen.
-* `Shadow` schakelt schaduwen voor het huidige licht.
-* `Shadow map` en `screenspace` zijn verschillende manieren om schaduwen te berekenen; doorgaans is shadow map betrouwbaarder.
-* `Contact` bepaalt hoe schaduwen worden berekend. Schaduwen zijn een lastig probleem in computergraphics en kunnen artefacten veroorzaken in de render. Nauwkeurigere schaduwen kunnen worden gekozen voor het belangrijkste licht in een scène; met deze instelling bepaal je of Nomad dat licht automatisch kiest of dat de gebruiker het selecteert.
-* `Tolerance` kan helpen schaduw­artefacten op te lossen (bijvoorbeeld wanneer schaduwen geen contact lijken te maken met oppervlakken, of wanneer er ruis en patronen in schaduwen zichtbaar zijn) door de tolerantie aan te passen.
+* Met `Directioneel/Omgeving/Spot/Punt` verander je het soort licht.
+* Tik op het `kleurvlak` om een kleurkiezer te openen.
+* `Intensiteit` bepaalt de sterkte van het licht.
+* `Koppeling` (_alleen directioneel_) koppelt het licht aan de wereld (`Vast`) of aan de camera (`Camera`). Gebruik je bijvoorbeeld een directioneel licht achter je personage als strijklicht, dan blijft het licht met koppeling aan de camera altijd achter het personage, hoe je de camera ook draait.
+* `Zachtheid` (_alleen spot_) bepaalt hoe scherp de rand van de lichtkegel is. 0 is een heel scherpe rand. 1 is heel zacht, met een overgang naar het midden van de lichtkegel. In de viewport kun je met het kleine blauwe puntje op de kegel de zachtheid direct instellen.
+* `Conushoek` (_alleen spot_) bepaalt hoe wijd het spotlicht uitwaaiert. Een kleine hoek geeft een heel smalle lichtbundel, 170 een heel brede. In de viewport kun je met het oranje puntje de conushoek direct instellen.
+* `Hoek` (_alleen directioneel en omgeving_) is de schijnbare grootte van het licht: zie het als hoe groot de zon aan de hemel lijkt. Grotere hoeken geven zachtere schaduwen en bredere glansplekken.
+* `Grootte` (_alleen spot en punt_) is de breedte van het licht. Grotere lichten geven zachtere schaduwen.
+* `Schaduw` zet de schaduwen van het huidige licht aan of uit.
+* Het schaduwtype bepaalt hoe schaduwen worden berekend. Een `Schaduwmap` rendert de scène vanuit het licht, en geeft dus ook schaduw van geometrie die de camera niet ziet. `Schermruimte` gebruikt alleen wat al op het scherm zichtbaar is: dat is lichter, maar experimenteel. Over het algemeen is de schaduwmap betrouwbaarder.
+* `Tolerantie` (_alleen schermruimte_): zie je artefacten in de schaduw (schaduwen lijken het oppervlak niet te raken, of er zit ruis of een patroon in), dan kan het bijstellen van de tolerantie helpen.
+* `Contact` voegt preciezere schaduwen toe over korte afstanden, waar objecten elkaar raken. Met `Auto` krijgt alleen het sterkste licht in de scène contactschaduwen; `Nee` en `Ja` zetten ze geforceerd uit of aan voor dit licht. De schuif `Tolerantie` ervan werkt net als die hierboven.
+
+De knop `...` van de werkbalk in de viewport bevat dezelfde schaduwinstellingen, plus:
+
+* `Klonen` dupliceert het licht.
+* `Centreren` zet het licht voor de camera, met behoud van zijn oriëntatie.
+* `Verwijderen` verwijdert het licht.
 
 
-## Omgeving {#environment}
+## ![](/icons/panorama.webp) Omgeving {#environment}
 
 ![](/images/shading_environment.webp)
 
-Licht in de echte wereld komt uit alle richtingen; het blauw van de lucht, het groen van het gras, het rood van een gebouw – al dat licht uit de ‘omgeving’ kan worden gesimuleerd met een environment map. 
+In het echt komt licht uit alle richtingen: het blauw van de lucht, het groen van het gras, het rood van een gebouw. Al dat licht uit de 'omgeving' kun je nabootsen met een omgevingsmap.
 
-Nomad wordt geleverd met verschillende voorbeeld‑environment maps voor binnen‑ en buitenlocaties, met verschillende tinten en helderheids­niveaus. Probeer verschillende maps om te zien welke het meeste detail in je sculpts naar voren brengt.
+Met het vinkje naast de titel zet je de omgevingsverlichting aan of uit.
 
-Tik op de afbeelding om de beschikbare environment maps te zien. Kies in dat dialoogvenster ‘Import...’ om je eigen map te laden. Het is het beste om High Dynamic Range (HDR)‑afbeeldingen te gebruiken in latlong‑ of equirectangular‑formaat, als .hdr‑ of .exr‑bestand. [www.polyhaven.com](https://polyhaven.com/hdris) heeft een goede collectie gratis environment maps; meestal zijn de 1k‑hdr‑maps een goede maat en kwaliteit.
+Nomad heeft een aantal voorbeeldomgevingen voor binnen en buiten, met verschillende tinten en helderheden. Probeer er een paar uit om te zien welke de meeste details van je sculpt laat zien.
+
+Tik op de afbeelding om de beschikbare omgevingsmaps te zien. Kies in dat venster `Importeer...` om je eigen te laden. Gebruik het liefst High Dynamic Range-afbeeldingen (HDR) in latlong- of equirectangulair formaat, als .hdr- of .exr-bestand. De browser kan omgevingen ook direct downloaden van [Poly Haven](https://polyhaven.com/hdris), dat een mooie verzameling gratis omgevingsmaps heeft.
 
 ### Belichting {#env-exposure}
-Pas de helderheid van de environment map aan. Vaak kunnen de maps te helder zijn in combinatie met gewone lichten; het verlagen van de exposure kan helpen om dit in balans te brengen, vooral in combinatie met Global Illumination in de [Post Process](postprocess)‑instellingen.
+Past de helderheid van de omgevingsmap aan. Samen met gewone lichten zijn de maps vaak te fel; de belichting omlaag zetten helpt dan om alles in balans te brengen, vooral samen met globale verlichting in de instellingen voor [Nabewerking](postprocess).
 
 ### Rotatie {#env-rotation}
 
-Omdat environment maps licht uit alle richtingen vastleggen, kun je ze roteren om de reflecties en algemene belichting goed te laten samenwerken met je sculpt.
+Omdat omgevingsmaps licht uit alle richtingen vastleggen, kun je ze draaien zodat de reflecties en de algehele verlichting goed bij je sculpt passen. Je kunt de omgeving ook draaien door met 3 vingers horizontaal over de viewport te slepen.
 
-### Aan camera gekoppeld {#env-attached}
-Koppel de environment aan de camera.
+### Gehecht aan camera {#env-attached}
+Maakt de omgeving vast aan de camera.
 
-Dit zorgt voor consistente belichting, wat handig kan zijn tijdens het beeldhouwen.
+Zo blijft de verlichting altijd hetzelfde, wat handig kan zijn tijdens het sculpten.
+
+### Vervaging (achtergrond) {#env-background-blur}
+Deze schuif verschijnt alleen als de [achtergrond](background.md) op de omgeving staat. Hij vervaagt de omgevingsafbeelding achter je model, zonder de verlichting te veranderen.
 
 
-## ![](/icons/sphere_smooth.webp) Matcap {#matcap}
+## ![](/icons/fog.webp) Mist {#fog}
+
+Mist geeft je scène atmosferische diepte en maakt lichtbundels zichtbaar. Zet hem aan met het vinkje naast de titel. Net als lichten en de omgeving is mist alleen beschikbaar in de modus [Verlicht (PBR)](#pbr).
+
+::: tip Sterkere lichtbundels
+Zet de `Omgeving` van de mist lager en gebruik een fel spot- of puntlicht. Verhoog de `Dichtheid` tot de mist duidelijk zichtbaar is. Voor zichtbare bundels in dunnere mist zet je de `Verstrooiingsrichting` op een hoge positieve waarde en richt je de camera naar het licht.
+:::
+
+### Kleur {#fog-color}
+De kleur van de mist en van het licht dat hij verstrooit.
+
+### Dichtheid {#fog-density}
+Hoe snel de mist dikker wordt met de afstand.
+
+### Maximale dekking {#fog-opacity}
+Beperkt hoeveel de mist de scène kan bedekken, ook bij een hoge dichtheid.
+
+### Verstrooiingsrichting {#fog-scattering}
+De richting waarin de mist het licht verstrooit (ook wel anisotropie genoemd). Positieve waarden maken de mist helderder als je naar een licht kijkt, negatieve waarden als je ervan wegkijkt, en bij nul wordt het licht gelijkmatig in alle richtingen verstrooid.
+
+### ![](/icons/panorama.webp) Omgeving {#fog-environment}
+Hoeveel de [omgeving](#environment) de mist verlicht. Deze optie is grijs als de omgeving uit staat.
+
+### Ruis {#fog-noise}
+Mengt ruis door de mist om hem in plukken op te breken, zonder de algehele dichtheid te veranderen. Staat de ruis boven 0, dan bepaalt een schuif `Grootte` hoe groot het patroon is.
+
+### Vorm {#fog-shape}
+Waar de mist de scène vult:
+
+* `Gelijkmatig` - vult de hele scène.
+* `Verticaal` - houdt de mist binnen een verticale band met zachte randen. De schuiven `Onder` en `Boven` bepalen de hoogte van de onder- en bovenrand, en met hun oogknop zie je de band in de viewport terwijl je ze bijstelt.
+
+
+## ![](/icons/sphere_smooth.webp) MatCap {#matcap}
 
 ![](/images/shading_matcap.webp)
 
-Zoals de naam al aangeeft (MATerial CAPture) bevat een matcap zowel de belichtings‑ als de materiaalinformatie in één afbeelding.
-Omdat het materiaal zelf al in de matcap aanwezig is, worden de schilderkanalen roughness en metalness genegeerd.
-De schilderkleur wordt met de matcap vermenigvuldigd; dat betekent dat als je een zwarte/grijze matcap hebt, wit schilderen het beeld niet helderder maakt.
+Zoals de naam al zegt (MATerial CAPture), legt een matcap zowel de verlichting als de materiaalinformatie vast in één afbeelding.
+Omdat het materiaal al in de matcap zit, worden de schilderkanalen voor ruwheid en metaalheid genegeerd.
+De verfkleur wordt met de matcap vermenigvuldigd: heb je een zwarte of grijze matcap, dan wordt het met witte verf niet lichter.
 
-Artiesten geven vaak de voorkeur aan deze modus voor beeldhouwen, omdat ze zich zo kunnen concentreren op de vorm en geometrie zelf.
+Kunstenaars gebruiken deze modus graag om te sculpten, omdat ze zich dan volledig op de vorm en de geometrie kunnen richten.
 
-Tik op de bol om een afbeeldingsbrowser te openen. Je kunt ook je eigen matcap toevoegen; in het algemeen kan elke foto, render of zelfs een schilderij van een bol die strak tot een vierkant is uitgesneden, worden gebruikt. Er zijn veel matcap‑bibliotheken online beschikbaar; een nuttige bron is de [nidorx matcap library](https://github.com/nidorx/matcaps).
+Tik op de bol om een afbeeldingenbrowser te openen. Je kunt ook je eigen matcap toevoegen: eigenlijk elke foto, render of zelfs schildering van een bol die strak tot een vierkant is bijgesneden, is bruikbaar. Online vind je veel matcapbibliotheken; een handige bron is de [nidorx matcap library](https://github.com/nidorx/matcaps).
 
-### Globale Matcap gebruiken {#matcap-global}
+### Gebruik globale MatCap {#matcap-global}
 
-Meestal gebruiken artiesten één enkele matcap voor het hele sculpt, maar als deze schakelaar is uitgeschakeld, kan elk object zijn eigen matcap hebben. Dit kan artistiek worden ingezet voor opvallende resultaten.
+Meestal gebruiken kunstenaars één matcap voor de hele sculpt, maar zet je deze schakelaar uit, dan kan het geselecteerde object een eigen matcap krijgen. Artistiek kun je daar opvallende resultaten mee halen.
 
 ::: tip
-Schakel deze optie uit en gebruik een afbeelding van een oogbal voor de ogen van je personage!
+Zet deze optie uit en gebruik een afbeelding van een oogbol voor de ogen van je personages!
 :::
 
 ### Rotatie {#matcap-rotation}
-Een matcap is een gespecialiseerde vorm van een environment map, dus net als een environment map kan hij worden geroteerd. Je kunt dit ook op elk moment in de viewport doen door met drie vingers naar links en rechts te slepen.
+Een matcap is een speciaal soort omgevingsmap, en net als een omgevingsmap kun je hem draaien. Dat kan ook op elk moment in de viewport door met 3 vingers naar links en rechts te slepen.
+
+De slotknop naast de schuif vergrendelt de rotatie, zodat een sleepbeweging met 3 vingers de matcap niet per ongeluk draait.
 
 
 
 ## ![](/icons/circle_fill.webp) Onbelicht {#unlit}
 
-In deze modus wordt alleen de oppervlakkleur weergegeven. Dit kan handig zijn om te controleren of de oppervlakkleur van je objecten is wat je verwacht, zonder afgeleid te worden door lichten, schaduwen, reflectie of transparantie. 
+Deze modus toont alleen de oppervlaktekleur. Handig om te controleren of de oppervlaktekleur van je objecten is wat je verwacht, zonder afleiding van lichten, schaduwen, reflecties of transparantie.
 
-Deze modus kan ook worden gebruikt voor niet‑fotorealistische renders, om een vlakke, cartooneske look te bereiken.
+Je kunt deze modus ook gebruiken voor niet-fotorealistische renders, met een vlakke, cartoonachtige look.
 
 ## ![](/icons/cube.webp) Object-ID {#object-id}
 
-Alle belichtings‑ en oppervlakte‑informatie wordt genegeerd en elk object wordt weergegeven met een unieke vlakke kleur. Als dit naast een PBR‑render wordt gerenderd, kan dit in een paint‑programma worden gebruikt om op kleur te selecteren en zo kleurcorrecties op specifieke objecten uit te voeren.
+Alle verlichting en oppervlakte-informatie wordt genegeerd, en elk object krijgt een eigen egale kleur. Render je dit naast een PBR-render, dan kun je in een tekenprogramma op kleur selecteren en zo kleurcorrecties op specifieke objecten doen.
 
-Let op: deze kleuren verschijnen ook in de [Scene‑menuboomstructuur](scene#tree-view).
+Deze kleuren verschijnen ook in de [boomweergave van het menu Scène](scene#tree-view).
 
 ### ID willekeurig maken {#object-random}
 
-Genereer een nieuwe set willekeurige kleuren. 
+Maakt een nieuwe set willekeurige kleuren.
 
 ## ![](/icons/link.webp) Instantie-ID {#instance-id}
 
-Hetzelfde als Object ID, maar instanties krijgen dezelfde kleur. 
+Hetzelfde als Object-ID, maar instanties krijgen dezelfde kleur.
 
 ### ID willekeurig maken {#instance-random}
 
-Genereer een nieuwe set willekeurige kleuren.
+Maakt een nieuwe set willekeurige kleuren.

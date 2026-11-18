@@ -1,187 +1,245 @@
 # ![](/icons/cog.webp) Impostazioni {#reset-to-default}
 
-Il menu delle impostazioni contiene molte opzioni per controllare l'aspetto e il comportamento di Nomad.
+Il menu Impostazioni contiene molte opzioni per controllare l'aspetto e il comportamento di Nomad.
 
 ![](/images/settings_overview.webp)
 
-## Impostazioni di visualizzazione {#display-settings}
-Questa sezione contiene scorciatoie di avvio rapido per la maggior parte delle impostazioni più in basso in questo menu.
+La fila di pulsanti in cima al menu porta direttamente a una sezione: `Cursore`, `Indicatore`, `Wire`, `Griglia`, `Dai due lati`, `Bordato`, `Evidenziazione`, `Cubo a scatto`, `Statistiche`, `Maniglie`, `Forma`, `Ripetitori` e `Multires`.
+
+## Impostazioni visualizzazione {#display-settings}
+Questa sezione contiene scorciatoie rapide per la maggior parte delle impostazioni che trovi più in basso in questo menu.
 
 ![](/images/settings_display_settings.webp)
 
-### Ombreggiatura uniforme {#smooth-shading}
-Attiva/disattiva l’ombreggiatura morbida o sfaccettata. Con l’ombreggiatura sfaccettata i poligoni sono ombreggiati in modo indipendente, così puoi vedere la topologia sottostante.
-Può essere utile vedere l’ombreggiatura sfaccettata durante la fase di scolpitura, quindi passare all’ombreggiatura morbida per il rendering.
+### ![](/icons/sphere_smooth.webp) Ombreggiatura uniforme {#smooth-shading}
+Passa dall'ombreggiatura uniforme a quella sfaccettata e viceversa. Con l'ombreggiatura sfaccettata i poligoni sono ombreggiati in modo indipendente, così puoi vedere la topologia sottostante.
+Può essere utile vedere l'ombreggiatura sfaccettata mentre scolpisci, per poi passare all'ombreggiatura uniforme per il rendering.
 
-Disabilitare l’Ombreggiatura morbida migliora leggermente le prestazioni.
+Disattivare l'ombreggiatura uniforme migliora un po' le prestazioni.
 
-### Contorno {#outline-quick}
-Attiva/disattiva un contorno sulla selezione corrente.
+### ![](/icons/outline.webp) Bordato {#outline-quick}
+Attiva o disattiva un contorno attorno alla selezione attuale.
 
-Questo è utile per avere un riscontro visivo sulla mesh o sulle mesh attualmente selezionate nel caso in cui [Scurisci non selezionati](#darken-unselected-objects) sia disattivato.
+È utile per avere un riscontro visivo sulle mesh selezionate quando [Scurisci gli oggetti non selezionati](#darken-unselected-objects) è disattivato.
 
-Dal punto di vista delle prestazioni, usare [Scurisci non selezionati](#darken-unselected-objects) è molto meglio che usare la soluzione del contorno.
+Dal punto di vista delle prestazioni, usare [Scurisci gli oggetti non selezionati](#darken-unselected-objects) è molto meglio che usare il contorno.
 
-### Griglia {#grid-quick}
-Attiva/disattiva una griglia di sfondo, utile per comprendere il posizionamento e la scala degli oggetti.
+### ![](/icons/grid.webp) Griglia {#grid-quick}
+Attiva o disattiva una griglia di sfondo, utile per capire la posizione e la scala degli oggetti.
 
-### Due lati {#two-sided-quick}
-Attiva/disattiva la visualizzazione dei poligoni su due lati. Tutte le facce puntano in una certa direzione.
-Le facce considerate *retro* sono quelle che puntano “lontano” dal punto di vista della camera.
+### ![](/icons/culling.webp) Dai due lati {#two-sided-quick}
+Attiva o disattiva la visualizzazione dei poligoni da entrambi i lati. Ogni faccia è rivolta in una certa direzione.
+Le facce considerate *lato posteriore* sono quelle rivolte "lontano" dal punto di vista della fotocamera.
 
-Per esempio, la sfera semplice di avvio avrà le sue facce rivolte verso l’esterno.
-Se sposti la camera all’interno della sfera vedrai quindi il retro di queste facce.
+Per esempio, la semplice sfera iniziale ha le facce rivolte verso l'esterno.
+Se porti la fotocamera dentro la sfera, vedrai il lato posteriore di queste facce.
 
-La maggior parte delle volte non dovresti vedere il retro delle facce, quindi colorarle può aiutarti a rilevare potenziali problemi o topologia non corretta.
+Il più delle volte non dovresti vedere il lato posteriore delle facce, quindi colorarlo può aiutarti a individuare problemi o topologia scorretta.
 
-Disabilitare il rendering `due lati` può migliorare un po’ le prestazioni di rendering.
+Disattivare il rendering `Dai due lati` può migliorare un po' le prestazioni.
 
 
-### Reticolo {#wireframe-quick}
-Attiva/disattiva una sovrapposizione wireframe. 
+### ![](/icons/wireframe.webp) Wireframe {#wireframe-quick}
+Attiva o disattiva la sovrapposizione del wireframe. 
 
-Nota che abilitare il wireframe ridurrà le prestazioni.
+Nota che attivare il wireframe riduce le prestazioni.
 
-### Cubo di aggancio {#snap-cube-quick}
-Attiva/disattiva un’icona di supporto nell’angolo della scena, utile per orientarti nello spazio e passare rapidamente tra le viste fronte/retro/sinistra/destra/alto/basso.
+### ![](/icons/snap_cube.webp) Cubo a scatto {#snap-cube-quick}
+Attiva o disattiva un'icona di aiuto nell'angolo della scena, utile per orientarti nello spazio e passare rapidamente tra le viste frontale/posteriore/sinistra/destra/superiore/inferiore.
 
-### Mostra pittura {#show-painting}
-Attiva/disattiva la visualizzazione della pittura. Il materiale predefinito è un materiale bianco non metallico, con rugosità al 25%.
+### ![](/icons/palette.webp) Mostra pittura {#show-painting}
+Mostra o nasconde la pittura. Quando è disattivata, gli oggetti vengono mostrati con un materiale bianco non metallico, con rugosità al 25%, invece della loro pittura.
 
-### Usa nascondi {#use-hide}
-Attiva/disattiva la modalità di nascondimento. Quando è disattivata è comunque presente, solo disabilitata. Questo pulsante è disabilitato se stai usando lo strumento di nascondimento.
+### ![](/icons/tool_hide.webp) Usa Nascondi {#use-hide}
+Attiva o disattiva la modalità Nascondi. Quando è spenta le zone nascoste restano, sono solo disattivate. Questo pulsante è disabilitato se stai usando lo strumento Nascondi.
 
-### Mostra maschera {#show-mask}
-Attiva/disattiva la modalità maschera. Quando è disattivata è comunque presente, solo disabilitata. Premi di nuovo questo pulsante per riattivarla.
+### ![](/icons/shield.webp) Mostra maschera {#show-mask}
+Attiva o disattiva la modalità maschera. Quando è spenta la maschera resta, è solo disattivata. Premi di nuovo questo pulsante per riattivarla.
 
-Se hai bisogno di nascondere la maschera E averla comunque attiva, usa il colore della maschera qui sotto e impostalo su bianco. Ricordati di riportarlo a un grigio quando hai finito!
+Se ti serve nascondere la maschera MA tenerla attiva, usa il colore della maschera qui sotto e impostalo sul bianco. Ricordati di rimetterlo grigio quando hai finito!
 
 Nota che questo pulsante è disabilitato se stai usando uno strumento maschera. 
 
-### Maschera -> Opaca {#mask-opaque}
-Maschera -> opaca ignorerà i vertici trasparenti per le maschere mascherate. Questo è rilevante solo per l’opacità dei vertici e delle texture, le facce nascoste tramite “nascondi” rimarranno comunque nascoste.
+### ![](/icons/shield.webp) Maschera → Opaco {#mask-opaque}
+`Maschera → Opaco` ignora i vertici trasparenti per la maschera. Riguarda solo l'opacità dei vertici e delle texture: le facce nascoste con "Nascondi" restano comunque nascoste. È disponibile solo mentre `Mostra maschera` è attivo.
 
-### Evidenzia {#highlight-quick}
-Attiva/disattiva il lampeggio di evidenziazione della selezione. Quando selezioni oggetti, l’oggetto selezionato lampeggia temporaneamente in rosa acceso per 500 millisecondi. Il colore e la durata del lampeggio possono essere personalizzati qui sotto.
+### ![](/icons/bang.webp) Evidenziazione {#highlight-quick}
+Attiva o disattiva il lampo che evidenzia la selezione. Quando selezioni degli oggetti, quello selezionato lampeggia per 500 millisecondi. Il colore e la durata del lampo si possono personalizzare più sotto.
 
-### Statistiche {#stats-quick}
-Attiva/disattiva il testo di stato nella viewport 3D. Mostra informazioni sulla memoria di sistema, il conteggio totale dei vertici della scena e il conteggio dei vertici della selezione corrente.
+### ![](/icons/list.webp) Statistiche {#stats-quick}
+Mostra o nasconde il testo di stato nella vista 3d. Mostra informazioni sulla memoria del sistema, sul numero totale di vertici della scena e sul numero di vertici della selezione attuale.
 
 ----- 
 
-### Scurisci oggetti non selezionati {#darken-unselected-objects}
-Gli oggetti che non sono selezionati verranno scuriti in modo che la selezione corrente risalti.
+### ![](/icons/cube.webp) Scurisci gli oggetti non selezionati {#darken-unselected-objects}
+Gli oggetti non selezionati vengono scuriti, così la selezione attuale risalta.
 
-### Maschera {#mask}
-Il colore usato per la mascheratura, di default un grigio medio, moltiplicato per il colore del tuo oggetto. Impostalo su bianco per rendere la maschera invisibile, ma ricordati di riportarlo a un grigio quando hai finito!
+### ![](/icons/shield.webp) Maschera {#mask}
+Il colore usato per la maschera, di default un grigio medio, moltiplicato per il colore dell'oggetto. Impostalo sul bianco per rendere invisibile la maschera, ma ricordati di rimetterlo grigio quando hai finito!
 
 ## ![](/icons/cursor.webp) Cursore {#cursor}
 
-### Mostra cerchio durante la scultura {#show-circle-while-sculpting}
-Continua a mostrare il raggio del pennello durante la scolpitura.
+### Cerchio {#show-circle-while-sculpting}
+Quando mostrare il cerchio del raggio del pennello:
+
+* `Auto` - mostra il cerchio, ma lo nasconde mentre scolpisci.
+* `No` - non mostra mai il cerchio.
+* `Sì` - mostra sempre il cerchio, anche mentre scolpisci.
 
 ### Mostra puntino {#show-small-dot}
-Mostra un punto al centro della pennellata durante la scolpitura, o quando il pivot della camera viene cambiato.
+Mostra un puntino al centro del tratto del pennello mentre scolpisci, o quando cambia il pivot della fotocamera.
 
-### Mostra stabilizzatore a corda {#show-rope-stabilizer}
-Disegna una linea per indicare la lunghezza della corda quando lo stabilizzatore “lazy rope” è attivo nelle impostazioni della pennellata.
+### Mostra stabilizzatore di corda {#show-rope-stabilizer}
+Disegna una linea che indica la lunghezza della corda quando lo [Stabilizzatore di corda ritardato](stroke.md#lazy-rope-stabilizer) è attivo nelle impostazioni del tratto.
+
+### Mostra indicatore di rollio {#show-roll-hint}
+Mostra la guida della direzione di rollio mentre usi una scorciatoia di rollio.
+
+### ![](/icons/radius.webp) Dimensioni {#dot-size}
+La dimensione del puntino.
+
+### Colori {#cursor-colors}
+Il cursore cambia colore in base a ciò che stai facendo: `Scolpire`, `Sfondo` (passando sopra lo sfondo), `Maschera`, `Leviga`, `Fotocamera` e `Raggio`. Qui puoi personalizzare ogni colore.
 
 ## ![](/icons/cursor.webp) Indicatore {#indicator}
 ![](/images/settings_indicator.webp)
 
-Mostra indicatori visivi per tutorial e registrazioni dello schermo.
+Mostra uno o più indicatori visivi per tutorial e registrazioni dello schermo. Impostalo su `Sì` per attivarlo (su iOS c'è anche l'opzione `Auto`).
 
-I pulsanti `Dito`, `Stilo` e `Mouse` abilitano la visualizzazione di un’icona quando viene rilevato quel tipo di input.
+I pulsanti `Dito`, `Stilo` e `Mouse` attivano la visualizzazione di un'icona quando viene rilevato quel tipo di input.
 
 ### Colore {#indicator-color}
-Il colore dell’indicatore.
+Il colore dell'indicatore.
 
-### Dimensione/Icona/Cerchio {#indicator-shape}
-Controlli per regolare la dimensione dell’indicatore e le forme all’interno dell’indicatore.
+### Dimensioni/Icona/Cerchio {#indicator-shape}
+Controlli per regolare la dimensione dell'indicatore, e l'opacità dell'icona e del cerchio al suo interno.
 
-## ![](/icons/wireframe.webp) Reticolo {#wireframe}
+## ![](/icons/wireframe.webp) Wireframe {#wireframe}
 ![](/images/settings_wireframe.webp)
-Attiva la sovrapposizione wireframe.
+Attiva la sovrapposizione del wireframe.
 
-### Destinazione {#target}
-Imposta se gli oggetti non selezionati mostreranno il wireframe, oppure solo gli oggetti selezionati, o tutti gli oggetti.
+### Target {#target}
+Stabilisce se il wireframe viene mostrato sugli oggetti non selezionati, solo su quelli selezionati, o su tutti gli oggetti.
 
 ### Nascondi {#hide}
-Imposta se il wireframe verrà comunque mostrato per i poligoni nascosti.
+Stabilisce se il wireframe viene mostrato anche per i poligoni nascosti.
 
 ### Multirisoluzione: solo livello 0 {#multiresolution-level-0-only}
-La multirisoluzione mostrerà i wireframe per il livello 0 più scuri e i livelli più alti progressivamente più chiari. Quando abilitata, questa opzione mostrerà solo il wireframe del livello 0.
+Con la multirisoluzione, il wireframe del livello 0 è più scuro e quello dei livelli superiori via via più chiaro. Quando è attiva, questa opzione mostra solo il wireframe del livello 0.
 
 ### Colore {#wireframe-color}
-Imposta colore e opacità del wireframe.
+Imposta il colore e l'opacità del wireframe.
 
 ## ![](/icons/grid.webp) Griglia {#grid}
 ![](/images/settings_grid.webp)
 Attiva la griglia.
 
+### Aggancio {#snap}
+Queste opzioni fanno agganciare i punti degli strumenti basati su curve e forme (`Lathe`, `Tubo`, forme a poligono e a tracciato...) mentre li disegni:
+
+* `Aggancia alla griglia` - si aggancia alla griglia.
+* `Aggancia ai punti (vista allineata)` - si aggancia ai punti esistenti vicini quando la fotocamera è allineata a un asse.
+* `Aggancia ai punti (visualizzazione libera)` - si aggancia ai punti esistenti vicini quando la fotocamera non è allineata.
+
 ### Colore {#grid-color}
-Imposta colore e opacità della griglia.
+Imposta il colore e l'opacità della griglia. Queste opzioni compaiono quando la griglia è visibile.
 
-### Aggancia {#snap}
-Abilita lo snap alla griglia per gli strumenti basati su curve.
+`Vignettatura` sfuma la griglia verso i bordi. `Soglia di divisione della griglia` imposta, in pixel, quanto possono infittirsi le linee della griglia sullo schermo prima che la griglia passi a un altro livello di suddivisione.
 
-## ![](/icons/culling.webp)Due lati {#two-sided}
-Abilita la visualizzazione delle facce dei poligoni da entrambi i lati.
+## ![](/icons/culling.webp)Dai due lati {#two-sided}
+Permette di vedere le facce dei poligoni da entrambi i lati.
 
-### Colore retro, Colore retro {#backface-color}
-Abilita la colorazione dei retro e il colore della tinta.
+### Colore lato posteriore {#backface-color}
+`Lato posteriore colorato` attiva la colorazione del lato posteriore delle facce, e `Colore lato posteriore` ne imposta il colore.
 
-## ![](/icons/outline.webp)Contorno {#outline}
-Abilita un contorno attorno all’oggetto attivo.
+## ![](/icons/outline.webp)Bordato {#outline}
+Attiva un contorno attorno agli oggetti selezionati.
 
-### Colore contorno, Spessore {#outline-color-thickness}
-Imposta il colore e lo spessore del contorno.
+### Colore del contorno, Spessore {#outline-color-thickness}
+Imposta il colore e lo `Spessore` del contorno.
 
 
-## ![](/icons/bang.webp) Evidenzia {#highlight}
-Abilita un breve lampeggio quando l’oggetto attivo viene cambiato.
+## ![](/icons/bang.webp) Evidenziazione {#highlight}
+Attiva un breve lampo quando la selezione cambia.
 ### Colore, Durata {#color-duration}
-Imposta il colore e la durata del lampeggio in millisecondi.
+Imposta il colore e la durata del lampo in millisecondi.
 
-## ![](/icons/snap_cube.webp) Cubo di aggancio {#snap-cube}
+## ![](/icons/snap_cube.webp) Cubo a scatto {#snap-cube}
 ![](/images/settings_snapcube.webp)
 
-Mostra un’icona di supporto nell’angolo della scena, utile per passare rapidamente tra le viste fronte/retro/sinistra/destra/alto/basso. Tocca i lati del cubo per passare tra le viste ortografiche.
+Mostra un'icona di aiuto nell'angolo della scena, utile per passare rapidamente tra le viste frontale/posteriore/sinistra/destra/superiore/inferiore. Tocca i lati del cubo per passare da una vista ortografica all'altra.
 
 ### Forma {#shape}
-Scegli tra una forma a cubo, sfera o gnomone per il cubo di scatto.
+Scegli tra una sfera, un cubo o uno gnomone come forma del cubo a scatto.
 
-### Limita allineamento {#restrict-alignment}
-Abilita il blocco della rotazione della camera quando trascini sul cubo di scatto. Quando è attivo, un movimento di trascinamento sul cubo di scatto andrà solo a sinistra/destra o su/giù.
+### Restringi allineamento {#restrict-alignment}
+Allinea le viste di aggancio agli assi del mondo. Quando è attivo, sono possibili solo le 6 viste principali. Su `Auto`, questa restrizione vale solo quando la fotocamera è in modalità `Piattaforma girevole`.
 
-### Dimensione {#size}
-Imposta la dimensione del cubo di scatto.
+### Dimensioni {#size}
+Imposta la dimensione del cubo a scatto.
 
-### Capovolgi 180 {#flip-180}
-Abilita un comportamento al tocco per cui, se la vista è bloccata, toccando il centro del cubo la vista ruoterà di 180 gradi. Per esempio, se la vista è bloccata sul fronte, toccando il cubo di vista ruoterai alla vista posteriore.
+### Ribalta 180° {#flip-180}
+Attiva un comportamento al tocco: se la vista è agganciata, toccando il centro del cubo la vista ruota di 180 gradi. Per esempio, se la vista è agganciata di fronte, toccando il cubo passi alla vista posteriore.
+
+### Bordi e angoli {#edges-corners}
+Aggiunge viste di aggancio sugli spigoli e sugli angoli del cubo (le zone ambrate). Non disponibile con la forma a gnomone.
+
+### Trascinamento a piattaforma girevole {#turntable-drag}
+Trascinando il cubo la vista ruota senza rollio della fotocamera, e si ferma su ogni vista di aggancio. Disattivalo per trascinare il cubo con la rotazione `Trackball`. In entrambi i casi il trascinamento resta orizzontale o verticale. Con una fotocamera in modalità `Piattaforma girevole`, il cubo si trascina sempre in questo modo.
 
 ### Posizione {#snap-position}
-Imposta in quale angolo sarà il cubo di scatto.
+Imposta in quale angolo si trova il cubo a scatto.
 
 
-## ![](/icons/edit_radius_n.webp) Statistiche {#stats}
+## ![](/icons/list.webp) Statistiche {#stats}
 ![](/images/settings_stats.webp)
 
-Mostra informazioni sulla memoria di sistema, il conteggio totale dei vertici della scena e il conteggio dei vertici della selezione corrente.
+Mostra informazioni sulla memoria del sistema, sul numero totale di vertici della scena e sul numero di vertici della selezione attuale.
 
 ### Posizione {#stats-position}
-Imposta in quale angolo saranno le statistiche.
+Imposta in quale angolo si trovano le statistiche.
 
-## Primitive/Ripetitori {#primitive-repeaters}
-## Inserimento numerico {#gizmo-input}
-Consenti l’input numerico quando si toccano i widget del gizmo.
+## ![](/icons/edit_radius.webp) Maniglia {#handle}
+Impostazioni per le maniglie che trascini nella vista, come il gizmo.
 
-## Multirisoluzione {#multires}
-### Conteggio massimo vertici {#multires-lowres-count}
-Imposta una soglia per non consentire un’operazione di suddivisione multirisoluzione oltre questo numero di poligoni, che probabilmente manderebbe in crash Nomad. Il valore predefinito è 10 milioni.
-### Soglia bassa risoluzione {#multires-lowres-threshold}
-Una risoluzione più bassa della mesh può essere visualizzata quando muovi la camera. Puoi aumentare questo valore se vuoi visualizzare una risoluzione più alta della mesh.
+### Inserimento numerico {#gizmo-input}
+Consente di inserire valori numerici toccando uno dei controlli del gizmo.
+
+### Nascondi durante l'interazione {#hide-on-interaction}
+Sfuma il gizmo mentre interagisci con esso, così non ti intralcia.
+
+### ![](/icons/opacity.webp) Opacità {#handle-opacity}
+L'opacità delle maniglie.
+
+## ![](/icons/shape_lasso.webp) Forma {#shape-settings}
+L'aspetto sullo schermo delle forme che disegni con i tratti a forma (lazo, rettangolo, curva...).
+
+### ![](/icons/opacity.webp) Riempimento, Contorno {#shape-fill-outline}
+L'opacità dell'interno della forma e della linea che la circonda.
+
+### Colori {#shape-colors}
+Il colore della forma per ogni tipo di strumento: `Maschera`, `Nascondi`, `Gruppo di facce` e `Rifila`.
+
+## ![](/icons/array.webp) Ripetitori {#primitive-repeaters}
+Limiti per le copie create dai [ripetitori](scene#repeaters) (array, radiale, curva, superficie). Mantengono Nomad reattivo quando un ripetitore sfugge di mano.
+
+### ![](/icons/cube.webp) Max copie {#repeater-max-copies}
+Il numero massimo di copie create da un singolo ripetitore. Nomad fatica con molti oggetti, qualunque sia la loro dimensione.
+
+### ![](/icons/cube.webp) Copie nella scena {#repeater-scene-copies}
+Il budget di copie per tutta la scena. Una copia low poly costa poca geometria ma resta un oggetto completo, quindi è questo il limite che le copie piccole raggiungono per primo.
+
+### ![](/icons/triangle.webp) Facce max {#repeater-max-faces}
+Il budget di facce per tutte le copie della scena. Oltre questo limite, gli oggetti più pesanti perdono copie per primi.
+
+## ![](/icons/multires.webp) Multirisoluzione {#multires}
+### Numero massimo di vertici {#multires-lowres-count}
+Imposta una soglia che impedisce una suddivisione multires oltre questo numero di vertici, che probabilmente farebbe crashare Nomad: Nomad non controlla la memoria disponibile prima di suddividere. Il valore predefinito è 10 milioni.
+### Soglia di bassa risoluzione {#multires-lowres-threshold}
+Quando muovi la fotocamera può essere mostrata una versione a risoluzione più bassa della mesh. Puoi aumentare questo valore se vuoi vedere la mesh a una risoluzione più alta.
 
 ## Impostazioni {#advanced}
-### Ripristina impostazioni predefinite {#reset}
-Ripristina tutte le impostazioni ai valori predefiniti.
+### ![](/icons/reset.webp) Ripristina valori predefiniti {#reset}
+Riporta tutte le preferenze dell'app ai valori predefiniti.
+
+Alcune risorse sono salvate a parte e NON vengono ripristinate: progetti, scorciatoie da tastiera, preset degli strumenti, ambienti HDR, MatCap, alfa, texture dei pennelli e immagini di riferimento. Anche tutto ciò che è salvato con il progetto, come illuminazione, post processing o viste della fotocamera, resta intatto.

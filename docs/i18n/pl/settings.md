@@ -1,187 +1,245 @@
 # ![](/icons/cog.webp) Ustawienia {#reset-to-default}
 
-Menu ustawień zawiera wiele opcji kontrolujących wygląd i zachowanie Nomad.
+Menu ustawień zawiera wiele opcji, które określają wygląd i działanie Nomad.
 
 ![](/images/settings_overview.webp)
 
+Rząd przycisków u góry menu przenosi od razu do wybranej sekcji: `Kursor`, `Wskaźnik`, `Drut`, `Siatka`, `Dwustronny`, `Kontur`, `Wyróżnianie`, `Kostka orientacji`, `Statystyki`, `Uchwyty`, `Kształt`, `Repeatery` i `Multirezolucja`.
+
 ## Ustawienia wyświetlania {#display-settings}
-Ta sekcja zawiera skróty szybkiego uruchamiania do większości ustawień znajdujących się niżej w tym menu.
+Ta sekcja zawiera skróty do większości ustawień opisanych niżej w tym menu.
 
 ![](/images/settings_display_settings.webp)
 
-### Gładkie cieniowanie {#smooth-shading}
-Przełączanie między gładkim a fasetowym cieniowaniem. Przy cieniowaniu fasetowym poligony są cieniowane niezależnie, dzięki czemu widać ich topologię.
-Może być przydatne oglądanie fasetowego cieniowania podczas rzeźbienia, a następnie przełączenie na gładkie cieniowanie do renderingu.
+### ![](/icons/sphere_smooth.webp) Płynne cieniowanie {#smooth-shading}
+Przełącza między cieniowaniem płynnym i fasetowym. Przy cieniowaniu fasetowym wielokąty są cieniowane niezależnie, więc widać topologię siatki.
+Cieniowanie fasetowe przydaje się na etapie rzeźbienia, a do renderowania możesz przełączyć się na płynne.
 
-Wyłączenie gładkiego cieniowania nieco poprawia wydajność.
+Wyłączenie płynnego cieniowania nieznacznie poprawia wydajność.
 
-### Obrys {#outline-quick}
-Przełącz obrys aktualnie zaznaczonego obiektu.
+### ![](/icons/outline.webp) Kontur {#outline-quick}
+Włącza lub wyłącza kontur wokół bieżącego zaznaczenia.
 
-Jest to przydatne, aby uzyskać wizualną informację zwrotną o aktualnie zaznaczonej siatce(-ach) w przypadku, gdy [Przyciemnij niezaznaczone](#darken-unselected-objects) jest wyłączone.
+Przydaje się, aby widzieć, które siatki są zaznaczone, gdy opcja [Przyciemnij niezaznaczone](#darken-unselected-objects) jest wyłączona.
 
-Z punktu widzenia wydajności używanie [Przyciemnij niezaznaczone](#darken-unselected-objects) jest znacznie lepsze niż używanie obrysu.
+Pod względem wydajności opcja [Przyciemnij niezaznaczone](#darken-unselected-objects) jest znacznie lepsza niż kontur.
 
-### Siatka {#grid-quick}
-Przełącz siatkę w tle, przydatną do zrozumienia położenia i skali obiektów.
+### ![](/icons/grid.webp) Siatka {#grid-quick}
+Włącza lub wyłącza siatkę w tle, która pomaga ocenić położenie i skalę obiektów.
 
-### Dwustronne {#two-sided-quick}
-Przełącz dwustronne wyświetlanie poligonów. Wszystkie ściany są skierowane w pewnym kierunku.
-Ściany uznawane za *tylną stronę* to te, które są skierowane „od” punktu widzenia kamery.
+### ![](/icons/culling.webp) Dwustronny {#two-sided-quick}
+Włącza lub wyłącza wyświetlanie wielokątów z obu stron. Każda ścianka jest skierowana w określoną stronę.
+Ścianki uznawane za *tylne* to te, które są zwrócone „od” punktu widzenia kamery.
 
-Na przykład startowa prosta kula ma ściany skierowane na zewnątrz.
-Jeśli przesuniesz kamerę do wnętrza kuli, zobaczysz tylną stronę tych ścian.
+Na przykład ścianki prostej kuli startowej są skierowane na zewnątrz.
+Jeśli przesuniesz kamerę do wnętrza kuli, zobaczysz tylne strony tych ścianek.
 
-Najczęściej nie powinieneś widzieć tylnej strony ścian, więc ich kolorowanie może pomóc wykryć potencjalne problemy lub nieprawidłową topologię.
+Zwykle tylne strony ścianek nie powinny być widoczne, więc ich pokolorowanie pomaga wykryć potencjalne problemy lub nieprawidłową topologię.
 
-Wyłączenie renderowania `dwustronnego` może nieco poprawić wydajność renderowania.
+Wyłączenie renderowania `Dwustronny` może nieco poprawić wydajność renderowania.
 
 
-### Szkielet (Wireframe) {#wireframe-quick}
-Przełącz nakładkę szkieletu siatki. 
+### ![](/icons/wireframe.webp) Szkielet {#wireframe-quick}
+Włącza lub wyłącza nakładkę szkieletu.
 
-Pamiętaj, że włączenie szkieletu obniży wydajność.
+Pamiętaj, że włączenie szkieletu obniża wydajność.
 
-### Kostka wyrównania (Snap cube) {#snap-cube-quick}
-Przełącz pomocniczą ikonę w rogu sceny, przydatną do orientowania się w przestrzeni i szybkiego przełączania między widokami przód/tył/lewo/prawo/góra/dół.
+### ![](/icons/snap_cube.webp) Kostka orientacji {#snap-cube-quick}
+Włącza lub wyłącza ikonę pomocniczą w rogu sceny, która ułatwia orientację w przestrzeni i szybkie przełączanie między widokami z przodu, z tyłu, z lewej, z prawej, z góry i z dołu.
 
-### Pokaż malowanie {#show-painting}
-Przełącz wyświetlanie malowania. Domyślnie używany jest biały, niemetaliczny materiał o szorstkości 25%.
+### ![](/icons/palette.webp) Pokaż malowanie {#show-painting}
+Włącza lub wyłącza wyświetlanie malowania. Gdy jest wyłączone, obiekty są wyświetlane z białym, niemetalicznym materiałem o chropowatości 25%, zamiast ich malowania.
 
-### Użyj ukrywania {#use-hide}
-Przełącz tryb ukrywania. Gdy jest wyłączony, nadal istnieje, tylko jest nieaktywny. Ten przycisk jest wyłączony, jeśli aktualnie używasz narzędzia ukrywania.
+### ![](/icons/tool_hide.webp) Użyj funkcji Ukryj {#use-hide}
+Włącza lub wyłącza tryb ukrywania. Po wyłączeniu ukrycie nadal istnieje, jest tylko nieaktywne. Ten przycisk jest niedostępny, gdy używasz narzędzia ukrywania.
 
-### Pokaż maskę {#show-mask}
-Przełącz tryb maski. Gdy jest wyłączony, nadal istnieje, tylko jest nieaktywny. Naciśnij ten przycisk ponownie, aby go ponownie włączyć.
+### ![](/icons/shield.webp) Pokaż maskę {#show-mask}
+Włącza lub wyłącza tryb maski. Po wyłączeniu maska nadal istnieje, jest tylko nieaktywna. Naciśnij ten przycisk ponownie, aby ją przywrócić.
 
-Jeśli musisz ukryć maskę I nadal mieć ją aktywną, użyj koloru maski poniżej i ustaw go na biały. Pamiętaj, aby po zakończeniu zmienić go z powrotem na szary!
+Jeśli chcesz ukryć maskę, ALE zachować jej działanie, ustaw poniżej kolor maski na biały. Pamiętaj, aby potem przywrócić szary!
 
-Zwróć uwagę, że ten przycisk jest wyłączony, jeśli aktualnie używasz narzędzia maski. 
+Ten przycisk jest niedostępny, gdy używasz narzędzia maski.
 
-### Maska -> Nieprzezroczysta {#mask-opaque}
-Maska -> nieprzezroczysta zignoruje przezroczyste wierzchołki dla zamaskowanej maski. Ma to znaczenie tylko dla przezroczystości wierzchołków i tekstur; ściany ukryte przez „ukryj” nadal będą ukryte.
+### ![](/icons/shield.webp) Maska → Nieprzezroczysty {#mask-opaque}
+`Maska → Nieprzezroczysty` ignoruje przezroczyste wierzchołki w zamaskowanym obszarze. Dotyczy to tylko krycia wierzchołków i tekstur: ścianki ukryte funkcją „ukryj” pozostają ukryte. Opcja jest dostępna tylko wtedy, gdy włączone jest `Pokaż maskę`.
 
-### Podświetlenie {#highlight-quick}
-Przełącz błysk podświetlenia zaznaczenia. Przy zaznaczaniu obiektów wybrany obiekt jest tymczasowo podświetlany jaskrawym różem przez 500 milisekund. Kolor i długość błysku można dostosować poniżej.
+### ![](/icons/bang.webp) Wyróżnianie {#highlight-quick}
+Włącza lub wyłącza błysk wyróżnienia zaznaczenia. Przy zaznaczaniu obiektów zaznaczony obiekt na chwilę błyska przez 500 milisekund. Kolor i długość błysku możesz zmienić poniżej.
 
-### Statystyki {#stats-quick}
-Przełącz wyświetlanie tekstu statusu w widoku 3D. Wyświetla on informacje o pamięci systemowej, całkowitej liczbie wierzchołków w scenie oraz liczbie wierzchołków aktualnego zaznaczenia.
+### ![](/icons/list.webp) Statystyki {#stats-quick}
+Włącza lub wyłącza tekst stanu w widoku 3d. Pokazuje on informacje o pamięci systemu, łącznej liczbie wierzchołków w scenie i liczbie wierzchołków bieżącego zaznaczenia.
 
 ----- 
 
-### Przyciemnij niezaznaczone obiekty {#darken-unselected-objects}
-Obiekty, które nie są zaznaczone, zostaną przyciemnione, aby aktualne zaznaczenie bardziej się wyróżniało.
+### ![](/icons/cube.webp) Przyciemnij niezaznaczone obiekty {#darken-unselected-objects}
+Niezaznaczone obiekty są przyciemniane, aby bieżące zaznaczenie się wyróżniało.
 
-### Maska {#mask}
-Kolor używany do maskowania, domyślnie średnia szarość, mnożony przez kolor obiektu. Ustaw na biały, aby maska była niewidoczna, ale pamiętaj, aby po zakończeniu zmienić go z powrotem na szary!
+### ![](/icons/shield.webp) Maska {#mask}
+Kolor maskowania, domyślnie średnioszary, mnożony z kolorem obiektu. Ustaw go na biały, aby maska była niewidoczna, ale pamiętaj, aby potem przywrócić szary!
 
 ## ![](/icons/cursor.webp) Kursor {#cursor}
 
-### Pokaż okrąg podczas rzeźbienia {#show-circle-while-sculpting}
-Kontynuuj wyświetlanie promienia pędzla podczas rzeźbienia.
+### Okrąg {#show-circle-while-sculpting}
+Kiedy pokazywać okrąg promienia pędzla:
+
+* `Auto` - pokazuje okrąg, ale ukrywa go podczas rzeźbienia.
+* `Nie` - nigdy nie pokazuje okręgu.
+* `Tak` - zawsze pokazuje okrąg, także podczas rzeźbienia.
 
 ### Pokaż małą kropkę {#show-small-dot}
-Wyświetl kropkę w centrum pociągnięcia pędzla podczas rzeźbienia lub gdy zmieniany jest punkt obrotu kamery.
+Wyświetla kropkę w środku pociągnięcia pędzla podczas rzeźbienia albo gdy zmienia się punkt obrotu kamery.
 
 ### Pokaż stabilizator liny {#show-rope-stabilizer}
-Rysuj linię wskazującą długość liny, gdy w ustawieniach pociągnięcia aktywny jest stabilizator „lazy rope”.
+Rysuje linię pokazującą długość liny, gdy w ustawieniach pociągnięcia aktywny jest [Stabilizator powolnej liny](stroke.md#lazy-rope-stabilizer).
+
+### Pokaż wskazówkę przechyłu {#show-roll-hint}
+Pokazuje prowadnicę kierunku przechyłu, gdy używasz skrótu klawiszowego przechyłu.
+
+### ![](/icons/radius.webp) Rozmiar {#dot-size}
+Rozmiar małej kropki.
+
+### Kolory {#cursor-colors}
+Kursor zmienia kolor w zależności od tego, co robisz: `Rzeźbienie`, `Tło` (gdy kursor jest nad tłem), `Maska`, `Gładkie`, `Kamera` i `Promień`. Każdy z tych kolorów możesz tutaj dostosować.
 
 ## ![](/icons/cursor.webp) Wskaźnik {#indicator}
 ![](/images/settings_indicator.webp)
 
-Wyświetlaj wizualny wskaźnik(-i) na potrzeby samouczków i nagrań ekranu.
+Wyświetla wskaźniki wizualne na potrzeby poradników i nagrań ekranu. Ustaw na `Tak`, aby go włączyć (na iOS jest też opcja `Auto`).
 
-Przyciski `Finger`, `Stylus` i `Mouse` włączą wyświetlanie ikony, gdy wykryty zostanie dany typ wejścia.
+Przyciski `Palec`, `Piórko` i `Mysz` włączają wyświetlanie ikony po wykryciu danego rodzaju wejścia.
 
 ### Kolor {#indicator-color}
 Kolor wskaźnika.
 
-### Rozmiar/Ikona/Okrąg {#indicator-shape}
-Elementy sterujące do regulacji rozmiaru wskaźnika i kształtów wewnątrz wskaźnika.
+### Rozmiar/ikona/okrąg {#indicator-shape}
+Ustawienia rozmiaru wskaźnika oraz krycia ikony i okręgu we wskaźniku.
 
-## ![](/icons/wireframe.webp) Szkielet (Wireframe) {#wireframe}
+## ![](/icons/wireframe.webp) Szkielet {#wireframe}
 ![](/images/settings_wireframe.webp)
-Aktywuj nakładkę szkieletu siatki.
+Włącza nakładkę szkieletu.
 
 ### Cel {#target}
-Ustaw, czy szkielet będzie widoczny dla obiektów niezaznaczonych, tylko zaznaczonych, czy wszystkich obiektów.
+Określa, czy szkielet pokazują niezaznaczone obiekty, tylko zaznaczone obiekty, czy wszystkie obiekty.
 
 ### Ukryj {#hide}
-Ustaw, czy szkielet będzie nadal wyświetlany dla ukrytych poligonów.
+Określa, czy szkielet jest nadal wyświetlany dla ukrytych wielokątów.
 
-### Multiresolution: tylko poziom 0 {#multiresolution-level-0-only}
-Multiresolution wyświetla szkielety dla poziomu 0 ciemniejsze, a wyższe poziomy stopniowo jaśniejsze. Po włączeniu tej opcji wyświetlany będzie tylko szkielet poziomu 0.
+### Multirezolucja: tylko poziom 0 {#multiresolution-level-0-only}
+Multirezolucja wyświetla szkielet poziomu 0 ciemniej, a wyższe poziomy coraz jaśniej. Gdy ta opcja jest włączona, wyświetlany jest tylko szkielet poziomu 0.
 
 ### Kolor {#wireframe-color}
-Ustaw kolor i przezroczystość szkieletu.
+Ustawia kolor i krycie szkieletu.
 
 ## ![](/icons/grid.webp) Siatka {#grid}
 ![](/images/settings_grid.webp)
-Aktywuj siatkę.
+Włącza siatkę.
+
+### Przyciągnij {#snap}
+Te opcje sprawiają, że punkty narzędzi opartych na krzywych i kształtach (`Bryła obrotowa`, `Rura`, kształty wielokątów i ścieżek...) są przyciągane podczas rysowania:
+
+* `Przyciągaj do siatki` - przyciąga do siatki.
+* `Przyciągaj do punktów (widok wyrównany)` - przyciąga do pobliskich istniejących punktów, gdy kamera jest wyrównana do osi.
+* `Przyciągaj do punktów (widok dowolny)` - przyciąga do pobliskich istniejących punktów, gdy kamera nie jest wyrównana.
 
 ### Kolor {#grid-color}
-Ustaw kolor i przezroczystość siatki.
+Ustawia kolor i krycie siatki. Te opcje pojawiają się, gdy siatka jest widoczna.
 
-### Przyciąganie {#snap}
-Włącz przyciąganie do siatki dla narzędzi opartych na krzywych.
+`Winieta` stopniowo wygasza siatkę w stronę jej krawędzi. `Próg podziału siatki` określa w pikselach, jak gęsto linie siatki mogą leżeć na ekranie, zanim siatka przełączy się na inny poziom podziału.
 
-## ![](/icons/culling.webp)Two sided {#two-sided}
-Włącz widoczność ścian poligonów z obu stron.
+## ![](/icons/culling.webp)Dwustronny {#two-sided}
+Pozwala widzieć ścianki wielokątów z obu stron.
 
-### Kolor tylnej ściany, kolor tylnej ściany {#backface-color}
-Włącz barwienie tylnej strony ścian oraz ustaw kolor tego zabarwienia.
+### Kolor tylnej powierzchni {#backface-color}
+`Kolorowa powierzchnia tylna` włącza zabarwienie tylnych stron ścianek, a `Kolor tylnej powierzchni` ustawia kolor zabarwienia.
 
-## ![](/icons/outline.webp)Outline {#outline}
-Włącz obrys wokół aktywnego obiektu.
+## ![](/icons/outline.webp)Kontur {#outline}
+Włącza kontur wokół zaznaczonych obiektów.
 
-### Kolor obrysu, grubość {#outline-color-thickness}
-Ustaw kolor i grubość obrysu.
+### Kolor konturu, grubość {#outline-color-thickness}
+Ustawia kolor i `Grubość` konturu.
 
 
-## ![](/icons/bang.webp) Podświetlenie {#highlight}
-Włącz krótki błysk, gdy aktywny obiekt zostanie zmieniony.
+## ![](/icons/bang.webp) Wyróżnianie {#highlight}
+Włącza krótki błysk przy zmianie zaznaczenia.
 ### Kolor, czas trwania {#color-duration}
-Ustaw kolor i czas trwania błysku w milisekundach.
+Ustawia kolor i czas trwania błysku w milisekundach.
 
-## ![](/icons/snap_cube.webp) Kostka wyrównania (Snap cube) {#snap-cube}
+## ![](/icons/snap_cube.webp) Kostka orientacji {#snap-cube}
 ![](/images/settings_snapcube.webp)
 
-Wyświetl pomocniczą ikonę w rogu sceny, przydatną do szybkiego przełączania między widokami przód/tył/lewo/prawo/góra/dół. Stuknij w boki kostki, aby przełączać się między widokami ortograficznymi.
+Wyświetla ikonę pomocniczą w rogu sceny, która pozwala szybko przełączać się między widokami z przodu, z tyłu, z lewej, z prawej, z góry i z dołu. Stuknij boki kostki, aby przełączać się między widokami ortograficznymi.
 
 ### Kształt {#shape}
-Wybierz między kostką, kulą lub kształtem gnomonu dla kostki przyciągania.
+Wybierz kulę, sześcian albo gnomon jako kształt kostki orientacji.
 
 ### Ogranicz wyrównanie {#restrict-alignment}
-Włącz blokadę obrotu kamery podczas przeciągania na kostce przyciągania. Gdy jest aktywna, ruch przeciągania na kostce będzie odbywał się tylko w lewo/prawo lub góra/dół.
+Wyrównuje widoki przyciągania do osi świata. Gdy ta opcja jest włączona, możliwych jest tylko 6 głównych widoków. Przy `Auto` to ograniczenie działa tylko wtedy, gdy kamera jest w trybie `Obrotnica`.
 
 ### Rozmiar {#size}
-Ustaw rozmiar kostki przyciągania.
+Ustawia rozmiar kostki orientacji.
 
-### Obróć o 180 {#flip-180}
-Włącz zachowanie stuknięcia tak, aby jeśli widok jest przyciągnięty, stuknięcie w środek kostki obróciło widok o 180 stopni. Na przykład, jeśli widok jest przyciągnięty do przodu, stuknięcie kostki widoku obróci go do widoku z tyłu.
+### Obróć o 180° {#flip-180}
+Włącza takie działanie stuknięcia, że gdy widok jest przyciągnięty, stuknięcie środka kostki obraca widok o 180 stopni. Na przykład gdy widok jest przyciągnięty z przodu, stuknięcie kostki obraca go do widoku z tyłu.
+
+### Krawędzie i narożniki {#edges-corners}
+Dodaje widoki przyciągania na krawędziach i narożnikach kostki (bursztynowe strefy). Niedostępne dla kształtu gnomona.
+
+### Przeciąganie w trybie obrotnicy {#turntable-drag}
+Przeciąganie kostki obraca widok bez przechylania kamery i zatrzymuje się na każdym widoku przyciągania. Wyłącz tę opcję, aby przeciągać kostkę z obrotem `Trackball`. W obu przypadkach przeciąganie odbywa się poziomo lub pionowo. Przy kamerze w trybie `Obrotnica` kostka zawsze przeciąga się w ten sposób.
 
 ### Pozycja {#snap-position}
-Ustaw, w którym rogu będzie znajdować się kostka przyciągania.
+Określa, w którym rogu znajduje się kostka orientacji.
 
 
-## ![](/icons/edit_radius_n.webp) Statystyki {#stats}
+## ![](/icons/list.webp) Statystyki {#stats}
 ![](/images/settings_stats.webp)
 
-Wyświetl informacje o pamięci systemowej, całkowitej liczbie wierzchołków w scenie oraz liczbie wierzchołków aktualnego zaznaczenia.
+Wyświetla informacje o pamięci systemu, łącznej liczbie wierzchołków w scenie i liczbie wierzchołków bieżącego zaznaczenia.
 
 ### Pozycja {#stats-position}
-Ustaw, w którym rogu będą wyświetlane statystyki.
+Określa, w którym rogu wyświetlane są statystyki.
 
-## Prymityw/Powielacze {#primitive-repeaters}
-## Wejście numeryczne {#gizmo-input}
-Zezwól na wprowadzanie wartości liczbowych po stuknięciu w uchwyty gizma.
+## ![](/icons/edit_radius.webp) Uchwyt {#handle}
+Ustawienia uchwytów przeciąganych w widoku, takich jak gizmo.
 
-## Multiresolution {#multires}
-### Maksymalna liczba wierzchołków {#multires-lowres-count}
-Ustaw próg, powyżej którego nie będzie można wykonać operacji podziału multires powyżej tej liczby poligonów, co prawdopodobnie spowodowałoby awarię Nomad. Domyślnie jest to 10 milionów.
+### Wprowadzanie numeryczne {#gizmo-input}
+Pozwala wpisywać wartości liczbowe po stuknięciu jednego z elementów sterujących gizmo.
+
+### Ukryj przy interakcji {#hide-on-interaction}
+Wygasza gizmo podczas korzystania z niego, aby nie przeszkadzało.
+
+### ![](/icons/opacity.webp) Krycie {#handle-opacity}
+Krycie uchwytów.
+
+## ![](/icons/shape_lasso.webp) Kształt {#shape-settings}
+Jak na ekranie wyglądają kształty rysowane pociągnięciami kształtów (lasso, prostokąt, krzywa...).
+
+### ![](/icons/opacity.webp) Wypełnienie, obrys {#shape-fill-outline}
+Krycie wnętrza kształtu i linii wokół niego.
+
+### Kolory {#shape-colors}
+Kolor kształtu dla każdego rodzaju narzędzia: `Maska`, `Ukryj`, `Grupa powierzchni` i `Przytnij`.
+
+## ![](/icons/array.webp) Repeatery {#primitive-repeaters}
+Limity kopii tworzonych przez [repeatery](scene#repeaters) (szyk, radialny, krzywa, powierzchnia). Dzięki nim Nomad pozostaje responsywny, gdy repeater wymknie się spod kontroli.
+
+### ![](/icons/cube.webp) Maks. kopii {#repeater-max-copies}
+Największa liczba kopii tworzonych przez jeden repeater. Nomad źle radzi sobie z dużą liczbą obiektów, bez względu na ich rozmiar.
+
+### ![](/icons/cube.webp) Kopie w scenie {#repeater-scene-copies}
+Limit kopii dla całej sceny. Kopia o małej liczbie wielokątów kosztuje niewiele geometrii, ale nadal jest pełnym obiektem, więc małe kopie osiągają najpierw właśnie ten limit.
+
+### ![](/icons/triangle.webp) Maks. liczba powierzchni {#repeater-max-faces}
+Limit ścianek dla wszystkich kopii w scenie. Po jego przekroczeniu kopie tracą najpierw najcięższe obiekty.
+
+## ![](/icons/multires.webp) Multirezolucja {#multires}
+### Maks. liczba wierzchołków {#multires-lowres-count}
+Ustawia próg, powyżej którego operacja podziału multirezolucji nie jest dozwolona, bo taka liczba wierzchołków najpewniej spowodowałaby awarię Nomad: Nomad nie sprawdza dostępnej pamięci przed podziałem. Wartość domyślna to 10 milionów.
 ### Próg niskiej rozdzielczości {#multires-lowres-threshold}
-Niższa rozdzielczość siatki może być wyświetlana podczas poruszania kamerą. Możesz zwiększyć tę wartość, jeśli chcesz wyświetlać siatkę w wyższej rozdzielczości.
+Podczas poruszania kamerą może być wyświetlana siatka w niższej rozdzielczości. Możesz zwiększyć tę wartość, jeśli chcesz wyświetlać siatkę w wyższej rozdzielczości.
 
 ## Ustawienia {#advanced}
-### Przywróć domyślne {#reset}
-Przywróć wszystkie ustawienia do wartości domyślnych.
+### ![](/icons/reset.webp) Przywróć domyślne {#reset}
+Przywraca wszystkie preferencje aplikacji do wartości domyślnych.
+
+Niektóre zasoby są zapisywane osobno i NIE są resetowane: projekty, skróty klawiszowe, ustawienia wstępne narzędzi, otoczenia HDR, MatCapy, alfy, tekstury pędzli i obrazy referencyjne. Wszystko, co jest zapisane w projekcie, na przykład oświetlenie, postprocessing czy widoki kamery, również pozostaje nienaruszone.

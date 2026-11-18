@@ -1,250 +1,233 @@
-# ![](/icons/faq.webp) FAQ {#faq}
+# ![](/icons/faq.webp) Vanliga frågor {#faq}
 
 [[toc]]
 
 ## Plattform {#platform}
-### Var finns mina projekt lagrade på min enhet? {#locate}
-Projekten finns i mappen `projects` inuti huvudmappen Nomad.
+### Var finns mina projekt på min enhet? {#locate}
+Projekten finns i mappen `projects` i Nomads huvudmapp.
 
-På iOS kan du komma åt Nomad-mappen via appen Filer.
+På iOS kommer du åt Nomad-mappen med appen Filer.
 
-På Android finns Nomad-mappen i `Android/data/com.stephaneginier.nomad/files/`.  
-På de senaste Android-versionerna (10/11) har du inte längre åtkomst till mappen `Android/data`.
+På Android ligger Nomad-mappen i `Android/data/com.stephaneginier.nomad/files/`.  
+I de senaste Android-versionerna (10/11) har du inte längre tillgång till mappen `Android/data`.
 Du kan komma åt den via en separat app, till exempel [den här](https://play.google.com/store/apps/details?id=com.mi.android.globalFileexplorer).
 <!-- [this one](https://play.google.com/store/apps/details?id=com.alphainventor.filemanager) -->
 <!-- [this one](https://play.google.com/store/apps/details?id=com.mi.android.globalFileexplorer) -->
 
-### Finns det något sätt att beta‑testa? {#beta}
-För Windows & MacOS kan en beta finnas tillgänglig på [hemsidan](https://nomadsculpt.com).
+### Kan jag betatesta? {#beta}
+För Windows och MacOS kan det finnas en betaversion på [hemsidan](https://nomadsculpt.com).
 <br>
-För iOS finns en privat TestFlight, besök [Discord](https://discord.com/invite/8h7BwpRz29) i kanalen #beta-ios.
+För iOS finns en privat TestFlight: gå till kanalen #beta-ios på [Discord](https://discord.com/invite/8h7BwpRz29).
 <br>
-[Webbdemon](https://nomadsculpt.com/demo) uppdateras vanligtvis med de senaste funktionerna.
+[Webbdemon](https://nomadsculpt.com/demo) uppdateras oftast med de senaste funktionerna.
 
-### Varför finns det en gratis provversion på Android men inte på iOS? {#android-trial}
-För att gamla Android-enheter är dåliga (och vissa nyare också...), och jag ville inte att folk skulle köpa appen och mötas av en svart skärm.
-Men huvudorsaken är att jag upplever att betalda Android-appar inte riktigt är normen.
+### Varför finns det en gratis provperiod på Android, men inte på iOS? {#android-trial}
+För att gamla Android-enheter är usla (och en del nya också...), och jag ville inte att folk skulle köpa appen och mötas av en svart skärm.
+Men huvudskälet är att jag upplevde att betalappar inte riktigt är normen på Android.
 
-### Vilken är den bästa surfplattan för att köra Nomad? {#best-tablet}
+### Vilken är den bästa surfplattan för Nomad? {#best-tablet}
 
-TLDR: En iPad.
+Kort svar: en iPad.
 
-Det lite längre svaret är 
+Det lite längre svaret är
 
-> "Den nyaste iPad du _har råd med_, om du inte verkligen hatar Apple, i så fall den nyaste Samsung-plattan du har råd med. Allt annat, testa först." 
+> "Den nyaste iPaden _du har råd med_, om du inte verkligen hatar Apple, i så fall den nyaste Samsung-plattan du har råd med. Allt annat: testa först."
 
-Folk vill alltid ha mer information, så här är en sammanfattning.
+Folk vill alltid ha mer information, så här kommer en sammanfattning.
 
 Nomad fungerar bäst på nyare iPads:
 
-* iPads och iPhones kan använda pluginet [Quad Remesher](tools#quad-remesher) från [Exoside](https://exoside.com/)
-* nyare iPads med senaste pennstödet har [barrel roll](https://www.youtube.com/watch?v=XcDQazDYpo0), du kan vrida pennan i vissa verktyg i Nomad. 
-* prestandan hos de senaste M-serie-chipen är mycket hög. 
+* iPads och iPhones har tillgång till insticksprogrammet [Quad Remesher](tools#quad-remesher) från [Exoside](https://exoside.com/)
+* nya iPads med den senaste pennan har stöd för [barrel roll](https://www.youtube.com/watch?v=XcDQazDYpo0): du kan vrida pennan i vissa verktyg i Nomad.
+* prestandan hos de senaste chippen i M-serien är mycket hög.
 
-Den nyaste och dyraste iPaden som finns kommer att kunna rendera slutbilder mycket snabbt och låta dig skulptera mycket detalj.
+Den nyaste och dyraste iPaden kan rendera slutliga bilder mycket snabbt och låter dig skulptera många detaljer.
 
-Men prestandafallet med billigare och äldre iPads är inte så stort som folk tror. Alla iPads som stöder Apple Pencil kör Nomad ganska bra. Till exempel:
+Men prestandan sjunker inte så mycket som folk tror med billigare och äldre iPads. Alla iPads som har stöd för Apple Pencil kör Nomad riktigt bra. Till exempel:
 
-* En iPad Pro från 2023 kan hantera skulpturer på 5 miljoner polygoner och ändå vara responsiv, en slutkvalitetsbild kan renderas på 5 sekunder.
-* En iPad Pro från 2015 kan hantera ett objekt på 1,2 miljoner polygoner med lite fördröjning, en slutkvalitetsbild kan renderas på 20 sekunder.
+* En iPad Pro från 2023 klarar skulpturer på 5 miljoner polygoner och är fortfarande följsam, och en bild i slutlig kvalitet renderas på 5 sekunder.
+* En iPad Pro från 2015 klarar ett objekt på 1,2 miljoner polygoner med lite fördröjning, och en bild i slutlig kvalitet renderas på 20 sekunder.
 
-Det är en stor prestandaskillnad, men du måste också ta hänsyn till priset:
+Det är en stor skillnad i prestanda, men du måste också ta hänsyn till priset:
 
-* iPad Pro 2025 kostar *2500 USD* ny med alla tillval. 
-* iPad Pro 2023 kostar för närvarande *400 USD* på eBay.
-* iPad Pro 2015 kostar *250 USD* på eBay.
+* iPad Pro från 2025 kostar *2500 USD* ny med alla tillval.
+* iPad Pro från 2023 kostar just nu *400 USD* på eBay.
+* iPad Pro från 2015 kostar *250 USD* på eBay.
 
-Är det värt 2100 dollar extra för 4 miljoner fler polys och att spara 15 sekunder? Det är upp till dig.
+Är 4 miljoner extra polygoner och 15 sparade sekunder värda 2100 dollar? Det får du avgöra själv.
 
-Icke-Pro-modeller kan vara ännu billigare och ge ett brett urval av storlekar och prestanda. Nuvarande iPad Air stöder gen 2-pennan med barrel roll och är avsevärt billigare än Pro. Andrahands- och renoveringsmarknaden har ännu fler alternativ. 
+Modeller som inte är Pro kan vara ännu billigare och finns i många olika storlekar och prestandanivåer. Den nuvarande iPad Air har stöd för andra generationens penna med barrel roll och är betydligt billigare än Pro. På andrahandsmarknaden och bland renoverade enheter finns ännu fler alternativ.
 
-Detta innebär att oavsett budget bör du kunna hitta en iPad som passar dig. Och kom ihåg att de flesta skulpturer inte är på miljoner polys! Om du kan hålla dig under 500 000 polys kommer även gamla iPads låta dig skulptera snabbt.
+Det betyder att du bör kunna hitta en iPad som passar dig, oavsett budget. Och kom ihåg att de flesta skulpturer inte har miljontals polygoner! Om du kan hålla dig under 500 000 polygoner låter även gamla iPads dig skulptera snabbt.
 
 `Hur är det med Android?`
 
-Grafikprestandan på Android ligger under iPads. Enligt Nomads utvecklare kommer "en Samsung Galaxy Tab S9 köra Nomad en storleksordning långsammare än en iPad Air". Med det sagt är många användare mycket nöjda med sina Samsung-plattor, Nomad fungerar bra för de flesta skulpteringsuppgifter. 
+Grafikprestandan på Android ligger under iPads. Enligt Nomads utvecklare "kör en Samsung Galaxy Tab S9 Nomad en storleksordning långsammare än en iPad Air". Med det sagt är många användare mycket nöjda med sina Samsung-plattor, och Nomad fungerar bra för det mesta skulpterandet.
 
-För andra Android-plattor, var försiktig. Android-hårdvara kan variera mycket i prestanda, det är inte lätt att förutse hur Nomad kommer att fungera.
+Var försiktig med andra Android-plattor. Prestandan hos Android-hårdvara varierar mycket, och det är inte lätt att förutsäga hur Nomad kommer att fungera.
 
-Använd den gratis, spar-inaktiverade versionen av Nomad för att testa först. 
+Använd den kostnadsfria versionen av Nomad, där sparning är avaktiverad, för att testa först.
 
 `Hur är det med minne och lagring?`
 
-De flesta Nomad-filer tenderar att vara 100 MB eller mindre. Det innebär att nästan vilken surfplatta du än köper idag, iPad eller Android, kommer ha gott om utrymme för dina Nomad-projekt.
+De flesta Nomad-filer är 100 MB eller mindre. Det betyder att nästan alla surfplattor du köper i dag, iPad eller Android, har gott om plats för dina Nomad-projekt.
 
 
-### Jag köpte Nomad för en enhet, kan jag använda den på en annan enhet? {#multi-devices}
-Så länge den använder samma appbutik och samma konto, ja.
+### Jag köpte Nomad till en enhet, kan jag använda den på en annan? {#multi-devices}
+Ja, så länge den använder samma appbutik och samma konto.
 
-Till exempel om du köpte den i iOS App Store kan du använda den på dina andra iOS-enheter.
+Om du till exempel köpte den i iOS App Store kan du använda den på dina andra iOS-enheter.
 
 Om du köpte den till din Android-platta på Google Play kan du använda den på dina andra Android-enheter.
 
-Men om du köpte Nomad på Android och sedan skaffar en iPad måste du köpa den igen.
+Men om du köpte Nomad på Android och sedan skaffar en iPad behöver du köpa den igen.
 
-Detta beror på att Nomad inte har någon egen licensserver eller prenumerationsmodell. Det finns ingen överenskommelse mellan Apple/Google/AppGallery om att hantera licensdelning. 
+Det beror på att Nomad inte har en egen licensserver eller prenumerationsmodell. Det finns inget avtal mellan Apple/Google/AppGallery för att dela licenser.
 
 
 ### Hur återställer jag mitt köp? {#restore}
-Google Play och AppGallery hanterar synkroniseringen automatiskt.
+Google Play och AppGallery sköter båda synkroniseringen automatiskt.
 
-- Gå till About-menyn (Nomad-ikonen uppe till vänster) och tryck på `restore purchase`
-- Kontrollera att du är inloggad på samma konto som du använde för att köpa Nomad (på Google Play).
+- Gå till menyn Om (Nomad-ikonen uppe till vänster) och tryck på `Återställ köp`
+- Dubbelkolla att du är inloggad med samma konto som du köpte Nomad med (på Google Play).
 - Starta om enheten
-- Ibland måste du vänta ett par timmar
-- Se till att Google Play-appen är uppdaterad
-- Installera om Nomad (se till att [säkerhetskopiera dina filer](#where-are-my-projects-located-on-my-device) om du inte vill förlora något)
-- Du kan försöka köpa igen för att se vad som händer (obs: du kan inte köpa samma artikel två gånger på samma konto)
+- Ibland behöver du vänta ett par timmar
+- Se till att appen Google Play är uppdaterad
+- Installera om Nomad (se till att [säkerhetskopiera dina filer](#locate) om du inte vill förlora något)
+- Du kan försöka köpa igen för att se vad som händer (obs: du kan inte köpa samma sak två gånger med samma konto)
 
 :::tip
-Du kan kontakta mig på <support@nomadsculpt.com> men det *enda* jag kan göra är att bekräfta om ett e-postkonto har ett köp kopplat till sig.
+Du kan kontakta mig på <support@nomadsculpt.com>, men det *enda* jag kan göra är att bekräfta om en e-postadress har ett köp kopplat till sig.
 
-Observera att jag regelbundet får rapporter om licenser som inte uppdateras korrekt efter att man skaffat en ny enhet.
-Jag har ingen kontroll över betalning och kontosynkronisering, allt hanteras av Google/AppGallery!
+Observera att jag regelbundet får rapporter om licenser som inte uppdateras korrekt efter att någon skaffat en ny enhet.
+Jag har ingen kontroll över betalningar och synkronisering av konton, allt sköts av Google/AppGallery!
 
-Till slut återställs köpet alltid, men vilka steg som krävs för att påskynda processen är oklart.
+Till slut återställs köpet alltid, men det är oklart vad man kan göra för att påskynda processen.
 :::
 
 ::: warning
-Nyare Huawei-enheter har inte tillgång till Googles tjänster.
-I så fall måste du köpa appen igen på AppGallery (Huaweis appbutik).
+Nya Huawei-enheter har inte tillgång till Googles tjänster.
+I så fall behöver du köpa appen igen på AppGallery (Huaweis appbutik).
 :::
 
-### Kan ni översätta eller fixa [mitt‑språk]? {#locale}
-Jag kan relativt enkelt lägga till ett nytt språk, men jag förlitar mig på AI-översättning eftersom det är mycket enklare att hantera för regelbundna uppdateringar.
+### Kan du översätta eller rätta [mitt-språk]? {#locale}
+Jag kan relativt enkelt lägga till ett nytt språk, men jag förlitar mig på AI-översättning eftersom det är mycket enklare att hantera vid regelbundna uppdateringar.
 Översättningsfilerna finns [här](https://github.com/stephomi/nomad-translation).
 
 ## Funktioner {#features}
 
 ### Varför rör sig inte gizmon? {#gizmo-not-moving}
-Du kan ha [pin aktiverad i vänstra menyverktygsfältet](tools#left-menu-toolbar). 
+Du kanske har aktiverat [fäst i det vänstra menyfältet](tools#left-menu-toolbar).
 
-### Kan vi animera i Nomad? {#animate}
-Inte just nu. En tidslinjefunktion som kan animera lager skulle kunna vara intressant, men är inte direkt planerad för tillfället.  
+### Kan man animera i Nomad? {#animate}
+Inte just nu. En tidslinje som kan animera lagren vore intressant, men det är inte riktigt planerat för tillfället.
 
-Jag skulle vilja stödja riggning/skinning i framtiden, men det innebär några utmaningar (framför allt interaktionen med skulpteringsverktygen...) så inget är säkert än.
+Jag skulle vilja ha stöd för rigging/skinning i framtiden, men det innebär en del utmaningar (särskilt samspelet med skulpteringsverktygen...), så inget är säkert ännu.
 
 
-### Kan vi göra riktig low‑poly‑modellering? {#lowpoly}
+### Kan man göra riktig lågpolymodellering? {#lowpoly}
 Inte just nu.
-Detta är inte riktigt inom Nomad *Sculpts* område, men kanske kommer jag att tillhandahålla några verktyg i framtiden.
+Det ligger egentligen utanför vad Nomad *Sculpt* är tänkt för, men jag kanske lägger till några verktyg i framtiden.
 
 
-### Kan vi göra uv och texturering? {#texturing}
-Kort svar: Ja. Långt svar: Inte direkt, men det finns flera sätt att kombinera Nomads utmärkta vertex-målningsverktyg med uv:n och texturer.
+### Kan man arbeta med UV och texturer? {#texturing}
+Kort svar: Ja. Långt svar: Inte direkt, men det finns flera sätt att kombinera Nomads utmärkta verktyg för vertexmålning med UV och texturer.
 
-* Nomad låter dig måla färg, roughness, materialegenskaper direkt i vertexarna på din skulptur.
-* Nomad tillåter mycket höga vertexantal så att du kan måla utan att bry dig om uv:n.
-* Nomad kan ladda texturer för användning i penslar, vilket möjliggör stämpling och målning med texturer.
-* Nomad kan ladda objekt som redan har texturer tilldelade, för renderingsändamål.
-* Nomad kan [UV-unwrappa](topology.md#uv-unwrap) objekt med lägre polygonantal.
-* Färg/roughness/metalness kan överföras från texturer till vertexar via [projektinställningarna](topology.md#reproject-to-vertex).
-* Färg/roughness/metalness/normals kan bakas från vertexar till texturer via [bake-inställningarna](topology.md#bake-to-texture)
-* Baking och projicering kan hanteras mellan enskilda objekt eller många objekt, eller mellan högsta och lägsta subdivisionsnivåerna på ett enskilt objekt, vilket möjliggör en mängd olika bake- och projektarbetsflöden.
-* Efter baking kommer export av en obj även exportera texturer, som kan tas till en app som Procreate för att måla direkt på texturer.
+* I Nomad kan du måla färg, grovhet och materialegenskaper direkt i skulpturens vertices.
+* Nomad klarar väldigt många vertices, så att du kan måla utan att bry dig om UV.
+* Nomad kan läsa in texturer att använda i penslar, så att du kan stämpla och måla med texturer.
+* Nomad kan läsa in objekt som redan har texturer tilldelade, för rendering.
+* Nomad kan göra [UV-uppackning](topology.md#uv-unwrap-uvatlas) av objekt med färre polygoner.
+* Färg/grovhet/metallitet kan överföras från texturer till vertices via [projiceringsalternativen](topology.md#reproject-to-vertex).
+* Färg/grovhet/metallitet/normaler kan bakas från vertices till texturer via [bakningsalternativen](topology.md#bake-texture)
+* Bakning och projicering kan göras mellan enskilda objekt eller många objekt, eller mellan den högsta och lägsta subdivisionsnivån för ett och samma objekt, vilket ger många olika arbetsflöden för bakning och projicering.
+* Efter bakningen exporteras även texturerna när du exporterar en OBJ, och de kan tas vidare till en app som Procreate för att måla direkt på texturerna.
 
-### Kan jag spela in en turntable‑video? {#video}
-Inte planerat för nu, iOS har en [videoinspelningsfunktion](https://support.apple.com/en-au/guide/ipad/ipaddf78ce08/ipados) som är mycket enkel att använda.
+### Kan jag spela in en vridbordsvideo? {#video}
+Det är inte planerat just nu, men iOS har en [skärminspelningsfunktion](https://support.apple.com/en-au/guide/ipad/ipaddf78ce08/ipados) som är väldigt enkel att använda.
 
-På iOS görs detta genom att svepa ned från övre vänstra hörnet och trycka på inspelningsknappen. Du får en nedräkning på 3 sekunder, svep bort menyn för att visa Nomad och använd turntable-funktionen. När du är klar, svep ned igen från övre högra hörnet och tryck på inspelningsknappen igen. Redigera filmen i bildbiblioteket för att ta bort överflödig film i början och slutet av videon.
+På iOS sveper du nedåt från övre vänstra hörnet och trycker på inspelningsknappen. Du får en nedräkning på 3 sekunder: svep bort menyn så att Nomad syns och använd vridbordsfunktionen. När du är klar sveper du nedåt igen från övre högra hörnet och trycker på inspelningsknappen igen. Redigera filmen i bildbiblioteket för att ta bort överflödigt material i början och slutet av videon.
 
-### Kan du lägga till [infoga‑favorit‑funktion] som en toppnivåknapp? {#interface}
-Ja, det nedre verktygsfältet kan nu anpassas från menyn [interface](interface.md), och flytande verktygsfält kan nu skapas.
+### Kan du lägga till [favoritfunktion] som en knapp på toppnivå? {#interface}
+Ja, det nedre verktygsfältet kan nu anpassas från menyn [Gränssnitt](interface.md#shortcuts), och du kan nu skapa flytande verktygsfält.
 
-### Vilka är de kommande funktionerna? {#next-features}
-För den medellånga/långa planen har jag många idéer men jag vet inte än.  
+### Vilka blir nästa funktioner? {#next-features}
+För färdplanen på medellång och lång sikt har jag många idéer, men jag vet inte än.
 
-Buggrättningar och förbättring av befintliga funktioner kommer alltid ha högre prioritet än att lägga till nya.
+Buggfixar och förbättringar av befintliga funktioner har alltid högre prioritet än nya funktioner.
 
 
-### Kan vi rigga i Nomad? {#rigging}
-Nej, men det är planerat. För närvarande kan du föräldrakoppla former till varandra och ändra pivotpunkter, vilket möjliggör enkla poserbara skulpturer.
+### Kan man rigga i Nomad? {#rigging}
+Nej, men det är planerat. Just nu kan du koppla ihop former och ändra pivotpunkter, vilket ger enkla skulpturer som går att posera.
 
-### Kan vi använda fler än 4 ljus? {#lights}
-Nej, detta är en begränsning i Nomads realtidsrenderingsmotor. Det är möjligt att fejka detta med emissiva objekt och global illumination i efterbearbetning, som visas i [den här handledningen](https://www.youtube.com/watch?v=QhrUGH7CuUA)
+### Kan man använda fler än 4 ljuskällor? {#lights}
+Du kan använda upp till 4 ljuskällor på mobilen och upp till 6 på datorn. Det är en begränsning i Nomads renderingsmotor för realtid. Det går att fejka fler med självlysande objekt och global belysning i efterbehandlingen, som visas i [den här guiden](https://www.youtube.com/watch?v=QhrUGH7CuUA)
 
-### Kan vi importera ZBrush‑verktyg? {#zbrush-import}
-Nej, Zbrush använder ett proprietärt format. Du bör kunna extrahera alpha-kartorna och använda dem i Nomad. 
+### Kan man importera verktyg från Zbrush? {#zbrush-import}
+Nej, Zbrush använder ett eget, slutet format. Du bör dock kunna extrahera alfabilderna och använda dem i Nomad.
 
 ### Varför stämmer inte färgerna med det jag målade? Varför kan jag inte få vitt i renderingen? {#paint-pbr}
-Föreställ dig att ta ett foto av ett pappersark, jämfört med ett foto av en skrivbordslampa, jämfört med ett foto av solen. Äldre kameror och skärmar gör dem bara alla ”vita”. Mer moderna system kan visa en skillnad mellan reflekterat vitt från papper, utsänt ljus från en lampa och det superljusa från solen.
+Tänk dig att du fotograferar ett papper, en skrivbordslampa och solen. Äldre kameror och skärmar gör helt enkelt alla tre "vita". Modernare system kan visa skillnaden mellan det reflekterade vita från papperet, det utsända ljuset från en lampa och solens extrema ljusstyrka.
 
-Modern datorgrafik försöker arbeta på ett liknande sätt, genom att efterlikna fysiken hos ljus och ytor. Detta kallas `Physically Based Rendering`, eller PBR, och Nomads PBR-renderare bygger på detta. Det ser realistiskt och balanserat ut, men ofta kommer starkt målade färger att se mörkare ut.
+Modern datorgrafik försöker fungera på liknande sätt, genom att efterlikna fysiken hos ljus och ytor. Det kallas `Physically Based Rendering` (fysikaliskt baserad rendering), eller PBR, och Nomads PBR-rendering bygger på det. Det ser realistiskt och balanserat ut, men starkt målade färger ser ofta mörkare ut.
 
-Om du behöver att renderingen ska stämma bättre med de målade färgerna kan du fixa detta både på icke-fysikaliskt baserade och fysikaliskt baserade sätt:
+Om du vill att renderingen ska ligga närmare de målade färgerna kan du åtgärda det både på icke fysikaliskt baserade och på fysikaliskt baserade sätt:
 
-Icke PBR:
-* `Använd läget 'Unlit' i ljusmenyn`. Färger visas exakt som de målats, men du förlorar också all skuggning. Praktiskt för snabba kontroller och mer grafisk output.
-* `Använd läget 'Matcap' i ljusmenyn`. Välj en ljusare matcap som mestadels är vit, utan färgton.
+Utan PBR:
+* `Använd läget Obelyst i menyn Skuggning`. Färgerna visas exakt som de målades, men du förlorar också all skuggning. Praktiskt för snabba kontroller och för ett mer grafiskt resultat.
+* `Använd läget MatCap i menyn Skuggning`. Välj en ljusare matcap som är mestadels vit, utan färgton.
 
-PBR:
-* `Använd en neutral miljö`. Du kan [ändra miljön](shading.md#environment) till en mer neutral. Undvik inomhusmiljöer eftersom de tenderar att vara mer färgade. Föredra istället dagsljus utomhus eller studiomiljö.
-* `Öka belysningen`. Om du tog ett foto av vitt papper i ett mörkt rum skulle du helt enkelt lägga till mer ljus. På miljöljuset, höj exposure-reglaget tills färgerna börjar kännas rätt för dig, eller lägg till fler individuella ljus med högre intensitet.
-* `Öka kamerans exponering`. Om det mörka rummet inte hade några extra lampor kunde du låta kameran ha slutaren öppen längre eller använda högre ISO-känslighet. I Nomad kan du uppnå ett liknande resultat med efterbearbetning. Gå till post process, aktivera, ner till tone mapping, aktivera och höj exposure-reglaget tills färgerna känns rätt.
-* `Använd emissiv färg`. I materialmenyn kan du aktivera ”emissive” under textures, vilket får ett objekt att se ut som en ljuskälla. Om du slår på global illumination i inställningarna för post process kommer det kasta ljus på andra objekt i scenen. Du kan också aktivera ”unlit” för det materialet, vilket ger ett liknande utseende utan textur.
+Med PBR:
+* `Använd en neutral miljö`. Du kan [byta miljö](shading.md#environment) till en mer neutral. Undvik inomhusmiljöer eftersom de ofta är mer färgade. Välj hellre en utomhusmiljö i dagsljus eller en studiomiljö.
+* `Förstärk belysningen`. Om du fotograferade ett vitt papper i ett mörkt rum skulle du helt enkelt lägga till mer ljus. Höj exponeringsreglaget för miljöljuset tills färgerna börjar kännas rätt, eller lägg till fler enskilda ljuskällor med högre intensitet.
+* `Höj kamerans exponering`. Om det mörka rummet inte hade några extra lampor skulle du kunna låta kamerans slutare vara öppen längre, eller använda ett känsligare ISO. I Nomad får du ett liknande resultat med efterbehandling. Gå till Efterbehandling, aktivera den, gå ner till Tonkartläggning, aktivera den och höj exponeringsreglaget tills färgerna känns rätt.
+* `Använd emissiv färg`. I menyn Material kan du aktivera "Emissiv" under texturer, vilket får ett objekt att se ut som en ljuskälla. Om du slår på global belysning i inställningarna för efterbehandling kastar det ljus på andra objekt i scenen. Du kan också aktivera "Alltid utan belysning" för materialet, vilket ger ett liknande utseende utan textur.
 
-## Kraschproblem {#crashes}
+## Krascher {#crashes}
 
-### Det kraschar när jag sparar eller remeshar min modell! {#crash-remesh}
+### Det kraschar när jag sparar eller gör en omnätning av min modell! {#crash-remesh}
 Din enhet får slut på minne (RAM).  
-För att minska minnesanvändningen i din scen kan du använda några av alternativen i [Topology](topology.md) för att minska antalet polygoner.
+För att minska minnesanvändningen i scenen kan du använda några av alternativen under [Topologi](topology.md) för att minska antalet polygoner.
 
-::: tip RAM/Lagring
-Det som spelar roll är mängden RAM, inte lagringen (som vanligtvis är mycket större).
+::: tip RAM/lagring
+Det som spelar roll är mängden RAM, inte lagringsutrymmet (som oftast är mycket större).
 :::
 
 
-### Det kraschar när jag laddar mitt projekt! {#crash-load}
+### Det kraschar när jag öppnar mitt projekt! {#crash-load}
 Om filen är liten kan du skicka den till mig så tittar jag på den (via e-post <support@nomadsculpt.com>).
 
 Annars får enheten troligen slut på RAM-minne.
 
-- Se till att du stänger alla andra öppna appar på din enhet.
-- Starta ett nytt projekt i Nomad istället för att ha ett projekt öppet.
-- Om det fortfarande kraschar är den enda lösningen att ladda [din projektfil](#where-are-my-projects-located-on-my-device) på en enhet med mer minne.
+- Se till att stänga alla andra öppna appar på enheten.
+- Starta ett nytt projekt i Nomad i stället för att ha ett projekt öppet.
+- Om det fortfarande kraschar är den enda lösningen att öppna [din projektfil](#locate) på en enhet med mer minne.
 
 ::: tip
-Om din mobila enhet inte kan läsa in projektet kan du prova [skrivbordsversionen](https://nomadsculpt.com). Du kan använda den gratis i demoläge för att importera och exportera projekt, men bara ett fåtal redigeringsverktyg är tillgängliga.
+Om din mobila enhet inte kan öppna projektet, prova [datorversionen](https://nomadsculpt.com). Du kan använda den gratis i demoläge för att importera och exportera projekt, även om bara ett fåtal redigeringsverktyg finns tillgängliga.
 
-Om ditt projekt använder [Layers](layers.md) kan du vilja platta ihop dem för att minska minnesanvändningen.
+Om ditt projekt använder [Lager](layers.md) kan du slå ihop dem för att minska minnesanvändningen.
 :::
 
-<!-- ::: tip
-Additionally, for legacy glb.lz4 file format, you can try the following:
-
-1. If your project is using [Layers](layers.md), enable the `Merge layers` option before loading the project.
-The option can be found in the `Files -> Settings` sub menu.
-Layers can take a lot of memory, merging them at loading can help reduce the memory peak usage.
-
-2. Decompress your [project](#where-are-my-projects-located-on-my-device) (`.glb.lz4` to `.glb`).
-On windows, you need to download [LZ4](https://github.com/lz4/lz4/releases).
-On MacOS, you can use the command line.
-With homebrew, simply do `brew install lz4` and then `lz4 myproject.glb.lz4`.
-
-3. Try to load the `.glb` file directly into Nomad again.
-
-4. If it still crashes at loading, you can open the file on any 3d desktop software that supports `glTF`.
-::: -->
-
 ### Det kraschar när jag startar Nomad! {#crash-start}
-Om det kraschar vid uppstart betyder det att Nomad har problem med en viss fil som finns i Nomad-mappen.
+Om det kraschar vid inläsningen betyder det att Nomad har problem med en viss fil i Nomad-mappen.
 
-För det mesta händer det för att projektet är tungt och tyvärr överskrider RAM-gränsen.
+Oftast händer det för att projektet är tungt och tyvärr överskrider gränsen för RAM.
 
-Leta upp [Nomad-mappen](#where-are-my-projects-located-on-my-device) och byt sedan namn på eller flytta några filer för att hitta boven.
+Leta upp [Nomad-mappen](#locate) och byt sedan namn på eller flytta några filer för att hitta den skyldiga.
 
-Försök först att byta namn på `settings.json`. På så sätt slutar den ladda det senaste projektet.
+Prova först att byta namn på `settings.json`. Då slutar Nomad att läsa in det senaste projektet.
 
-Om det inte fungerar, försök att flytta några senaste filer utanför deras respektive resursmappar (`projects`, `matcaps`, `environments`, etc).
+Om det inte fungerar, prova att flytta några nya filer ut ur sina respektive resursmappar (`projects`, `matcaps`, `environments` osv.).
 
-Du kan också byta namn på mapparna själva så att Nomad helt ignorerar dem.
-Om du byter namn på eller flyttar alla filer i Nomad-mappen får du samma resultat som en ren installation.
+Du kan också byta namn på själva mapparna så att Nomad ignorerar dem helt.
+Om du byter namn på eller flyttar alla filer i Nomad-mappen får du samma resultat som vid en ren installation.
 
 ::: tip
-När Nomad laddar en fil vid uppstart flyttar den alltid filen till mappen `can_be_deleted/`.
-Om åtgärden lyckas flyttas den sedan tillbaka till sin ursprungliga mapp.
+När Nomad läser in en fil vid start flyttar den alltid filen till mappen `can_be_deleted/`.
+Om inläsningen lyckas flyttas filen tillbaka till sin ursprungliga mapp.
 
-Om det kraschar innan inläsningen är klar kommer Nomad att starta utan problem nästa gång, eftersom den ignorerar mappen `can_be_deleted/`.
+Om det kraschar innan inläsningen är klar startar Nomad utan problem nästa gång, eftersom den ignorerar mappen `can_be_deleted/`.
 
-Du kan helt enkelt försöka ladda den här filen igen om du tror att det kan lyckas.
+Du kan helt enkelt försöka läsa in filen igen om du tror att det kan lyckas.
 :::

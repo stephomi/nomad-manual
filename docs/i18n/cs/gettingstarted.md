@@ -1,156 +1,160 @@
-# Začínáme {#getting-started}
+# ![](/icons/play.webp) Začínáme {#getting-started}
 
 ## Vítejte v Nomadu! {#welcome-to-nomad}
 
-Nomad je aplikace pro 3D modelování (sochaření), která funguje na mnoha zařízeních a nejlépe pracuje na tabletech s tlakově citlivým stylusem, např. Apple iPad s Apple Pencil nebo Samsung Galaxy Tab se stylusem.
+Nomad je aplikace pro 3d modelování (sochání), která běží na mnoha zařízeních a nejlépe funguje na tabletech s perem citlivým na přítlak, například na Apple iPadu s Pencilem nebo na Samsung Galaxy Tab s perem.
 
-Je inspirovaný desktopovými aplikacemi pro sochaření jako ZBrush a Blender, se zaměřením na snadno pochopitelné uživatelské rozhraní bez omezení funkcí. Pokud jste už někdy používali 3D sochařské aplikace, Nomad vám bude velmi povědomý.
+Inspiruje se desktopovými modelovacími aplikacemi jako ZBrush a Blender a klade důraz na snadno pochopitelné rozhraní, aniž by šetřila na funkcích. Pokud už jste dřív 3d modelovací aplikace používali, bude vám Nomad hodně povědomý.
 
-Pokud s 3D sochařením začínáte, je dobré znát pár základů.
+Pokud s 3d modelováním začínáte úplně poprvé, hodí se znát pár základů.
 
-::: tip Preferujete video?
-Na YouTube je nyní SPOUSTA video tutoriálů pro začátečníky, zde jsou některé skvělé odkazy:
+::: tip Máte radši video?
+Na YouTube je dnes SPOUSTA videonávodů pro začátečníky, tady je několik skvělých odkazů:
 
 * [Nomad Sculpt Crash Course od Dave Reed](https://www.youtube.com/watch?v=69m86ICy2Q4)
 * [Nomad Sculpt Beginner tutorial od Small Robot Studio](https://www.youtube.com/watch?v=J644wXoTiww)
-* [NOMAD FOR BEGINNERS série od SouthernGFX](https://www.youtube.com/watch?v=bEh0WxRoOmg)
+* [Série NOMAD FOR BEGINNERS od SouthernGFX](https://www.youtube.com/watch?v=bEh0WxRoOmg)
 
-Vyplatí se podívat na hlavní kanál těchto tvůrců, často zveřejňují nové tutoriály.
+Vyplatí se podívat i na hlavní kanály těchto autorů, často přidávají nové návody.
 :::
 
-## Váš první sochárský projekt {#your-first-sculpt}
+## Váš první model {#your-first-sculpt}
 
-Když Nomad spustíte poprvé, uvidíte na obrazovce kouli. Jednoduše táhněte stylusem po kouli a začněte modelovat. Symetrie je ve výchozím nastavení zapnutá, aby bylo modelování snazší.
+Když Nomad poprvé spustíte, uvidíte na obrazovce kouli. Stačí po ní táhnout perem a začnete modelovat. Symetrie je ve výchozím stavu zapnutá, aby se vám modelovalo snáz.
 
 ![](/videos/gettingstarted_01.mp4)
 
-Velikost štětce změníte pomocí posuvníku `Radius` vlevo.
+Štětec zvětšíte nebo zmenšíte posuvníkem poloměru vlevo.
 
 ![](/videos/gettingstarted_02.mp4)
 
-Sílu štětce změníte pomocí posuvníku `Intensity` vlevo.
+Sílu štětce zvýšíte nebo snížíte posuvníkem intenzity vlevo.
 
 ![](/videos/gettingstarted_03.mp4)
 
-Výchozím nástrojem je `Clay tool` a ten k povrchu přidává materiál. Pokud chcete materiál odebírat, klepněte vlevo na tlačítko `Sub`. Pro opětovné přidávání materiálu klepněte na tlačítko Sub znovu.
+Výchozí nástroj je `Hlína` a materiál na povrch přidává. Chcete-li z povrchu ubírat, klepněte na tlačítko `Méně` vlevo. Pro přidávání na něj klepněte znovu.
 
 ![](/videos/gettingstarted_04.mp4)
 
-Pro vyhlazení povrchu klepněte na tlačítko `Smooth`. Pro návrat k běžnému modelování klepněte na tlačítko Smooth znovu.
+Povrch vyhladíte klepnutím na tlačítko `Hladit`. K běžnému modelování se vrátíte dalším klepnutím na stejné tlačítko.
 
 ![](/videos/gettingstarted_05.mp4)
 
-Pro otáčení kolem modelu táhněte v prázdném prostoru mimo model.
+Kolem modelu se otáčíte tažením v prázdném prostoru mimo model.
 
 ![](/videos/gettingstarted_06.mp4)
 
-Pro přiblížení a oddálení použijte dvouprsté gesto přiblížení/oddálení (pinch).
+Přibližujete gestem sevření dvou prstů.
 
 ![](/videos/gettingstarted_07.mp4)
 
-Pro posun kamery (pan) položte na obrazovku dva prsty a táhněte.
+Kameru posunete tak, že položíte 2 prsty na obrazovku a táhnete.
 
 ![](/videos/gettingstarted_08.mp4)
 
-Pokud uděláte chybu, dvouprsté klepnutí provede krok zpět (undo), nebo použijte tlačítko undo vlevo dole. 
+Když se spletete, klepnutí dvěma prsty krok vrátí; můžete také použít tlačítko zpět vlevo dole. 
 
 ![](/videos/gettingstarted_09.mp4)
 
-::: tip Desktopová verze
-Na desktopu se pro ovládání kamery používá klávesa alt/opt:
+::: tip Verze pro počítače
+Na počítači se kamera ovládá klávesou Alt/Option:
 
-* tip táhnutí v prázdném prostoru = rotace kamery
-* alt+tip táhnutí = posun (pan)
-* alt+tip táhnutí, pak puštění alt = zoom (stejně jako v ZBrush)
+* tažení hrotem v prázdném prostoru = otáčení kamery
+* Alt + tažení hrotem = posun
+* Alt + tažení hrotem a pak puštění Alt = přiblížení (stejně jako v ZBrush)
 
-U Wacom tabletů, které mají na peru 2 nebo více tlačítek, použijte nastavení Wacomu a nakonfigurujte hrot a tlačítka takto:
+U tabletů Wacom s pery, která mají 2 nebo více tlačítek, nastavte v nastavení Wacom hrot a tlačítka takto:
 
-* tip = levé tlačítko myši
-* spodní kolébka = prostřední tlačítko
-* horní kolébka = pravé tlačítko
+* hrot = levé kliknutí
+* spodní tlačítko = prostřední kliknutí
+* horní tlačítko = pravé kliknutí
 
-S těmito nastaveními můžete kameru ovládat pouze perem:
+S tímto nastavením můžete kameru ovládat čistě perem:
 
-* horní kolébka a pohyb vznosem = rotace kamery
-* spodní kolébka a pohyb vznosem = posun
+* horní tlačítko a pohyb perem nad displejem = otáčení kamery
+* spodní tlačítko a pohyb perem nad displejem = posun
 :::
 
-## Přidání barvy {#add-color}
+## Přidejte barvu {#add-color}
 
-Nomad vám umožňuje malovat na povrch vašeho modelu. V nabídce nástrojů vpravo najděte nástroj `Paint` a klepněte na něj. Na levém panelu se objeví barevná koule. Klepněte na ni, zobrazí se výběr barvy. Zvolte barvu a malujte na svůj model.
+V Nomadu můžete povrch modelu malovat. V nabídce nástrojů vpravo najděte nástroj `Malovat` a klepněte na něj. Na levém panelu se objeví barevná koule. Klepněte na ni a otevře se výběr barvy. Vyberte barvu a malujte po modelu.
 
 ![](/videos/gettingstarted_10.mp4)
 
-Pro mazání klepněte na tlačítko `Erase` na levém panelu a poté mažte po povrchu. Pro návrat do režimu malování klepněte na tlačítko Erase znovu.
+Chcete-li mazat, klepněte na tlačítko `Vymazat` na levém panelu a mažte po povrchu. Dalším klepnutím na toto tlačítko se vrátíte do režimu malování.
 
 ![](/videos/gettingstarted_11.mp4)
 
-Pomocí štětce Clay v režimech add/sub, nástroje Smooth a nástroje Paint zkuste vytvořit jednoduchou kreslenou hlavu:
+Zkuste se štětcem hlína v režimech přidávání a ubírání, s vyhlazením a malováním vytvořit jednoduchou kreslenou hlavu:
 
 ![](/images/gettingstarted_head1.webp)
 
 ## Další nástroje {#other-tools}
 
-Paleta nástrojů obsahuje mnoho nástrojů, které pomáhají s modelováním. Zatím jste použili štětec Clay (výchozí nástroj), Smooth a Paint. Protože se Smooth používá často, má navíc zkratku na levém panelu.
+Paleta nástrojů nabízí spoustu pomocníků pro modelování. Zatím jste použili štětec hlína (výchozí nástroj), vyhlazení a malování. Protože se vyhlazení používá velmi často, má na levém panelu vlastní zkratku.
 
-Nástroje v Nomadu umí širokou škálu věcí – od sochařských nástrojů jako Move, Crease, Inflate až po nástroje jako Split a Trim, které připomínají spíše truhlářské nebo zámečnické nástroje. Stránka [Tools](tools.md) obsahuje více informací.
+Nástroje v Nomadu toho umí hodně: od modelovacích nástrojů jako posun, rýha nebo zvětšení až po nástroje jako rozdělení nebo ořez, které připomínají spíš truhlářské či zámečnické nářadí. Víc informací najdete na stránce [Nástroje](tools.md).
 
-Zkuste použít nástroje Move, Crease, Inflate a Smooth k přidání detailů na hlavu a změně jejího tvaru:
+Zkuste nástroji posun, rýha, zvětšení a vyhlazení přidat hlavě další detaily a změnit její tvar:
 
 ![](/images/gettingstarted_head2.webp)
 
-Teď, když znáte základy Nomadu, se podíváme na zbytek rozhraní.
+Teď když znáte základy Nomadu, pojďme se podívat na zbytek rozhraní.
 
 ## Rozhraní {#interface}
 
 ![](/images/interface_overview1.webp)
 
-* `Top menus` – Nabídky pro přístup k většině funkcí Nomadu. Nabídky vlevo nahoře se týkají hlavně scény a objektů, nabídky vpravo nahoře souvisejí s nástroji. Na menších obrazovkách se tyto nabídky kvůli úspoře místa sloučí.
-* `Stats` – Informace o scéně, aktuálním objektu, stavu masky a využití paměti.
-* `Nav Cube` – Pomůcka, která ukazuje, z jaké strany se na model díváte, a zároveň zkratka pro skok na různé pohledy. Klepnutím na kostku skočíte na příslušný pohled. Tažením kostky ji otáčíte. Klepnutím na malé ikony vedle kostky zarámujete aktuální objekt nebo resetujete pohled na výchozí.
-* `Toolbox` – Nástroje Nomadu jsou dostupné v této posuvné oblasti.
-* `Left toolbar` – Posuvníky pro radius a intensity u většiny nástrojů, kontextově specifická tlačítka pro jiné nástroje a zkratky pro symetrii, alt/sub režim nástroje, maskování, vyhlazování, gizmo a možnosti malování.
-* `Bottom toolbar` – Zkratky pro často používané funkce, vysvětlené níže.
+* `Horní nabídky` - Nabídky, přes které se dostanete k většině funkcí Nomadu. Nabídky vlevo nahoře se týkají hlavně scény a objektů, nabídky vpravo nahoře souvisejí s nástroji. Na menších obrazovkách se tyto nabídky sloučí, aby ušetřily místo.
+* `Statistiky` - Informace o scéně, aktuálním objektu, stavu masky a využití paměti.
+* `Navigační kostka` - Pomocník, který ukazuje, ze které strany se na model díváte, a zároveň zkratka pro skok do různých pohledů. Klepnutím na kostku přepnete pohled na stranu, na kterou jste klepli. Tažením kostky otáčíte. Malými ikonami vedle kostky zarámujete aktuální objekt, vrátíte se do výchozího pohledu, zamknete kameru nebo zapnete a vypnete mřížku. V aplikaci se jmenuje `Orientační kostka` a její vzhled i umístění můžete změnit v [Nastavení](settings.md#snap-cube).
+* `Nástroje` - V této posuvné oblasti jsou dostupné nástroje Nomadu.
+* `Levý panel` - Posuvníky poloměru a intenzity pro většinu nástrojů, tlačítka specifická pro jiné nástroje a zkratky pro symetrii, alternativní režim nástroje (ubírání), vyhlazení, maskování, skrývání, skupiny tváří, gizmo a možnosti malování. Pořadí zkratek můžete změnit v nabídce [Rozhraní](interface.md#side-bar).
+* `Spodní panel` - Zkratky pro často používané funkce, popsané níže.
 
-::: tip Levák?
-Můžete zrcadlově otočit umístění a pořadí všech panelů nástrojů, viz [Mirror top bar](interface.md#mirror-top-bar) a další související volby.
+::: tip Jste levák?
+Umístění a pořadí všech panelů nástrojů můžete zrcadlově převrátit, viz [Zrcadlit horní panel](interface.md#mirror-top-bar) a další související možnosti.
 :::
 
-## Spodní panel nástrojů {#bottom-toolbar}
+## Spodní panel {#bottom-toolbar}
 
 ![](/images/interface_bottom_toolbar.webp)
 
-* `Undo` – vrátí poslední operaci
-* `Redo` – obnoví poslední vrácenou operaci
-* `History` – přístup k možnostem historie, vysvětleným v nabídce [History](history.md).
-* `Solo` – přepíná zobrazení pouze aktuálního objektu nebo všech objektů
-* `X-Ray` – všechny ostatní objekty se zobrazí v rentgenovém režimu a aktuální objekt bude plný. Dlouhé podržení nebo gesto přejetí nahoru umožní nastavit barvu a průhlednost rentgenového režimu.
-* `Voxel` – zkratka k tlačítku [Voxel Remesher](topology.md#voxel-remesher) pro voxelové remeshování. Dlouhé podržení nebo gesto přejetí nahoru zobrazí zkratky pro nastavení kvality voxel remeshe.
-* `Grid` – přepíná zobrazení mřížky. Dlouhé podržení nebo gesto přejetí nahoru zobrazí možnosti mřížky.
-* `Wire` – přepíná překryvnou drátěnou síť (wireframe). Dlouhé podržení nebo gesto přejetí nahoru zobrazí možnosti drátěného zobrazení.
-* `Inspect` – přepíná zobrazení dodatečných dat o aktuální síti (mesh). Ve výchozím nastavení zobrazuje UV mapy, ale dlouhé podržení nebo gesto přejetí nahoru umožní zkontrolovat i jiné vlastnosti, pokud existují, a nastavit, zda se zobrazují na pozadí nebo přímo na síti.
+* `Zpět` - vrátí poslední operaci
+* `Vpřed` - obnoví poslední vrácenou operaci
+* `Historie` - otevře možnosti historie, popsané v nabídce [Historie](history.md).
+* `Sólo` - Přepíná mezi zobrazením jen aktuálního objektu a všech objektů
+* `Rentgen` - Vykreslí všechny ostatní objekty v režimu rentgenu a aktuální objekt plně. Dlouhým stiskem nebo potáhnutím nahoru můžete vybrat matcap a barvu rentgenu a určit, na které objekty se vztahuje.
+* `Voxel` - Zkratka pro tlačítko přesíťování v části [Voxelové přesíťování](topology.md#voxel-remesher). Dlouhým stiskem nebo potáhnutím nahoru zobrazíte možnosti voxelového přesíťování, například rozlišení.
+* `Mřížka` - Zapne nebo vypne zobrazení mřížky. Dlouhým stiskem nebo potáhnutím nahoru zobrazíte možnosti mřížky, například její barvu a přichytávání.
+* `Drátový model` - Zapne nebo vypne překryv drátového modelu. Dlouhým stiskem nebo potáhnutím nahoru zobrazíte jeho možnosti.
+* `Inspektor` - Zapne nebo vypne zobrazení dalších dat o aktuální síti. Ve výchozím stavu ukazuje UV, ale dlouhým stiskem nebo potáhnutím nahoru můžete zkoumat i jiné vlastnosti, pokud existují, a zvolit, jestli se zobrazí na pozadí, nebo na síti.
+* `Záznamy` - Zobrazí nebo skryje okno s ladicími záznamy Nomadu.
+* `Skupina tváří` - Zapne nebo vypne překryv skupin tváří, viz nástroj [SkupinaPovrch](tools.md#facegroup).
+
+Tyto zkratky můžete přidávat, odebírat a měnit jejich pořadí v nabídce [Rozhraní](interface.md#add-shortcuts-bottom).
 
 ## Další kroky {#next-steps}
 
-Co byste se měli naučit dál, záleží na vás a na tom, co vás zajímá! Zde je pár návrhů:
+Co se naučíte dál, záleží na vás a na tom, co vás baví! Tady je pár tipů:
 
-Chcete se dozvědět více o sochařských nástrojích? Přejděte do sekce [Tools](tools.md).
+Chcete se dozvědět víc o modelovacích nástrojích? Zamiřte do části [Nástroje](tools.md).
 
-Chcete exportovat své modely? Nebo importovat modely pro další úpravy? Nebo vytvářet obrázky svých modelů? Přejděte do sekce [Files](files.md).
+Chcete své modely exportovat? Nebo importovat modely, na kterých budete modelovat? Nebo vytvářet obrázky svých modelů? Zamiřte do části [Soubory](files.md).
 
-Chcete se dozvědět více o řízení detailu na vašem modelu? Přejděte do sekce [Topology](topology.md) a zjistěte více o multires a decimation.
+Chcete se dozvědět víc o tom, jak řídit míru detailu modelu? Zamiřte do části [Topologie](topology.md) a seznamte se s multirezolucí a decimací.
 
-Chcete pracovat s více objekty? Kombinovat jednoduché objekty a primitiva do větší scény? Přejděte do sekce [Scene](scene.md).
+Chcete pracovat s více objekty? Skládat jednoduché objekty a primitiva do větší scény? Zamiřte do části [Scéna](scene.md).
 
-Chcete se naučit *všechno* o Nomadu? Dobrá volba! Tento manuál pokrývá celý Nomad, obsahuje spoustu tipů a triků a má skvělou funkci vyhledávání nahoře. Použijte navigaci vlevo a zjistěte víc.
+Chcete se o Nomadu dozvědět *úplně všechno*? Dobrá volba! Tento manuál pokrývá celý Nomad, obsahuje spoustu tipů a triků a nahoře má skvělé vyhledávání. Pro další informace použijte navigaci vlevo.
 
-Pokud preferujete video, Holger Schönischka vytvořil na YouTube obrovskou sbírku tipů a triků pro Nomad: https://www.youtube.com/@ProcreateFX/videos
+Pokud máte radši video, Holger Schönischka natočil pro Nomad na YouTube obrovskou sbírku tipů a triků: https://www.youtube.com/@ProcreateFX/videos
 
 
-## Získání pomoci {#getting-help}
+## Kde získat pomoc {#getting-help}
 
-Pokud máte po přečtení manuálu a zhlédnutí výukových videí stále otázky, existují tři hlavní způsoby, jak mluvit s ostatními uživateli Nomadu nebo s vývojářem Nomadu:
+Pokud máte i po přečtení manuálu a zhlédnutí videonávodů otázky, máte tři hlavní možnosti, jak se spojit s dalšími uživateli Nomadu nebo s jeho vývojářem:
 
 * Navštivte fórum: [forum.nomadsculpt.com](http://forum.nomadsculpt.com)
-* Připojte se k Nomad discord chatu: [https://discord.com/invite/8h7BwpRz29](https://discord.com/invite/8h7BwpRz29)
-* Kontaktujte vývojáře přímo na support@nomadsculpt.com
+* Připojte se k chatu Nomadu na Discordu: [https://discord.com/invite/8h7BwpRz29](https://discord.com/invite/8h7BwpRz29)
+* Napište přímo vývojáři na support@nomadsculpt.com

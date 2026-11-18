@@ -1,4 +1,4 @@
-# 概述 {#overview}
+# ![](/icons/home.webp) 總覽 {#overview}
 
 <!-- 
 [[toc]]
@@ -8,34 +8,36 @@
 ::: details
 -->
 
-::: tip 初次接觸 Nomad？
-請先閱讀 [快速上手](gettingstarted.md) 指南。
+::: tip 第一次使用 Nomad？
+請先閱讀[入門指南](gettingstarted.md)。
 :::
 
 
 ## 目錄 {#table-of-contents}
 
-| Menu                           | Icon                          | Description                                        |
-| :----------------------------: | :---------------------------: | :------------------------------------------------: |
-| [Files](files.md)              | ![](/icons/open.webp)        | 管理你的專案、匯出、匯入等                         |
-| [Scene](scene.md)              | ![](/icons/scene.webp)       | 新增基本物件並管理場景中的物件                    |
-| [Topology](topology.md)        | ![](/icons/multires.webp)    | 編輯模型的拓樸結構                                |
-| [Material](material.md)        | ![](/icons/material.webp)    | 材質（物件層級）                                   |
-| [Shading](shading.md)          | ![](/icons/sun.webp)         | 如何為場景打光                                    |
-| [Post Process](postprocess.md) | ![](/icons/postprocess.webp) | 後製處理（螢幕空間視覺效果）                      |
-| [Background](background.md)    | ![](/icons/image.webp)       | 更換背景並加入參考圖片                            |
-| [Camera](camera.md)            | ![](/icons/camera.webp)      | 相機控制與互動                                    |
-| [Stroke](stroke.md)            | ![](/icons/pencil.webp)      | 編輯目前工具設定、筆劃、衰減等                    |
-| [Pressure](pressure.md)        | ![](/icons/pressure.webp)    | 管理手寫筆的壓力反應                              |
-| [Painting](painting.md)	     | ![](/icons/paint.webp)       | 繪畫工具的繪畫相關設定                            |
-| [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | 管理目前網格的鏡射平面                            |
-| [Layers](layers.md)            | ![](/icons/layer.webp)       | 管理目前物件的圖層                                |
-| [Settings](settings.md)        | ![](/icons/cog.webp)         | 自訂 3D 視窗                                      |
-| [Interface](interface.md)      | ![](/icons/sliders.webp)   | 自訂介面                                          |
-| [Tools](tools.md)              | ![](/icons/toolbox.webp)     | 所有工具／筆刷一覽                                |
-| [History](history.md)          | ![](/icons/history.webp)     | 管理復原／重做的歷史堆疊                          |
-| [FAQ](faq.md)                  | ![](/icons/faq.webp)         | 常見問題                                          |
-| [Tips](tips.md)                | ![](/icons/manual.webp)      | 工作流程小技巧                                    |
+| 選單                           | 圖示                         | 說明                                        |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
+| [檔案](files.md)              | ![](/icons/open.webp)        | 管理專案、匯出、匯入等          |
+| [場景](scene.md)              | ![](/icons/scene.webp)       | 新增基本體並管理場景中的物件    |
+| [拓樸](topology.md)        | ![](/icons/multires.webp)    | 編輯模型的拓樸                     |
+| [材質](material.md)        | ![](/icons/material.webp)    | 材質（物件層級）                            |
+| [著色](shading.md)          | ![](/icons/sun.webp)         | 為場景打光                         |
+| [後製](postprocess.md) | ![](/icons/postprocess.webp) | 後製處理（螢幕空間的視覺效果）      |
+| [背景](background.md)    | ![](/icons/image.webp)       | 變更背景並加入參考影像    |
+| [相機](camera.md)            | ![](/icons/camera.webp)      | 相機控制與操作                     |
+| [自由變換](transform.md)      | ![](/icons/transform.webp)   | 輸入物件的位置、旋轉與大小  |
+| [筆觸](stroke.md)            | ![](/icons/brush.webp)       | 編輯目前工具的設定、筆觸、衰減等 |
+| [壓感](stroke.md#pressure)        | ![](/icons/pressure.webp)    | 管理觸控筆的壓感                 |
+| [繪畫](painting.md)	       | ![](/icons/paint.webp)       | 繪畫工具的繪畫設定               |
+| [對稱](symmetry.md)        | ![](/icons/symmetry.webp)    | 管理目前網格的鏡像平面       |
+| [操作](operation.md)      | ![](/icons/operation.webp)   | 對整個網格進行平滑、膨脹、重新上色或模糊      |
+| [圖層](layers.md)            | ![](/icons/layer.webp)       | 管理目前物件的圖層                  |
+| [設定](settings.md)        | ![](/icons/cog.webp)         | 自訂 3d 視埠                          |
+| [介面](interface.md)      | ![](/icons/sliders.webp)     | 自訂介面                            |
+| [工具](tools.md)              | ![](/icons/toolbox.webp)     | 所有工具／筆刷一覽                       |
+| [歷史記錄](history.md)          | ![](/icons/history.webp)     | 管理復原／重做的歷史記錄堆疊                 |
+| [常見問題](faq.md)                  | ![](/icons/faq.webp)         | 常見問題與解答                         |
+| [技巧](tips.md)                | ![](/icons/manual.webp)      | 工作流程技巧                                      |
 
 ## 社群資源 {#community-resources}
 

@@ -1,186 +1,245 @@
 # ![](/icons/cog.webp) Inställningar {#reset-to-default}
 
-Menyn Inställningar innehåller många alternativ för att styra utseende och beteende i Nomad.
+Inställningsmenyn innehåller många alternativ för att styra hur Nomad ser ut och beter sig.
 
 ![](/images/settings_overview.webp)
 
+Raden med knappar högst upp i menyn hoppar direkt till ett avsnitt: `Markör`, `Indikator`, `Tråd`, `Rutnät`, `Två sidor`, `Kontur`, `Markering`, `Snap-kub`, `Statistik`, `Handtag`, `Form`, `Repeterare` och `Multiresolution`.
+
 ## Visningsinställningar {#display-settings}
-Detta avsnitt innehåller snabbstartgenvägar för de flesta inställningar längre ned i denna meny.
+Det här avsnittet innehåller snabbgenvägar till de flesta inställningarna längre ned i menyn.
 
 ![](/images/settings_display_settings.webp)
 
-### Mjuk skuggning {#smooth-shading}
-Växla mellan mjuk och fasetterad skuggning. När fasetterad är aktiverad skuggas polygonerna oberoende av varandra, så att du kan se den underliggande topologin.
-Det kan vara användbart att se fasetterad skuggning under skulpteringsstadiet och sedan byta till mjuk skuggning för rendering.
+### ![](/icons/sphere_smooth.webp) Jämn skuggning {#smooth-shading}
+Växlar mellan jämn och fasetterad skuggning. Med fasetterad skuggning skuggas polygonerna var för sig, så att du ser den underliggande topologin.
+Det kan vara användbart att ha fasetterad skuggning medan du skulpterar, och sedan byta till jämn skuggning för rendering.
 
-Att inaktivera mjuk skuggning förbättrar prestandan en aning.
+Att stänga av jämn skuggning förbättrar prestandan lite.
 
-### Kontur {#outline-quick}
-Slå på/av en kontur runt din aktuella markering.
+### ![](/icons/outline.webp) Kontur {#outline-quick}
+Slår på/av en kontur runt din nuvarande markering.
 
-Detta är användbart för att få visuell återkoppling på ditt nuvarande valda mesh om [Mörklägg icke markerade](#darken-unselected-objects) är inaktiverat.
+Det är användbart för att se vilka nät som är valda om [Mörka ej valda objekt](#darken-unselected-objects) är avstängt.
 
-Ur prestandasynpunkt är det mycket bättre att använda [Mörklägg icke markerade](#darken-unselected-objects) än att använda konturlösningen.
+Prestandamässigt är [Mörka ej valda objekt](#darken-unselected-objects) mycket bättre än konturen.
 
-### Rutnät {#grid-quick}
-Slå på/av ett bakgrundsrutnät, användbart för att förstå objektplacering och skala.
+### ![](/icons/grid.webp) Rutnät {#grid-quick}
+Slår på/av ett rutnät i bakgrunden, användbart för att förstå objektens placering och skala.
 
-### Dubbelsidig {#two-sided-quick}
-Slå på/av tvåsidig polygonvisning. Alla ytor pekar i en viss riktning.
-Ytor som betraktas som *baksida* är de som pekar ”bort” från kamerans synvinkel.
+### ![](/icons/culling.webp) Två sidor {#two-sided-quick}
+Slår på/av visning av polygoner från båda sidor. Alla ytor pekar åt ett visst håll.
+Ytor som räknas som *baksida* är de som pekar "bort" från kamerans synvinkel.
 
-Till exempel kommer den enkla startkulan ha sina ytor pekande utåt.
-Om du flyttar kameran inuti kulan kommer du då att se baksidan av dessa ytor.
+Till exempel pekar ytorna på den enkla startsfären utåt.
+Om du flyttar in kameran i sfären ser du baksidan av de ytorna.
 
-För det mesta bör du inte se baksidan av ytor, så att färglägga dem kan hjälpa dig att upptäcka potentiella problem eller felaktig topologi.
+För det mesta ska du inte se ytornas baksida, så att färga dem kan hjälpa dig att upptäcka möjliga problem eller felaktig topologi.
 
-Att inaktivera `tvåsidig` rendering kan förbättra renderingsprestandan något.
+Att stänga av renderingen `Två sidor` kan förbättra renderingsprestandan lite.
 
 
-### Trådram {#wireframe-quick}
-Slå på/av ett trådramsöverlägg. 
+### ![](/icons/wireframe.webp) Wireframe {#wireframe-quick}
+Slår på/av en wireframe-överlagring.
 
-Observera att aktivering av trådram kommer att sänka prestandan.
+Observera att wireframe sänker prestandan.
 
-### Snappkub {#snap-cube-quick}
-Slå på/av en hjälpikonen i hörnet av scenen, användbar för att orientera sig i rymden och snabbt växla mellan vyerna fram/bak/vänster/höger/topp/botten.
+### ![](/icons/snap_cube.webp) Snap-kub {#snap-cube-quick}
+Slår på/av en hjälpikon i scenens hörn, användbar för att orientera dig i rummet och snabbt växla mellan vyerna framifrån/bakifrån/från vänster/från höger/ovanifrån/underifrån.
 
-### Visa målning {#show-painting}
-Slå på/av visning av målning. Standardmaterialet som används är ett vitt icke-metalliskt material med 25 % råhet.
+### ![](/icons/palette.webp) Visa måleri {#show-painting}
+Slår på/av visningen av målningen. När den är av visas objekten med ett vitt, icke-metalliskt material med 25% grovhet i stället för sin målning.
 
-### Använd göm {#use-hide}
-Slå på/av dölj-läget. När det är avstängt finns det fortfarande kvar, bara inaktiverat. Denna knapp är inaktiverad om du för närvarande använder dölj-verktyget.
+### ![](/icons/tool_hide.webp) Använd Dölj {#use-hide}
+Slår på/av döljläget. När det är avstängt finns det kvar, det är bara inaktiverat. Knappen är inaktiverad om du just nu använder verktyget Dölj.
 
-### Visa mask {#show-mask}
-Slå på/av maskläget. När det är avstängt finns det fortfarande kvar, bara inaktiverat. Tryck på denna knapp igen för att återaktivera det.
+### ![](/icons/shield.webp) Visa mask {#show-mask}
+Slår på/av maskläget. När det är avstängt finns masken kvar, den är bara inaktiverad. Tryck på knappen igen för att aktivera den på nytt.
 
-Om du behöver dölja masken OCH ändå ha den aktiv, använd maskfärgen nedan och ställ in den på vitt. Kom ihåg att ändra tillbaka den till en grå när du är klar!
+Om du behöver dölja masken OCH ändå ha den aktiv, använd maskfärgen nedan och ställ in den på vitt. Kom ihåg att ändra tillbaka den till grått när du är klar!
 
-Observera att denna knapp är inaktiverad om du för närvarande använder ett maskverktyg. 
+Observera att knappen är inaktiverad om du just nu använder ett maskverktyg.
 
-### Mask -> Opaque {#mask-opaque}
-Mask -> opaque kommer att ignorera transparenta verticer för maskad mask. Detta är endast relevant för vertex- och texturopacitet, ytor som är dolda med ”dölj” kommer fortfarande att vara dolda.
+### ![](/icons/shield.webp) Mask → Oopakt {#mask-opaque}
+`Mask → Oopakt` ignorerar genomskinliga vertexar för den maskerade masken. Det gäller bara opacitet i vertexar och texturer; ytor som är dolda med “dölj” förblir dolda. Det är bara tillgängligt medan `Visa mask` är på.
 
-### Markering {#highlight-quick}
-Slå på/av markeringsblinkningen. När objekt väljs blinkar det valda objektet tillfälligt i starkt rosa i 500 millisekunder. Färgen och längden på blinkningen kan anpassas nedan.
+### ![](/icons/bang.webp) Markering {#highlight-quick}
+Slår på/av blinkningen som markerar valet. När du väljer objekt blinkar det valda objektet till i 500 millisekunder. Blinkningens färg och längd kan anpassas nedan.
 
-### Statistik {#stats-quick}
-Slå på/av statusvisningstexten i 3D-vyn. Den visar information om ditt systemminne, totalt antal verticer i scenen och antal verticer i den aktuella markeringen.
+### ![](/icons/list.webp) Statistik {#stats-quick}
+Slår på/av statustexten i 3d-vyn. Den visar information om systemets minne, scenens totala antal vertexar och antalet vertexar i den aktuella markeringen.
 
 ----- 
 
-### Mörka ej markerade objekt {#darken-unselected-objects}
-Objekt som inte är markerade kommer att mörkläggas så att den aktuella markeringen kan framträda tydligare.
+### ![](/icons/cube.webp) Mörka ej valda objekt {#darken-unselected-objects}
+Objekten som inte är valda mörkas ned så att den aktuella markeringen sticker ut.
 
-### Mask {#mask}
-Färgen som används för maskning, som standard en mellangrå, multipliceras mot objektets färg. Sätt denna till vitt för att göra masken osynlig, men kom ihåg att ändra tillbaka den till grå när du är klar!
+### ![](/icons/shield.webp) Mask {#mask}
+Färgen som används för maskering, som standard ett mellangrått som multipliceras med objektets färg. Ställ in den på vitt för att göra masken osynlig, men kom ihåg att ändra tillbaka den till grått när du är klar!
 
 ## ![](/icons/cursor.webp) Markör {#cursor}
 
-### Visa cirkel vid skulptering {#show-circle-while-sculpting}
-Fortsätt visa penselradien när du skulpterar.
+### Cirkel {#show-circle-while-sculpting}
+När cirkeln för penselns radie visas:
 
-### Visa liten punkt {#show-small-dot}
-Visa en punkt i mitten av penseldraget när du skulpterar, eller när kamerapivoten ändras.
+* `Auto` - visar cirkeln, men döljer den medan du skulpterar.
+* `Nej` - visar aldrig cirkeln.
+* `Ja` - visar alltid cirkeln, även medan du skulpterar.
 
-### Visa rep-stabilisering {#show-rope-stabilizer}
-Rita en linje som visar replängden när lazy rope-stabilisatorn är aktiv i penseldragsinställningarna.
+### Visa liten prick {#show-small-dot}
+Visar en prick i mitten av penseldraget medan du skulpterar, eller när kamerans pivot ändras.
+
+### Visa repstabilisator {#show-rope-stabilizer}
+Ritar en linje som visar repets längd när [Slö repsstabilisator](stroke.md#lazy-rope-stabilizer) är aktiv i penseldragsinställningarna.
+
+### Visa rullningstips {#show-roll-hint}
+Visar en guide för rullningsriktningen medan du använder en tangentbindning för rullning.
+
+### ![](/icons/radius.webp) Storlek {#dot-size}
+Storleken på den lilla pricken.
+
+### Färger {#cursor-colors}
+Markören byter färg beroende på vad du gör: `Skulptera`, `Bakgrund` (när du hovrar över bakgrunden), `Mask`, `Jämna ut`, `Kamera` och `Radie`. Varje färg kan anpassas här.
 
 ## ![](/icons/cursor.webp) Indikator {#indicator}
 ![](/images/settings_indicator.webp)
 
-Visa visuella indikator(er) för handledningar och skärminspelningar.
+Visar visuella indikatorer för guider och skärminspelningar. Ställ in den på `Ja` för att slå på den (på iOS finns även alternativet `Auto`).
 
-Knapparna `Finger`, `Stylus` och `Mouse` aktiverar visning av en ikon när den typen av inmatning upptäcks.
+Knapparna `Finger`, `Stylus` och `Mus` visar en ikon när den typen av inmatning upptäcks.
 
 ### Färg {#indicator-color}
 Indikatorns färg.
 
 ### Storlek/Ikon/Cirkel {#indicator-shape}
-Reglage för att justera indikatorns storlek och formerna i indikatorn.
+Kontroller för att justera indikatorns storlek, och opaciteten för ikonen och cirkeln i indikatorn.
 
-## ![](/icons/wireframe.webp) Trådram {#wireframe}
+## ![](/icons/wireframe.webp) Wireframe {#wireframe}
 ![](/images/settings_wireframe.webp)
-Aktivera trådramsöverlägget.
+Aktiverar wireframe-överlagringen.
 
 ### Mål {#target}
-Ställ in om icke markerade objekt ska visa trådram, eller endast markerade objekt, eller alla objekt.
+Bestämmer om icke valda objekt visar wireframe, eller bara valda objekt, eller alla objekt.
 
-### Göm {#hide}
-Ställ in om trådramen fortfarande ska visas för dolda polygoner.
+### Dölj {#hide}
+Bestämmer om wireframe fortfarande visas för dolda polygoner.
 
 ### Multiresolution: Endast nivå 0 {#multiresolution-level-0-only}
-Multiresolution kommer att visa trådramar för nivå 0 mörkare och högre nivåer successivt ljusare. När detta är aktiverat visas endast trådramen för nivå 0.
+Multiresolution visar wireframe för nivå 0 mörkare, och högre nivåer allt ljusare. När det här alternativet är aktiverat visas bara wireframe för nivå 0.
 
 ### Färg {#wireframe-color}
-Ställ in färg och opacitet för trådramen.
+Ställer in färg och opacitet för wireframe.
 
 ## ![](/icons/grid.webp) Rutnät {#grid}
 ![](/images/settings_grid.webp)
-Aktivera rutnätet.
+Aktiverar rutnätet.
+
+### Fäst {#snap}
+De här alternativen gör att punkterna i kurv- och formbaserade verktyg (`Svarv`, `Rör`, polygon- och banformer...) fästs medan du ritar dem:
+
+* `Fäst vid rutnät` - fäster vid rutnätet.
+* `Fäst vid punkter (justerad vy)` - fäster vid befintliga punkter i närheten när kameran är justerad mot en axel.
+* `Fäst vid punkter (fri vy)` - fäster vid befintliga punkter i närheten när kameran inte är justerad.
 
 ### Färg {#grid-color}
-Ställ in rutnätets färg och opacitet.
+Ställer in rutnätets färg och opacitet. De här alternativen visas när rutnätet syns.
 
-### Snapp {#snap}
-Aktivera snäppning mot rutnätet för kurvbaserade verktyg.
+`Vinjett` tonar ut rutnätet mot kanterna. `Fästgräns för indelningar` ställer in, i pixlar, hur tätt rutnätets linjer får bli på skärmen innan rutnätet byter till en annan indelningsnivå.
 
-## ![](/icons/culling.webp)Two sided {#two-sided}
-Aktivera visning av polygonytor från båda sidor.
+## ![](/icons/culling.webp)Två sidor {#two-sided}
+Gör att polygonernas ytor syns från båda sidor.
 
-### Färga baksida, baksidesfärg {#backface-color}
-Aktivera toning av baksidorna och välj toningsfärg.
+### Baksidans färg {#backface-color}
+`Färgad baksida` tonar baksidorna, och `Baksidans färg` ställer in tonens färg.
 
-## ![](/icons/outline.webp)Outline {#outline}
-Aktivera en kontur runt det aktiva objektet.
+## ![](/icons/outline.webp)Kontur {#outline}
+Aktiverar en kontur runt de valda objekten.
 
-### Konturfärg, tjocklek {#outline-color-thickness}
-Ställ in färg och tjocklek för konturen.
+### Konturfärg, Tjocklek {#outline-color-thickness}
+Ställer in konturens färg och `Tjocklek`.
 
 
 ## ![](/icons/bang.webp) Markering {#highlight}
-Aktivera en kort blinkning när det aktiva objektet ändras.
-### Färg, varaktighet {#color-duration}
-Ställ in färg och tidslängd för blinkningen i millisekunder.
+Aktiverar en kort blinkning när markeringen ändras.
+### Färg, Varaktighet {#color-duration}
+Ställer in blinkningens färg och längd i millisekunder.
 
-## ![](/icons/snap_cube.webp) Snappkub {#snap-cube}
+## ![](/icons/snap_cube.webp) Snap-kub {#snap-cube}
 ![](/images/settings_snapcube.webp)
 
-Visa en hjälpikonen i hörnet av scenen, användbar för att snabbt växla mellan vyerna fram/bak/vänster/höger/topp/botten. Tryck på sidorna av tärningen för att byta mellan ortografiska vyer.
+Visar en hjälpikon i scenens hörn, användbar för att snabbt växla mellan vyerna framifrån/bakifrån/från vänster/från höger/ovanifrån/underifrån. Tryck på kubens sidor för att växla mellan ortografiska vyer.
 
 ### Form {#shape}
-Välj mellan en kub, en sfär eller en gnomon-form för snaptärningen.
+Välj mellan en sfär, en kub eller en gnomon som form för snap-kuben.
 
-### Begränsa riktning {#restrict-alignment}
-Aktivera låsning av kamerarotation när du drar på snaptärningen. När detta är aktivt kommer en dragrörelse på snaptärningen endast gå vänster/höger eller upp/ner.
+### Begränsa justering {#restrict-alignment}
+Justerar fästvyerna efter världens axlar. När det är aktiverat är bara de 6 huvudvyerna möjliga. På `Auto` gäller begränsningen bara när kameran är i läget `Vändskiva`.
 
 ### Storlek {#size}
-Ställ in storleken på snaptärningen.
+Ställer in snap-kubens storlek.
 
-### Vänd 180 {#flip-180}
-Aktivera ett tryckbeteende så att om vyn är snäppad, kommer ett tryck på mitten av tärningen att rotera vyn 180 grader. Till exempel, om vyn är snäppad till framifrån, kommer ett tryck på vykuben att rotera till bakifrån-vy.
+### Vänd 180° {#flip-180}
+Gör att ett tryck på kubens mitt roterar vyn 180 grader när vyn är fäst. Om vyn till exempel är fäst framifrån roterar ett tryck på vykuben till vyn bakifrån.
+
+### Kanter och hörn {#edges-corners}
+Lägger till fästvyer på kubens kanter och hörn (de bärnstensfärgade zonerna). Inte tillgängligt med gnomonformen.
+
+### Dragning med vändskiva {#turntable-drag}
+När du drar i kuben roterar vyn utan att kameran rullar, och stannar vid varje fästvy. Avaktivera det för att dra kuben med rotationen `Trackball` i stället. Oavsett vilket förblir draget vågrätt eller lodrätt. Med en kamera i läget `Vändskiva` dras kuben alltid på det här sättet.
 
 ### Position {#snap-position}
-Ställ in i vilket hörn snaptärningen ska vara.
+Ställer in i vilket hörn snap-kuben ligger.
 
-## ![](/icons/edit_radius_n.webp) Statistik {#stats}
+
+## ![](/icons/list.webp) Statistik {#stats}
 ![](/images/settings_stats.webp)
 
-Visa information om ditt systemminne, totalt antal verticer i scenen och antal verticer i den aktuella markeringen.
+Visar information om systemets minne, scenens totala antal vertexar och antalet vertexar i den aktuella markeringen.
 
 ### Position {#stats-position}
-Ställ in i vilket hörn statistiken ska visas.
+Ställer in i vilket hörn statistiken visas.
 
-## Primitive/Upprepningar {#primitive-repeaters}
-## Numerisk inmatning {#gizmo-input}
-Tillåt numerisk inmatning när du trycker på gizmo-widgetarna.
+## ![](/icons/edit_radius.webp) Handtag {#handle}
+Inställningar för handtagen som du drar i vyn, som gizmon.
 
-## Multiresolution {#multires}
-### Max antal vertex {#multires-lowres-count}
-Ställ in en gräns för att inte tillåta en multires-subdivide-operation högre än detta polygonantal, vilket sannolikt skulle krascha Nomad. Standardvärdet är 10 miljoner.
-### Lågupplöst tröskel {#multires-lowres-threshold}
-En lägre upplösning av meshen kan visas när du flyttar kameran. Du kan öka detta värde om du vill visa en högre upplösning av meshen.
+### Numerisk inmatning {#gizmo-input}
+Tillåter numerisk inmatning när du trycker på en av gizmons kontroller.
+
+### Dölj vid interaktion {#hide-on-interaction}
+Tonar ut gizmon medan du interagerar med den, så att den inte är i vägen.
+
+### ![](/icons/opacity.webp) Opacitet {#handle-opacity}
+Handtagens opacitet.
+
+## ![](/icons/shape_lasso.webp) Form {#shape-settings}
+Hur formerna som du ritar med formbaserade penseldrag (lasso, rektangel, kurva...) ser ut på skärmen.
+
+### ![](/icons/opacity.webp) Fyllning, Kontur {#shape-fill-outline}
+Opaciteten för formens insida och för linjen runt den.
+
+### Färger {#shape-colors}
+Formens färg för varje typ av verktyg: `Mask`, `Dölj`, `Ytgrupp` och `Beskär`.
+
+## ![](/icons/array.webp) Repeterare {#primitive-repeaters}
+Gränser för kopiorna som görs av [repeterare](scene#repeaters) (array, radiell, kurva, yta). De gör att Nomad förblir responsivt när en repeterare spårar ur.
+
+### ![](/icons/cube.webp) Max kopior {#repeater-max-copies}
+Det högsta antalet kopior som en enskild repeterare gör. Nomad har svårt med många objekt, oavsett deras storlek.
+
+### ![](/icons/cube.webp) Kopior i scenen {#repeater-scene-copies}
+Kopiebudgeten för hela scenen. En lågpolygonkopia kostar lite geometri men förblir ett fullständigt objekt, så det är den här gränsen som små kopior når först.
+
+### ![](/icons/triangle.webp) Max. ytor {#repeater-max-faces}
+Ytbudgeten för alla kopior i scenen. När den överskrids förlorar de tyngsta objekten kopior först.
+
+## ![](/icons/multires.webp) Multiresolution {#multires}
+### Max antal vertiser {#multires-lowres-count}
+Ställer in en gräns så att en multires-indelning inte kan överstiga det här antalet vertexar, vilket troligen skulle få Nomad att krascha: Nomad kontrollerar inte det tillgängliga minnet innan indelningen. Standardvärdet är 10 miljoner.
+### Låg upplösningströskel {#multires-lowres-threshold}
+En lägre upplösning av nätet kan visas när du flyttar kameran. Du kan öka det här värdet om du vill visa en högre upplösning av nätet.
 
 ## Inställningar {#advanced}
-### Återställ till standard {#reset}
-Återställ alla inställningar till deras standardvärden.
+### ![](/icons/reset.webp) Återställ till standard {#reset}
+Återställer alla appens inställningar till standardvärdena.
+
+Vissa resurser sparas separat och återställs INTE: projekt, tangentbindningar, verktygsförinställningar, HDR-miljöer, MatCaps, alfor, penseltexturer och referensbilder. Allt som sparas med projektet, som belysning, efterbehandling eller kameravyer, lämnas också orört.

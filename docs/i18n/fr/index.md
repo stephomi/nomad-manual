@@ -1,4 +1,4 @@
-# Aperçu {#overview}
+# ![](/icons/home.webp) Aperçu {#overview}
 
 <!-- 
 [[toc]]
@@ -9,33 +9,35 @@
 -->
 
 ::: tip Nouveau sur Nomad ?
-Lisez le guide [Bien démarrer](gettingstarted.md).
+Lisez le guide de [prise en main](gettingstarted.md).
 :::
 
 
 ## Table des matières {#table-of-contents}
 
-| Menu                           | Icône                         | Description                                         |
-| :----------------------------: | :---------------------------: | :------------------------------------------------: |
+| Menu                           | Icône                        | Description                                        |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
 | [Fichiers](files.md)           | ![](/icons/open.webp)        | Gérer vos projets, exporter, importer, etc.        |
-| [Scène](scene.md)              | ![](/icons/scene.webp)       | Ajouter de nouvelles primitives et gérer les objets de votre scène |
+| [Scène](scene.md)              | ![](/icons/scene.webp)       | Ajouter des primitives et gérer les objets de la scène |
 | [Topologie](topology.md)       | ![](/icons/multires.webp)    | Modifier la topologie du modèle                    |
-| [Matériau](material.md)        | ![](/icons/material.webp)    | Matériau (au niveau de l’objet)                    |
-| [Éclairage](shading.md)        | ![](/icons/sun.webp)         | Comment éclairer votre scène                       |
-| [Post-traitement](postprocess.md) | ![](/icons/postprocess.webp) | Post-traitement (effets visuels en espace écran)   |
-| [Arrière-plan](background.md)  | ![](/icons/image.webp)       | Changer l’arrière-plan et ajouter une image de référence |
-| [Caméra](camera.md)            | ![](/icons/camera.webp)      | Contrôle et interaction de la caméra               |
-| [Trait](stroke.md)             | ![](/icons/pencil.webp)      | Modifier les paramètres de l’outil actuel, trait, dégradé... |
-| [Pression](pressure.md)        | ![](/icons/pressure.webp)    | Gérer la pression de votre stylet                  |
-| [Peinture](painting.md)	     | ![](/icons/paint.webp)       | Paramètres de peinture pour les outils de peinture |
-| [Symétrie](symmetry.md)        | ![](/icons/symmetry.webp)    | Gérer le plan miroir de votre maillage actuel      |
-| [Calques](layers.md)           | ![](/icons/layer.webp)       | Gérer les calques de votre objet actuel            |
-| [Paramètres](settings.md)      | ![](/icons/cog.webp)         | Personnaliser la vue 3D                            |
-| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Personnaliser l’interface                          |
-| [Outils](tools.md)             | ![](/icons/toolbox.webp)     | Liste de tous les outils/pinceaux                  |
-| [Historique](history.md)       | ![](/icons/history.webp)     | Gérer la pile d’historique annuler/rétablir        |
-| [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Foire aux questions                                |
-| [Astuces](tips.md)             | ![](/icons/manual.webp)      | Astuces de workflow                                 |
+| [Matériau](material.md)        | ![](/icons/material.webp)    | Matériau (au niveau de l'objet)                    |
+| [Ombrage](shading.md)          | ![](/icons/sun.webp)         | Éclairer votre scène                               |
+| [Post-traitement](postprocess.md) | ![](/icons/postprocess.webp) | Post-traitement (effets visuels appliqués à l'écran) |
+| [Arrière-plan](background.md)  | ![](/icons/image.webp)       | Changer l'arrière-plan et ajouter une image de référence |
+| [Caméra](camera.md)            | ![](/icons/camera.webp)      | Contrôle de la caméra et interactions              |
+| [Transformation](transform.md) | ![](/icons/transform.webp)   | Saisir la position, la rotation et la taille d'un objet |
+| [Trait](stroke.md)             | ![](/icons/brush.webp)       | Modifier les réglages de l'outil actuel, le trait, l'atténuation... |
+| [Pression](stroke.md#pressure) | ![](/icons/pressure.webp)    | Gérer la pression de votre stylet                  |
+| [Peinture](painting.md)	       | ![](/icons/paint.webp)       | Réglages de peinture pour les outils de peinture   |
+| [Symétrie](symmetry.md)        | ![](/icons/symmetry.webp)    | Gérer le plan miroir du maillage actuel            |
+| [Opération](operation.md)      | ![](/icons/operation.webp)   | Lisser, gonfler, recolorer ou flouter tout un maillage |
+| [Calques](layers.md)           | ![](/icons/layer.webp)       | Gérer les calques de l'objet actuel                |
+| [Réglages](settings.md)        | ![](/icons/cog.webp)         | Personnaliser la vue 3d                            |
+| [Interface](interface.md)      | ![](/icons/sliders.webp)     | Personnaliser l'interface                          |
+| [Outils](tools.md)             | ![](/icons/toolbox.webp)     | Liste de tous les outils et pinceaux               |
+| [Historique](history.md)       | ![](/icons/history.webp)     | Gérer la pile d'annulation et de rétablissement    |
+| [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Questions fréquentes                               |
+| [Astuces](tips.md)             | ![](/icons/manual.webp)      | Conseils de méthode de travail                     |
 
 ## Ressources de la communauté {#community-resources}
 
@@ -80,7 +82,7 @@ Lisez le guide [Bien démarrer](gettingstarted.md).
 </div>
 
 <div>
-<h3>Cours d’art DM</h3>
+<h3>DM Art classes</h3>
 <iframe src="https://www.youtube.com/embed/5VO0ZqyopGo?si=rtOLMvjwjCfPsdb4" allowfullscreen></iframe>
 </div>
 

@@ -1,332 +1,421 @@
-# ![](/icons/sliders.webp) Interfacemenu {#interface-menu}
+# ![](/icons/sliders.webp) Menu Interface {#interface-menu}
 
-Dit menu beheert veel opties om de interface van Nomad aan te passen. 
+Met dit menu pas je de interface van Nomad op allerlei manieren aan. 
 
 ![](/images/interface_overview2.webp)
 
-Nomad kan tot op een vrij diep niveau worden aangepast, dit menu is verdeeld in 4 secties: Interface, Gesture, Bindings, Debug.
+Je kunt Nomad tot in detail naar je hand zetten. Dit menu is verdeeld over 5 tabbladen: Interface, Snelkoppelingen, Gebaar, Toetsbindingen en Debug.
 
 ![](/images/interface_menu.webp)
 
 
 ::: tip
-Deze pagina gaat over het interfacemenu, niet over de interface zelf! De algemene interface wordt beschreven in [Getting Started](gettingstarted.md).
+Deze pagina gaat over het menu Interface, niet over de interface zelf! De interface in het algemeen wordt beschreven in [Aan de slag](gettingstarted.md).
 :::
 
-## Interface {#interface}
+## ![](/icons/sliders.webp) Interface {#interface}
 
-In de sectie Interface kun je snelkoppelingen toevoegen, zwevende werkbalken maken en de kleur, grootte en het uiterlijk van de gebruikersinterface van Nomad regelen.
+Het tabblad Interface regelt de kleur, de grootte en de indeling van de gebruikersinterface van Nomad. Het heeft twee subtabbladen: `Uiterlijk` en `Indeling`.
 
 ![](/images/interface_overview3.webp)
 
-### Snelkoppelingen toevoegen (onder)... {#add-shortcuts-bottom}
-![](/images/interface_shortcuts.webp)
-
-De onderste werkbalk heeft standaard deze snelkoppelingen ingeschakeld:
-* `Undo` - maak de vorige bewerking ongedaan
-* `Redo` - herstel de eerder ongedaan gemaakte bewerking
-* `Solo` - Verberg tijdelijk alle andere objecten, zodat alleen het geselecteerde zichtbaar blijft. Nogmaals drukken om alle objecten te herstellen.
-* `X-ray` - Maak tijdelijk alle andere objecten half transparant, zodat alleen het geselecteerde object massief blijft. Nogmaals drukken om de standaardmaterialen te herstellen.
-* `Voxel remesh` - Remesh het huidige object met de laatst gebruikte voxelresolutie. Een lange tik of een veeg omhoog opent een resolutieschuifregelaar en een schakelaar voor scherpe randen.
-* `Grid` - Schakel het raster in de weergave in/uit. Een lange tik of een veeg omhoog maakt het mogelijk de kleur en dekking van het raster aan te passen.
-* `Wireframe` - Schakel een wireframe-overlay in/uit. Een lange tik of veeg omhoog maakt het mogelijk de kleur en dekking van de wireframe aan te passen.
-* `Inspector` - hiermee kun je eigenschappen van je mesh bekijken, zoals uv’s, gebakken textures en andere eigenschappen, over de achtergrond van Nomad heen.
-* `Face Group` - Schakel de facegroup-overlay in/uit, meer info onder [Tools->FaceGroup](tools.md#facegroup) 
-
-Andere veelgebruikte snelkoppelingen zijn beschikbaar via dit menu, veel meer zijn te vinden via de bindings-knop.
-
-#### ![](/icons/more.webp) Koppelingen {#bindings-list}
-
-Bijna elke functie van Nomad kan via de bindings-knop aan de snelkoppelingswerkbalk worden toegevoegd. Wanneer je op de knop klikt, verschijnt een bindingsmenu:
-
-![](/images/interface_bindings_search.webp)
-
-Je kunt per categorie zoeken via de pictogrammen bovenaan, of via het zoekveld functies op naam vinden. Klik op een functie om deze aan de werkbalk toe te voegen. Klik nogmaals om hem te verwijderen.
-
-#### ![](/icons/list.webp) Volgorde {#order}
-
-Dit toont een lijst van de snelkoppelingen. Lang indrukken en slepen om de snelkoppelingen te herschikken.
-
-#### ![](/icons/reset.webp) Reset {#reset}
-
-Reset herstelt de onderste werkbalk naar de standaardinstellingen.
-
-### Snelkoppelingen toevoegen (venster)... + {#add-shortcuts-window}
-![](/images/interface_add_shortcuts_window.webp)
-
-Door op de + te klikken voeg je een zwevende werkbalk toe. Deze is niet zichtbaar totdat je op de bindings-knop klikt en er snelkoppelingen aan toevoegt; daarna kun je hem zichtbaar maken. 
-
-Je kunt meerdere werkbalken maken, elke werkbalk heeft in dit menu de volgende opties:
-
-* ![](/icons/checked.webp) `Visible` - Schakel de zichtbaarheid van de werkbalk in/uit
-* ![](/icons/more.webp)`Bindings` - Toon het bindingsvenster om functies aan de werkbalk toe te voegen of eruit te verwijderen.
-* ![](/icons/list.webp)`Order` - Toon een menu om de werkbalk te herschikken.
-* ![](/icons/reset.webp) `Reset` - Reset de werkbalk naar de standaardstatus.
-* ![](/icons/resize_bottom_right.webp) `Resize corner` - Schakel een resize-hendel in de rechterbenedenhoek van de werkbalk in/uit.
-* ![](/icons/sort_down.webp) `Collapsable` - Schakel een inklaphendel in de rechterbovenhoek in/uit.
-* ![](/icons/trash.webp) `Delete` - Verwijder de werkbalk.
-
-### Gereedschapskist {#toolbox}
-
-Opties voor het toolmenu aan de rechterkant van de Nomad-interface.
-
-![](/images/interface_toolbox.webp)
-
-#### ![](/icons/resize_bottom_right.webp) UI-hoek voor formaat wijzigen {#ui-resize-corner}
-
-Schakel een resize-hendel in de onderste hoek van de werkbalk in/uit.
-
-#### Verborgen {#hidden}
-Normaal gesproken schakelt het toolbox-pictogram in de bovenbalk tussen een lange enkele kolom of een lijst met meerdere kolommen met tools. Deze optie schakelt tussen de lijst met meerdere kolommen of volledig verborgen.
-
-#### Gekleurd {#colored}
-Kleurcodeer de pictogrammen per categorie, bv. alle mask-tools zijn bruin, split-tools rood, flatten-tools groen, enz.
-
-#### Rijen: Auto (>1) {#rows-auto-1}
-
-#### Volgorde resetten {#reset-order}
-Herstel de standaardtools in de toolbox naar de standaardvolgorde. Aangepaste pictogrammen blijven in de toolbox aan het einde van de lijst staan.
-
-
-### Presets {#presets}
+### ![](/icons/palette.webp) Kleuren {#presets}
 
 ![](/images/interface_presets.webp)
 
-Een verzameling kleurpresets voor de interface.
+Het subtabblad `Uiterlijk` begint met een verzameling kleurvoorinstellingen voor de interface. Tik op een voorinstelling om haar toe te passen, en verfijn haar daarna met de opties hieronder.
 
-#### Hoog-contrastknop {#high-contrast-button}
-Een alternatieve stijl voor knoppen die ze beter zichtbaar maakt wanneer ze zijn ingeschakeld. Als deze op Auto staat, gebruikt Nomad deze modus wanneer het UI-kleurcontrast tussen ingeschakeld/uitgeschakeld laag is.
+#### Accent en Basis {#color-widgetcolor-base}
+De hoofdkleuren van de interface: `Accent` voor geselecteerde knoppen en de balken van schuifregelaars, `Basis` voor de panelen.
 
-#### Kleurwidget/Kleurbasis {#color-widgetcolor-base}
-De primaire kleuren die in de interface worden gebruikt.
+#### Tekstdekking {#text-opacity}
+Maak tekst en pictogrammen zachter ten opzichte van de panelen.
 
-#### Transparant paneel, Kleurpaneel, Vervagingssterkte {#transparent-panel-color-panel-blur-strength}
+#### Schakelaars, Selectievakje, Tabbladen {#high-contrast-button}
+De stijl van de schakelknoppen (`Zacht` of `Vol`), van de selectievakjes (`Omlijning`, `Accent` of `Vulling`) en van de tabbladen (`Onderstreping`, `Zacht` of `Vol`).
+
+#### Gekleurde gereedschappen {#colored}
+Geef de pictogrammen een kleur per categorie: alle maskergereedschappen zijn bijvoorbeeld bruin, de snijgereedschappen rood, de afvlakgereedschappen groen enzovoort.
+
+#### Paneelschaduw {#material-color-preview}
+Panelen werpen een schaduw, zodat ze loskomen van de scène.
+
+#### Transparant paneel {#transparent-panel-color-panel-blur-strength}
 ![](/images/interface_transparent.webp)
-Wanneer ingeschakeld, verschijnen extra opties om te bepalen hoe menu’s en panelen er in Nomad uitzien. Hun kleur, transparantie en hoeveelheid vervaging kunnen worden aangepast.
+Staat dit aan, dan verschijnen er extra opties voor het uiterlijk van menu's en panelen in Nomad: `Paneeltint` bepaalt hun kleur, `Vervagingssterkte` hoeveel de scène erachter vervaagd wordt, en `Glas` voegt breking en glanslichten aan de randen toe, het best zichtbaar bij weinig vervaging.
 
 ::: tip
-Op kleine apparaten kan het nuttig zijn om het kleurpaneel bijna wit, transparant en met een lage blur strength te maken, zodat menu’s de scène niet bedekken.
+Op kleine apparaten kan het handig zijn de paneeltint bijna wit en transparant te maken, met een lage vervagingssterkte, zodat de menu's de scène niet verbergen.
 :::
 
-----
+#### ![](/icons/reset.webp) Uiterlijk herstellen {#reset-style}
+Zet alle opties voor het uiterlijk terug op hun standaardwaarden.
 
-### Bovenbalk spiegelen {#mirror-top-bar}
-Keer de volgorde van de menu’s in de bovenbalk om.
+### ![](/icons/panel_detach.webp) Indeling {#layout}
 
-### Zijbalken spiegelen {#mirror-side-bars}
-Wissel de zijbalken zodat de toolbox links staat en de toolopties rechts.
+Het subtabblad `Indeling` bepaalt waar alles staat en hoe groot het is.
 
-### Onderbalk spiegelen {#mirror-bottom-bar}
-Verplaats de onderbalk naar de rechterbenedenhoek en keer de volgorde van de knoppen om.
+#### Gereedschapskist {#toolbox}
 
-### Materiaalkleurvoorbeeld {#material-color-preview}
-Wanneer je een kleur voor een materiaal selecteert, wordt een voorbeeld van dit materiaal weergegeven op het momenteel geselecteerde object.
+Opties voor het gereedschapsmenu rechts in de interface van Nomad.
 
-----
-### Hulp-pop-up bij hover {#help-popup-on-hover}
+![](/images/interface_toolbox.webp)
 
-Voor apparaten die hover ondersteunen: bepaal of de contexthelp in Nomad, weergegeven met het ![](/icons/help.webp)-pictogram, bij hover verschijnt of alleen wanneer erop wordt geklikt.
+##### ![](/icons/resize_bottom_right.webp) Formaat aanpassen {#ui-resize-corner}
 
-----
+Toon of verberg een greep in de onderhoek van de gereedschapskist om het formaat aan te passen.
 
-### Totale schaal {#overall-scale}
-Een schaalfactor voor alle UI-elementen.
-### Paneelbreedte {#panel-width}
-De breedte van de menu’s en panelen.
-### Lettertypeschaal {#font-scale}
+##### Verborgen {#hidden}
+Normaal wisselt het pictogram van de gereedschapskist in de bovenbalk tussen één lange kolom en een lijst van gereedschappen in meerdere kolommen. Met deze optie wissel je in plaats daarvan tussen de lijst in meerdere kolommen en een verborgen gereedschapskist.
+
+##### Volgorde herstellen {#reset-order}
+Zet de standaardgereedschappen in de gereedschapskist terug in hun standaardvolgorde. Aangepaste pictogrammen blijven in de gereedschapskist, aan het einde van de lijst.
+
+#### Bovenbalk {#rows-auto-1}
+`Responsief` bepaalt wat de bovenbalk doet als hij niet op het scherm past, vooral van belang op kleine schermen: `Meerdere lijnen` verdeelt de menu's over meerdere regels, `Scroll` houdt één regel aan waar je doorheen kunt scrollen.
+
+#### Spiegel bovenste balk {#mirror-top-bar}
+Draai de volgorde van de menu's in de bovenbalk om.
+
+#### Spiegel zijbalken {#mirror-side-bars}
+Verwissel de zijbalken, zodat de gereedschapskist links staat en de gereedschapsopties rechts.
+
+#### Spiegel onderste balk {#mirror-bottom-bar}
+Verplaats de onderste balk naar de rechterbenedenhoek en draai de volgorde van de knoppen om.
+
+#### ![](/icons/move.webp) Paneel slepen {#drag-panel}
+Een zwevend paneel verplaats je altijd door aan de balk te slepen; met deze optie kun je ook aan de inhoud ervan slepen. Op `Auto` verplaatst een vinger of stylus het paneel alleen als je meer horizontaal dan verticaal sleept, zodat je met een verticale sleepbeweging nog steeds door de inhoud scrolt. Zet het op `Ja` om ook met de muis te slepen, in elke richting.
+
+#### ![](/icons/pencil.webp) Nomad-dialoog gebruiken {#use-nomad-dialog}
+Toon het eigen tekstvenster van Nomad in plaats van dat van het systeem als je een naam of een waarde typt.
+
+#### ![](/icons/stylus.webp) Zwevende punt {#hover-dot}
+Toon een puntje in de interface als er een zwevende stylus wordt herkend.
+
+#### ![](/icons/help.webp) Hulp pop-up bij zweven {#help-popup-on-hover}
+
+Op apparaten die zweven ondersteunen bepaal je hiermee of de contexthulp van Nomad (het pictogram ![](/icons/help.webp)) verschijnt als je erboven zweeft, of alleen als je erop klikt.
+
+#### Algemene schaal {#overall-scale}
+Een vermenigvuldiger voor de grootte van alle interface-elementen.
+#### Paneelbreedte {#panel-width}
+De breedte van de menu's en panelen.
+#### Lettertypeschaal {#font-scale}
 Schaal de lettertypen.
-### Verticale afstand {#vertical-spacing}
-De afstand tussen elementen in menu’s en panelen.
-### Verticale afstand (links) {#vertical-spacing-left}
-De afstand tussen elementen in de linker werkbalk.
+#### Verticale afstand {#vertical-spacing}
+De ruimte tussen de elementen in menu's en panelen.
+#### Verticale afstand (links) {#vertical-spacing-left}
+De ruimte tussen de elementen in de linkerwerkbalk.
 
-----
-
-### Randmarge {#edge-offset}
-Je zou deze waarden alleen moeten wijzigen als je problemen hebt met het bedienen van knoppen aan de schermranden. Als deze schuifregelaars zijn uitgeschakeld, gebruikt Nomad de veilige-gebied-waarden die door het apparaat zelf worden teruggegeven.
+#### Randafstanden {#edge-offset}
+Pas deze waarden alleen aan als je moeite hebt met de knoppen aan de randen van het scherm. Zijn deze schuifregelaars uitgeschakeld, dan gebruikt Nomad de waarden voor het veilige gebied die het apparaat zelf doorgeeft.
 
 ::: tip
-Wanneer je Nomad naar een nieuw apparaat migreert (bijv. een iPhone 12 vervangen door een iPhone 15), zorg er dan voor dat je de edge-opties naar de standaardwaarden reset!
+Zet je Nomad over naar een nieuw apparaat (bijvoorbeeld een iPhone 15 in plaats van een iPhone 12), zet de randopties dan terug op de standaardwaarden!
 :::
 
-### Stijl resetten {#reset-style}
-Reset alle UI-elementen naar hun standaardwaarden.
+#### ![](/icons/reset.webp) Indeling herstellen {#reset-layout}
+Zet alle opties voor de indeling terug op hun standaardwaarden.
+
+## ![](/icons/window.webp) Snelkoppelingen {#shortcuts}
+
+In het tabblad Snelkoppelingen kies je welke snelknoppen rond de viewport verschijnen, en kun je je eigen zwevende werkbalken maken.
+
+### Zijbalk {#side-bar}
+De snelknoppen voor gereedschappen onderaan de linkerzijbalk: `Gladstrijken`, `Masker`, `Verbergen`, `Vlakkengroep` en `Gizmo`. Sleep ze om hun volgorde te veranderen.
+
+### Onderste balk {#add-shortcuts-bottom}
+![](/images/interface_shortcuts.webp)
+
+Tik op een snelkoppeling om haar aan de onderste balk toe te voegen, of om haar weg te halen. Deze staan standaard aan:
+* `Ongedaan maken` - maak de vorige bewerking ongedaan
+* `Opnieuw doen` - herstel de bewerking die je net ongedaan hebt gemaakt
+* `Solo` - Verberg tijdelijk alle andere objecten, zodat alleen het geselecteerde zichtbaar is. Druk nog eens om alle objecten terug te halen.
+* `X-Ray` - Maak tijdelijk alle andere objecten half doorzichtig, zodat alleen het geselecteerde massief blijft. Druk nog eens om de standaardmaterialen terug te zetten.
+* `Voxel` - Remesh het huidige object met de laatst gebruikte voxelresolutie. Houd lang ingedrukt of veeg omhoog voor een resolutie-schuifregelaar en een schakelaar voor scherpe randen.
+* `Raster` - Zet het raster in de weergave aan of uit. Houd lang ingedrukt of veeg omhoog om de kleur en de dekking van het raster te veranderen.
+* `Draadmodel` - Zet een draadmodel over het object aan of uit. Houd lang ingedrukt of veeg omhoog om de kleur en de dekking van het draadmodel te veranderen.
+* `Inspecteren` - bekijk eigenschappen van je mesh, zoals UV's, gebakken texturen en andere eigenschappen, over de achtergrond van Nomad heen.
+* `Vlakkengroep` - Zet de weergave van de vlakkengroepen aan of uit; meer info bij [Gereedschappen->Vlakkengroep](tools.md#facegroup)
+
+Andere veelgebruikte snelkoppelingen zijn ook beschikbaar: `Omlijning`, `Projectie` (perspectief of orthografisch), `MatCap`, `DynTopo`, en de knoppen `Subdivisie`, `Omgekeerd` en de niveauknoppen van [Multiresolutie](topology.md#multiresolution).
+
+#### ![](/icons/more.webp) Toetsbindingen {#bindings-list}
+
+Bijna elke functie van Nomad kun je aan de onderste balk toevoegen via de knop Toetsbindingen, die laat zien hoeveel snelkoppelingen de balk bevat. Klik je op de knop, dan verschijnt er een menu met toetsbindingen:
+
+![](/images/interface_bindings_search.webp)
+
+Je kunt per categorie zoeken via de pictogrammen bovenaan, of in het zoekveld functies op naam zoeken. Klik op een functie om haar aan de werkbalk toe te voegen. Klik nog eens om haar weg te halen.
+
+#### ![](/icons/eye_open.webp) Zichtbaar {#order}
+
+Toon of verberg de hele onderste balk.
+
+#### ![](/icons/reset.webp) Herstellen {#reset}
+
+Zet de onderste balk terug op de standaardinstellingen.
+
+### Zwevende vensters {#add-shortcuts-window}
+![](/images/interface_add_shortcuts_window.webp)
+
+Klik op de + om een zwevende werkbalk toe te voegen. Die is pas zichtbaar als je via de knop Toetsbindingen snelkoppelingen hebt toegevoegd; daarna kun je hem zichtbaar maken.
+
+Je kunt veel werkbalken maken; elke werkbalk heeft een rij met deze opties:
+
+* Sleep de greep links van een rij om de volgorde van de werkbalken te veranderen.
+* `Naam` - De naam van de werkbalk.
+* `Zichtbaar` - Toon of verberg de werkbalk.
+* `Balk` - Toon een titelbalk op de werkbalk.
+* `Verkleind` - Houd de werkbalk op het scherm als de interface verkleind is.
+* `Toetsbindingen` - Open het venster met toetsbindingen om functies aan de werkbalk toe te voegen of eruit te halen.
+* `Verwijderen` - Verwijder de werkbalk.
 
 
-## Gebaar {#gesture}
-Het gesture-menu bepaalt hoe stylus- en vingerinvoer Nomad aanstuurt.
+## ![](/icons/gesture.webp) Gebaar {#gesture}
+Het menu Gebaar bepaalt hoe je Nomad bedient met je vinger, stylus, muis en trackpad.
 
 ![](/images/interface_gesture.webp)
 
 ### Gebaaropties {#gesture-options}
 ![](/images/interface_gesture_matrix.webp)
 
-Nomad kan bewerkingen beperken op basis van het invoerapparaat. Zo kan een vinger-sleep alleen de camera bewegen, terwijl een stylus-sleep alleen sculpt. Als je een muis of trackpad hebt, kan die ook worden toegewezen aan specifieke bewerkingen.
+Nomad kan bewerkingen beperken tot bepaalde invoerapparaten. Zo kan slepen met een vinger bijvoorbeeld alleen de camera bewegen, terwijl slepen met een stylus alleen boetseert. Heb je een muis of trackpad, dan kun je ook die aan bepaalde bewerkingen toewijzen.
 
-Nomad laat je momenteel deze modi instellen voor elke combinatie van vinger-, stylus- of muis-gesture:
+Elke rij is een bewerking: zet `Vinger`, `Stylus` en `Muis` aan of uit om te kiezen welke invoer haar mag uitvoeren.
 
-* Camera
-* Sculpt
-* Gizmo
-* Material picking (via een lange tik)
-* Select object
+* `Camera` - Beweeg de camera.
+* `Bewerken van knooppunten` - Versleep de grepen op het canvas, bijvoorbeeld om een primitief, een curve, een repeater of een licht te bewerken.
+* `Beeldhouwen` - Boetseer met de penselen. Gereedschappen met een eigen rij hieronder volgen die rij.
+* `Selecteer object` - Tik op een object om het te selecteren.
+* `Materiaal kiezer` - Houd lang ingedrukt op het canvas om de kleur of het materiaal onder de cursor over te nemen. Werkt alleen als schilderen aan staat voor het huidige penseel.
+* `Bij tikken` - De tiksnelkoppelingen van gereedschappen zoals Masker, Verbergen en Vlakkengroep (zie hieronder).
+* `Schilderen` - De gereedschappen Schilderen en Vlekken.
+* `Masker` - Het Masker-gereedschap.
+* `Vlak` - De gereedschappen Verbergen en Vlakkengroep.
+* `Creëer` - De gereedschappen Buis, Draaibank en Invoegen.
+* `Snij` - De gereedschappen Trimmen, Splitsen en Projecteren.
+* `Selecteren` - De gereedschappen Selecteren en Meten.
+* `Gizmo` - De gereedschappen Gizmo en Rooster.
+* `Transformeren` - De gereedschappen Transformeren en Rangschikken.
 
+::: tip
+Een veelgebruikte instelling op een tablet: laat alleen de stylus boetseren en schilderen, en gebruik je vingers voor de camera. Zo laten je handpalm of een verdwaalde vinger nooit een streek op je model achter.
+:::
 
-`Finger always smooths` - Smooth kan zo worden ingesteld dat het alleen werkt met een vinger-sleep.
+### ![](/icons/tool_smooth.webp) Vinger verzacht altijd {#finger-always-smooths}
+Staat dit aan, dan strijkt je vinger altijd glad zolang er een boetseergereedschap actief is, welk penseel het ook is. Zet je het aan, dan verdwijnt `Vinger` uit de rij `Beeldhouwen`, zodat de stylus boetseert en de vinger gladstrijkt.
+
+### Streek buiten object {#allow-air-stroke}
+Laat een streek ook beginnen als de cursor eerst naast de mesh terechtkomt. Kies de gereedschappen waarvoor het geldt: `Gereedschap` (alle andere penselen), `Gladstrijken`, `Masker` en `Verbergen`. Het werkt alleen voor invoer die wel kan boetseren maar niet de camera beweegt, dus deze knoppen zijn uitgeschakeld tot een van je invoerapparaten zo is ingesteld.
+
+### ![](/icons/stroke.webp) Lijn-uitlijning {#stroke-snap}
+Houd de aanwijzer aan het einde van een streek stil om hem om te zetten in een rechte lijn of een vloeiende curve. Blijf slepen om de aangepaste streek rond zijn beginpunt te draaien en te schalen.
+
+`Vasthoudtijd` bepaalt hoe lang je stil moet houden voordat de streek wordt aangepast, of voordat een vorm overgaat naar bewerken.
+
+### ![](/icons/stylus.webp) Extra invoersamples gebruiken {#use-extra-input-samples}
+Gebruik de extra invoersamples die het apparaat doorgeeft. Schakel dit uit als je streken hoekig zijn of de druk niet goed werkt. Deze optie wordt niet getoond op iOS.
 
 ### ![](/icons/tool_mask.webp) Masker {#mask}
 
 ![](/images/interface_gesture_mask.webp)
 
-`One tap shortcuts` - Schakel de volgende one-tap-snelkoppelingen in zonder de mask-knop ingedrukt te hoeven houden. Dit maakt de volgende gestures mogelijk:
-* tik op de achtergrond om de mask te inverteren
-* tik op een gemaskeerd gebied om de mask te vervagen (blur)
-* tik op een ongemaskeerd gebied om de mask te verscherpen (sharpen)
+`Snelle toetsen` - Zet de volgende tiksnelkoppelingen aan zonder dat je de maskerknop ingedrukt hoeft te houden. Je kunt dan:
+* op de achtergrond tikken om het masker om te keren
+* op een gemaskeerd gebied tikken om het masker te vervagen
+* op een niet-gemaskeerd gebied tikken om het masker te verscherpen
 
-### Masker <-> SelMask wisselen {#toggle-mask-selmask}
+#### Lang indrukken {#toggle-mask-selmask}
 ![](/images/interface_gesture_togglemask.webp)
-* `Stroke` - Lang indrukken schakelt tussen Mask en SelMask en start een nieuwe stroke. Aan het einde van de stroke wordt de vorige tool opnieuw geselecteerd. 
-* `Tool` - Lang indrukken en loslaten zonder te bewegen om tussen Mask en SelMask te wisselen. 
+
+Lang indrukken met het Masker-gereedschap wisselt tussen het maskerpenseel en de lasso (SelMask):
+* `Lang indrukken - Beeldhouwen` - Houd lang ingedrukt en blijf slepen: de streek wordt in de andere modus getekend, en aan het einde van de streek komt de vorige modus terug.
+* `Lang indrukken - Wisselen` - Houd lang ingedrukt en laat los zonder te bewegen om tussen de twee te wisselen.
+
+### ![](/icons/tool_smooth.webp) Gladstrijken {#smooth}
+`Lang indrukken - Lasso` - Lang indrukken met het Gladstrijken-gereedschap schakelt over naar het Selecteren-gereedschap zolang de selectiestreek duurt.
 
 ### ![](/icons/tool_hide.webp) Verbergen {#hide}
 ![](/images/interface_gesture_hide.webp)
 
-`One tap shortcuts` schakelt de volgende snelkoppelingen in bij gebruik van de hide-tool:
-* Tik op een face group om deze te verbergen
-* Tik in lege ruimte om de verborgen polygonen te inverteren
+`Snelle toetsen` zet de volgende snelkoppelingen aan voor het Verbergen-gereedschap:
+* Tik op een vlakkengroep om haar te verbergen
+* Tik in een lege ruimte om de verborgen polygonen om te keren
 
 ### ![](/icons/finger3.webp) Drie vingers {#three-fingers}
 ![](/images/interface_gesture_threefingers.webp)
 
-Als je apparaat 3-vinger-gestures ondersteunt, kun je hier snelkoppelingen voor dat gebaar configureren. 
+Ondersteunt je apparaat gebaren met 3 vingers, dan kun je daar snelkoppelingen aan toewijzen. 
 
-De optiematrix laat je verticale en horizontale sleepbewegingen als aparte snelkoppelingen definiëren. Merk op dat als hetzelfde gebaar voor 2 opties wordt gekozen, één ervan wordt uitgeschakeld.
+In de optietabel kun je verticaal en horizontaal slepen aan aparte snelkoppelingen koppelen, of `Nee` kiezen om het uit te laten. Let op: kies je hetzelfde gebaar voor 2 opties, dan wordt er één uitgeschakeld en is de naam doorgestreept.
 
-* `Rotate lighting` - Draai de environment, lichten en Matcap.
-* `Tool Radius` - Pas de toolradius aan.
-* `Tool Intensity` - Pas de toolintensiteit aan. 
+* `Draai verlichting` - Draai de omgeving, de lichten en de MatCap.
+* `Gereedschapsradius` - Pas de straal van het gereedschap aan.
+* `Tool Intensiteit` - Pas de intensiteit van het gereedschap aan. 
 
 ### ![](/icons/fingerprint.webp) Geschiedenis 2/3 {#history-23}
-`History shortcuts` - wanneer ingeschakeld, zijn de volgende gestures actief:
-* Undo - tik met 2 vingers
-* Redo - tik met 3 vingers
+`Historiegebaren` - als dit aan staat, werken de volgende gebaren:
+* Ongedaan maken - tik met 2 vingers
+* Opnieuw doen - tik met 3 vingers
 
-`Long press` - wanneer ingeschakeld, zorgt het ingedrukt houden van 2/3 vingers voor snel herhaald undo/redo.
+`Lang indrukken` - als dit aan staat, maak je snel achter elkaar ongedaan of opnieuw door 2 of 3 vingers op het scherm te houden.
+
+### ![](/icons/mouse.webp) Muiswiel {#mouse-wheel}
+`Snelheid (3d zoomen)` bepaalt hoe snel het wiel in de weergave zoomt, en `Snelheid (2d interface)` hoe snel het door de menu's en panelen scrolt. Met de minknop naast elke schuifregelaar draai je de richting om.
+
+### ![](/icons/fingerprint.webp) Trackpad {#trackpad}
+Op een Mac bepaal je met `Twee vingers` wat twee vingers op het trackpad doen. Knijpen zoomt altijd en draaien rolt altijd de weergave.
+* `Uit` - Scrollen met twee vingers zoomt, zoals het muiswiel. De vingers worden niet afzonderlijk gelezen.
+* `Verschuiven` - Twee vingers verschuiven de weergave, en als je er één optilt, draai je eromheen. Net als op een tablet.
+* `Draaien` - Twee vingers draaien om de weergave heen, en als je er één optilt, verschuif je.
 
 ### Toegankelijkheid {#accessibility}
 
 ![](/images/interface_gesture_accessibility.webp)
 
-`Assistive window` opent een zwevende werkbalk om drag-, pinch-, roll- en camera-bewerkingen te bedienen.
+`Hulpscherm` toont een zwevende werkbalk om slepen, knijpen, rollen en de camera te bedienen.
 
 ### Camera {#camera}
-Een snelkoppeling naar het `Camera`-menu (cameraopties stonden vroeger hier, maar zijn naar het cameramenu verplaatst).
+Een snelkoppeling naar het menu `Camera` (de camera-opties stonden vroeger hier, maar zijn naar het cameramenu verhuisd).
 
-### Pencil dubbel tikken -> Koppelingen {#pencil-tap}
+### Potlood dubbele tik -> Toetsbindingen {#pencil-tap}
 
-Een snelkoppeling naar het `Bindings`-menu (Pencil tap- en double tap-opties stonden vroeger hier, maar zijn naar het bindingsmenu verplaatst).
+Een snelkoppeling naar het menu `Toetsbindingen`, waar je instelt wat dubbeltikken met de Pencil doet. Buiten iOS staat er `Potloodknop → Toetsbindingen`, voor de knop van de stylus.
+
+### Handpalm negeren {#palm-rejection}
+Op telefoons en tablets worden aanrakingen genegeerd waarvan het contactoppervlak groter is dan `Maximale contactgrootte`, zoals je handpalm die op het scherm rust. Dit werkt misschien niet op elk apparaat; zet het dus uit als je moeite hebt met het bedienen van het canvas.
 
 
-## Koppelingen {#bindings}
-Toetsenbord- en knopsnelkoppelingen kunnen worden gedefinieerd in het bindingsmenu:
+## ![](/icons/keyboard.webp) Toetsbindingen {#bindings}
+In het menu Toetsbindingen stel je sneltoetsen voor het toetsenbord en voor knoppen in:
 
 ![](/images/interface_bindings.webp)
-Bijna alle functies in Nomad kunnen worden gekoppeld aan toetsenbordsnelkoppelingen als je apparaat een toetsenbord heeft, of aan extra knoppen op je stylus, of zelfs gamepad-controllers.
+Bijna alle functies van Nomad kun je aan een sneltoets koppelen als je apparaat een toetsenbord heeft, of aan extra knoppen op je stylus, of zelfs aan een gamecontroller.
 
-Om een binding te maken, klik je op het rechthoekje naast de functie en druk je op de toets/knop. 
+Om een toetsbinding te maken, klik je op het rechthoekje naast de functie en druk je op de toets of knop. 
 
-Zoek functies via de categoriepictogrammen bovenaan, of via de zoekbalk op naam. 
+Je vindt functies via de categoriepictogrammen bovenaan, of op naam via de zoekbalk. 
 
-Individuele bindings kunnen worden uitgeschakeld via het selectievakje naast de naam van de binding.
+Je kunt afzonderlijke toetsbindingen uitschakelen met het selectievakje naast de naam. Houd het selectievakje lang ingedrukt en sleep om de volgorde van de lijst te veranderen.
+
+Gebruiken twee ingeschakelde toetsbindingen dezelfde sneltoets, dan verschijnt er een pictogram ![](/icons/help.webp) naast, met de functies die met elkaar botsen.
 
 ### ![](/icons/more.webp) Contextmenu {#context-menu}
-Het ![](/icons/more.webp)-pictogram achter elke binding opent een contextmenu:
+Het pictogram ![](/icons/more.webp) achter elke toetsbinding opent een contextmenu:
 
 ![](/images/interface_bindings_context.webp)
 
-* `Clone` - Dupliceer de binding
-* `Reset` - Reset de binding
-* `Delete` - Verwijder de binding
-* `Toggle shortcut on key tap` - Stel in of een tik versus lang indrukken verschillend worden behandeld. Wanneer ingeschakeld, activeert een tik de tool. Een lange druk activeert de tool alleen zolang de toets is ingedrukt; bij loslaten wordt teruggekeerd naar de vorige tool. Dit wordt in andere 3D-apps soms ‘sticky keys’ genoemd.
+* `Klonen` - Kloon de toetsbinding, bijvoorbeeld om een functie een tweede sneltoets te geven.
+* `Herstellen` - Zet de toetsbinding terug
+* `Verwijderen` - Verwijder de toetsbinding. Alleen mogelijk als de functie meer dan één toetsbinding heeft.
 
-### Geavanceerd {#advanced}
-Onderaan het bindingsmenu staat een tandwielmenu voor geavanceerde opties:
+Daaronder hebben sommige toetsbindingen extra opties:
+
+* `Vaste toetsen` - Voor gereedschapssneltoetsen en de snelle sneltoetsen (Masker, Gladstrijken, Gizmo, Verbergen, Vlakkengroep, Toevoegen/Aftrekken): kies hoe een toetsdruk van gereedschap wisselt. `Auto` gebruikt de standaardinstelling uit de [Geavanceerde](#advanced) opties.
+  * `Vasthouden` - Houd de toets ingedrukt om het gereedschap te gebruiken, en laat los om terug te gaan naar het vorige gereedschap.
+  * `Wisselen` - Druk één keer om van gereedschap te wisselen.
+  * `Kort indrukken` - Houd ingedrukt om het gereedschap tijdelijk te gebruiken, of druk kort om ernaar over te schakelen.
+* `Terug bij loslaten` - Voor snelle sneltoetsen: kies of je bij het loslaten van een ingedrukte toets altijd teruggaat naar het vorige gereedschap, ook als dat gereedschap al actief was.
+* `Vorig gereedschap wisselen` - Voor gereedschapssneltoetsen: druk je op de sneltoets van het huidige gereedschap, dan ga je terug naar het laatste gereedschap. Vereist `Vaste toetsen` op `Wisselen` of `Kort indrukken`.
+* `Positie` - Voor sneltoetsen van zwevende vensters: open het venster waar het was (`Vorige behouden`) of onder de cursor (`Op cursor`).
+* `Verplaatsen (bij loslaten)` / `Zoomen (bij loslaten)` - Voor de toetsbindingen voor zoomen en verschuiven van de camera: schakel over naar de andere als je de toets loslaat.
+* Sleeprichting - Voor `Verlichting roteren`, `Gereedschapsradius` en `Gereedschapsintensiteit`: kies horizontaal of verticaal slepen.
+* `Synchroniseren` - Voor functies die objecten toevoegen, klonen of instantiëren: kies of het resultaat gesynchroniseerd wordt. Standaard wordt de synchronisatiewaarde uit het menu Scène gebruikt.
+* `Op achtergrond` - Voor de snelle sneltoetsen Gladstrijken en Masker: sleep op de achtergrond terwijl je de toets ingedrukt houdt om een lasso te tekenen: een selectielasso voor Gladstrijken, een maskerlasso voor Masker.
+* `Camera forceren` - Voor de cameratoetsbindingen: beweeg de camera, ook als dezelfde sneltoets door een andere toetsbinding wordt gebruikt, meestal een gereedschapssneltoets of Toevoegen/Aftrekken.
+* `Lineaire rolbeweging` - Voor de toetsbinding om te rollen: rol met een horizontale, verticale of diagonale sleepbeweging in plaats van rond het draaipunt te bewegen.
+
+::: tip
+Met `Kort indrukken` doet één toets allebei: houd hem ingedrukt om even glad te strijken of te maskeren en je bent terug bij je penseel zodra je loslaat, of tik erop om bij dat gereedschap te blijven.
+:::
+
+### ![](/icons/cog.webp) Geavanceerd {#advanced}
+Onderaan het menu Toetsbindingen staat een tandwielmenu met geavanceerde opties:
 
 ![](/images/interface_bindings_advanced.webp)
 
-* `Toggle shortcut on key tap` - Een tik op de standaard-snelkoppelingen voor mask, smooth, gizmo, hide, sub schakelt naar die modus, maar het ingedrukt houden van de toets schakelt tijdelijk naar die modus; wanneer de toets wordt losgelaten, keert de modus terug naar de vorige. Dit wordt in andere 3D-apps soms ‘sticky keys’ genoemd.
-* `Toggle tool shortcuts` - Wanneer je een van de tool-snelkoppelingen gebruikt en dezelfde snelkoppeling twee keer indrukt, wordt er teruggeschakeld naar de vorige tool. Zo kun je met dezelfde hotkey blijven wisselen tussen twee tools.
-* `Invert Y (Zooming)` - Keert de zoomrichting om.
-* `Reset bindings` - reset alle bindings naar de standaardwaarden.
+* `Snelle sneltoetsen` - De standaardinstelling van `Vaste toetsen` en `Terug bij loslaten` voor de sneltoetsen Masker, Gladstrijken, Gizmo, Verbergen, Vlakkengroep en Toevoegen/Aftrekken.
+* `Gereedschapssneltoetsen` - De standaardinstelling van `Vaste toetsen` en `Vorig gereedschap wisselen` voor de gereedschapssneltoetsen. Met `Vorig gereedschap wisselen` kun je met dezelfde sneltoets steeds tussen twee gereedschappen wisselen.
+* `Sneltoetsvenster` - De modus van `Vaste toetsen` voor de sneltoetsen die de zwevende vensters tonen.
+* `Draai zoom Y om` - Draai de verticale sleeprichting om bij het zoomen met een toetsbinding.
+* `Lineaire rolbeweging` - Rol de weergave met een horizontale, verticale of diagonale sleepbeweging in plaats van rond het draaipunt te bewegen.
+* `SpaceMouse` - Schakel ondersteuning voor de 3Dconnexion SpaceMouse in. Op sommige systemen verschijnen extra opties: wat hij beweegt (`Object`, `Camera`, `Eerste Persoon`, `Drone`), `Draaipunt automatisch bijwerken` om het draaipunt naar het oppervlak onder de cursor te verplaatsen zodra hij begint te bewegen, en zijn snelheden voor `Verplaatsen`, `Inzoomen` en `Rotatie`.
+* `Dode zones (drift)` - Voor controllers van het type `Gamepad`, `Joystick` en `Knop`. Verhoog deze waarden als de camera beweegt terwijl je de controller niet aanraakt.
+* `Gereedschapsradius` - Hoe slepen met de toetsbinding voor de straal het penseel van grootte verandert (`Cirkel`, `Midden` of `dx`), en daarna hoeveel de straaltoetsbindingen bij elke druk optellen (in pixels) of vermenigvuldigen.
+* `Gereedschapsintensiteit` - Hoeveel de intensiteitstoetsbindingen bij elke druk optellen of vermenigvuldigen.
+* `Camera - Snelheid` - De snelheid voor `Verplaatsen` en `Rotatie` van de toetsbindingen die de weergave verschuiven en draaien.
+* `Toetsbindingen herstellen` - zet alle toetsbindingen terug op hun standaardwaarden.
+* `Volgorde herstellen` - zet de standaardvolgorde van de lijst met toetsbindingen terug.
 
 
-## iOS ⌘ Sneltoetsweergave toetsenbord {#ios-keyboard-shortcuts-display}
+## iOS ⌘ Weergave van sneltoetsen {#ios-keyboard-shortcuts-display}
 
-Op iOS-apparaten met een toetsenbord kun je de ⌘ (cmd)-toets ingedrukt houden om een lijst met snelkoppelingen weer te geven.
+Op iOS-apparaten met een toetsenbord houd je de toets ⌘ (cmd) ingedrukt om een lijst met sneltoetsen te zien.
 
-Android-toetsenbordondersteuning is nog wat experimenteel.
+De toetsenbordondersteuning op Android is nog een beetje experimenteel.
 
 ![](/images/shortcuts.webp)
 
 
-## Debug {#debug}
-Enkele experimentele en debug-opties zijn in dit menu ondergebracht. Veel van deze opties zouden op de standaardwaarden moeten blijven en alleen gewijzigd moeten worden na contact met Nomad-support.
+## ![](/icons/bug.webp) Debug {#debug}
+In dit menu staan een aantal experimentele opties en debugopties. Laat de meeste op hun standaardwaarde staan, en verander ze alleen na contact met de ondersteuning van Nomad. Met de pictogrammen bovenaan spring je naar elk onderdeel.
 
 ![](/images/interface_debug.webp)
-### UV {#uv}
-* `Normalize Uvs` - Nomad normaliseert de UV’s binnen de [0-1]-tile.
+### ![](/icons/uv.webp) UV {#uv}
+* `Normaliseer UV's` - Nomad normaliseert de UV's van de geselecteerde mesh binnen de [0-1]-tegel.
 
-### Quad Remesh {#quad-remesh}
-* `Instant Mesh` - Schakel het instant remesh-algoritme in
-* `Quadriflow` - Een alternatieve quad-remesh-methode.
+### ![](/icons/sun.webp) Shading {#render}
+* `Brekingdiepte schrijven (achter)` - De achterkant van brekende meshes wordt in de dieptebuffer geschreven.
+* `Hoekgewogen gladde normalen` - Een aanpassing aan de werking van vloeiende shading die in bepaalde gevallen vouwen kan voorkomen.
 
-### Renderen {#render}
-* `Heightmap` - Verander de viewport zodat de diepte van de scène wordt gerenderd. Dit kan worden gebruikt om alpha maps te maken voor brushes.
-* `Refraction write depth (back)` - De achterkant van refractie-meshes wordt in de depth buffer geschreven.
-* `Flip Y (normal map)` - Inverteer het y-kanaal bij het bakken van normal maps, vereist voor bepaalde game- en render-engines.
-* `Angle weighted smooth normals` - Een aanpassing van hoe smooth shading werkt, die in bepaalde gevallen vouwen kan voorkomen.
+### ![](/icons/speed.webp) Doel FPS {#target-fps}
+Staat dit uit, dan stemt Nomad het aantal beelden per seconde af op de verversingssnelheid van je scherm.
 
-### Doel-FPS {#target-fps}
-Wanneer uitgeschakeld, synchroniseert Nomad zijn frames-per-second met de verversingssnelheid van je scherm.
+Staat het aan, dan stel je zelf in hoeveel beelden per seconde Nomad rendert.
 
-Wanneer ingeschakeld, kun je het aantal frames per seconde instellen dat Nomad rendert.
+### ![](/icons/window.webp) Interface {#debug-interface}
+* `Gereedschapskist: alles tonen` - Nomad verbergt gereedschappen die niet relevant zijn voor de huidige selectie; zo zijn bijvoorbeeld alle boetseerpenselen verborgen op primitieven die nog niet voltooid zijn. Met deze optie worden uitgeschakelde gereedschappen gedimd in plaats van verborgen.
 
-### Interface {#debug-interface}
-* `Top: layout` 
-  * Collapse: Op kleine apparaten wordt de bovenbalk samengevouwen in meer submenu’s. 
-  * Scroll: Als je Nomad op grote schermen gewend bent en de normale lay-out verkiest, kun je hiermee de standaard brede bovenbalk gebruiken, die dan scrollbaar is.
-  * Multiline: Toon het volledige bovenmenu over meerdere regels.
-* `Bottom: draggable popup` - De onderste werkbalk heeft verschillende knoppen die een dialoogvenster openen. Als deze optie is ingeschakeld, kunnen die dialogen naar een andere plek op het scherm worden verplaatst.  
-* `Toolbox: show all` - Nomad verbergt tools die niet relevant zijn voor de huidige selectie, bv. alle sculpt-brushes worden verborgen op primitieve objecten die nog niet gevalideerd zijn. Met deze optie worden niet-relevante tools gedimd in plaats van verborgen.
-* `Toolbox: colored` - Kleurcodeer de toolbox-pictogrammen op basis van hun type.
-* `Panel: Drop shadows` - Teken slagschaduwen rond menu’s en panelen. Op sommige oudere apparaten kan dit de prestaties beïnvloeden.
-* `Panel: Blending` - Debug-optie
-* `Pointer: hovering dot` - Voor apparaten die stylus-hover ondersteunen: toon een punt wanneer de stylus boven menu’s en panelen zweeft.
+De andere interface-opties die hier vroeger stonden, vind je nu in het tabblad [Interface](#interface).
 
-### Gif-turntable {#gif-turntable}
-Nomad kan een geanimeerde gif-turntable exporteren. Let op: door beperkingen van het gif-formaat is de kwaliteit laag. Schermopname is meestal een betere methode.
+### ![](/icons/turntable.webp) Draaitafel {#gif-turntable}
+Nomad kan een geanimeerde gif van een draaitafel exporteren. Door de beperkingen van het gif-formaat is de kwaliteit laag. Een schermopname is meestal een betere methode.
 
-* `Duration` - hoe lang de turntable in seconden duurt
-* `Rotation center` - waar het camerapivot zich bevindt, dus rond welk deel van de scène de camera draait
-* `Transparent background` - Gebruik de transparante optie voor gifs. Let op: gifs ondersteunen slechts 1-bit-transparantie, waardoor randen sterk gealiasd kunnen zijn.
-* `Max frame sampling` - Veel van Nomads hoogwaardige rendereffecten komen voort uit het combineren van meerdere frames. Deze schuifregelaar bepaalt hoeveel frames worden gecombineerd.
-* `Export (GIF)` - start het gif-exportproces.
+* `Duur` - hoeveel seconden de draaitafel duurt
+* `Max frame sampling` - Veel van de renderingeffecten van hoge kwaliteit in Nomad ontstaan door meerdere beelden te combineren. Deze schuifregelaar bepaalt hoeveel beelden er worden gecombineerd, en het selectievakje zet het aan of uit.
+* `Rotatiecentrum` - waar de camera omheen draait: `Huidige behouden` behoudt het huidige draaipunt, `(0, 0, 0)` gebruikt het midden van de wereld, `Scène` het midden van de scène.
+* `Transparante achtergrond` - Gebruik de transparante optie voor gifs. Let op: gifs ondersteunen alleen 1-bit transparantie, dus de randen kunnen flink gekarteld zijn.
+* `Export (GIF)` - start het exporteren van de gif.
 
-### Nabewerking {#post-process}
-* `Filtering` - Debug-optie
-* `Format` - Debug-optie
-* `Buffer reuse` - Debug-optie
+### ![](/icons/postprocess.webp) Nabewerking {#post-process}
+* `Filtering` - Debugoptie
+* `Formaat` - Debugoptie
+* `Buffers hergebruiken` - Debugoptie
 
-### Prestaties {#performance}
-* `Multicore general` - Debug-optie
-* `Multicore sculpting` - Debug-optie
-* `Partial Drawing` - Experimentele functie! Gebruik dit als je een relatief klein deel van een high-poly mesh aan het sculpten bent. Het zou het sculpten vloeiender moeten maken, maar je moet geen wireframe inschakelen! Ook kan het visuele artefacten veroorzaken tijdens brush-strokes.
+### ![](/icons/ram.webp) Prestaties {#performance}
+* `Multithreading: algemeen` - Debugoptie
+* `Multithreading: beeldhouwen` - Debugoptie
+* `Herhalingen als instanties tekenen` - Teken alle kopieën van een repeater in één draw call. Debugoptie.
 
-### Functie {#feature}
-* `Flip quad split (on tap)` -  Debug-optie
-* `Join: merge radius` - Vertexen worden automatisch gelast als ze dicht genoeg bij elkaar liggen wanneer meshes worden samengevoegd. Je kunt de radius met deze schuifregelaar aanpassen.
+### ![](/icons/star.webp) Functie {#feature}
+* `nom: multires comprimeren` - Maak projecten en Nomad-exports die multiresolutie gebruiken kleiner. Deze bestanden kunnen niet worden geopend door oudere versies van Nomad. Deze optie verdwijnt in de toekomst misschien en staat dan standaard aan.
+* `Quad-diagonaal omkeren (bij tikken)` -  Debugoptie
 
-### Debug {#dev}
-* `Logs` - Toon een logvenster
-* `App review popup` - Debug-optie
-* `FPS` - voeg een frames-per-second-teller toe aan de viewport-statistieken.
+### ![](/icons/bug.webp) Debug {#dev}
+* `Logboeken` - Open een logboekvenster
+* `Gebeurtenissen loggen` - Schrijf je aanwijzergebeurtenissen (vinger, stylus, muis) naar het logboekvenster, om problemen met invoer te onderzoeken.
+* `FPS` - voeg een teller voor beelden per seconde toe aan de statistieken in de viewport.
+* `Appbeoordelingsvenster` - Debugoptie, op iOS en Android.
+
+### ![](/icons/image.webp) Aangepaste iconen {#custom-icons}
+Vervang de pictogrammen van Nomad door je eigen png-bestanden.
+* `Iconen importeren` - Importeer png-bestanden naar `tmp_session/icons`. Elk bestand vervangt het basispictogram met dezelfde naam. Ze verdwijnen als Nomad opnieuw opstart.
+* `Gereedschapsiconen exporteren` - Kopieer de basispictogrammen `tool_<tool>.png` naar `tmp_session/icons`, zonder iets te overschrijven. Je kunt ze daar bewerken en toepassen met `Iconen opnieuw laden`.
+* `Iconen opnieuw laden` - Pas de pictogrammen uit `tmp_session/icons` toe.
+
+### Quad-remesh {#quad-remesh}
+De opties voor quad-remesh staan niet meer in dit menu: zie [Quad-remesh](topology.md#quad-remesh-instant) in het menu Topologie en het gereedschap [Quad Remesher](tools.md#quad-remesher).
+
+### Maak winkelminiaturen {#make-store-thumbnails}
+Render schermafbeeldingen in formaten die passen bij de App Store van iOS.

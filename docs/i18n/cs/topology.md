@@ -1,214 +1,252 @@
 # ![](/icons/multires.webp) Topologie {#topology}
 
-Tato nabídka ovládá topologii objektů v Nomadu, stejně jako nástroje pro „pečení“ a přenos detailů mezi objekty a mezi texturami.
+Tato nabídka řídí topologii objektů v Nomadu a nabízí také nástroje pro zapékání a přenos detailů mezi objekty i mezi texturami.
 
 ![](/images/topology_overview.webp)
 
-Nomad je založený na polygonech, používá trojúhelníky a čtyřúhelníky (quady) pro práci s geometrií.
-Topologií myslíme jak počet ploch, tak způsob, jakým jsou body (vrcholy) propojené.
+Nomad pracuje s polygony: geometrii tvoří trojúhelníky a čtyřúhelníky.
+Topologií rozumíme jak počet ploch, tak i to, jak jsou body (vrcholy) navzájem propojené.
 
-Je důležité mít přehled o topologii, obzvlášť pokud chcete model detailně sochat nebo malovat.
+Je důležité mít topologii pod kontrolou, zvlášť pokud chcete sochat nebo malovat jemné detaily.
 
-::: tip Jak sledovat svou topologii?
-Můžete zobrazit [drátěný model (Wireframe)](settings.md#wireframe) nebo jednoduše vypnout [hladké stínování (Smooth Shading)](settings.md#smooth-shading).
+::: tip Jak mít topologii pod kontrolou?
+Můžete zobrazit [drátový model](settings.md#wireframe) nebo jednoduše vypnout [hladké stínování](settings.md#smooth-shading).
 :::
 
 ![](/images/topology_top.webp)
 
-Nabídka Topology v Nomadu má několik sekcí:
+Nabídka Topologie má několik karet ve dvou řadách:
 
-| Method                                | Icon                         | Description                                                      |
+| Metoda                                | Ikona                        | Popis                                                            |
 | :-----------------------------------: | :--------------------------: | :--------------------------------------------------------------: |
-| [Multiresolution](#multiresolution)   | ![](/icons/multires.webp)   | Úprava více úrovní detailu pomocí subdivize                      |
-| [Voxel Remesher](#voxel-remesher)     | ![](/icons/voxel.webp)      | Přepočítá novou topologii s rovnoměrnou hustotou                 |
-| [Dynamic Topology](#dynamic-topology) | ![](/icons/dynamic.webp)    | Lokální přidávání/odebírání ploch v reálném čase při sochání či malbě |
-| [Misc](#misc)                         | ![](/icons/topo_extra.webp) | Decimace, UV, baking, remeshing, reprojekce                      |
-| [Primitive](#msc)                     | ![](/icons/dot.webp)        | Možnosti primitiv                                                |
+| [Multirezoluce](#multiresolution)     | ![](/icons/multires.webp)   | Úpravy na několika úrovních detailu pomocí dělení                |
+| [Voxelové přesíťování](#voxel-remesher) | ![](/icons/voxel.webp)    | Přepočítá novou topologii s rovnoměrnou hustotou                 |
+| [Dynamická topologie](#dynamic-topology) | ![](/icons/dynamic.webp) | Přidává a ubírá plochy lokálně v reálném čase při sochání nebo malování |
+| [Různé](#misc)                        | ![](/icons/topo_extra.webp) | Uzavření otvorů, vynucení manifoldu a převod na triplanár        |
+| [Primitiva](#primitive)               | ![](/icons/dot.webp)        | Možnosti primitiva                                               |
+| [Decimace](#decimation)               | ![](/icons/decimate.webp)      | Sníží počet ploch a zachová přitom tvar                       |
+| [Quad přesíťování](#quad-remesh)      | ![](/icons/quad.webp)       | Znovu postaví objekt s čistou sítí čtyřúhelníků                  |
+| [Rozbalení UV](#uv-unwrap)            | ![](/icons/uv.webp)         | Vytvoří UV pro texturování                                       |
+| [Péct](#bake)                         | ![](/icons/bake.webp)       | Zapeče detaily a malbu do textur, vrcholů nebo VDM razítek       |
 
 
-## Počty polygonů {#polygon-stats}
+## Statistiky polygonů {#polygon-stats}
 
 ![](/images/topology_stats.webp)
 
-Horní část nabídky Topology zobrazuje informace o polygonech pro vybraný objekt a celou scénu. Čísla ukazují celkový počet vrcholů, celkový počet trojúhelníků a celkový počet quadů (4stranných polygonů).
+Horní část každé karty ukazuje počty polygonů vybraného objektu, a pokud scéna obsahuje víc objektů, i celé scény. Sloupce udávají počet vrcholů, trojúhelníků, čtyřúhelníků (polygonů se 4 stranami) a UV souřadnic (0, když objekt nemá UV).
 
-Klepnutím na tuto sekci zobrazíte seznam statistik polygonů pro všechny polygonální objekty ve scéně.
+Klepnutím na tuto část zobrazíte seznam všech objektů scény s přesnými počty, včetně počtu skupin ploch.
+
+## ![](/icons/cog.webp) Nabídka ozubeného kolečka {#gear-menu}
+Některé sekce, například na kartách [Quad přesíťování](#quad-remesh) a [Péct](#bake), mají další možnosti. Otevřete je ikonou ozubeného kolečka vedle názvu sekce.
 
 ## ![](/icons/multires.webp) Multirezoluce {#multiresolution}
 
 ![](/images/topology_multires_menu.webp)
 
 ### Co je multirezoluce? {#what-is-multiresolution}
-Funkce multiresolution je užitečná hlavně ve dvou scénářích:
-- Hladký subdivizní algoritmus pro zvýšení počtu polygonů objektu
-- Práce s více úrovněmi rozlišení, abyste mohli střídat úpravy v malém a velkém měřítku
+Multirezoluce se hodí ve dvou hlavních situacích:
+- hladké dělení, kterým zvýšíte počet polygonů objektu
+- práce s několika úrovněmi rozlišení, takže můžete střídat drobné a velké úpravy
 
 ![](/videos/multiresolution.mp4)
 
-#### Postup práce s multirezolucí {#multiresolution-workflow}
-Důležitým aspektem multiresolution je, že se můžete vrátit na nižší rozlišení, provést změny na objektu a pak se vrátit na nejvyšší rozlišení bez ztráty detailů ve vysokém rozlišení. Všechny detaily ve vysokém rozlišení budou automaticky promítnuty (projektovány).
+#### Postup s multirezolucí {#multiresolution-workflow}
+Důležitou vlastností multirezoluce je, že se můžete vrátit na nižší rozlišení, upravit objekt a pak se vrátit na nejvyšší rozlišení, aniž byste přišli o jemné detaily. Všechny detaily vysokého rozlišení se automaticky promítnou.
+
+[Vrstvy](layers.md#layers) jsou k dispozici na každé úrovni rozlišení.
 
 ::: warning
-Pokud používáte nástroj, který mění topologii objektu, přijdete o všechny ostatní úrovně rozlišení objektu!
-Vždy byste měli dostat varování v případě, že se to má stát, například když používáte:
-- [Voxel Remesher](#voxel-remesher)
-- [Dynamic Topology](#dynamic-topology)
-- [Trim tool](tools.md#trim)
-- [Split tool](tools.md#split)
+Pokud použijete nástroj, který mění topologii objektu, přijdete o všechny ostatní úrovně rozlišení!
+Než se to stane, měli byste vždy dostat varování, například když používáte:
+- [voxelové přesíťování](#voxel-remesher)
+- [dynamickou topologii](#dynamic-topology)
+- [nástroj Oříznout](tools.md#trim)
+- [nástroj Rozdělit](tools.md#split)
 :::
 
 
 ### Posuvník multirezoluce {#multiresolution-slider}
-Tento posuvník ukazuje počet úrovní subdivize v aktuálním objektu. Pokud je zde 6 svislých pruhů, existuje 6 úrovní subdivize. Kroužek označuje aktuálně zobrazenou úroveň subdivize. 
+Tento posuvník ukazuje počet úrovní dělení aktuálního objektu. Když vidíte 6 svislých čárek, má objekt 6 úrovní dělení. Kroužek označuje právě zobrazenou úroveň.
 
-### Obrátit {#reverse}
-Na nejnižší úrovni subdivize se tlačítko Reverse pokusí vytvořit úroveň pod tou aktuální. Obecně to lze provést jen tehdy, pokud byl objekt od začátku vytvořen pomocí subdivize, například v Nomadu nebo v jiných 3D aplikacích, které používají multiresolution subdivision surfaces.
+Malé ikony nad posuvníkem ukazují, které možnosti (`Zamknout úroveň 0`, `Lineární`, `Ostrá hrana`, `Udržet trojúhelníky`) byly u jednotlivých úrovní použity.
 
-### Subdividovat {#subdivide}
-Tlačítko *Subdivide* zvýší počet polygonů 4×, proto sledujte počet polygonů, protože může velmi rychle narůstat!
-Důležitým aspektem *Subdivision Surface* je, že konvergují k *hladkému povrchu (Smooth Surface)*.
-Pro pochopení fungování můžete zkusit tlačítko *Subdivide* na objektu s jen několika málo polygony.
+### Opačný {#reverse}
+Na nejnižší úrovni dělení se tlačítko Opačný pokusí vytvořit úroveň pod tou aktuální. Obvykle to jde jen tehdy, když objekt vznikl dělením už od začátku, třeba v Nomadu nebo v jiné 3d aplikaci, která pracuje s multirezolučními dělenými povrchy.
 
-Toto *Smooth* chování můžete vypnout zaškrtnutím volby `Linear subdivision`.
+### Poddělení {#subdivide}
+Tlačítko *Poddělení* zčtyřnásobí počet polygonů, takže počet polygonů hlídejte, umí vyrůst velmi rychle! Pokud by výsledek byl příliš těžký, Nomad se nejdřív zeptá na potvrzení.
+Důležitou vlastností *dělených povrchů* je, že se postupně blíží *hladkému povrchu*.
+Abyste pochopili, jak to funguje, zkuste tlačítko *Poddělení* na objektu s několika málo polygony.
+
+Toto *vyhlazování* můžete vypnout možností `Lineární`.
 
 ### Smazat nižší {#delete-lower}
-Pokud existují subdivize pod aktuálně zobrazenou úrovní, smaže je. Pokud to uděláte omylem, můžete je znovu vytvořit tlačítkem Reverse.
+Smaže úrovně dělení pod právě zobrazenou úrovní. Pokud to uděláte omylem, můžete je znovu vytvořit tlačítkem Opačný.
 
 ### Smazat vyšší {#delete-higher}
-Pokud existují subdivize nad aktuálně zobrazenou úrovní, smaže je.
+Smaže úrovně dělení nad právě zobrazenou úrovní.
 
-### Lineární subdivize {#linear-subdivision}
-Subdividuje mesh bez aplikace vyhlazování.
+### ![](/icons/lock.webp) Zamknout úroveň 0 {#lock-lv0}
+Zachová tvar nejnižší úrovně dělení, když sochaříte na vyšších úrovních. Malba se do úrovně 0 přenáší i tak. To může být důležité, pokud objekt vznikl v jiné aplikaci a základní síť musí zůstat beze změny.
 
-### Ostrý okraj {#sharp-border}
-Pokud má objekt facegroupy, zapnutí této volby udrží hranice facegroup ostré. Lze nastavit na každé úrovni subdivize (na posuvníku subdivize se nad úrovní zobrazí malá ikona jako indikace).
+Tato možnost je dostupná jen před prvním dělením. Když je vypnutá, větší změny na vyšších úrovních dělení posunou i úroveň 0.
 
-### Zachovat trojúhelníky {#keep-triangles}
-Většina standardních systémů subdivision surface se při subdivizi snaží převést všechny polygony na quady. Toto přepínání vynutí, aby subdivize používala trojúhelníky.
+### ![](/icons/linear.webp) Lineární {#linear-subdivision}
+Rozdělí síť bez jakéhokoli vyhlazení.
 
-### Zamknout (LV0) {#lock-lv0}
+### ![](/icons/group.webp) Ostrá hrana {#sharp-border}
+Pokud má objekt skupiny ploch, tato možnost zachová hranice skupin ostré. Lze ji nastavit pro každou úroveň dělení zvlášť (posuvník dělení pak nad danou úrovní zobrazí malou ikonu).
 
-Zabrání úpravám nejnižší úrovně subdivize. To může být důležité, pokud byl objekt vygenerován v jiné aplikaci a základní objekt musí zůstat nezměněn. Když je tato volba vypnutá, velké změny provedené na vyšších úrovních subdivize budou posouvat i úroveň 0.
+### ![](/icons/triangle.webp) Udržet trojúhelníky {#keep-triangles}
+Většina běžných systémů dělených povrchů se při dělení snaží převést všechny polygony na čtyřúhelníky. Tento přepínač vynutí, aby dělení místo toho použilo trojúhelníky.
 
-::: tip 
+::: tip
 
-Subdivize ve výchozím nastavení vyhladí všechny ostré hrany. Pokud chcete hrany ponechat mírně ostré, zkuste použít lineární subdivizi nebo Sharp border na prvních 2 úrovních subdivize a pak je na vyšších úrovních vypnout. Vznikne tak polovičně ostrý subdividovaný mesh.
+Dělení ve výchozím stavu zaoblí všechny ostré hrany. Chcete-li hrany ponechat trochu ostré, vyzkoušejte `Lineární` nebo `Ostrá hrana` na prvních 2 úrovních dělení a na vyšších úrovních je vypněte. Vznikne tak poloostrá dělená síť.
 
 :::
 
+### Zobrazit nejvyšší úroveň {#show-highest-level}
+Zobrazí nejvyšší úroveň se všemi detaily, zatímco sochaříte na nižší úrovni. Hodí se, když chcete při velkých úpravách vidět konečný výsledek.
 
-## ![](/icons/voxel.webp) Voxelový remesher {#voxel-remesher}
+### Drátový model: Pouze úroveň 0 {#wireframe-level-0-only}
+Když je zapnutý [drátový model](settings.md#wireframe), zobrazí se drátový model jen nejnižší úrovně. Hustý drátový model vysokých úrovní by jinak mohl zakrývat tvar.
+
+
+## ![](/icons/voxel.webp) Voxelové přesíťování {#voxel-remesher}
 ![](/images/topology_voxel_menu.webp)
-Při použití `Voxel Remesher` bude celá síť (mesh) přinucena mít jednotné rozlišení topologie, což znamená, že všechny polygony mají víceméně stejnou velikost. To je velmi užitečné, když nechcete přemýšlet o topologii a chcete jen volně sochat.
+`Voxelové přesíťování` vynutí pro celou síť topologii s rovnoměrným rozlišením, takže všechny polygony mají zhruba stejnou velikost. To je velmi užitečné, když nechcete řešit topologii a prostě chcete volně sochat.
 
-Typický sochařský workflow může začít použitím `Voxel Remesher` pro nahrubé „block-out“ tvaru s nízkým rozlišením.
-Jednoduše občas stiskněte tlačítko *Remesh*, když síť příliš natahujete, abyste se vyhnuli velkému zkreslení.
+Typický postup sochání může začít tím, že pomocí `Voxelové přesíťování` nahrubo vytvarujete základní tvar v nízkém rozlišení.
+Kdykoli síť příliš natáhnete, stačí čas od času stisknout tlačítko *Remesh*, abyste se vyhnuli přílišné deformaci.
 
 ![](/videos/voxel_remesher.mp4)
 
 
 ::: tip Voxel?
-Jak bylo uvedeno výše, Nomad je polygonální software, ale `Voxel Remesher` je výjimka, kde se (dočasně) používá jiný přístup k provedení remeshingu.
+Jak bylo řečeno výše, Nomad je polygonový software, ale `Voxelové přesíťování` je výjimka: k přesíťování se (dočasně) používá jiný přístup.
 
-Velký rozdíl je v tom, že voxelový přístup nepřijímá samo-průniky (self intersection), takže ty budou vyřešeny.
-Také nepodporuje mesh s dírami.
+Jeden velký rozdíl je, že voxelový přístup nepřipouští samoprůniky, takže se vyřeší.
+Také nepodporuje sítě s otvory.
 
-Dírami zde nemyslíme `genus hole` (`díru` v donutu), ale mesh, který není `vodotěsný`/`uzavřený`.
-Typicky to znamená, že před aplikací remeshingu budou všechny díry vyplněny, podobně jako u [Trim tool](tools.md#trim) nebo [funkce vyplnění děr (Hole filling)](scene.md#hole-filling).
+Otvory nemyslíme `genus hole` (`díru` uprostřed donutu), ale sítě, které nejsou `vodotěsné`/`uzavřené`.
+V praxi to znamená, že před přesíťováním se všechny otvory zaplní, podobně jako u [nástroje Oříznout](tools.md#trim) nebo [funkce vyplnění otvorů](#holes). Způsob určuje níže popsaná možnost [Otvory](#voxel-holes).
 :::
 
-### Remesh {#voxel-remesh}
-Spustí voxelový remesh.
+### ![](/icons/voxel.webp) Remesh {#voxel-remesh}
+Spustí voxelové přesíťování. Malé ikony na tlačítku připomínají, které z níže uvedených možností jsou zapnuté.
 
 ### Rozlišení {#voxel-resolution}
-Velikost voxelů použitých během výpočtu. Při změně tohoto parametru se na mesh překryje šachovnicový vzor, který poskytne náhled výsledku.
+Velikost voxelů použitých při výpočtu, vyšší hodnoty dávají více detailu. Při změně tohoto parametru se na síť překryje šachovnicový vzor, který ukazuje náhled výsledku.
+
+Kapátko převezme rozlišení z hustoty sítě v místě, kam klepnete. Tlačítko s kostkou vedle něj přepne hodnotu na `Délka hrany` ve světových jednotkách: stejná hodnota pak dá stejný detail na jakémkoli objektu.
 
 ### Vytvořit multirezoluci {#build-multiresolution}
-Vytvoří nižší úrovně multiresolution pro voxelový remesh. Pokud použijete šachovnicový vzor k nastavení rozlišení a nastavíte build multiresolution na 2, konečný výsledek bude mít detail odpovídající posuvníku rozlišení a v záložce multires bude na úrovni 2, což znamená, že máte nižší multires meshe na úrovni 1 a 0. To může být dobrý způsob, jak vygenerovat čistý mesh s rovnoměrnými polygony a zároveň mít nízko-poly řídicí mesh.
+Vytvoří při voxelovém přesíťování nižší úrovně multirezoluce. Pokud rozlišení nastavíte podle šachovnicového vzoru a `Vytvořit multirezoluci` nastavíte na 2, bude mít výsledek detail odpovídající posuvníku rozlišení, a když přejdete na kartu Multirezoluce, bude na úrovni 2, takže pod ním budou sítě nižšího rozlišení na úrovni 1 a úrovni 0. Je to dobrý způsob, jak získat čistou síť s rovnoměrnými polygony a zároveň řídicí síť s nižším rozlišením.
 
-::: tip Tip: Build multiresolution a stable smoothing
+Při vysokém rozlišení je to také rychlejší a spotřebuje méně paměti. Při nízkém rozlišení a mnoha úrovních ale přijdete o detaily.
 
-Tato volba může někdy způsobit „smyčky“ v geometrii, které se těžko vyhlazují a vytvářejí malé pupínky. Pokud se to stane, zapněte 'Stable smoothing' v nastavení nástroje Smooth. 
+::: tip Tip: Vytvořit multirezoluci a stabilní vyhlazování
+
+Tato možnost někdy v geometrii vytvoří „smyčky“, které se špatně vyhlazují a dělají malé pupínky. Pokud se to stane, zapněte v možnostech nástroje Hladit „Stabilní vyhlazování“.
 
 :::
 
-### Zachovat ostré hrany {#keep-sharp-edges}
-Zapne přichytávání nových bodů k ostrým hranám původního meshe. Může to zavést zkreslení.
+### Zesílit tenké části {#thicken-thin-parts}
+Části tenčí než voxely se mohou při přesíťování rozpadnout nebo zmizet. Tato možnost je zesílí, aby přežily, vyšší hodnoty zesilují víc. Není dostupná spolu s `Ostré hrany` ani `Ostrá hranice`.
+
+### Otvory {#voxel-holes}
+Jak se otvory před přesíťováním uzavřou:
+
+* `Vyplnit` - Každý otvor se uzavře samostatně, od svého okraje.
+* `Tvar` - Otvory se uzavřou podle okolního povrchu a otevřené kusy, které se překrývají, se spojí.
+
+### ![](/icons/angle.webp) Ostré hrany {#keep-sharp-edges}
+Přichytí nové body k ostrým hranám původní sítě. Hodí se hlavně pro jednoduché booleovské operace s primitivy a může způsobit deformace.
+
+### ![](/icons/group.webp) Ostrá hranice {#voxel-sharp-border}
+Nové plochy sledují hranice skupin ploch a hranice zůstane ostrá tam, kde se podél ní povrch láme.
+
+### ![](/icons/group_separate.webp) Oddělit skupiny {#keep-groups-separate}
+Každá skupina ploch se přesíťuje samostatně: skupiny se nikdy nespojí a každá zůstane uzavřeným kusem ve své vlastní skupině. V tomto režimu se multirezoluce nevytváří. Možnost je dostupná, když má objekt několik skupin ploch.
 
 ## ![](/icons/dynamic.webp) Dynamická topologie {#dynamic-topology}
 
 ![](/images/topology_dyntopo_menu.webp)
-Multiresolution a voxel remeshing jsou běžné průmyslové metody pro kontrolu topologie, ale obě vyžadují, abyste hlídali, zda polygony příliš nenatahujete nebo příliš nestlačujete. 
+Multirezoluce a voxelové přesíťování jsou běžné způsoby řízení topologie, ale u obou musíte hlídat, abyste polygony příliš nenatáhli nebo příliš nestlačili.
 
-Dynamic Topology je alternativní metoda. Při sochání Nomad adaptivně přidává a odebírá polygony během tahu štětcem, takže vyřezávání malých detailů přidá mnoho malých polygonů tam, kde je potřebujete, a vyhlazování jinde polygony odebírá.
+Dynamická topologie je alternativní přístup. Během tahu štětcem Nomad průběžně přidává a ubírá polygony, takže když vyrýváte drobné detaily, přidá mnoho malých polygonů přesně tam, kde je potřebujete, a vyhlazování jinde polygony ubere.
 
-Všimněte si, že dynamic topology používá trojúhelníkové polygony místo quadů. Může to vypadat trochu nepořádně, ale je téměř lepší na drátěný model nekoukat, jen se soustředit na pěkně vypadající sochu bez starostí o topologii, a později použít některý z dalších remeshing nástrojů Nomadu k vygenerování čisté quad sítě.
+Dynamická topologie používá trojúhelníky, ne čtyřúhelníky. Může to vypadat trochu neuspořádaně, ale na drátový model je lepší se skoro nedívat: soustřeďte se na pěknou sochu bez starostí o topologii a později můžete některým z dalších nástrojů Nomadu pro přesíťování vytvořit čistou síť ze čtyřúhelníků.
 
-Podívejte se na video níže v akci.
+Podívejte se na video níže.
 
 ![](/videos/dynamic.mp4)
 
-### Zapnuto {#enabled}
-Zapne dynamic topology. Ikona DynTopo bude umístěna pod posuvníky poloměru a intenzity štětce, aby bylo možné Dyntopo přepínat pro každý nástroj zvlášť.
+### Povolená {#enabled}
+Zapne dynamickou topologii. Pod posuvníky poloměru a intenzity štětce se objeví ikona DynTopo, kterou můžete DynTopo zapínat pro každý nástroj zvlášť. Může znatelně ovlivnit výkon a vrstvy se aktualizují správně.
 
 ### Detail {#dyn-detail}
-Ovládá množství detailu, jeho chování se mění podle volby 'Detail based on...', viz níže.
+Řídí množství detailu, jeho chování závisí na volbě „Detail podle…“, viz níže. V režimu `Obrazovka` popisek ukazuje cílovou velikost trojúhelníku v pixelech. V režimu `Konstantní` můžete kapátkem převzít detail z hustoty sítě v místě, kam klepnete.
 
-### Detail založený na... {#detail-based-on}
-| Method   | Description                                                     |
-| :------: | :-------------------------------------------------------------: |
-| Screen   | Úroveň detailu závisí na tom, jak velký je objekt na obrazovce. Posuvník detailu je 100 % a více pro jemný detail (malé trojúhelníky) nebo 1 % pro nízký detail (velké trojúhelníky).  |
-| Radius   | Poloměr nástroje definuje množství detailu. Malý poloměr nástroje pro jemný detail, velký poloměr pro nízký detail. Posuvník detailu je násobitel tohoto poměru.                     |
-| Constant | Posuvník detailu definuje množství detailu a není ovlivněn velikostí obrazovky ani velikostí nástroje.             |
+### Detail podle… {#detail-based-on}
+| Metoda     | Popis                                                           |
+| :--------: | :-------------------------------------------------------------: |
+| Obrazovka  | Úroveň detailu závisí na tom, jak velký je objekt na obrazovce. Posuvník detailu na 100 % nebo víc dává jemný detail s malými trojúhelníky, 1 % hrubý detail s velkými trojúhelníky.  |
+| Poloměr    | Množství detailu určuje poloměr nástroje. Malý poloměr nástroje dává jemný detail, velký poloměr hrubý detail. Posuvník detailu tento poměr násobí.                     |
+| Konstantní | Množství detailu určuje posuvník detailu a nezávisí na velikosti obrazovky ani nástroje. Je to stejná hodnota jako posuvník [Detail](#all-detail) u `Remesh`.             |
 
-::: tip TIP: Radius mode
+::: tip TIP: Režim Poloměr
 
-Abyste lépe pochopili, jak funguje režim Radius, začněte jedním prstem posouvat posuvník detailu a zároveň druhým prstem měňte poloměr nástroje. Uvidíte, jak jsou propojené.
+Abyste lépe pochopili, jak režim Poloměr funguje, začněte jedním prstem posouvat posuvník detailu a zároveň druhým prstem měňte poloměr nástroje. Uvidíte, jak spolu souvisejí.
 
 :::
 
-### Preferovat... {#prefer}
-| Method  | Description       |
-| :-----: | :---------------: |
-| Speed   | Upřednostnit výkon |
-| Quality | Upřednostnit kvalitu     |
+### Upřednostnit... {#prefer}
+| Metoda   | Popis               |
+| :------: | :-----------------: |
+| Rychlost | Upřednostní výkon   |
+| Kvalita  | Upřednostní kvalitu |
 
-Když upřednostníte `Quality`, jsou zde 2 hlavní rozdíly:
-- zpřesnění (refinement) se aplikuje před socháním, takže při malování nebo sochání velmi malých detailů dostanete méně interpolačních artefaktů
-- zpřesnění běží, dokud nekonverguje na správnou úroveň detailu, na rozdíl od inkrementálního chování.
+Když upřednostníte `Kvalita`, jsou tu 2 hlavní rozdíly:
+- zjemnění se provede ještě před sochařením, takže při malování nebo sochání velmi drobných detailů vznikne méně artefaktů interpolace
+- zjemňování běží, dokud nedosáhne správné úrovně detailu, místo aby postupovalo po krocích.
  
-Díky tomu, pokud socháte velmi malé detaily nebo děláte rychlé tahy, bude topologie vždy zpřesněna podle očekávání.
+Díky tomu bude topologie vždy zjemněná podle očekávání, i když sochaříte velmi drobné detaily nebo děláte rychlé tahy
 
 
-### Použít tlak na poloměr {#use-pressure-on-radius}
-Relevantní pouze pokud je aktivní `Radius`. Když je zapnuto, úroveň detailu bude vždy odrážet velikost štětce, i když je velikost štětce ovlivněna tlakem pera.
 
-### Použít plynulost tahu {#use-stroke-falloff}
+### ![](/icons/pressure.webp) Použít tlak na poloměru {#use-pressure-on-radius}
+Má smysl jen v režimu `Poloměr`. Když je zapnutá, úroveň detailu vždy odpovídá velikosti štětce, i když velikost štětce ovlivňuje tlak pera.
 
-Do výpočtů dyntopo zahrne také křivku doznění (falloff) štětce a alfu.
+### Použít útlum tahu {#use-stroke-falloff}
+
+Do výpočtů DynTopo zahrne i křivku útlumu štětce a alfu.
 
 ### Metoda {#method}
-Ať už používáte `Dynamic Topology` na [Brush](#brush) nebo [Globally](#global), můžete zvolit režim, ve kterém pracuje:
+Zvolte, jak dynamická topologie mění síť, a to při sochání i při použití [Remesh](#dyn-remesh):
 
-| Method         | Description                                                           |
+| Metoda         | Popis                                                                 |
 | :------------: | :-------------------------------------------------------------------: |
-| Uniformisation | Může přidávat i odebírat plochy, to je režim použitý ve videu výše     |
-| Subdivision    | Přidává nové plochy, nemůže plochy odebírat                            |
-| Decimation     | Odebírá plochy, nemůže plochy přidávat                                 |
+| Unifikace      | Může přidávat i ubírat plochy, tento režim je použitý ve videu výše   |
+| Rozdělení      | Pouze přidává nové plochy, nemůže je ubírat                           |
+| Decimace       | Pouze ubírá plochy, nemůže přidávat nové                              |
 
-### Chránit maskovanou oblast {#protect-masked-area}
-Zapne ochranu zamaskovaných oblastí před změnou topologie.
+### ![](/icons/shield.webp) Chránit maskovanou oblast {#protect-masked-area}
+Maskované oblasti budou chráněné před změnami topologie.
 
-### Extrapolace vrcholů {#vertex-extrapolation}
-
+### ![](/icons/normal.webp) Extrapolace vrcholů {#vertex-extrapolation}
+Umístí body na hladký povrch, který sleduje zakřivení kolem nich, místo aby ležely naplocho na stávajících plochách.
 
 ### Detail {#all-detail}
-Rozlišení použité pro operaci remesh. Pokud je Dyntopo v režimu 'Constant', bude to stejná hodnota jako posuvník Detail v horní části této nabídky.
+Rozlišení použité pro přesíťování. Pokud je DynTopo v režimu „Konstantní“, je to stejná hodnota jako posuvník Detail v horní části této nabídky. Kapátko převezme detail z hustoty sítě v místě, kam klepnete.
 
 ### Remesh {#dyn-remesh}
-Spustí globální remesh pomocí algoritmu dyntopo. Obvykle byste pro plný remeshing měli použít [Voxel Remesher](#voxel-remesher).
+Spustí přesíťování celé sítě algoritmem DynTopo. Pro úplné přesíťování byste ale obvykle měli použít [voxelové přesíťování](#voxel-remesher).
 
-Jedna výhoda oproti voxelům je však ta, že zamaskovaná oblast bude chráněna, takže máte lepší kontrolu nad tím, kde mít větší či menší hustotu.
+Oproti voxelům má tu výhodu, že síť nemusí být uzavřená a maskovaná oblast zůstane chráněná, takže lépe určíte, kde má být hustota větší a kde menší.
 
 
 
@@ -216,313 +254,416 @@ Jedna výhoda oproti voxelům je však ta, že zamaskovaná oblast bude chráně
 
 ![](/images/topology_misc_menu.webp)
 
-##### ![](/icons/cog.webp) Menu ozubeného kola {#gear-menu}
-Mnoho nástrojů v této nabídce má další volby. K nim se dostanete přes ikonu ozubeného kola vedle názvu sekce.
+Tato karta sdružuje nástroje k čištění nebo převodu sítě: uzavření otvorů, vynucení manifoldu nebo převod na triplanár.
 
-### Decimace {#decimation}
+### ![](/icons/hole.webp) Otvory {#holes}
+![](/images/topology_holes_menu.webp)
+Většinou bude váš objekt vodotěsný, tedy síť bude „uzavřená“.
+
+Pokud má objekt otvory, můžete je vyplnit.
+
+![](/videos/hole_filling.mp4)
+
+::: tip
+Když spustíte voxelové přesíťování, všechny otvory se automaticky uzavřou, ať už ho používáte na 1 síť nebo na více sítí.
+:::
+
+#### Zavřít otvory {#close-holes}
+Provede uzavření otvorů.
+
+#### Možnosti {#holes-gear-menu}
+Tyto možnosti mění způsob vyplnění otvorů:
+
+##### Skupina ploch {#fill-face-group}
+Zvolte skupinu ploch pro nové plochy:
+
+* `Smíšené` - Otvor obklopený jedinou skupinou ploch ji převezme, otvor dotýkající se několika skupin dostane novou.
+* `Nový` - Vyplněné otvory dostanou novou skupinu ploch.
+* `Znovu použít` - Každý otvor převezme skupinu ploch, která ho obklopuje nejvíc.
+
+##### Detail {#fill-detail}
+Hustota polygonů použitá k vyplnění otvoru. Při posouvání tohoto posuvníku se na modelu zobrazí šachovnicový vzor, který naznačí velikost trojúhelníků. Zaškrtávací pole tuto možnost vypne a použijí se jen stávající body, z čehož obvykle vzniknou přes otvor dlouhé tenké trojúhelníky, na kterých se špatně sochá.
+
+##### Přemostit {#fill-non-manifold}
+Vyplní otvor a ostrůvky uvnitř něj jako jeden povrch, místo aby vyplnil každý okraj zvlášť. Vyšší úhel přemostí zakřivenější otvory. Zaškrtávací pole tuto možnost vypne.
+
+### ![](/icons/cog.webp) Vynutit manifold {#force-manifold}
+![](/images/topology_forcemanifold_menu.webp)
+Pokusí se vyčistit hrany, které nejsou manifold. Může se hodit pro externí software, který nepodporuje hrany sdílené více než 2 plochami.
+
+#### Vyčistit {#clean}
+Provede vyčištění.
+
+#### Možnosti {#force-manifold-gear-menu}
+Tato možnost mění způsob čištění sítě:
+
+##### Smazat malé plochy {#delete-small-faces}
+Práh, podle kterého se malé polygony odstraní a spojí. Zapnete ho jeho zaškrtávacím polem.
+
+
+### ![](/icons/triplanar.webp) Triplanární {#triplanar}
+![](/images/topology_triplanar_menu.webp)
+Převede síť na [triplanární](scene.md#triplanar) primitivum.
+Pravděpodobně při tom přijdete o hodně detailu: ztratí se i vrstvy, malba a multirezoluce.
+
+#### Vynutit krychli {#force-cubic}
+Triplanár bude krychle. Jinak se triplanár přizpůsobí nejbližšímu ohraničujícímu kvádru kolem objektu.
+
+#### Převést {#convert}
+Provede převod na triplanár.
+
+#### Rozlišení {#triplanar-resolution}
+Rozlišení mřížky triplanáru, vyšší hodnoty zachovají více detailu.
+
+## ![](/icons/decimate.webp) Decimace {#decimation}
 
 ![](/images/topology_decimation.webp)
 
-Sníží počet polygonů při snaze zachovat co nejvíce detailů, s použitím trojúhelníkových polygonů.
+Sníží počet polygonů a snaží se přitom zachovat co nejvíc detailů, s použitím trojúhelníků.
 
-Tato funkce může být užitečná, pokud chcete exportovat pro 3D tisk.
-Neměli byste ji však pravděpodobně používat, pokud chcete na modelu dál sochat, protože může vytvářet nerovnoměrné trojúhelníky.
+Tato funkce se může hodit, když chcete exportovat pro 3d tisk.
+Pokud ale chcete na objektu dál sochat, raději ji nepoužívejte, protože může vytvořit nerovnoměrné trojúhelníky.
 
-Všimněte si, že zamaskované oblasti nebudou decimovány.
+Maskované oblasti se nedecimují.
 
 ![](/videos/decimate.mp4)
 
 ::: tip
 
-Použití [Quadremesh tool](tools.md#quad-remesher) na vysoce polygonálních objektech může trvat dlouho a dávat výsledky, které se těžko kontrolují. Předzpracování meshe pomocí [facegroups](tools.md#facegroup-1) a decimate způsobí, že Quadremesh poběží mnohem rychleji a umožní mnohem větší kontrolu nad topologií.
+Výpočet [nástroje Quad Remesher](tools.md#quad-remesher) na objektech s vysokým počtem polygonů může trvat dlouho a dávat těžko ovladatelné výsledky. Když síť předem připravíte pomocí [skupin ploch](tools.md#facegroup) a decimace, Quad Remesher poběží mnohem rychleji a topologii budete mít mnohem víc pod kontrolou.
 
-* Označte mesh facegroupy tak, aby definovaly ideální tok quadů.
-* Použijte Facegroup relax pro vyhlazení hranic facegroup.
-* Proveďte Decimate. Tím zajistíte, že na hranách facegroup nebudete mít tenké nebo zkreslené plochy. V nastavení decimate se ujistěte, že je facegroup zapnutá. Tím se hrany trojúhelníků přesně přizpůsobí hranám facegroup.
-* V možnostech Quadremesh se ujistěte, že je relax vypnutý (protože jste mesh už vyhladili) a měli byste dostat dobré výsledky.
+* Rozdělte síť na skupiny ploch podle ideálního toku čtyřúhelníků.
+* Uvolněte skupiny ploch, aby měly hladké hranice.
+* Decimujte. Tím zajistíte, že na hranici skupin ploch nebudou tenké ani zdeformované plochy. V části `Zachovat hranice` mějte zapnuté `SkupinaPovrch`. Hrany trojúhelníků pak budou přesně sledovat hranice skupin ploch.
+* V možnostech Quad Remesheru mějte vypnuté uvolnění (síť už je uvolněná) a měli byste dostat dobré výsledky.
 
 :::
 
-#### Decimovat {#decimate}
-Spustí operaci decimate.
+### Decimace {#decimate}
+Spustí decimaci.
 
-Ikony vedle tlačítka decimate umožňují přepínat volby, které ovlivňují decimaci. Procento udává, jak silně je daná volba uplatněna, a lze jej nastavit v rozšířeném gear menu.
+Ikony vedle tlačítka decimace zobrazují níže uvedené možnosti a umožňují je přepínat. Procento udává, jak silná daná možnost je.
 
-* ![](/icons/palette.webp)  `Preserve Painting` - Umístí více trojúhelníků tam, kde je detail v malbě.
-* ![](/icons/triforce.webp) `Uniform Faces` - Preferuje vytváření rovnoměrně velkých trojúhelníků.
-* ![](/icons/hole.webp)  `Preserve Geometry Borders` - Decimate se pokusí zachovat hranice u otevřené geometrie a děr beze změny.
-* ![](/icons/group.webp) `Preserve Facegroup Borders` - Decimate se pokusí zachovat hranice facegroup beze změny.
-* ![](/icons/uv.webp) `Preserve UV Borders` - Decimate se pokusí zachovat UV hranice beze změny.
+* ![](/icons/palette.webp)  `Zachovat malbu` - Více trojúhelníků umístí tam, kde jsou detaily malby.
+* ![](/icons/triforce.webp) `Jednotné plochy` - Upřednostní trojúhelníky podobné velikosti.
+* ![](/icons/hole.webp)  `Díra` - Decimace se pokusí zachovat beze změny okraje u otevřené geometrie a otvorů.
+* ![](/icons/group.webp) `SkupinaPovrch` - Decimace se pokusí zachovat beze změny hranice skupin ploch.
+* ![](/icons/uv.webp) `UV` - Decimace se pokusí zachovat beze změny hranice UV.
 
-#### ![](/icons/cog.webp) Menu decimace (ozubené kolo) {#decimate-gear-menu}
-Gear menu má tyto pokročilé volby:
-##### Zachovat malbu {#preserve-painting}
-Zaškrtávací políčko přepíná tento režim, hodnota určuje, jak přesně bude zachován detail malby. Vyšší hodnoty zachovají více malby. Nastavte na 0, pokud vám na malbě nezáleží.
+### Cílové trojúhelníky {#target-triangles}
+Nastaví cílový počet trojúhelníků. Výchozí hodnota je 50 %, tlačítko procent/cíle přepíná mezi procentem a přesným cílovým počtem polygonů.
 
+### Možnosti {#decimate-gear-menu}
+Každá možnost má zaškrtávací pole pro zapnutí a hodnotu pro sílu:
 
-##### Rovnoměrné plochy {#uniform-faces}
-Zaškrtávací políčko přepíná tento režim. Vyšší hodnoty vytvoří trojúhelníky podobné velikosti.
+#### ![](/icons/palette.webp) Zachovat malbu {#preserve-painting}
+Hodnota určuje, jak přesně se zachová detail malby. Vyšší hodnoty zachovají více malby. Pokud vám na malbě nezáleží, nastavte 0.
 
-##### Zachovat okraje {#preserve-borders}
-Zapněte, aby se hranice nedezimovaly. Váhy hranic lze zvolit pro hranice `Geometry`, `Face Group` nebo `UV`.
+#### ![](/icons/triforce.webp) Jednotné plochy {#uniform-faces}
+Vyšší hodnoty dají trojúhelníky podobné velikosti.
 
-#### Cílový počet trojúhelníků {#target-triangles}
-Nastaví cílový počet trojúhelníků. Výchozí hodnota je 50 %, tlačítko percent/target přepíná mezi procentem nebo přesným cílovým počtem polygonů.
+#### Zachovat hranice {#preserve-borders}
+Zabrání decimaci okrajů. Váhy okrajů lze nastavit pro hranice `Díra`, `SkupinaPovrch` nebo `UV` (`UV` vyžaduje objekt s UV).
 
+## ![](/icons/quad.webp) Quad přesíťování {#quad-remesh}
+![](/images/topology_quadremesh_menu.webp)
+Znovu postaví objekt s čistou sítí čtyřúhelníků. Tato karta nabízí několik přesíťovačů, každý s vlastním tlačítkem `Remesh`, posuvníkem `Cílové čtyřúhelníky` a nabídkou ozubeného kolečka. Vyzkoušejte je na svém objektu, výsledky se dost liší!
 
+### Quad Remesher {#quad-remesher}
+Stejný přesíťovač jako nástroj [Quad Remesher](tools.md#quad-remesher), vyvinutý společností [Exoside](https://exoside.com/). Je dostupný jen na některých platformách a je potřeba ho zakoupit: do té doby tlačítko `Remesh` ukazuje košík.
 
-### UV rozbalení - UVAtlas {#uv-unwrap-uvatlas}
+`Vybrat nástroj` přepne na nástroj Quad Remesher, kde můžete kreslit vodítka a malovat hustotu. Nabídka ozubeného kolečka obsahuje `Přizpůsobivý počet kvádrů`, `Adaptivní velikost` (při 100 % se velikost čtyřúhelníků řídí zakřivením, při 0 % jsou čtyřúhelníky stejně velké), `Automatické zjišťování tvrdých hran` a `Znovuprojektovat vrchol`.
 
-![](/images/topology_uvatlas_menu.webp)
-Vypočítá texturové souřadnice (UV) pro aktuální mesh, obecně s preferencí vytvářet více ostrovů s řezy, aby se minimalizovalo zkreslení.
+::: tip
+Tam, kde je dostupný, dává Quad Remesher obecně nejlepší výsledky a nejvíc kontroly.
+:::
 
-Malá ikona oka mezi názvem nabídky a gear menu přepíná náhled UV na objektu.
+### AutoRemesher {#autoremesher}
+Alternativní přesíťovač na čtyřúhelníky s možnostmi, jak přizpůsobit velikost a tvar čtyřúhelníků povrchu.
+
+#### ![](/icons/cog.webp) Nabídka ozubeného kolečka AutoRemesheru {#autoremesher-gear-menu}
+Nabídka ozubeného kolečka obsahuje tyto pokročilé možnosti:
+
+##### Měřítko hran {#edge-scaling}
+Mění velikost čtyřúhelníků, vyšší hodnoty dávají větší čtyřúhelníky.
+
+##### Adaptivita {#adaptivity}
+Přizpůsobí hustotu čtyřúhelníků zakřivení. 0 dává stejně velké čtyřúhelníky, 1 menší čtyřúhelníky v zakřivených oblastech.
+
+##### Anizotropie {#anisotropy}
+Protáhne čtyřúhelníky ve směru, kde je povrch nejplošší. 0 dává čtvercové čtyřúhelníky, 1 protáhlé čtyřúhelníky na trubicích a hřebenech.
+
+##### Ostrá hrana {#sharp-edge}
+Hrany ohnuté víc, než je tento úhel, se zachovají jako ostré prvky.
+
+##### Vyhlazení normál {#smooth-normal}
+0 ponechá povrch během přesíťování fasetovaný. Vyšší hodnoty povrch vyhladí s ohledem na normály vrcholů.
+
+##### Maximální vyplnění otvorů {#autoremesher-max-fill-hole}
+Algoritmus někdy vytvoří nechtěné otvory. Pokud má otvor méně vrcholů než tato hodnota, vyplní se.
+
+### Instant Mesh {#quad-remesh-instant}
+Přesíťuje pomocí [algoritmu Instant Meshes od autorů Wenzel Jakob, Marco Tarini, Daniele Panozzo, Olga Sorkine-Hornung](https://igl.ethz.ch/projects/instant-meshes/). Analyzuje tok sítě a vytvoří čistou topologii ze čtyřúhelníků.
+
+#### Remesh {#instant-remesh}
+Spustí přesíťování.
+
+#### Cílové čtyřúhelníky {#target-quads}
+Počet čtyřúhelníků, který se přesíťovač pokusí vytvořit.
+
+#### ![](/icons/cog.webp) Nabídka ozubeného kolečka Instant Mesh {#quad-remesh-instant-gear-menu}
+Nabídka ozubeného kolečka obsahuje tyto pokročilé možnosti:
+
+##### Úhel záhybu {#crease-angle}
+Práh pro ostré rohy, který pomáhá vést přesíťování. Zapnete ho jeho zaškrtávacím polem.
+
+##### Maximální vyplnění otvorů {#max-fill-hole}
+Algoritmus někdy vytvoří nechtěné otvory. Pokud má otvor méně vrcholů než tato hodnota, vyplní se.
+
+### QuadriFlow {#quadriflow}
+Přesíťuje pomocí algoritmu QuadriFlow, dalšího způsobu, jak získat čistou síť ze čtyřúhelníků.
+
+#### ![](/icons/cog.webp) Nabídka ozubeného kolečka QuadriFlow {#quadriflow-gear-menu}
+Nabídka ozubeného kolečka obsahuje tyto pokročilé možnosti:
+
+##### Zachovat hranice {#quadriflow-preserve-boundary}
+Chrání okraje otvorů.
+
+##### Zachovat ostré hrany {#keep-sharp}
+Zarovná čtyřúhelníky s ostrými hranami povrchu.
+
+##### Tok s minimálními náklady {#min-cost-flow}
+Pro rozložení čtyřúhelníků použije řešič toku s minimálními náklady. Je pomalejší, ale může dát pravidelnější topologii.
+
+## ![](/icons/uv.webp) Rozbalení UV {#uv-unwrap}
+Vypočítá texturovací souřadnice (UV) vybraného objektu. Nomad nabízí dvě metody, `UVAtlas` a `BFF`, každou s vlastním tlačítkem `Rozbalit`.
 
 ![](/videos/unwrap.mp4)
 
+::: tip UV?
+UV se často přirovnávají k balení dárku: jak nejlépe nastříhat balicí papír, aby zakryl celý předmět bez překrývání?
+
+S UV je to podobné, jen místo papíru stříháte objekt. Představte si, že je váš model z tenkého plastu: jak byste ho rozstříhali, abyste ho rozložili naplocho, v tomto plochém stavu na něj malovali a pak ho zase složili dohromady?
+
+Teď si představte, že povrch modelu je z pružné lycry. Model byste mohli natáhnout naplocho, rozstříhat, nebo obojí. Ale kdybyste na rozložený objekt namalovali šachovnici, po složení by byla zdeformovaná. Co je lepší: víc střihů a menší deformace, nebo méně střihů a větší deformace?
+
+UV jsou pokyny, které 3d softwaru říkají, jak objekt při nanášení textur „rozstříhat a natáhnout“. Nástroj UV Atlas obecně volí přístup „víc střihů, menší deformace“.
+
+
+:::
+
+::: tip UV, Nomad a jiné aplikace
+
+Většina texturovaných modelů, které najdete na internetu, má textury nanesené pomocí UV. Nomad je umí importovat a zobrazit přes panel [materiálu](material.md#textures).
+
+Modely vytvořené v Nomadu můžete malovat přímo i bez UV. Pokud je potřebujete exportovat do jiných aplikací, např. do [Procreate](https://procreate.art/), můžete barevné informace z Nomadu „zapéct“ do textur pomocí UV.
+
+:::
+
+### UVAtlas {#uv-unwrap-uvatlas}
+
+![](/images/topology_uvatlas_menu.webp)
+UVAtlas obecně dává přednost více ostrovům se střihy, aby minimalizoval deformace.
+
 #### Rozbalit {#unwrap}
-Spočítá UV pro vybraný objekt, které budou zobrazeny na pozadí.
+Vypočítá UV vybraného objektu.
 
-#### Smazat UV {#delete-uvs}
-Smaže UV na objektu.
+#### Možnosti {#uvatlas-gear-menu}
+Tlačítka vedle `Rozbalit`:
 
-#### ![](/icons/cog.webp) Menu UVAtlas (ozubené kolo) {#uvatlas-gear-menu}
-Gear menu má tyto pokročilé volby:
+##### SkupinaPovrch {#atlas-face-group}
+Když ukazuje `Ano`, určují střihy UV skupiny ploch. Toto nastavení je společné s BFF.
 
-#### Skupina ploch {#atlas-face-group}
+##### Smazat UV {#delete-uvs}
+Tlačítko s košem smaže UV objektu.
 
-Použije facegroupy k definování řezů pro UV.
+##### Kontrola {#uv-inspect}
+Zobrazí UV objektu na pozadí.
 
-##### Maximální protažení {#max-stretch}
-Nízké hodnoty vytvářejí menší zkreslení a více ostrovů, vysoké hodnoty větší zkreslení a méně ostrovů. 
+#### Maximální protažení {#max-stretch}
+Nízké hodnoty dávají menší deformace a víc ostrovů, vysoké hodnoty větší deformace a méně ostrovů.
 
-##### Rozestup ostrovů {#island-spacing}
-Množství odsazení mezi ostrovy. Nízké hodnoty méně plýtvají místem, ale zvyšují riziko prolínání textur mezi ostrovy. 
+#### Rozestup ostrovů {#island-spacing}
+Velikost mezery mezi ostrovy. Nízké hodnoty plýtvají méně místem, ale hrozí, že textury budou mezi ostrovy prosakovat.
 
 ::: warning
-Výpočet UV může chvíli trvat, je nejlepší mít mesh s méně než 100k vrcholy.
+Výpočet UV může chvíli trvat, nejlépe je mít síť s méně než 100k vrcholy.
 :::
 
-::: tip UVs?
-Běžná analogie pro UV je balení dárku; jak nejlépe nastříhat balicí papír, aby zcela pokryl objekt bez překryvů? 
-
-UV jsou podobné, ale místo stříhání papíru stříháte objekt. Představte si, že váš model je z tenkého plastu – jak byste ho rozstříhali, abyste ho rozvinuli do plochy, v této ploché podobě na něj malovali a pak ho znovu složili?
-
-Teď si představte, že povrch modelu je z pružného lycra materiálu. Můžete model roztáhnout do plochy, nebo ho rozřezat, nebo kombinaci obojího. Ale pokud byste na objekt v plochém stavu namalovali šachovnici, po opětovném složení by byla šachovnice zkreslená. Co je lepší – více řezů s menším zkreslením, nebo méně řezů s větším zkreslením?
-
-UV jsou instrukce, které říkají 3D softwaru, jak „řezat a natahovat“ objekt při aplikaci textur. Nástroj UV Atlas obecně používá přístup „více řezů, méně zkreslení“.
-
-
-:::
-
-::: tip UV's and Nomad and other apps
-
-Většina texturovaných modelů, které najdete online, bude texturována pomocí UV. Nomad je umí importovat a zobrazit přes panel [material](material#textures).
-
-Když jsou modely vytvářeny v Nomadu, můžete malovat přímo na objekty bez UV. Pokud je potřebujete exportovat do jiných aplikací, např. [Procreate](https://procreate.art/), můžete „péct“ barevné informace Nomadu do textur přes UV. 
-
-:::
-
-### UV rozbalení - BFF {#uv-unwrap-bff}
+### BFF {#uv-unwrap-bff}
 ![](/images/topology_uvbff_menu.webp)
 
-BFF UV preferují přístup „méně řezů, více zkreslení“. 
+UV metodou BFF dávají přednost přístupu „méně střihů, větší deformace“.
 
-#### ![](/icons/cog.webp) Menu UV BFF (ozubené kolo) {#uv-bff-gear-menu}
+#### Možnosti {#uv-bff-gear-menu}
+Vedle `Rozbalit` jsou stejná tlačítka `SkupinaPovrch`, smazání a `Kontrola` jako u [UVAtlas](#uvatlas-gear-menu).
 
-#### Skupina ploch {#bff-face-group}
+##### SkupinaPovrch {#bff-face-group}
 
-Použije facegroupy k definování řezů pro UV.
+Střihy UV určí skupiny ploch.
 
-##### Počet kuželů {#cone-count}
-Definuje počet hlavních projekcí použitých při unwrapu. Nižší hodnoty vytvoří méně ostrovů, ale více zkreslení.
+#### Počet kuželů {#cone-count}
+Určuje počet použitých hlavních projekcí. Nižší hodnoty dávají méně ostrovů, ale větší deformace. Vyšší hodnoty se déle počítají.
 
-##### Bezešvé patche {#seamless-patches}
-Ovlivňuje rozložení UV „patchů“, nejlépe funguje s pečlivě vytvořenými facegroupami.
+#### Bezešvé záplaty {#seamless-patches}
+Ovlivňuje rozložení UV záplat a může způsobit výrazné deformace. Nejlépe funguje s pečlivě vytvořenými skupinami ploch.
 
-### Bake -> textura {#bake-texture}
+::: warning
+BFF může vytvořit překrývající se UV, pokud má síť ucha (jako je díra donutu).
+:::
+
+### ![](/icons/preview.webp) Zobrazit UV po rozbalení {#show-uv-after-unwrap}
+Po rozbalení otevře zobrazení kontroly UV, takže výsledek hned zkontrolujete.
+
+### ![](/icons/bake.webp) Péct: Textura → Textura {#unwrap-bake-texture}
+Dostupné jen tehdy, když má materiál objektu textury. Když objekt znovu rozbalíte, textury se přenesou na nové UV, takže dál sedí. Rozlišení je ve výchozím stavu `Auto` a odpovídá největší textuře, nebo ho můžete nastavit sami.
+
+## ![](/icons/bake.webp) Péct {#bake}
+Tato karta přenáší detaily a malbu mezi objekty a mezi vrcholy a texturami.
+
+`Z vysokého rozlišení` používá jako zdroj jiné objekty, číslo v závorce udává jejich počet. Nomad je vybírá takto:
+
+- použijí se všechny vybrané objekty a cílem je hlavní vybraný objekt (nejvýrazněji zvýrazněný v nabídce [Scéna](scene.md))
+- pokud je vybraný jen jeden objekt, Nomad místo toho použije všechny viditelné objekty
+- pokud jsou všechny ostatní objekty skryté (například pomocí Sólo), použije se celá scéna
+
+### ![](/icons/bake.webp) Péct → Textura {#bake-texture}
 ![](/images/topology_bake_menu.webp)
 
-Texture baking vytvoří textury projekcí ostatních viditelných objektů ve scéně do UV vybraného objektu.
+Zapékání textur vytvoří textury promítnutím ostatních viditelných objektů scény do UV vybraného objektu. Objekt musí mít UV.
 
-Typický workflow pro baking je následující:
-- Máte mesh s jemnými detaily a malbou
-- Naklonujete ho
-- Provedete decimate (nastavte `Preserve painting` na 0)
-- Provedete UV unwrap
-- Bake!
+Typický postup zapékání:
+- Máte síť s jemnými detaily a malbou
+- Naklonujte ji
+- Decimujte ji (`Zachovat malbu` nastavte na 0)
+- Rozbalte její UV
+- Zapečte ji!
 
-Nomad ve výchozím nastavení bere v úvahu všechny viditelné meshe ve scéně.
-Můžete také použít Solo mód pro rychlé skrytí většiny ostatních meshů.
-Pokud nejsou žádné jiné viditelné objekty, vezme se v úvahu celá scéna.
+Teď byste měli mít síť s nízkým rozlišením, která si zachovává většinu malby a detailů původního objektu.
 
-Nyní byste měli mít nízko-poly mesh, který zachovává většinu malby a detailů vašeho původního objektu.
+Po operaci se barvy vrcholů přesunou do nové vypnuté vrstvy, aby se netloukly s texturami.
 
-Po operaci budou barvy vrcholů přesunuty do nové vypnuté vrstvy, aby nezasahovaly do textur.
+#### Ze stejného objektu {#tex-from-itself}
+Zapeče objekt do jeho vlastních UV: z jeho malby se stanou textury, a pokud má úrovně multirezoluce, zapečou se detaily nejvyšší úrovně do té aktuální (na tlačítku se pak zobrazí ikona multirezoluce). Nastavení je jednoduché, ale často budete potřebovat víc kontroly a pak se víc hodí další možnost.
 
-#### Ze sebe sama {#tex-from-itself}
-Peče nejvyšší úroveň multiresolution do nejnižší úrovně na aktuálním objektu. To je jednoduché na nastavení, ale často budete potřebovat více kontroly, v takovém případě je užitečnější následující volba.
-
-#### Z hi-res () {#tex-from-high-res}
-Peče z ostatních viditelných objektů ve scéně do vybraného objektu. Číslo v závorkách udává počet ostatních viditelných objektů, které budou použity jako high-res cíle a upečeny do aktuálního low-res objektu s UV. Ostatní objekty nemusí být podobné v rozložení nebo topologii objektu, do kterého se peče, což umožňuje flexibilní workflow pro baking.
+#### Z vysokého rozlišení {#tex-from-high-res}
+Zapeče ostatní objekty do vybraného objektu. Číslo v závorce udává počet ostatních objektů, které se použijí jako zdroje s vysokým rozlišením a zapečou se do aktuálního objektu s nízkým rozlišením a UV. Ostatní objekty nemusí mít podobné rozložení ani topologii jako zapékaný objekt, což umožňuje všestranné postupy zapékání.
 
 #### Rozlišení {#tex-bake-resolution}
-Rozlišení upečené textury. Bake textury jsou vždy čtvercové, takže 1024 vytvoří obrázek 1024×1024. 
+Rozlišení zapečené textury. Zapečené textury jsou vždy čtvercové, takže 1024 vytvoří obrázek 1024x1024.
 
-Tlačítka níže jsou zkratky pro běžně používaná rozlišení. Pro představu, 512×512 je relativně malé, např. pro webovou grafiku a jednoduchou geometrii. 4096×4096 (zkráceně 4k) je pro vysoce kvalitní rendery.
+Tlačítka pod ním jsou zkratky pro často používaná rozlišení. Pro představu: 512x512 je poměrně malé, třeba pro webovou grafiku a jednoduchou geometrii. 4096x4096 (zkráceně 4k) je pro vysoce kvalitní rendery.
 
-#### ![](/icons/cog.webp) Bake menu (ozubené kolo) {#tex-bake-gear-menu}
+#### Barva, Drsnost, Kovovost, Normála, Posunutí, Emise, Krytí {#tex-normal-roughness-metalness-color-emissive-opacity}
+Tato tlačítka určují, které vlastnosti se zapečou, každá do samostatné mapy. Po dokončení zapékání se přidají jako textury do materiálu aktuálního objektu. `Posunutí` zapeče výšku detailů jako mapu posunutí (displacement).
+
+#### ![](/icons/cog.webp) Nabídka ozubeného kolečka zapékání {#tex-bake-gear-menu}
 ![](/images/topology_bake_gear_menu.webp)
-Gear menu má tyto pokročilé volby:
-
-##### Normál, Drsnost, Kovovost, Barva, Emise, Krytí {#tex-normal-roughness-metalness-color-emissive-opacity}
-Tato zaškrtávací políčka určují, které vlastnosti budou upečeny, každá do samostatné mapy. Po dokončení bake budou tyto mapy přidány jako textury k materiálu aktuálního objektu.
+Nabídka ozubeného kolečka obsahuje tyto pokročilé možnosti:
 
 ##### Záloha {#tex-backup}
-Aby bylo možné náhled upečených textur, měly by být informace o malbě objektu vypnuté. Tato volba přesune veškeré informace o malbě do nové vrstvy jako zálohu, aby je bylo možné snadno zapínat/vypínat.
+Abyste viděli náhled zapečených textur, musí být malba objektu vypnutá. `Záloha (Malování → Vrstva)` přesune veškerou malbu do nové vrstvy jako zálohu, kterou pak snadno zapnete nebo vypnete.
 
-#### Poloměr klece {#tex-cage-radius}
-Upraví, jak daleko od objektu, do kterého se peče, jsou vysílány paprsky při hledání cílových objektů. Ve výchozím nastavení je tato vzdálenost nízká, aby se předešlo artefaktům, ale lze ji zvýšit, pokud jsou cílové objekty daleko od objektu, do kterého se peče.
+##### Použít multires {#tex-use-multires}
+Pro `Ze stejného objektu` u objektu s úrovněmi multirezoluce. Nomad čte vysoké rozlišení přes úrovně dělení místo vrhání paprsků: je to rychlejší a bez chyb projekce. Vypněte to, chcete-li zapékat s níže uvedenými možnostmi.
 
-##### Posun paprsku {#tex-ray-offset}
-Upraví, odkud na objektu, do kterého se peče, začínají výpočty bake. Ve výchozím nastavení začínají 5 % od povrchu, což zabraňuje většině běžných artefaktů. Pokud jsou cílové objekty velmi daleko od objektu, do kterého se peče, může být nutné tento offset zvýšit.
+##### Hladká základna {#tex-smooth-base}
+Pro `Posunutí` u objektu s úrovněmi multirezoluce. Měří posunutí od rozdělené základny místo od jejích plochých ploch. Nechte zapnuté, když mapa posunutí půjde na dělenou síť, třeba s adaptivním dělením v Blenderu.
+
+##### Vyhledávací vzdálenost {#tex-cage-radius}
+Maximální vzdálenost, ve které se hledá zdrojový povrch. Ve výchozím stavu je nízká, aby nevznikaly artefakty, ale můžete ji zvýšit, pokud jsou cílové objekty od zapékaného objektu daleko.
+
+##### Projekce {#tex-projection}
+Jak se hledá zdrojový povrch:
+
+* `Paprsek` - Promítá podél normály povrchu.
+* `Paprsek + nejbližší` - Použije paprsek podél normály, a když mine, použije nejbližší povrch.
+* `Nejbližší` - Promítá do nejbližšího bodu zdrojového povrchu.
+
+##### Posunutí paprsku {#tex-ray-offset}
+Upraví, odkud na zapékaném objektu výpočty zapékání začínají. Malé odsazení od povrchu zabrání většině běžných artefaktů. Pokud jsou cílové objekty od zapékaného objektu velmi daleko, může být potřeba odsazení zvětšit. `Nejbližší` ho nepoužívá.
 
 
-### Reprojekce na vrcholy {#reproject-to-vertex}
+### ![](/icons/bake.webp) Přeprojektovat → Vrchol {#reproject-to-vertex}
 
 ![](/images/topology_reproject_menu.webp)
 
-Promítne sochařské detaily, malbu, vrstvy a textury do hodnot vrcholů.
+Promítne vysochané detaily, malbu, vrstvy a textury do hodnot vrcholů.
 
-Můžete si to představit jako inverzi bakingu; pokud baking přenáší vlastnosti vrcholů do textur, reprojekce přenáší textury (a další vlastnosti)
+Dá se to chápat jako opak zapékání: zapékání přenáší vlastnosti vrcholů do textur, přeprojektování přenáší textury (a další vlastnosti)
  zpět do vrcholů.
 
 ::: tip
-Při použití `Bake to texture` nebo `Reproject to vertex` se berou v úvahu jak barvy vrcholů, tak textury materiálu.
+Při použití `Péct → Textura` nebo `Přeprojektovat → Vrchol` se berou v úvahu barvy vrcholů i textury materiálu.
 :::
 
-#### Ze sebe sama {#vertex-from-itself}
-Převede textury z materiálu do hodnot vrcholů. Toto tlačítko bude aktivní pouze tehdy, pokud má objekt UV a v materiálu jsou aktivní textury.
+#### Ze stejného objektu {#vertex-from-itself}
+Převede textury z materiálu na hodnoty vrcholů. Tlačítko je aktivní jen tehdy, když má objekt UV a v materiálu jsou aktivní textury.
 
-::: tip TIP: Texture painting
-Nomad přímo nepodporuje malování a úpravu textur, ale velmi podobných výsledků lze dosáhnout projekcí textur -> hodnoty vrcholů, malováním na vrcholy a následným bake vrcholy -> textury:
+::: tip TIP: Malování textur
+Nomad přímo nepodporuje malování a úpravy textur, ale velmi podobného výsledku dosáhnete tak, že textury promítnete do hodnot vrcholů, malujete na vrcholy a pak vrcholy zapečete zpět do textur:
 
-1. Nastavte nízko-poly objekt s UV
+1. Připravte objekt s nízkým počtem polygonů a s UV
 1. Načtěte textury do jeho materiálu
-1. Subdividujte ho dostatečně, aby se na něj dalo malovat
-1. Proveďte `Reproject to vertex` v režimu `From itself`, nyní byla textura převedena na hodnoty vrcholů
-1. Malujte, vyhlazujte, mazejte, razítkujte, dělejte jakékoli úpravy
-1. Proveďte `Bake to texture` v režimu `From itself`. Tyto úpravy se převedou zpět do textur.
+1. Rozdělte ho natolik, aby se na něj dalo malovat
+1. `Přeprojektovat → Vrchol` v režimu `Ze stejného objektu`, textura se teď převedla na hodnoty vrcholů
+1. Malujte, vyhlazujte, rozmazávejte, razítkujte, upravte, co potřebujete
+1. `Péct → Textura` v režimu `Ze stejného objektu`. Úpravy se převedou zpět do textur.
 :::
 
-#### Z hi-res () {#vertex-from-high-res}
-Převede všechny viditelné objekty do hodnot vrcholů na vybraném objektu. Číslo na tomto tlačítku udává počet viditelných objektů.
+#### Z vysokého rozlišení {#vertex-from-high-res}
+Převede ostatní objekty na hodnoty vrcholů vybraného objektu. Číslo na tlačítku udává počet zdrojových objektů. Je to určené hlavně pro použití na síti s vysokým rozlišením, typicky s čistou topologií.
 
 ::: tip
-Reprojekce jiných objektů se dá použít nejen pro přenos barevných informací z jiných objektů, ale i pro projekci vrcholů na jiné objekty, např. obvazy lze promítnout na postavu.
+Přeprojektování jiných objektů neslouží jen k přenosu barev, ale i k promítnutí vrcholů na jiné objekty, např. obvazy lze promítnout na postavu.
 :::
 
-#### ![](/icons/cog.webp) Reproject menu (ozubené kolo) {#vertex-reproject-gear-menu}
-Gear menu má tyto pokročilé volby:
+#### Vrcholky, Barva, Drsnost, Kovovost, Krytí, Maska, Vrstvy, SkupinaPovrch {#vertex-vertices-roughness-metalness-color-opacity-opacity-mask-mask-layers-face-group}
+Tato tlačítka určují, které vlastnosti se promítnou na vybraný objekt. `Vrstvy` přenese ostatní vrstvy na vybranou síť.
 
-#### Vrcholy, Drsnost, Kovovost, Barva, Krytí, Krytí->Maska, Maska, Vrstvy, Skupina ploch {#vertex-vertices-roughness-metalness-color-opacity-opacity-mask-mask-layers-face-group}
-Tato zaškrtávací políčka určují, které vlastnosti budou promítnuty do vybraného objektu. 
+#### ![](/icons/cog.webp) Nabídka ozubeného kolečka přeprojektování {#vertex-reproject-gear-menu}
+Nabídka ozubeného kolečka obsahuje tyto pokročilé možnosti:
 
-#### Uvolnit {#vertex-relax}
-Vybraný mesh může mít své rozložení vyhlazeno nebo „uvolněno“ (relax) do určité míry, aby lépe seděl na cíle reprojekce. Smooth je lepší pro high-poly meshe. Relax je lepší pro low-poly meshe. Auto nechá Nomad zvolit nejlepší metodu.
+##### Krytí → Maska {#vertex-opacity-to-mask}
+Převede krytí zdroje na masku na vybraném objektu.
 
-#### Iterace {#vertex-iterations}
-Kolikrát má být operace relax aplikována během reprojekce.
+##### Iterace {#vertex-iterations}
+Kolikrát se během přeprojektování použije uvolnění. Používá se jen při zapnutém `Vrcholky`.
 
-#### Poloměr klece {#vertex-cage-radius}
-Upraví, jak daleko od vybraného objektu jsou vysílány paprsky při hledání cílových objektů. Ve výchozím nastavení je tato vzdálenost nízká, aby se předešlo artefaktům, ale lze ji zvýšit, pokud jsou cílové objekty daleko od objektu, do kterého se peče.
+##### Uvolnit {#vertex-relax}
+Rozložení vybrané sítě lze do jisté míry vyhladit nebo uvolnit, aby lépe sedla na cíle přeprojektování. `Hladit` je lepší pro sítě s vysokým počtem polygonů, `Uvolnit` pro sítě s nízkým počtem polygonů. `Auto` nechá Nomad vybrat nejlepší metodu.
 
-#### Odchylka paprsku {#vertex-ray-bias}
-Nižší hodnoty upřednostní projekci na nejbližší bod cílového povrchu. Vyšší hodnoty upřednostní průsečík s použitím normály povrchu. 
+##### Vyhledávací vzdálenost {#vertex-cage-radius}
+Maximální vzdálenost, ve které se hledá zdrojový povrch. Ve výchozím stavu je nízká, aby nevznikaly artefakty, ale můžete ji zvýšit, pokud jsou cílové objekty od vybraného objektu daleko.
 
-#### Posun paprsku {#ray-vertex-offset}
-Upraví, odkud na vybraném objektu začínají výpočty bake. Ve výchozím nastavení začínají 5 % od povrchu, což zabraňuje určitým artefaktům. Pokud jsou cílové objekty velmi daleko od objektu, do kterého se peče, může být nutné tento offset zvýšit.
+##### Projekce {#vertex-projection}
+Jak se hledá zdrojový povrch:
 
+* `Paprsek` - Promítá podél normály povrchu.
+* `Adaptivní směs` - Míchá paprsek podél normály a nejbližší povrch podle vzdálenosti a `Preference paprsku`. Když jeden mine, použije druhý.
+* `Nejbližší` - Promítá do nejbližšího bodu zdrojového povrchu.
 
-### Quad Remesh - Instant {#quad-remesh-instant}
-![](/images/topology_quadremesh_menu.webp)
-Remesh pomocí [algoritmu Instant Meshes od Wenzel Jakob, Marco Tarini, Daniele Panozzo, Olga Sorkine-Hornung](https://igl.ethz.ch/projects/instant-meshes/). Analyzuje tok meshe a vytváří čistou quad topologii.
+##### Preference paprsku {#vertex-ray-bias}
+Jen pro `Adaptivní směs`. Vyšší hodnoty posouvají směs k výsledku paprsku podél normály, nižší k nejbližšímu bodu.
+
+##### Posunutí paprsku {#ray-vertex-offset}
+Upraví, odkud na vybraném objektu výpočty začínají. Malé odsazení od povrchu zabrání některým artefaktům. Pokud jsou cílové objekty od zapékaného objektu velmi daleko, může být potřeba odsazení zvětšit. `Nejbližší` ho nepoužívá.
+
+### ![](/icons/bake.webp) Péct → VDM {#bake-vdm}
+Vytvoří z vybraného objektu VDM razítko (vektorové posunutí) a přidá ho do knihovny VDM. Budete požádáni o název.
+
+Typický postup:
+- Přidejte rovinu, nebo ve výběru VDM zvolte `Nový VDM`, čímž přidáte už nastavenou rovinu (primitivum [VDM](scene.md#add-menu))
+- Vysochejte na ní svůj tvar a okraj nechte rovný
+- Zapečte ji!
+
+Zapékaný čtverec určují UV roviny, takže objekt musí mít UV. Velikost razítka zvolíte pomocí `Rozlišení` a tlačítky `Barva`, `Drsnost`, `Kovovost` a `Krytí` určíte, co razítko kromě posunutí ponese.
 
 ::: tip
-Na iOS a desktopu dává nástroj [Quad remesher](tools#quad-remesher) lepší výsledky a více kontroly.
+Na rovině nepoužívejte DynTopo, poškodí její UV a razítko vyjde zdeformované. Nejpřesnější výsledek dá sochání ve vrstvě, protože plochá rovina pod ní zůstane. Malování také potřebuje vrstvu, jinak se materiál otiskne přes celý čtverec, ne jen tam, kde jste malovali.
 :::
-
-#### Remesh {#instant-remesh}
-Spustí operaci instant meshes.
-
-#### Cílové quady {#target-quads}
-Počet quad polygonů, které se Quad Remesh pokusí vytvořit.
-
-#### ![](/icons/cog.webp) Quad Remesh Instant menu (ozubené kolo) {#quad-remesh-instant-gear-menu}
-Gear menu má tyto pokročilé volby:
-
-##### Úhel zalomení {#crease-angle}
-Práh ostrých rohů, který se pokusí pomoci vést operaci remesh.
-
-#### Maximální vyplnění díry {#max-fill-hole}
-Algoritmus může někdy vytvářet nežádoucí díry. Pokud má díra méně vrcholů než tato hodnota, bude vyplněna.
-
-### Díry {#holes}
-![](/images/topology_holes_menu.webp)
-Většinu času bude váš objekt pravděpodobně vodotěsný, což znamená, že mesh je „uzavřený“.
-
-Pokud má váš objekt díry, můžete je vyplnit. Všimněte si, že to funguje jen na „naivní“ díry, takže nemůže „svařit“ dva oddělené okraje.
-
-![](/videos/hole_filling.mp4)
-
-::: tip
-Když spustíte Voxel remesher, všechny díry se automaticky uzavřou, ať už ho používáte na jednom nebo více meshech.
-:::
-
-#### Zavřít díry {#close-holes}
-Spustí akci uzavření děr.
-
-#### ![](/icons/cog.webp) Menu díry (ozubené kolo) {#holes-gear-menu}
-Gear menu má tyto pokročilé volby:
-
-##### Detail {#fill-detail}
-Hustota polygonů použitá k vyplnění díry. Při tažení tohoto posuvníku se na modelu zobrazí šachovnicový vzor, který dá představu o velikosti trojúhelníků. Zaškrtávací políčko toto vypne a použije pouze existující body, což obvykle vytvoří dlouhé tenké trojúhelníky přes díru, které se těžko sochají.
-
-##### Vyplnit nemanifold {#fill-non-manifold}
-Pokusí se vyplnit non-manifold díry.
-
-##### Skupina ploch {#fill-face-group}
-
-Při vyplňování děr – má každá díra dostat vlastní facegroup (Auto), nebo mají všechny sdílet jednu facegroup (Off), nebo se facegroupy nemají vytvářet (On).
-
-### Vynutit manifold {#force-manifold}
-![](/images/topology_forcemanifold_menu.webp)
-Pokusí se vyčistit non-manifold hrany. Může být užitečné pro externí software, který nepodporuje hrany sdílené více než 2 plochami.
-
-#### Vyčistit {#clean}
-Spustí akci čištění.
-#### ![](/icons/cog.webp) Force manifold menu (ozubené kolo) {#force-manifold-gear-menu}
-Gear menu má tyto pokročilé volby:
-
-#### Smazat malé plochy {#delete-small-faces}
-Práh použitý k odstranění a spojení malých polygonů.
-
-
-### Triplanární {#triplanar}
-![](/images/topology_triplanar_menu.webp)
-Převede mesh na [triplanar](scene.md#triplanar) primitivum.
-Pravděpodobně při tom ztratíte hodně detailů.
-
-#### Vynutit kubické {#force-cubic}
-Vynutí, aby triplanar byl krychle. Jinak se triplanar přizpůsobí nejbližší ohraničující krabici (bounding box) kolem objektu.
-
-#### Převést {#convert}
-Spustí akci triplanar.
-
-#### Rozlišení {#triplanar-resolution}
-Velikost voxelu použitá v operaci triplanar.
 
 ## ![](/icons/dot.webp) Primitiva {#primitive}
-Parametry pro vybrané primitivum. Tyto volby jsou také dostupné v panelu nástrojů primitiva ve viewportu.
+Parametry vybraného primitiva. Většina z nich je dostupná i přes tlačítko `…` na panelu nástrojů primitiva ve viewportu.
 
 ![](/images/topology_primitive_screenshot.webp)

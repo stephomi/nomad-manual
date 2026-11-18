@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "forum": "المنتدى"
+  },
+  "theme": {
+    "outlineLabel": "في هذه الصفحة",
+    "docFooter": {
+      "prev": "الصفحة السابقة",
+      "next": "الصفحة التالية"
+    },
+    "darkModeSwitchLabel": "المظهر",
+    "lightModeSwitchTitle": "التبديل إلى المظهر الفاتح",
+    "darkModeSwitchTitle": "التبديل إلى المظهر الداكن",
+    "sidebarMenuLabel": "القائمة",
+    "returnToTopLabel": "العودة إلى الأعلى",
+    "langMenuLabel": "تغيير اللغة",
+    "skipToContentLabel": "الانتقال إلى المحتوى",
+    "notFound": {
+      "title": "الصفحة غير موجودة",
+      "quote": "إن لم تغيّر وجهتك، وواصلت البحث، فقد تصل في النهاية إلى حيث تتجه.",
+      "linkLabel": "الذهاب إلى الصفحة الرئيسية",
+      "linkText": "أعدني إلى الصفحة الرئيسية"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "بحث",
+      "buttonAriaLabel": "بحث"
+    },
+    "modal": {
+      "displayDetails": "عرض القائمة المفصّلة",
+      "resetButtonTitle": "إعادة تعيين البحث",
+      "backButtonTitle": "إغلاق البحث",
+      "noResultsText": "لا توجد نتائج لـ",
+      "footer": {
+        "selectText": "للاختيار",
+        "selectKeyAriaLabel": "مفتاح الإدخال",
+        "navigateText": "للتنقل",
+        "navigateUpKeyAriaLabel": "سهم للأعلى",
+        "navigateDownKeyAriaLabel": "سهم للأسفل",
+        "closeText": "للإغلاق",
+        "closeKeyAriaLabel": "مفتاح الهروب"
+      }
+    }
+  }
+}

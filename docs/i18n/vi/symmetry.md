@@ -1,78 +1,94 @@
 # ![](/icons/symmetry.webp) Đối xứng {#symmetry}
 
-Menu này điều khiển cách các nét vẽ được lặp lại qua một mặt phẳng gương hoặc theo hướng xuyên tâm, và các cách để khôi phục đối xứng trên các đối tượng không đối xứng.
+Menu này điều khiển cách các nét vẽ được lặp lại qua một mặt phẳng gương, theo kiểu xuyên tâm hoặc theo dạng lát gạch, và các cách khôi phục đối xứng cho những đối tượng không đối xứng.
 
 ![](/images/symmetry_overview.webp) 
 
 ## Tổng quan {#overview}
 Bạn có thể dùng đối xứng theo nhiều cách:
 
-* Như một gương, lật công việc qua trục X (trái/phải), Y (trên/dưới), Z (sau/trước), hoặc kết hợp. 
-* Đối xứng xuyên tâm có thể được đặt trên X Y Z với số lần lặp, ví dụ điêu khắc một con sao biển. 
-* Gương có thể hoạt động quanh gốc tọa độ (gọi là chế độ thế giới – world mode) hoặc quanh tâm của một đối tượng (gọi là chế độ cục bộ – local mode).
-* Các bản điêu khắc bắt đầu không đối xứng có thể bị buộc trở nên đối xứng.
+* Như một tấm gương, lật phần việc qua trục X (trái/phải), Y (trên/dưới), Z (sau/trước), hoặc kết hợp các trục.
+* Đối xứng xuyên tâm có thể đặt trên X, Y, Z với số lần lặp lại tùy chọn, ví dụ khi điêu khắc một con sao biển.
+* Lát gạch lặp lại các nét vẽ của bạn trên khắp đối tượng, để tác phẩm liền mạch khi lát.
+* Gương có thể hoạt động quanh gốc tọa độ (gọi là chế độ thế giới) hoặc quanh tâm của đối tượng (gọi là chế độ cục bộ).
+* Những tác phẩm ban đầu không đối xứng có thể được ép thành đối xứng.
 
-Một phím tắt để bật/tắt đối xứng cũng có thể được tìm thấy ở bảng nhanh bên trái (*"Sym"*). Chữ nhỏ 'L/W' cho biết Nomad đang ở chế độ đối xứng Local hay World. Bạn cũng có thể nhấn giữ lâu hoặc vuốt vào giữa màn hình để mở một menu.
+Bạn cũng có thể tìm thấy lối tắt bật/tắt đối xứng trên bảng nhanh bên trái (*"Đối Xứng"*). Chữ nhỏ 'L/W' cho biết Nomad đang ở chế độ đối xứng Cục bộ (L) hay Thế giới (W). Bạn cũng có thể nhấn giữ hoặc vuốt về phía giữa màn hình để mở một menu.
 
 ![](/images/symmetry_button.webp) 
 
-Đây là một tùy chọn toàn cục, vì vậy trạng thái của nó sẽ được giữ khi chuyển giữa các công cụ khác nhau.
-Ngoại lệ duy nhất là các công cụ biến đổi ([Move](#translate), [Rotate](#rotate), [Scale](#scale) và [Gizmo](#gizmo)) có trạng thái đối xứng riêng.
+Cài đặt đối xứng được lưu theo từng đối tượng, và tiêu đề menu hiển thị tên của đối tượng bạn đang chỉnh sửa.
+Các công cụ điêu khắc dùng chung một trạng thái bật/tắt, còn các công cụ biến đổi ([Biến Đổi](tools.md#transform) và [Gizmo](tools.md#gizmo)) có trạng thái riêng.
 
 ::: tip
-Menu đối xứng chủ yếu dùng để điều khiển đối xứng của nét vẽ. Bạn cũng có thể phản chiếu và lặp lại đối tượng thông qua [repeaters trong menu scene](scene#repeaters). 
+Menu Đối xứng chủ yếu dùng để điều khiển đối xứng của nét vẽ. Bạn cũng có thể phản chiếu và lặp lại các đối tượng bằng [trình lặp lại trong menu Cảnh](scene#repeaters).
 :::
 
-## Bật {#enabled}
-Bật/tắt chế độ gương, giống với nút `Sym` trong bảng nhanh bên trái. 
+## ![](/icons/symmetry.webp) Kích hoạt {#enabled}
+Bật/tắt chế độ gương, giống như nút `Đối Xứng` trên bảng nhanh bên trái. Một biểu tượng cảnh báo nhắc bạn khi nó đang tắt, và menu cũng cho bạn biết khi công cụ hiện tại bỏ qua đối xứng.
 
 ## Mặt phẳng {#planes}
 
-Bật các mặt phẳng đối xứng và số lần lặp cho đối xứng xuyên tâm. Lưu ý rằng bạn không cần chỉ chọn một mặt phẳng; bạn có thể bật 1, 2 hoặc cả 3 mặt phẳng cho đối xứng phức tạp.
+Bật (các) mặt phẳng đối xứng, và đặt số lần lặp lại cho đối xứng xuyên tâm. Lưu ý rằng bạn không nhất thiết chỉ chọn một mặt phẳng: bạn có thể bật 1, 2 hoặc cả 3 mặt phẳng cho những kiểu đối xứng phức tạp.
 
-Trục và số lần lặp cho đối xứng xuyên tâm. Lưu ý rằng chúng cũng không bị giới hạn ở một trục duy nhất, và thậm chí có thể hoạt động kết hợp với đối xứng mặt phẳng để tạo ra kết quả chi tiết rất nhanh. (Tổng số lần lặp bị giới hạn ở 150)
+Hàng `Xuyên tâm` đặt số lần lặp lại cho đối xứng xuyên tâm quanh từng trục. Lưu ý rằng chúng cũng không bị giới hạn ở một trục, và thậm chí có thể kết hợp với đối xứng mặt phẳng để tạo ra kết quả chi tiết rất nhanh. (Tổng số lần lặp lại bị giới hạn ở 200)
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Phương thức {#method}
-Gương có thể là 'Local', di chuyển cùng đối tượng, hoặc 'World', không di chuyển. Nếu bạn không chắc cần chế độ nào, hãy quan sát mặt phẳng gương và các chỉ báo xuyên tâm được phủ lên đối tượng. Khi ở chế độ local, nếu bạn dùng gizmo biến đổi và di chuyển mô hình, các chỉ báo gương cũng sẽ di chuyển theo. Khi ở chế độ world, các chỉ báo gương sẽ đứng yên, và đối tượng sẽ trượt qua chúng.
+## Gạch lát {#tile}
+
+Lặp lại các nét vẽ dọc theo một trục, cách nhau một khoảng đều đặn, để tác phẩm liền mạch khi lát. Rất tiện cho hoa văn, gạch, hoặc một kết cấu bạn định lặp lại.
+
+Bật lát gạch cho từng trục bằng các nút `Gạch lát`, rồi đặt `Số lượng` (bao nhiêu lần lặp trải trên đối tượng) hoặc `Khoảng cách` (khoảng trống giữa hai lần lặp). Chạm vào nút gạt bên trái để chuyển giữa hai cách này.
+
+## Phương pháp {#method}
+Gương có thể là `Cục bộ`, di chuyển theo đối tượng, hoặc `Thế giới`, đứng yên. Nếu không chắc mình cần chế độ nào, hãy quan sát các chỉ báo mặt phẳng gương và xuyên tâm hiển thị chồng lên đối tượng. Ở chế độ cục bộ, nếu bạn dùng các công cụ biến đổi (`Gizmo` hoặc `Biến Đổi`) để di chuyển mô hình, các chỉ báo gương cũng di chuyển theo. Ở chế độ thế giới, các chỉ báo gương đứng yên, và đối tượng sẽ trượt qua chúng.
 
 ## Phản chiếu {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
-Khi điêu khắc gần các mặt phẳng đối xứng, một số cọ sẽ có hành vi đối xứng không hoàn hảo. Phần này cho phép bạn khôi phục đối xứng bằng cách sao chép một bên của bản điêu khắc sang bên kia. 
+Khi điêu khắc gần các mặt phẳng đối xứng, một số cọ sẽ cho kết quả đối xứng không hoàn hảo. Phần này cho phép bạn khôi phục đối xứng bằng cách chép một bên của tác phẩm sang bên kia.
 
-`Direction` - Các nút `<<` và `>>` quyết định bên nào sẽ được sao chép sang bên còn lại. Nomad tính toán điều này từ góc nhìn hiện tại của bạn, vì vậy đặt `<<` chẳng hạn sẽ luôn sao chép từ bên phải màn hình sang bên trái màn hình.
+`Hướng` - Hai nút mũi tên cạnh tiêu đề `Phản chiếu` quyết định bên nào được chép sang bên kia. Nomad tính hướng này từ khung nhìn hiện tại, nên bên được chọn vẫn giữ nguyên trên màn hình dù bạn nhìn mô hình từ phía nào.
 
-![](/icons/shield.webp) `Mask` - Nút mask cho phép bạn cô lập phần sẽ được phản chiếu; mask phía đích sẽ bảo vệ vùng đó, mask phía nguồn sẽ ngăn vùng đó được phản chiếu sang phía đích. 
+![](/icons/shield.webp) `Mặt nạ` - Nút mặt nạ cho phép bạn khoanh vùng phần sẽ được phản chiếu: che mặt nạ bên đích sẽ bảo vệ vùng đó, che mặt nạ bên nguồn sẽ ngăn vùng đó bị phản chiếu sang bên đích.
 
-![](/icons/tool_hide.webp) `Hide` - Khi bật, các vùng bị ẩn ở phía nguồn sẽ không được phản chiếu sang phía đích. 
+![](/icons/tool_hide.webp) `Ẩn` - Khi bật, những vùng bị ẩn ở bên nguồn sẽ không được phản chiếu sang bên đích.
 
-`Mirror` sẽ cố gắng xác định xem topology có giống nhau ở hai bên gương hay không, và nếu có, chỉ di chuyển các vertex. Đây là trường hợp phổ biến hơn.
+`Phản chiếu` (giữ cấu trúc) sẽ cố xác định xem tô pô hai bên gương có giống nhau không, và nếu có, chỉ di chuyển các đỉnh. Đây là trường hợp phổ biến hơn. Đối xứng xuyên tâm bị bỏ qua. Nếu tô pô không đối xứng, Nomad sẽ đề nghị ép phản chiếu bằng `Cắt • Phản chiếu`.
 
-`Split & Mirror` về cơ bản sẽ cắt đối tượng dọc theo gương, sao chép một bên, phản chiếu nó sang bên kia, và hàn các vertex dọc theo gương. Đây là tùy chọn phá hủy hơn, và sẽ xóa multiresolution, nhưng đôi khi phương pháp này là cần thiết nếu mô hình rất khác nhau giữa hai bên gương.
+Các nút `Cắt` cắt đối tượng dọc theo (các) mặt phẳng đối xứng. Chúng thay đổi tô pô, nên mang tính phá hủy hơn `Phản chiếu`. Con số trên mỗi nút là số đối tượng bạn nhận được:
+
+* `Cắt` - bỏ đi một bên của đối tượng.
+* `Cắt • Phản chiếu` - cắt đối tượng, chép một bên, phản chiếu sang bên kia, rồi hàn các đỉnh dọc theo mặt gương. Đôi khi bạn cần cách này nếu mô hình rất khác nhau giữa hai bên gương.
+* `Cắt • Tách` - cắt đối tượng và giữ mỗi bên thành một đối tượng riêng.
+* `Cắt • Phản chiếu • Tách` - giống `Cắt • Phản chiếu`, nhưng mỗi bên trở thành một đối tượng riêng.
+
+Nếu chọn nhiều đối tượng, `Phản chiếu` và [Lật đối tượng](#flip-object) sẽ áp dụng cho tất cả.
 
 ### Lật đối tượng {#flip-object}
 ![](/images/symmetry_flip.webp)
-Đổi bên trái thành bên phải và ngược lại. Trông tương tự như khi bạn dùng menu công cụ gizmo và đặt scale thành -1 trên trục X.
+Đổi bên trái thành bên phải và ngược lại, theo `X`, `Y` hoặc `Z`. Kết quả trông giống như khi bạn dùng menu công cụ gizmo và đặt tỷ lệ X thành -1.
 
 ## Đặt lại và Chỉnh sửa {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
-Có thể chỉnh sửa vị trí và hướng của đối xứng (nhưng không được khuyến nghị!). Nếu cần, `World center` và `Orientation` sẽ đặt lại vị trí và hướng đối xứng về giá trị mặc định.
+Bạn có thể chỉnh vị trí và hướng của đối xứng (nhưng không khuyến khích!). Khi cần, `Trung tâm thế giới` (`Trung tâm đối tượng` ở chế độ cục bộ) và `Hướng` sẽ đặt lại vị trí và hướng của đối xứng về giá trị mặc định.
 
-Nomad thường biết nên đặt mặt phẳng đối xứng ở đâu. Không khuyến nghị chỉnh tay phần này, nhưng nút `Gizmo (Edit)` cho phép điều đó cho người dùng nâng cao. Khi nút này được bấm, một gizmo sẽ xuất hiện để bạn tịnh tiến và xoay mặt phẳng đối xứng. Nếu bạn muốn khôi phục tâm và hướng mặc định, các nút `object center` và `orientation` sẽ làm điều đó.
+Nomad thường biết nên đặt mặt phẳng đối xứng ở đâu. Không nên tự chỉnh, nhưng nút `Chỉnh sửa Gizmo` cho phép người dùng nâng cao làm điều đó. Khi nhấn nút này, một gizmo hiện ra để bạn di chuyển và xoay mặt phẳng đối xứng. Nếu muốn khôi phục tâm và hướng mặc định, hãy dùng các nút đặt lại ở trên.
 
-Hành vi của các tùy chọn này sẽ thay đổi tùy thuộc vào không gian (*Local/World*) mà bạn đang ở.
-Vì vậy nếu nó không hoạt động như bạn mong đợi, hãy kiểm tra xem bạn đang ở đúng không gian hay không.
+`Từ trục xoay` đặt mặt phẳng đối xứng vào trục xoay của công cụ [Gizmo](tools.md#gizmo). Nó chỉ khả dụng khi công cụ `Gizmo` đang hoạt động.
+
+Hành vi của các tùy chọn này thay đổi tùy theo không gian (*Cục bộ/Thế giới*) bạn đang dùng.
+Vì vậy nếu nó không hoạt động như bạn mong đợi, hãy kiểm tra xem bạn có đang ở đúng không gian không.
 
 ::: tip
-Nút `Gizmo (Edit)` được cố ý làm mờ như một lời nhắc rằng có lẽ bạn không nên dùng nó!
+Chỉnh mặt phẳng đối xứng bằng gizmo còn khá thử nghiệm, có lẽ bạn sẽ không cần đến nó!
 :::
 
-## Hiển thị tùy chọn {#show-options}
+## Tùy chọn hiển thị {#show-options}
 ![](/images/symmetry_show.webp)
 
 
-`Show line` và `Show plane` sẽ bật/tắt lớp phủ trong viewport hiển thị vị trí đối xứng. Lưu ý rằng việc tắt các tùy chọn này chỉ có hiệu lực khi menu đối xứng được đóng.
+`Hiển thị đường` và `Hiển thị mặt phẳng` bật/tắt lớp phủ trong khung nhìn thể hiện vị trí đối xứng. Lưu ý rằng việc tắt các tùy chọn này chỉ có hiệu lực khi menu Đối xứng được đóng lại.

@@ -1,143 +1,167 @@
 # ![](/icons/paint.webp) Schilderen {#painting}
 
-Beheer de kleur, ruwheid, metallicheid van verfstreken, maak het mogelijk om verf‑eigenschappen te vullen (flood fill), en bepaal hoe verf‑tools omgaan met lagen, maskers en verborgen selecties.
+Regelt de kleur, ruwheid en metaalheid van schilderstreken, laat je eigenschappen over het hele object vullen, en bepaalt hoe schildergereedschappen omgaan met lagen, maskers en verborgen delen.
 
 ![](/images/paint_overview.webp)  
 
 ## Overzicht {#overview}
 
-Nomad gebruikt PBR‑vertexpainting. Wat betekent dit?
+Nomad gebruikt PBR-vertex-schilderen. Wat betekent dat?
 
 ### PBR {#pbr}
-PBR, of Physically Based Rendering, is een populaire computer­grafiek‑techniek voor film, televisie, games en mobiel. Door licht te baseren op fysieke eigenschappen, en oppervlakken te definiëren via kleur, ruwheid en metallicheid, kan een grote variëteit aan fotorealistische looks worden bereikt.
+PBR, of Physically Based Rendering, is een populaire techniek in computergraphics voor film, televisie, games en mobiel. Door lichten te baseren op fysieke eigenschappen en oppervlakken te beschrijven met kleur, ruwheid en metaalheid, kun je een grote verscheidenheid aan fotorealistische looks bereiken.
 
 ### Vertex-schilderen {#vertex-painting}
 
-Vertexpainting betekent dat de verfinformatie wordt opgeslagen in de vertices van het model, in plaats van in textures. Omdat Nomad modellen met honderdduizenden, vaak miljoenen vertices aankan, zouden je modellen zeer gedetailleerde oppervlakteverf moeten kunnen hebben; als je het detail kunt beeldhouwen, kun je dat detail ook schilderen.
+Bij vertex-schilderen wordt de verfinformatie in de vertices van het model opgeslagen, in plaats van in texturen. Omdat Nomad modellen aankan met honderdduizenden en vaak miljoenen vertices, kunnen je modellen heel gedetailleerd beschilderd worden: kun je een detail sculpten, dan kun je het ook schilderen.
 
-Dit betekent ook dat schilderen in Nomad geen UV‑mapping vereist, vaak een traag en technisch proces in andere 3D‑applicaties. Veel andere 3D‑applicaties ondersteunen niet de hoge vertex‑aantallen die Nomad wel aankan, maar Nomad heeft ook goede texture‑baking‑ en decimation‑tools om te helpen.
+Het betekent ook dat schilderen in Nomad geen UV-mapping nodig heeft, in andere 3d-programma's vaak een traag en technisch proces. Veel andere 3d-programma's kunnen niet zo veel vertices aan als Nomad, maar Nomad heeft ook goede gereedschappen om texturen te bakken en te decimeren.
 
-### Texturering {#texturing}
+### Texturen {#texturing}
 
-Nomad ondersteunt textures, maar die moeten aanwezig zijn in een geïmporteerd model, of via het bakken van vertexpainting naar textures. 
+Nomad ondersteunt texturen, maar die moeten al in een geïmporteerd model zitten, of ontstaan door vertex-schilderwerk naar texturen te bakken.
 
-Een texture is simpelweg een afbeelding, maar in de 3D‑context verwijst het meestal naar een afbeelding die aan een object is toegewezen.
-Om een afbeelding om een model heen te wikkelen, heeft het model texture‑coördinaten (UV) nodig.
+Een textuur is gewoon een afbeelding, maar in een 3d-context bedoelen we meestal een afbeelding die aan een object is gekoppeld.
+Om een afbeelding rond een model te wikkelen, heeft het model textuurcoördinaten (UV) nodig.
 
-Nomad kan [die automatisch berekenen](topology.md#uv-unwrap), maar je hebt niet veel controle over de algehele kwaliteit.
+Nomad kan [ze automatisch berekenen](topology.md#uv-unwrap), maar je hebt dan weinig controle over de algehele kwaliteit.
 
 ::: tip
-Een voorbeeld van workflow:
-- Beeldhouw in Nomad, daarna [UV‑unwrap](topology.md#uv-unwrap)
-- Als je al bent begonnen met schilderen in Nomad kun je [de vertexpainting naar textures overzetten](topology.md#bake-vertex-colors-to-texture)
+Een voorbeeld van een workflow:
+- Sculpt in Nomad en doe daarna een [UV-ontvouwen](topology.md#uv-unwrap)
+- Ben je al begonnen met schilderen in Nomad, dan kun je [het vertex-schilderwerk naar texturen overbrengen](topology.md#bake-texture)
 - Exporteer naar Procreate
-- Texture in Procreate
-- Exporteer terug naar Nomad voor render‑doeleinden
+- Maak de texturen in Procreate
+- Exporteer terug naar Nomad om te renderen
 :::
 
-Dat is het overzicht, nu bekijken we de onderdelen van het schildermenu:
+Tot zover het overzicht. Laten we nu de secties van het menu Schilderen bekijken:
 
 
-## Penseelstreek-schilderen {#stroke-painting}
+## Penseelschilderen {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
-Schilderen inschakelen voor deze tool, handig als je tegelijk wilt beeldhouwen en schilderen.
+Zet schilderen aan voor dit gereedschap, handig als je tegelijk wilt sculpten en schilderen. Kan een gereedschap schilderen maar staat dit vinkje uit, dan herinnert een waarschuwingsicoon naast de titel je daaraan.
 
-Voor tools waar schilderen de primaire functie is (bijv. Paint, Smudge, Mask), bestaat dit selectievakje niet.
+Bij gereedschappen waarvan schilderen de hoofdfunctie is (bijv. Verf, Vlekken, Masker), bestaat dit vinkje niet.
 
-### Schilderintensiteit {#paint-intensity}
+### ![](/icons/opacity.webp) Schilderintensiteit {#paint-intensity}
 
-Een schuifregelaar waarmee je een andere intensiteit kunt gebruiken dan de primaire tool‑intensiteit.
+Een schuifregelaar waarmee je een andere intensiteit gebruikt dan de hoofdintensiteit van het gereedschap.
 
-De selectievakjes `Alpha`, `Falloff` en `Randomize` bepalen of die functies het schilderen beïnvloeden. Je kunt bijvoorbeeld randomize inschakelen voor de Clay‑tool, maar de kleur niet laten randomizen.
+De schuifregelaarknop ernaast zet een snelle schuifregelaar voor de schilderintensiteit in de zijbalk, voor gereedschappen die tegelijk sculpten en schilderen.
+
+De knoppen `Alpha`, `Afname` en `Intensiteit variëren` bepalen of die functies invloed hebben op het schilderen. Je kunt bijvoorbeeld variatie aanzetten voor het gereedschap Klei, zonder dat de kleur varieert.
+
+* `Alpha` - staat dit uit, dan negeert het schilderen de alpha en bedekt het het hele penseeloppervlak. Bij het gereedschap VDM wordt deze knop vervangen door `Stempelmateriaal`, waarmee je het materiaal dat in de stempel is opgeslagen aan- of uitzet.
+* `Afname` - staat dit uit, dan blijft het schilderen op volle intensiteit tot aan de rand van het penseel.
+* `Intensiteit variëren` - of het intensiteitsdeel van de streekvariatie invloed heeft op het schilderen. Variatie in positie, rotatie en schaal verplaatst altijd de hele stempel.
+
+Deze opties worden genegeerd door [Alles verven](#paint-all), maar de triplanaire variant ervan gebruikt wel de alpha.
+
+### ![](/icons/link.webp) Globaal materiaal {#global-material}
+Staat deze optie aan, dan is het gekozen materiaal hetzelfde als bij de andere gereedschappen. Alleen de instellingen voor ruwheid, metaalheid en kleur tellen mee. Zet het uit om dit gereedschap een eigen materiaal te geven.
 
 
 ## Materiaal {#material}
 ![](/images/paint_material.webp) 
 
-Het eerste pictogram is een materiaalvoorbeeld‑vorm. Door te slepen op de 3D‑materiaalpreview roteer je deze. 
+Het eerste icoon is een voorbeeldvorm van het materiaal. Sleep over het 3d-materiaalvoorbeeld om het te draaien.
 
-Het tweede pictogram is een voorbeeld van de verfstreek met de geselecteerde alpha‑ en falloff‑opties.
+Het tweede icoon is een voorbeeld van de schilderstreek met de gekozen alpha- en afname-opties.
 
-Met de previewknop naast de titel Material kun je wisselen tussen none, Material of Triplanar. Dit bepaalt wat er gebeurt wanneer je verf‑eigenschappen interactief wijzigt:
+### ![](/icons/falloff.webp) Curven {#curves}
 
-* `None` - Er wordt geen preview op het model getoond wanneer je eigenschappen aanpast
-* `Material` - De materiaalwaarden worden op het object gepreviewd wanneer je eigenschappen aanpast. Als je textures gebruikt en het model UV’s heeft, worden de UV’s gebruikt.
-* `Triplanar` - Het materiaal wordt gepreviewd als een Triplanar‑projectie. 
+Opent een curve-editor voor de textuurvakken van de [PBR-schuifregelaars](#pbr-sliders). Die past de waarden van de textuur aan voordat ze worden geschilderd, zonder het afbeeldingsbestand te wijzigen. Een klein curve-icoon op een textuurvak laat zien dat de curve ervan is aangepast.
 
-De pipet kan worden gebruikt om alle eigenschappen van een object in je scène te samplen.
+### ![](/icons/cog.webp) Materiaalopties {#material-options}
+
+De knop `Materiaal` naast de titel bevat twee instellingen.
+
+`Materiaalviewportvoorbeeld` bepaalt wat er op het geselecteerde object gebeurt terwijl je de schuifregelaars voor kleur, ruwheid, metaalheid, dekking en intensiteit aanpast:
+
+* `Geen` - Er wordt geen voorbeeld op het model getoond als je eigenschappen aanpast.
+* `Materiaal` - De materiaalwaarden worden als voorbeeld op het object getoond als je eigenschappen aanpast.
+* `Triplanar` - Het materiaal wordt als voorbeeld getoond als triplanaire projectie.
+
+Met de vinkjes voor kleur, ruwheid, metaalheid en dekking eronder kies je welke kanalen de [Materiaalpipet](#material-picker) vervangt.
+
+### ![](/icons/dropper.webp) Materiaalpipet {#material-picker}
+
+De pipet neemt het materiaal onder de cursor over, van elk object in je scène. Alleen de kanalen die in de [Materiaalopties](#material-options) zijn aangevinkt, worden vervangen.
 
 ## Materiaalpresets {#material-presets}
-Tik op de 3D‑voorbeeldvorm om een preset‑menu met materialen te openen; deze kunnen worden gekloond om je eigen presets te definiëren.
+Tik op de 3d-voorbeeldvorm om een presetmenu met materialen te openen. Je kunt ze klonen om je eigen presets te maken.
 
 ![](/images/paint_presets.webp) 
 
-De schakelaars `Embed Textures` en `Alpha` slaan, indien ingeschakeld, alle textures op die door dit materiaal worden gebruikt binnen de preset. Dit wordt hieronder verder uitgelegd.
+De schakelaar `Texturen insluiten` bewaart een kopie van de texturen die dit materiaal gebruikt in de preset zelf. Zonder deze optie verwijst de preset alleen naar de texturen in de map textures/ van Nomad. Zet hem aan als je een preset met texturen wilt delen zonder de texturen apart te versturen.
+
+`Alpha opnemen` slaat ook de penseel-alpha op in de materiaalpreset.
 
 ## PBR-schuifregelaars {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
-[PBR](shading.md#pbr)‑schilderen gebruikt 4 kanalen:
-- `Color` De kleur die zal worden geschilderd. De pipet kan worden gebruikt om kleur te selecteren van andere delen van het model of van referentie‑afbeeldingen.
-- `Roughness` Geeft aan hoe “ruw” of “glad” een oppervlak is. Een lage waarde voor roughness betekent dat de reflecties scherp zullen zijn.
-- `Metalness` Geeft simpelweg aan of het oppervlak metallisch is of niet. De waarde zou meestal ofwel 0% of 100% moeten zijn; tussenliggende waarden zouden uitzonderlijk moeten zijn.
-- `Opacity` Hoeveel van het materiaal je erdoorheen kunt zien. Strikt genomen maakt het geen deel uit van de PBR‑specificatie, maar het is in veel situaties nuttig. 1 is volledig ondoorzichtig, 0 is transparant. Merk op dat opacity en breking (refractie) verschillende dingen zijn; refractie in Nomad wordt afgehandeld via het refractie‑materiaal. 
+[PBR](shading.md#pbr)-schilderen gebruikt 4 kanalen:
+- `Kleur` De kleur die wordt geschilderd. Met de pipet kun je een kleur overnemen van andere delen van het model of van referentieafbeeldingen.
+- `Ruwheid` Geeft aan hoe "ruw" of "glad" een oppervlak is. Een lage ruwheid betekent scherpe reflecties.
+- `Metaalheid` Geeft gewoon aan of het oppervlak metallisch is of niet. Meestal hoort de waarde 0% of 100% te zijn; waarden daartussen zouden een uitzondering moeten zijn.
+- `Dekking` Hoeveel je door het materiaal heen kunt kijken. Strikt genomen hoort het niet bij de PBR-specificatie, maar het is in veel situaties handig. 1 is volledig ondoorzichtig, 0 is doorzichtig. Let op: dekking en breking zijn twee verschillende dingen; breking regel je in Nomad met het materiaaltype Breking.
 
-Als je een materiaalpreset selecteert, worden 3 kanalen gelijktijdig geschilderd (opacity wordt vaak bewust uitgesloten). Dit betekent dat je in plaats van alleen ‘rood’ te schilderen, ‘een rood ruw metaal’ of ‘een wit glad plastic’ kunt schilderen.
+Kies je een materiaalpreset, dan worden 3 kanalen tegelijk geschilderd (dekking wordt vaak bewust weggelaten). In plaats van alleen 'rood' schilder je dan bijvoorbeeld 'een rood, ruw metaal' of 'een wit, glad plastic'.
 
-Het vierkant is een texture‑slot; klik erop om een texture voor die eigenschap te gebruiken in plaats van een vaste waarde.
+Het vierkantje is een textuurvak: klik erop om voor die eigenschap een textuur te gebruiken in plaats van een vaste waarde. Een kleurtextuur kleurt de kleur in, terwijl een ruwheids-, metaalheids- of dekkingstextuur de waarde van de schuifregelaar vervangt (het label wordt dan doorgestreept). Bij de dekkingstextuur leest `Alfa als waarde gebruiken` het alfakanaal van de textuur in plaats van de grijswaarde.
 
-Het penseelpictogram naast de schuifregelaars zal die eigenschap over je object vullen (flood fill).
+Bij het gereedschap VDM verschijnt, als de stempel een eigen materiaal heeft, een extra vak naast het textuurvak. Tik erop om dat kanaal van de stempel te gebruiken of te negeren.
 
-Het selectievakje schakelt die specifieke eigenschap in of uit, zodat je bijvoorbeeld alleen kleur kunt schilderen, of alleen roughness en opacity. 
+Het penseelicoon naast de schuifregelaars vult je object met die eigenschap.
 
-Hier zijn enkele voorbeelden van verschillende roughness‑ en metalness‑eigenschappen:
+Met het vinkje zet je een eigenschap aan of uit, zodat je bijvoorbeeld alleen kleur schildert, of alleen ruwheid en dekking.
 
-|                | Metalness 0%                      | Metalness 100%               |
+Hier zijn een paar voorbeelden van verschillende waarden voor ruwheid en metaalheid:
+
+|                | Metaalheid 0%                     | Metaalheid 100%              |
 | :------------: | :-------------------------------: | :--------------------------: |
-| Roughness 0%   | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
-| Roughness 50%  | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
-| Roughness 100% | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
+| Ruwheid 0%     | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
+| Ruwheid 50%    | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
+| Ruwheid 100%   | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
 
 ::: warning
-Alleen kleur wordt ondersteund in [Matcap‑rendering](shading.md#matcap)‑modus; metalness en roughness worden genegeerd.
+Ruwheid en metaalheid vereisen de shadingmodus [Verlicht (PBR)](shading.md#pbr). In de modus [MatCap](shading.md#matcap) of [Onbelicht](shading.md#unlit) worden ze genegeerd, en het menu toont een waarschuwing.
 :::
 
 ::: tip
-Wanneer je textures gebruikt voor PBR‑schilderen, is het vaak handig om over te schakelen naar bijvoorbeeld de `Stamp`‑tool, of het stroke‑menu te gebruiken om een andere modus dan dot te kiezen, die de texture kan uitsmeren.
+Gebruik je texturen voor PBR-schilderen, dan is het vaak handig om over te stappen op bijvoorbeeld het gereedschap `Stempel`, of in het menu Streek een andere modus dan dot te kiezen, want die kan de textuur uitsmeren.
 
 ![](/videos/paint_color_texture.mp4)  
 :::
 
 ::: tip
-Je kunt overwegen om `Smooth Shading` [globaal](settings.md#smooth-shading) of [per object](material.md#smooth-shading) in te schakelen als je een metalen oppervlak schildert op een object met een lagere polycount.
+Overweeg om `Vloeiende shading` [globaal](settings.md#smooth-shading) of [per object](material.md#smooth-shading) aan te zetten als je een metallisch oppervlak schildert op een object met weinig polygonen.
 :::
 
-## Alles schilderen {#paint-all}
+## ![](/icons/paint.webp) Alles verven {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
-Pas het huidige materiaal toe op het object, ofwel in standaardmodus met ‘Paint All’, of als een Triplanar‑projectie.
+Brengt het huidige materiaal aan op de geselecteerde objecten, ofwel in de standaardmodus met `Alles verven`, ofwel als triplanaire projectie met `Alles verven + Triplanar`. De triplanaire variant is niet beschikbaar voor primitieven die nog niet zijn gevalideerd.
 
-De selectievakjes naast de color/metalness/roughness/opacity‑schuifregelaars worden gerespecteerd; uitgeschakelde eigenschappen worden niet gevuld.
+De vinkjes naast de schuifregelaars voor kleur, metaalheid, ruwheid en dekking worden gerespecteerd: uitgeschakelde eigenschappen worden niet gevuld.
 
-De extra knoppen bepalen hoe Paint All verder kan worden beïnvloed:
+De extra knoppen bepalen verder hoe Alles verven werkt. De meeste tonen een percentage, en ze zijn grijs wanneer ze geen effect zouden hebben:
 
-| Icon                        | Description                                   |
+| Icoon                       | Beschrijving                                  |
 | :-------------------------: | :-------------------------------------------: |
-| ![](/icons/tool_mask.webp) | Gemaskerde gebieden worden niet beïnvloed.    |
+| ![](/icons/shield.webp)    | Gemaskerde gebieden worden niet beïnvloed.    |
 | ![](/icons/tool_hide.webp) | Verborgen gebieden worden niet beïnvloed.     |
-| ![](/icons/opacity.webp)   | gebruik de tool‑schilderfactor hierboven.     |
-| ![](/icons/layer.webp)     | Ongeschilderde gebieden van een laag worden niet beïnvloed. |
-| ![](/icons/triplanar.webp) | Indicator van triplanar‑instellingen          |
-| ![](/icons/cog.webp)       | Open de Triplanar‑instellingen                |
+| ![](/icons/opacity.webp)   | Gebruikt de schilderfactor van het gereedschap hierboven. |
+| ![](/icons/layer.webp)     | Onbeschilderde delen van een laag worden niet beïnvloed. |
+| ![](/icons/triplanar.webp) | `Vertex`: de triplanaire variant verschuift ook het oppervlak met de alpha, met de getoonde intensiteit van het gereedschap. |
+| ![](/icons/cog.webp)       | Opent de triplanaire instellingen             |
 
-### Triplanare instellingen {#triplanar-settings}
+### ![](/icons/cog.webp) Triplanaire instellingen {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
-Vergelijkbaar met de [triplanar‑instellingen in het materiaalmenu](material.md#triplanar) kun je de blending van de projecties, tiling en offsets regelen. 
+Net als bij de [triplanaire instellingen in het menu Materiaal](material.md#triplanar) regel je hier hoe de projecties in elkaar overlopen, de herhaling en de verschuivingen.
 
-Gebruik het preview‑selectievakje bovenaan dit menu om een blijvende preview in te schakelen terwijl je waarden aanpast.
-
-## Globaal materiaal {#global-material}
-Als deze optie is ingeschakeld, zal het geselecteerde materiaal hetzelfde zijn als bij de andere tools. Merk op dat alleen roughness‑, metalness‑ en kleurinstellingen in aanmerking worden genomen.
+Met het voorbeeldvinkje bovenaan dit menu zet je een blijvend voorbeeld aan terwijl je waarden aanpast.

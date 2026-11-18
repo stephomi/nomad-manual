@@ -1,187 +1,245 @@
 # ![](/icons/cog.webp) Tetapan {#reset-to-default}
 
-Menu tetapan mengandungi banyak pilihan untuk mengawal rupa dan tingkah laku Nomad.
+Menu tetapan mengandungi banyak pilihan untuk mengawal rupa dan kelakuan Nomad.
 
 ![](/images/settings_overview.webp)
 
+Barisan butang di bahagian atas menu membawa anda terus ke sesuatu bahagian: `Kursor`, `Petunjuk`, `Wayar`, `Grid`, `Dua belah`, `Garis luar`, `Sorotan`, `Snap kiub`, `Statistik`, `Pemegang-pemegang`, `Bentuk`, `Repeater` dan `Pelbagai resolusi`.
+
 ## Tetapan paparan {#display-settings}
-Bahagian ini mengandungi pintasan pelancaran pantas untuk kebanyakan tetapan di bahagian bawah menu ini.
+Bahagian ini mengandungi pintasan pelancaran pantas bagi kebanyakan tetapan yang terdapat di bahagian bawah menu ini.
 
 ![](/images/settings_display_settings.webp)
 
-### Lorekan licin {#smooth-shading}
-Togol lorekan licin dan bersegi. Apabila bersegi, poligon dilorek secara bebas, jadi anda boleh melihat topologi asas.
-Ia boleh berguna untuk melihat lorekan bersegi semasa peringkat mengukir, kemudian tukar kepada lorekan licin untuk rendering.
+### ![](/icons/sphere_smooth.webp) Shading licin {#smooth-shading}
+Togol antara shading licin dan bersegi. Dalam mod bersegi, setiap poligon diberi shading secara berasingan, jadi anda dapat melihat topologi di bawahnya.
+Shading bersegi boleh berguna semasa peringkat pemahatan, kemudian tukar kepada shading licin untuk pemaparan.
 
-Melumpuhkan Lorekan Licin meningkatkan prestasi sedikit.
+Menyahdayakan Shading licin meningkatkan prestasi sedikit.
 
-### Garis luar {#outline-quick}
+### ![](/icons/outline.webp) Garis luar {#outline-quick}
 Togol garis luar pada pilihan semasa anda.
 
-Ini berguna untuk mendapatkan maklum balas visual pada mesh terpilih anda sekiranya [Gelapkan Tidak Dipilih](#darken-unselected-objects) dilumpuhkan.
+Ini berguna untuk mendapatkan maklum balas visual tentang mesh yang sedang dipilih sekiranya [Gelapkan objek yang tidak dipilih](#darken-unselected-objects) dinyahdayakan.
 
-Dari sudut prestasi, menggunakan [Gelapkan Tidak Dipilih](#darken-unselected-objects) adalah jauh lebih baik daripada menggunakan penyelesaian garis luar.
+Dari segi prestasi, menggunakan [Gelapkan objek yang tidak dipilih](#darken-unselected-objects) jauh lebih baik daripada menggunakan garis luar.
 
-### Grid {#grid-quick}
-Togol grid latar belakang, berguna untuk memahami penempatan dan skala objek.
+### ![](/icons/grid.webp) Grid {#grid-quick}
+Togol grid latar belakang, berguna untuk memahami kedudukan dan skala objek.
 
-### Dua sisi {#two-sided-quick}
-Togol paparan poligon dua sisi. Semua permukaan menghala ke arah tertentu.
-Permukaan yang dianggap sebagai *backface* ialah yang menghala "menjauhi" sudut pandang kamera.
+### ![](/icons/culling.webp) Dua belah {#two-sided-quick}
+Togol paparan poligon dua belah. Semua muka menghala ke arah tertentu.
+Muka yang dianggap sebagai *muka belakang* ialah muka yang menghala "menjauhi" titik pandangan kamera.
 
-Sebagai contoh sfera ringkas permulaan akan mempunyai permukaan yang menghala ke luar.
-Jika anda menggerakkan kamera ke dalam sfera anda akan melihat backface permukaan ini.
+Contohnya, sfera ringkas semasa permulaan mempunyai muka yang menghala ke luar.
+Jika anda menggerakkan kamera ke dalam sfera, anda akan melihat bahagian belakang muka-muka ini.
 
-Kebanyakan masa anda tidak sepatutnya melihat bahagian backface permukaan, jadi mewarnakannya boleh membantu anda mengesan potensi masalah atau topologi yang tidak betul.
+Biasanya anda tidak sepatutnya melihat bahagian belakang muka, jadi mewarnakannya boleh membantu anda mengesan masalah yang berpotensi atau topologi yang salah.
 
-Melumpuhkan rendering `dua sisi` boleh meningkatkan prestasi rendering sedikit.
+Menyahdayakan pemaparan `Dua belah` boleh meningkatkan prestasi pemaparan sedikit.
 
 
-### Kerangka wayar {#wireframe-quick}
-Togol tindihan rangka dawai. 
+### ![](/icons/wireframe.webp) Kerangka dawai {#wireframe-quick}
+Togol tindihan kerangka dawai. 
 
-Ambil perhatian bahawa mengaktifkan rangka dawai akan menurunkan prestasi.
+Perhatikan bahawa mendayakan kerangka dawai akan menurunkan prestasi.
 
-### Kiub snap {#snap-cube-quick}
-Togol ikon pembantu di penjuru paparan, berguna untuk mengorientasikan diri anda dalam ruang dan menukar dengan pantas antara pandangan depan/belakang/kiri/kanan/atas/bawah.
+### ![](/icons/snap_cube.webp) Snap kiub {#snap-cube-quick}
+Togol ikon pembantu di penjuru adegan, berguna untuk mengorientasikan diri anda dalam ruang dan bertukar dengan pantas antara pandangan depan/belakang/kiri/kanan/atas/bawah.
 
-### Tunjuk pengecatan {#show-painting}
-Togol paparan cat. Cat lalai yang digunakan ialah bahan putih tidak metalik, pada kekasaran 25%.
+### ![](/icons/palette.webp) Tunjukkan cat {#show-painting}
+Togol paparan cat. Apabila dimatikan, objek dipaparkan dengan bahan putih bukan logam, pada kekasaran 25%, dan bukannya catnya.
 
-### Guna sembunyi {#use-hide}
-Togol mod sembunyi. Apabila dimatikan ia masih wujud, cuma dinyahaktifkan. Butang ini dilumpuhkan jika anda sedang menggunakan alat sembunyi.
+### ![](/icons/tool_hide.webp) Gunakan Sembunyi {#use-hide}
+Togol mod sembunyi. Apabila dimatikan, ia masih ada, cuma dinyahaktifkan. Butang ini dinyahdayakan jika anda sedang menggunakan alat sembunyi.
 
-### Tunjuk topeng {#show-mask}
-Togol mod topeng. Apabila dimatikan ia masih wujud, cuma dinyahaktifkan. Tekan butang ini sekali lagi untuk mengaktifkannya semula.
+### ![](/icons/shield.webp) Tunjukkan topeng {#show-mask}
+Togol mod topeng. Apabila dimatikan, ia masih ada, cuma dinyahaktifkan. Tekan butang ini sekali lagi untuk mendayakannya semula.
 
-Jika anda perlu menyembunyikan topeng DAN masih mahu ia aktif, gunakan warna topeng di bawah dan tetapkan kepada putih. Ingat untuk menukarnya kembali kepada kelabu apabila anda selesai!
+Jika anda perlu menyembunyikan topeng DAN masih mahu ia aktif, gunakan warna topeng di bawah dan tetapkannya kepada putih. Ingat untuk menukarnya kembali kepada kelabu apabila selesai!
 
-Ambil perhatian bahawa butang ini dilumpuhkan jika anda sedang menggunakan alat topeng. 
+Perhatikan bahawa butang ini dinyahdayakan jika anda sedang menggunakan alat topeng. 
 
-### Topeng -> Legap {#mask-opaque}
-Topeng -> legap akan mengabaikan verteks lutsinar untuk topeng bertopeng. Ini hanya berkaitan untuk kelegapan verteks dan tekstur, permukaan yang disembunyikan oleh “sembunyi” masih akan kekal tersembunyi.
+### ![](/icons/shield.webp) Topeng → Legap {#mask-opaque}
+`Topeng → Legap` akan mengabaikan verteks lut sinar bagi topeng. Ini hanya berkaitan dengan kelegapan verteks dan tekstur; muka yang disembunyikan oleh "sembunyi" akan tetap tersembunyi. Ia hanya tersedia semasa `Tunjukkan topeng` dihidupkan.
 
-### Serlahan {#highlight-quick}
-Togol kilatan sorotan pemilihan. Apabila memilih objek, kilatkan objek terpilih dengan warna merah jambu terang selama 500 milisaat. Warna dan tempoh kilatan boleh disuaikan di bawah.
+### ![](/icons/bang.webp) Sorotan {#highlight-quick}
+Togol kilatan sorotan pilihan. Apabila memilih objek, objek yang dipilih akan berkelip seketika selama 500 milisaat. Warna dan tempoh kilatan boleh disesuaikan di bawah.
 
-### Statistik {#stats-quick}
-Togol teks paparan status dalam viewport 3D. Ini memaparkan maklumat tentang memori sistem anda, jumlah kiraan verteks adegan, dan kiraan verteks pilihan semasa.
+### ![](/icons/list.webp) Statistik {#stats-quick}
+Togol teks paparan status dalam paparan 3d. Ia memaparkan maklumat tentang memori sistem anda, jumlah verteks dalam adegan, dan bilangan verteks dalam pilihan semasa.
 
 ----- 
 
-### Gelapkan objek tidak dipilih {#darken-unselected-objects}
+### ![](/icons/cube.webp) Gelapkan objek yang tidak dipilih {#darken-unselected-objects}
 Objek yang tidak dipilih akan digelapkan supaya pilihan semasa lebih menonjol.
 
-### Topeng {#mask}
-Warna yang digunakan untuk topeng, secara lalai kelabu sederhana, didarabkan dengan warna objek anda. Tetapkan ini kepada putih untuk menjadikan topeng tidak kelihatan, tetapi ingat untuk menukarnya kembali kepada kelabu apabila selesai!
+### ![](/icons/shield.webp) Topeng {#mask}
+Warna yang digunakan untuk topeng, secara lalai kelabu sederhana, didarabkan dengan warna objek anda. Tetapkannya kepada putih untuk menjadikan topeng tidak kelihatan, tetapi ingat untuk menukarnya kembali kepada kelabu apabila selesai!
 
 ## ![](/icons/cursor.webp) Kursor {#cursor}
 
-### Tunjuk bulatan ketika mengukir {#show-circle-while-sculpting}
-Terus menunjukkan jejari berus semasa mengukir.
+### Bulat {#show-circle-while-sculpting}
+Bila hendak memaparkan bulatan jejari berus:
 
-### Tunjuk titik kecil {#show-small-dot}
-Paparkan titik di tengah sapuan berus semasa mengukir, atau apabila paksi putar kamera diubah.
+* `Auto` - tunjukkan bulatan, tetapi sembunyikannya semasa anda memahat.
+* `Tidak` - jangan sesekali tunjukkan bulatan.
+* `Ya` - sentiasa tunjukkan bulatan, walaupun semasa memahat.
 
-### Tunjuk penstabil tali {#show-rope-stabilizer}
-Lukis garisan untuk menunjukkan panjang tali apabila penstabil tali malas diaktifkan dalam tetapan strok.
+### Tunjukkan titik kecil {#show-small-dot}
+Paparkan titik di tengah sapuan berus semasa memahat, atau apabila pangsi kamera diubah.
 
-## ![](/icons/cursor.webp) Penunjuk {#indicator}
+### Tunjukkan penstabil tali {#show-rope-stabilizer}
+Lukis garisan untuk menunjukkan panjang tali apabila [Penstabil tali lambat](stroke.md#lazy-rope-stabilizer) aktif dalam tetapan sapuan.
+
+### Tunjukkan petunjuk kecondongan {#show-roll-hint}
+Tunjukkan panduan arah golek semasa anda menggunakan ikatan kekunci golek.
+
+### ![](/icons/radius.webp) Saiz {#dot-size}
+Saiz titik kecil.
+
+### Warna {#cursor-colors}
+Kursor berubah warna bergantung pada apa yang sedang anda lakukan: `Ukir`, `Latar belakang` (apabila berada di atas latar belakang), `Topeng`, `Lancar`, `Kamera` dan `Jari-jari`. Setiap warna boleh disesuaikan di sini.
+
+## ![](/icons/cursor.webp) Petunjuk {#indicator}
 ![](/images/settings_indicator.webp)
 
-Paparkan penunjuk visual untuk tutorial dan rakaman skrin.
+Paparkan penunjuk visual untuk tutorial dan rakaman skrin. Tetapkannya kepada `Ya` untuk menghidupkannya (pada iOS terdapat juga pilihan `Auto`).
 
-Butang `Jari`, `Stylus` dan `Tetikus` akan membolehkan paparan ikon apabila jenis input tersebut dikesan.
+Butang `Jari`, `Stilus` dan `Tetikus` akan mendayakan paparan ikon apabila jenis input tersebut dikesan.
 
 ### Warna {#indicator-color}
 Warna penunjuk.
 
 ### Saiz/Ikon/Bulatan {#indicator-shape}
-Kawalan untuk melaraskan saiz penunjuk dan bentuk di dalam penunjuk.
+Kawalan untuk melaraskan saiz penunjuk, serta kelegapan ikon dan bulatan di dalam penunjuk.
 
-## ![](/icons/wireframe.webp) Kerangka wayar {#wireframe}
+## ![](/icons/wireframe.webp) Kerangka dawai {#wireframe}
 ![](/images/settings_wireframe.webp)
-Aktifkan tindihan rangka dawai.
+Aktifkan tindihan kerangka dawai.
 
 ### Sasaran {#target}
-Tetapkan sama ada objek tidak dipilih akan menunjukkan rangka dawai, atau hanya objek terpilih, atau semua objek.
+Tetapkan sama ada objek yang tidak dipilih akan memaparkan kerangka dawai, atau hanya objek yang dipilih, atau semua objek.
 
 ### Sembunyi {#hide}
-Tetapkan sama ada rangka dawai masih akan ditunjukkan untuk poligon tersembunyi.
+Tetapkan sama ada kerangka dawai masih dipaparkan untuk poligon yang tersembunyi.
 
-### Multiresolusi: Aras 0 sahaja {#multiresolution-level-0-only}
-Multiresolution akan menunjukkan rangka dawai untuk tahap 0 lebih gelap, dan tahap lebih tinggi semakin cerah. Apabila diaktifkan, pilihan ini hanya akan menunjukkan rangka dawai tahap 0.
+### Multiresolusi: Hanya Tahap 0 {#multiresolution-level-0-only}
+Multiresolusi memaparkan kerangka dawai tahap 0 dengan lebih gelap, dan tahap yang lebih tinggi semakin cerah. Apabila didayakan, pilihan ini hanya memaparkan kerangka dawai tahap 0.
 
 ### Warna {#wireframe-color}
-Tetapkan warna dan kelegapan untuk rangka dawai.
+Tetapkan warna dan kelegapan kerangka dawai.
 
 ## ![](/icons/grid.webp) Grid {#grid}
 ![](/images/settings_grid.webp)
 Aktifkan grid.
 
-### Warna {#grid-color}
-Tetapkan warna dan kelegapan grid.
-
 ### Snap {#snap}
-Aktifkan snap untuk alat berasaskan lengkung kepada grid.
+Pilihan ini membuatkan titik bagi alat berasaskan lengkung dan bentuk (`Larik`, `Tiub`, bentuk poligon dan laluan...) melekat semasa anda melukisnya:
 
-## ![](/icons/culling.webp)Dua sisi {#two-sided}
-Benarkan melihat permukaan poligon dari kedua-dua sisi.
+* `Snap ke grid` - melekat pada grid.
+* `Snap ke titik (pandangan sejajar)` - melekat pada titik sedia ada yang berdekatan apabila kamera sejajar dengan satu paksi.
+* `Snap ke titik (pandangan bebas)` - melekat pada titik sedia ada yang berdekatan apabila kamera tidak sejajar.
 
-### Warna belakang muka, Warna belakang muka {#backface-color}
-Aktifkan pewarnaan backface, dan warna pewarnaan.
+### Warna {#grid-color}
+Tetapkan warna dan kelegapan grid. Pilihan ini muncul apabila grid kelihatan.
+
+`Vinyet` memudarkan grid ke arah tepinya. `Ambang pembahagian snap` menetapkan, dalam piksel, setakat mana garisan grid boleh menjadi padat pada skrin sebelum grid bertukar ke tahap subbahagian yang lain.
+
+## ![](/icons/culling.webp)Dua belah {#two-sided}
+Membolehkan anda melihat muka poligon dari kedua-dua belah.
+
+### Warna permukaan belakang {#backface-color}
+`Warna belakang` mendayakan pewarnaan muka belakang, dan `Warna permukaan belakang` menetapkan warnanya.
 
 ## ![](/icons/outline.webp)Garis luar {#outline}
-Aktifkan garis luar di sekeliling objek aktif.
+Dayakan garis luar di sekeliling objek yang dipilih.
 
 ### Warna garis luar, Ketebalan {#outline-color-thickness}
-Tetapkan warna dan ketebalan garis luar.
+Tetapkan warna dan `Ketebalan` garis luar.
 
 
-## ![](/icons/bang.webp) Serlahan {#highlight}
-Aktifkan kilatan pendek apabila objek aktif ditukar.
-### Warna, Tempoh {#color-duration}
-Tetapkan warna dan tempoh masa kilatan dalam milisaat.
+## ![](/icons/bang.webp) Sorotan {#highlight}
+Dayakan kilatan singkat apabila pilihan berubah.
+### Warna, Jangka masa {#color-duration}
+Tetapkan warna dan tempoh kilatan dalam milisaat.
 
-## ![](/icons/snap_cube.webp) Kiub snap {#snap-cube}
+## ![](/icons/snap_cube.webp) Snap kiub {#snap-cube}
 ![](/images/settings_snapcube.webp)
 
-Paparkan ikon pembantu di penjuru paparan, berguna untuk menukar dengan pantas antara pandangan depan/belakang/kiri/kanan/atas/bawah. Ketik pada sisi kiub untuk bertukar antara pandangan ortografik.
+Paparkan ikon pembantu di penjuru adegan, berguna untuk bertukar dengan pantas antara pandangan depan/belakang/kiri/kanan/atas/bawah. Ketuk pada sisi kiub untuk bertukar antara pandangan ortografik.
 
 ### Bentuk {#shape}
-Pilih antara bentuk kiub, sfera, atau gnomon untuk kiub snap.
+Pilih antara bentuk sfera, kiub atau gnomon untuk snap kiub.
 
-### Hadkan penjajaran {#restrict-alignment}
-Aktifkan penguncian putaran kamera apabila menyeret pada kiub snap. Apabila aktif, gerakan seretan pada kiub snap hanya akan pergi kiri/kanan atau atas/bawah.
+### Hadkan penyelarasan {#restrict-alignment}
+Selaraskan pandangan snap dengan paksi dunia. Apabila didayakan, hanya 6 pandangan utama yang boleh dipilih. Pada `Auto`, sekatan ini hanya berlaku apabila kamera berada dalam mod `Meja Putar`.
 
 ### Saiz {#size}
-Tetapkan saiz kiub snap.
+Tetapkan saiz snap kiub.
 
-### Kalih 180 {#flip-180}
-Aktifkan tingkah laku ketikan supaya jika pandangan telah disnap, mengetik pada tengah kiub akan memutar pandangan 180 darjah. Sebagai contoh jika pandangan disnap ke depan, mengetik kiub pandangan akan memutar ke pandangan belakang.
+### Putar 180° {#flip-180}
+Dayakan kelakuan ketuk supaya jika pandangan telah di-snap, mengetuk bahagian tengah kiub akan memutar pandangan 180 darjah. Contohnya, jika pandangan di-snap ke depan, mengetuk kiub pandangan akan memutarnya ke pandangan belakang.
+
+### Tepi & penjuru {#edges-corners}
+Tambah pandangan snap pada tepi dan penjuru kiub (zon berwarna ambar). Tidak tersedia untuk bentuk gnomon.
+
+### Seretan meja putar {#turntable-drag}
+Menyeret kiub akan memutarnya tanpa menggolekkan kamera, dan berhenti seketika pada setiap pandangan snap. Nyahdayakannya untuk menyeret kiub dengan putaran `Bebola jejak`. Walau apa pun pilihannya, seretan kekal mendatar atau menegak. Dengan kamera `Meja Putar`, kiub sentiasa diseret dengan cara ini.
 
 ### Kedudukan {#snap-position}
-Tetapkan di penjuru mana kiub snap akan berada.
+Tetapkan penjuru tempat snap kiub berada.
 
 
-## ![](/icons/edit_radius_n.webp) Statistik {#stats}
+## ![](/icons/list.webp) Statistik {#stats}
 ![](/images/settings_stats.webp)
 
-Paparkan maklumat tentang memori sistem anda, jumlah kiraan verteks adegan, dan kiraan verteks pilihan semasa.
+Paparkan maklumat tentang memori sistem anda, jumlah verteks dalam adegan, dan bilangan verteks dalam pilihan semasa.
 
 ### Kedudukan {#stats-position}
-Tetapkan di penjuru mana statistik akan berada.
+Tetapkan penjuru tempat statistik berada.
 
-## Primitif/Pengulang {#primitive-repeaters}
-## Input berangka {#gizmo-input}
-Benarkan input berangka apabila mengetik widget gizmo.
+## ![](/icons/edit_radius.webp) Pemegang {#handle}
+Tetapan untuk pemegang yang anda seret dalam paparan, seperti gizmo.
 
-## Multiresolusi {#multires}
-### Kiraan verteks maksimum {#multires-lowres-count}
-Tetapkan ambang untuk tidak membenarkan operasi subdivide multires melebihi kiraan poligon ini, yang berkemungkinan akan menyebabkan Nomad ranap. Lalai ialah 10 juta.
+### Input berangka {#gizmo-input}
+Benarkan input berangka apabila mengetuk salah satu kawalan gizmo.
+
+### Sembunyi semasa interaksi {#hide-on-interaction}
+Memudarkan gizmo semasa anda berinteraksi dengannya, supaya ia tidak menghalang.
+
+### ![](/icons/opacity.webp) Kelegapan {#handle-opacity}
+Kelegapan pemegang.
+
+## ![](/icons/shape_lasso.webp) Bentuk {#shape-settings}
+Rupa bentuk yang anda lukis dengan sapuan bentuk (laso, segi empat tepat, lengkung...) pada skrin.
+
+### ![](/icons/opacity.webp) Isian, Garis luar {#shape-fill-outline}
+Kelegapan bahagian dalam bentuk dan garisan di sekelilingnya.
+
+### Warna {#shape-colors}
+Warna bentuk bagi setiap jenis alat: `Topeng`, `Sembunyi`, `Kumpulan muka` dan `Potong`.
+
+## ![](/icons/array.webp) Repeater {#primitive-repeaters}
+Had bagi salinan yang dihasilkan oleh [pengulang](scene#repeaters) (tatasusunan, radial, lengkung, permukaan). Had ini memastikan Nomad kekal responsif apabila sesuatu pengulang menjadi tidak terkawal.
+
+### ![](/icons/cube.webp) Salinan maksimum {#repeater-max-copies}
+Bilangan salinan paling banyak yang boleh dihasilkan oleh satu pengulang. Nomad bergelut dengan objek yang banyak, tidak kira saiznya.
+
+### ![](/icons/cube.webp) Salinan adegan {#repeater-scene-copies}
+Bajet salinan untuk seluruh adegan. Salinan poligon rendah menggunakan sedikit geometri tetapi tetap merupakan objek penuh, jadi inilah had yang dicapai dahulu oleh salinan kecil.
+
+### ![](/icons/triangle.webp) Muka maksimum {#repeater-max-faces}
+Bajet muka untuk semua salinan dalam adegan. Apabila melebihinya, objek yang paling berat akan kehilangan salinan dahulu.
+
+## ![](/icons/multires.webp) Multiresolusi {#multires}
+### Bilangan verteks maksimum {#multires-lowres-count}
+Tetapkan ambang supaya operasi `Perbahagikan` multiresolusi tidak dibenarkan melebihi bilangan verteks ini, kerana ia berkemungkinan besar akan menyebabkan Nomad ranap: Nomad tidak menyemak memori yang tersedia sebelum membahagikan. Nilai lalainya ialah 10 juta.
 ### Ambang resolusi rendah {#multires-lowres-threshold}
-Resolusi lebih rendah bagi mesh boleh dipaparkan apabila anda menggerakkan kamera. Anda boleh meningkatkan nilai ini jika anda mahu memaparkan resolusi mesh yang lebih tinggi.
+Resolusi mesh yang lebih rendah boleh dipaparkan semasa anda menggerakkan kamera. Anda boleh menaikkan nilai ini jika anda mahu memaparkan resolusi mesh yang lebih tinggi.
 
 ## Tetapan {#advanced}
-### Tetap semula ke lalai {#reset}
-Tetapkan semula semua tetapan kepada nilai lalai.
+### ![](/icons/reset.webp) Tetap semula kepada asal {#reset}
+Tetapkan semula semua tetapan keutamaan aplikasi kepada nilai lalainya.
+
+Sesetengah sumber disimpan secara berasingan dan TIDAK ditetapkan semula: projek, ikatan kekunci, pratetap alat, persekitaran HDR, MatCap, alpha, tekstur berus dan imej rujukan. Semua yang disimpan bersama projek, seperti pencahayaan, pemprosesan pasca atau pandangan kamera, juga kekal utuh.

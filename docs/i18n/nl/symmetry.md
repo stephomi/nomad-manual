@@ -1,78 +1,94 @@
 # ![](/icons/symmetry.webp) Symmetrie {#symmetry}
 
-Dit menu bepaalt hoe streken worden herhaald over een spiegelvlak of radiaal, en manieren om symmetrie te herstellen op niet-symmetrische objecten.
+Dit menu bepaalt hoe streken worden herhaald over een spiegelvlak, radiaal of als tegels, en hoe je de symmetrie herstelt op objecten die niet symmetrisch zijn.
 
 ![](/images/symmetry_overview.webp) 
 
 ## Overzicht {#overview}
 Je kunt symmetrie op verschillende manieren gebruiken:
 
-* Als een spiegel, waarbij werk wordt gespiegeld over X (links/rechts), Y (boven/onder), Z (achter/voor), of een combinatie daarvan. 
-* Radiale symmetrie kan worden ingesteld op X Y Z met een aantal herhalingen, bijvoorbeeld bij het sculpteren van een zeester. 
-* Spiegels kunnen werken rond de oorsprong (wereldmodus genoemd) of rond het midden van een object (lokale modus genoemd).
-* Sculpts die niet-symmetrisch zijn begonnen, kunnen gedwongen symmetrisch worden gemaakt.
+* Als spiegel, waarbij je werk wordt gespiegeld over X (links/rechts), Y (boven/onder), Z (achter/voor) of een combinatie daarvan.
+* Radiale symmetrie stel je in op X, Y of Z met een aantal herhalingen, bijvoorbeeld om een zeester te sculpten.
+* Tegels herhalen je streken over het object, zodat de sculpt naadloos aansluit.
+* Spiegels kunnen werken rond de oorsprong (de wereldmodus) of rond het midden van een object (de lokale modus).
+* Sculpts die niet symmetrisch zijn begonnen, kun je alsnog symmetrisch maken.
 
-Een snelkoppeling om symmetrie in/uit te schakelen is ook te vinden in het snelle linkerpaneel (*"Sym"*). De kleine 'L/W' geeft aan of Nomad in lokale of wereld-symmetriemodus staat. Je kunt ook lang drukken of naar het midden van het scherm vegen om een menu te openen.
+Een snelkoppeling om symmetrie aan of uit te zetten vind je ook in het linker snelpaneel (*"Sym"*). De kleine 'L/W' geeft aan of Nomad in de lokale (Local) of wereldsymmetrie (World) staat. Je kunt ook lang indrukken of naar het midden van het scherm vegen om een menu te openen.
 
 ![](/images/symmetry_button.webp) 
 
-Dit is een globale optie, dus de status wordt overgenomen door de verschillende tools.
-De enige uitzonderingen zijn de transformtools ([Verplaatsen](#translate), [Roteren](#rotate), [Schalen](#scale) en [Gizmo](#gizmo)) die hun eigen symmetrie-instelling hebben.
+De symmetrie-instellingen worden per object opgeslagen, en de titel van het menu toont de naam van het object dat je bewerkt.
+De sculptgereedschappen delen dezelfde aan/uit-status, terwijl de transformatiegereedschappen ([Transformeren](tools.md#transform) en [Gizmo](tools.md#gizmo)) hun eigen status hebben.
 
 ::: tip
-Het symmetriemenu is voornamelijk bedoeld om streek-symmetrie te regelen. Je kunt ook objecten spiegelen en herhalen via [repeaters in het scenemenu](scene#repeaters). 
+Het menu Symmetrie is vooral bedoeld voor de symmetrie van streken. Je kunt objecten ook spiegelen en herhalen met de [repeaters in het menu Scène](scene#repeaters).
 :::
 
-## Ingeschakeld {#enabled}
-Schakel de spiegelmodus in of uit, dit is hetzelfde als de `Sym`-knop in het snelle linkerpaneel. 
+## ![](/icons/symmetry.webp) Ingeschakeld {#enabled}
+Zet de spiegelmodus aan of uit, hetzelfde als de knop `Sym` in het linker snelpaneel. Een waarschuwingsicoon herinnert je eraan wanneer het uitstaat, en het menu laat ook weten wanneer het huidige gereedschap symmetrie negeert.
 
 ## Vlakken {#planes}
 
-Schakel symmetrievlak(ken) in, en stel het aantal herhalingen in voor radiale symmetrie. Merk op dat je niet slechts één vlak hoeft te kiezen; je kunt 1, 2 of 3 vlakken tegelijk inschakelen voor complexe symmetrie.
+Zet symmetrievlak(ken) aan en stel het aantal herhalingen voor radiale symmetrie in. Je hoeft niet maar één vlak te kiezen: je kunt 1, 2 of alle 3 de vlakken aanzetten voor complexe symmetrie.
 
-De as en het aantal herhalingen voor radiale symmetrie. Merk op dat deze ook niet beperkt zijn tot één as, en zelfs in combinatie met vlak-symmetrie kunnen werken om zeer snel gedetailleerde resultaten te genereren. (Het totale aantal herhalingen is beperkt tot 150)
+De rij `Radiaal` stelt het aantal herhalingen in voor radiale symmetrie rond elke as. Ook die zijn niet beperkt tot één as, en ze werken zelfs samen met vlaksymmetrie, zodat je heel snel gedetailleerde resultaten krijgt. (Het totale aantal herhalingen is beperkt tot 200.)
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Methode {#method}
-De spiegel kan ofwel ‘Lokaal’ zijn, en meebewegen met het object, of ‘Wereld’, en niet meebewegen. Als je niet zeker weet welke modus je nodig hebt, let dan op het spiegelvlak en de radiale indicatoren die over het object worden gelegd. In de lokale modus zullen, als je de transform-gizmo gebruikt en het model verplaatst, de spiegelindicatoren ook meebewegen. In de wereldmodus blijven de spiegelindicatoren vast staan en schuift het object erdoorheen.
+## Tegel {#tile}
 
-## Spiegelen {#mirroring}
+Herhaalt je streken langs een as, op een vaste afstand, zodat de sculpt naadloos aansluit. Handig voor patronen, bakstenen of een textuur die je wilt herhalen.
+
+Zet tegels aan per as met de knoppen `Tegel`, en stel dan een `Aantal` in (hoeveel herhalingen het object beslaan) of een `Afstand` (de ruimte tussen twee herhalingen). Tik op de schakelaar links om tussen de twee te wisselen.
+
+## Methode {#method}
+De spiegel kan `Lokaal` zijn en met het object meebewegen, of `Wereld` zijn en blijven staan. Weet je niet zeker welke modus je nodig hebt, kijk dan naar de aanwijzers voor het spiegelvlak en de radiale symmetrie die over het object worden getoond. In de lokale modus bewegen de spiegelaanwijzers mee als je het model verplaatst met de transformatiegereedschappen (`Gizmo` of `Transformeren`). In de wereldmodus blijven de spiegelaanwijzers op hun plek en schuift het object erdoorheen.
+
+## Spiegel {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
-Bij het sculpteren in de buurt van de symmetrievlakken zullen sommige brushes een onvolmaakt symmetriegedrag vertonen. In deze sectie kun je symmetrie herstellen door één kant van je sculpt naar de andere te kopiëren. 
+Als je vlak bij de symmetrievlakken sculpt, gedragen sommige penselen zich niet helemaal symmetrisch. In deze sectie herstel je de symmetrie door de ene kant van je sculpt naar de andere te kopiëren.
 
-`Richting` - De knoppen `<<` en `>>` bepalen welke kant naar de andere wordt gekopieerd. Nomad berekent dit vanuit je huidige viewport, dus als je het bijvoorbeeld op `<<` zet, wordt altijd van schermrechts naar schermlinks gekopieerd.
+`Richting` - De twee pijlknoppen naast de titel `Spiegel` bepalen welke kant naar de andere wordt gekopieerd. Nomad berekent dit op basis van je huidige viewport, dus de kant blijft op het scherm dezelfde, van welke kant je ook naar het model kijkt.
 
-![](/icons/shield.webp) `Masker` - Met de maskerknop kun je bepalen wat gespiegeld wordt; het maskeren van de doelzijde beschermt dat gebied, het maskeren van de bronzijde voorkomt dat dat gebied naar de doelzijde wordt gespiegeld. 
+![](/icons/shield.webp) `Masker` - Met de maskerknop bepaal je wat er wordt gespiegeld: maskeer je de doelkant, dan wordt dat gebied beschermd; maskeer je de bronkant, dan wordt dat gebied niet naar de doelkant gespiegeld.
 
-![](/icons/tool_hide.webp) `Verbergen` - Wanneer dit actief is, worden gebieden die aan de bronzijde verborgen zijn niet naar de doelzijde gespiegeld. 
+![](/icons/tool_hide.webp) `Verbergen` - Staat dit aan, dan worden verborgen gebieden aan de bronkant niet naar de doelkant gespiegeld.
 
-`Spiegelen` zal proberen te bepalen of de topologie aan beide zijden van de spiegel hetzelfde is en, zo ja, alleen vertices verplaatsen. Dit is het meest voorkomende scenario.
+`Spiegel` (behoud topologie) probeert te herkennen of de topologie aan beide kanten van de spiegel hetzelfde is, en verplaatst in dat geval alleen vertices. Dit is het meest voorkomende geval. Radiale symmetrie wordt genegeerd. Is de topologie niet symmetrisch, dan biedt Nomad aan om het spiegelen af te dwingen met `Snij • Spiegel`.
 
-`Splitsen & Spiegelen` zal het object in feite langs de spiegel doorsnijden, één kant kopiëren, die naar de andere kant spiegelen en vertices langs de spiegel lassen. Dit is een destructievere optie en verwijdert multiresolutie, maar soms is deze methode nodig als het model sterk verschilt over de spiegel.
+De knoppen `Snij` snijden het object door langs het symmetrievlak of de symmetrievlakken. Ze veranderen de topologie en zijn dus destructiever dan `Spiegel`. Het getal op elke knop geeft aan hoeveel objecten je krijgt:
+
+* `Snij` - verwijdert één kant van het object.
+* `Snij • Spiegel` - snijdt het object door, kopieert één kant, spiegelt die naar de andere en last de vertices langs de spiegel aan elkaar. Soms is deze methode nodig als het model aan beide kanten van de spiegel heel verschillend is.
+* `Snij • Splitsen` - snijdt het object door en houdt elke kant als apart object.
+* `Snij • Spiegel • Splitsen` - zoals `Snij • Spiegel`, maar elke kant wordt een apart object.
+
+Zijn er meerdere objecten geselecteerd, dan gelden `Spiegel` en [Object omkeren](#flip-object) voor allemaal.
 
 ### Object omkeren {#flip-object}
 ![](/images/symmetry_flip.webp)
-Maak de linkerkant tot de rechterkant en omgekeerd. Dit lijkt op het gebruik van het gizmo-toolmenu en het instellen van de schaal op -1 op X.
+Maakt van de linkerkant de rechterkant en omgekeerd, langs `X`, `Y` of `Z`. Het resultaat lijkt op wat je krijgt als je in het menu van het gereedschap Gizmo de schaal op X op -1 zet.
 
-## Resetten en bewerken {#reset-and-edit}
+## Herstellen en bewerken {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
-Het is mogelijk om de locatie en oriëntatie van de symmetrie te bewerken (maar niet aanbevolen!). Indien nodig zullen `Wereldcentrum` en `Oriëntatie` de symmetrielocatie en -oriëntatie terugzetten naar hun standaardwaarden.
+Je kunt de positie en oriëntatie van de symmetrie bewerken (maar dat raden we niet aan!). Indien nodig zetten `Wereldcentrum` (`Objectcentrum` in de lokale modus) en `Oriëntatie` de positie en oriëntatie van de symmetrie terug op hun standaardwaarden.
 
-Nomad weet meestal waar het symmetrievlak moet komen. Het wordt niet aanbevolen dit handmatig aan te passen, maar de knop `Gizmo (Bewerken)` maakt dit mogelijk voor gevorderde gebruikers. Wanneer op deze knop wordt geklikt, verschijnt een gizmo waarmee je het symmetrievlak kunt verplaatsen en roteren. Als je het standaardcentrum en de standaardoriëntatie wilt herstellen, doen de knoppen `objectcentrum` en `oriëntatie` dit.
+Nomad weet meestal goed waar het symmetrievlak hoort. Handmatig aanpassen is niet aan te raden, maar met de knop `Gizmo bewerken` kunnen gevorderde gebruikers het toch doen. Klik je op deze knop, dan verschijnt een gizmo waarmee je het symmetrievlak verplaatst en draait. Wil je het standaardmidden en de standaardoriëntatie terug, gebruik dan de herstelknoppen hierboven.
 
-Het gedrag van deze opties verandert afhankelijk van in welke ruimte (*Lokaal/Wereld*) je je bevindt.
-Als het dus niet werkt zoals je verwacht, controleer dan of je je in de juiste ruimte bevindt.
+`Van draaipunt` plaatst het symmetrievlak op het draaipunt van het gereedschap [Gizmo](tools.md#gizmo). Het is alleen beschikbaar zolang het gereedschap `Gizmo` actief is.
+
+Hoe deze opties zich gedragen, hangt af van de ruimte (*Lokaal/Wereld*) waarin je werkt.
+Werkt het niet zoals je verwacht, controleer dan of je in de juiste ruimte zit.
 
 ::: tip
-De knop `Gizmo (Bewerken)` is expres grijs gemaakt als herinnering dat je deze waarschijnlijk niet zou moeten gebruiken!
+Het symmetrievlak bewerken met de gizmo is een beetje experimenteel: waarschijnlijk heb je het niet nodig!
 :::
 
-## Opties weergeven {#show-options}
+## Weergaveopties {#show-options}
 ![](/images/symmetry_show.webp)
 
 
-`Lijn tonen` en `Vlak tonen` schakelen een viewport-overlay van de symmetrielocaties in of uit. Merk op dat het uitschakelen van deze opties pas effect heeft wanneer het symmetriemenu wordt gesloten.
+`Lijn tonen` en `Vlak tonen` zetten een weergave van de symmetriepositie in de viewport aan of uit. Let op: het uitzetten van deze opties wordt pas zichtbaar wanneer het menu Symmetrie gesloten is.

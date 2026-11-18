@@ -1,4 +1,4 @@
-# Descripción general {#overview}
+# ![](/icons/home.webp) Visión general {#overview}
 
 <!-- 
 [[toc]]
@@ -8,34 +8,36 @@
 ::: details
 -->
 
-::: tip ¿Nuevo en Nomad?
-Lee la guía [Primeros pasos](gettingstarted.md).
+::: tip ¿Eres nuevo en Nomad?
+Lee la guía de [Primeros pasos](gettingstarted.md).
 :::
 
 
-## Tabla de contenido {#table-of-contents}
+## Índice {#table-of-contents}
 
-| Menú                           | Icono                         | Descripción                                        |
-| :----------------------------: | :---------------------------: | :------------------------------------------------: |
-| [Files](files.md)              | ![](/icons/open.webp)        | Gestiona tus proyectos, exporta, importa, etc.     |
-| [Scene](scene.md)              | ![](/icons/scene.webp)       | Añade nuevas primitivas y gestiona los objetos de tu escena |
-| [Topology](topology.md)        | ![](/icons/multires.webp)    | Edita la topología del modelo                      |
+| Menú                           | Icono                        | Descripción                                        |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
+| [Archivos](files.md)           | ![](/icons/open.webp)        | Gestiona tus proyectos, exporta, importa, etc.     |
+| [Escena](scene.md)             | ![](/icons/scene.webp)       | Añade primitivos y gestiona los objetos de tu escena |
+| [Topología](topology.md)       | ![](/icons/multires.webp)    | Edita la topología del modelo                      |
 | [Material](material.md)        | ![](/icons/material.webp)    | Material (a nivel de objeto)                       |
-| [Shading](shading.md)          | ![](/icons/sun.webp)         | Cómo iluminar tu escena                            |
-| [Post Process](postprocess.md) | ![](/icons/postprocess.webp) | Postprocesado (efectos visuales en espacio de pantalla) |
-| [Background](background.md)    | ![](/icons/image.webp)       | Cambia el fondo y añade una imagen de referencia   |
-| [Camera](camera.md)            | ![](/icons/camera.webp)      | Control e interacción de la cámara                 |
-| [Stroke](stroke.md)            | ![](/icons/pencil.webp)      | Edita la configuración de la herramienta actual, trazo, atenuación... |
-| [Pressure](pressure.md)        | ![](/icons/pressure.webp)    | Gestiona la presión de tu lápiz                    |
-| [Painting](painting.md)	     | ![](/icons/paint.webp)       | Ajustes de pintura para las herramientas de pintura |
-| [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | Gestiona el plano de espejo de tu malla actual     |
-| [Layers](layers.md)            | ![](/icons/layer.webp)       | Gestiona las capas de tu objeto actual             |
-| [Settings](settings.md)        | ![](/icons/cog.webp)         | Personaliza la vista 3D                            |
-| [Interface](interface.md)      | ![](/icons/sliders.webp)   | Personaliza la interfaz                            |
-| [Tools](tools.md)              | ![](/icons/toolbox.webp)     | Lista de todas las herramientas/pinceles           |
-| [History](history.md)          | ![](/icons/history.webp)     | Gestiona la pila de historial de deshacer/rehacer  |
-| [FAQ](faq.md)                  | ![](/icons/faq.webp)         | Preguntas frecuentes                               |
-| [Tips](tips.md)                | ![](/icons/manual.webp)      | Consejos de flujo de trabajo                       |
+| [Sombreado](shading.md)        | ![](/icons/sun.webp)         | Cómo iluminar tu escena                            |
+| [Posprocesado](postprocess.md) | ![](/icons/postprocess.webp) | Posprocesado (efectos visuales en espacio de pantalla) |
+| [Fondo](background.md)         | ![](/icons/image.webp)       | Cambia el fondo y añade una imagen de referencia   |
+| [Cámara](camera.md)            | ![](/icons/camera.webp)      | Control de la cámara e interacción                 |
+| [Transformar](transform.md)    | ![](/icons/transform.webp)   | Escribe la posición, la rotación y el tamaño de un objeto |
+| [Trazo](stroke.md)             | ![](/icons/brush.webp)       | Edita los ajustes de la herramienta actual, el trazo, la disminución... |
+| [Presión](stroke.md#pressure)  | ![](/icons/pressure.webp)    | Gestiona la presión de tu lápiz                    |
+| [Pintura](painting.md)         | ![](/icons/paint.webp)       | Ajustes de pintura para las herramientas de pintura |
+| [Simetría](symmetry.md)        | ![](/icons/symmetry.webp)    | Gestiona el plano de simetría de la malla actual   |
+| [Operación](operation.md)      | ![](/icons/operation.webp)   | Suaviza, infla, recolorea o desenfoca una malla entera |
+| [Capas](layers.md)             | ![](/icons/layer.webp)       | Gestiona las capas del objeto actual               |
+| [Configuración](settings.md)   | ![](/icons/cog.webp)         | Personaliza la vista 3d                            |
+| [Interfaz](interface.md)       | ![](/icons/sliders.webp)     | Personaliza la interfaz                            |
+| [Herramientas](tools.md)       | ![](/icons/toolbox.webp)     | Lista de todas las herramientas y pinceles         |
+| [Historial](history.md)        | ![](/icons/history.webp)     | Gestiona la pila de deshacer/rehacer               |
+| [Preguntas frecuentes](faq.md) | ![](/icons/faq.webp)         | Preguntas frecuentes                               |
+| [Consejos](tips.md)            | ![](/icons/manual.webp)      | Consejos de flujo de trabajo                       |
 
 ## Recursos de la comunidad {#community-resources}
 

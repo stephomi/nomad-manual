@@ -1,159 +1,173 @@
-# ![](/icons/layer.webp) Ebenen {#layers}
+# ![](/icons/layer.webp) Layer {#layers}
 
-Dieses Menü enthält den Ebenenstapel – eine Möglichkeit, Bearbeitungen an deinem Objekt nicht-destruktiv zu speichern – sowie viele Möglichkeiten, Ebenen zu kombinieren und wiederzuverwenden.
+Dieses Menü enthält den Ebenenstapel, mit dem Sie Änderungen an Ihrem Objekt nicht-destruktiv speichern, und bietet viele Möglichkeiten, Ebenen zu kombinieren und weiterzuverwenden.
 
 ![](/images/layers_overview.webp) 
 
-## Übersicht {#overview}
+## Überblick {#overview}
 
-Nomad-Ebenen erfüllen mehrere Zwecke.
+Ebenen erfüllen in Nomad mehrere Aufgaben.
 
-Mal-Informationen (Farbe, Rauigkeit, Metallizität, Deckkraft) funktionieren mit Ebenen ähnlich wie in 2D-Malprogrammen. Eine Ebene kann erstellt und auf ein Modell bemalt werden. Die Ebene kann ein- oder ausgeschaltet werden, ihre Deckkraft kann angepasst werden, die Ebene kann dupliziert werden, ihre Reihenfolge im Ebenenstapel kann geändert und ihr Mischmodus angepasst werden.
+Malinformationen (Farbe, Rauheit, Metallizität, Deckkraft) funktionieren mit Ebenen ähnlich wie in 2d-Malprogrammen. Sie können eine Ebene anlegen und darauf ein Modell bemalen. Die Ebene lässt sich ein- und ausblenden, ihre Deckkraft anpassen, sie lässt sich duplizieren, im Ebenenstapel verschieben, und ihr Mischmodus lässt sich ändern.
 
-Nomad verwendet Ebenen auch für das Sculpting. Eine Ebene kann feine Details wie Falten speichern oder große Änderungen, sodass sie wie Blendshapes/Shape Keys/Morph Targets in anderen 3D-Anwendungen funktionieren. Du könntest zum Beispiel verschiedene Gesichtsausdrücke auf unterschiedlichen Ebenen modellieren und dann die Ebenenregler anpassen, um sie zu neuen Ausdrücken zu kombinieren.
+Nomad nutzt Ebenen auch zum Sculpten. Eine Ebene kann feine Details wie Falten speichern oder auch große Änderungen, sodass sie wie Blendshapes/Shape Keys/Morph Targets in anderen 3d-Programmen funktioniert. Sie könnten zum Beispiel verschiedene Gesichtsausdrücke auf verschiedenen Ebenen sculpten und sie über die Ebenenregler zu neuen Ausdrücken kombinieren.
 
-In diesem Fall sind die in einer Ebene gespeicherten Änderungen rein additiv, die Ebenenreihenfolge spielt – anders als bei Farbe – keine Rolle.
+In diesem Fall wirken die in einer Ebene gespeicherten Änderungen rein additiv: Anders als beim Malen spielt die Reihenfolge der Ebenen keine Rolle.
 
-Ebenen können teilweise über das Werkzeug [Delete Layer](tools.md#delete-layer) gelöscht werden, und Ebenen können auch verwendet werden, um Masken basierend auf den verschiedenen in der Ebene gespeicherten Informationen zu erstellen.
+Ebenen lassen sich mit dem Werkzeug [EbeneEntf](tools.md#delete-layer) teilweise radieren, und Sie können aus den verschiedenen in einer Ebene gespeicherten Informationen auch Masken erzeugen.
 
 ![](/videos/layer.mp4)
 
 ::: tip
-Anders als bei den meisten Sculpting-Programmen gehen Ebenen beim Ändern der Topologie eines Meshes nicht verloren. Du kannst den [Voxel Remesher](topology.md#voxel-remesher), die [Multiresolution](topology.md#multires) oder die Werkzeuge [Trim](tools.md#trim)/[Split](tools.md#split) verwenden, beachte aber, dass bei Verwendung des [Voxel Remesher](topology.md#voxel-remesher) die Qualität der Ebene beeinträchtigt wird.
+Anders als in den meisten Sculpting-Programmen gehen die Ebenen nicht verloren, wenn Sie die Topologie eines Meshes ändern. Sie können das [Voxel-Remeshing](topology.md#voxel-remesher), die [Multiauflösung](topology.md#multiresolution) oder die Werkzeuge [Trimmen](tools.md#trim)/[Teilen](tools.md#split) verwenden. Beachten Sie aber, dass beim [Voxel-Remeshing](topology.md#voxel-remesher) die Qualität der Ebene leidet.
 :::
 
 ::: tip
-Wenn du Ebenen für Blendshapes/Morph Targets verwendest, gibt es zusätzliche Ebenenfunktionen im [Szenenmenü](scene.md#object-menu). Du kannst Ebenen in Objekte aufteilen und passende Objekte wieder in Ebenen kombinieren.
+Wenn Sie Ebenen für Blendshapes/Morph Targets verwenden, finden Sie im [Szene-Menü](scene.md#object-menu) zusätzliche Ebenenfunktionen: Sie können Ebenen in Objekte aufteilen und passende Objekte zu Ebenen zusammenfassen.
 :::
 ----
 
-## Ebenenmenü {#layer-menu}
+## Layer-Menü {#layer-menu}
 
 ![](/images/layers_menu.webp)
 
-Drücke `Add layer`, um eine neue Ebene zu erstellen.
+Der Titel zeigt den Namen des ausgewählten Objekts. Für Grundformen sind keine Ebenen verfügbar; validieren Sie die Grundform also zuerst.
 
-Jede Ebene hat einen Namen, einen Schieberegler zur Steuerung ihrer Stärke/Faktors und Optionsschaltflächen.
+Tippen Sie auf `Layer hinzufügen`, um eine neue Ebene anzulegen. `Layer zusammenführen` führt alle Ebenen in das Basis-Mesh zusammen; die Zahl neben dem Icon gibt an, wie viele Ebenen es gibt.
+
+Jede Ebene hat einen Namen, einen Regler für ihre Stärke bzw. ihren Faktor und Optionsschaltflächen. Tippen Sie auf eine Ebene, um sie zur aktiven Ebene zu machen: Sculpting und Bemalung landen dann in dieser Ebene. Tippen Sie auf `Basis`, um wieder am Basis-Mesh zu arbeiten.
+
+### ![](/icons/sort_right.webp) Liste aufklappen {#ui-expand-list}
+
+Standardmäßig zeigt die Ebenenliste nur Sichtbarkeit, Mischmodus und Stärke jeder Ebene; die aktive Ebene ist mit allen Steuerelementen aufgeklappt. Der Pfeil links neben dem Titel klappt die vollständigen Steuerelemente für alle Ebenen auf.
+
+![](/images/layers_expand.webp)
 
 ### Optionen {#options}
 
-| Action       | Icon                         | Description                                         |
+| Aktion       | Symbol                       | Beschreibung                                        |
 | :----------: | :--------------------------: | :-------------------------------------------------  |
-| Visible      | ![](/icons/eye_open.webp)   | Show/hide the layer                                 |
-| Blend Mode   | ![](/icons/opacity.webp)    | The photoshop style blending mode. The 4 icons display the modes for Color, Roughness, Metalness, Opacity.                                 |
-| Edit Name    | ![](/icons/pencil.webp)     | Edit the layer name                                 |
-| Delete       | ![](/icons/trash.webp)      | Delete the layer                                    |
-| Duplicate    | ![](/icons/clone.webp)      | Duplicate the layer                                 |
-| Merge Down   | ![](/icons/merge_down.webp) | Merge the layer with the lower layer (or base mesh) |
-| More         | ![](/icons/more.webp)       | [More...](#more) options                            |
+| Sichtbar     | ![](/icons/eye_open.webp)   | Blendet die Ebene ein/aus                           |
+| Mischmodus   | ![](/icons/opacity.webp)    | Der Mischmodus wie in Photoshop. Die 4 Icons zeigen die Modi für Farbe, Rauheit, Metallizität und Deckkraft. |
+| Name bearbeiten | ![](/icons/pencil.webp)  | Bearbeitet den Namen der Ebene                      |
+| Löschen      | ![](/icons/trash.webp)      | Löscht die Ebene                                    |
+| Duplizieren  | ![](/icons/clone.webp)      | Dupliziert die Ebene                                |
+| Abwärts zusammenfügen | ![](/icons/merge_down.webp) | Führt die Ebene mit der darunterliegenden Ebene (oder dem Basis-Mesh) zusammen |
+| Mehr         | ![](/icons/more.webp)       | Optionen unter [Mehr…](#more)                       |
 
-Um eine Ebene an eine andere Stelle im Ebenenstapel zu verschieben, drücke und halte ihren Namen und ziehe sie dann.
+Ist eine Ebene nicht aufgeklappt, finden Sie `Name bearbeiten`, `Löschen`, `Duplizieren` und `Abwärts zusammenfügen` in ihrem Menü [Mehr…](#more).
 
-### Mehr... {#more}
+Um eine Ebene an eine andere Stelle im Ebenenstapel zu verschieben, halten Sie ihren Namen gedrückt und ziehen Sie sie.
 
-Die Schaltfläche „More...“ zeigt zusätzliche Optionen für die aktuelle Ebene an:
+### Basis {#base}
+
+Die Schaltfläche mit den 3 Punkten in der Zeile `Basis` verschiebt die Bemalung des Basis-Meshes über die Schaltfläche `Basis → Ebene` in eine neue Ebene. Die Basis wird dann auf das Hintergrundmaterial zurückgesetzt. Das ist praktisch, wenn Sie schon viel gemalt haben, bevor Sie überhaupt eine Ebene angelegt haben.
+
+* Die Masken- und Ausblenden-Schaltflächen daneben lassen maskierte und ausgeblendete Bereiche unverändert.
+* `Extrahieren` - die zu verschiebenden Kanäle: `Farbe`, `Deckkraft`, `Matt` und `Metallisch`.
+* `Hintergrundmaterial` - wenn aktiviert, werden nur die Werte verschoben, die von diesem Material abweichen. Stellen Sie es mit den Reglern ein oder nehmen Sie es mit der Pipette vom Modell auf.
+
+### ![](/icons/more.webp) Mehr… {#more}
+
+Die Schaltfläche „Mehr…“ zeigt zusätzliche Optionen für die aktuelle Ebene, verteilt auf zwei Tabs: die Einstellungen (Zahnrad-Icon) und die Extraktion (Würfel-Icon).
 
 ![](/images/layers_more.webp) 
 
-#### Kanal­faktoren {#channel-factors}
+#### Kanalfaktoren {#channel-factors}
 
-Mit diesen Reglern kannst du die Menge an Sculpt/Farbe/Rauigkeit/Metallizität/Deckkraft für die Ebene skalieren. Diese Werte werden mit dem Ebenenfaktor-Schieberegler multipliziert. Wenn zum Beispiel die Ebenenstärke 1 beträgt, der Farbkanalfaktor aber 0,5, wird die angezeigte Farbe mit einer Stärke von 0,5 dargestellt.
+Mit diesen Steuerelementen skalieren Sie den Anteil von Sculpting, Farbe, Rauheit, Metallizität und Deckkraft der Ebene. Diese Werte werden mit dem Faktor-Regler der Ebene multipliziert: Ist die Stärke der Ebene zum Beispiel 1, der Faktor des Farbkanals aber 0,5, wird die Farbe mit der Stärke 0,5 angezeigt.
 
-`Offset` steuert die Sculpt-Stärke der Ebene. Während Farbe/Rauigkeit/Metallizität zwischen 0 und 1 begrenzt sind, kann Offset jeden Wert annehmen, sowohl positiv als auch negativ. 
+`Versatz` steuert die Sculpting-Stärke der Ebene. Während Farbe, Rauheit und Metallizität auf Werte zwischen 0 und 1 begrenzt sind, kann der Versatz jeden beliebigen positiven oder negativen Wert annehmen.
 
 ::: tip
-Offset kann verwendet werden, um eine Ebene mit Erhebungen in eine Ebene mit Vertiefungen zu verwandeln oder ein Lächeln in ein Stirnrunzeln:
+Mit dem Versatz können Sie aus einer Ebene mit Beulen eine Ebene mit Vertiefungen machen, oder aus einem Lächeln ein Stirnrunzeln:
 ![](/videos/layer_happysad.mp4)
 
 
-Eine symmetrische Ebene kann geklont und dann mit Del Layer in linke/rechte Formen aufgeteilt werden:
+Eine symmetrische Ebene lässt sich klonen und dann mit EbeneEntf in eine linke und eine rechte Form aufteilen:
 ![](/videos/layer_leftright.mp4)
 
-Ebenen mit negativen Offset-Faktoren können auf leere Ebenen gebacken werden, um neue positive Formen zu erzeugen.
+Ebenen mit negativem Versatzfaktor lassen sich in leere Ebenen einbacken, um neue positive Formen zu erhalten.
 
-Ebenen mit positiven Offset-Faktoren über 1 können verwendet werden, um mit extremeren Blendshapes zu experimentieren.
+Ebenen mit positivem Versatzfaktor über 1 eignen sich, um mit extremeren Blendshapes zu experimentieren.
 :::
 
 ::: warning
-Im Moment teilen sich Ebenen nur einen einzigen Deckkraftkanal für alle 3 Kanäle (Farbe/Metallizität/Rauigkeit).
-Wenn du mehrere Ebenen mit kanalweiser Intensität zusammenführst, die nicht auf voller Intensität stehen, kann es sein, dass das Endergebnis anders aussieht.
+Derzeit teilen sich Ebenen einen einzigen Deckkraftkanal für alle 3 Kanäle (Farbe/Metallizität/Rauheit).
+Wenn Sie mehrere Ebenen mit kanalweiser Stärke zusammenführen, die nicht auf voller Stärke stehen, kann das Endergebnis anders aussehen.
 
-Möglicherweise wird in Zukunft jeder Kanal seinen eigenen Alphakanal haben, um diese Einschränkung zu beseitigen.
+Vielleicht erhält in Zukunft jeder Kanal seinen eigenen Alphakanal, um diese Einschränkung aufzuheben.
 :::
 
 
-#### ![](/icons/tool_mask.webp) Maske {#mask}
-Die Masken-Schaltfläche neben jedem Schieberegler erstellt eine Maske aus diesem Kanal. Ähnlich wie die Verwendung von Ebenen zur Auswahl in Malprogrammen ermöglicht dies, Arbeiten, die du in einer Ebene erledigt hast, für andere Operationen wiederzuverwenden.
+#### ![](/icons/shield.webp) Maske {#mask}
+Die Masken-Schaltfläche neben jedem Regler erzeugt aus diesem Kanal eine Maske. Ähnlich wie Sie in Malprogrammen Ebenen für Auswahlen nutzen, können Sie so die Arbeit in einer Ebene für andere Operationen weiterverwenden.
 
 #### ![](/icons/preview.webp) Vorschau {#preview}
 ![](/images/layers_preview.webp) 
 
-Wenn aktiviert, werden die Extraktions-Einstellungen für diese Ebene in der Vorschau angezeigt (siehe nächsten Abschnitt).
+Die folgenden Optionen befinden sich im Extraktions-Tab des Menüs „Mehr…“.
 
-Wenn X-Ray aktiviert ist, wird nur die extrahierte Form solide dargestellt, der Rest der Form wird transparent gemacht – nützlich, wenn du negative Extraktionshöhen verwendest.
+Ist diese Option aktiviert, zeigt sie eine Vorschau der Extraktionseinstellungen für diese Ebene (siehe nächster Abschnitt).
 
-#### Extrahieren {#extract}
+`Röntgen` wählt, welche Objekte während der Vorschau transparent dargestellt werden (`Keine`, `Nicht ausgewählt`, `Ausgewählt` oder `Alle`), damit die extrahierte Form massiv bleibt. Das ist nützlich, wenn Sie negative Extraktionshöhen verwenden.
+
+#### ![](/icons/mask_extract.webp) Extrahieren {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
 
-Die Schaltfläche `Extract` dupliziert den Inhalt der Ebene in ein neues Objekt, normalerweise mit einer vom Benutzer festgelegten Dicke, die im nächsten Abschnitt eingestellt wird.
+Die Schaltfläche `Extrahieren` dupliziert den Inhalt der Ebene in ein neues Objekt, meist mit einer selbst gewählten Stärke, die Sie im nächsten Abschnitt festlegen.
 
-`Closing action` bestimmt, wie die Duplizierung durchgeführt wird:
+`Schließen` bestimmt, wie die Duplizierung erfolgt:
 
-* None - Extrahiert einfach den Teil, ohne zu versuchen, Seiten zu erzeugen oder Löcher zu füllen.
-* Fill - Das Loch wird mit Dreiecken gefüllt und geglättet. Verwende diese Option nicht für flache Oberflächen.
-* Shell - Schließt die extrahierte Form mit den Optionen für Dicke und Richtung.
-* Layer - Extrahiert die Ebenendifferenz.
+* `Keine` - Extrahiert einfach den Teil, ohne Seiten zu erzeugen oder Löcher zu füllen.
+* `Füllen` - Das Loch wird mit Dreiecken gefüllt und geglättet. Verwenden Sie diese Option nicht für flache Oberflächen.
+* `Hülle` - Schließt die extrahierte Form mit den Optionen für Stärke und Richtung.
+* `Ebene` - Extrahiert die Differenz der Ebene.
 
-#### ![](/icons/height.webp) Dicke {#thickness}
+#### ![](/icons/height.webp) Höhe {#thickness}
 ![](/images/layers_thickness.webp) 
 
-Die Tiefe der Shell-Extrusion. Positive Werte wachsen aus der Oberfläche heraus, negative Werte wachsen in die Oberfläche hinein.
+Die Tiefe der Extrusion der Hülle. Positive Werte wachsen aus der Oberfläche heraus, negative Werte in die Oberfläche hinein. Diese Option ist ausgeblendet, wenn `Ebene` als Abschluss gewählt ist.
 
-Das Plus/Minus neben diesem Wert legt die Richtung der Extrusion fest:
-* Minus ( - ) beginnt an der aktuellen Oberfläche und extrudiert nach unten. 
+Plus/Minus neben diesem Wert legt die Richtung der Extrusion fest:
+* Minus ( - ) beginnt an der aktuellen Oberfläche und extrudiert nach unten.
 * Plus ( + ) beginnt an der aktuellen Oberfläche und extrudiert nach oben.
-* PlusMinus ( ± ) verschiebt Ober- und Unterseite der Extrusion gleichermaßen nach außen, sodass sie zur Hälfte in der ursprünglichen Oberfläche eingebettet ist.
+* PlusMinus ( ± ) schiebt Ober- und Unterseite der Extrusion gleich weit auseinander, sodass sie zur Hälfte in der ursprünglichen Oberfläche steckt.
 
-#### Glättung {#smoothness}
-![](/images/layers_smoothness.webp) 
-
-Wenn die Kanten des zu extrahierenden Bereichs ausgefranst sind, versucht dieser Schieberegler, die Kante in eine glattere Form zu verwischen. 
-
-#### ![](/icons/height.webp) Kantenschleife (Seite) {#edge-loop-side}
+#### Seiten {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
-Dieser Abschnitt ist sichtbar, wenn die Closing Action „Shell“ ist. 
+Dieser Abschnitt ist sichtbar, wenn `Hülle` als Abschluss gewählt ist.
 
-`Auto Edge-loop (side)` berechnet die Anzahl der Edge-Loops entlang der Shell-Seiten, um quadratische Polygone zu erzeugen. 
+`Wandunterteilungen` legt die Anzahl der Unterteilungen entlang der Seiten der Hülle fest. Ist der Schalter `Auto` aktiviert, berechnet Nomad die Anzahl der Kantenschleifen so, dass quadratische Polygone entstehen.
 
-Wenn deaktiviert, legt der `Division`-Schieberegler die Anzahl der Unterteilungen an den Seiten fest.
+#### Glätte {#smoothness}
+![](/images/layers_smoothness.webp) 
 
-_Dies ist das Ende des „More...“-Untermenüs._
+Wenn die Ränder des zu extrahierenden Bereichs gezackt sind, aktivieren Sie diese Option, um sie zu einer schöneren Form zu glätten. `Alle` glättet die gesamte extrahierte Oberfläche, `Nur Kanten` glättet ihre Ränder. `Iterationen` legt fest, wie stark geglättet wird.
 
-### Erweitert {#advanced}
+_Hier endet das Untermenü „Mehr…“._
+
+### ![](/icons/cog.webp) Erweitert {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Obere Ebenen­details behalten {#keep-top-layers-details}
+Die Schaltfläche `Erweitert` unten im Menü erscheint, sobald das Objekt Ebenen hat.
 
-Stellt sicher, dass kleine Details auf höheren Ebenen sichtbar bleiben, wenn große Änderungen an unteren Ebenen vorgenommen werden.
+#### Details der oberen Ebenen erhalten {#keep-top-layers-details}
 
-Standardmäßig gehen kleine Faltendetails auf einer Ebene verloren, wenn du anschließend große Änderungen an der Basisebene vornimmst. Durch Aktivieren dieser Option bleiben diese kleinen Details immer über den großen Änderungen der unteren Ebenen „schwebend“. Im folgenden Video siehst du, wie die Faltendetails standardmäßig entfernt werden, aber sichtbar bleiben, wenn „keep top layers details“ aktiviert ist:
+Sorgt dafür, dass kleine Details auf höheren Ebenen sichtbar bleiben, wenn Sie große Änderungen auf tieferen Ebenen vornehmen. Während Sie sculpten, wird die Verformung durch die oberen Ebenen ignoriert, ihre Details bleiben aber sichtbar. Das funktioniert nur gut, wenn diese oberen Ebenen relativ kleine Details enthalten.
+
+Wenn Sie standardmäßig kleine Falten auf einer Ebene sculpten und danach große Änderungen an der Basis vornehmen, gehen die Falten verloren. Mit dieser Option schweben diese kleinen Details stets über den großen Änderungen darunter. Im folgenden Video sehen Sie, wie die Falten standardmäßig verschwinden, aber sichtbar bleiben, wenn „Details der oberen Ebenen erhalten“ aktiviert ist:
 
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Liste ausklappen {#ui-expand-list}
-
-Das Standard-Ebenenmenü ermöglicht es dir, die Ebenensichtbarkeit und die Ebenendeckkraft umzuschalten. Wenn du diese Option aktivierst, werden die vollständigen Bedienelemente für jede Ebene eingeblendet.
-
-![](/images/layers_expand.webp)
-
 #### Transformation synchronisieren {#sync-transform}
 
-Wenn aktiviert, werden alle nicht ausgewählten Ebenen entsprechend der Transformationsrotation, -skalierung und -schrägung angepasst. 
+Ist diese Option aktiviert, werden alle nicht ausgewählten Ebenen an Rotation, Skalierung und Scherung der Transformation angepasst, wenn Sie die Werkzeuge Gizmo oder Transformieren verwenden. Mögliche Werte sind `Auto`, `Nein` oder `Ja`.
 
-Deaktiviere diese Option, wenn die anderen Ebenen ohne die neue Transformation verwendet werden sollen, die du anwendest.
+Deaktivieren Sie diese Option, wenn die anderen Ebenen ohne die neue Transformation verwendet werden sollen, die Sie gerade anwenden.
 
-Wenn auf `Auto` gesetzt, werden nur die sichtbaren Ebenen angepasst.
+Bei `Auto` werden nur die sichtbaren Ebenen angepasst.

@@ -1,79 +1,94 @@
 # ![](/icons/symmetry.webp) Simetri {#symmetry}
 
-Bu menü, fırça darbelerinin bir ayna düzlemi boyunca veya radyal olarak nasıl tekrar edileceğini ve simetrik olmayan nesnelerde simetrinin nasıl geri getirileceğini kontrol eder.
+Bu menü, fırça darbelerinin bir ayna düzlemi boyunca, radyal olarak veya döşeme şeklinde nasıl tekrarlanacağını kontrol eder; simetrik olmayan nesnelerde simetriyi geri getirmenin yollarını da sunar.
 
 ![](/images/symmetry_overview.webp) 
 
-## Genel Bakış {#overview}
+## Genel bakış {#overview}
 Simetriyi birkaç şekilde kullanabilirsiniz:
 
-* Ayna olarak, çalışmayı X (sol/sağ), Y (üst/alt), Z (arka/ön) veya bunların kombinasyonları boyunca çevirmek için. 
-* Radyal simetri X Y Z eksenlerinde, tekrar sayısı belirlenerek ayarlanabilir; örneğin bir denizyıldızı yontmak gibi. 
-* Aynalar, orijin etrafında (dünya modu olarak adlandırılır) veya bir nesnenin merkezi etrafında (yerel mod olarak adlandırılır) çalışabilir.
-* Başlangıçta simetrik olmayan yontular zorla simetrik hale getirilebilir.
+* Ayna olarak: çalışmanızı X (sol/sağ), Y (üst/alt), Z (arka/ön) boyunca veya bunların bir birleşimi boyunca yansıtır.
+* Radyal simetri X, Y, Z üzerinde bir tekrar sayısıyla ayarlanabilir; örneğin bir deniz yıldızı şekillendirmek için.
+* Döşeme, darbelerinizi nesne boyunca tekrarlar; böylece heykel kesintisiz bir şekilde döşenir.
+* Aynalar orijin etrafında (dünya modu) veya bir nesnenin merkezi etrafında (yerel mod) çalışabilir.
+* Simetrik olmayan şekilde başlamış heykeller simetrik olmaya zorlanabilir.
 
-Simetriyi açıp kapatmak için sol hızlı panelde (*"Sym"*) bir kısayol da bulunur. Küçük 'L/W', Nomad'ın Yerel (Local) mi yoksa Dünya (World) simetri modunda mı olduğunu gösterir. Ayrıca uzun basarak veya ekranın ortasına doğru kaydırarak bir menü açabilirsiniz.
+Simetriyi açıp kapatmak için sol hızlı paneldeki (*"Sim"*) kısayolu da kullanabilirsiniz. Üzerindeki küçük 'L/W' yazısı, Nomad'ın Yerel mi yoksa Dünya simetri modunda mı olduğunu gösterir. Bir menü açmak için düğmeye uzun basabilir veya ekranın ortasına doğru kaydırabilirsiniz.
 
 ![](/images/symmetry_button.webp) 
 
-Bu küresel (global) bir seçenektir, bu nedenle durumu farklı araçlar arasında korunur.
-Tek istisnalar, kendi simetri durumuna sahip olan dönüştürme araçlarıdır ([Taşı](#translate), [Döndür](#rotate), [Ölçekle](#scale) ve [Gizmo](#gizmo)).
+Simetri ayarları her nesneyle birlikte kaydedilir ve menü başlığı düzenlediğiniz nesnenin adını gösterir.
+Şekillendirme araçları aynı açık/kapalı durumunu paylaşırken, dönüştürme araçlarının ([Dönüştür](tools.md#transform) ve [Gizmo](tools.md#gizmo)) kendi durumları vardır.
 
 ::: tip
-Simetri menüsü esas olarak darbe (stroke) simetrisini kontrol etmek içindir. Nesneleri ayrıca [sahne menüsünde bulunan tekrarlayıcılar](scene#repeaters) aracılığıyla da aynalayabilir ve çoğaltabilirsiniz. 
+Simetri menüsü esas olarak darbe simetrisini kontrol etmek içindir. Nesneleri, [sahne menüsündeki tekrarlayıcılar](scene#repeaters) ile de aynalayabilir ve tekrarlayabilirsiniz.
 :::
 
-## Etkin {#enabled}
-Ayna modunu açıp kapatır, bu sol hızlı paneldeki `Sym` düğmesiyle aynıdır. 
+## ![](/icons/symmetry.webp) Etkin {#enabled}
+Ayna modunu açar veya kapatır; sol hızlı paneldeki `Sim` düğmesiyle aynıdır. Kapalıyken bir uyarı simgesi bunu size hatırlatır, menü ayrıca geçerli araç simetriyi göz ardı ettiğinde de sizi uyarır.
 
 ## Düzlemler {#planes}
 
-Simetri düzlemlerini ve radyal simetri için tekrar sayısını etkinleştirin. Yalnızca tek bir düzlem seçmek zorunda olmadığınızı, karmaşık simetri için 1, 2 veya 3 düzlemin tamamını etkinleştirebileceğinizi unutmayın.
+Simetri düzlemlerini ve radyal simetri için tekrar sayısını etkinleştirin. Tek bir düzlem seçmek zorunda olmadığınızı unutmayın; karmaşık simetriler için 1, 2 veya 3 düzlemin hepsini etkinleştirebilirsiniz.
 
-Radyal simetri için eksen ve tekrar sayısı. Bunların da tek bir eksenle sınırlı olmadığını ve ayrıntılı sonuçları çok hızlı üretmek için düzlem simetrisiyle bile birlikte çalışabileceğini unutmayın. (Toplam tekrar sayısı 150 ile sınırlıdır)
+`Radyal` satırı, her eksen etrafındaki radyal simetrinin tekrar sayısını ayarlar. Bunlar da tek bir eksenle sınırlı değildir; hatta düzlem simetrisiyle birlikte kullanılarak çok hızlı bir şekilde ayrıntılı sonuçlar üretebilirler. (Toplam tekrar sayısı 200 ile sınırlıdır.)
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Yöntem {#method}
-Ayna, nesneyle birlikte hareket eden 'Yerel' olabilir veya hareket etmeyen 'Dünya' olabilir. Hangi moda ihtiyacınız olduğundan emin değilseniz, nesnenin üzerine bindirilen ayna düzlemini ve radyal göstergeleri gözlemleyin. Yerel moddayken, dönüştürme gizmosunu kullanıp modeli hareket ettirirseniz, ayna göstergeleri de hareket eder. Dünya modunda ise ayna göstergeleri sabit kalır ve nesne onların içinden kayar.
+## Döşeme {#tile}
 
-## Yansılama {#mirroring}
+Darbelerinizi bir eksen boyunca, düzenli aralıklarla tekrarlayın; böylece heykel kesintisiz bir şekilde döşenir. Desenler, tuğlalar veya tekrarlamayı planladığınız bir doku için kullanışlıdır.
+
+Her eksen için döşemeyi `Döşeme` düğmeleriyle açın, ardından bir `Sayı` (nesne boyunca kaç tekrar olacağı) veya bir `Mesafe` (iki tekrar arasındaki boşluk) belirleyin. İkisi arasında geçiş yapmak için soldaki anahtara dokunun.
+
+## Yöntem {#method}
+Ayna ya `Yerel` olabilir ve nesneyle birlikte hareket eder ya da `Dünya` olabilir ve yerinde kalır. Hangi moda ihtiyacınız olduğundan emin değilseniz, nesnenin üzerinde gösterilen ayna düzlemi ve radyal göstergelere bakın. Yerel modda, dönüştürme araçlarını (`Gizmo` veya `Dönüştür`) kullanıp modeli taşırsanız ayna göstergeleri de onunla birlikte hareket eder. Dünya modunda ise ayna göstergeleri sabit kalır ve nesne onların içinden kayarak geçer.
+
+## Ayna {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
-Simetri düzlemlerinin yakınında yontu yaparken, bazı fırçalar mükemmel olmayan simetri davranışına sahip olabilir. Bu bölüm, yontunuzun bir tarafını diğerine kopyalayarak simetriyi geri yüklemenizi sağlar. 
+Simetri düzlemlerinin yakınında şekillendirirken bazı fırçalar kusurlu bir simetri davranışı gösterebilir. Bu bölüm, heykelinizin bir tarafını diğerine kopyalayarak simetriyi geri getirmenizi sağlar.
 
+`Yön` - `Ayna` başlığının yanındaki iki ok düğmesi, hangi tarafın diğerine kopyalanacağını belirler. Nomad bunu mevcut görüş açınıza göre hesaplar; böylece modele hangi yönden bakarsanız bakın, taraf ekranda aynı kalır.
 
-`Direction` - `<<` ve `>>` düğmeleri, hangi tarafın diğerine kopyalanacağını belirler. Nomad bunu mevcut görünümünüzden hesaplar, bu nedenle örneğin `<<` olarak ayarlamak, her zaman ekranda sağdan sola kopyalama yapar.
+![](/icons/shield.webp) `Maske` - Maske düğmesi, neyin aynalanacağını ayırmanızı sağlar; hedef taraftaki maske o bölgeyi korur, kaynak taraftaki maske ise o alanın hedefe aynalanmasını engeller.
 
-![](/icons/shield.webp) `Mask` - Maske düğmesi, neyin aynalanacağını yalıtmanıza olanak tanır; hedef tarafı maskelemek o bölgeyi korur, kaynak tarafı maskelemek ise o alanın hedefe aynalanmasını engeller. 
+![](/icons/tool_hide.webp) `Gizle` - Etkin olduğunda, kaynak tarafta gizlenmiş alanlar hedefe aynalanmaz.
 
-![](/icons/tool_hide.webp) `Hide` - Etkin olduğunda, kaynak tarafta gizlenmiş alanlar hedefe aynalanmaz. 
+`Ayna` (Topolojiyi koru), aynanın iki tarafında topolojinin aynı olup olmadığını anlamaya çalışır; aynıysa yalnızca verteksleri taşır. En yaygın durum budur. Radyal simetri göz ardı edilir. Topoloji simetrik değilse, Nomad aynalamayı bunun yerine `Kes • Ayna` ile zorlamayı önerir.
 
-`Mirror`, topolojinin ayna düzleminin her iki tarafında da aynı olup olmadığını anlamaya çalışır ve eğer öyleyse yalnızca tepe noktalarını (vertex) taşır. Bu daha yaygın senaryodur.
+`Kes` düğmeleri nesneyi simetri düzlemi (veya düzlemleri) boyunca keser. Topolojiyi değiştirdikleri için `Ayna` seçeneğinden daha yıkıcıdırlar. Her düğmenin üzerindeki sayı, kaç nesne elde edeceğinizi gösterir:
 
-`Split & Mirror`, temelde nesneyi ayna boyunca keser, bir tarafı kopyalar, diğer tarafa aynalar ve ayna boyunca tepe noktalarını birleştirir (weld). Daha yıkıcı bir seçenektir ve çok çözünürlüklü (multiresolution) veriyi siler, ancak model ayna boyunca çok farklıysa bazen bu yöntem gereklidir.
+* `Kes` - nesnenin bir tarafını kaldırır.
+* `Kes • Ayna` - nesneyi keser, bir tarafı kopyalar, diğer tarafa aynalar ve ayna boyunca verteksleri birbirine kaynatır. Model aynanın iki tarafında çok farklıysa bazen bu yöntem gerekir.
+* `Kes • Ayır` - nesneyi keser ve her tarafı ayrı bir nesne olarak tutar.
+* `Kes • Ayna • Ayır` - `Kes • Ayna` gibidir, ama her taraf ayrı bir nesne olur.
 
-### Nesneyi çevir {#flip-object}
+Birden fazla nesne seçiliyse, `Ayna` ve [Nesneyi ters çevir](#flip-object) hepsine uygulanır.
+
+### Nesneyi ters çevir {#flip-object}
 ![](/images/symmetry_flip.webp)
-Sol tarafı sağ tarafa ve tam tersini yapar. Görünüş olarak, gizmo araç menüsünü kullanıp X ölçeğini -1 olarak ayarlamaya benzer.
+Sol tarafı sağ tarafa, sağ tarafı da sol tarafa çevirir; `X`, `Y` veya `Z` boyunca. Görünüş olarak, gizmo aracının menüsünde X ölçeğini -1 yapmaya benzer.
 
 ## Sıfırla ve Düzenle {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
-Simetri konumunu ve yönelimini düzenlemek mümkündür (ancak önerilmez!). Gerekirse, `World center` ve `Orientation` simetri konumunu ve yönelimini varsayılan değerlerine sıfırlar.
+Simetrinin konumunu ve yönelimini düzenlemek mümkündür (ama önerilmez!). Gerekirse `Dünya merkezi` (yerel modda `Nesne merkezi`) ve `Yönelim`, simetrinin konumunu ve yönelimini varsayılan değerlerine sıfırlar.
 
-Nomad genellikle simetri düzlemini nereye koyacağını bilir. Bunu elle ayarlamak önerilmez, ancak `Gizmo (Edit)` düğmesi gelişmiş kullanıcılar için buna izin verir. Bu düğmeye tıklandığında, simetri düzlemini taşımak ve döndürmek için bir gizmo gösterilir. Varsayılan merkezi ve yönelimi geri yüklemek isterseniz, `object center` ve `orientation` düğmeleri bunu yapar.
+Nomad simetri düzlemini nereye koyacağını genellikle bilir. Bunu elle ayarlamanız önerilmez, ama `Gizmo düzenleme` düğmesi ileri düzey kullanıcılara bu imkânı verir. Bu düğmeye tıklandığında, simetri düzlemini taşımanızı ve döndürmenizi sağlayan bir gizmo görünür. Varsayılan merkezi ve yönelimi geri getirmek isterseniz yukarıdaki sıfırlama düğmelerini kullanın.
 
-Bu seçeneklerin davranışı, içinde bulunduğunuz uzaya (*Local/World*) bağlı olarak değişecektir.
-Bu nedenle beklediğiniz gibi çalışmıyorsa, doğru uzayda olup olmadığınızı kontrol ettiğinizden emin olun.
+`Pivottan`, simetri düzlemini [Gizmo](tools.md#gizmo) aracının pivot noktasına yerleştirir. Yalnızca `Gizmo` aracı etkinken kullanılabilir.
+
+Bu seçeneklerin davranışı, içinde bulunduğunuz uzaya (*Yerel/Dünya*) göre değişir.
+Yani beklediğiniz gibi çalışmıyorsa, doğru uzayda olup olmadığınızı mutlaka kontrol edin.
 
 ::: tip
-`Gizmo (Edit)` düğmesi, muhtemelen bunu kullanmamanız gerektiğini hatırlatmak için özellikle gri renktedir!
+Simetri düzlemini gizmo ile düzenlemek biraz deneyseldir, muhtemelen buna hiç ihtiyacınız olmaz!
 :::
 
-## Seçenekleri göster {#show-options}
+## Gösterim seçenekleri {#show-options}
 ![](/images/symmetry_show.webp)
 
 
-`Show line` ve `Show plane`, simetri konumlarının görünüm (viewport) bindirmesini açıp kapatır. Bu seçenekleri kapatmanın yalnızca simetri menüsü kapatıldığında etkili olacağını unutmayın.
+`Çizgiyi göster` ve `Düzlemi göster`, simetri konumlarını gösteren bir görüntü alanı katmanını açıp kapatır. Bu seçenekleri kapatmanın ancak simetri menüsü kapandığında etkili olacağını unutmayın.

@@ -1,78 +1,94 @@
 # ![](/icons/symmetry.webp) Simetri {#symmetry}
 
-Menu ini mengontrol bagaimana goresan akan diulang melintasi bidang cermin atau secara radial, serta cara memulihkan simetri pada objek yang tidak simetris.
+Menu ini mengatur bagaimana goresan diulang melintasi bidang cermin, secara radial atau sebagai ubin, serta cara untuk mengembalikan simetri pada objek yang tidak simetris.
 
 ![](/images/symmetry_overview.webp) 
 
 ## Ikhtisar {#overview}
-Anda dapat menggunakan simetri dengan beberapa cara:
+Anda bisa menggunakan simetri dengan beberapa cara:
 
-* Sebagai cermin, membalik pekerjaan melintasi X (kiri/kanan), Y (atas/bawah), Z (belakang/depan), atau kombinasinya. 
-* Simetri radial dapat diatur pada X Y Z dengan jumlah pengulangan, misalnya untuk memahat bentuk bintang laut. 
-* Cermin dapat beroperasi di sekitar titik asal (disebut mode dunia/world) atau di sekitar pusat objek (disebut mode lokal/local).
-* Pahatan yang dimulai tidak simetris dapat dipaksa menjadi simetris.
+* Sebagai cermin, membalik hasil kerja Anda melintasi X (kiri/kanan), Y (atas/bawah), Z (belakang/depan), atau kombinasinya. 
+* Simetri radial dapat diatur pada X Y Z dengan sejumlah pengulangan, misalnya untuk memahat bintang laut. 
+* Ubin mengulang goresan Anda di seluruh objek, sehingga pahatan menyambung tanpa sambungan yang terlihat.
+* Cermin dapat bekerja di sekitar titik asal (disebut mode dunia) atau di sekitar titik tengah objek (disebut mode lokal).
+* Pahatan yang awalnya tidak simetris dapat dipaksa menjadi simetris.
 
-Jalan pintas untuk mengaktifkan/nonaktifkan simetri juga dapat ditemukan di panel cepat kiri (*"Sym"*). Huruf kecil 'L/W' menunjukkan apakah Nomad berada dalam mode simetri Lokal atau Dunia. Anda juga dapat menekan lama atau menggeser ke tengah layar untuk memunculkan menu.
+Pintasan untuk mengaktifkan/menonaktifkan simetri juga tersedia di panel cepat kiri (*"Sim"*). Tanda kecil 'L/W' menunjukkan apakah Nomad berada dalam mode simetri Lokal atau Dunia. Anda juga bisa menekan lama atau menggeser ke tengah layar untuk memunculkan sebuah menu.
 
 ![](/images/symmetry_button.webp) 
 
-Ini adalah opsi global, jadi statusnya akan terbawa ke berbagai alat.
-Satu-satunya pengecualian adalah alat transformasi ([Move](#translate), [Rotate](#rotate), [Scale](#scale) dan [Gizmo](#gizmo)) yang memiliki status simetri masing-masing.
+Pengaturan simetri disimpan bersama setiap objek, dan judul menu menampilkan nama objek yang sedang Anda sunting.
+Alat-alat pahat berbagi status aktif/nonaktif yang sama, sedangkan alat transformasi ([Transformasi](tools.md#transform) dan [Gizmo](tools.md#gizmo)) memiliki statusnya sendiri.
 
 ::: tip
-Menu simetri terutama untuk mengontrol simetri goresan. Anda juga dapat mencerminkan dan mengulang objek melalui [repeater yang ada di menu scene](scene#repeaters). 
+Menu simetri terutama untuk mengatur simetri goresan. Anda juga bisa mencerminkan dan mengulang objek melalui [pengulang di menu adegan](scene#repeaters). 
 :::
 
-## Diaktifkan {#enabled}
-Alihkan mode cermin, ini sama dengan tombol `Sym` di panel cepat kiri. 
+## ![](/icons/symmetry.webp) Diaktifkan {#enabled}
+Mengaktifkan atau menonaktifkan mode cermin, sama dengan tombol `Sim` di panel cepat kiri. Ikon peringatan mengingatkan Anda saat mode ini mati, dan menu juga memberi tahu Anda jika alat yang sedang dipakai mengabaikan simetri.
 
 ## Bidang {#planes}
 
-Aktifkan bidang simetri dan jumlah pengulangan untuk simetri radial. Perhatikan bahwa Anda tidak harus memilih hanya satu bidang, Anda dapat mengaktifkan 1, 2, atau 3 bidang sekaligus untuk simetri yang kompleks.
+Aktifkan bidang simetri, dan jumlah pengulangan untuk simetri radial. Perhatikan bahwa Anda tidak harus memilih satu bidang saja: Anda bisa mengaktifkan 1, 2, atau ketiga bidang sekaligus untuk simetri yang kompleks.
 
-Sumbu dan jumlah pengulangan untuk simetri radial. Perhatikan bahwa ini juga tidak dibatasi pada satu sumbu, dan bahkan dapat bekerja dalam kombinasi dengan simetri bidang untuk menghasilkan detail dengan sangat cepat. (Jumlah total pengulangan dibatasi hingga 150)
+Baris `Radial` mengatur jumlah pengulangan simetri radial di sekitar setiap sumbu. Ini juga tidak terbatas pada satu sumbu, dan bahkan bisa digabungkan dengan simetri bidang untuk menghasilkan detail dengan sangat cepat. (Jumlah total pengulangan dibatasi hingga 200)
 
 ![](/videos/symmetry_demo.mp4) 
 
-## Metode {#method}
-Cermin dapat bersifat 'Local', dan bergerak bersama objek, atau 'World', dan tidak bergerak. Jika Anda tidak yakin mode mana yang Anda perlukan, amati bidang cermin dan indikator radial yang ditumpangkan pada objek. Saat dalam mode lokal, jika Anda menggunakan gizmo transformasi dan memindahkan model, indikator cermin juga akan bergerak. Saat dalam mode dunia, indikator cermin akan tetap diam, dan objek akan bergeser melewatinya.
+## Ubin {#tile}
 
-## Pencerminan {#mirroring}
+Mengulang goresan Anda di sepanjang sebuah sumbu, dengan jarak yang teratur, sehingga pahatan menyambung tanpa sambungan yang terlihat. Berguna untuk pola, batu bata, atau tekstur yang ingin Anda ulang.
+
+Aktifkan ubin untuk setiap sumbu dengan tombol `Ubin`, lalu atur `Jumlah` (berapa banyak pengulangan yang membentang di sepanjang objek) atau `Jarak` (ruang antara dua pengulangan). Ketuk sakelar di sebelah kiri untuk beralih di antara keduanya.
+
+## Metode {#method}
+Cermin bisa berupa `Lokal`, yang ikut bergerak bersama objek, atau `Dunia`, yang tidak bergerak. Jika Anda tidak yakin mode mana yang Anda butuhkan, perhatikan indikator bidang cermin dan radial yang ditampilkan di atas objek. Dalam mode lokal, jika Anda memakai alat transformasi (`Gizmo` atau `Transformasi`) dan memindahkan model, indikator cermin juga ikut bergerak. Dalam mode dunia, indikator cermin tetap diam, dan objeknya yang bergeser melewatinya.
+
+## Cerminkan {#mirroring}
 ![](/images/symmetry_mirroring.webp)
 
-Saat memahat dekat bidang simetri, beberapa kuas akan memiliki perilaku simetri yang tidak sempurna. Bagian ini memungkinkan Anda memulihkan simetri dengan menyalin satu sisi pahatan ke sisi lainnya. 
+Saat memahat di dekat bidang simetri, beberapa kuas akan menghasilkan simetri yang kurang sempurna. Bagian ini memungkinkan Anda mengembalikan simetri dengan menyalin satu sisi pahatan Anda ke sisi lainnya. 
 
-`Direction` - Tombol `<<` dan `>>` menentukan sisi mana yang akan disalin ke sisi lain. Nomad menghitung ini dari viewport Anda saat ini, jadi mengaturnya ke `<<` misalnya akan selalu menyalin dari kanan layar ke kiri layar.
+`Arah` - Dua tombol panah di sebelah judul `Cerminkan` menentukan sisi mana yang akan disalin ke sisi lainnya. Nomad menghitungnya dari viewport Anda saat ini, sehingga sisi tersebut tetap sama di layar dari arah mana pun Anda melihat model.
 
-![](/icons/shield.webp) `Mask` - Tombol mask memungkinkan Anda mengisolasi bagian yang akan dicerminkan; memasker sisi tujuan akan melindungi area tersebut, memasker sisi sumber akan menghentikan area itu untuk dicerminkan ke tujuan. 
+![](/icons/shield.webp) `Topeng` - Tombol topeng memungkinkan Anda membatasi apa yang akan dicerminkan; menopeng sisi tujuan akan melindungi area itu, sedangkan menopeng sisi sumber akan mencegah area tersebut dicerminkan ke sisi tujuan. 
 
-![](/icons/tool_hide.webp) `Hide` - Saat aktif, area yang disembunyikan di sisi sumber tidak akan dicerminkan ke sisi tujuan. 
+![](/icons/tool_hide.webp) `Sembunyi` - Saat aktif, area yang disembunyikan di sisi sumber tidak akan dicerminkan ke sisi tujuan. 
 
-`Mirror` akan mencoba mengidentifikasi apakah topologi sama di kedua sisi cermin, dan jika ya, hanya akan memindahkan verteks. Ini adalah skenario yang lebih umum.
+`Cerminkan` (jaga topologi) akan mencoba mendeteksi apakah topologi di kedua sisi cermin sama, dan jika ya, cukup memindahkan verteks. Ini adalah kasus yang paling umum. Simetri radial diabaikan. Jika topologinya tidak simetris, Nomad menawarkan untuk memaksakan pencerminan dengan `Potong • Cerminkan`.
 
-`Split & Mirror` pada dasarnya akan memotong objek sepanjang cermin, menyalin satu sisi, mencerminkannya ke sisi lain, dan mengelas verteks di sepanjang cermin. Ini adalah opsi yang lebih destruktif, dan akan menghapus multiresolusi, tetapi terkadang metode ini diperlukan jika model sangat berbeda di kedua sisi cermin.
+Tombol-tombol `Potong` memotong objek di sepanjang bidang simetri. Tombol ini mengubah topologi, jadi lebih destruktif daripada `Cerminkan`. Angka di setiap tombol menunjukkan berapa banyak objek yang Anda dapatkan:
+
+* `Potong` - membuang satu sisi objek.
+* `Potong • Cerminkan` - memotong objek, menyalin satu sisi, mencerminkannya ke sisi lain, lalu menyatukan verteks di sepanjang cermin. Terkadang cara ini diperlukan jika model sangat berbeda di kedua sisi cermin.
+* `Potong • Pisah` - memotong objek dan menyimpan setiap sisi sebagai objek terpisah.
+* `Potong • Cerminkan • Pisah` - seperti `Potong • Cerminkan`, tetapi setiap sisi menjadi objek terpisah.
+
+Jika beberapa objek dipilih, `Cerminkan` dan [Balik objek](#flip-object) diterapkan ke semuanya.
 
 ### Balik objek {#flip-object}
 ![](/images/symmetry_flip.webp)
-Membuat sisi kiri menjadi sisi kanan, dan sebaliknya. Mirip tampilannya dengan jika Anda menggunakan menu alat gizmo dan mengatur skala ke -1 pada X.
+Menjadikan sisi kiri sebagai sisi kanan, dan sebaliknya, di sepanjang `X`, `Y` atau `Z`. Hasilnya tampak serupa dengan jika Anda memakai menu alat gizmo dan mengatur skala menjadi -1 pada X.
 
-## Atur Ulang dan Sunting {#reset-and-edit}
+## Atur ulang dan Sunting {#reset-and-edit}
 
 ![](/images/symmetry_edit.webp)
 
-Lokasi dan orientasi simetri dapat diedit (namun tidak direkomendasikan!). Jika diperlukan, `World center` dan `Orientation` akan mengatur ulang lokasi dan orientasi simetri ke nilai defaultnya.
+Posisi dan orientasi simetri bisa disunting (tetapi tidak disarankan!). Jika diperlukan, `Pusat dunia` (`Pusat objek` dalam mode lokal) dan `Orientasi` akan mengatur ulang posisi dan orientasi simetri ke nilai bawaannya.
 
-Nomad biasanya tahu di mana harus menempatkan bidang simetri. Tidak disarankan untuk menyesuaikannya secara manual, tetapi tombol `Gizmo (Edit)` memungkinkan hal ini untuk pengguna tingkat lanjut. Saat tombol ini diklik, sebuah gizmo akan ditampilkan untuk memungkinkan Anda mentranslasi dan memutar bidang simetri. Jika Anda ingin mengembalikan pusat dan orientasi default, tombol `object center` dan `orientation` akan melakukannya.
+Nomad biasanya tahu di mana harus meletakkan bidang simetri. Tidak disarankan untuk mengaturnya secara manual, tetapi tombol `Edit Gizmo` memungkinkan hal ini bagi pengguna tingkat lanjut. Saat tombol ini diklik, sebuah gizmo muncul agar Anda bisa menggeser dan memutar bidang simetri. Jika Anda ingin mengembalikan pusat dan orientasi bawaan, gunakan tombol atur ulang di atas.
 
-Perilaku opsi-opsi ini akan berubah tergantung pada ruang (*Local/World*) tempat Anda berada.
-Jadi jika tidak bekerja seperti yang Anda harapkan, pastikan untuk memeriksa apakah Anda berada di ruang yang benar.
+`Dari poros` meletakkan bidang simetri pada poros alat [Gizmo](tools.md#gizmo). Opsi ini hanya tersedia saat alat `Gizmo` aktif.
+
+Perilaku opsi-opsi ini berubah tergantung pada ruang (*Lokal/Dunia*) yang sedang Anda gunakan.
+Jadi jika hasilnya tidak seperti yang Anda harapkan, pastikan untuk memeriksa apakah Anda berada di ruang yang benar.
 
 ::: tip
-Tombol `Gizmo (Edit)` sengaja dibuat abu-abu sebagai pengingat bahwa Anda mungkin sebaiknya tidak menggunakannya!
+Menyunting bidang simetri dengan gizmo masih agak eksperimental, kemungkinan besar Anda tidak akan membutuhkannya!
 :::
 
-## Tampilkan opsi {#show-options}
+## Opsi tampilan {#show-options}
 ![](/images/symmetry_show.webp)
 
 
-`Show line` dan `Show plane` akan mengaktifkan/menonaktifkan overlay viewport dari lokasi simetri. Perhatikan bahwa mematikan opsi ini hanya akan berlaku ketika menu simetri ditutup.
+`Tampilkan garis` dan `Tampilkan bidang` mengaktifkan atau menonaktifkan overlay viewport yang menunjukkan lokasi simetri. Perhatikan bahwa mematikan opsi-opsi ini baru berlaku setelah menu simetri ditutup.

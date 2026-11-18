@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "forum": "Forum"
+  },
+  "theme": {
+    "outlineLabel": "Sur cette page",
+    "docFooter": {
+      "prev": "Page précédente",
+      "next": "Page suivante"
+    },
+    "darkModeSwitchLabel": "Apparence",
+    "lightModeSwitchTitle": "Passer au thème clair",
+    "darkModeSwitchTitle": "Passer au thème sombre",
+    "sidebarMenuLabel": "Menu",
+    "returnToTopLabel": "Retour en haut",
+    "langMenuLabel": "Changer de langue",
+    "skipToContentLabel": "Aller au contenu",
+    "notFound": {
+      "title": "PAGE INTROUVABLE",
+      "quote": "Si vous ne changez pas de direction et que vous continuez à chercher, vous finirez peut-être par arriver là où vous allez.",
+      "linkLabel": "aller à l'accueil",
+      "linkText": "Retour à l'accueil"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "Rechercher",
+      "buttonAriaLabel": "Rechercher"
+    },
+    "modal": {
+      "displayDetails": "Afficher la liste détaillée",
+      "resetButtonTitle": "Réinitialiser la recherche",
+      "backButtonTitle": "Fermer la recherche",
+      "noResultsText": "Aucun résultat pour",
+      "footer": {
+        "selectText": "pour sélectionner",
+        "selectKeyAriaLabel": "entrée",
+        "navigateText": "pour naviguer",
+        "navigateUpKeyAriaLabel": "flèche haut",
+        "navigateDownKeyAriaLabel": "flèche bas",
+        "closeText": "pour fermer",
+        "closeKeyAriaLabel": "échap"
+      }
+    }
+  }
+}

@@ -1,29 +1,29 @@
 # ![](/icons/layer.webp) Lapisan {#layers}
 
-Menu ini mengandungi susunan lapisan (layer stack), satu cara untuk menyimpan suntingan pada objek anda secara tidak merosakkan (non‑destructive), dan pelbagai cara untuk menggabung serta menggunakan semula lapisan.
+Menu ini mengandungi tindanan lapisan, satu cara untuk menyimpan suntingan pada objek anda tanpa merosakkannya, serta banyak cara untuk menggabungkan dan menggunakan semula lapisan.
 
 ![](/images/layers_overview.webp) 
 
 ## Gambaran keseluruhan {#overview}
 
-Lapisan Nomad mempunyai pelbagai tujuan.
+Lapisan dalam Nomad mempunyai pelbagai kegunaan.
 
-Maklumat cat (Warna, Kekasaran, Keberkilatan Logam, Kelegapan) berfungsi dengan lapisan sama seperti aplikasi cat 2D. Satu lapisan boleh dicipta dan cat boleh digunakan pada model. Lapisan boleh dihidupkan atau dimatikan, kelegapannya boleh dilaraskan, lapisan boleh diduplikasi, susunannya boleh diubah dalam susunan lapisan, mod pengadunannya boleh dilaraskan.
+Maklumat cat (Warna, Kekasaran, Kemetalan, Kelegapan) berfungsi dengan lapisan sama seperti dalam aplikasi lukisan 2d. Anda boleh mencipta lapisan dan mengecat model padanya. Lapisan boleh dihidupkan atau dimatikan, kelegapannya dilaraskan, ia boleh diklon, susunannya dalam tindanan lapisan boleh diubah, dan mod campurannya dilaraskan.
 
-Nomad juga menggunakan lapisan untuk pengukiran (sculpting). Satu lapisan boleh menyimpan perincian halus seperti kedutan, atau ia boleh menyimpan perubahan besar, membolehkannya berfungsi seperti blendshape/shape key/morph target dalam aplikasi 3D lain. Sebagai contoh anda boleh mengukir ekspresi muka yang berbeza pada lapisan berasingan, dan melaras peluncur lapisan untuk menggabungkannya menjadi ekspresi baharu.
+Nomad juga menggunakan lapisan untuk memahat. Lapisan boleh menyimpan butiran halus seperti kedutan, atau perubahan besar, membolehkannya berfungsi seperti blendshape/shape key/morph target dalam aplikasi 3d lain. Contohnya, anda boleh memahat ekspresi wajah yang berbeza pada lapisan yang berbeza, dan melaraskan peluncur lapisan untuk menggabungkannya menjadi ekspresi baharu.
 
-Dalam kes ini perubahan yang disimpan dalam lapisan adalah semata‑mata tambahan (additive), susunan lapisan tidak penting seperti untuk cat.
+Dalam kes ini, perubahan yang disimpan dalam lapisan bersifat tambahan semata-mata; susunan lapisan tidak penting seperti untuk cat.
 
-Lapisan boleh dipadam sebahagiannya melalui alat [Delete Layer](tools.md#delete-layer), dan lapisan juga boleh digunakan untuk mencipta topeng (mask) berdasarkan maklumat berbeza yang disimpan dalam lapisan.
+Lapisan boleh dipadam sebahagiannya dengan alat [PadamLapisan](tools.md#delete-layer), dan lapisan juga boleh digunakan untuk mencipta topeng berdasarkan maklumat berbeza yang disimpan dalam lapisan.
 
 ![](/videos/layer.mp4)
 
 ::: tip
-Tidak seperti kebanyakan perisian sculpting, menukar topologi mesh tidak akan membuang lapisan. Anda boleh menggunakan [Voxel Remesher](topology.md#voxel-remesher), [Multiresolution](topology.md#multires) atau alat [Trim](tools.md#trim)/[Split](tools.md#split), tetapi ambil perhatian bahawa apabila menggunakan [Voxel Remesher](topology.md#voxel-remesher), kualiti lapisan akan terjejas.
+Tidak seperti kebanyakan perisian pemahatan, mengubah topologi mesh tidak akan membuang lapisan. Anda boleh menggunakan [Remesh voxel](topology.md#voxel-remesher), [Multiresolusi](topology.md#multiresolution) atau alat [Potong](tools.md#trim)/[Pisahkan](tools.md#split), tetapi perhatikan bahawa apabila menggunakan [Remesh voxel](topology.md#voxel-remesher), kualiti lapisan akan terjejas.
 :::
 
 ::: tip
-Jika menggunakan lapisan untuk blendshape/morph target, terdapat fungsi lapisan tambahan dalam [menu scene](scene.md#object-menu). Anda boleh memisahkan lapisan menjadi objek, dan menggabungkan objek yang sepadan menjadi lapisan.
+Jika anda menggunakan lapisan sebagai blendshape/morph target, terdapat fungsi lapisan tambahan dalam [menu adegan](scene.md#object-menu): anda boleh memisahkan lapisan menjadi objek, dan menggabungkan objek yang sepadan menjadi lapisan.
 :::
 ----
 
@@ -31,129 +31,143 @@ Jika menggunakan lapisan untuk blendshape/morph target, terdapat fungsi lapisan 
 
 ![](/images/layers_menu.webp)
 
-Tekan `Add layer` untuk mencipta lapisan baharu.
+Tajuk menunjukkan nama objek yang dipilih. Lapisan tidak tersedia untuk primitif, jadi sahkan primitif terlebih dahulu.
 
-Setiap lapisan mempunyai nama, peluncur untuk mengawal kekuatan/faktornya, dan butang pilihan.
+Tekan `Tambah lapisan` untuk mencipta lapisan baharu. `Gabungkan Lapisan` menggabungkan setiap lapisan ke dalam mesh asas; nombor di sebelah ikonnya ialah bilangan lapisan yang ada.
+
+Setiap lapisan mempunyai nama, peluncur untuk mengawal kekuatan/faktornya, dan butang pilihan. Ketuk lapisan untuk menjadikannya lapisan aktif: pemahatan dan pengecatan akan masuk ke dalam lapisan itu. Ketuk `Asas` untuk kembali bekerja pada mesh asas.
+
+### ![](/icons/sort_right.webp) Kembangkan senarai {#ui-expand-list}
+
+Secara lalai, senarai lapisan hanya memaparkan keterlihatan, mod campuran dan kekuatan setiap lapisan, dan lapisan aktif dikembangkan dengan kawalan penuhnya. Anak panah di sebelah kiri tajuk mengembangkan kawalan penuh untuk setiap lapisan.
+
+![](/images/layers_expand.webp)
 
 ### Pilihan {#options}
 
-| Action       | Icon                         | Description                                         |
-| :----------: | :--------------------------: | :-------------------------------------------------  |
-| Visible      | ![](/icons/eye_open.webp)   | Tunjuk/sorok lapisan                                |
-| Blend Mode   | ![](/icons/opacity.webp)    | Mod pengadunan gaya Photoshop. 4 ikon memaparkan mod untuk Warna, Kekasaran, Keberkilatan Logam, Kelegapan. |
-| Edit Name    | ![](/icons/pencil.webp)     | Sunting nama lapisan                                |
-| Delete       | ![](/icons/trash.webp)      | Padam lapisan                                       |
-| Duplicate    | ![](/icons/clone.webp)      | Gandakan lapisan                                    |
-| Merge Down   | ![](/icons/merge_down.webp) | Gabungkan lapisan dengan lapisan di bawah (atau mesh asas) |
-| More         | ![](/icons/more.webp)       | Pilihan [More...](#more)                            |
+| Tindakan         | Ikon                         | Penerangan                                          |
+| :--------------: | :--------------------------: | :-------------------------------------------------  |
+| Kelihatan        | ![](/icons/eye_open.webp)   | Tunjuk/sembunyikan lapisan                          |
+| Mod Campuran     | ![](/icons/opacity.webp)    | Mod campuran gaya Photoshop. 4 ikon memaparkan mod untuk Warna, Kekasaran, Kemetalan, Kelegapan. |
+| Namakan semula   | ![](/icons/pencil.webp)     | Sunting nama lapisan                                |
+| Padam            | ![](/icons/trash.webp)      | Padam lapisan                                       |
+| Klona            | ![](/icons/clone.webp)      | Klon lapisan                                        |
+| Gabung ke bawah  | ![](/icons/merge_down.webp) | Gabungkan lapisan dengan lapisan di bawahnya (atau mesh asas) |
+| Lagi             | ![](/icons/more.webp)       | Pilihan [Lagi...](#more)                            |
 
-Untuk mengalihkan lapisan ke bahagian lain dalam susunan lapisan, tekan dan tahan pada namanya, kemudian seret.
+Apabila sesuatu lapisan tidak dikembangkan, `Namakan semula`, `Padam`, `Klona` dan `Gabung ke bawah` terdapat dalam menu [Lagi...](#more) lapisan itu.
 
-### Lagi... {#more}
+Untuk memindahkan lapisan ke bahagian lain dalam tindanan lapisan, tekan dan tahan pada namanya, kemudian seret.
 
-Butang 'More...' akan memaparkan pilihan tambahan untuk lapisan semasa:
+### Asas {#base}
+
+Butang 3 titik pada baris `Asas` memindahkan cat mesh asas ke dalam lapisan baharu, dengan butang `Asas → Lapisan`. Mesh asas kemudian ditetapkan semula kepada bahan latar belakang. Ini berguna apabila anda sudah banyak mengecat sebelum mencipta sebarang lapisan.
+
+* Butang topeng dan sembunyi di sebelahnya membiarkan kawasan bertopeng dan tersembunyi tanpa diubah.
+* `Ekstrak` - saluran yang hendak dipindahkan: `Warna`, `Kelegapan`, `Kekasaran` dan `Kemetalan`.
+* `Bahan latar belakang` - jika didayakan, hanya nilai yang berbeza daripada bahan ini akan dipindahkan. Tetapkannya dengan peluncur, atau pilih daripada model dengan penitis mata.
+
+### ![](/icons/more.webp) Lagi... {#more}
+
+Butang 'Lagi...' memaparkan pilihan tambahan untuk lapisan semasa, dalam dua tab: tetapan (ikon gear), dan pengekstrakan (ikon kiub).
 
 ![](/images/layers_more.webp) 
 
 #### Faktor saluran {#channel-factors}
 
-Kawalan ini membolehkan anda menskalakan jumlah sculpt/color/roughness/metalness/opacity untuk lapisan. Nilai‑nilai ini didarab dengan peluncur faktor lapisan, jadi sebagai contoh jika kekuatan lapisan ialah 1, tetapi faktor saluran warna ialah 0.5, maka warna yang dipaparkan akan berada pada kekuatan 0.5.
+Kawalan ini membolehkan anda menskalakan jumlah pahatan/warna/kekasaran/kemetalan/kelegapan bagi lapisan. Nilai ini didarabkan dengan peluncur faktor lapisan; contohnya, jika kekuatan lapisan ialah 1 tetapi faktor saluran warna ialah 0.5, warna yang dipaparkan akan berada pada kekuatan 0.5.
 
-`Offset` mengawal kekuatan sculpt lapisan. Walaupun color/roughness/metalness dihadkan antara 0 dan 1, offset boleh menjadi sebarang nilai, positif atau negatif. 
+`Ofset` mengawal kekuatan pahatan lapisan. Walaupun warna/kekasaran/kemetalan dihadkan antara 0 dan 1, ofset boleh menjadi apa-apa nilai, sama ada positif atau negatif. 
 
 ::: tip
-Offset boleh digunakan untuk menukar lapisan bonjolan menjadi lapisan lekuk, atau senyuman menjadi masam:
+Ofset boleh digunakan untuk menukar lapisan bonjolan menjadi lapisan lekukan, atau senyuman menjadi muka masam:
 ![](/videos/layer_happysad.mp4)
 
 
-Lapisan simetri boleh digandakan dan kemudian dipecahkan kepada bentuk kiri/kanan dengan del layer:
+Lapisan yang simetri boleh diklon dan kemudian dipisahkan kepada bentuk kiri/kanan dengan PadamLapisan:
 ![](/videos/layer_leftright.mp4)
 
-Lapisan dengan faktor offset negatif boleh dibakar (bake) ke lapisan kosong untuk membuat bentuk positif baharu.
+Lapisan dengan faktor ofset negatif boleh di-bake ke dalam lapisan kosong untuk menghasilkan bentuk positif yang baharu.
 
-Lapisan dengan faktor offset positif melebihi 1 boleh digunakan untuk mencuba blendshape yang lebih ekstrem.
+Lapisan dengan faktor ofset positif melebihi 1 boleh digunakan untuk bereksperimen dengan blendshape yang lebih ekstrem.
 :::
 
 ::: warning
-Pada masa ini lapisan hanya berkongsi satu saluran kelegapan untuk semua 3 saluran (color/metalness/roughness).
-Jika anda menggabungkan berbilang lapisan dengan keamatan per‑saluran yang tidak pada keamatan penuh, adalah mungkin hasil akhir kelihatan berbeza.
+Buat masa ini, lapisan hanya berkongsi satu saluran kelegapan untuk ketiga-tiga saluran (warna/kemetalan/kekasaran).
+Jika anda menggabungkan beberapa lapisan dengan keamatan setiap saluran yang tidak penuh, hasil akhirnya mungkin kelihatan berbeza.
 
-Mungkin pada masa hadapan, setiap saluran akan mempunyai saluran alfa sendiri untuk menghapuskan had ini.
+Mungkin pada masa hadapan, setiap saluran akan mempunyai saluran alpha sendiri untuk menghapuskan had ini.
 :::
 
 
-#### ![](/icons/tool_mask.webp) Topeng {#mask}
-Butang mask di sebelah setiap peluncur akan mencipta mask daripada saluran tersebut. Sama seperti menggunakan lapisan untuk membuat pilihan dalam aplikasi melukis, ini membolehkan anda menggunakan semula kerja yang telah anda lakukan dalam satu lapisan untuk operasi lain.
+#### ![](/icons/shield.webp) Topeng {#mask}
+Butang topeng di sebelah setiap peluncur akan mencipta topeng daripada saluran itu. Sama seperti menggunakan lapisan untuk membuat pilihan dalam aplikasi lukisan, ini membolehkan anda menggunakan semula kerja yang telah anda lakukan dalam sesuatu lapisan untuk operasi lain.
 
 #### ![](/icons/preview.webp) Pratonton {#preview}
 ![](/images/layers_preview.webp) 
 
-Apabila diaktifkan, akan mempratonton tetapan extract untuk lapisan ini (lihat seksyen seterusnya).
+Pilihan berikut terdapat dalam tab pengekstrakan menu 'Lagi...'.
 
-Apabila xray diaktifkan, hanya bentuk yang diekstrak akan menjadi legap, selebihnya bentuk akan menjadi lutsinar, berguna jika anda menggunakan ketinggian ekstraksi negatif.
+Apabila didayakan, tetapan ekstrak untuk lapisan ini akan dipratonton (lihat bahagian seterusnya).
 
-#### Ekstrak {#extract}
+`X-Ray` memilih objek yang dijadikan lut sinar semasa pratonton (`Tiada`, `Tidak terpilih`, `Terpilih` atau `Semua`), supaya bentuk yang diekstrak kekal padu. Ia berguna jika anda menggunakan ketinggian ekstrak negatif.
+
+#### ![](/icons/mask_extract.webp) Ekstrak {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
 
-Butang `Extract` akan menduplikasi kandungan lapisan ke dalam objek baharu, biasanya dengan ketebalan yang ditentukan pengguna yang ditetapkan oleh seksyen seterusnya.
+Butang `Ekstrak` akan menduplikasi kandungan lapisan ke dalam objek baharu, biasanya dengan ketebalan yang ditentukan pengguna melalui bahagian seterusnya.
 
-`Closing action` menentukan bagaimana penduplikasian dilakukan:
+`Tindakan Penutupan` menentukan cara penduplikasian dilakukan:
 
-* None - Hanya ekstrak bahagian tersebut, jangan cuba menjana sisi atau mengisi sebarang lubang.
-* Fill - Lubang diisi dan dilicinkan dengan segi tiga. Jangan gunakan pilihan ini untuk permukaan rata.
-* Shell - Tutup bentuk yang diekstrak dengan nilai ketebalan dan pilihan arah.
-* Layer - Ekstrak perbezaan lapisan.
+* `Tiada` - Hanya ekstrak bahagian itu, tanpa cuba menjana sisi atau mengisi sebarang lubang.
+* `Isi` - Lubang diisi dan dilicinkan dengan segi tiga. Jangan gunakan pilihan ini untuk permukaan rata.
+* `Cangkerang` - Menutup bentuk yang diekstrak dengan nilai ketebalan dan pilihan arah.
+* `Lapisan` - Mengekstrak perbezaan lapisan.
 
-#### ![](/icons/height.webp) Ketebalan {#thickness}
+#### ![](/icons/height.webp) Ketinggian {#thickness}
 ![](/images/layers_thickness.webp) 
 
-Kedalaman ekstrusi shell. Nilai positif berkembang keluar dari permukaan, nilai negatif berkembang masuk ke dalam permukaan.
+Kedalaman penyemperitan cangkerang. Nilai positif tumbuh keluar dari permukaan, nilai negatif tumbuh ke dalam permukaan. Ia disembunyikan apabila tindakan penutupan ialah `Lapisan`.
 
-Tanda tambah/tolak di sebelah nilai ini akan menetapkan arah ekstrusi:
-* Minus ( - ) akan bermula dari permukaan semasa dan mengekstrud ke bawah. 
-* Plus ( + ) akan bermula dari permukaan semasa dan mengekstrud ke atas.
-* PlusMinus ( ± ) akan menolak bahagian atas dan bawah ekstrusi menjauh dengan jumlah yang sama, jadi ia akan tertanam separuh dalam permukaan asal.
+Tanda tambah/tolak di sebelah nilai ini menetapkan arah penyemperitan:
+* Tolak ( - ) bermula dari permukaan semasa dan menyemperit ke bawah. 
+* Tambah ( + ) bermula dari permukaan semasa dan menyemperit ke atas.
+* TambahTolak ( ± ) menolak bahagian atas dan bawah penyemperitan sama jauh, jadi ia akan terbenam separuh dalam permukaan asal.
 
-#### Kelicinan {#smoothness}
-![](/images/layers_smoothness.webp) 
-
-Jika tepi rantau yang akan diekstrak bergerigi, peluncur ini akan cuba mengaburkan tepi menjadi bentuk yang lebih licin. 
-
-#### ![](/icons/height.webp) Gelung tepi (sisi) {#edge-loop-side}
+#### Sisi {#edge-loop-side}
 ![](/images/layers_edgeloop.webp) 
 
-Seksysen ini kelihatan apabila closing action ialah 'Shell'. 
+Bahagian ini kelihatan apabila tindakan penutupan ialah `Cangkerang`. 
 
-`Auto Edge-loop (side)` akan mengira bilangan edge loop sepanjang sisi shell untuk mencipta poligon segi empat sama. 
+`Bahagian dinding` menetapkan bilangan pembahagian di sepanjang sisi cangkerang. Apabila togol `Auto` dihidupkan, Nomad mengira bilangan gelung tepi untuk menghasilkan poligon segi empat sama.
 
-Jika dinyahaktifkan, peluncur `Division` akan menetapkan bilangan bahagian pada sisi.
+#### Kehalusan {#smoothness}
+![](/images/layers_smoothness.webp) 
 
-_Ini adalah penghujung submenu 'More...'._
+Jika tepi kawasan yang hendak diekstrak bergerigi, dayakan pilihan ini untuk melicinkannya menjadi bentuk yang lebih kemas. `Semua` melicinkan keseluruhan permukaan yang diekstrak, `Hanya Tepi` melicinkan tepinya. `Ulangan` menetapkan kekuatan pelicinan.
 
-### Lanjutan {#advanced}
+_Ini ialah penghujung submenu 'Lagi...'._
+
+### ![](/icons/cog.webp) Lanjutan {#advanced}
 ![](/images/layers_advanced.webp)
 
-#### Kekalkan perincian lapisan atas {#keep-top-layers-details}
+Butang `Lanjutan` di bahagian bawah menu muncul sebaik sahaja objek mempunyai lapisan.
 
-Memastikan perincian kecil pada lapisan lebih tinggi kekal kelihatan apabila perubahan besar dibuat pada lapisan lebih rendah.
+#### Simpan butiran layer atas {#keep-top-layers-details}
 
-Secara lalai jika anda mengukir kedutan kecil pada satu lapisan, kemudian pergi membuat perubahan besar pada lapisan asas, kedutan itu akan hilang. Mengaktifkan togol ini akan membenarkan perincian kecil tersebut sentiasa terapung di atas perubahan besar di bawah. Dalam video berikut, lihat bagaimana perincian kedutan dibuang secara lalai, tetapi kekal kelihatan apabila 'keep top layers details' diaktifkan:
+Memastikan butiran kecil pada lapisan yang lebih tinggi kekal kelihatan apabila perubahan besar dibuat pada lapisan yang lebih rendah. Semasa anda memahat, ubah bentuk yang datang daripada lapisan atas diabaikan, tetapi butirannya kekal kelihatan. Ia hanya berfungsi dengan baik jika lapisan atas tersebut mengandungi butiran yang agak kecil.
+
+Secara lalai, jika anda memahat kedutan kecil pada satu lapisan, kemudian membuat perubahan besar pada lapisan asas, kedutan itu akan hilang. Mendayakan togol ini membolehkan butiran kecil tersebut sentiasa terapung di atas perubahan besar di bawahnya. Dalam video berikut, lihat bagaimana butiran kedutan terhapus secara lalai, tetapi kekal kelihatan apabila 'simpan butiran layer atas' didayakan:
 
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Kembangkan senarai {#ui-expand-list}
-
-Menu lapisan lalai membolehkan anda menogol keterlihatan lapisan dan kelegapan lapisan. Mengaktifkan pilihan ini mengembangkan kawalan penuh untuk setiap lapisan.
-
-![](/images/layers_expand.webp)
-
 #### Segerak transformasi {#sync-transform}
 
-Jika diaktifkan, semua lapisan yang tidak dipilih akan dilaraskan bergantung pada putaran, skala, herotan (skew) transform.
+Apabila dihidupkan, semua lapisan yang tidak dipilih akan dilaraskan mengikut putaran, skala dan serong transformasi, apabila anda menggunakan alat Gizmo atau Transformasi. Ia boleh ditetapkan kepada `Auto`, `Tidak` atau `Ya`.
 
-Nyahaktifkan pilihan ini jika lapisan lain dimaksudkan untuk digunakan tanpa transform baharu yang anda gunakan.
+Nyahdayakan pilihan ini jika lapisan lain sepatutnya digunakan tanpa transformasi baharu yang sedang anda gunakan.
 
 Apabila ditetapkan kepada `Auto`, hanya lapisan yang kelihatan akan dilaraskan.

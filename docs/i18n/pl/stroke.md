@@ -1,316 +1,376 @@
-# ![](/icons/pencil.webp) Pociągnięcie {#stroke}
+# ![](/icons/brush.webp) Pociągnięcie {#stroke}
 
 ---
 ![](/images/stroke_overview.webp) 
 
 ## Przegląd {#overview}
 
-Możesz dostosować zachowanie pociągnięcia dla większości narzędzi–pędzli.
-Ustawienia są podobne do tych znanych z 2D‑owych aplikacji malarskich, jednak część opcji jest specyficzna dla rzeźbienia i 3D.
+Możesz dostosować zachowanie pociągnięcia dla większości pędzli narzędzi.
+Ustawienia przypominają te z aplikacji do malowania 2d, ale niektóre opcje są typowe tylko dla rzeźbienia i 3d.
 
-Opcje są podzielone na 5 pod‑menu:
+Opcje są podzielone na 5 podmenu:
 
-| Name     | Icon                         | Description                                                        |
-| :------: | :--------------------------: | :----------------------------------------------------------------: |
-| Stroke   | ![](/icons/stroke_dot.webp) | Kontroluje sposób nakładania pociągnięcia na model                |
-| Alpha    | ![](/icons/alpha.webp)      | Określa, jak skala szarości tekstury jest używana w odcisku pędzla |
-| Falloff  | ![](/icons/falloff.webp)    | Kontroluje zmianę siły pędzla od środka do krawędzi               |
-| Filter   | ![](/icons/filter.webp)     | Określa, jak pędzel reaguje na geometrię modelu                   |
-| Pressure | ![](/icons/pressure.webp)   | Kontroluje reakcję na nacisk rysika                               |
+| Nazwa     | Ikona                        | Opis                                                                     |
+| :-------: | :--------------------------: | :----------------------------------------------------------------------: |
+| Pociągnięcie | ![](/icons/brush.webp)    | Określa, jak pociągnięcie jest nakładane na model                        |
+| Alfa      | ![](/icons/alpha.webp)      | Jak tekstura w skali szarości jest używana jako odcisk pędzla            |
+| Zanikanie | ![](/icons/falloff.webp)    | Określa, jak siła pędzla zmienia się od środka do krawędzi               |
+| Filtr     | ![](/icons/filter.webp)     | Jak geometria modelu wpływa na działanie pędzla                          |
+| Nacisk    | ![](/icons/pressure.webp)   | Określa reakcję na nacisk rysika                                         |
 
 ::: tip
-Nie wszystkie opcje pociągnięcia mają zastosowanie do wszystkich narzędzi. Opcje, których bieżące narzędzie nie używa, będą wyłączone lub ukryte. 
+Nie wszystkie opcje pociągnięcia dotyczą każdego narzędzia. Opcje, których bieżące narzędzie nie używa, są wyłączone lub ukryte. 
 :::
 
 
-## Pociągnięcie {#stroke-1}
+## ![](/icons/brush.webp) Pociągnięcie {#stroke-1}
 
-### Promień {#radius}
+### ![](/icons/radius.webp) Promień {#radius}
 
 ![](/images/stroke_radius.webp)
 
-#### Udostępnij promień {#share-radius}
+Opcje promienia są ustawieniami globalnymi: dotyczą wszystkich narzędzi.
 
-Po włączeniu wszystkie narzędzia używają tego samego promienia; domyślnie każde narzędzie ma własny promień.
+#### Przestrzeń {#size}
 
-#### Rozmiar {#size}
+* `Ekran` - promień jest ustawiany w jednostkach ekranu. Jeśli ustawisz promień na 100 pikseli, pozostanie on szeroki na 100 pikseli bez względu na to, czy przybliżasz, czy oddalasz widok.
+* `Świat (3D)` - promień jest ustawiany w jednostkach 3d. Jeśli na przykład utworzysz kulę i ustawisz promień tak, by był tej samej wielkości co kula, promień pozostanie wielkości kuli podczas przybliżania i oddalania.
 
-* Screen – promień jest ustawiany w jednostkach ekranu. Jeśli ustawisz promień na 100 pikseli, pozostanie on szeroki na 100 pikseli niezależnie od przybliżenia lub oddalenia.
-* Constant (3d) – promień jest ustawiany w jednostkach 3D. Na przykład, jeśli utworzysz sferę i ustawisz promień na jej rozmiar, promień pozostanie tej samej wielkości co sfera podczas przybliżania i oddalania.
+#### ![](/icons/link.webp) Synchronizuj skrót {#sync-shortcut}
+
+Gdy ta opcja jest włączona, ustawienia promienia i sylwetki są synchronizowane po przełączeniu na pędzle skrótów (`Gładkie`, `Maska` lub `Ukryj`). Dzięki temu szybkie wygładzanie czy maskowanie odbywa się pędzlem tej samej wielkości co narzędzie, którego właśnie używasz.
+
+#### ![](/icons/link.webp) Udostępnij promień {#share-radius}
+
+Gdy ta opcja jest włączona, wszystkie narzędzia używają tego samego promienia. Domyślnie każde narzędzie ma własny promień.
 
 
-### Pociągnięcie {#stroke-type}
+### Typ pociągnięcia {#stroke-type}
 
 ![](/images/stroke_strokemode.webp)
 
 Pociągnięcia mogą działać w kilku trybach:
 
 ### ![](/icons/stroke_dot.webp) Kropka {#dot}
-Przeciągaj jak zwykłe pociągnięcie malarskie. 
+Przeciągasz jak zwykłym pociągnięciem pędzla. 
 ![](/videos/stroke_dot.mp4) 
 
-### ![](/icons/stroke_roll.webp) Przetaczanie {#roll}
-Alfa pędzla będzie obracana, aby podążać za kierunkiem pociągnięcia, co jest przydatne do tworzenia np. ściegów materiału. 
+### ![](/icons/stroke_roll.webp) Roluj {#roll}
+Alfa pędzla obraca się zgodnie z kierunkiem pociągnięcia. Przydaje się do tworzenia szwów na tkaninie. 
 ![](/videos/stroke_roll.mp4) 
 
- ### ![](/icons/radius.webp) Lock + radius
- Odcisk pędzla z ustaloną **_wysokością_**. Przeciąganie ustawia skalę i obrót.
+### ![](/icons/radius.webp) Blokada + promień {#lock-radius}
+Odciska pociągnięcie o stałej **_wysokości_**. Przeciąganie ustawia skalę i obrót.
 ![](/videos/stroke_lock_radius.mp4) 
 
-### ![](/icons/falloff.webp) Blokada + intensywność {#lock-intensity}
-Odcisk pędzla z ustalonym **_promieniem_**. Przeciąganie ustawia wysokość i obrót.
+### ![](/icons/normal.webp) Blokada + intensywność {#lock-intensity}
+Odciska pociągnięcie o stałym **_promieniu_**. Przeciąganie ustawia wysokość i obrót.
 ![](/videos/stroke_lock_intensity.mp4) 
+
+::: tip
+Tryby `Blokada + promień` i `Blokada + intensywność` ignorują ustawienia [Nacisku](#pressure), ponieważ rozmiar i siłę ustala już samo przeciąganie.
+:::
 
 ![](/images/stroke_strokemodemove.webp)
 
-Narzędzia `Move` i `Drag` mają własne 3 opcje:
+Narzędzia `Przenieś` i `Przeciągnij` mają własne 3 opcje:
 
-### ![](/icons/snake.webp) Przeciąganie {#drag}
+### ![](/icons/snake.webp) Przeciągnij {#drag}
 
-Podczas pociągnięcia cały czas aktualizuje to, co znajduje się w promieniu pędzla. Szybkie pociągnięcie zostawi powierzchnię w tyle, natomiast wolne będzie „trzymać się” materiału, tworząc dłuższe kształty. To domyślny tryb narzędzia `Drag`. Z włączoną `Dynamic Topology` można w ten sposób tworzyć wężowate ekstruzje. 
+Przez cały czas pociągnięcia aktualizuje to, co znajduje się w promieniu pędzla. Szybkie pociągnięcie zostawi powierzchnię w tyle, a wolne będzie trzymać materiał, tworząc dłuższe kształty. To domyślny tryb narzędzia `Przeciągnij`. Z `Topologią dynamiczną` możesz w ten sposób tworzyć wężowate wyciągnięcia. 
 ![](/videos/stroke_drag.mp4) 
 
 
-### ![](/icons/grab.webp) Chwytanie {#grab}
-Zaznacza to, co znajduje się w promieniu pędzla w momencie rozpoczęcia pociągnięcia i utrzymuje to zaznaczenie. Jest to przydatne do bardziej precyzyjnych przesunięć, ponieważ możesz dokładnie regulować odległość ruchu i nie przesuniesz przypadkowo więcej, niż pierwotnie zaznaczyłeś. To domyślny tryb narzędzia `Move`.
+### ![](/icons/grab.webp) Przechwyć {#grab}
+Na początku pociągnięcia zaznacza to, co znajduje się w promieniu pędzla, i trzyma to zaznaczenie do końca. Przydaje się do precyzyjniejszego przesuwania: możesz starannie dobrać odległość przesunięcia i nie ruszysz przypadkiem więcej, niż początkowo zaznaczyłeś. To domyślny tryb narzędzia `Przenieś`.
 ![](/videos/stroke_grab.mp4) 
 
 
 ### ![](/icons/radius.webp) Blokada + promień (przeciąganie) {#lock-radius-drag}
-Ustawiony przez użytkownika promień jest ignorowany i dynamicznie wyznaczany na podstawie odległości przeciągnięcia od punktu startowego. Mała odległość = mały promień, większa odległość = większy promień. Użyj suwaka intensywności, aby kontrolować kształt wygaszania (falloff). Przydatne do blokowania organicznych, gumowatych kształtów.
+Promień ustawiony przez użytkownika jest ignorowany i zmienia się dynamicznie w zależności od tego, jak daleko od punktu początkowego przeciągniesz pociągnięcie. Mała odległość = mały promień, większa odległość = większy promień. Suwakiem intensywności sterujesz kształtem zanikania. Przydaje się do szkicowania organicznych, gumowatych kształtów.
 ![](/videos/stroke_lockradius_drag.mp4) 
 
+Niektóre inne narzędzia wyświetlają tu własne typy pociągnięć, na przykład `Złagodź`, `Gładkie` i `Smużenie` w narzędziach do wygładzania, albo kształty takie jak `Lasso` i `Krzywa` w narzędziach opartych na zaznaczeniu. Opisano je przy każdym [narzędziu](tools.md).
 
 
-### Dopasuj intensywność odstępu {#adjust-spacing-intensity}
+### Dostosuj intensywność odstępów {#adjust-spacing-intensity}
 ![](/images/stroke_space_smooth.webp)
 
-Pociągnięcia z małym odstępem (mniejszym niż 50%) mogą szybko się kumulować, dając intensywniejszy efekt niż przy większych odstępach. Ten przełącznik kompensuje to, aby pociągnięcia miały zbliżoną intensywność niezależnie od odstępu.
+Pociągnięcia o małym odstępie (poniżej 50%) szybko się kumulują, przez co są intensywniejsze niż te o większym odstępie. Ten przełącznik to kompensuje, więc pociągnięcia mają mniej więcej tę samą intensywność bez względu na odstęp.
 
-### Odstęp pociągnięcia {#stroke-spacing}
-Jak daleko od siebie nakładać kolejne odciski pędzla podczas przeciągania. Wartości poniżej 100% powodują nakładanie się, dając wrażenie ciągłego pociągnięcia. Wartości powyżej 100% zaczną zostawiać przerwy, co jest przydatne np. do rzeźbienia detali takich jak szwy czy zamki błyskawiczne.
+### Odstęp pociągnięć {#stroke-spacing}
+Jak daleko od siebie nakładane są kolejne odciski pędzla podczas przeciągania. Wartości poniżej 100% nakładają się na siebie, dając wrażenie ciągłego pociągnięcia. Wartości powyżej 100% zaczynają zostawiać przerwy, co przydaje się do rzeźbienia detali takich jak szwy czy zamki błyskawiczne.
 
-### Stabilizator „leniwej liny” {#lazy-rope-stabilizer}
-Pociągnięcia będą opóźnione względem pozycji wskaźnika o określoną odległość. Można tego użyć do rysowania gładkich linii.
+### Stabilizator powolnej liny {#lazy-rope-stabilizer}
+Pociągnięcie podąża za wskaźnikiem z pewnym opóźnieniem, w stałej odległości. Pozwala to rysować gładkie linie.
 ![](/videos/stroke_lazy_rope.mp4) 
 
-### Wygładzanie pociągnięcia {#stroke-smoothing}
-Uśrednia wiele pozycji wskaźnika, aby uzyskać gładsze pociągnięcie.
-Przy wysokich wartościach pociągnięcie będzie opóźnione względem wskaźnika, ale ostatecznie go dogoni.
-Przydatne do rysowania gładkich linii.
+### Wygładzanie pociągnięć {#stroke-smoothing}
+Uśrednia kilka kolejnych pozycji wskaźnika, aby pociągnięcie było gładsze.
+Przy wysokich wartościach pociągnięcie zostaje w tyle za wskaźnikiem, ale w końcu go dogania.
+Przydaje się do rysowania gładkich linii.
 
-### Złap promień {#snap-radius}
-Przyciąga początek pociągnięcia do końca poprzedniego. Promień określa, jak daleko szukać końca poprzedniego pociągnięcia. Może to być przydatne przy rysowaniu długich, ciągłych linii z częstymi przerwami.
+### Promień przyciągania {#snap-radius}
+Przyciąga pociągnięcie do poprzedniego, gdy wskaźnik startuje blisko miejsca, w którym ostatnie pociągnięcie się skończyło. Promień określa, jak daleko szukać końca poprzedniego pociągnięcia. Przydaje się przy rysowaniu długich, ciągłych linii z częstymi przerwami.
+
+### ![](/icons/trail.webp) Ślad pociągnięcia pędzla {#trail}
+
+Gdy ta opcja jest włączona, każdy nowy odcisk ponownie nakłada też ostatnie punkty pociągnięcia znajdujące się za nim. `Liczba śladów` ustala, ile punktów jest nakładanych ponownie, `Intensywność śladu` – jak mocno, a `Promień śladu` – o ile się powiększają.
+
+Ślad działa tylko z typem pociągnięcia `Kropka` i nie działa z [wpływem zanikania](#influence) `Grzbiet`.
 
 ### ![](/icons/silhouette.webp) Sylwetka {#silhouette}
 ![](/images/stroke_silhouette.webp)
-Domyślnie pociągnięcia wpływają tylko na powierzchnię modelu w obrębie promienia pędzla. Po włączeniu silhouette pociągnięcie będzie rzutowane przez cały model. Może to być bardzo użyteczne przy wstępnym blokowaniu modelu lub dla kształtów, w których boki muszą pozostać prostopadłe.
+Domyślnie pociągnięcia działają tylko na powierzchnię modelu w promieniu pędzla. Gdy sylwetka jest włączona, pociągnięcie jest rzutowane przez cały model. Bardzo się to przydaje przy wstępnym szkicowaniu bryły modelu albo przy kształtach, których boki mają pozostać prostopadłe.
 
-Kierunek projekcji można ustawić ręcznie; domyślna metoda „Closest” wykryje najlepszy kąt względem widoku. 
+Kierunek rzutowania możesz ustawić wprost:
+
+* `X`, `Y`, `Z` - rzutowanie wzdłuż stałej osi.
+* `Wyświetl` - rzutowanie wzdłuż kierunku kamery.
+* `Jeśli przyciągnięte` - rzutowanie wzdłuż kierunku kamery, ale tylko wtedy, gdy kamera jest przyciągnięta do widoku. W przeciwnym razie pociągnięcie pozostaje zwykłym pociągnięciem.
+* `Najbliższe` - rzutowanie wzdłuż osi najbliższej kierunkowi kamery. To ustawienie domyślne.
 
 ![](/videos/stroke_silhouette.mp4) 
 
-### ![](/icons/dice.webp) Losuj {#randomize}
+### ![](/icons/dice.webp)Zrandomizuj {#randomize}
 
 ![](/images/stroke_randomize.webp)
 
-Intensywność, przesunięcie, obrót i skala pociągnięcia mogą być losowane niezależnie. Można w ten sposób tworzyć różne efekty, np. losowanie z narzędziem paint może dać nakrapiane kolory, a z narzędziem crease – detale skóry.
+`Intensywność`, `Przesunięcie`, `Obrót` i `Skala` pociągnięcia mogą być losowane niezależnie. Pole wyboru w danym wierszu włącza lub wyłącza losowanie. Daje to wiele efektów: na przykład losowanie z narzędziem do malowania tworzy cętkowany kolor, a z narzędziem do bruzd pozwala uzyskać detale skóry.
+
+`Okres (wolniej)` ustala długość cyklu losowania: zwiększ go, by uzyskać powolne, płynne zmiany, zmniejsz, by uzyskać szybki szum. Mały przycisk obok każdego wiersza skaluje okres tylko dla tego wiersza.
 
 ![](/videos/stroke_randomize.mp4) 
 
-### Przesunięcie pociągnięcia {#stroke-offset}
+### ![](/icons/paint.webp) Zrandomizuj - HSV {#randomize-hsv}
 
-Nakłada stałe przesunięcie na pociągnięcie. Jest to przydatne na małych ekranach, gdzie palec zasłaniałby pociągnięcie. 
+W narzędziach, które malują, losować można też `Odcień`, `Nasycenie` i `Wartość` koloru farby, z osobnym okresem. Świetnie sprawdza się to przy dodawaniu subtelnych zmian koloru skóry czy kamienia.
+
+### Przesunięcie pociągnięć {#stroke-offset}
+
+Nakłada stałe przesunięcie na pociągnięcie, żeby palec go nie zasłaniał. Przydaje się na małych ekranach. To ustawienie globalne: włączasz je polem wyboru i dotyczy wszystkich narzędzi.
 
 
 ## ![](/icons/alpha.webp) Alfa {#alpha}
 ![](/images/stroke_alpha.webp) 
 
-`Alpha` to tekstura modulująca zachowanie pędzla.
-To obraz w skali szarości, gdzie czarne piksele oznaczają brak deformacji, a białe – pełną deformację.
+`Alfa` to tekstura, która moduluje działanie pędzla.
+To obraz w skali szarości, w którym czarne piksele oznaczają brak deformacji, a białe pełną deformację.
 
-Kliknij obraz alfa, aby go zmienić.
+Kliknij obraz alfy, aby go zmienić. Oprócz wbudowanych alf i tych, które sam zaimportujesz, lista alf pozwala też pobrać mapy przemieszczeń z Poly Haven.
 
-Kliknij podgląd materiału, aby wczytać alfę z presetu materiału. Możesz też zapisywać tu presety materiałów i zdecydować, czy osadzać tekstury w narzędziu.
-
-::: tip
-Tekstura nigdy nie jest zmieniana rozmiarem, więc duże tekstury mogą spowalniać działanie.
-:::
-
-### Odwróć piksele {#invert-pixels}
-Odwraca wartości obrazu, tak że czarne piksele stają się białe, a białe – czarne.
+Kliknij podgląd materiału, aby wczytać alfę z ustawienia wstępnego materiału. Możesz tu też zapisywać ustawienia wstępne materiałów i zdecydować, czy tekstury mają być osadzone razem z narzędziem.
 
 ::: tip
+Tekstura nigdy nie jest skalowana, więc duże tekstury mogą spowolnić działanie.
+:::
 
-Wbudowane alfy dostarczane z Nomad nie mogą być odwracane.
+### ![](/icons/blend_contrast.webp) Popraw alfę {#invert-pixels}
+Przycisk `Popraw...` przy zaimportowanej alfie otwiera okienko, które poprawia sam obraz: jego średnią wartość, odwrócenie pikseli (czarny staje się biały, a biały czarny), obrót o 90° oraz odbicie w poziomie lub w pionie. Plik obrazu jest zapisywany na nowo, więc inne aplikacje też widzą poprawiony obraz.
+
+::: tip
+
+Wbudowanych alf dostarczanych z Nomad nie można poprawiać.
 
 :::
 
-### Skalowanie {#scaling}
+### Projekcja {#projection}
 
-Rozmiar pędzla w Nomad to okrąg o promieniu zdefiniowanym przez użytkownika. Tekstury są często kwadratowe lub prostokątne; parametry `Scaling` pozwalają zdecydować, jak tekstura ma się mieścić w tym okręgu. Dla kwadratowej tekstury wartość 0.7 sprawi, że zmieści się ona w okręgu. Wartość 1 powiększy teksturę tak, aby okrąg mieścił się w jej wnętrzu, przycinając krawędzie.
+Sposób rzutowania alfy na model:
+
+* `Powierzchnia` - alfa leży na powierzchni pod pędzlem i dopasowuje się do jej orientacji.
+* `Ekran` - alfa jest rzutowana prosto z widoku.
+* `Kafelkowanie` - alfa jest rzutowana z widoku i zostaje w miejscu, gdy malujesz po niej, jak szablon, dzięki czemu powtarzający się wzór łączy się bez szwów. Obrót jest zablokowany, a nacisk rysika nie zmienia rozmiaru wzoru.
+* `Trzypłaszczyznowy` - alfa jest rzutowana wzdłuż 3 osi. Opcje skalowania, obrotu i rozmieszczenia opisane niżej zostają zastąpione ustawieniami tekstury trzypłaszczyznowej.
+
+### ![](/icons/diagonal.webp) Skalowanie {#scaling}
+
+Pędzel w Nomad to okrąg o promieniu ustawionym przez użytkownika. Tekstury są często kwadratowe lub prostokątne, a parametry `Skalowanie` pozwalają zdecydować, jak tekstura ma się zmieścić w okręgu. Dla kwadratowej tekstury wartość 0.7 zmieści ją wewnątrz okręgu. Wartość 1 powiększy teksturę tak, by to okrąg zmieścił się w niej, a jej krawędzie zostaną przycięte.
 
 ![](/images/alpha_scaling.webp) 
 
-Włączenie `Scaling - Y` pozwala rozciągać alfę w pionie.
+Włączenie `Skalowanie Y` pozwala rozciągnąć alfę w pionie. Pierwszy suwak staje się wtedy `Skalowanie X`.
 
 ![](/images/alpha_scaling_y.webp) 
 
+`Odwróć poziomo` odbija alfę z lewej na prawą.
+
 ### Obrót {#rotation}
 
-Tekstura alfa będzie obracana, aby podążać za kierunkiem pociągnięcia. Możesz dodać offset obrotu, a jeśli ikona kłódki jest włączona, tekstura pozostanie zablokowana w tym obrocie względem ekranu.
+Tekstura alfy obraca się zgodnie z kierunkiem pociągnięcia. Możesz dodać przesunięcie obrotu, a jeśli ikona kłódki jest włączona, tekstura pozostanie zablokowana w tym obrocie względem ekranu.
 
-### Kafelkowanie {#tiling}
+Przycisk z piórem obok obraca alfę, gdy obracasz rysik wokół własnej osi (barrel roll), przy pociągnięciach `Blokada + promień` i `Blokada + intensywność`, o ile obrót nie jest zablokowany. Działa to tylko z rysikami, które to obsługują.
+
+### Rozmieszczenie sąsiadująco {#tiling}
 ![](/images/stroke_tiling.webp) 
 
-Jak często tekstura powtarza się w profilu pędzla. Tryby tilingu pozwalają ograniczyć się do pojedynczej tekstury w pociągnięciu, powtarzanych tekstur lub odbijanych lustrzanie, gdzie co druga tekstura jest odwrócona, aby tworzyć wzory lub pomagać w uzyskaniu bezszwowych tekstur.
+Jak często tekstura powtarza się w profilu pędzla. Tryby `Rozmieszczenie sąsiadująco - X` i `Rozmieszczenie sąsiadująco - Y` pozwalają ograniczyć się do jednej tekstury w pociągnięciu (`Brak`), powtarzać teksturę (`Powtarzanie`) albo odbijać co drugą teksturę, by tworzyć wzory lub ułatwić uzyskanie tekstur bez szwów (`Odbicie lustrzane`). Są dostępne z pociągnięciem `Roluj`, projekcją `Kafelkowanie` lub `Rozmieszczenie sąsiadująco` większym niż 1.
+
+`Dopasuj do wewnątrz` ma znaczenie tylko dla niekwadratowych alf i tekstur pędzla. Gdy jest włączone, każdy obraz jest powielany osobno, bez odstępów. Wyłącz je, by alfa i pozostałe obrazy pozostały zsynchronizowane, gdy mają różne proporcje.
 
 ![](/videos/alpha_tiling.mp4) 
 
 
 
-### Wartość środkowa {#mid-value}
+### Średnia wartość {#mid-value}
 
-Domyślnie czarne piksele oznaczają brak deformacji, a białe – pełną dodatnią deformację, więc np. pędzel clay z teksturą alfa skał będzie wyciągał powierzchnię tylko tam, gdzie alfa nie jest czarna.
+Domyślnie czarne piksele oznaczają brak deformacji, a białe pełną deformację na zewnątrz. Na przykład pędzel typu glina z alfą przedstawiającą skały wyciągnie powierzchnię tylko tam, gdzie alfa nie jest czarna.
 
-Jeśli chcesz, aby pędzel wciskał powierzchnię do środka lub jednocześnie wciskał i wyciągał, możesz zmodyfikować wartość środkową. Jeśli ustawisz ją na 0.5, średnia szarość w alfie nie zrobi nic, czerń będzie wciskać, a biel – wyciągać.
+Jeśli chcesz, żeby pędzel wciskał powierzchnię albo jednocześnie wciskał I wyciągał, zmień średnią wartość. Gdy ustawisz ją na 0.5, średnia szarość w alfie nic nie zrobi, czerń wciśnie powierzchnię, a biel ją wyciągnie.
+
+Dwa przyciski pomagają znaleźć właściwą wartość: kwadratowy przycisk odczytuje średnią wartość z obrzeża obrazu, a próbnik pozwala wskazać ją bezpośrednio na alfie.
 
 
 
 
-## Spadek {#falloff}
+## ![](/icons/falloff.webp) Zanikanie {#falloff}
 
 ![](/images/falloff_menu.webp) 
 
-Działa podobnie jak [Alpha](#alpha), z tą różnicą, że intensywność jest sterowana pojedynczą krzywą. Jest ona łączona z alfą, dzięki czemu możesz użyć tekstury do detalu, a falloff do kontrolowania wygaszania krawędzi i intensywności w centrum narzędzia.
+Działa podobnie do [Alfy](#alpha), z tą różnicą, że intensywnością sterujesz jedną krzywą. Zanikanie łączy się z alfą, więc możesz użyć tekstury do detali, a zanikania do kontroli wygaszania na krawędziach i intensywności w środku narzędzia.
 
-Gdy krzywa jest na górze, oznacza to pełną deformację; gdy na dole – pędzel nie ma efektu.
+Gdy krzywa jest na górze, deformacja jest pełna, a gdy jest na dole, pędzel nic nie robi.
 
-Możesz myśleć o krzywej jak o przekroju przez czubek pędzla. Dolna część pokazuje podgląd pojedynczego „odcisku” pędzla na powierzchni modelu, a jeśli pędzel ma teksturę alfa, będzie ona również pokazana, aby zobrazować, jak falloff i alfa ze sobą współdziałają.
+Krzywą możesz traktować jak przekrój przez czubek pędzla. Dolna część pokazuje podgląd tego, jak pojedynczy „odcisk” pędzla wyglądałby na powierzchni modelu. Jeśli pędzel ma teksturę alfy, ona również jest tam widoczna, więc od razu widać, jak zanikanie i alfa ze sobą współgrają.
 
-### Ustawienie wstępne {#preset}
-Po wybraniu tej opcji kliknięcie na wykres krzywej otworzy menu presetów. Zaokrąglone krzywe dają miększe rezultaty, kanciaste – ostrzejsze. Przycisk `Sub` w lewym pasku narzędzi efektywnie odwraca falloff, więc szczyt krzywej będzie wciskał powierzchnię zamiast ją wyciągać, lub odwrotnie.
+### ![](/icons/fx.webp) Ustawienie wstępne {#preset}
+Gdy wybrane jest `Ustawienie wstępne...`, kliknięcie wykresu krzywej otwiera menu gotowych ustawień. Zaokrąglone krzywe dają miękkie efekty, a kanciaste ostrzejsze. Przycisk `Odejmij` na lewym pasku narzędzi w praktyce odwraca zanikanie: szczyt krzywej wciska powierzchnię zamiast ją wyciągać i na odwrót.
 
-### Catmull-Rom {#catmull-rom}
-Po wybraniu użytkownik może rysować własne krzywe falloff. Edytor krzywych działa tak samo jak krzywe w pozostałych częściach Nomad:
+### ![](/icons/curve_catmull.webp) Catmull-Rom {#catmull-rom}
+Po wybraniu tej opcji możesz rysować własne krzywe zanikania. Edytor krzywych działa tak samo jak krzywe w pozostałych częściach Nomad:
 
-* Kliknij na krzywej, aby utworzyć nowy punkt
-* Przeciągnij punkt, aby go przesunąć
-* Kliknij punkt, aby przełączać między ostrym a gładkim
+* Kliknij krzywą, aby utworzyć nowy punkt
+* Przeciągnij punkt, aby zmienić jego położenie
+* Kliknij punkt, aby przełączyć go między ostrym a gładkim
 * Przeciągnij punkt na sąsiedni, aby go usunąć
 
-### B-spline {#b-spline}
-Po wybraniu użytkownik może rysować własne krzywe falloff. Edytor działa tak samo jak w Catmull-Rom, ale punkty krzywej wpływają na jej kształt zamiast leżeć bezpośrednio na niej, co może ułatwić tworzenie gładszych kształtów.
+### ![](/icons/curve_bspline.webp) B-splajn {#b-spline}
+Po wybraniu tej opcji możesz rysować własne krzywe zanikania. Edytor działa tak samo jak Catmull-Rom, ale punkty wpływają na krzywą, zamiast leżeć bezpośrednio na niej, co ułatwia uzyskanie gładszych kształtów.
 
-Edytor krzywej ma 3 przyciski:
+### ![](/icons/curve_bevel.webp) Faza {#bevel}
+Punkty są połączone prostymi odcinkami z zaokrąglonymi narożnikami, których wielkość zależy od ostrości każdego punktu. Przydaje się do pędzli z płaskim wierzchem i czystą fazą na krawędzi.
 
-| Item     | Icon                        | Description                                  |
-| :------: | :-------------------------: | :------------------------------------------: |
-| Maximize | ![](/icons/maximize.webp)  | Rozwija edytor krzywej                       |
-| Reset    | ![](/icons/reset.webp)     | Przywraca krzywą do stanu domyślnego        |
-| Symmetry | ![](/icons/symmetric.webp) | Wyświetla krzywą jako symetryczny „czubek pędzla” |
+Edytor krzywych ma 3 przyciski:
+
+| Element   | Ikona                       | Opis                                              |
+| :-------: | :-------------------------: | :-----------------------------------------------: |
+| Maksymalizuj | ![](/icons/maximize.webp) | Powiększa edytor krzywych                         |
+| Wyzeruj   | ![](/icons/reset.webp)     | Przywraca krzywą do stanu domyślnego              |
+| Symetria  | ![](/icons/symmetric.webp) | Wyświetla krzywą jako symetryczny „czubek pędzla” |
 
 
 ### Wpływ {#influence}
 
-* Sphere (3d) – Wpływ jest obliczany na podstawie odległości wierzchołka od środka pędzla.
-* Circle (2d) – Wierzchołek jest najpierw rzutowany na płaszczyznę obszaru, a dopiero potem mierzona jest jego odległość od środka pędzla. Jest to podobne do sposobu próbkowania alf.
-* Cylinder – Wpływ jest rzutowany przez obszar jako cylinder, używany przez tryb Silhouette poniżej.
+* `Kula` (3d) - wpływ jest obliczany na podstawie odległości wierzchołka od środka pędzla.
+* `Okrąg` (2d) - wierzchołek jest najpierw rzutowany na płaszczyznę obszaru, a dopiero potem mierzona jest jego odległość od środka pędzla. Podobnie próbkowane są alfy. 
+* `Walec` - wpływ jest rzutowany przez obszar w kształcie walca. Działa to tak samo jak włączenie opisanej niżej [Sylwetki](#silhouette-1).
+* `Grzbiet` - zanikanie jest mierzone w poprzek pociągnięcia, więc krzywa staje się przekrojem całego pociągnięcia. Przycisk `Sym` odbija wtedy profil w poprzek pociągnięcia: edytujesz jedną stronę, a druga podąża za nią. Gdy jest wyłączony, krzywa biegnie od lewej strony pociągnięcia do prawej. Niedostępne dla narzędzi opartych na spłaszczaniu.
 
-### Sylwetka {#silhouette-1}
-Domyślnie pociągnięcia wpływają tylko na powierzchnię modelu w obrębie promienia pędzla. Po włączeniu silhouette pociągnięcie będzie rzutowane przez cały model. Może to być bardzo użyteczne przy wstępnym blokowaniu modelu lub dla kształtów, w których boki muszą pozostać prostopadłe.
+### ![](/icons/silhouette.webp) Sylwetka {#silhouette-1}
+Domyślnie pociągnięcia działają tylko na powierzchnię modelu w promieniu pędzla. Gdy sylwetka jest włączona, pociągnięcie jest rzutowane przez cały model. Bardzo się to przydaje przy wstępnym szkicowaniu bryły modelu albo przy kształtach, których boki mają pozostać prostopadłe. Ma te same opcje rzutowania co [Sylwetka](#silhouette) w zakładce Pociągnięcie.
 
 
 
-## Filtr {#filter}
+## ![](/icons/filter.webp) Filtr {#filter}
 
 ![](/images/filter_menu.webp) 
 
-### Akumuluj pociągnięcie {#accumulate-stroke}
-Usuwa limit ilości materiału dodawanego/usuwanego w jednym pociągnięciu. Np. narzędzie `Clay` ma tę opcję włączoną, więc materiał może się wciąż kumulować, podczas gdy `Brush` ma ją wyłączoną, więc pociągnięcia przestaną dodawać materiał, jeśli będziesz wielokrotnie przejeżdżać po tym samym obszarze siatki. 
+### ![](/icons/accumulate.webp) Akumulacja pociągnięć {#accumulate-stroke}
+Znosi limit tego, ile materiału można dodać lub usunąć w jednym pociągnięciu. Na przykład narzędzie `Glina` ma tę opcję włączoną, więc materiał może się nadbudowywać, a narzędzie `Pędzel` ma ją wyłączoną, więc pociągnięcie przestaje dodawać materiał, jeśli wciąż przesuwasz je po tym samym fragmencie siatki. 
 
-### Tylko wierzchołki skierowane do przodu {#front-facing-vertex-only}
-Ta opcja ignoruje wierzchołki odwrócone tyłem.
-Może być przydatna, jeśli chcesz malować część cienkiej geometrii bez wpływania na drugą stronę.
-Działa również przy rzeźbieniu, ale możesz zauważyć pewne artefakty.
+### ![](/icons/culling.webp) Tylko przednie wierzchołki {#front-facing-vertex-only}
+Ta opcja ignoruje wierzchołki zwrócone tyłem.
+Przydaje się, gdy chcesz malować fragment cienkiej geometrii bez wpływu na jej drugą stronę.
+Działa też przy rzeźbieniu, ale mogą pojawić się artefakty.
 
-### Zezwól na dynamiczną topologię {#allow-dynamic-topology}
-Ta opcja jest dostępna tylko wtedy, gdy siatka jest w trybie [Dynamic Topology](topology.md#dynamic-topology). Możesz włączać lub wyłączać dynamic topology osobno dla każdego narzędzia.
+### ![](/icons/eye_open.webp) Tylko widoczne wierzchołki {#visible-vertex-only}
+Ignoruje wierzchołki zasłonięte przez inne powierzchnie, patrząc z kamery. Opcja pojawia się przy pociągnięciach kształtem (lasso, prostokąt...) w narzędziach do maskowania i malowania oraz w narzędziach `Grupa powierzchni` i `Ukryj`.
 
-### Połączona topologia {#connected-topology}
-Włącza rzeźbienie tylko na wierzchołkach połączonych z powierzchnią, której dotykasz narzędziem. Na przykład z narzędziem `Move` pozwoli to przesuwać część, nawet jeśli przecina się ona z inną częścią.
+### ![](/icons/dynamic.webp) Zezwól na topologię dynamiczną {#allow-dynamic-topology}
+Ta opcja jest dostępna tylko wtedy, gdy siatka jest w trybie [Topologii dynamicznej](topology.md#dynamic-topology). Możesz włączać lub wyłączać topologię dynamiczną osobno dla każdego narzędzia.
+
+### ![](/icons/connect.webp) Połączona topologia {#connected-topology}
+Rzeźbi tylko wierzchołki połączone z powierzchnią, której dotykasz narzędziem. Na przykład z narzędziem `Przenieś` pozwala przesunąć część modelu, nawet jeśli przenika się ona z inną częścią.
 ![](/videos/connected_topology.mp4)
 
 ### Chroń obszar {#protect-area}
 ![](/images/filter_protect_area.webp) 
 
-Te opcje zatrzymują działanie narzędzi na częściach siatki w różnych warunkach. 
+Te opcje chronią fragmenty siatki przed działaniem narzędzi w różnych sytuacjach. Każdą z nich można ustawić na `Auto`, `Nie` lub `Tak`, a mała strzałka pokazuje, czemu odpowiada w tej chwili `Auto`.
 
-Opcja „Auto” oznacza, że jeśli masz włączone hide, mask lub facegroup w menu [Shading](shading), będą one chronione, ale jeśli są tam wyłączone, ochrona jest dezaktywowana.
+* `Ukryj` - czy części siatki ukryte narzędziem do ukrywania mają być chronione. Przy `Auto` ukryte powierzchnie są chronione, chyba że widać ich szkielet (zobacz ustawienia [Szkielet](settings.md#wireframe)).
+* `Maska` - czy zamaskowane części siatki mają być chronione. Przy `Auto` zamaskowane części są chronione, dopóki maska jest widoczna w menu [Cieniowanie](shading).
+* `Grupa powierzchni` - czy narzędzie ma działać tylko w obrębie pierwszej dotkniętej grupy powierzchni. Przy `Auto` zależy to od tego, czy grupy powierzchni są widoczne w menu [Cieniowanie](shading).
 
-* `All` – Przełącznik określający, czy filtry ochrony są globalne, czy per narzędzie.
-* `Hide` – Jeśli części siatki są ukryte narzędziem hide, określa, czy mają być chronione.
-* `Mask` – Jeśli części siatki są zamaskowane, określa, czy mają być chronione.
-* `Facegroup` – Określa, czy możesz używać narzędzia tylko w obrębie pierwszej dotkniętej grupy ścian (facegroup).
+Przycisk `(All)` określa, czy te zabezpieczenia są globalne, wspólne dla wszystkich narzędzi, czy ustawiane osobno dla każdego narzędzia.
 
 
-### Zachowaj ostre krawędzie {#keep-sharp-edges}
-Wyklucza punkty, których normalne zbyt mocno różnią się od normalnej powierzchni.
+### Próbkowanie obszaru {#area-sampling}
+Niektóre pędzle lub opcje pociągnięcia potrzebują do działania normalnej i położenia płaszczyzny względem powierzchni.
 
-Zmienia sposób obliczania płaszczyzny obszaru (Area sampling).
+Możesz określić, jak ta uśredniona płaszczyzna jest obliczana, ustawiając obszar próbkowania jako ułamek promienia narzędzia.
 
-Opcja ta może być przydatna dla narzędzi opartych na spłaszczaniu lub gdy chcesz kolorować głównie płaską powierzchnię bez „wylewania się” na boki.
+Przy 100% brany jest pod uwagę każdy punkt wewnątrz okręgu zaznaczenia.
+
+Przy 0% brany jest pod uwagę tylko najbliższy wierzchołek lub trójkąt. Wartości `Promień normalny` i `Promień pozycji` mogą być ze sobą powiązane albo odblokowane i ustawiane niezależnie.
+
+### Filtr normalnych obszaru {#keep-sharp-edges}
+Wyklucza punkty, których normalne zbyt mocno odbiegają od normalnej powierzchni.
+
+Zmienia to sposób obliczania płaszczyzny obszaru (próbkowanie obszaru), więc najbardziej przydaje się w narzędziach typu glina lub opartych na spłaszczaniu, albo gdy chcesz pokolorować w miarę płaską powierzchnię, nie wychodząc poza nią.
+
+Kąty `Min.` i `Max.` sterują przejściem między punktami wykluczonymi a w pełni objętymi działaniem, co pokazuje mały kolorowy krążek obok nich.
 
 ![](/videos/filter_keep_sharp_edges.mp4)
 
-### Próbkowanie obszaru {#area-sampling}
-Niektóre pędzle lub opcje pociągnięcia wymagają normalnej płaszczyzny i położenia płaszczyzny względem powierzchni, aby działać.
-
-Możesz kontrolować sposób obliczania tej średniej płaszczyzny, ustawiając obszar próbkowania jako procent promienia narzędzia.
-
-Przy 100% brane są pod uwagę wszystkie punkty wewnątrz okręgu zaznaczenia.
-
-Przy 0% brany jest pod uwagę tylko najbliższy wierzchołek lub trójkąt. Wartości te mogą być połączone dla `Normal radius` i `Position radius` lub odblokowane i ustawiane niezależnie.
+### Filtr normalnych wygaszania {#falloff-normal-filter}
+Podobnie jak [Filtr normalnych obszaru](#keep-sharp-edges) wyklucza punkty, których normalne zbyt mocno odbiegają od normalnej powierzchni, ale działa na zanikanie pędzla, a nie na obliczanie płaszczyzny. Przydaje się do malowania zagłębień lub wypukłości.
 
 
-### Maskowanie głębi {#depth-masking}
+### Maskowanie głębokości {#depth-masking}
 ![](/images/stroke_depthmask.webp)
 
-Wyklucza punkty znajdujące się powyżej lub poniżej określonej odległości od obliczonej płaszczyzny (Area sampling).
+Wyklucza punkty, które leżą powyżej lub poniżej pewnej odległości od obliczonej płaszczyzny (próbkowanie obszaru).
 
-Można tego użyć do malowania tylko na wypukłościach lub tylko w zagłębieniach.
+Dzięki temu możesz malować tylko na wypukłych fragmentach albo tylko we wgłębieniach.
 
-Wykres przedstawia przekrój powierzchni; pozioma linia to miejsce, gdzie znajduje się powierzchnia, okrąg reprezentuje promień wygaszania pędzla powyżej i poniżej powierzchni. `Height offset` to procent powyżej lub poniżej powierzchni, od którego zaczyna się obliczanie maskowania. `Top area` i `Bottom area` pozwalają skalować wygaszanie powyżej i poniżej punktu offsetu.
+Wykres przedstawia przekrój powierzchni: pozioma linia to miejsce, w którym leży powierzchnia, a okrąg to promień zanikania farby powyżej i poniżej powierzchni. `Przesunięcie wysokości` to procent powyżej lub poniżej powierzchni, od którego zaczyna się obliczanie maskowania. Gdy włączone jest `Zanikanie głębokości`, suwaki `Górny obszar` i `Dolny obszar` pozwalają skalować zanikanie powyżej i poniżej punktu przesunięcia.
 
-#### Przykład: Malowanie w zagłębieniach {#example-paint-in-cavities}
-Aby malować tylko w zagłębieniach, ustaw height offset na -100% i dostosuj suwak top area tak, aby był odsunięty od linii poziomej. Oznacza to, że pierwsze kliknięcie ustawia „zerową” głębokość, a następnie wpływ będzie miała tylko powierzchnia poniżej tej głębokości.
+#### Przykład: malowanie we wgłębieniach {#example-paint-in-cavities}
+Aby malować tylko we wgłębieniach, ustaw przesunięcie wysokości na -100% i przesuń suwak górnego obszaru tak, by okrąg oddalił się od poziomej linii. Pierwsze kliknięcie ustala wtedy „zerową” głębokość, a działanie obejmuje tylko obszary leżące poniżej niej.
 
 ![](/videos/stroke_depth_cavity.mp4)
 
-#### Przykład: Malowanie na wypukłościach {#example-paint-on-bumps}
-Aby malować tylko na wypukłościach, ustaw height offset na +90%, tak aby dół okręgu przecinał linię poziomą w niewielkim stopniu. Gdy klikniesz na szczycie „wysokiej” strefy, ustawi to głębokość tak, że wszystko na tej głębokości, trochę poniżej i wszystko powyżej będzie malowane. Głębokie zagłębienia zostaną pominięte.
+#### Przykład: malowanie na wypukłościach {#example-paint-on-bumps}
+Aby malować tylko wysoko położone obszary, ustaw przesunięcie wysokości na +90%, tak by dół okręgu odrobinę przecinał poziomą linię. Kliknięcie na szczycie „wysokiego” obszaru ustala głębokość, więc pomalowane zostanie wszystko na tej głębokości, trochę poniżej niej i wszystko, co leży wyżej. Głębokie wgłębienia zostaną pominięte.
 ![](/videos/stroke_depth_bump.mp4)
 
 
-## Nacisk {#pressure}
+## ![](/icons/pressure.webp) Nacisk {#pressure}
 ![](/images/pressure_menu.webp) 
 
-Kontroluje, jak nacisk rysika/pióra wpływa na pędzle.
+Określa, jak nacisk rysika wpływa na pędzle.
 
-Domyślnie włączone jest `Use global settings`, co oznacza, że wszystkie pędzle współdzielą te same wartości nacisku.
+### Użyj ustawień globalnych {#use-global-settings}
 
-### Nacisk – promień {#pressure-radius}
+Domyślnie opcja `Użyj ustawień globalnych` jest włączona, co oznacza, że wszystkie pędzle mają te same wartości nacisku. Odznacz ją, aby bieżące narzędzie miało własne ustawienia nacisku.
 
-Ta krzywa kontroluje, jak promień pędzla reaguje na nacisk. Domyślnie jest to zależność liniowa, więc jeśli twój rysik ma płynną odpowiedź, zmiana promienia również powinna być płynna. Wiele rysików ma jednak nieliniową charakterystykę, którą możesz skompensować tą krzywą. Na przykład, jeśli promień nie wydaje się osiągać maksymalnej wartości przy dużym nacisku, użyj presetu krzywej takiego jak „out-pow3”, z wygięciem skierowanym w górę, aby zwiększyć promień wcześniej.
+### ![](/icons/radius.webp) Promień {#pressure-radius}
 
-To okno dialogowe jest podobne do wyświetlania krzywej falloff; możesz użyć presetu, stukając w okno krzywej, lub narysować własne krzywe w trybach Catmull-Rom i B-Spline.
+Ta krzywa określa, jak nacisk wpływa na promień pędzla. Domyślnie zależność jest liniowa, więc jeśli Twój rysik reaguje płynnie, zmiana promienia też powinna być płynna. Wiele rysików ma jednak nieliniową reakcję, którą możesz skompensować tą krzywą. Jeśli na przykład masz wrażenie, że przy mocnym nacisku promień nie osiąga maksimum, wybierz ustawienie wstępne krzywej, takie jak „out-pow3”, wygięte ku górze, aby promień rósł szybciej.
 
-Jeśli chcesz stały promień, wyłącz tę sekcję.
+To okno działa podobnie jak wykres krzywej zanikania: możesz wybrać ustawienie wstępne, stukając w okno krzywej, albo narysować własne krzywe w trybach `Catmull-Rom`, `B-splajn` i `Faza`.
 
-### Nacisk – intensywność {#pressure-intensity}
+Jeśli chcesz mieć stały promień, wyłącz tę sekcję.
 
-Podobne do krzywej promienia, ale kontroluje intensywność. Jeśli chcesz stałą intensywność, wyłącz tę sekcję.
+### ![](/icons/intensity.webp) Intensywność {#pressure-intensity}
+
+Działa podobnie jak krzywa promienia, ale steruje intensywnością. Jeśli chcesz mieć stałą intensywność, wyłącz tę sekcję.
+
+### Ogranicz ciśnienie do 100% {#limit-pressure}
+
+Pilnuje, by nacisk rysika nigdy nie przekroczył 100%. To ustawienie globalne.
 
 ### Wygładzanie nacisku {#pressure-smoothing}
 
-Uśrednia zdarzenia nacisku rysika dla gładszych rezultatów.
+Uśrednia odczyty nacisku rysika, by uzyskać płynniejsze efekty.

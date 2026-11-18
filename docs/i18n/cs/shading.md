@@ -1,6 +1,6 @@
 # ![](/icons/sun.webp) Stínování {#shading}
 
-Tato nabídka ovládá režimy stínování používané v Nomadu, vlastnosti světel a vlastnosti světla prostředí/matcapu.
+Tato nabídka ovládá režimy stínování v Nomadu, vlastnosti osvětlení, prostředí a matcap a také mlhu.
 
 ![](/images/shading_overview.webp)
 
@@ -8,232 +8,274 @@ Tato nabídka ovládá režimy stínování používané v Nomadu, vlastnosti sv
 
 Můžete si vybrat z několika režimů vykreslování:
 
-| Mode                        | Meaning                    | Description                                                     |
+| Režim                       | Význam                     | Popis                                                           |
 | :-------------------------: | :------------------------: | :-------------------------------------------------------------: |
-| [Lit(PBR)](#pbr)            | Physically Based Rendering | Malování s metalicitou/drsností                                |
-| [Matcap](#matcap)           | Material Capture           | Používá se při sochání s nižším využitím GPU/CPU než PBR        |
-| [Unlit](#unlit)             | Surface Color              | Pouze barva povrchu bez stínování a osvětlení                  |
-| [Object Id](#object-id)      | Object ID                  | Náhodná barva na objekt, užitečné pro malířské aplikace        |
-| [Instance Id](#instance-id)  | Instance ID                | Náhodná barva na instanci, užitečné pro identifikaci sdílených meshů |
+| [Osvětlené (PBR)](#pbr)     | Physically Based Rendering | Světla, stíny, prostředí a namalovaná kovovost/drsnost          |
+| [MatCap](#matcap)           | Material Capture           | Rychlý režim pro sochání, s menší zátěží gpu/cpu než PBR        |
+| [Neosvětlené](#unlit)       | Barva povrchu              | Jen barva povrchu, bez stínování a osvětlení                    |
+| [ID objektu](#object-id)    | ID objektu                 | Náhodná barva pro každý objekt, užitečná pro malířské aplikace. |
+| [ID instance](#instance-id) | ID instance                | Náhodná barva pro každou instanci, pomáhá rozpoznat sdílené sítě |
 
-Pokud se chcete dozvědět více o metalicitě a drsnosti, podívejte se na sekci [Vertex Paint](painting.md).
+Pokud se chcete o kovovosti a drsnosti dozvědět víc, podívejte se do části [Malování vrcholů](painting.md).
 
 ---
 
 ![](/images/shading_second.webp)
 
-### Skupina ploch {#face-group}
-Překryvné barvy facegroup. Facegroup jsou barevné výběry polygonů, které lze vytvořit nástrojem [Face group](tools#facegroup) a automaticky vznikají u většiny primitiv.
+### ![](/icons/group_gray.webp) SkupinaPovrch {#face-group}
+Zobrazí barvy skupin ploch. Skupiny ploch jsou barevně odlišené výběry polygonů, které můžete vytvořit nástrojem [Skupina ploch](tools#facegroup) a které se automaticky vytvářejí u většiny primitiv.
 
-Některé nástroje budou automaticky filtrovat podle facegroup, pokud jsou facegroup viditelné.
+Některé nástroje se při viditelných skupinách ploch automaticky omezují podle skupin ploch.
 
-### Zobrazit malbu {#show-paint}
-Nomad může ukládat barvu, drsnost a metalicitu do vrcholů (vertices) vaší sochy. Zobrazení těchto vlastností můžete globálně přepínat tímto zaškrtávacím políčkem.
+### ![](/icons/palette.webp) Zobrazit malbu {#show-paint}
+Nomad umí ukládat barvu, drsnost a kovovost do vrcholů vaší sochy. Tímto zaškrtávacím políčkem zobrazení těchto vlastností globálně zapnete nebo vypnete.
 
-Všimněte si, že pokud máte jak vlastnosti ve vrcholech, tak textury a obojí je povoleno, hodnoty se budou mezi sebou násobit.
+Pokud máte vlastnosti vrcholů i textury a obojí je zapnuté, hodnoty se spolu vynásobí.
 
-### Zobrazit masku {#show-mask}
-Přepíná šedotónový překryv masky z [mask tools](tools#mask). Když je toto vypnuto, maska je také vypnutá, což je užitečné pro rychlé úpravy bez masky; poté ji můžete znovu zapnout a masku neztratíte.
+### ![](/icons/shield.webp) Zobrazit masku {#show-mask}
+Zapne nebo vypne zobrazení masky ve stupních šedi z [nástrojů masky](tools#mask). Když je vypnuté, vypne se i samotná maska. Hodí se pro rychlé úpravy bez masky: pak ji znovu zapnete a o masku nepřijdete.
 
-### Použít skrýt {#use-hide}
+### ![](/icons/tool_hide.webp) Použít Skrytí {#use-hide}
 
-Přepíná skryté plochy. Poznámka: funguje pouze pokud NEjste v nástroji hide!
+Zapne nebo vypne skryté plochy. Funguje to jen tehdy, když NEJSTE v nástroji skrýt!
 
-### Použít textury {#use-textures}
+### ![](/icons/image.webp) Použít textury {#use-textures}
 
-Nomad umožňuje přiřadit textury objektům z nabídky [material](material). Pokud jsou textury přiřazeny, lze je globálně přepínat tímto zaškrtávacím políčkem.
+V Nomadu můžete objektům přiřadit textury v nabídce [materiál](material). Pokud jsou textury přiřazené, můžete je tímto zaškrtávacím políčkem globálně zapnout nebo vypnout.
 
-
-
-
-
-
+Textury v Nomadu vytvářet ani upravovat nelze, textury z importovaných souborů ale fungují. Textury průhlednosti fungují v režimech Osvětlené, MatCap a Neosvětlené, normálové mapy v Osvětlené a MatCap, barva v Osvětlené a Neosvětlené a emisivita, drsnost a kovovost jen v Osvětlené. Když scéna nemá žádnou texturu, je tlačítko zašedlé.
 
 ### Přehled PBR a světel {#pbr}
-Tento manuál nepůjde do detailů fyzikálně založeného renderingu (Physically Based Rendering).
+Tato příručka nebude zacházet do podrobností o Physically Based Rendering.
 
-Důležité je mít na paměti, že osvětlení a materiál jsou zcela oddělené.
-To znamená, že můžete malovat barvu, drsnost a metalicitu objektu, zatímco osvětlení je řešeno nezávisle.
-Umožňuje to namalovat objekt a pak později doladit osvětlení, aniž by se rozbil celkový vzhled modelu.
+Je dobré mít na paměti, že osvětlení a materiál jsou zcela oddělené.
+Znamená to, že můžete objektu malovat barvu, drsnost a kovovost, zatímco osvětlení se řeší nezávisle.
+Objekt tak můžete namalovat a osvětlení doladit později, aniž byste narušili celkový vzhled modelu.
 
-Světla jsou dostupná pouze v [PBR režimu](#pbr).
-Z důvodů výkonu jste omezeni na maximálně 4 světla.
+Světla, prostředí a mlha jsou dostupné jen v [režimu PBR](#pbr).
+Z důvodu výkonu můžete mít na mobilu nejvýš 4 světla a na počítači 6.
 
 ::: tip
-Můžete načíst soubor glTF s více než 4 světly a Nomad je všechny zachová.
-Nemusí to však nutně běžet plynule.
+Můžete načíst soubor glTF s více světly a Nomad je zachová všechna.
+Výkon tím ale může utrpět.
 :::
 
 ::: tip
-Mnoho světel můžete „falšovat“ tím, že objekty nastavíte jako unlit/emissive a poté zapnete globální iluminaci v nabídce [post process](postprocess).
+Mnoho světel můžete nasimulovat tak, že objekty nastavíte jako neosvětlené/emisivní a v nabídce [Postproces](postprocess) zapnete globální osvětlení.
 :::
 
 ### Přehled typů světel {#light-types-overview}
 
-Zde jsou typy světel, které jsou aktuálně podporovány:
+Toto jsou aktuálně podporované typy světel:
 
-| Mode                        | Description                                             | Can cast shadows                                       |
-| :-------------------------: | :-----------------------------------------------------: | :----------------------------------------------------: |
-| [Directional](#directional) | Sluneční světlo z nekonečné vzdálenosti               | ano                                                    |
-| [Environment](#environment) | Vzdálené světlo odpovídající HDR prostředí             | ano                                                    |
-| [Spot](#spot)               | Kuželová světla				                        | Ano                                                    |
-| [Point](#point)             | Bodové světlo svítící všemi směry                      | Ano, ale pouze méně robustní screen-space stíny       |
+| Režim                       | Popis                                                   | Vrhá stíny       |
+| :-------------------------: | :-----------------------------------------------------: | :--------------: |
+| [Směrové](#directional)     | Sluneční světlo z nekonečné dálky                       | Ano              |
+| [Prostředí](#env-light)     | Vzdálené světlo sladěné s HDR prostředí                 | Ano              |
+| [Bodové (kužel)](#spot)     | Světla ve tvaru kužele                                  | Ano              |
+| [Bodové](#point)            | Všesměrový bodový zdroj světla                          | Ano              |
 
-#### Směrové {#directional}
-Vyzařuje světlo z nekonečné vzdálenosti s jednotnou intenzitou.
-Jeho 3D pozice ve scéně není důležitá, záleží pouze na orientaci.
+#### ![](/icons/sun.webp) Směrové {#directional}
+Vyzařuje světlo z nekonečné dálky se stejnoměrnou intenzitou.
+Na jeho 3d poloze ve scéně nezáleží, důležitá je jen jeho orientace.
 
-Toto světlo můžete připojit ke kameře, takže bude mít konzistentní osvětlení.  
-Například ho můžete použít jako rim light (silné světlo vycházející zezadu modelu směrem ke kameře), které vždy osvětluje zadní část vašeho modelu.
+Toto světlo můžete připojit ke kameře, takže osvětlení zůstává stejné.  
+Můžete tak například vytvořit kontrastní světlo (rim light, silné světlo, které svítí zezadu modelu směrem ke kameře), které vždy osvětluje zadní stranu modelu.
 
-#### Prostředí (environment) světlo {#env-light}
-Použití [environment hdr](#environment) dobře funguje pro celkové měkké osvětlení, ale pokud je v HDR viditelné silné ostré světlo, stín jím vytvořený bude velmi měkký, často téměř neviditelný. Pomoci může použití směrového světla v kombinaci s environment HDR, ale může být obtížné je zarovnat.
+#### ![](/icons/panorama.webp) Světlo prostředí {#env-light}
+[HDR prostředí](#environment) se dobře hodí pro celkové měkké osvětlení, ale pokud je v HDR vidět silné ostré světlo, bude jeho stín velmi měkký, často vůbec neviditelný. Pomoci může kombinace směrového světla s HDR prostředím, jenže sladit je bývá obtížné.
 
-Toto světlo tuto práci udělá za vás. Světlo se automaticky natočí tak, aby se zarovnalo s nejjasnější částí HDR, a vy pak můžete samostatně ovládat jeho intenzitu a úhel (měkkost stínu). 
+Toto světlo tu práci udělá za vás. Automaticky se natočí tak, aby odpovídalo nejjasnější části HDR, a pak samostatně nastavíte jeho intenzitu a úhel (měkkost stínu). 
 
-#### Reflektor {#spot}
-Reflektor (spot light) vyzařuje světlo jedním směrem, omezené tvarem kužele.
+#### ![](/icons/spotlight.webp) Bodové (kužel) {#spot}
+Toto světlo svítí jedním směrem a jeho paprsek je omezený tvarem kužele.
 
-#### Bodové {#point}
-Bodové světlo vyzařuje světlo všemi směry.  
-V tuto chvíli bodové světlo nepodporuje stíny.
+#### ![](/icons/light.webp) Bodové {#point}
+Bodové světlo svítí do všech směrů a také může vrhat stíny.
 
 #### Stíny {#shadows}
-Volba `normal bias` může být použita ke snížení běžných artefaktů stínů (acne/peter-panning).
+Každé světlo může vrhat stíny a v jeho [nastavení](#light-extra-controls) si zvolíte, jak se počítají. Pokud vidíte artefakty ve stínech, mohou pomoci tamní posuvníky `Tolerance`.
 
 Kvalita stínů závisí na velikosti objektů vzhledem k celé scéně.  
-Pokud máte ve scéně velký objekt, který nemusí vrhat stíny (například velkou rovinu), ujistěte se, že je u něj vrhání stínů vypnuto v [nastavení materiálu](material.md#cast-shadows).
+Pokud máte ve scéně velký objekt, který stíny vrhat nemusí (například velkou rovinu), vypněte vrhání stínů v jeho [nastavení materiálu](material.md#casts-shadows).
 
-## Světla {#lights}
+## ![](/icons/sun.webp) Světla {#lights}
 
 ![](/images/shading_lights.webp)
 
-### ![](/icons/checked.webp) Zaškrtávací políčko Světla {#lights-checkbox}
+### ![](/icons/checked.webp) Zaškrtávací políčko světel {#lights-checkbox}
 
-Přepíná všechna přímá světla ve scéně.
+Zapne nebo vypne všechna přímá světla ve scéně.
 
 
 
 ### Přidat světlo {#add-light}
 
-Přidá světlo do scény, maximálně 4. Když je světlo přidáno, zobrazí se seznam světel s tlačítky a do horní části viewportu se přidá panel nástrojů světla.
+Přidá do scény světlo, na mobilu nejvýš 4 a na počítači 6. Po přidání světla se zobrazí seznam světel s tlačítky a v horní části zobrazení se objeví panel nástrojů světla.
 
 ![](/images/shading_lights_icons.webp)
 
-* Text zobrazuje název světla a jas.
+* Text ukazuje název světla a jeho jas. Klepnutím světlo vyberete.
 * Ikona oka přepíná viditelnost.
-* Ikona tužky umožňuje přejmenovat světlo.
+* Ikonou tužky světlo přejmenujete.
 * Ikona koše světlo smaže.
-* Ikona kopie světlo duplikuje. 
-* Ikona se 3 tečkami otevře plný editor světla. Většina této funkčnosti je také dostupná z panelu nástrojů, který se objeví ve viewportu. 
+* Ikona kopírování světlo zduplikuje. 
+* Ikona se 3 tečkami otevře úplný editor světla. Většina jeho funkcí je dostupná i z panelu nástrojů, který se objeví v zobrazení. 
 
-### ![](/icons/spotlight.webp) Ikony {#icons}
+Světla v seznamu můžete také přetažením přeuspořádat.
 
-Přepíná zobrazení ikon světel ve viewportu.
+### ![](/icons/spotlight.webp)  Ikony {#icons}
 
-### Lišta světel {#light-toolbar}
+Zapne nebo vypne zobrazení ikon světel v zobrazení
+
+### Panel nástrojů světla {#light-toolbar}
 ![](/images/shading_lights_toolbar.webp) 
 
-Tento panel nástrojů se objeví v horní části viewportu, když je vybráno světlo.
+Tento panel nástrojů se objeví v horní části zobrazení, když je vybrané světlo.
 
-* Show přepíná viditelnost světla.
-* Directional/Environment/Spot/Point mění typ světla. Klepnutím cyklujete, dlouhým stiskem zobrazíte nabídku.
-* Intensity ovládá sílu světla, hodnota může jít nad 1.0 pro velmi intenzivní světla, užitečné při použití s Global Illumination v Post Process.
-* Kliknutím na vzorek barvy se otevře výběr barvy. Nomad nabízí několik způsobů volby barvy. Ovládání Kelvin poskytuje přirozený způsob výběru teplého/studeného světla.
-* Shadow přepíná stíny.
-* Size nastavuje šířku světla. Širší světla vrhají měkčí stíny, měkčí osvětlení a měkčí odlesk na objektech.
-* ... otevře další ovládací prvky.
+* `Viditelný` přepíná viditelnost světla.
+* Směrové/Prostředí/Bodové (kužel)/Bodové mění typ světla. Klepnutím je postupně přepínáte, dlouhým stiskem zobrazíte nabídku.
+* Intenzita řídí sílu světla. Hodnota může přesáhnout 1,0 pro velmi intenzivní světla, což se hodí s globálním osvětlením v nabídce Postproces
+* Klepnutím na barevný vzorek otevřete výběr barvy. Nomad nabízí několik způsobů, jak barvu vybrat. Ovládání v kelvinech nabízí přirozený způsob, jak zvolit teplé nebo studené osvětlení.
+* Stín zapíná a vypíná stíny.
+* Úhel (_směrové a prostředí_) nebo Velikost (_bodové s kuželem a bodové_) nastavuje šířku světla. Širší světla vrhají měkké stíny, měkčí osvětlení a měkčí odlesky na objektech.
+* Připojení (_jen směrové_), Kuželový úhel a Měkkost (_jen bodové s kuželem_) jsou popsané níže v části [editor světla](#light-extra-controls).
+* ... zobrazí `Klonovat`, `Znovu vystředit` a `Smazat` spolu s nastavením stínů.
 
-### Rozšířené ovladače světel {#light-extra-controls}
+### Další ovládání světla {#light-extra-controls}
 
 ![](/images/shading_extra_controls.webp) 
 
-Všimněte si, že některé volby jsou specifické pro určité typy světel.
+Ikona se 3 tečkami u světla v seznamu otevře jeho úplný editor. Některé volby jsou specifické jen pro určité typy světel.
 
-* `Clone` duplikuje světlo.
-* `Recenter` přesune světlo zpět do počátku.
-* `Delete` světlo smaže.
-* `Directional/Environment/Spot/Point` umožňují změnit typ světla.
-* `colour swatch` po kliknutí otevře výběr barvy. 
-* `Intensity` ovládá sílu světla.
-* `Attachment` (_pouze directional_) nastaví, zda je světlo rodičem světa, nebo kamery. Např. pokud použijete směrové světlo za postavou jako rim light, při nastavení attachment na camera bude při otáčení kamery světlo vždy za postavou.
-* `Angle` (_pouze directional a environment_) je zdánlivá velikost světla, představte si ji jako to, jak velké se slunce jeví na obloze. Větší úhly vrhají měkčí stíny a širší odlesky.
-* `Softness` (_pouze spotlight_) ovládá ostrost okraje kužele reflektoru. 0 je velmi ostrý okraj. 1 je velmi měkký, s přechodem ke středu světelného kužele. Ve viewportu lze malým modrým bodem na kuželu reflektoru interaktivně nastavovat softness.
-* `Cone angle` (_pouze spotlight_) ovládá rozptylový úhel reflektoru. Malý úhel je velmi tenký paprsek světla, 170 je velmi široký rozptyl světla. Ve viewportu lze oranžovým bodem interaktivně nastavovat cone angle.
-* `Shadow` přepíná stíny pro aktuální světlo.
-* `Shadow map` a `screenspace` jsou různé způsoby výpočtu stínů, obecně je shadow map spolehlivější.
-* `Contact` upravuje, jak jsou stíny počítány. Stíny jsou v počítačové grafice obtížný problém a mohou způsobovat artefakty v renderu. Pro nejdůležitější světlo ve scéně lze zvolit přesnější stíny; toto ovládání určuje, zda nejdůležitější světlo vybere automaticky Nomad, nebo uživatel.
-* `Tolerance` pokud jsou viditelné artefakty stínů (stíny se nezdají dotýkat povrchů, nebo je v nich šum a vzory), úprava tolerance může pomoci tyto problémy vyřešit.
+* `Směrové/Prostředí/Bodové` umožňují změnit typ světla.
+* Klepnutím na `barevný vzorek` otevřete výběr barvy. 
+* `Intenzita` řídí sílu světla.
+* `Připojení` (_jen směrové_) připojí světlo ke světu (`Pevně`) nebo ke kameře (`Kamera`). Pokud například použijete směrové světlo za postavou jako kontrastní světlo a zvolíte připojení ke kameře, bude světlo i při otáčení kamery vždy za postavou.
+* `Měkkost` (_jen bodové s kuželem_) řídí ostrost okraje kužele světla. 0 znamená velmi ostrý okraj, 1 velmi měkký, s přechodem ke středu kužele. V zobrazení můžete měkkost nastavit interaktivně malou modrou tečkou na kuželi světla.
+* `Kuželový úhel` (_jen bodové s kuželem_) řídí úhel rozptylu světla. Malý úhel dává velmi úzký paprsek, 170 velmi široký rozptyl. V zobrazení můžete kuželový úhel nastavit interaktivně oranžovou tečkou.
+* `Úhel` (_jen směrové a prostředí_) je zdánlivá velikost světla, představte si, jak velké se slunce jeví na obloze. Větší úhly vrhají měkčí stíny a širší odlesky.
+* `Velikost` (_jen bodové s kuželem a bodové_) je šířka světla. Větší světla vrhají měkčí stíny.
+* `Stín` zapíná a vypíná stíny aktuálního světla.
+* Typ stínu určuje, jak se stíny počítají. `Stínová mapa` vykreslí scénu z pohledu světla, takže stíní i geometrii, kterou kamera nevidí. `Oblast obrazovky` používá jen to, co je už vidět na obrazovce: je méně náročná, ale experimentální. Stínová mapa je obecně spolehlivější.
+* `Tolerance` (_jen oblast obrazovky_): pokud jsou vidět artefakty stínů (stíny se nedotýkají povrchů, nebo je ve stínech šum a vzory), může úprava tolerance tyto problémy napravit.
+* `Kontaktní` přidá přesnější stíny na krátké vzdálenosti, tam, kde se objekty dotýkají. Při `Auto` dostane kontaktní stíny jen nejvýraznější světlo ve scéně, `Ne` a `Ano` je pro toto světlo vynutí. Jeho posuvník `Tolerance` funguje stejně jako ten výše.
+
+Tlačítko `...` na panelu nástrojů v zobrazení obsahuje stejná nastavení stínů a navíc:
+
+* `Klonovat` světlo zduplikuje.
+* `Znovu vystředit` přesune světlo před kameru a zachová jeho orientaci.
+* `Smazat` světlo smaže.
 
 
-## Prostředí {#environment}
+## ![](/icons/panorama.webp) Prostředí {#environment}
 
 ![](/images/shading_environment.webp)
 
-Světlo ve skutečném světě přichází ze všech směrů; modrá oblohy, zelená trávy, červená budovy – toto světlo z „prostředí“ lze simulovat environment mapou. 
+Světlo v reálném světě přichází ze všech směrů: modrá barva oblohy, zelená trávy, červená budovy. Všechno toto světlo z „prostředí“ lze simulovat pomocí mapy prostředí. 
 
-Nomad obsahuje několik ukázkových environment map pro vnitřní i venkovní prostředí s různými odstíny a úrovněmi jasu. Vyzkoušejte různé mapy a zjistěte, která nejlépe zvýrazní detaily vašich soch.
+Zaškrtávacím políčkem vedle názvu osvětlení prostředím zapnete nebo vypnete.
 
-Klepnutím na obrázek zobrazíte dostupné environment mapy. V tomto dialogu zvolte „Import...“ pro načtení vlastní. Nejlepší je používat obrázky s vysokým dynamickým rozsahem (HDR) ve formátu latlong nebo equirectangular jako soubory .hdr nebo .exr. Stránka [www.polyhaven.com](https://polyhaven.com/hdris) má dobrou kolekci bezplatných environment map; obecně jsou 1k hdr mapy dobrou velikostí i kvalitou.
+Nomad obsahuje několik ukázkových map prostředí pro interiéry i exteriéry, s různými odstíny a úrovněmi jasu. Vyzkoušejte různé mapy a zjistěte, která na vašich sochách nejlépe vynese detaily.
+
+Klepnutím na obrázek zobrazíte dostupné mapy prostředí. V tomto okně zvolte `Importovat...`, pokud chcete načíst vlastní. Nejlepší jsou obrázky s vysokým dynamickým rozsahem (HDR) ve formátu latlong neboli equirectangular, jako soubory .hdr nebo .exr. Prohlížeč umí prostředí stahovat i přímo z [Poly Haven](https://polyhaven.com/hdris), který má dobrou sbírku bezplatných map prostředí.
 
 ### Expozice {#env-exposure}
-Upravuje jas environment mapy. Často mohou být mapy příliš jasné při použití s běžnými světly; snížení expozice může pomoci vyvážit scénu, zvláště při použití s Global Illumination v nastavení [Post Process](postprocess).
+Upraví jas mapy prostředí. V kombinaci s běžnými světly bývají mapy často příliš jasné. Snížení expozice pomůže vše vyvážit, zvlášť s globálním osvětlením v nastavení [Postproces](postprocess).
 
 ### Rotace {#env-rotation}
 
-Protože environment mapy zachycují světlo ze všech směrů, můžete je otáčet, aby se odrazy a celkové osvětlení dobře kombinovaly s vaší sochou.
+Mapy prostředí zachycují světlo ze všech směrů, takže je můžete natočit, aby se odrazy a celkové osvětlení k vaší soše dobře hodily. Prostředí můžete otáčet také tažením 3 prsty vodorovně po zobrazení.
 
 ### Připojeno ke kameře {#env-attached}
 Připojí prostředí ke kameře.
 
-Vynutí konzistentní osvětlení, což může být užitečné během sochání.
+Osvětlení tak zůstává stejné, což se může hodit při sochání.
+
+### Rozostření (pozadí) {#env-background-blur}
+Tento posuvník se zobrazuje, jen když je [pozadí](background.md) nastavené na prostředí. Rozostří obrázek prostředí za vaším modelem, aniž by změnil osvětlení.
 
 
-## ![](/icons/sphere_smooth.webp) Matcap {#matcap}
+## ![](/icons/fog.webp) Mlha {#fog}
+
+Mlha dodá scéně atmosférickou hloubku a zviditelní paprsky světla. Zapnete ji zaškrtávacím políčkem vedle názvu. Stejně jako světla a prostředí je dostupná jen v režimu [Osvětlené (PBR)](#pbr).
+
+::: tip Výraznější paprsky světla
+Snižte u mlhy `Prostředí` a použijte jasné bodové světlo s kuželem nebo bodové světlo. Zvyšujte `Hustota`, dokud mlha nebude zřetelně vidět. Pro viditelné paprsky v řidší mlze nastavte `Směr rozptylu` na vysokou kladnou hodnotu a namiřte kameru směrem ke světlu.
+:::
+
+### Barva {#fog-color}
+Barva mlhy a světla, které rozptyluje.
+
+### Hustota {#fog-density}
+Jak rychle mlha se vzdáleností houstne.
+
+### Maximální krytí {#fog-opacity}
+Omezuje, jak moc může mlha scénu zakrýt, i při vysoké hustotě.
+
+### Směr rozptylu {#fog-scattering}
+Směr, kterým mlha rozptyluje světlo (také se mu říká anizotropie). Kladné hodnoty zjasní mlhu, když se díváte směrem ke světlu, záporné, když se díváte od něj, a nula rozptyluje světlo rovnoměrně do všech směrů.
+
+### ![](/icons/panorama.webp) Prostředí {#fog-environment}
+Jak moc mlhu osvětluje [prostředí](#environment). Když je prostředí vypnuté, je volba zašedlá.
+
+### Šum {#fog-noise}
+Přimíchá do mlhy šum, který ji rozdělí na chuchvalce, aniž by se změnila její celková hustota. Když je šum nad 0, nastavíte posuvníkem `Velikost` velikost vzoru.
+
+### Tvar {#fog-shape}
+Kde mlha scénu vyplňuje:
+
+* `Rovnoměrný` - vyplní celou scénu.
+* `Svislý` - drží mlhu ve svislém pásu s měkkými okraji. Posuvníky `Dole` a `Nahoře` nastavují výšku jeho dolního a horního okraje a jejich tlačítko s okem při úpravách ukazuje pás v zobrazení.
+
+
+## ![](/icons/sphere_smooth.webp) MatCap {#matcap}
 
 ![](/images/shading_matcap.webp)
 
-Jak název napovídá (MATerial CAPture), matcap se stará jak o informace o osvětlení, tak o materiálu v jediném obrázku.
-Protože materiál je již v matcapu obsažen, malovací kanály drsnosti a metalicity budou ignorovány.
-Barva malby bude s matcapem násobena, což znamená, že pokud máte černý/šedý matcap, použití bílé barvy ho nezesvětlí.
+Jak napovídá název (MATerial CAPture), matcap v jediném obrázku zahrnuje informace o osvětlení i o materiálu.
+Protože materiál už je v matcapu obsažen, kanály malování drsnosti a kovovosti se ignorují.
+Barva malby se s matcapem násobí, takže pokud máte černý nebo šedý matcap, bílá barva ho nezesvětlí.
 
-Umělci tento režim často preferují pro účely sochání, protože jim umožňuje soustředit se na tvar a geometrii samotnou.
+Umělci tento režim při sochání často upřednostňují, protože se v něm mohou soustředit na samotný tvar a geometrii.
 
-Klepnutím na kouli se otevře prohlížeč obrázků. Můžete také přidat vlastní matcap; obecně lze použít jakoukoli fotografii, render nebo dokonce malbu koule, která byla těsně oříznuta do čtverce. Online je k dispozici mnoho knihoven matcapů, užitečným zdrojem je [nidorx matcap library](https://github.com/nidorx/matcaps).
+Klepnutím na kouli otevřete prohlížeč obrázků. Můžete přidat i vlastní matcap: obecně poslouží jakákoli fotka, render, nebo dokonce malba koule, která je těsně oříznutá do čtverce. Na internetu najdete mnoho knihoven matcapů, užitečným zdrojem je [knihovna matcapů nidorx](https://github.com/nidorx/matcaps).
 
-### Použít globální Matcap {#matcap-global}
+### Použít globální MatCap {#matcap-global}
 
-Obvykle umělci používají jeden matcap pro celou sochu, ale pokud je toto přepínání vypnuto, může mít každý objekt svůj vlastní matcap. To lze umělecky využít k dosažení výrazných výsledků.
+Umělci obvykle používají jediný matcap pro celou sochu, ale když tento přepínač vypnete, může mít vybraný objekt vlastní matcap. Dá se to využít umělecky k dosažení působivých výsledků.
 
 ::: tip
-Vypněte tuto volbu a použijte obrázek oční bulvy pro oči vaší postavy!
+Vypněte tuto volbu a použijte na oči svých postav obrázek oční bulvy!
 :::
 
 ### Rotace {#matcap-rotation}
-Matcap je specializovaná forma environment mapy, takže stejně jako environment mapu ho lze otáčet. Můžete to také kdykoli udělat ve viewportu tažením třemi prsty doleva a doprava.
+Matcap je zvláštní druh mapy prostředí, takže ho stejně jako mapu prostředí můžete otáčet. Kdykoli to můžete udělat i v zobrazení tažením 3 prsty doleva a doprava.
+
+Tlačítko zámku vedle posuvníku rotaci zamkne, takže tažení 3 prsty matcap omylem neotočí.
 
 
 
-## ![](/icons/circle_fill.webp) Bez osvětlení {#unlit}
+## ![](/icons/circle_fill.webp) Neosvětlené {#unlit}
 
-Tento režim zobrazuje pouze barvu povrchu. Může být užitečný pro kontrolu, zda jsou barvy povrchů vašich objektů takové, jak očekáváte, aniž by vás rozptylovala světla, stíny, odrazy či průhlednost. 
+Tento režim ukazuje jen barvu povrchu. Hodí se pro kontrolu, zda mají vaše objekty takovou barvu povrchu, jakou čekáte, aniž by vás rozptylovala světla, stíny, odrazy nebo průhlednost. 
 
-Tento režim lze také použít pro ne-fotorealistické rendery, k dosažení plochého, kresleného vzhledu.
+Tento režim můžete použít i pro nefotorealistické rendery s plochým, komiksovým vzhledem.
 
 ## ![](/icons/cube.webp) ID objektu {#object-id}
 
-Veškeré informace o osvětlení a povrchu jsou ignorovány a každý objekt je stínován jedinečnou plochou barvou. Pokud je toto vyrenderováno vedle PBR renderu, lze to v malířském programu použít k výběru podle barvy a tím k barevným korekcím konkrétních objektů.
+Veškeré informace o osvětlení a povrchu se ignorují a každý objekt se vystínuje jedinečnou plochou barvou. Když tento obrázek vyrenderujete vedle PBR renderu, můžete ho v malířském programu použít k výběru podle barvy, a upravit tak barvy jen u konkrétních objektů.
 
-Všimněte si, že tyto barvy se také objeví ve [stromovém zobrazení nabídky Scene](scene#tree-view).
+Tyto barvy se objeví i ve [stromovém zobrazení nabídky Scéna](scene#tree-view).
 
-### Náhodné id {#object-random}
+### Náhodné ID {#object-random}
 
 Vygeneruje novou sadu náhodných barev. 
 
 ## ![](/icons/link.webp) ID instance {#instance-id}
 
-Stejné jako Object ID, ale instance budou mít stejnou barvu. 
+Stejné jako ID objektu, ale instance mají stejnou barvu. 
 
-### Náhodné id {#instance-random}
+### Náhodné ID {#instance-random}
 
-Vygeneruje novou sadu náhodných barev.
+Vygeneruje novou sadu náhodných barev. 

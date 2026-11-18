@@ -2,190 +2,190 @@
 
 [[toc]]
 
-## Cara memulai model {#how-to-start-a-model}
+## Cara memulai sebuah model {#how-to-start-a-model}
 
-Pemula dalam pemodelan 3D sculpting sering bertanya cara terbaik untuk memulai sebuah model. Tidak ada cara yang paling benar, setiap orang punya preferensi berbeda. Berikut beberapa pendekatan yang paling umum.
+Pemula di dunia sculpting 3d sering bertanya cara terbaik untuk memulai sebuah model. Tidak ada cara terbaik, setiap orang punya preferensi masing-masing. Berikut beberapa pendekatan yang paling umum.
 
-### Memahat pada bola, multires {#sculpt-on-sphere-multires}
+### Memahat di bola, multiresolusi {#sculpt-on-sphere-multires}
 
-Model bawaan ketika Nomad dijalankan adalah cara yang paling umum. Gunakan tool move, clay, crease untuk mendorong dan menarik sphere hingga membentuk bentuk yang diinginkan, gunakan level subdivisi yang lebih rendah ketika ingin membuat perubahan besar dengan cepat, gunakan level subdivisi yang lebih tinggi untuk pekerjaan detail.
+Model bawaan saat Nomad dijalankan adalah cara yang paling umum. Gunakan alat pindah, clay, dan crease untuk mendorong dan menarik bola hingga terbentuk, gunakan tingkat subdivisi yang lebih rendah saat Anda ingin membuat perubahan besar dengan cepat, dan tingkat subdivisi yang lebih tinggi untuk mengerjakan detail.
 
-Masalah umum adalah Anda sering kehabisan poligon di area yang membutuhkannya, sementara di tempat lain justru terlalu banyak poligon. Misalnya jika Anda mendorong sphere bawaan menjadi satu tubuh penuh, kemungkinan Anda tidak punya cukup detail untuk membuat jari, sementara banyak poligon terbuang di bagian belakang kepala. Namun untuk bentuk yang sebagian besar bulat seperti kepala, hal ini bisa saja cukup.
+Masalah yang sering muncul adalah Anda kehabisan poligon di tempat yang membutuhkannya, sementara di tempat lain poligonnya terlalu banyak. Misalnya, jika Anda membentuk bola bawaan menjadi seluruh tubuh, kemungkinan detailnya tidak cukup untuk membuat jari-jari tangan, sementara banyak poligon terbuang di bagian belakang kepala. Namun untuk bentuk yang sebagian besar bulat seperti kepala, cara ini tidak masalah.
 
 ### Dyntopo {#dyntopo}
 
-Mengaktifkan Dyntopo akan secara adaptif menambah dan menghapus poligon saat Anda melakukan sculpt. Poligon ini akan berupa segitiga, dan pemula sering tidak menyukai tata letak yang berantakan dibandingkan tampilan rapi pada multires. Layak untuk terus dicoba! Jika Anda menyalakan smooth shading, mematikan wireframe dan berhenti mengkhawatirkan tata letak, mode ini bisa memberikan rasa seperti tanah liat. Jangan lupa bahwa jika Anda menggunakan kuas besar, atau kuas smooth, mode ini juga bisa menghapus poligon, sehingga tool selalu terasa cepat dan responsif. Setelah Anda menyelesaikan pass pertama sculpt, Anda bisa mengkloningnya dan menjalankannya melalui quad remesher untuk mendapatkan tata letak yang bagus, lalu memproyeksikan ulang detail asli ke level subdivisi tinggi.
+Mengaktifkan Dyntopo akan menambah dan mengurangi poligon secara adaptif saat Anda memahat. Poligon-poligon ini berupa segitiga, dan pemula sering tidak menyukai susunannya yang berantakan dibanding tampilan multiresolusi yang rapi. Tapi layak untuk terus dicoba! Jika Anda menyalakan shading halus, mematikan wireframe, dan berhenti mengkhawatirkan susunannya, mode ini bisa terasa sangat mirip tanah liat. Jangan lupa bahwa jika Anda memakai kuas besar atau kuas penghalus, mode ini juga bisa mengurangi poligon, sehingga alatnya selalu terasa cepat dan responsif. Setelah tahap pertama pahatan selesai, Anda bisa mengklonnya, memprosesnya dengan quad remesher untuk mendapatkan susunan yang rapi, lalu memproyeksikan ulang detail aslinya ke tingkat subdivisi yang tinggi.
 
 ### Voxel remesh {#voxel-remesh}
 
-Voxel remesh akan menerapkan topologi berbasis quad pada sculpt Anda. Operasi ini cepat pada resolusi rendah, dan bisa digunakan untuk dengan cepat mengganti poligon yang tertarik berlebihan atau terlalu padat dengan tata letak yang jaraknya merata. Ini bisa menjadi cara yang bagus untuk memulai tubuh penuh dari sebuah sphere; misalnya Anda mulai dengan kepala, Anda bisa menarik leher, voxel remesh. Tarik badan, voxel remesh, lengan, voxel remesh, dan seterusnya, sampai Anda mendapatkan bentuk dasar.
+Voxel remesh menerapkan topologi yang sebagian besar berbasis quad pada pahatan Anda. Operasi ini cepat pada resolusi rendah, dan bisa dipakai untuk segera mengganti poligon yang meregang atau terlalu padat dengan susunan yang merata. Ini bisa menjadi cara yang bagus untuk memulai seluruh tubuh dari sebuah bola; misalnya Anda mulai dari kepala, tarik keluar leher, voxel remesh. Tarik keluar tubuh, voxel remesh, lengan, voxel remesh, dan seterusnya, sampai bentuk dasarnya jadi.
 
-### Gunakan beberapa objek {#use-multiple-objects}
+### Memakai beberapa objek {#use-multiple-objects}
 
-Banyak panduan anatomi akan merepresentasikan tubuh dari bola, silinder, kubus sederhana. Anda juga bisa melakukan sculpt seperti ini di Nomad. Ini memiliki keuntungan karena memungkinkan Anda untuk melakukan parent objek dalam hierarki scene, sehingga Anda bisa memutar leher dan kepala akan ikut, misalnya. Kemampuan menggunakan tool gizmo untuk translasi/rotasi/skala yang presisi juga sangat berguna, dan Anda juga bisa mengatur pivot per bentuk sehingga mereka bergerak persis seperti yang Anda harapkan. Ketika blok-blok dasar sudah berada di posisi yang tepat, Anda bisa memilih semuanya dan melakukan voxel remesh atau boolean menjadi satu permukaan untuk sculpting yang lebih detail.
+Banyak panduan anatomi menggambarkan tubuh dari bola, silinder, dan kubus sederhana. Anda juga bisa memahat dengan cara ini di Nomad. Keuntungannya, Anda bisa menautkan objek sebagai induk-anak dalam hierarki adegan, jadi misalnya Anda bisa memutar leher dan kepala akan ikut. Kemampuan memakai alat gizmo untuk translasi/rotasi/skala yang presisi juga sangat berguna, dan Anda juga bisa mengatur poros per bentuk agar bergerak persis seperti yang Anda harapkan. Setelah balok-balok dasarnya berada di tempat yang tepat, Anda bisa memilih semuanya lalu melakukan voxel remesh atau boolean untuk menyatukannya menjadi satu permukaan untuk sculpting yang lebih detail.
 
-Tips praktis untuk cara kerja ini adalah mulai dengan sebuah sphere, skala menjadi bentuk sosis memanjang, tekan pivot, klik 'bottom', tekan pivot lagi. Sekarang Anda punya bagian tubuh yang bisa diklon, digeser sepanjang panjang sphere pertama, diklon, diputar, diklon, digeser, diklon dan seterusnya untuk menyusun tubuh dengan cepat.
+Tips praktis untuk cara kerja ini: mulai dengan bola, ubah skalanya menjadi seperti sosis memanjang, tekan poros, klik 'bawah', lalu tekan poros lagi. Sekarang Anda punya bagian tubuh yang bisa diklon, digeser sepanjang bola pertama, diklon, diputar, diklon, digeser, diklon, dst. untuk menyusun tubuh dengan cepat.
 
 ### Tabung {#tubes}
 
-Tool tube adalah cara yang sangat bagus untuk memulai sculpt. Ekor reptil, lengan, kaki, jari, alis, semuanya bisa dengan cepat digambar dengan tool tube, lalu mudah diedit setelahnya. Tool ini juga memungkinkan Anda memodifikasi profil penampang, sehingga perubahan bentuk bisa dilakukan dengan cepat. Anda bisa memvalidasi bentuk untuk mulai melakukan sculpt di atasnya, dan melakukan voxel remesh bersama objek lain untuk mendapatkan mesh tubuh penuh.
+Alat tabung adalah cara yang bagus untuk memulai pahatan. Ekor reptil, lengan, kaki, jari, alis, semuanya bisa dibuat sketsanya dengan cepat memakai alat tabung, lalu mudah disunting setelahnya. Alat ini juga memungkinkan Anda mengubah profil penampangnya, sehingga bentuknya bisa diubah dengan cepat. Anda bisa memvalidasi bentuknya untuk mulai memahatnya, dan melakukan voxel remesh bersama objek lain untuk mendapatkan mesh seluruh tubuh.
 
-### Gunakan aplikasi lain {#use-other-apps}
+### Memakai aplikasi lain {#use-other-apps}
 
-Sebagian orang lebih suka memulai model di aplikasi lain, itu juga tidak masalah. Tool seperti Blender atau Valence memungkinkan model dimulai dengan teknik low poly, lalu bisa diimpor ke Nomad untuk sculpting.
+Sebagian orang lebih suka memulai model di aplikasi lain, dan itu juga tidak masalah. Alat seperti Blender atau Valence memungkinkan model dimulai dengan teknik low poly, lalu diimpor ke Nomad untuk dipahat.
 
-### Gunakan preset bawaan {#use-the-built-in-presets}
+### Memakai prasetel bawaan {#use-the-built-in-presets}
 
-Dari menu project klik `Preset...` di kanan atas. Di sini Anda akan menemukan beberapa preset bentuk kepala dan tubuh dari Blender Foundation. Pilih yang Anda suka, ketuk lagi, tambahkan ke scene Anda. 
+Dari menu [File](files.md), klik `Prasetel…` di sebelah kiri bagian proyek. Di sini Anda akan menemukan beberapa prasetel bentuk kepala dan tubuh dari Blender foundation. Pilih yang Anda suka, ketuk lagi, lalu tambahkan ke adegan Anda. 
 
-### Gunakan model daring {#use-online-models}
+### Memakai model online {#use-online-models}
 
-Ada banyak model gratis yang tersedia secara online, misalnya polyhaven, sketchfab, turbosquid. Biasanya model-model ini bisa diimpor ke Nomad, dan bisa langsung di-sculpt, atau digunakan sebagai referensi.
+Ada banyak model gratis yang tersedia secara online, misalnya polyhaven, sketchfab, turbosquid. Biasanya model-model ini bisa diimpor ke Nomad, lalu dipahat langsung atau dipakai sebagai referensi.
 
 ### Tanpa aturan! {#no-rules}
 
-Pada akhirnya Anda bisa menggunakan kombinasi teknik-teknik ini, atau tidak sama sekali! Nomad sangat fleksibel dalam hal ini, pengguna mahir mungkin menggunakan tubes untuk memulai, lalu dyntopo, lalu menggabungkannya dengan kaki yang diunduh, lalu melakukan quad remesh pada semuanya, lalu multires untuk detail akhir. Apa pun yang cocok untuk Anda.
+Pada akhirnya, Anda bisa memakai kombinasi apa pun dari teknik-teknik ini, atau tidak sama sekali! Nomad sangat fleksibel dalam hal ini. Pengguna mahir mungkin memulai dengan tabung, lalu dyntopo, lalu menggabungkannya dengan kaki yang diunduh, lalu melakukan quad remesh pada semuanya, lalu multiresolusi untuk detail akhir. Apa pun yang cocok untuk Anda.
 
-## Facegroups {#facegroups}
+## Grup face {#facegroups}
 
-Tool facegroup bisa digunakan untuk banyak hal, seperti dijelaskan dalam video youtube ini: https://youtu.be/qtjYcxS8f9s?si=HGWTG-NqXGstWehx
+Alat grup face bisa dipakai untuk banyak hal, seperti yang dijelaskan dalam video youtube ini: https://youtu.be/qtjYcxS8f9s?si=HGWTG-NqXGstWehx
 
-Ini adalah ringkasan teks dari fitur-fitur yang dibahas dalam video tersebut.
+Berikut ringkasan tertulis dari fitur-fitur yang dibahas dalam video tersebut.
 
-### Mengapa facegroups? {#why-facegroups}
+### Mengapa grup face? {#why-facegroups}
 
-Facegroups memungkinkan Anda mengatur dan memilih faces ('faces' dan 'polygons' digunakan secara bergantian dalam manual ini). Ini lebih mudah dijelaskan dibandingkan tool seleksi dan organisasi lain di Nomad. Nomad memungkinkan Anda membuat objek, menamainya, melakukan parent, mudah untuk membuat struktur objek untuk mendefinisikan sebuah ruangan yang terdiri dari lantai, dinding, kursi, meja dan seterusnya.
+Grup face memungkinkan Anda mengatur dan memilih face ('face' dan 'poligon' dipakai bergantian dalam manual ini). Ini lebih mudah dijelaskan jika dibandingkan dengan alat seleksi dan pengaturan lain di Nomad. Nomad memungkinkan Anda membuat objek, memberinya nama, dan menjadikannya induk-anak, sehingga mudah membuat struktur objek untuk sebuah ruangan yang terdiri dari lantai, dinding, kursi, meja, dan sebagainya.
 
-Untuk karakter Anda mungkin melakukan block-out awal menggunakan objek terpisah untuk kepala, lengan, kaki, tetapi setelah Anda menggabungkan semua bagian menjadi satu mesh, struktur ini hilang. Anda bisa mengerjakan sub-bagian karakter dengan mask, tetapi bisa melelahkan jika harus terus-menerus melukis mask untuk tangan, lalu hidung, lalu tangan lagi.
+Untuk karakter, Anda mungkin membuat bentuk dasar awal dengan objek terpisah untuk kepala, lengan, kaki, tetapi begitu semua bagian digabung menjadi satu mesh, struktur ini hilang. Anda bisa mengerjakan bagian-bagian karakter dengan masker, tetapi lama-lama melelahkan jika harus terus mengecat masker untuk tangan, lalu hidung, lalu tangan lagi.
 
-Di sinilah facegroups berguna. Ini memungkinkan Anda memberi tag pada polygon faces dengan sebuah warna, lalu dapat memilih dan memanipulasi poly yang memiliki warna yang sama. Perhatikan bahwa warna facegroup dan warna vertex adalah dua hal yang berbeda.
+Di sinilah grup face berguna. Grup face memungkinkan Anda menandai face poligon dengan sebuah warna, lalu memilih dan memanipulasi poligon yang berwarna sama. Perlu diingat bahwa warna grup face dan warna verteks adalah dua hal yang berbeda.
 
-Analogi terdekat adalah mewarnai peta, lalu kemudian bisa memilih negara atau wilayah berdasarkan warna.
+Analogi yang paling mendekati adalah mewarnai peta, lalu nantinya bisa memilih negara atau wilayah berdasarkan warnanya.
 
-Untuk kepala karakter Anda bisa mewarnai zona untuk menandai rongga mata, hidung, bibir, dagu, telinga, lalu dengan mudah memilih zona tersebut nanti. Untuk sculpting hard surface dan mekanikal, ini bisa berguna untuk mendefinisikan panel dan bagian-bagian.
+Untuk kepala karakter, Anda bisa mewarnai zona untuk menandai rongga mata, hidung, bibir, dagu, telinga, lalu dengan mudah memilih zona-zona itu nanti. Untuk sculpting hard surface dan mekanis, grup face berguna untuk menentukan panel dan bagian.
 
-### Membuat dan mengedit facegroups {#creating-and-editing-facegroups}
+### Membuat dan menyunting grup face {#creating-and-editing-facegroups}
 
-Facegroups bisa diterapkan dengan kuas, di mana setiap sapuan baru membuat facegroup baru, atau bisa memilih facegroup di bawah kursor dan memperluasnya. Facegroups juga bisa dibuat menggunakan bentuk-bentuk.
+Grup face bisa diterapkan dengan kuas, di mana setiap goresan baru membuat grup face baru, atau kuas bisa memilih grup face di bawah kursor lalu memperluasnya. Grup face juga bisa dibuat dengan bentuk.
 
-* Dot, auto-pick aktif - satu drag akan mendefinisikan warna facegroup baru dan menerapkannya ke faces yang Anda lewati. Setiap drag baru akan mendefinisikan facegroup baru. Satu tap akan melakukan flood fill facegroup baru.
-* Dot, auto-pick nonaktif - ketika tombol auto-pick berada dalam mode 'sub', Nomad akan memilih facegroup di bawah kursor, dan menerapkannya selama sisa drag. Ini berguna untuk menyempurnakan facegroups tanpa harus memilihnya secara manual.
+* Titik, mode bawaan - satu seretan akan menentukan warna grup face baru dan menerapkannya ke face yang Anda seret. Setiap seretan baru menentukan grup face baru. Satu ketukan akan mengisi penuh grup face baru.
+* Titik, mode `Pilih` - saat tombol `Pilih` di bilah alat kiri aktif, Nomad akan memilih grup face di bawah kursor, lalu menerapkannya selama sisa seretan. Ini berguna untuk merapikan grup face tanpa harus memilihnya secara manual.
 
-### Masking {#masking}
+### Masker {#masking}
 
-Ketika tool mask aktif, dan tombol facegroup aktif di toolbar-nya, mengetuk sebuah facegroup akan mem-mask-nya.
+Saat alat masker aktif, dan tombol grup face di bilah alatnya aktif, mengetuk sebuah grup face akan memberinya masker.
 
 
 ### Menyembunyikan {#hiding}
 
-Ketika tool hide aktif, dan tombol facegroup aktif di toolbar-nya, mengetuk sebuah facegroup akan menyembunyikannya.
+Saat alat sembunyi aktif, dan tombol grup face di bilah alatnya aktif, mengetuk sebuah grup face akan menyembunyikannya.
 
-### Mengorganisir {#organizing}
+### Mengatur {#organizing}
 
-Seperti disebutkan sebelumnya facegroups bisa digunakan untuk mengorganisasi mesh Anda tanpa mengharuskan Anda membuat objek terpisah. Anda mungkin tidak ingin membagi kepala menjadi objek terpisah untuk hidung, dagu, telinga, tetapi sangat berguna jika bagian-bagian tersebut didefinisikan melalui facegroups.
+Seperti disebutkan sebelumnya, grup face bisa dipakai untuk mengatur mesh Anda tanpa harus membuat objek terpisah. Anda mungkin tidak ingin memecah kepala menjadi objek terpisah untuk hidung, dagu, telinga, tetapi sangat berguna jika bagian-bagian itu ditentukan lewat grup face.
 
 ### Wilayah UV {#uv-regions}
 
-Tool UV Atlas akan mencoba mendefinisikan seams secara otomatis, tetapi terkadang menempatkan seams di tempat yang tidak Anda inginkan. Jika facegroups ada pada sebuah objek, dan opsi facegroup aktif di opsi UV Atlas, maka ia akan menggunakan batas facegroup sebagai UV seams sebagai gantinya.
+Alat UV Atlas akan mencoba menentukan seam secara otomatis, tetapi terkadang menaruh seam di tempat yang tidak Anda inginkan. Jika ada grup face pada sebuah objek, dan opsi grup face aktif di opsi UV Atlas, alat ini akan memakai batas grup face sebagai seam UV.
 
 ### Quad remesher {#quad-remesher}
 
-Plugin quad remesher biasanya akan mengalirkan edges dengan baik pada model Anda, tetapi Anda bisa menggunakan facegroups untuk membantu mengarahkannya ketika opsi facegroup diaktifkan. Ini bisa memudahkan untuk mendefinisikan alur edge yang bersih di sekitar mata, tulang alis, bibir, lipatan pipi misalnya.
+Plugin quad remesher biasanya mengalirkan edge dengan rapi di model Anda, tetapi Anda bisa memakai grup face untuk membantu mengarahkannya jika opsi grup face diaktifkan. Ini memudahkan Anda menentukan aliran edge yang rapi di sekitar mata, tonjolan alis, bibir, atau lipatan pipi, misalnya.
 
-### Filter dengan alat lain {#filter-with-other-tools}
+### Menyaring dengan alat lain {#filter-with-other-tools}
 
-Banyak tool memiliki opsi untuk menyadari facegroup, baik dari menu tool utama, atau melalui menu stroke -> filtering. Misalnya tool smooth pada kekuatan di atas 100% bisa secara agresif menghaluskan detail di dalam sebuah facegroup, tetapi menjaga batas facegroup relatif utuh.
+Banyak alat punya opsi untuk memperhitungkan grup face, baik dari menu utama alatnya, atau lewat menu Goresan -> Filter. Misalnya, alat penghalus dengan kekuatan di atas 100% bisa menghaluskan detail secara agresif di dalam sebuah grup face, tetapi tetap menjaga batas grup face relatif utuh.
 
-### Merilekskan dan menghaluskan batas facegroup {#relax-and-smooth-facegroup-borders}
+### Merelaksasi dan menghaluskan batas grup face {#relax-and-smooth-facegroup-borders}
 
-Opsi relax di dalam tool facegroup sangat baik dalam menghaluskan batas facegroup sambil menjaga fitur lain tetap utuh. Ini bisa menjadi cara yang bagus untuk mendefinisikan wilayah batas facegroup yang halus sebelum melakukan quad remeshing.
+Opsi `Santai` di alat grup face sangat bagus untuk menghaluskan batas grup face sambil menjaga fitur lain tetap utuh. Ini bisa menjadi cara yang bagus untuk menentukan wilayah batas grup face yang halus sebelum melakukan quad remesh.
 
-## Keterbatasan pada tablet/mobile {#limitations-on-tabletmobile}
+## Keterbatasan di tablet/ponsel {#limitations-on-tabletmobile}
 
-Tablet dan ponsel saat ini sangat bertenaga, tetapi memiliki perbedaan penting dibanding komputer desktop dan laptop:
+Tablet dan ponsel saat ini sangat bertenaga, tetapi punya perbedaan penting dibanding komputer desktop dan laptop:
 
 ### Tanpa pendinginan aktif {#no-active-cooling}
 
-Komputer memiliki kipas dan/atau heatsink besar untuk menjaga tetap dingin, dan dirancang untuk berjalan pada suhu tinggi. Perangkat mobile biasanya dirancang untuk setipis mungkin terlebih dahulu, bukan untuk membantu menjaga bagian dalam tetap dingin. Jika Nomad dipaksa ke pengaturan kualitas tertinggi (mode pencahayaan PBR, material kompleks, banyak objek, banyak opsi post processing diaktifkan), ini bisa membuat perangkat terlalu panas dan menguras baterai dengan sangat cepat. 
+Komputer punya kipas dan/atau heatsink besar agar tetap dingin, dan dirancang untuk berjalan pada suhu tinggi. Perangkat keras seluler biasanya dirancang untuk tipis terlebih dahulu, bukan untuk membantu menjaga komponen di dalamnya tetap dingin. Jika Nomad dipaksa ke pengaturan kualitas tertingginya (mode pencahayaan PBR, material yang rumit, banyak objek, banyak opsi pascaproses aktif), perangkat bisa kepanasan dan baterainya bisa cepat habis. 
 
-Pendekatan yang lebih baik adalah menggunakan mode pencahayaan matcap, dan menggunakan render multiplier yang lebih rendah (di bagian atas menu post process). Pilihan-pilihan ini akan menjaga perangkat tetap dingin dan memungkinkan Anda melakukan sculpt lebih lama.
+Pendekatan yang lebih baik adalah memakai mode pencahayaan matcap, dan memakai `Resolusi render` yang lebih rendah (di bagian atas menu PascaProses). Pilihan ini menjaga perangkat tetap dingin dan memungkinkan Anda memahat lebih lama.
 
 ### Memori terbatas {#limited-memory}
 
-Nomad bisa mencapai hasil setara dengan sebagian besar aplikasi sculpting desktop, tetapi tidak bisa melanggar hukum fisika! Kebanyakan komputer desktop memiliki dua kali memori perangkat mobile, workstation yang dibuat untuk animasi 3D sering memiliki 4x atau 8x memori. Karena itu, sebaiknya Anda menyadari berapa banyak poligon yang digunakan, lakukan beberapa tes pada perangkat Anda untuk melihat kapan mulai terasa lag. Hampir semua perangkat yang bisa menjalankan Nomad dapat menangani 1 juta poligon dengan cukup mudah. Ipad Pro M2 bisa menangani 8 juta dengan nyaman, orang-orang telah menguji pada Ipad terbaru jauh di atas itu.
+Nomad bisa mencapai hasil yang setara dengan sebagian besar aplikasi sculpting desktop, tetapi tidak bisa melawan hukum fisika! Sebagian besar komputer desktop punya memori dua kali lipat perangkat seluler, dan workstation yang dibuat untuk animasi 3d sering punya memori 4x atau 8x lipat. Karena itu, ada baiknya Anda tahu berapa banyak poligon yang Anda pakai; lakukan beberapa uji coba di perangkat Anda untuk melihat kapan mulai terasa lambat. Hampir semua perangkat yang bisa menjalankan Nomad bisa menangani 1 juta poligon dengan cukup mudah. iPad Pro M2 bisa menangani 8 juta dengan nyaman, dan orang-orang yang mengujinya di iPad terbaru mencapai jauh di atas itu.
 
-Meski begitu, hanya sculpt yang sangat detail yang membutuhkan lebih dari 4 juta poly; jika Anda membuat objek yang relatif sederhana dan sering mendapati diri Anda melampaui 500.000, 1 juta, 4 juta, berarti Anda menggunakan terlalu banyak poligon! Pastikan mode smooth shaded diaktifkan di opsi.
+Meski begitu, hanya pahatan yang paling detail yang membutuhkan lebih dari 4 juta poligon; jika Anda membuat objek yang relatif sederhana dan sering melewati 500.000, 1 juta, 4 juta, berarti Anda memakai terlalu banyak poligon! Pastikan `Shading halus` diaktifkan di [Pengaturan](settings.md).
 
-### OS kurang toleran terhadap aplikasi intensif {#os-is-less-forgiving-with-intensive-apps}
+### OS kurang toleran terhadap aplikasi berat {#os-is-less-forgiving-with-intensive-apps}
 
-Apple dan Android mengharapkan aplikasi akan menyimpan dan memuat file kecil dengan sangat cepat. Mereka juga mengasumsikan aplikasi bisa berpindah tugas dengan sangat cepat. Sekali lagi Nomad melakukan beberapa trik cerdas untuk menjaga ukuran file relatif kecil dan menyimpannya dengan sangat cepat, tetapi jika OS mobile memutuskan Nomad memakan waktu terlalu lama, ia akan langsung mematikannya sebelum menyelesaikan tugas. Ini alasan lain untuk menjaga file tetap kecil; memungkinkan untuk bekerja dengan sculpt 37 juta poly seperti yang dilaporkan salah satu pengguna di discord, tetapi tidak direkomendasikan!
+Apple dan Android mengharapkan aplikasi menyimpan dan memuat file kecil dengan sangat cepat. Mereka juga menganggap aplikasi bisa berpindah tugas dengan sangat cepat. Sekali lagi, Nomad memakai beberapa trik cerdas untuk menjaga ukuran file relatif kecil dan menyimpannya dengan sangat cepat, tetapi jika OS seluler menganggap Nomad terlalu lama, OS akan langsung menghentikannya sebelum tugasnya selesai. Ini alasan lain untuk menjaga ukuran file tetap kecil; bekerja dengan pahatan 37 juta poligon memang mungkin, seperti yang dilaporkan seorang pengguna di discord, tetapi tidak disarankan!
 
-## Bekerja pada layar kecil {#working-on-small-screens}
+## Bekerja di layar kecil {#working-on-small-screens}
 
-Nomad dirancang untuk bekerja pada tablet, tetapi juga bekerja dengan baik di ponsel. Sculpting pada layar kecil seperti ponsel bisa dibuat lebih mudah dengan beberapa penyesuaian UI dan alur kerja:
+Nomad dirancang untuk tablet, tetapi juga bekerja dengan baik di ponsel. Memahat di layar kecil seperti ponsel bisa dibuat lebih mudah dengan beberapa penyesuaian UI dan alur kerja:
 
-* Tap 4 jari akan mengaktifkan/nonaktifkan seluruh UI, memberi Anda lebih banyak ruang untuk sculpt.
-* Drag 3 jari ke atas dan ke bawah akan mengubah radius kuas
-* Skala UI bisa dibuat lebih kecil untuk memuat lebih banyak tombol jika penglihatan Anda baik, atau lebih besar jika penglihatan Anda kurang baik!
-* Menu yang lebih lebar terkadang menghalangi sculpt, Anda bisa membuatnya transparan dan tanpa blur agar bisa melihat sculpt di bawah menu.
-* Jika melakukan sculpt dengan jari, gunakan opsi offset untuk memindahkan pusat kuas sedikit menjauh dari jari Anda.
-* Opsi-opsi ini dan banyak lagi bisa ditemukan di [Interface menu](./interface.md). 
+* Ketukan 4 jari akan menyembunyikan atau menampilkan seluruh UI, memberi Anda lebih banyak ruang untuk memahat.
+* Seretan 3 jari ke atas dan ke bawah akan mengubah jari-jari kuas
+* Skala UI bisa diperkecil agar muat lebih banyak tombol jika penglihatan Anda bagus, atau diperbesar jika penglihatan Anda kurang baik!
+* Menu yang lebih lebar terkadang bisa menghalangi pahatan; Anda bisa membuatnya transparan dan tidak buram agar pahatan di bawah menu tetap terlihat.
+* Jika memahat dengan jari, gunakan opsi [`Offset stroke`](stroke.md#stroke-offset) untuk menggeser pusat kuas sedikit menjauh dari jari Anda.
+* Opsi-opsi ini dan banyak lagi bisa ditemukan di [menu Antarmuka](./interface.md). 
 
 
 ## Deformer inflate atau peak {#inflate-or-peak-deformer}
 
-Banyak aplikasi 3D memiliki inflate deformer, yang akan mendorong semua vertex sepanjang normal-nya dengan jumlah yang bisa diatur. Meskipun Nomad saat ini belum memiliki deformers, perilaku ini bisa ditiru dengan kuas inflate:
+Banyak aplikasi 3d punya deformer inflate, yang mendorong semua verteks sepanjang normalnya sejauh jumlah yang bisa diatur. Meskipun Nomad saat ini belum punya deformer, perilaku ini bisa ditiru dengan kuas kembung:
 
-* Pilih kuas inflate
-* Dari [Stroke menu](./stroke.md#stroke) ubah metode stroke menjadi `Lock + Radius'
-* Buat radius kuas lebih besar dari sculpt Anda, zoom kamera menjauh dari sculpt jika perlu.
-* Klik lalu drag sebuah stroke di permukaan objek Anda; ketika radius lebih besar dari objek, seluruh bentuk akan mengembang secara merata dengan jumlah tetap.
-* Sesuaikan intensitas kuas untuk mengontrol jumlah pengembangan
-* Gunakan masking jika perlu untuk melindungi atau mengurangi efek inflate di area tertentu.
+* Pilih kuas kembung
+* Dari [menu Goresan](./stroke.md#stroke), ubah metode goresan ke `Kunci + jari-jari`
+* Buat jari-jari kuas lebih besar dari pahatan Anda, dan mundurkan kamera dari pahatan jika perlu.
+* Klik lalu seret sebuah goresan di permukaan objek Anda; jika jari-jarinya lebih besar dari objek, seluruh bentuk akan menggembung secara merata sejauh jumlah yang tetap.
+* Sesuaikan intensitas kuas untuk mengatur seberapa besar penggembungannya
+* Gunakan masker jika perlu, untuk melindungi atau mengurangi efek kembung di area tertentu.
 
-## Menghilangkan tonjolan atau 'jerawat' dari operasi voxel remesh {#remove-lumps-or-pimples-from-a-voxel-remesh-operation}
+## Menghilangkan benjolan atau 'jerawat' dari operasi voxel remesh {#remove-lumps-or-pimples-from-a-voxel-remesh-operation}
 
-Voxel remesh sangat bagus untuk membuat poligon yang jaraknya merata, tetapi terkadang menciptakan topologi yang akan menyebabkan benjolan kecil atau jerawat ketika dihaluskan. Misalnya:
+Voxel remesh sangat bagus untuk membuat poligon yang merata, tetapi terkadang menghasilkan topologi yang menimbulkan benjolan atau jerawat kecil saat dihaluskan. Contohnya:
 
-* Gunakan kuas crease pada sphere bawaan dan buat pusaran
-* Voxel remesh dengan 'build multiresolution at 3'
-* Smooth dengan intensitas tinggi
-* artefak muncul (lebih mudah dilihat dengan material matcap kontras tinggi):
+* Gunakan kuas crease pada bola bawaan dan buat pusaran
+* Lakukan voxel remesh dengan `Bangun multiresolusi` di 3
+* Haluskan dengan intensitas tinggi
+* artefak muncul (lebih mudah terlihat dengan material matcap yang kontrasnya tinggi):
 
 ![](/videos/tip_pimples_before.mp4)
 
-Untuk memperbaiki lewat sculpting, coba opsi `Stable smoothing` di pengaturan smooth. Ini bisa menangani tata letak topologi yang tidak rata dari voxel remesh, dan menghasilkan hasil yang bersih.
+Untuk memperbaikinya lewat sculpting, coba opsi `Pelembutan stabil` di pengaturan penghalus. Opsi ini bisa menangani susunan topologi voxel remesh yang tidak merata, dan memberi hasil yang bersih.
 
 ![](/videos/tip_pimples_stable_smooth.mp4)
 
-Untuk memperbaiki topologi itu sendiri, gunakan primitive baru, atau tool quad remesh, atau pemodel 3D eksternal, dan proyeksikan detail dari mesh asli ke mesh baru melalui `Topology -> Misc -> Reproject`. 
+Untuk memperbaiki topologinya sendiri, gunakan primitif baru, alat quad remesh, atau aplikasi pemodelan 3d eksternal, lalu proyeksikan detail dari mesh asli ke mesh baru lewat `Topologi -> Bake -> Proyeksi ulang → Verteks`. 
 
 ![](/videos/tip_pimples_reproject.mp4)
 
 ## Pencahayaan siang hari {#daylight-lighting}
 
-Render PBR bawaan, seperti namanya, berbasis fisika, yang seperti foto digital mentah bisa terlihat agak pudar dan datar. Lampu dan post processing Nomad bisa digunakan untuk membuat render terlihat lebih hidup.
+Render PBR bawaan, sesuai namanya, berbasis fisika, dan seperti foto digital yang belum diolah, hasilnya bisa tampak sedikit pucat dan datar. Cahaya dan pascaproses Nomad bisa dipakai untuk membuat render tampak lebih hidup.
 
-Berikut render bawaan, mari kita lihat apakah bisa dibuat lebih baik:
+Berikut render bawaan, mari kita lihat apakah bisa dibuat lebih bagus:
 ![](/images/tips_lighting_default.webp)
 
-Mengaktifkan post processing dan tonemapping bisa menambah kecerahan dan kontras:
+Mengaktifkan pascaproses dan tonemapping bisa menambah kecerahan dan kontras:
 
 ![](/images/tips_lighting_tonemap.webp)
 
-Untuk fokus pada lampu, environment light bawaan bagus untuk sculpting, tetapi bisa ditingkatkan untuk render akhir. Salah satu cara memikirkannya adalah memisahkan direct light (misalnya matahari) vs environment light (misalnya cahaya dari birunya langit, tanah). Dengan mengurangi environment light dan memutarnya, ini mulai menangkap seperti apa pencahayaan jika subjek berada di area teduh:
+Untuk cahayanya, cahaya lingkungan bawaan sudah bagus untuk memahat, tetapi bisa ditingkatkan untuk render akhir. Salah satu cara memikirkannya adalah memisahkan cahaya langsung (misalnya matahari) dari cahaya lingkungan (misalnya cahaya dari birunya langit, atau dari tanah). Dengan mengurangi cahaya lingkungan dan memutarnya, hasilnya mulai menyerupai pencahayaan subjek yang berada di area teduh:
 
 ![](/images/tips_lighting_env.webp)
 
-Sebuah direct light bisa ditambahkan, dan intensitasnya ditingkatkan untuk mensimulasikan sinar matahari yang keras. Menyeimbangkan ini dengan environment light akan menghasilkan hasil yang menyenangkan:
+Cahaya langsung bisa ditambahkan, dan intensitasnya dinaikkan untuk meniru sinar matahari yang terik. Menyeimbangkannya dengan cahaya lingkungan akan memberi hasil yang enak dilihat:
 
 ![](/images/tips_lighting_sunlight.webp)
 
-Karakter bisa mendapatkan manfaat dari penggantian material menjadi subsurface, dan menempatkan spotlight di belakang karakter mengarah ke telinga untuk membuatnya berpendar:
+Karakter bisa terlihat lebih bagus jika materialnya diganti menjadi subsurface, dan lampu sorot ditempatkan di belakang karakter mengarah ke telinga agar telinganya tampak bercahaya:
 
 ![](/images/tips_lighting_sss.webp)
 
-Lalu bereksperimenlah dengan sisa pengaturan post process! Global Illumination dan Ambient Occlusion membantu pencahayaan yang lebih realistis. Curvature dan Sharpen bisa membantu menonjolkan lebih banyak detail sculpt. Chromatic Aberration, Depth of Field, Grain, Bloom, Vignette membantu mensimulasikan efek kamera. Perhatikan bahwa ketika fitur diaktifkan, pencahayaan dan nilai post processing lain perlu disesuaikan untuk mengompensasi.
+Lalu bereksperimenlah dengan pengaturan pascaproses lainnya! Global Illumination dan Ambient Occlusion membantu menghasilkan pencahayaan yang lebih realistis. Curvature dan Sharpen bisa membantu menonjolkan lebih banyak detail pada pahatan. Chromatic Aberration, Depth of Field, Grain, Bloom, dan Vignette membantu meniru efek kamera. Perlu diingat, setiap kali fitur diaktifkan, pencahayaan dan nilai pascaproses lainnya perlu disesuaikan untuk mengimbanginya.
 
-Berikut render dengan serangkaian penuh penyesuaian post processing:
+Berikut render dengan serangkaian penyesuaian pascaproses lengkap:
 ![](/images/tips_lighting_final.webp)

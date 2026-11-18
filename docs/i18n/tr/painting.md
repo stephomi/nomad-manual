@@ -1,143 +1,167 @@
-# ![](/icons/paint.webp) Boyama {#painting}
+# ![](/icons/paint.webp) Boya {#painting}
 
-Boya darbelerinin renk, pürüzlülük, metalliğini kontrol edin; boya özniteliklerini taşma (flood fill) ile doldurun ve boya araçlarının katmanlar, maskeler, gizli seçimlerle nasıl etkileşime girdiğini ayarlayın.
+Boya darbelerinin rengini, pürüzlüğünü ve metalikliğini kontrol eder; boya özelliklerini tüm yüzeye doldurmanıza olanak tanır ve boya araçlarının katmanlar, maskeler ve gizlenmiş seçimlerle nasıl etkileşime gireceğini belirler.
 
 ![](/images/paint_overview.webp)  
 
 ## Genel bakış {#overview}
 
-Nomad, PBR vertex boyama kullanır. Bu ne anlama geliyor?
+Nomad, PBR verteks boyama kullanır. Bu ne anlama geliyor?
 
 ### PBR {#pbr}
-PBR, yani Fiziksel Tabanlı Görselleştirme, film, televizyon, oyunlar ve mobil için popüler bir bilgisayar grafiği tekniğidir. Işıkları fiziksel özelliklere dayandırarak ve yüzeyleri renk, pürüzlülük, metanlık ile tanımlayarak çok çeşitli fotogerçekçi görünümler elde edilebilir.
+PBR (Physically Based Rendering, yani fiziksel tabanlı işleme), film, televizyon, oyun ve mobil alanlarında yaygın bir bilgisayar grafiği tekniğidir. Işıklandırmayı fiziksel özelliklere dayandırıp yüzeyleri renk, pürüzlük ve metaliklik ile tanımlayarak, çok çeşitli foto-gerçekçi görünümler elde edilebilir.
 
-### Tepe noktası (vertex) boyama {#vertex-painting}
+### Verteks boyama {#vertex-painting}
 
-Vertex boyama, boya bilgisinin dokularda değil, modelin vertekslerinde saklandığı anlamına gelir. Nomad yüz binlerce, çoğu zaman milyonlarca verteksi olan modelleri işleyebildiği için, modellerinizin son derece detaylı yüzey boyamasına sahip olması gerekir; eğer detayı yontabiliyorsanız, o detayı boyayabilirsiniz de.
+Verteks boyama, boya bilgisinin dokularda değil, modelin vertekslerinde saklandığı anlamına gelir. Nomad yüz binlerce, çoğu zaman milyonlarca verteksli modelleri işleyebildiği için modelleriniz son derece ayrıntılı yüzey boyamalarına sahip olabilir: bir ayrıntıyı şekillendirebiliyorsanız, onu boyayabilirsiniz de.
 
-Bu aynı zamanda Nomad'de boyamanın, diğer 3B uygulamalarda genellikle yavaş ve teknik bir süreç olan UV eşleme gerektirmediği anlamına gelir. Birçok diğer 3B uygulama, Nomad'in desteklediği yüksek vertex sayılarını desteklemez, ancak Nomad'in ayrıca iyi doku pişirme (baking) ve küçültme (decimation) araçları da vardır.
+Bu aynı zamanda Nomad'da boyama yapmak için UV haritalama gerekmediği anlamına gelir; UV haritalama diğer 3d uygulamalarında çoğu zaman yavaş ve teknik bir süreçtir. Diğer pek çok 3d uygulaması Nomad'ın işleyebildiği yüksek verteks sayılarını desteklemez; ama Nomad'da bu konuda yardımcı olacak iyi doku pişirme ve azaltma araçları da vardır.
 
-### Dokulandırma {#texturing}
+### Dokular {#texturing}
 
-Nomad dokuları destekler, ancak bunların içe aktarılan bir modelde mevcut olması ya da vertex boyamayı dokulara pişirerek elde edilmesi gerekir. 
+Nomad dokuları destekler, ancak dokuların içe aktarılan bir modelde bulunması ya da verteks boyamasının dokulara pişirilmesiyle elde edilmesi gerekir.
 
-Bir doku basitçe bir görüntüdür, ancak 3B bağlamda genellikle bir nesneye atanmış bir görüntü anlamına gelir.
-Bir görüntüyü bir modelin etrafına sarmak için modelin doku koordinatlarına (UV) ihtiyacı vardır.
+Doku basitçe bir görseldir, ama 3d bağlamında genellikle bir nesneye atanmış bir görseli ifade eder.
+Bir görseli bir modelin etrafına sarmak için modelin doku koordinatlarına (UV) ihtiyacı vardır.
 
-Nomad bunları [otomatik olarak hesaplayabilir](topology.md#uv-unwrap), ancak genel kalite üzerinde fazla kontrolünüz olmaz.
+Nomad bunları [otomatik olarak hesaplayabilir](topology.md#uv-unwrap), ancak genel kalite üzerinde pek kontrolünüz olmaz.
 
 ::: tip
 Örnek bir iş akışı:
-- Nomad'de yontun, ardından [UV açma işlemi yapın](topology.md#uv-unwrap)
-- Eğer Nomad'de boyamaya zaten başladıysanız, [vertex boyamayı dokulara aktarabilirsiniz](topology.md#bake-vertex-colors-to-texture)
+- Nomad'da şekillendirin, ardından [UV açma](topology.md#uv-unwrap) yapın
+- Nomad'da boyamaya zaten başladıysanız [verteks boyamasını dokulara aktarabilirsiniz](topology.md#bake-texture)
 - Procreate'e dışa aktarın
 - Procreate'te dokulandırın
-- Render amacıyla tekrar Nomad'e aktarın
+- İşleme için Nomad'a geri aktarın
 :::
 
-Genel bakış bu kadar, şimdi boyama menüsünün bölümlerini inceleyelim:
+Genel bakış bu kadar; şimdi boya menüsünün bölümlerini inceleyelim:
 
 
-## Fırça darbesiyle boyama {#stroke-painting}
+## Darbe boyama {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
-Bu araç için boyamayı etkinleştirin; aynı anda hem yontmanız hem de boyamanız gerektiğinde kullanışlıdır.
+Bu araç için boyamayı etkinleştirir; aynı anda hem şekillendirip hem boyamanız gerektiğinde kullanışlıdır. Bir araç boyama yapabildiği halde bu onay kutusu kapalıysa, başlığın yanındaki bir uyarı simgesi bunu size hatırlatır.
 
-Boyamanın birincil işlev olduğu araçlarda (örn. Paint, Smudge, Mask) bu onay kutusu yoktur.
+Boyamanın asıl işlev olduğu araçlarda (örneğin Boya, Leke, Maske) bu onay kutusu bulunmaz.
 
-### Boya yoğunluğu {#paint-intensity}
+### ![](/icons/opacity.webp) Boyama yoğunluğu {#paint-intensity}
 
-Birincil araç yoğunluğundan farklı bir yoğunluk kullanmanıza izin veren bir kaydırıcı.
+Aracın asıl yoğunluğundan farklı bir yoğunluk kullanmanızı sağlayan bir kaydırıcı.
 
-`Alpha`, `Falloff` ve `Randomize` onay kutuları, bu özelliklerin boyamayı etkileyip etkilemeyeceğini belirler. Örneğin, kil aracı için rastgeleleştirmeyi etkinleştirmiş olabilirsiniz, ancak renk rastgeleleştirilmeyebilir.
+Yanındaki kaydırıcılar düğmesi, aynı anda hem şekillendiren hem boyayan araçlar için yan çubuğa hızlı bir boyama yoğunluğu kaydırıcısı ekler.
+
+`Alfa`, `Düşüş` ve `Yoğunluğu rastgeleleştir` düğmeleri, bu özelliklerin boyamayı etkileyip etkilemeyeceğini belirler. Örneğin kil aracı için rastgeleleştirmeyi açabilirsiniz, ama renk rastgeleleştirilmez.
+
+* `Alfa` - devre dışıyken boyama alfayı yok sayar ve fırça alanının tamamını kaplar. VDM aracında bu düğmenin yerini, damgada saklanan malzemeyi açıp kapatan `Damga malzemesi` alır.
+* `Düşüş` - devre dışıyken boyama, fırçanın kenarına kadar tam yoğunlukta kalır.
+* `Yoğunluğu rastgeleleştir` - darbe rastgeleleştiricisinin yoğunluk kısmının boyamayı etkileyip etkilemeyeceği. Konum, dönüş ve ölçek rastgeleleştirmesi her zaman damganın tamamını hareket ettirir.
+
+Bu seçenekler [Tümünü boya](#paint-all) tarafından yok sayılır, ama onun üç düzlemli varyantı alfayı kullanır.
+
+### ![](/icons/link.webp) Global malzeme {#global-material}
+Bu seçenek etkinse, seçili malzeme diğer araçlarınkiyle aynı olur. Yalnızca pürüzlük, metaliklik ve renk ayarlarının dikkate alındığını unutmayın. Bu araca kendi malzemesini vermek için devre dışı bırakın.
 
 
 ## Malzeme {#material}
 ![](/images/paint_material.webp) 
 
-İlk simge bir malzeme önizleme şeklidir. 3B malzeme önizlemesi üzerinde sürüklemek onu döndürür. 
+İlk simge, bir malzeme önizleme şeklidir. 3d malzeme önizlemesi üzerinde sürüklemek onu döndürür.
 
-İkinci simge, seçili alfa ve düşüş (falloff) seçenekleriyle boya darbesinin bir önizlemesidir.
+İkinci simge, seçili alfa ve düşüş seçenekleriyle boya darbesinin bir önizlemesidir.
 
-Malzeme başlığının yanındaki önizleme düğmesi, None, Material veya Triplanar arasında geçiş yapmanızı sağlar. Bu, boya özelliklerini etkileşimli olarak değiştirdiğinizde ne olacağını belirler:
+### ![](/icons/falloff.webp) Eğriler {#curves}
 
-* `None` - Özellikleri ayarlarken model üzerinde hiçbir önizleme gösterilmez
-* `Material` - Özellikleri ayarlarken malzeme değerleri nesne üzerinde önizlenir. Dokular kullanıyorsanız ve modelin UV'leri varsa, UV'ler kullanılır.
-* `Triplanar` - Malzeme, Triplanar projeksiyon olarak önizlenir. 
+[PBR kaydırıcılarının](#pbr-sliders) doku yuvaları için bir eğri düzenleyici açar. Doku değerlerini, görsel dosyasına dokunmadan, boyanmadan önce yeniden eşler. Bir doku yuvasındaki küçük eğri simgesi, eğrisinin düzenlendiğini gösterir.
 
-Damlalık, sahnenizdeki bir nesneden tüm özellikleri örneklemek için kullanılabilir.
+### ![](/icons/cog.webp) Malzeme seçenekleri {#material-options}
 
-## Malzeme Ön Ayarları {#material-presets}
-3B önizleme şekline dokunmak, malzemelerin bir ön ayar menüsünü açar; bunlar kendi ön ayarlarınızı tanımlamak için klonlanabilir.
+Başlığın yanındaki `Malzeme` düğmesi iki ayar içerir.
+
+`Malzeme önizlemesi`, renk, pürüzlük, metaliklik, opaklık ve yoğunluk kaydırıcılarını değiştirirken seçili nesnede ne olacağını belirler:
+
+* `Yok` - Özellikleri ayarlarken model üzerinde hiçbir önizleme gösterilmez
+* `Malzeme` - Özellikleri ayarlarken malzeme değerleri nesne üzerinde önizlenir.
+* `Üç düzlemli` - Malzeme, üç düzlemli bir projeksiyon olarak önizlenir.
+
+Aşağıdaki renk, pürüzlük, metaliklik ve opaklık onay kutuları, [Malzeme damlalığı](#material-picker) ile hangi kanalların değiştirileceğini seçer.
+
+### ![](/icons/dropper.webp) Malzeme damlalığı {#material-picker}
+
+Damlalık, sahnenizdeki herhangi bir nesneden, imlecin altındaki malzemeyi alır. Yalnızca [Malzeme seçenekleri](#material-options) içinde işaretlenen kanallar değiştirilir.
+
+## Malzeme önayarları {#material-presets}
+3d önizleme şekline dokunmak bir malzeme önayarları menüsü açar; bunlar klonlanarak kendi önayarlarınızı tanımlayabilirsiniz.
 
 ![](/images/paint_presets.webp) 
 
-`Embed Textures` ve `Alpha` anahtarları etkinleştirildiğinde, bu malzeme tarafından kullanılan tüm dokular ön ayar içinde saklanır. Bu aşağıda daha ayrıntılı açıklanmıştır.
+`Dokuları göm` seçeneği, bu malzemenin kullandığı dokuların bir kopyasını önayarın içinde saklar. Bu seçenek kapalıyken önayar yalnızca Nomad'ın textures/ klasöründeki dokulara başvurur. Dokulu bir önayarı, dokularını ayrıca göndermeden paylaşmak istediğinizde açın.
+
+`Alfa Kanalını Dahil Et`, fırça alfasını da malzeme önayarına kaydeder.
 
 ## PBR kaydırıcıları {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 [PBR](shading.md#pbr) boyama 4 kanal kullanır:
-- `Color` Boyanacak renk. Damlalık, modelin diğer kısımlarından veya referans görüntülerden renk seçmek için kullanılabilir.
-- `Roughness` Bir yüzeyin ne kadar "pürüzlü" veya "düzgün" olduğunu belirtir. Düşük pürüzlülük değeri, yansımaların keskin olacağı anlamına gelir.
-- `Metalness` Yüzeyin metalik olup olmadığını belirtir. Değer çoğu zaman ya %0 ya da %100 olmalıdır, aradaki değerler istisnai olmalıdır.
-- `Opacity` Malzemenin ne kadar görülebilir olduğunu belirtir. Teknik olarak PBR spesifikasyonunun bir parçası değildir, ancak birçok durumda kullanışlıdır. 1 tamamen opak, 0 şeffaftır. Opaklık ve kırılmanın farklı şeyler olduğuna dikkat edin; Nomad'de kırılma, kırılma (refraction) malzemesiyle ele alınır. 
+- `Renk` Boyanacak renk. Damlalık, modelin diğer bölümlerinden veya referans görsellerden renk seçmek için kullanılabilir.
+- `Pürüzlük` Bir yüzeyin ne kadar "pürüzlü" veya "pürüzsüz" olduğunu belirtir. Düşük bir pürüzlük değeri, yansımaların keskin olacağı anlamına gelir.
+- `Metaliklik seviyesi` Yüzeyin metalik olup olmadığını belirtir. Değer çoğu zaman ya %0 ya da %100 olmalıdır; aradaki değerler istisnai olmalıdır.
+- `Opaklık` Malzemenin ne kadar saydam olduğu. Kesin konuşmak gerekirse PBR tanımının bir parçası değildir, ama birçok durumda işe yarar. 1 tamamen opak, 0 saydamdır. Opaklık ile kırılmanın farklı şeyler olduğunu unutmayın; Nomad'da kırılma, kırılma malzemesiyle sağlanır.
 
-Bir malzeme ön ayarı seçerseniz, 3 kanal aynı anda boyanır (opaklık genellikle kasıtlı olarak hariç tutulur). Bu, yalnızca 'kırmızı' boyamak yerine, 'kırmızı pürüzlü metal' veya 'beyaz düzgün plastik' boyayabileceğiniz anlamına gelir.
+Bir malzeme önayarı seçerseniz 3 kanal aynı anda boyanır (opaklık çoğu zaman bilerek hariç tutulur). Yani yalnızca 'kırmızı' boyamak yerine 'kırmızı, pürüzlü bir metal' ya da 'beyaz, pürüzsüz bir plastik' boyayabilirsiniz.
 
-Kare, bir doku yuvasıdır; bu özelliğe katı bir değer yerine bir doku kullanmak için üzerine tıklayın.
+Kare, bir doku yuvasıdır; o özellik için sabit bir değer yerine doku kullanmak üzere ona tıklayın. Bir renk dokusu rengi tonlar; pürüzlük, metaliklik veya opaklık dokusu ise kaydırıcının değerinin yerini alır (bunu göstermek için etiketinin üstü çizilir). Opaklık dokusu için `Alfayı Değer Olarak Kullan`, dokunun gri tonlama değeri yerine alfa kanalını okur.
 
-Kaydırıcıların yanındaki fırça simgesi, bu özelliği nesneniz üzerinde taşma (flood fill) ile doldurur.
+VDM aracında, damga kendi malzemesini taşıyorsa, doku yuvasının yanında onu gösteren ek bir yuva belirir. Damganın o kanalını kullanmak veya yok saymak için ona dokunun.
 
-Onay kutusu, belirli bir özelliği etkinleştirir veya devre dışı bırakır; böylece yalnızca rengi boyayabilir veya örneğin yalnızca pürüzlülük ve opaklığı boyayabilirsiniz. 
+Kaydırıcıların yanındaki fırça simgesi, o özelliği nesnenizin tamamına doldurur.
 
-İşte farklı pürüzlülük ve metanlık özelliklerine bazı örnekler:
+Onay kutusu o özelliği etkinleştirir veya devre dışı bırakır; böylece örneğin yalnızca renk, ya da yalnızca pürüzlük ve opaklık boyayabilirsiniz.
 
-|                | Metalness 0%                      | Metalness 100%               |
+Farklı pürüzlük ve metaliklik değerlerine bazı örnekler:
+
+|                | Metaliklik %0                      | Metaliklik %100               |
 | :------------: | :-------------------------------: | :--------------------------: |
-| Roughness 0%   | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
-| Roughness 50%  | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
-| Roughness 100% | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
+| Pürüzlük %0   | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
+| Pürüzlük %50  | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
+| Pürüzlük %100 | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
 
 ::: warning
-[Matcap render](shading.md#matcap) modunda yalnızca renk desteklenir, metanlık ve pürüzlülük yok sayılır.
+Pürüzlük ve metaliklik için [Aydınlatılmış (PBR)](shading.md#pbr) gölgelendirme modu gerekir. [MatCap](shading.md#matcap) veya [Aydınlatmasız](shading.md#unlit) modunda yok sayılırlar ve menü bir uyarı gösterir.
 :::
 
 ::: tip
-PBR boyama için dokular kullanırken, genellikle `Stamp` gibi bir araca geçmek veya dokuyu bulaştırabilen nokta (dot) dışındaki bir modu kullanmak için darbe menüsünü kullanmak faydalıdır.
+PBR boyama için doku kullanırken, `Damga` aracı gibi bir araca geçmek ya da darbe menüsünden nokta dışında bir mod seçmek çoğu zaman işe yarar; nokta modu dokuyu bulaştırabilir.
 
 ![](/videos/paint_color_texture.mp4)  
 :::
 
 ::: tip
-Daha düşük poligon sayısına sahip bir nesne üzerinde metalik bir yüzey boyuyorsanız, `Smooth Shading` özelliğini [genel](settings.md#smooth-shading) veya [nesne bazında](material.md#smooth-shading) açmayı düşünebilirsiniz.
+Düşük poligonlu bir nesneye metalik bir yüzey boyuyorsanız, `Yumuşak gölgelendirme` seçeneğini [genel olarak](settings.md#smooth-shading) veya [nesne başına](material.md#smooth-shading) açmayı düşünebilirsiniz.
 :::
 
-## Tümünü boya {#paint-all}
+## ![](/icons/paint.webp) Tümünü boya {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
-Geçerli malzemeyi nesneye, standart modda 'Paint All' ile veya Triplanar projeksiyon olarak uygulayın.
+Geçerli malzemeyi seçili nesnelere uygular: ya standart modda `Tümünü boya` ile, ya da üç düzlemli bir projeksiyon olarak `Tümünü boya + Üç düzlemli` ile. Üç düzlemli varyant, tamamlanmamış primitiflerde kullanılamaz.
 
-Renk/metanlık/pürüzlülük/opaklık kaydırıcılarının yanındaki onay kutuları dikkate alınır; devre dışı bırakılan özellikler doldurulmaz.
+Renk/metaliklik/pürüzlük/opaklık kaydırıcılarının yanındaki onay kutuları dikkate alınır; devre dışı bırakılan özellikler doldurulmaz.
 
-Ek düğmeler, tümünü boya işleminin nasıl daha fazla etkilenebileceğini kontrol eder:
+Ek düğmeler, tümünü boya işleminin ayrıca nasıl etkileneceğini kontrol eder. Çoğu bir yüzde gösterir ve hiçbir etkisi olmayacaklarında gri görünürler:
 
-| Icon                        | Açıklama                                      |
+| Simge                        | Açıklama                                   |
 | :-------------------------: | :-------------------------------------------: |
-| ![](/icons/tool_mask.webp) | Maskelenmiş alanlar etkilenmez.               |
-| ![](/icons/tool_hide.webp) | Gizli alanlar etkilenmez.                     |
-| ![](/icons/opacity.webp)   | Yukarıdaki araç boyama faktörünü kullan.      |
-| ![](/icons/layer.webp)     | Bir katmanın boyanmamış alanları etkilenmez.  |
-| ![](/icons/triplanar.webp) | Triplanar ayarlarının göstergesi              |
-| ![](/icons/cog.webp)       | Triplanar ayarlarını aç                       |
+| ![](/icons/shield.webp)    | Maskelenmiş alanlar etkilenmez.               |
+| ![](/icons/tool_hide.webp) | Gizlenmiş alanlar etkilenmez.               |
+| ![](/icons/opacity.webp)   | Yukarıdaki araç boyama faktörünü kullanır.           |
+| ![](/icons/layer.webp)     | Bir katmanın boyanmamış alanları etkilenmez. |
+| ![](/icons/triplanar.webp) | `Verteks`: üç düzlemli varyant, gösterilen araç yoğunluğuyla yüzeyi alfa ile de kaydırır. |
+| ![](/icons/cog.webp)       | Üç düzlemli ayarlarını açar                   |
 
-### Üç düzlemli (triplanar) ayarları {#triplanar-settings}
+### ![](/icons/cog.webp) Üç düzlemli ayarları {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
-[Malzeme menüsündeki triplanar ayarlarına](material.md#triplanar) benzer şekilde, projeksiyonların karışımını, döşemeyi (tiling) ve ofsetleri kontrol edebilirsiniz. 
+[Malzeme menüsündeki üç düzlemli ayarlarına](material.md#triplanar) benzer şekilde, projeksiyonların karışımını, döşemeyi ve kaydırmaları kontrol edebilirsiniz.
 
-Değerleri ayarlarken kalıcı bir önizleme etkinleştirmek için bu menünün üst kısmındaki önizleme onay kutusunu kullanın.
-
-## Global malzeme {#global-material}
-Bu seçenek etkinleştirilirse, seçili malzeme diğer araçlarla aynı olur. Yalnızca pürüzlülük, metanlık ve renk ayarlarının dikkate alındığını unutmayın.
+Değerleri ayarlarken kalıcı bir önizleme açmak için bu menünün üstündeki önizleme onay kutusunu kullanın.

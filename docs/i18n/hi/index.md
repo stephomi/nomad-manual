@@ -1,4 +1,4 @@
-# अवलोकन {#overview}
+# ![](/icons/home.webp) अवलोकन {#overview}
 
 <!-- 
 [[toc]]
@@ -9,35 +9,37 @@
 -->
 
 ::: tip Nomad में नए हैं?
-[Getting Started](gettingstarted.md) गाइड पढ़ें।
+[शुरुआत करें](gettingstarted.md) गाइड पढ़ें।
 :::
 
 
 ## विषय-सूची {#table-of-contents}
 
-| मेनू                           | आइकन                          | विवरण                                              |
-| :----------------------------: | :---------------------------: | :------------------------------------------------: |
-| [Files](files.md)              | ![](/icons/open.webp)        | अपने प्रोजेक्ट प्रबंधित करें, एक्सपोर्ट, इम्पोर्ट, आदि |
-| [Scene](scene.md)              | ![](/icons/scene.webp)       | नया प्रिमिटिव जोड़ें और अपने सीन ऑब्जेक्ट प्रबंधित करें |
-| [Topology](topology.md)        | ![](/icons/multires.webp)    | मॉडल की टोपोलॉजी संपादित करें                     |
-| [Material](material.md)        | ![](/icons/material.webp)    | मटेरियल (ऑब्जेक्ट-स्तर)                           |
-| [Shading](shading.md)          | ![](/icons/sun.webp)         | अपने सीन को कैसे लाइट करें                         |
-| [Post Process](postprocess.md) | ![](/icons/postprocess.webp) | पोस्ट प्रोसेसिंग (स्क्रीन-स्पेस विज़ुअल इफेक्ट्स) |
-| [Background](background.md)    | ![](/icons/image.webp)       | बैकग्राउंड बदलें और रेफरेंस इमेज जोड़ें           |
-| [Camera](camera.md)            | ![](/icons/camera.webp)      | कैमरा नियंत्रण और इंटरैक्शन                       |
-| [Stroke](stroke.md)            | ![](/icons/pencil.webp)      | वर्तमान टूल सेटिंग्स, स्ट्रोक, फॉलऑफ आदि संपादित करें |
-| [Pressure](pressure.md)        | ![](/icons/pressure.webp)    | अपने पेंसिल के प्रेशर को प्रबंधित करें            |
-| [Painting](painting.md)	     | ![](/icons/paint.webp)       | पेंटिंग टूल्स के लिए पेंटिंग सेटिंग्स             |
-| [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | अपनी वर्तमान मेष के मिरर प्लेन को प्रबंधित करें   |
-| [Layers](layers.md)            | ![](/icons/layer.webp)       | अपने वर्तमान ऑब्जेक्ट लेयर्स प्रबंधित करें        |
-| [Settings](settings.md)        | ![](/icons/cog.webp)         | 3D व्यूपोर्ट को कस्टमाइज़ करें                     |
-| [Interface](interface.md)      | ![](/icons/sliders.webp)   | इंटरफ़ेस को कस्टमाइज़ करें                         |
-| [Tools](tools.md)              | ![](/icons/toolbox.webp)     | सभी टूल्स/ब्रश की सूची                             |
-| [History](history.md)          | ![](/icons/history.webp)     | undo/redo हिस्ट्री स्टैक प्रबंधित करें             |
-| [FAQ](faq.md)                  | ![](/icons/faq.webp)         | अक्सर पूछे जाने वाले प्रश्न                        |
-| [Tips](tips.md)                | ![](/icons/manual.webp)      | वर्कफ़्लो टिप्स                                     |
+| मेनू                           | आइकॉन                        | विवरण                                              |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
+| [फ़ाइलें](files.md)              | ![](/icons/open.webp)        | अपने प्रोजेक्ट संभालें, एक्सपोर्ट, इंपोर्ट आदि करें        |
+| [दृश्य](scene.md)              | ![](/icons/scene.webp)       | नए प्रिमिटिव जोड़ें और अपने दृश्य की वस्तुएँ संभालें     |
+| [टोपोलॉजी](topology.md)        | ![](/icons/multires.webp)    | मॉडल की टोपोलॉजी बदलें                              |
+| [मटीरीयल](material.md)        | ![](/icons/material.webp)    | मटीरीयल (वस्तु के स्तर पर)                           |
+| [छायांकन](shading.md)          | ![](/icons/sun.webp)         | अपने दृश्य में रोशनी कैसे करें                         |
+| [पोस्ट प्रॉसेस](postprocess.md) | ![](/icons/postprocess.webp) | पोस्ट प्रोसेसिंग (स्क्रीन-स्पेस विज़ुअल इफ़ेक्ट)          |
+| [पृष्ठभूमि](background.md)    | ![](/icons/image.webp)       | पृष्ठभूमि बदलें और संदर्भ इमेज जोड़ें                  |
+| [कैमरा](camera.md)            | ![](/icons/camera.webp)      | कैमरा नियंत्रण और इंटरैक्शन                         |
+| [रूपांतरण](transform.md)      | ![](/icons/transform.webp)   | किसी वस्तु की स्थिति, घुमाव और आकार अंकों में लिखें    |
+| [स्ट्रोक](stroke.md)            | ![](/icons/brush.webp)       | मौजूदा टूल की सेटिंग्स, स्ट्रोक, फ़ॉलऑफ़... बदलें      |
+| [दाब](stroke.md#pressure)        | ![](/icons/pressure.webp)    | अपनी पेंसिल का दाब संभालें                          |
+| [पेंटिंग](painting.md)	       | ![](/icons/paint.webp)       | पेंटिंग टूल्स के लिए पेंटिंग सेटिंग्स                  |
+| [सममिति](symmetry.md)        | ![](/icons/symmetry.webp)    | अपने मौजूदा मेश का दर्पण तल संभालें                   |
+| [ऑपरेशन](operation.md)      | ![](/icons/operation.webp)   | पूरे मेश को स्मूथ करें, फुलाएँ, दोबारा रंगें या धुंधला करें |
+| [परतें](layers.md)            | ![](/icons/layer.webp)       | मौजूदा वस्तु की परतें संभालें                         |
+| [सेटिंग्ज़](settings.md)        | ![](/icons/cog.webp)         | 3d व्यूपोर्ट को अपने हिसाब से ढालें                     |
+| [इंटरफ़ेस](interface.md)      | ![](/icons/sliders.webp)     | इंटरफ़ेस को अपने हिसाब से ढालें                        |
+| [टूल्स](tools.md)              | ![](/icons/toolbox.webp)     | सभी टूल्स/ब्रशों की सूची                              |
+| [इतिहास](history.md)          | ![](/icons/history.webp)     | पहले जैसा करें/फिर करें इतिहास स्टैक संभालें             |
+| [अक्सर पूछे जाने वाले प्रश्न](faq.md)                  | ![](/icons/faq.webp)         | अक्सर पूछे जाने वाले प्रश्न                              |
+| [सुझाव](tips.md)                | ![](/icons/manual.webp)      | वर्कफ़्लो से जुड़े सुझाव                                |
 
-## समुदाय संसाधन {#community-resources}
+## समुदाय के संसाधन {#community-resources}
 
 <style>
 .video-grid {

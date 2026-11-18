@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "홈",
+    "forum": "포럼"
+  },
+  "theme": {
+    "outlineLabel": "이 페이지의 내용",
+    "docFooter": {
+      "prev": "이전 페이지",
+      "next": "다음 페이지"
+    },
+    "darkModeSwitchLabel": "화면 모드",
+    "lightModeSwitchTitle": "라이트 테마로 전환",
+    "darkModeSwitchTitle": "다크 테마로 전환",
+    "sidebarMenuLabel": "메뉴",
+    "returnToTopLabel": "맨 위로 돌아가기",
+    "langMenuLabel": "언어 변경",
+    "skipToContentLabel": "본문으로 건너뛰기",
+    "notFound": {
+      "title": "페이지를 찾을 수 없습니다",
+      "quote": "하지만 방향을 바꾸지 않고 계속 찾다 보면, 결국 가려던 곳에 닿게 될지도 모릅니다.",
+      "linkLabel": "홈으로 이동",
+      "linkText": "홈으로 돌아가기"
+    }
+  },
+  "search": {
+    "button": {
+      "buttonText": "검색",
+      "buttonAriaLabel": "검색"
+    },
+    "modal": {
+      "displayDetails": "자세한 목록 표시",
+      "resetButtonTitle": "검색 초기화",
+      "backButtonTitle": "검색 닫기",
+      "noResultsText": "검색 결과 없음:",
+      "footer": {
+        "selectText": "선택",
+        "selectKeyAriaLabel": "엔터",
+        "navigateText": "이동",
+        "navigateUpKeyAriaLabel": "위쪽 화살표",
+        "navigateDownKeyAriaLabel": "아래쪽 화살표",
+        "closeText": "닫기",
+        "closeKeyAriaLabel": "이스케이프"
+      }
+    }
+  }
+}

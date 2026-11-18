@@ -1,372 +1,462 @@
 # ![](/icons/scene.webp) Scena {#scene}
 
-To menu pozwala zarządzać obiektami, światłami, kamerami i replikatorami (repeaters) w Nomadzie. Wyświetla hierarchię sceny w postaci drzewa, umożliwiając modyfikację wielu aspektów obiektów. Pozwala także tworzyć nowe obiekty oraz łączyć i rozdzielać obiekty na różne sposoby.
+To menu pozwala zarządzać obiektami, światłami, kamerami i repeaterami w Nomadzie. Pokazuje hierarchię sceny w postaci drzewa, w którym możesz zmieniać wiele właściwości obiektów. Pozwala też tworzyć nowe obiekty oraz łączyć je i dzielić na różne sposoby.
 
 
 ![](/images/scene_menu_summary.webp)
 
 
 ## Pasek skrótów {#shortcut-bar}
-| Akcja                 | Ikona                             | Opis                                                                                                              |
-| :-------------------: | :-------------------------------: | :----------------------------------------------------------------------------------------------------------------: |
-| [Dodaj...](#add-menu) | ![](/icons/plus.webp)            | Wyświetl [menu Dodaj](#add-menu), aby dodać obiekt do sceny                                                       |
-| Usuń                  | ![](/icons/trash.webp)           | Usuń obiekt                                                                                                       |
-| Zablokuj              | ![](/icons/lock.webp)            | Uczyń obiekt niemożliwym do zaznaczenia w widoku 3D. Nadal można go zaznaczyć z drzewa sceny.                    |
-| Połącz                | ![](/icons/merge.webp)           | Połącz zaznaczone obiekty w jeden obiekt bez zmiany geometrii                                                     |
-| Rozdziel              | ![](/icons/diagonal.webp)        | Jeśli obiekt składa się z oddzielnych „skorup” poligonów, rozbij go na osobne obiekty. Odwrotność operacji Połącz |
-| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Wyświetl menu [Boolean](#boolean)                                                                                 |
-| Klonuj                | ![](/icons/clone.webp)           | Duplikuj obiekt jako nowy, niezależny obiekt                                                                      |
-| Instancja             | ![](/icons/link.webp)            | Duplikuj obiekt jako instancję, tak aby zmiany modelowania jednego były stosowane do wszystkich instancji        |
-| Usuń instancję        | ![](/icons/unlink.webp)          | Zamień instancję w unikalny kształt, aby zmiany modelowania nie były już kopiowane do innych instancji           |
-| Synchronizuj          | ![](/icons/link.webp)            | Jeśli instancje mają dzieci, upewnij się, że wszystkie instancje mają tę samą hierarchię dzieci                   |
+| Akcja                  | Ikona                             | Opis                                                                                                                |
+| :--------------------: | :-------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
+| [Dodaj...](#add-menu)  | ![](/icons/plus.webp)            | Otwiera [menu Dodaj](#add-menu), aby dodać obiekt do sceny                                                          |
+| Usuń                   | ![](/icons/trash.webp)           | Usuwa zaznaczone obiekty. Ich obiekty podrzędne zostają.                                                            |
+| Zablokuj               | ![](/icons/lock.webp)            | Sprawia, że zaznaczonych obiektów nie da się zaznaczyć w widoku. Nadal można je zaznaczyć w drzewie. Zablokowanie grupy blokuje wszystko, co jest pod nią. Stuknij ponownie, aby odblokować. |
+| [Połącz](#join)        | ![](/icons/merge.webp)           | Łączy zaznaczone obiekty w jeden obiekt bez zmian w geometrii                                                       |
+| [Podziel...](#separate) | ![](/icons/separate.webp)        | Otwiera okno [Podziel](#separate), aby rozbić obiekt na kilka obiektów. Odwrotność łączenia                          |
+| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Otwiera okno [Boolean](#boolean)                                                                               |
+| Klonuj                 | ![](/icons/clone.webp)           | Powiela zaznaczone obiekty jako nowe obiekty                                                                        |
+| Utwórz instancję       | ![](/icons/link.webp)            | Powiela zaznaczone obiekty jako instancje, więc zmiany modelowania jednej trafiają do wszystkich instancji.          |
+| Anuluj instancję       | ![](/icons/unlink.webp)          | Zamienia instancję w osobny kształt, więc zmiany modelowania nie są już kopiowane do innych instancji                |
+| Synchronizacja         | ![](/icons/checked.webp)         | Gdy jest zaznaczone, operacje działają na wszystkie instancje zaznaczonych obiektów, a nie tylko na zaznaczone. Dostępne tylko wtedy, gdy zaznaczenie zawiera instancje. [Karta Synchronizacja](#sync) w oknie `Zaawansowane` określa, które operacje stosują się do tego pola wyboru. |
+
+::: tip
+Gdy operacja wpłynie także na inne instancje, na jej przycisku pojawia się mała ikona łańcucha.
+:::
 
 
-## Widok drzewa {#tree-view}
+## Drzewo {#tree-view}
 ![](/images/scene_treeview.webp) 
 
-| Akcja        | Ikona                      | Opis                      |
-| :----------: | :------------------------: | :-----------------------: |
-| Zaznacz      | ![](/icons/checked.webp)  | Przełącz zaznaczone/niezaznaczone |
-| Widoczny     | ![](/icons/eye_open.webp) | Przełącz widoczność       |
-| Menu         | ![](/icons/more.webp)     | Wyświetl menu obiektu     |
+Drzewo zawiera obiekty, grupy, repeatery, światła i kamery sceny. Obok nazwy siatki widać liczbę jej wierzchołków, a gdy ma warstwy, kolorową ikonę warstwy. Każdy wiersz ma te przyciski:
 
-::: tip WSKAZÓWKA: Szybkie zaznaczanie lub ukrywanie wielu obiektów
+| Akcja        | Ikona                      | Opis                     |
+| :----------: | :------------------------: | :----------------------: |
+| Nazwa        | ![](/icons/pencil.webp)   | Zmienia nazwę obiektu. Jeśli obiekt jest zaznaczony, nazwa zmienia się we wszystkich zaznaczonych obiektach naraz, z dodanym numerem. Przytrzymaj, aby zmienić nazwę razem z obiektami podrzędnymi. |
+| Wybierz      | ![](/icons/checked.webp)  | Zaznacza lub odznacza    |
+| Widoczne     | ![](/icons/eye_open.webp) | Pokazuje lub ukrywa      |
+| Menu         | ![](/icons/more.webp)     | Otwiera [menu obiektu](#object-menu) |
 
-Stuknij ikonę zaznaczenia, aby przełączyć pojedynczy obiekt, lub przeciągnij pionowo po kolumnie zaznaczenia, aby zaznaczyć wiele obiektów. To samo można zrobić z kolumną widoczności.
+::: tip WSKAZÓWKA: szybkie zaznaczanie lub ukrywanie wielu obiektów
+
+Stuknij ikonę zaznaczenia, aby przełączyć pojedynczy obiekt, albo przeciągnij pionowo po kolumnie zaznaczenia, aby zaznaczyć wiele obiektów. To samo działa w kolumnie widoczności.
+
+Przytrzymaj ikonę zaznaczenia lub widoczności, aby objąć też obiekty podrzędne.
 
 :::
 
-### Manipulacja widokiem drzewa {#tree-view-manipulation}
+### Nagłówek drzewa {#tree-view-header}
 
-Przytrzymaj długo element w widoku drzewa, aż zmieni kolor na żółty. Następnie możesz przesuwać go w górę lub w dół w drzewie, a także przeciągnąć na inny element, aby stał się jego dzieckiem.
+Wiersz nad listą ma kilka pomocnych przycisków:
 
-Gdy zaznaczonych jest wiele elementów, większość będzie ciemnożółta, jeden będzie jaśniejszy. Przytrzymaj długo i przeciągnij jaśniejszy element, aby przesunąć wszystkie obiekty naraz.
+* ![](/icons/sort_down.webp) - zwija lub rozwija wszystkie grupy naraz.
+* ![](/icons/preview.webp) - włącza lub wyłącza `Podglądy obiektów`, czyli małą wyrenderowaną miniaturę każdego obiektu na liście.
+* ![](/icons/search.webp) - filtruje listę po nazwie.
 
-Gdy zaznaczysz element nadrzędny, domyślnie wszystkie elementy podrzędne również zostaną zaznaczone. Stuknięcie ikony rodzica przełącza między zaznaczeniem tylko rodzica a rodzica z dziećmi.
+### Porządkowanie drzewa {#tree-view-manipulation}
+
+Przytrzymaj element w drzewie, aż zostanie podświetlony. Możesz go wtedy przesunąć w górę lub w dół, a także upuścić na inny element, by stał się jego obiektem podrzędnym.
+
+Gdy zaznaczonych jest wiele elementów, jeden z nich jest zaznaczeniem głównym i jest jaśniejszy. Przytrzymaj i przeciągnij dowolny z nich, aby przesunąć wszystkie zaznaczone obiekty naraz.
+
+Gdy zaznaczasz element nadrzędny, domyślnie zaznaczane są też wszystkie jego obiekty podrzędne. Ponowne stuknięcie elementu nadrzędnego przełącza między zaznaczeniem samego elementu nadrzędnego a zaznaczeniem go razem z obiektami podrzędnymi.
+
+Stuknij dwukrotnie element, aby skupić na nim kamerę (patrz [Zaawansowane](#focus-on-item)).
 
 ### Menu obiektu {#object-menu}
 
-Kliknięcie przycisku z wielokropkiem (...) dla obiektu w widoku drzewa wyświetli menu obiektu. 
-Wiele z tych opcji jest podobnych do paska skrótów u góry, powtórzonych dla wygody.
+Stuknięcie przycisku z wielokropkiem (...) przy obiekcie w drzewie otwiera menu obiektu. 
+Wiele z tych opcji powtarza dla wygody przyciski z paska skrótów na górze.
 
-|       Akcja        |                        Ikona                        | Opis                                                                                                                                                                     |
-| :----------------: | :-------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     Instancja      |               ![](/icons/link.webp)               | Duplikuj obiekt jako instancję, tak aby zmiany modelowania jednego były stosowane do wszystkich instancji.                                                             |
-|       Klonuj       |              ![](/icons/clone.webp)               | Duplikuj obiekt jako nowy, niezależny obiekt                                                                                                                            |
-|       Nazwa        |              ![](/icons/pencil.webp)              | Zmień nazwę obiektu                                                                                                                                                     |
-|       Usuń         |              ![](/icons/trash.webp)               | Usuń obiekt                                                                                                                                                             |
-|      Usuń+         |            ![](/icons/removeNode.webp)            | Usuń obiekt wraz z jego dziećmi                                                                                                                                         |
-|   Usuń instancję   |              ![](/icons/unlink.webp)              | Zamień instancję w unikalny kształt, aby zmiany modelowania nie były już kopiowane do innych instancji.                                                                |
-| Rozdziel topologię |             ![](/icons/separate.webp)             | Jeśli obiekt składa się z oddzielnych „skorup” poligonów, rozbij go na osobne obiekty. Odwrotność operacji Połącz.                                                     |
-| Rozdziel grupę ścian |            ![](/icons/group.webp)          | Jeśli obiekt ma wiele grup ścian (face groups), rozbij siatkę na osobne obiekty.                                                                                        |
-|  Rozdziel warstwy  |              ![](/icons/layer.webp)               | Jeśli obiekt ma warstwy, rozdziel każdą warstwę do osobnego obiektu. Przydatne przy wysyłaniu blendshape’ów do innych aplikacji.                                       |
-| Połącz -> Warstwy  | ![](/icons/merge.webp) -> ![](/icons/layer.webp) <span style="visibility:hidden">_________</span> | Jeśli zaznaczono wiele obiektów o pasującej topologii, połącz te obiekty w warstwy głównego obiektu (pozostałe obiekty zostaną usunięte). Ponownie przydatne dla blendshape’ów pochodzących Z innych aplikacji.<br><br> Zwróć uwagę, że warstwy będą domyślnie wyłączone. Włącz je, jeśli chcesz regulować ich suwaki. |
+|       Akcja         |                       Ikona                        | Opis                                                                                                                                                                    |
+| :-----------------: | :------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|        Nazwa        |              ![](/icons/pencil.webp)           | Zmienia nazwę obiektu                                                                                                                                                   |
+|  Anuluj instancję   |              ![](/icons/unlink.webp)           | Zamienia instancję w osobny kształt, więc zmiany modelowania nie są już kopiowane do innych instancji.                                                                  |
+|  Utwórz instancję   |               ![](/icons/link.webp)            | Powiela obiekt jako instancję, więc zmiany modelowania jednej trafiają do wszystkich instancji.                                                                         |
+|       Klonuj        |              ![](/icons/clone.webp)            | Powiela obiekt jako nowy obiekt                                                                                                                                         |
+|        Usuń         |              ![](/icons/trash.webp)            | Usuwa obiekt. Jego obiekty podrzędne zostają, chyba że zaznaczono `Obiekty podrzędne`.                                                                                  |
+|  Obiekty podrzędne  |            ![](/icons/hierarchy.webp)          | Gdy jest zaznaczone, `Utwórz instancję`, `Klonuj` i `Usuń` działają też na obiekty podrzędne.                                                                           |
+| Podziel według Części |             ![](/icons/separate.webp)          | Jeśli obiekt składa się z niepołączonych części, tworzy osobny obiekt dla każdej z nich. Odwrotność łączenia.                                                         |
+| Podziel według Grup |            ![](/icons/group.webp)          | Jeśli obiekt ma kilka grup powierzchni, tworzy osobny obiekt dla każdej grupy powierzchni.                                                                                 |
+| Podziel według Warstw |              ![](/icons/layer.webp)            | Jeśli obiekt ma warstwy, tworzy osobne obiekty dla siatki bazowej i każdej warstwy. Przydaje się do przenoszenia blendshape'ów do innych aplikacji.                  |
+|   Połącz → Warstwy  | ![](/icons/merge.webp) -> ![](/icons/layer.webp) <span style="visibility:hidden">_________</span> | Jeśli zaznaczono kilka obiektów o zgodnej topologii, scala je w warstwy głównego obiektu (pozostałe obiekty zostaną usunięte). Również przydatne przy blendshape'ach przychodzących Z innych aplikacji.<br><br> Warstwy będą domyślnie wyłączone. Włącz je, jeśli chcesz regulować ich suwaki. |
+| Krzywa (Powtarzacz) |              ![](/icons/curve.webp)            | Tylko dla rury lub bryły obrotowej: dodaje jako obiekt podrzędny repeater [Krzywa](#curve), który podąża za tą samą krzywą.                                             |
+|        Rura         |             ![](/icons/tube.webp)              | Dla bryły obrotowej dodaje jako obiekt podrzędny [rurę](tools.md#tube), która podąża za jej profilem. Walec, stożek lub torus zamienia w rurę o tym samym kształcie, którą możesz wygiąć wzdłuż krzywej. |
 
 
 
 
-### Wielokrotny wybór {#multiselection}
-Możesz zaznaczyć wiele obiektów, aby osiągnąć dwie rzeczy:
-- używać narzędzia gizmo do jednoczesnego przesuwania kilku obiektów
-- łączyć obiekty za pomocą operacji Połącz i Boolean.
+### Zaznaczanie wielu obiektów {#multiselection}
+Możesz zaznaczyć wiele obiektów, aby:
+- przesuwać kilka obiektów naraz narzędziem Gizmo,
+- scalać obiekty operacjami łączenia i boolean.
 
-Możesz to zrobić, zaznaczając pole `Multiselection`, a następnie klikając obiekty na liście.
+W drzewie stuknij ikonę zaznaczenia każdego obiektu albo przeciągnij po kolumnie zaznaczenia. Stukając w nazwy, przytrzymaj skrót `Maska` (lub `Ctrl` na klawiaturze), aby dodać lub usunąć pojedynczy obiekt, albo skrót `Gładkie` (lub `Shift`), aby zaznaczyć wszystkie obiekty między bieżącym a stukniętym.
 
-::: tip Szybkie wielokrotne zaznaczanie
-Możesz także zaznaczać wiele obiektów w widoku 3D, przytrzymując skrót `Smooth` i stukając w inną siatkę.
+::: tip Szybkie zaznaczanie wielu obiektów
+W widoku też możesz zaznaczać wiele obiektów: przytrzymaj skrót `Gładkie` (lub `Shift`) i stuknij inną siatkę.
 
-Możesz odznaczyć obiekt, stukając go ponownie (tylko jeśli w zaznaczeniu jest więcej niż jeden obiekt).
+Obiekt odznaczysz, stukając go ponownie (tylko gdy zaznaczonych jest więcej obiektów niż jeden).
 :::
 
-::: warning Ograniczenia gizmo
-Przy wielokrotnym zaznaczeniu narzędzie gizmo zawsze ignoruje maskowanie.
-Skalowanie X/Y/Z jest również wyłączone.
-
-Powodem jest to, że wielokrotne zaznaczenie pozwala tylko na transformację całej siatki, a nie na transformację wierzchołków.
-Może to zostać ulepszone w przyszłości.
-:::
+Gizmo przesuwa wszystkie zaznaczone obiekty razem, patrz [Gizmo](tools.md#gizmo).
 
 
-## Połącz {#join}
-Ta opcja po prostu utworzy jeden wpis obiektu z wielu zaznaczonych obiektów.
+## ![](/icons/merge.webp) Połącz {#join}
+Ta opcja po prostu tworzy jeden obiekt z kilku zaznaczonych obiektów.
+Punkty i UV położone bliżej niż [promień zespawania](#weld-radius) zostają scalone.
 
-Przykład wideo można zobaczyć w sekcji [Rozdziel](#separate).
+Przykład na filmie znajdziesz w sekcji [Podziel](#separate).
 
-## Boolean {#boolean}
+## ![](/icons/bool_subtract_circle.webp) Boolean {#boolean}
 ![](/images/scene_boolean_menu.webp) 
-Łącz obiekty w jedną powierzchnię.
+Łączy obiekty w jedną powierzchnię.
 
-`Voxel merge` zachowa objętość obiektów i obliczy nowe, równomiernie rozmieszczone poligony na powierzchni. Ze względu na etap obliczeń łączenie wokselowe radzi sobie złożoną geometrią, ale może utracić drobne detale, jeśli docelowa rozdzielczość nie jest wystarczająco wysoka.
+`Scalanie wokseli` zachowuje objętość obiektów i oblicza na powierzchni nowe, równomiernie rozłożone wielokąty. Dzięki temu etapowi obliczeń radzi sobie ze złożoną geometrią, ale może zgubić drobne detale, jeśli docelowa rozdzielczość jest za niska.
 
-`Boolean` spróbuje pozostawić poligony w ich oryginalnym układzie i zszyć je w miejscach, gdzie obiekty się nakładają. Może to dać znacznie czystsze i ostrzejsze rezultaty niż łączenie wokselowe, jednak wymaga „szczelnych” siatek; w obiektach nie może być dziur ani uszkodzonych kształtów. Jeśli to się nie powiedzie, zazwyczaj zadziała łączenie wokselowe.
+`Boolean` stara się zachować pierwotny układ wielokątów i zszywa je tam, gdzie obiekty się nakładają. Daje to znacznie czystsze i ostrzejsze wyniki niż scalanie wokseli, ale wymaga „szczelnych” siatek: obiekty nie mogą mieć otworów ani wadliwych kształtów. Jeśli to się nie uda, zwykle zadziała scalanie wokseli.
 
-### Operacje boolowskie {#boolean-operations}
-Zarówno Voxel Merge, jak i Boolean używają widoczności obiektów do sterowania operacją:
+### Operacje boolean {#boolean-operations}
+Zarówno scalanie wokseli, jak i Boolean sterują operacją przez widoczność obiektów, co przypominają podpowiedzi na dole okna:
 
 #### Suma {#union}
-Oba obiekty widoczne utworzą **sumę** (union) boolowską – zewnętrzna „skóra” obiektów zostanie połączona, bez wewnętrznych powierzchni. ![](/images/boolean_union.webp)
+Oba obiekty widoczne dają **sumę**: zewnętrzne powłoki obiektów zostają połączone, bez wewnętrznych powierzchni. ![](/images/boolean_union.webp)
 
-#### Różnica {#subtract}
-Jeden obiekt niewidoczny = **różnica** (subtract) boolowska – niewidoczny obiekt zostanie odjęty od widocznego. ![](/images/boolean_subtract.webp)
+#### Odejmowanie {#subtract}
+Jeden obiekt ukryty = **odejmowanie**: ukryty obiekt zostaje odjęty od widocznego. ![](/images/boolean_subtract.webp)
 
-#### Część wspólna {#intersect}
-Oba obiekty niewidoczne = **część wspólna** (intersection) boolowska – powstanie nowy kształt tylko w miejscu, gdzie obiekty się nakładają. ![](/images/boolean_intersect.webp)
+#### Przecięcie {#intersect}
+Oba obiekty ukryte = **przecięcie**: nowy kształt powstaje tylko tam, gdzie obiekty się nakładają. ![](/images/boolean_intersect.webp)
 
 
-### Przycisk Voxel Merge {#voxel-merge-button}
-Naciśnięcie tego przycisku wykona operację łączenia wokselowego na zaznaczonych obiektach. Wykonane na pojedynczym obiekcie przetopologizuje go do równomiernie rozmieszczonych poligonów, co jest przydatne, gdy obiekt ma rozciągnięte poligony.
+### ![](/icons/voxel.webp) Scalanie wokseli {#voxel-merge-button}
+Ten przycisk wykonuje scalanie wokseli na zaznaczonych obiektach. Na pojedynczym obiekcie przebudowuje go z równomiernie rozłożonymi wielokątami, co przydaje się, gdy obiekt ma rozciągnięte wielokąty. Poniższe opcje działają jak w [remeshu wokselowym](topology.md#voxel-remesher).
 
 ### Rozdzielczość {#resolution}
-Rozdzielczość trójwymiarowej siatki wokseli używanej do obliczeń. Po zmianie tej wartości na obiekt nakładany jest wzór szachownicy, aby podglądnąć rozmiar poligonów.
+Rozdzielczość siatki wokseli 3d użytej w obliczeniach. Podczas zmiany tej wartości na obiekcie pojawia się szachownica, która pokazuje rozmiar wielokątów.
 
-### Zbuduj multirozdzielczość {#build-multiresolution}
-Utwórz poziomy wielorozdzielczości poniżej docelowej rozdzielczości. Jeśli więc rozdzielczość wynosi 400, a build multiresolution to 3, otrzymasz nową siatkę z np. 296 000 poligonów, ale będą 3 niższe poziomy subdiv: 74 000, 18 000, 4 000.
+Zakraplacz obok suwaka pobiera szczegółowość z gęstości siatki pod palcem. Przycisk obok przełącza suwak na `Długość krawędzi`, czyli rozmiar w świecie: ta sama wartość daje te same detale na każdym obiekcie.
 
-### Zachowaj ostre krawędzie {#keep-sharp-edges}
-Włącz przyciąganie siatki wokselowej do krawędzi. Najlepiej działa na prostych kształtach.
+### Utwórz wielokrotną rozdzielczość {#build-multiresolution}
+Tworzy poziomy wielokrotnej rozdzielczości poniżej docelowej rozdzielczości. Jeśli rozdzielczość to 400, a ta opcja ma wartość 3, dostaniesz nową siatkę z około 296 000 wielokątów, ale pod nią będą 3 niższe poziomy podziału z około 74 000, 18 500 i 4 600 wielokątów.
 
-### Przycisk Boolean {#boolean-button}
-Naciśnięcie tego przycisku wykona operację boolowską na poligonach z użyciem biblioteki Manifold autorstwa Emmetta Lalisha. 
+### Pogrub cienkie części {#thicken-thin-parts}
+Pogrubia części zbyt cienkie dla siatki wokseli, żeby się nie rozpadły. Nie jest dostępna razem z `Ostre krawędzie` ani `Ostra granica`.
+
+### Otwory {#holes}
+Sposób zamykania otworów w otwartych obiektach przed scaleniem:
+* `Wypełnij` - każdy otwór jest zamykany osobno, od jego krawędzi.
+* `Kształt` - otwory są zamykane zgodnie z otaczającą powierzchnią, a nakładające się otwarte fragmenty zostają połączone.
+
+### ![](/icons/angle.webp) Zachowaj ostre krawędzie {#keep-sharp-edges}
+Przycisk `Ostre krawędzie` przyciąga siatkę wokselową do ostrych krawędzi obiektów. Działa najlepiej na prostych kształtach i w niektórych miejscach może wprowadzić zniekształcenia.
+
+### ![](/icons/group.webp) Ostra granica {#sharp-border}
+Nowe ściany podążają za granicami grup powierzchni, a granica pozostaje ostra tam, gdzie powierzchnia się wzdłuż niej załamuje.
+
+### ![](/icons/group_separate.webp) Zachowaj osobne grupy {#keep-groups-separate}
+Każda grupa powierzchni jest przebudowywana osobno: grupy nigdy się nie łączą, a każda pozostaje zamkniętym kawałkiem we własnej grupie. W tym trybie wielokrotna rozdzielczość nie jest tworzona.
+
+### ![](/icons/bool_subtract_circle.webp) Przycisk Boolean {#boolean-button}
+Ten przycisk wykonuje operację boolean na wielokątach przy użyciu biblioteki Manifold autorstwa Emmetta Lalisha. 
+
+### ![](/icons/bool_unite_circle.webp) Usuń nakładające się fragmenty {#clean-overlaps}
+Gdy zaznaczony jest tylko jeden obiekt, przycisk `Boolean` zmienia się w `Usuń nakładające się fragmenty`: scala przecinające się części obiektu w czystą powierzchnię.
 
 
-## Rozdziel {#separate}
-Jeśli masz pojedynczy obiekt złożony z kilku niepołączonych części, możesz rozdzielić go na kilka obiektów. 
-Można to traktować jako przeciwieństwo [prostego łączenia](#simple-merge).
+## ![](/icons/separate.webp) Podziel {#separate}
+Jeśli masz jeden obiekt złożony z kilku niepołączonych części, możesz go podzielić na kilka obiektów. 
+To przeciwieństwo [łączenia](#join).
+
+Okno `Podziel...` oferuje trzy sposoby podziału zaznaczonych obiektów:
+* `Podziel według Części` - tworzy osobny obiekt dla każdej niepołączonej części.
+* `Podziel według Grup` - tworzy osobny obiekt dla każdej grupy powierzchni.
+* `Podziel według Warstw` - tworzy osobne obiekty dla siatki bazowej i każdej warstwy.
 
 ![](/videos/merge_separate.mp4)
 
 
-## Menu dodawania {#add-menu}
+## ![](/icons/plus.webp) Menu Dodaj {#add-menu}
 
 ![](/images/scene_addmenu_overview.webp)
 
 To menu tworzy prymitywy, grupy, kamery, repeatery i światła.
 
-Prymitywy to podstawowe typy kształtów, które można regulować za pomocą parametrów. Gdy dopasujesz prymityw do swoich potrzeb, „walidujesz” go, co sprowadza parametry do siatki poligonowej, którą można rzeźbić i malować. Po walidacji prymitywu nie można już zmieniać jego parametrów.
+Prymitywy to podstawowe kształty, które dostosowujesz za pomocą parametrów. Gdy prymityw jest już taki, jak chcesz, „zatwierdzasz” go: parametry zostają zamienione na siatkę wielokątów, którą można rzeźbić i malować. Po zatwierdzeniu nie da się już zmieniać parametrów prymitywu.
 
 
 ![](/images/scene_addmenu_top.webp)
 
-### Na gizmie {#on-gizmo}
-Włącz umieszczanie nowego prymitywu w miejscu aktualnie zaznaczonego kształtu lub gizma. Gdy wyłączone, prymityw zostanie umieszczony w centrum sceny.
+### ![](/icons/gizmo.webp) Na manipulatorze {#on-gizmo}
+Umieszcza nowy prymityw tam, gdzie jest aktualnie zaznaczony kształt lub gizmo. Gdy opcja jest wyłączona, prymityw pojawia się w środku sceny.
 
-### Wybierz gizmo {#select-gizmo}
-Włącz automatyczne przełączanie na narzędzie gizmo po utworzeniu nowego prymitywu. 
+### ![](/icons/gizmo.webp) Wybierz manipulator {#select-gizmo}
+Po utworzeniu nowego prymitywu automatycznie przełącza na narzędzie Gizmo. 
 
-### Zaawansowane {#add-advanced}
+### ![](/icons/cog.webp) Zaawansowane {#add-advanced}
 
-To menu pozwala ustawić preferencje dotyczące miejsca tworzenia nowych prymitywów, grup i repeaterów. Mogą być tworzone na zaznaczonym obiekcie, w początku układu współrzędnych (world origin) lub w miejscu gizma.
+To menu pozwala wybrać, gdzie mają powstawać nowe prymitywy, grupy i repeatery: na zaznaczonym obiekcie, w początku układu współrzędnych świata lub w miejscu gizmo.
 
 
 ### UV {#uvs}
-Włącz UV dla prymitywów. UV (często nazywane współrzędnymi tekstury) to dodatkowe dane używane w 3D, aby umożliwić nakładanie tekstur na powierzchnie. Zajmują więcej pamięci, ale dla większości urządzeń nie powinno to być problemem, chyba że pracujesz na bardzo wysokich liczbach poligonów (np. 10 milionów i więcej). 
+Przełącznik `UV` obok tytułu Prymityw włącza UV w prymitywach. UV (często nazywane współrzędnymi tekstury) to dodatkowe dane, dzięki którym w 3d można nakładać tekstury na powierzchnie. Zajmują więcej pamięci, ale na większości urządzeń nie powinno to być problemem, chyba że pracujesz z bardzo dużą liczbą wielokątów (np. 10 milionów lub więcej). 
 
 ### Prymitywy {#primitives}
 
-| Prymityw       | Ikona                                     | Opis                                                                                                              |
-| :------------: | :---------------------------------------: | :----------------------------------------------------------------------------------------------------------------: |
-| Box            | ![](/icons/cube.webp)                    | Prosty sześcian, możesz kontrolować podziały w X, Y i Z                                                           |
-| Sphere         | ![](/icons/circle.webp)                  | Dla wygody nazwana „Sphere”, ale w rzeczywistości to podzielony sześcian z wymuszonym `Project on sphere`        |
-| Cylinder       | ![](/icons/cylinder.webp)                | Możesz dodać otwór w środku walca, np. aby zrobić pustą rurę                                                      |
-| Torus          | ![](/icons/torus.webp)                   | Torus może być dobrym punktem wyjścia dla pierścieni                                                              |
-| Cone           | ![](/icons/cone.webp)                    | -                                                                                                                 |
-| Icosahedron    | ![](/icons/icosahedron.webp)             | -                                                                                                                 |
-| UV-sphere      | ![](/icons/circle.webp)                  | Sfera z nierównym układem poligonów, zobacz [ostrzeżenie poniżej](#uv-sphere)                                     |
-| Plane          | ![](/icons/rectangle.webp)               | Prosta płaszczyzna, jedyny prymityw, który nie jest zamknięty                                                     |
-| Tube           | ![](/icons/tool_tube.webp)               | zobacz [Tube](tools#tube)                                                                                         |
-| Lathe          | ![](/icons/tool_lathe.webp)              | zobacz [Lathe](tools#lathe)                                                                                       |
-| Triplanar      | ![](/icons/triplanar.webp)               | zobacz [Triplanar](#triplanar)                                                                                    |
-| Shadow Catcher | ![](/icons/material_shadow_catcher.webp) | zobacz [Shadow Catcher](#shadow-catcher)                                                                          |
-| Head           | ![](/icons/face.webp)                    | Prosta głowa z warstwą do mieszania między męską/żeńską                                                           |
+| Prymityw       | Ikona                                     | Opis                                                                                                            |
+| :------------: | :---------------------------------------: | :-------------------------------------------------------------------------------------------------------------: |
+| Równoległościan | ![](/icons/cube.webp)                    | Prosty sześcian; możesz ustawić podział w osiach X, Y i Z                                                       |
+| Kula Sześcienna | ![](/icons/circle.webp)                  | Podzielony sześcian z wymuszoną opcją `Kula` (rzutowanie na kulę), więc ma równy układ czworokątów, dobry do rzeźbienia |
+| Walec          | ![](/icons/cylinder.webp)                | Walec może mieć otwór w środku, na przykład by zrobić pustą w środku rurkę                                      |
+| Torus          | ![](/icons/torus.webp)                   | Torus to dobry punkt wyjścia na pierścienie                                                                     |
+| Stożek         | ![](/icons/cone.webp)                    | -                                                                                                               |
+| Dwudziestościan | ![](/icons/icosahedron.webp)            | -                                                                                                               |
+| Kula UV        | ![](/icons/circle.webp)                  | Kula o nierównym układzie wielokątów, patrz [ostrzeżenie poniżej](#uv-sphere)                                   |
+| Płaszczyzna    | ![](/icons/rectangle.webp)               | Prosta płaszczyzna; to jedyny prymityw, który nie jest zamknięty                                                |
+| Tekst          | ![](/icons/text.webp)                    | Tekst 3d z czcionką, stylem, wyrównaniem, głębokością i wygięciem. `Scal litery` łączy stykające się litery     |
+| Rura           | ![](/icons/tube.webp)                    | patrz [Rura](tools#tube)                                                                                        |
+| Bryła obrotowa | ![](/icons/lathe.webp)                   | patrz [Bryła obrotowa](tools#lathe)                                                                             |
+| Trzypłaszczyznowy | ![](/icons/triplanar.webp)            | patrz [Trzypłaszczyznowy](#triplanar)                                                                           |
+| VDM            | ![](/icons/vdm.webp)                     | Płaszczyzna przygotowana do rzeźbienia stempla wektorowej mapy przemieszczeń: ma UV i jest zwrócona do kamery    |
+| Łapacz cienia  | ![](/icons/material_shadow_catcher.webp) | patrz [Łapacz cienia](#shadow-catcher)                                                                          |
+| Głowa          | ![](/icons/face.webp)                    | Prosta głowa z warstwą do płynnego przejścia między męską a żeńską                                              |
 
 ::: tip
-Jeśli zastanawiasz się, jaka jest siatka bazowa po uruchomieniu Nomada: to również podzielony sześcian.
-Jednak siatka bazowa w Nomadzie nie używa `Project on sphere`, co oznacza, że nie jest idealnie okrągła.
+Jeśli zastanawiasz się, czym jest siatka bazowa po uruchomieniu Nomada: to również podzielony sześcian.
+Siatka bazowa w Nomadzie nie używa jednak rzutowania na kulę (`Kula`), więc nie jest idealnie okrągła.
 :::
 
-### Pasek narzędzi prymitywów {#primitive-toolbar}
+### Pasek narzędzi prymitywu {#primitive-toolbar}
 
-![](/images/scene_primitive_toolbar.gif)
+![](/images/scene_primitive_toolbar.webp)
 
-Po utworzeniu prymitywu pojawi się pasek narzędzi do sterowania jego parametrami.
+Po utworzeniu prymitywu pojawia się pasek narzędzi do sterowania jego parametrami.
 
-* `Validate` Wypal prymityw do standardowego obiektu, aby można go było rzeźbić i malować.
-* `Edit` Przełącz wyświetlanie gizma prymitywu. Jest ono pokazane bezpośrednio na prymitywie, aby kontrolować jego parametry, np. szerokość sześcianu lub promień otworu walca.
-* `Mirror` Przełącz umieszczenie repeatera lustrzanego nad prymitywem.
-* `...` Wyświetl menu prymitywu.
+* `Zatwierdź` Zamienia prymityw w zwykły obiekt, który można rzeźbić i malować.
+* `Odbicie lustrzane` Włącza lub wyłącza repeater lustrzany nad prymitywem.
+* `Wszystkie` (ikona oka) Wybiera, które uchwyty do sterowania parametrami są widoczne bezpośrednio na prymitywie, np. szerokość sześcianu czy promień otworu walca: `Brak`, `Wszystkie` lub tylko jeden rodzaj (promień, otwór, profil...), zależnie od prymitywu.
+* `Podział` Liczba podziałów prymitywu, tutaj w osi X dla sześcianu.
+* `Stała gęstość` Gdy rozciągasz prymityw gizmo wzdłuż jednej osi, rośnie jego rozmiar i liczba podziałów, zamiast rozciągać się wielokąty, więc ściany pozostają kwadratowe. Dostępne dla sześcianów, płaszczyzn i walców.
+* `...` Otwiera menu prymitywu.
 
-Różne prymitywy mają dodatkowe opcje na pasku narzędzi:
+Różne prymitywy mają na pasku dodatkowe opcje:
 
-* `Project` Sfera jest skonstruowana jako podzielony sześcian, co jest lepsze do rzeźbienia, ale oznacza, że nie jest idealnie okrągła. Ta opcja wymusi kształt bliższy idealnej sferze. Icosahedron ma tę samą opcję.
-* `Cap` Przełącz zaślepki końcowe kształtu, np. walec może mieć zaślepki na górze, na dole, na obu końcach lub żadnych.
-* `Hole` Przełącz tworzenie otworu przez środek kształtu. Przełącza między brakiem otworu, otworem o jednym promieniu lub otworem o różnych promieniach na górze i na dole.
-* `Radius` Przełącz, czy walec ma mieć jeden promień, czy różne promienie na górze i na dole.
-* `Disk` Przełącz, czy płaszczyzna ma być kształtem czterokątnym, czy okrągłym.
+* `Kula` Kula jest zbudowana z podzielonego sześcianu, bo lepiej się go rzeźbi, ale przez to nie jest idealnie okrągła. Ta opcja przybliża kształt do idealnej kuli. Dwudziestościan też ma tę opcję.
+* `Zakończenie` Włącza lub wyłącza zamknięcia końców kształtu, np. walec może mieć zamknięcie na górze, na dole, oba lub żadne.
+* `Otwór` Tworzy otwór przez środek kształtu. Przełącza między brakiem otworu, otworem o jednym promieniu i otworem o różnych promieniach na górze i na dole.
+* `Promień` Określa, czy walec ma jeden promień, czy różne promienie na górze i na dole.
+* `Dysk` Określa, czy płaszczyzna ma kształt czworokąta, czy koła.
 
-Mały pasek narzędzi pod głównym paskiem pozwala przełączać się między gizmem prymitywu a gizmem transformacji.
+Mały pasek pod głównym paskiem przełącza między gizmo prymitywu a gizmo przekształceń.
 
 ::: tip
 
-Kliknięcie tytułu paska narzędzi przełączy go między górą a dołem ekranu. Kliknięcie strzałki w rogu zwinie go.
+Stuknięcie tytułu paska przenosi go na górę lub na dół ekranu. Stuknięcie strzałki w rogu go zwija.
 
 :::
 
 
-### Menu prymitywów {#primitive-menu}
+### Menu prymitywu {#primitive-menu}
 
 ![](/images/scene_primitive_menu.webp)
 
-Zawiera wszystkie parametry zaznaczonego prymitywu. Parametry to podstawowy opis kształtu. Aby opisać pierścień, na przykład, określisz jego promień zewnętrzny, promień wewnętrzny i liczbę poligonów.
+Zawiera wszystkie parametry zaznaczonego prymitywu. Parametry to podstawowy opis kształtu. Aby opisać pierścień, podałbyś na przykład jego promień zewnętrzny, promień wewnętrzny i liczbę wielokątów.
 
-Większość parametrów prymitywów jest dość oczywista, a część jest wspólna dla wszystkich prymitywów:
+Większość parametrów prymitywów nie wymaga wyjaśnień, a kilka jest wspólnych dla wszystkich prymitywów:
 
-* `UVs` Mały przycisk UVs na górze menu przełącza tworzenie współrzędnych UV
-* `Validate` Mały przycisk validate wypala prymityw do standardowego obiektu, aby można go było rzeźbić i malować.
-* `Max faces` Ustaw górny limit liczby poligonów w obiekcie, aby uniknąć zawieszenia urządzenia.
-* `Post subdivision` Włącz wybraną liczbę poziomów podziału z sekcji multiresolution w menu topologii. Można tego użyć do tworzenia wygładzonych prymitywów z miękkimi krawędziami w połączeniu z niskimi podziałami topologii. Na przykład ustaw podziały topologii sześcianu na 2, a post subdivisions na 4 – otrzymasz sześcian z gładkimi narożnikami.
-* `Linear subdivision` Ustaw, ile poziomów podziału liniowego użyć przed zastosowaniem zwykłego gładkiego podziału. Pozwala to kontrolować, jak ostre lub miękkie są krawędzie na podzielonych powierzchniach. Np. ustaw podziały topologii sześcianu na 2, post subdivisions na 4, a następnie zmieniaj linear subdivisions między 0 a 4. Narożniki sześcianu przejdą od miękkich do ostrych.
+* `UV` Mały przycisk UV na górze menu włącza tworzenie współrzędnych UV
+* `Zatwierdź` Mały przycisk zatwierdzania zamienia prymityw w zwykły obiekt, który można rzeźbić i malować.
+* `Maks. liczba powierzchni` Górny limit liczby wielokątów obiektu, który chroni urządzenie przed awarią.
+* `Podział następczy` Stosuje wybraną liczbę podziałów z sekcji wielokrotnej rozdzielczości menu Topologia. W połączeniu z niewielką liczbą podziałów topologii pozwala tworzyć wygładzone prymitywy o miękkich narożnikach. Na przykład sześcian z podziałem topologii 2 i podziałem następczym 4 będzie miał gładkie narożniki.
+* `Podział liniowy` Ile poziomów podziału liniowego zastosować przed zwykłym gładkim podziałem. Pozwala kontrolować, jak ostre lub miękkie są narożniki podzielonych powierzchni. Na przykład ustaw podział topologii sześcianu na 2, podział następczy na 4 i zmieniaj podział liniowy od 0 do 4. Narożniki sześcianu przejdą od miękkich do ostrych.
 
 ### Topologia {#topology}
 
-Kontroluje liczbę poligonów w prymitywie. Zwykle suwaki są połączone, więc zmiana aktywnego suwaka równomiernie dostosuje wszystkie poligony. Możesz stuknąć przycisk rozłączenia i sterować podziałami X/Y/Z kształtu osobno.
+Określa liczbę wielokątów prymitywu. Zwykle suwaki są powiązane, więc zmiana jednego aktywnego suwaka równomiernie zmienia wszystkie wielokąty. Możesz stuknąć przycisk rozłączenia i sterować podziałami X/Y/Z osobno.
 
 ### Geometria {#geometry}
 
-Kontroluje ogólny rozmiar prymitywu – w jednostkach X/Y/Z dla kształtów „kwadratowych” oraz w promieniu dla kształtów okrągłych.
+Określa ogólny rozmiar prymitywu: w jednostkach X/Y/Z dla kształtów kanciastych i jako promień dla kształtów okrągłych.
 
 
-### Sfera UV {#uv-sphere}
+### ![](/icons/circle.webp) Kula UV {#uv-sphere}
 ::: warning
-UV Sphere nie nadaje się dobrze do rzeźbienia, szczególnie w okolicach biegunów.
+Kula UV nie nadaje się dobrze do rzeźbienia, zwłaszcza na biegunach.
 
-Preferuj prymitywy [Sphere](#sphere), [Box](#box) lub [Icosahedron](#icosahedron) wraz z opcją `Project on sphere`.
+Lepiej wybierz [prymityw](#primitives) Kula Sześcienna, Równoległościan lub Dwudziestościan z opcją `Kula` (rzutowanie na kulę).
 
-Zauważ, że topologia może być akceptowalna do rzeźbienia, jeśli użyjesz bardzo niskiej wartości suwaków `Division`.
-Możesz wtedy użyć suwaka `Overall Subdivision`, aby zwiększyć liczbę poligonów.
+Topologia może być do przyjęcia przy rzeźbieniu, jeśli ustawisz bardzo niską wartość suwaków `Podział`.
+Liczbę wielokątów zwiększysz potem suwakiem `Podział ogólny`.
 
-Choć nie nadaje się do ogólnego rzeźbienia, jest przydatna do oczu; jeśli obrócisz sferę tak, aby bieguny znalazły się w miejscu źrenicy, układ poligonów naturalnie dopasuje się do malowania i rzeźbienia tęczówki i źrenicy.
+Choć Kula UV nie nadaje się do zwykłego rzeźbienia, przydaje się na oczy: jeśli obrócisz ją tak, by biegun wypadał na źrenicy, układ wielokątów naturalnie pasuje do malowania i rzeźbienia tęczówki i źrenicy.
 :::
 
 
-### Triplanar {#triplanar}
-Ten prymityw jest szczególny, ponieważ do kształtowania geometrii powinieneś używać [narzędzia Mask](tools.md#mask).
+### ![](/icons/triplanar.webp) Trzypłaszczyznowy {#triplanar}
+Ten prymityw jest wyjątkowy: jego geometrię kształtujesz [narzędziem Maska](tools.md#mask).
 
 ![](/videos/triplanar.mp4)
 
 
 ::: tip
-Podwójne stuknięcie w płaszczyznę spowoduje, że kamera skupi się na tej konkretnej płaszczyźnie.
-Nie zadziała to jednak, jeśli obrócisz prymityw gizmem.
+Stuknij dwukrotnie płaszczyznę, a kamera skupi się na niej.
+Nie zadziała to jednak, jeśli obrócisz prymityw gizmo.
 :::
 
-Triplanar używa informacji maski z 3 płaszczyzn do wypełnienia siatki wokseli, która jest następnie poligonizowana (dzięki [Voxel Remesher](topology.md#voxel-remeshere)).
+Prymityw trzypłaszczyznowy wypełnia siatkę wokseli na podstawie maski z 3 płaszczyzn, a następnie zamienia ją na wielokąty (dzięki [remeshowi wokselowemu](topology.md#voxel-remesher)).
 
 Każda płaszczyzna ma własną płaszczyznę symetrii.
 
 ::: warning
-Za każdym razem, gdy zaktualizujesz rozmiar prymitywu Triplanar, jakość malowania maski ulegnie pogorszeniu.
+Każda zmiana rozmiaru prymitywu trzypłaszczyznowego pogarsza jakość namalowanej maski.
 
-Na razie nie ma opcji „zablokowania” malowania na pojedynczej płaszczyźnie, ale być może pojawi się w przyszłości.
-Możesz użyć [Connected Topology](stroke.md#connected-topology), aby trochę pomóc – jeśli kursor leży dokładnie na jednej płaszczyźnie, nie wpłynie na pozostałe.
+Na razie nie ma opcji „zablokowania” malowania na jednej płaszczyźnie, ale może pojawi się w przyszłości.
+Trochę pomaga [Połączona topologia](stroke.md#connected-topology): jeśli kursor leży dokładnie na jednej płaszczyźnie, nie wpłynie na pozostałe.
 :::
 
-### Shadow Catcher {#shadow-catcher}
-Dodaj płaszczyznę z materiałem shadow catcher. Zobacz [materiał Shadow Catcher](material.md#shadow-catcher), aby uzyskać więcej szczegółów. 
+### ![](/icons/material_shadow_catcher.webp) Łapacz cienia {#shadow-catcher}
+Dodaje płaszczyznę z materiałem łapacza cienia. Więcej szczegółów w opisie [materiału Łapacz cienia](material.md#shadow-catcher). 
 
 
 ## Grupa/Kamera {#groupcamera}
-### Grupa {#group}
-Utwórz „pusty” obiekt, pod który możesz podpinać inne obiekty. Można go użyć po prostu do organizacji hierarchii, umieszczając wiele obiektów w grupie, a następnie ją zwijając. Grupa może też służyć jako pomoc przy przemieszczaniu obiektów; wiele obiektów można umieścić w grupie, a następnie przesuwać, obracać i skalować grupę narzędziem gizmo.
+### ![](/icons/share.webp) Grupa {#group}
+Tworzy „pusty” obiekt, pod którym możesz umieszczać inne obiekty. Pozwala po prostu uporządkować hierarchię: umieść wiele obiektów pod grupą, a potem ją zwiń. Grupa może też pomagać w przesuwaniu obiektów: umieść pod nią wiele obiektów, a potem przesuwaj, obracaj i skaluj grupę narzędziem Gizmo.
 
-### Dodaj widok {#add-view}
-Utwórz kamerę.
+### ![](/icons/camera.webp) Kamera {#add-view}
+Tworzy kamerę.
 
-## Repeater’y {#repeaters}
+## Repeatery {#repeaters}
 ![](/images/scene_primitive_repeaters.webp)
 
-Repeatery to węzły tworzące instancje obiektów znajdujących się pod nimi. 
+Repeatery to węzły, które tworzą instancje umieszczonych pod nimi obiektów. 
 
-### Array {#array}
+### ![](/icons/array.webp) Macierz {#array}
 ![](/images/scene_primitive_array.webp)
 
-Gdy obiekty są dziećmi tego węzła, mogą być instancjowane w układzie siatki. Po zaznaczeniu ma on następujące kontrolki:
-* Fit inside – przełączanie między kontrolą rozmiaru siatki/pudełka array a kontrolą odstępu między instancjami
-* CountX/Y/Z – liczba instancji na każdej osi
-* OffsetX/Y/Z – odległość między instancjami, gdy fit inside jest przełączone
-* SizeX/Y/Z – szerokość/wysokość/głębokość całej siatki array, gdy fit inside jest przełączone.
+Obiekty podrzędne tego węzła mogą być powielane jako instancje w układzie siatki. Gdy węzeł jest zaznaczony, ma te ustawienia:
+* `Dopasuj do wewnątrz` - gdy jest włączone, wszystkie kopie mieszczą się w granicach macierzy; gdy jest wyłączone, suwaki ustalają odstęp między kopiami
+* `Liczba X/Y/Z` - liczba instancji w każdej osi
+* `Rozmiar X/Y/Z` - rozmiar siatki w każdej osi albo odległość między kopiami, gdy `Dopasuj do wewnątrz` jest wyłączone
+* `Zrandomizuj...` - dodaje losowe różnice między kopiami, patrz [Zrandomizuj](#curve) poniżej.
 
-### Krzywa {#curve}
+### ![](/icons/curve.webp) Krzywa {#curve}
 ![](/images/scene_primitive_curve.webp)
-Tworzy krzywą, a dzieci tego węzła będą powtarzane wzdłuż krzywej. Po zaznaczeniu ma następujące kontrolki:
-* Edit – pozwala dodawać punkty do krzywej i przesuwać punkty na krzywej.
-* Snap – przyciąga punkty krzywej do innej geometrii
-* Align – obraca kształty potomne, aby wyrównać je w kierunku krzywej
-* Count – liczba instancji
-* Closed – przełącz, czy krzywa łączy początek i koniec, czy jest otwarta
-* Radius – przełącz kontrolki na każdym punkcie krzywej do sterowania skalą instancji
-* Twist – przełącz kontrolki na każdym punkcie krzywej do sterowania skrętem (rotacją) instancji 
-* B-spline – przełącz, czy instancje mają dokładnie podążać za krzywą, czy używać interpolacji B-spline dla gładszych rezultatów. 
+Tworzy krzywą, wzdłuż której powtarzane są obiekty podrzędne tego węzła. Gdy węzeł jest zaznaczony, ma te ustawienia:
+* `Krzywa` - edycja krzywej: dodawanie i przesuwanie jej punktów.
+* `Pokaż` - pokazuje lub ukrywa krzywą i jej punkty.
+* `Przyciągnij` - przyciąga punkty krzywej do innej geometrii.
+* `Sym` - edytuje krzywą symetrycznie.
+* `Zamknięty` - łączy początek z końcem albo pozostawia krzywą otwartą.
+* `B-splajn` - instancje podążają dokładnie za krzywą albo używają interpolacji B-splajn, która daje gładsze wyniki.
+* `Dopasuj kształt` - wygina każdą kopię wzdłuż krzywej, tak by stykała się z sąsiednimi (`Płynne` wygina ich boki, by stykały się bez kąta).
+* `Wyrównaj` - obraca kopie zgodnie z kierunkiem krzywej.
+* `Pkt obrotu` - punkt obrotu kopii: sama krzywa (`Sama krzywa`) lub jej obiekty podrzędne.
+* `Liczba` - liczba instancji. Przycisk trybu obok przełącza na `Odległość`: stały odstęp między kopiami, a ich liczba zależy od długości krzywej.
+* `Promień` - uchwyty na każdym punkcie krzywej ustalające skalę instancji.
+* `Skręt` - uchwyty na każdym punkcie krzywej ustalające skręcenie instancji.
+* `Naprzemiennie` - obraca co drugą kopię wokół krzywej: o 90° dla ogniw łańcucha, o 180° dla liści czy ząbków zamka, wokół wybranej `Oś`.
+* `Spirala...` - nawija kopie wokół krzywej w kilku splotach (lina, warkocz, wstążka...).
+* `Zrandomizuj...` - dodaje losowe różnice między kopiami; każdy wiersz może zamiast tego dodawać tę samą wartość przy każdej kopii.
 
-### Promieniowy {#radial}
+Pod paskiem narzędzi przełącznik `(Scal)` scala punkt z innym, gdy go na niego przeciągniesz. `IK` (kinematyka odwrotna) pozwala pozować krzywą: przeciągasz punkt, a połączone punkty podążają za nim. Stuknij punkt, aby go zablokować lub odblokować, przytrzymaj, aby zablokować lub odblokować wszystkie; zablokowane punkty pozostają na miejscu.
+
+### ![](/icons/radial.webp) Radialna {#radial}
 ![](/images/scene_primitive_radial.webp)
 
-Dzieci tego węzła będą instancjowane w okręgu. Przesuń obiekt potomny, aby zmienić promień repeatera. Po zaznaczeniu ma następujące kontrolki:
-* RadialX/Y/Z – wybranie tych przycisków ustawia oś radialną i liczbę instancji.
+Obiekty podrzędne tego węzła są powielane jako instancje po okręgu. Przesuń obiekt podrzędny, aby zmienić promień tego repeatera. Gdy węzeł jest zaznaczony, ma te ustawienia:
+* RadialX/Y/Z - te przyciski ustawiają oś powielania i liczbę instancji.
 
 
 
-### Lustro {#mirror}
+### ![](/icons/mirror.webp) Odbicie lustrzane {#mirror}
 ![](/images/scene_primitive_mirror.webp)
 
-Dzieci tego węzła będą lustrzane względem osi. Po zaznaczeniu ma następujące kontrolki:
-* Gizmo – włącz gizmo transformacji, aby ustawić środek lustrzanego odbicia. Można je także obracać i skalować. Po zakończeniu stuknij ponownie gizmo, aby przywrócić standardowe kontrolki.
-* X/Y/Z – ustaw płaszczyznę lustrzaną
+Obiekty podrzędne tego węzła są odbijane względem osi. Gdy węzeł jest zaznaczony, ma te ustawienia:
+* Gizmo - włącza gizmo przekształceń, by ustawić środek odbicia. Można je też obracać i skalować. Gdy skończysz, stuknij ponownie Gizmo, aby wrócić do zwykłych ustawień.
+* X/Y/Z - ustawia płaszczyznę odbicia
 
-Wszystkie repeatery mają kontrolkę `Validate`, która wypala wynik repeatera i pyta, jak wykonać wypalanie:
-* Join children – instancje są łączone w jeden obiekt
-* Keep instances – instancje pozostają instancjami, ale nie mają już repeatera jako „rodzica”
-* Un-instances – instancje są konwertowane na unikalne obiekty
+### ![](/icons/surface.webp) Powierzchnia {#surface}
 
-::: tip Wskazówka: Łączenie repeaterów
-Repeatery można zagnieżdżać jeden pod drugim, a kilka obiektów może być dziećmi repeaterów, co prowadzi do złożonych efektów.
+Obiekty podrzędne tego węzła są kopiowane na powierzchnię obiektu: jedna kopia na ścianę, krawędź lub wierzchołek albo losowo rozsiane. Gdy węzeł jest zaznaczony, ma te ustawienia:
+* Tryb - umieszcza kopie na ścianach (`Ściany`), krawędziach (`Krawędzie`) lub wierzchołkach albo je rozsiewa (`Rozsiej`).
+* Co - jedna kopia co N ścian, krawędzi lub wierzchołków. `Losowo` wybiera je losowo, a `Przetasuj` losuje inny zestaw.
+* Odstępy - przy rozsiewaniu minimalna odległość między dwiema kopiami.
+* Wyrównaj - kopie stoją na powierzchni zgodnie z jej normalną, zamiast zachować orientację oryginału.
+* Przyciągnij - rzutuje oryginał na najbliższy punkt powierzchni, a kopie podążają za nim.
+* Dopasuj rozmiar, Ścinanie - skalują i rozciągają kopie do kształtu każdej ściany.
+* Dopasuj kształt - wygina każdą kopię na jej ścianie lub wzdłuż jej krawędzi, by sąsiednie kopie stykały się bez przerw.
+
+Wszystkie repeatery mają opcję `Zatwierdź`, która utrwala wynik działania repeatera i pyta, jak to zrobić:
+* Połącz obiekty podrzędne - instancje zostają połączone w jeden obiekt
+* Zachowaj instancje - instancje pozostają instancjami, ale bez nadrzędnego repeatera
+* Anuluj instancję - instancje zostają zamienione w osobne obiekty
+
+`Spłaszcz wszystko` utrwala także repeatery zagnieżdżone w tym repeaterze, więc każda kopia staje się zwykłym obiektem.
+
+::: tip Wskazówka: łączenie repeaterów
+Repeatery można zagnieżdżać jeden w drugim, a kilka obiektów może być obiektami podrzędnymi repeaterów, co pozwala uzyskać złożone efekty.
 
 ![](/images/scene_repeater_combine.webp)
 :::
 
-::: tip Wskazówka: Pivoty repeaterów
+::: tip Wskazówka: punkty obrotu repeaterów
 
-Niektóre repeatery próbują automatycznie ustawić pivot obiektów potomnych, więc nawet jeśli przesuwasz lub obracasz je gizmem, nie będą się poruszać. Jeśli chcesz nadpisać to zachowanie, wstaw grupę między repeater a dziecko. Teraz możesz przesuwać kształt potomny niezależnie od repeatera.
+Niektóre repeatery automatycznie ustawiają punkt obrotu obiektów podrzędnych, więc nawet jeśli przesuniesz lub obrócisz je narzędziem Gizmo, nie zmienią położenia. Aby to obejść, wstaw grupę między repeater a obiekt podrzędny. Wtedy możesz przesuwać obiekt podrzędny niezależnie od repeatera.
 :::
 
 ## Światło {#light}
 
 ![](/images/scene_primitive_light.webp)
 
-### Kierunkowe {#directional}
-Utwórz światło kierunkowe, nieskończenie odległe źródło światła, jak słońce.
+### ![](/icons/sun.webp) Kierunkowe {#directional}
+Tworzy światło kierunkowe, czyli nieskończenie odległe źródło światła, jak słońce.
 
-### Reflektor {#spot}
-Utwórz reflektor (spot light) z kontrolą szerokości stożka i miękkości krawędzi
+### ![](/icons/panorama.webp) Środowisko {#environment}
+Tworzy światło środowiskowe, które oświetla scenę obrazem otaczającym ją ze wszystkich stron (oświetlenie oparte na obrazie, jak HDRI).
 
-### Punktowe {#point}
-Utwórz światło punktowe
+### ![](/icons/spotlight.webp) Stożkowe {#spot}
+Tworzy światło stożkowe z ustawieniami szerokości i miękkości stożka.
 
-## Zaawansowane {#advanced}
-### Wycentruj na elemencie {#focus-on-item}
-Podwójne kliknięcie elementu na liście Sceny wycentruje kamerę na tym elemencie w widoku 3D.
+### ![](/icons/light.webp) Wielokierunkowe {#point}
+Tworzy światło punktowe, świecące we wszystkich kierunkach.
 
-### Synchronizuj widoczność {#sync-visibility}
-Użycie ikony oka wpłynie na wszystkie zaznaczone elementy. 
+## ![](/icons/cog.webp) Zaawansowane {#advanced}
+Przycisk `Zaawansowane` w lewym dolnym rogu panelu otwiera okno z dwiema kartami: `Ogólne` i `Synchronizacja`.
 
-### Instancja: Pokaż {#instance-show}
-Wyświetl kolorową kapsułkę po lewej stronie listy sceny, aby pokazać instancje.
+### ![](/icons/focus.webp) UI: Skup przy 2× stuknięciu {#focus-on-item}
+Dwukrotne stuknięcie elementu na liście Scena ustawia kamerę w widoku 3d na tym elemencie.
 
+### ![](/icons/eye_open.webp) Synchronizuj widoczność {#sync-visibility}
+Gdy jest włączone, użycie ikony oka przy zaznaczonym elemencie wpływa na wszystkie zaznaczone elementy. 
+
+### ![](/icons/bang.webp) Wyróżnianie {#highlight}
+Podświetla zaznaczone obiekty w widoku, gdy zmienia się zaznaczenie.
+
+### ![](/icons/link.webp) Pokaż (Instancja) {#instance-show}
+Wyświetla kolorowy znacznik po lewej stronie listy sceny, który oznacza instancje.
+
+### ![](/icons/preview.webp) Podglądy obiektów {#object-previews}
+Pokazuje wyrenderowaną miniaturę każdego obiektu na liście sceny. Działa tak samo jak przycisk podglądu nad listą.
+
+### Promień zespawania {#weld-radius}
+Pod tytułem `Połącz` znajdziesz `Promień zespawania pozycji` i `Promień zespawania UV`: punkty i UV bliższe niż te promienie zostają scalone. Każdy z nich można wyłączyć polem wyboru. Dotyczy to łączenia, operacji Boolean, przycinania, upraszczania, przebudowy siatki i importu plików.
 
 ### Ikony {#icons}
-Ustaw rozmiar i przezroczystość ikon grup, świateł, kamer i luster w widoku 3D
+Ustawia minimalny i maksymalny `Rozmiar` oraz `Krycie` ikon grup, świateł, kamer i repeaterów w widoku.
 
-### Linie hierarchii {#hierarchy-lines}
-Wyświetl linię między rodzicem a jego dziećmi w widoku 3D
+### ![](/icons/hierarchy.webp) Linie hierarchii {#hierarchy-lines}
+Wyświetla w widoku linię między obiektem nadrzędnym a jego obiektami podrzędnymi. Gdy opcja jest włączona, możesz też ustawić:
+* `Użyj pivot Nomad` - linie zaczynają się w punkcie obrotu używanym przez narzędzia Przekształcenie i Gizmo. Gdy opcja jest wyłączona, używają naturalnego punktu obrotu bazy, który może być daleko od środka obiektu.
+* `Grubość` - szerokość linii. Przycisk obok suwaka dodaje do nich obrys.
+* Kolor linii.
+
+### ![](/icons/link.webp) Synchronizacja {#sync}
+Karta `Synchronizacja` określa dla każdej operacji (`Dodaj`, `Usuń`, `Zablokuj`, `Klonuj`, `Utwórz instancję`, `Anuluj instancję`, `Połącz`, `Podziel` i `Boolean`), czy działa na wszystkie instancje zaznaczenia:
+* `Auto` - zgodnie z polem wyboru `Synchronizacja` na górze menu Scena.
+* `Nie` - tylko zaznaczone obiekty.
+* `Tak` - zawsze wszystkie instancje.
+
+Domyślnie `Połącz`, `Podziel` i `Boolean` mają wartość `Tak`, a pozostałe `Auto`. `Wyzeruj` przywraca te ustawienia domyślne.
 
 ## Dolny pasek narzędzi {#bottom-toolbar}
-Te ikony przełączają widoczność grup, świateł, kamer, repeaterów i linii hierarchii w widoku 3D.
+Te ikony pokazują lub ukrywają w widoku grupy, światła, kamery, repeatery i linie hierarchii. Ikony widoczne w widoku można stuknąć, by je zaznaczyć i bezpośrednio edytować.

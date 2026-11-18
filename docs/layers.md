@@ -19,7 +19,7 @@ Layers can be partially erased via the [Delete Layer](tools.md#delete-layer) too
 ![](/videos/layer.mp4)
 
 ::: tip
-Unlike most sculpting software, changing the topology of a mesh will not discard the layers. You can use the [Voxel Remesher](topology.md#voxel-remesher), the [Multiresolution](topology.md#multires) or the [Trim](tools.md#trim)/[Split](tools.md#split) tools, but note that when using [Voxel Remesher](topology.md#voxel-remesher), the quality of the layer will be impacted.
+Unlike most sculpting software, changing the topology of a mesh will not discard the layers. You can use the [Voxel Remesher](topology.md#voxel-remesher), the [Multiresolution](topology.md#multiresolution) or the [Trim](tools.md#trim)/[Split](tools.md#split) tools, but note that when using [Voxel Remesher](topology.md#voxel-remesher), the quality of the layer will be impacted.
 :::
 
 ::: tip
@@ -31,9 +31,17 @@ If using layers for blendshapes/morph targets, there is extra layer functionalit
 
 ![](/images/layers_menu.webp)
 
-Press `Add layer` to create a new layer.
+The title shows the name of the selected object. Layers aren't available on primitives, so validate the primitive first.
 
-Each layer has a name, a slider to control it's strength/factor, and option buttons.
+Press `Add layer` to create a new layer. `Merge layers` merges every layer into the base mesh, the number next to its icon is how many layers there are.
+
+Each layer has a name, a slider to control it's strength/factor, and option buttons. Tap a layer to make it the active one: sculpting and painting go into that layer. Tap `Base` to work on the base mesh again.
+
+### ![](/icons/sort_right.webp) Expand list {#ui-expand-list}
+
+By default, the layer list only shows the visibility, blend mode and strength of each layer, and the active layer is expanded with its full controls. The arrow on the left of the title expands the full controls for every layer.
+
+![](/images/layers_expand.webp)
 
 ### Options {#options}
 
@@ -47,11 +55,21 @@ Each layer has a name, a slider to control it's strength/factor, and option butt
 | Merge Down   | ![](/icons/merge_down.webp) | Merge the layer with the lower layer (or base mesh) |
 | More         | ![](/icons/more.webp)       | [More...](#more) options                            |
 
+When a layer isn't expanded, `Edit Name`, `Delete`, `Duplicate` and `Merge Down` are found in its [More...](#more) menu.
+
 To move a layer to another part of the layer stack, press and hold on its name, then drag.
 
-### More... {#more}
+### Base {#base}
 
-The 'More...' button will show extra options for the current layer:
+The 3 dots button of the `Base` row moves the paint of the base mesh into a new layer, with the `Base → Layer` button. The base is then reset to the background material. This is handy when you painted a lot before creating any layer.
+
+* The mask and hide buttons next to it leave masked and hidden areas untouched.
+* `Extract` - the channels to move: `Color`, `Opacity`, `Roughness` and `Metalness`.
+* `Background material` - if enabled, only the values that differ from this material are moved. Set it with the sliders, or pick it from the model with the eyedropper.
+
+### ![](/icons/more.webp) More... {#more}
+
+The 'More...' button will show extra options for the current layer, in two tabs: the settings (cog icon), and the extraction (cube icon).
 
 ![](/images/layers_more.webp) 
 
@@ -82,17 +100,19 @@ Maybe in the future, each channel will have its own alpha channel to remove this
 :::
 
 
-#### ![](/icons/tool_mask.webp) Mask {#mask}
+#### ![](/icons/shield.webp) Mask {#mask}
 The mask button next to each slider will create a mask from that channel. Similar to using layers to make selections in painting applications, this allows you to reuse work you have done in a layer for other operations.
 
 #### ![](/icons/preview.webp) Preview {#preview}
 ![](/images/layers_preview.webp) 
 
+The following options are in the extraction tab of the 'More...' menu.
+
 When enabled, will preview the extract settings for this layer (see the next section).
 
-When xray is enabled, only the exacted shape will be solid, the rest of the shape will be made transparent, useful if you are using negative extraction heights.
+`X-Ray` picks which objects are made transparent during the preview (`None`, `Unselected`, `Selected` or `All`), so the extracted shape stays solid. It's useful if you are using negative extraction heights.
 
-#### Extract {#extract}
+#### ![](/icons/mask_extract.webp) Extract {#extract}
 ![](/images/layers_extract.webp) 
 
 ![](/videos/layer_shell.mp4)
@@ -101,59 +121,53 @@ The `Extract` button will duplicate the contents of the layer into a new object,
 
 `Closing action` determines how the duplication is done:
 
-* None - Simply extract the part, do not try to generate sides or fill any holes.
-* Fill - Hole is filled and smoothed with triangles. Do not use this option for flat surfaces.
-* Shell - Close the extracted shape with the thickness value and direction options.
-* Layer - Extract the layer difference.
+* `None` - Simply extract the part, do not try to generate sides or fill any holes.
+* `Fill` - Hole is filled and smoothed with triangles. Do not use this option for flat surfaces.
+* `Shell` - Close the extracted shape with the thickness value and direction options.
+* `Layer` - Extract the layer difference.
 
-#### ![](/icons/height.webp) Thickness {#thickness}
+#### ![](/icons/height.webp) Height {#thickness}
 ![](/images/layers_thickness.webp) 
 
-The depth of the shell extrusion. Positive values grow out of the surface, negative values grow into the surface.
+The depth of the shell extrusion. Positive values grow out of the surface, negative values grow into the surface. It is hidden when the closing action is `Layer`.
 
 The plus/minus next to this value will set the direction of the extrusion:
 * Minus ( - ) will start from the current surface and extrude down. 
 * Plus ( + ) will start from the current surface and extrude up.
 * PlusMinus ( ± ) will push the top and bottom of the extrusion away by equal amounts, so it will be halfway embedded in the original surface.
 
+#### Sides {#edge-loop-side}
+![](/images/layers_edgeloop.webp) 
+
+This section is visible when the closing action is `Shell`. 
+
+`Wall divisions` sets the number of divisions along the shell sides. With its `Auto` toggle on, Nomad calculates the number of edge loops to create square polygons.
+
 #### Smoothness {#smoothness}
 ![](/images/layers_smoothness.webp) 
 
-If the edges of the region to be extracted are jagged, this slider will attempt to blur the edge into a smoother shape. 
-
-#### ![](/icons/height.webp) Edge loop (side) {#edge-loop-side}
-![](/images/layers_edgeloop.webp) 
-
-This section is visible when the closing action is 'Shell'. 
-
-`Auto Edge-loop (side)` will calculate the number of edge loops along the shell sides to create square polygons. 
-
-If disabled, the `Division` slider will set the number of divisions on the sides.
+If the edges of the region to be extracted are jagged, enable this option to smooth them into a nicer shape. `All` smooths the whole extracted surface, `Borders only` smooths its edges. `Iterations` sets how strong the smoothing is.
 
 _This is the end of the 'More...' submenu._
 
-### Advanced {#advanced}
+### ![](/icons/cog.webp) Advanced {#advanced}
 ![](/images/layers_advanced.webp)
+
+The `Advanced` button at the bottom of the menu appears once the object has layers.
 
 #### Keep top layers details {#keep-top-layers-details}
 
-Ensure that small details on higher layers remain visible when large changes are made to lower changes.
+Ensure that small details on higher layers remain visible when large changes are made to lower changes. While you sculpt, the deformation coming from the top layers is ignored, but their details stay visible. It only works well if those top layers hold relatively small details.
 
 By default if you sculpt small wrinkles on a layer, then go and make large changes to the base layer, the wrinkles will be lost. Enabling this toggle will allow those small details to always float above the lower large changes. In the following video, see how the wrinkle detail gets removed by default, but remains visible when 'keep top layers details' is enabled:
 
 ![](/videos/layers_details.mp4)
 
 
-#### UI: Expand list {#ui-expand-list}
-
-The default layer menu lets you toggle layer visibility and the layer opacity. Enabling this option expands the full controls for every layer.
-
-![](/images/layers_expand.webp)
-
 #### Sync transform {#sync-transform}
 
-If enabled, all the unselected layers will be adjusted depending on the transform rotation, scale, skew. 
+When on, all the unselected layers will be adjusted depending on the transform rotation, scale, skew, when you use the Gizmo or Transform tools. It can be `Auto`, `No` or `Yes`.
 
-Disbale this option if the other layers are meantt o be used without the new transform that you are applying.
+Disable this option if the other layers are meant to be used without the new transform that you are applying.
 
 When set on `Auto`, only the visible layers will be adjusted.

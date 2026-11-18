@@ -1,169 +1,211 @@
-# ![](/icons/pencil.webp) Strich {#stroke}
+# ![](/icons/brush.webp) Strich {#stroke}
 
 ---
 ![](/images/stroke_overview.webp) 
 
 ## Überblick {#overview}
 
-Du kannst das Strichverhalten der meisten Werkzeugpinsel anpassen.
-Die Einstellungen ähneln denen in 2D-Malprogrammen, einige Optionen sind jedoch speziell für Sculpting und 3D.
+Bei den meisten Werkzeugpinseln können Sie anpassen, wie sich der Strich verhält.
+Die Einstellungen ähneln denen aus 2d-Malprogrammen, einige Optionen sind aber speziell auf das Sculpting und 3d zugeschnitten.
 
-Die Optionen sind auf 5 Untermenüs aufgeteilt:
+Die Optionen sind auf 5 Untermenüs verteilt:
 
-| Name     | Icon                         | Beschreibung                                                      |
+| Name     | Symbol                       | Beschreibung                                                       |
 | :------: | :--------------------------: | :----------------------------------------------------------------: |
-| Stroke   | ![](/icons/stroke_dot.webp) | Steuert, wie der Strich auf das Modell angewendet wird            |
-| Alpha    | ![](/icons/alpha.webp)      | Wie eine Graustufen-Textur für den Pinselabdruck verwendet wird   |
-| Falloff  | ![](/icons/falloff.webp)    | Steuert, wie sich die Pinselstärke vom Zentrum zum Rand ändert    |
-| Filter   | ![](/icons/filter.webp)     | Wie der Pinsel von der Modellgeometrie beeinflusst wird           |
-| Pressure | ![](/icons/pressure.webp)   | Steuert die Reaktion auf Stiftdruck                               |
+| Strich   | ![](/icons/brush.webp)      | Steuert, wie der Strich auf das Modell aufgetragen wird            |
+| Alpha    | ![](/icons/alpha.webp)      | Wie eine Graustufentextur als Pinselabdruck verwendet wird         |
+| Falloff  | ![](/icons/falloff.webp)    | Steuert, wie die Pinselstärke von der Mitte zum Rand hin abnimmt   |
+| Filter   | ![](/icons/filter.webp)     | Wie der Pinsel von der Geometrie des Modells beeinflusst wird      |
+| Druck    | ![](/icons/pressure.webp)   | Steuert, wie auf den Druck des Stifts reagiert wird                |
 
 ::: tip
-Nicht alle Strichoptionen gelten für alle Werkzeuge. Strichoptionen, die vom aktuellen Werkzeug nicht verwendet werden, werden deaktiviert oder ausgeblendet. 
+Nicht jede Strichoption gilt für jedes Werkzeug. Optionen, die das aktuelle Werkzeug nicht nutzt, sind deaktiviert oder ausgeblendet. 
 :::
 
 
-## Strich {#stroke-1}
+## ![](/icons/brush.webp) Strich {#stroke-1}
 
-### Radius {#radius}
+### ![](/icons/radius.webp) Radius {#radius}
 
 ![](/images/stroke_radius.webp)
 
-#### Radius teilen {#share-radius}
+Die Radiusoptionen sind globale Einstellungen: Sie gelten für alle Werkzeuge.
 
-Wenn aktiviert, verwenden alle Werkzeuge denselben Radius; standardmäßig hat jedes Werkzeug seinen eigenen Radius.
+#### Raum {#size}
 
-#### Größe {#size}
+* `Bildschirm` - der Radius wird in Bildschirmeinheiten festgelegt. Stellen Sie den Radius auf 100 Pixel ein, bleibt er 100 Pixel breit, egal ob Sie hinein- oder herauszoomen.
+* `Welt (3D)` - der Radius wird in 3d-Einheiten festgelegt. Erstellen Sie zum Beispiel eine Kugel und machen den Radius genauso groß wie die Kugel, bleibt er beim Hinein- und Herauszoomen immer so groß wie die Kugel.
 
-* Screen – der Radius wird in Bildschirmeinheiten festgelegt. Wenn du den Radius auf 100 Pixel Breite einstellst, bleibt er 100 Pixel breit, unabhängig davon, ob du hinein- oder herauszoomst.
-* Constant (3d) – der Radius wird in 3D-Einheiten festgelegt. Wenn du zum Beispiel eine Kugel erstellst und den Radius auf die gleiche Größe wie die Kugel setzt, bleibt der Radius gleich groß wie die Kugel, während du hinein- und herauszoomst.
+#### ![](/icons/link.webp) Shortcut synchronisieren {#sync-shortcut}
+
+Ist diese Option aktiv, werden Radius und Silhouette-Einstellungen übernommen, wenn Sie zu den Shortcut-Pinseln wechseln (`Glätten`, `Maske` oder `Ausblenden`). So nutzt ein schnelles Glätten oder Maskieren dieselbe Pinselgröße wie das Werkzeug, mit dem Sie gerade gearbeitet haben.
+
+#### ![](/icons/link.webp) Radius teilen {#share-radius}
+
+Ist diese Option aktiv, nutzen alle Werkzeuge denselben Radius. Standardmäßig hat jedes Werkzeug seinen eigenen.
 
 
-### Strich {#stroke-type}
+### Strichtyp {#stroke-type}
 
 ![](/images/stroke_strokemode.webp)
 
 Striche können in mehreren Modi arbeiten:
 
 ### ![](/icons/stroke_dot.webp) Punkt {#dot}
-Ziehen wie ein normaler Malstrich. 
+Ziehen Sie wie bei einem normalen Malstrich. 
 ![](/videos/stroke_dot.mp4) 
 
 ### ![](/icons/stroke_roll.webp) Rollen {#roll}
-Das Pinsel-Alpha wird so rotiert, dass es der Richtung des Strichs folgt – nützlich für Stoffnähte. 
+Das Pinselalpha dreht sich mit der Richtung des Strichs mit, praktisch für Nähte auf Stoff. 
 ![](/videos/stroke_roll.mp4) 
 
- ### ![](/icons/radius.webp) Lock + radius
-Einen Pinselstrich mit fester **_Höhe_** stempeln. Ziehen legt Skalierung und Rotation fest.
+### ![](/icons/radius.webp) Grab • Dynamischer Radius {#lock-radius}
+Setzt einen Pinselabdruck mit fester **_Höhe_**. Durch Ziehen legen Sie Größe und Drehung fest.
 ![](/videos/stroke_lock_radius.mp4) 
 
-### ![](/icons/falloff.webp) Sperren + Intensität {#lock-intensity}
-Einen Pinselstrich mit festem **_Radius_** stempeln. Ziehen legt Höhe und Rotation fest.
+### ![](/icons/normal.webp) Grab • Dynamische Intensität {#lock-intensity}
+Setzt einen Pinselabdruck mit festem **_Radius_**. Durch Ziehen legen Sie Höhe und Drehung fest.
 ![](/videos/stroke_lock_intensity.mp4) 
+
+::: tip
+Die Modi `Grab • Dynamischer Radius` und `Grab • Dynamische Intensität` ignorieren die [Druck](#pressure)-Einstellungen, da das Ziehen bereits Größe und Stärke bestimmt.
+:::
 
 ![](/images/stroke_strokemodemove.webp)
 
-Die Werkzeuge `Move` und `Drag` haben ihre eigenen 3 Optionen:
+Die Werkzeuge `Bewegen` und `Ziehen` haben ihre eigenen 3 Optionen:
 
 ### ![](/icons/snake.webp) Ziehen {#drag}
 
-Aktualisiert während des Strichs fortlaufend, was sich innerhalb des Pinselradius befindet. Ein schneller Strich lässt die Oberfläche zurück, während ein langsamer Strich Material „festhält“ und längere Formen erzeugt. Dies ist der Standardmodus für das Werkzeug `Drag`. Mit `Dynamic Topology` kann dies verwendet werden, um schlangenartige Extrusionen zu erzeugen. 
+Aktualisiert während des Strichs ständig, was sich im Pinselradius befindet. Ein schneller Strich lässt die Oberfläche hinter sich, ein langsamer hält das Material fest und zieht so längere Formen heraus. Das ist der Standardmodus des Werkzeugs `Ziehen`. Zusammen mit `Dynamische Topologie` lassen sich damit schlangenartige Extrusionen formen. 
 ![](/videos/stroke_drag.mp4) 
 
 
 ### ![](/icons/grab.webp) Greifen {#grab}
-Wählt beim Start des Pinsels, was sich innerhalb des Pinselradius befindet, und behält diese Auswahl bei. Das ist nützlich für präzisere Verschiebevorgänge, da du den Verschiebeabstand sorgfältig anpassen kannst, ohne versehentlich mehr zu bewegen als ursprünglich ausgewählt. Dies ist der Standardmodus für das Werkzeug `Move`.
+Wählt zu Beginn des Strichs aus, was sich im Pinselradius befindet, und behält diese Auswahl bei. Das eignet sich für genauere Verschiebungen: Sie können die Strecke sorgfältig einstellen, ohne versehentlich mehr zu bewegen, als Sie anfangs erfasst haben. Das ist der Standardmodus des Werkzeugs `Bewegen`.
 ![](/videos/stroke_grab.mp4) 
 
 
-### ![](/icons/radius.webp) Sperren + Radius (Ziehen) {#lock-radius-drag}
-Der Benutzer-Radius wird ignoriert und dynamisch basierend darauf gesetzt, wie weit der Strich vom Startpunkt weggezogen wird. Kleine Distanz = kleiner Radius, größere Distanz = größerer Radius. Verwende den Intensitätsregler, um die Form des Falloffs zu steuern. Nützlich zum Blocken organischer, gummiartiger Formen.
+### ![](/icons/radius.webp) Grab • Dynamischer Radius (Ziehen) {#lock-radius-drag}
+Der eingestellte Radius wird ignoriert und stattdessen dynamisch danach bestimmt, wie weit Sie den Strich vom Startpunkt wegziehen. Kurze Strecke = kleiner Radius, längere Strecke = größerer Radius. Mit dem Stärke-Regler steuern Sie die Form des Falloffs. Praktisch, um organische, gummiartige Formen grob anzulegen.
 ![](/videos/stroke_lockradius_drag.mp4) 
 
+Einige andere Werkzeuge zeigen hier ihre eigenen Strichtypen, zum Beispiel `Entspannen`, `Glätten` und `Wischfinger` bei den Glättungswerkzeugen oder Formen wie `Lasso` und `Kurve` bei den auswahlbasierten Werkzeugen. Sie werden beim jeweiligen [Werkzeug](tools.md) beschrieben.
 
 
-### Abstand-Intensität anpassen {#adjust-spacing-intensity}
+### Intensität der Abstände anpassen {#adjust-spacing-intensity}
 ![](/images/stroke_space_smooth.webp)
 
-Striche mit geringem Abstand (unter 50 %) können sich schnell aufbauen und intensivere Striche erzeugen als höhere Abstands­werte. Diese Umschaltoption kompensiert das, sodass Striche ungefähr die gleiche Intensität haben, unabhängig vom Abstand.
+Striche mit geringem Abstand (unter 50 %) überlagern sich schnell und wirken dadurch stärker als Striche mit größerem Abstand. Diese Option gleicht das aus, sodass Striche unabhängig vom Abstand ungefähr gleich stark sind.
 
 ### Strichabstand {#stroke-spacing}
-Legt fest, wie weit auseinander jeder Pinselabdruck während eines Ziehvorgangs angewendet wird. Werte unter 100 % überlappen sich und erzeugen den Eindruck eines kontinuierlichen Strichs. Werte über 100 % beginnen Lücken zu lassen – nützlich für Details wie Nähte oder Reißverschlüsse.
+Wie weit die einzelnen Pinselabdrücke beim Ziehen auseinanderliegen. Werte unter 100 % überlappen sich und ergeben einen durchgehenden Strich. Werte über 100 % lassen Lücken, nützlich für Details wie Nähte oder Reißverschlüsse.
 
-### Lazy-Rope-Stabilisierung {#lazy-rope-stabilizer}
-Striche hinken der Zeigerposition um eine bestimmte Distanz hinterher. Dies kann verwendet werden, um glatte Linien zu zeichnen.
+### Lazy Rope Stabilisator {#lazy-rope-stabilizer}
+Der Strich folgt dem Zeiger mit einem gewissen Abstand. So lassen sich saubere, glatte Linien zeichnen.
 ![](/videos/stroke_lazy_rope.mp4) 
 
-### Strichglättung {#stroke-smoothing}
+### Stroke Smoothing {#stroke-smoothing}
 Mittelt mehrere Zeigerpositionen, um einen glatteren Strich zu erhalten.
-Bei hohen Werten hinkt der Strich dem Zeiger hinterher, holt aber schließlich auf.
-Dies ist nützlich, um glatte Linien zu zeichnen.
+Bei hohen Werten hinkt der Strich dem Zeiger hinterher, holt ihn aber schließlich ein.
+Praktisch, um glatte Linien zu zeichnen.
 
-### Radius einrasten {#snap-radius}
-Den Beginn des Strichs an das Ende des vorherigen Strichs schnappen. Der Radius bestimmt, wie weit nach dem Ende des vorherigen Strichs gesucht wird. Dies kann nützlich sein, wenn du lange, durchgehende Linien mit häufigen Pausen zeichnest.
+### Einrastradius {#snap-radius}
+Setzt den Strich am vorherigen fort, wenn der Zeiger nahe an dessen Ende ansetzt. Der Radius bestimmt, wie weit nach dem Ende des vorherigen Strichs gesucht wird. Nützlich, wenn Sie lange durchgehende Linien zeichnen und dabei immer wieder absetzen.
+
+### ![](/icons/trail.webp) Spur {#trail}
+
+Ist diese Option aktiv, trägt jeder neue Abdruck auch die letzten Punkte des Strichs dahinter erneut auf. `Spuranzahl` legt fest, wie viele Punkte erneut aufgetragen werden, `Spurintensität`, wie stark sie sind, und `Spurradius`, wie viel größer sie werden.
+
+Die Spur funktioniert nur mit dem Strichtyp `Punkt` und nicht mit dem [Falloff-Einfluss](#influence) `Grat`.
 
 ### ![](/icons/silhouette.webp) Silhouette {#silhouette}
 ![](/images/stroke_silhouette.webp)
-Standardmäßig beeinflussen Striche nur die Modelloberfläche innerhalb des Pinselradius. Wenn Silhouette aktiviert ist, wird der Strich durch das gesamte Modell projiziert. Das ist sehr nützlich beim ersten Blocken eines Modells oder für Formen, bei denen die Seiten senkrecht bleiben sollen.
+Standardmäßig wirken Striche nur auf die Oberfläche des Modells innerhalb des Pinselradius. Mit aktivierter Silhouette wird der Strich durch das gesamte Modell projiziert. Das ist sehr nützlich, um ein Modell anfangs grob anzulegen, oder für Formen, deren Seiten senkrecht bleiben sollen.
 
-Die Projektionsrichtung kann explizit gesetzt werden; die Standardmethode „Closest“ erkennt den besten Winkel relativ zur Ansicht. 
+Die Projektionsrichtung lässt sich gezielt festlegen:
+
+* `X`, `Y`, `Z` - entlang einer festen Achse projizieren.
+* `Ansicht` - entlang der Blickrichtung der Kamera projizieren.
+* `Wenn ausgerichtet` - entlang der Blickrichtung der Kamera projizieren, aber nur, solange die Kamera an einer Ansicht ausgerichtet ist. Andernfalls bleibt es ein normaler Strich.
+* `Nächste` - entlang der Achse projizieren, die der Blickrichtung der Kamera am nächsten liegt. Das ist die Standardeinstellung.
 
 ![](/videos/stroke_silhouette.mp4) 
 
-### ![](/icons/dice.webp) Zufall {#randomize}
+### ![](/icons/dice.webp)Randomisieren {#randomize}
 
 ![](/images/stroke_randomize.webp)
 
-Intensität, Translation, Rotation und Skalierung des Strichs können jeweils zufällig variiert werden. Damit lassen sich verschiedene Effekte erzeugen, z. B. kann Randomize mit dem Paint-Werkzeug gesprenkelte Farben erzeugen oder mit dem Crease-Werkzeug Hautdetails.
+`Stärke`, `Versatz`, `Rotation` und `Skalierung` des Strichs lassen sich jeweils zufällig variieren. Mit dem Kontrollkästchen einer Zeile schalten Sie sie ein oder aus. Damit erzielen Sie verschiedenste Effekte: Mit dem Werkzeug Zeichnen entsteht zum Beispiel eine fleckige Färbung, mit dem Werkzeug Falte feine Hautdetails.
+
+`Periode (langsamer)` legt die Länge des Zufallszyklus fest: Erhöhen Sie sie für langsame, sanfte Schwankungen, verringern Sie sie für schnelles Rauschen. Der kleine Button neben jeder Zeile skaliert die Periode nur für diese Zeile.
 
 ![](/videos/stroke_randomize.mp4) 
 
+### ![](/icons/paint.webp) Randomisieren - HSV {#randomize-hsv}
+
+Bei Werkzeugen, die malen, lassen sich auch `Farbton`, `Sättigung` und `Wert` der Malfarbe zufällig variieren, mit einer eigenen Periode. Ideal für dezente Farbvariationen auf Haut oder Stein.
+
 ### Strichversatz {#stroke-offset}
 
-Einen konstanten Versatz auf den Strich anwenden. Das ist nützlich bei kleinen Bildschirmen, auf denen dein Finger den Strich verdecken würde. 
-
+Verschiebt den Strich um einen festen Abstand, damit Ihr Finger ihn nicht verdeckt. Das ist auf kleinen Bildschirmen nützlich. Es handelt sich um eine globale Einstellung: Aktivieren Sie sie über ihr Kontrollkästchen, dann gilt sie für alle Werkzeuge.
 
 ## ![](/icons/alpha.webp) Alpha {#alpha}
 ![](/images/stroke_alpha.webp) 
 
-Das `Alpha` ist eine Textur, die das Pinselverhalten moduliert.
-Es ist ein Graustufenbild, bei dem schwarze Pixel keine Deformation und weiße Pixel volle Deformation bedeuten.
+Das `Alpha` ist eine Textur, die das Verhalten Ihres Pinsels moduliert.
+Es ist ein Graustufenbild: Schwarze Pixel bedeuten keine Verformung, weiße Pixel volle Verformung.
 
-Klicke auf das Alpha-Bild, um es zu ändern.
+Tippen Sie auf das Alphabild, um es zu wechseln. Neben den mitgelieferten Alphas und Ihren eigenen Importen kann die Alphaliste auch Displacement-Maps von Poly Haven herunterladen.
 
-Klicke auf die Materialvorschau, um ein Alpha aus einem Material-Preset zu laden. Du kannst hier auch Material-Presets speichern und wählen, ob Texturen mit dem Werkzeug eingebettet werden sollen.
-
-::: tip
-Die Textur wird nie in der Größe geändert, daher können große Texturen die Performance verlangsamen.
-:::
-
-### Pixel invertieren {#invert-pixels}
-Dies kehrt die Werte des Bildes um, sodass schwarze Pixel weiß und weiße Pixel schwarz werden.
+Tippen Sie auf die Materialvorschau, um ein Alpha aus einem Material-Preset zu laden. Hier können Sie auch Material-Presets speichern und festlegen, ob die Texturen mit dem Werkzeug eingebettet werden.
 
 ::: tip
+Die Textur wird nie verkleinert, große Texturen können daher die Leistung bremsen.
+:::
 
-Die integrierten Alphas, die mit Nomad ausgeliefert werden, können nicht invertiert werden.
+### ![](/icons/blend_contrast.webp) Alpha korrigieren {#invert-pixels}
+Der Button `Korrigieren...` eines importierten Alphas öffnet ein Popup, das das Bild selbst korrigiert: seinen Mittelwert, das Invertieren der Pixel (Schwarz wird Weiß und Weiß wird Schwarz), eine Drehung um 90° sowie eine horizontale oder vertikale Spiegelung. Die Bilddatei wird überschrieben, sodass auch andere Apps das korrigierte Bild sehen.
+
+::: tip
+
+Die mit Nomad mitgelieferten Alphas lassen sich nicht korrigieren.
 
 :::
 
-### Skalierung {#scaling}
+### Projektion {#projection}
 
-Die Pinselgröße in Nomad ist ein Kreis mit einem benutzerdefinierten Radius. Texturen sind oft quadratisch oder rechteckig; die Parameter `Scaling` legen fest, wie die Textur in den Kreis eingepasst wird. Für eine quadratische Textur passt ein Wert von 0,7 in den Kreis. Ein Wert von 1 skaliert die Textur größer, sodass der Kreis hineinpasst und die Ränder abgeschnitten werden.
+Wie das Alpha auf das Modell projiziert wird:
+
+* `Oberfläche` - das Alpha liegt auf der Oberfläche unter dem Pinsel und folgt ihrer Ausrichtung.
+* `Bildschirm` - das Alpha wird direkt aus der Ansicht projiziert.
+* `Kachel` - das Alpha wird aus der Ansicht projiziert und bleibt an seinem Platz, während Sie darüber malen, wie eine Schablone. So fügt sich ein sich wiederholendes Muster nahtlos zusammen. Die Drehung ist gesperrt, und der Stiftdruck ändert die Mustergröße nicht.
+* `Triplanar` - das Alpha wird entlang der 3 Achsen projiziert. Die Optionen für Skalierung, Drehung und Kacheln darunter werden durch die Einstellungen der Triplanar-Textur ersetzt.
+
+### ![](/icons/diagonal.webp) Skalierung {#scaling}
+
+Der Pinsel in Nomad ist ein Kreis mit einem von Ihnen festgelegten Radius. Texturen sind oft quadratisch oder rechteckig, und mit den Parametern unter `Skalierung` bestimmen Sie, wie die Textur in den Kreis passt. Bei einer quadratischen Textur passt sie mit einem Wert von 0,7 in den Kreis. Ein Wert von 1 vergrößert die Textur so weit, dass der Kreis in sie hineinpasst, und schneidet dabei die Ränder ab.
 
 ![](/images/alpha_scaling.webp) 
 
-Wenn `Scaling - Y` aktiviert ist, kannst du das Alpha vertikal strecken.
+Mit `Skalierung Y` können Sie das Alpha vertikal strecken. Der erste Regler wird dann zu `Skalierung X`.
 
 ![](/images/alpha_scaling_y.webp) 
 
+`Horizontal spiegeln` spiegelt das Alpha von links nach rechts.
+
 ### Rotation {#rotation}
 
-Die Alpha-Textur wird so rotiert, dass sie der Richtung des Strichs folgt. Du kannst einen Rotationsoffset hinzufügen, und wenn das Schloss-Symbol aktiviert ist, bleibt die Textur relativ zum Bildschirm in dieser Rotation gesperrt.
+Die Alphatextur dreht sich mit der Richtung des Strichs mit. Sie können einen Drehversatz hinzufügen. Ist das Schloss-Symbol aktiv, bleibt die Textur in dieser Drehung relativ zum Bildschirm fixiert.
 
-### Kachelung {#tiling}
+Der Stift-Button daneben dreht das Alpha, wenn Sie Ihren Stift um die eigene Achse rollen (Barrel Roll), bei den Strichen `Grab • Dynamischer Radius` und `Grab • Dynamische Intensität`, solange die Drehung nicht gesperrt ist. Das funktioniert nur mit Stiften, die das unterstützen.
+
+### Kacheln {#tiling}
 ![](/images/stroke_tiling.webp) 
 
-Legt fest, wie oft die Textur innerhalb des Pinselprofils wiederholt wird. Die Tiling-Modi erlauben es, auf einen einzelnen Texturabdruck pro Strich zu begrenzen, wiederholte Texturen zu verwenden oder gespiegelt zu kacheln, wobei jede zweite Textur gespiegelt wird, um Muster zu erzeugen oder nahtlose Texturen zu erleichtern.
+Wie oft sich die Textur innerhalb des Pinselprofils wiederholt. Mit den Modi `Kacheln - X` und `Kacheln - Y` beschränken Sie den Strich auf eine einzelne Textur (`Kein`), wiederholen sie (`Wiederholen`) oder spiegeln jede zweite Textur, um Muster zu erzeugen oder nahtlose Texturen zu erleichtern (`Spiegeln`). Sie stehen beim Strich `Rollen`, bei der Projektion `Kachel` oder bei `Kacheln` über 1 zur Verfügung.
+
+`Innerhalb einpassen` spielt nur bei nicht quadratischen Alphas und Pinseltexturen eine Rolle. Ist die Option aktiv, wird jedes Bild für sich ohne Abstand gekachelt. Deaktivieren Sie sie, damit das Alpha und die anderen Bilder synchron bleiben, wenn ihre Seitenverhältnisse unterschiedlich sind.
 
 ![](/videos/alpha_tiling.mp4) 
 
@@ -171,146 +213,163 @@ Legt fest, wie oft die Textur innerhalb des Pinselprofils wiederholt wird. Die T
 
 ### Mittelwert {#mid-value}
 
-Standardmäßig bedeuten schwarze Pixel keine Deformation und weiße Pixel volle positive Deformation. Eine Clay-Bürste mit einer Alpha-Textur aus Felsen zieht die Oberfläche also nur dort heraus, wo das Alpha nicht schwarz ist.
+Standardmäßig bedeuten schwarze Pixel keine Verformung und weiße Pixel volle positive Verformung. Ein Ton-Pinsel mit einer Felsen-Alphatextur zieht die Oberfläche also nur dort heraus, wo das Alpha nicht schwarz ist.
 
-Wenn du möchtest, dass der Pinsel die Oberfläche hineindrückt oder sowohl hinein- als auch herausdrückt, kannst du den Mittelwert anpassen. Wenn du den Wert z. B. auf 0,5 setzt, bewirkt ein mittleres Grau im Alpha nichts, Schwarz drückt hinein, Weiß zieht heraus.
+Soll der Pinsel die Oberfläche hineindrücken oder sowohl hineindrücken ALS AUCH herausziehen, ändern Sie den Mittelwert. Bei einem Wert von 0,5 bewirkt ein mittleres Grau im Alpha nichts, Schwarz drückt hinein und Weiß zieht heraus.
+
+Zwei Buttons helfen Ihnen, den richtigen Wert zu finden: Der quadratische Button liest den Mittelwert am Rand des Bildes ab, und mit der Pipette wählen Sie ihn direkt auf dem Alpha aus.
 
 
 
 
-## Abfall {#falloff}
+## ![](/icons/falloff.webp) Falloff {#falloff}
 
 ![](/images/falloff_menu.webp) 
 
-Dies ähnelt dem [Alpha](#alpha), außer dass du die Intensität mit einer einzelnen Kurve steuerst. Diese wird mit dem Alpha kombiniert, sodass du eine Textur für Details und Falloff zur Steuerung des Rand-Ausblendens und der Intensität im Zentrum des Werkzeugs verwenden kannst.
+Das funktioniert ähnlich wie das [Alpha](#alpha), nur dass Sie die Stärke mit einer einzigen Kurve steuern. Falloff und Alpha werden kombiniert: Die Textur liefert die Details, der Falloff steuert das Ausblenden am Rand und die Stärke in der Mitte des Werkzeugs.
 
-Wenn die Kurve oben ist, bedeutet das volle Deformation; wenn sie unten ist, hat der Pinsel keinen Effekt.
+Liegt die Kurve oben, ist das volle Verformung, liegt sie unten, hat der Pinsel keine Wirkung.
 
-Du kannst dir die Kurve als Querschnitt durch die Spitze des Pinsels vorstellen. Der untere Bereich zeigt eine Vorschau, wie ein einzelner „Stempel“ des Pinsels auf der Modelloberfläche aussehen würde; wenn es eine Alpha-Textur für den Pinsel gibt, wird diese ebenfalls angezeigt, um zu zeigen, wie Falloff und Alpha zusammenwirken.
+Stellen Sie sich die Kurve als Querschnitt durch die Pinselspitze vor. Der untere Bereich zeigt eine Vorschau, wie ein einzelner „Abdruck“ des Pinsels auf der Oberfläche des Modells aussehen würde. Hat der Pinsel eine Alphatextur, wird sie ebenfalls angezeigt, damit Sie sehen, wie Falloff und Alpha zusammenwirken.
 
-### Voreinstellung {#preset}
-Wenn dies ausgewählt ist, öffnet ein Klick auf die Kurvengrafik ein Menü mit Presets. Abgerundete Kurven ergeben weichere Ergebnisse, eckige Kurven schärfere. Die Schaltfläche `Sub` in der linken Werkzeugleiste kehrt den Falloff effektiv um, sodass die Oberseite der Kurve in die Oberfläche hineindrückt statt herauszuziehen – oder umgekehrt.
+### ![](/icons/fx.webp) Preset {#preset}
+Ist `Preset...` ausgewählt, öffnet ein Tippen auf das Kurvendiagramm ein Menü mit Presets. Runde Kurven ergeben weichere Ergebnisse, eckige Kurven schärfere. Der Button `Sub` in der linken Werkzeugleiste kehrt den Falloff praktisch um: Die Kurvenspitze drückt dann in die Oberfläche hinein, statt herauszuziehen, oder umgekehrt.
 
-### Catmull-Rom {#catmull-rom}
-Wenn ausgewählt, kann der Benutzer eigene Falloff-Kurven zeichnen. Der Kurveneditor funktioniert wie die Kurven im restlichen Nomad:
+### ![](/icons/curve_catmull.webp) Catmull-Rom {#catmull-rom}
+In diesem Modus zeichnen Sie Ihre eigenen Falloff-Kurven. Der Kurveneditor funktioniert wie die Kurven im Rest von Nomad:
 
-* Auf die Kurve klicken, um einen neuen Punkt zu erstellen
-* Einen Punkt ziehen, um ihn zu verschieben
-* Auf einen Punkt klicken, um zwischen scharf und weich umzuschalten
-* Einen Punkt in einen benachbarten Punkt ziehen, um ihn zu entfernen
+* Tippen Sie auf die Kurve, um einen neuen Punkt zu erstellen
+* Ziehen Sie einen Punkt, um ihn zu verschieben
+* Tippen Sie auf einen Punkt, um zwischen scharf und weich zu wechseln
+* Ziehen Sie einen Punkt auf einen benachbarten Punkt, um ihn zu entfernen
 
-### B-Spline {#b-spline}
-Wenn ausgewählt, kann der Benutzer eigene Falloff-Kurven zeichnen. Der Editor funktioniert wie bei Catmull-Rom, aber die Kurvenpunkte beeinflussen die Kurve, statt direkt auf ihr zu liegen, was beim Erstellen glatter Kurvenformen helfen kann.
+### ![](/icons/curve_bspline.webp) B-Spline {#b-spline}
+In diesem Modus zeichnen Sie Ihre eigenen Falloff-Kurven. Der Editor funktioniert wie bei Catmull-Rom, die Punkte beeinflussen die Kurve aber nur, statt direkt auf ihr zu liegen. So lassen sich leichter weichere Kurvenformen erstellen.
 
-Der Kurveneditor hat 3 Schaltflächen:
+### ![](/icons/curve_bevel.webp) Fase {#bevel}
+Die Punkte werden durch gerade Linien verbunden, mit abgerundeten Ecken, deren Größe von der Schärfe des jeweiligen Punkts abhängt. Praktisch für Pinsel mit flacher Spitze und einer sauberen Fase am Rand.
 
-| Element  | Icon                        | Beschreibung                                 |
-| :------: | :-------------------------: | :------------------------------------------: |
-| Maximize | ![](/icons/maximize.webp)  | Kurveneditor maximieren                      |
-| Reset    | ![](/icons/reset.webp)     | Kurve auf den Standardzustand zurücksetzen   |
-| Symmetry | ![](/icons/symmetric.webp) | Kurve als symmetrische „Pinselspitze“ anzeigen |
+Der Kurveneditor hat 3 Buttons:
+
+| Element      | Symbol                      | Beschreibung                                         |
+| :----------: | :-------------------------: | :--------------------------------------------------: |
+| Maximieren   | ![](/icons/maximize.webp)  | Vergrößert den Kurveneditor                          |
+| Zurücksetzen | ![](/icons/reset.webp)     | Setzt die Kurve auf den Standard zurück              |
+| Symmetrie    | ![](/icons/symmetric.webp) | Zeigt die Kurve als symmetrische „Pinselspitze“ an   |
 
 
 ### Einfluss {#influence}
 
-* Sphere (3d) – Der Einfluss wird berechnet, indem der Abstand vom Vertex zum Pinselzentrum genommen wird.
-* Circle (2d) – Der Vertex wird zuerst auf die Flächenebene projiziert, bevor sein Abstand zum Pinselzentrum genommen wird. Dies ähnelt der Art, wie Alphas abgetastet werden. 
-* Cylinder – Der Einfluss wird als Zylinder durch die Fläche projiziert, wie im Silhouette-Modus unten.
+* `Kugel` (3d) - Der Einfluss wird aus dem Abstand des Vertex zur Pinselmitte berechnet.
+* `Kreis` (2d) - Der Vertex wird zuerst auf die Bereichsebene projiziert, bevor sein Abstand zur Pinselmitte gemessen wird. Das entspricht in etwa der Art, wie Alphas abgetastet werden. 
+* `Zylinder` - Der Einfluss wird als Zylinder durch den Bereich projiziert. Das entspricht dem Aktivieren der [Silhouette](#silhouette-1) weiter unten.
+* `Grat` - Der Falloff wird quer zum Strich gemessen, die Kurve wird also zum Querschnitt des gesamten Strichs. Der Button `Sym` spiegelt das Profil dann quer zum Strich: Bearbeiten Sie eine Seite, folgt die andere. Ist er aus, verläuft die Kurve von der linken zur rechten Seite des Strichs. Nicht verfügbar für die auf Abflachen basierenden Werkzeuge.
 
-### Silhouette {#silhouette-1}
-Standardmäßig beeinflussen Striche nur die Modelloberfläche innerhalb des Pinselradius. Wenn Silhouette aktiviert ist, wird der Strich durch das gesamte Modell projiziert. Das ist sehr nützlich beim ersten Blocken eines Modells oder für Formen, bei denen die Seiten senkrecht bleiben sollen.
+### ![](/icons/silhouette.webp) Silhouette {#silhouette-1}
+Standardmäßig wirken Striche nur auf die Oberfläche des Modells innerhalb des Pinselradius. Mit aktivierter Silhouette wird der Strich durch das gesamte Modell projiziert. Das ist sehr nützlich, um ein Modell anfangs grob anzulegen, oder für Formen, deren Seiten senkrecht bleiben sollen. Es gibt dieselben Projektionsoptionen wie bei der [Silhouette](#silhouette) im Tab Strich.
 
 
 
-## Filter {#filter}
+## ![](/icons/filter.webp) Filter {#filter}
 
 ![](/images/filter_menu.webp) 
 
-### Strich akkumulieren {#accumulate-stroke}
-Kein Limit dafür aktivieren, wie viel Material pro Strich hinzugefügt/entfernt werden kann. Z. B. hat das Werkzeug `Clay` dies aktiviert, sodass Material sich weiter aufbauen kann, während das Werkzeug `Brush` dies deaktiviert hat, sodass Striche aufhören, Material hinzuzufügen, wenn du denselben Strich über dieselbe Region des Meshes bewegst. 
+### ![](/icons/accumulate.webp) Strokes kumulieren {#accumulate-stroke}
+Hebt die Grenze auf, wie viel Material pro Strich hinzugefügt oder entfernt werden kann. Beim Werkzeug `Ton` ist das zum Beispiel aktiv, sodass sich Material immer weiter aufbaut, beim Werkzeug `Pinsel` dagegen nicht: Fahren Sie mit demselben Strich mehrmals über denselben Bereich des Meshs, kommt kein Material mehr hinzu. 
 
-### Nur frontale Vertices {#front-facing-vertex-only}
-Diese Option ignoriert rückseitige Vertices.
-Sie kann nützlich sein, wenn du nur einen Teil einer dünnen Geometrie bemalen willst, ohne die andere Seite zu beeinflussen.
-Sie funktioniert auch beim Sculpting, kann aber zu Artefakten führen.
+### ![](/icons/culling.webp) Nur Front-Facing Vertex {#front-facing-vertex-only}
+Diese Option ignoriert Vertices, die von Ihnen abgewandt sind.
+Das ist nützlich, wenn Sie einen Teil einer dünnen Geometrie bemalen möchten, ohne die andere Seite zu treffen.
+Beim Sculpten funktioniert es ebenfalls, kann dort aber Artefakte verursachen.
 
-### Dynamische Topologie erlauben {#allow-dynamic-topology}
-Diese Option ist nur verfügbar, wenn dein Mesh im Modus [Dynamic Topology](topology.md#dynamic-topology) ist. Du kannst dynamische Topologie pro Werkzeug deaktivieren oder aktivieren.
+### ![](/icons/eye_open.webp) Nur sichtbare Vertices {#visible-vertex-only}
+Ignoriert Vertices, die aus Sicht der Kamera hinter anderen Oberflächen verborgen sind. Diese Option erscheint bei den Formstrichen (Lasso, Rechteck...) der Werkzeuge zum Maskieren und Malen sowie von `Face-Gruppe` und `Ausblenden`.
 
-### Verbundene Topologie {#connected-topology}
-Nur die Vertices bearbeiten, die mit der Oberfläche verbunden sind, die du mit dem Werkzeug berührst. Zum Beispiel kannst du mit dem Werkzeug `Move` so einen Teil verschieben, auch wenn er sich mit einem anderen Teil überschneidet.
+### ![](/icons/dynamic.webp) Dynamische Topologie zulassen {#allow-dynamic-topology}
+Diese Option ist nur verfügbar, wenn sich Ihr Mesh im Modus [Dynamische Topologie](topology.md#dynamic-topology) befindet. Sie können die dynamische Topologie für jedes Werkzeug einzeln aktivieren oder deaktivieren.
+
+### ![](/icons/connect.webp) Connected Topology {#connected-topology}
+Bearbeitet nur die Vertices, die mit der vom Werkzeug berührten Oberfläche verbunden sind. Mit dem Werkzeug `Bewegen` können Sie so zum Beispiel ein Teil verschieben, auch wenn es ein anderes Teil durchdringt.
 ![](/videos/connected_topology.mp4)
 
-### Bereich schützen {#protect-area}
+### Maskierten Bereich schützen {#protect-area}
 ![](/images/filter_protect_area.webp) 
 
-Diese Optionen verhindern, dass Werkzeuge Teile deines Meshes unter bestimmten Bedingungen beeinflussen. 
+Diese Optionen verhindern unter verschiedenen Bedingungen, dass Werkzeuge Teile Ihres Meshs verändern. Jede lässt sich auf `Auto`, `Nein` oder `Ja` stellen, und der kleine Pfeil zeigt, was `Auto` gerade bedeutet.
 
-Die Option „Auto“ bedeutet: Wenn du Hide, Mask oder Facegroup im Menü [Shading](shading) sichtbar hast, werden sie geschützt; wenn sie in diesem Menü deaktiviert sind, ist der Schutz ausgeschaltet.
+* `Ausblenden` - Legt fest, ob mit dem Werkzeug Ausblenden versteckte Teile des Meshs geschützt werden. Bei `Auto` sind ausgeblendete Faces geschützt, außer ihr Drahtgitter ist sichtbar (siehe die Einstellungen zum [Drahtgitter](settings.md#wireframe)).
+* `Maske` - Legt fest, ob maskierte Teile des Meshs geschützt werden. Bei `Auto` sind maskierte Teile geschützt, solange die Maske im Menü [Shading](shading) sichtbar ist.
+* `Face-Gruppe` - Legt fest, ob ein Werkzeug nur innerhalb der zuerst berührten Face-Gruppe wirkt. Bei `Auto` richtet sich das danach, ob Face-Gruppen im Menü [Shading](shading) sichtbar sind.
 
-* `All` – Umschalter, ob die Schutzfilter global oder pro Werkzeug gelten.
-* `Hide` – Wenn Teile des Meshes mit dem Hide-Werkzeug versteckt sind, legt fest, ob sie geschützt werden sollen.
-* `Mask` – Wenn Teile des Meshes maskiert sind, legt fest, ob sie geschützt werden sollen.
-* `Facegroup` – Legt fest, ob du ein Werkzeug nur innerhalb der zuerst berührten Facegroup verwenden kannst.
+Der Button `(Alle)` legt fest, ob diese Schutzeinstellungen global für alle Werkzeuge gelten oder für jedes Werkzeug einzeln.
 
 
-### Scharfe Kanten beibehalten {#keep-sharp-edges}
-Punkte ausschließen, deren Normalen zu stark von der Flächennormale abweichen.
+### Bereichssampling {#area-sampling}
+Manche Pinsel oder Strichoptionen benötigen eine Ebenennormale und eine Ebenenposition auf der Oberfläche, um zu funktionieren.
 
-Dadurch ändert sich, wie die Flächenebene berechnet wird (Area sampling).
-
-Diese Option kann für Flatten-basierte Werkzeuge nützlich sein oder wenn du eine überwiegend flache Oberfläche ohne Überlauf einfärben möchtest.
-
-![](/videos/filter_keep_sharp_edges.mp4)
-
-### Bereichsabtastung {#area-sampling}
-Einige Pinsel oder Strichoptionen benötigen eine Flächennormale und eine Flächenposition auf der Oberfläche, um zu funktionieren.
-
-Du kannst steuern, wie diese durchschnittliche Ebene berechnet wird, indem du den Abtastbereich als Verhältnis des Werkzeugradius festlegst.
+Wie diese gemittelte Ebene berechnet wird, steuern Sie, indem Sie den Sampling-Bereich als Verhältnis zum Werkzeugradius festlegen.
 
 Bei 100 % wird jeder Punkt innerhalb des Auswahlkreises berücksichtigt.
 
-Bei 0 % wird nur der nächste Vertex oder das nächste Dreieck berücksichtigt. Diese Werte können sowohl für `Normal radius` als auch für `Position radius` gekoppelt oder getrennt und unabhängig gesetzt werden.
+Bei 0 % wird nur der nächstgelegene Vertex bzw. das nächstgelegene Dreieck berücksichtigt. Die Werte für `Normalenradius` und `Positionsradius` lassen sich koppeln oder entsperren und getrennt einstellen.
+
+### Normalenfilter (Bereich) {#keep-sharp-edges}
+Schließt Punkte aus, deren Normalen zu stark von der Oberflächennormale abweichen.
+
+Das verändert, wie die Ebene berechnet wird (Bereichssampling). Es ist daher vor allem für Ton- oder Abflachen-Werkzeuge nützlich, oder wenn Sie eine weitgehend flache Fläche einfärben möchten, ohne darüber hinauszumalen.
+
+Die Winkel `Min.` und `Max.` steuern den Übergang zwischen ausgeschlossenen und voll betroffenen Punkten, wie die kleine farbige Scheibe daneben zeigt.
+
+![](/videos/filter_keep_sharp_edges.mp4)
+
+### Normalenfilter (Verlauf) {#falloff-normal-filter}
+Wie der [Normalenfilter (Bereich)](#keep-sharp-edges) schließt er Punkte aus, deren Normalen zu stark von der Oberflächennormale abweichen, wirkt aber auf den Pinsel-Falloff statt auf die Ebenenberechnung. Nützlich, um Falten oder Erhebungen zu bemalen.
 
 
 ### Tiefenmaskierung {#depth-masking}
 ![](/images/stroke_depthmask.webp)
 
-Punkte ausschließen, die über oder unter einer bestimmten Distanz zur berechneten Ebene (Area sampling) liegen.
+Schließt Punkte aus, die mehr als einen bestimmten Abstand über oder unter der berechneten Ebene (Bereichssampling) liegen.
 
-Damit kannst du nur auf Erhöhungen oder nur in Vertiefungen malen.
+So können Sie nur erhabene Bereiche oder nur Vertiefungen bemalen.
 
-Die Grafik stellt einen Querschnitt der Oberfläche dar; die horizontale Linie ist die Oberfläche, der Kreis repräsentiert den Radius des Farb-Falloffs relativ über und unter der Oberfläche. `Height offset` ist ein Prozentsatz über oder unter der Oberfläche, ab dem die Maskierungsberechnung beginnt. `Top area` und `Bottom area` erlauben es dir, den Falloff oberhalb und unterhalb des Offset-Punkts zu skalieren.
+Das Diagramm zeigt einen Querschnitt der Oberfläche: Die waagerechte Linie ist die Oberfläche, der Kreis stellt den Falloff-Radius der Farbe über und unter der Oberfläche dar. `Höhenversatz` ist ein Prozentwert über oder unter der Oberfläche, ab dem die Maskierung berechnet wird. Mit aktiviertem `Tiefenabfall` skalieren Sie mit `Oberer Bereich` und `Unterer Bereich` den Falloff über und unter dem Versatzpunkt.
 
 #### Beispiel: In Vertiefungen malen {#example-paint-in-cavities}
-Um nur in Vertiefungen zu malen, setze den Height Offset auf -100 % und passe den Top-Area-Schieberegler so an, dass er von der horizontalen Linie entfernt ist. Das bedeutet, dass der erste Klick die „Null“-Tiefe festlegt und dann nur Bereiche unterhalb dieser Tiefe beeinflusst werden.
+Um nur in Vertiefungen zu malen, stellen Sie den Höhenversatz auf -100 % und den Regler für den oberen Bereich so ein, dass er von der waagerechten Linie entfernt ist. Der erste Tipper legt dann die „Null“-Tiefe fest, und nur Bereiche unterhalb dieser Tiefe werden bemalt.
 
 ![](/videos/stroke_depth_cavity.mp4)
 
 #### Beispiel: Auf Erhebungen malen {#example-paint-on-bumps}
-Um nur auf hohen Bereichen zu malen, setze den Height Offset auf +90 %, sodass der untere Teil des Kreises die horizontale Linie nur leicht schneidet. Wenn du auf die Spitze einer „hohen“ Zone klickst, legt dies die Tiefe fest, sodass alles in dieser Tiefe, etwas darunter und alles darüber bemalt wird. Tiefe Vertiefungen werden übersprungen.
+Um nur auf hohen Bereichen zu malen, stellen Sie den Höhenversatz auf +90 %, sodass die Unterseite des Kreises die waagerechte Linie ein kleines Stück schneidet. Tippen Sie oben auf einen „hohen“ Bereich, legt das die Tiefe fest: Alles auf dieser Tiefe, etwas darunter und alles darüber wird bemalt. Tiefe Vertiefungen werden ausgelassen.
 ![](/videos/stroke_depth_bump.mp4)
 
 
-## Druck {#pressure}
+## ![](/icons/pressure.webp) Druck {#pressure}
 ![](/images/pressure_menu.webp) 
 
-Steuert, wie der Stift-/Stylus-Druck die Pinsel beeinflusst.
+Steuert, wie sich der Druck des Stifts auf die Pinsel auswirkt.
 
-Standardmäßig ist `Use global settings` aktiviert, d. h. alle Pinsel teilen sich dieselben Druckwerte.
+### Globale Vorgabe nutzen {#use-global-settings}
 
-### Druck – Radius {#pressure-radius}
+Standardmäßig ist `Globale Vorgabe nutzen` aktiv, alle Pinsel teilen sich also dieselben Druckwerte. Deaktivieren Sie die Option, um dem aktuellen Werkzeug eigene Druckeinstellungen zu geben.
 
-Diese Kurve steuert, wie der Pinselradius vom Druck beeinflusst wird. Standard ist eine lineare Beziehung, sodass sich die Radiusänderung glatt anfühlen sollte, wenn dein Stylus eine gleichmäßige Reaktion hat. Viele Stifte haben jedoch eine nichtlineare Reaktion, die du mit dieser Kurve kompensieren kannst. Wenn sich der Radius z. B. nicht so anfühlt, als würde er bei hohem Druck seinen Maximalwert erreichen, verwende ein Kurvenpreset wie „out-pow3“ mit einer nach oben gebogenen Form, um den Radius früher zu erhöhen.
+### ![](/icons/radius.webp) Radius {#pressure-radius}
 
-Dieser Dialog ähnelt der Falloff-Kurvenanzeige; du kannst ein Preset verwenden, indem du auf das Kurvenfenster tippst, oder deine eigenen Kurven mit den Modi Catmull-Rom und B-Spline zeichnen.
+Diese Kurve steuert, wie sich der Druck auf den Pinselradius auswirkt. Standardmäßig ist der Zusammenhang linear: Reagiert Ihr Stift gleichmäßig, sollte sich auch der Radius gleichmäßig ändern. Viele Stifte reagieren allerdings nicht linear, was Sie mit dieser Kurve ausgleichen können. Erreicht der Radius bei hohem Druck zum Beispiel nicht ganz seinen Maximalwert, wählen Sie ein Kurven-Preset wie „out-pow3“, dessen Biegung nach oben zeigt, damit der Radius früher zunimmt.
 
-Wenn du einen konstanten Radius möchtest, deaktiviere diesen Abschnitt.
+Dieser Dialog ähnelt der Anzeige der Falloff-Kurve: Tippen Sie auf das Kurvenfenster, um ein Preset zu wählen, oder zeichnen Sie Ihre eigenen Kurven mit den Modi `Catmull-Rom`, `B-Spline` und `Fase`.
 
-### Druck – Intensität {#pressure-intensity}
+Möchten Sie einen konstanten Radius, deaktivieren Sie diesen Abschnitt.
 
-Ähnlich wie beim Radiusregler, aber zur Steuerung der Intensität. Wenn du eine konstante Intensität möchtest, deaktiviere diesen Abschnitt.
+### ![](/icons/intensity.webp) Stärke {#pressure-intensity}
+
+Wie die Radiuskurve, nur für die Stärke. Möchten Sie eine konstante Stärke, deaktivieren Sie diesen Abschnitt.
+
+### Druck auf 100% begrenzen {#limit-pressure}
+
+Sorgt dafür, dass der Stiftdruck nie über 100 % geht. Das ist eine globale Einstellung.
 
 ### Druckglättung {#pressure-smoothing}
 
-Stiftdruck-Ereignisse mitteln, um glattere Ergebnisse zu erhalten.
+Mittelt die Druckwerte des Stifts für gleichmäßigere Ergebnisse.

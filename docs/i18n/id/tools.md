@@ -3,84 +3,91 @@
 ![](/images/tools_menu.webp)
 
 ::: tip
-Lompat ke bawah ke [Alat](#tools-1) untuk deskripsi tiap alat.
+Langsung ke bagian [Alat](#tools-1) untuk penjelasan setiap alat.
 :::
 
 ## Ikhtisar {#overview}
 
-Alat dipilih dari `Toolbox` di sebelah kanan, dan dikendalikan dengan `Tool Controls` di sebelah kiri. Pengaturan tambahan ada di menu `Settings`, ikon pertama di menu kanan atas.
+Alat dipilih dari `Kotak peralatan` di sebelah kanan, lalu dikendalikan dengan `Kontrol Alat` di sebelah kiri. Pengaturan tambahan ada di menu `Alat`, di menu kanan atas.
 
-Alat kuas memiliki kontrol untuk ukuran dan intensitas. Alat seleksi memiliki kontrol untuk beberapa gaya seleksi. Bagian bawah kontrol alat memiliki pintasan untuk operasi yang sering digunakan (Smooth, Mask, Hide, Gizmo, Color, Alpha).
+Alat kuas punya kontrol untuk ukuran dan intensitas. Alat seleksi punya kontrol untuk beberapa gaya seleksi. Bagian bawah kontrol alat berisi pintasan untuk operasi yang sering dipakai (Haluskan, Topeng, Sembunyi, Grup Face, Gizmo, Warna, Alpha).
 
-Alat Nomad diberi kode warna di toolbox:
+Alat-alat Nomad diberi kode warna di kotak peralatan (matikan `Alat berwarna` di menu [Antarmuka](interface.md) untuk label polos):
 
-* <span class=brush>**Brush tools**</span> (Clay, Brush, Smooth, Layer, Inflate, Nudge, Stamp, DelLayer)
-* <span class=move>**Move tools**</span> (Move, Drag)
-* <span class=mask>**Mask tools**</span> (Mask, SelMask)
-* <span class=paint>**Paint tools**</span> (Paint, Smudge)
-* <span class=flatten>**Flatten tools**</span> (Flatten, Planar)
-* <span class=pinch>**Pinch tools**</span> (Crease, Pinch)
-* <span class=selection>**Selection based tools**</span> di mana sebuah mask 2D digambar terlebih dahulu, lalu sebuah operasi dijalankan (Trim, Split, Project)
-* <span class=creation>**Creation tools**</span> (Tube, Lathe, Insert)
-* <span class=transform>**Transform tools**</span> (Transform, Gizmo)
-* <span class=misc>**Misc tools**</span> (Facegroup, Hide, Measure, Select)
-* <span class=view>**View tool**</span>
+* <span class=brush>**Alat kuas**</span> (Tanah Liat, Kuas, Haluskan, Lapisan, Kembung, HapusLapisan, Quad Remesher)
+* <span class=move>**Alat pindah**</span> (Pindah, Tarik, Elastis, Dorongan)
+* <span class=mask>**Alat topeng**</span> (Topeng)
+* <span class=paint>**Alat lukis**</span> (Melukis, Smudge)
+* <span class=flatten>**Alat perata**</span> (Datar, Planar, Poles)
+* <span class=pinch>**Alat cubit**</span> (Alur tajam, Cubitan)
+* <span class=stamp>**Alat cap**</span> (Cap, VDM)
+* <span class=selection>**Alat berbasis seleksi**</span>, yang menggambar topeng 2d terlebih dahulu, lalu menjalankan sebuah operasi (Pangkas, Pisah, Proyeksi)
+* <span class=creation>**Alat pembuat**</span> (Tabung, Bubut, Masukkan)
+* <span class=transform>**Alat transformasi**</span> (Transformasi, Gizmo, Atur, Lattice)
+* <span class=misc>**Alat lain-lain**</span> (Grup Face, Sembunyi)
+* <span class=view>**Alat tampilan**</span> (Tampilan, Ukur, Pilih)
 
 
 
-Banyak dari alat ini dapat dikustomisasi dengan perilaku kuas, tekanan, tekstur, dll yang berbeda melalui menu [Stroke](stroke.md). 
+Banyak dari alat ini bisa disesuaikan dengan perilaku kuas, tekanan, tekstur, dan lainnya melalui menu [Goresan](stroke.md).
 
 
 ### Kontrol kuas {#brush-controls}
 
-Toolbar kiri memiliki slider untuk radius dan intensitas, lalu kontrol spesifik kategori alat, dijelaskan di bawah.
+Bilah alat kiri berisi penggeser untuk jari-jari dan intensitas, lalu kontrol khusus sesuai kategori alat, yang dijelaskan di bawah.
 
 ![](/images/tool_left_panel.webp)
 
 ::: tip
-Slider intensitas untuk banyak alat bisa melampaui 100%, layak untuk dieksperimenkan!
+Penggeser intensitas pada banyak alat bisa melewati 100%, layak untuk dicoba!
 :::
 
 ### Mode sub {#sub-mode}
-Tombol tepat di bawah slider intensitas adalah tombol `Sub`. Label dan fungsinya akan berubah untuk setiap alat, dan ketika ditekan akan memanggil perilaku alternatif, biasanya kebalikan. Misalnya untuk [Paint](#paint) akan memanggil mode Erase, untuk [Crease](#crease) akan membuat tepi yang terangkat alih-alih cekungan, dll.
+Tombol tepat di bawah penggeser intensitas adalah tombol `Kurang` (Sub). Label dan fungsinya berubah untuk setiap alat, dan saat ditekan akan menjalankan perilaku alternatif, biasanya kebalikannya. Misalnya, untuk [Melukis](#paint) tombol ini menjalankan mode hapus, untuk [Alur tajam](#crease) tombol ini membuat tepi yang menonjol, bukan alur, dan seterusnya.
 
-Secara bawaan tombol ini bersifat lengket; artinya Anda bisa menahannya untuk sementara memanggilnya, ketika Anda lepaskan ia akan mati. Jika Anda mengetuknya, sub mode akan diaktifkan secara permanen.
+Secara bawaan, tombol ini bekerja sebagai tombol lengket: Anda bisa menahannya untuk mengaktifkannya sementara, dan saat dilepas mode itu mati lagi. Jika Anda mengetuknya, mode sub akan aktif terus.
 
 ### Pintasan {#shortcuts}
-Di bagian bawah toolbar kiri ada pintasan untuk [Smooth](#smooth), [Mask](#mask), [Hide](#hide), [Gizmo](#gizmo), [Color](painting.md#pbr-sliders), [Alpha](stroke.md#alpha). 
+Di bagian bawah bilah alat kiri terdapat pintasan untuk [Haluskan](#smooth), [Topeng](#mask), [Sembunyi](#hide), [Grup Face](#facegroup), [Gizmo](#gizmo), [Warna](painting.md#pbr-sliders), [Alpha](stroke.md#alpha).
 
-Secara bawaan semuanya berfungsi sebagai tombol lengket; artinya Anda bisa menahannya untuk sementara memanggilnya, ketika Anda lepaskan ia akan mati. Jika Anda mengetuknya, mode pintasan itu akan diaktifkan secara permanen.
+Secara bawaan, semuanya bekerja sebagai tombol lengket: Anda bisa menahannya untuk mengaktifkannya sementara, dan saat dilepas mode itu mati lagi. Jika Anda mengetuknya, mode pintasan itu akan aktif terus.
 
 ### Kontrol seleksi {#selection-controls}
 
-Alat [Selection Mask](#selection-mask), [Trim](#trim), [Split](#split), [Project](#project), [Facegroup](#facegroup) dan [Hide](#hide) semuanya menggunakan kontrol serupa untuk memilih area mesh.
+Alat [Topeng](#mask), [Melukis](#paint), [Pangkas](#trim), [Pisah](#split), [Proyeksi](#project), [Grup Face](#facegroup), [Sembunyi](#hide), dan [Pilih](#select) semuanya memakai kontrol serupa untuk menyeleksi area mesh.
 
 ![](/images/tools_shape_selector_panel.webp)
 
+Ketuk tombol bentuk di bilah alat kiri (tombol ini menampilkan bentuk yang sedang aktif, `Tali` secara bawaan) untuk membuka popup berisi bentuk-bentuk. Untuk alat yang juga bisa bekerja dengan kuas (Topeng, Melukis, Grup Face, Sembunyi), popup yang sama juga memuat jenis goresan.
 
-* `Lasso` - Bentuk gambar bebas
-* `Polygon` - Bentuk tertutup yang didefinisikan oleh kombinasi kurva dan/atau garis lurus. Lihat [Shape editing](#shape-editing) di bawah untuk info lebih lanjut.
-* `Curve` - (Project saja) - Kurva gambar bebas untuk proyeksi
-* `Path` - (Project saja) - Kurva yang didefinisikan oleh titik-titik. Lihat [Shape editing](#shape-editing) di bawah untuk info lebih lanjut.
-* `Line` - Seret garis untuk mendefinisikan segmen planar. Secara bawaan akan langsung beroperasi pada mesh, matikan auto validate jika Anda tidak menginginkannya (tekan lama atau geser pada ikon garis)
-* `Rect` - Seret garis diagonal, ini akan mendefinisikan sudut-sudut bentuk persegi panjang. Tekan lama atau geser untuk menampilkan opsi auto validate, paksa ke bentuk persegi, dan agar klik pertama menjadi pusat persegi panjang.
-* `Ellipse` - Seret garis diagonal, ini akan mendefinisikan ukuran elips. Tekan lama atau geser untuk menampilkan opsi auto validate, paksa ke bentuk lingkaran, dan agar klik pertama menjadi pusat elips.
-* `Flip` - membalik mask bentuk, atau arah alat project.
+* `Tampilan` - Tanpa bentuk, alat tidak melakukan apa-apa, seperti mode kamera.
+* `Tali` - Bentuk yang digambar bebas dengan tangan
+* `Poligon` - Bentuk tertutup yang tersusun dari gabungan kurva dan/atau garis lurus. Lihat [Menyunting bentuk](#shape-editing) di bawah untuk info lebih lanjut.
+* `Lengkung` - (Hanya Proyeksi) - Kurva bebas untuk proyeksi
+* `Jalur` - (Hanya Proyeksi) - Kurva yang ditentukan oleh titik-titik. Lihat [Menyunting bentuk](#shape-editing) di bawah untuk info lebih lanjut.
+* `Garis` - Seret sebuah garis untuk menentukan potongan bidang datar. Secara bawaan, operasi langsung dijalankan pada mesh; ubah opsi `Sunting` jika Anda tidak menginginkannya (tekan lama atau usap ikon garis).
+* `Pita` - Jalur di antara dua pemandu sejajar, dengan gradien melintanginya. `Perpanjang` mempertahankan nilai penuh melewati pemandu terjauh alih-alih berhenti di batas pita, `Balik` menukar pemandu tempat gradien dimulai.
+* `Rect` - Seret garis diagonal untuk menentukan sudut-sudut persegi panjang. Tekan lama atau usap untuk memunculkan opsi `Sunting`, `Persegi` untuk memaksa bentuk persegi, dan `Terpusat` agar klik pertama menjadi pusat persegi panjang.
+* `Elips` - Seret garis diagonal untuk menentukan ukuran elips. Tekan lama atau usap untuk memunculkan opsi `Sunting`, `Lingkaran` untuk memaksa bentuk lingkaran, dan `Terpusat` agar klik pertama menjadi pusat elips.
+* `Balik` - Membalik topeng bentuk, atau arah alat proyeksi.
 
-Kebanyakan alat memiliki opsi auto validate, artinya operasi akan terjadi segera setelah Anda selesai menggambar bentuk. Ketika auto validate mati, sebuah tombol hijau akan digambar di sebelah bentuk yang akan mengeksekusi operasi. Ini memungkinkan Anda mengedit bentuk, menyesuaikan tampilan, ketika siap menggunakan bentuk, tekan tombol hijau.
+Sebagian besar alat punya opsi `Sunting` yang menentukan apa yang terjadi setelah Anda selesai menggambar bentuk:
+* `Edit: nonaktif` - Operasi langsung dijalankan begitu Anda melepas.
+* `Edit: aktif` - Bentuk tetap bisa disunting. Sebuah tombol hijau muncul di samping bentuk untuk menjalankan operasi. Dengan begitu Anda bisa menyunting bentuk dan mengatur tampilan, lalu menekan tombol hijau saat sudah siap.
+* `Edit: tahan` - Operasi dijalankan saat Anda melepas, kecuali Anda menahan di akhir goresan untuk terus menyunting bentuk.
 
-### Pengeditan bentuk {#shape-editing}
-Pengeditan poligon dan kurva berperilaku dengan cara yang mirip:
+### Menyunting bentuk {#shape-editing}
+Penyuntingan poligon dan kurva bekerja dengan cara yang mirip:
 
-* Untuk memulai, seret garis untuk mendefinisikan 2 titik, lalu seret keluar dari tengah garis untuk mendefinisikan poligon atau kurva.
-* Klik pada titik untuk beralih antara halus dan tajam. 
-* Klik dan seret pada bagian kurva atau garis untuk membuat titik baru.
-* Untuk menghapus titik, seret titik ke tetangganya sampai berubah merah.
-* Ikon tempat sampah di sudut ikon poligon atau path akan menghapus bentuk.
+* Untuk memulai, seret sebuah garis untuk menentukan 2 titik, lalu tarik dari tengah garis untuk membentuk poligon atau kurva.
+* Klik titik-titik untuk beralih antara halus dan tajam.
+* Klik dan seret bagian kurva atau garis untuk membuat titik baru.
+* Untuk menghapus titik, seret titik ke titik tetangganya sampai berubah merah.
+* Ikon tempat sampah di sudut ikon poligon atau jalur akan menghapus bentuk.
 
 ### Menu pengaturan {#settings-menu}
 
-Banyak alat memiliki pengaturan tambahan yang ditemukan di menu settings, ikon pertama di menu kanan atas:
+Banyak alat punya pengaturan tambahan yang ada di menu `Alat`, di menu kanan atas. Menu ini tampak abu-abu untuk alat yang tidak punya pengaturan tambahan.
 
 ![](/images/tools_settings_menu.webp)
 
@@ -88,760 +95,927 @@ Banyak alat memiliki pengaturan tambahan yang ditemukan di menu settings, ikon p
 
 |                                                                     |                                                   |                                                                   |                                                         |                                                         |                                                                     |
 | :-----------------------------------------------------------------: | :-----------------------------------------------: | :---------------------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-----------------------------------------------------------------: |
-| ![](/icons/tool_clay.webp)         <br> [Clay](#clay)              | ![](/icons/tool_brush.webp) <br> [Brush](#brush) | ![](/icons/tool_move.webp)       <br> [Move](#move)              | ![](/icons/tool_drag.webp)    <br> [Drag](#drag)       | ![](/icons/tool_smooth.webp)  <br> [Smooth](#smooth)   | ![](/icons/tool_mask.webp)    <br> [Mask](#mask)                   |
-| ![](/icons/tool_maskSelector.webp) <br> [Sel Mask](#selector-mask) | ![](/icons/tool_paint.webp) <br> [Paint](#paint) | ![](/icons/tool_smudge.webp)     <br> [Smudge](#smudge)          | ![](/icons/tool_flatten.webp) <br> [Flatten](#flatten) | ![](/icons/tool_planar.webp)  <br> [Planar](#planar)   | ![](/icons/tool_crease.webp)  <br> [Crease](#crease)               |
-| ![](/icons/tool_pinch.webp)        <br> [Pinch](#pinch)            | ![](/icons/tool_trim.webp)  <br> [Trim](#trim)   | ![](/icons/tool_split.webp)      <br> [Split](#split)            | ![](/icons/tool_project.webp) <br> [Project](#project) | ![](/icons/tool_layer.webp)   <br> [Layer](#layer)     | ![](/icons/tool_inflate.webp) <br> [Inflate](#inflate)             |
-| ![](/icons/tool_nudge.webp)        <br> [Nudge](#nudge)            | ![](/icons/tool_stamp.webp) <br> [Stamp](#stamp) | ![](/icons/tool_clearLayer.webp) <br> [Del Layer](#delete-layer) | ![](/icons/tool_tube.webp)    <br> [Tube](#tube)       | ![](/icons/tool_lathe.webp)   <br> [Lathe](#lathe)     | ![](/icons/tool_insert.webp)  <br> [Insert](#insert)               |
-| ![](/icons/tool_transform.webp)    <br> [Transform](#transform)    | ![](/icons/tool_gizmo.webp) <br> [Gizmo](#gizmo) | ![](/icons/tool_faceGroup.webp)  <br> [FaceGroup](#facegroup)    | ![](/icons/tool_hide.webp)    <br> [Hide](#hide)       | ![](/icons/tool_measure.webp) <br> [Measure](#measure) | ![](/icons/tool_remesh.webp)  <br> [Quad Remesher](#quad-remesher) |
-| ![](/icons/tool_select.webp)       <br> [Select](#select)          | ![](/icons/tool_view.webp)  <br> [View](#view)   |                                                                   |                                                         |                                                         |                                                                     |
+| ![](/icons/tool_clay.webp)    <br> [Tanah Liat](#clay) | ![](/icons/tool_brush.webp)   <br> [Kuas](#brush)      | ![](/icons/tool_move.webp)       <br> [Pindah](#move)            | ![](/icons/tool_drag.webp)      <br> [Tarik](#drag)          | ![](/icons/tool_elastic.webp)   <br> [Elastis](#elastic)     | ![](/icons/tool_smooth.webp)  <br> [Haluskan](#smooth) |
+| ![](/icons/tool_mask.webp)    <br> [Topeng](#mask)     | ![](/icons/tool_paint.webp)   <br> [Melukis](#paint)   | ![](/icons/tool_smudge.webp)     <br> [Smudge](#smudge)          | ![](/icons/tool_flatten.webp)   <br> [Datar](#flatten)       | ![](/icons/tool_planar.webp)    <br> [Planar](#planar)       | ![](/icons/tool_polish.webp)  <br> [Poles](#polish)    |
+| ![](/icons/tool_crease.webp)  <br> [Alur tajam](#crease) | ![](/icons/tool_pinch.webp)   <br> [Cubitan](#pinch) | ![](/icons/tool_trim.webp)       <br> [Pangkas](#trim)           | ![](/icons/tool_split.webp)     <br> [Pisah](#split)         | ![](/icons/tool_project.webp)   <br> [Proyeksi](#project)    | ![](/icons/tool_layer.webp)   <br> [Lapisan](#layer)   |
+| ![](/icons/tool_inflate.webp) <br> [Kembung](#inflate) | ![](/icons/tool_nudge.webp)   <br> [Dorongan](#nudge)  | ![](/icons/tool_stamp.webp)      <br> [Cap](#stamp)              | [VDM](#vdm)                                                  | ![](/icons/tool_clearLayer.webp) <br> [HapusLapisan](#delete-layer) | ![](/icons/tool_tube.webp)    <br> [Tabung](#tube)     |
+| ![](/icons/tool_lathe.webp)   <br> [Bubut](#lathe)     | ![](/icons/tool_insert.webp)  <br> [Masukkan](#insert) | ![](/icons/tool_transform.webp)  <br> [Transformasi](#transform) | ![](/icons/tool_gizmo.webp)     <br> [Gizmo](#gizmo)         | ![](/icons/tool_faceGroup.webp) <br> [Grup Face](#facegroup) | ![](/icons/tool_hide.webp)    <br> [Sembunyi](#hide)   |
+| ![](/icons/tool_measure.webp) <br> [Ukur](#measure)    | [Atur](#arrange)                                         | ![](/icons/tool_remesh.webp)     <br> [Quad Remesher](#quad-remesher) | ![](/icons/tool_select.webp)    <br> [Pilih](#select)        | ![](/icons/tool_lattice.webp)   <br> [Lattice](#lattice)     | ![](/icons/tool_view.webp)    <br> [Tampilan](#view)   |
 
 ------
 
-### ![](/icons/tool_clay.webp) Tanah liat {#clay}
-Alat Clay berguna untuk membangun bentuk patung Anda. `Sub` akan menghapus material dari patung Anda.
+### ![](/icons/tool_clay.webp) Tanah Liat {#clay}
+Alat Tanah Liat berguna untuk membangun bentuk pahatan Anda. `Kurang` akan mengurangi material dari pahatan Anda.
 
 ![](/videos/tool_clay.mp4)
 
 ### ![](/icons/tool_brush.webp) Kuas {#brush}
-Brush standar. `Sub` akan menghapus material.
+Kuas standar. `Kurang` akan mengurangi material.
 
 ![](/videos/tool_brush.mp4)
 
 ### ![](/icons/tool_move.webp) Pindah {#move}
-Area di bawah kuas akan menempel pada kuas, memungkinkan deformasi elastis. Seleksi dipertahankan selama pemindahan, jadi jika Anda menjauhkan kuas, lalu mengembalikannya ke tempat semula, Anda tidak akan melihat deformasi.
+Area di bawah kuas akan menempel pada kuas, sehingga menghasilkan deformasi elastis. Seleksi dipertahankan selama pemindahan, jadi jika Anda menggerakkan kuas menjauh lalu kembali ke titik awal, tidak akan ada deformasi.
 
-Sub mode adalah `Normal`, dan akan memindahkan area di bawah kuas sepanjang normal permukaan.
+Mode sub-nya adalah `Normal`, yang memindahkan area di bawah kuas mengikuti normal permukaan.
 
-Brush ini bagus untuk deformasi skala besar maupun deformasi kecil yang hati-hati.
+Kuas ini cocok untuk deformasi skala besar maupun deformasi kecil yang hati-hati.
 
 #### Pengaturan Pindah {#move-settings}
 
-* `Radius (Background)` - Seberapa jauh dari tepi model Anda masih bisa memahat, berguna saat bekerja pada siluet objek. 
-* `Same-side vertex only` - Abaikan verteks yang menghadap ke arah berlawanan dari deformasi.
+* `Jari-jari (Latar belakang)` - Seberapa jauh dari tepi model Anda masih bisa memahat, berguna saat menggarap siluet objek. Hapus centangnya agar hanya mencengkeram jika Anda mulai di atas model.
+* `Hanya verteks sisi yang sama` - Mengabaikan verteks yang menghadap ke arah berlawanan dengan deformasi.
+* `Arah` - Dipakai oleh mode sub `Normal`, menentukan apakah seretan mendorong atau menarik permukaan:
+    * `Otomatis` - Memilihkan salah satu dari dua metode di bawah untuk Anda, berdasarkan sudut normal permukaan.
+    * `Normal 3D` - Membandingkan posisi penunjuk di layar dengan normal permukaan seperti terlihat dari kamera.
+    * `XY` - Memakai posisi penunjuk di layar (atas/bawah, kiri/kanan) untuk menentukan dorong atau tarik.
+    * `Ambang Batas` - Dengan `Otomatis`, batas sudut yang menentukan metode mana yang dipakai.
+* `Kecepatan putar` - Anda bisa memuntir area yang dicengkeram sambil memindahkannya: putar dua jari, putar batang stylus Anda, atau tahan tombol pengubah (Alt, Ctrl, Shift, atau Cmd) sambil menyeret dengan mouse. Ada satu penggeser untuk masing-masing jari, stylus, dan mouse; hapus centang salah satunya untuk mematikan input itu.
 
 
 ![](/videos/tool_move.mp4)
 
-### ![](/icons/tool_drag.webp) Seret {#drag}
-Area di bawah kuas akan menempel pada kuas, memungkinkan deformasi elastis. Tidak seperti move brush, seleksi terus diperbarui selama sapuan, sehingga memungkinkan membuat objek panjang seperti ular, terutama ketika Dynamic Topology diaktifkan.
+### ![](/icons/tool_drag.webp) Tarik {#drag}
+Area di bawah kuas akan menempel pada kuas, sehingga menghasilkan deformasi elastis. Berbeda dengan kuas Pindah, seleksi terus diperbarui selama goresan, sehingga Anda bisa membuat objek yang panjang seperti ular, terutama saat Dynamic Topology diaktifkan.
 
-Sub mode adalah `Normal`, dan akan memindahkan area di bawah kuas sepanjang normal permukaan.
+Mode sub-nya adalah `Normal`, yang memindahkan area di bawah kuas mengikuti normal permukaan.
 
-Brush ini bagus untuk perubahan bentuk yang lebih longgar dan gestural.
+Kuas ini cocok untuk perubahan bentuk yang lebih longgar dan ekspresif.
 
-#### Pengaturan Seret {#drag-settings}
+#### Pengaturan Tarik {#drag-settings}
 
-* `Radius (Background)` - Seberapa jauh dari tepi model Anda masih bisa memahat, berguna saat bekerja pada siluet objek. 
-* `Same-side vertex only` - Abaikan verteks yang menghadap ke arah berlawanan dari deformasi.
+Tarik punya pengaturan yang sama dengan [Pindah](#move-settings): `Jari-jari (Latar belakang)`, `Hanya verteks sisi yang sama`, `Arah`, dan `Kecepatan putar`.
 
 ![](/videos/tool_drag.mp4)
 
+### ![](/icons/tool_elastic.webp) Elastis {#elastic}
+Mencengkeram dan menarik permukaan seperti [Pindah](#move), tetapi dengan deformasi elastis: alih-alih berhenti di tepi kuas, tarikannya memudar perlahan seiring jarak di seluruh objek, mirip seperti meregangkan karet. Jari-jari kuas menentukan seberapa lebar tarikannya.
+
+Mode sub-nya adalah `Normal`, yang memindahkan area di bawah kuas mengikuti normal permukaan.
+
+Kuas ini cocok untuk perubahan proporsi yang besar dan lembut, dengan hasil yang tetap halus.
+
+#### Pengaturan Elastis {#elastic-settings}
+
+Elastis punya pengaturan yang sama dengan [Pindah](#move-settings), kecuali `Hanya verteks sisi yang sama`. `Jari-jari (Latar belakang)` nonaktif secara bawaan.
+
 ### ![](/icons/tool_smooth.webp) Haluskan {#smooth}
 Menghaluskan area dengan merata-ratakan posisi titik. Alat ini sangat bergantung pada kepadatan poligon.
-Jadi jika Anda memiliki banyak poligon, penghalusan akan kurang efektif.
+Jadi jika poligon Anda banyak, penghalusannya akan kurang efektif.
 
-Sub mode adalah `Relax`, yang hanya menghaluskan wireframe tetapi berusaha mempertahankan detail geometris.
+Mode sub-nya adalah `Santai`, yang hanya merapikan wireframe tetapi berusaha mempertahankan detail geometri.
 
-#### Pengaturan haluskan {#smooth-settings}
+#### Pengaturan Haluskan {#smooth-settings}
 
 ![](/images/tool_smooth_settings.webp)
 
-##### Facegroup {#smooth-facegroup}
+##### Grup Face {#smooth-facegroup}
 
-* `Relax` - Akan menghaluskan batas facegroup. Gunakan intensitas lebih dari 100% untuk cepat menghaluskan batas. `Auto` akan menghaluskan hanya jika pratinjau facegroup diaktifkan, `Off` akan menonaktifkan, `On` akan mengaktifkan. 
+* `Santai` - Menghaluskan batas grup face. Gunakan intensitas di atas 100% untuk menghaluskan batas dengan cepat. `Otomatis` hanya menghaluskan jika pratinjau grup face aktif, `Tidak` menonaktifkannya, `Ya` mengaktifkannya.
 
-##### Vertex {#vertex}
-* `Sticky vertex on border` - Untuk mesh dengan tepi terbuka, misalnya bidang, memungkinkan untuk menghaluskan sudut. Mengaktifkan opsi ini akan mengunci tepi terbuka.
-* `Relax` - sama dengan mode alternatif relax di toolbar kiri.
-* `Stable smoothing` - Berusaha membuat penghalusan tidak bergantung pada topologi. Ini bekerja paling baik dengan kepadatan topologi yang bervariasi dan dengan nilai intensitas smoothing yang tinggi.
+##### Verteks {#vertex}
+* `Pertahankan volume` - Menghaluskan tanpa menyusutkan permukaan, sehingga penghalusan berulang tidak mengempiskan bentuk Anda. Tombol roda gigi di sebelahnya berisi nilai `Menyusut` dan `Kembung` yang dipakai untuk ini.
+* `Pertahankan batas` - Pada mesh dengan tepi terbuka, misalnya bidang datar, sudut-sudutnya bisa ikut terhaluskan. Mengaktifkan opsi ini membuat verteks di batas mesh tetap diam.
+* `Pelembutan stabil` - Berusaha membuat penghalusan tidak bergantung pada topologi. Paling baik bekerja pada kepadatan topologi yang bervariasi dan dengan nilai intensitas penghalusan yang tinggi.
+* `Santai` - Sama dengan mode alternatif Santai di bilah alat kiri.
 
 ##### Pengecatan {#painting}
-* `Screen Smoothing` - Gunakan opsi ini untuk mendapatkan smoothing yang tidak bergantung pada topologi, bahkan pada jumlah poligon tinggi.
-* `Screen samples` - Kualitas smoothing, angka lebih tinggi akan lebih halus, tetapi lebih lambat.
+* `Melembutkan layar` - Gunakan opsi ini untuk mendapatkan penghalusan yang tidak bergantung pada topologi, bahkan pada jumlah poligon tinggi. `Otomatis`, `Tidak`, atau `Ya`.
+* `Sampel layar` - Kualitas penghalusan; angka yang lebih tinggi lebih halus, tetapi lebih lambat.
 
 ::: tip
-Kepadatan poligon yang lebih tinggi dapat memerlukan peningkatan intensitas di atas 100%. Nilai sangat tinggi (300%, 500%) juga dapat bekerja dengan baik sebagai alat pemahatan, memaksa area menjadi datar dan halus dengan cepat di bawah kuas, seperti memukul tanah liat dengan palu!
+Kepadatan poligon yang lebih tinggi bisa membutuhkan intensitas di atas 100%. Nilai yang sangat tinggi (300%, 500%) juga bisa bekerja dengan baik sebagai alat pahat, memaksa area menjadi datar dan halus dengan cepat di bawah kuas, seperti memukul tanah liat dengan palu!
 :::
 
 ![](/videos/tool_smooth.mp4)
 
-### ![](/icons/tool_mask.webp) Masker {#mask}
-Alat ini memungkinkan Anda mem-mask verteks. Verteks yang di-mask terlindungi dari sculpting atau painting. 
+### ![](/icons/tool_mask.webp) Topeng {#mask}
+Alat ini memungkinkan Anda memberi topeng pada verteks. Verteks yang bertopeng terlindungi dari pemahatan maupun pengecatan.
 
-Sub mode adalah `Unmask`, dan akan menghapus area di mana mask telah dilukis.
+Mode sub-nya adalah `Lepas Topeng`, yang menghapus topeng di tempat yang sudah dicat.
 
-Mirip dengan seleksi di program lukis 2D, mask dapat dilukis dengan kuas, atau dibuat dengan seleksi bentuk, diburamkan atau dipertajam. 
+Mirip dengan seleksi di aplikasi lukis 2d, topeng bisa dicat dengan kuas atau dibuat dengan seleksi bentuk (`Tali`, `Rect`, `Pita`...), lalu dikaburkan atau dipertajam. Pilih kuas atau bentuknya di popup goresan pada bilah alat kiri, lihat [Kontrol seleksi](#selection-controls).
 
-Berbeda dengan program lukis 2D, mask juga dapat dibuat melalui facegroup, dan mask dapat digunakan untuk membuat geometri baru melalui operasi ekstrusi/ekstraksi. 
+Berbeda dengan aplikasi lukis 2d, topeng juga bisa dibuat dari grup face, dan topeng bisa dipakai untuk membuat geometri baru melalui operasi bergaya ekstrusi/ekstraksi.
 
 ![](/videos/tool_mask1.mp4)
 
- Sebuah toolbar akan muncul di bagian atas viewport dengan kontrol tambahan. 
+ Sebuah bilah alat akan muncul di bagian atas viewport dengan kontrol tambahan.
 
 ![](/images/tool_mask_toolbar.webp)
 
-Judul bar dapat diketuk untuk memperluas/meruntuhkan, atau panah di kanan atas dapat diketuk untuk memindahkannya ke bagian atas atau bawah UI.
+Judul bilah bisa diketuk untuk membuka/menutupnya, atau ketuk panah di kanan atas untuk memindahkannya ke bagian atas atau bawah antarmuka.
 
-| Action                                             | Description                                                                                |
+| Tindakan                                           | Deskripsi                                                                                  |
 | :------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| ![](/icons/circle_cross2.webp) Clear              | Menghapus mask                                                                             |
-| ![](/icons/invert.webp)        Invert             | Membalik mask                                                                              |
-| ![](/icons/sharpen.webp)       Sharpen            | Menajamkan tepi mask                                                                       |
-| ![](/icons/blur.webp)          Blur               | Memburamkan tepi mask                                                                      |
-|                                 Blur ->            | Seret kiri/kanan untuk memburamkan mask secara interaktif                                  |
-| ![](/icons/culling.webp)       Front              | Beralih untuk hanya mem-mask verteks yang menghadap ke depan                              |
-|                                 Convert            | Mengonversi mask menjadi facegroup                                                         |
-| ![](/icons/group_to_mask.webp) On tap (facegroup) | Saat diaktifkan facegroup akan ditampilkan, mengetuk facegroup akan mem-mask-nya          |
-|                                 On tap (mask)      | Saat diaktifkan, mengetuk 'pulau' mask atau poligon tak ter-mask akan flood fill pulau itu |
-| ![](/icons/vertex.webp)        Connected          | Saat diaktifkan hanya mengizinkan sapuan mask memengaruhi topologi yang terhubung         |
+| ![](/icons/circle_cross2.webp) Hapus semua        | Menghapus topeng di semua objek. Jika objek lain juga bertopeng, tombol `Bersihkan` tambahan hanya menghapus topeng objek yang dipilih |
+| ![](/icons/invert.webp)        Balik              | Membalik topeng                                                                            |
+| ![](/icons/sharpen.webp)       Mempertajam        | Mempertajam tepi topeng                                                                    |
+| ![](/icons/blur.webp)          Kabur              | Mengaburkan tepi topeng                                                                    |
+| ![](/icons/outline.webp)       Batas              | Memberi topeng pada batas terbuka mesh, seperti tepi bidang datar atau bibir lubang       |
+| ![](/icons/blur.webp)          Kabur ->           | Seret ke kanan untuk mengaburkan topeng, ke kiri untuk mempertajamnya                      |
+| ![](/icons/circle_plus.webp)   Perbesar ->        | Seret ke kanan untuk memperluas area bertopeng, ke kiri untuk menyusutkannya              |
+| ![](/icons/intensity.webp)     Tingkatkan ->      | Seret ke kanan untuk memperkuat topeng, ke kiri untuk melemahkannya, tanpa mengubah bentuknya |
+| ![](/icons/dig.webp)           Rongga ->          | Membangun ulang topeng dari kelengkungan permukaan: seret ke kanan agar hanya bagian cekung yang bisa dicat, ke kiri agar hanya bagian menonjol |
+| ![](/icons/culling.webp)       Depan              | Aktifkan agar hanya verteks yang menghadap depan yang diberi topeng                        |
+| ![](/icons/eye_open.webp)      Terlihat           | Dengan bentuk, aktifkan untuk mengabaikan verteks yang tersembunyi di balik permukaan lain |
+|                                 Konversi           | Mengonversi topeng menjadi grup face                                                       |
+| ![](/icons/group_to_mask.webp) Saat diketuk (grup face) | Jika aktif, grup face akan ditampilkan, dan mengetuk sebuah grup face akan memberinya topeng |
+|                                 Saat diketuk (topeng) | Jika aktif, mengetuk sebuah 'pulau' poligon bertopeng atau tidak bertopeng akan mengisi penuh pulau itu. |
+| ![](/icons/connect.webp)       Terhubung          | Jika aktif, goresan topeng hanya memengaruhi topologi yang terhubung.                      |
 
-##### Gerakan cepat masker {#mask-quick-gesture}
-Anda dapat melakukan gesture gaya ZBrush sambil menahan tombol quick masking di toolbar kiri:
-| Action  | Gesture (hold lower-left shortcut) |
-| :-----: | :--------------------------------: |
-| Invert  | Ketuk pada background              |
-| Clear   | Seret pada background              |
-| Blur    | Ketuk pada area yang di-mask       |
-| Sharpen | Ketuk pada area yang tidak di-mask |
+##### Gestur cepat topeng {#mask-quick-gesture}
+Anda bisa melakukan gestur bergaya ZBrush sambil menahan tombol topeng cepat di bilah alat kiri:
+| Tindakan    | Gestur (tahan pintasan kiri bawah) |
+| :---------: | :--------------------------------: |
+| Balik       | Ketuk di latar belakang            |
+| Bersihkan   | Seret di latar belakang            |
+| Kabur       | Ketuk di area bertopeng            |
+| Mempertajam | Ketuk di area tanpa topeng         |
 
 
-#### Pengaturan masker {#mask-settings}
+#### Pengaturan Topeng {#mask-settings}
 ![](/images/tool_mask_settings.webp)
 
 ![](/videos/tool_mask2.mp4)
 
-* `Preview` - Menu Mask settings terutama digunakan untuk membuat geometri dari mask. Karena itu perilaku bawaan adalah mempratinjau seperti apa geometri baru. Anda dapat memilih tanpa pratinjau, pratinjau extract, pratinjau split, dan apakah geometri ini akan ditampilkan dalam mode x-ray.
+Pengaturan Topeng terutama dipakai untuk membuat geometri dari topeng. Tab di bagian atas memilih operasinya: [Ekstrak](#extract), [Pisah](#split-mask), atau [Ukir](#carve). Opsi di bawahnya berubah sesuai operasi.
 
-##### Ketebalan {#thickness}
-* `Height` - Tinggi bentuk yang diekstrak. Ikon Plus/Minus memungkinkan Anda berputar antara ekstrusi ke luar, ke dalam, atau terpusat. 
-* `Height/Height+Mask` - Beralih antara tinggi yang konstan, atau apakah bagian mask yang diburamkan memengaruhi tinggi, memungkinkan bentuk lembut dengan tinggi bervariasi. 
-
-##### Kelembutan {#smoothness}
-Saat aktif, akan menghaluskan tepi bentuk yang diekstrak, bekerja lebih baik dengan jumlah poligon tinggi. 
-* `Iterations` - Jumlah smoothing yang diterapkan. Nilai tinggi akan menghasilkan tepi melengkung yang sangat halus, tetapi akan mulai menyimpang dari bentuk mask.
-* `All/Sharp border/Borders only` - Smoothing dapat bekerja ke segala arah, menghaluskan sisi dan atas bentuk yang diekstrak, atau menghaluskan atas dan sisi tetapi mempertahankan tepi tajam, atau hanya menghaluskan tepi, membiarkan permukaan atas tidak terpengaruh.
-
-##### Loop tepi (samping) {#edge-loop-side}
-* `Auto Edge-loop (side)` - Akan menghitung jumlah divisi di sisi bentuk yang diekstrak untuk membuat poligon persegi yang cocok dengan poligon area yang di-mask. Saat dinonaktifkan, Anda dapat mengatur jumlah edge loop sendiri dengan slider edge loop.
-
-----
+* `Pratinjau` - Menampilkan seperti apa geometri baru nantinya selagi Anda mengatur pengaturannya.
+* `X-Ray` - Objek mana yang digambar dalam mode x-ray selama pratinjau: `Tidak ada`, `Tidak terpilih`, `Dipilih`, atau `Semua`.
 
 ##### Ekstrak {#extract}
-* `Extract` - Membuat geometri hasil ekstraksi.
-* `Closing action` - Bagaimana extract harus berperilaku. 'None' akan menduplikasi poligon yang di-mask ke bentuk baru. 'Fill' akan melakukan hal yang sama, dan mencoba menambal permukaan belakang. 'Shell' akan mengekstrusi sesuai jumlah yang diatur di 'thickness', dan ini adalah bawaan.
+* `Ekstrak` - Membuat geometri hasil ekstraksi sebagai objek baru.
+* `Aksi penutupan` - Cara bentuk hasil ekstraksi ditutup. `Tidak ada` menduplikasi poligon bertopeng menjadi bentuk baru dan membiarkannya terbuka. `Isi` melakukan hal yang sama, lalu mengisi dan menghaluskan lubang di bagian belakang (jangan gunakan pada permukaan datar). `Kulit` menutup bentuk dengan memakai nilai `Tinggi`, dan merupakan pilihan bawaan.
 
 ::: tip
 
-Jika preview dalam mode 'Extract' dengan 'X-ray' diaktifkan, mengklik tombol Extract bisa membingungkan pada awalnya. Karena menu aktif, ia akan mencoba mempratinjau ekstraksi pada bentuk baru Anda, dan men-xray permukaan asli. Namun karena Anda tidak memiliki mask pada permukaan baru, ia tidak dapat mempratinjau ekstraksi, dan Nomad akan memperingatkan Anda 'Nothing to Extract!'. 
+Jika pratinjau aktif dengan x-ray, menekan tombol Ekstrak bisa membingungkan pada awalnya. Karena menu masih aktif, Nomad akan mencoba menampilkan pratinjau ekstraksi pada bentuk baru Anda, dan menampilkan permukaan asli dalam mode x-ray. Namun karena bentuk baru itu tidak punya topeng, pratinjau ekstraksi tidak bisa ditampilkan, dan Nomad akan memperingatkan 'Tidak ada yang bisa diekstrak!'.
 
-Ini normal, tutup menu mask settings untuk melihat bentuk baru dan yang asli, dan pilih lagi permukaan asli jika Anda perlu menghapus mask atau menggambar mask baru.
+Ini normal. Tutup menu pengaturan topeng untuk melihat bentuk baru dan bentuk aslinya, lalu pilih kembali permukaan asli jika Anda perlu menghapus topeng atau menggambar topeng baru.
 :::
 
 ##### Pisah {#split-mask}
-* `Split` - Akan mengekstrak area yang di-mask DAN yang tidak di-mask ke bentuk baru. 
-* `Closing action (masked)` - Bagaimana ekstraksi mask harus berperilaku. 'None' akan menduplikasi poligon yang di-mask ke bentuk baru. 'Fill' akan melakukan hal yang sama, dan mencoba menambal permukaan belakang. 'Shell' akan mengekstrusi sesuai jumlah yang diatur di 'thickness', dan ini adalah bawaan.
-* `Closing action (unmasked)` - Bagaimana ekstraksi area tak ter-mask harus berperilaku. 'None' akan menduplikasi poligon yang di-mask ke bentuk baru. 'Fill' akan melakukan hal yang sama, dan mencoba menambal permukaan belakang. 'Shell' akan mengekstrusi sesuai jumlah yang diatur di 'thickness', dan ini adalah bawaan.
-* `Sync border` - Memastikan batas antara bentuk hasil ekstraksi area mask dan tak ter-mask tetap berdekatan. Saat dinonaktifkan, karena operasi shell akan mengekstrusi tiap face sepanjang normalnya, celah bisa terbentuk di antara bentuk.
+* `Pisah` - Mengekstrak area bertopeng DAN area tanpa topeng menjadi bentuk-bentuk baru.
+* `Aksi penutupan` (bertopeng) - Cara bagian bertopeng ditutup, dengan pilihan `Tidak ada`, `Isi`, dan `Kulit` yang sama seperti pada Ekstrak.
+* `Aksi penutupan` (tanpa topeng) - Cara bagian tanpa topeng ditutup, dengan pilihan yang sama.
 
-##### Pahat {#carve}
-* `Carve` - Dalam mode bawaan, berperilaku seolah Anda telah melakukan trim ke permukaan sejauh nilai 'thickness', seperti memotong sepotong kulit jeruk. 
+##### Ukir {#carve}
+* `Ukir` - Bekerja seolah-olah Anda memangkas ke dalam permukaan sedalam nilai `Tinggi`, seperti memotong sepotong kulit jeruk. `Tinggi` tidak boleh 0.
+
+##### Tinggi {#thickness}
+* `Tinggi` - Tinggi bentuk hasil ekstraksi. Tombol Plus/Minus memungkinkan Anda berganti antara ekstrusi ke luar, ke dalam, atau ke dua sisi.
+
+##### Kehalusan {#smoothness}
+Jika aktif, bentuk hasil ekstraksi akan dihaluskan; ini bekerja lebih baik dengan jumlah poligon yang lebih tinggi.
+* `Semua` / `Hanya tepi` - Menghaluskan seluruh bentuk, atau hanya tepinya, tanpa mengubah bentuk permukaan atasnya.
+* `Iterasi` - Dengan `Semua`, banyaknya penghalusan yang diterapkan. Nilai tinggi menghasilkan tepi lengkung yang sangat halus, tetapi bentuknya mulai menyimpang dari bentuk topeng.
+* `Dinding` - Dengan `Hanya tepi`, banyaknya penghalusan pada dinding. Tombolnya berganti antara Santai, yang mempertahankan sudut-sudut tajam, dan Haluskan, yang juga membulatkannya.
+* `Bagian dalam` - Dengan `Hanya tepi`, seberapa rata permukaan atas dibuat. Tombolnya berganti antara Santai, yang mempertahankan detail pahatan dan hanya meratakan arah ekstrusi (sehingga detail tidak lagi menimbulkan duri), dan Haluskan, yang menghaluskan permukaannya sendiri.
+
+##### Sisi {#edge-loop-side}
+* `Lurus` - Dinding polos di sisi-sisi bentuk hasil ekstraksi.
+* `Bevel` - (Hanya Ekstrak dengan `Kulit`) Bibir miring di tepi depan. `Bevel` mengatur lebarnya, dalam % dari `Tinggi` atau dalam satuan dunia (tombol di sebelahnya untuk beralih), `Pembagian bevel` membaginya (`Otomatis` secara bawaan), dan sebuah kurva memungkinkan Anda membentuk profilnya.
+* `Profil` - Membentuk dinding dengan kurva profil, dengan `Lebar` dalam % dari `Tinggi` atau dalam satuan dunia.
+* `Topeng` - Tingginya mengikuti topeng: bagian topeng yang kabur mendapat tinggi lebih rendah, sehingga Anda bisa membuat bentuk dengan tinggi yang lembut dan bervariasi.
+* `Pembagian dinding` - Jumlah loop tepi di sisi-sisinya. Dengan `Otomatis`, Nomad memilih jumlah pembagian yang menghasilkan poligon persegi, sesuai dengan poligon di area bertopeng.
 
 
 
-### ![](/icons/tool_maskSelector.webp) Masker Seleksi {#selection-mask}
-Alat ini sebagian besar mirip dengan [Masking tool](#mask), perbedaan utamanya adalah Anda tidak menggunakan stroke untuk melukis mask, tetapi menggunakan [Selection Controls](#selection-controls).
+### ![](/icons/tool_maskSelector.webp) Topeng Seleksi {#selection-mask}
+Alat Topeng Seleksi (SelTopeng) kini menjadi bagian dari [alat Topeng](#mask). Untuk memberi topeng dengan bentuk alih-alih goresan kuas, pilih sebuah bentuk (`Tali`, `Poligon`, `Rect`...) di popup goresan alat Topeng, lihat [Kontrol seleksi](#selection-controls).
 
-Sub mode adalah `Unmask`, dan akan menghapus mask menggunakan selection controls.
-
-Selection mask berbagi pengaturan alat yang sama dengan alat `Mask`.
+Mode sub `Lepas Topeng` juga bekerja dengan bentuk, dan akan menghapus topeng di dalam bentuk.
 
 ![](/videos/tool_selector_mask.mp4)
 
-### ![](/icons/tool_paint.webp) Cat {#paint}
-Menerapkan warna dan properti material. Untuk mempelajari lebih lanjut tentang material Anda dapat mengunjungi bagian [Painting](painting.md).
+### ![](/icons/tool_paint.webp) Melukis {#paint}
+Menerapkan warna dan properti material. Untuk mempelajari lebih lanjut tentang material, Anda bisa mengunjungi bagian [Lukis](painting.md).
 
-Sub mode adalah `Erase` dan akan menghapus cat.
+Mode sub-nya adalah `Hapus`, yang menghapus cat.
 
-#### Pengaturan cat {#paint-settings}
-* `Layer fitering` - Ini berfungsi seperti layer alpha lock di Photoshop atau Procreate. Jika Anda melukis pada sebuah layer, ketika ini diaktifkan, Anda hanya dapat memodifikasi area yang sudah dicat; area yang belum dicat akan terlindungi.
+Selain goresan kuas, Melukis juga bisa mengisi bentuk (`Tali`, `Rect`, `Pita`...), lihat [Kontrol seleksi](#selection-controls).
+
+#### Pengaturan Melukis {#paint-settings}
+* `Penyaringan Layer` - Fungsinya seperti alpha lock lapisan di Photoshop atau Procreate. Jika Anda mengecat di sebuah lapisan dan opsi ini aktif, Anda hanya bisa mengubah bagian yang sudah ada catnya; area yang belum dicat akan terlindungi. Opsi ini hanya tersedia jika ada lapisan yang dipilih.
 
 ![](/videos/tool_paint.mp4)
 
-### ![](/icons/tool_smudge.webp) Oles {#smudge}
-Menggosok warna dan properti material. Menu smudge settings berisi slider `Quality`, nilai lebih rendah berarti sapuan lebih cepat.
+### ![](/icons/tool_smudge.webp) Smudge {#smudge}
+Mengusapkan warna dan properti material. Menu pengaturan Smudge berisi penggeser `Kualitas`; nilai yang lebih rendah membuat goresan lebih cepat.
 
 ![](/videos/tool_smudge.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Ratakan {#flatten}
-Meratakan area dengan memproyeksikan titik ke bidang rata-rata.
+### ![](/icons/tool_flatten.webp) Datar {#flatten}
+Meratakan area dengan memproyeksikan titik-titik ke bidang rata-rata.
 
-Sub mode adalah `Fill` dan akan mendefinisikan bidang yang diatur oleh titik tertinggi, dan cenderung menarik titik ke atas.
+Mode sub-nya adalah `Isi`, yang menentukan bidang berdasarkan titik tertinggi, dan cenderung menarik titik-titik ke atas.
 
-#### Pengaturan ratakan {#flatten-settings}
+#### Pengaturan Datar {#flatten-settings}
 
-* `Lock plane direction` - Gunakan arah bidang yang dihitung pada klik pertama. Secara bawaan ini dinonaktifkan.
-* `Lock plane origin`- Gunakan klik pertama sebagai pusat bidang. Secara bawaan ini dinonaktifkan.
+* `Kunci Arah Bidang` - Memakai arah bidang yang dihitung pada klik pertama. Secara bawaan opsi ini nonaktif.
+* `Kunci Asal Bidang` - Memakai klik pertama sebagai pusat bidang. Secara bawaan opsi ini nonaktif, dan hanya bisa diaktifkan bersama `Kunci Arah Bidang`.
 
-Ketika salah satu atau keduanya dinonaktifkan, flatten dapat diperdalam secara bertahap atau sudut bidang diubah dengan menggunakan sapuan panjang yang bergerak di atas kedalaman dan kelengkungan berbeda. Ini bersama dengan opsi area sampling di menu brush dapat menawarkan kontrol yang sangat presisi.
+Jika salah satu atau keduanya nonaktif, perataan bisa diperdalam secara bertahap atau sudut bidangnya diubah dengan goresan panjang yang melewati kedalaman dan kelengkungan berbeda. Dipadukan dengan opsi pengambilan sampel area di menu kuas, ini memberi kendali yang sangat presisi.
 
 ::: tip
-Saat bekerja di area dengan kelengkungan tinggi, misalnya mencoba meratakan pipi tetapi alat terus memengaruhi sisi hidung, cobalah membuat mask untuk melindungi area yang tidak boleh dipengaruhi kuas flatten.
+Saat bekerja di area dengan kelengkungan tinggi, misalnya saat mencoba meratakan pipi tetapi alat terus memengaruhi sisi hidung, coba buat topeng untuk melindungi area yang tidak boleh terkena kuas perata.
 :::
 
 ![](/videos/tool_flatten.mp4)
 
 
 ### ![](/icons/tool_planar.webp) Planar {#planar}
-Membuat titik planar dengan memproyeksikan ke bidang rata-rata, tetapi dengan penumpukan yang lebih sedikit dibanding kuas flatten. Ini menciptakan permukaan hard-edge yang lebih bersih. Sapuan cepat akan lebih mendorong dan menarik permukaan, sapuan lambat yang dimulai dari area yang sudah planar dan bergerak keluar akan lebih mempertahankan bidang.
+Membuat titik-titik sebidang dengan memproyeksikannya ke bidang rata-rata, tetapi dengan penumpukan yang lebih sedikit dibanding kuas Datar. Hasilnya adalah permukaan bertepi keras yang lebih bersih. Goresan cepat akan lebih banyak mendorong dan menarik permukaan, sedangkan goresan lambat yang dimulai dari area yang sudah datar lalu bergerak ke luar akan lebih mempertahankan bidangnya.
 
-Sub mode adalah `Fill` dan akan mendefinisikan bidang yang diatur oleh titik tertinggi, dan cenderung menarik titik ke atas.
+Mode sub-nya adalah `Isi`, yang menentukan bidang berdasarkan titik tertinggi, dan cenderung menarik titik-titik ke atas.
 
-Planar sebenarnya adalah alat yang sama dengan `Flatten`, tetapi dengan `Lock plane direction` diaktifkan, artinya ia akan cenderung membuat permukaan hard edge yang lebih stabil, sementara flatten bisa lebih skulptural dan digunakan untuk membuat area semi-datar.
+Planar sebenarnya adalah alat yang sama dengan `Datar`, tetapi dengan `Kunci Arah Bidang` aktif, sehingga cenderung menghasilkan permukaan bertepi keras yang lebih stabil, sedangkan Datar bisa lebih bebas dipakai memahat dan membuat area setengah datar.
 
 ![](/videos/tool_planar.mp4)
 
-### ![](/icons/tool_crease.webp) Lipatan {#crease}
-Alat Crease berguna untuk memahat potongan kecil atau cekungan.
+### ![](/icons/tool_polish.webp) Poles {#polish}
+Anggota lain keluarga Datar, yang diatur untuk memoles permukaan menjadi bidang yang bersih. Ini adalah alat yang sama dengan `Datar`, dengan bawaan [Goresan](stroke.md) yang berbeda: `Jejak`, `Filter Normal Area`, dan `Filter kedalaman` diaktifkan.
 
-Sub mode adalah `Invert`, dan akan membuat crease yang terangkat.
+Mode sub-nya adalah `Isi`, seperti Datar.
 
-#### Pengaturan lipatan {#crease-settings}
+Poles punya pengaturan yang sama dengan [Datar](#flatten-settings): `Kunci Arah Bidang` dan `Kunci Asal Bidang`.
 
-* `Pinch factor` - Seberapa banyak menarik verteks ke samping menuju kuas. Jika pinch di 1, dan offset di 0, permukaan tidak akan memiliki perubahan kedalaman, hanya perubahan topologi, menarik edge ke arah stroke.
-* `Offset factor` - Seberapa banyak mendorong/menarik verteks dalam kedalaman. Jika pinch di 0, dan offset di 1, crease dalam atau tonjolan akan dibuat, tetapi akan terlihat bergerigi karena tidak cukup geo yang ditarik ke crease untuk mendefinisikan sisi atau dasar crease dengan akurat.
+### ![](/icons/tool_crease.webp) Alur tajam {#crease}
+Alat Alur tajam berguna untuk memahat potongan atau lekukan kecil.
+
+Mode sub-nya adalah `Balik`, yang membuat alur yang menonjol.
+
+#### Pengaturan Alur tajam {#crease-settings}
+
+* `Faktor Cubitan` - Seberapa kuat verteks ditarik ke samping menuju kuas. Jika cubitan bernilai 1 dan ofset 0, kedalaman permukaan tidak berubah, hanya topologinya yang berubah, dengan tepi-tepi tertarik ke arah goresan.
+* `Faktor Ofset` - Seberapa kuat verteks didorong/ditarik ke dalam. Jika cubitan bernilai 0 dan ofset 1, alur yang dalam atau lekukan yang menonjol akan terbentuk, tetapi tampak bergerigi karena geometri yang tertarik ke alur tidak cukup untuk membentuk sisi atau dasar alur dengan rapi.
 
 ![](/videos/tool_crease.mp4)
 
-### ![](/icons/tool_pinch.webp) Cubit {#pinch}
-Alat ini dapat digunakan untuk menajamkan tepi.
+### ![](/icons/tool_pinch.webp) Cubitan {#pinch}
+Alat ini bisa dipakai untuk mempertajam tepi.
 
-Sub mode adalah `Invert` dan akan menyebarkan verteks.
+Mode sub-nya adalah `Balik`, yang merenggangkan verteks.
 
 ![](/videos/tool_pinch.mp4)
 
 
 ### ![](/icons/tool_trim.webp) Pangkas {#trim}
-Alat Trim bekerja dengan menghapus sebagian mesh Anda, dan memberikan opsi bagaimana memproses celah yang tersisa. Ia menggunakan [Selection controls](#selection-controls) untuk mendefinisikan trim.
+Alat Pangkas bekerja dengan membuang sebagian mesh Anda, dan memberi pilihan cara mengolah celah yang tertinggal. Alat ini memakai [Kontrol seleksi](#selection-controls) untuk menentukan area pangkasan.
+
+Mode sub-nya adalah `Balik`, yang membalik bentuk sehingga sisi lainnya yang dibuang.
 
 ::: tip
 Karena alat ini memproyeksikan dari kamera, Anda akan mendapat peringatan jika kamera dalam mode perspektif.
 
-Dalam mode ortografik potongan yang dibuat melalui mesh sejajar dengan tampilan, yang biasanya diharapkan orang. Ketika dilakukan dengan kamera perspektif, potongan akan terlihat berbeda di sisi jauh objek dibanding sisi dekat.
+Dalam mode ortografis, potongan yang menembus mesh sejajar dengan arah pandang, dan biasanya itulah yang diharapkan. Dengan kamera perspektif, potongan akan terlihat berbeda di sisi jauh objek dibanding di sisi dekatnya.
 :::
 
-#### Pengaturan pangkas {#trim-settings}
+#### Pengaturan Pangkas {#trim-settings}
 
-* `Stroke painting` - Jika paint diaktifkan di menu paint, area yang ditambal akan diisi dengan warna yang saat ini dipilih.
-* `Boolean` - mengisi lubang trim menggunakan area quad poly. Area yang diisi akan datar.
-* `Legacy` - mengisi lubang trim dengan area triangulasi. Area yang diisi akan datar.
-* `Fill` - mengisi lubang dengan area triangulasi. Area yang diisi akan berupa permukaan melengkung, seperti film gelembung sabun.
-* `None` - tidak mengisi lubang.
-* `Boolean Detail Shape` - Perkiraan ukuran quad dan triangle yang digunakan di sisi bentuk trim.
-* `Boolean Detail Hole` - Perkiraan ukuran triangle atau poly yang digunakan pada lubang trim yang diisi. 
-* `Legacy Detail` - Perkiraan ukuran triangle yang digunakan pada trim.
-* `Legacy Hole smoothing` - Seberapa banyak triangle dirilekskan pada area yang diisi.
-* `Legacy Threshold espilon` - Nilai yang dapat disesuaikan untuk meningkatkan algoritma pengisian lubang legacy.
-* `Fill Detail` - Perkiraan ukuran triangle yang digunakan pada trim.
+Pengaturannya dikelompokkan di bawah `Pengisian lubang`:
+
+* `Lukisan garis` - Jika cat diaktifkan di menu lukis, area tambalan akan diisi dengan warna yang sedang dipilih.
+* `Boolean` - Mengisi lubang pangkasan dengan area poligon kuad. Area yang diisi akan datar.
+* `Lama` - Mengisi lubang pangkasan dengan area segitiga. Area yang diisi akan datar.
+* `Isi` - Mengisi lubang dengan area segitiga. Area yang diisi akan berupa permukaan lengkung, seperti lapisan gelembung sabun.
+* `Tidak ada` - Tidak mengisi lubang.
+
+Dengan `Boolean`, bagian `Rincian` berisi:
+
+* `Bentuk` - Perkiraan ukuran kuad dan segitiga yang dipakai di sisi bentuk pangkasan.
+* `Lubang` - Perkiraan ukuran segitiga atau poligon yang dipakai pada lubang yang diisi. Tombol tautan di sebelah `Rincian` menjaganya tetap sama dengan `Bentuk`; lepaskan tautannya untuk mengaturnya sendiri.
+* `Pertahankan topologi` - Tidak menghaluskan dan menyederhanakan batas potongan, sehingga topologi mesh asli di dekat face bertopeng dan tersembunyi tetap terjaga.
+
+Dengan `Lama`:
+
+* `Rincian` - Perkiraan ukuran segitiga yang dipakai pada pangkasan.
+* `Penghalusan lubang` - Seberapa banyak segitiga dirapikan pada area yang diisi.
+* `Ambang batas epsilon` - Nilai yang bisa diatur untuk memperbaiki algoritma pengisian lubang lama.
+
+Dengan `Isi`:
+
+* `Rincian` - Perkiraan ukuran segitiga yang dipakai pada pangkasan.
 
 ![](/videos/tool_trim.mp4)
 
-### ![](/icons/tool_split.webp) Belah {#split}
-Mirip dengan alat [Trim](#trim), kecuali Trim membuang seleksi, Split akan menyimpan seleksi sebagai objek baru.
+### ![](/icons/tool_split.webp) Pisah {#split}
+Mirip dengan alat [Pangkas](#trim), hanya saja Pangkas membuang seleksi, sedangkan Pisah menyimpan seleksi sebagai objek baru.
 
-#### Pengaturan belah {#split-settings}
+Mode sub-nya adalah `Bagi`: setiap potongan disimpan sebagai objek tersendiri, sehingga bentuk yang saling tumpang tindih (misalnya karena simetri) dipotong menjadi bagian-bagian terpisah, bukan digabung menjadi satu.
 
-* `Stroke painting` - Jika paint diaktifkan di menu paint, area yang ditambal akan diisi dengan warna yang saat ini dipilih.
-* `Boolean` - mengisi lubang split menggunakan area quad poly. Area yang diisi akan datar.
-* `Legacy` - mengisi lubang split dengan area triangulasi. Area yang diisi akan datar.
-* `Fill` - mengisi lubang dengan area triangulasi. Area yang diisi akan berupa permukaan melengkung, seperti film gelembung sabun.
-* `None` - tidak mengisi lubang.
-* `Boolean Detail Shape` - Perkiraan ukuran quad dan triangle yang digunakan di sisi bentuk split.
-* `Boolean Detail Hole` - Perkiraan ukuran triangle atau poly yang digunakan pada lubang split yang diisi. 
-* `Legacy Detail` - Perkiraan ukuran triangle yang digunakan pada split.
-* `Legacy Hole smoothing` - Seberapa banyak triangle dirilekskan pada area yang diisi.
-* `Legacy Threshold espilon` - Nilai yang dapat disesuaikan untuk meningkatkan algoritma pengisian lubang legacy.
-* `Fill Detail` - Perkiraan ukuran triangle yang digunakan pada split.
+#### Pengaturan Pisah {#split-settings}
+
+Pisah punya pengaturan `Pengisian lubang` yang sama dengan [Pangkas](#trim-settings): `Lukisan garis`, metode `Boolean`, `Lama`, `Isi`, dan `Tidak ada`, beserta opsi `Rincian`-nya.
 
 ![](/videos/tool_split.mp4)
 
 
 ### ![](/icons/tool_project.webp) Proyeksi {#project}
-Alat Project terlihat seperti alat [Trim](#trim), tetapi tidak menghapus atau membuat geometri apa pun, hanya memindahkan verteks agar sesuai dengan seleksi.
+Alat Proyeksi mirip dengan alat [Pangkas](#trim), tetapi tidak menghapus atau membuat geometri apa pun; alat ini hanya memindahkan verteks agar mengikuti seleksi.
 
 ![](/videos/tool_project.mp4)
 
 ::: tip
-Jika Anda menggunakan Project saat berada di layer, Anda dapat melakukan blend antara bentuk asli dan bentuk hasil proyeksi dengan slider layer.
+Jika Anda memakai Proyeksi saat berada di sebuah lapisan, Anda bisa memadukan bentuk asli dan bentuk hasil proyeksi dengan penggeser lapisan.
 :::
 
 ### ![](/icons/tool_layer.webp) Lapisan {#layer}
-Mengangkat permukaan, tetapi membatasi tinggi.
+Menaikkan permukaan, tetapi dengan batas tinggi.
 
-Jika Anda terus menekan pensil dan terus menyapu area, Layer akan naik ke ketinggian tertentu lalu tidak lebih jauh, berbeda dengan alat lain yang akan terus menumpuk tinggi.
+Jika Anda terus menahan pena dan menyapu suatu area berulang kali, Lapisan akan naik sampai ketinggian tertentu lalu berhenti, sedangkan alat lain akan terus menumpuk ketinggian.
 
-Perhatikan bahwa secara bawaan batas hanya diatur per stroke! Jika Anda memulai stroke baru, ia akan membangun dari tinggi permukaan baru.
+Perlu diingat bahwa secara bawaan batas ini hanya berlaku per goresan! Jika Anda memulai goresan baru, alat akan membangun dari ketinggian permukaan yang baru.
 
-Untuk mengatur tinggi maksimum konstan di banyak stroke, gunakan alat Layer dengan sistem [Layers](layers.md) Nomad.
+Untuk mengatur tinggi maksimum yang tetap di banyak goresan, gunakan alat Lapisan bersama sistem [Lapisan](layers.md) Nomad.
 
-Buat layer, dan gunakan alat ini. Tinggi maksimum sekarang diatur dari layer, sehingga Anda dapat menerapkan banyak sapuan kuas dan tinggi akan selalu sama.
+Buat sebuah lapisan, lalu gunakan alat ini. Tinggi maksimumnya kini ditentukan dari lapisan, jadi Anda bisa membuat banyak goresan kuas dan tingginya akan selalu sama.
 
-`Sub` akan menggunakan kedalaman minimum, menciptakan alur.
+`Kurang` memakai kedalaman minimum, sehingga membuat cekungan.
 
-#### Pengaturan lapisan {#layer-settings}
+#### Pengaturan Lapisan {#layer-settings}
 
-* `Use layer data` - Saat aktif, dan ketika sebuah layer dipilih, gunakan data layer untuk mengatur tinggi maksimum.
-* `Inflate`- Saat aktif menyesuaikan arah kerja layer untuk mendapatkan hasil yang lebih halus.
-* `Relax (Normal)` - Jumlah smoothing yang diterapkan pada normal.
+* `Gunakan Data Lapisan` - Jika aktif, dan jika ada lapisan yang dipilih, data lapisan dipakai untuk menentukan tinggi maksimum. Sebuah peringatan mengingatkan Anda jika tidak ada lapisan yang dipilih.
+* `Kembung` - Jika aktif, arah kerja lapisan disesuaikan untuk hasil yang lebih halus.
+* `Santai (Normal)` - Dengan `Kembung` aktif, banyaknya penghalusan yang diterapkan pada normal.
 
 ![](/videos/tool_layer.mp4)
 
 
-### ![](/icons/tool_flatten.webp) Mengembung {#inflate}
-Memindahkan verteks sepanjang normalnya sendiri. `Sub` akan memindahkan verteks sepanjang normal terbalik.
+### ![](/icons/tool_inflate.webp) Kembung {#inflate}
+Memindahkan verteks searah normalnya masing-masing. `Kurang` memindahkan verteks searah kebalikan normalnya.
 
-#### Pengaturan mengembung {#inflate-setings}
-* `Relax (Normal)` - Jumlah smoothing yang diterapkan pada normal.
+#### Pengaturan Kembung {#inflate-setings}
+* `Santai (Normal)` - Banyaknya penghalusan yang diterapkan pada normal.
 
 ![](/videos/tool_inflate.mp4)
 
 
 
 
-### ![](/icons/tool_nudge.webp) Dorong {#nudge}
-Memindahkan atau 'mengoles' titik ke arah stroke.
+### ![](/icons/tool_nudge.webp) Dorongan {#nudge}
+Memindahkan atau 'mengoleskan' titik-titik searah goresan.
+
+Mode sub-nya adalah `Lipatan`, yang mendorong lipatan material sepanjang goresan: tonjolan di depan kuas, dan cekungan di belakangnya.
+
+#### Pengaturan Dorongan {#nudge-settings}
+* `Haluskan` - Seberapa banyak area di bawah kuas dihaluskan selagi Anda mendorongnya, agar permukaan yang dioles tetap rapi.
 
 ![](/videos/tool_nudge.mp4)
 
 
-### ![](/icons/tool_stamp.webp) Stempel {#stamp}
+### ![](/icons/tool_stamp.webp) Cap {#stamp}
 
-Klik dan seret untuk mengangkat area patung dalam bentuk Alpha yang dipilih.
+Klik dan seret untuk menaikkan area pahatan sesuai bentuk Alpha yang dipilih.
 
-Ini hanyalah [Brush tool](#brush) dengan tipe stroke diatur ke `Lock + radius`. 
+Ini sebenarnya adalah [alat Kuas](#brush) dengan jenis goresan `Kunci + jari-jari`.
 
-`Sub` akan mendorong stamp ke dalam alih-alih menariknya keluar dari permukaan.
+`Kurang` akan menekan cap ke dalam alih-alih menariknya keluar dari permukaan.
 
 ::: tip
-Stamp biasanya bekerja paling baik dengan geometri resolusi tinggi. Jika Anda mencari secara online 'wrinkles alpha', 'pores alpha', 'scales alpha' dll, tekstur alpha ini dan Stamp bisa menjadi cara hebat untuk menambah detail organik pada sculpt karakter.
+Cap biasanya bekerja paling baik pada geometri beresolusi tinggi. Jika Anda mencari 'wrinkles alpha', 'pores alpha', 'scales alpha', dan sejenisnya di internet, tekstur alpha tersebut bersama Cap bisa menjadi cara yang bagus untuk menambahkan detail organik pada pahatan karakter.
 
-Dua mode stroke berguna untuk hal yang berbeda. 
+Kedua mode goresan berguna untuk hal yang berbeda.
 
-* `Lock + radius` memiliki *tinggi* yang tetap, menyeret akan menyesuaikan lebar dan rotasi stamp. Bagus untuk tekstur kulit yang perlu memiliki kedalaman/tinggi sama, tetapi rotasi dan skala berbeda untuk menyamarkan pola berulang.
-* `Lock + intensity` memiliki *lebar* yang tetap, menyeret menyesuaikan rotasi dan tinggi stamp. Bagus untuk rivet, yang semuanya harus berukuran sama, tetapi rotasi dan tinggi berbeda. 
+* `Kunci + jari-jari` punya *tinggi* yang tetap; menyeret mengatur lebar dan rotasi cap. Cocok untuk tekstur kulit yang perlu kedalaman/tinggi yang sama, tetapi rotasi dan skala berbeda agar pola berulangnya tersamarkan.
+* `Kunci + intensitas` punya *lebar* yang tetap; menyeret mengatur rotasi dan tinggi cap. Cocok untuk paku keling, yang semuanya harus berukuran sama, tetapi dengan rotasi dan tinggi berbeda.
 
 :::
 
 ![](/videos/tool_stamp.mp4)
 
+### ![](/icons/tool_vdm.webp) VDM {#vdm}
+
+Mengecap peta pergeseran vektor (VDM). Berbeda dengan alpha, yang hanya bisa mendorong permukaan ke atas atau ke bawah, VDM menyimpan bentuk 3d lengkap, sehingga bisa mengecap bentuk menjorok seperti telinga, tanduk, atau daun yang melengkung. Cara kerjanya seperti [Cap](#stamp), dengan mode goresan `Kunci + jari-jari` dan `Kunci + intensitas` yang sama.
+
+`Kurang` (`Balik`) membalik kedalaman cap, untuk menekannya ke dalam permukaan seperti cetakan.
+
+VDM-nya sendiri dipilih di menu [Alpha](stroke.md#alpha), yang juga punya penggeser `Tinggi` untuk mengubah skala tinggi cap saja, tanpa mengubah pergeseran ke sampingnya.
+
+Tombol `Buat` di bilah alat kiri memungkinkan Anda membuat cap sendiri:
+
+* `VDM baru...` - Menambahkan bidang datar yang sudah disiapkan untuk memahat VDM. Pahat bentuk Anda di atasnya, lalu bake dengan `Topologi -> Bake -> VDM`: Nomad menambahkan cap baru ke pustaka VDM dan memilihnya.
+* `Tangkap VDM` - (Eksperimental) Seret di permukaan model untuk mengambil area itu dan mengubahnya menjadi cap VDM. `Toleransi` meratakan tepi tangkapan secara halus.
+
+::: tip
+Hindari DynTopo saat memahat bidang VDM, karena merusak UV bidang dan membuat cap terdistorsi. Jauhkan juga pahatan dari tepi bidang, atau cap akan menampilkan tepi yang keras.
+:::
+
 
 ### ![](/icons/tool_clearLayer.webp) Hapus Lapisan {#delete-layer}
-Alat ini dapat mereset layer secara lokal, Anda memerlukan layer aktif jika tidak tidak akan terjadi apa-apa.
+Alat ini bisa mereset lapisan secara lokal; Anda memerlukan lapisan yang aktif, kalau tidak, tidak akan terjadi apa-apa. Alat ini menghapus data pahatan lapisan, dan juga catnya jika pengecatan diaktifkan.
+
+Mode sub-nya adalah `Balik`, yang sedikit memperkuat lapisan alih-alih menghapusnya.
 
 ![](/videos/tool_delete_layer.mp4)
 
 
 ### ![](/icons/tool_tube.webp) Tabung {#tube}
-Membuat tube dengan menggambar kurva. 
+Membuat tabung dengan menggambar kurva.
 ![](/images/tool_tube_new.webp)
 
-Setelah tube dibuat, path dapat diedit dalam ruang 3D menggunakan kontrol serupa dengan alat [Shape editing](#shape-editing) dan pengeditan kurva standar. 
+Setelah tabung dibuat, jalurnya bisa disunting di ruang 3d dengan kontrol yang mirip dengan alat [Menyunting bentuk](#shape-editing) standar dan alat penyuntingan kurva.
 
 ![](/videos/tool_tube.mp4)
 
-#### Bilah alat kiri tabung {#tube-left-toolbar}
+#### Bilah alat kiri Tabung {#tube-left-toolbar}
 
 ![](/images/tool_tube_left_toolbar.webp)
 
-Toolbar kiri memiliki opsi berikut:
+Bilah alat kiri berisi opsi berikut:
 
-* `Sync` - Jika tube saat ini di-instance, dan ada child node dari tube yang berbeda antar instance, ini akan menyinkronkannya kembali.
-* `Snap` - Saat aktif, mode curve dan path akan snap ke objek lain saat Anda menggambar. Saat tidak aktif, titik pertama akan snap, lalu sisa tube akan digambar pada kedalaman itu. Ia memiliki menu kecil:
-    * `Offset` - Mengatur kedalaman snap; 0% akan membuat tengah penampang tube snap ke permukaan, nilai positif akan mengangkatnya dari permukaan, nilai negatif akan menurunkannya.
-* `Curve` - Menggambar bebas sebuah tube. Ia memiliki menu kecil:
-    * `Auto-validate` - Akan membuat tube segera setelah stroke selesai. Saat dinonaktifkan, lingkaran validasi hijau akan terlihat di sebelah path kurva, tekan untuk memvalidasi, atau gunakan tautan `Reset` yang muncul di menu ini untuk menghapus path.
-    * `Closed` - membuat tube menjadi loop.
-    * `Screen` - Hanya tersedia ketika Auto-validate dinonaktifkan. Saat aktif, path 'dipin' ke layar, memungkinkan Anda menggerakkan tampilan dan objek, dan path tetap di tempat. Saat tidak aktif, path adalah bagian dari scene 3D, dan akan bergerak bersama kamera dan objek.
-    * `Accuracy` - Berapa banyak titik kurva yang akan digunakan untuk mengonversi path yang digambar menjadi tube. 0% akan menggunakan jumlah titik terendah, tetapi akan melewatkan perubahan kelengkungan kecil. 100% akan sangat akurat, dan menggunakan banyak titik.
-* `Path` - Membuat tube dengan mengklik untuk mendefinisikan titik kurva. Ketuk lingkaran hijau untuk memvalidasi path. Ia memiliki menu kecil:
-    * `B-spline` - Metode gambar kurva alternatif di mana titik kurva biasanya tidak berada langsung di kurva, tetapi dapat menghasilkan hasil yang lebih halus daripada metode bawaan.
-    * `Closed` - membuat tube menjadi loop
-    * `Screen` - Saat aktif, path 'dipin' ke layar, memungkinkan Anda menggerakkan tampilan dan objek, dan path tetap di tempat. Saat tidak aktif, path adalah bagian dari scene 3D, dan akan bergerak bersama kamera dan objek.
+* `Sinkron` - Jika tabung saat ini merupakan instans, dan ada node anak tabung yang berbeda di antara instans-instansnya, opsi ini akan menyinkronkannya kembali.
+* `Snap` - Jika aktif, mode kurva dan jalur akan menempel ke objek lain saat Anda menggambar. Jika nonaktif, hanya titik pertama yang menempel, lalu sisa tabung digambar pada kedalaman itu.
+* `Offset` - Mengatur kedalaman tempelan; 0% membuat bagian tengah penampang tabung menempel di permukaan, nilai positif mengangkatnya dari permukaan, nilai negatif menurunkannya. 100% sama dengan jari-jari tabung.
+* `Tampilan` - Tanpa mode menggambar, sehingga Anda bisa menggerakkan kamera dengan bebas.
+* `Lengkung` - Menggambar tabung secara bebas. Opsi ini punya menu kecil:
+    * `Sunting` - Apa yang terjadi saat Anda menyelesaikan goresan, lihat [Kontrol seleksi](#selection-controls): langsung membuat tabung, mempertahankan kurva agar bisa disunting dengan lingkaran validasi hijau di sebelahnya, atau `Tahan` di akhir goresan untuk terus menyunting.
+    * `Tutup` - Menjadikan tabung sebuah lingkaran tertutup.
+    * `Terus menggambar` - Setelah memvalidasi sebuah tabung, tetap di alat ini untuk menggambar tabung berikutnya.
+    * `Ketepatan` - Berapa banyak titik kurva yang dipakai untuk mengubah jalur yang digambar menjadi tabung. 0% memakai jumlah titik paling sedikit, tetapi melewatkan perubahan lengkung kecil pada jalur. 100% sangat akurat, dan memakai banyak titik.
+* `Jalur` - Membuat tabung dengan mengklik untuk menentukan titik-titik kurva. Ketuk lingkaran hijau untuk memvalidasi jalur. Opsi ini punya menu kecil:
+    * `B-spline` - Metode menggambar kurva alternatif, di mana titik-titik kurva biasanya tidak terletak tepat di kurva, tetapi bisa menghasilkan bentuk yang lebih halus dibanding metode bawaan.
+    * `Tutup` - Menjadikan tabung sebuah lingkaran tertutup
+    * `Layar` - Jika aktif, jalur 'disematkan' ke layar, sehingga Anda bisa menggerakkan tampilan dan objek sementara jalur tetap di tempatnya. Jika nonaktif, jalur menjadi bagian dari adegan 3d, dan akan bergerak bersama kamera dan objek.
+* `Penampang` - Kurva menjadi cincin yang melingkari bentuk, memotong melalui kedua titiknya searah dengan arah pandang Anda.
 
-##### Bilah alat atas tabung {#tube-top-toolbar}
+##### Bilah alat atas Tabung {#tube-top-toolbar}
 ![](/images/tool_tube_toolbar.webp)
-Ketika sebuah tube dipilih, toolbar akan muncul di bagian atas viewport dengan kontrol tambahan. Klik judul toolbar untuk meruntuhkan/memperluas toolbar, dan klik panah di kanan atas untuk memindahkan toolbar ke bagian atas atau bawah viewport.
+Saat sebuah tabung dipilih, sebuah bilah alat akan muncul di bagian atas viewport dengan kontrol tambahan. Klik judul bilah alat untuk menutup/membukanya, dan klik panah di kanan atas untuk memindahkan bilah alat ke bagian atas atau bawah viewport.
 
-* `Validate` - memanggang tube menjadi poligon biasa sehingga dapat dipahat.
-* `Edit` - menampilkan titik kurva sehingga dapat dimanipulasi
-* `Mirror` - menambahkan mirror repeater sebagai parent dari kurva ini
-* `Snap` - men-snap titik kurva ke permukaan terdekat
-* `Closed` - Menggabungkan awal dan akhir kurva menjadi loop
+* `Finalisasi` - Mengubah tabung menjadi poligon biasa agar bisa dipahat.
+* `Sunting` - Menampilkan titik-titik kurva agar bisa dimanipulasi
+* `Cermin` - Menambahkan pengulang cermin sebagai induk kurva ini
+* `Snap` - Menempelkan titik-titik kurva ke permukaan terdekat
+* `Tutup` - Menyambungkan awal dan akhir kurva menjadi lingkaran tertutup
 * `B-spline` - Beralih antara interpolasi Catmull-rom dan B-spline.
-* `Cap` - Berputar antara cap di kedua ujung tube, atau hanya awal atau akhir, atau tanpa cap.
-* `Hole` - Menambahkan ketebalan ke tube, mengubahnya menjadi pipa. Berputar antara memiliki lubang di kedua ujung, hanya di ujung, atau tanpa lubang. 
-* `Radius` - Berputar antara radius seragam, radius di awal dan akhir, atau radius per titik kurva. Ini diedit dengan handle oranye pada kurva.
-* `Twist` - Berputar antara tanpa twist, twist seragam, twist di awal dan akhir, atau twist per titik kurva. Ini diedit dengan handle merah muda pada kurva.
-* `Profile` - Berputar antara tanpa profil (jadi profil lingkaran), profil seragam, profil di awal dan akhir, atau profil per titik.
-* `Profile edit` - Menampilkan editor profil. Ini berfungsi mirip dengan alat [Shape editing](#shape-editing), dapat menyimpan dan memuat preset profil, dan memiliki toggle untuk memungkinkan Anda mengedit profil dalam ruang 3D.
-* `Spiral` - Mengaktifkan menu untuk menambahkan twist spiral ke tube. Menu ini memiliki opsi `Twist Angle`, `Offset`, `Scale`, dan `Angle offset`.
-* `X Divisions` - jumlah divisi di sekitar tube, 4 divisi akan membuat tube persegi misalnya. 
-* `Constant density` - saat aktif, akan menjaga poligon tetap persegi. saat dinonaktifkan, akan memungkinkan Anda mengatur `Y divisions` sepanjang panjang tube.
-* `...` - Menu pengaturan Tube.
+* `Tutup` - Berganti antara tutup di kedua ujung tabung, hanya di awal atau akhir, atau tanpa tutup.
+* `Lubang` - Menambahkan ketebalan pada tabung, mengubahnya menjadi pipa. Berganti antara lubang di kedua ujung, hanya di ujung akhir, atau tanpa lubang.
+* `Radius` - Berganti antara radius seragam, radius di awal dan akhir, atau radius per titik kurva. Semuanya disunting dengan pegangan oranye pada kurva.
+* `Lilitan` - Berganti antara tanpa lilitan, lilitan seragam, lilitan di awal dan akhir, atau lilitan per titik kurva. Semuanya disunting dengan pegangan merah muda pada kurva.
+* `Profil` - Berganti antara tanpa profil (jadi profil lingkaran), profil seragam, profil di awal dan akhir, atau profil per titik.
+* `Sunting profil` - Menampilkan editor profil. Fungsinya mirip dengan alat [Menyunting bentuk](#shape-editing), bisa menyimpan dan memuat prasetel profil, dan punya tombol untuk menyunting profil di ruang 3d.
+* `Spiral` - Membuka menu untuk menambahkan lilitan spiral pada tabung. Menu ini punya opsi `Sudut lilitan`, `Offset`, `Skala`, dan `Offset sudut`.
+* `Pembagian X` - Jumlah pembagian di sekeliling tabung; 4 pembagian akan membuat tabung persegi, misalnya.
+* `Kepadatan konstan` - Jika aktif, poligon tetap berbentuk persegi. Jika nonaktif, Anda bisa mengatur `Pembagian Y` sepanjang tabung.
+* `...` - Menu pengaturan tabung.
 
-#### Toggle hapus titik kurva {#curve-point-delete-toggle}
+#### Tombol hapus titik kurva {#curve-point-delete-toggle}
 
 ![](/images/tool_tube_delete_toggle.webp)
 
-Di bawah toolbar ada toggle hapus titik kurva. Ketika Anda menyeret titik kurva dekat dengan yang lain, ia akan berubah merah, menunjukkan bahwa jika Anda melepaskan, titik akan dihapus. Jika Anda melakukan edit kecil dan tidak ingin menghapus titik, tombol ini akan menonaktifkan perilaku hapus titik.
+Di bawah bilah alat ada tombol hapus titik kurva. Saat Anda menyeret sebuah titik kurva mendekati titik lain, titik itu berubah merah, menandakan bahwa titik tersebut akan dihapus jika Anda melepasnya. Jika Anda sedang melakukan suntingan kecil dan tidak ingin menghapus titik, tombol ini menonaktifkan perilaku penghapusan titik.
 
 
 
-#### Pengaturan tabung {#tube-settings}
-* `Primitive` - tombol untuk mengaktifkan/nonaktifkan UV, atau untuk memvalidasi tube.
-* `Post subdivision` - pintasan untuk mengatur level multiresolution sebelum memvalidasi.
-* `Linear subdivision` - pintasan untuk mengatur level linear subdivision sebelum memvalidasi. 
-* `Division X` - sama dengan X Divisions di toolbar.
-* `Division Y` - sama dengan Y Divisions di toolbar.
-* `Curve (Repeater)` - mengonversi tube menjadi [Curve Repeater](scene.md#curve)
+#### Pengaturan Tabung {#tube-settings}
+* `Primitif` - Tombol untuk mengaktifkan/menonaktifkan UV, atau untuk memvalidasi tabung.
+* `Pembagian pasca` - Pintasan untuk mengatur level multiresolusi sebelum memvalidasi.
+* `Subdivisi linear` - Pintasan untuk mengatur level subdivisi linear sebelum memvalidasi.
+* `Pembagian X` - Sama dengan Pembagian X di bilah alat.
+* `Pembagian Y` - Sama dengan Pembagian Y di bilah alat.
+* `Kurva (Pengulang)` - Mengubah tabung menjadi [Pengulang Kurva](scene.md#curve)
 
 ::: tip
-Divisions di 4 dan Post subdivision di 3 akan membuat tube ujung bulat yang halus, bagus untuk cacing, ular, bagian tubuh.
+Pembagian 4 dan Pembagian pasca 3 akan menghasilkan tabung dengan ujung bulat yang halus, cocok untuk cacing, ular, dan bagian tubuh.
 :::
 
 
 ### ![](/icons/tool_lathe.webp) Bubut {#lathe}
-Membuat permukaan revolusi dengan menggambar kurva.
+Membuat permukaan putar dengan menggambar kurva.
 
-Alat ini bagus untuk bentuk seperti vas, gelas anggur.
+Alat ini sangat cocok untuk bentuk seperti vas dan gelas anggur.
 
 ![](/videos/tool_lathe.mp4)
 
-#### Bilah alat kiri bubut {#lathe-left-toolbar}
+#### Bilah alat kiri Bubut {#lathe-left-toolbar}
 
 ![](/images/tool_lathe_left_toolbar.webp)
 
-Toolbar kiri memiliki opsi berikut:
+Bilah alat kiri berisi opsi berikut:
 
-* `Sync` - Jika lathe saat ini di-instance, dan ada child node dari lathe yang berbeda antar instance, ini akan menyinkronkannya kembali.
-* `Fixed` - Saat diaktifkan, pusat lathe tetap dan ditampilkan di layar. Garis pusat ini memiliki titik edit yang dapat disesuaikan. Saat dinonaktifkan, pusat lathe akan diperbarui secara dinamis agar sesuai dengan awal dan akhir kurva yang digambar.
-* `Curve` - Menggambar profil lathe dalam satu stroke. Ia memiliki menu kecil:
-    * `Auto-validate` - Saat diaktifkan, lathe akan dibuat ketika pensil diangkat dari layar. Saat dinonaktifkan, lingkaran hijau di sebelah kurva dapat ditekan untuk membuat lathe. Kurva dapat dihapus dengan tombol `Reset`.
-    * `Closed` - Menggabungkan awal dan akhir kurva menjadi loop
-    * `Screen` - Hanya tersedia ketika Auto-validate dinonaktifkan. Saat aktif, path 'dipin' ke layar, memungkinkan Anda menggerakkan tampilan dan objek, dan path tetap di tempat. Saat tidak aktif, path adalah bagian dari scene 3D, dan akan bergerak bersama kamera dan objek.
-    * `Accuracy` - Berapa banyak titik kurva yang akan digunakan untuk mengonversi path yang digambar menjadi tube. 0% akan menggunakan jumlah titik terendah, tetapi akan melewatkan perubahan kelengkungan kecil. 100% akan sangat akurat, dan menggunakan banyak titik.
-* `Path` - Membuat lathe dengan mengklik untuk mendefinisikan titik kurva. Ketuk lingkaran hijau untuk memvalidasi path. Ia memiliki menu kecil:
-    * `B-spline` - Metode gambar kurva alternatif di mana titik kurva biasanya tidak berada langsung di kurva, tetapi dapat menghasilkan hasil yang lebih halus daripada metode bawaan.
-    * `Closed` - membuat tube menjadi loop
-    * `Screen` - Saat aktif, path 'dipin' ke layar, memungkinkan Anda menggerakkan tampilan dan objek, dan path tetap di tempat. Saat tidak aktif, path adalah bagian dari scene 3D, dan akan bergerak bersama kamera dan objek.
+* `Sinkron` - Jika bubutan saat ini merupakan instans, dan ada node anak bubutan yang berbeda di antara instans-instansnya, opsi ini akan menyinkronkannya kembali.
+* `Tetap` - Jika aktif, pusat bubutan tetap dan ditampilkan di layar. Garis pusat ini punya titik sunting yang bisa diatur. Jika nonaktif, pusat bubutan akan diperbarui secara dinamis mengikuti awal dan akhir kurva yang digambar.
+* `Tampilan` - Tanpa mode menggambar, sehingga Anda bisa menggerakkan kamera dengan bebas.
+* `Lengkung` - Menggambar profil bubutan dalam satu goresan. Opsi ini punya menu kecil:
+    * `Sunting` - Apa yang terjadi saat Anda mengangkat pena, lihat [Kontrol seleksi](#selection-controls): langsung membuat bubutan, mempertahankan kurva agar bisa disunting dengan lingkaran hijau di sebelahnya untuk membuat bubutan, atau `Tahan` di akhir goresan untuk terus menyunting.
+    * `Tutup` - Menyambungkan awal dan akhir kurva menjadi lingkaran tertutup
+    * `Terus menggambar` - Setelah memvalidasi sebuah bubutan, tetap di alat ini untuk menggambar bubutan berikutnya.
+    * `Ketepatan` - Berapa banyak titik kurva yang dipakai untuk mengubah jalur yang digambar menjadi tabung. 0% memakai jumlah titik paling sedikit, tetapi melewatkan perubahan lengkung kecil pada jalur. 100% sangat akurat, dan memakai banyak titik.
+* `Jalur` - Membuat bubutan dengan mengklik untuk menentukan titik-titik kurva. Ketuk lingkaran hijau untuk memvalidasi jalur. Opsi ini punya menu kecil:
+    * `B-spline` - Metode menggambar kurva alternatif, di mana titik-titik kurva biasanya tidak terletak tepat di kurva, tetapi bisa menghasilkan bentuk yang lebih halus dibanding metode bawaan.
+    * `Tutup` - Menjadikan tabung sebuah lingkaran tertutup
+    * `Layar` - Jika aktif, jalur 'disematkan' ke layar, sehingga Anda bisa menggerakkan tampilan dan objek sementara jalur tetap di tempatnya. Jika nonaktif, jalur menjadi bagian dari adegan 3d, dan akan bergerak bersama kamera dan objek.
 
-#### Bilah alat atas bubut {#lathe-top-toolbar}
+#### Bilah alat atas Bubut {#lathe-top-toolbar}
 ![](/images/tool_lathe_top_toolbar.webp)
 
-Ketika sebuah lathe dipilih, toolbar akan muncul di bagian atas viewport dengan kontrol tambahan. Klik judul toolbar untuk meruntuhkan/memperluas toolbar, dan klik panah di kanan atas untuk memindahkan toolbar ke bagian atas atau bawah viewport.
+Saat sebuah bubutan dipilih, sebuah bilah alat akan muncul di bagian atas viewport dengan kontrol tambahan. Klik judul bilah alat untuk menutup/membukanya, dan klik panah di kanan atas untuk memindahkan bilah alat ke bagian atas atau bawah viewport.
 
-* `Validate` - memanggang lathe menjadi poligon biasa sehingga dapat dipahat.
-* `Edit` - menampilkan titik kurva sehingga dapat dimanipulasi
-* `Mirror` - menambahkan mirror repeater sebagai parent dari lathe ini
-* `Snap` - men-snap titik kurva ke permukaan terdekat
-* `Stable` - Saat diaktifkan, profil kurva akan diparent ke garis pusat lathe. Saat dinonaktifkan, garis pusat dapat diedit dan tidak akan memindahkan kurva, memungkinkan bentuk yang lebih kompleks.
-* `Focus` - Akan memutar tampilan untuk melihat profil kurva rata sempurna terhadap kamera.
-* `Closed` - Menggabungkan awal dan akhir kurva menjadi loop
-* `Cap` - Jika Closed dinonaktifkan, berputar antara cap di kedua ujung tube, atau hanya awal atau akhir, atau tanpa cap.
-* `Hole` - Menambahkan ketebalan ke lathe, mengubahnya menjadi pipa. Berputar antara memiliki lubang di kedua ujung, hanya di ujung, atau tanpa lubang. 
+* `Finalisasi` - Mengubah bubutan menjadi poligon biasa agar bisa dipahat.
+* `Sunting` - Menampilkan titik-titik kurva agar bisa dimanipulasi
+* `Cermin` - Menambahkan pengulang cermin sebagai induk bubutan ini
+* `Snap` - Menempelkan titik-titik kurva ke permukaan terdekat
+* `Stabil` - Jika aktif, profil kurva menjadi anak dari garis pusat bubutan. Jika nonaktif, garis pusat bisa disunting tanpa menggerakkan kurva, sehingga bentuk yang lebih rumit bisa dibuat.
+* `Fokus` - Memutar tampilan agar profil kurva terlihat lurus menghadap kamera.
+* `Tutup` - Menyambungkan awal dan akhir kurva menjadi lingkaran tertutup
+* `Tutup` - Jika Tutup (lingkaran) nonaktif, berganti antara tutup di kedua ujung, hanya di awal atau akhir, atau tanpa tutup.
+* `Lubang` - Menambahkan ketebalan pada bubutan, mengubahnya menjadi pipa. Berganti antara lubang di kedua ujung, hanya di ujung akhir, atau tanpa lubang.
 * `B-spline` - Beralih antara interpolasi Catmull-rom dan B-spline.
-* `X Divisions` - jumlah divisi di sekitar tulathebe, 4 divisi akan membuat profil lathe persegi misalnya. 
-* `Constant density` - saat aktif, akan menjaga poligon tetap persegi. saat dinonaktifkan, akan memungkinkan Anda mengatur `Y divisions` sepanjang panjang tube.
-* `...` - Menu pengaturan Lathe.
+* `Pembagian X` - Jumlah pembagian di sekeliling bubutan; 4 pembagian akan membuat bubutan berprofil persegi, misalnya.
+* `Kepadatan konstan` - Jika aktif, poligon tetap berbentuk persegi. Jika nonaktif, Anda bisa mengatur `Pembagian Y` sepanjang tabung.
+* `...` - Menu pengaturan bubutan.
 
-#### Pengaturan bubut {#lathe-settings}
-* `Primitive` - tombol untuk mengaktifkan/nonaktifkan UV, atau untuk memvalidasi tube.
-* `Post subdivision` - pintasan untuk mengatur level multiresolution sebelum memvalidasi.
-* `Linear subdivision` - pintasan untuk mengatur level linear subdivision sebelum memvalidasi. 
-* `Division X` - sama dengan X Divisions di toolbar.
-* `Division Y` - sama dengan Y Divisions di toolbar.
-* `Curve (Repeater)` - mengonversi profil kurva menjadi [Curve Repeater](scene.md#curve)
+#### Pengaturan Bubut {#lathe-settings}
+* `Primitif` - Tombol untuk mengaktifkan/menonaktifkan UV, atau untuk memvalidasi tabung.
+* `Pembagian pasca` - Pintasan untuk mengatur level multiresolusi sebelum memvalidasi.
+* `Subdivisi linear` - Pintasan untuk mengatur level subdivisi linear sebelum memvalidasi.
+* `Pembagian X` - Sama dengan Pembagian X di bilah alat.
+* `Pembagian Y` - Sama dengan Pembagian Y di bilah alat.
+* `Kurva (Pengulang)` - Mengubah profil kurva menjadi [Pengulang Kurva](scene.md#curve)
 
-### ![](/icons/tool_insert.webp) Sisipkan {#insert}
-Menempatkan objek di permukaan objek lain. Dalam penggunaan mirip dengan alat stamp, tetapi untuk bentuk 3D penuh.
+### ![](/icons/tool_insert.webp) Masukkan {#insert}
+Menempatkan sebuah objek di permukaan objek lain. Cara pakainya mirip alat Cap, tetapi untuk bentuk 3d utuh.
 
-Jika Anda memilih primitif dari toolbar kiri, klik-seret pada permukaan apa pun akan menempatkan primitif di tempat Anda mengklik, seret akan mengatur ukuran. Setelah Anda selesai menyeret, Insert akan beralih ke mode [Transform](#transform).
+Jika Anda memilih sebuah primitif dari bilah alat kiri, klik-seret di permukaan mana pun akan menempatkan primitif di titik yang Anda klik, dan seretannya menentukan ukurannya. Setelah selesai menyeret, Masukkan akan beralih ke mode [Transformasi](#transform).
 
-Dalam mode Instance, menyeret akan membuat dan menggeser instance baru di atas permukaan. Ukuran akan diduplikasi dari bentuk pertama, dengan cara ini Anda dapat menempatkan banyak instance berukuran sama dari sebuah objek di atas permukaan lain.
+Dalam mode Instans, menyeret akan membuat instans baru dan menggesernya di atas permukaan. Ukurannya disalin dari bentuk pertama; dengan cara ini Anda bisa menempatkan banyak instans berukuran sama dari sebuah objek di atas permukaan lain.
 
-Anda tidak harus hanya menyisipkan primitif! Pilih *bentuk apa pun* di outliner, jika Insert dalam mode Instance atau Clone, Anda dapat menyeret salinan objek yang dipilih di atas permukaan lain.
+Anda tidak harus memasukkan primitif saja! Pilih bentuk *apa pun* di outliner; jika Masukkan dalam mode Instans atau Kloning, Anda bisa menyeret salinan objek yang dipilih ke atas permukaan lain mana pun.
 
-Jika sebuah objek memiliki pivot kustom, maka itu akan digunakan sebagai titik jangkar. Lihat video di bawah.
+Jika sebuah objek punya poros khusus, poros itu akan dipakai sebagai titik jangkar. Lihat video di bawah.
+
+Bilah alat kiri juga punya `Tampilan`, untuk menggerakkan kamera tanpa memasukkan apa pun, dan `Sinkron`: jika objek sasaran merupakan instans, objek baru juga ditambahkan ke semua instans lainnya.
 
 ![](/videos/tool_insert.mp4)
 
 ### ![](/icons/tool_transform.webp) Transformasi {#transform}
-Memindahkan/Memutar/Menskala model secara langsung dengan 1 dan 2 jari, biasanya di atas permukaan objek lain.
+Memindahkan/memutar/mengubah skala model secara langsung dengan 1 dan 2 jari, biasanya di atas permukaan objek lain.
 
-Alat dikendalikan dengan toolbar kiri, dan memiliki 5 tombol:
+Bilah alat kiri berisi tombol-tombol berikut:
 
-* `Snap` - men-snap model ke permukaan lain
-* `Group` - Jika objek yang dipilih memiliki kombinasi objek dan instance, ini memungkinkan Anda menentukan perilaku alat.
-* `Move` - Seret satu jari akan memindahkan objek. Saat snap aktif, ini akan menggeser objek sepanjang permukaan di bawah jari Anda.
-* `Rotate` - Seret satu jari akan memutar objek. Saat snap aktif, akan memutar di sekitar normal permukaan di bawah jari Anda.
-* `Scale` - Seret satu jari akan menskala objek.
+* `Kloning` / `Instans` - Membuat salinan atau instans objek, lihat bilah alat [Gizmo](#left-menu-toolbar).
+* `Pindah` - Seret dengan satu jari untuk memindahkan objek. Jika snap aktif, objek akan meluncur di atas permukaan di bawah jari Anda.
+* `Putar` - Seret dengan satu jari untuk memutar objek. Jika snap aktif, objek berputar di sekitar normal permukaan di bawah jari Anda.
+* `Skala` - Seret dengan satu jari untuk mengubah skala objek.
 
-Transform dapat digunakan untuk mengoperasikan 2 mode ini dengan cepat menggunakan 2 jari:
+Sebuah bilah alat di bagian atas viewport berisi:
 
-* Seret objek untuk menempatkannya. Berhenti menggerakkan jari pertama Anda, tetapi jangan angkat dari layar.
-* Sentuhkan jari kedua Anda di layar sambil tetap menahan jari pertama. Saat jari kedua diseret, objek akan diskalakan.
-* Angkat jari kedua, dan lanjutkan menyeret jari pertama, objek akan kembali dalam mode move.
+* `Sasaran` - Apakah alat memindahkan objek, grupnya, atau verteksnya, sama seperti pada [Gizmo](#left-menu-toolbar).
+* `Snap` - Menempelkan model ke permukaan lain.
+* `Permukaan` / `Verteks` - Dengan `Snap`, menempel ke permukaan, atau ke verteks terdekat.
 
-Anda juga dapat mengubah mode kedua dengan gesture ketukan jari kedua:
+Transformasi bisa menjalankan 2 mode ini dengan cepat menggunakan 2 jari:
 
-* Seret objek untuk menempatkannya, berhenti menggerakkan, tetapi jangan angkat jari Anda dari layar.
-* Ketuk jari kedua Anda sambil menahan jari pertama
-* Alat ditukar ke mode rotasi. Seret jari pertama Anda untuk mengatur rotasi.
-* Ketuk jari kedua seperti sebelumnya, alat ditukar kembali ke mode move.
+* Seret objek untuk menempatkannya. Hentikan gerakan jari pertama, tetapi jangan angkat dari layar.
+* Sentuhkan jari kedua ke layar sambil tetap menahan jari pertama. Saat jari kedua diseret, skala objek akan berubah.
+* Angkat jari kedua, lalu lanjutkan menyeret jari pertama; objek akan kembali ke mode pindah.
 
-Ini menghadirkan alur kerja cepat untuk mengkloning objek di atas yang lain, misalnya batu di atas lanskap. Perhatikan bahwa tombol clone juga ada di toolbar kiri untuk akses mudah:
+Anda juga bisa mengganti mode kedua dengan gestur ketuk jari kedua:
 
-* Gunakan alat transform untuk memindahkan batu ke tempatnya.
-* Lepaskan, tekan tombol clone
-* Pindahkan batu ini, putar/skalakan sesuai kebutuhan
-* Lepaskan, tekan tombol clone
+* Seret objek untuk menempatkannya, hentikan gerakan, tetapi jangan angkat jari dari layar.
+* Ketuk dengan jari kedua sambil menahan jari pertama
+* Alat beralih ke mode rotasi. Seret jari pertama untuk mengatur rotasi.
+* Ketuk jari kedua seperti tadi, alat kembali ke mode pindah.
+
+Ini memberi alur kerja yang cepat untuk mengkloning objek di atas objek lain, misalnya batu di atas lanskap. Perhatikan bahwa tombol kloning juga ada di bilah alat kiri agar mudah dijangkau:
+
+* Gunakan alat transformasi untuk memindahkan batu ke tempatnya.
+* Lepaskan, tekan tombol kloning
+* Pindahkan batu ini, putar/ubah skalanya sesuai kebutuhan
+* Lepaskan, tekan tombol kloning
 * Pindahkan batu ini, ulangi.
 
 ![](/videos/tool_transform.mp4)
 
 ### ![](/icons/tool_gizmo.webp) Gizmo {#gizmo}
-Alat ini memungkinkan Anda memindahkan, memutar dan menskala objek, serta mengubah pivot objek.
+Alat ini memungkinkan Anda memindahkan, memutar, dan mengubah skala objek, serta mengubah poros objek.
 
-Handle viewport memiliki fitur berikut:
+Pegangan di viewport punya fitur-fitur berikut:
 
-* `Move` - Seret pada garis+panah untuk memindahkan pada X/Y/Z. Seret pada titik persik di tengah gizmo untuk translasi bebas dalam ruang layar. Klik pada kotak merah, hijau, biru untuk translasi pada bidang X/Y/Z.
-* `Rotate` - Seret pada lingkaran merah/hijau/biru untuk rotasi pada X/Y/Z. Seret bola di dalam lingkaran untuk rotasi bebas.
-* `Scale`- Seret pada titik merah/hijau/biru luar untuk skala pada X/Y/Z. Seret pada kerucut merah/hijau/biru luar untuk skala pada bidang X/Y/Z. Seret pada lingkaran persik luar untuk skala seragam.
+* `Pindah` - Seret garis+panah untuk memindahkan di sumbu X/Y/Z. Seret titik berwarna persik di tengah gizmo untuk memindahkan bebas di ruang layar. Klik kotak merah, hijau, biru untuk memindahkan di bidang X/Y/Z.
+* `Putar` - Seret lingkaran merah/hijau/biru untuk memutar di sumbu X/Y/Z. Seret bola di dalam lingkaran-lingkaran itu untuk memutar bebas.
+* `Skala` - Seret titik merah/hijau/biru di bagian luar untuk mengubah skala di sumbu X/Y/Z. Seret kerucut merah/hijau/biru di bagian luar untuk mengubah skala di bidang X/Y/Z. Seret lingkaran persik di bagian luar untuk mengubah skala secara seragam.
 
 ![](/images/tool_gizmo.webp)
 
 #### Node dan verteks {#nodes-and-vertices}
 
-Setiap objek di Nomad terdiri dari node dan verteks:
+Setiap objek di Nomad terdiri dari sebuah node dan verteks:
 
-* `Node` - 'Handle' objek, yang menyimpan translasi, rotasi, skala, disebut matriks transformasinya.
-* `Vertices` - Titik yang mendefinisikan permukaan objek, menyimpan informasi posisi dan cat.
+* `Node` - 'Pegangan' objek, yang menyimpan translasi, rotasi, dan skalanya, disebut matriks transformasinya.
+* `Verteks` - Titik-titik yang membentuk permukaan objek; menyimpan posisi dan informasi cat.
 
-Jika Anda memiliki kotak sederhana yang terdiri dari 8 verteks, Anda dapat mentranslasikannya dengan memodifikasi matriks transformasinya, atau dengan memodifikasi posisi verteks. Saat memahat Anda biasanya ingin memodifikasi verteks, saat memindahkan objek dengan gizmo, Anda biasanya ingin memodifikasi node. Nomad memungkinkan Anda melakukan keduanya. 
+Jika Anda punya kotak sederhana yang terdiri dari 8 verteks, Anda bisa memindahkannya dengan mengubah matriks transformasinya, atau dengan mengubah posisi verteksnya. Saat memahat, biasanya Anda ingin mengubah verteks; saat memindahkan objek dengan gizmo, biasanya Anda ingin mengubah node. Nomad memungkinkan keduanya.
 
-#### Bilah alat menu kiri {#left-menu-toolbar}
+#### Bilah alat Gizmo {#left-menu-toolbar}
 
-Toolbar kiri mengontrol apakah gizmo akan bekerja pada node atau verteks, serta fungsi lainnya:
+Bilah alat kiri berisi:
 
-* `Clone` - Membuat salinan mandiri dari objek saat ini, yang dapat diseret menjauh dengan gizmo.
-* `Instance` - Membuat salinan instance dari objek saat ini. Objek saling tertaut, sehingga perubahan sculpting pada satu objek akan muncul di semua objek instance.
-* `Group/Object/Vertex/Auto` - Akan mengatur apakah gizmo akan memengaruhi node atau verteks objek. Mode 'auto' bawaan akan mencoba tebakan terbaik. Jika ada beberapa objek yang diparent bersama dalam hierarki, 'Object' hanya akan memindahkan objek saat ini, objek anak akan tetap diam. Gizmo juga dapat mempertimbangkan masking dan simetri.
-* `Pin` - Secara bawaan gizmo akan berpindah ke pivot objek yang dipilih. Saat pin diaktifkan, gizmo akan tetap di tempatnya saat ini.
-* `Align` - Beralih antara pivot disejajarkan dengan objek saat ini, atau disejajarkan dengan dunia.
-* `Snap rotation` - Mengaktifkan nilai rotasi yang di-snap ke kelipatan, nilai snap ditampilkan dan dapat diedit saat snap aktif.
-* `Snap translation` - Mengaktifkan nilai translasi yang di-snap ke kelipatan, nilai snap ditampilkan dan dapat diedit saat snap aktif.
-* `Pivot` - Saat diaktifkan, gizmo dapat dipindahkan dan diputar tanpa memindahkan objek. Ia memiliki menu tambahan yang dijelaskan di bawah.
+* `Kloning` - Membuat salinan mandiri dari objek saat ini, yang bisa diseret menjauh dengan gizmo.
+* `Instans` - Membuat salinan instans dari objek saat ini. Objek-objeknya saling terhubung, jadi perubahan pahatan pada satu objek akan muncul di semua objek instansnya.
+* `Poros` - (Ikon gembok, di tempat tombol `Kurang`) Jika aktif, gizmo bisa dipindahkan dan diputar tanpa menggerakkan objek. Seperti `Kurang`, tahan untuk perubahan sesaat, atau ketuk agar tetap aktif.
 
-#### Pivot {#pivot}
-Saat mode pivot aktif, sebuah menu ditampilkan untuk memungkinkan perubahan pivot cepat:
+Sebuah bilah alat di bagian atas viewport berisi kontrol lainnya:
 
-**Reset** 
-* `Center` - Memindahkan pivot ke pusat objek
-* `Bottom` - Memindahkan pivot ke bagian bawah objek
-* `Align` - Mereset rotasi agar sejajar dengan dunia.
-* `Mask` - Memindahkan pivot ke pusat area tak ter-mask.
+* `Sasaran` - Menentukan apakah gizmo memengaruhi node atau verteks sebuah objek:
+    * `Otomatis` - Bawaan; bekerja seperti `Grup`, tetapi jika mesh punya topeng atau simetri aktif, bekerja seperti `Verteks`.
+    * `Verteks` - Menerapkan transformasi pada verteks, dengan memperhitungkan topeng dan simetri. Tidak bekerja pada primitif yang belum difinalisasi, dan instans juga ikut terpengaruh.
+    * `Objek` - Hanya memindahkan objek saat ini, mengabaikan simetri dan topeng. Objek anak tetap diam.
+    * `Grup` - Memindahkan objek beserta seluruh hierarkinya, mengabaikan simetri dan topeng.
+    * `Instans` - (Objek dan Grup) Sama, tetapi semua instans objek ikut bergerak.
+* `Poros` - Popup untuk menempatkan poros dengan cepat, dijelaskan [di bawah](#pivot).
+* `Semua` / `Pindah` / `Putar` / `Skala` - Menampilkan semua pegangan gizmo, atau hanya pegangan pindah, putar, atau skala.
+* `Pin` - Secara bawaan, gizmo akan berpindah ke poros objek yang dipilih. Jika pin aktif, gizmo tetap di posisinya saat ini.
+* `Sejajarkan` - Beralih antara poros yang sejajar dengan objek saat ini, atau sejajar dengan dunia.
+* `Snap` (rotasi) - Mengaktifkan nilai rotasi yang melompat per kelipatan; nilai snap ditampilkan dan bisa disunting saat snap aktif. Opsi `Magnet`-nya membuat rotasi menempel pada sebuah kelipatan saat melewatinya, lalu bergerak bebas lagi; matikan untuk melompat dari kelipatan ke kelipatan.
+* `Snap` (translasi) - Mengaktifkan nilai translasi yang melompat per kelipatan; nilai snap ditampilkan dan bisa disunting saat snap aktif.
 
-**On Tap**
-* `None` - tidak melakukan apa-apa saat objek diketuk
-* `Normal` - Memindahkan dan memutar pivot agar sejajar dengan tempat permukaan diketuk
-* `First` - Memindahkan (tetapi tidak memutar) pivot ke tempat permukaan diketuk
-* `Medial` - Memindahkan pivot ke tengah objek, di bawah tempat permukaan diketuk.
+#### ![](/icons/reset.webp) Poros {#pivot}
+Popup `Poros` di bilah alat atas memungkinkan perubahan poros dengan cepat. Posisi dan orientasi poros menentukan gizmo.
 
-#### Pengaturan gizmo {#gizmo-settings}
+**Atur ulang**
+* `Otomatis` - Pusat objek, sejajar dengan transformasinya.
+* `Tengah` - Memindahkan poros ke pusat objek, dengan orientasi tetap.
+* `Bawah` - Memindahkan poros ke tengah bawah objek. Ketuk lagi untuk memakai kotak pembatas dunia.
+* `Atas` - Memindahkan poros ke tengah atas objek. Ketuk lagi untuk memakai kotak pembatas dunia.
+* `Objek` - Memindahkan poros ke titik asal objek, sejajar dengan transformasinya.
+* `Topeng` - Memindahkan poros ke pusat area tanpa topeng. Ketuk lagi untuk beralih ke area bertopeng.
+* `Sejajarkan` - Mereset rotasi agar sejajar dengan dunia, dengan posisi tetap.
+* `Tampilan` - Menyejajarkan poros dengan tampilan saat ini, dengan posisi tetap. Poros tidak mengikuti kamera setelahnya.
+
+**Sekali ketuk (mode Poros)**
+
+Hanya aktif saat `Poros` menyala; menentukan apa yang terjadi saat Anda mengetuk sekali di permukaan mesh:
+* `Tidak ada` - Tidak melakukan apa-apa saat objek diketuk
+* `Normal` - Memindahkan dan memutar poros agar sejajar dengan titik permukaan yang diketuk
+* `Pertama` - Memindahkan (tanpa memutar) poros ke titik permukaan yang diketuk
+* `Medial` - Memindahkan poros ke bagian tengah objek, di bawah titik permukaan yang diketuk.
+
+#### Pengaturan Gizmo {#gizmo-settings}
 
 ![](/images/tool_gizmo_settings.webp)
 
-##### Matriks {#matrix}
-* ![](/icons/target.webp) `Move origin` - Memindahkan objek sehingga pivot-nya berada di pusat scene, disebut origin.
-* ![](/icons/bake.webp)  `Bake` - Membekukan objek di tempat saat ini, dan mengatur nilai translate/rotate ke 0, scale ke 1.
-* ![](/icons/bake.webp) -> ![](/icons/tool_gizmo.webp) `Bake Pivot` - Membuat nilai matriks sesuai dengan posisi handle gizmo di dunia.
-* ![](/icons/reset.webp) `Reset` - Pintasan yang mengatur nilai translasi ke 0, rotasi ke 0, skala ke 1, memindahkan dan memutar objek.
-
-::: tip Bake vs bake to pivot
-Buat kotak, pilih alat Gizmo, buka dan pin menu settings. Secara bawaan translasi dan rotasi adalah 0, skala 1.
-
-Aktifkan mode pivot, pindahkan handle ke satu sisi, nonaktifkan mode pivot. Pivot telah berubah, tetapi perhatikan bahwa nilai translasi masih 0. 
-
-Jika Anda ingin melihat di mana pivot *sebenarnya* berada, klik `Bake Pivot`. Sekarang nilai translasi diperbarui. Perhatikan kotak tidak bergerak selama operasi ini, maupun dalam mode pivot.
-
-Pindahkan dan putar kotak ke suatu tempat, lalu ketuk `Move Origin`. Ini memindahkan objek sehingga pivot-nya berada di pusat dunia, tetapi membiarkan rotasi tidak berubah.
-
-Klik `Reset`, dan rotasi akan diatur ke 0 juga.
-
-Pindahkan dan putar kotak lagi, kali ini klik `Bake`. Pivot tetap di tempatnya, kotak tetap di tempatnya, tetapi nilai translasi dan rotasi diatur ke 0.
-
-Latih ini beberapa kali! Pahami bahwa nilai pivot tersembunyi, Nomad mengurusnya untuk Anda, tetapi jika Anda perlu mengatur pivot ke lokasi nyata di ruang, Bake pivot akan melakukannya untuk Anda.
-
-:::
-
-* `Translation` - nilai translate X, Y, Z
-* `Rotation` - nilai rotate X, Y, Z
-* `Scale` - Skala seragam jika diaktifkan, atau skala X, Y, Z jika dinonaktifkan.
-* `Uniform scale` - Beralih kemampuan untuk skala seragam atau independen di tiap sumbu
+* `Kompak` - Mengubah tata letak gizmo untuk meletakkan pegangan tambahan di luar atau di dalam bola rotasi
+* `Ukuran Gizmo` - Ukuran gizmo
+* `Ketebalan` - Ukuran garis-garis pada gizmo
+* `Opasitas` - Opasitas gizmo
+* `Sembunyikan saat berinteraksi` - Mengatur apakah gizmo disembunyikan sementara saat sedang diseret
 
 -----
 
-* `Compact` - beralih tata letak gizmo untuk menempatkan handle tambahan di luar atau di dalam bola rotasi
-* `Widget size` - ukuran gizmo
-* `Thickness` - ukuran garis pada gizmo
-* `Opacity` - opasitas gizmo
-* `Hide on interaction` - beralih apakah gizmo harus disembunyikan sementara saat diseret
-
------
-
-* `Tangent roll threshold` - Mengontrol bagaimana UI rotasi berperilaku saat menyeret pada handle lingkaran untuk rotasi pada X/Y/Z. Jika nilai ini 0, rotasi bekerja seperti dial, seret gizmo melingkar. Jika nilai ini 90, rotasi bekerja seperti menarik tali yo-yo; seret dalam garis lurus menuju atau menjauh dari tempat Anda pertama kali mengklik. Nilai antara 0 dan 90 akan melakukan kombinasi keduanya; di bawah nilai akan menjadi gerakan linear, di atas nilai akan menjadi gerakan melingkar.
-* `Numerical input` - saat diaktifkan, satu ketukan pada gizmo akan memunculkan jendela untuk memasukkan nilai tepat untuk sumbu widget yang diketuk.
+* `Ambang gulir tangensial` - Mengatur perilaku rotasi saat menyeret pegangan lingkaran untuk memutar di sumbu X/Y/Z. Jika nilainya 0, rotasi bekerja seperti tombol putar: seret gizmo dengan gerakan melingkar. Jika nilainya 90, rotasi bekerja seperti menarik tali yo-yo: seret dalam garis lurus mendekati atau menjauhi titik klik pertama. Nilai di antara 0 dan 90 memadukan keduanya; di bawah nilai tersebut gerakannya linear, di atasnya gerakannya melingkar.
+* `Masukan numerik` - Jika aktif, satu ketukan pada gizmo akan memunculkan jendela untuk memasukkan nilai yang tepat bagi sumbu widget yang diketuk.
 
 ::: warning
-[Gizmo](#gizmo), [Translate](#translate), [Rotate](#rotate) dan [Scale](#scale) menggunakan checkbox simetri mereka sendiri!
+Alat [Gizmo](#gizmo) dan [Transformasi](#transform) memakai kotak centang simetrinya sendiri, terpisah dari simetri pahatan!
 
-Secara bawaan simetri ini dimatikan.
+Secara bawaan, simetri ini nonaktif.
 :::
 
-Di sebelah kiri Anda dapat memindahkan pivot gizmo, Anda dapat melihat video di bawah dalam aksi.
-Ini sangat berguna untuk rotasi, karena tidak mengubah apa pun untuk translasi.
+##### Matriks {#matrix}
+Nilai transformasi yang tepat dari objek tidak lagi ada di pengaturan Gizmo: semuanya pindah ke menu `Transformasi`, di menu kanan atas. Bagian `Matriks`-nya berisi:
+
+* ![](/icons/target.webp) `Pindahkan ke asal` - Memindahkan objek agar porosnya berada di pusat adegan, yang disebut titik asal.
+* ![](/icons/bake.webp)  `Bake` - Membekukan objek di posisinya saat ini, dan mengatur nilai translasi/rotasi ke 0, skala ke 1.
+* ![](/icons/bake.webp) -> ![](/icons/tool_gizmo.webp) `Poros` - Bake poros: membuat nilai matriks sesuai dengan posisi pegangan gizmo di dunia.
+* ![](/icons/reset.webp) `Atur Ulang` - Pintasan yang mengatur nilai translasi ke 0, nilai rotasi ke 0, skala ke 1, sehingga objek ikut berpindah dan berputar.
+
+::: tip Bake vs bake ke poros
+Buat sebuah kotak, pilih alat Gizmo, buka dan sematkan menu `Transformasi`. Secara bawaan, translasi dan rotasinya 0, skalanya 1.
+
+Aktifkan mode poros, pindahkan pegangannya ke satu sisi, lalu matikan mode poros. Porosnya sudah berubah, tetapi perhatikan bahwa nilai translasinya masih 0.
+
+Jika Anda ingin melihat di mana poros itu *sebenarnya* berada, klik tombol bake `Poros`. Sekarang nilai translasinya berubah. Perhatikan bahwa kotaknya tidak bergerak selama operasi ini, maupun saat mode poros.
+
+Pindahkan dan putar kotak ke suatu tempat, lalu ketuk `Pindahkan ke asal`. Objek dipindahkan sehingga porosnya berada di pusat dunia, tetapi rotasinya tidak berubah.
+
+Klik `Atur Ulang`, dan rotasinya juga akan diatur ke 0.
+
+Pindahkan dan putar kotak lagi, kali ini klik `Bake`. Poros tetap di tempatnya, kotak tetap di tempatnya, tetapi nilai translasi dan rotasinya diatur ke 0.
+
+Latih ini beberapa kali! Pahami bahwa nilai poros itu tersembunyi dan Nomad mengurusnya untuk Anda, tetapi jika Anda perlu menempatkan poros di lokasi nyata dalam ruang, Bake poros akan melakukannya untuk Anda.
+
+:::
+
+* `Translasi` - Nilai translasi X, Y, Z
+* `Rotasi` - Nilai rotasi X, Y, Z
+* `Skala` - Skala seragam jika opsi itu aktif, atau skala X, Y, Z jika nonaktif.
+* `Miring` - Nilai kemiringan (shear) X, Y, Z, hanya ditampilkan jika objek sudah dimiringkan
+* `Skala Uniform` - Beralih antara mengubah skala secara seragam atau terpisah di setiap sumbu
+
+Di sebelah kiri, Anda bisa memindahkan poros gizmo; lihat cara kerjanya di video di bawah.
+Ini terutama berguna untuk rotasi, karena tidak mengubah apa pun pada translasi.
 
 ![](/videos/tool_gizmo.mp4)
 
-### ![](/icons/tool_faceGroup.webp) Facegroup {#facegroup}
+### ![](/icons/tool_faceGroup.webp) Grup Face {#facegroup}
 
-Facegroup memungkinkan Anda mengorganisir objek menjadi face dengan warna berbeda. Anda dapat menggunakan grup ini dengan banyak cara di Nomad:
+Grup face memungkinkan Anda menata objek menjadi kumpulan face dengan warna berbeda. Anda bisa memakai grup ini dengan banyak cara di Nomad:
 
-* Metode seleksi cepat untuk mask
+* Cara cepat menyeleksi untuk topeng
 * Menyembunyikan/menampilkan bagian objek
-* Mengorganisir objek tanpa harus memecahnya menjadi bagian terpisah
-* Mendefinisikan region UV
-* Membimbing quad remesher
-* Kontrol tambahan untuk alat seperti smooth.
+* Menata objek tanpa harus memecahnya menjadi bagian-bagian terpisah
+* Menentukan area UV
+* Memandu quad remesher
+* Kendali tambahan untuk alat seperti Haluskan.
 
-#### Bilah alat kiri Facegroup {#facegroup-left-toolbar}
+#### Bilah alat kiri Grup Face {#facegroup-left-toolbar}
 
-* `Patch ` - Menampilkan facegroup yang tersedia sebagai patch. Patch yang tidak digunakan dapat dihapus. Ketuk patch untuk mengganti nama atau mengubah warnanya. Ikon plus memungkinkan Anda membuat patch baru.
-* `Dot` - Melukis pada objek untuk mendefinisikan facegroup. Saat '+ Face Group' diaktifkan, setiap stroke baru akan otomatis membuat facegroup baru, berguna untuk cepat mendefinisikan region. Ketukan akan flood fill region yang dipilih. Slider mengatur radius dot.
-* `Relax` - Menghaluskan batas facegroup. Sangat berguna untuk mendefinisikan tepi bersih untuk quad remeshing, atau untuk mendefinisikan panel untuk pemodelan hard surface. Slider mengontrol radius dan intensitas operasi relax.
-* `Shape selector` - Membuat facegroup dengan bentuk alih-alih kuas, melalui `Lock+Radius`, `Lasso`, `Polygon`, `Rect` dan `Ellipse`. Lihat [Shape Selector](#shape-selector) untuk info lebih lanjut.
-* `Auto-pick` - Saat diaktifkan, akan memilih patch tempat stroke dimulai, dan menerapkan patch itu untuk sisa stroke. Sangat berguna untuk merapikan region facegroup; jika facegroup telah meluas terlalu jauh, aktifkan auto-pick, mulai stroke dari tempat patch facegroup benar, dan seret ke batas untuk menetapkan ulang patch yang benar.
+* `Grup` - Tombol ini menampilkan grup face saat ini. Ketuk untuk menampilkan grup face yang tersedia sebagai petak-petak warna dan memilih salah satunya. Ketuk sebuah petak untuk mengganti nama atau warnanya, atau menghapusnya. `Hapus yang tidak digunakan` menghapus petak yang tidak terpakai, `Setel ulang` menghapus semuanya. Ikon plus memungkinkan Anda membuat petak baru.
+* `Titik` - Cat di atas objek untuk menentukan grup face. Jika '+ Grup Face' aktif, setiap goresan baru otomatis membuat grup face baru, berguna untuk menentukan area dengan cepat. Satu ketukan akan mengisi penuh area yang dipilih. Penggesernya mengatur jari-jari titik.
+* `Santai` - Menghaluskan batas grup face. Sangat berguna untuk membuat tepi yang rapi sebelum quad remeshing, atau untuk menentukan panel pada pemodelan hard surface. Penggesernya mengatur jari-jari dan intensitas operasi santai.
+* Bentuk - Membuat grup face dengan bentuk alih-alih kuas, melalui `Kunci + jari-jari`, `Tali`, `Poligon`, `Garis`, `Rect`, dan `Elips`. Lihat [Kontrol seleksi](#selection-controls) untuk info lebih lanjut.
+* `Pilih` - Mode sub. Jika aktif, petak tempat goresan dimulai akan dipilih, lalu dipakai untuk sisa goresan. Sangat berguna untuk merapikan area grup face; jika sebuah grup face meluas terlalu jauh, aktifkan `Pilih`, mulai goresan dari tempat petak grup face sudah benar, lalu seret sampai ke batasnya untuk menetapkan ulang petak yang benar.
 
-### ![](/icons/tool_hide.webp) Sembunyikan {#hide}
-Menyembunyikan atau mengisolasi bagian objek. 
+#### Bilah alat atas Grup Face {#facegroup-top-toolbar}
 
-Mode utama dikendalikan dari menu kiri:
+Sebuah bilah alat di bagian atas viewport berisi kontrol tambahan:
 
-* `Dot` - Menggosok pada objek untuk menyembunyikan bagian objek.
-* `Shape selector` -  Menyembunyikan dengan bentuk alih-alih kuas, melalui `Lasso`, `Polygon`, `Line`, `Rect` dan `Ellipse`. Lihat [Shape Selector](#shape-selector) untuk info lebih lanjut.
-* `Show` - membalik operasi, sehingga mode yang dipilih akan menampilkan alih-alih menyembunyikan bagian objek.
+* `Santai (Semua)` - Seret untuk merapikan batas semua grup face sekaligus.
+* `Depan` / `Terlihat` / `Terhubung` - Filter goresan yang sama seperti pada bilah alat [Topeng](#mask).
+* `Dari normal` - Membuat grup face berdasarkan sudut antar-face. Popup-nya berisi `Sudut`, dan memungkinkan Anda melewati grup kecil berdasarkan `Jumlah face` atau `Luas permukaan`, dengan `Pratinjau` sebelum Anda memvalidasi.
+* `Dari bagian` - Membuat satu grup face untuk setiap bagian yang terpisah.
+* `Dari UV` - Membuat satu grup face untuk setiap pulau UV.
+* `Dari topeng` - Membuat grup face dari area bertopeng.
+* `Saat diketuk` - Pilih apa yang terjadi saat sebuah grup face diketuk: mengisinya dengan grup face saat ini, menyembunyikannya, memberinya topeng, atau `Pose` (grup yang diketuk dan semua yang ada di baliknya dilepas topengnya, dan gizmo diletakkan di sambungannya, dengan penggeser `Kabur` untuk topeng). Tombol `Saat diketuk` kedua, yang tersedia jika mesh punya topeng, membatasi ketukan hanya pada face di sisi topeng yang sama.
+* Tombol `Bersihkan` untuk alat [Sembunyi](#hide) dan [Topeng](#mask), untuk menampilkan kembali semuanya atau menghapus topeng tanpa meninggalkan alat.
 
-Toolbar akan muncul di bagian atas viewport dengan kontrol tambahan:
+#### Pengaturan Grup Face {#facegroup-settings}
 
-* `Clear` - Mengembalikan objek, semua bagian tersembunyi akan ditampilkan.
-* `Invert` - Menukar bagian tersembunyi dan terlihat.
-* `Facegroup` - Menggunakan facegroup untuk cepat menyembunyikan bagian, mengetuk facegroup akan menyembunyikan seluruh facegroup.
-* `Mask` - Jika mask aktif, mengetuk tombol ini akan menyembunyikan bagian yang di-mask.
-* `Delete` - Menghapus bagian objek yang tersembunyi
-* `Split` - Memisahkan bagian objek yang tersembunyi menjadi bentuk baru.
+Menu `Alat` mengekstrak grup face menjadi objek baru, dengan opsi yang sama seperti `Ekstrak` di [Pengaturan Topeng](#mask-settings). Tombol `Grup Face` di bagian atas memilih grup mana yang diekstrak, dan ada penggeser `Celah` tambahan: penggeser ini menggeser setiap batas ke dalam di sepanjang permukaan, sedangkan nilai negatif menggesernya ke luar sehingga tumpang tindih. Untuk panel yang bersebelahan, gunakan setengah dari celah yang diinginkan.
+
+### ![](/icons/tool_hide.webp) Sembunyi {#hide}
+Menyembunyikan atau mengisolasi bagian-bagian objek.
+
+Mode utamanya diatur dari menu sebelah kiri:
+
+* `Titik` - Sapukan kuas di atas objek untuk menyembunyikan bagian-bagiannya.
+* Bentuk - Menyembunyikan dengan bentuk alih-alih kuas, melalui `Tali`, `Poligon`, `Garis`, `Rect`, dan `Elips`. Lihat [Kontrol seleksi](#selection-controls) untuk info lebih lanjut.
+* `Tampilkan` - Mode sub, membalik operasi sehingga mode yang dipilih akan menampilkan bagian objek alih-alih menyembunyikannya.
+
+Sebuah bilah alat akan muncul di bagian atas viewport dengan kontrol tambahan:
+
+* `Hapus semua` - Memulihkan objek; semua bagian yang tersembunyi akan ditampilkan kembali. Jika objek lain juga punya bagian tersembunyi, tombol `Bersihkan` tambahan hanya memulihkan objek yang dipilih.
+* `Balik` - Menukar bagian yang tersembunyi dan yang terlihat.
+* `Hapus` - Menghapus bagian objek yang tersembunyi
+* `Pisah` - Memisahkan bagian objek yang tersembunyi menjadi bentuk baru.
+* `Depan` / `Terlihat` / `Terhubung` - Filter goresan yang sama seperti pada bilah alat [Topeng](#mask).
+* `Saat diketuk` (grup face) - Memakai grup face untuk menyembunyikan bagian dengan cepat; mengetuk sebuah grup face akan menyembunyikan seluruh grup face itu.
+* `Saat diketuk` (topeng) - Jika ada topeng yang aktif, ketukan akan menyembunyikan bagian yang bertopeng.
 
 ### ![](/icons/tool_measure.webp) Ukur {#measure}
-Seret untuk mengukur jarak antara 2 titik.
+Seret untuk mengukur jarak antara 2 titik. Setelah ditempatkan, Anda bisa menyeret titik-titik ujungnya untuk menyesuaikan ukuran.
+
+Bilah alat kiri memilih cara jarak diukur:
+
+* `Garis` - Garis lurus di antara kedua titik.
+* `Permukaan` - Jarak di sepanjang permukaan, mengikuti potongan melalui kedua titik seperti terlihat dari kamera.
+* `Penampang` - Keliling penampang melalui kedua titik, seperti meteran jahit yang dilingkarkan di lengan.
+* `Verteks` - Menempelkan titik-titik ujung ke verteks terdekat.
+* `Rasio emas` - Menampilkan titik kuning pada titik rasio emas dari ukuran.
+* Tombol `?` menampilkan volume, luas permukaan, dan ukuran objek yang dipilih.
+
+### ![](/icons/tool_arrange.webp) Atur {#arrange}
+Menyusun dan menata beberapa objek sekaligus, seperti alat perataan di aplikasi desain 2d. Pilih objek-objeknya terlebih dahulu; dengan satu objek saja, Atur bekerja pada bagian-bagiannya yang terpisah. Sebuah kotak digambar di sekeliling seleksi; seret pegangannya untuk mengubah skalanya.
+
+Sebuah bilah alat di bagian atas viewport berisi kontrolnya:
+
+* `Dunia` / `Layar` - Menata mengikuti sumbu dunia, atau mengikuti layar (kiri, kanan, atas, bawah).
+* `Sejajarkan` - Menyejajarkan objek pada sisi minimum, tengah, atau maksimumnya, di setiap sumbu.
+* `Distribusikan` - Memberi jarak yang rata pada objek di antara dua objek terluar, berdasarkan sisi minimum, tengah, atau maksimumnya. Membutuhkan minimal 3 objek.
+* `Garis` - Menyusun objek dalam satu baris di sepanjang sebuah sumbu.
+* `Kisi` - Menyusun objek dalam kisi, dengan sejumlah objek di `X`, `Y`, dan `Z`.
+* `Lingkaran` - (Hanya Dunia) Menyusun objek dalam lingkaran di sekitar sumbu `X`, `Y`, atau `Z`.
+* `Bola` - (Hanya Dunia) Menyusun objek di atas permukaan bola.
+
+`Garis`, `Kisi`, `Lingkaran`, dan `Bola` semuanya punya penggeser `Jarak` untuk celah di antara objek.
 
 ### ![](/icons/tool_remesh.webp) Quad Remesher {#quad-remesher}
 
 ![](/images/tool_quadremesher.webp)
 
-Alat ini akan mengonversi objek yang dipilih menjadi tata letak topologi quad yang bersih, dengan kontrol untuk kepadatan, aliran edge, simetri. 
+Alat ini mengubah objek yang dipilih menjadi tata letak topologi kuad yang rapi, dengan kontrol untuk kepadatan, aliran tepi, dan simetri.
 
 ::: tip
-Quad Remesher dikembangkan oleh [Exoside](https://exoside.com/) untuk iOS dan desktop. 
+Quad Remesher dikembangkan oleh [Exoside](https://exoside.com/) untuk iOS dan desktop.
 
-Untuk iOS ini adalah pembelian dalam aplikasi di dalam Nomad, pembayaran satu kali sebesar $16USD.
+Di iOS, Quad Remesher adalah pembelian dalam aplikasi di Nomad, dengan pembayaran sekali sebesar $16USD.
 
-Untuk desktop, beli lisensi dari [Exoside](https://exoside.com/quadremesher/quadremesher-buy/). Anda dapat membelinya hanya untuk Nomad desktop, atau lisensi lintas semua aplikasi desktop yang didukung.
+Untuk desktop, beli lisensi dari [Exoside](https://exoside.com/quadremesher/quadremesher-buy/). Anda bisa membelinya khusus untuk Nomad desktop, atau lisensi silang untuk semua aplikasi desktop yang didukung.
 
-Jika Anda sudah memiliki Quad Remesher untuk aplikasi desktop lain, Anda dapat [membeli upgrade ke semua platform dengan biaya lebih rendah.](https://exoside.com/quadremesher/quadremesher-upgrade/)
+Jika Anda sudah memiliki Quad Remesher untuk aplikasi desktop lain, Anda bisa [membeli upgrade ke semua platform dengan biaya lebih murah.](https://exoside.com/quadremesher/quadremesher-upgrade/)
 
-Quad Remesher tidak tersedia untuk Android. Android dapat menggunakan 'Quad Remesh - Instant' open source gratis yang tersedia di bawah menu Topology -> Misc, tetapi pahami bahwa set fiturnya sangat terbatas.
+Quad Remesher tidak tersedia untuk Android. Di Android, Anda bisa memakai remesher open source gratis di tab topologi [Remesh Kuad](topology.md#quad-remesh) (AutoRemesher, Instant Mesh, QuadriFlow), tetapi perlu diingat bahwa fiturnya lebih terbatas.
 :::
 
-When alat ini diaktifkan untuk pertama kali, alat ini akan menanyakan apakah Anda ingin mengaktifkannya sebagai pembelian dalam aplikasi. Setelah aktif, bilah alat kiri dan atas akan diaktifkan.
+Selama Quad Remesher belum dibuka, bilah alat atas diawali dengan tombol keranjang belanja alih-alih tombol remesh. Di iOS, tombol ini membuka pembelian dalam aplikasi. Di desktop, tombol ini menampilkan `Buka kunci (beli, pulihkan, coba)`, yang memeriksa lisensi Exoside Anda (atau memulai masa uji coba). Setelah aktif, bilah alat kiri dan atas akan diaktifkan.
 
-* `Dot` - Kuas ini akan mengatur kerapatan target. Intensitas 100% akan melukis dengan warna merah, yang akan menggunakan dua kali kerapatan quad target di area tersebut. Intensitas 0% akan melukis dengan warna sian, yang akan menggunakan setengah kerapatan quad target di area tersebut. Intensitas 50% akan melukis dengan warna abu-abu, yang akan menggunakan kerapatan quad target bawaan.
-* `Smooth` - Menghaluskan transisi kerapatan merah/abu-abu/sian.
-* `Curve` - Menggambar kurva di permukaan sculpt, quad remesher akan menggunakannya sebagai panduan aliran edge. Ketuk sebuah kurva untuk menghapusnya.
-* `Path` - Menggambar path di permukaan sculpt, quad remesher akan menggunakannya sebagai panduan aliran edge. Ketuk sebuah path untuk menghapusnya. 
-* `Rect` - Menggambar persegi panjang di permukaan sculpt, quad remesher akan menggunakannya sebagai panduan aliran edge. Ketuk sebuah path untuk menghapusnya.
-* `Ellipse` - Menggambar elips di permukaan sculpt, quad remesher akan menggunakannya sebagai panduan aliran edge. Ketuk sebuah path untuk menghapusnya.
+* `Titik` - Kuas ini mengatur kepadatan target. Intensitas 100% akan mengecat merah, yang memakai dua kali kepadatan kuad target di area tersebut. Intensitas 0% akan mengecat sian, yang memakai setengah kepadatan kuad target di area tersebut. Intensitas 50% akan mengecat abu-abu, yang memakai kepadatan kuad target bawaan.
+* `Haluskan` - Menghaluskan peralihan kepadatan merah/abu-abu/sian.
+* `Smudge` - Mengusap cat kepadatan.
+* `Lengkung` - Gambar kurva di permukaan pahatan; quad remesher akan memakainya sebagai pemandu aliran tepi. Ketuk sebuah kurva untuk menghapusnya.
+* `Jalur` - Gambar jalur di permukaan pahatan; quad remesher akan memakainya sebagai pemandu aliran tepi. Ketuk sebuah jalur untuk menghapusnya.
+* `Rect` - Gambar persegi panjang di permukaan pahatan; quad remesher akan memakainya sebagai pemandu aliran tepi. Ketuk sebuah jalur untuk menghapusnya.
+* `Elips` - Gambar elips di permukaan pahatan; quad remesher akan memakainya sebagai pemandu aliran tepi. Ketuk sebuah jalur untuk menghapusnya.
 
-#### Bilah alat atas Quad remesher {#quad-remesher-top-toolbar}
+#### Bilah alat atas Quad Remesher {#quad-remesher-top-toolbar}
 ![](/images/tool_quadremesher_toolbar.webp)
 
 Sebuah bilah alat akan muncul di bagian atas viewport dengan kontrol tambahan:
 
 
-* `<Count>` - Klik ini untuk memulai proses quad remesher, angka ini memberi tahu Anda berapa target jumlah quad remesh.
-* `Quads` - Mengatur target jumlah quad dengan menggeser ke kiri dan kanan, atau ketuk untuk mengatur angka pasti. Perhatikan bahwa ini lebih merupakan panduan daripada angka tetap, berbagai kontrol pada quad remesher sering kali membuat hasilnya tidak persis sama dengan target ini.
-* `Half` - Pintasan untuk mengatur target jumlah menjadi setengah jumlah poly saat ini.
-* `Same` - Pintasan untuk mengatur target jumlah menjadi sama dengan jumlah poly saat ini.
-* `Guides` - menunjukkan total jumlah guide, atau ketuk untuk menghapus semua guide.
-* `Density X` - ketuk untuk menghapus semua pengecatan kerapatan.
-* `Density (painting)` - toggle untuk menggunakan atau mengabaikan pengecatan kerapatan.
-* `Face Group` - toggle untuk menggunakan atau mengabaikan facegroup untuk mengarahkan quad remesher.
-* `Relax` - toggle untuk secara otomatis merelaksasi batas facegroup selama quad remeshing. Jika Anda sudah merelaksasi/menghaluskan batas facegroup, nonaktifkan opsi ini.
-* `Relax Slider` - Slider pintasan untuk merelaksasi batas facegroup.
-* `Hard Edges` - toggle untuk mencoba mempertahankan hard edge.
-* `Reproject Vertex` - toggle untuk memproyeksikan ulang tata letak baru ke mesh input.
-* `Symmetry` - Toggle untuk mengaktifkan hasil simetris. Perhatikan bahwa simetri selalu dihitung di sekitar sumbu x dunia, jadi pastikan model Anda berada di origin jika Anda mengharapkan hasil simetris.
-* `...` - Menu pengaturan Quadremesher. 
+* `<Jumlah>` - Klik ini untuk memulai proses quad remesher; angka ini menunjukkan jumlah kuad target hasil remesh.
+* `Empat Sisi` - Atur jumlah kuad target dengan menggeser ke kiri dan kanan, atau ketuk untuk memasukkan angka yang tepat. Perlu diingat bahwa angka ini lebih merupakan panduan daripada angka pasti; berbagai kontrol quad remesher sering membuat hasilnya tidak persis sama dengan target ini.
+* `Setengah` - Pintasan untuk mengatur jumlah target menjadi setengah dari jumlah poligon saat ini.
+* `Sama` - Pintasan untuk mengatur jumlah target sama dengan jumlah poligon saat ini.
+* `Panduan` - Beralih untuk memakai atau mengabaikan pemandu. Jika ada pemandu, tombol `Panduan` kedua menampilkan jumlahnya; ketuk untuk menghapus semuanya.
+* `Kepadatan` - Beralih untuk memakai atau mengabaikan cat kepadatan. Jika ada cat kepadatan, tombol `Kepadatan` kedua akan menghapusnya.
+* `Grup Face` - Beralih untuk memakai atau mengabaikan grup face untuk mengarahkan quad remesher.
+* `Santai` - Beralih untuk merapikan batas grup face secara otomatis selama quad remeshing. Jika Anda sudah merapikan/menghaluskan batas grup face, nonaktifkan opsi ini.
+* `Penggeser Santai` - Penggeser pintasan untuk merapikan batas grup face.
+* `Tepi Keras` - Beralih untuk mencoba mempertahankan tepi keras.
+* `Proyeksikan Ulang Vertex` - Beralih untuk memproyeksikan ulang tata letak baru ke mesh masukan.
+* `Sim` - Beralih untuk mengaktifkan hasil yang simetris. Perlu diingat bahwa simetri selalu dihitung terhadap sumbu x dunia, jadi pastikan model Anda berada di titik asal jika Anda mengharapkan hasil yang simetris.
+* `...` - Popup pengaturan Quad Remesher.
 
-#### Menu pengaturan Quad remesher {#quad-remesher-settings-menu}
+#### Menu pengaturan Quad Remesher {#quad-remesher-settings-menu}
 
-Sebagian besar pengaturan ini tersedia di bilah alat atas.
+Tombol `...` di ujung bilah alat atas membuka popup berisi pengaturan lainnya:
 
-* `<Count>, Half, Same` - Sama seperti tombol Remesh, Half, Same di bilah alat atas.
-* `Target Quads` - Sama seperti tombol `Quads` di bilah alat atas
-* `Adaptive quad count` - toggle untuk mengaktifkan penggunaan quad yang lebih kecil di area dengan kelengkungan tinggi, dan quad yang lebih besar di kelengkungan rendah.
-* `Adaptive size` - Mengatur jumlah adaptivitas. 100% akan mengizinkan ukuran adaptif maksimum, pada 0% quad akan seragam.
-* `Auto-Detect Hard Edges` - toggle untuk menyesuaikan tata letak quad remesh agar lebih mengikuti permukaan tajam.
-* `Density (painting)` - Sama seperti tombol `Density (painting)` di bilah alat atas
-* `Reproject Vertex` - toggle untuk memproyeksikan ulang tata letak baru ke mesh input.
-* `Face Group` - Sama seperti tombol `Face Group` di bilah alat atas
-* `Relax Slider` - Slider pintasan untuk merelaksasi batas facegroup.
+* `Jumlah Kuad Adaptif` - Beralih untuk memakai kuad yang lebih kecil di area dengan kelengkungan tinggi, dan kuad yang lebih besar di area dengan kelengkungan rendah.
+* `Ukuran Adaptif` - Mengatur tingkat adaptivitas. 100% memungkinkan ukuran adaptif maksimum, pada 0% kuad akan seragam.
 
 ::: tip
 
-Resep untuk mendapatkan quad remesh yang baik dengan artefak minimal:
+Resep untuk mendapatkan quad remesh yang bagus dengan artefak minimal:
 
-* Facegroup mesh untuk mendefinisikan aliran quad ideal Anda.
-* Facegroup relax untuk mendapatkan batas facegroup yang halus.
-* Decimate. Ini akan memastikan Anda tidak memiliki face tipis atau terdistorsi di tepi facegroup. Di pengaturan decimate pastikan facegroup diaktifkan. Ini akan membuat edge segitiga mengikuti edge facegroup Anda secara presisi. 
+* Beri grup face pada mesh untuk menentukan aliran kuad ideal Anda.
+* Rapikan grup face dengan Santai agar batas grup face halus.
+* Desimasi. Ini memastikan tidak ada face yang tipis atau terdistorsi di tepi grup face. Di pengaturan desimasi, pastikan grup face diaktifkan. Dengan begitu, tepi segitiga akan mengikuti tepi grup face Anda dengan tepat.
 
-Di opsi quad remesh pastikan relax dinonaktifkan (karena Anda sudah merelaksasi mesh) dan Anda seharusnya mendapatkan hasil yang baik.
+Di opsi quad remesh, pastikan Santai dinonaktifkan (karena Anda sudah merapikan mesh), dan Anda seharusnya mendapat hasil yang bagus.
 
 :::
 
 ### ![](/icons/tool_select.webp) Pilih {#select}
-Gunakan mode bentuk untuk memilih objek di scene. `Unselect` akan menghapus objek dari seleksi.
+Gunakan mode bentuk (`Tali`, `Rect`, `Elips`) untuk memilih objek di adegan. `Batalkan Pilih` akan mengeluarkan objek dari seleksi.
+
+### ![](/icons/tool_lattice.webp) Lattice {#lattice}
+Mendeformasi objek dengan sangkar titik kontrol di sekelilingnya, alih-alih memahat permukaannya. Menggerakkan beberapa titik sangkar akan membengkokkan, memuntir, atau meregangkan seluruh objek dengan halus, sangat cocok untuk mengatur proporsi atau membuat pose tanpa menyentuh topologinya. Deformasinya tetap bisa diubah sampai Anda memvalidasinya.
+
+Bilah alat kiri memilih cara Anda menyunting sangkar:
+
+* `Titik` - Seret langsung titik dan tepi sangkar. Ketuk sebuah titik untuk memilihnya.
+* `Tampilan` - Menggerakkan kamera tanpa menyunting sangkar.
+* `Santai` - Kuas yang merapikan titik-titik sangkar di bawahnya.
+* `Elastis` - Kuas yang menarik titik-titik sangkar dengan penurunan elastis, seperti alat [Elastis](#elastic).
+* `Gizmo` - Memindahkan, memutar, dan mengubah skala titik-titik yang dipilih dengan gizmo. Mode sub-nya adalah `Poros`.
+* `Tali` - Memilih titik sangkar dengan laso; `Batalkan Pilih` mengeluarkannya dari seleksi.
+
+Popup bentuk juga berisi `Jari-jari lembut`, yang membuat seretan titik ikut menggerakkan titik-titik tetangganya (dalam satuan sel kisi; 0 hanya menggerakkan seleksi), dan `Balikkan pilihan`.
+
+Sebuah bilah alat di bagian atas viewport berisi:
+
+* `Finalisasi` - Menerapkan deformasi pada objek dan menghapus sangkarnya.
+* `Atur ulang` - Menghapus sangkar beserta deformasinya.
+* `Opasitas` - Opasitas tampilan sangkar.
+* `Sisi cermin` - Dengan simetri, berganti sisi cermin sangkar mana yang ditampilkan dan bisa dipilih, dengan `Opasitas` tersendiri untuk sisi yang tersembunyi.
+* `Titik grid` - Titik sangkar mana yang bisa dipindahkan: seluruh kisi, permukaan dan titik pusat, atau hanya permukaan.
+* `Kekakuan` - Seberapa kaku deformasinya, dari halus (0%) sampai kaku dan linear (100%).
+* `Falloff` - Seberapa jauh deformasi memudar di luar sangkar.
+* `Sejajarkan` - Menyejajarkan sangkar dengan objek, atau dengan dunia.
+* `X`, `Y`, `Z` `Pembagian` - Jumlah sel sangkar di setiap sumbu. Tombol mode di sebelahnya mengatur hubungan ketiganya: `x = y = z` memakai jumlah yang sama di 3 sumbu, `Seragam` menjaga jarak antar-titik tetap sama di setiap sumbu, dan `Kustom` memungkinkan Anda mengatur setiap sumbu dengan bebas.
+
+#### Pengaturan Lattice {#lattice-settings}
+* `Kecepatan putar` - Opsi putar yang sama seperti pada alat [Pindah](#move-settings), dipakai saat menyeret titik-titik sangkar.
 
 ### ![](/icons/tool_view.webp) Tampilan {#view}
-"Alat" ini tidak melakukan apa pun secara khusus, ini hanyalah cara untuk melihat model tanpa memodifikasi scene Anda.
+"Alat" ini tidak melakukan apa-apa; ini hanyalah cara untuk melihat model tanpa mengubah adegan Anda.
+
+#### Pengaturan Tampilan {#view-settings}
+Selama alat Tampilan aktif, pengaturan ini menggantikan beberapa opsi tampilan, agar Anda mendapat tampilan bersih untuk presentasi atau memeriksa model:
+
+* `Primitif (Sunting)`, `Pengulang (Sunting)`, `Cahaya (Sunting)`, `Kamera (Sunting)` - Mengizinkan penyuntingan primitif, pengulang, cahaya, dan kamera di viewport saat berada di alat Tampilan. Nonaktifkan agar pegangannya tidak tergeser secara tidak sengaja.
+* `Pintasan kamera (selalu)` - Selalu menampilkan tombol pintasan kamera di viewport.
+* `Tampilkan topeng`, `Garis tepi`, `Gelapkan objek yang tidak dipilih` - Menampilkan topeng, garis tepi objek yang dipilih, atau menggelapkan objek yang tidak dipilih. `Otomatis` mengikuti pengaturan Anda yang biasa, `Tidak` dan `Ya` memaksakannya.
+* `Tampilkan garis (Simetri)`, `Tampilkan bidang (Simetri)` - Menampilkan garis atau bidang simetri, dengan pilihan `Otomatis`, `Tidak`, dan `Ya` yang sama.
+* `Ikon` - Menampilkan ikon grup, pengulang, cahaya, kamera, dan hierarki di viewport, dengan pilihan yang sama.
 
 
-## Menu konteks kotak alat {#toolbox-context-menu}
+## Menu konteks kotak peralatan {#toolbox-context-menu}
 
 ![](/images/tools_context_menu.webp)
 
-Klik kanan atau tekan lama pada sebuah alat di toolbox akan memunculkan menu konteks. Menu ini memiliki opsi berikut:
+Klik kanan atau tekan lama sebuah alat di kotak peralatan untuk memunculkan menu konteks. Menu ini berisi opsi berikut:
 
-* `Save` - menyimpan perubahan apa pun yang Anda buat pada alat
-* `Clone` - menduplikasi alat menjadi pintasan alat baru
-* `Last save` - mengembalikan ke versi alat yang terakhir disimpan
-* `Icon` - mengubah ikon untuk alat
-* `Reset` - mengatur ulang alat ke setelan defaultnya
+* `Simpan` - Menyimpan perubahan apa pun yang Anda buat pada alat
+* `Kloning` - Menduplikasi alat menjadi pintasan alat baru
+* `Simpanan terakhir` - Kembali ke versi alat yang terakhir disimpan
+* `Ikon` - Mengganti ikon alat. Jika alat punya ikon khusus, tombol ini akan menghapusnya.
+* `→ ...` - Memindahkan alat ke folder lain di kotak peralatan, atau ke folder baru
+* `Setel ulang` - Mereset alat ke pengaturan bawaannya
+
+Alat hasil kloning juga punya `Ganti nama` dan `Hapus`.

@@ -1,83 +1,93 @@
 # ![](/icons/material.webp) Materiál {#material}
 
-Toto menu umožňuje změnit materiál aktuálního objektu, vlastnosti vykreslování objektu/materiálu a přiřadit materiálu textury.
+V této nabídce můžete změnit materiál aktuálního objektu, vlastnosti vykreslování objektu a materiálu a přiřadit materiálu textury.
 
 ![](/images/material_overview.webp)
 
-Materiály určují, jak objekt vypadá, tím, že řídí, jak reaguje na světlo a na ostatní objekty. Vzhled objektu je řízen těmito vlastnostmi:
+Materiály určují, jak objekt vypadá, tím, že řídí, jak reaguje na světlo a na ostatní objekty. Vzhled objektu ovlivňují tyto vlastnosti:
 
 * `Typ materiálu`
 * `Barva`
 * `Drsnost`
 * `Kovovost`
-* `Průhlednost`
+* `Krytí`
 * `Odrazivost`
-* `Emisní/neosvětlený`
+* `Emise/neosvětlené`
 
-Kombinace těchto vlastností umožňují dosáhnout široké škály výsledků od fotorealistických po kreslené až po experimentální.
+Kombinacemi těchto vlastností dosáhnete široké škály výsledků, od fotorealistických přes kreslené až po experimentální.
 
-Barvu, drsnost, kovovost a průhlednost lze malovat, více informací viz [Možnosti Vertex Paint](painting.md).
+Barvu, drsnost, kovovost a krytí lze malovat, víc informací najdete v [možnostech malování do vrcholů](painting.md).
 
-Typ materiálu, odrazivost, emisní/neosvětlený jsou materiálové vlastnosti vysvětlené níže.
+Typ materiálu, odrazivost a emise/neosvětlené jsou vlastnosti materiálu vysvětlené níže.
 
-Tlačítka kopírovat/vložit v horní části tohoto menu umožňují kopírovat materiály z jednoho objektu na druhý.
+Tlačítky `Kopírovat` a `Vložit` nahoře v této nabídce můžete kopírovat materiály z jednoho objektu na druhý.
 
-Všimněte si, že renderer Nomadu je renderer v reálném čase; i když je výkonný, u některých efektů upřednostňuje rychlost před přesností. 
+Vykreslovač Nomadu pracuje v reálném čase; je výkonný, ale u některých efektů dává přednost rychlosti před přesností. 
 
-## Typy materiálu {#material-types}
+## Typy materiálů {#material-types}
 
 ![](/images/material_types.webp)
 
-Typy materiálu v Nomadu jsou Opaque, Subsurface, Blending, Additive, Refraction, Dithering, Shadow Catcher.
+Typy materiálů v Nomadu jsou Neprůhledný, Podpovrchová, Míchání, Přídavné, Lom světla, Dithering a Stínový zachytávač.
 
 ### ![](/icons/material_opaque.webp) Neprůhledný {#opaque}
-Výchozí režim, který považuje povrchy za jednoduchý materiál podporující malovanou barvu, drsnost, kovovost a průhlednost.
+Výchozí režim, který povrch bere jako jednoduchý materiál s podporou malované barvy, drsnosti, kovovosti a krytí. Malované krytí, textura krytí nebo alfa kanál barevné textury objekt stále zprůhlední, pomocí ditheringu. Ignoruje se jen hlavní posuvník krytí.
 
-### ![](/icons/material_subsurface.webp) Podpovrchový {#subsurface}
-Tento režim může simulovat materiál, který umožňuje světlu se interně rozmazávat a rozptylovat, jako je kůže, vosk, jadeit.
+### ![](/icons/material_subsurface.webp) Podpovrchová {#subsurface}
+Tento režim simuluje materiály, ve kterých se světlo uvnitř rozptyluje a rozmazává, jako kůže, vosk nebo nefrit.
 
-Pro nejlepší výsledek přepněte na PBR stínování a použijte alespoň jedno směrové nebo bodové světlo, ideálně s tlumeným prostředím.
+Vyžaduje režim stínování PBR. Nejlepšího výsledku dosáhnete s alespoň jedním směrovým nebo bodovým (spot) světlem, ideálně s tlumeným prostředím.
 
-`Depth` určuje, jak daleko se světlo rozptyluje z přední strany pod povrch a pak znovu ven předním povrchem. To má za následek změkčení tvrdých stínů a rozmazání detailů povrchu.
+Barevný vzorek nastavuje barvu rozptýleného světla.
 
-`Translucency` řídí, jak se světlo rozptyluje z přední na zadní stranu tvaru, jako rozptyl světla spodní stranou listu nebo když jsou uši silně nasvícené zezadu. 
+`Hloubka` určuje, jak daleko se světlo rozptýlí od přední strany pod povrch a zase ven přední stranou. Změkčuje to ostré stíny a rozmazává detaily povrchu.
 
-### ![](/icons/material_blending.webp) Mísení {#blending}
+`Průsvitnost` určuje, jak se světlo rozptyluje z přední strany tvaru na zadní, například jako když prosvítá spodní stranou listu, nebo když jsou uši silně podsvícené zezadu. Abyste to viděli, potřebujete světlo, které vrhá stíny.
 
-Podobné jako Opaque, ale podporuje posuvník průhlednosti, který umožňuje materiálu přecházet mezi pevným a průhledným. Jde o jednoduchý jediný posuvník pro průhlednost, oproti malovatelné průhlednosti podporované neprůhledným materiálem. 
+### ![](/icons/material_blending.webp) Míchání {#blending}
+
+Podobné jako Neprůhledný, ale podporuje posuvník krytí, takže materiál může přecházet mezi plným a průhledným. Jde o jediný jednoduchý posuvník krytí, na rozdíl od malovaného krytí, které podporuje neprůhledný materiál. 
 
 ::: warning
-Režim Blending může způsobovat blikání a problikávání u složitých nebo protínajících se tvarů.
+Režim míchání může u složitých nebo protínajících se tvarů způsobovat blikání a přeskakování.
 :::
 
-### ![](/icons/material_additive.webp) Aditivní {#additive}
-S tímto materiálem můžete udělat svou síť (mesh) poloprůhlednou. Je podobný materiálu Blending, ale zatímco Blending se mísí se svým okolím, Additive bude vždy jasnější než objekty za ním, což je vhodné pro jasné efekty jako světelné paprsky, oheň, exploze.
+### ![](/icons/material_additive.webp) Přídavné {#additive}
+S tímto materiálem můžete síť udělat poloprůhlednou. Podobá se materiálu míchání, ale zatímco míchání se mísí s okolím, přídavné bude vždy světlejší než objekty za ním. Hodí se pro jasné efekty, jako jsou paprsky světla, oheň nebo výbuchy.
 
-Můžete nastavit hodnotu průhlednosti vyšší než 1, což znamená, že objekt bude jasnější.  
-To může být užitečné, pokud chcete použít [bloom](postprocess.md#bloom) a `parametr threshold`, abyste nechali zářit pouze tento objekt jako emisní objekt.
+Krytí můžete nastavit i na hodnotu vyšší než 1, objekt pak bude jasnější.  
+To se hodí, pokud chcete použít [bloom](postprocess.md#bloom) a parametr `Prahová hodnota`, aby tento objekt zářil jako emisní objekt.
 
-Tento režim má tendenci mít méně artefaktů než [Blending](#blending) (transparentnost nezávislá na pořadí).
+Tento režim mívá méně artefaktů než [Míchání](#blending) (průhlednost nezávislá na pořadí).
 
-### ![](/icons/material_refraction.webp) Refrakce {#refraction}
-Tento režim lze použít k simulaci skleněného materiálu. Kvůli omezením reálného času jsou samolomy a vícevrstvé lomy do určité míry omezené.
+### ![](/icons/material_refraction.webp) Lom světla {#refraction}
+Tento režim slouží k simulaci skla. Vyžaduje režim stínování PBR. Kvůli omezením vykreslování v reálném čase je lom světla v sobě samém a vícevrstvý lom poněkud omezený.
 
-Malovaná drsnost modelu ovlivňuje, jak rozmazaný lom je.
-Ve výchozím nastavení má každý objekt vytvořený v Nomadu drsnost mírně kolem 25 %, takže lom nebude dokonalý, ale mírně rozmazaný.
-Můžete použít tlačítko `paint glossy` k přemalování modelu s drsností a kovovostí 0 (barvy nebudou ovlivněny).
+Malovaná drsnost modelu ovlivňuje, jak rozmazaný lom bude.
+Ve výchozím stavu má každý objekt vytvořený v Nomadu drsnost kolem 25 %, takže lom nebude dokonalý, ale trochu rozmazaný.
+Tlačítkem `Lesklý nátěr` můžete model přemalovat na drsnost a kovovost 0 (barvy se nezmění).
 
-Hrají zde roli 2 různé drsnosti: jedna řídí, jak rozmazaný je odraz na povrchu, a druhá řídí vnitřek (lom).  
-Protože však v Nomadu existuje pouze jeden malovací kanál drsnosti, budou vnitřní i vnější drsnost sdílet stejnou hodnotu.  
-Abyste mohli mít různé hodnoty (například lízátko s ostrým povrchem, ale rozmazaným vnitřkem), použijte posuvníky `Surface glossiness` a `Interior roughness` k přepsání malované drsnosti.
+Ve hře jsou 2 různé drsnosti: jedna určuje, jak rozmazaný je odraz na povrchu, druhá řídí vnitřek (lom).  
+Nomad ale má jen jeden malovaný kanál drsnosti, takže vnitřní i vnější drsnost sdílejí stejnou hodnotu.  
+Chcete-li mít různé hodnoty (například lízátko s ostrým povrchem, ale rozmazaným vnitřkem), použijte posuvníky `Povrch` a `Interiér` v části `Přepsat drsnost`, které malovanou drsnost přepíšou.
 
 ![](/videos/refraction.mp4)
 
+#### Index lomu {#index-of-refraction}
+Jak moc se světlo ohne, když vstupuje do objektu. Vyšší hodnoty ho ohýbají víc, jako tlustá čočka.
+
+#### Absorpce {#absorption}
+Simuluje pohlcování světla při průchodu objemem, zabarvené barevným vzorkem; `Faktor` nastavuje sílu. Tenké části jsou světlejší, protože propouštějí víc světla, zatímco silná místa jsou tmavší. Používá se jen přibližná tloušťka objektu, takže efekt hodně závisí na tvaru.
+
 
 ### ![](/icons/material_dithering.webp) Dithering {#dithering}
-Způsobí, že objekt bude poloprůhledný tím, že náhodně vyřazuje některé pixely.
+Udělá objekt poloprůhledným tím, že náhodně vynechá některé pixely.
 
-### ![](/icons/material_shadow_catcher.webp) Zachytávač stínů {#shadow-catcher}
+### ![](/icons/material_shadow_catcher.webp) Stínový zachytávač {#shadow-catcher}
 
-Způsobí, že objekt bude neviditelný a bude pouze přijímat stíny. Užitečné pro kombinování renderů z Nomadu s jinými obrázky. 
+Udělá objekt neviditelným, takže jen přijímá stíny od světel. Hodí se ke kombinování renderů z Nomadu s jinými obrázky, obvykle na rovině. Barevný vzorek nastavuje barvu stínu.
+
+Ve scéně musí být světlo vrhající stíny, jinak stínový zachytávač nedělá nic. Tlačítka `Kovovost → 0%` a `Kovovost → 100%` objekt přemalují: když je plně kovový, může stínový zachytávač také odrážet scénu, pokud je zapnutý postproces [Odraz (SSR)](postprocess.md#reflection-ssr).
 
 ::: tip
 
@@ -89,142 +99,171 @@ Další informace o průhlednosti a režimech míchání najdete na https://supp
 
 ![](/images/material_controls.webp)
 
-### Vždy neosvětlené {#always-unlit}
-Pokud je povoleno, objekt bude ignorovat PBR a Matcap a jednoduše zobrazí svou malovanou barvu bez stínování.
-Všimněte si, že pokud používáte [Additive](#additive), můžete malovat průhlednost přímo pomocí černé barvy.
+### ![](/icons/circle_fill.webp) Vždy neosvětlené {#always-unlit}
+Když je zapnuté, objekt ignoruje PBR i Matcap a jednoduše zobrazí svou malovanou barvu bez stínování.
+Pokud používáte [Přídavné](#additive), můžete průhlednost malovat přímo černou barvou.
 
-### Průhlednost {#opacity}
-Jak pevný nebo neprůhledný se objekt jeví; 100 % je pevný, 0 % je průhledný. Pro jemnější kontrolu můžete také malovat průhlednost.
+### Krytí {#opacity}
+Jak plný nebo neprůhledný objekt bude: 100 % je plný, 0 % průhledný. Posuvník se ukazuje u typů Míchání, Přídavné, Dithering a Stínový zachytávač. Pro jemnější kontrolu můžete krytí i malovat.
+
+### Předrefrakční průchod {#pre-refract-pass}
+Jen Míchání a Přídavné. Vykreslí tento průhledný objekt před průchodem lomu světla. Hodí se, když je objekt s lomem světla před jinými průhlednými povrchy.
 
 ### Odrazivost {#reflectance}
-Řídí množství odrazu, které materiál přijímá pro ne-kovové materiály. Většinu času by se měla používat výchozí hodnota (která odpovídá standardním 4 % odraženého světla v kolmém úhlu), ale lze ji zvýšit pro zesílení odrazů a zvýraznění například v očích postav.
+Určuje množství odrazu, které materiál dostane, u nekovových materiálů. Většinou byste měli použít výchozí hodnotu (odpovídá standardním 4 % odraženého světla při kolmém úhlu), ale můžete ji zvýšit a posílit tak odrazy a odlesky například v očích postavy. Vyžaduje režim stínování PBR.
 
-### Inverzní odřezávání {#inverse-culling}
-Obrátí normály povrchu. Obvykle není potřeba, ale lze jej použít, pokud se model jeví naruby, nebo v kombinaci s vypnutým `Two sided` lze použít k tvorbě interiérů, kde je stěna nejblíže kameře vždy skrytá.
+### ![](/icons/culling.webp) Inverzní odstranění {#inverse-culling}
+Obrátí normály povrchu. Obvykle to není potřeba, ale hodí se, když model vypadá naruby, nebo v kombinaci s vypnutým `Oboustranné` k vytváření interiérů, kde je stěna nejblíže ke kameře vždy skrytá.
 
-### Hladké stínování {#smooth-shading}
-Viz [globální volba](settings.md#smooth-shading).  
-Hodnota `Auto` použije globální volbu.
+Následující možnosti lze nastavit na `Auto`, `Ne` nebo `Ano`. U `Auto` šipka ukazuje hodnotu, která se skutečně použije.
 
-### Oboustranné {#two-sided}
-Viz [globální volba](settings.md#two-sided).  
-Hodnota `Auto` použije globální volbu.
+### ![](/icons/sphere_smooth.webp) Hladké odstíny {#smooth-shading}
+Viz [globální možnost](settings.md#smooth-shading).  
+Hodnota `Auto` použije globální možnost.
 
-### Barevná zadní strana {#coloured-backface}
-Viz [globální volba](settings#two-sided).
-Hodnota `Auto` použije globální volbu.
+### ![](/icons/culling.webp) Oboustranné {#two-sided}
+Plochy budou vidět z obou stran. Viz [globální možnost](settings.md#two-sided-quick).  
+Hodnota `Auto` použije globální možnost.
 
-### Vrhá stíny {#casts-shadows}
-Prozatím je `Auto` stejné jako `On`.
-Průhledné objekty také vrhají stíny (v dithering vzoru pro emulaci míchaných stínů).  
-Ujistěte se, že vypnete vrhání stínů, pokud máte ve scéně velký objekt, který nemusí vrhat stíny (například velkou podlahu).
+### ![](/icons/culling.webp) Zadní strana barevná {#coloured-backface}
+Viz [globální možnost](settings.md#two-sided-quick).
+Hodnota `Auto` použije globální možnost.
 
-### Přijímá stíny {#recieve-shadows}
-Prozatím je `Auto` stejné jako `On`.
+### ![](/icons/shadow_cast.webp) Vrhání stínů {#casts-shadows}
+Stíny vrhají i průhledné objekty (ditheringovým vzorem, který napodobuje prolnuté stíny).  
+Nezapomeňte vrhání stínů vypnout, pokud máte ve scéně velký objekt, který stíny vrhat nepotřebuje (například velkou podlahu).
 
-### Drátěný model {#wireframe}
-Viz [globální volba](settings.md#wireframe).  
-Hodnota `Auto` použije globální volbu.
+### ![](/icons/shadow_receive.webp) Příjem stínů {#recieve-shadows}
+Jestli se na tomto objektu vykreslují stíny od ostatních objektů.
+
+### ![](/icons/wireframe.webp) Drátový model {#wireframe}
+Viz [globální možnost](settings.md#wireframe).  
+Hodnota `Auto` použije globální možnost.
+
+### ![](/icons/trash.webp) Resetovat normály {#reset-normals}
+Zobrazí se jen tehdy, když importovaný objekt nese vlastní normály (například se `Zachovat topologii`). Odstraní je, takže stínování použije normály vypočítané z povrchu.
 
 
 ## Textury {#textures}
 
 ![](/images/material_textures.webp)
 
-Pokud má objekt UV souřadnice, lze k materiálu kromě vrcholové barvy/drsnosti/kovovosti/průhlednosti aplikovat i textury. Obvykle jsou výsledkem bake textur, ale lze použít i obrázky vytvořené mimo Nomad.
+Pokud má objekt UV, můžete na materiál kromě barvy/drsnosti/kovovosti/krytí ve vrcholech použít i textury. Obvykle jsou výsledkem pečení textur, ale můžete použít i obrázky vytvořené mimo Nomad. `UV:✓` nebo `UV:✗` vedle nadpisu ukazuje, jestli má objekt UV.
 
-Textury lze aplikovat na
+Textury lze použít pro
 
-* Barvu
-* Normálu
+* Barva
+* Normála
 * Drsnost
 * Kovovost
-* Průhlednost
-* Emisi
+* Krytí
+* Posunutí
+* Emise
 
-Kliknutím na slot textury se otevře výběr. Po přiřazení textury do slotu materiálu se po opětovném kliknutí zobrazí panel textury:
+Řádek `Okluze` se objeví také tehdy, když má importovaný objekt texturu okluze, Nomad ji ale nepoužívá.
 
-### Možnosti panelu textur {#texture-panel-options}
+Posuvník v každém řádku nastavuje, jak silně se textura použije, od vůbec po úplně. `Barva` a `Emise` mají také barevný vzorek, který texturu tónuje, a `Emise` nastavuje sílu záře.
+
+`Posunutí` nastavuje, jak daleko mapa posunutí vytlačí povrch. Jeho tlačítko `Použít` posune vrcholy podle posunutí a mapu pak odstraní. Výsledek se uloží do aktivní vrstvy.
+
+Tlačítko palety vedle nadpisu otevře předvolby materiálů z nabídky [malování](painting.md): klepnutím na jednu zkopírujete její textury na objekt. Na počítači se importované obrázky synchronizují s původním souborem, když se vrátíte do Nomadu, a tlačítko synchronizace vedle nadpisu je znovu načte.
+
+Klepnutím na texturový slot otevřete výběr. Když už je ke slotu materiálu textura přiřazená, dalším klepnutím otevřete panel textury:
+
+### Možnosti panelu textury {#texture-panel-options}
 
 ![](/images/material_texture_panel.webp)
 
-### Otevřít {#open}
-Vybrat jinou texturu
+Panel ukazuje velikost obrázku a náhled textury.
 
-### Žádné {#none}
-Odstranit texturu
+### ![](/icons/open.webp) Otevřít {#open}
+Vybere jinou texturu. Na počítači `Prozkoumat` ukáže soubor obrázku ve správci souborů.
 
-### Průhlednost {#texture-opacity}
+### ![](/icons/circle_cross.webp) Žádný {#none}
+Odstraní texturu.
 
-Pokud má obrázek alfa kanál, toto umožní použít jej pro průhlednost (Opacity) nebo jej ignorovat.
+### Krytí {#texture-opacity}
 
-### ![](/icons/link.webp) Ikona řetězu/odkazu {#chainlink-icon}
+Jen barevná textura. Pokud má obrázek alfa kanál, můžete ho použít pro krytí, nebo ho ignorovat.
 
-Ikona odkazu v následujících sekcích, pokud je povolena, znamená, že jakékoli použité volby budou sdíleny s ostatními texturami (barva, normála, drsnost, kovovost, průhlednost, emise), které mají také povolenou svou ikonu odkazu. 
+### Formát {#normal-format}
+Jen textura normál. Normálové mapy existují ve dvou variantách, `OpenGL (+Y)` a `DirectX (-Y)`. Pokud detaily vypadají obráceně, zkuste tu druhou.
 
-To vám umožní zajistit, že pokud máte zarovnané textury, zůstanou zarovnané i při změně parametrů nebo typů projekce.
+### Výška {#displacement-height}
+Jen textura posunutí.
+* `Lokální` - Výška roste a klesá s měřítkem objektu.
+* `Svět` - Výška zůstává stejná bez ohledu na měřítko objektu.
+
+### Násobit {#multiply}
+Jen textury drsnosti, kovovosti a krytí. Vynásobí hodnoty textury. Když není 100 %, hodnota se ukáže na texturovém slotu.
+
+### ![](/icons/link.webp) Ikona řetězu/propojení {#chainlink-icon}
+
+Když je ikona propojení v následujících částech zapnutá, všechna použitá nastavení se sdílejí s ostatními texturami (barva, normála, drsnost, kovovost, krytí, emise), které mají ikonu propojení také zapnutou. 
+
+Díky tomu zůstanou zarovnané textury zarovnané, i když změníte parametry nebo typ projekce.
 
 
 ### Projekce {#projection}
 ![](/images/material_projection.webp)
 
-Nastaví, jak má být textura na objekt aplikována.
+Nastavuje, jak se textura na objekt použije.
 
-* `Auto` - Pokud má objekt UV, UV, jinak Triplanar
-* `UV` - Použije UV souřadnice meshe k aplikaci textury. Pokud mesh a textura pocházejí mimo Nomad nebo mají být z Nomadu exportovány k použití jinde, UV je správná volba.
-* `Triplanar` - Promítá texturu podél os X, Y, Z a mísí spoje. 
+* `Auto` - UV, pokud má objekt UV, jinak Triplanar
+* `UV` - K použití textury se využijí UV souřadnice sítě. Pokud síť a textura pocházejí odjinud než z Nomadu, nebo je budete z Nomadu exportovat a používat jinde, je UV správná volba.
+* `Triplanar` - Promítne texturu podél os X, Y, Z a prolne švy. 
 
-### Triplanární {#triplanar}
+### Triplanar {#triplanar}
 ![](/images/material_triplanar.webp)
 
-Triplanární projekce jsou výkonný, ale jednoduchý způsob aplikace textur na objekty.
+Triplanární projekce je výkonný, a přitom jednoduchý způsob, jak na objekty použít textury.
 
-Triplanar je jako mít 6 videoprojektorů se stejným obrázkem, které svítí na přední, zadní, levou, pravou, horní a spodní stranu objektu.
+Je to jako mít 6 projektorů se stejným obrázkem, které svítí na přední, zadní, levou, pravou, horní a spodní stranu objektu.
 
-Pokud je potřeba, lze to poté bakeovat do UV nebo vrcholových barev.
+Výsledek pak můžete v případě potřeby vypéct do UV nebo do barev vrcholů.
 
 
 ![](/images/material_triplanar_example.webp)
 
 #### Metoda {#method}
 
-* `Local` - Projekce se bude pohybovat s transformací objektu
-* `World` - Projekce zůstane fixní, pohyb objektu jím bude „klouzat“ skrz projekci.
+* `Lokální` - Projekce se pohybuje s transformací objektu
+* `Svět` - Projekce zůstává na místě a objekt jí při posunu projíždí.
 
 #### Tvrdost {#hardness}
 
-Jak se projekce mísí. 100 % nebude dělat žádné míchání a hrany projekcí budou ostré. 0 % bude míchat hrany přes široký úhel. Výchozí hodnota je 90 %, což je dostatečné míchání k ukrytí hran a zároveň ponechání zbytku projekcí ostrých.
+Jak se projekce prolínají. 100 % neprolíná vůbec a okraje projekcí budou ostré. 0 % prolne okraje v širokém úhlu. Výchozí hodnota je 90 %, dost prolnutí na skrytí okrajů, přičemž zbytek projekcí zůstane ostrý.
 
-### Uniformní {#uniform}
+### Jednotný {#uniform}
 
-Pokud je zaškrtnuto, používá se stejná tvrdost pro všechny projekce. Pokud není zaškrtnuto, zobrazí se další ovládací prvky tvrdosti pro projekce X, Y, Z.
+Když je zaškrtnuté, použije se pro všechny projekce stejná tvrdost. Když není, objeví se další ovládání tvrdosti pro projekce X, Y a Z.
 
 
 ### Parametr {#parameter}
 ![](/images/material_parameter.webp)
 
-#### Filtrování {#filtering}
-Metoda filtrování textury, `Auto` je výchozí, metody jsou `Nearest`, `Linear`, `Mipmap`. Nearest neprovádí žádné filtrování, takže textury mohou zblízka vykazovat zubaté artefakty. Linear a Mipmap provádějí lepší filtrování, takže textury vypadají zblízka spíše rozmazaně než zubatě.
+#### Filtr {#filtering}
+Metoda filtrování textury: výchozí je `Auto`, dalšími metodami jsou `Nejbližší`, `Lineární` a `Mipmap`. Nejbližší nefiltruje vůbec, takže zblízka mohou mít textury zubaté artefakty. Lineární a Mipmap filtrují lépe, takže textury jsou zblízka spíš rozmazané než zubaté.
 
-#### Dlaždicování-X {#tiling-x}
-Pokud je parametr Scale větší než 1, takže textura je menší než UV objektu, jak bude textura dlážděna podél osy X. `None` znamená žádné opakování. `Repeat` bude dělat kopie textury. `Mirror` bude dělat kopie textury, přičemž každá druhá kopie bude převrácená, což může pomoci skrýt artefakty dlaždicování.
+#### Dláždění - X {#tiling-x}
+Když je parametr Měřítko větší než 1 a textura je tak menší než UV objektu, určuje, jak se textura opakuje podél osy X. `Nic` znamená žádné opakování. `Opakovat` vytvoří kopie textury. `Zrcadlit` vytvoří kopie textury, z nichž každá druhá je převrácená, což může pomoci skrýt artefakty opakování.
 
-#### Dlaždicování-Y {#tiling-y}
-Stejné jako Tiling-X, ale pro osu Y.
+#### Dláždění - Y {#tiling-y}
+Stejné jako Dláždění - X, ale pro osu Y.
 
-### Transformace {#transform}
+### Přeměnit {#transform}
 ![](/images/material_transform.webp)
 
-Další 2D transformace aplikované na texturu v UV prostoru. Tlačítko reset vrátí výchozí hodnoty, ikona řetězu (pokud jsou vybrány jiné textury než barva) propojí nebo odpojí transformaci tak, aby byla stejná jako u barevné textury.
+Další 2d transformace použité na texturu v prostoru UV. Tlačítko resetu vrátí výchozí hodnoty; ikona řetězu (když jsou vybrané jiné textury než barva) propojí nebo rozpojí transformaci tak, aby byla stejná jako u barevné textury.
 
 #### Posun {#translation}
-Posun textury v osách X a Y
+Posun textury v ose X a Y.
 
 #### Rotace {#rotation}
-Rotace textury
+Rotace textury.
 
 #### Měřítko {#scale}
-Měřítko textury, větší čísla způsobí, že textura bude na objektu menší, použijte posuvníky Tiling-X a Tiling-Y k řízení, co se stane.
+Měřítko textury: větší čísla texturu na objektu zmenší. Co se pak stane, určíte možnostmi Dláždění - X a Dláždění - Y.
 
-### Uniformní měřítko {#uniform-scale}
-Pokud je vypnuto, Nomad zobrazí samostatné ovládací prvky pro Scale-X a Scale-Y.
+### Jednotné měřítko {#uniform-scale}
+Když je vypnuté, Nomad ukáže samostatné ovládání pro měřítko X a měřítko Y.

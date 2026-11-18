@@ -1,43 +1,58 @@
 # ![](/icons/image.webp) Hintergrund {#background}
 
-Dieses Menü steuert die Hintergrundfarbe von Nomad sowie alle Referenzbilder, die verwendet werden sollen.
+In diesem Menü legen Sie die Hintergrundfarbe von Nomad fest und fügen Referenzbilder hinzu.
 
 ![](/images/background_overview.webp)
 
-## Hintergrund {#type}
+## Typ {#type}
 ![](/images/background_selector.webp)
 
-Es gibt drei Optionen für den Viewport-Hintergrund.
+Für den Hintergrund des Ansichtsfensters gibt es drei Möglichkeiten.
 
-* `Environment` – Zeigt die in [Shading](shading) ausgewählte Umgebungs-Map an. Dies kann mit den Reglern für Blur und Exposure (Helligkeit) weiter gesteuert werden. 
-* `Color` – Eine einfarbige Fläche, die du auswählen kannst
-* `Gradient` – Ein Farbverlauf von oben nach unten. Mit dem Faktor-Regler kannst du den Mittelpunkt des Farbverlaufs bestimmen.  
+* `Umgebung` - Zeigt die Umgebungstextur an, die unter [Shading](shading.md) gewählt ist. Mit den Reglern `Unschärfe` und `Belichtung` (Helligkeit) können Sie sie weiter anpassen. 
+* `Farbe` - Eine einheitliche Farbe Ihrer Wahl
+* `Farbverlauf` - Ein Übergang zwischen zwei Farben. Mit dem Regler `Faktor` verschieben Sie die Mitte des Verlaufs.  
+
+### Art des Verlaufs {#gradient-type}
+Bei `Farbverlauf` wählen Sie seine Form:
+* `Linear` - Ein gerader Verlauf, dessen Richtung Sie mit dem Regler `Winkel` festlegen.
+* `Radial` - Ein kreisförmiger Verlauf, der von der Bildschirmmitte ausgeht.
+* `Himmel` - Ein Verlauf, der am Horizont der Welt ausgerichtet ist und daher der Kamera folgt, wenn Sie nach oben oder unten schauen.
+
+Jede Farbe hat eine Schaltfläche zum Zurücksetzen und eine Pipette, mit der Sie eine Farbe vom Bildschirm aufnehmen.
+
+## ![](/icons/lock.webp) Mit Kameralock synchronisieren {#sync-on-camera-lock}
+Wenn die Kamera mit dem [Ansichten-Würfel](settings.md#snap-cube) gesperrt ist, folgt das Referenzbild der Kamerabewegung und bleibt so deckungsgleich mit Ihrer Skulptur.
+
+* `Rollen erlauben` - Erlaubt der Kamera zu rollen, sobald Sie die Kamerasperre verlassen.
+* `Beim Entsperren zurücksetzen` - Setzt die Ansicht zurück, sobald Sie die Kamerasperre verlassen.
 
 ## Referenzbild {#reference}
 
 ![](/images/background_reference.webp)
 
-Du kannst ein Bild deiner Wahl im Hintergrund hinzufügen, das als Referenz verwendet wird.
-Du kannst die Position und den Maßstab ändern, zum Beispiel, wenn du es in eine Bildschirmecke verschieben möchtest.
+Sie können ein beliebiges Bild als Referenz in den Hintergrund legen. Tippen Sie auf `Import`, um eines hinzuzufügen, und aktivieren Sie dann `Referenzbild`, um es anzuzeigen.
+Position und Größe lassen sich ändern, zum Beispiel wenn Sie das Bild in eine Ecke des Bildschirms schieben möchten.
 
 ### ![](/icons/tool_transform.webp) Transformieren {#transform}
 
-Mit dieser Schaltfläche kannst du das Referenzbild interaktiv platzieren. Verwende 2 Finger, um das Referenzbild zu verschieben, zu skalieren und zu drehen. Die endgültige Platzierung wird in den folgenden Reglern wiedergegeben:
+Mit dieser Schaltfläche platzieren Sie das Referenzbild direkt auf dem Bildschirm. Verschieben, skalieren und drehen Sie es mit 2 Fingern an die gewünschte Stelle. `Einstellungen zurücksetzen` bringt das Bild an seine ursprüngliche Position zurück. Die endgültige Platzierung wird in den Reglern darunter übernommen:
 
-* `Overlay` – Bei 0 % befindet sich das Referenzbild immer hinter deinen Objekten, bei 100 % davor. 
-* `Opacity` – Wie transparent das Bild ist.
-* `Position` – Die X- und Y-Position des Bildes.
-* `Rotation` – Bildrotation.
-* `Scale` – Bildskalierung.
+* `Überlagern` - Bei 0 % liegt das Referenzbild immer hinter Ihren Objekten, bei 100 % davor. 
+* `Deckkraft` - Wie durchsichtig das Bild ist.
+* `Nachbearbeitung` - Wendet die Effekte der Nachbearbeitung auch auf das Referenzbild an. Schalten Sie es aus, um die Originalfarben zu behalten.
+* `X-Position` / `Y-Position` - Die X- und Y-Position des Bildes.
+* `Skalierung` - Größe des Bildes.
+* `Rotation` - Drehung des Bildes.
 
 
 ::: tip
 
 Kameras und Referenzbilder sind miteinander verknüpft. 
 
-Das bedeutet: Wenn du dein Referenzbild so einrichtest, dass es mit deiner Skulptur übereinstimmt, und du dann eine Kamera über das [Camera-Menü](camera) erstellst, werden die Position, Rotation und Skalierung des Referenzbildes ebenfalls mit der Kamera gespeichert. Du kannst das Referenzbild ausschalten und zu einem anderen Viewport drehen. Wenn du wieder durch die Kamera schaust, wird das Referenzbild mit den von dir verwendeten Einstellungen aktiviert.
+Wenn Sie also Ihr Referenzbild passend zu Ihrer Skulptur ausgerichtet haben und dann im [Kamera-Menü](camera.md) eine Kamera erstellen, werden Position, Rotation und Größe des Referenzbilds mit der Kamera gespeichert. Sie können das Referenzbild ausschalten und in eine andere Ansicht drehen. Sobald Sie wieder durch die Kamera schauen, wird das Referenzbild mit Ihren Einstellungen wieder eingeblendet.
 
-Das schließt sogar ein, dass du für verschiedene Kameras unterschiedliche Bilder auswählen kannst!
+Sie können sogar für jede Kamera ein anderes Bild verwenden!
 
  ![](/videos/reference_camera.mp4)
 

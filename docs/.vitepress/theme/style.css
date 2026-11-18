@@ -28,8 +28,15 @@ h6 {
     pointer-events: none;
 }
 
+/* width/height come from the file (config.mts imageSize): they set the aspect ratio, the column the width */
 .image {
-    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.vp-doc video {
+    max-width: 100%;
+    height: auto;
 }
 
 :is(h1, h2, h3, h4, h5, h6)>.icon {
@@ -39,6 +46,31 @@ h6 {
 
 html:not(.dark) .can_invert {
     filter: invert(1);
+}
+
+/* page icon in the sidebar, drawn as a mask so it follows the text color */
+.sidebar-icon {
+    display: inline-block;
+    vertical-align: -0.25em;
+    width: 1.3em;
+    height: 1.3em;
+    margin-inline-end: 0.5em;
+    -webkit-mask: no-repeat center / contain;
+    mask: no-repeat center / contain;
+}
+
+.sidebar-icon[data-icon] {
+    background-color: currentColor;
+}
+
+/* heading icon in the "On this page" outline, copied from the heading by outlineIcons.ts */
+.outline-icon {
+    display: inline-block;
+    vertical-align: -0.2em;
+    width: 1.15em;
+    height: 1.15em;
+    margin-inline-end: 0.4em;
+    object-fit: contain;
 }
 
 /*-------------------------------------------------*/
@@ -194,14 +226,29 @@ html.dark {
     --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
-span.brush { color: #fff; }
-span.move { color: #9791C8; }
-span.mask { color: #966; }
-span.paint { color: #FF9; }
-span.flatten { color: #9F6; }
-span.pinch { color: #F96; }
-span.selection { color: #C66; }
-span.creation { color: #F90; }
-span.transform { color: #F9C; }
-span.misc { color: #9CF; }
-span.view { color: #6FC; }
+/* tool families, the toolbox colors (Tool::linearColor in the app); darker in light mode */
+span.brush { color: #555; }
+span.move { color: #54547E; }
+span.mask { color: #544638; }
+span.paint { color: #8C8857; }
+span.flatten { color: #547E38; }
+span.pinch { color: #1E7485; }
+span.stamp { color: #8A4411; }
+span.selection { color: #8A3123; }
+span.creation { color: #8C5D00; }
+span.transform { color: #8B6480; }
+span.misc { color: #54708C; }
+span.view { color: #388C70; }
+
+.dark span.brush { color: #FFFFFF; }
+.dark span.move { color: #9999E5; }
+.dark span.mask { color: #997F66; }
+.dark span.paint { color: #FFF79E; }
+.dark span.flatten { color: #99E566; }
+.dark span.pinch { color: #37D2F2; }
+.dark span.stamp { color: #FA7C1F; }
+.dark span.selection { color: #FA593F; }
+.dark span.creation { color: #FFAA00; }
+.dark span.transform { color: #FCB5E8; }
+.dark span.misc { color: #99CCFF; }
+.dark span.view { color: #66FFCC; }

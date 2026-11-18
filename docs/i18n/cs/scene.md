@@ -1,372 +1,462 @@
 # ![](/icons/scene.webp) Scéna {#scene}
 
-Tato nabídka vám umožňuje spravovat objekty, světla, kamery a replikátory (repeaters) v Nomadu. Zobrazuje hierarchii scény jako stromový náhled, který vám umožní upravovat mnoho aspektů vašich objektů. Také umožňuje vytvářet nové objekty a objekty různými způsoby spojovat a rozdělovat.
+V této nabídce spravujete objekty, světla, kamery a opakovače v Nomadu. Zobrazuje hierarchii scény jako stromovou strukturu, ve které můžete měnit mnoho vlastností objektů. Umožňuje také vytvářet nové objekty a různými způsoby objekty spojovat a rozdělovat.
 
 
 ![](/images/scene_menu_summary.webp)
 
 
 ## Panel zkratek {#shortcut-bar}
-| Akce                  | Ikona                             | Popis                                                                                                              |
-| :-------------------: | :-------------------------------: | :----------------------------------------------------------------------------------------------------------------: |
-| [Přidat...](#add-menu) | ![](/icons/plus.webp)            | Zobrazí [nabídku Přidat](#add-menu) pro přidání objektu do scény                                                   |
-| Smazat                | ![](/icons/trash.webp)           | Smaže objekt                                                                                                       |
-| Zamknout              | ![](/icons/lock.webp)            | Způsobí, že objekt nelze ve viewportu vybrat. Stále jej však lze vybrat ve stromovém zobrazení.                   |
-| Sloučit               | ![](/icons/merge.webp)           | Sloučí vybrané objekty do jednoho objektu bez změny geometrie                                                     |
-| Oddělit               | ![](/icons/diagonal.webp)        | Pokud je objekt tvořen samostatnými polygonovými „skořápkami“, rozdělí jej na více objektů. Opak operace sloučení |
-| [Boolean...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Zobrazí nabídku [Boolean](#boolean)                                                                                |
-| Klonovat              | ![](/icons/clone.webp)           | Duplikuje objekt do nového objektu                                                                                |
-| Instance              | ![](/icons/link.webp)            | Duplikuje objekt jako instanci, takže modelovací změny na jednom se projeví na všech instancích                   |
-| Zrušit instanci       | ![](/icons/unlink.webp)          | Převede instanci na unikátní tvar, takže modelovací změny se již nekopírují do ostatních instancí                 |
-| Sync                  | ![](/icons/link.webp)            | Pokud mají instance potomky, zajistí, že všechny instance sdílejí stejnou hierarchii potomků                      |
+| Akce                   | Ikona                             | Popis                                                                                                               |
+| :--------------------: | :-------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
+| [Přidat...](#add-menu) | ![](/icons/plus.webp)            | Zobrazí [nabídku Přidat](#add-menu) pro přidání objektu do scény                                                    |
+| Smazat                 | ![](/icons/trash.webp)           | Smaže vybrané objekty. Jejich potomci zůstanou zachováni.                                                           |
+| Zámek                  | ![](/icons/lock.webp)            | Vybrané objekty nepůjde vybrat ve viewportu. Ve stromové struktuře je vybrat stále můžete. Zamčením skupiny zamknete vše pod ní. Dalším klepnutím objekty odemknete. |
+| [Spojit](#join)        | ![](/icons/merge.webp)           | Spojí vybrané objekty do jediného objektu beze změny geometrie                                                      |
+| [Rozdělit...](#separate) | ![](/icons/separate.webp)      | Zobrazí okno [Rozdělit](#separate) pro rozdělení objektu na několik objektů. Opak spojení                          |
+| [Booleovský...](#boolean) | ![](/icons/bool_subtract_circle.webp) | Zobrazí okno [Booleovský](#boolean)                                                                     |
+| Klonovat               | ![](/icons/clone.webp)           | Zduplikuje vybrané objekty do nových objektů                                                                        |
+| Instance               | ![](/icons/link.webp)            | Zduplikuje vybrané objekty jako instance, takže úpravy tvaru jedné se projeví na všech instancích.                  |
+| Zrušit instanci        | ![](/icons/unlink.webp)          | Převede instanci na samostatný tvar, takže se úpravy tvaru už nekopírují do ostatních instancí                     |
+| Synchronizovat         | ![](/icons/checked.webp)         | Když je zaškrtnuté, operace se použijí na všechny instance vybraných objektů, nejen na ty vybrané. Je dostupné jen tehdy, když výběr obsahuje instance. Které operace se tímto zaškrtávacím polem řídí, určuje [karta Synchronizovat](#sync) v okně `Rozšířené`. |
+
+::: tip
+Když operace ovlivní i ostatní instance, zobrazí se na jejím tlačítku malá ikona řetízku.
+:::
 
 
 ## Stromová struktura {#tree-view}
 ![](/images/scene_treeview.webp) 
 
-| Akce        | Ikona                      | Popis                    |
-| :---------: | :------------------------: | :----------------------: |
-| Vybrat      | ![](/icons/checked.webp)  | Přepne výběr/nevybráno   |
-| Viditelné   | ![](/icons/eye_open.webp) | Přepne viditelnost       |
-| Nabídka     | ![](/icons/more.webp)     | Zobrazí nabídku objektu  |
+Stromová struktura obsahuje objekty, skupiny, opakovače, světla a kamery scény. Vedle názvu sítě uvidíte počet jejích vrcholů a barevnou ikonu vrstvy, pokud má vrstvy. Každý řádek má tato tlačítka:
 
-::: tip TIP: Rychlý výběr nebo skrytí více objektů
+| Akce         | Ikona                      | Popis                    |
+| :----------: | :------------------------: | :----------------------: |
+| Název        | ![](/icons/pencil.webp)   | Přejmenuje objekt. Pokud je vybraný, přejmenují se najednou všechny vybrané objekty a přidá se k nim číslo. Dlouhým stiskem přejmenujete objekt i s jeho potomky. |
+| Vybrat       | ![](/icons/checked.webp)  | Přepne výběr            |
+| Viditelný    | ![](/icons/eye_open.webp) | Přepne viditelnost       |
+| Nabídka      | ![](/icons/more.webp)     | Zobrazí [nabídku objektu](#object-menu) |
 
-Klepnutím na ikonu výběru přepnete jeden objekt, nebo tažením vertikálně ve sloupci výběru vyberete více objektů. Totéž lze provést ve sloupci viditelnosti.
+::: tip TIP: Rychlý výběr nebo skrytí mnoha objektů
+
+Klepnutím na ikonu výběru přepnete jeden objekt, tažením svisle po sloupci výběru vyberete mnoho objektů. Totéž funguje se sloupcem viditelnosti.
+
+Dlouhým stiskem ikony výběru nebo viditelnosti ovlivníte i potomky.
 
 :::
 
-### Ovládání stromového zobrazení {#tree-view-manipulation}
+### Záhlaví stromové struktury {#tree-view-header}
 
-Dlouze stiskněte položku ve stromovém zobrazení, dokud nezžloutne. Poté ji můžete posouvat nahoru nebo dolů ve stromu, stejně jako ji přetáhnout na jinou položku a udělat z ní jejího potomka.
+Řádek nad seznamem nabízí několik pomocníků:
 
-Když je vybráno více položek, většina bude tmavě žlutá, jedna bude světlejší žlutá. Dlouze stiskněte a táhněte světlejší položku, abyste přesunuli všechny objekty najednou.
+* ![](/icons/sort_down.webp) - sbalí nebo rozbalí všechny skupiny najednou.
+* ![](/icons/preview.webp) - přepne `Náhledy objektů`, malou vyrenderovanou miniaturu u každého objektu seznamu.
+* ![](/icons/search.webp) - filtruje seznam podle názvu.
 
-Když vyberete rodičovskou položku, ve výchozím nastavení se vyberou i všechny její potomci. Klepnutím na ikonu rodiče přepínáte mezi výběrem pouze rodiče, nebo rodiče i potomků.
+### Práce se stromovou strukturou {#tree-view-manipulation}
+
+Dlouze stiskněte položku ve stromové struktuře, dokud se nezvýrazní. Pak ji můžete posunout nahoru nebo dolů, nebo ji přetáhnout na jinou položku, čímž se stane jejím potomkem.
+
+Když je vybráno víc položek, jedna z nich je hlavní výběr a je vykreslená jasněji. Dlouhým stiskem a tažením jedné z nich přesunete všechny vybrané objekty najednou.
+
+Když vyberete rodičovskou položku, ve výchozím stavu se vyberou i všechny její potomky. Dalším klepnutím na rodiče přepínáte mezi výběrem jen rodiče, nebo rodiče i s potomky.
+
+Dvojitým klepnutím na položku na ni zaměříte kameru (viz [Rozšířené](#focus-on-item)).
 
 ### Nabídka objektu {#object-menu}
 
-Kliknutím na tlačítko se třemi tečkami (...) u objektu ve stromovém zobrazení se zobrazí nabídka objektu. 
-Mnoho z těchto voleb je podobných panelu zkratek nahoře, zopakovaných pro pohodlí.
+Klepnutím na tlačítko se třemi tečkami (...) u objektu ve stromové struktuře zobrazíte nabídku objektu.
+Mnoho z těchto možností odpovídá panelu zkratek nahoře, jsou tu zopakované pro pohodlí.
 
-|       Akce        |                        Ikona                        | Popis                                                                                                                                                                   |
-| :---------------: | :-------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|      Instance     |               ![](/icons/link.webp)               | Duplikuje objekt jako instanci, takže modelovací změny na jednom se projeví na všech instancích.                                                                      |
-|       Klonovat    |              ![](/icons/clone.webp)               | Duplikuje objekt do nového objektu                                                                                                                                     |
-|        Název      |              ![](/icons/pencil.webp)              | Změní název objektu                                                                                                                                                    |
-|       Smazat      |              ![](/icons/trash.webp)               | Smaže objekt                                                                                                                                                           |
-|     Smazat+       |            ![](/icons/removeNode.webp)            | Smaže objekt i jeho potomky                                                                                                                                            |
-|   Zrušit instanci |              ![](/icons/unlink.webp)              | Převede instanci na unikátní tvar, takže modelovací změny se již nekopírují do ostatních instancí.                                                                    |
-| Oddělit topologii |             ![](/icons/separate.webp)             | Pokud je objekt tvořen samostatnými polygonovými „skořápkami“, rozdělí jej na více objektů. Opak operace sloučení.                                                    |
-| Oddělit Face Group |            ![](/icons/group.webp)           | Pokud má objekt více face group, rozdělí síť na samostatné objekty.                                                                                                   |
-|   Oddělit vrstvy  |              ![](/icons/layer.webp)               | Pokud má objekt vrstvy, rozdělí každou vrstvu do samostatného objektu. Užitečné pro posílání blendshapeů do jiných aplikací.                                         |
-|   Sloučit -> Vrstvy    | ![](/icons/merge.webp) -> ![](/icons/layer.webp) <span style="visibility:hidden">_________</span> | Pokud je vybráno více objektů se shodnou topologií, sloučí tyto objekty do vrstev primárního objektu (ostatní objekty budou smazány). Opět užitečné pro blendshapy přicházející Z jiných aplikací.<br><br> Všimněte si, že vrstvy budou ve výchozím stavu vypnuté. Povolte je, pokud potřebujete upravit jejich posuvníky. |
+|       Akce          |                        Ikona                       | Popis                                                                                                                                                                   |
+| :-----------------: | :------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|        Název        |              ![](/icons/pencil.webp)           | Změní název objektu                                                                                                                                                     |
+|   Zrušit instanci   |              ![](/icons/unlink.webp)           | Převede instanci na samostatný tvar, takže se úpravy tvaru už nekopírují do ostatních instancí.                                                                         |
+|      Instance       |               ![](/icons/link.webp)            | Zduplikuje objekt jako instanci, takže úpravy tvaru jedné se projeví na všech instancích.                                                                               |
+|      Klonovat       |              ![](/icons/clone.webp)            | Zduplikuje objekt do nového objektu                                                                                                                                     |
+|       Smazat        |              ![](/icons/trash.webp)            | Smaže objekt. Jeho potomci zůstanou zachováni, pokud není zaškrtnuto `Děti`.                                                                                            |
+|        Děti         |            ![](/icons/hierarchy.webp)          | Když je zaškrtnuto, `Instance`, `Klonovat` a `Smazat` působí i na potomky objektu.                                                                                      |
+| Rozdělit podle Částí |             ![](/icons/separate.webp)         | Pokud se objekt skládá z nespojených částí, vytvoří pro každou z nich samostatný objekt. Opak spojení.                                                                 |
+| Rozdělit podle Skupin |            ![](/icons/group.webp)         | Pokud má objekt více skupin ploch, vytvoří pro každou skupinu ploch samostatný objekt.                                                                                  |
+| Rozdělit podle Vrstev |              ![](/icons/layer.webp)       | Pokud má objekt vrstvy, vytvoří samostatné objekty pro základní síť a pro každou vrstvu. Hodí se pro posílání blendshapů do jiných aplikací.                            |
+|   Spojit → Vrstvy   | ![](/icons/merge.webp) -> ![](/icons/layer.webp) <span style="visibility:hidden">_________</span> | Pokud je vybráno více objektů se shodnou topologií, sloučí je do vrstev hlavního objektu (ostatní objekty se smažou). Opět se hodí pro blendshapy, tentokrát přicházející Z jiných aplikací.<br><br> Vrstvy budou ve výchozím stavu vypnuté. Zapněte je, pokud potřebujete upravit jejich posuvníky. |
+|  Křivka (Opakovač)  |              ![](/icons/curve.webp)            | Jen pro trubku nebo soustruh: přidá jako potomka objektu opakovač [Křivka](#curve), který sleduje stejnou křivku.                                                      |
+|        Trubka       |             ![](/icons/tube.webp)              | U soustruhu přidá jako potomka [trubku](tools.md#tube), která sleduje jeho profil. Válec, kužel nebo torus převede na trubku stejného tvaru, kterou pak můžete ohýbat podél křivky. |
 
 
 
 
 ### Vícenásobný výběr {#multiselection}
-Můžete vybrat více objektů, abyste dosáhli dvou věcí:
-- použití nástroje gizmo k přesunu několika objektů najednou
-- sloučení objektů pomocí operací sloučení a boolean.
+Vybrat více objektů se hodí ke dvěma věcem:
+- přesunout několik objektů najednou nástrojem gizmo
+- sloučit objekty pomocí spojení a booleovských operací.
 
-Můžete to udělat zaškrtnutím `Multiselection` a poté klikáním na objekty v seznamu.
+Ve stromové struktuře klepněte na ikonu výběru u každého objektu, nebo táhněte po sloupci výběru. Při klepání na názvy podržte zkratku `Maska` (nebo `Ctrl` na klávesnici), chcete-li přidat či odebrat jeden objekt, nebo zkratku `Hladit` (nebo `Shift`), chcete-li vybrat všechny objekty mezi aktuálním a tím, na který klepnete.
 
 ::: tip Rychlý vícenásobný výběr
-Můžete také vybírat více objektů ve viewportu podržením zkratky `Smooth` a klepnutím na jinou síť (mesh).
+Vybírat více objektů můžete i ve viewportu: podržte zkratku `Hladit` (nebo `Shift`) a klepněte na další síť.
 
-Objekt můžete odznačit opětovným klepnutím na něj (pouze pokud váš výběr obsahuje více než jeden objekt).
+Výběr objektu zrušíte opětovným klepnutím na něj (jen pokud je ve výběru víc než jeden objekt).
 :::
 
-::: warning Omezené funkce gizma
-Při použití vícenásobného výběru bude nástroj gizmo vždy ignorovat maskování.
-Také je odstraněno škálování v osách X/Y/Z.
-
-Důvodem je, že vícenásobný výběr umožňuje pouze transformaci celé sítě, nikoli transformaci jednotlivých vrcholů.
-To může být v budoucnu vylepšeno.
-:::
+Gizmo posouvá všechny vybrané objekty společně, viz [Gizmo](tools.md#gizmo).
 
 
-## Spojit {#join}
-Tato volba jednoduše vytvoří jednu položku objektu z více vybraných objektů.
+## ![](/icons/merge.webp) Spojit {#join}
+Tato možnost jednoduše udělá z několika vybraných objektů jedinou položku.
+Body a UV bližší než [poloměr svaření](#weld-radius) se sloučí.
 
-Příklad můžete vidět na videu v sekci [Oddělit](#separate).
+Příklad na videu najdete v sekci [Rozdělit](#separate).
 
-## Booleovské operace {#boolean}
+## ![](/icons/bool_subtract_circle.webp) Booleovský {#boolean}
 ![](/images/scene_boolean_menu.webp) 
-Kombinuje objekty do jednoho povrchu.
+Spojí objekty do jediného povrchu.
 
-`Voxel merge` zachová objem objektů a vypočítá nové rovnoměrně rozmístěné polygony na povrchu. Kvůli výpočetnímu kroku si voxelové sloučení poradí se složitou geometrií, ale může ztratit jemné detaily, pokud cílové rozlišení není dostatečně vysoké.
+`Slučit voxel` zachová objem objektů a na povrchu vypočítá nové, rovnoměrně rozložené polygony. Díky tomuto výpočtu zvládne voxelové sloučení i složitou geometrii, ale pokud cílové rozlišení není dost vysoké, může přijít o jemné detaily.
 
-`Boolean` se pokusí ponechat polygony v jejich původním rozložení a sešít je tam, kde se objekty překrývají. To může vytvořit mnohem čistší a ostřejší výsledky než voxelové sloučení, vyžaduje však „vodotěsné“ sítě; v objektech nesmí být díry nebo poškozené tvary. Pokud to selže, obvykle bude fungovat voxel merge.
+`Booleovský` se snaží ponechat polygony v původním rozložení a sešít je tam, kde se objekty překrývají. Výsledek tak může být mnohem čistší a ostřejší než u voxelového sloučení, vyžaduje to ale „vodotěsné“ sítě: objekty nesmí mít otvory ani poškozené tvary. Když to selže, voxelové sloučení obvykle funguje.
 
 ### Booleovské operace {#boolean-operations}
-Jak Voxel Merge, tak Boolean používají viditelnost objektů k řízení operace:
+Voxelové sloučení i booleovská operace řídí výsledek podle viditelnosti objektů, jak připomínají poznámky ve spodní části okna:
 
 #### Sjednocení {#union}
-Oba objekty viditelné vytvoří boolean **union**, vnější „kůže“ objektů je spojena bez vnitřních povrchů. ![](/images/boolean_union.webp)
+Oba objekty viditelné vytvoří booleovské **sjednocení**: vnější plášť objektů se spojí bez vnitřních ploch. ![](/images/boolean_union.webp)
 
-#### Odečíst {#subtract}
-Jeden objekt neviditelný = boolean **subtract**, neviditelný objekt bude odečten od viditelného objektu. ![](/images/boolean_subtract.webp)
+#### Odečtení {#subtract}
+Jeden objekt neviditelný = booleovské **odečtení**: neviditelný objekt se odečte od viditelného. ![](/images/boolean_subtract.webp)
 
 #### Průnik {#intersect}
-Oba objekty neviditelné = boolean **intersection**, vytvoří nový tvar pouze tam, kde se dva objekty překrývají. ![](/images/boolean_intersect.webp)
+Oba objekty neviditelné = booleovský **průnik**: nový tvar vznikne jen tam, kde se oba objekty překrývají. ![](/images/boolean_intersect.webp)
 
 
-### Tlačítko Voxel Merge {#voxel-merge-button}
-Stisknutím tohoto tlačítka provedete voxelové sloučení vybraných objektů. Při použití na jednom objektu jej retopologizuje do rovnoměrně rozmístěných polygonů, což je užitečné, když má objekt natažené polygony.
+### ![](/icons/voxel.webp) Slučit voxel {#voxel-merge-button}
+Stisknutím tohoto tlačítka provedete voxelové sloučení vybraných objektů. Na jediném objektu ho přesíťuje na rovnoměrně rozložené polygony, což se hodí, když má objekt natažené polygony. Níže uvedené možnosti fungují stejně jako u [voxelového přesíťování](topology.md#voxel-remesher).
 
 ### Rozlišení {#resolution}
-Rozlišení voxelové 3D mřížky použité pro výpočet. Při změně této hodnoty se na objekt překryje šachovnicový vzor pro náhled velikosti polygonů.
+Rozlišení 3d voxelové mřížky použité pro výpočet. Při změně této hodnoty se na objekt překryje šachovnicový vzor s náhledem velikosti polygonů.
 
-### Vytvořit multirozlišení {#build-multiresolution}
-Vytvoří úrovně multiresolution pod cílovým rozlišením. Pokud je tedy vaše rozlišení 400 a build multiresolution je 3, získáte novou síť například s 296 000 polygony, ale budou existovat 3 nižší subdiv úrovně s 74 000, 18 000, 4 000 poly.
+Kapátko vedle posuvníku převezme detail z hustoty sítě pod vaším prstem. Tlačítko vedle něj přepne posuvník na `Délka hrany`, velikost ve světě: stejná hodnota dá stejný detail na jakémkoli objektu.
 
-### Zachovat ostré hrany {#keep-sharp-edges}
-Povolí přichytávání voxelové sítě k hranám. Nejlépe funguje na jednoduchých tvarech.
+### Vytvořit multirezoluci {#build-multiresolution}
+Vytvoří úrovně multirezoluce pod cílovým rozlišením. Pokud je rozlišení 400 a `Vytvořit multirezoluci` je 3, dostanete novou síť s řekněme 296 000 polygony, ale pod ní budou 3 nižší úrovně dělení s přibližně 74 000, 18 500 a 4 600 polygony.
 
-### Booleovské tlačítko {#boolean-button}
-Stisknutím tohoto tlačítka provedete polygonovou boolean operaci pomocí knihovny Manifold od Emmetta Lalishe. 
+### Zesílit tenké části {#thicken-thin-parts}
+Zesílí části, které jsou pro voxelovou mřížku příliš tenké, aby se nerozpadly. Není dostupné spolu s `Ostré hrany` ani `Ostrá hranice`.
+
+### Otvory {#holes}
+Jak se před sloučením uzavřou otvory v otevřených objektech:
+* `Vyplnit` - každý otvor se uzavře samostatně, od svého okraje.
+* `Tvar` - otvory se uzavřou podle okolního povrchu a otevřené kusy, které se překrývají, se spojí.
+
+### ![](/icons/angle.webp) Udržovat ostré hrany {#keep-sharp-edges}
+Tlačítko `Ostré hrany` přichytí voxelovou síť k ostrým hranám objektů. Nejlépe funguje na jednoduchých tvarech a na některých místech může způsobit deformace.
+
+### ![](/icons/group.webp) Ostrá hranice {#sharp-border}
+Nové plochy sledují hranice skupin ploch a hranice zůstane ostrá tam, kde se podél ní povrch láme.
+
+### ![](/icons/group_separate.webp) Oddělit skupiny {#keep-groups-separate}
+Každá skupina ploch se přesíťuje samostatně: skupiny se nikdy nespojí a každá zůstane uzavřeným kusem ve své vlastní skupině. V tomto režimu se multirezoluce nevytváří.
+
+### ![](/icons/bool_subtract_circle.webp) Tlačítko Booleovský {#boolean-button}
+Stisknutím tohoto tlačítka provedete polygonovou booleovskou operaci pomocí knihovny Manifold od Emmetta Lalishe.
+
+### ![](/icons/bool_unite_circle.webp) Vyčistit překryvy {#clean-overlaps}
+Když je vybraný jen jeden objekt, tlačítko `Booleovský` se změní na `Vyčistit překryvy`: sloučí části objektu, které se navzájem protínají, do čistého povrchu.
 
 
-## Oddělit {#separate}
-Pokud máte jeden objekt založený na několika nepropojených částech, můžete tento objekt rozdělit na několik objektů. 
-To lze chápat jako opak [jednoduchého sloučení](#simple-merge).
+## ![](/icons/separate.webp) Rozdělit {#separate}
+Pokud máte jeden objekt složený z několika nespojených částí, můžete ho rozdělit na několik objektů.
+Dá se to chápat jako opak [spojení](#join).
+
+Okno `Rozdělit...` nabízí tři způsoby, jak vybrané objekty rozdělit:
+* `Rozdělit podle Částí` - vytvoří samostatný objekt pro každou nespojenou část.
+* `Rozdělit podle Skupin` - vytvoří samostatný objekt pro každou skupinu ploch.
+* `Rozdělit podle Vrstev` - vytvoří samostatné objekty pro základní síť a pro každou vrstvu.
 
 ![](/videos/merge_separate.mp4)
 
 
-## Nabídka Přidat {#add-menu}
+## ![](/icons/plus.webp) Nabídka Přidat {#add-menu}
 
 ![](/images/scene_addmenu_overview.webp)
 
-Tato nabídka vytváří primitiva, skupiny, kamery, repeatery a světla.
+Tato nabídka vytváří primitiva, skupiny, kamery, opakovače a světla.
 
-Primitiva jsou základní tvary, které lze upravovat pomocí parametrů. Jakmile primitivum upravíte podle svých potřeb, „validujete“ ho, čímž se parametry převedou na polygonovou síť, kterou lze sochat a malovat. Parametry primitiva nelze po validaci dále upravovat.
+Primitiva jsou základní tvary, které lze upravovat pomocí parametrů. Když primitivum upravíte podle svých potřeb, „dokončíte“ ho, čímž se parametry zapečou do polygonové sítě, na které můžete sochat a malovat. Po dokončení už parametry primitiva měnit nelze.
 
 
 ![](/images/scene_addmenu_top.webp)
 
-### Na gizmu {#on-gizmo}
-Povolí umístění nového primitiva tam, kde je aktuálně vybraný tvar nebo gizmo. Pokud je vypnuto, primitivum bude umístěno do středu scény.
+### ![](/icons/gizmo.webp) Na gizmo {#on-gizmo}
+Nové primitivum se umístí tam, kde je aktuálně vybraný tvar nebo gizmo. Když je vypnuto, primitivum se umístí do středu scény.
 
-### Vybrat gizmo {#select-gizmo}
-Povolí automatické přepnutí na nástroj gizmo po vytvoření nového primitiva. 
+### ![](/icons/gizmo.webp) Vybrat gizmo {#select-gizmo}
+Po vytvoření nového primitiva se automaticky přepne na nástroj gizmo.
 
-### Pokročilé {#add-advanced}
+### ![](/icons/cog.webp) Rozšířené {#add-advanced}
 
-Tato nabídka umožňuje nastavit preferenci, kde budou nová primitiva, skupiny a repeatery vytvářeny. Mohou být na vybraném objektu, v počátku světa, nebo v pozici gizma.
+V této nabídce nastavíte, kde se mají vytvářet nová primitiva, skupiny a opakovače. Mohou vznikat na vybraném objektu, v počátku světa, nebo na místě gizma.
 
 
 ### UV {#uvs}
-Povolí UV na primitivech. UV (často nazývané texturovací souřadnice) jsou dodatečná data používaná ve 3D k aplikaci textur na povrchy. Zabírají více paměti, ale pro většinu zařízení by to neměl být problém, pokud se nepouštíte do velmi vysokých počtů polygonů (např. 10 milionů a více). 
+Přepínač `UV` vedle nadpisu Primitivum zapne UV u primitiv. UV (často nazývané texturovací souřadnice) jsou doplňková data, která ve 3d umožňují nanášet textury na povrchy. Zabírají víc paměti, ale na většině zařízení by to neměl být problém, pokud se nedostanete k velmi vysokým počtům polygonů (např. 10 milionů a víc).
 
 ### Primitiva {#primitives}
 
-| Primitivum     | Ikona                                     | Popis                                                                                                              |
-| :------------: | :---------------------------------------: | :----------------------------------------------------------------------------------------------------------------: |
-| Box            | ![](/icons/cube.webp)                    | Jednoduchá krychle, můžete ovládat dělení v osách X, Y a Z                                                        |
-| Sphere         | ![](/icons/circle.webp)                  | Pro pohodlí je pojmenována Sphere, ale ve skutečnosti jde o subdividovaný box s vynuceným `Project on sphere`     |
-| Cylinder       | ![](/icons/cylinder.webp)                | U primitiva válce můžete přidat středový otvor, například pro vytvoření duté trubky                               |
-| Torus          | ![](/icons/torus.webp)                   | Torus může být dobrým výchozím bodem pro prsteny                                                                  |
-| Cone           | ![](/icons/cone.webp)                    | -                                                                                                                  |
-| Icosahedron    | ![](/icons/icosahedron.webp)             | -                                                                                                                  |
-| UV-sphere      | ![](/icons/circle.webp)                  | Koule s nerovnoměrným rozložením polygonů, viz [varování níže](#uv-sphere)                                        |
-| Plane          | ![](/icons/rectangle.webp)               | Jednoduchá rovina, všimněte si, že je to jediné primitivum, které není uzavřené                                   |
-| Tube           | ![](/icons/tool_tube.webp)               | viz [Tube](tools#tube)                                                                                            |
-| Lathe          | ![](/icons/tool_lathe.webp)              | viz [Lathe](tools#lathe)                                                                                          |
-| Triplanar      | ![](/icons/triplanar.webp)               | viz [Triplanar](#triplanar)                                                                                       |
-| Shadow Catcher | ![](/icons/material_shadow_catcher.webp) | viz [Shadow Catcher](#shadow-catcher)                                                                             |
-| Head           | ![](/icons/face.webp)                    | Jednoduchá hlava s vrstvou pro prolínání mezi mužským/ženským tvarem                                              |
+| Primitivum     | Ikona                                     | Popis                                                                                                           |
+| :------------: | :---------------------------------------: | :-------------------------------------------------------------------------------------------------------------: |
+| Kvádr          | ![](/icons/cube.webp)                    | Jednoduchá krychle, můžete nastavit dělení v X, Y a Z                                                           |
+| Quad koule     | ![](/icons/circle.webp)                  | Dělený kvádr s vynucenou možností `Koule`, takže má rovnoměrnou síť čtyřúhelníků, která se dobře hodí k sochání |
+| Válec          | ![](/icons/cylinder.webp)                | Válci můžete přidat díru uprostřed, například pro dutou trubku                                                  |
+| Torus          | ![](/icons/torus.webp)                   | Torus může být dobrým výchozím bodem pro prsteny                                                                |
+| Kužel          | ![](/icons/cone.webp)                    | -                                                                                                               |
+| Ikosahedron    | ![](/icons/icosahedron.webp)             | -                                                                                                               |
+| UV koule       | ![](/icons/circle.webp)                  | Koule s nerovnoměrným rozložením polygonů, viz [upozornění níže](#uv-sphere)                                    |
+| Rovina         | ![](/icons/rectangle.webp)               | Jednoduchá rovina, jako jediné primitivum není uzavřená                                                         |
+| Text           | ![](/icons/text.webp)                    | 3d text s písmem, stylem, zarovnáním, hloubkou a ohybem. `Sloučit písmena` spojí písmena, která se dotýkají     |
+| Trubka         | ![](/icons/tube.webp)                    | viz [Trubka](tools#tube)                                                                                        |
+| Soustruh       | ![](/icons/lathe.webp)                   | viz [Soustruh](tools#lathe)                                                                                     |
+| Triplanární    | ![](/icons/triplanar.webp)               | viz [Triplanární](#triplanar)                                                                                   |
+| VDM            | ![](/icons/vdm.webp)                     | Rovina připravená k sochání razítka vektorového posunutí: obsahuje UV a je natočená ke kameře                   |
+| Stínový zachytávač | ![](/icons/material_shadow_catcher.webp) | viz [Stínový zachytávač](#shadow-catcher)                                                                   |
+| Hlava          | ![](/icons/face.webp)                    | Jednoduchá hlava s vrstvou pro prolínání mezi mužskou a ženskou podobou                                         |
 
 ::: tip
-Pokud vás zajímá, jaká je základní síť po spuštění Nomadu: je to také subdividovaný box.
-Základní síť v Nomadu však nepoužívá `Project on sphere`, což znamená, že není dokonale kulatá.
+Pokud vás zajímá, co je základní síť po spuštění Nomadu: je to také dělený kvádr.
+Základní síť v Nomadu ale nepoužívá `Koule`, takže není dokonale kulatá.
 :::
 
-### Panel nástrojů primitiv {#primitive-toolbar}
+### Panel nástrojů primitiva {#primitive-toolbar}
 
-![](/images/scene_primitive_toolbar.gif)
+![](/images/scene_primitive_toolbar.webp)
 
-Jakmile je primitivum vytvořeno, objeví se panel nástrojů pro ovládání jeho parametrů.
+Po vytvoření primitiva se zobrazí panel nástrojů pro ovládání jeho parametrů.
 
-* `Validate` Upeče primitivum do standardního objektu, aby jej bylo možné sochat a malovat.
-* `Edit` Přepíná zobrazení gizma primitiva. To je zobrazeno přímo na primitivu pro ovládání jeho parametrů, např. šířky krychle nebo poloměru otvoru válce.
-* `Mirror` Přepíná umístění mirror repeateru nad primitivum.
+* `Dokončit` Zapeče primitivum do běžného objektu, na kterém můžete sochat a malovat.
+* `Zrcadlit` Přepne umístění zrcadlového opakovače nad primitivum.
+* `Vše` (ikona oka) Zvolte, které úchyty se zobrazí přímo na primitivu pro ovládání jeho parametrů, např. šířky krychle nebo poloměru díry válce: `Žádný`, `Vše`, nebo jen jeden druh (poloměr, díra, profil...) podle primitiva.
+* `Dělení` Počet dělení primitiva, zde podél X u kvádru.
+* `Konstantní hustota` Když primitivum gizmem natáhnete podél jedné osy, roste jeho velikost i počet dělení místo natahování polygonů, takže plochy zůstanou čtvercové. Dostupné u kvádrů, rovin a válců.
 * `...` Zobrazí nabídku primitiva.
 
-Různá primitiva mají na panelu další volby:
+Různá primitiva mají na panelu nástrojů další možnosti:
 
-* `Project` Koule je konstruována jako subdividovaná krychle, což je lepší pro sochání, ale znamená to, že není dokonale kulatá. Tato volba vynutí tvar blíže k dokonalé kouli. Stejnou volbu sdílí icosahedron.
-* `Cap` Přepíná koncové víčka tvaru, např. válec může mít víčka nahoře, dole, obě, nebo žádná.
-* `Hole` Přepíná vytvoření otvoru skrz střed tvaru. Cyklicky přepíná mezi žádným otvorem, otvorem s jediným poloměrem nebo otvorem s různým poloměrem nahoře a dole.
-* `Radius` Přepíná, zda má mít válec jediný poloměr, nebo odlišný poloměr nahoře a dole.
-* `Disk` Přepíná, zda má být rovina čtyřstranný tvar, nebo kruhový tvar.
+* `Koule` Koule je postavená jako dělená krychle, protože to je pro sochání lepší, takže není dokonale kulatá. Tato možnost tvar přiblíží dokonalé kouli. Stejnou možnost má i ikosahedron.
+* `Víčko` Přepíná víčka na koncích tvaru, např. válec může mít víčko nahoře, dole, na obou koncích, nebo nikde.
+* `Díra` Přepíná díru středem tvaru. Střídá se bez díry, díra s jedním poloměrem a díra s různým poloměrem nahoře a dole.
+* `Poloměr` Přepíná, zda má válec jeden poloměr, nebo různý poloměr nahoře a dole.
+* `Disk` Přepíná, zda je rovina čtyřúhelník, nebo kruh.
 
-Malý panel pod hlavním panelem vám umožní přepínat mezi gizmem primitiva a transformačním gizmem.
+Malý panel pod hlavním panelem nástrojů přepíná mezi gizmem primitiva a transformačním gizmem.
 
 ::: tip
 
-Kliknutím na název panelu jej přepnete nahoru nebo dolů na displeji. Kliknutím na šipku v rohu jej sbalíte.
+Klepnutím na nadpis panelu nástrojů ho přesunete nahoru nebo dolů na obrazovce. Klepnutím na šipku v rohu ho sbalíte.
 
 :::
 
 
-### Nabídka primitiv {#primitive-menu}
+### Nabídka primitiva {#primitive-menu}
 
 ![](/images/scene_primitive_menu.webp)
 
-Obsahuje všechny parametry vybraného primitiva. Parametry jsou základní popis tvaru. Pro popis prstenu byste například popsali jeho vnější poloměr, vnitřní poloměr a počet polygonů.
+Obsahuje všechny parametry vybraného primitiva. Parametry jsou základní popis tvaru. Prsten byste například popsali jeho vnějším poloměrem, vnitřním poloměrem a počtem polygonů.
 
-Většina parametrů primitiv by měla být samozřejmá a existují některé společné parametry sdílené všemi primitivy:
+Většina parametrů primitiv by měla být srozumitelná sama o sobě a některé parametry mají všechna primitiva společné:
 
-* `UVs` Malé tlačítko UVs v horní části nabídky přepíná vytváření UV souřadnic
-* `Validate` Malé tlačítko validate upeče primitivum do standardního objektu, aby jej bylo možné sochat a malovat.
-* `Max faces` Nastaví horní limit počtu polygonů v objektu, aby se předešlo pádu zařízení.
-* `Post subdivision` Povolí zvolený počet subdiv úrovní z multiresolution sekce nabídky topologie. Lze použít k vytváření vyhlazených, měkkých hran primitiv v kombinaci s nízkým dělením topologie. Například nastavení dělení topologie boxu na 2 a post subdivisions na 4 vytvoří box s hladkými rohy.
-* `Linear subdivision` Nastaví, kolik úrovní lineárního dělení se použije před použitím běžného smooth dělení. Lze použít k ovládání, jak ostré nebo měkké jsou rohy na subdividovaných površích. Např. nastavte dělení topologie boxu na 2, post subdivisions na 4 a pak zkuste měnit linear subdivisions mezi 0 a 4. Rohy boxu přejdou z měkkých na ostré.
+* `UV` Malé tlačítko UV v horní části nabídky přepíná vytváření UV souřadnic
+* `Dokončit` Malé tlačítko pro dokončení zapeče primitivum do běžného objektu, na kterém můžete sochat a malovat.
+* `Max. počet ploch` Nastaví horní limit počtu polygonů objektu, aby zařízení nespadlo.
+* `Post-pododdíl` Zapne zvolený počet dělení ze sekce multirezoluce v nabídce Topologie. V kombinaci s nízkým počtem dělení topologie z toho můžete udělat vyhlazená primitiva s měkkými rohy. Například kvádr s dělením topologie 2 a následným dělením 4 bude mít hladké rohy.
+* `Lineární poddělení` Nastaví, kolik úrovní lineárního dělení se použije před běžným hladkým dělením. Tím řídíte, jak ostré nebo měkké budou rohy dělených povrchů. Např. nastavte kvádru dělení topologie na 2, následné dělení na 4 a pak zkoušejte měnit lineární dělení mezi 0 a 4. Rohy kvádru přejdou od měkkých k ostrým.
 
 ### Topologie {#topology}
 
-Ovládá počet polygonů v primitivu. Ovládací prvky jsou obvykle propojené, takže změna jednoho aktivního posuvníku upraví všechny polygony rovnoměrně. Můžete klepnout na tlačítko pro odpojení a ovládat dělení X/Y/Z u tvaru samostatně.
+Řídí počet polygonů primitiva. Ovládací prvky jsou obvykle propojené, takže změnou jediného aktivního posuvníku rovnoměrně upravíte všechny polygony. Klepnutím na tlačítko rozpojení můžete dělení tvaru v X/Y/Z ovládat zvlášť.
 
 ### Geometrie {#geometry}
 
-Ovládá celkovou velikost primitiva v jednotkách X/Y/Z u hranatých tvarů a v poloměru u kulatých tvarů.
+Řídí celkovou velikost primitiva, v jednotkách X/Y/Z u hranatých tvarů a poloměrem u kulatých tvarů.
 
 
-### UV koule {#uv-sphere}
+### ![](/icons/circle.webp) UV koule {#uv-sphere}
 ::: warning
-UV Sphere není dobře vhodná pro sochání, zejména v oblasti pólů.
+UV koule se na sochání příliš nehodí, zvlášť na pólech.
 
-Upřednostněte prosím primitiva [Sphere](#sphere), [Box](#box) nebo [Icosahedron](#icosahedron) spolu s volbou `Project on sphere`.
+Dejte raději přednost [primitivům](#primitives) Quad koule, Kvádr nebo Ikosahedron s možností `Koule`.
 
-Všimněte si, že topologie může být pro sochání přijatelná, pokud použijete velmi nízkou hodnotu posuvníků `Division`.
-Poté můžete použít posuvník `Overall Subdivision` ke zvýšení počtu polygonů.
+Topologie může být pro sochání přijatelná, pokud u posuvníků `Dělení` použijete velmi nízkou hodnotu.
+Počet polygonů pak můžete zvýšit posuvníkem `Celkové dělení`.
 
-Ačkoli není vhodná pro obecné sochání, je užitečná pro oči; pokud kouli otočíte tak, aby póly ležely v oblasti zornice, rozložení polygonů přirozeně sedne pro malování a sochání duhovky a zornice.
+I když se nehodí pro běžné sochání, hodí se na oči: když kouli natočíte tak, aby póly byly v místě zornice, rozložení polygonů přirozeně sedne pro malování a sochání duhovky a zornice.
 :::
 
 
-### Triplanární {#triplanar}
-Toto primitivum je specifické tím, že byste na něj měli použít [nástroj Masking](tools.md#mask) pro tvarování geometrie.
+### ![](/icons/triplanar.webp) Triplanární {#triplanar}
+Toto primitivum je zvláštní tím, že jeho geometrii tvarujete [nástrojem Maska](tools.md#mask).
 
 ![](/videos/triplanar.mp4)
 
 
 ::: tip
-Dvojitým klepnutím na rovinu se kamera zaměří na tuto konkrétní rovinu.
-Pokud však primitivum otáčíte pomocí gizma, nebude to fungovat.
+Dvojitým klepnutím na rovinu na ni kamera zaměří.
+Nefunguje to ale, pokud primitivum otočíte gizmem.
 :::
 
-Triplanar používá maskovací informace ze 3 rovin k naplnění voxelové mřížky, která je následně polygonizována (díky [Voxel Remesheru](topology.md#voxel-remeshere)).
+Triplanár používá informace o masce ze 3 rovin k vyplnění voxelové mřížky, která se pak převede na polygony (díky [voxelovému přesíťování](topology.md#voxel-remesher)).
 
 Každá rovina má vlastní rovinu symetrie.
 
 ::: warning
-Pokaždé, když aktualizujete velikost Triplanar primitiva, kvalita maskovacího malování se zhorší.
+Pokaždé, když změníte velikost triplanárního primitiva, kvalita malby masky se zhorší.
 
-Prozatím neexistuje možnost „zamknout“ malování na jedné rovině, ale možná přijde v budoucnu.
-Můžete trochu pomoci pomocí [Connected Topology](stroke.md#connected-topology), protože pokud kurzor leží přesně na jedné rovině, neovlivní ostatní roviny.
+Zatím nelze malbu „zamknout“ na jedné rovině, ale možná to v budoucnu přijde.
+Trochu pomoci může [spojitá topologie](stroke.md#connected-topology): pokud kurzor leží přesně na jedné rovině, neovlivní ostatní roviny.
 :::
 
-### Lapač stínů {#shadow-catcher}
-Přidá rovinu s materiálem shadow catcher. Více podrobností viz [materiál Shadow Catcher](material.md#shadow-catcher). 
+### ![](/icons/material_shadow_catcher.webp) Stínový zachytávač {#shadow-catcher}
+Přidá rovinu s materiálem stínového zachytávače. Podrobnosti najdete v sekci [Materiál Stínový zachytávač](material.md#shadow-catcher).
 
 
 ## Skupina/Kamera {#groupcamera}
-### Skupina {#group}
-Vytvoří „prázdný“ objekt, pod který můžete zanořit jiné objekty. Lze jej použít k jednoduché organizaci hierarchie tím, že pod skupinu umístíte mnoho objektů a poté ji zavřete. Skupina může být také použita jako pomocný objekt pro přesun objektů; mnoho objektů lze umístit pod skupinu a poté skupinu přesouvat, otáčet a škálovat pomocí nástroje gizmo.
+### ![](/icons/share.webp) Skupina {#group}
+Vytvoří „prázdný“ objekt, pod který můžete vnořit další objekty. Hodí se k uspořádání hierarchie: dáte mnoho objektů pod jednu skupinu a tu sbalíte. Skupina může také pomoci s přesouváním objektů: mnoho objektů umístíte pod skupinu a pak skupinu nástrojem gizmo posunete, otočíte nebo změníte její měřítko.
 
-### Přidat pohled {#add-view}
+### ![](/icons/camera.webp) Kamera {#add-view}
 Vytvoří kameru.
 
 ## Opakovače {#repeaters}
 ![](/images/scene_primitive_repeaters.webp)
 
-Repeatery jsou uzly, které vytvářejí instance objektů pod nimi. 
+Opakovače jsou uzly, které vytvářejí instance objektů pod sebou.
 
-### Pole {#array}
+### ![](/icons/array.webp) Pole {#array}
 ![](/images/scene_primitive_array.webp)
 
-Když jsou objekty potomky tohoto uzlu, mohou být instancovány do mřížkového rozložení. Po výběru má ovládací prvky:
-* Fit inside – přepíná mezi ovládáním velikosti mřížky/boxu pole nebo ovládáním rozestupu mezi instancemi pole
-* CountX/Y/Z – počet instancí na každé ose
-* OffsetX/Y/Z – vzdálenost mezi instancemi, když je přepnuto fit inside
-* SizeX/Y/Z – šířka/výška/hloubka celé mřížky pole, když je přepnuto fit inside.
+Objekty, které se stanou potomky tohoto uzlu, lze instancovat do mřížky. Když je uzel vybraný, má tyto ovládací prvky:
+* `Vložit dovnitř` - když je zapnuto, všechny kopie se umístí dovnitř hranic pole; když je vypnuto, posuvníky nastavují mezeru mezi kopiemi
+* `Počet X/Y/Z` - počet instancí na každé ose
+* `Velikost X/Y/Z` - velikost mřížky podél každé osy, nebo vzdálenost mezi kopiemi, když je `Vložit dovnitř` vypnuto
+* `Náhodně...` - přidá kopiím náhodné odchylky, viz [Náhodně](#curve) níže.
 
-### Křivka {#curve}
+### ![](/icons/curve.webp) Křivka {#curve}
 ![](/images/scene_primitive_curve.webp)
-Vytvoří křivku, potomci tohoto uzlu budou opakováni podél křivky. Po výběru má ovládací prvky:
-* Edit – umožní přidávání bodů na křivku a přesouvání bodů na křivce.
-* Snap – přichytává body křivky k jiné geometrii
-* Align – otáčí podřízené tvary tak, aby se zarovnaly ve směru křivky
-* Count – počet instancí
-* Closed – přepíná, zda se začátek a konec křivky spojí, nebo zda jde o otevřenou křivku
-* Radius – přepíná ovládací prvky na každém bodě křivky pro řízení měřítka instancí
-* Twist – přepíná ovládací prvky na každém bodě křivky pro řízení rotačního zkroucení instancí 
-* B-spline – přepíná, zda instance sledují křivku přesně, nebo používají B-spline interpolaci, která má hladší výsledky. 
+Vytvoří křivku a potomci tohoto uzlu se budou opakovat podél ní. Když je uzel vybraný, má tyto ovládací prvky:
+* `Křivka` - úprava křivky: přidávání bodů a posouvání bodů na křivce.
+* `Zobrazit` - zobrazí nebo skryje křivku a její body.
+* `Zachycení` - přichytí body křivky k jiné geometrii.
+* `Sym` - upravuje křivku symetricky.
+* `Uzavřeno` - přepíná, zda se začátek a konec křivky spojí, nebo zda je křivka otevřená.
+* `B-splajn` - přepíná, zda instance sledují křivku přesně, nebo použijí interpolaci b-splajnem s hladším výsledkem.
+* `Deformovat` - ohne každou kopii podél křivky, takže kopie navazují na sousedy (`Plynulé` ohne jejich boky tak, aby navazovaly bez úhlu).
+* `Zarovnat` - natočí kopie podle směru křivky.
+* `Otočný bod` - otočný bod kopií: samotná křivka (`Vlastní`) nebo její potomci.
+* `Počet` - počet instancí. Tlačítko režimu vedle něj přepne na `Vzdálenost`: pevnou mezeru mezi kopiemi, počet se pak řídí délkou křivky.
+* `Poloměr` - ovládací prvky na každém bodu křivky pro nastavení měřítka instancí.
+* `Zkrut` - ovládací prvky na každém bodu křivky pro nastavení zkroucení instancí.
+* `Střídat` - otočí každou druhou kopii kolem křivky: o 90° pro články řetězu, o 180° pro listy nebo zuby zipu, kolem zvolené `Osa`.
+* `Spirála...` - vine kopie kolem křivky v několika pramenech (lano, cop, stuha...).
+* `Náhodně...` - přidá kopiím náhodné odchylky; každý řádek může místo toho přidat stejnou hodnotu u každé kopie.
 
-### Radiální {#radial}
+Pod panelem nástrojů přepínač `(Sloučit)` sloučí bod s jiným, když ho na něj přetáhnete. `IK` (inverzní kinematika) umožňuje křivku pózovat: táhnete bodem a propojené body ho následují. Klepnutím na bod ho zamknete nebo odemknete, dlouhým stiskem zamknete nebo odemknete všechny; zamčené body zůstanou na místě.
+
+### ![](/icons/radial.webp) Radiální {#radial}
 ![](/images/scene_primitive_radial.webp)
 
-Potomci tohoto uzlu budou instancováni do kruhu. Přesunutím podřízeného objektu změníte poloměr tohoto repeateru. Po výběru má ovládací prvky:
-* RadialX/Y/Z – výběrem těchto tlačítek nastavíte radiální osu a počet instancí.
+Potomci tohoto uzlu se instancují do kruhu. Posunutím potomka změníte poloměr opakovače. Když je uzel vybraný, má tyto ovládací prvky:
+* RadialX/Y/Z - tato tlačítka nastaví osu kruhu a počet instancí.
 
 
 
-### Zrcadlení {#mirror}
+### ![](/icons/mirror.webp) Zrcadlit {#mirror}
 ![](/images/scene_primitive_mirror.webp)
 
-Potomci tohoto uzlu budou zrcadleni přes osu. Po výběru má ovládací prvky:
-* Gizmo – povolí transformační gizmo pro nastavení středu zrcadlení. Lze jej také otáčet a škálovat. Po dokončení znovu klepněte na gizmo pro zobrazení standardních ovládacích prvků.
-* X/Y/Z – nastaví rovinu zrcadlení
+Potomci tohoto uzlu se zrcadlí podle osy. Když je uzel vybraný, má tyto ovládací prvky:
+* Gizmo - zapne transformační gizmo pro nastavení středu zrcadlení. Lze ho také otáčet a měnit jeho měřítko. Až budete hotovi, klepněte znovu na gizmo a zobrazí se běžné ovládací prvky.
+* X/Y/Z - nastaví rovinu zrcadlení
 
-Všechny repeatery mají ovládací prvek `Validate`, který upeče výsledky repeateru a zeptá se, jak péct:
-* Join children – instance jsou sloučeny do jednoho objektu
-* Keep instances – instance zůstanou instancemi, ale již nebudou mít repeater jako „rodiče“
-* Un-instances – instance jsou převedeny na unikátní objekty
+### ![](/icons/surface.webp) Povrch {#surface}
 
-::: tip Tip: Kombinování repeaterů
-Repeatery lze vnořovat pod sebe a několik objektů lze udělat potomky repeaterů, což vede ke složitým efektům.
+Potomci tohoto uzlu se kopírují na povrch objektu: jedna kopie na plochu, na hranu nebo na vrchol, nebo náhodně rozptýlené. Když je uzel vybraný, má tyto ovládací prvky:
+* Režim - umístí kopie na `Plochy`, `Hrany` nebo vrcholy, nebo je `Rozptýlit`.
+* Každých - jedna kopie každých N ploch, hran nebo vrcholů. `Náhodně` je místo toho vybere náhodně a `Promíchat` vylosuje jinou náhodnou sadu.
+* Rozestupy - při rozptylování minimální vzdálenost mezi dvěma kopiemi.
+* Zarovnat - kopie stojí na povrchu podle jeho normály, místo aby si zachovaly natočení originálu.
+* Přichytit - promítne originál do nejbližšího bodu povrchu, kopie ho následují.
+* Přizpůsobit velikost, Klopení - změní měřítko kopií a natáhne je podle tvaru každé plochy.
+* Deformovat - ohne každou kopii na její plochu nebo podél její hrany, takže sousední kopie na sebe navazují bez mezer.
+
+Všechny opakovače mají ovládací prvek `Dokončit`, který zapeče výsledek opakovače a zeptá se, jak zapečení provést:
+* Spojit děti - instance se spojí do jediného objektu
+* Zachovat instance - instance zůstanou instancemi, ale už nebudou mít „rodičovský“ opakovač
+* Zrušit instanci - instance se převedou na samostatné objekty
+
+`Zploštit vše` zapeče i opakovače vnořené v tomto opakovači, takže se z každé kopie stane obyčejný objekt.
+
+::: tip Tip: Kombinace opakovačů
+Opakovače lze vnořovat pod sebe a potomky opakovačů může být několik objektů, což vede ke složitým efektům.
 
 ![](/images/scene_repeater_combine.webp)
 :::
 
-::: tip Tip: Pivoty repeaterů
+::: tip Tip: Otočné body opakovačů
 
-Některé repeatery se pokusí automaticky nastavit pivot podřízených objektů, takže i když je přesunete nebo otočíte pomocí gizma, nepohnou se. Pokud potřebujete toto chování přepsat, vložte mezi repeater a potomka skupinu. Nyní můžete podřízený tvar přesouvat nezávisle na repeateru.
+Některé opakovače se snaží automaticky nastavit otočný bod potomků, takže se nepohnou, ani když je posunete nebo otočíte nástrojem gizmo. Pokud to potřebujete obejít, vložte mezi opakovač a potomka skupinu. Pak můžete tvarem potomka hýbat nezávisle na opakovači.
 :::
 
 ## Světlo {#light}
 
 ![](/images/scene_primitive_light.webp)
 
-### Směrové {#directional}
-Vytvoří směrové světlo, nekonečně vzdálený zdroj světla jako slunce.
+### ![](/icons/sun.webp) Směrové {#directional}
+Vytvoří směrové světlo, nekonečně vzdálený zdroj světla podobný slunci.
 
-### Reflektor {#spot}
-Vytvoří reflektor (spot light) s ovládáním šířky kužele a měkkosti
+### ![](/icons/panorama.webp) Prostředí {#environment}
+Vytvoří světlo prostředí, které osvětluje scénu obrázkem kolem ní (osvětlení podle obrázku, jako HDRI).
 
-### Bodové {#point}
+### ![](/icons/spotlight.webp) Bodové (reflektor) {#spot}
+Vytvoří reflektor s nastavením šířky a měkkosti kužele
+
+### ![](/icons/light.webp) Bodové {#point}
 Vytvoří bodové světlo
 
-## Pokročilé {#advanced}
-### Zaměřit na položku {#focus-on-item}
-Dvojité kliknutí na položku v seznamu Scény vycentruje kameru na tuto položku ve 3D pohledu.
+## ![](/icons/cog.webp) Rozšířené {#advanced}
+Tlačítko `Rozšířené` vlevo dole na panelu otevře okno se dvěma kartami: `Obecné` a `Synchronizovat`.
 
-### Synchronizovat viditelnost {#sync-visibility}
-Použití ikony oka ovlivní všechny vybrané položky. 
+### ![](/icons/focus.webp) UI: Zaměřit na položku při dvojím klepnutí {#focus-on-item}
+Dvojité klepnutí na položku v seznamu Scéna vystředí kameru na tuto položku ve 3d zobrazení.
 
-### Instance: Zobrazit {#instance-show}
-Zobrazí barevnou kapsli vlevo od seznamu scény pro zobrazení instancí.
+### ![](/icons/eye_open.webp) Synchronizovat viditelnost {#sync-visibility}
+Když je zapnuto, ikona oka u vybrané položky ovlivní všechny vybrané položky.
 
+### ![](/icons/bang.webp) Zvýraznit {#highlight}
+Při změně výběru zvýrazní vybrané objekty ve viewportu.
+
+### ![](/icons/link.webp) Zobrazit (Instance) {#instance-show}
+Zobrazí vlevo v seznamu scény barevnou kapsli, která označuje instance.
+
+### ![](/icons/preview.webp) Náhledy objektů {#object-previews}
+Zobrazí u každého objektu v seznamu scény vyrenderovanou miniaturu. Je to totéž jako tlačítko náhledu nad seznamem.
+
+### Poloměr svaření {#weld-radius}
+Pod nadpisem `Spojit` jsou `Poloměr svaření pozice` a `Poloměr svaření UV`: body a UV bližší než tyto poloměry se sloučí. Každý z nich lze vypnout jeho zaškrtávacím polem. Platí to pro spojení, booleovské operace, ořezání, decimaci, přesíťování a import souborů.
 
 ### Ikony {#icons}
-Nastaví velikost a neprůhlednost ikon skupin, světel, kamer a zrcadel ve viewportu
+Nastaví minimální a maximální `Velikost` a `Krytí` ikon skupin, světel, kamer a opakovačů ve viewportu.
 
-### Čáry hierarchie {#hierarchy-lines}
-Zobrazí čáru mezi rodičem a jeho potomky ve viewportu
+### ![](/icons/hierarchy.webp) Hierarchické linie {#hierarchy-lines}
+Zobrazí ve viewportu čáru mezi rodičem a jeho potomky. Když je zapnuto, můžete také nastavit:
+* `Použij Nomad pivot` - čáry začínají v otočném bodě, který používají nástroje Transformace a Gizmo. Když je vypnuto, použije se přirozený základní otočný bod, který může být daleko od středu objektu.
+* `Tloušťka` - šířka čar. Tlačítko vedle posuvníku k nim přidá obrys.
+* Barvu čar.
 
-## Dolní panel nástrojů {#bottom-toolbar}
-Tyto ikony přepínají viditelnost skupin, světel, kamer, repeaterů a čar hierarchie ve viewportu.
+### ![](/icons/link.webp) Synchronizovat {#sync}
+Karta `Synchronizovat` určuje pro každou operaci (`Přidat`, `Smazat`, `Zámek`, `Klonovat`, `Instance`, `Zrušit instanci`, `Spojit`, `Rozdělit` a `Booleovský`), zda se použije na všechny instance výběru:
+* `Auto` - řídí se zaškrtávacím polem `Synchronizovat` v horní části nabídky scény.
+* `Ne` - jen vybrané objekty.
+* `Ano` - vždy všechny instance.
+
+Ve výchozím stavu jsou `Spojit`, `Rozdělit` a `Booleovský` na `Ano` a ostatní na `Auto`. `Resetovat` vrátí tyto výchozí hodnoty.
+
+## Spodní panel nástrojů {#bottom-toolbar}
+Tyto ikony přepínají viditelnost skupin, světel, kamer, opakovačů a hierarchických linií ve viewportu. Na ikony zobrazené na plátně můžete klepnout a přímo je tak vybrat a upravit.

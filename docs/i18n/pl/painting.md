@@ -1,143 +1,167 @@
 # ![](/icons/paint.webp) Malowanie {#painting}
 
-Kontroluj kolor, szorstkość, metaliczność pociągnięć pędzla, umożliwiaj zalewanie (flood fill) atrybutów farby oraz sposób, w jaki narzędzia malarskie wchodzą w interakcję z warstwami, maskami i ukrytymi zaznaczeniami.
+Określa kolor, chropowatość i metaliczność pociągnięć farby, pozwala wypełniać obiekt atrybutami malowania i decyduje, jak narzędzia malarskie współpracują z warstwami, maskami i ukrytymi obszarami.
 
 ![](/images/paint_overview.webp)  
 
 ## Przegląd {#overview}
 
-Nomad używa wierzchołkowego malowania PBR. Co to oznacza?
+Nomad używa malowania wierzchołków PBR. Co to oznacza?
 
 ### PBR {#pbr}
-PBR, czyli Physically Based Rendering, to popularna technika grafiki komputerowej stosowana w filmie, telewizji, grach i na urządzeniach mobilnych. Dzięki opieraniu świateł na właściwościach fizycznych oraz definiowaniu powierzchni poprzez kolor, szorstkość i metaliczność można uzyskać szeroką gamę fotorealistycznych wyglądów.
+PBR (Physically Based Rendering, czyli renderowanie oparte na fizyce) to popularna technika grafiki komputerowej, stosowana w filmie, telewizji, grach i na urządzeniach mobilnych. Dzięki oparciu świateł na właściwościach fizycznych i opisaniu powierzchni kolorem, chropowatością i metalicznością można uzyskać bardzo wiele fotorealistycznych wyglądów.
 
 ### Malowanie wierzchołków {#vertex-painting}
 
-Malowanie wierzchołków oznacza, że informacje o farbie są przechowywane w wierzchołkach modelu, a nie w teksturach. Ponieważ Nomad potrafi obsługiwać modele liczące setki tysięcy, a często miliony wierzchołków, Twoje modele mogą mieć bardzo szczegółowe malowanie powierzchni; jeśli możesz wyrzeźbić detal, możesz też go pomalować.
+Malowanie wierzchołków oznacza, że informacje o malowaniu są zapisywane w wierzchołkach modelu, a nie w teksturach. Nomad radzi sobie z modelami o setkach tysięcy, a często milionach wierzchołków, więc Twoje modele mogą mieć bardzo szczegółowe malowanie powierzchni: jeśli potrafisz wyrzeźbić dany szczegół, możesz go też pomalować.
 
-Oznacza to również, że malowanie w Nomadzie nie wymaga mapowania UV, które w innych aplikacjach 3D jest często powolnym i technicznym procesem. Wiele innych aplikacji 3D nie obsługuje tak wysokiej liczby wierzchołków jak Nomad, jednak Nomad ma też dobre narzędzia do wypalania tekstur i dekymacji.
+Oznacza to również, że malowanie w Nomad nie wymaga mapowania UV, które w innych aplikacjach 3d bywa powolnym i technicznym procesem. Wiele innych aplikacji 3d nie obsługuje tak dużej liczby wierzchołków jak Nomad, ale Nomad ma też dobre narzędzia do wypalania tekstur i upraszczania, które w tym pomagają.
 
 ### Teksturowanie {#texturing}
 
-Nomad obsługuje tekstury, ale muszą one być obecne w zaimportowanym modelu lub zostać utworzone poprzez wypalenie malowania wierzchołków do tekstur. 
+Nomad obsługuje tekstury, ale muszą one pochodzić z importowanego modelu albo z wypalenia malowania wierzchołków do tekstur.
 
-Tekstura to po prostu obraz, ale w kontekście 3D zazwyczaj odnosi się do obrazu przypisanego do obiektu.
+Tekstura to po prostu obraz, ale w kontekście 3d zwykle oznacza obraz przypisany do obiektu.
 Aby owinąć obraz wokół modelu, model potrzebuje współrzędnych tekstury (UV).
 
-Nomad może [obliczyć je automatycznie](topology.md#uv-unwrap), ale nie masz dużej kontroli nad ogólną jakością.
+Nomad potrafi [obliczyć je automatycznie](topology.md#uv-unwrap), ale nie masz wtedy dużego wpływu na ogólną jakość.
 
 ::: tip
-Przykładowy workflow:
-- Rzeźb w Nomadzie, następnie wykonaj [UV unwrap](topology.md#uv-unwrap)
-- Jeśli zacząłeś już malować w Nomadzie, możesz [przenieść malowanie wierzchołków do tekstur](topology.md#bake-vertex-colors-to-texture)
-- Eksport do Procreate
-- Teksturowanie w Procreate
-- Eksport z powrotem do Nomada w celu renderowania
+Przykładowy sposób pracy:
+- Rzeźbisz w Nomad, a potem robisz [rozwijanie UV](topology.md#uv-unwrap)
+- Jeśli zacząłeś już malować w Nomad, możesz [przenieść malowanie wierzchołków do tekstur](topology.md#bake-texture)
+- Eksportujesz do Procreate
+- Teksturujesz w Procreate
+- Eksportujesz z powrotem do Nomad, aby wyrenderować
 :::
 
-To był przegląd, teraz przyjrzyjmy się sekcjom menu malowania:
+To tyle tytułem wstępu, przyjrzyjmy się teraz sekcjom menu malowania:
 
 
-## Malowanie pociągnięć {#stroke-painting}
+## Malowanie pociągnięciami {#stroke-painting}
 ![](/images/paint_intensity.webp)  
 
-Włącz malowanie dla tego narzędzia, przydatne, jeśli chcesz rzeźbić i malować jednocześnie.
+Włącza malowanie dla tego narzędzia, co przydaje się, gdy chcesz jednocześnie rzeźbić i malować. Gdy narzędzie potrafi malować, ale to pole jest wyłączone, przypomina o tym ikona ostrzeżenia obok tytułu.
 
-Dla narzędzi, w których malowanie jest główną funkcją (np. Paint, Smudge, Mask), to pole wyboru nie istnieje.
+W narzędziach, których główną funkcją jest malowanie (np. Farba, Smużenie, Maska), tego pola wyboru nie ma.
 
-### Intensywność malowania {#paint-intensity}
+### ![](/icons/opacity.webp) Intensywność farby {#paint-intensity}
 
-Suwak pozwalający użyć innej intensywności niż podstawowa intensywność narzędzia.
+Suwak, który pozwala użyć innej intensywności niż główna intensywność narzędzia.
 
-Pola wyboru `Alpha`, `Falloff` i `Randomize` określają, czy te funkcje będą wpływać na malowanie. Np. możesz mieć włączone randomize dla narzędzia Clay, ale kolor nie będzie losowany.
+Przycisk z suwakami obok niego dodaje do paska bocznego szybki suwak intensywności farby, w narzędziach, które jednocześnie rzeźbią i malują.
+
+Przyciski `Alfa`, `Zanikanie` i `Zrandomizuj intensywność` określają, czy te funkcje wpływają na malowanie. Możesz na przykład włączyć losowość dla narzędzia Glina, a kolor nie będzie losowany.
+
+* `Alfa` - gdy jest wyłączona, malowanie ignoruje alfę i pokrywa cały obszar pędzla. W narzędziu VDM ten przycisk zastępuje `Materiał stempla`, który włącza lub wyłącza materiał zapisany w stemplu.
+* `Zanikanie` - gdy jest wyłączone, malowanie ma pełną intensywność aż do krawędzi pędzla.
+* `Zrandomizuj intensywność` - czy losowość intensywności z randomizera pociągnięcia wpływa na malowanie. Losowość położenia, obrotu i skali zawsze przesuwa cały stempel.
+
+Te opcje są ignorowane przez [Maluj wszystko](#paint-all), ale jego wariant trzypłaszczyznowy używa alfy.
+
+### ![](/icons/link.webp) Materiał globalny {#global-material}
+Jeśli ta opcja jest włączona, wybrany materiał jest taki sam jak w pozostałych narzędziach. Uwzględnia ona tylko ustawienia chropowatości, metaliczności i koloru. Wyłącz ją, aby nadać temu narzędziu własny materiał.
 
 
 ## Materiał {#material}
 ![](/images/paint_material.webp) 
 
-Pierwsza ikona to kształt podglądu materiału. Przeciąganie na podglądzie 3D materiału będzie go obracać. 
+Pierwsza ikona to kształt podglądu materiału. Przeciąganie po podglądzie materiału 3d obraca go.
 
-Druga ikona to podgląd pociągnięcia pędzla z wybranymi opcjami alfy i falloff.
+Druga ikona to podgląd pociągnięcia farby z wybraną alfą i opcjami zanikania.
 
-Przycisk podglądu obok tytułu Material pozwala przełączać między none, Material lub Triplanar. Określa to, co się stanie, gdy interaktywnie zmieniasz właściwości farby:
+### ![](/icons/falloff.webp) Krzywe {#curves}
 
-* `None` - Na modelu nie będzie wyświetlany żaden podgląd podczas regulacji właściwości
-* `Material` - Wartości materiału będą podglądane na obiekcie podczas regulacji właściwości. Jeśli używasz tekstur i model ma UV, zostaną użyte UV.
-* `Triplanar` - Materiał będzie podglądany jako projekcja trójpłaszczyznowa (Triplanar). 
+Otwiera edytor krzywych dla gniazd tekstur [suwaków PBR](#pbr-sliders). Przekształca wartości tekstury przed ich namalowaniem, nie zmieniając pliku obrazu. Mała ikona krzywej na gnieździe tekstury informuje, że jego krzywa została zmieniona.
 
-Pipeta może być użyta do pobrania wszystkich właściwości z obiektu w Twojej scenie.
+### ![](/icons/cog.webp) Opcje materiału {#material-options}
 
-## Presety materiałów {#material-presets}
-Stuknięcie w 3D kształt podglądu wyświetli menu presetów materiałów, które można sklonować, aby zdefiniować własne presety.
+Przycisk `Materiał` obok tytułu zawiera dwa ustawienia.
+
+`Podgląd materiału w widoku` określa, co dzieje się na zaznaczonym obiekcie, gdy zmieniasz suwaki koloru, chropowatości, metaliczności, krycia i intensywności:
+
+* `Brak` - Podczas zmiany właściwości na modelu nie jest wyświetlany żaden podgląd.
+* `Materiał` - Podczas zmiany właściwości wartości materiału są wyświetlane na obiekcie.
+* `Trzypłaszczyznowy` - Podgląd materiału jest wyświetlany jako projekcja trzypłaszczyznowa.
+
+Pola wyboru koloru, chropowatości, metaliczności i krycia poniżej określają, które kanały zastępuje [Próbnik materiału](#material-picker).
+
+### ![](/icons/dropper.webp) Próbnik materiału {#material-picker}
+
+Pipeta pobiera materiał spod kursora, z dowolnego obiektu w scenie. Zastępowane są tylko kanały zaznaczone w [Opcjach materiału](#material-options).
+
+## Ustawienia wstępne materiałów {#material-presets}
+Stuknięcie kształtu podglądu 3d otwiera menu ustawień wstępnych materiałów, które możesz klonować, aby tworzyć własne ustawienia wstępne.
 
 ![](/images/paint_presets.webp) 
 
-Przełączniki `Embed Textures` i `Alpha` po włączeniu zapiszą wszystkie tekstury używane przez ten materiał w presecie. Jest to szerzej wyjaśnione poniżej.
+Przełącznik `Osadź tekstury` zapisuje kopię tekstur używanych przez ten materiał wewnątrz ustawienia wstępnego. Bez niego ustawienie wstępne tylko odwołuje się do tekstur w folderze textures/ Nomad. Włącz go, gdy chcesz udostępnić ustawienie wstępne z teksturami bez osobnego wysyłania tekstur.
+
+`Uwzględnij alfę` zapisuje w ustawieniu wstępnym materiału także alfę pędzla.
 
 ## Suwaki PBR {#pbr-sliders}
 ![](/images/paint_sliders.webp) 
 
 Malowanie [PBR](shading.md#pbr) używa 4 kanałów:
-- `Color` Kolor, który będzie malowany. Pipeta może być użyta do wyboru koloru z innych części modelu lub z obrazów referencyjnych.
-- `Roughness` Określa, jak „szorstka” lub „gładka” jest powierzchnia. Niska wartość szorstkości oznacza, że odbicia będą ostre.
-- `Metalness` Określa po prostu, czy powierzchnia jest metaliczna, czy nie. Wartość powinna być najczęściej albo 0%, albo 100%, wartości pośrednie powinny być wyjątkowe.
-- `Opacity` Jak bardzo materiał jest przezroczysty. Ściśle rzecz biorąc, nie jest to część specyfikacji PBR, ale jest użyteczna w wielu sytuacjach. 1 to całkowita nieprzezroczystość, 0 to pełna przezroczystość. Zauważ, że krycie (opacity) i załamanie światła (refraction) to różne rzeczy, załamanie w Nomadzie jest obsługiwane przez materiał refraction. 
+- `Kolor` Kolor, który zostanie namalowany. Pipetą możesz pobrać kolor z innych części modelu albo z obrazów referencyjnych.
+- `Chropowatość` Określa, jak „szorstka” lub „gładka” jest powierzchnia. Niska wartość chropowatości oznacza ostre odbicia.
+- `Metaliczność` Po prostu określa, czy powierzchnia jest metaliczna, czy nie. W większości przypadków wartość powinna wynosić 0% albo 100%, a wartości pośrednie powinny być wyjątkiem.
+- `Krycie` Na ile materiał jest prześwitujący. Ściśle mówiąc, nie należy ono do specyfikacji PBR, ale przydaje się w wielu sytuacjach. 1 to pełne krycie, 0 to przezroczystość. Pamiętaj, że krycie i refrakcja to różne rzeczy: refrakcję w Nomad obsługuje materiał refrakcyjny.
 
-Jeśli wybierzesz preset materiału, 3 kanały są malowane jednocześnie (krycie jest często celowo wyłączone). Oznacza to, że zamiast malować tylko „czerwony”, możesz malować „czerwony, szorstki metal” lub „biały, gładki plastik”.
+Jeśli wybierzesz ustawienie wstępne materiału, 3 kanały są malowane jednocześnie (krycie jest często celowo pomijane). Dzięki temu zamiast malować po prostu „czerwienią”, możesz malować „czerwonym, szorstkim metalem” albo „białym, gładkim plastikiem”.
 
-Kwadrat to slot tekstury, kliknij go, aby użyć tekstury dla tej właściwości zamiast stałej wartości.
+Kwadrat to gniazdo tekstury: kliknij je, aby dla tej właściwości użyć tekstury zamiast jednolitej wartości. Tekstura koloru zabarwia kolor, a tekstura chropowatości, metaliczności lub krycia zastępuje wartość suwaka (jego etykieta jest wtedy przekreślona). W przypadku tekstury krycia `Użyj alfy jako wartości` odczytuje kanał alfa tekstury zamiast jej wartości w skali szarości.
 
-Ikona pędzla obok suwaków wypełni (flood fill) tę właściwość na całym obiekcie.
+W narzędziu VDM, gdy stempel ma własny materiał, obok gniazda tekstury pojawia się dodatkowe gniazdo, które go pokazuje. Stuknij je, aby użyć tego kanału stempla lub go zignorować.
 
-Pole wyboru włączy lub wyłączy daną właściwość, więc możesz np. malować tylko kolor albo tylko szorstkość i krycie. 
+Ikona pędzla obok suwaków wypełnia daną właściwością cały obiekt.
 
-Oto kilka przykładów różnych właściwości szorstkości i metaliczności:
+Pole wyboru włącza lub wyłącza daną właściwość, więc możesz na przykład malować tylko kolor albo tylko chropowatość i krycie.
 
-|                | Metalness 0%                      | Metalness 100%               |
+Oto kilka przykładów różnych wartości chropowatości i metaliczności:
+
+|                | Metaliczność 0%                   | Metaliczność 100%            |
 | :------------: | :-------------------------------: | :--------------------------: |
-| Roughness 0%   | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
-| Roughness 50%  | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
-| Roughness 100% | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
+| Chropowatość 0%   | ![](/images/dielectric_r0.webp)   | ![](/images/metal_r0.webp)   |
+| Chropowatość 50%  | ![](/images/dielectric_r50.webp)  | ![](/images/metal_r50.webp)  |
+| Chropowatość 100% | ![](/images/dielectric_r100.webp) | ![](/images/metal_r100.webp) |
 
 ::: warning
-W trybie [renderowania Matcap](shading.md#matcap) obsługiwany jest tylko kolor, metaliczność i szorstkość są ignorowane.
+Chropowatość i metaliczność wymagają trybu cieniowania [Oświetlony (PBR)](shading.md#pbr). W trybie [MatCap](shading.md#matcap) lub [Nieoświetlony](shading.md#unlit) są ignorowane, a menu wyświetla ostrzeżenie.
 :::
 
 ::: tip
-Podczas używania tekstur do malowania PBR często przydatne jest przełączenie się na narzędzie takie jak `Stamp` lub użycie menu Stroke, aby wybrać tryb inny niż dot, który może rozmazywać teksturę.
+Przy malowaniu PBR teksturami często warto przełączyć się na narzędzie takie jak `Stempel` albo w menu pociągnięcia wybrać tryb inny niż kropka, który może rozmazywać teksturę.
 
 ![](/videos/paint_color_texture.mp4)  
 :::
 
 ::: tip
-Możesz rozważyć włączenie `Smooth Shading` [globalnie](settings.md#smooth-shading) lub [per-obiekt](material.md#smooth-shading), jeśli malujesz metaliczną powierzchnię na obiekcie o niskiej liczbie polygonów.
+Rozważ włączenie `Płynne cieniowanie` [globalnie](settings.md#smooth-shading) lub [dla obiektu](material.md#smooth-shading), jeśli malujesz metaliczną powierzchnię na obiekcie o mniejszej liczbie wielokątów.
 :::
 
-## Maluj wszystko {#paint-all}
+## ![](/icons/paint.webp) Maluj wszystko {#paint-all}
 
 ![](/images/paint_paint_all.webp)
 
-Zastosuj bieżący materiał do obiektu, w trybie standardowym za pomocą „Paint All” lub jako projekcję Triplanar.
+Stosuje bieżący materiał do zaznaczonych obiektów, w trybie standardowym przyciskiem `Maluj wszystko` albo jako projekcję trzypłaszczyznową przyciskiem `Maluj wszystko + Trzypłaszczyznowy`. Wariant trzypłaszczyznowy nie jest dostępny dla niezatwierdzonych prymitywów.
 
-Pola wyboru obok suwaków color/metalness/roughness/opacity są respektowane, wyłączone właściwości nie zostaną wypełnione.
+Pola wyboru obok suwaków koloru, metaliczności, chropowatości i krycia są respektowane: wyłączone właściwości nie zostaną wypełnione.
 
-Dodatkowe przyciski kontrolują, w jaki sposób Paint All może być dalej modyfikowane:
+Dodatkowe przyciski określają, co jeszcze wpływa na działanie Maluj wszystko. Większość z nich pokazuje wartość procentową i jest wyszarzona, gdy nie miałaby żadnego efektu:
 
-| Icon                        | Description                                   |
+| Ikona                       | Opis                                          |
 | :-------------------------: | :-------------------------------------------: |
-| ![](/icons/tool_mask.webp) | Obszary zamaskowane nie zostaną naruszone.    |
-| ![](/icons/tool_hide.webp) | Obszary ukryte nie zostaną naruszone.         |
-| ![](/icons/opacity.webp)   | użyj współczynnika malowania narzędzia powyżej. |
-| ![](/icons/layer.webp)     | Niepomalowane obszary warstwy nie zostaną naruszone. |
-| ![](/icons/triplanar.webp) | Wskaźnik ustawień triplanar                   |
-| ![](/icons/cog.webp)       | Otwórz ustawienia Triplanar                   |
+| ![](/icons/shield.webp)    | Zamaskowane obszary pozostają nietknięte.     |
+| ![](/icons/tool_hide.webp) | Ukryte obszary pozostają nietknięte.          |
+| ![](/icons/opacity.webp)   | Używa powyższego współczynnika malowania narzędzia. |
+| ![](/icons/layer.webp)     | Niepomalowane obszary warstwy pozostają nietknięte. |
+| ![](/icons/triplanar.webp) | `Wierzchołek`: wariant trzypłaszczyznowy dodatkowo przesuwa powierzchnię zgodnie z alfą, o pokazaną intensywność narzędzia. |
+| ![](/icons/cog.webp)       | Otwiera ustawienia trzypłaszczyznowe          |
 
-### Ustawienia trójpłaszczyznowe {#triplanar-settings}
+### ![](/icons/cog.webp) Ustawienia trzypłaszczyznowe {#triplanar-settings}
 ![](/images/paint_triplanar_settings.webp)
 
-Podobnie jak w [ustawieniach triplanar w menu materiału](material.md#triplanar), możesz kontrolować mieszanie projekcji, tiling i przesunięcia. 
+Podobnie jak w [ustawieniach trzypłaszczyznowych w menu materiału](material.md#triplanar), możesz sterować mieszaniem projekcji, kafelkowaniem i przesunięciami.
 
-Użyj pola podglądu na górze tego menu, aby włączyć trwały podgląd podczas regulacji wartości.
-
-## Materiał globalny {#global-material}
-Jeśli ta opcja jest włączona, wybrany materiał będzie taki sam jak w innych narzędziach. Zauważ, że brane są pod uwagę tylko ustawienia szorstkości, metaliczności i koloru.
+Pole wyboru podglądu u góry tego menu włącza stały podgląd podczas zmiany wartości.

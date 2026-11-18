@@ -1,4 +1,4 @@
-# 概要 {#overview}
+# ![](/icons/home.webp) 概要 {#overview}
 
 <!-- 
 [[toc]]
@@ -9,35 +9,37 @@
 -->
 
 ::: tip Nomad は初めてですか？
-[はじめに](gettingstarted.md) ガイドをお読みください。
+まずは[はじめに](gettingstarted.md)のガイドを読んでみてください。
 :::
 
 
 ## 目次 {#table-of-contents}
 
-| Menu                           | Icon                          | Description                                        |
-| :----------------------------: | :---------------------------: | :------------------------------------------------: |
-| [Files](files.md)              | ![](/icons/open.webp)        | プロジェクトの管理、エクスポート、インポートなど |
-| [Scene](scene.md)              | ![](/icons/scene.webp)       | 新しいプリミティブを追加し、シーン内のオブジェクトを管理 |
-| [Topology](topology.md)        | ![](/icons/multires.webp)    | モデルのトポロジを編集                            |
-| [Material](material.md)        | ![](/icons/material.webp)    | マテリアル（オブジェクトレベル）                 |
-| [Shading](shading.md)          | ![](/icons/sun.webp)         | シーンのライティング方法                          |
-| [Post Process](postprocess.md) | ![](/icons/postprocess.webp) | ポストプロセス（スクリーンスペースの視覚効果）   |
-| [Background](background.md)    | ![](/icons/image.webp)       | 背景の変更とリファレンス画像の追加                |
-| [Camera](camera.md)            | ![](/icons/camera.webp)      | カメラの操作とインタラクション                    |
-| [Stroke](stroke.md)            | ![](/icons/pencil.webp)      | 現在のツール設定、ストローク、フォールオフなどの編集 |
-| [Pressure](pressure.md)        | ![](/icons/pressure.webp)    | ペンの筆圧設定の管理                              |
-| [Painting](painting.md)	     | ![](/icons/paint.webp)       | ペイントツール用のペインティング設定              |
-| [Symmetry](symmetry.md)        | ![](/icons/symmetry.webp)    | 現在のメッシュのミラープレーンを管理              |
-| [Layers](layers.md)            | ![](/icons/layer.webp)       | 現在のオブジェクトのレイヤーを管理                |
-| [Settings](settings.md)        | ![](/icons/cog.webp)         | 3D ビューポートのカスタマイズ                     |
-| [Interface](interface.md)      | ![](/icons/sliders.webp)   | インターフェースのカスタマイズ                    |
-| [Tools](tools.md)              | ![](/icons/toolbox.webp)     | すべてのツール／ブラシの一覧                      |
-| [History](history.md)          | ![](/icons/history.webp)     | アンドゥ／リドゥ履歴スタックの管理                |
-| [FAQ](faq.md)                  | ![](/icons/faq.webp)         | よくある質問                                      |
-| [Tips](tips.md)                | ![](/icons/manual.webp)      | ワークフローのヒント                              |
+| メニュー                       | アイコン                     | 説明                                               |
+| :----------------------------: | :--------------------------: | :------------------------------------------------: |
+| [ファイル](files.md)           | ![](/icons/open.webp)        | プロジェクトの管理、書き出し、読み込みなど         |
+| [シーン](scene.md)             | ![](/icons/scene.webp)       | 新しいプリミティブの追加とシーン内のオブジェクトの管理 |
+| [トポロジー](topology.md)      | ![](/icons/multires.webp)    | モデルのトポロジーの編集                           |
+| [マテリアル](material.md)      | ![](/icons/material.webp)    | マテリアル（オブジェクト単位）                     |
+| [シェーディング](shading.md)   | ![](/icons/sun.webp)         | シーンのライティング                               |
+| [ポストプロセス](postprocess.md) | ![](/icons/postprocess.webp) | ポストプロセス（スクリーンスペースの視覚効果）     |
+| [背景](background.md)          | ![](/icons/image.webp)       | 背景の変更と参照イメージの追加                     |
+| [カメラ](camera.md)            | ![](/icons/camera.webp)      | カメラの操作と設定                                 |
+| [トランスフォーム](transform.md) | ![](/icons/transform.webp)   | オブジェクトの位置、回転、サイズを数値で入力       |
+| [ストローク](stroke.md)        | ![](/icons/brush.webp)       | 現在のツールの設定、ストローク、フォールオフなどの編集 |
+| [筆圧](stroke.md#pressure)        | ![](/icons/pressure.webp)    | ペンの筆圧の管理                                   |
+| [ペイント](painting.md)	       | ![](/icons/paint.webp)       | ペイント系ツールのペイント設定                     |
+| [対称](symmetry.md)            | ![](/icons/symmetry.webp)    | 現在のメッシュのミラー面の管理                     |
+| [操作](operation.md)           | ![](/icons/operation.webp)   | メッシュ全体のスムーズ、膨張、色の置き換え、ブラー |
+| [レイヤー](layers.md)          | ![](/icons/layer.webp)       | 現在のオブジェクトのレイヤーの管理                 |
+| [設定](settings.md)            | ![](/icons/cog.webp)         | 3d ビューポートのカスタマイズ                      |
+| [インターフェース](interface.md) | ![](/icons/sliders.webp)     | インターフェースのカスタマイズ                     |
+| [ツール](tools.md)             | ![](/icons/toolbox.webp)     | すべてのツール／ブラシの一覧                       |
+| [履歴](history.md)             | ![](/icons/history.webp)     | 取り消し／やり直しの履歴の管理                     |
+| [FAQ](faq.md)                  | ![](/icons/faq.webp)         | よくある質問                                       |
+| [ヒント](tips.md)              | ![](/icons/manual.webp)      | ワークフローのヒント                               |
 
-## コミュニティリソース {#community-resources}
+## コミュニティの情報源 {#community-resources}
 
 <style>
 .video-grid {
