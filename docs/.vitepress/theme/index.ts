@@ -23,9 +23,9 @@ export default {
     setup() {
         const route = useRoute();
         const initZoom = () => {
-            var imagesDev = document.querySelectorAll('img[src*=images]');
-            var imagesBuild = document.querySelectorAll('img[src*=assets]');
-            var images = imagesBuild.length ? imagesBuild : imagesDev;
+            // screenshots only (class set by the markdown renderer), not icons: the built src
+            // of both is a hashed /assets/ file
+            var images = document.querySelectorAll('img.image');
             new mediumZoom(images, {
                 background: 'var(--vp-c-bg)',
                 scrollOffset: 10,

@@ -12,7 +12,8 @@ function decorate(link: HTMLAnchorElement) {
     link.dataset.iconFor = id
 
     const heading = id ? document.getElementById(id) : null
-    const src = heading?.querySelector<HTMLImageElement>('img[src*="/icons/"]')
+    // the `icon` class comes from the markdown renderer: the built src is a hashed /assets/ file
+    const src = heading?.querySelector<HTMLImageElement>('img.icon')
     const icon = document.createElement(src ? 'img' : 'span')
     icon.className = 'outline-icon'
     if (src) {
