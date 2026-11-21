@@ -56,7 +56,7 @@ Drag like a regular paint stroke.
 ![](/videos/stroke_dot.mp4) 
 
 ### ![](/icons/stroke_roll.webp) Roll {#roll}
-The brush alpha will be rotated to follow the direction of the stroke, useful for making fabric stitches. 
+The brush alpha is rolled out along the stroke, like a patterned paint roller: it repeats end to end and follows the direction of the stroke. Useful for making fabric stitches. 
 ![](/videos/stroke_roll.mp4) 
 
 ### ![](/icons/radius.webp) Lock + radius {#lock-radius}
@@ -73,11 +73,11 @@ The `Lock + radius` and `Lock + intensity` modes ignore the [Pressure](#pressure
 
 ![](/images/stroke_strokemodemove.webp)
 
-The `Move` and `Drag` tools have their own 3 options:
+The `Move` and `Drag` tools have their own 3 options. With all of them, the intensity sets how far the surface follows your pointer: at 100% it stays under it, at 50% (the default for `Move`) it goes half as far.
 
 ### ![](/icons/snake.webp) Drag {#drag}
 
-Will keep updating what is inside the brush radius during the stroke. A fast stroke will leave the surface behind, while a slow stroke will hold onto material, making longer shapes. This is the default mode for the `Drag` tool. With `Dynamic Topology` this can be used to make snake like extrusions. 
+Will keep updating what is inside the brush radius during the stroke. A fast stroke will leave the surface behind, while a slow stroke will hold onto material, making longer shapes. This is the default mode for the `Drag` tool. With `Dynamic Topology` this can be used to make snake like extrusions (with the `Move` tool, raise the intensity to 100% for this). 
 ![](/videos/stroke_drag.mp4) 
 
 
@@ -87,7 +87,7 @@ Will select what is inside the brush radius when the brush is started, and keep 
 
 
 ### ![](/icons/radius.webp) Lock + radius (drag) {#lock-radius-drag}
-The user radius is ignored, and is set dynamically based on how far the stroke is dragged away from the starting point. A small distance=small radius, a larger distance = bigger radius. Use the intensity slider to control the shape of the falloff. Useful for blocking in organic rubbery shapes.
+The user radius is ignored, and is set dynamically based on how far the stroke is dragged away from the starting point. A small distance=small radius, a larger distance = bigger radius. Useful for blocking in organic rubbery shapes.
 ![](/videos/stroke_lockradius_drag.mp4) 
 
 Some other tools list their own stroke types here, for example `Relax`, `Smooth` and `Smudge` for the smoothing tools, or shapes such as `Lasso` and `Curve` for the selection-based tools. They are described with each [tool](tools.md).
@@ -317,14 +317,14 @@ At 0%, only the nearest vertex or triangle is taken into account. These values c
 ### Area Normal Filter {#keep-sharp-edges}
 Exclude points whose normals deviate too much from the surface normal.
 
-It will change how the plane area is computed (Area sampling), so it's mostly useful for clay or flatten-based tools, or if you want to color a mostly flat surface without over-spill.
+It will change how the plane area is computed (Area sampling), so it's mostly useful for clay or flatten-based tools.
 
 The `Min` and `Max` angles control the fade between excluded and fully affected points, as shown by the small colored disc next to them.
 
-![](/videos/filter_keep_sharp_edges.mp4)
-
 ### Falloff Normal Filter {#falloff-normal-filter}
-Like the [Area Normal Filter](#keep-sharp-edges), it excludes points whose normals deviate too much from the surface normal, but it acts on the brush falloff instead of the plane computation. It's useful for painting creases or bumps.
+Like the [Area Normal Filter](#keep-sharp-edges), it excludes points whose normals deviate too much from the surface normal, but it acts on the brush falloff instead of the plane computation. It's the one to use when painting: color stays on one side of a sharp edge instead of spilling over it, and it helps when painting creases or bumps. `Min` and `Max` work the same way.
+
+![](/videos/filter_keep_sharp_edges.mp4)
 
 
 ### Depth filter {#depth-masking}
@@ -337,12 +337,12 @@ This can be used to paint only on bumpy regions, or only on cavity regions.
 The graph represents a cross section of the surface; the horizontal line is where the surface is, the circle represents the paint falloff radius relative above and below the surface. `Height offset` is a percentage above or below the surface to start the masking calculation. With `Depth falloff` enabled, `Top area` and `Bottom area` allow you to scale the falloff above and below the offset point.
 
 #### Example: Paint in cavities {#example-paint-in-cavities}
-To paint only cavity regions, set the height offset to -100%, and adjust the top area slider so that it is away from the horizontal line. This means the first click sets the 'zero' depth, and then only areas below this depth will get affected.
+To paint only cavity regions, leave the height offset at 0%, enable `Depth falloff` and lower `Top area` to about 10%, so that only what sits below the surface gets painted. Set [Area sampling](#area-sampling) to 100%: the plane then rests on the top of the surface instead of dropping into each groove.
 
 ![](/videos/stroke_depth_cavity.mp4)
 
 #### Example: Paint on bumps {#example-paint-on-bumps}
-To only paint in high regions, set the height offset to +90%, so that the bottom of the circle intersects the horizontal line by a small amount.  When you click on the top of a 'high' zone, this will set the depth, so that anything at that depth, plus a little below it, and anything higher than it, will be painted. Deep cavities will be skipped.
+To only paint in high regions, set the height offset to about +50%, with `Depth falloff` off and [Area sampling](#area-sampling) at 100%. The plane follows the overall surface, so anything at its height or above gets painted, and deep cavities are skipped.
 ![](/videos/stroke_depth_bump.mp4)
 
 

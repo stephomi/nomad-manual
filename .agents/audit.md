@@ -30,8 +30,8 @@ Snapshots of each menu (option list with help texts, stitched capture) are made 
 | faq | - | done | - |
 | tips | - | done | kept: tips_lighting_* renders |
 
-Videos were not audited; known outdated: tool_selector_mask (removed tool), tip_pimples_reproject
-(old menu location), the Getting Started clips (old UI).
+Videos audited and the outdated ones re-recorded 2026-11-20: workflow and status in
+`.agents/videos.md`.
 
 ## Images flagged as outdated
 
@@ -132,6 +132,28 @@ falloff_menu shows the dev-only `Shift` slider (ai= sessions run in dev mode).
   rows without one icon. Stroke menu icon is `brush` (was pencil); scene "Add view" is now `Camera`.
   The locales get the icons at the translation sync.
 - faq.md rigging answer could mention the face group Pose tap action.
+- Video re-recording (2026-11-20) fixed page text: stroke.md (the sharp-edge clip moved under
+  Falloff Normal Filter, which is what stops paint at an edge; Depth filter example values that
+  work), layers.md (Keep top layers details asks for a confirmation), material.md (refraction
+  sliders under a `Glossiness | Roughness` header), tools.md (Split `Divide` needs symmetry, Tube
+  `Twist` is labeled `Rotate`). Still to check: the Tube top toolbar has no `Edit` button now and
+  shows All, Sym, Profile..., Spiral...; the Lathe top toolbar has `Align` and no `Edit` (Stable may
+  now be an Axis option: tool.lathe.axis.*). The locales get these at the next sync.
+- Second video batch (2026-11-20, the ten remaining tool clips): tools.md Insert now says the tool
+  hands over to Transform during the drag and comes back on release (Insert.cpp setOverrideType),
+  it used to say it swapped after the drag. Still to check: the Transform left toolbar also shows
+  `Sym` and `Pivot`, not in the page's list; the page's two-finger steps (hold one finger, add or
+  tap a second) weren't replayed, `touch` can't stagger fingers; Smooth doesn't mention its second
+  left slider, `Paint intensity`, which is what blurs paint.
+- Third video batch (2026-11-20, the last 15 old clips): stroke.md fixed (Roll rolls the alpha out
+  along the stroke; for Move/Drag strokes the intensity is how far the surface follows the
+  pointer, not the falloff shape), layers.md names the `DelLayer` tool. Still to check: tips.md
+  pimples steps (no visible pimples on the default sphere with the slider's range: it took a
+  glossy material and Smooth typed far above 100 %; remeshing the default sphere asks "UV will be
+  lost!"); background.md `Reference image` title is drawn dimmed after loading a project though
+  the checkbox works; camera.md doesn't say `Add View` selects the new camera and switches to the
+  View tool (top toolbar: Previous, Add View, Update, Opacity, Overlay, Next); the stroke.md
+  heading "Lock + radius (drag)" is `Lock + radius` in the app (kept: two sections share the name).
 - files.md: USD `Instance`/`Repeater` and Live sync `Working view` inferred from code.
 - camera.md: `Center view when zooming out` described from a code comment.
 - painting.md: triplanar `Vertex` button described from Paint.cpp.

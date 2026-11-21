@@ -69,7 +69,7 @@ You can use the `Paint glossy` button to repaint your model with a roughness and
 
 There are 2 different roughness at play, the one driving how blurry the reflection is on the surface, and the other one driving the interior (refraction).  
 However, since there is only one painting roughness channel in Nomad, both interior and exterior roughness will share the same value.  
-In order to have different values (for example a lollipop with sharp surface but blurry interior) you use the `Surface` and `Interior` sliders under `Override roughness` to override the painted roughness.
+In order to have different values (for example a lollipop with sharp surface but blurry interior) you use the `Surface` and `Interior` sliders to override the painted roughness. They sit under a `Glossiness | Roughness` header: low values are glossy, high values rough.
 
 ![](/videos/refraction.mp4)
 

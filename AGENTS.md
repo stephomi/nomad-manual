@@ -122,7 +122,8 @@ done
   screenshots is allowed.
 - Stop the Nomad you started (`python3 ../nomad/.agents/ai.py stop`) before ending your turn, and
   check none is left (`pgrep -fl 'Nomad ai='`). The user can't tell otherwise whether it's in use.
-- Workflow and capture helper: `.agents/screenshots.md` and `.agents/shot.py`.
+- Workflow and capture helper: `.agents/screenshots.md` and `.agents/shot.py`. Videos:
+  `.agents/videos.md`.
 - Only the projects in the `manual` folder of the Nomad user folder may be used:
   `~/Downloads/data_nomad/cache/projects/manual/*.nom`. A fresh scene is fine too. Never open other
   projects. Never Nomad's default sphere (Files > New), and spread the models across images: pick

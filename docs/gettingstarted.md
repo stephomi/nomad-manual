@@ -77,7 +77,7 @@ With those settings, you can manipulate the camera purely with the pen:
 
 ## Add color {#add-color}
 
-Nomad allows you to paint the surface of your sculpt. From the tool menu on the right, find the `Paint` tool, and click it. On the left toolbar a colored sphere will appear. Click it, this will bring up a color selector. Choose a color, and paint on your model.
+Nomad allows you to paint the surface of your sculpt. From the tool menu on the right, find the `Paint` tool, and click it. At the bottom of the left toolbar, a preview of the current color and material appears. Tap it to open the paint menu, scroll down to the color selector, choose a color, and paint on your model.
 
 ![](/videos/gettingstarted_10.mp4)
 

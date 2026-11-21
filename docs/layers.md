@@ -84,7 +84,7 @@ Offset can be used to turn a layer of bumps into a layer of cavities, or a smile
 ![](/videos/layer_happysad.mp4)
 
 
-A symmetrical layer can be cloned and then split into left/right shapes with del layer:
+A symmetrical layer can be cloned and then split into left/right shapes with the [`DelLayer`](tools.md#delete-layer) tool:
 ![](/videos/layer_leftright.mp4)
 
 Layers with negative offset factors can be baked down to empty layers to make new positive shapes.
@@ -157,7 +157,7 @@ The `Advanced` button at the bottom of the menu appears once the object has laye
 
 #### Keep top layers details {#keep-top-layers-details}
 
-Ensure that small details on higher layers remain visible when large changes are made to lower changes. While you sculpt, the deformation coming from the top layers is ignored, but their details stay visible. It only works well if those top layers hold relatively small details.
+Ensure that small details on higher layers remain visible when large changes are made to lower changes. While you sculpt, the deformation coming from the top layers is ignored, but their details stay visible. It only works well if those top layers hold relatively small details. Turning it on asks for a confirmation first.
 
 By default if you sculpt small wrinkles on a layer, then go and make large changes to the base layer, the wrinkles will be lost. Enabling this toggle will allow those small details to always float above the lower large changes. In the following video, see how the wrinkle detail gets removed by default, but remains visible when 'keep top layers details' is enabled:
 

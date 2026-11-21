@@ -160,7 +160,7 @@ This brush is good for large, soft changes of proportions that stay smooth.
 Elastic has the same settings as [Move](#move-settings), except `Same-side vertex only`. `Radius (Background)` is off by default.
 
 ### ![](/icons/tool_smooth.webp) Smooth {#smooth}
-Smooth the area by average the point positions. This tool is highly dependent on the polygon density.
+Smooth the area by averaging the point positions. This tool is highly dependent on the polygon density.
 So if you have many polygons, the smoothing will be less effective.
 
 The sub mode is `Relax`, which only smooths the wireframe but tries to retain the geometric details.
@@ -171,7 +171,7 @@ The sub mode is `Relax`, which only smooths the wireframe but tries to retain th
 
 ##### Face Group {#smooth-facegroup}
 
-* `Relax` - Will smoooth the borders of facegroups. Use intensity greater that 100% to quickly smooth borders. `Auto` will smooth only if facegroup preview is enabled, `No` will disable, `Yes` will enable. 
+* `Relax` - Will smooth the borders of facegroups. Use intensity greater than 100% to quickly smooth borders. `Auto` will smooth only if facegroup preview is enabled, `No` will disable, `Yes` will enable. 
 
 ##### Vertex {#vertex}
 * `Preserve volume` - Smooths without shrinking the surface, so repeated smoothing doesn't deflate your shapes. The cog button next to it holds the `Shrink` and `Inflate` amounts used for this.
@@ -181,7 +181,7 @@ The sub mode is `Relax`, which only smooths the wireframe but tries to retain th
 
 ##### Painting {#painting}
 * `Screen smoothing` - Use this option to get topology independent smoothing, even at high poly counts. `Auto`, `No` or `Yes`.
-* `Screen samples` - The quality of the smoothing, higher numbers will be be smoother, but slower.
+* `Screen samples` - The quality of the smoothing, higher numbers will be smoother, but slower.
 
 ::: tip
 Higher polygon densities can require raising the intensity above 100%. Very high values (300%, 500%) can also work well as a sculpting tool, forcing areas to go flat and smooth quickly under the brush, like hitting clay with a mallet!
@@ -404,7 +404,7 @@ With `Fill`:
 ### ![](/icons/tool_split.webp) Split {#split}
 Similar to the [Trim](#trim) tool, except that while Trim discards the selection, Split will keep the selection as a new object.
 
-The sub mode is `Divide`: every piece is kept as its own object, so overlapping shapes (for example with symmetry) are cut into separate parts instead of being joined into one.
+The sub mode is `Divide`: every piece is kept as its own object, so overlapping shapes (for example with symmetry) are cut into separate parts instead of being joined into one. It is only available while symmetry is on.
 
 #### Split settings {#split-settings}
 
@@ -447,7 +447,7 @@ Create a layer, and use this tool. The maximum height is now set from the layer,
 ### ![](/icons/tool_inflate.webp) Inflate {#inflate}
 Move the vertices along their own normals. `Sub` will move vertices along their inverted normal.
 
-#### Inflate Setings {#inflate-setings}
+#### Inflate Settings {#inflate-setings}
 * `Relax (Normal)` - The amount of smoothing applied to the normals.
 
 ![](/videos/tool_inflate.mp4)
@@ -554,7 +554,7 @@ Whe a tube is selected, a toolbar will appear at the top of the viewport with ex
 * `Cap` - Cycle between caps on both ends of the tube, or the start or end, or no caps.
 * `Hole` - Add thickness to the tube, converting it into a pipe. Cycle between having a hole at both ends, at only the end, or no holes. 
 * `Radius` - Cycle between a uniform radius, a radius at the start and end, or a radius per curve point. These are edited with orange handles on the curve.
-* `Twist` - Cycle between no twist, a uniform twist, a twist at the start and end, or a twist per curve point. These are editing with pink handles on the curve.
+* `Rotate` - Cycle between no twist, a uniform twist, a twist at the start and end, or a twist per curve point. These are edited with pink handles on the curve.
 * `Profile` - Cycle between no profile (so a circle profile), a uniform profile, a profile at the start end end, or a profile per point.
 * `Profile edit` - Display a profile editor. This functions similar to the [Shape editing](#shape-editing) tools, can save and load profile presets, and has a toggle to allow you to edit the profile in 3d space.
 * `Spiral` - Toggle a menu to add a spiral twist to the tube. This menu has options for `Twist Angle`, `Offset`, `Scale`, and `Angle offset`.
@@ -639,9 +639,9 @@ Whe a lathe is selected, a toolbar will appear at the top of the viewport with e
 ### ![](/icons/tool_insert.webp) Insert {#insert}
 Place an object on the surface of another. In use it is similar to the stamp tool, but for full 3d shapes.
 
-If you select a primitive from the left toolbar, a click-drag on any surface will place a primitive where you click, the drag will set the size. Once you finish dragging, Insert will swap to [Transform](#transform) mode.
+If you select a primitive from the left toolbar, a click-drag on any surface will place a primitive where you click, the drag will set the size. While you drag, Insert hands over to [Transform](#transform), so its buttons show in the left toolbar. When you release, you're back in Insert, ready to place the next one.
 
-In Instance mode, dragging will create and slide a new instance over the surface. The size will be duplicated from the first shape, in this way you can place many same-sized instances of an obejct over other surfaces.
+In Instance mode, dragging will create and slide a new instance over the surface. The size will be duplicated from the first shape, in this way you can place many same-sized instances of an object over other surfaces.
 
 You don't have to just insert primitives! Select *any* shape in the outliner, if Insert is in Instance or Clone mode, you can drag copies of the selected object over any other surface.
 
